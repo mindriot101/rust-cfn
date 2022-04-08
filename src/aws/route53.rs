@@ -3,7 +3,7 @@
 /// The [`AWS::Route53::DNSSEC`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-dnssec.html) resource type.
 #[derive(Debug, Default)]
 pub struct DNSSEC {
-    properties: DNSSECProperties
+    properties: DNSSECProperties,
 }
 
 /// Properties for the `DNSSEC` resource.
@@ -19,7 +19,11 @@ pub struct DNSSECProperties {
 impl ::serde::Serialize for DNSSECProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneId", &self.hosted_zone_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "HostedZoneId",
+            &self.hosted_zone_id,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -35,7 +39,10 @@ impl<'de> ::serde::Deserialize<'de> for DNSSECProperties {
                 write!(f, "a struct of type DNSSECProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut hosted_zone_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -48,7 +55,8 @@ impl<'de> ::serde::Deserialize<'de> for DNSSECProperties {
                 }
 
                 Ok(DNSSECProperties {
-                    hosted_zone_id: hosted_zone_id.ok_or(::serde::de::Error::missing_field("HostedZoneId"))?,
+                    hosted_zone_id: hosted_zone_id
+                        .ok_or(::serde::de::Error::missing_field("HostedZoneId"))?,
                 })
             }
         }
@@ -79,7 +87,7 @@ impl From<DNSSECProperties> for DNSSEC {
 /// The [`AWS::Route53::HealthCheck`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html) resource type.
 #[derive(Debug, Default)]
 pub struct HealthCheck {
-    properties: HealthCheckProperties
+    properties: HealthCheckProperties,
 }
 
 /// Properties for the `HealthCheck` resource.
@@ -100,9 +108,17 @@ pub struct HealthCheckProperties {
 impl ::serde::Serialize for HealthCheckProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckConfig", &self.health_check_config)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "HealthCheckConfig",
+            &self.health_check_config,
+        )?;
         if let Some(ref health_check_tags) = self.health_check_tags {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckTags", health_check_tags)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckTags",
+                health_check_tags,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -119,9 +135,13 @@ impl<'de> ::serde::Deserialize<'de> for HealthCheckProperties {
                 write!(f, "a struct of type HealthCheckProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut health_check_config: Option<::Value<::json::Value>> = None;
-                let mut health_check_tags: Option<::ValueList<self::health_check::HealthCheckTag>> = None;
+                let mut health_check_tags: Option<::ValueList<self::health_check::HealthCheckTag>> =
+                    None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -136,7 +156,8 @@ impl<'de> ::serde::Deserialize<'de> for HealthCheckProperties {
                 }
 
                 Ok(HealthCheckProperties {
-                    health_check_config: health_check_config.ok_or(::serde::de::Error::missing_field("HealthCheckConfig"))?,
+                    health_check_config: health_check_config
+                        .ok_or(::serde::de::Error::missing_field("HealthCheckConfig"))?,
                     health_check_tags: health_check_tags,
                 })
             }
@@ -168,7 +189,7 @@ impl From<HealthCheckProperties> for HealthCheck {
 /// The [`AWS::Route53::HostedZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html) resource type.
 #[derive(Debug, Default)]
 pub struct HostedZone {
-    properties: HostedZoneProperties
+    properties: HostedZoneProperties,
 }
 
 /// Properties for the `HostedZone` resource.
@@ -205,16 +226,28 @@ impl ::serde::Serialize for HostedZoneProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref hosted_zone_config) = self.hosted_zone_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneConfig", hosted_zone_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HostedZoneConfig",
+                hosted_zone_config,
+            )?;
         }
         if let Some(ref hosted_zone_tags) = self.hosted_zone_tags {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneTags", hosted_zone_tags)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HostedZoneTags",
+                hosted_zone_tags,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
         if let Some(ref query_logging_config) = self.query_logging_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueryLoggingConfig", query_logging_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "QueryLoggingConfig",
+                query_logging_config,
+            )?;
         }
         if let Some(ref vp_cs) = self.vp_cs {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "VPCs", vp_cs)?;
@@ -234,11 +267,18 @@ impl<'de> ::serde::Deserialize<'de> for HostedZoneProperties {
                 write!(f, "a struct of type HostedZoneProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut hosted_zone_config: Option<::Value<self::hosted_zone::HostedZoneConfig>> = None;
-                let mut hosted_zone_tags: Option<::ValueList<self::hosted_zone::HostedZoneTag>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut hosted_zone_config: Option<::Value<self::hosted_zone::HostedZoneConfig>> =
+                    None;
+                let mut hosted_zone_tags: Option<::ValueList<self::hosted_zone::HostedZoneTag>> =
+                    None;
                 let mut name: Option<::Value<String>> = None;
-                let mut query_logging_config: Option<::Value<self::hosted_zone::QueryLoggingConfig>> = None;
+                let mut query_logging_config: Option<
+                    ::Value<self::hosted_zone::QueryLoggingConfig>,
+                > = None;
                 let mut vp_cs: Option<::ValueList<self::hosted_zone::VPC>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -298,7 +338,7 @@ impl From<HostedZoneProperties> for HostedZone {
 /// The [`AWS::Route53::KeySigningKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-keysigningkey.html) resource type.
 #[derive(Debug, Default)]
 pub struct KeySigningKey {
-    properties: KeySigningKeyProperties
+    properties: KeySigningKeyProperties,
 }
 
 /// Properties for the `KeySigningKey` resource.
@@ -329,8 +369,16 @@ pub struct KeySigningKeyProperties {
 impl ::serde::Serialize for KeySigningKeyProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneId", &self.hosted_zone_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyManagementServiceArn", &self.key_management_service_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "HostedZoneId",
+            &self.hosted_zone_id,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "KeyManagementServiceArn",
+            &self.key_management_service_arn,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Status", &self.status)?;
         ::serde::ser::SerializeMap::end(map)
@@ -338,7 +386,9 @@ impl ::serde::Serialize for KeySigningKeyProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for KeySigningKeyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<KeySigningKeyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<KeySigningKeyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -348,7 +398,10 @@ impl<'de> ::serde::Deserialize<'de> for KeySigningKeyProperties {
                 write!(f, "a struct of type KeySigningKeyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut hosted_zone_id: Option<::Value<String>> = None;
                 let mut key_management_service_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -360,7 +413,8 @@ impl<'de> ::serde::Deserialize<'de> for KeySigningKeyProperties {
                             hosted_zone_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "KeyManagementServiceArn" => {
-                            key_management_service_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            key_management_service_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Name" => {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -373,8 +427,10 @@ impl<'de> ::serde::Deserialize<'de> for KeySigningKeyProperties {
                 }
 
                 Ok(KeySigningKeyProperties {
-                    hosted_zone_id: hosted_zone_id.ok_or(::serde::de::Error::missing_field("HostedZoneId"))?,
-                    key_management_service_arn: key_management_service_arn.ok_or(::serde::de::Error::missing_field("KeyManagementServiceArn"))?,
+                    hosted_zone_id: hosted_zone_id
+                        .ok_or(::serde::de::Error::missing_field("HostedZoneId"))?,
+                    key_management_service_arn: key_management_service_arn
+                        .ok_or(::serde::de::Error::missing_field("KeyManagementServiceArn"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     status: status.ok_or(::serde::de::Error::missing_field("Status"))?,
                 })
@@ -407,7 +463,7 @@ impl From<KeySigningKeyProperties> for KeySigningKey {
 /// The [`AWS::Route53::RecordSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html) resource type.
 #[derive(Debug, Default)]
 pub struct RecordSet {
-    properties: RecordSetProperties
+    properties: RecordSetProperties,
 }
 
 /// Properties for the `RecordSet` resource.
@@ -506,23 +562,39 @@ impl ::serde::Serialize for RecordSetProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "GeoLocation", geo_location)?;
         }
         if let Some(ref health_check_id) = self.health_check_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckId", health_check_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckId",
+                health_check_id,
+            )?;
         }
         if let Some(ref hosted_zone_id) = self.hosted_zone_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneId", hosted_zone_id)?;
         }
         if let Some(ref hosted_zone_name) = self.hosted_zone_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneName", hosted_zone_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HostedZoneName",
+                hosted_zone_name,
+            )?;
         }
         if let Some(ref multi_value_answer) = self.multi_value_answer {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiValueAnswer", multi_value_answer)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MultiValueAnswer",
+                multi_value_answer,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref region) = self.region {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Region", region)?;
         }
         if let Some(ref resource_records) = self.resource_records {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceRecords", resource_records)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResourceRecords",
+                resource_records,
+            )?;
         }
         if let Some(ref set_identifier) = self.set_identifier {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SetIdentifier", set_identifier)?;
@@ -549,7 +621,10 @@ impl<'de> ::serde::Deserialize<'de> for RecordSetProperties {
                 write!(f, "a struct of type RecordSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut alias_target: Option<::Value<self::record_set::AliasTarget>> = None;
                 let mut comment: Option<::Value<String>> = None;
                 let mut failover: Option<::Value<String>> = None;
@@ -663,7 +738,7 @@ impl From<RecordSetProperties> for RecordSet {
 /// The [`AWS::Route53::RecordSetGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct RecordSetGroup {
-    properties: RecordSetGroupProperties
+    properties: RecordSetGroupProperties,
 }
 
 /// Properties for the `RecordSetGroup` resource.
@@ -701,7 +776,11 @@ impl ::serde::Serialize for RecordSetGroupProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneId", hosted_zone_id)?;
         }
         if let Some(ref hosted_zone_name) = self.hosted_zone_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneName", hosted_zone_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HostedZoneName",
+                hosted_zone_name,
+            )?;
         }
         if let Some(ref record_sets) = self.record_sets {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecordSets", record_sets)?;
@@ -711,7 +790,9 @@ impl ::serde::Serialize for RecordSetGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RecordSetGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RecordSetGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RecordSetGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -721,7 +802,10 @@ impl<'de> ::serde::Deserialize<'de> for RecordSetGroupProperties {
                 write!(f, "a struct of type RecordSetGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut comment: Option<::Value<String>> = None;
                 let mut hosted_zone_id: Option<::Value<String>> = None;
                 let mut hosted_zone_name: Option<::Value<String>> = None;
@@ -805,7 +889,9 @@ pub mod health_check {
     }
 
     impl ::codec::DeserializeValue for HealthCheckTag {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HealthCheckTag, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HealthCheckTag, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -815,11 +901,16 @@ pub mod health_check {
                     write!(f, "a struct of type HealthCheckTag")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -867,7 +958,9 @@ pub mod hosted_zone {
     }
 
     impl ::codec::DeserializeValue for HostedZoneConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HostedZoneConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HostedZoneConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -877,10 +970,15 @@ pub mod hosted_zone {
                     write!(f, "a struct of type HostedZoneConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut comment: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Comment" => {
                                 comment = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -889,9 +987,7 @@ pub mod hosted_zone {
                         }
                     }
 
-                    Ok(HostedZoneConfig {
-                        comment: comment,
-                    })
+                    Ok(HostedZoneConfig { comment: comment })
                 }
             }
 
@@ -924,7 +1020,9 @@ pub mod hosted_zone {
     }
 
     impl ::codec::DeserializeValue for HostedZoneTag {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HostedZoneTag, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HostedZoneTag, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -934,11 +1032,16 @@ pub mod hosted_zone {
                     write!(f, "a struct of type HostedZoneTag")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -974,13 +1077,19 @@ pub mod hosted_zone {
     impl ::codec::SerializeValue for QueryLoggingConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchLogsLogGroupArn", &self.cloud_watch_logs_log_group_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CloudWatchLogsLogGroupArn",
+                &self.cloud_watch_logs_log_group_arn,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for QueryLoggingConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<QueryLoggingConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<QueryLoggingConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -990,20 +1099,28 @@ pub mod hosted_zone {
                     write!(f, "a struct of type QueryLoggingConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cloud_watch_logs_log_group_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CloudWatchLogsLogGroupArn" => {
-                                cloud_watch_logs_log_group_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                                cloud_watch_logs_log_group_arn =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(QueryLoggingConfig {
-                        cloud_watch_logs_log_group_arn: cloud_watch_logs_log_group_arn.ok_or(::serde::de::Error::missing_field("CloudWatchLogsLogGroupArn"))?,
+                        cloud_watch_logs_log_group_arn: cloud_watch_logs_log_group_arn.ok_or(
+                            ::serde::de::Error::missing_field("CloudWatchLogsLogGroupArn"),
+                        )?,
                     })
                 }
             }
@@ -1047,11 +1164,16 @@ pub mod hosted_zone {
                     write!(f, "a struct of type VPC")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut vpc_id: Option<::Value<String>> = None;
                     let mut vpc_region: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "VPCId" => {
                                 vpc_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1065,7 +1187,8 @@ pub mod hosted_zone {
 
                     Ok(VPC {
                         vpc_id: vpc_id.ok_or(::serde::de::Error::missing_field("VPCId"))?,
-                        vpc_region: vpc_region.ok_or(::serde::de::Error::missing_field("VPCRegion"))?,
+                        vpc_region: vpc_region
+                            .ok_or(::serde::de::Error::missing_field("VPCRegion"))?,
                     })
                 }
             }
@@ -1103,9 +1226,17 @@ pub mod record_set {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DNSName", &self.dns_name)?;
             if let Some(ref evaluate_target_health) = self.evaluate_target_health {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EvaluateTargetHealth", evaluate_target_health)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EvaluateTargetHealth",
+                    evaluate_target_health,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneId", &self.hosted_zone_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HostedZoneId",
+                &self.hosted_zone_id,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -1121,18 +1252,24 @@ pub mod record_set {
                     write!(f, "a struct of type AliasTarget")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dns_name: Option<::Value<String>> = None;
                     let mut evaluate_target_health: Option<::Value<bool>> = None;
                     let mut hosted_zone_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DNSName" => {
                                 dns_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EvaluateTargetHealth" => {
-                                evaluate_target_health = ::serde::de::MapAccess::next_value(&mut map)?;
+                                evaluate_target_health =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HostedZoneId" => {
                                 hosted_zone_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1144,7 +1281,8 @@ pub mod record_set {
                     Ok(AliasTarget {
                         dns_name: dns_name.ok_or(::serde::de::Error::missing_field("DNSName"))?,
                         evaluate_target_health: evaluate_target_health,
-                        hosted_zone_id: hosted_zone_id.ok_or(::serde::de::Error::missing_field("HostedZoneId"))?,
+                        hosted_zone_id: hosted_zone_id
+                            .ok_or(::serde::de::Error::missing_field("HostedZoneId"))?,
                     })
                 }
             }
@@ -1177,13 +1315,21 @@ pub mod record_set {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref continent_code) = self.continent_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContinentCode", continent_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContinentCode",
+                    continent_code,
+                )?;
             }
             if let Some(ref country_code) = self.country_code {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CountryCode", country_code)?;
             }
             if let Some(ref subdivision_code) = self.subdivision_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubdivisionCode", subdivision_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SubdivisionCode",
+                    subdivision_code,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1200,12 +1346,17 @@ pub mod record_set {
                     write!(f, "a struct of type GeoLocation")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut continent_code: Option<::Value<String>> = None;
                     let mut country_code: Option<::Value<String>> = None;
                     let mut subdivision_code: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ContinentCode" => {
                                 continent_code = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1261,9 +1412,17 @@ pub mod record_set_group {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DNSName", &self.dns_name)?;
             if let Some(ref evaluate_target_health) = self.evaluate_target_health {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EvaluateTargetHealth", evaluate_target_health)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EvaluateTargetHealth",
+                    evaluate_target_health,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneId", &self.hosted_zone_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HostedZoneId",
+                &self.hosted_zone_id,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -1279,18 +1438,24 @@ pub mod record_set_group {
                     write!(f, "a struct of type AliasTarget")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dns_name: Option<::Value<String>> = None;
                     let mut evaluate_target_health: Option<::Value<bool>> = None;
                     let mut hosted_zone_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DNSName" => {
                                 dns_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EvaluateTargetHealth" => {
-                                evaluate_target_health = ::serde::de::MapAccess::next_value(&mut map)?;
+                                evaluate_target_health =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HostedZoneId" => {
                                 hosted_zone_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1302,7 +1467,8 @@ pub mod record_set_group {
                     Ok(AliasTarget {
                         dns_name: dns_name.ok_or(::serde::de::Error::missing_field("DNSName"))?,
                         evaluate_target_health: evaluate_target_health,
-                        hosted_zone_id: hosted_zone_id.ok_or(::serde::de::Error::missing_field("HostedZoneId"))?,
+                        hosted_zone_id: hosted_zone_id
+                            .ok_or(::serde::de::Error::missing_field("HostedZoneId"))?,
                     })
                 }
             }
@@ -1335,13 +1501,21 @@ pub mod record_set_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref continent_code) = self.continent_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContinentCode", continent_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContinentCode",
+                    continent_code,
+                )?;
             }
             if let Some(ref country_code) = self.country_code {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CountryCode", country_code)?;
             }
             if let Some(ref subdivision_code) = self.subdivision_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubdivisionCode", subdivision_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SubdivisionCode",
+                    subdivision_code,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1358,12 +1532,17 @@ pub mod record_set_group {
                     write!(f, "a struct of type GeoLocation")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut continent_code: Option<::Value<String>> = None;
                     let mut country_code: Option<::Value<String>> = None;
                     let mut subdivision_code: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ContinentCode" => {
                                 continent_code = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1478,26 +1657,50 @@ pub mod record_set_group {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "GeoLocation", geo_location)?;
             }
             if let Some(ref health_check_id) = self.health_check_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckId", health_check_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HealthCheckId",
+                    health_check_id,
+                )?;
             }
             if let Some(ref hosted_zone_id) = self.hosted_zone_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneId", hosted_zone_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HostedZoneId",
+                    hosted_zone_id,
+                )?;
             }
             if let Some(ref hosted_zone_name) = self.hosted_zone_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneName", hosted_zone_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HostedZoneName",
+                    hosted_zone_name,
+                )?;
             }
             if let Some(ref multi_value_answer) = self.multi_value_answer {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiValueAnswer", multi_value_answer)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MultiValueAnswer",
+                    multi_value_answer,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
             if let Some(ref region) = self.region {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Region", region)?;
             }
             if let Some(ref resource_records) = self.resource_records {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceRecords", resource_records)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ResourceRecords",
+                    resource_records,
+                )?;
             }
             if let Some(ref set_identifier) = self.set_identifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SetIdentifier", set_identifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SetIdentifier",
+                    set_identifier,
+                )?;
             }
             if let Some(ref ttl) = self.ttl {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TTL", ttl)?;
@@ -1521,7 +1724,10 @@ pub mod record_set_group {
                     write!(f, "a struct of type RecordSet")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut alias_target: Option<::Value<AliasTarget>> = None;
                     let mut failover: Option<::Value<String>> = None;
                     let mut geo_location: Option<::Value<GeoLocation>> = None;
@@ -1537,7 +1743,9 @@ pub mod record_set_group {
                     let mut r#type: Option<::Value<String>> = None;
                     let mut weight: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AliasTarget" => {
                                 alias_target = ::serde::de::MapAccess::next_value(&mut map)?;

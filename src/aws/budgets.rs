@@ -3,7 +3,7 @@
 /// The [`AWS::Budgets::Budget`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html) resource type.
 #[derive(Debug, Default)]
 pub struct Budget {
-    properties: BudgetProperties
+    properties: BudgetProperties,
 }
 
 /// Properties for the `Budget` resource.
@@ -18,7 +18,8 @@ pub struct BudgetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub notifications_with_subscribers: Option<::ValueList<self::budget::NotificationWithSubscribers>>,
+    pub notifications_with_subscribers:
+        Option<::ValueList<self::budget::NotificationWithSubscribers>>,
 }
 
 impl ::serde::Serialize for BudgetProperties {
@@ -26,7 +27,11 @@ impl ::serde::Serialize for BudgetProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Budget", &self.budget)?;
         if let Some(ref notifications_with_subscribers) = self.notifications_with_subscribers {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationsWithSubscribers", notifications_with_subscribers)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationsWithSubscribers",
+                notifications_with_subscribers,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -43,9 +48,14 @@ impl<'de> ::serde::Deserialize<'de> for BudgetProperties {
                 write!(f, "a struct of type BudgetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut budget: Option<::Value<self::budget::BudgetData>> = None;
-                let mut notifications_with_subscribers: Option<::ValueList<self::budget::NotificationWithSubscribers>> = None;
+                let mut notifications_with_subscribers: Option<
+                    ::ValueList<self::budget::NotificationWithSubscribers>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -53,7 +63,8 @@ impl<'de> ::serde::Deserialize<'de> for BudgetProperties {
                             budget = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "NotificationsWithSubscribers" => {
-                            notifications_with_subscribers = ::serde::de::MapAccess::next_value(&mut map)?;
+                            notifications_with_subscribers =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
@@ -92,7 +103,7 @@ impl From<BudgetProperties> for Budget {
 /// The [`AWS::Budgets::BudgetsAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html) resource type.
 #[derive(Debug, Default)]
 pub struct BudgetsAction {
-    properties: BudgetsActionProperties
+    properties: BudgetsActionProperties,
 }
 
 /// Properties for the `BudgetsAction` resource.
@@ -143,22 +154,36 @@ pub struct BudgetsActionProperties {
 impl ::serde::Serialize for BudgetsActionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ActionThreshold", &self.action_threshold)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ActionThreshold",
+            &self.action_threshold,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ActionType", &self.action_type)?;
         if let Some(ref approval_model) = self.approval_model {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApprovalModel", approval_model)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BudgetName", &self.budget_name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Definition", &self.definition)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRoleArn", &self.execution_role_arn)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationType", &self.notification_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ExecutionRoleArn",
+            &self.execution_role_arn,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "NotificationType",
+            &self.notification_type,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subscribers", &self.subscribers)?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for BudgetsActionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<BudgetsActionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<BudgetsActionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -168,8 +193,12 @@ impl<'de> ::serde::Deserialize<'de> for BudgetsActionProperties {
                 write!(f, "a struct of type BudgetsActionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut action_threshold: Option<::Value<self::budgets_action::ActionThreshold>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut action_threshold: Option<::Value<self::budgets_action::ActionThreshold>> =
+                    None;
                 let mut action_type: Option<::Value<String>> = None;
                 let mut approval_model: Option<::Value<String>> = None;
                 let mut budget_name: Option<::Value<String>> = None;
@@ -209,14 +238,21 @@ impl<'de> ::serde::Deserialize<'de> for BudgetsActionProperties {
                 }
 
                 Ok(BudgetsActionProperties {
-                    action_threshold: action_threshold.ok_or(::serde::de::Error::missing_field("ActionThreshold"))?,
-                    action_type: action_type.ok_or(::serde::de::Error::missing_field("ActionType"))?,
+                    action_threshold: action_threshold
+                        .ok_or(::serde::de::Error::missing_field("ActionThreshold"))?,
+                    action_type: action_type
+                        .ok_or(::serde::de::Error::missing_field("ActionType"))?,
                     approval_model: approval_model,
-                    budget_name: budget_name.ok_or(::serde::de::Error::missing_field("BudgetName"))?,
-                    definition: definition.ok_or(::serde::de::Error::missing_field("Definition"))?,
-                    execution_role_arn: execution_role_arn.ok_or(::serde::de::Error::missing_field("ExecutionRoleArn"))?,
-                    notification_type: notification_type.ok_or(::serde::de::Error::missing_field("NotificationType"))?,
-                    subscribers: subscribers.ok_or(::serde::de::Error::missing_field("Subscribers"))?,
+                    budget_name: budget_name
+                        .ok_or(::serde::de::Error::missing_field("BudgetName"))?,
+                    definition: definition
+                        .ok_or(::serde::de::Error::missing_field("Definition"))?,
+                    execution_role_arn: execution_role_arn
+                        .ok_or(::serde::de::Error::missing_field("ExecutionRoleArn"))?,
+                    notification_type: notification_type
+                        .ok_or(::serde::de::Error::missing_field("NotificationType"))?,
+                    subscribers: subscribers
+                        .ok_or(::serde::de::Error::missing_field("Subscribers"))?,
                 })
             }
         }
@@ -309,7 +345,11 @@ pub mod budget {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CostTypes", cost_types)?;
             }
             if let Some(ref planned_budget_limits) = self.planned_budget_limits {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PlannedBudgetLimits", planned_budget_limits)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PlannedBudgetLimits",
+                    planned_budget_limits,
+                )?;
             }
             if let Some(ref time_period) = self.time_period {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimePeriod", time_period)?;
@@ -330,7 +370,10 @@ pub mod budget {
                     write!(f, "a struct of type BudgetData")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut budget_limit: Option<::Value<Spend>> = None;
                     let mut budget_name: Option<::Value<String>> = None;
                     let mut budget_type: Option<::Value<String>> = None;
@@ -340,7 +383,9 @@ pub mod budget {
                     let mut time_period: Option<::Value<TimePeriod>> = None;
                     let mut time_unit: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BudgetLimit" => {
                                 budget_limit = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -358,7 +403,8 @@ pub mod budget {
                                 cost_types = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PlannedBudgetLimits" => {
-                                planned_budget_limits = ::serde::de::MapAccess::next_value(&mut map)?;
+                                planned_budget_limits =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimePeriod" => {
                                 time_period = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -373,12 +419,14 @@ pub mod budget {
                     Ok(BudgetData {
                         budget_limit: budget_limit,
                         budget_name: budget_name,
-                        budget_type: budget_type.ok_or(::serde::de::Error::missing_field("BudgetType"))?,
+                        budget_type: budget_type
+                            .ok_or(::serde::de::Error::missing_field("BudgetType"))?,
                         cost_filters: cost_filters,
                         cost_types: cost_types,
                         planned_budget_limits: planned_budget_limits,
                         time_period: time_period,
-                        time_unit: time_unit.ok_or(::serde::de::Error::missing_field("TimeUnit"))?,
+                        time_unit: time_unit
+                            .ok_or(::serde::de::Error::missing_field("TimeUnit"))?,
                     })
                 }
             }
@@ -451,34 +499,70 @@ pub mod budget {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref include_credit) = self.include_credit {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeCredit", include_credit)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeCredit",
+                    include_credit,
+                )?;
             }
             if let Some(ref include_discount) = self.include_discount {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeDiscount", include_discount)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeDiscount",
+                    include_discount,
+                )?;
             }
             if let Some(ref include_other_subscription) = self.include_other_subscription {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeOtherSubscription", include_other_subscription)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeOtherSubscription",
+                    include_other_subscription,
+                )?;
             }
             if let Some(ref include_recurring) = self.include_recurring {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeRecurring", include_recurring)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeRecurring",
+                    include_recurring,
+                )?;
             }
             if let Some(ref include_refund) = self.include_refund {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeRefund", include_refund)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeRefund",
+                    include_refund,
+                )?;
             }
             if let Some(ref include_subscription) = self.include_subscription {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeSubscription", include_subscription)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeSubscription",
+                    include_subscription,
+                )?;
             }
             if let Some(ref include_support) = self.include_support {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeSupport", include_support)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeSupport",
+                    include_support,
+                )?;
             }
             if let Some(ref include_tax) = self.include_tax {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeTax", include_tax)?;
             }
             if let Some(ref include_upfront) = self.include_upfront {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeUpfront", include_upfront)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeUpfront",
+                    include_upfront,
+                )?;
             }
             if let Some(ref use_amortized) = self.use_amortized {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UseAmortized", use_amortized)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UseAmortized",
+                    use_amortized,
+                )?;
             }
             if let Some(ref use_blended) = self.use_blended {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "UseBlended", use_blended)?;
@@ -498,7 +582,10 @@ pub mod budget {
                     write!(f, "a struct of type CostTypes")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut include_credit: Option<::Value<bool>> = None;
                     let mut include_discount: Option<::Value<bool>> = None;
                     let mut include_other_subscription: Option<::Value<bool>> = None;
@@ -511,7 +598,9 @@ pub mod budget {
                     let mut use_amortized: Option<::Value<bool>> = None;
                     let mut use_blended: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "IncludeCredit" => {
                                 include_credit = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -520,7 +609,8 @@ pub mod budget {
                                 include_discount = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IncludeOtherSubscription" => {
-                                include_other_subscription = ::serde::de::MapAccess::next_value(&mut map)?;
+                                include_other_subscription =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IncludeRecurring" => {
                                 include_recurring = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -529,7 +619,8 @@ pub mod budget {
                                 include_refund = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IncludeSubscription" => {
-                                include_subscription = ::serde::de::MapAccess::next_value(&mut map)?;
+                                include_subscription =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IncludeSupport" => {
                                 include_support = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -598,11 +689,23 @@ pub mod budget {
     impl ::codec::SerializeValue for Notification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComparisonOperator", &self.comparison_operator)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationType", &self.notification_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ComparisonOperator",
+                &self.comparison_operator,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationType",
+                &self.notification_type,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Threshold", &self.threshold)?;
             if let Some(ref threshold_type) = self.threshold_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ThresholdType", threshold_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ThresholdType",
+                    threshold_type,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -619,13 +722,18 @@ pub mod budget {
                     write!(f, "a struct of type Notification")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut comparison_operator: Option<::Value<String>> = None;
                     let mut notification_type: Option<::Value<String>> = None;
                     let mut threshold: Option<::Value<f64>> = None;
                     let mut threshold_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ComparisonOperator" => {
                                 comparison_operator = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -644,9 +752,12 @@ pub mod budget {
                     }
 
                     Ok(Notification {
-                        comparison_operator: comparison_operator.ok_or(::serde::de::Error::missing_field("ComparisonOperator"))?,
-                        notification_type: notification_type.ok_or(::serde::de::Error::missing_field("NotificationType"))?,
-                        threshold: threshold.ok_or(::serde::de::Error::missing_field("Threshold"))?,
+                        comparison_operator: comparison_operator
+                            .ok_or(::serde::de::Error::missing_field("ComparisonOperator"))?,
+                        notification_type: notification_type
+                            .ok_or(::serde::de::Error::missing_field("NotificationType"))?,
+                        threshold: threshold
+                            .ok_or(::serde::de::Error::missing_field("Threshold"))?,
                         threshold_type: threshold_type,
                     })
                 }
@@ -674,14 +785,24 @@ pub mod budget {
     impl ::codec::SerializeValue for NotificationWithSubscribers {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "Notification", &self.notification)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subscribers", &self.subscribers)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "Notification",
+                &self.notification,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "Subscribers",
+                &self.subscribers,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for NotificationWithSubscribers {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NotificationWithSubscribers, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NotificationWithSubscribers, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -691,11 +812,16 @@ pub mod budget {
                     write!(f, "a struct of type NotificationWithSubscribers")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut notification: Option<::Value<Notification>> = None;
                     let mut subscribers: Option<::ValueList<Subscriber>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Notification" => {
                                 notification = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -708,8 +834,10 @@ pub mod budget {
                     }
 
                     Ok(NotificationWithSubscribers {
-                        notification: notification.ok_or(::serde::de::Error::missing_field("Notification"))?,
-                        subscribers: subscribers.ok_or(::serde::de::Error::missing_field("Subscribers"))?,
+                        notification: notification
+                            .ok_or(::serde::de::Error::missing_field("Notification"))?,
+                        subscribers: subscribers
+                            .ok_or(::serde::de::Error::missing_field("Subscribers"))?,
                     })
                 }
             }
@@ -753,11 +881,16 @@ pub mod budget {
                     write!(f, "a struct of type Spend")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut amount: Option<::Value<f64>> = None;
                     let mut unit: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Amount" => {
                                 amount = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -799,7 +932,11 @@ pub mod budget {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Address", &self.address)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubscriptionType", &self.subscription_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SubscriptionType",
+                &self.subscription_type,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -815,11 +952,16 @@ pub mod budget {
                     write!(f, "a struct of type Subscriber")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut address: Option<::Value<String>> = None;
                     let mut subscription_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Address" => {
                                 address = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -833,7 +975,8 @@ pub mod budget {
 
                     Ok(Subscriber {
                         address: address.ok_or(::serde::de::Error::missing_field("Address"))?,
-                        subscription_type: subscription_type.ok_or(::serde::de::Error::missing_field("SubscriptionType"))?,
+                        subscription_type: subscription_type
+                            .ok_or(::serde::de::Error::missing_field("SubscriptionType"))?,
                     })
                 }
             }
@@ -881,11 +1024,16 @@ pub mod budget {
                     write!(f, "a struct of type TimePeriod")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut end: Option<::Value<String>> = None;
                     let mut start: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "End" => {
                                 end = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -937,7 +1085,9 @@ pub mod budgets_action {
     }
 
     impl ::codec::DeserializeValue for ActionThreshold {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ActionThreshold, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ActionThreshold, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -947,11 +1097,16 @@ pub mod budgets_action {
                     write!(f, "a struct of type ActionThreshold")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut r#type: Option<::Value<String>> = None;
                     let mut value: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Type" => {
                                 r#type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -998,13 +1153,25 @@ pub mod budgets_action {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref iam_action_definition) = self.iam_action_definition {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IamActionDefinition", iam_action_definition)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IamActionDefinition",
+                    iam_action_definition,
+                )?;
             }
             if let Some(ref scp_action_definition) = self.scp_action_definition {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScpActionDefinition", scp_action_definition)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ScpActionDefinition",
+                    scp_action_definition,
+                )?;
             }
             if let Some(ref ssm_action_definition) = self.ssm_action_definition {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SsmActionDefinition", ssm_action_definition)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SsmActionDefinition",
+                    ssm_action_definition,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1021,21 +1188,29 @@ pub mod budgets_action {
                     write!(f, "a struct of type Definition")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut iam_action_definition: Option<::Value<IamActionDefinition>> = None;
                     let mut scp_action_definition: Option<::Value<ScpActionDefinition>> = None;
                     let mut ssm_action_definition: Option<::Value<SsmActionDefinition>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "IamActionDefinition" => {
-                                iam_action_definition = ::serde::de::MapAccess::next_value(&mut map)?;
+                                iam_action_definition =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ScpActionDefinition" => {
-                                scp_action_definition = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scp_action_definition =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SsmActionDefinition" => {
-                                ssm_action_definition = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ssm_action_definition =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1096,7 +1271,9 @@ pub mod budgets_action {
     }
 
     impl ::codec::DeserializeValue for IamActionDefinition {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<IamActionDefinition, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<IamActionDefinition, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1106,13 +1283,18 @@ pub mod budgets_action {
                     write!(f, "a struct of type IamActionDefinition")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut groups: Option<::ValueList<String>> = None;
                     let mut policy_arn: Option<::Value<String>> = None;
                     let mut roles: Option<::ValueList<String>> = None;
                     let mut users: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Groups" => {
                                 groups = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1132,7 +1314,8 @@ pub mod budgets_action {
 
                     Ok(IamActionDefinition {
                         groups: groups,
-                        policy_arn: policy_arn.ok_or(::serde::de::Error::missing_field("PolicyArn"))?,
+                        policy_arn: policy_arn
+                            .ok_or(::serde::de::Error::missing_field("PolicyArn"))?,
                         roles: roles,
                         users: users,
                     })
@@ -1168,7 +1351,9 @@ pub mod budgets_action {
     }
 
     impl ::codec::DeserializeValue for ScpActionDefinition {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ScpActionDefinition, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ScpActionDefinition, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1178,11 +1363,16 @@ pub mod budgets_action {
                     write!(f, "a struct of type ScpActionDefinition")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut policy_id: Option<::Value<String>> = None;
                     let mut target_ids: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PolicyId" => {
                                 policy_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1195,8 +1385,10 @@ pub mod budgets_action {
                     }
 
                     Ok(ScpActionDefinition {
-                        policy_id: policy_id.ok_or(::serde::de::Error::missing_field("PolicyId"))?,
-                        target_ids: target_ids.ok_or(::serde::de::Error::missing_field("TargetIds"))?,
+                        policy_id: policy_id
+                            .ok_or(::serde::de::Error::missing_field("PolicyId"))?,
+                        target_ids: target_ids
+                            .ok_or(::serde::de::Error::missing_field("TargetIds"))?,
                     })
                 }
             }
@@ -1228,7 +1420,11 @@ pub mod budgets_action {
     impl ::codec::SerializeValue for SsmActionDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceIds", &self.instance_ids)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InstanceIds",
+                &self.instance_ids,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Region", &self.region)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subtype", &self.subtype)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1236,7 +1432,9 @@ pub mod budgets_action {
     }
 
     impl ::codec::DeserializeValue for SsmActionDefinition {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SsmActionDefinition, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SsmActionDefinition, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1246,12 +1444,17 @@ pub mod budgets_action {
                     write!(f, "a struct of type SsmActionDefinition")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut instance_ids: Option<::ValueList<String>> = None;
                     let mut region: Option<::Value<String>> = None;
                     let mut subtype: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InstanceIds" => {
                                 instance_ids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1267,7 +1470,8 @@ pub mod budgets_action {
                     }
 
                     Ok(SsmActionDefinition {
-                        instance_ids: instance_ids.ok_or(::serde::de::Error::missing_field("InstanceIds"))?,
+                        instance_ids: instance_ids
+                            .ok_or(::serde::de::Error::missing_field("InstanceIds"))?,
                         region: region.ok_or(::serde::de::Error::missing_field("Region"))?,
                         subtype: subtype.ok_or(::serde::de::Error::missing_field("Subtype"))?,
                     })
@@ -1313,11 +1517,16 @@ pub mod budgets_action {
                     write!(f, "a struct of type Subscriber")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut address: Option<::Value<String>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Address" => {
                                 address = ::serde::de::MapAccess::next_value(&mut map)?;

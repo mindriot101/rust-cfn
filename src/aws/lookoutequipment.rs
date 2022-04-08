@@ -3,7 +3,7 @@
 /// The [`AWS::LookoutEquipment::InferenceScheduler`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html) resource type.
 #[derive(Debug, Default)]
 pub struct InferenceScheduler {
-    properties: InferenceSchedulerProperties
+    properties: InferenceSchedulerProperties,
 }
 
 /// Properties for the `InferenceScheduler` resource.
@@ -60,18 +60,42 @@ impl ::serde::Serialize for InferenceSchedulerProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref data_delay_offset_in_minutes) = self.data_delay_offset_in_minutes {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataDelayOffsetInMinutes", data_delay_offset_in_minutes)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DataDelayOffsetInMinutes",
+                data_delay_offset_in_minutes,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataInputConfiguration", &self.data_input_configuration)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataOutputConfiguration", &self.data_output_configuration)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataUploadFrequency", &self.data_upload_frequency)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DataInputConfiguration",
+            &self.data_input_configuration,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DataOutputConfiguration",
+            &self.data_output_configuration,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DataUploadFrequency",
+            &self.data_upload_frequency,
+        )?;
         if let Some(ref inference_scheduler_name) = self.inference_scheduler_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InferenceSchedulerName", inference_scheduler_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InferenceSchedulerName",
+                inference_scheduler_name,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ModelName", &self.model_name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
         if let Some(ref server_side_kms_key_id) = self.server_side_kms_key_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerSideKmsKeyId", server_side_kms_key_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ServerSideKmsKeyId",
+                server_side_kms_key_id,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -81,7 +105,9 @@ impl ::serde::Serialize for InferenceSchedulerProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for InferenceSchedulerProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<InferenceSchedulerProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<InferenceSchedulerProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -91,7 +117,10 @@ impl<'de> ::serde::Deserialize<'de> for InferenceSchedulerProperties {
                 write!(f, "a struct of type InferenceSchedulerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data_delay_offset_in_minutes: Option<::Value<u32>> = None;
                 let mut data_input_configuration: Option<::Value<::json::Value>> = None;
                 let mut data_output_configuration: Option<::Value<::json::Value>> = None;
@@ -105,19 +134,23 @@ impl<'de> ::serde::Deserialize<'de> for InferenceSchedulerProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "DataDelayOffsetInMinutes" => {
-                            data_delay_offset_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                            data_delay_offset_in_minutes =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DataInputConfiguration" => {
-                            data_input_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            data_input_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DataOutputConfiguration" => {
-                            data_output_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            data_output_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DataUploadFrequency" => {
                             data_upload_frequency = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "InferenceSchedulerName" => {
-                            inference_scheduler_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                            inference_scheduler_name =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ModelName" => {
                             model_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -137,9 +170,12 @@ impl<'de> ::serde::Deserialize<'de> for InferenceSchedulerProperties {
 
                 Ok(InferenceSchedulerProperties {
                     data_delay_offset_in_minutes: data_delay_offset_in_minutes,
-                    data_input_configuration: data_input_configuration.ok_or(::serde::de::Error::missing_field("DataInputConfiguration"))?,
-                    data_output_configuration: data_output_configuration.ok_or(::serde::de::Error::missing_field("DataOutputConfiguration"))?,
-                    data_upload_frequency: data_upload_frequency.ok_or(::serde::de::Error::missing_field("DataUploadFrequency"))?,
+                    data_input_configuration: data_input_configuration
+                        .ok_or(::serde::de::Error::missing_field("DataInputConfiguration"))?,
+                    data_output_configuration: data_output_configuration
+                        .ok_or(::serde::de::Error::missing_field("DataOutputConfiguration"))?,
+                    data_upload_frequency: data_upload_frequency
+                        .ok_or(::serde::de::Error::missing_field("DataUploadFrequency"))?,
                     inference_scheduler_name: inference_scheduler_name,
                     model_name: model_name.ok_or(::serde::de::Error::missing_field("ModelName"))?,
                     role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,

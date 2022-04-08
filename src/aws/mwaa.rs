@@ -3,7 +3,7 @@
 /// The [`AWS::MWAA::Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html) resource type.
 #[derive(Debug, Default)]
 pub struct Environment {
-    properties: EnvironmentProperties
+    properties: EnvironmentProperties,
 }
 
 /// Properties for the `Environment` resource.
@@ -115,25 +115,45 @@ impl ::serde::Serialize for EnvironmentProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref airflow_configuration_options) = self.airflow_configuration_options {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AirflowConfigurationOptions", airflow_configuration_options)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AirflowConfigurationOptions",
+                airflow_configuration_options,
+            )?;
         }
         if let Some(ref airflow_version) = self.airflow_version {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AirflowVersion", airflow_version)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AirflowVersion",
+                airflow_version,
+            )?;
         }
         if let Some(ref dag_s3_path) = self.dag_s3_path {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DagS3Path", dag_s3_path)?;
         }
         if let Some(ref environment_class) = self.environment_class {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentClass", environment_class)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnvironmentClass",
+                environment_class,
+            )?;
         }
         if let Some(ref execution_role_arn) = self.execution_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRoleArn", execution_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ExecutionRoleArn",
+                execution_role_arn,
+            )?;
         }
         if let Some(ref kms_key) = self.kms_key {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKey", kms_key)?;
         }
         if let Some(ref logging_configuration) = self.logging_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoggingConfiguration", logging_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LoggingConfiguration",
+                logging_configuration,
+            )?;
         }
         if let Some(ref max_workers) = self.max_workers {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxWorkers", max_workers)?;
@@ -143,34 +163,66 @@ impl ::serde::Serialize for EnvironmentProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref network_configuration) = self.network_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NetworkConfiguration", network_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NetworkConfiguration",
+                network_configuration,
+            )?;
         }
         if let Some(ref plugins_s3_object_version) = self.plugins_s3_object_version {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PluginsS3ObjectVersion", plugins_s3_object_version)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PluginsS3ObjectVersion",
+                plugins_s3_object_version,
+            )?;
         }
         if let Some(ref plugins_s3_path) = self.plugins_s3_path {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PluginsS3Path", plugins_s3_path)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PluginsS3Path",
+                plugins_s3_path,
+            )?;
         }
         if let Some(ref requirements_s3_object_version) = self.requirements_s3_object_version {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RequirementsS3ObjectVersion", requirements_s3_object_version)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RequirementsS3ObjectVersion",
+                requirements_s3_object_version,
+            )?;
         }
         if let Some(ref requirements_s3_path) = self.requirements_s3_path {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RequirementsS3Path", requirements_s3_path)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RequirementsS3Path",
+                requirements_s3_path,
+            )?;
         }
         if let Some(ref schedulers) = self.schedulers {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Schedulers", schedulers)?;
         }
         if let Some(ref source_bucket_arn) = self.source_bucket_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceBucketArn", source_bucket_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SourceBucketArn",
+                source_bucket_arn,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref webserver_access_mode) = self.webserver_access_mode {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "WebserverAccessMode", webserver_access_mode)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "WebserverAccessMode",
+                webserver_access_mode,
+            )?;
         }
         if let Some(ref weekly_maintenance_window_start) = self.weekly_maintenance_window_start {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "WeeklyMaintenanceWindowStart", weekly_maintenance_window_start)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "WeeklyMaintenanceWindowStart",
+                weekly_maintenance_window_start,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -187,18 +239,25 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 write!(f, "a struct of type EnvironmentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut airflow_configuration_options: Option<::Value<::json::Value>> = None;
                 let mut airflow_version: Option<::Value<String>> = None;
                 let mut dag_s3_path: Option<::Value<String>> = None;
                 let mut environment_class: Option<::Value<String>> = None;
                 let mut execution_role_arn: Option<::Value<String>> = None;
                 let mut kms_key: Option<::Value<String>> = None;
-                let mut logging_configuration: Option<::Value<self::environment::LoggingConfiguration>> = None;
+                let mut logging_configuration: Option<
+                    ::Value<self::environment::LoggingConfiguration>,
+                > = None;
                 let mut max_workers: Option<::Value<u32>> = None;
                 let mut min_workers: Option<::Value<u32>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut network_configuration: Option<::Value<self::environment::NetworkConfiguration>> = None;
+                let mut network_configuration: Option<
+                    ::Value<self::environment::NetworkConfiguration>,
+                > = None;
                 let mut plugins_s3_object_version: Option<::Value<String>> = None;
                 let mut plugins_s3_path: Option<::Value<String>> = None;
                 let mut requirements_s3_object_version: Option<::Value<String>> = None;
@@ -212,7 +271,8 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AirflowConfigurationOptions" => {
-                            airflow_configuration_options = ::serde::de::MapAccess::next_value(&mut map)?;
+                            airflow_configuration_options =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AirflowVersion" => {
                             airflow_version = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -245,13 +305,15 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                             network_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PluginsS3ObjectVersion" => {
-                            plugins_s3_object_version = ::serde::de::MapAccess::next_value(&mut map)?;
+                            plugins_s3_object_version =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PluginsS3Path" => {
                             plugins_s3_path = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RequirementsS3ObjectVersion" => {
-                            requirements_s3_object_version = ::serde::de::MapAccess::next_value(&mut map)?;
+                            requirements_s3_object_version =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RequirementsS3Path" => {
                             requirements_s3_path = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -269,7 +331,8 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                             webserver_access_mode = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "WeeklyMaintenanceWindowStart" => {
-                            weekly_maintenance_window_start = ::serde::de::MapAccess::next_value(&mut map)?;
+                            weekly_maintenance_window_start =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
@@ -360,16 +423,28 @@ pub mod environment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dag_processing_logs) = self.dag_processing_logs {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DagProcessingLogs", dag_processing_logs)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DagProcessingLogs",
+                    dag_processing_logs,
+                )?;
             }
             if let Some(ref scheduler_logs) = self.scheduler_logs {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SchedulerLogs", scheduler_logs)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SchedulerLogs",
+                    scheduler_logs,
+                )?;
             }
             if let Some(ref task_logs) = self.task_logs {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TaskLogs", task_logs)?;
             }
             if let Some(ref webserver_logs) = self.webserver_logs {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "WebserverLogs", webserver_logs)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "WebserverLogs",
+                    webserver_logs,
+                )?;
             }
             if let Some(ref worker_logs) = self.worker_logs {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "WorkerLogs", worker_logs)?;
@@ -379,7 +454,9 @@ pub mod environment {
     }
 
     impl ::codec::DeserializeValue for LoggingConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoggingConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoggingConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -389,14 +466,19 @@ pub mod environment {
                     write!(f, "a struct of type LoggingConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dag_processing_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
                     let mut scheduler_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
                     let mut task_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
                     let mut webserver_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
                     let mut worker_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DagProcessingLogs" => {
                                 dag_processing_logs = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -455,7 +537,11 @@ pub mod environment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_log_group_arn) = self.cloud_watch_log_group_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchLogGroupArn", cloud_watch_log_group_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CloudWatchLogGroupArn",
+                    cloud_watch_log_group_arn,
+                )?;
             }
             if let Some(ref enabled) = self.enabled {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", enabled)?;
@@ -468,7 +554,9 @@ pub mod environment {
     }
 
     impl ::codec::DeserializeValue for ModuleLoggingConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ModuleLoggingConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ModuleLoggingConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -478,15 +566,21 @@ pub mod environment {
                     write!(f, "a struct of type ModuleLoggingConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cloud_watch_log_group_arn: Option<::Value<String>> = None;
                     let mut enabled: Option<::Value<bool>> = None;
                     let mut log_level: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CloudWatchLogGroupArn" => {
-                                cloud_watch_log_group_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                                cloud_watch_log_group_arn =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Enabled" => {
                                 enabled = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -529,7 +623,11 @@ pub mod environment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref security_group_ids) = self.security_group_ids {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", security_group_ids)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SecurityGroupIds",
+                    security_group_ids,
+                )?;
             }
             if let Some(ref subnet_ids) = self.subnet_ids {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetIds", subnet_ids)?;
@@ -539,7 +637,9 @@ pub mod environment {
     }
 
     impl ::codec::DeserializeValue for NetworkConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NetworkConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NetworkConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -549,11 +649,16 @@ pub mod environment {
                     write!(f, "a struct of type NetworkConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut security_group_ids: Option<::ValueList<String>> = None;
                     let mut subnet_ids: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SecurityGroupIds" => {
                                 security_group_ids = ::serde::de::MapAccess::next_value(&mut map)?;

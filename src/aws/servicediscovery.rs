@@ -3,7 +3,7 @@
 /// The [`AWS::ServiceDiscovery::HttpNamespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html) resource type.
 #[derive(Debug, Default)]
 pub struct HttpNamespace {
-    properties: HttpNamespaceProperties
+    properties: HttpNamespaceProperties,
 }
 
 /// Properties for the `HttpNamespace` resource.
@@ -41,7 +41,9 @@ impl ::serde::Serialize for HttpNamespaceProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for HttpNamespaceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<HttpNamespaceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<HttpNamespaceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -51,7 +53,10 @@ impl<'de> ::serde::Deserialize<'de> for HttpNamespaceProperties {
                 write!(f, "a struct of type HttpNamespaceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -105,7 +110,7 @@ impl From<HttpNamespaceProperties> for HttpNamespace {
 /// The [`AWS::ServiceDiscovery::Instance`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html) resource type.
 #[derive(Debug, Default)]
 pub struct Instance {
-    properties: InstanceProperties
+    properties: InstanceProperties,
 }
 
 /// Properties for the `Instance` resource.
@@ -131,7 +136,11 @@ pub struct InstanceProperties {
 impl ::serde::Serialize for InstanceProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceAttributes", &self.instance_attributes)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "InstanceAttributes",
+            &self.instance_attributes,
+        )?;
         if let Some(ref instance_id) = self.instance_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceId", instance_id)?;
         }
@@ -151,7 +160,10 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProperties {
                 write!(f, "a struct of type InstanceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut instance_attributes: Option<::Value<::json::Value>> = None;
                 let mut instance_id: Option<::Value<String>> = None;
                 let mut service_id: Option<::Value<String>> = None;
@@ -172,7 +184,8 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProperties {
                 }
 
                 Ok(InstanceProperties {
-                    instance_attributes: instance_attributes.ok_or(::serde::de::Error::missing_field("InstanceAttributes"))?,
+                    instance_attributes: instance_attributes
+                        .ok_or(::serde::de::Error::missing_field("InstanceAttributes"))?,
                     instance_id: instance_id,
                     service_id: service_id.ok_or(::serde::de::Error::missing_field("ServiceId"))?,
                 })
@@ -205,7 +218,7 @@ impl From<InstanceProperties> for Instance {
 /// The [`AWS::ServiceDiscovery::PrivateDnsNamespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html) resource type.
 #[derive(Debug, Default)]
 pub struct PrivateDnsNamespace {
-    properties: PrivateDnsNamespaceProperties
+    properties: PrivateDnsNamespaceProperties,
 }
 
 /// Properties for the `PrivateDnsNamespace` resource.
@@ -257,7 +270,9 @@ impl ::serde::Serialize for PrivateDnsNamespaceProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for PrivateDnsNamespaceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PrivateDnsNamespaceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PrivateDnsNamespaceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -267,7 +282,10 @@ impl<'de> ::serde::Deserialize<'de> for PrivateDnsNamespaceProperties {
                 write!(f, "a struct of type PrivateDnsNamespaceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut properties: Option<::Value<self::private_dns_namespace::Properties>> = None;
@@ -331,7 +349,7 @@ impl From<PrivateDnsNamespaceProperties> for PrivateDnsNamespace {
 /// The [`AWS::ServiceDiscovery::PublicDnsNamespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html) resource type.
 #[derive(Debug, Default)]
 pub struct PublicDnsNamespace {
-    properties: PublicDnsNamespaceProperties
+    properties: PublicDnsNamespaceProperties,
 }
 
 /// Properties for the `PublicDnsNamespace` resource.
@@ -377,7 +395,9 @@ impl ::serde::Serialize for PublicDnsNamespaceProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for PublicDnsNamespaceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PublicDnsNamespaceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PublicDnsNamespaceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -387,7 +407,10 @@ impl<'de> ::serde::Deserialize<'de> for PublicDnsNamespaceProperties {
                 write!(f, "a struct of type PublicDnsNamespaceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut properties: Option<::Value<self::public_dns_namespace::Properties>> = None;
@@ -446,7 +469,7 @@ impl From<PublicDnsNamespaceProperties> for PublicDnsNamespace {
 /// The [`AWS::ServiceDiscovery::Service`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html) resource type.
 #[derive(Debug, Default)]
 pub struct Service {
-    properties: ServiceProperties
+    properties: ServiceProperties,
 }
 
 /// Properties for the `Service` resource.
@@ -504,10 +527,18 @@ impl ::serde::Serialize for ServiceProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DnsConfig", dns_config)?;
         }
         if let Some(ref health_check_config) = self.health_check_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckConfig", health_check_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckConfig",
+                health_check_config,
+            )?;
         }
         if let Some(ref health_check_custom_config) = self.health_check_custom_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckCustomConfig", health_check_custom_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckCustomConfig",
+                health_check_custom_config,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -536,11 +567,17 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
                 write!(f, "a struct of type ServiceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut dns_config: Option<::Value<self::service::DnsConfig>> = None;
-                let mut health_check_config: Option<::Value<self::service::HealthCheckConfig>> = None;
-                let mut health_check_custom_config: Option<::Value<self::service::HealthCheckCustomConfig>> = None;
+                let mut health_check_config: Option<::Value<self::service::HealthCheckConfig>> =
+                    None;
+                let mut health_check_custom_config: Option<
+                    ::Value<self::service::HealthCheckCustomConfig>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut namespace_id: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -558,7 +595,8 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
                             health_check_config = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "HealthCheckCustomConfig" => {
-                            health_check_custom_config = ::serde::de::MapAccess::next_value(&mut map)?;
+                            health_check_custom_config =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Name" => {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -636,7 +674,9 @@ pub mod private_dns_namespace {
     }
 
     impl ::codec::DeserializeValue for PrivateDnsPropertiesMutable {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PrivateDnsPropertiesMutable, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PrivateDnsPropertiesMutable, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -646,10 +686,15 @@ pub mod private_dns_namespace {
                     write!(f, "a struct of type PrivateDnsPropertiesMutable")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut soa: Option<::Value<SOA>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SOA" => {
                                 soa = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -658,9 +703,7 @@ pub mod private_dns_namespace {
                         }
                     }
 
-                    Ok(PrivateDnsPropertiesMutable {
-                        soa: soa,
-                    })
+                    Ok(PrivateDnsPropertiesMutable { soa: soa })
                 }
             }
 
@@ -682,7 +725,11 @@ pub mod private_dns_namespace {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dns_properties) = self.dns_properties {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DnsProperties", dns_properties)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DnsProperties",
+                    dns_properties,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -699,10 +746,15 @@ pub mod private_dns_namespace {
                     write!(f, "a struct of type Properties")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dns_properties: Option<::Value<PrivateDnsPropertiesMutable>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DnsProperties" => {
                                 dns_properties = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -752,10 +804,15 @@ pub mod private_dns_namespace {
                     write!(f, "a struct of type SOA")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ttl: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TTL" => {
                                 ttl = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -764,9 +821,7 @@ pub mod private_dns_namespace {
                         }
                     }
 
-                    Ok(SOA {
-                        ttl: ttl,
-                    })
+                    Ok(SOA { ttl: ttl })
                 }
             }
 
@@ -792,7 +847,11 @@ pub mod public_dns_namespace {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dns_properties) = self.dns_properties {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DnsProperties", dns_properties)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DnsProperties",
+                    dns_properties,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -809,10 +868,15 @@ pub mod public_dns_namespace {
                     write!(f, "a struct of type Properties")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dns_properties: Option<::Value<PublicDnsPropertiesMutable>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DnsProperties" => {
                                 dns_properties = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -852,7 +916,9 @@ pub mod public_dns_namespace {
     }
 
     impl ::codec::DeserializeValue for PublicDnsPropertiesMutable {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PublicDnsPropertiesMutable, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PublicDnsPropertiesMutable, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -862,10 +928,15 @@ pub mod public_dns_namespace {
                     write!(f, "a struct of type PublicDnsPropertiesMutable")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut soa: Option<::Value<SOA>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SOA" => {
                                 soa = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -874,9 +945,7 @@ pub mod public_dns_namespace {
                         }
                     }
 
-                    Ok(PublicDnsPropertiesMutable {
-                        soa: soa,
-                    })
+                    Ok(PublicDnsPropertiesMutable { soa: soa })
                 }
             }
 
@@ -915,10 +984,15 @@ pub mod public_dns_namespace {
                     write!(f, "a struct of type SOA")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ttl: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TTL" => {
                                 ttl = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -927,9 +1001,7 @@ pub mod public_dns_namespace {
                         }
                     }
 
-                    Ok(SOA {
-                        ttl: ttl,
-                    })
+                    Ok(SOA { ttl: ttl })
                 }
             }
 
@@ -969,7 +1041,11 @@ pub mod service {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NamespaceId", namespace_id)?;
             }
             if let Some(ref routing_policy) = self.routing_policy {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoutingPolicy", routing_policy)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RoutingPolicy",
+                    routing_policy,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -986,12 +1062,17 @@ pub mod service {
                     write!(f, "a struct of type DnsConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dns_records: Option<::ValueList<DnsRecord>> = None;
                     let mut namespace_id: Option<::Value<String>> = None;
                     let mut routing_policy: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DnsRecords" => {
                                 dns_records = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1007,7 +1088,8 @@ pub mod service {
                     }
 
                     Ok(DnsConfig {
-                        dns_records: dns_records.ok_or(::serde::de::Error::missing_field("DnsRecords"))?,
+                        dns_records: dns_records
+                            .ok_or(::serde::de::Error::missing_field("DnsRecords"))?,
                         namespace_id: namespace_id,
                         routing_policy: routing_policy,
                     })
@@ -1053,11 +1135,16 @@ pub mod service {
                     write!(f, "a struct of type DnsRecord")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ttl: Option<::Value<f64>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TTL" => {
                                 ttl = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1104,10 +1191,18 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref failure_threshold) = self.failure_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FailureThreshold", failure_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FailureThreshold",
+                    failure_threshold,
+                )?;
             }
             if let Some(ref resource_path) = self.resource_path {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourcePath", resource_path)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ResourcePath",
+                    resource_path,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", &self.r#type)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1115,7 +1210,9 @@ pub mod service {
     }
 
     impl ::codec::DeserializeValue for HealthCheckConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HealthCheckConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HealthCheckConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1125,12 +1222,17 @@ pub mod service {
                     write!(f, "a struct of type HealthCheckConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut failure_threshold: Option<::Value<f64>> = None;
                     let mut resource_path: Option<::Value<String>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FailureThreshold" => {
                                 failure_threshold = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1171,14 +1273,20 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref failure_threshold) = self.failure_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FailureThreshold", failure_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FailureThreshold",
+                    failure_threshold,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HealthCheckCustomConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HealthCheckCustomConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HealthCheckCustomConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1188,10 +1296,15 @@ pub mod service {
                     write!(f, "a struct of type HealthCheckCustomConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut failure_threshold: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FailureThreshold" => {
                                 failure_threshold = ::serde::de::MapAccess::next_value(&mut map)?;

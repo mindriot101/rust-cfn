@@ -3,7 +3,7 @@
 /// The [`AWS::MemoryDB::ACL`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-acl.html) resource type.
 #[derive(Debug, Default)]
 pub struct ACL {
-    properties: ACLProperties
+    properties: ACLProperties,
 }
 
 /// Properties for the `ACL` resource.
@@ -51,7 +51,10 @@ impl<'de> ::serde::Deserialize<'de> for ACLProperties {
                 write!(f, "a struct of type ACLProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut acl_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut user_names: Option<::ValueList<String>> = None;
@@ -105,7 +108,7 @@ impl From<ACLProperties> for ACL {
 /// The [`AWS::MemoryDB::Cluster`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html) resource type.
 #[derive(Debug, Default)]
 pub struct Cluster {
-    properties: ClusterProperties
+    properties: ClusterProperties,
 }
 
 /// Properties for the `Cluster` resource.
@@ -233,7 +236,11 @@ impl ::serde::Serialize for ClusterProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ACLName", &self.acl_name)?;
         if let Some(ref auto_minor_version_upgrade) = self.auto_minor_version_upgrade {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoMinorVersionUpgrade", auto_minor_version_upgrade)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AutoMinorVersionUpgrade",
+                auto_minor_version_upgrade,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClusterName", &self.cluster_name)?;
         if let Some(ref description) = self.description {
@@ -243,29 +250,49 @@ impl ::serde::Serialize for ClusterProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EngineVersion", engine_version)?;
         }
         if let Some(ref final_snapshot_name) = self.final_snapshot_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FinalSnapshotName", final_snapshot_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FinalSnapshotName",
+                final_snapshot_name,
+            )?;
         }
         if let Some(ref kms_key_id) = self.kms_key_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyId", kms_key_id)?;
         }
         if let Some(ref maintenance_window) = self.maintenance_window {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaintenanceWindow", maintenance_window)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MaintenanceWindow",
+                maintenance_window,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "NodeType", &self.node_type)?;
         if let Some(ref num_replicas_per_shard) = self.num_replicas_per_shard {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumReplicasPerShard", num_replicas_per_shard)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NumReplicasPerShard",
+                num_replicas_per_shard,
+            )?;
         }
         if let Some(ref num_shards) = self.num_shards {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumShards", num_shards)?;
         }
         if let Some(ref parameter_group_name) = self.parameter_group_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterGroupName", parameter_group_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ParameterGroupName",
+                parameter_group_name,
+            )?;
         }
         if let Some(ref port) = self.port {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Port", port)?;
         }
         if let Some(ref security_group_ids) = self.security_group_ids {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", security_group_ids)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroupIds",
+                security_group_ids,
+            )?;
         }
         if let Some(ref snapshot_arns) = self.snapshot_arns {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnapshotArns", snapshot_arns)?;
@@ -274,19 +301,35 @@ impl ::serde::Serialize for ClusterProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnapshotName", snapshot_name)?;
         }
         if let Some(ref snapshot_retention_limit) = self.snapshot_retention_limit {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnapshotRetentionLimit", snapshot_retention_limit)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SnapshotRetentionLimit",
+                snapshot_retention_limit,
+            )?;
         }
         if let Some(ref snapshot_window) = self.snapshot_window {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnapshotWindow", snapshot_window)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SnapshotWindow",
+                snapshot_window,
+            )?;
         }
         if let Some(ref sns_topic_arn) = self.sns_topic_arn {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnsTopicArn", sns_topic_arn)?;
         }
         if let Some(ref sns_topic_status) = self.sns_topic_status {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnsTopicStatus", sns_topic_status)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SnsTopicStatus",
+                sns_topic_status,
+            )?;
         }
         if let Some(ref subnet_group_name) = self.subnet_group_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetGroupName", subnet_group_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SubnetGroupName",
+                subnet_group_name,
+            )?;
         }
         if let Some(ref tls_enabled) = self.tls_enabled {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TLSEnabled", tls_enabled)?;
@@ -309,7 +352,10 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                 write!(f, "a struct of type ClusterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut acl_name: Option<::Value<String>> = None;
                 let mut auto_minor_version_upgrade: Option<::Value<bool>> = None;
                 let mut cluster_name: Option<::Value<String>> = None;
@@ -340,7 +386,8 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                             acl_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AutoMinorVersionUpgrade" => {
-                            auto_minor_version_upgrade = ::serde::de::MapAccess::next_value(&mut map)?;
+                            auto_minor_version_upgrade =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ClusterName" => {
                             cluster_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -385,7 +432,8 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                             snapshot_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SnapshotRetentionLimit" => {
-                            snapshot_retention_limit = ::serde::de::MapAccess::next_value(&mut map)?;
+                            snapshot_retention_limit =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SnapshotWindow" => {
                             snapshot_window = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -412,7 +460,8 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                 Ok(ClusterProperties {
                     acl_name: acl_name.ok_or(::serde::de::Error::missing_field("ACLName"))?,
                     auto_minor_version_upgrade: auto_minor_version_upgrade,
-                    cluster_name: cluster_name.ok_or(::serde::de::Error::missing_field("ClusterName"))?,
+                    cluster_name: cluster_name
+                        .ok_or(::serde::de::Error::missing_field("ClusterName"))?,
                     description: description,
                     engine_version: engine_version,
                     final_snapshot_name: final_snapshot_name,
@@ -463,7 +512,7 @@ impl From<ClusterProperties> for Cluster {
 /// The [`AWS::MemoryDB::ParameterGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-parametergroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct ParameterGroup {
-    properties: ParameterGroupProperties
+    properties: ParameterGroupProperties,
 }
 
 /// Properties for the `ParameterGroup` resource.
@@ -503,7 +552,11 @@ impl ::serde::Serialize for ParameterGroupProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Family", &self.family)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterGroupName", &self.parameter_group_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ParameterGroupName",
+            &self.parameter_group_name,
+        )?;
         if let Some(ref parameters) = self.parameters {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Parameters", parameters)?;
         }
@@ -515,7 +568,9 @@ impl ::serde::Serialize for ParameterGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ParameterGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ParameterGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -525,7 +580,10 @@ impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
                 write!(f, "a struct of type ParameterGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut family: Option<::Value<String>> = None;
                 let mut parameter_group_name: Option<::Value<String>> = None;
@@ -556,7 +614,8 @@ impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
                 Ok(ParameterGroupProperties {
                     description: description,
                     family: family.ok_or(::serde::de::Error::missing_field("Family"))?,
-                    parameter_group_name: parameter_group_name.ok_or(::serde::de::Error::missing_field("ParameterGroupName"))?,
+                    parameter_group_name: parameter_group_name
+                        .ok_or(::serde::de::Error::missing_field("ParameterGroupName"))?,
                     parameters: parameters,
                     tags: tags,
                 })
@@ -589,7 +648,7 @@ impl From<ParameterGroupProperties> for ParameterGroup {
 /// The [`AWS::MemoryDB::SubnetGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-subnetgroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct SubnetGroup {
-    properties: SubnetGroupProperties
+    properties: SubnetGroupProperties,
 }
 
 /// Properties for the `SubnetGroup` resource.
@@ -623,7 +682,11 @@ impl ::serde::Serialize for SubnetGroupProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetGroupName", &self.subnet_group_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SubnetGroupName",
+            &self.subnet_group_name,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetIds", &self.subnet_ids)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -643,7 +706,10 @@ impl<'de> ::serde::Deserialize<'de> for SubnetGroupProperties {
                 write!(f, "a struct of type SubnetGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut subnet_group_name: Option<::Value<String>> = None;
                 let mut subnet_ids: Option<::ValueList<String>> = None;
@@ -669,7 +735,8 @@ impl<'de> ::serde::Deserialize<'de> for SubnetGroupProperties {
 
                 Ok(SubnetGroupProperties {
                     description: description,
-                    subnet_group_name: subnet_group_name.ok_or(::serde::de::Error::missing_field("SubnetGroupName"))?,
+                    subnet_group_name: subnet_group_name
+                        .ok_or(::serde::de::Error::missing_field("SubnetGroupName"))?,
                     subnet_ids: subnet_ids.ok_or(::serde::de::Error::missing_field("SubnetIds"))?,
                     tags: tags,
                 })
@@ -702,7 +769,7 @@ impl From<SubnetGroupProperties> for SubnetGroup {
 /// The [`AWS::MemoryDB::User`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-user.html) resource type.
 #[derive(Debug, Default)]
 pub struct User {
-    properties: UserProperties
+    properties: UserProperties,
 }
 
 /// Properties for the `User` resource.
@@ -734,7 +801,11 @@ impl ::serde::Serialize for UserProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccessString", &self.access_string)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AuthenticationMode", &self.authentication_mode)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AuthenticationMode",
+            &self.authentication_mode,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -754,7 +825,10 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                 write!(f, "a struct of type UserProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut access_string: Option<::Value<String>> = None;
                 let mut authentication_mode: Option<::Value<::json::Value>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -779,8 +853,10 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                 }
 
                 Ok(UserProperties {
-                    access_string: access_string.ok_or(::serde::de::Error::missing_field("AccessString"))?,
-                    authentication_mode: authentication_mode.ok_or(::serde::de::Error::missing_field("AuthenticationMode"))?,
+                    access_string: access_string
+                        .ok_or(::serde::de::Error::missing_field("AccessString"))?,
+                    authentication_mode: authentication_mode
+                        .ok_or(::serde::de::Error::missing_field("AuthenticationMode"))?,
                     tags: tags,
                     user_name: user_name.ok_or(::serde::de::Error::missing_field("UserName"))?,
                 })
@@ -852,11 +928,16 @@ pub mod cluster {
                     write!(f, "a struct of type Endpoint")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut address: Option<::Value<String>> = None;
                     let mut port: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Address" => {
                                 address = ::serde::de::MapAccess::next_value(&mut map)?;

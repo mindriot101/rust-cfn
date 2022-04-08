@@ -3,7 +3,7 @@
 /// The [`AWS::ServiceCatalog::AcceptedPortfolioShare`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html) resource type.
 #[derive(Debug, Default)]
 pub struct AcceptedPortfolioShare {
-    properties: AcceptedPortfolioShareProperties
+    properties: AcceptedPortfolioShareProperties,
 }
 
 /// Properties for the `AcceptedPortfolioShare` resource.
@@ -25,7 +25,11 @@ impl ::serde::Serialize for AcceptedPortfolioShareProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortfolioId", &self.portfolio_id)?;
         ::serde::ser::SerializeMap::end(map)
@@ -33,7 +37,9 @@ impl ::serde::Serialize for AcceptedPortfolioShareProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for AcceptedPortfolioShareProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AcceptedPortfolioShareProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AcceptedPortfolioShareProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -43,7 +49,10 @@ impl<'de> ::serde::Deserialize<'de> for AcceptedPortfolioShareProperties {
                 write!(f, "a struct of type AcceptedPortfolioShareProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut portfolio_id: Option<::Value<String>> = None;
 
@@ -61,7 +70,8 @@ impl<'de> ::serde::Deserialize<'de> for AcceptedPortfolioShareProperties {
 
                 Ok(AcceptedPortfolioShareProperties {
                     accept_language: accept_language,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
                 })
             }
         }
@@ -92,7 +102,7 @@ impl From<AcceptedPortfolioShareProperties> for AcceptedPortfolioShare {
 /// The [`AWS::ServiceCatalog::CloudFormationProduct`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html) resource type.
 #[derive(Debug, Default)]
 pub struct CloudFormationProduct {
-    properties: CloudFormationProductProperties
+    properties: CloudFormationProductProperties,
 }
 
 /// Properties for the `CloudFormationProduct` resource.
@@ -127,7 +137,8 @@ pub struct CloudFormationProductProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provisioning_artifact_parameters: ::ValueList<self::cloud_formation_product::ProvisioningArtifactProperties>,
+    pub provisioning_artifact_parameters:
+        ::ValueList<self::cloud_formation_product::ProvisioningArtifactProperties>,
     /// Property [`ReplaceProvisioningArtifacts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-replaceprovisioningartifacts).
     ///
     /// Update type: _Mutable_.
@@ -159,7 +170,11 @@ impl ::serde::Serialize for CloudFormationProductProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -169,12 +184,24 @@ impl ::serde::Serialize for CloudFormationProductProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Owner", &self.owner)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisioningArtifactParameters", &self.provisioning_artifact_parameters)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ProvisioningArtifactParameters",
+            &self.provisioning_artifact_parameters,
+        )?;
         if let Some(ref replace_provisioning_artifacts) = self.replace_provisioning_artifacts {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReplaceProvisioningArtifacts", replace_provisioning_artifacts)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ReplaceProvisioningArtifacts",
+                replace_provisioning_artifacts,
+            )?;
         }
         if let Some(ref support_description) = self.support_description {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SupportDescription", support_description)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SupportDescription",
+                support_description,
+            )?;
         }
         if let Some(ref support_email) = self.support_email {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SupportEmail", support_email)?;
@@ -190,7 +217,9 @@ impl ::serde::Serialize for CloudFormationProductProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for CloudFormationProductProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<CloudFormationProductProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<CloudFormationProductProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -200,13 +229,18 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProductProperties {
                 write!(f, "a struct of type CloudFormationProductProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut distributor: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut owner: Option<::Value<String>> = None;
-                let mut provisioning_artifact_parameters: Option<::ValueList<self::cloud_formation_product::ProvisioningArtifactProperties>> = None;
+                let mut provisioning_artifact_parameters: Option<
+                    ::ValueList<self::cloud_formation_product::ProvisioningArtifactProperties>,
+                > = None;
                 let mut replace_provisioning_artifacts: Option<::Value<bool>> = None;
                 let mut support_description: Option<::Value<String>> = None;
                 let mut support_email: Option<::Value<String>> = None;
@@ -231,10 +265,12 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProductProperties {
                             owner = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ProvisioningArtifactParameters" => {
-                            provisioning_artifact_parameters = ::serde::de::MapAccess::next_value(&mut map)?;
+                            provisioning_artifact_parameters =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ReplaceProvisioningArtifacts" => {
-                            replace_provisioning_artifacts = ::serde::de::MapAccess::next_value(&mut map)?;
+                            replace_provisioning_artifacts =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SupportDescription" => {
                             support_description = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -258,7 +294,9 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProductProperties {
                     distributor: distributor,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     owner: owner.ok_or(::serde::de::Error::missing_field("Owner"))?,
-                    provisioning_artifact_parameters: provisioning_artifact_parameters.ok_or(::serde::de::Error::missing_field("ProvisioningArtifactParameters"))?,
+                    provisioning_artifact_parameters: provisioning_artifact_parameters.ok_or(
+                        ::serde::de::Error::missing_field("ProvisioningArtifactParameters"),
+                    )?,
                     replace_provisioning_artifacts: replace_provisioning_artifacts,
                     support_description: support_description,
                     support_email: support_email,
@@ -294,7 +332,7 @@ impl From<CloudFormationProductProperties> for CloudFormationProduct {
 /// The [`AWS::ServiceCatalog::CloudFormationProvisionedProduct`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html) resource type.
 #[derive(Debug, Default)]
 pub struct CloudFormationProvisionedProduct {
-    properties: CloudFormationProvisionedProductProperties
+    properties: CloudFormationProvisionedProductProperties,
 }
 
 /// Properties for the `CloudFormationProvisionedProduct` resource.
@@ -349,12 +387,14 @@ pub struct CloudFormationProvisionedProductProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provisioning_parameters: Option<::ValueList<self::cloud_formation_provisioned_product::ProvisioningParameter>>,
+    pub provisioning_parameters:
+        Option<::ValueList<self::cloud_formation_provisioned_product::ProvisioningParameter>>,
     /// Property [`ProvisioningPreferences`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provisioning_preferences: Option<::Value<self::cloud_formation_provisioned_product::ProvisioningPreferences>>,
+    pub provisioning_preferences:
+        Option<::Value<self::cloud_formation_provisioned_product::ProvisioningPreferences>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags).
     ///
     /// Update type: _Mutable_.
@@ -366,10 +406,18 @@ impl ::serde::Serialize for CloudFormationProvisionedProductProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         if let Some(ref notification_arns) = self.notification_arns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationArns", notification_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationArns",
+                notification_arns,
+            )?;
         }
         if let Some(ref path_id) = self.path_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PathId", path_id)?;
@@ -384,19 +432,39 @@ impl ::serde::Serialize for CloudFormationProvisionedProductProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProductName", product_name)?;
         }
         if let Some(ref provisioned_product_name) = self.provisioned_product_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisionedProductName", provisioned_product_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ProvisionedProductName",
+                provisioned_product_name,
+            )?;
         }
         if let Some(ref provisioning_artifact_id) = self.provisioning_artifact_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisioningArtifactId", provisioning_artifact_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ProvisioningArtifactId",
+                provisioning_artifact_id,
+            )?;
         }
         if let Some(ref provisioning_artifact_name) = self.provisioning_artifact_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisioningArtifactName", provisioning_artifact_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ProvisioningArtifactName",
+                provisioning_artifact_name,
+            )?;
         }
         if let Some(ref provisioning_parameters) = self.provisioning_parameters {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisioningParameters", provisioning_parameters)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ProvisioningParameters",
+                provisioning_parameters,
+            )?;
         }
         if let Some(ref provisioning_preferences) = self.provisioning_preferences {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisioningPreferences", provisioning_preferences)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ProvisioningPreferences",
+                provisioning_preferences,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -406,17 +474,25 @@ impl ::serde::Serialize for CloudFormationProvisionedProductProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for CloudFormationProvisionedProductProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<CloudFormationProvisionedProductProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<CloudFormationProvisionedProductProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
             type Value = CloudFormationProvisionedProductProperties;
 
             fn expecting(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-                write!(f, "a struct of type CloudFormationProvisionedProductProperties")
+                write!(
+                    f,
+                    "a struct of type CloudFormationProvisionedProductProperties"
+                )
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut notification_arns: Option<::ValueList<String>> = None;
                 let mut path_id: Option<::Value<String>> = None;
@@ -426,8 +502,12 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProvisionedProductProperti
                 let mut provisioned_product_name: Option<::Value<String>> = None;
                 let mut provisioning_artifact_id: Option<::Value<String>> = None;
                 let mut provisioning_artifact_name: Option<::Value<String>> = None;
-                let mut provisioning_parameters: Option<::ValueList<self::cloud_formation_provisioned_product::ProvisioningParameter>> = None;
-                let mut provisioning_preferences: Option<::Value<self::cloud_formation_provisioned_product::ProvisioningPreferences>> = None;
+                let mut provisioning_parameters: Option<
+                    ::ValueList<self::cloud_formation_provisioned_product::ProvisioningParameter>,
+                > = None;
+                let mut provisioning_preferences: Option<
+                    ::Value<self::cloud_formation_provisioned_product::ProvisioningPreferences>,
+                > = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -451,19 +531,23 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProvisionedProductProperti
                             product_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ProvisionedProductName" => {
-                            provisioned_product_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                            provisioned_product_name =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ProvisioningArtifactId" => {
-                            provisioning_artifact_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                            provisioning_artifact_id =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ProvisioningArtifactName" => {
-                            provisioning_artifact_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                            provisioning_artifact_name =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ProvisioningParameters" => {
                             provisioning_parameters = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ProvisioningPreferences" => {
-                            provisioning_preferences = ::serde::de::MapAccess::next_value(&mut map)?;
+                            provisioning_preferences =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -507,7 +591,9 @@ impl ::Resource for CloudFormationProvisionedProduct {
 impl ::private::Sealed for CloudFormationProvisionedProduct {}
 
 impl From<CloudFormationProvisionedProductProperties> for CloudFormationProvisionedProduct {
-    fn from(properties: CloudFormationProvisionedProductProperties) -> CloudFormationProvisionedProduct {
+    fn from(
+        properties: CloudFormationProvisionedProductProperties,
+    ) -> CloudFormationProvisionedProduct {
         CloudFormationProvisionedProduct { properties }
     }
 }
@@ -515,7 +601,7 @@ impl From<CloudFormationProvisionedProductProperties> for CloudFormationProvisio
 /// The [`AWS::ServiceCatalog::LaunchNotificationConstraint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html) resource type.
 #[derive(Debug, Default)]
 pub struct LaunchNotificationConstraint {
-    properties: LaunchNotificationConstraintProperties
+    properties: LaunchNotificationConstraintProperties,
 }
 
 /// Properties for the `LaunchNotificationConstraint` resource.
@@ -552,12 +638,20 @@ impl ::serde::Serialize for LaunchNotificationConstraintProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationArns", &self.notification_arns)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "NotificationArns",
+            &self.notification_arns,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortfolioId", &self.portfolio_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProductId", &self.product_id)?;
         ::serde::ser::SerializeMap::end(map)
@@ -565,7 +659,9 @@ impl ::serde::Serialize for LaunchNotificationConstraintProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LaunchNotificationConstraintProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LaunchNotificationConstraintProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LaunchNotificationConstraintProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -575,7 +671,10 @@ impl<'de> ::serde::Deserialize<'de> for LaunchNotificationConstraintProperties {
                 write!(f, "a struct of type LaunchNotificationConstraintProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut notification_arns: Option<::ValueList<String>> = None;
@@ -606,8 +705,10 @@ impl<'de> ::serde::Deserialize<'de> for LaunchNotificationConstraintProperties {
                 Ok(LaunchNotificationConstraintProperties {
                     accept_language: accept_language,
                     description: description,
-                    notification_arns: notification_arns.ok_or(::serde::de::Error::missing_field("NotificationArns"))?,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    notification_arns: notification_arns
+                        .ok_or(::serde::de::Error::missing_field("NotificationArns"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
                     product_id: product_id.ok_or(::serde::de::Error::missing_field("ProductId"))?,
                 })
             }
@@ -639,7 +740,7 @@ impl From<LaunchNotificationConstraintProperties> for LaunchNotificationConstrai
 /// The [`AWS::ServiceCatalog::LaunchRoleConstraint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html) resource type.
 #[derive(Debug, Default)]
 pub struct LaunchRoleConstraint {
-    properties: LaunchRoleConstraintProperties
+    properties: LaunchRoleConstraintProperties,
 }
 
 /// Properties for the `LaunchRoleConstraint` resource.
@@ -681,13 +782,21 @@ impl ::serde::Serialize for LaunchRoleConstraintProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref local_role_name) = self.local_role_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocalRoleName", local_role_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LocalRoleName",
+                local_role_name,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortfolioId", &self.portfolio_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProductId", &self.product_id)?;
@@ -699,7 +808,9 @@ impl ::serde::Serialize for LaunchRoleConstraintProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LaunchRoleConstraintProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LaunchRoleConstraintProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LaunchRoleConstraintProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -709,7 +820,10 @@ impl<'de> ::serde::Deserialize<'de> for LaunchRoleConstraintProperties {
                 write!(f, "a struct of type LaunchRoleConstraintProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut local_role_name: Option<::Value<String>> = None;
@@ -745,7 +859,8 @@ impl<'de> ::serde::Deserialize<'de> for LaunchRoleConstraintProperties {
                     accept_language: accept_language,
                     description: description,
                     local_role_name: local_role_name,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
                     product_id: product_id.ok_or(::serde::de::Error::missing_field("ProductId"))?,
                     role_arn: role_arn,
                 })
@@ -778,7 +893,7 @@ impl From<LaunchRoleConstraintProperties> for LaunchRoleConstraint {
 /// The [`AWS::ServiceCatalog::LaunchTemplateConstraint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html) resource type.
 #[derive(Debug, Default)]
 pub struct LaunchTemplateConstraint {
-    properties: LaunchTemplateConstraintProperties
+    properties: LaunchTemplateConstraintProperties,
 }
 
 /// Properties for the `LaunchTemplateConstraint` resource.
@@ -815,7 +930,11 @@ impl ::serde::Serialize for LaunchTemplateConstraintProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -828,7 +947,9 @@ impl ::serde::Serialize for LaunchTemplateConstraintProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LaunchTemplateConstraintProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LaunchTemplateConstraintProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LaunchTemplateConstraintProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -838,7 +959,10 @@ impl<'de> ::serde::Deserialize<'de> for LaunchTemplateConstraintProperties {
                 write!(f, "a struct of type LaunchTemplateConstraintProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut portfolio_id: Option<::Value<String>> = None;
@@ -869,7 +993,8 @@ impl<'de> ::serde::Deserialize<'de> for LaunchTemplateConstraintProperties {
                 Ok(LaunchTemplateConstraintProperties {
                     accept_language: accept_language,
                     description: description,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
                     product_id: product_id.ok_or(::serde::de::Error::missing_field("ProductId"))?,
                     rules: rules.ok_or(::serde::de::Error::missing_field("Rules"))?,
                 })
@@ -902,7 +1027,7 @@ impl From<LaunchTemplateConstraintProperties> for LaunchTemplateConstraint {
 /// The [`AWS::ServiceCatalog::Portfolio`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html) resource type.
 #[derive(Debug, Default)]
 pub struct Portfolio {
-    properties: PortfolioProperties
+    properties: PortfolioProperties,
 }
 
 /// Properties for the `Portfolio` resource.
@@ -939,7 +1064,11 @@ impl ::serde::Serialize for PortfolioProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -964,7 +1093,10 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioProperties {
                 write!(f, "a struct of type PortfolioProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut display_name: Option<::Value<String>> = None;
@@ -995,8 +1127,10 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioProperties {
                 Ok(PortfolioProperties {
                     accept_language: accept_language,
                     description: description,
-                    display_name: display_name.ok_or(::serde::de::Error::missing_field("DisplayName"))?,
-                    provider_name: provider_name.ok_or(::serde::de::Error::missing_field("ProviderName"))?,
+                    display_name: display_name
+                        .ok_or(::serde::de::Error::missing_field("DisplayName"))?,
+                    provider_name: provider_name
+                        .ok_or(::serde::de::Error::missing_field("ProviderName"))?,
                     tags: tags,
                 })
             }
@@ -1028,7 +1162,7 @@ impl From<PortfolioProperties> for Portfolio {
 /// The [`AWS::ServiceCatalog::PortfolioPrincipalAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct PortfolioPrincipalAssociation {
-    properties: PortfolioPrincipalAssociationProperties
+    properties: PortfolioPrincipalAssociationProperties,
 }
 
 /// Properties for the `PortfolioPrincipalAssociation` resource.
@@ -1060,27 +1194,43 @@ impl ::serde::Serialize for PortfolioPrincipalAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortfolioId", &self.portfolio_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PrincipalARN", &self.principal_arn)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PrincipalType", &self.principal_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PrincipalType",
+            &self.principal_type,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for PortfolioPrincipalAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PortfolioPrincipalAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PortfolioPrincipalAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
             type Value = PortfolioPrincipalAssociationProperties;
 
             fn expecting(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-                write!(f, "a struct of type PortfolioPrincipalAssociationProperties")
+                write!(
+                    f,
+                    "a struct of type PortfolioPrincipalAssociationProperties"
+                )
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut portfolio_id: Option<::Value<String>> = None;
                 let mut principal_arn: Option<::Value<String>> = None;
@@ -1106,9 +1256,12 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioPrincipalAssociationProperties 
 
                 Ok(PortfolioPrincipalAssociationProperties {
                     accept_language: accept_language,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
-                    principal_arn: principal_arn.ok_or(::serde::de::Error::missing_field("PrincipalARN"))?,
-                    principal_type: principal_type.ok_or(::serde::de::Error::missing_field("PrincipalType"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    principal_arn: principal_arn
+                        .ok_or(::serde::de::Error::missing_field("PrincipalARN"))?,
+                    principal_type: principal_type
+                        .ok_or(::serde::de::Error::missing_field("PrincipalType"))?,
                 })
             }
         }
@@ -1139,7 +1292,7 @@ impl From<PortfolioPrincipalAssociationProperties> for PortfolioPrincipalAssocia
 /// The [`AWS::ServiceCatalog::PortfolioProductAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct PortfolioProductAssociation {
-    properties: PortfolioProductAssociationProperties
+    properties: PortfolioProductAssociationProperties,
 }
 
 /// Properties for the `PortfolioProductAssociation` resource.
@@ -1171,19 +1324,29 @@ impl ::serde::Serialize for PortfolioProductAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortfolioId", &self.portfolio_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProductId", &self.product_id)?;
         if let Some(ref source_portfolio_id) = self.source_portfolio_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourcePortfolioId", source_portfolio_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SourcePortfolioId",
+                source_portfolio_id,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for PortfolioProductAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PortfolioProductAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PortfolioProductAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1193,7 +1356,10 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioProductAssociationProperties {
                 write!(f, "a struct of type PortfolioProductAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut portfolio_id: Option<::Value<String>> = None;
                 let mut product_id: Option<::Value<String>> = None;
@@ -1219,7 +1385,8 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioProductAssociationProperties {
 
                 Ok(PortfolioProductAssociationProperties {
                     accept_language: accept_language,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
                     product_id: product_id.ok_or(::serde::de::Error::missing_field("ProductId"))?,
                     source_portfolio_id: source_portfolio_id,
                 })
@@ -1252,7 +1419,7 @@ impl From<PortfolioProductAssociationProperties> for PortfolioProductAssociation
 /// The [`AWS::ServiceCatalog::PortfolioShare`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html) resource type.
 #[derive(Debug, Default)]
 pub struct PortfolioShare {
-    properties: PortfolioShareProperties
+    properties: PortfolioShareProperties,
 }
 
 /// Properties for the `PortfolioShare` resource.
@@ -1284,19 +1451,29 @@ impl ::serde::Serialize for PortfolioShareProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccountId", &self.account_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortfolioId", &self.portfolio_id)?;
         if let Some(ref share_tag_options) = self.share_tag_options {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShareTagOptions", share_tag_options)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ShareTagOptions",
+                share_tag_options,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for PortfolioShareProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PortfolioShareProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PortfolioShareProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1306,7 +1483,10 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioShareProperties {
                 write!(f, "a struct of type PortfolioShareProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut account_id: Option<::Value<String>> = None;
                 let mut portfolio_id: Option<::Value<String>> = None;
@@ -1333,7 +1513,8 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioShareProperties {
                 Ok(PortfolioShareProperties {
                     accept_language: accept_language,
                     account_id: account_id.ok_or(::serde::de::Error::missing_field("AccountId"))?,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
                     share_tag_options: share_tag_options,
                 })
             }
@@ -1365,7 +1546,7 @@ impl From<PortfolioShareProperties> for PortfolioShare {
 /// The [`AWS::ServiceCatalog::ResourceUpdateConstraint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourceUpdateConstraint {
-    properties: ResourceUpdateConstraintProperties
+    properties: ResourceUpdateConstraintProperties,
 }
 
 /// Properties for the `ResourceUpdateConstraint` resource.
@@ -1402,20 +1583,30 @@ impl ::serde::Serialize for ResourceUpdateConstraintProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortfolioId", &self.portfolio_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProductId", &self.product_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "TagUpdateOnProvisionedProduct", &self.tag_update_on_provisioned_product)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "TagUpdateOnProvisionedProduct",
+            &self.tag_update_on_provisioned_product,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResourceUpdateConstraintProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceUpdateConstraintProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResourceUpdateConstraintProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1425,7 +1616,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceUpdateConstraintProperties {
                 write!(f, "a struct of type ResourceUpdateConstraintProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut portfolio_id: Option<::Value<String>> = None;
@@ -1447,7 +1641,8 @@ impl<'de> ::serde::Deserialize<'de> for ResourceUpdateConstraintProperties {
                             product_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "TagUpdateOnProvisionedProduct" => {
-                            tag_update_on_provisioned_product = ::serde::de::MapAccess::next_value(&mut map)?;
+                            tag_update_on_provisioned_product =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
@@ -1456,9 +1651,12 @@ impl<'de> ::serde::Deserialize<'de> for ResourceUpdateConstraintProperties {
                 Ok(ResourceUpdateConstraintProperties {
                     accept_language: accept_language,
                     description: description,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
                     product_id: product_id.ok_or(::serde::de::Error::missing_field("ProductId"))?,
-                    tag_update_on_provisioned_product: tag_update_on_provisioned_product.ok_or(::serde::de::Error::missing_field("TagUpdateOnProvisionedProduct"))?,
+                    tag_update_on_provisioned_product: tag_update_on_provisioned_product.ok_or(
+                        ::serde::de::Error::missing_field("TagUpdateOnProvisionedProduct"),
+                    )?,
                 })
             }
         }
@@ -1489,7 +1687,7 @@ impl From<ResourceUpdateConstraintProperties> for ResourceUpdateConstraint {
 /// The [`AWS::ServiceCatalog::ServiceAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html) resource type.
 #[derive(Debug, Default)]
 pub struct ServiceAction {
-    properties: ServiceActionProperties
+    properties: ServiceActionProperties,
 }
 
 /// Properties for the `ServiceAction` resource.
@@ -1526,10 +1724,18 @@ impl ::serde::Serialize for ServiceActionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Definition", &self.definition)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefinitionType", &self.definition_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DefinitionType",
+            &self.definition_type,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
@@ -1539,7 +1745,9 @@ impl ::serde::Serialize for ServiceActionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ServiceActionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ServiceActionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ServiceActionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1549,9 +1757,13 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionProperties {
                 write!(f, "a struct of type ServiceActionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
-                let mut definition: Option<::ValueList<self::service_action::DefinitionParameter>> = None;
+                let mut definition: Option<::ValueList<self::service_action::DefinitionParameter>> =
+                    None;
                 let mut definition_type: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -1579,8 +1791,10 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionProperties {
 
                 Ok(ServiceActionProperties {
                     accept_language: accept_language,
-                    definition: definition.ok_or(::serde::de::Error::missing_field("Definition"))?,
-                    definition_type: definition_type.ok_or(::serde::de::Error::missing_field("DefinitionType"))?,
+                    definition: definition
+                        .ok_or(::serde::de::Error::missing_field("Definition"))?,
+                    definition_type: definition_type
+                        .ok_or(::serde::de::Error::missing_field("DefinitionType"))?,
                     description: description,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                 })
@@ -1613,7 +1827,7 @@ impl From<ServiceActionProperties> for ServiceAction {
 /// The [`AWS::ServiceCatalog::ServiceActionAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct ServiceActionAssociation {
-    properties: ServiceActionAssociationProperties
+    properties: ServiceActionAssociationProperties,
 }
 
 /// Properties for the `ServiceActionAssociation` resource.
@@ -1640,14 +1854,24 @@ impl ::serde::Serialize for ServiceActionAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProductId", &self.product_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisioningArtifactId", &self.provisioning_artifact_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceActionId", &self.service_action_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ProvisioningArtifactId",
+            &self.provisioning_artifact_id,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ServiceActionId",
+            &self.service_action_id,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ServiceActionAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ServiceActionAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ServiceActionAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1657,7 +1881,10 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionAssociationProperties {
                 write!(f, "a struct of type ServiceActionAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut product_id: Option<::Value<String>> = None;
                 let mut provisioning_artifact_id: Option<::Value<String>> = None;
                 let mut service_action_id: Option<::Value<String>> = None;
@@ -1668,7 +1895,8 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionAssociationProperties {
                             product_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ProvisioningArtifactId" => {
-                            provisioning_artifact_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                            provisioning_artifact_id =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ServiceActionId" => {
                             service_action_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1679,8 +1907,10 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionAssociationProperties {
 
                 Ok(ServiceActionAssociationProperties {
                     product_id: product_id.ok_or(::serde::de::Error::missing_field("ProductId"))?,
-                    provisioning_artifact_id: provisioning_artifact_id.ok_or(::serde::de::Error::missing_field("ProvisioningArtifactId"))?,
-                    service_action_id: service_action_id.ok_or(::serde::de::Error::missing_field("ServiceActionId"))?,
+                    provisioning_artifact_id: provisioning_artifact_id
+                        .ok_or(::serde::de::Error::missing_field("ProvisioningArtifactId"))?,
+                    service_action_id: service_action_id
+                        .ok_or(::serde::de::Error::missing_field("ServiceActionId"))?,
                 })
             }
         }
@@ -1711,7 +1941,7 @@ impl From<ServiceActionAssociationProperties> for ServiceActionAssociation {
 /// The [`AWS::ServiceCatalog::StackSetConstraint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html) resource type.
 #[derive(Debug, Default)]
 pub struct StackSetConstraint {
-    properties: StackSetConstraintProperties
+    properties: StackSetConstraintProperties,
 }
 
 /// Properties for the `StackSetConstraint` resource.
@@ -1768,22 +1998,36 @@ impl ::serde::Serialize for StackSetConstraintProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref accept_language) = self.accept_language {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptLanguage", accept_language)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptLanguage",
+                accept_language,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccountList", &self.account_list)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdminRole", &self.admin_role)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", &self.description)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRole", &self.execution_role)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ExecutionRole",
+            &self.execution_role,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortfolioId", &self.portfolio_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProductId", &self.product_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegionList", &self.region_list)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackInstanceControl", &self.stack_instance_control)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "StackInstanceControl",
+            &self.stack_instance_control,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for StackSetConstraintProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<StackSetConstraintProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<StackSetConstraintProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1793,7 +2037,10 @@ impl<'de> ::serde::Deserialize<'de> for StackSetConstraintProperties {
                 write!(f, "a struct of type StackSetConstraintProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_language: Option<::Value<String>> = None;
                 let mut account_list: Option<::ValueList<String>> = None;
                 let mut admin_role: Option<::Value<String>> = None;
@@ -1839,14 +2086,20 @@ impl<'de> ::serde::Deserialize<'de> for StackSetConstraintProperties {
 
                 Ok(StackSetConstraintProperties {
                     accept_language: accept_language,
-                    account_list: account_list.ok_or(::serde::de::Error::missing_field("AccountList"))?,
+                    account_list: account_list
+                        .ok_or(::serde::de::Error::missing_field("AccountList"))?,
                     admin_role: admin_role.ok_or(::serde::de::Error::missing_field("AdminRole"))?,
-                    description: description.ok_or(::serde::de::Error::missing_field("Description"))?,
-                    execution_role: execution_role.ok_or(::serde::de::Error::missing_field("ExecutionRole"))?,
-                    portfolio_id: portfolio_id.ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
+                    description: description
+                        .ok_or(::serde::de::Error::missing_field("Description"))?,
+                    execution_role: execution_role
+                        .ok_or(::serde::de::Error::missing_field("ExecutionRole"))?,
+                    portfolio_id: portfolio_id
+                        .ok_or(::serde::de::Error::missing_field("PortfolioId"))?,
                     product_id: product_id.ok_or(::serde::de::Error::missing_field("ProductId"))?,
-                    region_list: region_list.ok_or(::serde::de::Error::missing_field("RegionList"))?,
-                    stack_instance_control: stack_instance_control.ok_or(::serde::de::Error::missing_field("StackInstanceControl"))?,
+                    region_list: region_list
+                        .ok_or(::serde::de::Error::missing_field("RegionList"))?,
+                    stack_instance_control: stack_instance_control
+                        .ok_or(::serde::de::Error::missing_field("StackInstanceControl"))?,
                 })
             }
         }
@@ -1877,7 +2130,7 @@ impl From<StackSetConstraintProperties> for StackSetConstraint {
 /// The [`AWS::ServiceCatalog::TagOption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html) resource type.
 #[derive(Debug, Default)]
 pub struct TagOption {
-    properties: TagOptionProperties
+    properties: TagOptionProperties,
 }
 
 /// Properties for the `TagOption` resource.
@@ -1923,7 +2176,10 @@ impl<'de> ::serde::Deserialize<'de> for TagOptionProperties {
                 write!(f, "a struct of type TagOptionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut active: Option<::Value<bool>> = None;
                 let mut key: Option<::Value<String>> = None;
                 let mut value: Option<::Value<String>> = None;
@@ -1977,7 +2233,7 @@ impl From<TagOptionProperties> for TagOption {
 /// The [`AWS::ServiceCatalog::TagOptionAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct TagOptionAssociation {
-    properties: TagOptionAssociationProperties
+    properties: TagOptionAssociationProperties,
 }
 
 /// Properties for the `TagOptionAssociation` resource.
@@ -2005,7 +2261,9 @@ impl ::serde::Serialize for TagOptionAssociationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for TagOptionAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<TagOptionAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<TagOptionAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2015,7 +2273,10 @@ impl<'de> ::serde::Deserialize<'de> for TagOptionAssociationProperties {
                 write!(f, "a struct of type TagOptionAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut resource_id: Option<::Value<String>> = None;
                 let mut tag_option_id: Option<::Value<String>> = None;
 
@@ -2032,8 +2293,10 @@ impl<'de> ::serde::Deserialize<'de> for TagOptionAssociationProperties {
                 }
 
                 Ok(TagOptionAssociationProperties {
-                    resource_id: resource_id.ok_or(::serde::de::Error::missing_field("ResourceId"))?,
-                    tag_option_id: tag_option_id.ok_or(::serde::de::Error::missing_field("TagOptionId"))?,
+                    resource_id: resource_id
+                        .ok_or(::serde::de::Error::missing_field("ResourceId"))?,
+                    tag_option_id: tag_option_id
+                        .ok_or(::serde::de::Error::missing_field("TagOptionId"))?,
                 })
             }
         }
@@ -2096,7 +2359,11 @@ pub mod cloud_formation_product {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
             }
             if let Some(ref disable_template_validation) = self.disable_template_validation {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisableTemplateValidation", disable_template_validation)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DisableTemplateValidation",
+                    disable_template_validation,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Info", &self.info)?;
             if let Some(ref name) = self.name {
@@ -2107,7 +2374,9 @@ pub mod cloud_formation_product {
     }
 
     impl ::codec::DeserializeValue for ProvisioningArtifactProperties {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ProvisioningArtifactProperties, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ProvisioningArtifactProperties, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2117,19 +2386,25 @@ pub mod cloud_formation_product {
                     write!(f, "a struct of type ProvisioningArtifactProperties")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut description: Option<::Value<String>> = None;
                     let mut disable_template_validation: Option<::Value<bool>> = None;
                     let mut info: Option<::Value<::json::Value>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Description" => {
                                 description = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DisableTemplateValidation" => {
-                                disable_template_validation = ::serde::de::MapAccess::next_value(&mut map)?;
+                                disable_template_validation =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Info" => {
                                 info = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2183,7 +2458,9 @@ pub mod cloud_formation_provisioned_product {
     }
 
     impl ::codec::DeserializeValue for ProvisioningParameter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ProvisioningParameter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ProvisioningParameter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2193,11 +2470,16 @@ pub mod cloud_formation_provisioned_product {
                     write!(f, "a struct of type ProvisioningParameter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2264,32 +2546,69 @@ pub mod cloud_formation_provisioned_product {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref stack_set_accounts) = self.stack_set_accounts {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackSetAccounts", stack_set_accounts)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StackSetAccounts",
+                    stack_set_accounts,
+                )?;
             }
-            if let Some(ref stack_set_failure_tolerance_count) = self.stack_set_failure_tolerance_count {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackSetFailureToleranceCount", stack_set_failure_tolerance_count)?;
+            if let Some(ref stack_set_failure_tolerance_count) =
+                self.stack_set_failure_tolerance_count
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StackSetFailureToleranceCount",
+                    stack_set_failure_tolerance_count,
+                )?;
             }
-            if let Some(ref stack_set_failure_tolerance_percentage) = self.stack_set_failure_tolerance_percentage {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackSetFailureTolerancePercentage", stack_set_failure_tolerance_percentage)?;
+            if let Some(ref stack_set_failure_tolerance_percentage) =
+                self.stack_set_failure_tolerance_percentage
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StackSetFailureTolerancePercentage",
+                    stack_set_failure_tolerance_percentage,
+                )?;
             }
-            if let Some(ref stack_set_max_concurrency_count) = self.stack_set_max_concurrency_count {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackSetMaxConcurrencyCount", stack_set_max_concurrency_count)?;
+            if let Some(ref stack_set_max_concurrency_count) = self.stack_set_max_concurrency_count
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StackSetMaxConcurrencyCount",
+                    stack_set_max_concurrency_count,
+                )?;
             }
-            if let Some(ref stack_set_max_concurrency_percentage) = self.stack_set_max_concurrency_percentage {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackSetMaxConcurrencyPercentage", stack_set_max_concurrency_percentage)?;
+            if let Some(ref stack_set_max_concurrency_percentage) =
+                self.stack_set_max_concurrency_percentage
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StackSetMaxConcurrencyPercentage",
+                    stack_set_max_concurrency_percentage,
+                )?;
             }
             if let Some(ref stack_set_operation_type) = self.stack_set_operation_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackSetOperationType", stack_set_operation_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StackSetOperationType",
+                    stack_set_operation_type,
+                )?;
             }
             if let Some(ref stack_set_regions) = self.stack_set_regions {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackSetRegions", stack_set_regions)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StackSetRegions",
+                    stack_set_regions,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ProvisioningPreferences {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ProvisioningPreferences, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ProvisioningPreferences, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2299,7 +2618,10 @@ pub mod cloud_formation_provisioned_product {
                     write!(f, "a struct of type ProvisioningPreferences")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut stack_set_accounts: Option<::ValueList<String>> = None;
                     let mut stack_set_failure_tolerance_count: Option<::Value<u32>> = None;
                     let mut stack_set_failure_tolerance_percentage: Option<::Value<u32>> = None;
@@ -2308,25 +2630,32 @@ pub mod cloud_formation_provisioned_product {
                     let mut stack_set_operation_type: Option<::Value<String>> = None;
                     let mut stack_set_regions: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "StackSetAccounts" => {
                                 stack_set_accounts = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StackSetFailureToleranceCount" => {
-                                stack_set_failure_tolerance_count = ::serde::de::MapAccess::next_value(&mut map)?;
+                                stack_set_failure_tolerance_count =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StackSetFailureTolerancePercentage" => {
-                                stack_set_failure_tolerance_percentage = ::serde::de::MapAccess::next_value(&mut map)?;
+                                stack_set_failure_tolerance_percentage =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StackSetMaxConcurrencyCount" => {
-                                stack_set_max_concurrency_count = ::serde::de::MapAccess::next_value(&mut map)?;
+                                stack_set_max_concurrency_count =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StackSetMaxConcurrencyPercentage" => {
-                                stack_set_max_concurrency_percentage = ::serde::de::MapAccess::next_value(&mut map)?;
+                                stack_set_max_concurrency_percentage =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StackSetOperationType" => {
-                                stack_set_operation_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                                stack_set_operation_type =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StackSetRegions" => {
                                 stack_set_regions = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2338,7 +2667,8 @@ pub mod cloud_formation_provisioned_product {
                     Ok(ProvisioningPreferences {
                         stack_set_accounts: stack_set_accounts,
                         stack_set_failure_tolerance_count: stack_set_failure_tolerance_count,
-                        stack_set_failure_tolerance_percentage: stack_set_failure_tolerance_percentage,
+                        stack_set_failure_tolerance_percentage:
+                            stack_set_failure_tolerance_percentage,
                         stack_set_max_concurrency_count: stack_set_max_concurrency_count,
                         stack_set_max_concurrency_percentage: stack_set_max_concurrency_percentage,
                         stack_set_operation_type: stack_set_operation_type,
@@ -2380,7 +2710,9 @@ pub mod service_action {
     }
 
     impl ::codec::DeserializeValue for DefinitionParameter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DefinitionParameter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DefinitionParameter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2390,11 +2722,16 @@ pub mod service_action {
                     write!(f, "a struct of type DefinitionParameter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;

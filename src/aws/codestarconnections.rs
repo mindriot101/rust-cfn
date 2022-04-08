@@ -3,7 +3,7 @@
 /// The [`AWS::CodeStarConnections::Connection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html) resource type.
 #[derive(Debug, Default)]
 pub struct Connection {
-    properties: ConnectionProperties
+    properties: ConnectionProperties,
 }
 
 /// Properties for the `Connection` resource.
@@ -34,7 +34,11 @@ pub struct ConnectionProperties {
 impl ::serde::Serialize for ConnectionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionName", &self.connection_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ConnectionName",
+            &self.connection_name,
+        )?;
         if let Some(ref host_arn) = self.host_arn {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostArn", host_arn)?;
         }
@@ -59,7 +63,10 @@ impl<'de> ::serde::Deserialize<'de> for ConnectionProperties {
                 write!(f, "a struct of type ConnectionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut connection_name: Option<::Value<String>> = None;
                 let mut host_arn: Option<::Value<String>> = None;
                 let mut provider_type: Option<::Value<String>> = None;
@@ -84,7 +91,8 @@ impl<'de> ::serde::Deserialize<'de> for ConnectionProperties {
                 }
 
                 Ok(ConnectionProperties {
-                    connection_name: connection_name.ok_or(::serde::de::Error::missing_field("ConnectionName"))?,
+                    connection_name: connection_name
+                        .ok_or(::serde::de::Error::missing_field("ConnectionName"))?,
                     host_arn: host_arn,
                     provider_type: provider_type,
                     tags: tags,

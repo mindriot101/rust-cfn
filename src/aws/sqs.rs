@@ -3,7 +3,7 @@
 /// The [`AWS::SQS::Queue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html) resource type.
 #[derive(Debug, Default)]
 pub struct Queue {
-    properties: QueueProperties
+    properties: QueueProperties,
 }
 
 /// Properties for the `Queue` resource.
@@ -90,10 +90,18 @@ impl ::serde::Serialize for QueueProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref content_based_deduplication) = self.content_based_deduplication {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContentBasedDeduplication", content_based_deduplication)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContentBasedDeduplication",
+                content_based_deduplication,
+            )?;
         }
         if let Some(ref deduplication_scope) = self.deduplication_scope {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeduplicationScope", deduplication_scope)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DeduplicationScope",
+                deduplication_scope,
+            )?;
         }
         if let Some(ref delay_seconds) = self.delay_seconds {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DelaySeconds", delay_seconds)?;
@@ -102,28 +110,58 @@ impl ::serde::Serialize for QueueProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "FifoQueue", fifo_queue)?;
         }
         if let Some(ref fifo_throughput_limit) = self.fifo_throughput_limit {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FifoThroughputLimit", fifo_throughput_limit)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FifoThroughputLimit",
+                fifo_throughput_limit,
+            )?;
         }
-        if let Some(ref kms_data_key_reuse_period_seconds) = self.kms_data_key_reuse_period_seconds {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsDataKeyReusePeriodSeconds", kms_data_key_reuse_period_seconds)?;
+        if let Some(ref kms_data_key_reuse_period_seconds) = self.kms_data_key_reuse_period_seconds
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KmsDataKeyReusePeriodSeconds",
+                kms_data_key_reuse_period_seconds,
+            )?;
         }
         if let Some(ref kms_master_key_id) = self.kms_master_key_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsMasterKeyId", kms_master_key_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KmsMasterKeyId",
+                kms_master_key_id,
+            )?;
         }
         if let Some(ref maximum_message_size) = self.maximum_message_size {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaximumMessageSize", maximum_message_size)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MaximumMessageSize",
+                maximum_message_size,
+            )?;
         }
         if let Some(ref message_retention_period) = self.message_retention_period {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MessageRetentionPeriod", message_retention_period)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MessageRetentionPeriod",
+                message_retention_period,
+            )?;
         }
         if let Some(ref queue_name) = self.queue_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueueName", queue_name)?;
         }
-        if let Some(ref receive_message_wait_time_seconds) = self.receive_message_wait_time_seconds {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReceiveMessageWaitTimeSeconds", receive_message_wait_time_seconds)?;
+        if let Some(ref receive_message_wait_time_seconds) = self.receive_message_wait_time_seconds
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ReceiveMessageWaitTimeSeconds",
+                receive_message_wait_time_seconds,
+            )?;
         }
         if let Some(ref redrive_allow_policy) = self.redrive_allow_policy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RedriveAllowPolicy", redrive_allow_policy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RedriveAllowPolicy",
+                redrive_allow_policy,
+            )?;
         }
         if let Some(ref redrive_policy) = self.redrive_policy {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RedrivePolicy", redrive_policy)?;
@@ -132,7 +170,11 @@ impl ::serde::Serialize for QueueProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref visibility_timeout) = self.visibility_timeout {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VisibilityTimeout", visibility_timeout)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VisibilityTimeout",
+                visibility_timeout,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -149,7 +191,10 @@ impl<'de> ::serde::Deserialize<'de> for QueueProperties {
                 write!(f, "a struct of type QueueProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut content_based_deduplication: Option<::Value<bool>> = None;
                 let mut deduplication_scope: Option<::Value<String>> = None;
                 let mut delay_seconds: Option<::Value<u32>> = None;
@@ -169,7 +214,8 @@ impl<'de> ::serde::Deserialize<'de> for QueueProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ContentBasedDeduplication" => {
-                            content_based_deduplication = ::serde::de::MapAccess::next_value(&mut map)?;
+                            content_based_deduplication =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DeduplicationScope" => {
                             deduplication_scope = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -184,7 +230,8 @@ impl<'de> ::serde::Deserialize<'de> for QueueProperties {
                             fifo_throughput_limit = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "KmsDataKeyReusePeriodSeconds" => {
-                            kms_data_key_reuse_period_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                            kms_data_key_reuse_period_seconds =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "KmsMasterKeyId" => {
                             kms_master_key_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -193,13 +240,15 @@ impl<'de> ::serde::Deserialize<'de> for QueueProperties {
                             maximum_message_size = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "MessageRetentionPeriod" => {
-                            message_retention_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                            message_retention_period =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "QueueName" => {
                             queue_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ReceiveMessageWaitTimeSeconds" => {
-                            receive_message_wait_time_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                            receive_message_wait_time_seconds =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RedriveAllowPolicy" => {
                             redrive_allow_policy = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -263,7 +312,7 @@ impl From<QueueProperties> for Queue {
 /// The [`AWS::SQS::QueuePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html) resource type.
 #[derive(Debug, Default)]
 pub struct QueuePolicy {
-    properties: QueuePolicyProperties
+    properties: QueuePolicyProperties,
 }
 
 /// Properties for the `QueuePolicy` resource.
@@ -284,7 +333,11 @@ pub struct QueuePolicyProperties {
 impl ::serde::Serialize for QueuePolicyProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PolicyDocument",
+            &self.policy_document,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Queues", &self.queues)?;
         ::serde::ser::SerializeMap::end(map)
     }
@@ -301,7 +354,10 @@ impl<'de> ::serde::Deserialize<'de> for QueuePolicyProperties {
                 write!(f, "a struct of type QueuePolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut policy_document: Option<::Value<::json::Value>> = None;
                 let mut queues: Option<::ValueList<String>> = None;
 
@@ -318,7 +374,8 @@ impl<'de> ::serde::Deserialize<'de> for QueuePolicyProperties {
                 }
 
                 Ok(QueuePolicyProperties {
-                    policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                    policy_document: policy_document
+                        .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
                     queues: queues.ok_or(::serde::de::Error::missing_field("Queues"))?,
                 })
             }

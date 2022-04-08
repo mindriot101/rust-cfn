@@ -3,7 +3,7 @@
 /// The [`AWS::DLM::LifecyclePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html) resource type.
 #[derive(Debug, Default)]
 pub struct LifecyclePolicy {
-    properties: LifecyclePolicyProperties
+    properties: LifecyclePolicyProperties,
 }
 
 /// Properties for the `LifecyclePolicy` resource.
@@ -43,7 +43,11 @@ impl ::serde::Serialize for LifecyclePolicyProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref execution_role_arn) = self.execution_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRoleArn", execution_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ExecutionRoleArn",
+                execution_role_arn,
+            )?;
         }
         if let Some(ref policy_details) = self.policy_details {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDetails", policy_details)?;
@@ -59,7 +63,9 @@ impl ::serde::Serialize for LifecyclePolicyProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LifecyclePolicyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LifecyclePolicyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LifecyclePolicyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -69,10 +75,14 @@ impl<'de> ::serde::Deserialize<'de> for LifecyclePolicyProperties {
                 write!(f, "a struct of type LifecyclePolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut execution_role_arn: Option<::Value<String>> = None;
-                let mut policy_details: Option<::Value<self::lifecycle_policy::PolicyDetails>> = None;
+                let mut policy_details: Option<::Value<self::lifecycle_policy::PolicyDetails>> =
+                    None;
                 let mut state: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -151,7 +161,11 @@ pub mod lifecycle_policy {
     impl ::codec::SerializeValue for Action {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CrossRegionCopy", &self.cross_region_copy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CrossRegionCopy",
+                &self.cross_region_copy,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -168,11 +182,16 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type Action")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cross_region_copy: Option<::ValueList<CrossRegionCopyAction>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CrossRegionCopy" => {
                                 cross_region_copy = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -185,7 +204,8 @@ pub mod lifecycle_policy {
                     }
 
                     Ok(Action {
-                        cross_region_copy: cross_region_copy.ok_or(::serde::de::Error::missing_field("CrossRegionCopy"))?,
+                        cross_region_copy: cross_region_copy
+                            .ok_or(::serde::de::Error::missing_field("CrossRegionCopy"))?,
                         name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     })
                 }
@@ -229,13 +249,21 @@ pub mod lifecycle_policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cron_expression) = self.cron_expression {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CronExpression", cron_expression)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CronExpression",
+                    cron_expression,
+                )?;
             }
             if let Some(ref interval) = self.interval {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", interval)?;
             }
             if let Some(ref interval_unit) = self.interval_unit {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IntervalUnit", interval_unit)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IntervalUnit",
+                    interval_unit,
+                )?;
             }
             if let Some(ref location) = self.location {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Location", location)?;
@@ -258,14 +286,19 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type CreateRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cron_expression: Option<::Value<String>> = None;
                     let mut interval: Option<::Value<u32>> = None;
                     let mut interval_unit: Option<::Value<String>> = None;
                     let mut location: Option<::Value<String>> = None;
                     let mut times: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CronExpression" => {
                                 cron_expression = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -323,7 +356,11 @@ pub mod lifecycle_policy {
     impl ::codec::SerializeValue for CrossRegionCopyAction {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionConfiguration", &self.encryption_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionConfiguration",
+                &self.encryption_configuration,
+            )?;
             if let Some(ref retain_rule) = self.retain_rule {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RetainRule", retain_rule)?;
             }
@@ -333,7 +370,9 @@ pub mod lifecycle_policy {
     }
 
     impl ::codec::DeserializeValue for CrossRegionCopyAction {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CrossRegionCopyAction, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CrossRegionCopyAction, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -343,15 +382,22 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type CrossRegionCopyAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut encryption_configuration: Option<::Value<EncryptionConfiguration>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut encryption_configuration: Option<::Value<EncryptionConfiguration>> =
+                        None;
                     let mut retain_rule: Option<::Value<CrossRegionCopyRetainRule>> = None;
                     let mut target: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EncryptionConfiguration" => {
-                                encryption_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                encryption_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RetainRule" => {
                                 retain_rule = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -364,7 +410,8 @@ pub mod lifecycle_policy {
                     }
 
                     Ok(CrossRegionCopyAction {
-                        encryption_configuration: encryption_configuration.ok_or(::serde::de::Error::missing_field("EncryptionConfiguration"))?,
+                        encryption_configuration: encryption_configuration
+                            .ok_or(::serde::de::Error::missing_field("EncryptionConfiguration"))?,
                         retain_rule: retain_rule,
                         target: target.ok_or(::serde::de::Error::missing_field("Target"))?,
                     })
@@ -394,13 +441,19 @@ pub mod lifecycle_policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", &self.interval)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IntervalUnit", &self.interval_unit)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IntervalUnit",
+                &self.interval_unit,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CrossRegionCopyDeprecateRule {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CrossRegionCopyDeprecateRule, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CrossRegionCopyDeprecateRule, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -410,11 +463,16 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type CrossRegionCopyDeprecateRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut interval: Option<::Value<u32>> = None;
                     let mut interval_unit: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Interval" => {
                                 interval = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -428,7 +486,8 @@ pub mod lifecycle_policy {
 
                     Ok(CrossRegionCopyDeprecateRule {
                         interval: interval.ok_or(::serde::de::Error::missing_field("Interval"))?,
-                        interval_unit: interval_unit.ok_or(::serde::de::Error::missing_field("IntervalUnit"))?,
+                        interval_unit: interval_unit
+                            .ok_or(::serde::de::Error::missing_field("IntervalUnit"))?,
                     })
                 }
             }
@@ -456,13 +515,19 @@ pub mod lifecycle_policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", &self.interval)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IntervalUnit", &self.interval_unit)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IntervalUnit",
+                &self.interval_unit,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CrossRegionCopyRetainRule {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CrossRegionCopyRetainRule, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CrossRegionCopyRetainRule, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -472,11 +537,16 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type CrossRegionCopyRetainRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut interval: Option<::Value<u32>> = None;
                     let mut interval_unit: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Interval" => {
                                 interval = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -490,7 +560,8 @@ pub mod lifecycle_policy {
 
                     Ok(CrossRegionCopyRetainRule {
                         interval: interval.ok_or(::serde::de::Error::missing_field("Interval"))?,
-                        interval_unit: interval_unit.ok_or(::serde::de::Error::missing_field("IntervalUnit"))?,
+                        interval_unit: interval_unit
+                            .ok_or(::serde::de::Error::missing_field("IntervalUnit"))?,
                     })
                 }
             }
@@ -549,7 +620,11 @@ pub mod lifecycle_policy {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CopyTags", copy_tags)?;
             }
             if let Some(ref deprecate_rule) = self.deprecate_rule {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeprecateRule", deprecate_rule)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DeprecateRule",
+                    deprecate_rule,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Encrypted", &self.encrypted)?;
             if let Some(ref retain_rule) = self.retain_rule {
@@ -559,14 +634,20 @@ pub mod lifecycle_policy {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Target", target)?;
             }
             if let Some(ref target_region) = self.target_region {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetRegion", target_region)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TargetRegion",
+                    target_region,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CrossRegionCopyRule {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CrossRegionCopyRule, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CrossRegionCopyRule, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -576,7 +657,10 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type CrossRegionCopyRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cmk_arn: Option<::Value<String>> = None;
                     let mut copy_tags: Option<::Value<bool>> = None;
                     let mut deprecate_rule: Option<::Value<CrossRegionCopyDeprecateRule>> = None;
@@ -585,7 +669,9 @@ pub mod lifecycle_policy {
                     let mut target: Option<::Value<String>> = None;
                     let mut target_region: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CmkArn" => {
                                 cmk_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -616,7 +702,8 @@ pub mod lifecycle_policy {
                         cmk_arn: cmk_arn,
                         copy_tags: copy_tags,
                         deprecate_rule: deprecate_rule,
-                        encrypted: encrypted.ok_or(::serde::de::Error::missing_field("Encrypted"))?,
+                        encrypted: encrypted
+                            .ok_or(::serde::de::Error::missing_field("Encrypted"))?,
                         retain_rule: retain_rule,
                         target: target,
                         target_region: target_region,
@@ -658,14 +745,20 @@ pub mod lifecycle_policy {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", interval)?;
             }
             if let Some(ref interval_unit) = self.interval_unit {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IntervalUnit", interval_unit)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IntervalUnit",
+                    interval_unit,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DeprecateRule {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DeprecateRule, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DeprecateRule, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -675,12 +768,17 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type DeprecateRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut count: Option<::Value<u32>> = None;
                     let mut interval: Option<::Value<u32>> = None;
                     let mut interval_unit: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Count" => {
                                 count = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -734,7 +832,9 @@ pub mod lifecycle_policy {
     }
 
     impl ::codec::DeserializeValue for EncryptionConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EncryptionConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EncryptionConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -744,11 +844,16 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type EncryptionConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cmk_arn: Option<::Value<String>> = None;
                     let mut encrypted: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CmkArn" => {
                                 cmk_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -762,7 +867,8 @@ pub mod lifecycle_policy {
 
                     Ok(EncryptionConfiguration {
                         cmk_arn: cmk_arn,
-                        encrypted: encrypted.ok_or(::serde::de::Error::missing_field("Encrypted"))?,
+                        encrypted: encrypted
+                            .ok_or(::serde::de::Error::missing_field("Encrypted"))?,
                     })
                 }
             }
@@ -795,16 +901,26 @@ pub mod lifecycle_policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description_regex) = self.description_regex {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DescriptionRegex", description_regex)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DescriptionRegex",
+                    description_regex,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventType", &self.event_type)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnapshotOwner", &self.snapshot_owner)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SnapshotOwner",
+                &self.snapshot_owner,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EventParameters {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EventParameters, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EventParameters, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -814,12 +930,17 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type EventParameters")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut description_regex: Option<::Value<String>> = None;
                     let mut event_type: Option<::Value<String>> = None;
                     let mut snapshot_owner: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DescriptionRegex" => {
                                 description_regex = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -836,8 +957,10 @@ pub mod lifecycle_policy {
 
                     Ok(EventParameters {
                         description_regex: description_regex,
-                        event_type: event_type.ok_or(::serde::de::Error::missing_field("EventType"))?,
-                        snapshot_owner: snapshot_owner.ok_or(::serde::de::Error::missing_field("SnapshotOwner"))?,
+                        event_type: event_type
+                            .ok_or(::serde::de::Error::missing_field("EventType"))?,
+                        snapshot_owner: snapshot_owner
+                            .ok_or(::serde::de::Error::missing_field("SnapshotOwner"))?,
                     })
                 }
             }
@@ -883,11 +1006,16 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type EventSource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut parameters: Option<::Value<EventParameters>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Parameters" => {
                                 parameters = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -939,7 +1067,11 @@ pub mod lifecycle_policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref availability_zones) = self.availability_zones {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailabilityZones", availability_zones)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AvailabilityZones",
+                    availability_zones,
+                )?;
             }
             if let Some(ref count) = self.count {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Count", count)?;
@@ -948,14 +1080,20 @@ pub mod lifecycle_policy {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", interval)?;
             }
             if let Some(ref interval_unit) = self.interval_unit {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IntervalUnit", interval_unit)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IntervalUnit",
+                    interval_unit,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FastRestoreRule {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FastRestoreRule, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FastRestoreRule, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -965,13 +1103,18 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type FastRestoreRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut availability_zones: Option<::ValueList<String>> = None;
                     let mut count: Option<::Value<u32>> = None;
                     let mut interval: Option<::Value<u32>> = None;
                     let mut interval_unit: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AvailabilityZones" => {
                                 availability_zones = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1021,7 +1164,11 @@ pub mod lifecycle_policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref exclude_boot_volume) = self.exclude_boot_volume {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExcludeBootVolume", exclude_boot_volume)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ExcludeBootVolume",
+                    exclude_boot_volume,
+                )?;
             }
             if let Some(ref no_reboot) = self.no_reboot {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NoReboot", no_reboot)?;
@@ -1041,11 +1188,16 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type Parameters")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut exclude_boot_volume: Option<::Value<bool>> = None;
                     let mut no_reboot: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ExcludeBootVolume" => {
                                 exclude_boot_volume = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1129,10 +1281,18 @@ pub mod lifecycle_policy {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyType", policy_type)?;
             }
             if let Some(ref resource_locations) = self.resource_locations {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceLocations", resource_locations)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ResourceLocations",
+                    resource_locations,
+                )?;
             }
             if let Some(ref resource_types) = self.resource_types {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceTypes", resource_types)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ResourceTypes",
+                    resource_types,
+                )?;
             }
             if let Some(ref schedules) = self.schedules {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Schedules", schedules)?;
@@ -1145,7 +1305,9 @@ pub mod lifecycle_policy {
     }
 
     impl ::codec::DeserializeValue for PolicyDetails {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PolicyDetails, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PolicyDetails, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1155,7 +1317,10 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type PolicyDetails")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut actions: Option<::ValueList<Action>> = None;
                     let mut event_source: Option<::Value<EventSource>> = None;
                     let mut parameters: Option<::Value<Parameters>> = None;
@@ -1165,7 +1330,9 @@ pub mod lifecycle_policy {
                     let mut schedules: Option<::ValueList<Schedule>> = None;
                     let mut target_tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Actions" => {
                                 actions = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1242,7 +1409,11 @@ pub mod lifecycle_policy {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", interval)?;
             }
             if let Some(ref interval_unit) = self.interval_unit {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IntervalUnit", interval_unit)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IntervalUnit",
+                    interval_unit,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1259,12 +1430,17 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type RetainRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut count: Option<::Value<u32>> = None;
                     let mut interval: Option<::Value<u32>> = None;
                     let mut interval_unit: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Count" => {
                                 count = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1356,13 +1532,25 @@ pub mod lifecycle_policy {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CreateRule", create_rule)?;
             }
             if let Some(ref cross_region_copy_rules) = self.cross_region_copy_rules {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CrossRegionCopyRules", cross_region_copy_rules)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CrossRegionCopyRules",
+                    cross_region_copy_rules,
+                )?;
             }
             if let Some(ref deprecate_rule) = self.deprecate_rule {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeprecateRule", deprecate_rule)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DeprecateRule",
+                    deprecate_rule,
+                )?;
             }
             if let Some(ref fast_restore_rule) = self.fast_restore_rule {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FastRestoreRule", fast_restore_rule)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FastRestoreRule",
+                    fast_restore_rule,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -1377,7 +1565,11 @@ pub mod lifecycle_policy {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TagsToAdd", tags_to_add)?;
             }
             if let Some(ref variable_tags) = self.variable_tags {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VariableTags", variable_tags)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VariableTags",
+                    variable_tags,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1394,10 +1586,14 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type Schedule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut copy_tags: Option<::Value<bool>> = None;
                     let mut create_rule: Option<::Value<CreateRule>> = None;
-                    let mut cross_region_copy_rules: Option<::ValueList<CrossRegionCopyRule>> = None;
+                    let mut cross_region_copy_rules: Option<::ValueList<CrossRegionCopyRule>> =
+                        None;
                     let mut deprecate_rule: Option<::Value<DeprecateRule>> = None;
                     let mut fast_restore_rule: Option<::Value<FastRestoreRule>> = None;
                     let mut name: Option<::Value<String>> = None;
@@ -1406,7 +1602,9 @@ pub mod lifecycle_policy {
                     let mut tags_to_add: Option<::ValueList<::Tag>> = None;
                     let mut variable_tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CopyTags" => {
                                 copy_tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1415,7 +1613,8 @@ pub mod lifecycle_policy {
                                 create_rule = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CrossRegionCopyRules" => {
-                                cross_region_copy_rules = ::serde::de::MapAccess::next_value(&mut map)?;
+                                cross_region_copy_rules =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DeprecateRule" => {
                                 deprecate_rule = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1485,13 +1684,25 @@ pub mod lifecycle_policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref target_accounts) = self.target_accounts {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetAccounts", target_accounts)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TargetAccounts",
+                    target_accounts,
+                )?;
             }
             if let Some(ref unshare_interval) = self.unshare_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UnshareInterval", unshare_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UnshareInterval",
+                    unshare_interval,
+                )?;
             }
             if let Some(ref unshare_interval_unit) = self.unshare_interval_unit {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UnshareIntervalUnit", unshare_interval_unit)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UnshareIntervalUnit",
+                    unshare_interval_unit,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1508,12 +1719,17 @@ pub mod lifecycle_policy {
                     write!(f, "a struct of type ShareRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut target_accounts: Option<::ValueList<String>> = None;
                     let mut unshare_interval: Option<::Value<u32>> = None;
                     let mut unshare_interval_unit: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TargetAccounts" => {
                                 target_accounts = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1522,7 +1738,8 @@ pub mod lifecycle_policy {
                                 unshare_interval = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "UnshareIntervalUnit" => {
-                                unshare_interval_unit = ::serde::de::MapAccess::next_value(&mut map)?;
+                                unshare_interval_unit =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }

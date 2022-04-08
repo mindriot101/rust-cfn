@@ -3,7 +3,7 @@
 /// The [`AWS::Logs::Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html) resource type.
 #[derive(Debug, Default)]
 pub struct Destination {
-    properties: DestinationProperties
+    properties: DestinationProperties,
 }
 
 /// Properties for the `Destination` resource.
@@ -34,8 +34,16 @@ pub struct DestinationProperties {
 impl ::serde::Serialize for DestinationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationName", &self.destination_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationPolicy", &self.destination_policy)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DestinationName",
+            &self.destination_name,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DestinationPolicy",
+            &self.destination_policy,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetArn", &self.target_arn)?;
         ::serde::ser::SerializeMap::end(map)
@@ -53,7 +61,10 @@ impl<'de> ::serde::Deserialize<'de> for DestinationProperties {
                 write!(f, "a struct of type DestinationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut destination_name: Option<::Value<String>> = None;
                 let mut destination_policy: Option<::Value<String>> = None;
                 let mut role_arn: Option<::Value<String>> = None;
@@ -78,8 +89,10 @@ impl<'de> ::serde::Deserialize<'de> for DestinationProperties {
                 }
 
                 Ok(DestinationProperties {
-                    destination_name: destination_name.ok_or(::serde::de::Error::missing_field("DestinationName"))?,
-                    destination_policy: destination_policy.ok_or(::serde::de::Error::missing_field("DestinationPolicy"))?,
+                    destination_name: destination_name
+                        .ok_or(::serde::de::Error::missing_field("DestinationName"))?,
+                    destination_policy: destination_policy
+                        .ok_or(::serde::de::Error::missing_field("DestinationPolicy"))?,
                     role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
                     target_arn: target_arn.ok_or(::serde::de::Error::missing_field("TargetArn"))?,
                 })
@@ -112,7 +125,7 @@ impl From<DestinationProperties> for Destination {
 /// The [`AWS::Logs::LogGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct LogGroup {
-    properties: LogGroupProperties
+    properties: LogGroupProperties,
 }
 
 /// Properties for the `LogGroup` resource.
@@ -150,7 +163,11 @@ impl ::serde::Serialize for LogGroupProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupName", log_group_name)?;
         }
         if let Some(ref retention_in_days) = self.retention_in_days {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RetentionInDays", retention_in_days)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RetentionInDays",
+                retention_in_days,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -170,7 +187,10 @@ impl<'de> ::serde::Deserialize<'de> for LogGroupProperties {
                 write!(f, "a struct of type LogGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut kms_key_id: Option<::Value<String>> = None;
                 let mut log_group_name: Option<::Value<String>> = None;
                 let mut retention_in_days: Option<::Value<u32>> = None;
@@ -229,7 +249,7 @@ impl From<LogGroupProperties> for LogGroup {
 /// The [`AWS::Logs::LogStream`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html) resource type.
 #[derive(Debug, Default)]
 pub struct LogStream {
-    properties: LogStreamProperties
+    properties: LogStreamProperties,
 }
 
 /// Properties for the `LogStream` resource.
@@ -250,9 +270,17 @@ pub struct LogStreamProperties {
 impl ::serde::Serialize for LogStreamProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupName", &self.log_group_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "LogGroupName",
+            &self.log_group_name,
+        )?;
         if let Some(ref log_stream_name) = self.log_stream_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogStreamName", log_stream_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LogStreamName",
+                log_stream_name,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -269,7 +297,10 @@ impl<'de> ::serde::Deserialize<'de> for LogStreamProperties {
                 write!(f, "a struct of type LogStreamProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut log_group_name: Option<::Value<String>> = None;
                 let mut log_stream_name: Option<::Value<String>> = None;
 
@@ -286,7 +317,8 @@ impl<'de> ::serde::Deserialize<'de> for LogStreamProperties {
                 }
 
                 Ok(LogStreamProperties {
-                    log_group_name: log_group_name.ok_or(::serde::de::Error::missing_field("LogGroupName"))?,
+                    log_group_name: log_group_name
+                        .ok_or(::serde::de::Error::missing_field("LogGroupName"))?,
                     log_stream_name: log_stream_name,
                 })
             }
@@ -318,7 +350,7 @@ impl From<LogStreamProperties> for LogStream {
 /// The [`AWS::Logs::MetricFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html) resource type.
 #[derive(Debug, Default)]
 pub struct MetricFilter {
-    properties: MetricFilterProperties
+    properties: MetricFilterProperties,
 }
 
 /// Properties for the `MetricFilter` resource.
@@ -344,15 +376,29 @@ pub struct MetricFilterProperties {
 impl ::serde::Serialize for MetricFilterProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterPattern", &self.filter_pattern)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupName", &self.log_group_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricTransformations", &self.metric_transformations)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FilterPattern",
+            &self.filter_pattern,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "LogGroupName",
+            &self.log_group_name,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "MetricTransformations",
+            &self.metric_transformations,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for MetricFilterProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<MetricFilterProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<MetricFilterProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -362,10 +408,15 @@ impl<'de> ::serde::Deserialize<'de> for MetricFilterProperties {
                 write!(f, "a struct of type MetricFilterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut filter_pattern: Option<::Value<String>> = None;
                 let mut log_group_name: Option<::Value<String>> = None;
-                let mut metric_transformations: Option<::ValueList<self::metric_filter::MetricTransformation>> = None;
+                let mut metric_transformations: Option<
+                    ::ValueList<self::metric_filter::MetricTransformation>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -383,9 +434,12 @@ impl<'de> ::serde::Deserialize<'de> for MetricFilterProperties {
                 }
 
                 Ok(MetricFilterProperties {
-                    filter_pattern: filter_pattern.ok_or(::serde::de::Error::missing_field("FilterPattern"))?,
-                    log_group_name: log_group_name.ok_or(::serde::de::Error::missing_field("LogGroupName"))?,
-                    metric_transformations: metric_transformations.ok_or(::serde::de::Error::missing_field("MetricTransformations"))?,
+                    filter_pattern: filter_pattern
+                        .ok_or(::serde::de::Error::missing_field("FilterPattern"))?,
+                    log_group_name: log_group_name
+                        .ok_or(::serde::de::Error::missing_field("LogGroupName"))?,
+                    metric_transformations: metric_transformations
+                        .ok_or(::serde::de::Error::missing_field("MetricTransformations"))?,
                 })
             }
         }
@@ -416,7 +470,7 @@ impl From<MetricFilterProperties> for MetricFilter {
 /// The [`AWS::Logs::QueryDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-querydefinition.html) resource type.
 #[derive(Debug, Default)]
 pub struct QueryDefinition {
-    properties: QueryDefinitionProperties
+    properties: QueryDefinitionProperties,
 }
 
 /// Properties for the `QueryDefinition` resource.
@@ -443,7 +497,11 @@ impl ::serde::Serialize for QueryDefinitionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref log_group_names) = self.log_group_names {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupNames", log_group_names)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LogGroupNames",
+                log_group_names,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueryString", &self.query_string)?;
@@ -452,7 +510,9 @@ impl ::serde::Serialize for QueryDefinitionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for QueryDefinitionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<QueryDefinitionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<QueryDefinitionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -462,7 +522,10 @@ impl<'de> ::serde::Deserialize<'de> for QueryDefinitionProperties {
                 write!(f, "a struct of type QueryDefinitionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut log_group_names: Option<::ValueList<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut query_string: Option<::Value<String>> = None;
@@ -485,7 +548,8 @@ impl<'de> ::serde::Deserialize<'de> for QueryDefinitionProperties {
                 Ok(QueryDefinitionProperties {
                     log_group_names: log_group_names,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    query_string: query_string.ok_or(::serde::de::Error::missing_field("QueryString"))?,
+                    query_string: query_string
+                        .ok_or(::serde::de::Error::missing_field("QueryString"))?,
                 })
             }
         }
@@ -516,7 +580,7 @@ impl From<QueryDefinitionProperties> for QueryDefinition {
 /// The [`AWS::Logs::ResourcePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-resourcepolicy.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourcePolicy {
-    properties: ResourcePolicyProperties
+    properties: ResourcePolicyProperties,
 }
 
 /// Properties for the `ResourcePolicy` resource.
@@ -537,14 +601,20 @@ pub struct ResourcePolicyProperties {
 impl ::serde::Serialize for ResourcePolicyProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PolicyDocument",
+            &self.policy_document,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyName", &self.policy_name)?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourcePolicyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResourcePolicyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -554,7 +624,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
                 write!(f, "a struct of type ResourcePolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut policy_document: Option<::Value<String>> = None;
                 let mut policy_name: Option<::Value<String>> = None;
 
@@ -571,8 +644,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
                 }
 
                 Ok(ResourcePolicyProperties {
-                    policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
-                    policy_name: policy_name.ok_or(::serde::de::Error::missing_field("PolicyName"))?,
+                    policy_document: policy_document
+                        .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                    policy_name: policy_name
+                        .ok_or(::serde::de::Error::missing_field("PolicyName"))?,
                 })
             }
         }
@@ -603,7 +678,7 @@ impl From<ResourcePolicyProperties> for ResourcePolicy {
 /// The [`AWS::Logs::SubscriptionFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html) resource type.
 #[derive(Debug, Default)]
 pub struct SubscriptionFilter {
-    properties: SubscriptionFilterProperties
+    properties: SubscriptionFilterProperties,
 }
 
 /// Properties for the `SubscriptionFilter` resource.
@@ -634,9 +709,21 @@ pub struct SubscriptionFilterProperties {
 impl ::serde::Serialize for SubscriptionFilterProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationArn", &self.destination_arn)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterPattern", &self.filter_pattern)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupName", &self.log_group_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DestinationArn",
+            &self.destination_arn,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FilterPattern",
+            &self.filter_pattern,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "LogGroupName",
+            &self.log_group_name,
+        )?;
         if let Some(ref role_arn) = self.role_arn {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", role_arn)?;
         }
@@ -645,7 +732,9 @@ impl ::serde::Serialize for SubscriptionFilterProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for SubscriptionFilterProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SubscriptionFilterProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SubscriptionFilterProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -655,7 +744,10 @@ impl<'de> ::serde::Deserialize<'de> for SubscriptionFilterProperties {
                 write!(f, "a struct of type SubscriptionFilterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut destination_arn: Option<::Value<String>> = None;
                 let mut filter_pattern: Option<::Value<String>> = None;
                 let mut log_group_name: Option<::Value<String>> = None;
@@ -680,9 +772,12 @@ impl<'de> ::serde::Deserialize<'de> for SubscriptionFilterProperties {
                 }
 
                 Ok(SubscriptionFilterProperties {
-                    destination_arn: destination_arn.ok_or(::serde::de::Error::missing_field("DestinationArn"))?,
-                    filter_pattern: filter_pattern.ok_or(::serde::de::Error::missing_field("FilterPattern"))?,
-                    log_group_name: log_group_name.ok_or(::serde::de::Error::missing_field("LogGroupName"))?,
+                    destination_arn: destination_arn
+                        .ok_or(::serde::de::Error::missing_field("DestinationArn"))?,
+                    filter_pattern: filter_pattern
+                        .ok_or(::serde::de::Error::missing_field("FilterPattern"))?,
+                    log_group_name: log_group_name
+                        .ok_or(::serde::de::Error::missing_field("LogGroupName"))?,
                     role_arn: role_arn,
                 })
             }
@@ -743,17 +838,31 @@ pub mod metric_filter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_value) = self.default_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultValue", default_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DefaultValue",
+                    default_value,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricName", &self.metric_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricNamespace", &self.metric_namespace)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricValue", &self.metric_value)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MetricNamespace",
+                &self.metric_namespace,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MetricValue",
+                &self.metric_value,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MetricTransformation {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MetricTransformation, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MetricTransformation, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -763,13 +872,18 @@ pub mod metric_filter {
                     write!(f, "a struct of type MetricTransformation")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut default_value: Option<::Value<f64>> = None;
                     let mut metric_name: Option<::Value<String>> = None;
                     let mut metric_namespace: Option<::Value<String>> = None;
                     let mut metric_value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DefaultValue" => {
                                 default_value = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -789,9 +903,12 @@ pub mod metric_filter {
 
                     Ok(MetricTransformation {
                         default_value: default_value,
-                        metric_name: metric_name.ok_or(::serde::de::Error::missing_field("MetricName"))?,
-                        metric_namespace: metric_namespace.ok_or(::serde::de::Error::missing_field("MetricNamespace"))?,
-                        metric_value: metric_value.ok_or(::serde::de::Error::missing_field("MetricValue"))?,
+                        metric_name: metric_name
+                            .ok_or(::serde::de::Error::missing_field("MetricName"))?,
+                        metric_namespace: metric_namespace
+                            .ok_or(::serde::de::Error::missing_field("MetricNamespace"))?,
+                        metric_value: metric_value
+                            .ok_or(::serde::de::Error::missing_field("MetricValue"))?,
                     })
                 }
             }

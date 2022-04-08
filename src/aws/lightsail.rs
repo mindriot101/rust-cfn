@@ -3,7 +3,7 @@
 /// The [`AWS::Lightsail::Alarm`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html) resource type.
 #[derive(Debug, Default)]
 pub struct Alarm {
-    properties: AlarmProperties
+    properties: AlarmProperties,
 }
 
 /// Properties for the `Alarm` resource.
@@ -70,25 +70,57 @@ impl ::serde::Serialize for AlarmProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlarmName", &self.alarm_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComparisonOperator", &self.comparison_operator)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ComparisonOperator",
+            &self.comparison_operator,
+        )?;
         if let Some(ref contact_protocols) = self.contact_protocols {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContactProtocols", contact_protocols)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContactProtocols",
+                contact_protocols,
+            )?;
         }
         if let Some(ref datapoints_to_alarm) = self.datapoints_to_alarm {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatapointsToAlarm", datapoints_to_alarm)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatapointsToAlarm",
+                datapoints_to_alarm,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EvaluationPeriods", &self.evaluation_periods)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EvaluationPeriods",
+            &self.evaluation_periods,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricName", &self.metric_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "MonitoredResourceName", &self.monitored_resource_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "MonitoredResourceName",
+            &self.monitored_resource_name,
+        )?;
         if let Some(ref notification_enabled) = self.notification_enabled {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationEnabled", notification_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationEnabled",
+                notification_enabled,
+            )?;
         }
         if let Some(ref notification_triggers) = self.notification_triggers {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationTriggers", notification_triggers)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationTriggers",
+                notification_triggers,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Threshold", &self.threshold)?;
         if let Some(ref treat_missing_data) = self.treat_missing_data {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TreatMissingData", treat_missing_data)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TreatMissingData",
+                treat_missing_data,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -105,7 +137,10 @@ impl<'de> ::serde::Deserialize<'de> for AlarmProperties {
                 write!(f, "a struct of type AlarmProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut alarm_name: Option<::Value<String>> = None;
                 let mut comparison_operator: Option<::Value<String>> = None;
                 let mut contact_protocols: Option<::ValueList<String>> = None;
@@ -159,12 +194,16 @@ impl<'de> ::serde::Deserialize<'de> for AlarmProperties {
 
                 Ok(AlarmProperties {
                     alarm_name: alarm_name.ok_or(::serde::de::Error::missing_field("AlarmName"))?,
-                    comparison_operator: comparison_operator.ok_or(::serde::de::Error::missing_field("ComparisonOperator"))?,
+                    comparison_operator: comparison_operator
+                        .ok_or(::serde::de::Error::missing_field("ComparisonOperator"))?,
                     contact_protocols: contact_protocols,
                     datapoints_to_alarm: datapoints_to_alarm,
-                    evaluation_periods: evaluation_periods.ok_or(::serde::de::Error::missing_field("EvaluationPeriods"))?,
-                    metric_name: metric_name.ok_or(::serde::de::Error::missing_field("MetricName"))?,
-                    monitored_resource_name: monitored_resource_name.ok_or(::serde::de::Error::missing_field("MonitoredResourceName"))?,
+                    evaluation_periods: evaluation_periods
+                        .ok_or(::serde::de::Error::missing_field("EvaluationPeriods"))?,
+                    metric_name: metric_name
+                        .ok_or(::serde::de::Error::missing_field("MetricName"))?,
+                    monitored_resource_name: monitored_resource_name
+                        .ok_or(::serde::de::Error::missing_field("MonitoredResourceName"))?,
                     notification_enabled: notification_enabled,
                     notification_triggers: notification_triggers,
                     threshold: threshold.ok_or(::serde::de::Error::missing_field("Threshold"))?,
@@ -199,7 +238,7 @@ impl From<AlarmProperties> for Alarm {
 /// The [`AWS::Lightsail::Bucket`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html) resource type.
 #[derive(Debug, Default)]
 pub struct Bucket {
-    properties: BucketProperties
+    properties: BucketProperties,
 }
 
 /// Properties for the `Bucket` resource.
@@ -251,13 +290,25 @@ impl ::serde::Serialize for BucketProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BundleId", &self.bundle_id)?;
         if let Some(ref object_versioning) = self.object_versioning {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectVersioning", object_versioning)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ObjectVersioning",
+                object_versioning,
+            )?;
         }
         if let Some(ref read_only_access_accounts) = self.read_only_access_accounts {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReadOnlyAccessAccounts", read_only_access_accounts)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ReadOnlyAccessAccounts",
+                read_only_access_accounts,
+            )?;
         }
         if let Some(ref resources_receiving_access) = self.resources_receiving_access {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourcesReceivingAccess", resources_receiving_access)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResourcesReceivingAccess",
+                resources_receiving_access,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -277,7 +328,10 @@ impl<'de> ::serde::Deserialize<'de> for BucketProperties {
                 write!(f, "a struct of type BucketProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut access_rules: Option<::Value<self::bucket::AccessRules>> = None;
                 let mut bucket_name: Option<::Value<String>> = None;
                 let mut bundle_id: Option<::Value<String>> = None;
@@ -301,10 +355,12 @@ impl<'de> ::serde::Deserialize<'de> for BucketProperties {
                             object_versioning = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ReadOnlyAccessAccounts" => {
-                            read_only_access_accounts = ::serde::de::MapAccess::next_value(&mut map)?;
+                            read_only_access_accounts =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ResourcesReceivingAccess" => {
-                            resources_receiving_access = ::serde::de::MapAccess::next_value(&mut map)?;
+                            resources_receiving_access =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -315,7 +371,8 @@ impl<'de> ::serde::Deserialize<'de> for BucketProperties {
 
                 Ok(BucketProperties {
                     access_rules: access_rules,
-                    bucket_name: bucket_name.ok_or(::serde::de::Error::missing_field("BucketName"))?,
+                    bucket_name: bucket_name
+                        .ok_or(::serde::de::Error::missing_field("BucketName"))?,
                     bundle_id: bundle_id.ok_or(::serde::de::Error::missing_field("BundleId"))?,
                     object_versioning: object_versioning,
                     read_only_access_accounts: read_only_access_accounts,
@@ -351,7 +408,7 @@ impl From<BucketProperties> for Bucket {
 /// The [`AWS::Lightsail::Certificate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-certificate.html) resource type.
 #[derive(Debug, Default)]
 pub struct Certificate {
-    properties: CertificateProperties
+    properties: CertificateProperties,
 }
 
 /// Properties for the `Certificate` resource.
@@ -382,10 +439,18 @@ pub struct CertificateProperties {
 impl ::serde::Serialize for CertificateProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateName", &self.certificate_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "CertificateName",
+            &self.certificate_name,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainName", &self.domain_name)?;
         if let Some(ref subject_alternative_names) = self.subject_alternative_names {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubjectAlternativeNames", subject_alternative_names)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SubjectAlternativeNames",
+                subject_alternative_names,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -405,7 +470,10 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
                 write!(f, "a struct of type CertificateProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut certificate_name: Option<::Value<String>> = None;
                 let mut domain_name: Option<::Value<String>> = None;
                 let mut subject_alternative_names: Option<::ValueList<String>> = None;
@@ -420,7 +488,8 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
                             domain_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SubjectAlternativeNames" => {
-                            subject_alternative_names = ::serde::de::MapAccess::next_value(&mut map)?;
+                            subject_alternative_names =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -430,8 +499,10 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
                 }
 
                 Ok(CertificateProperties {
-                    certificate_name: certificate_name.ok_or(::serde::de::Error::missing_field("CertificateName"))?,
-                    domain_name: domain_name.ok_or(::serde::de::Error::missing_field("DomainName"))?,
+                    certificate_name: certificate_name
+                        .ok_or(::serde::de::Error::missing_field("CertificateName"))?,
+                    domain_name: domain_name
+                        .ok_or(::serde::de::Error::missing_field("DomainName"))?,
                     subject_alternative_names: subject_alternative_names,
                     tags: tags,
                 })
@@ -464,7 +535,7 @@ impl From<CertificateProperties> for Certificate {
 /// The [`AWS::Lightsail::Container`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html) resource type.
 #[derive(Debug, Default)]
 pub struct Container {
-    properties: ContainerProperties
+    properties: ContainerProperties,
 }
 
 /// Properties for the `Container` resource.
@@ -511,14 +582,22 @@ impl ::serde::Serialize for ContainerProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref container_service_deployment) = self.container_service_deployment {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerServiceDeployment", container_service_deployment)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContainerServiceDeployment",
+                container_service_deployment,
+            )?;
         }
         if let Some(ref is_disabled) = self.is_disabled {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsDisabled", is_disabled)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Power", &self.power)?;
         if let Some(ref public_domain_names) = self.public_domain_names {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PublicDomainNames", public_domain_names)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PublicDomainNames",
+                public_domain_names,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scale", &self.scale)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceName", &self.service_name)?;
@@ -540,11 +619,18 @@ impl<'de> ::serde::Deserialize<'de> for ContainerProperties {
                 write!(f, "a struct of type ContainerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut container_service_deployment: Option<::Value<self::container::ContainerServiceDeployment>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut container_service_deployment: Option<
+                    ::Value<self::container::ContainerServiceDeployment>,
+                > = None;
                 let mut is_disabled: Option<::Value<bool>> = None;
                 let mut power: Option<::Value<String>> = None;
-                let mut public_domain_names: Option<::ValueList<self::container::PublicDomainName>> = None;
+                let mut public_domain_names: Option<
+                    ::ValueList<self::container::PublicDomainName>,
+                > = None;
                 let mut scale: Option<::Value<u32>> = None;
                 let mut service_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -552,7 +638,8 @@ impl<'de> ::serde::Deserialize<'de> for ContainerProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ContainerServiceDeployment" => {
-                            container_service_deployment = ::serde::de::MapAccess::next_value(&mut map)?;
+                            container_service_deployment =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "IsDisabled" => {
                             is_disabled = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -582,7 +669,8 @@ impl<'de> ::serde::Deserialize<'de> for ContainerProperties {
                     power: power.ok_or(::serde::de::Error::missing_field("Power"))?,
                     public_domain_names: public_domain_names,
                     scale: scale.ok_or(::serde::de::Error::missing_field("Scale"))?,
-                    service_name: service_name.ok_or(::serde::de::Error::missing_field("ServiceName"))?,
+                    service_name: service_name
+                        .ok_or(::serde::de::Error::missing_field("ServiceName"))?,
                     tags: tags,
                 })
             }
@@ -614,7 +702,7 @@ impl From<ContainerProperties> for Container {
 /// The [`AWS::Lightsail::Database`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html) resource type.
 #[derive(Debug, Default)]
 pub struct Database {
-    properties: DatabaseProperties
+    properties: DatabaseProperties,
 }
 
 /// Properties for the `Database` resource.
@@ -684,7 +772,8 @@ pub struct DatabaseProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub relational_database_parameters: Option<::ValueList<self::database::RelationalDatabaseParameter>>,
+    pub relational_database_parameters:
+        Option<::ValueList<self::database::RelationalDatabaseParameter>>,
     /// Property [`RotateMasterUserPassword`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-rotatemasteruserpassword).
     ///
     /// Update type: _Mutable_.
@@ -701,36 +790,92 @@ impl ::serde::Serialize for DatabaseProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref availability_zone) = self.availability_zone {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailabilityZone", availability_zone)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AvailabilityZone",
+                availability_zone,
+            )?;
         }
         if let Some(ref backup_retention) = self.backup_retention {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BackupRetention", backup_retention)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BackupRetention",
+                backup_retention,
+            )?;
         }
         if let Some(ref ca_certificate_identifier) = self.ca_certificate_identifier {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaCertificateIdentifier", ca_certificate_identifier)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CaCertificateIdentifier",
+                ca_certificate_identifier,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "MasterDatabaseName", &self.master_database_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "MasterDatabaseName",
+            &self.master_database_name,
+        )?;
         if let Some(ref master_user_password) = self.master_user_password {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MasterUserPassword", master_user_password)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MasterUserPassword",
+                master_user_password,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "MasterUsername", &self.master_username)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "MasterUsername",
+            &self.master_username,
+        )?;
         if let Some(ref preferred_backup_window) = self.preferred_backup_window {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreferredBackupWindow", preferred_backup_window)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PreferredBackupWindow",
+                preferred_backup_window,
+            )?;
         }
         if let Some(ref preferred_maintenance_window) = self.preferred_maintenance_window {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreferredMaintenanceWindow", preferred_maintenance_window)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PreferredMaintenanceWindow",
+                preferred_maintenance_window,
+            )?;
         }
         if let Some(ref publicly_accessible) = self.publicly_accessible {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PubliclyAccessible", publicly_accessible)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PubliclyAccessible",
+                publicly_accessible,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RelationalDatabaseBlueprintId", &self.relational_database_blueprint_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RelationalDatabaseBundleId", &self.relational_database_bundle_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RelationalDatabaseName", &self.relational_database_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RelationalDatabaseBlueprintId",
+            &self.relational_database_blueprint_id,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RelationalDatabaseBundleId",
+            &self.relational_database_bundle_id,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RelationalDatabaseName",
+            &self.relational_database_name,
+        )?;
         if let Some(ref relational_database_parameters) = self.relational_database_parameters {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RelationalDatabaseParameters", relational_database_parameters)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RelationalDatabaseParameters",
+                relational_database_parameters,
+            )?;
         }
         if let Some(ref rotate_master_user_password) = self.rotate_master_user_password {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RotateMasterUserPassword", rotate_master_user_password)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RotateMasterUserPassword",
+                rotate_master_user_password,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -750,7 +895,10 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
                 write!(f, "a struct of type DatabaseProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut availability_zone: Option<::Value<String>> = None;
                 let mut backup_retention: Option<::Value<bool>> = None;
                 let mut ca_certificate_identifier: Option<::Value<String>> = None;
@@ -763,7 +911,9 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
                 let mut relational_database_blueprint_id: Option<::Value<String>> = None;
                 let mut relational_database_bundle_id: Option<::Value<String>> = None;
                 let mut relational_database_name: Option<::Value<String>> = None;
-                let mut relational_database_parameters: Option<::ValueList<self::database::RelationalDatabaseParameter>> = None;
+                let mut relational_database_parameters: Option<
+                    ::ValueList<self::database::RelationalDatabaseParameter>,
+                > = None;
                 let mut rotate_master_user_password: Option<::Value<bool>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -776,7 +926,8 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
                             backup_retention = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "CaCertificateIdentifier" => {
-                            ca_certificate_identifier = ::serde::de::MapAccess::next_value(&mut map)?;
+                            ca_certificate_identifier =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "MasterDatabaseName" => {
                             master_database_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -791,25 +942,31 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
                             preferred_backup_window = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PreferredMaintenanceWindow" => {
-                            preferred_maintenance_window = ::serde::de::MapAccess::next_value(&mut map)?;
+                            preferred_maintenance_window =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PubliclyAccessible" => {
                             publicly_accessible = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RelationalDatabaseBlueprintId" => {
-                            relational_database_blueprint_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                            relational_database_blueprint_id =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RelationalDatabaseBundleId" => {
-                            relational_database_bundle_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                            relational_database_bundle_id =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RelationalDatabaseName" => {
-                            relational_database_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                            relational_database_name =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RelationalDatabaseParameters" => {
-                            relational_database_parameters = ::serde::de::MapAccess::next_value(&mut map)?;
+                            relational_database_parameters =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RotateMasterUserPassword" => {
-                            rotate_master_user_password = ::serde::de::MapAccess::next_value(&mut map)?;
+                            rotate_master_user_password =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -822,15 +979,22 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
                     availability_zone: availability_zone,
                     backup_retention: backup_retention,
                     ca_certificate_identifier: ca_certificate_identifier,
-                    master_database_name: master_database_name.ok_or(::serde::de::Error::missing_field("MasterDatabaseName"))?,
+                    master_database_name: master_database_name
+                        .ok_or(::serde::de::Error::missing_field("MasterDatabaseName"))?,
                     master_user_password: master_user_password,
-                    master_username: master_username.ok_or(::serde::de::Error::missing_field("MasterUsername"))?,
+                    master_username: master_username
+                        .ok_or(::serde::de::Error::missing_field("MasterUsername"))?,
                     preferred_backup_window: preferred_backup_window,
                     preferred_maintenance_window: preferred_maintenance_window,
                     publicly_accessible: publicly_accessible,
-                    relational_database_blueprint_id: relational_database_blueprint_id.ok_or(::serde::de::Error::missing_field("RelationalDatabaseBlueprintId"))?,
-                    relational_database_bundle_id: relational_database_bundle_id.ok_or(::serde::de::Error::missing_field("RelationalDatabaseBundleId"))?,
-                    relational_database_name: relational_database_name.ok_or(::serde::de::Error::missing_field("RelationalDatabaseName"))?,
+                    relational_database_blueprint_id: relational_database_blueprint_id.ok_or(
+                        ::serde::de::Error::missing_field("RelationalDatabaseBlueprintId"),
+                    )?,
+                    relational_database_bundle_id: relational_database_bundle_id.ok_or(
+                        ::serde::de::Error::missing_field("RelationalDatabaseBundleId"),
+                    )?,
+                    relational_database_name: relational_database_name
+                        .ok_or(::serde::de::Error::missing_field("RelationalDatabaseName"))?,
                     relational_database_parameters: relational_database_parameters,
                     rotate_master_user_password: rotate_master_user_password,
                     tags: tags,
@@ -864,7 +1028,7 @@ impl From<DatabaseProperties> for Database {
 /// The [`AWS::Lightsail::Disk`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html) resource type.
 #[derive(Debug, Default)]
 pub struct Disk {
-    properties: DiskProperties
+    properties: DiskProperties,
 }
 
 /// Properties for the `Disk` resource.
@@ -904,7 +1068,11 @@ impl ::serde::Serialize for DiskProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AddOns", add_ons)?;
         }
         if let Some(ref availability_zone) = self.availability_zone {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailabilityZone", availability_zone)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AvailabilityZone",
+                availability_zone,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DiskName", &self.disk_name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "SizeInGb", &self.size_in_gb)?;
@@ -926,7 +1094,10 @@ impl<'de> ::serde::Deserialize<'de> for DiskProperties {
                 write!(f, "a struct of type DiskProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut add_ons: Option<::ValueList<self::disk::AddOn>> = None;
                 let mut availability_zone: Option<::Value<String>> = None;
                 let mut disk_name: Option<::Value<String>> = None;
@@ -990,7 +1161,7 @@ impl From<DiskProperties> for Disk {
 /// The [`AWS::Lightsail::Distribution`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html) resource type.
 #[derive(Debug, Default)]
 pub struct Distribution {
-    properties: DistributionProperties
+    properties: DistributionProperties,
 }
 
 /// Properties for the `Distribution` resource.
@@ -1053,18 +1224,42 @@ impl ::serde::Serialize for DistributionProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BundleId", &self.bundle_id)?;
         if let Some(ref cache_behavior_settings) = self.cache_behavior_settings {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CacheBehaviorSettings", cache_behavior_settings)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CacheBehaviorSettings",
+                cache_behavior_settings,
+            )?;
         }
         if let Some(ref cache_behaviors) = self.cache_behaviors {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CacheBehaviors", cache_behaviors)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CacheBehaviors",
+                cache_behaviors,
+            )?;
         }
         if let Some(ref certificate_name) = self.certificate_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateName", certificate_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CertificateName",
+                certificate_name,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultCacheBehavior", &self.default_cache_behavior)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DistributionName", &self.distribution_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DefaultCacheBehavior",
+            &self.default_cache_behavior,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DistributionName",
+            &self.distribution_name,
+        )?;
         if let Some(ref ip_address_type) = self.ip_address_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IpAddressType", ip_address_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IpAddressType",
+                ip_address_type,
+            )?;
         }
         if let Some(ref is_enabled) = self.is_enabled {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsEnabled", is_enabled)?;
@@ -1078,7 +1273,9 @@ impl ::serde::Serialize for DistributionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for DistributionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<DistributionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<DistributionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1088,12 +1285,20 @@ impl<'de> ::serde::Deserialize<'de> for DistributionProperties {
                 write!(f, "a struct of type DistributionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut bundle_id: Option<::Value<String>> = None;
-                let mut cache_behavior_settings: Option<::Value<self::distribution::CacheSettings>> = None;
-                let mut cache_behaviors: Option<::ValueList<self::distribution::CacheBehaviorPerPath>> = None;
+                let mut cache_behavior_settings: Option<
+                    ::Value<self::distribution::CacheSettings>,
+                > = None;
+                let mut cache_behaviors: Option<
+                    ::ValueList<self::distribution::CacheBehaviorPerPath>,
+                > = None;
                 let mut certificate_name: Option<::Value<String>> = None;
-                let mut default_cache_behavior: Option<::Value<self::distribution::CacheBehavior>> = None;
+                let mut default_cache_behavior: Option<::Value<self::distribution::CacheBehavior>> =
+                    None;
                 let mut distribution_name: Option<::Value<String>> = None;
                 let mut ip_address_type: Option<::Value<String>> = None;
                 let mut is_enabled: Option<::Value<bool>> = None;
@@ -1141,8 +1346,10 @@ impl<'de> ::serde::Deserialize<'de> for DistributionProperties {
                     cache_behavior_settings: cache_behavior_settings,
                     cache_behaviors: cache_behaviors,
                     certificate_name: certificate_name,
-                    default_cache_behavior: default_cache_behavior.ok_or(::serde::de::Error::missing_field("DefaultCacheBehavior"))?,
-                    distribution_name: distribution_name.ok_or(::serde::de::Error::missing_field("DistributionName"))?,
+                    default_cache_behavior: default_cache_behavior
+                        .ok_or(::serde::de::Error::missing_field("DefaultCacheBehavior"))?,
+                    distribution_name: distribution_name
+                        .ok_or(::serde::de::Error::missing_field("DistributionName"))?,
                     ip_address_type: ip_address_type,
                     is_enabled: is_enabled,
                     origin: origin.ok_or(::serde::de::Error::missing_field("Origin"))?,
@@ -1177,7 +1384,7 @@ impl From<DistributionProperties> for Distribution {
 /// The [`AWS::Lightsail::Instance`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html) resource type.
 #[derive(Debug, Default)]
 pub struct Instance {
-    properties: InstanceProperties
+    properties: InstanceProperties,
 }
 
 /// Properties for the `Instance` resource.
@@ -1242,7 +1449,11 @@ impl ::serde::Serialize for InstanceProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AddOns", add_ons)?;
         }
         if let Some(ref availability_zone) = self.availability_zone {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailabilityZone", availability_zone)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AvailabilityZone",
+                availability_zone,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlueprintId", &self.blueprint_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BundleId", &self.bundle_id)?;
@@ -1277,7 +1488,10 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProperties {
                 write!(f, "a struct of type InstanceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut add_ons: Option<::ValueList<self::instance::AddOn>> = None;
                 let mut availability_zone: Option<::Value<String>> = None;
                 let mut blueprint_id: Option<::Value<String>> = None;
@@ -1328,10 +1542,12 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProperties {
                 Ok(InstanceProperties {
                     add_ons: add_ons,
                     availability_zone: availability_zone,
-                    blueprint_id: blueprint_id.ok_or(::serde::de::Error::missing_field("BlueprintId"))?,
+                    blueprint_id: blueprint_id
+                        .ok_or(::serde::de::Error::missing_field("BlueprintId"))?,
                     bundle_id: bundle_id.ok_or(::serde::de::Error::missing_field("BundleId"))?,
                     hardware: hardware,
-                    instance_name: instance_name.ok_or(::serde::de::Error::missing_field("InstanceName"))?,
+                    instance_name: instance_name
+                        .ok_or(::serde::de::Error::missing_field("InstanceName"))?,
                     key_pair_name: key_pair_name,
                     networking: networking,
                     tags: tags,
@@ -1366,7 +1582,7 @@ impl From<InstanceProperties> for Instance {
 /// The [`AWS::Lightsail::LoadBalancer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html) resource type.
 #[derive(Debug, Default)]
 pub struct LoadBalancer {
-    properties: LoadBalancerProperties
+    properties: LoadBalancerProperties,
 }
 
 /// Properties for the `LoadBalancer` resource.
@@ -1418,21 +1634,47 @@ impl ::serde::Serialize for LoadBalancerProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref attached_instances) = self.attached_instances {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AttachedInstances", attached_instances)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AttachedInstances",
+                attached_instances,
+            )?;
         }
         if let Some(ref health_check_path) = self.health_check_path {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckPath", health_check_path)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckPath",
+                health_check_path,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstancePort", &self.instance_port)?;
         if let Some(ref ip_address_type) = self.ip_address_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IpAddressType", ip_address_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IpAddressType",
+                ip_address_type,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoadBalancerName", &self.load_balancer_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "LoadBalancerName",
+            &self.load_balancer_name,
+        )?;
         if let Some(ref session_stickiness_enabled) = self.session_stickiness_enabled {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SessionStickinessEnabled", session_stickiness_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SessionStickinessEnabled",
+                session_stickiness_enabled,
+            )?;
         }
-        if let Some(ref session_stickiness_lb_cookie_duration_seconds) = self.session_stickiness_lb_cookie_duration_seconds {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SessionStickinessLBCookieDurationSeconds", session_stickiness_lb_cookie_duration_seconds)?;
+        if let Some(ref session_stickiness_lb_cookie_duration_seconds) =
+            self.session_stickiness_lb_cookie_duration_seconds
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SessionStickinessLBCookieDurationSeconds",
+                session_stickiness_lb_cookie_duration_seconds,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -1442,7 +1684,9 @@ impl ::serde::Serialize for LoadBalancerProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LoadBalancerProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LoadBalancerProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LoadBalancerProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1452,14 +1696,18 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerProperties {
                 write!(f, "a struct of type LoadBalancerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut attached_instances: Option<::ValueList<String>> = None;
                 let mut health_check_path: Option<::Value<String>> = None;
                 let mut instance_port: Option<::Value<u32>> = None;
                 let mut ip_address_type: Option<::Value<String>> = None;
                 let mut load_balancer_name: Option<::Value<String>> = None;
                 let mut session_stickiness_enabled: Option<::Value<bool>> = None;
-                let mut session_stickiness_lb_cookie_duration_seconds: Option<::Value<String>> = None;
+                let mut session_stickiness_lb_cookie_duration_seconds: Option<::Value<String>> =
+                    None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -1480,10 +1728,12 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerProperties {
                             load_balancer_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SessionStickinessEnabled" => {
-                            session_stickiness_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                            session_stickiness_enabled =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SessionStickinessLBCookieDurationSeconds" => {
-                            session_stickiness_lb_cookie_duration_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                            session_stickiness_lb_cookie_duration_seconds =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1495,11 +1745,14 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerProperties {
                 Ok(LoadBalancerProperties {
                     attached_instances: attached_instances,
                     health_check_path: health_check_path,
-                    instance_port: instance_port.ok_or(::serde::de::Error::missing_field("InstancePort"))?,
+                    instance_port: instance_port
+                        .ok_or(::serde::de::Error::missing_field("InstancePort"))?,
                     ip_address_type: ip_address_type,
-                    load_balancer_name: load_balancer_name.ok_or(::serde::de::Error::missing_field("LoadBalancerName"))?,
+                    load_balancer_name: load_balancer_name
+                        .ok_or(::serde::de::Error::missing_field("LoadBalancerName"))?,
                     session_stickiness_enabled: session_stickiness_enabled,
-                    session_stickiness_lb_cookie_duration_seconds: session_stickiness_lb_cookie_duration_seconds,
+                    session_stickiness_lb_cookie_duration_seconds:
+                        session_stickiness_lb_cookie_duration_seconds,
                     tags: tags,
                 })
             }
@@ -1531,7 +1784,7 @@ impl From<LoadBalancerProperties> for LoadBalancer {
 /// The [`AWS::Lightsail::LoadBalancerTlsCertificate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html) resource type.
 #[derive(Debug, Default)]
 pub struct LoadBalancerTlsCertificate {
-    properties: LoadBalancerTlsCertificateProperties
+    properties: LoadBalancerTlsCertificateProperties,
 }
 
 /// Properties for the `LoadBalancerTlsCertificate` resource.
@@ -1568,20 +1821,38 @@ impl ::serde::Serialize for LoadBalancerTlsCertificateProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref certificate_alternative_names) = self.certificate_alternative_names {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateAlternativeNames", certificate_alternative_names)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CertificateAlternativeNames",
+                certificate_alternative_names,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateDomainName", &self.certificate_domain_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateName", &self.certificate_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "CertificateDomainName",
+            &self.certificate_domain_name,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "CertificateName",
+            &self.certificate_name,
+        )?;
         if let Some(ref is_attached) = self.is_attached {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsAttached", is_attached)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoadBalancerName", &self.load_balancer_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "LoadBalancerName",
+            &self.load_balancer_name,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for LoadBalancerTlsCertificateProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LoadBalancerTlsCertificateProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LoadBalancerTlsCertificateProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1591,7 +1862,10 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerTlsCertificateProperties {
                 write!(f, "a struct of type LoadBalancerTlsCertificateProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut certificate_alternative_names: Option<::ValueList<String>> = None;
                 let mut certificate_domain_name: Option<::Value<String>> = None;
                 let mut certificate_name: Option<::Value<String>> = None;
@@ -1601,7 +1875,8 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerTlsCertificateProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "CertificateAlternativeNames" => {
-                            certificate_alternative_names = ::serde::de::MapAccess::next_value(&mut map)?;
+                            certificate_alternative_names =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "CertificateDomainName" => {
                             certificate_domain_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1621,10 +1896,13 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerTlsCertificateProperties {
 
                 Ok(LoadBalancerTlsCertificateProperties {
                     certificate_alternative_names: certificate_alternative_names,
-                    certificate_domain_name: certificate_domain_name.ok_or(::serde::de::Error::missing_field("CertificateDomainName"))?,
-                    certificate_name: certificate_name.ok_or(::serde::de::Error::missing_field("CertificateName"))?,
+                    certificate_domain_name: certificate_domain_name
+                        .ok_or(::serde::de::Error::missing_field("CertificateDomainName"))?,
+                    certificate_name: certificate_name
+                        .ok_or(::serde::de::Error::missing_field("CertificateName"))?,
                     is_attached: is_attached,
-                    load_balancer_name: load_balancer_name.ok_or(::serde::de::Error::missing_field("LoadBalancerName"))?,
+                    load_balancer_name: load_balancer_name
+                        .ok_or(::serde::de::Error::missing_field("LoadBalancerName"))?,
                 })
             }
         }
@@ -1655,7 +1933,7 @@ impl From<LoadBalancerTlsCertificateProperties> for LoadBalancerTlsCertificate {
 /// The [`AWS::Lightsail::StaticIp`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-staticip.html) resource type.
 #[derive(Debug, Default)]
 pub struct StaticIp {
-    properties: StaticIpProperties
+    properties: StaticIpProperties,
 }
 
 /// Properties for the `StaticIp` resource.
@@ -1679,7 +1957,11 @@ impl ::serde::Serialize for StaticIpProperties {
         if let Some(ref attached_to) = self.attached_to {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AttachedTo", attached_to)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "StaticIpName", &self.static_ip_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "StaticIpName",
+            &self.static_ip_name,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -1695,7 +1977,10 @@ impl<'de> ::serde::Deserialize<'de> for StaticIpProperties {
                 write!(f, "a struct of type StaticIpProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut attached_to: Option<::Value<String>> = None;
                 let mut static_ip_name: Option<::Value<String>> = None;
 
@@ -1713,7 +1998,8 @@ impl<'de> ::serde::Deserialize<'de> for StaticIpProperties {
 
                 Ok(StaticIpProperties {
                     attached_to: attached_to,
-                    static_ip_name: static_ip_name.ok_or(::serde::de::Error::missing_field("StaticIpName"))?,
+                    static_ip_name: static_ip_name
+                        .ok_or(::serde::de::Error::missing_field("StaticIpName"))?,
                 })
             }
         }
@@ -1763,7 +2049,11 @@ pub mod bucket {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_public_overrides) = self.allow_public_overrides {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowPublicOverrides", allow_public_overrides)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowPublicOverrides",
+                    allow_public_overrides,
+                )?;
             }
             if let Some(ref get_object) = self.get_object {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "GetObject", get_object)?;
@@ -1783,14 +2073,20 @@ pub mod bucket {
                     write!(f, "a struct of type AccessRules")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allow_public_overrides: Option<::Value<bool>> = None;
                     let mut get_object: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllowPublicOverrides" => {
-                                allow_public_overrides = ::serde::de::MapAccess::next_value(&mut map)?;
+                                allow_public_overrides =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "GetObject" => {
                                 get_object = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1851,7 +2147,11 @@ pub mod container {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Command", command)?;
             }
             if let Some(ref container_name) = self.container_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerName", container_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContainerName",
+                    container_name,
+                )?;
             }
             if let Some(ref environment) = self.environment {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Environment", environment)?;
@@ -1877,14 +2177,19 @@ pub mod container {
                     write!(f, "a struct of type Container")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut command: Option<::ValueList<String>> = None;
                     let mut container_name: Option<::Value<String>> = None;
                     let mut environment: Option<::ValueList<EnvironmentVariable>> = None;
                     let mut image: Option<::Value<String>> = None;
                     let mut ports: Option<::ValueList<PortInfo>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Command" => {
                                 command = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1941,14 +2246,20 @@ pub mod container {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Containers", containers)?;
             }
             if let Some(ref public_endpoint) = self.public_endpoint {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PublicEndpoint", public_endpoint)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PublicEndpoint",
+                    public_endpoint,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ContainerServiceDeployment {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ContainerServiceDeployment, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ContainerServiceDeployment, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1958,11 +2269,16 @@ pub mod container {
                     write!(f, "a struct of type ContainerServiceDeployment")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut containers: Option<::ValueList<Container>> = None;
                     let mut public_endpoint: Option<::Value<PublicEndpoint>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Containers" => {
                                 containers = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2014,7 +2330,9 @@ pub mod container {
     }
 
     impl ::codec::DeserializeValue for EnvironmentVariable {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EnvironmentVariable, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EnvironmentVariable, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2024,11 +2342,16 @@ pub mod container {
                     write!(f, "a struct of type EnvironmentVariable")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut value: Option<::Value<String>> = None;
                     let mut variable: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Value" => {
                                 value = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2090,29 +2413,51 @@ pub mod container {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref healthy_threshold) = self.healthy_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthyThreshold", healthy_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HealthyThreshold",
+                    healthy_threshold,
+                )?;
             }
             if let Some(ref interval_seconds) = self.interval_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IntervalSeconds", interval_seconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IntervalSeconds",
+                    interval_seconds,
+                )?;
             }
             if let Some(ref path) = self.path {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", path)?;
             }
             if let Some(ref success_codes) = self.success_codes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SuccessCodes", success_codes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SuccessCodes",
+                    success_codes,
+                )?;
             }
             if let Some(ref timeout_seconds) = self.timeout_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimeoutSeconds", timeout_seconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimeoutSeconds",
+                    timeout_seconds,
+                )?;
             }
             if let Some(ref unhealthy_threshold) = self.unhealthy_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UnhealthyThreshold", unhealthy_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UnhealthyThreshold",
+                    unhealthy_threshold,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HealthCheckConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HealthCheckConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HealthCheckConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2122,7 +2467,10 @@ pub mod container {
                     write!(f, "a struct of type HealthCheckConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut healthy_threshold: Option<::Value<u32>> = None;
                     let mut interval_seconds: Option<::Value<u32>> = None;
                     let mut path: Option<::Value<String>> = None;
@@ -2130,7 +2478,9 @@ pub mod container {
                     let mut timeout_seconds: Option<::Value<u32>> = None;
                     let mut unhealthy_threshold: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "HealthyThreshold" => {
                                 healthy_threshold = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2208,11 +2558,16 @@ pub mod container {
                     write!(f, "a struct of type PortInfo")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut port: Option<::Value<String>> = None;
                     let mut protocol: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Port" => {
                                 port = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2254,7 +2609,11 @@ pub mod container {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref certificate_name) = self.certificate_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateName", certificate_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CertificateName",
+                    certificate_name,
+                )?;
             }
             if let Some(ref domain_names) = self.domain_names {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainNames", domain_names)?;
@@ -2264,7 +2623,9 @@ pub mod container {
     }
 
     impl ::codec::DeserializeValue for PublicDomainName {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PublicDomainName, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PublicDomainName, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2274,11 +2635,16 @@ pub mod container {
                     write!(f, "a struct of type PublicDomainName")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut certificate_name: Option<::Value<String>> = None;
                     let mut domain_names: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CertificateName" => {
                                 certificate_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2325,20 +2691,34 @@ pub mod container {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_name) = self.container_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerName", container_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContainerName",
+                    container_name,
+                )?;
             }
             if let Some(ref container_port) = self.container_port {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerPort", container_port)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContainerPort",
+                    container_port,
+                )?;
             }
             if let Some(ref health_check_config) = self.health_check_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckConfig", health_check_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HealthCheckConfig",
+                    health_check_config,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for PublicEndpoint {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PublicEndpoint, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PublicEndpoint, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2348,12 +2728,17 @@ pub mod container {
                     write!(f, "a struct of type PublicEndpoint")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut container_name: Option<::Value<String>> = None;
                     let mut container_port: Option<::Value<u32>> = None;
                     let mut health_check_config: Option<::Value<HealthCheckConfig>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ContainerName" => {
                                 container_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2433,7 +2818,11 @@ pub mod database {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_values) = self.allowed_values {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowedValues", allowed_values)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowedValues",
+                    allowed_values,
+                )?;
             }
             if let Some(ref apply_method) = self.apply_method {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplyMethod", apply_method)?;
@@ -2448,20 +2837,34 @@ pub mod database {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
             }
             if let Some(ref is_modifiable) = self.is_modifiable {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsModifiable", is_modifiable)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IsModifiable",
+                    is_modifiable,
+                )?;
             }
             if let Some(ref parameter_name) = self.parameter_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterName", parameter_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ParameterName",
+                    parameter_name,
+                )?;
             }
             if let Some(ref parameter_value) = self.parameter_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterValue", parameter_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ParameterValue",
+                    parameter_value,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RelationalDatabaseParameter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RelationalDatabaseParameter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RelationalDatabaseParameter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2471,7 +2874,10 @@ pub mod database {
                     write!(f, "a struct of type RelationalDatabaseParameter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allowed_values: Option<::Value<String>> = None;
                     let mut apply_method: Option<::Value<String>> = None;
                     let mut apply_type: Option<::Value<String>> = None;
@@ -2481,7 +2887,9 @@ pub mod database {
                     let mut parameter_name: Option<::Value<String>> = None;
                     let mut parameter_value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllowedValues" => {
                                 allowed_values = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2557,7 +2965,11 @@ pub mod disk {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AddOnType", &self.add_on_type)?;
             if let Some(ref auto_snapshot_add_on_request) = self.auto_snapshot_add_on_request {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoSnapshotAddOnRequest", auto_snapshot_add_on_request)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AutoSnapshotAddOnRequest",
+                    auto_snapshot_add_on_request,
+                )?;
             }
             if let Some(ref status) = self.status {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Status", status)?;
@@ -2577,18 +2989,24 @@ pub mod disk {
                     write!(f, "a struct of type AddOn")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut add_on_type: Option<::Value<String>> = None;
                     let mut auto_snapshot_add_on_request: Option<::Value<AutoSnapshotAddOn>> = None;
                     let mut status: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AddOnType" => {
                                 add_on_type = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AutoSnapshotAddOnRequest" => {
-                                auto_snapshot_add_on_request = ::serde::de::MapAccess::next_value(&mut map)?;
+                                auto_snapshot_add_on_request =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Status" => {
                                 status = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2598,7 +3016,8 @@ pub mod disk {
                     }
 
                     Ok(AddOn {
-                        add_on_type: add_on_type.ok_or(::serde::de::Error::missing_field("AddOnType"))?,
+                        add_on_type: add_on_type
+                            .ok_or(::serde::de::Error::missing_field("AddOnType"))?,
                         auto_snapshot_add_on_request: auto_snapshot_add_on_request,
                         status: status,
                     })
@@ -2623,14 +3042,20 @@ pub mod disk {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref snapshot_time_of_day) = self.snapshot_time_of_day {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnapshotTimeOfDay", snapshot_time_of_day)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SnapshotTimeOfDay",
+                    snapshot_time_of_day,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AutoSnapshotAddOn {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AutoSnapshotAddOn, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AutoSnapshotAddOn, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2640,13 +3065,19 @@ pub mod disk {
                     write!(f, "a struct of type AutoSnapshotAddOn")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut snapshot_time_of_day: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SnapshotTimeOfDay" => {
-                                snapshot_time_of_day = ::serde::de::MapAccess::next_value(&mut map)?;
+                                snapshot_time_of_day =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2687,7 +3118,9 @@ pub mod distribution {
     }
 
     impl ::codec::DeserializeValue for CacheBehavior {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CacheBehavior, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CacheBehavior, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2697,10 +3130,15 @@ pub mod distribution {
                     write!(f, "a struct of type CacheBehavior")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut behavior: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Behavior" => {
                                 behavior = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2709,9 +3147,7 @@ pub mod distribution {
                         }
                     }
 
-                    Ok(CacheBehavior {
-                        behavior: behavior,
-                    })
+                    Ok(CacheBehavior { behavior: behavior })
                 }
             }
 
@@ -2748,7 +3184,9 @@ pub mod distribution {
     }
 
     impl ::codec::DeserializeValue for CacheBehaviorPerPath {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CacheBehaviorPerPath, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CacheBehaviorPerPath, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2758,11 +3196,16 @@ pub mod distribution {
                     write!(f, "a struct of type CacheBehaviorPerPath")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut behavior: Option<::Value<String>> = None;
                     let mut path: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Behavior" => {
                                 behavior = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2834,22 +3277,42 @@ pub mod distribution {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_http_methods) = self.allowed_http_methods {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowedHTTPMethods", allowed_http_methods)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowedHTTPMethods",
+                    allowed_http_methods,
+                )?;
             }
             if let Some(ref cached_http_methods) = self.cached_http_methods {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CachedHTTPMethods", cached_http_methods)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CachedHTTPMethods",
+                    cached_http_methods,
+                )?;
             }
             if let Some(ref default_ttl) = self.default_ttl {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultTTL", default_ttl)?;
             }
             if let Some(ref forwarded_cookies) = self.forwarded_cookies {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ForwardedCookies", forwarded_cookies)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ForwardedCookies",
+                    forwarded_cookies,
+                )?;
             }
             if let Some(ref forwarded_headers) = self.forwarded_headers {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ForwardedHeaders", forwarded_headers)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ForwardedHeaders",
+                    forwarded_headers,
+                )?;
             }
             if let Some(ref forwarded_query_strings) = self.forwarded_query_strings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ForwardedQueryStrings", forwarded_query_strings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ForwardedQueryStrings",
+                    forwarded_query_strings,
+                )?;
             }
             if let Some(ref maximum_ttl) = self.maximum_ttl {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaximumTTL", maximum_ttl)?;
@@ -2862,7 +3325,9 @@ pub mod distribution {
     }
 
     impl ::codec::DeserializeValue for CacheSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CacheSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CacheSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2872,7 +3337,10 @@ pub mod distribution {
                     write!(f, "a struct of type CacheSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allowed_http_methods: Option<::Value<String>> = None;
                     let mut cached_http_methods: Option<::Value<String>> = None;
                     let mut default_ttl: Option<::Value<u32>> = None;
@@ -2882,10 +3350,13 @@ pub mod distribution {
                     let mut maximum_ttl: Option<::Value<u32>> = None;
                     let mut minimum_ttl: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllowedHTTPMethods" => {
-                                allowed_http_methods = ::serde::de::MapAccess::next_value(&mut map)?;
+                                allowed_http_methods =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CachedHTTPMethods" => {
                                 cached_http_methods = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2900,7 +3371,8 @@ pub mod distribution {
                                 forwarded_headers = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ForwardedQueryStrings" => {
-                                forwarded_query_strings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                forwarded_query_strings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaximumTTL" => {
                                 maximum_ttl = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2948,7 +3420,11 @@ pub mod distribution {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cookies_allow_list) = self.cookies_allow_list {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CookiesAllowList", cookies_allow_list)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CookiesAllowList",
+                    cookies_allow_list,
+                )?;
             }
             if let Some(ref option) = self.option {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Option", option)?;
@@ -2968,11 +3444,16 @@ pub mod distribution {
                     write!(f, "a struct of type CookieObject")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cookies_allow_list: Option<::ValueList<String>> = None;
                     let mut option: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CookiesAllowList" => {
                                 cookies_allow_list = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3014,7 +3495,11 @@ pub mod distribution {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref headers_allow_list) = self.headers_allow_list {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HeadersAllowList", headers_allow_list)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HeadersAllowList",
+                    headers_allow_list,
+                )?;
             }
             if let Some(ref option) = self.option {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Option", option)?;
@@ -3034,11 +3519,16 @@ pub mod distribution {
                     write!(f, "a struct of type HeaderObject")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut headers_allow_list: Option<::ValueList<String>> = None;
                     let mut option: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "HeadersAllowList" => {
                                 headers_allow_list = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3088,7 +3578,11 @@ pub mod distribution {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
             }
             if let Some(ref protocol_policy) = self.protocol_policy {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProtocolPolicy", protocol_policy)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ProtocolPolicy",
+                    protocol_policy,
+                )?;
             }
             if let Some(ref region_name) = self.region_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegionName", region_name)?;
@@ -3108,12 +3602,17 @@ pub mod distribution {
                     write!(f, "a struct of type InputOrigin")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut protocol_policy: Option<::Value<String>> = None;
                     let mut region_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3162,14 +3661,20 @@ pub mod distribution {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Option", option)?;
             }
             if let Some(ref query_strings_allow_list) = self.query_strings_allow_list {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueryStringsAllowList", query_strings_allow_list)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "QueryStringsAllowList",
+                    query_strings_allow_list,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for QueryStringObject {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<QueryStringObject, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<QueryStringObject, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3179,17 +3684,23 @@ pub mod distribution {
                     write!(f, "a struct of type QueryStringObject")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut option: Option<::Value<bool>> = None;
                     let mut query_strings_allow_list: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Option" => {
                                 option = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "QueryStringsAllowList" => {
-                                query_strings_allow_list = ::serde::de::MapAccess::next_value(&mut map)?;
+                                query_strings_allow_list =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3235,7 +3746,11 @@ pub mod instance {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AddOnType", &self.add_on_type)?;
             if let Some(ref auto_snapshot_add_on_request) = self.auto_snapshot_add_on_request {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoSnapshotAddOnRequest", auto_snapshot_add_on_request)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AutoSnapshotAddOnRequest",
+                    auto_snapshot_add_on_request,
+                )?;
             }
             if let Some(ref status) = self.status {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Status", status)?;
@@ -3255,18 +3770,24 @@ pub mod instance {
                     write!(f, "a struct of type AddOn")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut add_on_type: Option<::Value<String>> = None;
                     let mut auto_snapshot_add_on_request: Option<::Value<AutoSnapshotAddOn>> = None;
                     let mut status: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AddOnType" => {
                                 add_on_type = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AutoSnapshotAddOnRequest" => {
-                                auto_snapshot_add_on_request = ::serde::de::MapAccess::next_value(&mut map)?;
+                                auto_snapshot_add_on_request =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Status" => {
                                 status = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3276,7 +3797,8 @@ pub mod instance {
                     }
 
                     Ok(AddOn {
-                        add_on_type: add_on_type.ok_or(::serde::de::Error::missing_field("AddOnType"))?,
+                        add_on_type: add_on_type
+                            .ok_or(::serde::de::Error::missing_field("AddOnType"))?,
                         auto_snapshot_add_on_request: auto_snapshot_add_on_request,
                         status: status,
                     })
@@ -3301,14 +3823,20 @@ pub mod instance {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref snapshot_time_of_day) = self.snapshot_time_of_day {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnapshotTimeOfDay", snapshot_time_of_day)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SnapshotTimeOfDay",
+                    snapshot_time_of_day,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AutoSnapshotAddOn {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AutoSnapshotAddOn, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AutoSnapshotAddOn, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3318,13 +3846,19 @@ pub mod instance {
                     write!(f, "a struct of type AutoSnapshotAddOn")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut snapshot_time_of_day: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SnapshotTimeOfDay" => {
-                                snapshot_time_of_day = ::serde::de::MapAccess::next_value(&mut map)?;
+                                snapshot_time_of_day =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3387,14 +3921,22 @@ pub mod instance {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AttachedTo", attached_to)?;
             }
             if let Some(ref attachment_state) = self.attachment_state {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AttachmentState", attachment_state)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AttachmentState",
+                    attachment_state,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DiskName", &self.disk_name)?;
             if let Some(ref iops) = self.iops {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "IOPS", iops)?;
             }
             if let Some(ref is_system_disk) = self.is_system_disk {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsSystemDisk", is_system_disk)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IsSystemDisk",
+                    is_system_disk,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", &self.path)?;
             if let Some(ref size_in_gb) = self.size_in_gb {
@@ -3415,7 +3957,10 @@ pub mod instance {
                     write!(f, "a struct of type Disk")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut attached_to: Option<::Value<String>> = None;
                     let mut attachment_state: Option<::Value<String>> = None;
                     let mut disk_name: Option<::Value<String>> = None;
@@ -3424,7 +3969,9 @@ pub mod instance {
                     let mut path: Option<::Value<String>> = None;
                     let mut size_in_gb: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AttachedTo" => {
                                 attached_to = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3454,7 +4001,8 @@ pub mod instance {
                     Ok(Disk {
                         attached_to: attached_to,
                         attachment_state: attachment_state,
-                        disk_name: disk_name.ok_or(::serde::de::Error::missing_field("DiskName"))?,
+                        disk_name: disk_name
+                            .ok_or(::serde::de::Error::missing_field("DiskName"))?,
                         iops: iops,
                         is_system_disk: is_system_disk,
                         path: path.ok_or(::serde::de::Error::missing_field("Path"))?,
@@ -3497,7 +4045,11 @@ pub mod instance {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Disks", disks)?;
             }
             if let Some(ref ram_size_in_gb) = self.ram_size_in_gb {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RamSizeInGb", ram_size_in_gb)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RamSizeInGb",
+                    ram_size_in_gb,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -3514,12 +4066,17 @@ pub mod instance {
                     write!(f, "a struct of type Hardware")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cpu_count: Option<::Value<u32>> = None;
                     let mut disks: Option<::ValueList<Disk>> = None;
                     let mut ram_size_in_gb: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CpuCount" => {
                                 cpu_count = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3565,7 +4122,11 @@ pub mod instance {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref availability_zone) = self.availability_zone {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailabilityZone", availability_zone)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AvailabilityZone",
+                    availability_zone,
+                )?;
             }
             if let Some(ref region_name) = self.region_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegionName", region_name)?;
@@ -3585,11 +4146,16 @@ pub mod instance {
                     write!(f, "a struct of type Location")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut availability_zone: Option<::Value<String>> = None;
                     let mut region_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AvailabilityZone" => {
                                 availability_zone = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3626,14 +4192,20 @@ pub mod instance {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref gb_per_month_allocated) = self.gb_per_month_allocated {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GbPerMonthAllocated", gb_per_month_allocated)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GbPerMonthAllocated",
+                    gb_per_month_allocated,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MonthlyTransfer {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MonthlyTransfer, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MonthlyTransfer, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3643,13 +4215,19 @@ pub mod instance {
                     write!(f, "a struct of type MonthlyTransfer")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut gb_per_month_allocated: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "GbPerMonthAllocated" => {
-                                gb_per_month_allocated = ::serde::de::MapAccess::next_value(&mut map)?;
+                                gb_per_month_allocated =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3684,7 +4262,11 @@ pub mod instance {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref monthly_transfer) = self.monthly_transfer {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MonthlyTransfer", monthly_transfer)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MonthlyTransfer",
+                    monthly_transfer,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ports", &self.ports)?;
             ::serde::ser::SerializeMap::end(map)
@@ -3702,11 +4284,16 @@ pub mod instance {
                     write!(f, "a struct of type Networking")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut monthly_transfer: Option<::Value<MonthlyTransfer>> = None;
                     let mut ports: Option<::ValueList<Port>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MonthlyTransfer" => {
                                 monthly_transfer = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3788,7 +4375,11 @@ pub mod instance {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_direction) = self.access_direction {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccessDirection", access_direction)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AccessDirection",
+                    access_direction,
+                )?;
             }
             if let Some(ref access_from) = self.access_from {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccessFrom", access_from)?;
@@ -3797,7 +4388,11 @@ pub mod instance {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccessType", access_type)?;
             }
             if let Some(ref cidr_list_aliases) = self.cidr_list_aliases {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CidrListAliases", cidr_list_aliases)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CidrListAliases",
+                    cidr_list_aliases,
+                )?;
             }
             if let Some(ref cidrs) = self.cidrs {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Cidrs", cidrs)?;
@@ -3832,7 +4427,10 @@ pub mod instance {
                     write!(f, "a struct of type Port")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut access_direction: Option<::Value<String>> = None;
                     let mut access_from: Option<::Value<String>> = None;
                     let mut access_type: Option<::Value<String>> = None;
@@ -3844,7 +4442,9 @@ pub mod instance {
                     let mut protocol: Option<::Value<String>> = None;
                     let mut to_port: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AccessDirection" => {
                                 access_direction = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3938,11 +4538,16 @@ pub mod instance {
                     write!(f, "a struct of type State")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut code: Option<::Value<u32>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Code" => {
                                 code = ::serde::de::MapAccess::next_value(&mut map)?;

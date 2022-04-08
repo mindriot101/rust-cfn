@@ -3,7 +3,7 @@
 /// The [`AWS::Connect::ContactFlow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflow.html) resource type.
 #[derive(Debug, Default)]
 pub struct ContactFlow {
-    properties: ContactFlowProperties
+    properties: ContactFlowProperties,
 }
 
 /// Properties for the `ContactFlow` resource.
@@ -79,7 +79,10 @@ impl<'de> ::serde::Deserialize<'de> for ContactFlowProperties {
                 write!(f, "a struct of type ContactFlowProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut content: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut instance_arn: Option<::Value<String>> = None;
@@ -118,7 +121,8 @@ impl<'de> ::serde::Deserialize<'de> for ContactFlowProperties {
                 Ok(ContactFlowProperties {
                     content: content.ok_or(::serde::de::Error::missing_field("Content"))?,
                     description: description,
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     state: state,
                     tags: tags,
@@ -153,7 +157,7 @@ impl From<ContactFlowProperties> for ContactFlow {
 /// The [`AWS::Connect::ContactFlowModule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html) resource type.
 #[derive(Debug, Default)]
 pub struct ContactFlowModule {
-    properties: ContactFlowModuleProperties
+    properties: ContactFlowModuleProperties,
 }
 
 /// Properties for the `ContactFlowModule` resource.
@@ -211,7 +215,9 @@ impl ::serde::Serialize for ContactFlowModuleProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ContactFlowModuleProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ContactFlowModuleProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ContactFlowModuleProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -221,7 +227,10 @@ impl<'de> ::serde::Deserialize<'de> for ContactFlowModuleProperties {
                 write!(f, "a struct of type ContactFlowModuleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut content: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut instance_arn: Option<::Value<String>> = None;
@@ -256,7 +265,8 @@ impl<'de> ::serde::Deserialize<'de> for ContactFlowModuleProperties {
                 Ok(ContactFlowModuleProperties {
                     content: content.ok_or(::serde::de::Error::missing_field("Content"))?,
                     description: description,
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     state: state,
                     tags: tags,
@@ -290,7 +300,7 @@ impl From<ContactFlowModuleProperties> for ContactFlowModule {
 /// The [`AWS::Connect::HoursOfOperation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html) resource type.
 #[derive(Debug, Default)]
 pub struct HoursOfOperation {
-    properties: HoursOfOperationProperties
+    properties: HoursOfOperationProperties,
 }
 
 /// Properties for the `HoursOfOperation` resource.
@@ -346,7 +356,9 @@ impl ::serde::Serialize for HoursOfOperationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for HoursOfOperationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<HoursOfOperationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<HoursOfOperationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -356,8 +368,13 @@ impl<'de> ::serde::Deserialize<'de> for HoursOfOperationProperties {
                 write!(f, "a struct of type HoursOfOperationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut config: Option<::ValueList<self::hours_of_operation::HoursOfOperationConfig>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut config: Option<
+                    ::ValueList<self::hours_of_operation::HoursOfOperationConfig>,
+                > = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut instance_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -391,7 +408,8 @@ impl<'de> ::serde::Deserialize<'de> for HoursOfOperationProperties {
                 Ok(HoursOfOperationProperties {
                     config: config.ok_or(::serde::de::Error::missing_field("Config"))?,
                     description: description,
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     tags: tags,
                     time_zone: time_zone.ok_or(::serde::de::Error::missing_field("TimeZone"))?,
@@ -425,7 +443,7 @@ impl From<HoursOfOperationProperties> for HoursOfOperation {
 /// The [`AWS::Connect::QuickConnect`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-quickconnect.html) resource type.
 #[derive(Debug, Default)]
 pub struct QuickConnect {
-    properties: QuickConnectProperties
+    properties: QuickConnectProperties,
 }
 
 /// Properties for the `QuickConnect` resource.
@@ -466,7 +484,11 @@ impl ::serde::Serialize for QuickConnectProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceArn", &self.instance_arn)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "QuickConnectConfig", &self.quick_connect_config)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "QuickConnectConfig",
+            &self.quick_connect_config,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -475,7 +497,9 @@ impl ::serde::Serialize for QuickConnectProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for QuickConnectProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<QuickConnectProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<QuickConnectProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -485,11 +509,16 @@ impl<'de> ::serde::Deserialize<'de> for QuickConnectProperties {
                 write!(f, "a struct of type QuickConnectProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut instance_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut quick_connect_config: Option<::Value<self::quick_connect::QuickConnectConfig>> = None;
+                let mut quick_connect_config: Option<
+                    ::Value<self::quick_connect::QuickConnectConfig>,
+                > = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -515,9 +544,11 @@ impl<'de> ::serde::Deserialize<'de> for QuickConnectProperties {
 
                 Ok(QuickConnectProperties {
                     description: description,
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    quick_connect_config: quick_connect_config.ok_or(::serde::de::Error::missing_field("QuickConnectConfig"))?,
+                    quick_connect_config: quick_connect_config
+                        .ok_or(::serde::de::Error::missing_field("QuickConnectConfig"))?,
                     tags: tags,
                 })
             }
@@ -549,7 +580,7 @@ impl From<QuickConnectProperties> for QuickConnect {
 /// The [`AWS::Connect::User`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html) resource type.
 #[derive(Debug, Default)]
 pub struct User {
-    properties: UserProperties
+    properties: UserProperties,
 }
 
 /// Properties for the `User` resource.
@@ -611,10 +642,18 @@ impl ::serde::Serialize for UserProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref directory_user_id) = self.directory_user_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DirectoryUserId", directory_user_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DirectoryUserId",
+                directory_user_id,
+            )?;
         }
         if let Some(ref hierarchy_group_arn) = self.hierarchy_group_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HierarchyGroupArn", hierarchy_group_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HierarchyGroupArn",
+                hierarchy_group_arn,
+            )?;
         }
         if let Some(ref identity_info) = self.identity_info {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IdentityInfo", identity_info)?;
@@ -624,8 +663,16 @@ impl ::serde::Serialize for UserProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", password)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PhoneConfig", &self.phone_config)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoutingProfileArn", &self.routing_profile_arn)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityProfileArns", &self.security_profile_arns)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RoutingProfileArn",
+            &self.routing_profile_arn,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SecurityProfileArns",
+            &self.security_profile_arns,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -645,7 +692,10 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                 write!(f, "a struct of type UserProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut directory_user_id: Option<::Value<String>> = None;
                 let mut hierarchy_group_arn: Option<::Value<String>> = None;
                 let mut identity_info: Option<::Value<self::user::UserIdentityInfo>> = None;
@@ -697,11 +747,15 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                     directory_user_id: directory_user_id,
                     hierarchy_group_arn: hierarchy_group_arn,
                     identity_info: identity_info,
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
                     password: password,
-                    phone_config: phone_config.ok_or(::serde::de::Error::missing_field("PhoneConfig"))?,
-                    routing_profile_arn: routing_profile_arn.ok_or(::serde::de::Error::missing_field("RoutingProfileArn"))?,
-                    security_profile_arns: security_profile_arns.ok_or(::serde::de::Error::missing_field("SecurityProfileArns"))?,
+                    phone_config: phone_config
+                        .ok_or(::serde::de::Error::missing_field("PhoneConfig"))?,
+                    routing_profile_arn: routing_profile_arn
+                        .ok_or(::serde::de::Error::missing_field("RoutingProfileArn"))?,
+                    security_profile_arns: security_profile_arns
+                        .ok_or(::serde::de::Error::missing_field("SecurityProfileArns"))?,
                     tags: tags,
                     username: username.ok_or(::serde::de::Error::missing_field("Username"))?,
                 })
@@ -734,7 +788,7 @@ impl From<UserProperties> for User {
 /// The [`AWS::Connect::UserHierarchyGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-userhierarchygroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct UserHierarchyGroup {
-    properties: UserHierarchyGroupProperties
+    properties: UserHierarchyGroupProperties,
 }
 
 /// Properties for the `UserHierarchyGroup` resource.
@@ -763,14 +817,20 @@ impl ::serde::Serialize for UserHierarchyGroupProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceArn", &self.instance_arn)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref parent_group_arn) = self.parent_group_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParentGroupArn", parent_group_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ParentGroupArn",
+                parent_group_arn,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for UserHierarchyGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<UserHierarchyGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<UserHierarchyGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -780,7 +840,10 @@ impl<'de> ::serde::Deserialize<'de> for UserHierarchyGroupProperties {
                 write!(f, "a struct of type UserHierarchyGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut instance_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut parent_group_arn: Option<::Value<String>> = None;
@@ -801,7 +864,8 @@ impl<'de> ::serde::Deserialize<'de> for UserHierarchyGroupProperties {
                 }
 
                 Ok(UserHierarchyGroupProperties {
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     parent_group_arn: parent_group_arn,
                 })
@@ -865,7 +929,9 @@ pub mod hours_of_operation {
     }
 
     impl ::codec::DeserializeValue for HoursOfOperationConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HoursOfOperationConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HoursOfOperationConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -875,12 +941,17 @@ pub mod hours_of_operation {
                     write!(f, "a struct of type HoursOfOperationConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut day: Option<::Value<String>> = None;
                     let mut end_time: Option<::Value<HoursOfOperationTimeSlice>> = None;
                     let mut start_time: Option<::Value<HoursOfOperationTimeSlice>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Day" => {
                                 day = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -898,7 +969,8 @@ pub mod hours_of_operation {
                     Ok(HoursOfOperationConfig {
                         day: day.ok_or(::serde::de::Error::missing_field("Day"))?,
                         end_time: end_time.ok_or(::serde::de::Error::missing_field("EndTime"))?,
-                        start_time: start_time.ok_or(::serde::de::Error::missing_field("StartTime"))?,
+                        start_time: start_time
+                            .ok_or(::serde::de::Error::missing_field("StartTime"))?,
                     })
                 }
             }
@@ -932,7 +1004,9 @@ pub mod hours_of_operation {
     }
 
     impl ::codec::DeserializeValue for HoursOfOperationTimeSlice {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HoursOfOperationTimeSlice, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HoursOfOperationTimeSlice, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -942,11 +1016,16 @@ pub mod hours_of_operation {
                     write!(f, "a struct of type HoursOfOperationTimeSlice")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut hours: Option<::Value<u32>> = None;
                     let mut minutes: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Hours" => {
                                 hours = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -986,13 +1065,19 @@ pub mod quick_connect {
     impl ::codec::SerializeValue for PhoneNumberQuickConnectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PhoneNumber", &self.phone_number)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PhoneNumber",
+                &self.phone_number,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for PhoneNumberQuickConnectConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PhoneNumberQuickConnectConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PhoneNumberQuickConnectConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1002,10 +1087,15 @@ pub mod quick_connect {
                     write!(f, "a struct of type PhoneNumberQuickConnectConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut phone_number: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PhoneNumber" => {
                                 phone_number = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1015,7 +1105,8 @@ pub mod quick_connect {
                     }
 
                     Ok(PhoneNumberQuickConnectConfig {
-                        phone_number: phone_number.ok_or(::serde::de::Error::missing_field("PhoneNumber"))?,
+                        phone_number: phone_number
+                            .ok_or(::serde::de::Error::missing_field("PhoneNumber"))?,
                     })
                 }
             }
@@ -1042,14 +1133,20 @@ pub mod quick_connect {
     impl ::codec::SerializeValue for QueueQuickConnectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContactFlowArn", &self.contact_flow_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContactFlowArn",
+                &self.contact_flow_arn,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueueArn", &self.queue_arn)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for QueueQuickConnectConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<QueueQuickConnectConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<QueueQuickConnectConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1059,11 +1156,16 @@ pub mod quick_connect {
                     write!(f, "a struct of type QueueQuickConnectConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut contact_flow_arn: Option<::Value<String>> = None;
                     let mut queue_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ContactFlowArn" => {
                                 contact_flow_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1076,8 +1178,10 @@ pub mod quick_connect {
                     }
 
                     Ok(QueueQuickConnectConfig {
-                        contact_flow_arn: contact_flow_arn.ok_or(::serde::de::Error::missing_field("ContactFlowArn"))?,
-                        queue_arn: queue_arn.ok_or(::serde::de::Error::missing_field("QueueArn"))?,
+                        contact_flow_arn: contact_flow_arn
+                            .ok_or(::serde::de::Error::missing_field("ContactFlowArn"))?,
+                        queue_arn: queue_arn
+                            .ok_or(::serde::de::Error::missing_field("QueueArn"))?,
                     })
                 }
             }
@@ -1120,7 +1224,11 @@ pub mod quick_connect {
             if let Some(ref queue_config) = self.queue_config {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueueConfig", queue_config)?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "QuickConnectType", &self.quick_connect_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "QuickConnectType",
+                &self.quick_connect_type,
+            )?;
             if let Some(ref user_config) = self.user_config {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserConfig", user_config)?;
             }
@@ -1129,7 +1237,9 @@ pub mod quick_connect {
     }
 
     impl ::codec::DeserializeValue for QuickConnectConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<QuickConnectConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<QuickConnectConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1139,13 +1249,18 @@ pub mod quick_connect {
                     write!(f, "a struct of type QuickConnectConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut phone_config: Option<::Value<PhoneNumberQuickConnectConfig>> = None;
                     let mut queue_config: Option<::Value<QueueQuickConnectConfig>> = None;
                     let mut quick_connect_type: Option<::Value<String>> = None;
                     let mut user_config: Option<::Value<UserQuickConnectConfig>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PhoneConfig" => {
                                 phone_config = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1166,7 +1281,8 @@ pub mod quick_connect {
                     Ok(QuickConnectConfig {
                         phone_config: phone_config,
                         queue_config: queue_config,
-                        quick_connect_type: quick_connect_type.ok_or(::serde::de::Error::missing_field("QuickConnectType"))?,
+                        quick_connect_type: quick_connect_type
+                            .ok_or(::serde::de::Error::missing_field("QuickConnectType"))?,
                         user_config: user_config,
                     })
                 }
@@ -1194,14 +1310,20 @@ pub mod quick_connect {
     impl ::codec::SerializeValue for UserQuickConnectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContactFlowArn", &self.contact_flow_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContactFlowArn",
+                &self.contact_flow_arn,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserArn", &self.user_arn)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for UserQuickConnectConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UserQuickConnectConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UserQuickConnectConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1211,11 +1333,16 @@ pub mod quick_connect {
                     write!(f, "a struct of type UserQuickConnectConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut contact_flow_arn: Option<::Value<String>> = None;
                     let mut user_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ContactFlowArn" => {
                                 contact_flow_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1228,7 +1355,8 @@ pub mod quick_connect {
                     }
 
                     Ok(UserQuickConnectConfig {
-                        contact_flow_arn: contact_flow_arn.ok_or(::serde::de::Error::missing_field("ContactFlowArn"))?,
+                        contact_flow_arn: contact_flow_arn
+                            .ok_or(::serde::de::Error::missing_field("ContactFlowArn"))?,
                         user_arn: user_arn.ok_or(::serde::de::Error::missing_field("UserArn"))?,
                     })
                 }
@@ -1279,7 +1407,9 @@ pub mod user {
     }
 
     impl ::codec::DeserializeValue for UserIdentityInfo {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UserIdentityInfo, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UserIdentityInfo, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1289,12 +1419,17 @@ pub mod user {
                     write!(f, "a struct of type UserIdentityInfo")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut email: Option<::Value<String>> = None;
                     let mut first_name: Option<::Value<String>> = None;
                     let mut last_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Email" => {
                                 email = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1350,13 +1485,21 @@ pub mod user {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref after_contact_work_time_limit) = self.after_contact_work_time_limit {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AfterContactWorkTimeLimit", after_contact_work_time_limit)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AfterContactWorkTimeLimit",
+                    after_contact_work_time_limit,
+                )?;
             }
             if let Some(ref auto_accept) = self.auto_accept {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoAccept", auto_accept)?;
             }
             if let Some(ref desk_phone_number) = self.desk_phone_number {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeskPhoneNumber", desk_phone_number)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DeskPhoneNumber",
+                    desk_phone_number,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PhoneType", &self.phone_type)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1364,7 +1507,9 @@ pub mod user {
     }
 
     impl ::codec::DeserializeValue for UserPhoneConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UserPhoneConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UserPhoneConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1374,16 +1519,22 @@ pub mod user {
                     write!(f, "a struct of type UserPhoneConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut after_contact_work_time_limit: Option<::Value<u32>> = None;
                     let mut auto_accept: Option<::Value<bool>> = None;
                     let mut desk_phone_number: Option<::Value<String>> = None;
                     let mut phone_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AfterContactWorkTimeLimit" => {
-                                after_contact_work_time_limit = ::serde::de::MapAccess::next_value(&mut map)?;
+                                after_contact_work_time_limit =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AutoAccept" => {
                                 auto_accept = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1402,7 +1553,8 @@ pub mod user {
                         after_contact_work_time_limit: after_contact_work_time_limit,
                         auto_accept: auto_accept,
                         desk_phone_number: desk_phone_number,
-                        phone_type: phone_type.ok_or(::serde::de::Error::missing_field("PhoneType"))?,
+                        phone_type: phone_type
+                            .ok_or(::serde::de::Error::missing_field("PhoneType"))?,
                     })
                 }
             }

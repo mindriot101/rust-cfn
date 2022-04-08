@@ -3,7 +3,7 @@
 /// The [`AWS::IoT1Click::Device`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-device.html) resource type.
 #[derive(Debug, Default)]
 pub struct Device {
-    properties: DeviceProperties
+    properties: DeviceProperties,
 }
 
 /// Properties for the `Device` resource.
@@ -41,7 +41,10 @@ impl<'de> ::serde::Deserialize<'de> for DeviceProperties {
                 write!(f, "a struct of type DeviceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut device_id: Option<::Value<String>> = None;
                 let mut enabled: Option<::Value<bool>> = None;
 
@@ -90,7 +93,7 @@ impl From<DeviceProperties> for Device {
 /// The [`AWS::IoT1Click::Placement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html) resource type.
 #[derive(Debug, Default)]
 pub struct Placement {
-    properties: PlacementProperties
+    properties: PlacementProperties,
 }
 
 /// Properties for the `Placement` resource.
@@ -122,7 +125,11 @@ impl ::serde::Serialize for PlacementProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref associated_devices) = self.associated_devices {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociatedDevices", associated_devices)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssociatedDevices",
+                associated_devices,
+            )?;
         }
         if let Some(ref attributes) = self.attributes {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Attributes", attributes)?;
@@ -146,7 +153,10 @@ impl<'de> ::serde::Deserialize<'de> for PlacementProperties {
                 write!(f, "a struct of type PlacementProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut associated_devices: Option<::Value<::json::Value>> = None;
                 let mut attributes: Option<::Value<::json::Value>> = None;
                 let mut placement_name: Option<::Value<String>> = None;
@@ -174,7 +184,8 @@ impl<'de> ::serde::Deserialize<'de> for PlacementProperties {
                     associated_devices: associated_devices,
                     attributes: attributes,
                     placement_name: placement_name,
-                    project_name: project_name.ok_or(::serde::de::Error::missing_field("ProjectName"))?,
+                    project_name: project_name
+                        .ok_or(::serde::de::Error::missing_field("ProjectName"))?,
                 })
             }
         }
@@ -205,7 +216,7 @@ impl From<PlacementProperties> for Placement {
 /// The [`AWS::IoT1Click::Project`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html) resource type.
 #[derive(Debug, Default)]
 pub struct Project {
-    properties: ProjectProperties
+    properties: ProjectProperties,
 }
 
 /// Properties for the `Project` resource.
@@ -234,7 +245,11 @@ impl ::serde::Serialize for ProjectProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PlacementTemplate", &self.placement_template)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PlacementTemplate",
+            &self.placement_template,
+        )?;
         if let Some(ref project_name) = self.project_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProjectName", project_name)?;
         }
@@ -253,9 +268,13 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 write!(f, "a struct of type ProjectProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
-                let mut placement_template: Option<::Value<self::project::PlacementTemplate>> = None;
+                let mut placement_template: Option<::Value<self::project::PlacementTemplate>> =
+                    None;
                 let mut project_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -275,7 +294,8 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
 
                 Ok(ProjectProperties {
                     description: description,
-                    placement_template: placement_template.ok_or(::serde::de::Error::missing_field("PlacementTemplate"))?,
+                    placement_template: placement_template
+                        .ok_or(::serde::de::Error::missing_field("PlacementTemplate"))?,
                     project_name: project_name,
                 })
             }
@@ -326,7 +346,11 @@ pub mod project {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref callback_overrides) = self.callback_overrides {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CallbackOverrides", callback_overrides)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CallbackOverrides",
+                    callback_overrides,
+                )?;
             }
             if let Some(ref device_type) = self.device_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceType", device_type)?;
@@ -336,7 +360,9 @@ pub mod project {
     }
 
     impl ::codec::DeserializeValue for DeviceTemplate {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DeviceTemplate, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DeviceTemplate, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -346,11 +372,16 @@ pub mod project {
                     write!(f, "a struct of type DeviceTemplate")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut callback_overrides: Option<::Value<::json::Value>> = None;
                     let mut device_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CallbackOverrides" => {
                                 callback_overrides = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -392,17 +423,27 @@ pub mod project {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_attributes) = self.default_attributes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultAttributes", default_attributes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DefaultAttributes",
+                    default_attributes,
+                )?;
             }
             if let Some(ref device_templates) = self.device_templates {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceTemplates", device_templates)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DeviceTemplates",
+                    device_templates,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for PlacementTemplate {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PlacementTemplate, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PlacementTemplate, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -412,11 +453,16 @@ pub mod project {
                     write!(f, "a struct of type PlacementTemplate")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut default_attributes: Option<::Value<::json::Value>> = None;
                     let mut device_templates: Option<::Value<::json::Value>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DefaultAttributes" => {
                                 default_attributes = ::serde::de::MapAccess::next_value(&mut map)?;

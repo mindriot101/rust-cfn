@@ -3,7 +3,7 @@
 /// The [`AWS::CloudTrail::Trail`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html) resource type.
 #[derive(Debug, Default)]
 pub struct Trail {
-    properties: TrailProperties
+    properties: TrailProperties,
 }
 
 /// Properties for the `Trail` resource.
@@ -90,34 +90,70 @@ impl ::serde::Serialize for TrailProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref cloud_watch_logs_log_group_arn) = self.cloud_watch_logs_log_group_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchLogsLogGroupArn", cloud_watch_logs_log_group_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CloudWatchLogsLogGroupArn",
+                cloud_watch_logs_log_group_arn,
+            )?;
         }
         if let Some(ref cloud_watch_logs_role_arn) = self.cloud_watch_logs_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchLogsRoleArn", cloud_watch_logs_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CloudWatchLogsRoleArn",
+                cloud_watch_logs_role_arn,
+            )?;
         }
         if let Some(ref enable_log_file_validation) = self.enable_log_file_validation {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableLogFileValidation", enable_log_file_validation)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnableLogFileValidation",
+                enable_log_file_validation,
+            )?;
         }
         if let Some(ref event_selectors) = self.event_selectors {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventSelectors", event_selectors)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EventSelectors",
+                event_selectors,
+            )?;
         }
         if let Some(ref include_global_service_events) = self.include_global_service_events {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeGlobalServiceEvents", include_global_service_events)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IncludeGlobalServiceEvents",
+                include_global_service_events,
+            )?;
         }
         if let Some(ref insight_selectors) = self.insight_selectors {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InsightSelectors", insight_selectors)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InsightSelectors",
+                insight_selectors,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsLogging", &self.is_logging)?;
         if let Some(ref is_multi_region_trail) = self.is_multi_region_trail {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsMultiRegionTrail", is_multi_region_trail)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IsMultiRegionTrail",
+                is_multi_region_trail,
+            )?;
         }
         if let Some(ref is_organization_trail) = self.is_organization_trail {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsOrganizationTrail", is_organization_trail)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IsOrganizationTrail",
+                is_organization_trail,
+            )?;
         }
         if let Some(ref kms_key_id) = self.kms_key_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KMSKeyId", kms_key_id)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3BucketName", &self.s3_bucket_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "S3BucketName",
+            &self.s3_bucket_name,
+        )?;
         if let Some(ref s3_key_prefix) = self.s3_key_prefix {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3KeyPrefix", s3_key_prefix)?;
         }
@@ -145,7 +181,10 @@ impl<'de> ::serde::Deserialize<'de> for TrailProperties {
                 write!(f, "a struct of type TrailProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut cloud_watch_logs_log_group_arn: Option<::Value<String>> = None;
                 let mut cloud_watch_logs_role_arn: Option<::Value<String>> = None;
                 let mut enable_log_file_validation: Option<::Value<bool>> = None;
@@ -165,19 +204,23 @@ impl<'de> ::serde::Deserialize<'de> for TrailProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "CloudWatchLogsLogGroupArn" => {
-                            cloud_watch_logs_log_group_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            cloud_watch_logs_log_group_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "CloudWatchLogsRoleArn" => {
-                            cloud_watch_logs_role_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            cloud_watch_logs_role_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "EnableLogFileValidation" => {
-                            enable_log_file_validation = ::serde::de::MapAccess::next_value(&mut map)?;
+                            enable_log_file_validation =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "EventSelectors" => {
                             event_selectors = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "IncludeGlobalServiceEvents" => {
-                            include_global_service_events = ::serde::de::MapAccess::next_value(&mut map)?;
+                            include_global_service_events =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "InsightSelectors" => {
                             insight_selectors = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -224,7 +267,8 @@ impl<'de> ::serde::Deserialize<'de> for TrailProperties {
                     is_multi_region_trail: is_multi_region_trail,
                     is_organization_trail: is_organization_trail,
                     kms_key_id: kms_key_id,
-                    s3_bucket_name: s3_bucket_name.ok_or(::serde::de::Error::missing_field("S3BucketName"))?,
+                    s3_bucket_name: s3_bucket_name
+                        .ok_or(::serde::de::Error::missing_field("S3BucketName"))?,
                     s3_key_prefix: s3_key_prefix,
                     sns_topic_name: sns_topic_name,
                     tags: tags,
@@ -296,11 +340,16 @@ pub mod trail {
                     write!(f, "a struct of type DataResource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut r#type: Option<::Value<String>> = None;
                     let mut values: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Type" => {
                                 r#type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -352,23 +401,43 @@ pub mod trail {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_resources) = self.data_resources {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataResources", data_resources)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DataResources",
+                    data_resources,
+                )?;
             }
-            if let Some(ref exclude_management_event_sources) = self.exclude_management_event_sources {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExcludeManagementEventSources", exclude_management_event_sources)?;
+            if let Some(ref exclude_management_event_sources) =
+                self.exclude_management_event_sources
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ExcludeManagementEventSources",
+                    exclude_management_event_sources,
+                )?;
             }
             if let Some(ref include_management_events) = self.include_management_events {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeManagementEvents", include_management_events)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeManagementEvents",
+                    include_management_events,
+                )?;
             }
             if let Some(ref read_write_type) = self.read_write_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReadWriteType", read_write_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ReadWriteType",
+                    read_write_type,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EventSelector {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EventSelector, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EventSelector, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -378,22 +447,29 @@ pub mod trail {
                     write!(f, "a struct of type EventSelector")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut data_resources: Option<::ValueList<DataResource>> = None;
                     let mut exclude_management_event_sources: Option<::ValueList<String>> = None;
                     let mut include_management_events: Option<::Value<bool>> = None;
                     let mut read_write_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DataResources" => {
                                 data_resources = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ExcludeManagementEventSources" => {
-                                exclude_management_event_sources = ::serde::de::MapAccess::next_value(&mut map)?;
+                                exclude_management_event_sources =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IncludeManagementEvents" => {
-                                include_management_events = ::serde::de::MapAccess::next_value(&mut map)?;
+                                include_management_events =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ReadWriteType" => {
                                 read_write_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -436,7 +512,9 @@ pub mod trail {
     }
 
     impl ::codec::DeserializeValue for InsightSelector {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InsightSelector, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InsightSelector, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -446,10 +524,15 @@ pub mod trail {
                     write!(f, "a struct of type InsightSelector")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut insight_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InsightType" => {
                                 insight_type = ::serde::de::MapAccess::next_value(&mut map)?;

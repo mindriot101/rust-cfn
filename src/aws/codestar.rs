@@ -3,7 +3,7 @@
 /// The [`AWS::CodeStar::GitHubRepository`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html) resource type.
 #[derive(Debug, Default)]
 pub struct GitHubRepository {
-    properties: GitHubRepositoryProperties
+    properties: GitHubRepositoryProperties,
 }
 
 /// Properties for the `GitHubRepository` resource.
@@ -67,19 +67,37 @@ impl ::serde::Serialize for GitHubRepositoryProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IsPrivate", is_private)?;
         }
         if let Some(ref repository_access_token) = self.repository_access_token {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryAccessToken", repository_access_token)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryAccessToken",
+                repository_access_token,
+            )?;
         }
         if let Some(ref repository_description) = self.repository_description {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryDescription", repository_description)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryDescription",
+                repository_description,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryName", &self.repository_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryOwner", &self.repository_owner)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RepositoryName",
+            &self.repository_name,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RepositoryOwner",
+            &self.repository_owner,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for GitHubRepositoryProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<GitHubRepositoryProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<GitHubRepositoryProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -89,7 +107,10 @@ impl<'de> ::serde::Deserialize<'de> for GitHubRepositoryProperties {
                 write!(f, "a struct of type GitHubRepositoryProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut code: Option<::Value<self::git_hub_repository::Code>> = None;
                 let mut connection_arn: Option<::Value<String>> = None;
                 let mut enable_issues: Option<::Value<bool>> = None;
@@ -136,8 +157,10 @@ impl<'de> ::serde::Deserialize<'de> for GitHubRepositoryProperties {
                     is_private: is_private,
                     repository_access_token: repository_access_token,
                     repository_description: repository_description,
-                    repository_name: repository_name.ok_or(::serde::de::Error::missing_field("RepositoryName"))?,
-                    repository_owner: repository_owner.ok_or(::serde::de::Error::missing_field("RepositoryOwner"))?,
+                    repository_name: repository_name
+                        .ok_or(::serde::de::Error::missing_field("RepositoryName"))?,
+                    repository_owner: repository_owner
+                        .ok_or(::serde::de::Error::missing_field("RepositoryOwner"))?,
                 })
             }
         }
@@ -197,10 +220,15 @@ pub mod git_hub_repository {
                     write!(f, "a struct of type Code")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut s3: Option<::Value<S3>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "S3" => {
                                 s3 = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -245,7 +273,11 @@ pub mod git_hub_repository {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
             if let Some(ref object_version) = self.object_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectVersion", object_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ObjectVersion",
+                    object_version,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -262,12 +294,17 @@ pub mod git_hub_repository {
                     write!(f, "a struct of type S3")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bucket: Option<::Value<String>> = None;
                     let mut key: Option<::Value<String>> = None;
                     let mut object_version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bucket" => {
                                 bucket = ::serde::de::MapAccess::next_value(&mut map)?;

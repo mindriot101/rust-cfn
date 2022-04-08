@@ -3,7 +3,7 @@
 /// The [`AWS::FMS::NotificationChannel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-notificationchannel.html) resource type.
 #[derive(Debug, Default)]
 pub struct NotificationChannel {
-    properties: NotificationChannelProperties
+    properties: NotificationChannelProperties,
 }
 
 /// Properties for the `NotificationChannel` resource.
@@ -31,7 +31,9 @@ impl ::serde::Serialize for NotificationChannelProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for NotificationChannelProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<NotificationChannelProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<NotificationChannelProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -41,7 +43,10 @@ impl<'de> ::serde::Deserialize<'de> for NotificationChannelProperties {
                 write!(f, "a struct of type NotificationChannelProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut sns_role_name: Option<::Value<String>> = None;
                 let mut sns_topic_arn: Option<::Value<String>> = None;
 
@@ -58,8 +63,10 @@ impl<'de> ::serde::Deserialize<'de> for NotificationChannelProperties {
                 }
 
                 Ok(NotificationChannelProperties {
-                    sns_role_name: sns_role_name.ok_or(::serde::de::Error::missing_field("SnsRoleName"))?,
-                    sns_topic_arn: sns_topic_arn.ok_or(::serde::de::Error::missing_field("SnsTopicArn"))?,
+                    sns_role_name: sns_role_name
+                        .ok_or(::serde::de::Error::missing_field("SnsRoleName"))?,
+                    sns_topic_arn: sns_topic_arn
+                        .ok_or(::serde::de::Error::missing_field("SnsTopicArn"))?,
                 })
             }
         }
@@ -90,7 +97,7 @@ impl From<NotificationChannelProperties> for NotificationChannel {
 /// The [`AWS::FMS::Policy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html) resource type.
 #[derive(Debug, Default)]
 pub struct Policy {
-    properties: PolicyProperties
+    properties: PolicyProperties,
 }
 
 /// Properties for the `Policy` resource.
@@ -162,28 +169,52 @@ impl ::serde::Serialize for PolicyProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref delete_all_policy_resources) = self.delete_all_policy_resources {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeleteAllPolicyResources", delete_all_policy_resources)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DeleteAllPolicyResources",
+                delete_all_policy_resources,
+            )?;
         }
         if let Some(ref exclude_map) = self.exclude_map {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExcludeMap", exclude_map)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExcludeResourceTags", &self.exclude_resource_tags)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ExcludeResourceTags",
+            &self.exclude_resource_tags,
+        )?;
         if let Some(ref include_map) = self.include_map {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeMap", include_map)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyName", &self.policy_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RemediationEnabled", &self.remediation_enabled)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RemediationEnabled",
+            &self.remediation_enabled,
+        )?;
         if let Some(ref resource_tags) = self.resource_tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceTags", resource_tags)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceType", &self.resource_type)?;
         if let Some(ref resource_type_list) = self.resource_type_list {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceTypeList", resource_type_list)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResourceTypeList",
+                resource_type_list,
+            )?;
         }
         if let Some(ref resources_clean_up) = self.resources_clean_up {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourcesCleanUp", resources_clean_up)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResourcesCleanUp",
+                resources_clean_up,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityServicePolicyData", &self.security_service_policy_data)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SecurityServicePolicyData",
+            &self.security_service_policy_data,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -202,7 +233,10 @@ impl<'de> ::serde::Deserialize<'de> for PolicyProperties {
                 write!(f, "a struct of type PolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut delete_all_policy_resources: Option<::Value<bool>> = None;
                 let mut exclude_map: Option<::Value<self::policy::IEMap>> = None;
                 let mut exclude_resource_tags: Option<::Value<bool>> = None;
@@ -219,7 +253,8 @@ impl<'de> ::serde::Deserialize<'de> for PolicyProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "DeleteAllPolicyResources" => {
-                            delete_all_policy_resources = ::serde::de::MapAccess::next_value(&mut map)?;
+                            delete_all_policy_resources =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ExcludeMap" => {
                             exclude_map = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -249,7 +284,8 @@ impl<'de> ::serde::Deserialize<'de> for PolicyProperties {
                             resources_clean_up = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SecurityServicePolicyData" => {
-                            security_service_policy_data = ::serde::de::MapAccess::next_value(&mut map)?;
+                            security_service_policy_data =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -261,15 +297,21 @@ impl<'de> ::serde::Deserialize<'de> for PolicyProperties {
                 Ok(PolicyProperties {
                     delete_all_policy_resources: delete_all_policy_resources,
                     exclude_map: exclude_map,
-                    exclude_resource_tags: exclude_resource_tags.ok_or(::serde::de::Error::missing_field("ExcludeResourceTags"))?,
+                    exclude_resource_tags: exclude_resource_tags
+                        .ok_or(::serde::de::Error::missing_field("ExcludeResourceTags"))?,
                     include_map: include_map,
-                    policy_name: policy_name.ok_or(::serde::de::Error::missing_field("PolicyName"))?,
-                    remediation_enabled: remediation_enabled.ok_or(::serde::de::Error::missing_field("RemediationEnabled"))?,
+                    policy_name: policy_name
+                        .ok_or(::serde::de::Error::missing_field("PolicyName"))?,
+                    remediation_enabled: remediation_enabled
+                        .ok_or(::serde::de::Error::missing_field("RemediationEnabled"))?,
                     resource_tags: resource_tags,
-                    resource_type: resource_type.ok_or(::serde::de::Error::missing_field("ResourceType"))?,
+                    resource_type: resource_type
+                        .ok_or(::serde::de::Error::missing_field("ResourceType"))?,
                     resource_type_list: resource_type_list,
                     resources_clean_up: resources_clean_up,
-                    security_service_policy_data: security_service_policy_data.ok_or(::serde::de::Error::missing_field("SecurityServicePolicyData"))?,
+                    security_service_policy_data: security_service_policy_data.ok_or(
+                        ::serde::de::Error::missing_field("SecurityServicePolicyData"),
+                    )?,
                     tags: tags,
                 })
             }
@@ -340,11 +382,16 @@ pub mod policy {
                     write!(f, "a struct of type IEMap")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut account: Option<::ValueList<String>> = None;
                     let mut orgunit: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ACCOUNT" => {
                                 account = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -402,11 +449,16 @@ pub mod policy {
                     write!(f, "a struct of type PolicyTag")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -466,11 +518,16 @@ pub mod policy {
                     write!(f, "a struct of type ResourceTag")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;

@@ -3,7 +3,7 @@
 /// The [`AWS::StepFunctions::Activity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html) resource type.
 #[derive(Debug, Default)]
 pub struct Activity {
-    properties: ActivityProperties
+    properties: ActivityProperties,
 }
 
 /// Properties for the `Activity` resource.
@@ -43,7 +43,10 @@ impl<'de> ::serde::Deserialize<'de> for ActivityProperties {
                 write!(f, "a struct of type ActivityProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<self::activity::TagsEntry>> = None;
 
@@ -92,7 +95,7 @@ impl From<ActivityProperties> for Activity {
 /// The [`AWS::StepFunctions::StateMachine`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html) resource type.
 #[derive(Debug, Default)]
 pub struct StateMachine {
-    properties: StateMachineProperties
+    properties: StateMachineProperties,
 }
 
 /// Properties for the `StateMachine` resource.
@@ -157,36 +160,66 @@ impl ::serde::Serialize for StateMachineProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Definition", definition)?;
         }
         if let Some(ref definition_s3_location) = self.definition_s3_location {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefinitionS3Location", definition_s3_location)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DefinitionS3Location",
+                definition_s3_location,
+            )?;
         }
         if let Some(ref definition_string) = self.definition_string {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefinitionString", definition_string)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DefinitionString",
+                definition_string,
+            )?;
         }
         if let Some(ref definition_substitutions) = self.definition_substitutions {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefinitionSubstitutions", definition_substitutions)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DefinitionSubstitutions",
+                definition_substitutions,
+            )?;
         }
         if let Some(ref logging_configuration) = self.logging_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoggingConfiguration", logging_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LoggingConfiguration",
+                logging_configuration,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
         if let Some(ref state_machine_name) = self.state_machine_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StateMachineName", state_machine_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StateMachineName",
+                state_machine_name,
+            )?;
         }
         if let Some(ref state_machine_type) = self.state_machine_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StateMachineType", state_machine_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StateMachineType",
+                state_machine_type,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref tracing_configuration) = self.tracing_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TracingConfiguration", tracing_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TracingConfiguration",
+                tracing_configuration,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for StateMachineProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<StateMachineProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<StateMachineProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -196,17 +229,25 @@ impl<'de> ::serde::Deserialize<'de> for StateMachineProperties {
                 write!(f, "a struct of type StateMachineProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut definition: Option<::Value<self::state_machine::Definition>> = None;
-                let mut definition_s3_location: Option<::Value<self::state_machine::S3Location>> = None;
+                let mut definition_s3_location: Option<::Value<self::state_machine::S3Location>> =
+                    None;
                 let mut definition_string: Option<::Value<String>> = None;
                 let mut definition_substitutions: Option<::ValueMap<String>> = None;
-                let mut logging_configuration: Option<::Value<self::state_machine::LoggingConfiguration>> = None;
+                let mut logging_configuration: Option<
+                    ::Value<self::state_machine::LoggingConfiguration>,
+                > = None;
                 let mut role_arn: Option<::Value<String>> = None;
                 let mut state_machine_name: Option<::Value<String>> = None;
                 let mut state_machine_type: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<self::state_machine::TagsEntry>> = None;
-                let mut tracing_configuration: Option<::Value<self::state_machine::TracingConfiguration>> = None;
+                let mut tracing_configuration: Option<
+                    ::Value<self::state_machine::TracingConfiguration>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -220,7 +261,8 @@ impl<'de> ::serde::Deserialize<'de> for StateMachineProperties {
                             definition_string = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DefinitionSubstitutions" => {
-                            definition_substitutions = ::serde::de::MapAccess::next_value(&mut map)?;
+                            definition_substitutions =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "LoggingConfiguration" => {
                             logging_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -320,11 +362,16 @@ pub mod activity {
                     write!(f, "a struct of type TagsEntry")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -365,14 +412,20 @@ pub mod state_machine {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref log_group_arn) = self.log_group_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupArn", log_group_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LogGroupArn",
+                    log_group_arn,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CloudWatchLogsLogGroup {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CloudWatchLogsLogGroup, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CloudWatchLogsLogGroup, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -382,10 +435,15 @@ pub mod state_machine {
                     write!(f, "a struct of type CloudWatchLogsLogGroup")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut log_group_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LogGroupArn" => {
                                 log_group_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -406,8 +464,7 @@ pub mod state_machine {
 
     /// The [`AWS::StepFunctions::StateMachine.Definition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-definition.html) property type.
     #[derive(Debug, Default)]
-    pub struct Definition {
-    }
+    pub struct Definition {}
 
     impl ::codec::SerializeValue for Definition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -427,7 +484,10 @@ pub mod state_machine {
                     write!(f, "a struct of type Definition")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(Definition {})
                 }
             }
@@ -450,14 +510,20 @@ pub mod state_machine {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_logs_log_group) = self.cloud_watch_logs_log_group {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchLogsLogGroup", cloud_watch_logs_log_group)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CloudWatchLogsLogGroup",
+                    cloud_watch_logs_log_group,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LogDestination {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LogDestination, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LogDestination, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -467,13 +533,20 @@ pub mod state_machine {
                     write!(f, "a struct of type LogDestination")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_logs_log_group: Option<::Value<CloudWatchLogsLogGroup>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut cloud_watch_logs_log_group: Option<::Value<CloudWatchLogsLogGroup>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CloudWatchLogsLogGroup" => {
-                                cloud_watch_logs_log_group = ::serde::de::MapAccess::next_value(&mut map)?;
+                                cloud_watch_logs_log_group =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -513,10 +586,18 @@ pub mod state_machine {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destinations) = self.destinations {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destinations", destinations)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Destinations",
+                    destinations,
+                )?;
             }
             if let Some(ref include_execution_data) = self.include_execution_data {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeExecutionData", include_execution_data)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeExecutionData",
+                    include_execution_data,
+                )?;
             }
             if let Some(ref level) = self.level {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Level", level)?;
@@ -526,7 +607,9 @@ pub mod state_machine {
     }
 
     impl ::codec::DeserializeValue for LoggingConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoggingConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoggingConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -536,18 +619,24 @@ pub mod state_machine {
                     write!(f, "a struct of type LoggingConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut destinations: Option<::ValueList<LogDestination>> = None;
                     let mut include_execution_data: Option<::Value<bool>> = None;
                     let mut level: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Destinations" => {
                                 destinations = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IncludeExecutionData" => {
-                                include_execution_data = ::serde::de::MapAccess::next_value(&mut map)?;
+                                include_execution_data =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Level" => {
                                 level = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -611,12 +700,17 @@ pub mod state_machine {
                     write!(f, "a struct of type S3Location")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bucket: Option<::Value<String>> = None;
                     let mut key: Option<::Value<String>> = None;
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bucket" => {
                                 bucket = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -678,11 +772,16 @@ pub mod state_machine {
                     write!(f, "a struct of type TagsEntry")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -726,7 +825,9 @@ pub mod state_machine {
     }
 
     impl ::codec::DeserializeValue for TracingConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TracingConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TracingConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -736,10 +837,15 @@ pub mod state_machine {
                     write!(f, "a struct of type TracingConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut enabled: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Enabled" => {
                                 enabled = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -748,9 +854,7 @@ pub mod state_machine {
                         }
                     }
 
-                    Ok(TracingConfiguration {
-                        enabled: enabled,
-                    })
+                    Ok(TracingConfiguration { enabled: enabled })
                 }
             }
 

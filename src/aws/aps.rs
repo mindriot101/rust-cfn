@@ -3,7 +3,7 @@
 /// The [`AWS::APS::RuleGroupsNamespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-rulegroupsnamespace.html) resource type.
 #[derive(Debug, Default)]
 pub struct RuleGroupsNamespace {
-    properties: RuleGroupsNamespaceProperties
+    properties: RuleGroupsNamespaceProperties,
 }
 
 /// Properties for the `RuleGroupsNamespace` resource.
@@ -45,7 +45,9 @@ impl ::serde::Serialize for RuleGroupsNamespaceProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RuleGroupsNamespaceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RuleGroupsNamespaceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RuleGroupsNamespaceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -55,7 +57,10 @@ impl<'de> ::serde::Deserialize<'de> for RuleGroupsNamespaceProperties {
                 write!(f, "a struct of type RuleGroupsNamespaceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -114,7 +119,7 @@ impl From<RuleGroupsNamespaceProperties> for RuleGroupsNamespace {
 /// The [`AWS::APS::Workspace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html) resource type.
 #[derive(Debug, Default)]
 pub struct Workspace {
-    properties: WorkspaceProperties
+    properties: WorkspaceProperties,
 }
 
 /// Properties for the `Workspace` resource.
@@ -141,7 +146,11 @@ impl ::serde::Serialize for WorkspaceProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref alert_manager_definition) = self.alert_manager_definition {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlertManagerDefinition", alert_manager_definition)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AlertManagerDefinition",
+                alert_manager_definition,
+            )?;
         }
         if let Some(ref alias) = self.alias {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Alias", alias)?;
@@ -164,7 +173,10 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
                 write!(f, "a struct of type WorkspaceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut alert_manager_definition: Option<::Value<String>> = None;
                 let mut alias: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -172,7 +184,8 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AlertManagerDefinition" => {
-                            alert_manager_definition = ::serde::de::MapAccess::next_value(&mut map)?;
+                            alert_manager_definition =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Alias" => {
                             alias = ::serde::de::MapAccess::next_value(&mut map)?;

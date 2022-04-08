@@ -3,7 +3,7 @@
 /// The [`AWS::Amplify::App`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html) resource type.
 #[derive(Debug, Default)]
 pub struct App {
-    properties: AppProperties
+    properties: AppProperties,
 }
 
 /// Properties for the `App` resource.
@@ -88,10 +88,18 @@ impl ::serde::Serialize for AppProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccessToken", access_token)?;
         }
         if let Some(ref auto_branch_creation_config) = self.auto_branch_creation_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoBranchCreationConfig", auto_branch_creation_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AutoBranchCreationConfig",
+                auto_branch_creation_config,
+            )?;
         }
         if let Some(ref basic_auth_config) = self.basic_auth_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BasicAuthConfig", basic_auth_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BasicAuthConfig",
+                basic_auth_config,
+            )?;
         }
         if let Some(ref build_spec) = self.build_spec {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BuildSpec", build_spec)?;
@@ -106,13 +114,25 @@ impl ::serde::Serialize for AppProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref enable_branch_auto_deletion) = self.enable_branch_auto_deletion {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableBranchAutoDeletion", enable_branch_auto_deletion)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnableBranchAutoDeletion",
+                enable_branch_auto_deletion,
+            )?;
         }
         if let Some(ref environment_variables) = self.environment_variables {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentVariables", environment_variables)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnvironmentVariables",
+                environment_variables,
+            )?;
         }
         if let Some(ref iam_service_role) = self.iam_service_role {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IAMServiceRole", iam_service_role)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IAMServiceRole",
+                iam_service_role,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref oauth_token) = self.oauth_token {
@@ -139,16 +159,22 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
                 write!(f, "a struct of type AppProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut access_token: Option<::Value<String>> = None;
-                let mut auto_branch_creation_config: Option<::Value<self::app::AutoBranchCreationConfig>> = None;
+                let mut auto_branch_creation_config: Option<
+                    ::Value<self::app::AutoBranchCreationConfig>,
+                > = None;
                 let mut basic_auth_config: Option<::Value<self::app::BasicAuthConfig>> = None;
                 let mut build_spec: Option<::Value<String>> = None;
                 let mut custom_headers: Option<::Value<String>> = None;
                 let mut custom_rules: Option<::ValueList<self::app::CustomRule>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut enable_branch_auto_deletion: Option<::Value<bool>> = None;
-                let mut environment_variables: Option<::ValueList<self::app::EnvironmentVariable>> = None;
+                let mut environment_variables: Option<::ValueList<self::app::EnvironmentVariable>> =
+                    None;
                 let mut iam_service_role: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut oauth_token: Option<::Value<String>> = None;
@@ -161,7 +187,8 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
                             access_token = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AutoBranchCreationConfig" => {
-                            auto_branch_creation_config = ::serde::de::MapAccess::next_value(&mut map)?;
+                            auto_branch_creation_config =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "BasicAuthConfig" => {
                             basic_auth_config = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -179,7 +206,8 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "EnableBranchAutoDeletion" => {
-                            enable_branch_auto_deletion = ::serde::de::MapAccess::next_value(&mut map)?;
+                            enable_branch_auto_deletion =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "EnvironmentVariables" => {
                             environment_variables = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -248,7 +276,7 @@ impl From<AppProperties> for App {
 /// The [`AWS::Amplify::Branch`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html) resource type.
 #[derive(Debug, Default)]
 pub struct Branch {
-    properties: BranchProperties
+    properties: BranchProperties,
 }
 
 /// Properties for the `Branch` resource.
@@ -321,7 +349,11 @@ impl ::serde::Serialize for BranchProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppId", &self.app_id)?;
         if let Some(ref basic_auth_config) = self.basic_auth_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BasicAuthConfig", basic_auth_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BasicAuthConfig",
+                basic_auth_config,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BranchName", &self.branch_name)?;
         if let Some(ref build_spec) = self.build_spec {
@@ -331,19 +363,39 @@ impl ::serde::Serialize for BranchProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref enable_auto_build) = self.enable_auto_build {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableAutoBuild", enable_auto_build)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnableAutoBuild",
+                enable_auto_build,
+            )?;
         }
         if let Some(ref enable_performance_mode) = self.enable_performance_mode {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnablePerformanceMode", enable_performance_mode)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnablePerformanceMode",
+                enable_performance_mode,
+            )?;
         }
         if let Some(ref enable_pull_request_preview) = self.enable_pull_request_preview {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnablePullRequestPreview", enable_pull_request_preview)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnablePullRequestPreview",
+                enable_pull_request_preview,
+            )?;
         }
         if let Some(ref environment_variables) = self.environment_variables {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentVariables", environment_variables)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnvironmentVariables",
+                environment_variables,
+            )?;
         }
         if let Some(ref pull_request_environment_name) = self.pull_request_environment_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PullRequestEnvironmentName", pull_request_environment_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PullRequestEnvironmentName",
+                pull_request_environment_name,
+            )?;
         }
         if let Some(ref stage) = self.stage {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Stage", stage)?;
@@ -366,7 +418,10 @@ impl<'de> ::serde::Deserialize<'de> for BranchProperties {
                 write!(f, "a struct of type BranchProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut app_id: Option<::Value<String>> = None;
                 let mut basic_auth_config: Option<::Value<self::branch::BasicAuthConfig>> = None;
                 let mut branch_name: Option<::Value<String>> = None;
@@ -375,7 +430,9 @@ impl<'de> ::serde::Deserialize<'de> for BranchProperties {
                 let mut enable_auto_build: Option<::Value<bool>> = None;
                 let mut enable_performance_mode: Option<::Value<bool>> = None;
                 let mut enable_pull_request_preview: Option<::Value<bool>> = None;
-                let mut environment_variables: Option<::ValueList<self::branch::EnvironmentVariable>> = None;
+                let mut environment_variables: Option<
+                    ::ValueList<self::branch::EnvironmentVariable>,
+                > = None;
                 let mut pull_request_environment_name: Option<::Value<String>> = None;
                 let mut stage: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -404,13 +461,15 @@ impl<'de> ::serde::Deserialize<'de> for BranchProperties {
                             enable_performance_mode = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "EnablePullRequestPreview" => {
-                            enable_pull_request_preview = ::serde::de::MapAccess::next_value(&mut map)?;
+                            enable_pull_request_preview =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "EnvironmentVariables" => {
                             environment_variables = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PullRequestEnvironmentName" => {
-                            pull_request_environment_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                            pull_request_environment_name =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Stage" => {
                             stage = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -425,7 +484,8 @@ impl<'de> ::serde::Deserialize<'de> for BranchProperties {
                 Ok(BranchProperties {
                     app_id: app_id.ok_or(::serde::de::Error::missing_field("AppId"))?,
                     basic_auth_config: basic_auth_config,
-                    branch_name: branch_name.ok_or(::serde::de::Error::missing_field("BranchName"))?,
+                    branch_name: branch_name
+                        .ok_or(::serde::de::Error::missing_field("BranchName"))?,
                     build_spec: build_spec,
                     description: description,
                     enable_auto_build: enable_auto_build,
@@ -465,7 +525,7 @@ impl From<BranchProperties> for Branch {
 /// The [`AWS::Amplify::Domain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html) resource type.
 #[derive(Debug, Default)]
 pub struct Domain {
-    properties: DomainProperties
+    properties: DomainProperties,
 }
 
 /// Properties for the `Domain` resource.
@@ -507,17 +567,34 @@ impl ::serde::Serialize for DomainProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppId", &self.app_id)?;
-        if let Some(ref auto_sub_domain_creation_patterns) = self.auto_sub_domain_creation_patterns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoSubDomainCreationPatterns", auto_sub_domain_creation_patterns)?;
+        if let Some(ref auto_sub_domain_creation_patterns) = self.auto_sub_domain_creation_patterns
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AutoSubDomainCreationPatterns",
+                auto_sub_domain_creation_patterns,
+            )?;
         }
         if let Some(ref auto_sub_domain_iam_role) = self.auto_sub_domain_iam_role {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoSubDomainIAMRole", auto_sub_domain_iam_role)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AutoSubDomainIAMRole",
+                auto_sub_domain_iam_role,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainName", &self.domain_name)?;
         if let Some(ref enable_auto_sub_domain) = self.enable_auto_sub_domain {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableAutoSubDomain", enable_auto_sub_domain)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnableAutoSubDomain",
+                enable_auto_sub_domain,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubDomainSettings", &self.sub_domain_settings)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SubDomainSettings",
+            &self.sub_domain_settings,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -533,13 +610,17 @@ impl<'de> ::serde::Deserialize<'de> for DomainProperties {
                 write!(f, "a struct of type DomainProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut app_id: Option<::Value<String>> = None;
                 let mut auto_sub_domain_creation_patterns: Option<::ValueList<String>> = None;
                 let mut auto_sub_domain_iam_role: Option<::Value<String>> = None;
                 let mut domain_name: Option<::Value<String>> = None;
                 let mut enable_auto_sub_domain: Option<::Value<bool>> = None;
-                let mut sub_domain_settings: Option<::ValueList<self::domain::SubDomainSetting>> = None;
+                let mut sub_domain_settings: Option<::ValueList<self::domain::SubDomainSetting>> =
+                    None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -547,10 +628,12 @@ impl<'de> ::serde::Deserialize<'de> for DomainProperties {
                             app_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AutoSubDomainCreationPatterns" => {
-                            auto_sub_domain_creation_patterns = ::serde::de::MapAccess::next_value(&mut map)?;
+                            auto_sub_domain_creation_patterns =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AutoSubDomainIAMRole" => {
-                            auto_sub_domain_iam_role = ::serde::de::MapAccess::next_value(&mut map)?;
+                            auto_sub_domain_iam_role =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DomainName" => {
                             domain_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -569,9 +652,11 @@ impl<'de> ::serde::Deserialize<'de> for DomainProperties {
                     app_id: app_id.ok_or(::serde::de::Error::missing_field("AppId"))?,
                     auto_sub_domain_creation_patterns: auto_sub_domain_creation_patterns,
                     auto_sub_domain_iam_role: auto_sub_domain_iam_role,
-                    domain_name: domain_name.ok_or(::serde::de::Error::missing_field("DomainName"))?,
+                    domain_name: domain_name
+                        .ok_or(::serde::de::Error::missing_field("DomainName"))?,
                     enable_auto_sub_domain: enable_auto_sub_domain,
-                    sub_domain_settings: sub_domain_settings.ok_or(::serde::de::Error::missing_field("SubDomainSettings"))?,
+                    sub_domain_settings: sub_domain_settings
+                        .ok_or(::serde::de::Error::missing_field("SubDomainSettings"))?,
                 })
             }
         }
@@ -661,31 +746,63 @@ pub mod app {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref auto_branch_creation_patterns) = self.auto_branch_creation_patterns {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoBranchCreationPatterns", auto_branch_creation_patterns)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AutoBranchCreationPatterns",
+                    auto_branch_creation_patterns,
+                )?;
             }
             if let Some(ref basic_auth_config) = self.basic_auth_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BasicAuthConfig", basic_auth_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BasicAuthConfig",
+                    basic_auth_config,
+                )?;
             }
             if let Some(ref build_spec) = self.build_spec {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "BuildSpec", build_spec)?;
             }
             if let Some(ref enable_auto_branch_creation) = self.enable_auto_branch_creation {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableAutoBranchCreation", enable_auto_branch_creation)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EnableAutoBranchCreation",
+                    enable_auto_branch_creation,
+                )?;
             }
             if let Some(ref enable_auto_build) = self.enable_auto_build {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableAutoBuild", enable_auto_build)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EnableAutoBuild",
+                    enable_auto_build,
+                )?;
             }
             if let Some(ref enable_performance_mode) = self.enable_performance_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnablePerformanceMode", enable_performance_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EnablePerformanceMode",
+                    enable_performance_mode,
+                )?;
             }
             if let Some(ref enable_pull_request_preview) = self.enable_pull_request_preview {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnablePullRequestPreview", enable_pull_request_preview)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EnablePullRequestPreview",
+                    enable_pull_request_preview,
+                )?;
             }
             if let Some(ref environment_variables) = self.environment_variables {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentVariables", environment_variables)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EnvironmentVariables",
+                    environment_variables,
+                )?;
             }
             if let Some(ref pull_request_environment_name) = self.pull_request_environment_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PullRequestEnvironmentName", pull_request_environment_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PullRequestEnvironmentName",
+                    pull_request_environment_name,
+                )?;
             }
             if let Some(ref stage) = self.stage {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Stage", stage)?;
@@ -695,7 +812,9 @@ pub mod app {
     }
 
     impl ::codec::DeserializeValue for AutoBranchCreationConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AutoBranchCreationConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AutoBranchCreationConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -705,7 +824,10 @@ pub mod app {
                     write!(f, "a struct of type AutoBranchCreationConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut auto_branch_creation_patterns: Option<::ValueList<String>> = None;
                     let mut basic_auth_config: Option<::Value<BasicAuthConfig>> = None;
                     let mut build_spec: Option<::Value<String>> = None;
@@ -717,10 +839,13 @@ pub mod app {
                     let mut pull_request_environment_name: Option<::Value<String>> = None;
                     let mut stage: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AutoBranchCreationPatterns" => {
-                                auto_branch_creation_patterns = ::serde::de::MapAccess::next_value(&mut map)?;
+                                auto_branch_creation_patterns =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "BasicAuthConfig" => {
                                 basic_auth_config = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -729,22 +854,27 @@ pub mod app {
                                 build_spec = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EnableAutoBranchCreation" => {
-                                enable_auto_branch_creation = ::serde::de::MapAccess::next_value(&mut map)?;
+                                enable_auto_branch_creation =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EnableAutoBuild" => {
                                 enable_auto_build = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EnablePerformanceMode" => {
-                                enable_performance_mode = ::serde::de::MapAccess::next_value(&mut map)?;
+                                enable_performance_mode =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EnablePullRequestPreview" => {
-                                enable_pull_request_preview = ::serde::de::MapAccess::next_value(&mut map)?;
+                                enable_pull_request_preview =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EnvironmentVariables" => {
-                                environment_variables = ::serde::de::MapAccess::next_value(&mut map)?;
+                                environment_variables =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PullRequestEnvironmentName" => {
-                                pull_request_environment_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                pull_request_environment_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Stage" => {
                                 stage = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -796,7 +926,11 @@ pub mod app {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enable_basic_auth) = self.enable_basic_auth {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableBasicAuth", enable_basic_auth)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EnableBasicAuth",
+                    enable_basic_auth,
+                )?;
             }
             if let Some(ref password) = self.password {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", password)?;
@@ -809,7 +943,9 @@ pub mod app {
     }
 
     impl ::codec::DeserializeValue for BasicAuthConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BasicAuthConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<BasicAuthConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -819,12 +955,17 @@ pub mod app {
                     write!(f, "a struct of type BasicAuthConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut enable_basic_auth: Option<::Value<bool>> = None;
                     let mut password: Option<::Value<String>> = None;
                     let mut username: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EnableBasicAuth" => {
                                 enable_basic_auth = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -902,13 +1043,18 @@ pub mod app {
                     write!(f, "a struct of type CustomRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut condition: Option<::Value<String>> = None;
                     let mut source: Option<::Value<String>> = None;
                     let mut status: Option<::Value<String>> = None;
                     let mut target: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Condition" => {
                                 condition = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -964,7 +1110,9 @@ pub mod app {
     }
 
     impl ::codec::DeserializeValue for EnvironmentVariable {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EnvironmentVariable, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EnvironmentVariable, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -974,11 +1122,16 @@ pub mod app {
                     write!(f, "a struct of type EnvironmentVariable")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1029,7 +1182,11 @@ pub mod branch {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enable_basic_auth) = self.enable_basic_auth {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableBasicAuth", enable_basic_auth)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EnableBasicAuth",
+                    enable_basic_auth,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", &self.password)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Username", &self.username)?;
@@ -1038,7 +1195,9 @@ pub mod branch {
     }
 
     impl ::codec::DeserializeValue for BasicAuthConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BasicAuthConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<BasicAuthConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1048,12 +1207,17 @@ pub mod branch {
                     write!(f, "a struct of type BasicAuthConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut enable_basic_auth: Option<::Value<bool>> = None;
                     let mut password: Option<::Value<String>> = None;
                     let mut username: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EnableBasicAuth" => {
                                 enable_basic_auth = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1105,7 +1269,9 @@ pub mod branch {
     }
 
     impl ::codec::DeserializeValue for EnvironmentVariable {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EnvironmentVariable, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EnvironmentVariable, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1115,11 +1281,16 @@ pub mod branch {
                     write!(f, "a struct of type EnvironmentVariable")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1171,7 +1342,9 @@ pub mod domain {
     }
 
     impl ::codec::DeserializeValue for SubDomainSetting {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SubDomainSetting, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SubDomainSetting, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1181,11 +1354,16 @@ pub mod domain {
                     write!(f, "a struct of type SubDomainSetting")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut branch_name: Option<::Value<String>> = None;
                     let mut prefix: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BranchName" => {
                                 branch_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1198,7 +1376,8 @@ pub mod domain {
                     }
 
                     Ok(SubDomainSetting {
-                        branch_name: branch_name.ok_or(::serde::de::Error::missing_field("BranchName"))?,
+                        branch_name: branch_name
+                            .ok_or(::serde::de::Error::missing_field("BranchName"))?,
                         prefix: prefix.ok_or(::serde::de::Error::missing_field("Prefix"))?,
                     })
                 }

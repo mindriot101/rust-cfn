@@ -3,7 +3,7 @@
 /// The [`AWS::DataSync::Agent`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html) resource type.
 #[derive(Debug, Default)]
 pub struct Agent {
-    properties: AgentProperties
+    properties: AgentProperties,
 }
 
 /// Properties for the `Agent` resource.
@@ -44,12 +44,20 @@ pub struct AgentProperties {
 impl ::serde::Serialize for AgentProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ActivationKey", &self.activation_key)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ActivationKey",
+            &self.activation_key,
+        )?;
         if let Some(ref agent_name) = self.agent_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AgentName", agent_name)?;
         }
         if let Some(ref security_group_arns) = self.security_group_arns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupArns", security_group_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroupArns",
+                security_group_arns,
+            )?;
         }
         if let Some(ref subnet_arns) = self.subnet_arns {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetArns", subnet_arns)?;
@@ -58,7 +66,11 @@ impl ::serde::Serialize for AgentProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref vpc_endpoint_id) = self.vpc_endpoint_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcEndpointId", vpc_endpoint_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VpcEndpointId",
+                vpc_endpoint_id,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -75,7 +87,10 @@ impl<'de> ::serde::Deserialize<'de> for AgentProperties {
                 write!(f, "a struct of type AgentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut activation_key: Option<::Value<String>> = None;
                 let mut agent_name: Option<::Value<String>> = None;
                 let mut security_group_arns: Option<::ValueList<String>> = None;
@@ -108,7 +123,8 @@ impl<'de> ::serde::Deserialize<'de> for AgentProperties {
                 }
 
                 Ok(AgentProperties {
-                    activation_key: activation_key.ok_or(::serde::de::Error::missing_field("ActivationKey"))?,
+                    activation_key: activation_key
+                        .ok_or(::serde::de::Error::missing_field("ActivationKey"))?,
                     agent_name: agent_name,
                     security_group_arns: security_group_arns,
                     subnet_arns: subnet_arns,
@@ -144,7 +160,7 @@ impl From<AgentProperties> for Agent {
 /// The [`AWS::DataSync::LocationEFS`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationEFS {
-    properties: LocationEFSProperties
+    properties: LocationEFSProperties,
 }
 
 /// Properties for the `LocationEFS` resource.
@@ -176,7 +192,11 @@ impl ::serde::Serialize for LocationEFSProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ec2Config", &self.ec2_config)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EfsFilesystemArn", &self.efs_filesystem_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EfsFilesystemArn",
+            &self.efs_filesystem_arn,
+        )?;
         if let Some(ref subdirectory) = self.subdirectory {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subdirectory", subdirectory)?;
         }
@@ -198,7 +218,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationEFSProperties {
                 write!(f, "a struct of type LocationEFSProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut ec2_config: Option<::Value<self::location_efs::Ec2Config>> = None;
                 let mut efs_filesystem_arn: Option<::Value<String>> = None;
                 let mut subdirectory: Option<::Value<String>> = None;
@@ -224,7 +247,8 @@ impl<'de> ::serde::Deserialize<'de> for LocationEFSProperties {
 
                 Ok(LocationEFSProperties {
                     ec2_config: ec2_config.ok_or(::serde::de::Error::missing_field("Ec2Config"))?,
-                    efs_filesystem_arn: efs_filesystem_arn.ok_or(::serde::de::Error::missing_field("EfsFilesystemArn"))?,
+                    efs_filesystem_arn: efs_filesystem_arn
+                        .ok_or(::serde::de::Error::missing_field("EfsFilesystemArn"))?,
                     subdirectory: subdirectory,
                     tags: tags,
                 })
@@ -257,7 +281,7 @@ impl From<LocationEFSProperties> for LocationEFS {
 /// The [`AWS::DataSync::LocationFSxLustre`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationFSxLustre {
-    properties: LocationFSxLustreProperties
+    properties: LocationFSxLustreProperties,
 }
 
 /// Properties for the `LocationFSxLustre` resource.
@@ -288,8 +312,16 @@ pub struct LocationFSxLustreProperties {
 impl ::serde::Serialize for LocationFSxLustreProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FsxFilesystemArn", &self.fsx_filesystem_arn)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupArns", &self.security_group_arns)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FsxFilesystemArn",
+            &self.fsx_filesystem_arn,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SecurityGroupArns",
+            &self.security_group_arns,
+        )?;
         if let Some(ref subdirectory) = self.subdirectory {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subdirectory", subdirectory)?;
         }
@@ -301,7 +333,9 @@ impl ::serde::Serialize for LocationFSxLustreProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LocationFSxLustreProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LocationFSxLustreProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LocationFSxLustreProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -311,7 +345,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationFSxLustreProperties {
                 write!(f, "a struct of type LocationFSxLustreProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut fsx_filesystem_arn: Option<::Value<String>> = None;
                 let mut security_group_arns: Option<::ValueList<String>> = None;
                 let mut subdirectory: Option<::Value<String>> = None;
@@ -336,8 +373,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationFSxLustreProperties {
                 }
 
                 Ok(LocationFSxLustreProperties {
-                    fsx_filesystem_arn: fsx_filesystem_arn.ok_or(::serde::de::Error::missing_field("FsxFilesystemArn"))?,
-                    security_group_arns: security_group_arns.ok_or(::serde::de::Error::missing_field("SecurityGroupArns"))?,
+                    fsx_filesystem_arn: fsx_filesystem_arn
+                        .ok_or(::serde::de::Error::missing_field("FsxFilesystemArn"))?,
+                    security_group_arns: security_group_arns
+                        .ok_or(::serde::de::Error::missing_field("SecurityGroupArns"))?,
                     subdirectory: subdirectory,
                     tags: tags,
                 })
@@ -370,7 +409,7 @@ impl From<LocationFSxLustreProperties> for LocationFSxLustre {
 /// The [`AWS::DataSync::LocationFSxOpenZFS`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationFSxOpenZFS {
-    properties: LocationFSxOpenZFSProperties
+    properties: LocationFSxOpenZFSProperties,
 }
 
 /// Properties for the `LocationFSxOpenZFS` resource.
@@ -406,9 +445,17 @@ pub struct LocationFSxOpenZFSProperties {
 impl ::serde::Serialize for LocationFSxOpenZFSProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FsxFilesystemArn", &self.fsx_filesystem_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FsxFilesystemArn",
+            &self.fsx_filesystem_arn,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Protocol", &self.protocol)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupArns", &self.security_group_arns)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SecurityGroupArns",
+            &self.security_group_arns,
+        )?;
         if let Some(ref subdirectory) = self.subdirectory {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subdirectory", subdirectory)?;
         }
@@ -420,7 +467,9 @@ impl ::serde::Serialize for LocationFSxOpenZFSProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LocationFSxOpenZFSProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LocationFSxOpenZFSProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LocationFSxOpenZFSProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -430,7 +479,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationFSxOpenZFSProperties {
                 write!(f, "a struct of type LocationFSxOpenZFSProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut fsx_filesystem_arn: Option<::Value<String>> = None;
                 let mut protocol: Option<::Value<self::location_f_sx_open_zfs::Protocol>> = None;
                 let mut security_group_arns: Option<::ValueList<String>> = None;
@@ -459,9 +511,11 @@ impl<'de> ::serde::Deserialize<'de> for LocationFSxOpenZFSProperties {
                 }
 
                 Ok(LocationFSxOpenZFSProperties {
-                    fsx_filesystem_arn: fsx_filesystem_arn.ok_or(::serde::de::Error::missing_field("FsxFilesystemArn"))?,
+                    fsx_filesystem_arn: fsx_filesystem_arn
+                        .ok_or(::serde::de::Error::missing_field("FsxFilesystemArn"))?,
                     protocol: protocol.ok_or(::serde::de::Error::missing_field("Protocol"))?,
-                    security_group_arns: security_group_arns.ok_or(::serde::de::Error::missing_field("SecurityGroupArns"))?,
+                    security_group_arns: security_group_arns
+                        .ok_or(::serde::de::Error::missing_field("SecurityGroupArns"))?,
                     subdirectory: subdirectory,
                     tags: tags,
                 })
@@ -494,7 +548,7 @@ impl From<LocationFSxOpenZFSProperties> for LocationFSxOpenZFS {
 /// The [`AWS::DataSync::LocationFSxWindows`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationFSxWindows {
-    properties: LocationFSxWindowsProperties
+    properties: LocationFSxWindowsProperties,
 }
 
 /// Properties for the `LocationFSxWindows` resource.
@@ -543,9 +597,17 @@ impl ::serde::Serialize for LocationFSxWindowsProperties {
         if let Some(ref domain) = self.domain {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Domain", domain)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FsxFilesystemArn", &self.fsx_filesystem_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FsxFilesystemArn",
+            &self.fsx_filesystem_arn,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", &self.password)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupArns", &self.security_group_arns)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SecurityGroupArns",
+            &self.security_group_arns,
+        )?;
         if let Some(ref subdirectory) = self.subdirectory {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subdirectory", subdirectory)?;
         }
@@ -558,7 +620,9 @@ impl ::serde::Serialize for LocationFSxWindowsProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LocationFSxWindowsProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LocationFSxWindowsProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LocationFSxWindowsProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -568,7 +632,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationFSxWindowsProperties {
                 write!(f, "a struct of type LocationFSxWindowsProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut domain: Option<::Value<String>> = None;
                 let mut fsx_filesystem_arn: Option<::Value<String>> = None;
                 let mut password: Option<::Value<String>> = None;
@@ -606,9 +673,11 @@ impl<'de> ::serde::Deserialize<'de> for LocationFSxWindowsProperties {
 
                 Ok(LocationFSxWindowsProperties {
                     domain: domain,
-                    fsx_filesystem_arn: fsx_filesystem_arn.ok_or(::serde::de::Error::missing_field("FsxFilesystemArn"))?,
+                    fsx_filesystem_arn: fsx_filesystem_arn
+                        .ok_or(::serde::de::Error::missing_field("FsxFilesystemArn"))?,
                     password: password.ok_or(::serde::de::Error::missing_field("Password"))?,
-                    security_group_arns: security_group_arns.ok_or(::serde::de::Error::missing_field("SecurityGroupArns"))?,
+                    security_group_arns: security_group_arns
+                        .ok_or(::serde::de::Error::missing_field("SecurityGroupArns"))?,
                     subdirectory: subdirectory,
                     tags: tags,
                     user: user.ok_or(::serde::de::Error::missing_field("User"))?,
@@ -642,7 +711,7 @@ impl From<LocationFSxWindowsProperties> for LocationFSxWindows {
 /// The [`AWS::DataSync::LocationHDFS`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationHDFS {
-    properties: LocationHDFSProperties
+    properties: LocationHDFSProperties,
 }
 
 /// Properties for the `LocationHDFS` resource.
@@ -719,28 +788,56 @@ impl ::serde::Serialize for LocationHDFSProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AgentArns", &self.agent_arns)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AuthenticationType", &self.authentication_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AuthenticationType",
+            &self.authentication_type,
+        )?;
         if let Some(ref block_size) = self.block_size {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlockSize", block_size)?;
         }
         if let Some(ref kerberos_keytab) = self.kerberos_keytab {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KerberosKeytab", kerberos_keytab)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KerberosKeytab",
+                kerberos_keytab,
+            )?;
         }
         if let Some(ref kerberos_krb5_conf) = self.kerberos_krb5_conf {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KerberosKrb5Conf", kerberos_krb5_conf)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KerberosKrb5Conf",
+                kerberos_krb5_conf,
+            )?;
         }
         if let Some(ref kerberos_principal) = self.kerberos_principal {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KerberosPrincipal", kerberos_principal)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KerberosPrincipal",
+                kerberos_principal,
+            )?;
         }
         if let Some(ref kms_key_provider_uri) = self.kms_key_provider_uri {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyProviderUri", kms_key_provider_uri)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KmsKeyProviderUri",
+                kms_key_provider_uri,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "NameNodes", &self.name_nodes)?;
         if let Some(ref qop_configuration) = self.qop_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "QopConfiguration", qop_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "QopConfiguration",
+                qop_configuration,
+            )?;
         }
         if let Some(ref replication_factor) = self.replication_factor {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReplicationFactor", replication_factor)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ReplicationFactor",
+                replication_factor,
+            )?;
         }
         if let Some(ref simple_user) = self.simple_user {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SimpleUser", simple_user)?;
@@ -756,7 +853,9 @@ impl ::serde::Serialize for LocationHDFSProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LocationHDFSProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LocationHDFSProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LocationHDFSProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -766,7 +865,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationHDFSProperties {
                 write!(f, "a struct of type LocationHDFSProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut agent_arns: Option<::ValueList<String>> = None;
                 let mut authentication_type: Option<::Value<String>> = None;
                 let mut block_size: Option<::Value<u32>> = None;
@@ -775,7 +877,8 @@ impl<'de> ::serde::Deserialize<'de> for LocationHDFSProperties {
                 let mut kerberos_principal: Option<::Value<String>> = None;
                 let mut kms_key_provider_uri: Option<::Value<String>> = None;
                 let mut name_nodes: Option<::ValueList<self::location_hdfs::NameNode>> = None;
-                let mut qop_configuration: Option<::Value<self::location_hdfs::QopConfiguration>> = None;
+                let mut qop_configuration: Option<::Value<self::location_hdfs::QopConfiguration>> =
+                    None;
                 let mut replication_factor: Option<::Value<u32>> = None;
                 let mut simple_user: Option<::Value<String>> = None;
                 let mut subdirectory: Option<::Value<String>> = None;
@@ -828,7 +931,8 @@ impl<'de> ::serde::Deserialize<'de> for LocationHDFSProperties {
 
                 Ok(LocationHDFSProperties {
                     agent_arns: agent_arns.ok_or(::serde::de::Error::missing_field("AgentArns"))?,
-                    authentication_type: authentication_type.ok_or(::serde::de::Error::missing_field("AuthenticationType"))?,
+                    authentication_type: authentication_type
+                        .ok_or(::serde::de::Error::missing_field("AuthenticationType"))?,
                     block_size: block_size,
                     kerberos_keytab: kerberos_keytab,
                     kerberos_krb5_conf: kerberos_krb5_conf,
@@ -870,7 +974,7 @@ impl From<LocationHDFSProperties> for LocationHDFS {
 /// The [`AWS::DataSync::LocationNFS`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationNFS {
-    properties: LocationNFSProperties
+    properties: LocationNFSProperties,
 }
 
 /// Properties for the `LocationNFS` resource.
@@ -909,8 +1013,16 @@ impl ::serde::Serialize for LocationNFSProperties {
         if let Some(ref mount_options) = self.mount_options {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MountOptions", mount_options)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "OnPremConfig", &self.on_prem_config)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerHostname", &self.server_hostname)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "OnPremConfig",
+            &self.on_prem_config,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ServerHostname",
+            &self.server_hostname,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subdirectory", &self.subdirectory)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -930,7 +1042,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationNFSProperties {
                 write!(f, "a struct of type LocationNFSProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut mount_options: Option<::Value<self::location_nfs::MountOptions>> = None;
                 let mut on_prem_config: Option<::Value<self::location_nfs::OnPremConfig>> = None;
                 let mut server_hostname: Option<::Value<String>> = None;
@@ -960,9 +1075,12 @@ impl<'de> ::serde::Deserialize<'de> for LocationNFSProperties {
 
                 Ok(LocationNFSProperties {
                     mount_options: mount_options,
-                    on_prem_config: on_prem_config.ok_or(::serde::de::Error::missing_field("OnPremConfig"))?,
-                    server_hostname: server_hostname.ok_or(::serde::de::Error::missing_field("ServerHostname"))?,
-                    subdirectory: subdirectory.ok_or(::serde::de::Error::missing_field("Subdirectory"))?,
+                    on_prem_config: on_prem_config
+                        .ok_or(::serde::de::Error::missing_field("OnPremConfig"))?,
+                    server_hostname: server_hostname
+                        .ok_or(::serde::de::Error::missing_field("ServerHostname"))?,
+                    subdirectory: subdirectory
+                        .ok_or(::serde::de::Error::missing_field("Subdirectory"))?,
                     tags: tags,
                 })
             }
@@ -994,7 +1112,7 @@ impl From<LocationNFSProperties> for LocationNFS {
 /// The [`AWS::DataSync::LocationObjectStorage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationObjectStorage {
-    properties: LocationObjectStorageProperties
+    properties: LocationObjectStorageProperties,
 }
 
 /// Properties for the `LocationObjectStorage` resource.
@@ -1058,12 +1176,20 @@ impl ::serde::Serialize for LocationObjectStorageProperties {
         if let Some(ref secret_key) = self.secret_key {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecretKey", secret_key)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerHostname", &self.server_hostname)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ServerHostname",
+            &self.server_hostname,
+        )?;
         if let Some(ref server_port) = self.server_port {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerPort", server_port)?;
         }
         if let Some(ref server_protocol) = self.server_protocol {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerProtocol", server_protocol)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ServerProtocol",
+                server_protocol,
+            )?;
         }
         if let Some(ref subdirectory) = self.subdirectory {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subdirectory", subdirectory)?;
@@ -1076,7 +1202,9 @@ impl ::serde::Serialize for LocationObjectStorageProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LocationObjectStorageProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LocationObjectStorageProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LocationObjectStorageProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1086,7 +1214,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationObjectStorageProperties {
                 write!(f, "a struct of type LocationObjectStorageProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut access_key: Option<::Value<String>> = None;
                 let mut agent_arns: Option<::ValueList<String>> = None;
                 let mut bucket_name: Option<::Value<String>> = None;
@@ -1133,9 +1264,11 @@ impl<'de> ::serde::Deserialize<'de> for LocationObjectStorageProperties {
                 Ok(LocationObjectStorageProperties {
                     access_key: access_key,
                     agent_arns: agent_arns.ok_or(::serde::de::Error::missing_field("AgentArns"))?,
-                    bucket_name: bucket_name.ok_or(::serde::de::Error::missing_field("BucketName"))?,
+                    bucket_name: bucket_name
+                        .ok_or(::serde::de::Error::missing_field("BucketName"))?,
                     secret_key: secret_key,
-                    server_hostname: server_hostname.ok_or(::serde::de::Error::missing_field("ServerHostname"))?,
+                    server_hostname: server_hostname
+                        .ok_or(::serde::de::Error::missing_field("ServerHostname"))?,
                     server_port: server_port,
                     server_protocol: server_protocol,
                     subdirectory: subdirectory,
@@ -1170,7 +1303,7 @@ impl From<LocationObjectStorageProperties> for LocationObjectStorage {
 /// The [`AWS::DataSync::LocationS3`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationS3 {
-    properties: LocationS3Properties
+    properties: LocationS3Properties,
 }
 
 /// Properties for the `LocationS3` resource.
@@ -1209,7 +1342,11 @@ impl ::serde::Serialize for LocationS3Properties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3BucketArn", &self.s3_bucket_arn)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Config", &self.s3_config)?;
         if let Some(ref s3_storage_class) = self.s3_storage_class {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3StorageClass", s3_storage_class)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "S3StorageClass",
+                s3_storage_class,
+            )?;
         }
         if let Some(ref subdirectory) = self.subdirectory {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subdirectory", subdirectory)?;
@@ -1232,7 +1369,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationS3Properties {
                 write!(f, "a struct of type LocationS3Properties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut s3_bucket_arn: Option<::Value<String>> = None;
                 let mut s3_config: Option<::Value<self::location_s3::S3Config>> = None;
                 let mut s3_storage_class: Option<::Value<String>> = None;
@@ -1261,7 +1401,8 @@ impl<'de> ::serde::Deserialize<'de> for LocationS3Properties {
                 }
 
                 Ok(LocationS3Properties {
-                    s3_bucket_arn: s3_bucket_arn.ok_or(::serde::de::Error::missing_field("S3BucketArn"))?,
+                    s3_bucket_arn: s3_bucket_arn
+                        .ok_or(::serde::de::Error::missing_field("S3BucketArn"))?,
                     s3_config: s3_config.ok_or(::serde::de::Error::missing_field("S3Config"))?,
                     s3_storage_class: s3_storage_class,
                     subdirectory: subdirectory,
@@ -1296,7 +1437,7 @@ impl From<LocationS3Properties> for LocationS3 {
 /// The [`AWS::DataSync::LocationSMB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html) resource type.
 #[derive(Debug, Default)]
 pub struct LocationSMB {
-    properties: LocationSMBProperties
+    properties: LocationSMBProperties,
 }
 
 /// Properties for the `LocationSMB` resource.
@@ -1355,7 +1496,11 @@ impl ::serde::Serialize for LocationSMBProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MountOptions", mount_options)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", &self.password)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerHostname", &self.server_hostname)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ServerHostname",
+            &self.server_hostname,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subdirectory", &self.subdirectory)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -1376,7 +1521,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationSMBProperties {
                 write!(f, "a struct of type LocationSMBProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut agent_arns: Option<::ValueList<String>> = None;
                 let mut domain: Option<::Value<String>> = None;
                 let mut mount_options: Option<::Value<self::location_smb::MountOptions>> = None;
@@ -1421,8 +1569,10 @@ impl<'de> ::serde::Deserialize<'de> for LocationSMBProperties {
                     domain: domain,
                     mount_options: mount_options,
                     password: password.ok_or(::serde::de::Error::missing_field("Password"))?,
-                    server_hostname: server_hostname.ok_or(::serde::de::Error::missing_field("ServerHostname"))?,
-                    subdirectory: subdirectory.ok_or(::serde::de::Error::missing_field("Subdirectory"))?,
+                    server_hostname: server_hostname
+                        .ok_or(::serde::de::Error::missing_field("ServerHostname"))?,
+                    subdirectory: subdirectory
+                        .ok_or(::serde::de::Error::missing_field("Subdirectory"))?,
                     tags: tags,
                     user: user.ok_or(::serde::de::Error::missing_field("User"))?,
                 })
@@ -1455,7 +1605,7 @@ impl From<LocationSMBProperties> for LocationSMB {
 /// The [`AWS::DataSync::Task`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html) resource type.
 #[derive(Debug, Default)]
 pub struct Task {
-    properties: TaskProperties
+    properties: TaskProperties,
 }
 
 /// Properties for the `Task` resource.
@@ -1512,9 +1662,17 @@ impl ::serde::Serialize for TaskProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref cloud_watch_log_group_arn) = self.cloud_watch_log_group_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchLogGroupArn", cloud_watch_log_group_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CloudWatchLogGroupArn",
+                cloud_watch_log_group_arn,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationLocationArn", &self.destination_location_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DestinationLocationArn",
+            &self.destination_location_arn,
+        )?;
         if let Some(ref excludes) = self.excludes {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Excludes", excludes)?;
         }
@@ -1530,7 +1688,11 @@ impl ::serde::Serialize for TaskProperties {
         if let Some(ref schedule) = self.schedule {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Schedule", schedule)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceLocationArn", &self.source_location_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SourceLocationArn",
+            &self.source_location_arn,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -1549,7 +1711,10 @@ impl<'de> ::serde::Deserialize<'de> for TaskProperties {
                 write!(f, "a struct of type TaskProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut cloud_watch_log_group_arn: Option<::Value<String>> = None;
                 let mut destination_location_arn: Option<::Value<String>> = None;
                 let mut excludes: Option<::ValueList<self::task::FilterRule>> = None;
@@ -1563,10 +1728,12 @@ impl<'de> ::serde::Deserialize<'de> for TaskProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "CloudWatchLogGroupArn" => {
-                            cloud_watch_log_group_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            cloud_watch_log_group_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DestinationLocationArn" => {
-                            destination_location_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            destination_location_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Excludes" => {
                             excludes = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1595,13 +1762,15 @@ impl<'de> ::serde::Deserialize<'de> for TaskProperties {
 
                 Ok(TaskProperties {
                     cloud_watch_log_group_arn: cloud_watch_log_group_arn,
-                    destination_location_arn: destination_location_arn.ok_or(::serde::de::Error::missing_field("DestinationLocationArn"))?,
+                    destination_location_arn: destination_location_arn
+                        .ok_or(::serde::de::Error::missing_field("DestinationLocationArn"))?,
                     excludes: excludes,
                     includes: includes,
                     name: name,
                     options: options,
                     schedule: schedule,
-                    source_location_arn: source_location_arn.ok_or(::serde::de::Error::missing_field("SourceLocationArn"))?,
+                    source_location_arn: source_location_arn
+                        .ok_or(::serde::de::Error::missing_field("SourceLocationArn"))?,
                     tags: tags,
                 })
             }
@@ -1651,7 +1820,11 @@ pub mod location_efs {
     impl ::codec::SerializeValue for Ec2Config {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupArns", &self.security_group_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroupArns",
+                &self.security_group_arns,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetArn", &self.subnet_arn)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1668,11 +1841,16 @@ pub mod location_efs {
                     write!(f, "a struct of type Ec2Config")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut security_group_arns: Option<::ValueList<String>> = None;
                     let mut subnet_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SecurityGroupArns" => {
                                 security_group_arns = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1685,8 +1863,10 @@ pub mod location_efs {
                     }
 
                     Ok(Ec2Config {
-                        security_group_arns: security_group_arns.ok_or(::serde::de::Error::missing_field("SecurityGroupArns"))?,
-                        subnet_arn: subnet_arn.ok_or(::serde::de::Error::missing_field("SubnetArn"))?,
+                        security_group_arns: security_group_arns
+                            .ok_or(::serde::de::Error::missing_field("SecurityGroupArns"))?,
+                        subnet_arn: subnet_arn
+                            .ok_or(::serde::de::Error::missing_field("SubnetArn"))?,
                     })
                 }
             }
@@ -1730,10 +1910,15 @@ pub mod location_f_sx_open_zfs {
                     write!(f, "a struct of type MountOptions")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Version" => {
                                 version = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1742,9 +1927,7 @@ pub mod location_f_sx_open_zfs {
                         }
                     }
 
-                    Ok(MountOptions {
-                        version: version,
-                    })
+                    Ok(MountOptions { version: version })
                 }
             }
 
@@ -1765,7 +1948,11 @@ pub mod location_f_sx_open_zfs {
     impl ::codec::SerializeValue for NFS {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MountOptions", &self.mount_options)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MountOptions",
+                &self.mount_options,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -1781,10 +1968,15 @@ pub mod location_f_sx_open_zfs {
                     write!(f, "a struct of type NFS")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut mount_options: Option<::Value<MountOptions>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MountOptions" => {
                                 mount_options = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1794,7 +1986,8 @@ pub mod location_f_sx_open_zfs {
                     }
 
                     Ok(NFS {
-                        mount_options: mount_options.ok_or(::serde::de::Error::missing_field("MountOptions"))?,
+                        mount_options: mount_options
+                            .ok_or(::serde::de::Error::missing_field("MountOptions"))?,
                     })
                 }
             }
@@ -1834,10 +2027,15 @@ pub mod location_f_sx_open_zfs {
                     write!(f, "a struct of type Protocol")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut nfs: Option<::Value<NFS>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "NFS" => {
                                 nfs = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1846,9 +2044,7 @@ pub mod location_f_sx_open_zfs {
                         }
                     }
 
-                    Ok(Protocol {
-                        nfs: nfs,
-                    })
+                    Ok(Protocol { nfs: nfs })
                 }
             }
 
@@ -1895,11 +2091,16 @@ pub mod location_hdfs {
                     write!(f, "a struct of type NameNode")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut hostname: Option<::Value<String>> = None;
                     let mut port: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Hostname" => {
                                 hostname = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1941,17 +2142,27 @@ pub mod location_hdfs {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_transfer_protection) = self.data_transfer_protection {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataTransferProtection", data_transfer_protection)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DataTransferProtection",
+                    data_transfer_protection,
+                )?;
             }
             if let Some(ref rpc_protection) = self.rpc_protection {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RpcProtection", rpc_protection)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RpcProtection",
+                    rpc_protection,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for QopConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<QopConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<QopConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1961,14 +2172,20 @@ pub mod location_hdfs {
                     write!(f, "a struct of type QopConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut data_transfer_protection: Option<::Value<String>> = None;
                     let mut rpc_protection: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DataTransferProtection" => {
-                                data_transfer_protection = ::serde::de::MapAccess::next_value(&mut map)?;
+                                data_transfer_protection =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RpcProtection" => {
                                 rpc_protection = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2023,10 +2240,15 @@ pub mod location_nfs {
                     write!(f, "a struct of type MountOptions")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Version" => {
                                 version = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2035,9 +2257,7 @@ pub mod location_nfs {
                         }
                     }
 
-                    Ok(MountOptions {
-                        version: version,
-                    })
+                    Ok(MountOptions { version: version })
                 }
             }
 
@@ -2074,10 +2294,15 @@ pub mod location_nfs {
                     write!(f, "a struct of type OnPremConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut agent_arns: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AgentArns" => {
                                 agent_arns = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2087,7 +2312,8 @@ pub mod location_nfs {
                     }
 
                     Ok(OnPremConfig {
-                        agent_arns: agent_arns.ok_or(::serde::de::Error::missing_field("AgentArns"))?,
+                        agent_arns: agent_arns
+                            .ok_or(::serde::de::Error::missing_field("AgentArns"))?,
                     })
                 }
             }
@@ -2113,7 +2339,11 @@ pub mod location_s3 {
     impl ::codec::SerializeValue for S3Config {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketAccessRoleArn", &self.bucket_access_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BucketAccessRoleArn",
+                &self.bucket_access_role_arn,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -2129,20 +2359,27 @@ pub mod location_s3 {
                     write!(f, "a struct of type S3Config")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bucket_access_role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BucketAccessRoleArn" => {
-                                bucket_access_role_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                                bucket_access_role_arn =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(S3Config {
-                        bucket_access_role_arn: bucket_access_role_arn.ok_or(::serde::de::Error::missing_field("BucketAccessRoleArn"))?,
+                        bucket_access_role_arn: bucket_access_role_arn
+                            .ok_or(::serde::de::Error::missing_field("BucketAccessRoleArn"))?,
                     })
                 }
             }
@@ -2186,10 +2423,15 @@ pub mod location_smb {
                     write!(f, "a struct of type MountOptions")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Version" => {
                                 version = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2198,9 +2440,7 @@ pub mod location_smb {
                         }
                     }
 
-                    Ok(MountOptions {
-                        version: version,
-                    })
+                    Ok(MountOptions { version: version })
                 }
             }
 
@@ -2251,11 +2491,16 @@ pub mod task {
                     write!(f, "a struct of type FilterRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut filter_type: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FilterType" => {
                                 filter_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2360,7 +2605,11 @@ pub mod task {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Atime", atime)?;
             }
             if let Some(ref bytes_per_second) = self.bytes_per_second {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BytesPerSecond", bytes_per_second)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BytesPerSecond",
+                    bytes_per_second,
+                )?;
             }
             if let Some(ref gid) = self.gid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Gid", gid)?;
@@ -2372,25 +2621,53 @@ pub mod task {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Mtime", mtime)?;
             }
             if let Some(ref overwrite_mode) = self.overwrite_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OverwriteMode", overwrite_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OverwriteMode",
+                    overwrite_mode,
+                )?;
             }
             if let Some(ref posix_permissions) = self.posix_permissions {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PosixPermissions", posix_permissions)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PosixPermissions",
+                    posix_permissions,
+                )?;
             }
             if let Some(ref preserve_deleted_files) = self.preserve_deleted_files {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreserveDeletedFiles", preserve_deleted_files)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PreserveDeletedFiles",
+                    preserve_deleted_files,
+                )?;
             }
             if let Some(ref preserve_devices) = self.preserve_devices {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreserveDevices", preserve_devices)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PreserveDevices",
+                    preserve_devices,
+                )?;
             }
             if let Some(ref security_descriptor_copy_flags) = self.security_descriptor_copy_flags {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityDescriptorCopyFlags", security_descriptor_copy_flags)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SecurityDescriptorCopyFlags",
+                    security_descriptor_copy_flags,
+                )?;
             }
             if let Some(ref task_queueing) = self.task_queueing {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TaskQueueing", task_queueing)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TaskQueueing",
+                    task_queueing,
+                )?;
             }
             if let Some(ref transfer_mode) = self.transfer_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TransferMode", transfer_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TransferMode",
+                    transfer_mode,
+                )?;
             }
             if let Some(ref uid) = self.uid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Uid", uid)?;
@@ -2413,7 +2690,10 @@ pub mod task {
                     write!(f, "a struct of type Options")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut atime: Option<::Value<String>> = None;
                     let mut bytes_per_second: Option<::Value<u32>> = None;
                     let mut gid: Option<::Value<String>> = None;
@@ -2429,7 +2709,9 @@ pub mod task {
                     let mut uid: Option<::Value<String>> = None;
                     let mut verify_mode: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Atime" => {
                                 atime = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2453,13 +2735,15 @@ pub mod task {
                                 posix_permissions = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PreserveDeletedFiles" => {
-                                preserve_deleted_files = ::serde::de::MapAccess::next_value(&mut map)?;
+                                preserve_deleted_files =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PreserveDevices" => {
                                 preserve_devices = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SecurityDescriptorCopyFlags" => {
-                                security_descriptor_copy_flags = ::serde::de::MapAccess::next_value(&mut map)?;
+                                security_descriptor_copy_flags =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TaskQueueing" => {
                                 task_queueing = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2513,7 +2797,11 @@ pub mod task {
     impl ::codec::SerializeValue for TaskSchedule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScheduleExpression", &self.schedule_expression)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ScheduleExpression",
+                &self.schedule_expression,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -2529,10 +2817,15 @@ pub mod task {
                     write!(f, "a struct of type TaskSchedule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut schedule_expression: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ScheduleExpression" => {
                                 schedule_expression = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2542,7 +2835,8 @@ pub mod task {
                     }
 
                     Ok(TaskSchedule {
-                        schedule_expression: schedule_expression.ok_or(::serde::de::Error::missing_field("ScheduleExpression"))?,
+                        schedule_expression: schedule_expression
+                            .ok_or(::serde::de::Error::missing_field("ScheduleExpression"))?,
                     })
                 }
             }

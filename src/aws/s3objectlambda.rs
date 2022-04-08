@@ -3,7 +3,7 @@
 /// The [`AWS::S3ObjectLambda::AccessPoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspoint.html) resource type.
 #[derive(Debug, Default)]
 pub struct AccessPoint {
-    properties: AccessPointProperties
+    properties: AccessPointProperties,
 }
 
 /// Properties for the `AccessPoint` resource.
@@ -27,7 +27,11 @@ impl ::serde::Serialize for AccessPointProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectLambdaConfiguration", &self.object_lambda_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ObjectLambdaConfiguration",
+            &self.object_lambda_configuration,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -43,9 +47,14 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointProperties {
                 write!(f, "a struct of type AccessPointProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
-                let mut object_lambda_configuration: Option<::Value<self::access_point::ObjectLambdaConfiguration>> = None;
+                let mut object_lambda_configuration: Option<
+                    ::Value<self::access_point::ObjectLambdaConfiguration>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -53,7 +62,8 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointProperties {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ObjectLambdaConfiguration" => {
-                            object_lambda_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            object_lambda_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
@@ -61,7 +71,9 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointProperties {
 
                 Ok(AccessPointProperties {
                     name: name,
-                    object_lambda_configuration: object_lambda_configuration.ok_or(::serde::de::Error::missing_field("ObjectLambdaConfiguration"))?,
+                    object_lambda_configuration: object_lambda_configuration.ok_or(
+                        ::serde::de::Error::missing_field("ObjectLambdaConfiguration"),
+                    )?,
                 })
             }
         }
@@ -92,7 +104,7 @@ impl From<AccessPointProperties> for AccessPoint {
 /// The [`AWS::S3ObjectLambda::AccessPointPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspointpolicy.html) resource type.
 #[derive(Debug, Default)]
 pub struct AccessPointPolicy {
-    properties: AccessPointPolicyProperties
+    properties: AccessPointPolicyProperties,
 }
 
 /// Properties for the `AccessPointPolicy` resource.
@@ -113,14 +125,24 @@ pub struct AccessPointPolicyProperties {
 impl ::serde::Serialize for AccessPointPolicyProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectLambdaAccessPoint", &self.object_lambda_access_point)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ObjectLambdaAccessPoint",
+            &self.object_lambda_access_point,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PolicyDocument",
+            &self.policy_document,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for AccessPointPolicyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AccessPointPolicyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AccessPointPolicyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -130,14 +152,18 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointPolicyProperties {
                 write!(f, "a struct of type AccessPointPolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut object_lambda_access_point: Option<::Value<String>> = None;
                 let mut policy_document: Option<::Value<::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ObjectLambdaAccessPoint" => {
-                            object_lambda_access_point = ::serde::de::MapAccess::next_value(&mut map)?;
+                            object_lambda_access_point =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PolicyDocument" => {
                             policy_document = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -147,8 +173,10 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointPolicyProperties {
                 }
 
                 Ok(AccessPointPolicyProperties {
-                    object_lambda_access_point: object_lambda_access_point.ok_or(::serde::de::Error::missing_field("ObjectLambdaAccessPoint"))?,
-                    policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                    object_lambda_access_point: object_lambda_access_point
+                        .ok_or(::serde::de::Error::missing_field("ObjectLambdaAccessPoint"))?,
+                    policy_document: policy_document
+                        .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
                 })
             }
         }
@@ -208,19 +236,37 @@ pub mod access_point {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_features) = self.allowed_features {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowedFeatures", allowed_features)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowedFeatures",
+                    allowed_features,
+                )?;
             }
             if let Some(ref cloud_watch_metrics_enabled) = self.cloud_watch_metrics_enabled {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchMetricsEnabled", cloud_watch_metrics_enabled)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CloudWatchMetricsEnabled",
+                    cloud_watch_metrics_enabled,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SupportingAccessPoint", &self.supporting_access_point)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TransformationConfigurations", &self.transformation_configurations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SupportingAccessPoint",
+                &self.supporting_access_point,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TransformationConfigurations",
+                &self.transformation_configurations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ObjectLambdaConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ObjectLambdaConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ObjectLambdaConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -230,25 +276,35 @@ pub mod access_point {
                     write!(f, "a struct of type ObjectLambdaConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allowed_features: Option<::ValueList<String>> = None;
                     let mut cloud_watch_metrics_enabled: Option<::Value<bool>> = None;
                     let mut supporting_access_point: Option<::Value<String>> = None;
-                    let mut transformation_configurations: Option<::ValueList<TransformationConfiguration>> = None;
+                    let mut transformation_configurations: Option<
+                        ::ValueList<TransformationConfiguration>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllowedFeatures" => {
                                 allowed_features = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CloudWatchMetricsEnabled" => {
-                                cloud_watch_metrics_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                                cloud_watch_metrics_enabled =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SupportingAccessPoint" => {
-                                supporting_access_point = ::serde::de::MapAccess::next_value(&mut map)?;
+                                supporting_access_point =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TransformationConfigurations" => {
-                                transformation_configurations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                transformation_configurations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -257,8 +313,11 @@ pub mod access_point {
                     Ok(ObjectLambdaConfiguration {
                         allowed_features: allowed_features,
                         cloud_watch_metrics_enabled: cloud_watch_metrics_enabled,
-                        supporting_access_point: supporting_access_point.ok_or(::serde::de::Error::missing_field("SupportingAccessPoint"))?,
-                        transformation_configurations: transformation_configurations.ok_or(::serde::de::Error::missing_field("TransformationConfigurations"))?,
+                        supporting_access_point: supporting_access_point
+                            .ok_or(::serde::de::Error::missing_field("SupportingAccessPoint"))?,
+                        transformation_configurations: transformation_configurations.ok_or(
+                            ::serde::de::Error::missing_field("TransformationConfigurations"),
+                        )?,
                     })
                 }
             }
@@ -286,13 +345,19 @@ pub mod access_point {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Actions", &self.actions)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContentTransformation", &self.content_transformation)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContentTransformation",
+                &self.content_transformation,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for TransformationConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TransformationConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TransformationConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -302,17 +367,23 @@ pub mod access_point {
                     write!(f, "a struct of type TransformationConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut actions: Option<::ValueList<String>> = None;
                     let mut content_transformation: Option<::Value<::json::Value>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Actions" => {
                                 actions = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ContentTransformation" => {
-                                content_transformation = ::serde::de::MapAccess::next_value(&mut map)?;
+                                content_transformation =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -320,7 +391,8 @@ pub mod access_point {
 
                     Ok(TransformationConfiguration {
                         actions: actions.ok_or(::serde::de::Error::missing_field("Actions"))?,
-                        content_transformation: content_transformation.ok_or(::serde::de::Error::missing_field("ContentTransformation"))?,
+                        content_transformation: content_transformation
+                            .ok_or(::serde::de::Error::missing_field("ContentTransformation"))?,
                     })
                 }
             }

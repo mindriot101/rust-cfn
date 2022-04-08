@@ -3,7 +3,7 @@
 /// The [`AWS::MediaLive::Channel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html) resource type.
 #[derive(Debug, Default)]
 pub struct Channel {
-    properties: ChannelProperties
+    properties: ChannelProperties,
 }
 
 /// Properties for the `Channel` resource.
@@ -70,7 +70,11 @@ impl ::serde::Serialize for ChannelProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref cdi_input_specification) = self.cdi_input_specification {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CdiInputSpecification", cdi_input_specification)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CdiInputSpecification",
+                cdi_input_specification,
+            )?;
         }
         if let Some(ref channel_class) = self.channel_class {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ChannelClass", channel_class)?;
@@ -79,13 +83,25 @@ impl ::serde::Serialize for ChannelProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destinations", destinations)?;
         }
         if let Some(ref encoder_settings) = self.encoder_settings {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncoderSettings", encoder_settings)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncoderSettings",
+                encoder_settings,
+            )?;
         }
         if let Some(ref input_attachments) = self.input_attachments {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputAttachments", input_attachments)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InputAttachments",
+                input_attachments,
+            )?;
         }
         if let Some(ref input_specification) = self.input_specification {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputSpecification", input_specification)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InputSpecification",
+                input_specification,
+            )?;
         }
         if let Some(ref log_level) = self.log_level {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogLevel", log_level)?;
@@ -117,13 +133,20 @@ impl<'de> ::serde::Deserialize<'de> for ChannelProperties {
                 write!(f, "a struct of type ChannelProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut cdi_input_specification: Option<::Value<self::channel::CdiInputSpecification>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut cdi_input_specification: Option<
+                    ::Value<self::channel::CdiInputSpecification>,
+                > = None;
                 let mut channel_class: Option<::Value<String>> = None;
                 let mut destinations: Option<::ValueList<self::channel::OutputDestination>> = None;
                 let mut encoder_settings: Option<::Value<self::channel::EncoderSettings>> = None;
-                let mut input_attachments: Option<::ValueList<self::channel::InputAttachment>> = None;
-                let mut input_specification: Option<::Value<self::channel::InputSpecification>> = None;
+                let mut input_attachments: Option<::ValueList<self::channel::InputAttachment>> =
+                    None;
+                let mut input_specification: Option<::Value<self::channel::InputSpecification>> =
+                    None;
                 let mut log_level: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut role_arn: Option<::Value<String>> = None;
@@ -211,7 +234,7 @@ impl From<ChannelProperties> for Channel {
 /// The [`AWS::MediaLive::Input`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html) resource type.
 #[derive(Debug, Default)]
 pub struct Input {
-    properties: InputProperties
+    properties: InputProperties,
 }
 
 /// Properties for the `Input` resource.
@@ -279,10 +302,18 @@ impl ::serde::Serialize for InputProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputDevices", input_devices)?;
         }
         if let Some(ref input_security_groups) = self.input_security_groups {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputSecurityGroups", input_security_groups)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InputSecurityGroups",
+                input_security_groups,
+            )?;
         }
         if let Some(ref media_connect_flows) = self.media_connect_flows {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MediaConnectFlows", media_connect_flows)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MediaConnectFlows",
+                media_connect_flows,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -317,11 +348,17 @@ impl<'de> ::serde::Deserialize<'de> for InputProperties {
                 write!(f, "a struct of type InputProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut destinations: Option<::ValueList<self::input::InputDestinationRequest>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut destinations: Option<::ValueList<self::input::InputDestinationRequest>> =
+                    None;
                 let mut input_devices: Option<::ValueList<self::input::InputDeviceSettings>> = None;
                 let mut input_security_groups: Option<::ValueList<String>> = None;
-                let mut media_connect_flows: Option<::ValueList<self::input::MediaConnectFlowRequest>> = None;
+                let mut media_connect_flows: Option<
+                    ::ValueList<self::input::MediaConnectFlowRequest>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut role_arn: Option<::Value<String>> = None;
                 let mut sources: Option<::ValueList<self::input::InputSourceRequest>> = None;
@@ -406,7 +443,7 @@ impl From<InputProperties> for Input {
 /// The [`AWS::MediaLive::InputSecurityGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct InputSecurityGroup {
-    properties: InputSecurityGroupProperties
+    properties: InputSecurityGroupProperties,
 }
 
 /// Properties for the `InputSecurityGroup` resource.
@@ -431,14 +468,20 @@ impl ::serde::Serialize for InputSecurityGroupProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref whitelist_rules) = self.whitelist_rules {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "WhitelistRules", whitelist_rules)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "WhitelistRules",
+                whitelist_rules,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for InputSecurityGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<InputSecurityGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<InputSecurityGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -448,9 +491,14 @@ impl<'de> ::serde::Deserialize<'de> for InputSecurityGroupProperties {
                 write!(f, "a struct of type InputSecurityGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut tags: Option<::Value<::json::Value>> = None;
-                let mut whitelist_rules: Option<::ValueList<self::input_security_group::InputWhitelistRuleCidr>> = None;
+                let mut whitelist_rules: Option<
+                    ::ValueList<self::input_security_group::InputWhitelistRuleCidr>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -563,7 +611,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Profile", profile)?;
             }
             if let Some(ref rate_control_mode) = self.rate_control_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RateControlMode", rate_control_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RateControlMode",
+                    rate_control_mode,
+                )?;
             }
             if let Some(ref raw_format) = self.raw_format {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RawFormat", raw_format)?;
@@ -592,7 +644,10 @@ pub mod channel {
                     write!(f, "a struct of type AacSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bitrate: Option<::Value<f64>> = None;
                     let mut coding_mode: Option<::Value<String>> = None;
                     let mut input_type: Option<::Value<String>> = None;
@@ -603,7 +658,9 @@ pub mod channel {
                     let mut spec: Option<::Value<String>> = None;
                     let mut vbr_quality: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bitrate" => {
                                 bitrate = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -701,7 +758,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bitrate", bitrate)?;
             }
             if let Some(ref bitstream_mode) = self.bitstream_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BitstreamMode", bitstream_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BitstreamMode",
+                    bitstream_mode,
+                )?;
             }
             if let Some(ref coding_mode) = self.coding_mode {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CodingMode", coding_mode)?;
@@ -716,7 +777,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "LfeFilter", lfe_filter)?;
             }
             if let Some(ref metadata_control) = self.metadata_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetadataControl", metadata_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MetadataControl",
+                    metadata_control,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -733,7 +798,10 @@ pub mod channel {
                     write!(f, "a struct of type Ac3Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bitrate: Option<::Value<f64>> = None;
                     let mut bitstream_mode: Option<::Value<String>> = None;
                     let mut coding_mode: Option<::Value<String>> = None;
@@ -742,7 +810,9 @@ pub mod channel {
                     let mut lfe_filter: Option<::Value<String>> = None;
                     let mut metadata_control: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bitrate" => {
                                 bitrate = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -798,15 +868,22 @@ pub mod channel {
     impl ::codec::SerializeValue for AncillarySourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            if let Some(ref source_ancillary_channel_number) = self.source_ancillary_channel_number {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceAncillaryChannelNumber", source_ancillary_channel_number)?;
+            if let Some(ref source_ancillary_channel_number) = self.source_ancillary_channel_number
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SourceAncillaryChannelNumber",
+                    source_ancillary_channel_number,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AncillarySourceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AncillarySourceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AncillarySourceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -816,13 +893,19 @@ pub mod channel {
                     write!(f, "a struct of type AncillarySourceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut source_ancillary_channel_number: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SourceAncillaryChannelNumber" => {
-                                source_ancillary_channel_number = ::serde::de::MapAccess::next_value(&mut map)?;
+                                source_ancillary_channel_number =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -852,14 +935,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref archive_s3_settings) = self.archive_s3_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ArchiveS3Settings", archive_s3_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ArchiveS3Settings",
+                    archive_s3_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ArchiveCdnSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ArchiveCdnSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ArchiveCdnSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -869,10 +958,15 @@ pub mod channel {
                     write!(f, "a struct of type ArchiveCdnSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut archive_s3_settings: Option<::Value<ArchiveS3Settings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ArchiveS3Settings" => {
                                 archive_s3_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -910,7 +1004,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref m2ts_settings) = self.m2ts_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "M2tsSettings", m2ts_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "M2tsSettings",
+                    m2ts_settings,
+                )?;
             }
             if let Some(ref raw_settings) = self.raw_settings {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RawSettings", raw_settings)?;
@@ -920,7 +1018,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for ArchiveContainerSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ArchiveContainerSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ArchiveContainerSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -930,11 +1030,16 @@ pub mod channel {
                     write!(f, "a struct of type ArchiveContainerSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut m2ts_settings: Option<::Value<M2tsSettings>> = None;
                     let mut raw_settings: Option<::Value<RawSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "M2tsSettings" => {
                                 m2ts_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -981,20 +1086,30 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref archive_cdn_settings) = self.archive_cdn_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ArchiveCdnSettings", archive_cdn_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ArchiveCdnSettings",
+                    archive_cdn_settings,
+                )?;
             }
             if let Some(ref destination) = self.destination {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destination", destination)?;
             }
             if let Some(ref rollover_interval) = self.rollover_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RolloverInterval", rollover_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RolloverInterval",
+                    rollover_interval,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ArchiveGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ArchiveGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ArchiveGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1004,15 +1119,21 @@ pub mod channel {
                     write!(f, "a struct of type ArchiveGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut archive_cdn_settings: Option<::Value<ArchiveCdnSettings>> = None;
                     let mut destination: Option<::Value<OutputLocationRef>> = None;
                     let mut rollover_interval: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ArchiveCdnSettings" => {
-                                archive_cdn_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                archive_cdn_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Destination" => {
                                 destination = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1060,20 +1181,30 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_settings) = self.container_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerSettings", container_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContainerSettings",
+                    container_settings,
+                )?;
             }
             if let Some(ref extension) = self.extension {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Extension", extension)?;
             }
             if let Some(ref name_modifier) = self.name_modifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NameModifier", name_modifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NameModifier",
+                    name_modifier,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ArchiveOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ArchiveOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ArchiveOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1083,12 +1214,17 @@ pub mod channel {
                     write!(f, "a struct of type ArchiveOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut container_settings: Option<::Value<ArchiveContainerSettings>> = None;
                     let mut extension: Option<::Value<String>> = None;
                     let mut name_modifier: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ContainerSettings" => {
                                 container_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1136,7 +1272,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for ArchiveS3Settings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ArchiveS3Settings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ArchiveS3Settings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1146,10 +1284,15 @@ pub mod channel {
                     write!(f, "a struct of type ArchiveS3Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut canned_acl: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CannedAcl" => {
                                 canned_acl = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1170,8 +1313,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.AribDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aribdestinationsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct AribDestinationSettings {
-    }
+    pub struct AribDestinationSettings {}
 
     impl ::codec::SerializeValue for AribDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1181,7 +1323,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AribDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AribDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AribDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1191,7 +1335,10 @@ pub mod channel {
                     write!(f, "a struct of type AribDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(AribDestinationSettings {})
                 }
             }
@@ -1202,8 +1349,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.AribSourceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aribsourcesettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct AribSourceSettings {
-    }
+    pub struct AribSourceSettings {}
 
     impl ::codec::SerializeValue for AribSourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1213,7 +1359,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AribSourceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AribSourceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AribSourceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1223,7 +1371,10 @@ pub mod channel {
                     write!(f, "a struct of type AribSourceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(AribSourceSettings {})
                 }
             }
@@ -1251,17 +1402,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref input_channel_levels) = self.input_channel_levels {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputChannelLevels", input_channel_levels)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputChannelLevels",
+                    input_channel_levels,
+                )?;
             }
             if let Some(ref output_channel) = self.output_channel {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputChannel", output_channel)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutputChannel",
+                    output_channel,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AudioChannelMapping {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioChannelMapping, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioChannelMapping, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1271,14 +1432,20 @@ pub mod channel {
                     write!(f, "a struct of type AudioChannelMapping")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut input_channel_levels: Option<::ValueList<InputChannelLevel>> = None;
                     let mut output_channel: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InputChannelLevels" => {
-                                input_channel_levels = ::serde::de::MapAccess::next_value(&mut map)?;
+                                input_channel_levels =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "OutputChannel" => {
                                 output_channel = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1343,13 +1510,21 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ac3Settings", ac3_settings)?;
             }
             if let Some(ref eac3_settings) = self.eac3_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Eac3Settings", eac3_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Eac3Settings",
+                    eac3_settings,
+                )?;
             }
             if let Some(ref mp2_settings) = self.mp2_settings {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Mp2Settings", mp2_settings)?;
             }
             if let Some(ref pass_through_settings) = self.pass_through_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PassThroughSettings", pass_through_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PassThroughSettings",
+                    pass_through_settings,
+                )?;
             }
             if let Some(ref wav_settings) = self.wav_settings {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "WavSettings", wav_settings)?;
@@ -1359,7 +1534,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AudioCodecSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioCodecSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioCodecSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1369,7 +1546,10 @@ pub mod channel {
                     write!(f, "a struct of type AudioCodecSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut aac_settings: Option<::Value<AacSettings>> = None;
                     let mut ac3_settings: Option<::Value<Ac3Settings>> = None;
                     let mut eac3_settings: Option<::Value<Eac3Settings>> = None;
@@ -1377,7 +1557,9 @@ pub mod channel {
                     let mut pass_through_settings: Option<::Value<PassThroughSettings>> = None;
                     let mut wav_settings: Option<::Value<WavSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AacSettings" => {
                                 aac_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1392,7 +1574,8 @@ pub mod channel {
                                 mp2_settings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PassThroughSettings" => {
-                                pass_through_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                pass_through_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "WavSettings" => {
                                 wav_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1480,34 +1663,66 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_normalization_settings) = self.audio_normalization_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioNormalizationSettings", audio_normalization_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioNormalizationSettings",
+                    audio_normalization_settings,
+                )?;
             }
             if let Some(ref audio_selector_name) = self.audio_selector_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioSelectorName", audio_selector_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioSelectorName",
+                    audio_selector_name,
+                )?;
             }
             if let Some(ref audio_type) = self.audio_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioType", audio_type)?;
             }
             if let Some(ref audio_type_control) = self.audio_type_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioTypeControl", audio_type_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioTypeControl",
+                    audio_type_control,
+                )?;
             }
             if let Some(ref audio_watermarking_settings) = self.audio_watermarking_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioWatermarkingSettings", audio_watermarking_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioWatermarkingSettings",
+                    audio_watermarking_settings,
+                )?;
             }
             if let Some(ref codec_settings) = self.codec_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CodecSettings", codec_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CodecSettings",
+                    codec_settings,
+                )?;
             }
             if let Some(ref language_code) = self.language_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageCode", language_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageCode",
+                    language_code,
+                )?;
             }
             if let Some(ref language_code_control) = self.language_code_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageCodeControl", language_code_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageCodeControl",
+                    language_code_control,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
             }
             if let Some(ref remix_settings) = self.remix_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RemixSettings", remix_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RemixSettings",
+                    remix_settings,
+                )?;
             }
             if let Some(ref stream_name) = self.stream_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamName", stream_name)?;
@@ -1517,7 +1732,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AudioDescription {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioDescription, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioDescription, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1527,12 +1744,18 @@ pub mod channel {
                     write!(f, "a struct of type AudioDescription")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut audio_normalization_settings: Option<::Value<AudioNormalizationSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut audio_normalization_settings: Option<
+                        ::Value<AudioNormalizationSettings>,
+                    > = None;
                     let mut audio_selector_name: Option<::Value<String>> = None;
                     let mut audio_type: Option<::Value<String>> = None;
                     let mut audio_type_control: Option<::Value<String>> = None;
-                    let mut audio_watermarking_settings: Option<::Value<AudioWatermarkSettings>> = None;
+                    let mut audio_watermarking_settings: Option<::Value<AudioWatermarkSettings>> =
+                        None;
                     let mut codec_settings: Option<::Value<AudioCodecSettings>> = None;
                     let mut language_code: Option<::Value<String>> = None;
                     let mut language_code_control: Option<::Value<String>> = None;
@@ -1540,10 +1763,13 @@ pub mod channel {
                     let mut remix_settings: Option<::Value<RemixSettings>> = None;
                     let mut stream_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioNormalizationSettings" => {
-                                audio_normalization_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_normalization_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioSelectorName" => {
                                 audio_selector_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1555,7 +1781,8 @@ pub mod channel {
                                 audio_type_control = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioWatermarkingSettings" => {
-                                audio_watermarking_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_watermarking_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CodecSettings" => {
                                 codec_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1564,7 +1791,8 @@ pub mod channel {
                                 language_code = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LanguageCodeControl" => {
-                                language_code_control = ::serde::de::MapAccess::next_value(&mut map)?;
+                                language_code_control =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1628,7 +1856,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AudioHlsRenditionSelection {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioHlsRenditionSelection, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioHlsRenditionSelection, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1638,11 +1868,16 @@ pub mod channel {
                     write!(f, "a struct of type AudioHlsRenditionSelection")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut group_id: Option<::Value<String>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "GroupId" => {
                                 group_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1684,17 +1919,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref language_code) = self.language_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageCode", language_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageCode",
+                    language_code,
+                )?;
             }
             if let Some(ref language_selection_policy) = self.language_selection_policy {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageSelectionPolicy", language_selection_policy)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageSelectionPolicy",
+                    language_selection_policy,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AudioLanguageSelection {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioLanguageSelection, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioLanguageSelection, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1704,17 +1949,23 @@ pub mod channel {
                     write!(f, "a struct of type AudioLanguageSelection")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut language_code: Option<::Value<String>> = None;
                     let mut language_selection_policy: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LanguageCode" => {
                                 language_code = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LanguageSelectionPolicy" => {
-                                language_selection_policy = ::serde::de::MapAccess::next_value(&mut map)?;
+                                language_selection_policy =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1758,7 +2009,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Algorithm", algorithm)?;
             }
             if let Some(ref algorithm_control) = self.algorithm_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlgorithmControl", algorithm_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AlgorithmControl",
+                    algorithm_control,
+                )?;
             }
             if let Some(ref target_lkfs) = self.target_lkfs {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetLkfs", target_lkfs)?;
@@ -1768,7 +2023,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AudioNormalizationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioNormalizationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioNormalizationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1778,12 +2035,17 @@ pub mod channel {
                     write!(f, "a struct of type AudioNormalizationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut algorithm: Option<::Value<String>> = None;
                     let mut algorithm_control: Option<::Value<String>> = None;
                     let mut target_lkfs: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Algorithm" => {
                                 algorithm = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1839,13 +2101,25 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_group_id) = self.audio_group_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioGroupId", audio_group_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioGroupId",
+                    audio_group_id,
+                )?;
             }
             if let Some(ref audio_only_image) = self.audio_only_image {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioOnlyImage", audio_only_image)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioOnlyImage",
+                    audio_only_image,
+                )?;
             }
             if let Some(ref audio_track_type) = self.audio_track_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioTrackType", audio_track_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioTrackType",
+                    audio_track_type,
+                )?;
             }
             if let Some(ref segment_type) = self.segment_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentType", segment_type)?;
@@ -1855,7 +2129,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AudioOnlyHlsSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioOnlyHlsSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioOnlyHlsSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1865,13 +2141,18 @@ pub mod channel {
                     write!(f, "a struct of type AudioOnlyHlsSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_group_id: Option<::Value<String>> = None;
                     let mut audio_only_image: Option<::Value<InputLocation>> = None;
                     let mut audio_track_type: Option<::Value<String>> = None;
                     let mut segment_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioGroupId" => {
                                 audio_group_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1923,7 +2204,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AudioPidSelection {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioPidSelection, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioPidSelection, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1933,10 +2216,15 @@ pub mod channel {
                     write!(f, "a struct of type AudioPidSelection")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut pid: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Pid" => {
                                 pid = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1945,9 +2233,7 @@ pub mod channel {
                         }
                     }
 
-                    Ok(AudioPidSelection {
-                        pid: pid,
-                    })
+                    Ok(AudioPidSelection { pid: pid })
                 }
             }
 
@@ -1977,14 +2263,20 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
             }
             if let Some(ref selector_settings) = self.selector_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SelectorSettings", selector_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SelectorSettings",
+                    selector_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AudioSelector {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioSelector, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioSelector, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1994,11 +2286,16 @@ pub mod channel {
                     write!(f, "a struct of type AudioSelector")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut selector_settings: Option<::Value<AudioSelectorSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2050,23 +2347,41 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_hls_rendition_selection) = self.audio_hls_rendition_selection {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioHlsRenditionSelection", audio_hls_rendition_selection)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioHlsRenditionSelection",
+                    audio_hls_rendition_selection,
+                )?;
             }
             if let Some(ref audio_language_selection) = self.audio_language_selection {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioLanguageSelection", audio_language_selection)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioLanguageSelection",
+                    audio_language_selection,
+                )?;
             }
             if let Some(ref audio_pid_selection) = self.audio_pid_selection {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioPidSelection", audio_pid_selection)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioPidSelection",
+                    audio_pid_selection,
+                )?;
             }
             if let Some(ref audio_track_selection) = self.audio_track_selection {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioTrackSelection", audio_track_selection)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioTrackSelection",
+                    audio_track_selection,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AudioSelectorSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioSelectorSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioSelectorSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2076,25 +2391,36 @@ pub mod channel {
                     write!(f, "a struct of type AudioSelectorSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut audio_hls_rendition_selection: Option<::Value<AudioHlsRenditionSelection>> = None;
-                    let mut audio_language_selection: Option<::Value<AudioLanguageSelection>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut audio_hls_rendition_selection: Option<
+                        ::Value<AudioHlsRenditionSelection>,
+                    > = None;
+                    let mut audio_language_selection: Option<::Value<AudioLanguageSelection>> =
+                        None;
                     let mut audio_pid_selection: Option<::Value<AudioPidSelection>> = None;
                     let mut audio_track_selection: Option<::Value<AudioTrackSelection>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioHlsRenditionSelection" => {
-                                audio_hls_rendition_selection = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_hls_rendition_selection =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioLanguageSelection" => {
-                                audio_language_selection = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_language_selection =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioPidSelection" => {
                                 audio_pid_selection = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioTrackSelection" => {
-                                audio_track_selection = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_track_selection =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2132,17 +2458,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_selector_name) = self.audio_selector_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioSelectorName", audio_selector_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioSelectorName",
+                    audio_selector_name,
+                )?;
             }
             if let Some(ref audio_silence_threshold_msec) = self.audio_silence_threshold_msec {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioSilenceThresholdMsec", audio_silence_threshold_msec)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioSilenceThresholdMsec",
+                    audio_silence_threshold_msec,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AudioSilenceFailoverSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioSilenceFailoverSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioSilenceFailoverSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2152,17 +2488,23 @@ pub mod channel {
                     write!(f, "a struct of type AudioSilenceFailoverSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_selector_name: Option<::Value<String>> = None;
                     let mut audio_silence_threshold_msec: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioSelectorName" => {
                                 audio_selector_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioSilenceThresholdMsec" => {
-                                audio_silence_threshold_msec = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_silence_threshold_msec =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2210,10 +2552,15 @@ pub mod channel {
                     write!(f, "a struct of type AudioTrack")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut track: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Track" => {
                                 track = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2222,9 +2569,7 @@ pub mod channel {
                         }
                     }
 
-                    Ok(AudioTrack {
-                        track: track,
-                    })
+                    Ok(AudioTrack { track: track })
                 }
             }
 
@@ -2253,7 +2598,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AudioTrackSelection {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioTrackSelection, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioTrackSelection, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2263,10 +2610,15 @@ pub mod channel {
                     write!(f, "a struct of type AudioTrackSelection")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut tracks: Option<::ValueList<AudioTrack>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Tracks" => {
                                 tracks = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2275,9 +2627,7 @@ pub mod channel {
                         }
                     }
 
-                    Ok(AudioTrackSelection {
-                        tracks: tracks,
-                    })
+                    Ok(AudioTrackSelection { tracks: tracks })
                 }
             }
 
@@ -2299,14 +2649,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref nielsen_watermarks_settings) = self.nielsen_watermarks_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenWatermarksSettings", nielsen_watermarks_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenWatermarksSettings",
+                    nielsen_watermarks_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AudioWatermarkSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioWatermarkSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AudioWatermarkSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2316,13 +2672,21 @@ pub mod channel {
                     write!(f, "a struct of type AudioWatermarkSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut nielsen_watermarks_settings: Option<::Value<NielsenWatermarksSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut nielsen_watermarks_settings: Option<
+                        ::Value<NielsenWatermarksSettings>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "NielsenWatermarksSettings" => {
-                                nielsen_watermarks_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_watermarks_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2367,23 +2731,41 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref error_clear_time_msec) = self.error_clear_time_msec {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ErrorClearTimeMsec", error_clear_time_msec)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ErrorClearTimeMsec",
+                    error_clear_time_msec,
+                )?;
             }
             if let Some(ref failover_conditions) = self.failover_conditions {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FailoverConditions", failover_conditions)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FailoverConditions",
+                    failover_conditions,
+                )?;
             }
             if let Some(ref input_preference) = self.input_preference {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputPreference", input_preference)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputPreference",
+                    input_preference,
+                )?;
             }
             if let Some(ref secondary_input_id) = self.secondary_input_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecondaryInputId", secondary_input_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SecondaryInputId",
+                    secondary_input_id,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AutomaticInputFailoverSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AutomaticInputFailoverSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AutomaticInputFailoverSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2393,16 +2775,22 @@ pub mod channel {
                     write!(f, "a struct of type AutomaticInputFailoverSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut error_clear_time_msec: Option<::Value<u32>> = None;
                     let mut failover_conditions: Option<::ValueList<FailoverCondition>> = None;
                     let mut input_preference: Option<::Value<String>> = None;
                     let mut secondary_input_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ErrorClearTimeMsec" => {
-                                error_clear_time_msec = ::serde::de::MapAccess::next_value(&mut map)?;
+                                error_clear_time_msec =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FailoverConditions" => {
                                 failover_conditions = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2449,7 +2837,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref avail_blanking_image) = self.avail_blanking_image {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailBlankingImage", avail_blanking_image)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AvailBlankingImage",
+                    avail_blanking_image,
+                )?;
             }
             if let Some(ref state) = self.state {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "State", state)?;
@@ -2459,7 +2851,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for AvailBlanking {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AvailBlanking, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AvailBlanking, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2469,14 +2863,20 @@ pub mod channel {
                     write!(f, "a struct of type AvailBlanking")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut avail_blanking_image: Option<::Value<InputLocation>> = None;
                     let mut state: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AvailBlankingImage" => {
-                                avail_blanking_image = ::serde::de::MapAccess::next_value(&mut map)?;
+                                avail_blanking_image =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "State" => {
                                 state = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2510,14 +2910,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref avail_settings) = self.avail_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailSettings", avail_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AvailSettings",
+                    avail_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AvailConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AvailConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AvailConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2527,10 +2933,15 @@ pub mod channel {
                     write!(f, "a struct of type AvailConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut avail_settings: Option<::Value<AvailSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AvailSettings" => {
                                 avail_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2568,17 +2979,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref scte35_splice_insert) = self.scte35_splice_insert {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte35SpliceInsert", scte35_splice_insert)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte35SpliceInsert",
+                    scte35_splice_insert,
+                )?;
             }
             if let Some(ref scte35_time_signal_apos) = self.scte35_time_signal_apos {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte35TimeSignalApos", scte35_time_signal_apos)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte35TimeSignalApos",
+                    scte35_time_signal_apos,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AvailSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AvailSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AvailSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2588,17 +3009,24 @@ pub mod channel {
                     write!(f, "a struct of type AvailSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut scte35_splice_insert: Option<::Value<Scte35SpliceInsert>> = None;
                     let mut scte35_time_signal_apos: Option<::Value<Scte35TimeSignalApos>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Scte35SpliceInsert" => {
-                                scte35_splice_insert = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scte35_splice_insert =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Scte35TimeSignalApos" => {
-                                scte35_time_signal_apos = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scte35_time_signal_apos =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2649,13 +3077,25 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref blackout_slate_image) = self.blackout_slate_image {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlackoutSlateImage", blackout_slate_image)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BlackoutSlateImage",
+                    blackout_slate_image,
+                )?;
             }
             if let Some(ref network_end_blackout) = self.network_end_blackout {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NetworkEndBlackout", network_end_blackout)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NetworkEndBlackout",
+                    network_end_blackout,
+                )?;
             }
             if let Some(ref network_end_blackout_image) = self.network_end_blackout_image {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NetworkEndBlackoutImage", network_end_blackout_image)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NetworkEndBlackoutImage",
+                    network_end_blackout_image,
+                )?;
             }
             if let Some(ref network_id) = self.network_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NetworkId", network_id)?;
@@ -2668,7 +3108,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for BlackoutSlate {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BlackoutSlate, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<BlackoutSlate, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2678,23 +3120,31 @@ pub mod channel {
                     write!(f, "a struct of type BlackoutSlate")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut blackout_slate_image: Option<::Value<InputLocation>> = None;
                     let mut network_end_blackout: Option<::Value<String>> = None;
                     let mut network_end_blackout_image: Option<::Value<InputLocation>> = None;
                     let mut network_id: Option<::Value<String>> = None;
                     let mut state: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BlackoutSlateImage" => {
-                                blackout_slate_image = ::serde::de::MapAccess::next_value(&mut map)?;
+                                blackout_slate_image =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NetworkEndBlackout" => {
-                                network_end_blackout = ::serde::de::MapAccess::next_value(&mut map)?;
+                                network_end_blackout =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NetworkEndBlackoutImage" => {
-                                network_end_blackout_image = ::serde::de::MapAccess::next_value(&mut map)?;
+                                network_end_blackout_image =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NetworkId" => {
                                 network_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2817,10 +3267,18 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Alignment", alignment)?;
             }
             if let Some(ref background_color) = self.background_color {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BackgroundColor", background_color)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BackgroundColor",
+                    background_color,
+                )?;
             }
             if let Some(ref background_opacity) = self.background_opacity {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BackgroundOpacity", background_opacity)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BackgroundOpacity",
+                    background_opacity,
+                )?;
             }
             if let Some(ref font) = self.font {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Font", font)?;
@@ -2832,13 +3290,21 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FontOpacity", font_opacity)?;
             }
             if let Some(ref font_resolution) = self.font_resolution {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FontResolution", font_resolution)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FontResolution",
+                    font_resolution,
+                )?;
             }
             if let Some(ref font_size) = self.font_size {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FontSize", font_size)?;
             }
             if let Some(ref outline_color) = self.outline_color {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutlineColor", outline_color)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutlineColor",
+                    outline_color,
+                )?;
             }
             if let Some(ref outline_size) = self.outline_size {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutlineSize", outline_size)?;
@@ -2847,16 +3313,32 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShadowColor", shadow_color)?;
             }
             if let Some(ref shadow_opacity) = self.shadow_opacity {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShadowOpacity", shadow_opacity)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ShadowOpacity",
+                    shadow_opacity,
+                )?;
             }
             if let Some(ref shadow_x_offset) = self.shadow_x_offset {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShadowXOffset", shadow_x_offset)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ShadowXOffset",
+                    shadow_x_offset,
+                )?;
             }
             if let Some(ref shadow_y_offset) = self.shadow_y_offset {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShadowYOffset", shadow_y_offset)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ShadowYOffset",
+                    shadow_y_offset,
+                )?;
             }
             if let Some(ref teletext_grid_control) = self.teletext_grid_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TeletextGridControl", teletext_grid_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TeletextGridControl",
+                    teletext_grid_control,
+                )?;
             }
             if let Some(ref x_position) = self.x_position {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "XPosition", x_position)?;
@@ -2869,7 +3351,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for BurnInDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BurnInDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<BurnInDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2879,7 +3363,10 @@ pub mod channel {
                     write!(f, "a struct of type BurnInDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut alignment: Option<::Value<String>> = None;
                     let mut background_color: Option<::Value<String>> = None;
                     let mut background_opacity: Option<::Value<u32>> = None;
@@ -2898,7 +3385,9 @@ pub mod channel {
                     let mut x_position: Option<::Value<u32>> = None;
                     let mut y_position: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Alignment" => {
                                 alignment = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2943,7 +3432,8 @@ pub mod channel {
                                 shadow_y_offset = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TeletextGridControl" => {
-                                teletext_grid_control = ::serde::de::MapAccess::next_value(&mut map)?;
+                                teletext_grid_control =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "XPosition" => {
                                 x_position = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3015,16 +3505,32 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref caption_selector_name) = self.caption_selector_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptionSelectorName", caption_selector_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptionSelectorName",
+                    caption_selector_name,
+                )?;
             }
             if let Some(ref destination_settings) = self.destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationSettings", destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DestinationSettings",
+                    destination_settings,
+                )?;
             }
             if let Some(ref language_code) = self.language_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageCode", language_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageCode",
+                    language_code,
+                )?;
             }
             if let Some(ref language_description) = self.language_description {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageDescription", language_description)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageDescription",
+                    language_description,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -3034,7 +3540,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for CaptionDescription {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptionDescription, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptionDescription, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3044,26 +3552,35 @@ pub mod channel {
                     write!(f, "a struct of type CaptionDescription")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut caption_selector_name: Option<::Value<String>> = None;
-                    let mut destination_settings: Option<::Value<CaptionDestinationSettings>> = None;
+                    let mut destination_settings: Option<::Value<CaptionDestinationSettings>> =
+                        None;
                     let mut language_code: Option<::Value<String>> = None;
                     let mut language_description: Option<::Value<String>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CaptionSelectorName" => {
-                                caption_selector_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                caption_selector_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DestinationSettings" => {
-                                destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LanguageCode" => {
                                 language_code = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LanguageDescription" => {
-                                language_description = ::serde::de::MapAccess::next_value(&mut map)?;
+                                language_description =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3118,17 +3635,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub embedded_plus_scte20_destination_settings: Option<::Value<EmbeddedPlusScte20DestinationSettings>>,
+        pub embedded_plus_scte20_destination_settings:
+            Option<::Value<EmbeddedPlusScte20DestinationSettings>>,
         /// Property [`RtmpCaptionInfoDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-rtmpcaptioninfodestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rtmp_caption_info_destination_settings: Option<::Value<RtmpCaptionInfoDestinationSettings>>,
+        pub rtmp_caption_info_destination_settings:
+            Option<::Value<RtmpCaptionInfoDestinationSettings>>,
         /// Property [`Scte20PlusEmbeddedDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-scte20plusembeddeddestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte20_plus_embedded_destination_settings: Option<::Value<Scte20PlusEmbeddedDestinationSettings>>,
+        pub scte20_plus_embedded_destination_settings:
+            Option<::Value<Scte20PlusEmbeddedDestinationSettings>>,
         /// Property [`Scte27DestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-scte27destinationsettings).
         ///
         /// Update type: _Mutable_.
@@ -3160,50 +3680,110 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref arib_destination_settings) = self.arib_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AribDestinationSettings", arib_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AribDestinationSettings",
+                    arib_destination_settings,
+                )?;
             }
             if let Some(ref burn_in_destination_settings) = self.burn_in_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BurnInDestinationSettings", burn_in_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BurnInDestinationSettings",
+                    burn_in_destination_settings,
+                )?;
             }
             if let Some(ref dvb_sub_destination_settings) = self.dvb_sub_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DvbSubDestinationSettings", dvb_sub_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DvbSubDestinationSettings",
+                    dvb_sub_destination_settings,
+                )?;
             }
             if let Some(ref ebu_tt_d_destination_settings) = self.ebu_tt_d_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EbuTtDDestinationSettings", ebu_tt_d_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EbuTtDDestinationSettings",
+                    ebu_tt_d_destination_settings,
+                )?;
             }
             if let Some(ref embedded_destination_settings) = self.embedded_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EmbeddedDestinationSettings", embedded_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EmbeddedDestinationSettings",
+                    embedded_destination_settings,
+                )?;
             }
-            if let Some(ref embedded_plus_scte20_destination_settings) = self.embedded_plus_scte20_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EmbeddedPlusScte20DestinationSettings", embedded_plus_scte20_destination_settings)?;
+            if let Some(ref embedded_plus_scte20_destination_settings) =
+                self.embedded_plus_scte20_destination_settings
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EmbeddedPlusScte20DestinationSettings",
+                    embedded_plus_scte20_destination_settings,
+                )?;
             }
-            if let Some(ref rtmp_caption_info_destination_settings) = self.rtmp_caption_info_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RtmpCaptionInfoDestinationSettings", rtmp_caption_info_destination_settings)?;
+            if let Some(ref rtmp_caption_info_destination_settings) =
+                self.rtmp_caption_info_destination_settings
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RtmpCaptionInfoDestinationSettings",
+                    rtmp_caption_info_destination_settings,
+                )?;
             }
-            if let Some(ref scte20_plus_embedded_destination_settings) = self.scte20_plus_embedded_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte20PlusEmbeddedDestinationSettings", scte20_plus_embedded_destination_settings)?;
+            if let Some(ref scte20_plus_embedded_destination_settings) =
+                self.scte20_plus_embedded_destination_settings
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte20PlusEmbeddedDestinationSettings",
+                    scte20_plus_embedded_destination_settings,
+                )?;
             }
             if let Some(ref scte27_destination_settings) = self.scte27_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte27DestinationSettings", scte27_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte27DestinationSettings",
+                    scte27_destination_settings,
+                )?;
             }
             if let Some(ref smpte_tt_destination_settings) = self.smpte_tt_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SmpteTtDestinationSettings", smpte_tt_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SmpteTtDestinationSettings",
+                    smpte_tt_destination_settings,
+                )?;
             }
             if let Some(ref teletext_destination_settings) = self.teletext_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TeletextDestinationSettings", teletext_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TeletextDestinationSettings",
+                    teletext_destination_settings,
+                )?;
             }
             if let Some(ref ttml_destination_settings) = self.ttml_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TtmlDestinationSettings", ttml_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TtmlDestinationSettings",
+                    ttml_destination_settings,
+                )?;
             }
             if let Some(ref webvtt_destination_settings) = self.webvtt_destination_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "WebvttDestinationSettings", webvtt_destination_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "WebvttDestinationSettings",
+                    webvtt_destination_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CaptionDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptionDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptionDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3213,61 +3793,103 @@ pub mod channel {
                     write!(f, "a struct of type CaptionDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut arib_destination_settings: Option<::Value<AribDestinationSettings>> = None;
-                    let mut burn_in_destination_settings: Option<::Value<BurnInDestinationSettings>> = None;
-                    let mut dvb_sub_destination_settings: Option<::Value<DvbSubDestinationSettings>> = None;
-                    let mut ebu_tt_d_destination_settings: Option<::Value<EbuTtDDestinationSettings>> = None;
-                    let mut embedded_destination_settings: Option<::Value<EmbeddedDestinationSettings>> = None;
-                    let mut embedded_plus_scte20_destination_settings: Option<::Value<EmbeddedPlusScte20DestinationSettings>> = None;
-                    let mut rtmp_caption_info_destination_settings: Option<::Value<RtmpCaptionInfoDestinationSettings>> = None;
-                    let mut scte20_plus_embedded_destination_settings: Option<::Value<Scte20PlusEmbeddedDestinationSettings>> = None;
-                    let mut scte27_destination_settings: Option<::Value<Scte27DestinationSettings>> = None;
-                    let mut smpte_tt_destination_settings: Option<::Value<SmpteTtDestinationSettings>> = None;
-                    let mut teletext_destination_settings: Option<::Value<TeletextDestinationSettings>> = None;
-                    let mut ttml_destination_settings: Option<::Value<TtmlDestinationSettings>> = None;
-                    let mut webvtt_destination_settings: Option<::Value<WebvttDestinationSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut arib_destination_settings: Option<::Value<AribDestinationSettings>> =
+                        None;
+                    let mut burn_in_destination_settings: Option<
+                        ::Value<BurnInDestinationSettings>,
+                    > = None;
+                    let mut dvb_sub_destination_settings: Option<
+                        ::Value<DvbSubDestinationSettings>,
+                    > = None;
+                    let mut ebu_tt_d_destination_settings: Option<
+                        ::Value<EbuTtDDestinationSettings>,
+                    > = None;
+                    let mut embedded_destination_settings: Option<
+                        ::Value<EmbeddedDestinationSettings>,
+                    > = None;
+                    let mut embedded_plus_scte20_destination_settings: Option<
+                        ::Value<EmbeddedPlusScte20DestinationSettings>,
+                    > = None;
+                    let mut rtmp_caption_info_destination_settings: Option<
+                        ::Value<RtmpCaptionInfoDestinationSettings>,
+                    > = None;
+                    let mut scte20_plus_embedded_destination_settings: Option<
+                        ::Value<Scte20PlusEmbeddedDestinationSettings>,
+                    > = None;
+                    let mut scte27_destination_settings: Option<
+                        ::Value<Scte27DestinationSettings>,
+                    > = None;
+                    let mut smpte_tt_destination_settings: Option<
+                        ::Value<SmpteTtDestinationSettings>,
+                    > = None;
+                    let mut teletext_destination_settings: Option<
+                        ::Value<TeletextDestinationSettings>,
+                    > = None;
+                    let mut ttml_destination_settings: Option<::Value<TtmlDestinationSettings>> =
+                        None;
+                    let mut webvtt_destination_settings: Option<
+                        ::Value<WebvttDestinationSettings>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AribDestinationSettings" => {
-                                arib_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                arib_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "BurnInDestinationSettings" => {
-                                burn_in_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                burn_in_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DvbSubDestinationSettings" => {
-                                dvb_sub_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                dvb_sub_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EbuTtDDestinationSettings" => {
-                                ebu_tt_d_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ebu_tt_d_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EmbeddedDestinationSettings" => {
-                                embedded_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                embedded_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EmbeddedPlusScte20DestinationSettings" => {
-                                embedded_plus_scte20_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                embedded_plus_scte20_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RtmpCaptionInfoDestinationSettings" => {
-                                rtmp_caption_info_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                rtmp_caption_info_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Scte20PlusEmbeddedDestinationSettings" => {
-                                scte20_plus_embedded_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scte20_plus_embedded_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Scte27DestinationSettings" => {
-                                scte27_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scte27_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SmpteTtDestinationSettings" => {
-                                smpte_tt_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                smpte_tt_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TeletextDestinationSettings" => {
-                                teletext_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                teletext_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TtmlDestinationSettings" => {
-                                ttml_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ttml_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "WebvttDestinationSettings" => {
-                                webvtt_destination_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                webvtt_destination_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3279,9 +3901,12 @@ pub mod channel {
                         dvb_sub_destination_settings: dvb_sub_destination_settings,
                         ebu_tt_d_destination_settings: ebu_tt_d_destination_settings,
                         embedded_destination_settings: embedded_destination_settings,
-                        embedded_plus_scte20_destination_settings: embedded_plus_scte20_destination_settings,
-                        rtmp_caption_info_destination_settings: rtmp_caption_info_destination_settings,
-                        scte20_plus_embedded_destination_settings: scte20_plus_embedded_destination_settings,
+                        embedded_plus_scte20_destination_settings:
+                            embedded_plus_scte20_destination_settings,
+                        rtmp_caption_info_destination_settings:
+                            rtmp_caption_info_destination_settings,
+                        scte20_plus_embedded_destination_settings:
+                            scte20_plus_embedded_destination_settings,
                         scte27_destination_settings: scte27_destination_settings,
                         smpte_tt_destination_settings: smpte_tt_destination_settings,
                         teletext_destination_settings: teletext_destination_settings,
@@ -3319,20 +3944,34 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref caption_channel) = self.caption_channel {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptionChannel", caption_channel)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptionChannel",
+                    caption_channel,
+                )?;
             }
             if let Some(ref language_code) = self.language_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageCode", language_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageCode",
+                    language_code,
+                )?;
             }
             if let Some(ref language_description) = self.language_description {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageDescription", language_description)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageDescription",
+                    language_description,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CaptionLanguageMapping {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptionLanguageMapping, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptionLanguageMapping, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3342,12 +3981,17 @@ pub mod channel {
                     write!(f, "a struct of type CaptionLanguageMapping")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut caption_channel: Option<::Value<u32>> = None;
                     let mut language_code: Option<::Value<String>> = None;
                     let mut language_description: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CaptionChannel" => {
                                 caption_channel = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3356,7 +4000,8 @@ pub mod channel {
                                 language_code = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LanguageDescription" => {
-                                language_description = ::serde::de::MapAccess::next_value(&mut map)?;
+                                language_description =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3419,7 +4064,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for CaptionRectangle {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptionRectangle, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptionRectangle, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3429,13 +4076,18 @@ pub mod channel {
                     write!(f, "a struct of type CaptionRectangle")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut height: Option<::Value<f64>> = None;
                     let mut left_offset: Option<::Value<f64>> = None;
                     let mut top_offset: Option<::Value<f64>> = None;
                     let mut width: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Height" => {
                                 height = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3490,20 +4142,30 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref language_code) = self.language_code {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LanguageCode", language_code)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LanguageCode",
+                    language_code,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
             }
             if let Some(ref selector_settings) = self.selector_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SelectorSettings", selector_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SelectorSettings",
+                    selector_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CaptionSelector {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptionSelector, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptionSelector, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3513,12 +4175,17 @@ pub mod channel {
                     write!(f, "a struct of type CaptionSelector")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut language_code: Option<::Value<String>> = None;
                     let mut name: Option<::Value<String>> = None;
                     let mut selector_settings: Option<::Value<CaptionSelectorSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LanguageCode" => {
                                 language_code = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3589,32 +4256,62 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ancillary_source_settings) = self.ancillary_source_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AncillarySourceSettings", ancillary_source_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AncillarySourceSettings",
+                    ancillary_source_settings,
+                )?;
             }
             if let Some(ref arib_source_settings) = self.arib_source_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AribSourceSettings", arib_source_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AribSourceSettings",
+                    arib_source_settings,
+                )?;
             }
             if let Some(ref dvb_sub_source_settings) = self.dvb_sub_source_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DvbSubSourceSettings", dvb_sub_source_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DvbSubSourceSettings",
+                    dvb_sub_source_settings,
+                )?;
             }
             if let Some(ref embedded_source_settings) = self.embedded_source_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EmbeddedSourceSettings", embedded_source_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EmbeddedSourceSettings",
+                    embedded_source_settings,
+                )?;
             }
             if let Some(ref scte20_source_settings) = self.scte20_source_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte20SourceSettings", scte20_source_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte20SourceSettings",
+                    scte20_source_settings,
+                )?;
             }
             if let Some(ref scte27_source_settings) = self.scte27_source_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte27SourceSettings", scte27_source_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte27SourceSettings",
+                    scte27_source_settings,
+                )?;
             }
             if let Some(ref teletext_source_settings) = self.teletext_source_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TeletextSourceSettings", teletext_source_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TeletextSourceSettings",
+                    teletext_source_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CaptionSelectorSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptionSelectorSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptionSelectorSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3624,37 +4321,52 @@ pub mod channel {
                     write!(f, "a struct of type CaptionSelectorSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut ancillary_source_settings: Option<::Value<AncillarySourceSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut ancillary_source_settings: Option<::Value<AncillarySourceSettings>> =
+                        None;
                     let mut arib_source_settings: Option<::Value<AribSourceSettings>> = None;
                     let mut dvb_sub_source_settings: Option<::Value<DvbSubSourceSettings>> = None;
-                    let mut embedded_source_settings: Option<::Value<EmbeddedSourceSettings>> = None;
+                    let mut embedded_source_settings: Option<::Value<EmbeddedSourceSettings>> =
+                        None;
                     let mut scte20_source_settings: Option<::Value<Scte20SourceSettings>> = None;
                     let mut scte27_source_settings: Option<::Value<Scte27SourceSettings>> = None;
-                    let mut teletext_source_settings: Option<::Value<TeletextSourceSettings>> = None;
+                    let mut teletext_source_settings: Option<::Value<TeletextSourceSettings>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AncillarySourceSettings" => {
-                                ancillary_source_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ancillary_source_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AribSourceSettings" => {
-                                arib_source_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                arib_source_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DvbSubSourceSettings" => {
-                                dvb_sub_source_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                dvb_sub_source_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EmbeddedSourceSettings" => {
-                                embedded_source_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                embedded_source_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Scte20SourceSettings" => {
-                                scte20_source_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scte20_source_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Scte27SourceSettings" => {
-                                scte27_source_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scte27_source_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TeletextSourceSettings" => {
-                                teletext_source_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                teletext_source_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3697,7 +4409,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for CdiInputSpecification {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CdiInputSpecification, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CdiInputSpecification, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3707,10 +4421,15 @@ pub mod channel {
                     write!(f, "a struct of type CdiInputSpecification")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut resolution: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Resolution" => {
                                 resolution = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3731,8 +4450,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.ColorSpacePassthroughSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-colorspacepassthroughsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct ColorSpacePassthroughSettings {
-    }
+    pub struct ColorSpacePassthroughSettings {}
 
     impl ::codec::SerializeValue for ColorSpacePassthroughSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -3742,7 +4460,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for ColorSpacePassthroughSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ColorSpacePassthroughSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ColorSpacePassthroughSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3752,7 +4472,10 @@ pub mod channel {
                     write!(f, "a struct of type ColorSpacePassthroughSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(ColorSpacePassthroughSettings {})
                 }
             }
@@ -3798,7 +4521,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for DvbNitSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DvbNitSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DvbNitSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3808,12 +4533,17 @@ pub mod channel {
                     write!(f, "a struct of type DvbNitSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut network_id: Option<::Value<u32>> = None;
                     let mut network_name: Option<::Value<String>> = None;
                     let mut rep_interval: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "NetworkId" => {
                                 network_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3878,14 +4608,20 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceName", service_name)?;
             }
             if let Some(ref service_provider_name) = self.service_provider_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceProviderName", service_provider_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ServiceProviderName",
+                    service_provider_name,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DvbSdtSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DvbSdtSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DvbSdtSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3895,13 +4631,18 @@ pub mod channel {
                     write!(f, "a struct of type DvbSdtSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut output_sdt: Option<::Value<String>> = None;
                     let mut rep_interval: Option<::Value<u32>> = None;
                     let mut service_name: Option<::Value<String>> = None;
                     let mut service_provider_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "OutputSdt" => {
                                 output_sdt = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3913,7 +4654,8 @@ pub mod channel {
                                 service_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ServiceProviderName" => {
-                                service_provider_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                service_provider_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -4029,10 +4771,18 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Alignment", alignment)?;
             }
             if let Some(ref background_color) = self.background_color {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BackgroundColor", background_color)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BackgroundColor",
+                    background_color,
+                )?;
             }
             if let Some(ref background_opacity) = self.background_opacity {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BackgroundOpacity", background_opacity)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BackgroundOpacity",
+                    background_opacity,
+                )?;
             }
             if let Some(ref font) = self.font {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Font", font)?;
@@ -4044,13 +4794,21 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FontOpacity", font_opacity)?;
             }
             if let Some(ref font_resolution) = self.font_resolution {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FontResolution", font_resolution)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FontResolution",
+                    font_resolution,
+                )?;
             }
             if let Some(ref font_size) = self.font_size {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FontSize", font_size)?;
             }
             if let Some(ref outline_color) = self.outline_color {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutlineColor", outline_color)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutlineColor",
+                    outline_color,
+                )?;
             }
             if let Some(ref outline_size) = self.outline_size {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutlineSize", outline_size)?;
@@ -4059,16 +4817,32 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShadowColor", shadow_color)?;
             }
             if let Some(ref shadow_opacity) = self.shadow_opacity {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShadowOpacity", shadow_opacity)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ShadowOpacity",
+                    shadow_opacity,
+                )?;
             }
             if let Some(ref shadow_x_offset) = self.shadow_x_offset {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShadowXOffset", shadow_x_offset)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ShadowXOffset",
+                    shadow_x_offset,
+                )?;
             }
             if let Some(ref shadow_y_offset) = self.shadow_y_offset {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShadowYOffset", shadow_y_offset)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ShadowYOffset",
+                    shadow_y_offset,
+                )?;
             }
             if let Some(ref teletext_grid_control) = self.teletext_grid_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TeletextGridControl", teletext_grid_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TeletextGridControl",
+                    teletext_grid_control,
+                )?;
             }
             if let Some(ref x_position) = self.x_position {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "XPosition", x_position)?;
@@ -4081,7 +4855,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for DvbSubDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DvbSubDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DvbSubDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4091,7 +4867,10 @@ pub mod channel {
                     write!(f, "a struct of type DvbSubDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut alignment: Option<::Value<String>> = None;
                     let mut background_color: Option<::Value<String>> = None;
                     let mut background_opacity: Option<::Value<u32>> = None;
@@ -4110,7 +4889,9 @@ pub mod channel {
                     let mut x_position: Option<::Value<u32>> = None;
                     let mut y_position: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Alignment" => {
                                 alignment = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4155,7 +4936,8 @@ pub mod channel {
                                 shadow_y_offset = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TeletextGridControl" => {
-                                teletext_grid_control = ::serde::de::MapAccess::next_value(&mut map)?;
+                                teletext_grid_control =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "XPosition" => {
                                 x_position = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4222,7 +5004,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for DvbSubSourceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DvbSubSourceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DvbSubSourceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4232,11 +5016,16 @@ pub mod channel {
                     write!(f, "a struct of type DvbSubSourceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ocr_language: Option<::Value<String>> = None;
                     let mut pid: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "OcrLanguage" => {
                                 ocr_language = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4280,7 +5069,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for DvbTdtSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DvbTdtSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DvbTdtSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4290,10 +5081,15 @@ pub mod channel {
                     write!(f, "a struct of type DvbTdtSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut rep_interval: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "RepInterval" => {
                                 rep_interval = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4421,13 +5217,21 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attenuation_control) = self.attenuation_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AttenuationControl", attenuation_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AttenuationControl",
+                    attenuation_control,
+                )?;
             }
             if let Some(ref bitrate) = self.bitrate {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bitrate", bitrate)?;
             }
             if let Some(ref bitstream_mode) = self.bitstream_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BitstreamMode", bitstream_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BitstreamMode",
+                    bitstream_mode,
+                )?;
             }
             if let Some(ref coding_mode) = self.coding_mode {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CodingMode", coding_mode)?;
@@ -4451,34 +5255,74 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "LfeFilter", lfe_filter)?;
             }
             if let Some(ref lo_ro_center_mix_level) = self.lo_ro_center_mix_level {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoRoCenterMixLevel", lo_ro_center_mix_level)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LoRoCenterMixLevel",
+                    lo_ro_center_mix_level,
+                )?;
             }
             if let Some(ref lo_ro_surround_mix_level) = self.lo_ro_surround_mix_level {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoRoSurroundMixLevel", lo_ro_surround_mix_level)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LoRoSurroundMixLevel",
+                    lo_ro_surround_mix_level,
+                )?;
             }
             if let Some(ref lt_rt_center_mix_level) = self.lt_rt_center_mix_level {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LtRtCenterMixLevel", lt_rt_center_mix_level)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LtRtCenterMixLevel",
+                    lt_rt_center_mix_level,
+                )?;
             }
             if let Some(ref lt_rt_surround_mix_level) = self.lt_rt_surround_mix_level {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LtRtSurroundMixLevel", lt_rt_surround_mix_level)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LtRtSurroundMixLevel",
+                    lt_rt_surround_mix_level,
+                )?;
             }
             if let Some(ref metadata_control) = self.metadata_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetadataControl", metadata_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MetadataControl",
+                    metadata_control,
+                )?;
             }
             if let Some(ref passthrough_control) = self.passthrough_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PassthroughControl", passthrough_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PassthroughControl",
+                    passthrough_control,
+                )?;
             }
             if let Some(ref phase_control) = self.phase_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PhaseControl", phase_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PhaseControl",
+                    phase_control,
+                )?;
             }
             if let Some(ref stereo_downmix) = self.stereo_downmix {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StereoDownmix", stereo_downmix)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StereoDownmix",
+                    stereo_downmix,
+                )?;
             }
             if let Some(ref surround_ex_mode) = self.surround_ex_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SurroundExMode", surround_ex_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SurroundExMode",
+                    surround_ex_mode,
+                )?;
             }
             if let Some(ref surround_mode) = self.surround_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SurroundMode", surround_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SurroundMode",
+                    surround_mode,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -4495,7 +5339,10 @@ pub mod channel {
                     write!(f, "a struct of type Eac3Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut attenuation_control: Option<::Value<String>> = None;
                     let mut bitrate: Option<::Value<f64>> = None;
                     let mut bitstream_mode: Option<::Value<String>> = None;
@@ -4517,7 +5364,9 @@ pub mod channel {
                     let mut surround_ex_mode: Option<::Value<String>> = None;
                     let mut surround_mode: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AttenuationControl" => {
                                 attenuation_control = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4550,16 +5399,20 @@ pub mod channel {
                                 lfe_filter = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LoRoCenterMixLevel" => {
-                                lo_ro_center_mix_level = ::serde::de::MapAccess::next_value(&mut map)?;
+                                lo_ro_center_mix_level =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LoRoSurroundMixLevel" => {
-                                lo_ro_surround_mix_level = ::serde::de::MapAccess::next_value(&mut map)?;
+                                lo_ro_surround_mix_level =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LtRtCenterMixLevel" => {
-                                lt_rt_center_mix_level = ::serde::de::MapAccess::next_value(&mut map)?;
+                                lt_rt_center_mix_level =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LtRtSurroundMixLevel" => {
-                                lt_rt_surround_mix_level = ::serde::de::MapAccess::next_value(&mut map)?;
+                                lt_rt_surround_mix_level =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MetadataControl" => {
                                 metadata_control = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4641,23 +5494,37 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref copyright_holder) = self.copyright_holder {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CopyrightHolder", copyright_holder)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CopyrightHolder",
+                    copyright_holder,
+                )?;
             }
             if let Some(ref fill_line_gap) = self.fill_line_gap {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FillLineGap", fill_line_gap)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FillLineGap",
+                    fill_line_gap,
+                )?;
             }
             if let Some(ref font_family) = self.font_family {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FontFamily", font_family)?;
             }
             if let Some(ref style_control) = self.style_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StyleControl", style_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StyleControl",
+                    style_control,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EbuTtDDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EbuTtDDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EbuTtDDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4667,13 +5534,18 @@ pub mod channel {
                     write!(f, "a struct of type EbuTtDDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut copyright_holder: Option<::Value<String>> = None;
                     let mut fill_line_gap: Option<::Value<String>> = None;
                     let mut font_family: Option<::Value<String>> = None;
                     let mut style_control: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CopyrightHolder" => {
                                 copyright_holder = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4706,8 +5578,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.EmbeddedDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddeddestinationsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct EmbeddedDestinationSettings {
-    }
+    pub struct EmbeddedDestinationSettings {}
 
     impl ::codec::SerializeValue for EmbeddedDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -4717,7 +5588,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for EmbeddedDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EmbeddedDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EmbeddedDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4727,7 +5600,10 @@ pub mod channel {
                     write!(f, "a struct of type EmbeddedDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(EmbeddedDestinationSettings {})
                 }
             }
@@ -4738,8 +5614,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.EmbeddedPlusScte20DestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedplusscte20destinationsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct EmbeddedPlusScte20DestinationSettings {
-    }
+    pub struct EmbeddedPlusScte20DestinationSettings {}
 
     impl ::codec::SerializeValue for EmbeddedPlusScte20DestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -4749,7 +5624,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for EmbeddedPlusScte20DestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EmbeddedPlusScte20DestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EmbeddedPlusScte20DestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4759,7 +5636,10 @@ pub mod channel {
                     write!(f, "a struct of type EmbeddedPlusScte20DestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(EmbeddedPlusScte20DestinationSettings {})
                 }
             }
@@ -4797,23 +5677,41 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref convert608_to708) = self.convert608_to708 {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Convert608To708", convert608_to708)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Convert608To708",
+                    convert608_to708,
+                )?;
             }
             if let Some(ref scte20_detection) = self.scte20_detection {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte20Detection", scte20_detection)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte20Detection",
+                    scte20_detection,
+                )?;
             }
             if let Some(ref source608_channel_number) = self.source608_channel_number {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Source608ChannelNumber", source608_channel_number)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Source608ChannelNumber",
+                    source608_channel_number,
+                )?;
             }
             if let Some(ref source608_track_number) = self.source608_track_number {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Source608TrackNumber", source608_track_number)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Source608TrackNumber",
+                    source608_track_number,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EmbeddedSourceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EmbeddedSourceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EmbeddedSourceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4823,13 +5721,18 @@ pub mod channel {
                     write!(f, "a struct of type EmbeddedSourceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut convert608_to708: Option<::Value<String>> = None;
                     let mut scte20_detection: Option<::Value<String>> = None;
                     let mut source608_channel_number: Option<::Value<u32>> = None;
                     let mut source608_track_number: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Convert608To708" => {
                                 convert608_to708 = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4838,10 +5741,12 @@ pub mod channel {
                                 scte20_detection = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Source608ChannelNumber" => {
-                                source608_channel_number = ::serde::de::MapAccess::next_value(&mut map)?;
+                                source608_channel_number =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Source608TrackNumber" => {
-                                source608_track_number = ::serde::de::MapAccess::next_value(&mut map)?;
+                                source608_track_number =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -4929,47 +5834,97 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_descriptions) = self.audio_descriptions {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioDescriptions", audio_descriptions)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioDescriptions",
+                    audio_descriptions,
+                )?;
             }
             if let Some(ref avail_blanking) = self.avail_blanking {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailBlanking", avail_blanking)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AvailBlanking",
+                    avail_blanking,
+                )?;
             }
             if let Some(ref avail_configuration) = self.avail_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailConfiguration", avail_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AvailConfiguration",
+                    avail_configuration,
+                )?;
             }
             if let Some(ref blackout_slate) = self.blackout_slate {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlackoutSlate", blackout_slate)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BlackoutSlate",
+                    blackout_slate,
+                )?;
             }
             if let Some(ref caption_descriptions) = self.caption_descriptions {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptionDescriptions", caption_descriptions)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptionDescriptions",
+                    caption_descriptions,
+                )?;
             }
             if let Some(ref feature_activations) = self.feature_activations {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FeatureActivations", feature_activations)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FeatureActivations",
+                    feature_activations,
+                )?;
             }
             if let Some(ref global_configuration) = self.global_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GlobalConfiguration", global_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GlobalConfiguration",
+                    global_configuration,
+                )?;
             }
             if let Some(ref motion_graphics_configuration) = self.motion_graphics_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MotionGraphicsConfiguration", motion_graphics_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MotionGraphicsConfiguration",
+                    motion_graphics_configuration,
+                )?;
             }
             if let Some(ref nielsen_configuration) = self.nielsen_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenConfiguration", nielsen_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenConfiguration",
+                    nielsen_configuration,
+                )?;
             }
             if let Some(ref output_groups) = self.output_groups {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputGroups", output_groups)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutputGroups",
+                    output_groups,
+                )?;
             }
             if let Some(ref timecode_config) = self.timecode_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimecodeConfig", timecode_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimecodeConfig",
+                    timecode_config,
+                )?;
             }
             if let Some(ref video_descriptions) = self.video_descriptions {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoDescriptions", video_descriptions)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VideoDescriptions",
+                    video_descriptions,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EncoderSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EncoderSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EncoderSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4979,7 +5934,10 @@ pub mod channel {
                     write!(f, "a struct of type EncoderSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_descriptions: Option<::ValueList<AudioDescription>> = None;
                     let mut avail_blanking: Option<::Value<AvailBlanking>> = None;
                     let mut avail_configuration: Option<::Value<AvailConfiguration>> = None;
@@ -4987,13 +5945,17 @@ pub mod channel {
                     let mut caption_descriptions: Option<::ValueList<CaptionDescription>> = None;
                     let mut feature_activations: Option<::Value<FeatureActivations>> = None;
                     let mut global_configuration: Option<::Value<GlobalConfiguration>> = None;
-                    let mut motion_graphics_configuration: Option<::Value<MotionGraphicsConfiguration>> = None;
+                    let mut motion_graphics_configuration: Option<
+                        ::Value<MotionGraphicsConfiguration>,
+                    > = None;
                     let mut nielsen_configuration: Option<::Value<NielsenConfiguration>> = None;
                     let mut output_groups: Option<::ValueList<OutputGroup>> = None;
                     let mut timecode_config: Option<::Value<TimecodeConfig>> = None;
                     let mut video_descriptions: Option<::ValueList<VideoDescription>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioDescriptions" => {
                                 audio_descriptions = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5008,19 +5970,23 @@ pub mod channel {
                                 blackout_slate = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CaptionDescriptions" => {
-                                caption_descriptions = ::serde::de::MapAccess::next_value(&mut map)?;
+                                caption_descriptions =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FeatureActivations" => {
                                 feature_activations = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "GlobalConfiguration" => {
-                                global_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                global_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MotionGraphicsConfiguration" => {
-                                motion_graphics_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                motion_graphics_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NielsenConfiguration" => {
-                                nielsen_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "OutputGroups" => {
                                 output_groups = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5070,14 +6036,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref failover_condition_settings) = self.failover_condition_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FailoverConditionSettings", failover_condition_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FailoverConditionSettings",
+                    failover_condition_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FailoverCondition {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FailoverCondition, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FailoverCondition, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5087,13 +6059,21 @@ pub mod channel {
                     write!(f, "a struct of type FailoverCondition")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut failover_condition_settings: Option<::Value<FailoverConditionSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut failover_condition_settings: Option<
+                        ::Value<FailoverConditionSettings>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FailoverConditionSettings" => {
-                                failover_condition_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                failover_condition_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5133,20 +6113,34 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_silence_settings) = self.audio_silence_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioSilenceSettings", audio_silence_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioSilenceSettings",
+                    audio_silence_settings,
+                )?;
             }
             if let Some(ref input_loss_settings) = self.input_loss_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossSettings", input_loss_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossSettings",
+                    input_loss_settings,
+                )?;
             }
             if let Some(ref video_black_settings) = self.video_black_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoBlackSettings", video_black_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VideoBlackSettings",
+                    video_black_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FailoverConditionSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FailoverConditionSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FailoverConditionSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5156,21 +6150,30 @@ pub mod channel {
                     write!(f, "a struct of type FailoverConditionSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut audio_silence_settings: Option<::Value<AudioSilenceFailoverSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut audio_silence_settings: Option<::Value<AudioSilenceFailoverSettings>> =
+                        None;
                     let mut input_loss_settings: Option<::Value<InputLossFailoverSettings>> = None;
-                    let mut video_black_settings: Option<::Value<VideoBlackFailoverSettings>> = None;
+                    let mut video_black_settings: Option<::Value<VideoBlackFailoverSettings>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioSilenceSettings" => {
-                                audio_silence_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_silence_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "InputLossSettings" => {
                                 input_loss_settings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "VideoBlackSettings" => {
-                                video_black_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                video_black_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5202,14 +6205,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref input_prepare_schedule_actions) = self.input_prepare_schedule_actions {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputPrepareScheduleActions", input_prepare_schedule_actions)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputPrepareScheduleActions",
+                    input_prepare_schedule_actions,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FeatureActivations {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FeatureActivations, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FeatureActivations, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5219,13 +6228,19 @@ pub mod channel {
                     write!(f, "a struct of type FeatureActivations")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut input_prepare_schedule_actions: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InputPrepareScheduleActions" => {
-                                input_prepare_schedule_actions = ::serde::de::MapAccess::next_value(&mut map)?;
+                                input_prepare_schedule_actions =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5278,7 +6293,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for FecOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FecOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FecOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5288,12 +6305,17 @@ pub mod channel {
                     write!(f, "a struct of type FecOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut column_depth: Option<::Value<u32>> = None;
                     let mut include_fec: Option<::Value<String>> = None;
                     let mut row_length: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ColumnDepth" => {
                                 column_depth = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5344,20 +6366,34 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_rendition_sets) = self.audio_rendition_sets {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioRenditionSets", audio_rendition_sets)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioRenditionSets",
+                    audio_rendition_sets,
+                )?;
             }
             if let Some(ref nielsen_id3_behavior) = self.nielsen_id3_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenId3Behavior", nielsen_id3_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenId3Behavior",
+                    nielsen_id3_behavior,
+                )?;
             }
             if let Some(ref timed_metadata_behavior) = self.timed_metadata_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataBehavior", timed_metadata_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataBehavior",
+                    timed_metadata_behavior,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for Fmp4HlsSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Fmp4HlsSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Fmp4HlsSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5367,21 +6403,29 @@ pub mod channel {
                     write!(f, "a struct of type Fmp4HlsSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_rendition_sets: Option<::Value<String>> = None;
                     let mut nielsen_id3_behavior: Option<::Value<String>> = None;
                     let mut timed_metadata_behavior: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioRenditionSets" => {
-                                audio_rendition_sets = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_rendition_sets =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NielsenId3Behavior" => {
-                                nielsen_id3_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_id3_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataBehavior" => {
-                                timed_metadata_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timed_metadata_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5413,14 +6457,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref frame_capture_s3_settings) = self.frame_capture_s3_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FrameCaptureS3Settings", frame_capture_s3_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FrameCaptureS3Settings",
+                    frame_capture_s3_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FrameCaptureCdnSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FrameCaptureCdnSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FrameCaptureCdnSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5430,13 +6480,20 @@ pub mod channel {
                     write!(f, "a struct of type FrameCaptureCdnSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut frame_capture_s3_settings: Option<::Value<FrameCaptureS3Settings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut frame_capture_s3_settings: Option<::Value<FrameCaptureS3Settings>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FrameCaptureS3Settings" => {
-                                frame_capture_s3_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                frame_capture_s3_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5474,14 +6531,20 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destination", destination)?;
             }
             if let Some(ref frame_capture_cdn_settings) = self.frame_capture_cdn_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FrameCaptureCdnSettings", frame_capture_cdn_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FrameCaptureCdnSettings",
+                    frame_capture_cdn_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FrameCaptureGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FrameCaptureGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FrameCaptureGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5491,17 +6554,24 @@ pub mod channel {
                     write!(f, "a struct of type FrameCaptureGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut destination: Option<::Value<OutputLocationRef>> = None;
-                    let mut frame_capture_cdn_settings: Option<::Value<FrameCaptureCdnSettings>> = None;
+                    let mut frame_capture_cdn_settings: Option<::Value<FrameCaptureCdnSettings>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Destination" => {
                                 destination = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FrameCaptureCdnSettings" => {
-                                frame_capture_cdn_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                frame_capture_cdn_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5520,8 +6590,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.FrameCaptureHlsSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturehlssettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct FrameCaptureHlsSettings {
-    }
+    pub struct FrameCaptureHlsSettings {}
 
     impl ::codec::SerializeValue for FrameCaptureHlsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -5531,7 +6600,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for FrameCaptureHlsSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FrameCaptureHlsSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FrameCaptureHlsSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5541,7 +6612,10 @@ pub mod channel {
                     write!(f, "a struct of type FrameCaptureHlsSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(FrameCaptureHlsSettings {})
                 }
             }
@@ -5564,14 +6638,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name_modifier) = self.name_modifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NameModifier", name_modifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NameModifier",
+                    name_modifier,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FrameCaptureOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FrameCaptureOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FrameCaptureOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5581,10 +6661,15 @@ pub mod channel {
                     write!(f, "a struct of type FrameCaptureOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name_modifier: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "NameModifier" => {
                                 name_modifier = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5624,7 +6709,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for FrameCaptureS3Settings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FrameCaptureS3Settings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FrameCaptureS3Settings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5634,10 +6721,15 @@ pub mod channel {
                     write!(f, "a struct of type FrameCaptureS3Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut canned_acl: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CannedAcl" => {
                                 canned_acl = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5675,17 +6767,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref capture_interval) = self.capture_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptureInterval", capture_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptureInterval",
+                    capture_interval,
+                )?;
             }
             if let Some(ref capture_interval_units) = self.capture_interval_units {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptureIntervalUnits", capture_interval_units)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptureIntervalUnits",
+                    capture_interval_units,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FrameCaptureSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FrameCaptureSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FrameCaptureSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5695,17 +6797,23 @@ pub mod channel {
                     write!(f, "a struct of type FrameCaptureSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut capture_interval: Option<::Value<u32>> = None;
                     let mut capture_interval_units: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CaptureInterval" => {
                                 capture_interval = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CaptureIntervalUnits" => {
-                                capture_interval_units = ::serde::de::MapAccess::next_value(&mut map)?;
+                                capture_interval_units =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5761,29 +6869,55 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref initial_audio_gain) = self.initial_audio_gain {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InitialAudioGain", initial_audio_gain)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InitialAudioGain",
+                    initial_audio_gain,
+                )?;
             }
             if let Some(ref input_end_action) = self.input_end_action {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputEndAction", input_end_action)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputEndAction",
+                    input_end_action,
+                )?;
             }
             if let Some(ref input_loss_behavior) = self.input_loss_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossBehavior", input_loss_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossBehavior",
+                    input_loss_behavior,
+                )?;
             }
             if let Some(ref output_locking_mode) = self.output_locking_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputLockingMode", output_locking_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutputLockingMode",
+                    output_locking_mode,
+                )?;
             }
             if let Some(ref output_timing_source) = self.output_timing_source {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputTimingSource", output_timing_source)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutputTimingSource",
+                    output_timing_source,
+                )?;
             }
             if let Some(ref support_low_framerate_inputs) = self.support_low_framerate_inputs {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SupportLowFramerateInputs", support_low_framerate_inputs)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SupportLowFramerateInputs",
+                    support_low_framerate_inputs,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for GlobalConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GlobalConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<GlobalConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5793,7 +6927,10 @@ pub mod channel {
                     write!(f, "a struct of type GlobalConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut initial_audio_gain: Option<::Value<u32>> = None;
                     let mut input_end_action: Option<::Value<String>> = None;
                     let mut input_loss_behavior: Option<::Value<InputLossBehavior>> = None;
@@ -5801,7 +6938,9 @@ pub mod channel {
                     let mut output_timing_source: Option<::Value<String>> = None;
                     let mut support_low_framerate_inputs: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InitialAudioGain" => {
                                 initial_audio_gain = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5816,10 +6955,12 @@ pub mod channel {
                                 output_locking_mode = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "OutputTimingSource" => {
-                                output_timing_source = ::serde::de::MapAccess::next_value(&mut map)?;
+                                output_timing_source =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SupportLowFramerateInputs" => {
-                                support_low_framerate_inputs = ::serde::de::MapAccess::next_value(&mut map)?;
+                                support_low_framerate_inputs =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5863,21 +7004,37 @@ pub mod channel {
     impl ::codec::SerializeValue for H264ColorSpaceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            if let Some(ref color_space_passthrough_settings) = self.color_space_passthrough_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorSpacePassthroughSettings", color_space_passthrough_settings)?;
+            if let Some(ref color_space_passthrough_settings) =
+                self.color_space_passthrough_settings
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorSpacePassthroughSettings",
+                    color_space_passthrough_settings,
+                )?;
             }
             if let Some(ref rec601_settings) = self.rec601_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rec601Settings", rec601_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Rec601Settings",
+                    rec601_settings,
+                )?;
             }
             if let Some(ref rec709_settings) = self.rec709_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rec709Settings", rec709_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Rec709Settings",
+                    rec709_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for H264ColorSpaceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<H264ColorSpaceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<H264ColorSpaceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5887,15 +7044,23 @@ pub mod channel {
                     write!(f, "a struct of type H264ColorSpaceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut color_space_passthrough_settings: Option<::Value<ColorSpacePassthroughSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut color_space_passthrough_settings: Option<
+                        ::Value<ColorSpacePassthroughSettings>,
+                    > = None;
                     let mut rec601_settings: Option<::Value<Rec601Settings>> = None;
                     let mut rec709_settings: Option<::Value<Rec709Settings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ColorSpacePassthroughSettings" => {
-                                color_space_passthrough_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                color_space_passthrough_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Rec601Settings" => {
                                 rec601_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5933,14 +7098,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref temporal_filter_settings) = self.temporal_filter_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TemporalFilterSettings", temporal_filter_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TemporalFilterSettings",
+                    temporal_filter_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for H264FilterSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<H264FilterSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<H264FilterSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5950,13 +7121,20 @@ pub mod channel {
                     write!(f, "a struct of type H264FilterSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TemporalFilterSettings" => {
-                                temporal_filter_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                temporal_filter_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -6186,10 +7364,18 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref adaptive_quantization) = self.adaptive_quantization {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdaptiveQuantization", adaptive_quantization)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AdaptiveQuantization",
+                    adaptive_quantization,
+                )?;
             }
             if let Some(ref afd_signaling) = self.afd_signaling {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AfdSignaling", afd_signaling)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AfdSignaling",
+                    afd_signaling,
+                )?;
             }
             if let Some(ref bitrate) = self.bitrate {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bitrate", bitrate)?;
@@ -6201,16 +7387,32 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "BufSize", buf_size)?;
             }
             if let Some(ref color_metadata) = self.color_metadata {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorMetadata", color_metadata)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorMetadata",
+                    color_metadata,
+                )?;
             }
             if let Some(ref color_space_settings) = self.color_space_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorSpaceSettings", color_space_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorSpaceSettings",
+                    color_space_settings,
+                )?;
             }
             if let Some(ref entropy_encoding) = self.entropy_encoding {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EntropyEncoding", entropy_encoding)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EntropyEncoding",
+                    entropy_encoding,
+                )?;
             }
             if let Some(ref filter_settings) = self.filter_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterSettings", filter_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilterSettings",
+                    filter_settings,
+                )?;
             }
             if let Some(ref fixed_afd) = self.fixed_afd {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FixedAfd", fixed_afd)?;
@@ -6219,73 +7421,141 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FlickerAq", flicker_aq)?;
             }
             if let Some(ref force_field_pictures) = self.force_field_pictures {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ForceFieldPictures", force_field_pictures)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ForceFieldPictures",
+                    force_field_pictures,
+                )?;
             }
             if let Some(ref framerate_control) = self.framerate_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FramerateControl", framerate_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FramerateControl",
+                    framerate_control,
+                )?;
             }
             if let Some(ref framerate_denominator) = self.framerate_denominator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FramerateDenominator", framerate_denominator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FramerateDenominator",
+                    framerate_denominator,
+                )?;
             }
             if let Some(ref framerate_numerator) = self.framerate_numerator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FramerateNumerator", framerate_numerator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FramerateNumerator",
+                    framerate_numerator,
+                )?;
             }
             if let Some(ref gop_b_reference) = self.gop_b_reference {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopBReference", gop_b_reference)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopBReference",
+                    gop_b_reference,
+                )?;
             }
             if let Some(ref gop_closed_cadence) = self.gop_closed_cadence {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopClosedCadence", gop_closed_cadence)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopClosedCadence",
+                    gop_closed_cadence,
+                )?;
             }
             if let Some(ref gop_num_b_frames) = self.gop_num_b_frames {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopNumBFrames", gop_num_b_frames)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopNumBFrames",
+                    gop_num_b_frames,
+                )?;
             }
             if let Some(ref gop_size) = self.gop_size {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopSize", gop_size)?;
             }
             if let Some(ref gop_size_units) = self.gop_size_units {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopSizeUnits", gop_size_units)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopSizeUnits",
+                    gop_size_units,
+                )?;
             }
             if let Some(ref level) = self.level {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Level", level)?;
             }
             if let Some(ref look_ahead_rate_control) = self.look_ahead_rate_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LookAheadRateControl", look_ahead_rate_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LookAheadRateControl",
+                    look_ahead_rate_control,
+                )?;
             }
             if let Some(ref max_bitrate) = self.max_bitrate {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxBitrate", max_bitrate)?;
             }
             if let Some(ref min_i_interval) = self.min_i_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MinIInterval", min_i_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MinIInterval",
+                    min_i_interval,
+                )?;
             }
             if let Some(ref num_ref_frames) = self.num_ref_frames {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumRefFrames", num_ref_frames)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NumRefFrames",
+                    num_ref_frames,
+                )?;
             }
             if let Some(ref par_control) = self.par_control {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParControl", par_control)?;
             }
             if let Some(ref par_denominator) = self.par_denominator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParDenominator", par_denominator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ParDenominator",
+                    par_denominator,
+                )?;
             }
             if let Some(ref par_numerator) = self.par_numerator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParNumerator", par_numerator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ParNumerator",
+                    par_numerator,
+                )?;
             }
             if let Some(ref profile) = self.profile {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Profile", profile)?;
             }
             if let Some(ref quality_level) = self.quality_level {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "QualityLevel", quality_level)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "QualityLevel",
+                    quality_level,
+                )?;
             }
             if let Some(ref qvbr_quality_level) = self.qvbr_quality_level {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "QvbrQualityLevel", qvbr_quality_level)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "QvbrQualityLevel",
+                    qvbr_quality_level,
+                )?;
             }
             if let Some(ref rate_control_mode) = self.rate_control_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RateControlMode", rate_control_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RateControlMode",
+                    rate_control_mode,
+                )?;
             }
             if let Some(ref scan_type) = self.scan_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScanType", scan_type)?;
             }
             if let Some(ref scene_change_detect) = self.scene_change_detect {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SceneChangeDetect", scene_change_detect)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SceneChangeDetect",
+                    scene_change_detect,
+                )?;
             }
             if let Some(ref slices) = self.slices {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Slices", slices)?;
@@ -6297,7 +7567,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "SpatialAq", spatial_aq)?;
             }
             if let Some(ref subgop_length) = self.subgop_length {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubgopLength", subgop_length)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SubgopLength",
+                    subgop_length,
+                )?;
             }
             if let Some(ref syntax) = self.syntax {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Syntax", syntax)?;
@@ -6306,7 +7580,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TemporalAq", temporal_aq)?;
             }
             if let Some(ref timecode_insertion) = self.timecode_insertion {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimecodeInsertion", timecode_insertion)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimecodeInsertion",
+                    timecode_insertion,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -6323,7 +7601,10 @@ pub mod channel {
                     write!(f, "a struct of type H264Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut adaptive_quantization: Option<::Value<String>> = None;
                     let mut afd_signaling: Option<::Value<String>> = None;
                     let mut bitrate: Option<::Value<u32>> = None;
@@ -6366,10 +7647,13 @@ pub mod channel {
                     let mut temporal_aq: Option<::Value<String>> = None;
                     let mut timecode_insertion: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdaptiveQuantization" => {
-                                adaptive_quantization = ::serde::de::MapAccess::next_value(&mut map)?;
+                                adaptive_quantization =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AfdSignaling" => {
                                 afd_signaling = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -6387,7 +7671,8 @@ pub mod channel {
                                 color_metadata = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ColorSpaceSettings" => {
-                                color_space_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                color_space_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EntropyEncoding" => {
                                 entropy_encoding = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -6402,13 +7687,15 @@ pub mod channel {
                                 flicker_aq = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ForceFieldPictures" => {
-                                force_field_pictures = ::serde::de::MapAccess::next_value(&mut map)?;
+                                force_field_pictures =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FramerateControl" => {
                                 framerate_control = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FramerateDenominator" => {
-                                framerate_denominator = ::serde::de::MapAccess::next_value(&mut map)?;
+                                framerate_denominator =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FramerateNumerator" => {
                                 framerate_numerator = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -6432,7 +7719,8 @@ pub mod channel {
                                 level = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LookAheadRateControl" => {
-                                look_ahead_rate_control = ::serde::de::MapAccess::next_value(&mut map)?;
+                                look_ahead_rate_control =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxBitrate" => {
                                 max_bitrate = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -6573,24 +7861,44 @@ pub mod channel {
     impl ::codec::SerializeValue for H265ColorSpaceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            if let Some(ref color_space_passthrough_settings) = self.color_space_passthrough_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorSpacePassthroughSettings", color_space_passthrough_settings)?;
+            if let Some(ref color_space_passthrough_settings) =
+                self.color_space_passthrough_settings
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorSpacePassthroughSettings",
+                    color_space_passthrough_settings,
+                )?;
             }
             if let Some(ref hdr10_settings) = self.hdr10_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Hdr10Settings", hdr10_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Hdr10Settings",
+                    hdr10_settings,
+                )?;
             }
             if let Some(ref rec601_settings) = self.rec601_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rec601Settings", rec601_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Rec601Settings",
+                    rec601_settings,
+                )?;
             }
             if let Some(ref rec709_settings) = self.rec709_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rec709Settings", rec709_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Rec709Settings",
+                    rec709_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for H265ColorSpaceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<H265ColorSpaceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<H265ColorSpaceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -6600,16 +7908,24 @@ pub mod channel {
                     write!(f, "a struct of type H265ColorSpaceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut color_space_passthrough_settings: Option<::Value<ColorSpacePassthroughSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut color_space_passthrough_settings: Option<
+                        ::Value<ColorSpacePassthroughSettings>,
+                    > = None;
                     let mut hdr10_settings: Option<::Value<Hdr10Settings>> = None;
                     let mut rec601_settings: Option<::Value<Rec601Settings>> = None;
                     let mut rec709_settings: Option<::Value<Rec709Settings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ColorSpacePassthroughSettings" => {
-                                color_space_passthrough_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                color_space_passthrough_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Hdr10Settings" => {
                                 hdr10_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -6651,14 +7967,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref temporal_filter_settings) = self.temporal_filter_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TemporalFilterSettings", temporal_filter_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TemporalFilterSettings",
+                    temporal_filter_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for H265FilterSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<H265FilterSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<H265FilterSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -6668,13 +7990,20 @@ pub mod channel {
                     write!(f, "a struct of type H265FilterSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TemporalFilterSettings" => {
-                                temporal_filter_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                temporal_filter_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -6844,13 +8173,25 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref adaptive_quantization) = self.adaptive_quantization {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdaptiveQuantization", adaptive_quantization)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AdaptiveQuantization",
+                    adaptive_quantization,
+                )?;
             }
             if let Some(ref afd_signaling) = self.afd_signaling {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AfdSignaling", afd_signaling)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AfdSignaling",
+                    afd_signaling,
+                )?;
             }
             if let Some(ref alternative_transfer_function) = self.alternative_transfer_function {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlternativeTransferFunction", alternative_transfer_function)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AlternativeTransferFunction",
+                    alternative_transfer_function,
+                )?;
             }
             if let Some(ref bitrate) = self.bitrate {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bitrate", bitrate)?;
@@ -6859,13 +8200,25 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "BufSize", buf_size)?;
             }
             if let Some(ref color_metadata) = self.color_metadata {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorMetadata", color_metadata)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorMetadata",
+                    color_metadata,
+                )?;
             }
             if let Some(ref color_space_settings) = self.color_space_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorSpaceSettings", color_space_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorSpaceSettings",
+                    color_space_settings,
+                )?;
             }
             if let Some(ref filter_settings) = self.filter_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterSettings", filter_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilterSettings",
+                    filter_settings,
+                )?;
             }
             if let Some(ref fixed_afd) = self.fixed_afd {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FixedAfd", fixed_afd)?;
@@ -6874,52 +8227,96 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FlickerAq", flicker_aq)?;
             }
             if let Some(ref framerate_denominator) = self.framerate_denominator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FramerateDenominator", framerate_denominator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FramerateDenominator",
+                    framerate_denominator,
+                )?;
             }
             if let Some(ref framerate_numerator) = self.framerate_numerator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FramerateNumerator", framerate_numerator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FramerateNumerator",
+                    framerate_numerator,
+                )?;
             }
             if let Some(ref gop_closed_cadence) = self.gop_closed_cadence {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopClosedCadence", gop_closed_cadence)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopClosedCadence",
+                    gop_closed_cadence,
+                )?;
             }
             if let Some(ref gop_size) = self.gop_size {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopSize", gop_size)?;
             }
             if let Some(ref gop_size_units) = self.gop_size_units {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopSizeUnits", gop_size_units)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopSizeUnits",
+                    gop_size_units,
+                )?;
             }
             if let Some(ref level) = self.level {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Level", level)?;
             }
             if let Some(ref look_ahead_rate_control) = self.look_ahead_rate_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LookAheadRateControl", look_ahead_rate_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LookAheadRateControl",
+                    look_ahead_rate_control,
+                )?;
             }
             if let Some(ref max_bitrate) = self.max_bitrate {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxBitrate", max_bitrate)?;
             }
             if let Some(ref min_i_interval) = self.min_i_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MinIInterval", min_i_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MinIInterval",
+                    min_i_interval,
+                )?;
             }
             if let Some(ref par_denominator) = self.par_denominator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParDenominator", par_denominator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ParDenominator",
+                    par_denominator,
+                )?;
             }
             if let Some(ref par_numerator) = self.par_numerator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParNumerator", par_numerator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ParNumerator",
+                    par_numerator,
+                )?;
             }
             if let Some(ref profile) = self.profile {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Profile", profile)?;
             }
             if let Some(ref qvbr_quality_level) = self.qvbr_quality_level {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "QvbrQualityLevel", qvbr_quality_level)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "QvbrQualityLevel",
+                    qvbr_quality_level,
+                )?;
             }
             if let Some(ref rate_control_mode) = self.rate_control_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RateControlMode", rate_control_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RateControlMode",
+                    rate_control_mode,
+                )?;
             }
             if let Some(ref scan_type) = self.scan_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScanType", scan_type)?;
             }
             if let Some(ref scene_change_detect) = self.scene_change_detect {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SceneChangeDetect", scene_change_detect)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SceneChangeDetect",
+                    scene_change_detect,
+                )?;
             }
             if let Some(ref slices) = self.slices {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Slices", slices)?;
@@ -6928,7 +8325,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tier", tier)?;
             }
             if let Some(ref timecode_insertion) = self.timecode_insertion {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimecodeInsertion", timecode_insertion)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimecodeInsertion",
+                    timecode_insertion,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -6945,7 +8346,10 @@ pub mod channel {
                     write!(f, "a struct of type H265Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut adaptive_quantization: Option<::Value<String>> = None;
                     let mut afd_signaling: Option<::Value<String>> = None;
                     let mut alternative_transfer_function: Option<::Value<String>> = None;
@@ -6976,16 +8380,20 @@ pub mod channel {
                     let mut tier: Option<::Value<String>> = None;
                     let mut timecode_insertion: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdaptiveQuantization" => {
-                                adaptive_quantization = ::serde::de::MapAccess::next_value(&mut map)?;
+                                adaptive_quantization =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AfdSignaling" => {
                                 afd_signaling = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AlternativeTransferFunction" => {
-                                alternative_transfer_function = ::serde::de::MapAccess::next_value(&mut map)?;
+                                alternative_transfer_function =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Bitrate" => {
                                 bitrate = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -6997,7 +8405,8 @@ pub mod channel {
                                 color_metadata = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ColorSpaceSettings" => {
-                                color_space_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                color_space_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FilterSettings" => {
                                 filter_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7009,7 +8418,8 @@ pub mod channel {
                                 flicker_aq = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FramerateDenominator" => {
-                                framerate_denominator = ::serde::de::MapAccess::next_value(&mut map)?;
+                                framerate_denominator =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FramerateNumerator" => {
                                 framerate_numerator = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7027,7 +8437,8 @@ pub mod channel {
                                 level = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LookAheadRateControl" => {
-                                look_ahead_rate_control = ::serde::de::MapAccess::next_value(&mut map)?;
+                                look_ahead_rate_control =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxBitrate" => {
                                 max_bitrate = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7136,7 +8547,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for Hdr10Settings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Hdr10Settings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Hdr10Settings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -7146,11 +8559,16 @@ pub mod channel {
                     write!(f, "a struct of type Hdr10Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut max_cll: Option<::Value<u32>> = None;
                     let mut max_fall: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MaxCll" => {
                                 max_cll = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7217,19 +8635,35 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionRetryInterval", connection_retry_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConnectionRetryInterval",
+                    connection_retry_interval,
+                )?;
             }
             if let Some(ref filecache_duration) = self.filecache_duration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilecacheDuration", filecache_duration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilecacheDuration",
+                    filecache_duration,
+                )?;
             }
             if let Some(ref http_transfer_mode) = self.http_transfer_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HttpTransferMode", http_transfer_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HttpTransferMode",
+                    http_transfer_mode,
+                )?;
             }
             if let Some(ref num_retries) = self.num_retries {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumRetries", num_retries)?;
             }
             if let Some(ref restart_delay) = self.restart_delay {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RestartDelay", restart_delay)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RestartDelay",
+                    restart_delay,
+                )?;
             }
             if let Some(ref salt) = self.salt {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Salt", salt)?;
@@ -7242,7 +8676,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for HlsAkamaiSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsAkamaiSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsAkamaiSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -7252,7 +8688,10 @@ pub mod channel {
                     write!(f, "a struct of type HlsAkamaiSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut connection_retry_interval: Option<::Value<u32>> = None;
                     let mut filecache_duration: Option<::Value<u32>> = None;
                     let mut http_transfer_mode: Option<::Value<String>> = None;
@@ -7261,10 +8700,13 @@ pub mod channel {
                     let mut salt: Option<::Value<String>> = None;
                     let mut token: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ConnectionRetryInterval" => {
-                                connection_retry_interval = ::serde::de::MapAccess::next_value(&mut map)?;
+                                connection_retry_interval =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FilecacheDuration" => {
                                 filecache_duration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7333,23 +8775,37 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionRetryInterval", connection_retry_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConnectionRetryInterval",
+                    connection_retry_interval,
+                )?;
             }
             if let Some(ref filecache_duration) = self.filecache_duration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilecacheDuration", filecache_duration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilecacheDuration",
+                    filecache_duration,
+                )?;
             }
             if let Some(ref num_retries) = self.num_retries {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumRetries", num_retries)?;
             }
             if let Some(ref restart_delay) = self.restart_delay {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RestartDelay", restart_delay)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RestartDelay",
+                    restart_delay,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HlsBasicPutSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsBasicPutSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsBasicPutSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -7359,16 +8815,22 @@ pub mod channel {
                     write!(f, "a struct of type HlsBasicPutSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut connection_retry_interval: Option<::Value<u32>> = None;
                     let mut filecache_duration: Option<::Value<u32>> = None;
                     let mut num_retries: Option<::Value<u32>> = None;
                     let mut restart_delay: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ConnectionRetryInterval" => {
-                                connection_retry_interval = ::serde::de::MapAccess::next_value(&mut map)?;
+                                connection_retry_interval =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FilecacheDuration" => {
                                 filecache_duration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7430,26 +8892,48 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref hls_akamai_settings) = self.hls_akamai_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsAkamaiSettings", hls_akamai_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsAkamaiSettings",
+                    hls_akamai_settings,
+                )?;
             }
             if let Some(ref hls_basic_put_settings) = self.hls_basic_put_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsBasicPutSettings", hls_basic_put_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsBasicPutSettings",
+                    hls_basic_put_settings,
+                )?;
             }
             if let Some(ref hls_media_store_settings) = self.hls_media_store_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsMediaStoreSettings", hls_media_store_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsMediaStoreSettings",
+                    hls_media_store_settings,
+                )?;
             }
             if let Some(ref hls_s3_settings) = self.hls_s3_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsS3Settings", hls_s3_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsS3Settings",
+                    hls_s3_settings,
+                )?;
             }
             if let Some(ref hls_webdav_settings) = self.hls_webdav_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsWebdavSettings", hls_webdav_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsWebdavSettings",
+                    hls_webdav_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HlsCdnSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsCdnSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsCdnSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -7459,23 +8943,30 @@ pub mod channel {
                     write!(f, "a struct of type HlsCdnSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut hls_akamai_settings: Option<::Value<HlsAkamaiSettings>> = None;
                     let mut hls_basic_put_settings: Option<::Value<HlsBasicPutSettings>> = None;
                     let mut hls_media_store_settings: Option<::Value<HlsMediaStoreSettings>> = None;
                     let mut hls_s3_settings: Option<::Value<HlsS3Settings>> = None;
                     let mut hls_webdav_settings: Option<::Value<HlsWebdavSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "HlsAkamaiSettings" => {
                                 hls_akamai_settings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HlsBasicPutSettings" => {
-                                hls_basic_put_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                hls_basic_put_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HlsMediaStoreSettings" => {
-                                hls_media_store_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                hls_media_store_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HlsS3Settings" => {
                                 hls_s3_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7728,28 +9219,56 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdMarkers", ad_markers)?;
             }
             if let Some(ref base_url_content) = self.base_url_content {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BaseUrlContent", base_url_content)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BaseUrlContent",
+                    base_url_content,
+                )?;
             }
             if let Some(ref base_url_content1) = self.base_url_content1 {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BaseUrlContent1", base_url_content1)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BaseUrlContent1",
+                    base_url_content1,
+                )?;
             }
             if let Some(ref base_url_manifest) = self.base_url_manifest {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BaseUrlManifest", base_url_manifest)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BaseUrlManifest",
+                    base_url_manifest,
+                )?;
             }
             if let Some(ref base_url_manifest1) = self.base_url_manifest1 {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BaseUrlManifest1", base_url_manifest1)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BaseUrlManifest1",
+                    base_url_manifest1,
+                )?;
             }
             if let Some(ref caption_language_mappings) = self.caption_language_mappings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptionLanguageMappings", caption_language_mappings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptionLanguageMappings",
+                    caption_language_mappings,
+                )?;
             }
             if let Some(ref caption_language_setting) = self.caption_language_setting {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptionLanguageSetting", caption_language_setting)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptionLanguageSetting",
+                    caption_language_setting,
+                )?;
             }
             if let Some(ref client_cache) = self.client_cache {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClientCache", client_cache)?;
             }
             if let Some(ref codec_specification) = self.codec_specification {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CodecSpecification", codec_specification)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CodecSpecification",
+                    codec_specification,
+                )?;
             }
             if let Some(ref constant_iv) = self.constant_iv {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConstantIv", constant_iv)?;
@@ -7758,97 +9277,209 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destination", destination)?;
             }
             if let Some(ref directory_structure) = self.directory_structure {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DirectoryStructure", directory_structure)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DirectoryStructure",
+                    directory_structure,
+                )?;
             }
             if let Some(ref discontinuity_tags) = self.discontinuity_tags {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DiscontinuityTags", discontinuity_tags)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DiscontinuityTags",
+                    discontinuity_tags,
+                )?;
             }
             if let Some(ref encryption_type) = self.encryption_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionType", encryption_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EncryptionType",
+                    encryption_type,
+                )?;
             }
             if let Some(ref hls_cdn_settings) = self.hls_cdn_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsCdnSettings", hls_cdn_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsCdnSettings",
+                    hls_cdn_settings,
+                )?;
             }
             if let Some(ref hls_id3_segment_tagging) = self.hls_id3_segment_tagging {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsId3SegmentTagging", hls_id3_segment_tagging)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsId3SegmentTagging",
+                    hls_id3_segment_tagging,
+                )?;
             }
             if let Some(ref i_frame_only_playlists) = self.i_frame_only_playlists {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IFrameOnlyPlaylists", i_frame_only_playlists)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IFrameOnlyPlaylists",
+                    i_frame_only_playlists,
+                )?;
             }
             if let Some(ref incomplete_segment_behavior) = self.incomplete_segment_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncompleteSegmentBehavior", incomplete_segment_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncompleteSegmentBehavior",
+                    incomplete_segment_behavior,
+                )?;
             }
             if let Some(ref index_n_segments) = self.index_n_segments {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IndexNSegments", index_n_segments)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IndexNSegments",
+                    index_n_segments,
+                )?;
             }
             if let Some(ref input_loss_action) = self.input_loss_action {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossAction", input_loss_action)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossAction",
+                    input_loss_action,
+                )?;
             }
             if let Some(ref iv_in_manifest) = self.iv_in_manifest {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IvInManifest", iv_in_manifest)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IvInManifest",
+                    iv_in_manifest,
+                )?;
             }
             if let Some(ref iv_source) = self.iv_source {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "IvSource", iv_source)?;
             }
             if let Some(ref keep_segments) = self.keep_segments {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeepSegments", keep_segments)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "KeepSegments",
+                    keep_segments,
+                )?;
             }
             if let Some(ref key_format) = self.key_format {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyFormat", key_format)?;
             }
             if let Some(ref key_format_versions) = self.key_format_versions {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyFormatVersions", key_format_versions)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "KeyFormatVersions",
+                    key_format_versions,
+                )?;
             }
             if let Some(ref key_provider_settings) = self.key_provider_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyProviderSettings", key_provider_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "KeyProviderSettings",
+                    key_provider_settings,
+                )?;
             }
             if let Some(ref manifest_compression) = self.manifest_compression {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManifestCompression", manifest_compression)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ManifestCompression",
+                    manifest_compression,
+                )?;
             }
             if let Some(ref manifest_duration_format) = self.manifest_duration_format {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManifestDurationFormat", manifest_duration_format)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ManifestDurationFormat",
+                    manifest_duration_format,
+                )?;
             }
             if let Some(ref min_segment_length) = self.min_segment_length {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MinSegmentLength", min_segment_length)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MinSegmentLength",
+                    min_segment_length,
+                )?;
             }
             if let Some(ref mode) = self.mode {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Mode", mode)?;
             }
             if let Some(ref output_selection) = self.output_selection {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputSelection", output_selection)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutputSelection",
+                    output_selection,
+                )?;
             }
             if let Some(ref program_date_time) = self.program_date_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProgramDateTime", program_date_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ProgramDateTime",
+                    program_date_time,
+                )?;
             }
             if let Some(ref program_date_time_clock) = self.program_date_time_clock {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProgramDateTimeClock", program_date_time_clock)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ProgramDateTimeClock",
+                    program_date_time_clock,
+                )?;
             }
             if let Some(ref program_date_time_period) = self.program_date_time_period {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProgramDateTimePeriod", program_date_time_period)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ProgramDateTimePeriod",
+                    program_date_time_period,
+                )?;
             }
             if let Some(ref redundant_manifest) = self.redundant_manifest {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RedundantManifest", redundant_manifest)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RedundantManifest",
+                    redundant_manifest,
+                )?;
             }
             if let Some(ref segment_length) = self.segment_length {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentLength", segment_length)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SegmentLength",
+                    segment_length,
+                )?;
             }
             if let Some(ref segmentation_mode) = self.segmentation_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentationMode", segmentation_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SegmentationMode",
+                    segmentation_mode,
+                )?;
             }
             if let Some(ref segments_per_subdirectory) = self.segments_per_subdirectory {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentsPerSubdirectory", segments_per_subdirectory)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SegmentsPerSubdirectory",
+                    segments_per_subdirectory,
+                )?;
             }
             if let Some(ref stream_inf_resolution) = self.stream_inf_resolution {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamInfResolution", stream_inf_resolution)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StreamInfResolution",
+                    stream_inf_resolution,
+                )?;
             }
             if let Some(ref timed_metadata_id3_frame) = self.timed_metadata_id3_frame {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataId3Frame", timed_metadata_id3_frame)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataId3Frame",
+                    timed_metadata_id3_frame,
+                )?;
             }
             if let Some(ref timed_metadata_id3_period) = self.timed_metadata_id3_period {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataId3Period", timed_metadata_id3_period)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataId3Period",
+                    timed_metadata_id3_period,
+                )?;
             }
             if let Some(ref timestamp_delta_milliseconds) = self.timestamp_delta_milliseconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimestampDeltaMilliseconds", timestamp_delta_milliseconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimestampDeltaMilliseconds",
+                    timestamp_delta_milliseconds,
+                )?;
             }
             if let Some(ref ts_file_mode) = self.ts_file_mode {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TsFileMode", ts_file_mode)?;
@@ -7858,7 +9489,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for HlsGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -7868,13 +9501,17 @@ pub mod channel {
                     write!(f, "a struct of type HlsGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ad_markers: Option<::ValueList<String>> = None;
                     let mut base_url_content: Option<::Value<String>> = None;
                     let mut base_url_content1: Option<::Value<String>> = None;
                     let mut base_url_manifest: Option<::Value<String>> = None;
                     let mut base_url_manifest1: Option<::Value<String>> = None;
-                    let mut caption_language_mappings: Option<::ValueList<CaptionLanguageMapping>> = None;
+                    let mut caption_language_mappings: Option<::ValueList<CaptionLanguageMapping>> =
+                        None;
                     let mut caption_language_setting: Option<::Value<String>> = None;
                     let mut client_cache: Option<::Value<String>> = None;
                     let mut codec_specification: Option<::Value<String>> = None;
@@ -7913,7 +9550,9 @@ pub mod channel {
                     let mut timestamp_delta_milliseconds: Option<::Value<u32>> = None;
                     let mut ts_file_mode: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdMarkers" => {
                                 ad_markers = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7931,10 +9570,12 @@ pub mod channel {
                                 base_url_manifest1 = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CaptionLanguageMappings" => {
-                                caption_language_mappings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                caption_language_mappings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CaptionLanguageSetting" => {
-                                caption_language_setting = ::serde::de::MapAccess::next_value(&mut map)?;
+                                caption_language_setting =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ClientCache" => {
                                 client_cache = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7961,13 +9602,16 @@ pub mod channel {
                                 hls_cdn_settings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HlsId3SegmentTagging" => {
-                                hls_id3_segment_tagging = ::serde::de::MapAccess::next_value(&mut map)?;
+                                hls_id3_segment_tagging =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IFrameOnlyPlaylists" => {
-                                i_frame_only_playlists = ::serde::de::MapAccess::next_value(&mut map)?;
+                                i_frame_only_playlists =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IncompleteSegmentBehavior" => {
-                                incomplete_segment_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                incomplete_segment_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IndexNSegments" => {
                                 index_n_segments = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -7991,13 +9635,16 @@ pub mod channel {
                                 key_format_versions = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "KeyProviderSettings" => {
-                                key_provider_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                key_provider_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ManifestCompression" => {
-                                manifest_compression = ::serde::de::MapAccess::next_value(&mut map)?;
+                                manifest_compression =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ManifestDurationFormat" => {
-                                manifest_duration_format = ::serde::de::MapAccess::next_value(&mut map)?;
+                                manifest_duration_format =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MinSegmentLength" => {
                                 min_segment_length = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8012,10 +9659,12 @@ pub mod channel {
                                 program_date_time = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ProgramDateTimeClock" => {
-                                program_date_time_clock = ::serde::de::MapAccess::next_value(&mut map)?;
+                                program_date_time_clock =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ProgramDateTimePeriod" => {
-                                program_date_time_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                                program_date_time_period =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RedundantManifest" => {
                                 redundant_manifest = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8027,19 +9676,24 @@ pub mod channel {
                                 segmentation_mode = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SegmentsPerSubdirectory" => {
-                                segments_per_subdirectory = ::serde::de::MapAccess::next_value(&mut map)?;
+                                segments_per_subdirectory =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StreamInfResolution" => {
-                                stream_inf_resolution = ::serde::de::MapAccess::next_value(&mut map)?;
+                                stream_inf_resolution =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataId3Frame" => {
-                                timed_metadata_id3_frame = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timed_metadata_id3_frame =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataId3Period" => {
-                                timed_metadata_id3_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timed_metadata_id3_period =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimestampDeltaMilliseconds" => {
-                                timestamp_delta_milliseconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timestamp_delta_milliseconds =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TsFileMode" => {
                                 ts_file_mode = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8137,23 +9791,37 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bandwidth", bandwidth)?;
             }
             if let Some(ref buffer_segments) = self.buffer_segments {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BufferSegments", buffer_segments)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BufferSegments",
+                    buffer_segments,
+                )?;
             }
             if let Some(ref retries) = self.retries {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Retries", retries)?;
             }
             if let Some(ref retry_interval) = self.retry_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RetryInterval", retry_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RetryInterval",
+                    retry_interval,
+                )?;
             }
             if let Some(ref scte35_source) = self.scte35_source {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte35Source", scte35_source)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte35Source",
+                    scte35_source,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HlsInputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsInputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsInputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8163,14 +9831,19 @@ pub mod channel {
                     write!(f, "a struct of type HlsInputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bandwidth: Option<::Value<u32>> = None;
                     let mut buffer_segments: Option<::Value<u32>> = None;
                     let mut retries: Option<::Value<u32>> = None;
                     let mut retry_interval: Option<::Value<u32>> = None;
                     let mut scte35_source: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bandwidth" => {
                                 bandwidth = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8239,26 +9912,44 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionRetryInterval", connection_retry_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConnectionRetryInterval",
+                    connection_retry_interval,
+                )?;
             }
             if let Some(ref filecache_duration) = self.filecache_duration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilecacheDuration", filecache_duration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilecacheDuration",
+                    filecache_duration,
+                )?;
             }
             if let Some(ref media_store_storage_class) = self.media_store_storage_class {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MediaStoreStorageClass", media_store_storage_class)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MediaStoreStorageClass",
+                    media_store_storage_class,
+                )?;
             }
             if let Some(ref num_retries) = self.num_retries {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumRetries", num_retries)?;
             }
             if let Some(ref restart_delay) = self.restart_delay {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RestartDelay", restart_delay)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RestartDelay",
+                    restart_delay,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HlsMediaStoreSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsMediaStoreSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsMediaStoreSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8268,23 +9959,30 @@ pub mod channel {
                     write!(f, "a struct of type HlsMediaStoreSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut connection_retry_interval: Option<::Value<u32>> = None;
                     let mut filecache_duration: Option<::Value<u32>> = None;
                     let mut media_store_storage_class: Option<::Value<String>> = None;
                     let mut num_retries: Option<::Value<u32>> = None;
                     let mut restart_delay: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ConnectionRetryInterval" => {
-                                connection_retry_interval = ::serde::de::MapAccess::next_value(&mut map)?;
+                                connection_retry_interval =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FilecacheDuration" => {
                                 filecache_duration = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MediaStoreStorageClass" => {
-                                media_store_storage_class = ::serde::de::MapAccess::next_value(&mut map)?;
+                                media_store_storage_class =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NumRetries" => {
                                 num_retries = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8339,23 +10037,37 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref h265_packaging_type) = self.h265_packaging_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "H265PackagingType", h265_packaging_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "H265PackagingType",
+                    h265_packaging_type,
+                )?;
             }
             if let Some(ref hls_settings) = self.hls_settings {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsSettings", hls_settings)?;
             }
             if let Some(ref name_modifier) = self.name_modifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NameModifier", name_modifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NameModifier",
+                    name_modifier,
+                )?;
             }
             if let Some(ref segment_modifier) = self.segment_modifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentModifier", segment_modifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SegmentModifier",
+                    segment_modifier,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HlsOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8365,13 +10077,18 @@ pub mod channel {
                     write!(f, "a struct of type HlsOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut h265_packaging_type: Option<::Value<String>> = None;
                     let mut hls_settings: Option<::Value<HlsSettings>> = None;
                     let mut name_modifier: Option<::Value<String>> = None;
                     let mut segment_modifier: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "H265PackagingType" => {
                                 h265_packaging_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8423,7 +10140,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for HlsS3Settings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsS3Settings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsS3Settings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8433,10 +10152,15 @@ pub mod channel {
                     write!(f, "a struct of type HlsS3Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut canned_acl: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CannedAcl" => {
                                 canned_acl = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8484,16 +10208,32 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_only_hls_settings) = self.audio_only_hls_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioOnlyHlsSettings", audio_only_hls_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioOnlyHlsSettings",
+                    audio_only_hls_settings,
+                )?;
             }
             if let Some(ref fmp4_hls_settings) = self.fmp4_hls_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Fmp4HlsSettings", fmp4_hls_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Fmp4HlsSettings",
+                    fmp4_hls_settings,
+                )?;
             }
             if let Some(ref frame_capture_hls_settings) = self.frame_capture_hls_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FrameCaptureHlsSettings", frame_capture_hls_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FrameCaptureHlsSettings",
+                    frame_capture_hls_settings,
+                )?;
             }
             if let Some(ref standard_hls_settings) = self.standard_hls_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StandardHlsSettings", standard_hls_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StandardHlsSettings",
+                    standard_hls_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -8510,25 +10250,34 @@ pub mod channel {
                     write!(f, "a struct of type HlsSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_only_hls_settings: Option<::Value<AudioOnlyHlsSettings>> = None;
                     let mut fmp4_hls_settings: Option<::Value<Fmp4HlsSettings>> = None;
-                    let mut frame_capture_hls_settings: Option<::Value<FrameCaptureHlsSettings>> = None;
+                    let mut frame_capture_hls_settings: Option<::Value<FrameCaptureHlsSettings>> =
+                        None;
                     let mut standard_hls_settings: Option<::Value<StandardHlsSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioOnlyHlsSettings" => {
-                                audio_only_hls_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_only_hls_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Fmp4HlsSettings" => {
                                 fmp4_hls_settings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FrameCaptureHlsSettings" => {
-                                frame_capture_hls_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                frame_capture_hls_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StandardHlsSettings" => {
-                                standard_hls_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                standard_hls_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -8581,26 +10330,44 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionRetryInterval", connection_retry_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConnectionRetryInterval",
+                    connection_retry_interval,
+                )?;
             }
             if let Some(ref filecache_duration) = self.filecache_duration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilecacheDuration", filecache_duration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilecacheDuration",
+                    filecache_duration,
+                )?;
             }
             if let Some(ref http_transfer_mode) = self.http_transfer_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HttpTransferMode", http_transfer_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HttpTransferMode",
+                    http_transfer_mode,
+                )?;
             }
             if let Some(ref num_retries) = self.num_retries {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumRetries", num_retries)?;
             }
             if let Some(ref restart_delay) = self.restart_delay {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RestartDelay", restart_delay)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RestartDelay",
+                    restart_delay,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HlsWebdavSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsWebdavSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HlsWebdavSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8610,17 +10377,23 @@ pub mod channel {
                     write!(f, "a struct of type HlsWebdavSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut connection_retry_interval: Option<::Value<u32>> = None;
                     let mut filecache_duration: Option<::Value<u32>> = None;
                     let mut http_transfer_mode: Option<::Value<String>> = None;
                     let mut num_retries: Option<::Value<u32>> = None;
                     let mut restart_delay: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ConnectionRetryInterval" => {
-                                connection_retry_interval = ::serde::de::MapAccess::next_value(&mut map)?;
+                                connection_retry_interval =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FilecacheDuration" => {
                                 filecache_duration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8654,8 +10427,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.HtmlMotionGraphicsSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-htmlmotiongraphicssettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct HtmlMotionGraphicsSettings {
-    }
+    pub struct HtmlMotionGraphicsSettings {}
 
     impl ::codec::SerializeValue for HtmlMotionGraphicsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -8665,7 +10437,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for HtmlMotionGraphicsSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HtmlMotionGraphicsSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HtmlMotionGraphicsSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8675,7 +10449,10 @@ pub mod channel {
                     write!(f, "a struct of type HtmlMotionGraphicsSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(HtmlMotionGraphicsSettings {})
                 }
             }
@@ -8712,24 +10489,40 @@ pub mod channel {
     impl ::codec::SerializeValue for InputAttachment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            if let Some(ref automatic_input_failover_settings) = self.automatic_input_failover_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutomaticInputFailoverSettings", automatic_input_failover_settings)?;
+            if let Some(ref automatic_input_failover_settings) =
+                self.automatic_input_failover_settings
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AutomaticInputFailoverSettings",
+                    automatic_input_failover_settings,
+                )?;
             }
             if let Some(ref input_attachment_name) = self.input_attachment_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputAttachmentName", input_attachment_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputAttachmentName",
+                    input_attachment_name,
+                )?;
             }
             if let Some(ref input_id) = self.input_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputId", input_id)?;
             }
             if let Some(ref input_settings) = self.input_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputSettings", input_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputSettings",
+                    input_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for InputAttachment {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputAttachment, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputAttachment, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8739,19 +10532,28 @@ pub mod channel {
                     write!(f, "a struct of type InputAttachment")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut automatic_input_failover_settings: Option<::Value<AutomaticInputFailoverSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut automatic_input_failover_settings: Option<
+                        ::Value<AutomaticInputFailoverSettings>,
+                    > = None;
                     let mut input_attachment_name: Option<::Value<String>> = None;
                     let mut input_id: Option<::Value<String>> = None;
                     let mut input_settings: Option<::Value<InputSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AutomaticInputFailoverSettings" => {
-                                automatic_input_failover_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                automatic_input_failover_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "InputAttachmentName" => {
-                                input_attachment_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                input_attachment_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "InputId" => {
                                 input_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8798,14 +10600,20 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Gain", gain)?;
             }
             if let Some(ref input_channel) = self.input_channel {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputChannel", input_channel)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputChannel",
+                    input_channel,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for InputChannelLevel {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputChannelLevel, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputChannelLevel, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8815,11 +10623,16 @@ pub mod channel {
                     write!(f, "a struct of type InputChannelLevel")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut gain: Option<::Value<u32>> = None;
                     let mut input_channel: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Gain" => {
                                 gain = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8866,7 +10679,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref password_param) = self.password_param {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PasswordParam", password_param)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PasswordParam",
+                    password_param,
+                )?;
             }
             if let Some(ref uri) = self.uri {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Uri", uri)?;
@@ -8879,7 +10696,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for InputLocation {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputLocation, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputLocation, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8889,12 +10708,17 @@ pub mod channel {
                     write!(f, "a struct of type InputLocation")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut password_param: Option<::Value<String>> = None;
                     let mut uri: Option<::Value<String>> = None;
                     let mut username: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PasswordParam" => {
                                 password_param = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -8955,26 +10779,48 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref black_frame_msec) = self.black_frame_msec {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlackFrameMsec", black_frame_msec)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BlackFrameMsec",
+                    black_frame_msec,
+                )?;
             }
             if let Some(ref input_loss_image_color) = self.input_loss_image_color {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossImageColor", input_loss_image_color)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossImageColor",
+                    input_loss_image_color,
+                )?;
             }
             if let Some(ref input_loss_image_slate) = self.input_loss_image_slate {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossImageSlate", input_loss_image_slate)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossImageSlate",
+                    input_loss_image_slate,
+                )?;
             }
             if let Some(ref input_loss_image_type) = self.input_loss_image_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossImageType", input_loss_image_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossImageType",
+                    input_loss_image_type,
+                )?;
             }
             if let Some(ref repeat_frame_msec) = self.repeat_frame_msec {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepeatFrameMsec", repeat_frame_msec)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RepeatFrameMsec",
+                    repeat_frame_msec,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for InputLossBehavior {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputLossBehavior, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputLossBehavior, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -8984,26 +10830,34 @@ pub mod channel {
                     write!(f, "a struct of type InputLossBehavior")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut black_frame_msec: Option<::Value<u32>> = None;
                     let mut input_loss_image_color: Option<::Value<String>> = None;
                     let mut input_loss_image_slate: Option<::Value<InputLocation>> = None;
                     let mut input_loss_image_type: Option<::Value<String>> = None;
                     let mut repeat_frame_msec: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BlackFrameMsec" => {
                                 black_frame_msec = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "InputLossImageColor" => {
-                                input_loss_image_color = ::serde::de::MapAccess::next_value(&mut map)?;
+                                input_loss_image_color =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "InputLossImageSlate" => {
-                                input_loss_image_slate = ::serde::de::MapAccess::next_value(&mut map)?;
+                                input_loss_image_slate =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "InputLossImageType" => {
-                                input_loss_image_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                                input_loss_image_type =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RepeatFrameMsec" => {
                                 repeat_frame_msec = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9040,14 +10894,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref input_loss_threshold_msec) = self.input_loss_threshold_msec {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossThresholdMsec", input_loss_threshold_msec)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossThresholdMsec",
+                    input_loss_threshold_msec,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for InputLossFailoverSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputLossFailoverSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputLossFailoverSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -9057,13 +10917,19 @@ pub mod channel {
                     write!(f, "a struct of type InputLossFailoverSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut input_loss_threshold_msec: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InputLossThresholdMsec" => {
-                                input_loss_threshold_msec = ::serde::de::MapAccess::next_value(&mut map)?;
+                                input_loss_threshold_msec =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -9143,44 +11009,82 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_selectors) = self.audio_selectors {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioSelectors", audio_selectors)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioSelectors",
+                    audio_selectors,
+                )?;
             }
             if let Some(ref caption_selectors) = self.caption_selectors {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptionSelectors", caption_selectors)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptionSelectors",
+                    caption_selectors,
+                )?;
             }
             if let Some(ref deblock_filter) = self.deblock_filter {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeblockFilter", deblock_filter)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DeblockFilter",
+                    deblock_filter,
+                )?;
             }
             if let Some(ref denoise_filter) = self.denoise_filter {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DenoiseFilter", denoise_filter)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DenoiseFilter",
+                    denoise_filter,
+                )?;
             }
             if let Some(ref filter_strength) = self.filter_strength {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterStrength", filter_strength)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilterStrength",
+                    filter_strength,
+                )?;
             }
             if let Some(ref input_filter) = self.input_filter {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputFilter", input_filter)?;
             }
             if let Some(ref network_input_settings) = self.network_input_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NetworkInputSettings", network_input_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NetworkInputSettings",
+                    network_input_settings,
+                )?;
             }
             if let Some(ref scte35_pid) = self.scte35_pid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte35Pid", scte35_pid)?;
             }
             if let Some(ref smpte2038_data_preference) = self.smpte2038_data_preference {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Smpte2038DataPreference", smpte2038_data_preference)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Smpte2038DataPreference",
+                    smpte2038_data_preference,
+                )?;
             }
             if let Some(ref source_end_behavior) = self.source_end_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceEndBehavior", source_end_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SourceEndBehavior",
+                    source_end_behavior,
+                )?;
             }
             if let Some(ref video_selector) = self.video_selector {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoSelector", video_selector)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VideoSelector",
+                    video_selector,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for InputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -9190,7 +11094,10 @@ pub mod channel {
                     write!(f, "a struct of type InputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_selectors: Option<::ValueList<AudioSelector>> = None;
                     let mut caption_selectors: Option<::ValueList<CaptionSelector>> = None;
                     let mut deblock_filter: Option<::Value<String>> = None;
@@ -9203,7 +11110,9 @@ pub mod channel {
                     let mut source_end_behavior: Option<::Value<String>> = None;
                     let mut video_selector: Option<::Value<VideoSelector>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioSelectors" => {
                                 audio_selectors = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9224,13 +11133,15 @@ pub mod channel {
                                 input_filter = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NetworkInputSettings" => {
-                                network_input_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                network_input_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Scte35Pid" => {
                                 scte35_pid = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Smpte2038DataPreference" => {
-                                smpte2038_data_preference = ::serde::de::MapAccess::next_value(&mut map)?;
+                                smpte2038_data_preference =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SourceEndBehavior" => {
                                 source_end_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9289,7 +11200,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Codec", codec)?;
             }
             if let Some(ref maximum_bitrate) = self.maximum_bitrate {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaximumBitrate", maximum_bitrate)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaximumBitrate",
+                    maximum_bitrate,
+                )?;
             }
             if let Some(ref resolution) = self.resolution {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Resolution", resolution)?;
@@ -9299,7 +11214,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for InputSpecification {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputSpecification, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputSpecification, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -9309,12 +11226,17 @@ pub mod channel {
                     write!(f, "a struct of type InputSpecification")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut codec: Option<::Value<String>> = None;
                     let mut maximum_bitrate: Option<::Value<String>> = None;
                     let mut resolution: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Codec" => {
                                 codec = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9355,14 +11277,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref static_key_settings) = self.static_key_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StaticKeySettings", static_key_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StaticKeySettings",
+                    static_key_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for KeyProviderSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KeyProviderSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<KeyProviderSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -9372,10 +11300,15 @@ pub mod channel {
                     write!(f, "a struct of type KeyProviderSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut static_key_settings: Option<::Value<StaticKeySettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "StaticKeySettings" => {
                                 static_key_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9638,28 +11571,52 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref absent_input_audio_behavior) = self.absent_input_audio_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AbsentInputAudioBehavior", absent_input_audio_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AbsentInputAudioBehavior",
+                    absent_input_audio_behavior,
+                )?;
             }
             if let Some(ref arib) = self.arib {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arib", arib)?;
             }
             if let Some(ref arib_captions_pid) = self.arib_captions_pid {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AribCaptionsPid", arib_captions_pid)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AribCaptionsPid",
+                    arib_captions_pid,
+                )?;
             }
             if let Some(ref arib_captions_pid_control) = self.arib_captions_pid_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AribCaptionsPidControl", arib_captions_pid_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AribCaptionsPidControl",
+                    arib_captions_pid_control,
+                )?;
             }
             if let Some(ref audio_buffer_model) = self.audio_buffer_model {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioBufferModel", audio_buffer_model)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioBufferModel",
+                    audio_buffer_model,
+                )?;
             }
             if let Some(ref audio_frames_per_pes) = self.audio_frames_per_pes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioFramesPerPes", audio_frames_per_pes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioFramesPerPes",
+                    audio_frames_per_pes,
+                )?;
             }
             if let Some(ref audio_pids) = self.audio_pids {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioPids", audio_pids)?;
             }
             if let Some(ref audio_stream_type) = self.audio_stream_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioStreamType", audio_stream_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioStreamType",
+                    audio_stream_type,
+                )?;
             }
             if let Some(ref bitrate) = self.bitrate {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bitrate", bitrate)?;
@@ -9668,61 +11625,121 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "BufferModel", buffer_model)?;
             }
             if let Some(ref cc_descriptor) = self.cc_descriptor {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CcDescriptor", cc_descriptor)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CcDescriptor",
+                    cc_descriptor,
+                )?;
             }
             if let Some(ref dvb_nit_settings) = self.dvb_nit_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DvbNitSettings", dvb_nit_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DvbNitSettings",
+                    dvb_nit_settings,
+                )?;
             }
             if let Some(ref dvb_sdt_settings) = self.dvb_sdt_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DvbSdtSettings", dvb_sdt_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DvbSdtSettings",
+                    dvb_sdt_settings,
+                )?;
             }
             if let Some(ref dvb_sub_pids) = self.dvb_sub_pids {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DvbSubPids", dvb_sub_pids)?;
             }
             if let Some(ref dvb_tdt_settings) = self.dvb_tdt_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DvbTdtSettings", dvb_tdt_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DvbTdtSettings",
+                    dvb_tdt_settings,
+                )?;
             }
             if let Some(ref dvb_teletext_pid) = self.dvb_teletext_pid {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DvbTeletextPid", dvb_teletext_pid)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DvbTeletextPid",
+                    dvb_teletext_pid,
+                )?;
             }
             if let Some(ref ebif) = self.ebif {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ebif", ebif)?;
             }
             if let Some(ref ebp_audio_interval) = self.ebp_audio_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EbpAudioInterval", ebp_audio_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EbpAudioInterval",
+                    ebp_audio_interval,
+                )?;
             }
             if let Some(ref ebp_lookahead_ms) = self.ebp_lookahead_ms {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EbpLookaheadMs", ebp_lookahead_ms)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EbpLookaheadMs",
+                    ebp_lookahead_ms,
+                )?;
             }
             if let Some(ref ebp_placement) = self.ebp_placement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EbpPlacement", ebp_placement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EbpPlacement",
+                    ebp_placement,
+                )?;
             }
             if let Some(ref ecm_pid) = self.ecm_pid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcmPid", ecm_pid)?;
             }
             if let Some(ref es_rate_in_pes) = self.es_rate_in_pes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EsRateInPes", es_rate_in_pes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EsRateInPes",
+                    es_rate_in_pes,
+                )?;
             }
             if let Some(ref etv_platform_pid) = self.etv_platform_pid {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EtvPlatformPid", etv_platform_pid)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EtvPlatformPid",
+                    etv_platform_pid,
+                )?;
             }
             if let Some(ref etv_signal_pid) = self.etv_signal_pid {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EtvSignalPid", etv_signal_pid)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EtvSignalPid",
+                    etv_signal_pid,
+                )?;
             }
             if let Some(ref fragment_time) = self.fragment_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FragmentTime", fragment_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FragmentTime",
+                    fragment_time,
+                )?;
             }
             if let Some(ref klv) = self.klv {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Klv", klv)?;
             }
             if let Some(ref klv_data_pids) = self.klv_data_pids {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "KlvDataPids", klv_data_pids)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "KlvDataPids",
+                    klv_data_pids,
+                )?;
             }
             if let Some(ref nielsen_id3_behavior) = self.nielsen_id3_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenId3Behavior", nielsen_id3_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenId3Behavior",
+                    nielsen_id3_behavior,
+                )?;
             }
             if let Some(ref null_packet_bitrate) = self.null_packet_bitrate {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NullPacketBitrate", null_packet_bitrate)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NullPacketBitrate",
+                    null_packet_bitrate,
+                )?;
             }
             if let Some(ref pat_interval) = self.pat_interval {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "PatInterval", pat_interval)?;
@@ -9752,28 +11769,56 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte27Pids", scte27_pids)?;
             }
             if let Some(ref scte35_control) = self.scte35_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte35Control", scte35_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte35Control",
+                    scte35_control,
+                )?;
             }
             if let Some(ref scte35_pid) = self.scte35_pid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte35Pid", scte35_pid)?;
             }
             if let Some(ref segmentation_markers) = self.segmentation_markers {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentationMarkers", segmentation_markers)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SegmentationMarkers",
+                    segmentation_markers,
+                )?;
             }
             if let Some(ref segmentation_style) = self.segmentation_style {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentationStyle", segmentation_style)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SegmentationStyle",
+                    segmentation_style,
+                )?;
             }
             if let Some(ref segmentation_time) = self.segmentation_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentationTime", segmentation_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SegmentationTime",
+                    segmentation_time,
+                )?;
             }
             if let Some(ref timed_metadata_behavior) = self.timed_metadata_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataBehavior", timed_metadata_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataBehavior",
+                    timed_metadata_behavior,
+                )?;
             }
             if let Some(ref timed_metadata_pid) = self.timed_metadata_pid {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataPid", timed_metadata_pid)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataPid",
+                    timed_metadata_pid,
+                )?;
             }
             if let Some(ref transport_stream_id) = self.transport_stream_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TransportStreamId", transport_stream_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TransportStreamId",
+                    transport_stream_id,
+                )?;
             }
             if let Some(ref video_pid) = self.video_pid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoPid", video_pid)?;
@@ -9793,7 +11838,10 @@ pub mod channel {
                     write!(f, "a struct of type M2tsSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut absent_input_audio_behavior: Option<::Value<String>> = None;
                     let mut arib: Option<::Value<String>> = None;
                     let mut arib_captions_pid: Option<::Value<String>> = None;
@@ -9842,10 +11890,13 @@ pub mod channel {
                     let mut transport_stream_id: Option<::Value<u32>> = None;
                     let mut video_pid: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AbsentInputAudioBehavior" => {
-                                absent_input_audio_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                absent_input_audio_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Arib" => {
                                 arib = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9854,13 +11905,15 @@ pub mod channel {
                                 arib_captions_pid = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AribCaptionsPidControl" => {
-                                arib_captions_pid_control = ::serde::de::MapAccess::next_value(&mut map)?;
+                                arib_captions_pid_control =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioBufferModel" => {
                                 audio_buffer_model = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioFramesPerPes" => {
-                                audio_frames_per_pes = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_frames_per_pes =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioPids" => {
                                 audio_pids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9926,7 +11979,8 @@ pub mod channel {
                                 klv_data_pids = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NielsenId3Behavior" => {
-                                nielsen_id3_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_id3_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NullPacketBitrate" => {
                                 null_packet_bitrate = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9965,7 +12019,8 @@ pub mod channel {
                                 scte35_pid = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SegmentationMarkers" => {
-                                segmentation_markers = ::serde::de::MapAccess::next_value(&mut map)?;
+                                segmentation_markers =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SegmentationStyle" => {
                                 segmentation_style = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -9974,7 +12029,8 @@ pub mod channel {
                                 segmentation_time = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataBehavior" => {
-                                timed_metadata_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timed_metadata_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataPid" => {
                                 timed_metadata_pid = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10139,7 +12195,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_frames_per_pes) = self.audio_frames_per_pes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioFramesPerPes", audio_frames_per_pes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioFramesPerPes",
+                    audio_frames_per_pes,
+                )?;
             }
             if let Some(ref audio_pids) = self.audio_pids {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioPids", audio_pids)?;
@@ -10148,7 +12208,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcmPid", ecm_pid)?;
             }
             if let Some(ref nielsen_id3_behavior) = self.nielsen_id3_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenId3Behavior", nielsen_id3_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenId3Behavior",
+                    nielsen_id3_behavior,
+                )?;
             }
             if let Some(ref pat_interval) = self.pat_interval {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "PatInterval", pat_interval)?;
@@ -10172,19 +12236,35 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProgramNum", program_num)?;
             }
             if let Some(ref scte35_behavior) = self.scte35_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte35Behavior", scte35_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Scte35Behavior",
+                    scte35_behavior,
+                )?;
             }
             if let Some(ref scte35_pid) = self.scte35_pid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scte35Pid", scte35_pid)?;
             }
             if let Some(ref timed_metadata_behavior) = self.timed_metadata_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataBehavior", timed_metadata_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataBehavior",
+                    timed_metadata_behavior,
+                )?;
             }
             if let Some(ref timed_metadata_pid) = self.timed_metadata_pid {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataPid", timed_metadata_pid)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataPid",
+                    timed_metadata_pid,
+                )?;
             }
             if let Some(ref transport_stream_id) = self.transport_stream_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TransportStreamId", transport_stream_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TransportStreamId",
+                    transport_stream_id,
+                )?;
             }
             if let Some(ref video_pid) = self.video_pid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoPid", video_pid)?;
@@ -10204,7 +12284,10 @@ pub mod channel {
                     write!(f, "a struct of type M3u8Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_frames_per_pes: Option<::Value<u32>> = None;
                     let mut audio_pids: Option<::Value<String>> = None;
                     let mut ecm_pid: Option<::Value<String>> = None;
@@ -10223,10 +12306,13 @@ pub mod channel {
                     let mut transport_stream_id: Option<::Value<u32>> = None;
                     let mut video_pid: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioFramesPerPes" => {
-                                audio_frames_per_pes = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_frames_per_pes =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioPids" => {
                                 audio_pids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10235,7 +12321,8 @@ pub mod channel {
                                 ecm_pid = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NielsenId3Behavior" => {
-                                nielsen_id3_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_id3_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PatInterval" => {
                                 pat_interval = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10265,7 +12352,8 @@ pub mod channel {
                                 scte35_pid = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataBehavior" => {
-                                timed_metadata_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timed_metadata_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataPid" => {
                                 timed_metadata_pid = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10327,7 +12415,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for MediaPackageGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MediaPackageGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MediaPackageGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -10337,10 +12427,15 @@ pub mod channel {
                     write!(f, "a struct of type MediaPackageGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut destination: Option<::Value<OutputLocationRef>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Destination" => {
                                 destination = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10380,7 +12475,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for MediaPackageOutputDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MediaPackageOutputDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MediaPackageOutputDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -10390,10 +12487,15 @@ pub mod channel {
                     write!(f, "a struct of type MediaPackageOutputDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut channel_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ChannelId" => {
                                 channel_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10414,8 +12516,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.MediaPackageOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct MediaPackageOutputSettings {
-    }
+    pub struct MediaPackageOutputSettings {}
 
     impl ::codec::SerializeValue for MediaPackageOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -10425,7 +12526,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for MediaPackageOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MediaPackageOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MediaPackageOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -10435,7 +12538,10 @@ pub mod channel {
                     write!(f, "a struct of type MediaPackageOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(MediaPackageOutputSettings {})
                 }
             }
@@ -10463,17 +12569,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref motion_graphics_insertion) = self.motion_graphics_insertion {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MotionGraphicsInsertion", motion_graphics_insertion)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MotionGraphicsInsertion",
+                    motion_graphics_insertion,
+                )?;
             }
             if let Some(ref motion_graphics_settings) = self.motion_graphics_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MotionGraphicsSettings", motion_graphics_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MotionGraphicsSettings",
+                    motion_graphics_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MotionGraphicsConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MotionGraphicsConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MotionGraphicsConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -10483,17 +12599,25 @@ pub mod channel {
                     write!(f, "a struct of type MotionGraphicsConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut motion_graphics_insertion: Option<::Value<String>> = None;
-                    let mut motion_graphics_settings: Option<::Value<MotionGraphicsSettings>> = None;
+                    let mut motion_graphics_settings: Option<::Value<MotionGraphicsSettings>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MotionGraphicsInsertion" => {
-                                motion_graphics_insertion = ::serde::de::MapAccess::next_value(&mut map)?;
+                                motion_graphics_insertion =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MotionGraphicsSettings" => {
-                                motion_graphics_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                motion_graphics_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -10524,14 +12648,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref html_motion_graphics_settings) = self.html_motion_graphics_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HtmlMotionGraphicsSettings", html_motion_graphics_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HtmlMotionGraphicsSettings",
+                    html_motion_graphics_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MotionGraphicsSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MotionGraphicsSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MotionGraphicsSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -10541,13 +12671,21 @@ pub mod channel {
                     write!(f, "a struct of type MotionGraphicsSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut html_motion_graphics_settings: Option<::Value<HtmlMotionGraphicsSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut html_motion_graphics_settings: Option<
+                        ::Value<HtmlMotionGraphicsSettings>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "HtmlMotionGraphicsSettings" => {
-                                html_motion_graphics_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                html_motion_graphics_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -10610,12 +12748,17 @@ pub mod channel {
                     write!(f, "a struct of type Mp2Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bitrate: Option<::Value<f64>> = None;
                     let mut coding_mode: Option<::Value<String>> = None;
                     let mut sample_rate: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bitrate" => {
                                 bitrate = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10656,14 +12799,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref temporal_filter_settings) = self.temporal_filter_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TemporalFilterSettings", temporal_filter_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TemporalFilterSettings",
+                    temporal_filter_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for Mpeg2FilterSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Mpeg2FilterSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Mpeg2FilterSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -10673,13 +12822,20 @@ pub mod channel {
                     write!(f, "a struct of type Mpeg2FilterSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TemporalFilterSettings" => {
-                                temporal_filter_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                temporal_filter_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -10784,59 +12940,109 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref adaptive_quantization) = self.adaptive_quantization {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdaptiveQuantization", adaptive_quantization)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AdaptiveQuantization",
+                    adaptive_quantization,
+                )?;
             }
             if let Some(ref afd_signaling) = self.afd_signaling {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AfdSignaling", afd_signaling)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AfdSignaling",
+                    afd_signaling,
+                )?;
             }
             if let Some(ref color_metadata) = self.color_metadata {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorMetadata", color_metadata)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorMetadata",
+                    color_metadata,
+                )?;
             }
             if let Some(ref color_space) = self.color_space {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorSpace", color_space)?;
             }
             if let Some(ref display_aspect_ratio) = self.display_aspect_ratio {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisplayAspectRatio", display_aspect_ratio)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DisplayAspectRatio",
+                    display_aspect_ratio,
+                )?;
             }
             if let Some(ref filter_settings) = self.filter_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterSettings", filter_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilterSettings",
+                    filter_settings,
+                )?;
             }
             if let Some(ref fixed_afd) = self.fixed_afd {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FixedAfd", fixed_afd)?;
             }
             if let Some(ref framerate_denominator) = self.framerate_denominator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FramerateDenominator", framerate_denominator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FramerateDenominator",
+                    framerate_denominator,
+                )?;
             }
             if let Some(ref framerate_numerator) = self.framerate_numerator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FramerateNumerator", framerate_numerator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FramerateNumerator",
+                    framerate_numerator,
+                )?;
             }
             if let Some(ref gop_closed_cadence) = self.gop_closed_cadence {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopClosedCadence", gop_closed_cadence)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopClosedCadence",
+                    gop_closed_cadence,
+                )?;
             }
             if let Some(ref gop_num_b_frames) = self.gop_num_b_frames {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopNumBFrames", gop_num_b_frames)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopNumBFrames",
+                    gop_num_b_frames,
+                )?;
             }
             if let Some(ref gop_size) = self.gop_size {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopSize", gop_size)?;
             }
             if let Some(ref gop_size_units) = self.gop_size_units {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GopSizeUnits", gop_size_units)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GopSizeUnits",
+                    gop_size_units,
+                )?;
             }
             if let Some(ref scan_type) = self.scan_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScanType", scan_type)?;
             }
             if let Some(ref subgop_length) = self.subgop_length {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubgopLength", subgop_length)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SubgopLength",
+                    subgop_length,
+                )?;
             }
             if let Some(ref timecode_insertion) = self.timecode_insertion {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimecodeInsertion", timecode_insertion)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimecodeInsertion",
+                    timecode_insertion,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for Mpeg2Settings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Mpeg2Settings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Mpeg2Settings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -10846,7 +13052,10 @@ pub mod channel {
                     write!(f, "a struct of type Mpeg2Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut adaptive_quantization: Option<::Value<String>> = None;
                     let mut afd_signaling: Option<::Value<String>> = None;
                     let mut color_metadata: Option<::Value<String>> = None;
@@ -10864,10 +13073,13 @@ pub mod channel {
                     let mut subgop_length: Option<::Value<String>> = None;
                     let mut timecode_insertion: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdaptiveQuantization" => {
-                                adaptive_quantization = ::serde::de::MapAccess::next_value(&mut map)?;
+                                adaptive_quantization =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AfdSignaling" => {
                                 afd_signaling = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10879,7 +13091,8 @@ pub mod channel {
                                 color_space = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DisplayAspectRatio" => {
-                                display_aspect_ratio = ::serde::de::MapAccess::next_value(&mut map)?;
+                                display_aspect_ratio =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FilterSettings" => {
                                 filter_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -10888,7 +13101,8 @@ pub mod channel {
                                 fixed_afd = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FramerateDenominator" => {
-                                framerate_denominator = ::serde::de::MapAccess::next_value(&mut map)?;
+                                framerate_denominator =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FramerateNumerator" => {
                                 framerate_numerator = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11047,16 +13261,32 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref acquisition_point_id) = self.acquisition_point_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcquisitionPointId", acquisition_point_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AcquisitionPointId",
+                    acquisition_point_id,
+                )?;
             }
             if let Some(ref audio_only_timecode_control) = self.audio_only_timecode_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioOnlyTimecodeControl", audio_only_timecode_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioOnlyTimecodeControl",
+                    audio_only_timecode_control,
+                )?;
             }
             if let Some(ref certificate_mode) = self.certificate_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateMode", certificate_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CertificateMode",
+                    certificate_mode,
+                )?;
             }
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionRetryInterval", connection_retry_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConnectionRetryInterval",
+                    connection_retry_interval,
+                )?;
             }
             if let Some(ref destination) = self.destination {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destination", destination)?;
@@ -11065,50 +13295,100 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventId", event_id)?;
             }
             if let Some(ref event_id_mode) = self.event_id_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventIdMode", event_id_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EventIdMode",
+                    event_id_mode,
+                )?;
             }
             if let Some(ref event_stop_behavior) = self.event_stop_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventStopBehavior", event_stop_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EventStopBehavior",
+                    event_stop_behavior,
+                )?;
             }
             if let Some(ref filecache_duration) = self.filecache_duration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilecacheDuration", filecache_duration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FilecacheDuration",
+                    filecache_duration,
+                )?;
             }
             if let Some(ref fragment_length) = self.fragment_length {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FragmentLength", fragment_length)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FragmentLength",
+                    fragment_length,
+                )?;
             }
             if let Some(ref input_loss_action) = self.input_loss_action {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossAction", input_loss_action)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossAction",
+                    input_loss_action,
+                )?;
             }
             if let Some(ref num_retries) = self.num_retries {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumRetries", num_retries)?;
             }
             if let Some(ref restart_delay) = self.restart_delay {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RestartDelay", restart_delay)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RestartDelay",
+                    restart_delay,
+                )?;
             }
             if let Some(ref segmentation_mode) = self.segmentation_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SegmentationMode", segmentation_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SegmentationMode",
+                    segmentation_mode,
+                )?;
             }
             if let Some(ref send_delay_ms) = self.send_delay_ms {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SendDelayMs", send_delay_ms)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SendDelayMs",
+                    send_delay_ms,
+                )?;
             }
             if let Some(ref sparse_track_type) = self.sparse_track_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SparseTrackType", sparse_track_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SparseTrackType",
+                    sparse_track_type,
+                )?;
             }
             if let Some(ref stream_manifest_behavior) = self.stream_manifest_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamManifestBehavior", stream_manifest_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StreamManifestBehavior",
+                    stream_manifest_behavior,
+                )?;
             }
             if let Some(ref timestamp_offset) = self.timestamp_offset {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimestampOffset", timestamp_offset)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimestampOffset",
+                    timestamp_offset,
+                )?;
             }
             if let Some(ref timestamp_offset_mode) = self.timestamp_offset_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimestampOffsetMode", timestamp_offset_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimestampOffsetMode",
+                    timestamp_offset_mode,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MsSmoothGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MsSmoothGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MsSmoothGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11118,7 +13398,10 @@ pub mod channel {
                     write!(f, "a struct of type MsSmoothGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut acquisition_point_id: Option<::Value<String>> = None;
                     let mut audio_only_timecode_control: Option<::Value<String>> = None;
                     let mut certificate_mode: Option<::Value<String>> = None;
@@ -11139,19 +13422,24 @@ pub mod channel {
                     let mut timestamp_offset: Option<::Value<String>> = None;
                     let mut timestamp_offset_mode: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AcquisitionPointId" => {
-                                acquisition_point_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                                acquisition_point_id =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AudioOnlyTimecodeControl" => {
-                                audio_only_timecode_control = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_only_timecode_control =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CertificateMode" => {
                                 certificate_mode = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ConnectionRetryInterval" => {
-                                connection_retry_interval = ::serde::de::MapAccess::next_value(&mut map)?;
+                                connection_retry_interval =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Destination" => {
                                 destination = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11190,13 +13478,15 @@ pub mod channel {
                                 sparse_track_type = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StreamManifestBehavior" => {
-                                stream_manifest_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                stream_manifest_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimestampOffset" => {
                                 timestamp_offset = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimestampOffsetMode" => {
-                                timestamp_offset_mode = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timestamp_offset_mode =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -11249,17 +13539,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref h265_packaging_type) = self.h265_packaging_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "H265PackagingType", h265_packaging_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "H265PackagingType",
+                    h265_packaging_type,
+                )?;
             }
             if let Some(ref name_modifier) = self.name_modifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NameModifier", name_modifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NameModifier",
+                    name_modifier,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MsSmoothOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MsSmoothOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MsSmoothOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11269,11 +13569,16 @@ pub mod channel {
                     write!(f, "a struct of type MsSmoothOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut h265_packaging_type: Option<::Value<String>> = None;
                     let mut name_modifier: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "H265PackagingType" => {
                                 h265_packaging_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11298,8 +13603,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.MultiplexGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexgroupsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct MultiplexGroupSettings {
-    }
+    pub struct MultiplexGroupSettings {}
 
     impl ::codec::SerializeValue for MultiplexGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -11309,7 +13613,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for MultiplexGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MultiplexGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MultiplexGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11319,7 +13625,10 @@ pub mod channel {
                     write!(f, "a struct of type MultiplexGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(MultiplexGroupSettings {})
                 }
             }
@@ -11349,7 +13658,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for MultiplexOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MultiplexOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MultiplexOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11359,10 +13670,15 @@ pub mod channel {
                     write!(f, "a struct of type MultiplexOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut destination: Option<::Value<OutputLocationRef>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Destination" => {
                                 destination = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11410,21 +13726,31 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for MultiplexProgramChannelDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MultiplexProgramChannelDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MultiplexProgramChannelDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
                 type Value = MultiplexProgramChannelDestinationSettings;
 
                 fn expecting(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-                    write!(f, "a struct of type MultiplexProgramChannelDestinationSettings")
+                    write!(
+                        f,
+                        "a struct of type MultiplexProgramChannelDestinationSettings"
+                    )
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut multiplex_id: Option<::Value<String>> = None;
                     let mut program_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MultiplexId" => {
                                 multiplex_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11466,17 +13792,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref hls_input_settings) = self.hls_input_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsInputSettings", hls_input_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsInputSettings",
+                    hls_input_settings,
+                )?;
             }
             if let Some(ref server_validation) = self.server_validation {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerValidation", server_validation)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ServerValidation",
+                    server_validation,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for NetworkInputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NetworkInputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NetworkInputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11486,11 +13822,16 @@ pub mod channel {
                     write!(f, "a struct of type NetworkInputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut hls_input_settings: Option<::Value<HlsInputSettings>> = None;
                     let mut server_validation: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "HlsInputSettings" => {
                                 hls_input_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11537,10 +13878,18 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cbet_check_digit_string) = self.cbet_check_digit_string {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CbetCheckDigitString", cbet_check_digit_string)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CbetCheckDigitString",
+                    cbet_check_digit_string,
+                )?;
             }
             if let Some(ref cbet_stepaside) = self.cbet_stepaside {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CbetStepaside", cbet_stepaside)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CbetStepaside",
+                    cbet_stepaside,
+                )?;
             }
             if let Some(ref csid) = self.csid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Csid", csid)?;
@@ -11560,15 +13909,21 @@ pub mod channel {
                     write!(f, "a struct of type NielsenCBET")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cbet_check_digit_string: Option<::Value<String>> = None;
                     let mut cbet_stepaside: Option<::Value<String>> = None;
                     let mut csid: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CbetCheckDigitString" => {
-                                cbet_check_digit_string = ::serde::de::MapAccess::next_value(&mut map)?;
+                                cbet_check_digit_string =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CbetStepaside" => {
                                 cbet_stepaside = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11611,17 +13966,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref distributor_id) = self.distributor_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DistributorId", distributor_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DistributorId",
+                    distributor_id,
+                )?;
             }
             if let Some(ref nielsen_pcm_to_id3_tagging) = self.nielsen_pcm_to_id3_tagging {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenPcmToId3Tagging", nielsen_pcm_to_id3_tagging)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenPcmToId3Tagging",
+                    nielsen_pcm_to_id3_tagging,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for NielsenConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NielsenConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NielsenConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11631,17 +13996,23 @@ pub mod channel {
                     write!(f, "a struct of type NielsenConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut distributor_id: Option<::Value<String>> = None;
                     let mut nielsen_pcm_to_id3_tagging: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DistributorId" => {
                                 distributor_id = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NielsenPcmToId3Tagging" => {
-                                nielsen_pcm_to_id3_tagging = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_pcm_to_id3_tagging =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -11677,7 +14048,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref check_digit_string) = self.check_digit_string {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CheckDigitString", check_digit_string)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CheckDigitString",
+                    check_digit_string,
+                )?;
             }
             if let Some(ref sid) = self.sid {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Sid", sid)?;
@@ -11687,7 +14062,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for NielsenNaesIiNw {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NielsenNaesIiNw, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NielsenNaesIiNw, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11697,11 +14074,16 @@ pub mod channel {
                     write!(f, "a struct of type NielsenNaesIiNw")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut check_digit_string: Option<::Value<String>> = None;
                     let mut sid: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CheckDigitString" => {
                                 check_digit_string = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11748,20 +14130,34 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref nielsen_cbet_settings) = self.nielsen_cbet_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenCbetSettings", nielsen_cbet_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenCbetSettings",
+                    nielsen_cbet_settings,
+                )?;
             }
             if let Some(ref nielsen_distribution_type) = self.nielsen_distribution_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenDistributionType", nielsen_distribution_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenDistributionType",
+                    nielsen_distribution_type,
+                )?;
             }
             if let Some(ref nielsen_naes_ii_nw_settings) = self.nielsen_naes_ii_nw_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NielsenNaesIiNwSettings", nielsen_naes_ii_nw_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NielsenNaesIiNwSettings",
+                    nielsen_naes_ii_nw_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for NielsenWatermarksSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NielsenWatermarksSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NielsenWatermarksSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11771,21 +14167,29 @@ pub mod channel {
                     write!(f, "a struct of type NielsenWatermarksSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut nielsen_cbet_settings: Option<::Value<NielsenCBET>> = None;
                     let mut nielsen_distribution_type: Option<::Value<String>> = None;
                     let mut nielsen_naes_ii_nw_settings: Option<::Value<NielsenNaesIiNw>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "NielsenCbetSettings" => {
-                                nielsen_cbet_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_cbet_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NielsenDistributionType" => {
-                                nielsen_distribution_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_distribution_type =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NielsenNaesIiNwSettings" => {
-                                nielsen_naes_ii_nw_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                nielsen_naes_ii_nw_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -11837,19 +14241,35 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_description_names) = self.audio_description_names {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioDescriptionNames", audio_description_names)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioDescriptionNames",
+                    audio_description_names,
+                )?;
             }
             if let Some(ref caption_description_names) = self.caption_description_names {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptionDescriptionNames", caption_description_names)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptionDescriptionNames",
+                    caption_description_names,
+                )?;
             }
             if let Some(ref output_name) = self.output_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputName", output_name)?;
             }
             if let Some(ref output_settings) = self.output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputSettings", output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutputSettings",
+                    output_settings,
+                )?;
             }
             if let Some(ref video_description_name) = self.video_description_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoDescriptionName", video_description_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VideoDescriptionName",
+                    video_description_name,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -11866,20 +14286,27 @@ pub mod channel {
                     write!(f, "a struct of type Output")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_description_names: Option<::ValueList<String>> = None;
                     let mut caption_description_names: Option<::ValueList<String>> = None;
                     let mut output_name: Option<::Value<String>> = None;
                     let mut output_settings: Option<::Value<OutputSettings>> = None;
                     let mut video_description_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioDescriptionNames" => {
-                                audio_description_names = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_description_names =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CaptionDescriptionNames" => {
-                                caption_description_names = ::serde::de::MapAccess::next_value(&mut map)?;
+                                caption_description_names =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "OutputName" => {
                                 output_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -11888,7 +14315,8 @@ pub mod channel {
                                 output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "VideoDescriptionName" => {
-                                video_description_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                video_description_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -11940,10 +14368,18 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Id", id)?;
             }
             if let Some(ref media_package_settings) = self.media_package_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MediaPackageSettings", media_package_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MediaPackageSettings",
+                    media_package_settings,
+                )?;
             }
             if let Some(ref multiplex_settings) = self.multiplex_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiplexSettings", multiplex_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MultiplexSettings",
+                    multiplex_settings,
+                )?;
             }
             if let Some(ref settings) = self.settings {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Settings", settings)?;
@@ -11953,7 +14389,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for OutputDestination {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OutputDestination, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<OutputDestination, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -11963,19 +14401,29 @@ pub mod channel {
                     write!(f, "a struct of type OutputDestination")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut id: Option<::Value<String>> = None;
-                    let mut media_package_settings: Option<::ValueList<MediaPackageOutputDestinationSettings>> = None;
-                    let mut multiplex_settings: Option<::Value<MultiplexProgramChannelDestinationSettings>> = None;
+                    let mut media_package_settings: Option<
+                        ::ValueList<MediaPackageOutputDestinationSettings>,
+                    > = None;
+                    let mut multiplex_settings: Option<
+                        ::Value<MultiplexProgramChannelDestinationSettings>,
+                    > = None;
                     let mut settings: Option<::ValueList<OutputDestinationSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Id" => {
                                 id = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MediaPackageSettings" => {
-                                media_package_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                media_package_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MultiplexSettings" => {
                                 multiplex_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12029,7 +14477,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref password_param) = self.password_param {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PasswordParam", password_param)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PasswordParam",
+                    password_param,
+                )?;
             }
             if let Some(ref stream_name) = self.stream_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamName", stream_name)?;
@@ -12045,7 +14497,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for OutputDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OutputDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<OutputDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12055,13 +14509,18 @@ pub mod channel {
                     write!(f, "a struct of type OutputDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut password_param: Option<::Value<String>> = None;
                     let mut stream_name: Option<::Value<String>> = None;
                     let mut url: Option<::Value<String>> = None;
                     let mut username: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PasswordParam" => {
                                 password_param = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12119,7 +14578,11 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
             }
             if let Some(ref output_group_settings) = self.output_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputGroupSettings", output_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutputGroupSettings",
+                    output_group_settings,
+                )?;
             }
             if let Some(ref outputs) = self.outputs {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Outputs", outputs)?;
@@ -12139,18 +14602,24 @@ pub mod channel {
                     write!(f, "a struct of type OutputGroup")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut output_group_settings: Option<::Value<OutputGroupSettings>> = None;
                     let mut outputs: Option<::ValueList<Output>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "OutputGroupSettings" => {
-                                output_group_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                output_group_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Outputs" => {
                                 outputs = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12220,35 +14689,69 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref archive_group_settings) = self.archive_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ArchiveGroupSettings", archive_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ArchiveGroupSettings",
+                    archive_group_settings,
+                )?;
             }
             if let Some(ref frame_capture_group_settings) = self.frame_capture_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FrameCaptureGroupSettings", frame_capture_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FrameCaptureGroupSettings",
+                    frame_capture_group_settings,
+                )?;
             }
             if let Some(ref hls_group_settings) = self.hls_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsGroupSettings", hls_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsGroupSettings",
+                    hls_group_settings,
+                )?;
             }
             if let Some(ref media_package_group_settings) = self.media_package_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MediaPackageGroupSettings", media_package_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MediaPackageGroupSettings",
+                    media_package_group_settings,
+                )?;
             }
             if let Some(ref ms_smooth_group_settings) = self.ms_smooth_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MsSmoothGroupSettings", ms_smooth_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MsSmoothGroupSettings",
+                    ms_smooth_group_settings,
+                )?;
             }
             if let Some(ref multiplex_group_settings) = self.multiplex_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiplexGroupSettings", multiplex_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MultiplexGroupSettings",
+                    multiplex_group_settings,
+                )?;
             }
             if let Some(ref rtmp_group_settings) = self.rtmp_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RtmpGroupSettings", rtmp_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RtmpGroupSettings",
+                    rtmp_group_settings,
+                )?;
             }
             if let Some(ref udp_group_settings) = self.udp_group_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UdpGroupSettings", udp_group_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UdpGroupSettings",
+                    udp_group_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for OutputGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OutputGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<OutputGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12258,35 +14761,50 @@ pub mod channel {
                     write!(f, "a struct of type OutputGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut archive_group_settings: Option<::Value<ArchiveGroupSettings>> = None;
-                    let mut frame_capture_group_settings: Option<::Value<FrameCaptureGroupSettings>> = None;
+                    let mut frame_capture_group_settings: Option<
+                        ::Value<FrameCaptureGroupSettings>,
+                    > = None;
                     let mut hls_group_settings: Option<::Value<HlsGroupSettings>> = None;
-                    let mut media_package_group_settings: Option<::Value<MediaPackageGroupSettings>> = None;
+                    let mut media_package_group_settings: Option<
+                        ::Value<MediaPackageGroupSettings>,
+                    > = None;
                     let mut ms_smooth_group_settings: Option<::Value<MsSmoothGroupSettings>> = None;
-                    let mut multiplex_group_settings: Option<::Value<MultiplexGroupSettings>> = None;
+                    let mut multiplex_group_settings: Option<::Value<MultiplexGroupSettings>> =
+                        None;
                     let mut rtmp_group_settings: Option<::Value<RtmpGroupSettings>> = None;
                     let mut udp_group_settings: Option<::Value<UdpGroupSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ArchiveGroupSettings" => {
-                                archive_group_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                archive_group_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FrameCaptureGroupSettings" => {
-                                frame_capture_group_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                frame_capture_group_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HlsGroupSettings" => {
                                 hls_group_settings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MediaPackageGroupSettings" => {
-                                media_package_group_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                media_package_group_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MsSmoothGroupSettings" => {
-                                ms_smooth_group_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ms_smooth_group_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MultiplexGroupSettings" => {
-                                multiplex_group_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                multiplex_group_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RtmpGroupSettings" => {
                                 rtmp_group_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12329,14 +14847,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination_ref_id) = self.destination_ref_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationRefId", destination_ref_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DestinationRefId",
+                    destination_ref_id,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for OutputLocationRef {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OutputLocationRef, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<OutputLocationRef, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12346,10 +14870,15 @@ pub mod channel {
                     write!(f, "a struct of type OutputLocationRef")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut destination_ref_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DestinationRefId" => {
                                 destination_ref_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12417,35 +14946,69 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref archive_output_settings) = self.archive_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ArchiveOutputSettings", archive_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ArchiveOutputSettings",
+                    archive_output_settings,
+                )?;
             }
             if let Some(ref frame_capture_output_settings) = self.frame_capture_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FrameCaptureOutputSettings", frame_capture_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FrameCaptureOutputSettings",
+                    frame_capture_output_settings,
+                )?;
             }
             if let Some(ref hls_output_settings) = self.hls_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HlsOutputSettings", hls_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HlsOutputSettings",
+                    hls_output_settings,
+                )?;
             }
             if let Some(ref media_package_output_settings) = self.media_package_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MediaPackageOutputSettings", media_package_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MediaPackageOutputSettings",
+                    media_package_output_settings,
+                )?;
             }
             if let Some(ref ms_smooth_output_settings) = self.ms_smooth_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MsSmoothOutputSettings", ms_smooth_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MsSmoothOutputSettings",
+                    ms_smooth_output_settings,
+                )?;
             }
             if let Some(ref multiplex_output_settings) = self.multiplex_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiplexOutputSettings", multiplex_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MultiplexOutputSettings",
+                    multiplex_output_settings,
+                )?;
             }
             if let Some(ref rtmp_output_settings) = self.rtmp_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RtmpOutputSettings", rtmp_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RtmpOutputSettings",
+                    rtmp_output_settings,
+                )?;
             }
             if let Some(ref udp_output_settings) = self.udp_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UdpOutputSettings", udp_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UdpOutputSettings",
+                    udp_output_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for OutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<OutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12455,38 +15018,55 @@ pub mod channel {
                     write!(f, "a struct of type OutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut archive_output_settings: Option<::Value<ArchiveOutputSettings>> = None;
-                    let mut frame_capture_output_settings: Option<::Value<FrameCaptureOutputSettings>> = None;
+                    let mut frame_capture_output_settings: Option<
+                        ::Value<FrameCaptureOutputSettings>,
+                    > = None;
                     let mut hls_output_settings: Option<::Value<HlsOutputSettings>> = None;
-                    let mut media_package_output_settings: Option<::Value<MediaPackageOutputSettings>> = None;
-                    let mut ms_smooth_output_settings: Option<::Value<MsSmoothOutputSettings>> = None;
-                    let mut multiplex_output_settings: Option<::Value<MultiplexOutputSettings>> = None;
+                    let mut media_package_output_settings: Option<
+                        ::Value<MediaPackageOutputSettings>,
+                    > = None;
+                    let mut ms_smooth_output_settings: Option<::Value<MsSmoothOutputSettings>> =
+                        None;
+                    let mut multiplex_output_settings: Option<::Value<MultiplexOutputSettings>> =
+                        None;
                     let mut rtmp_output_settings: Option<::Value<RtmpOutputSettings>> = None;
                     let mut udp_output_settings: Option<::Value<UdpOutputSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ArchiveOutputSettings" => {
-                                archive_output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                archive_output_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FrameCaptureOutputSettings" => {
-                                frame_capture_output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                frame_capture_output_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HlsOutputSettings" => {
                                 hls_output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MediaPackageOutputSettings" => {
-                                media_package_output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                media_package_output_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MsSmoothOutputSettings" => {
-                                ms_smooth_output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ms_smooth_output_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MultiplexOutputSettings" => {
-                                multiplex_output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                multiplex_output_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RtmpOutputSettings" => {
-                                rtmp_output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                rtmp_output_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "UdpOutputSettings" => {
                                 udp_output_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12514,8 +15094,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.PassThroughSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-passthroughsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct PassThroughSettings {
-    }
+    pub struct PassThroughSettings {}
 
     impl ::codec::SerializeValue for PassThroughSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -12525,7 +15104,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for PassThroughSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PassThroughSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PassThroughSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12535,7 +15116,10 @@ pub mod channel {
                     write!(f, "a struct of type PassThroughSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(PassThroughSettings {})
                 }
             }
@@ -12546,8 +15130,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.RawSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rawsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct RawSettings {
-    }
+    pub struct RawSettings {}
 
     impl ::codec::SerializeValue for RawSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -12567,7 +15150,10 @@ pub mod channel {
                     write!(f, "a struct of type RawSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(RawSettings {})
                 }
             }
@@ -12578,8 +15164,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.Rec601Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rec601settings.html) property type.
     #[derive(Debug, Default)]
-    pub struct Rec601Settings {
-    }
+    pub struct Rec601Settings {}
 
     impl ::codec::SerializeValue for Rec601Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -12589,7 +15174,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for Rec601Settings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Rec601Settings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Rec601Settings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12599,7 +15186,10 @@ pub mod channel {
                     write!(f, "a struct of type Rec601Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(Rec601Settings {})
                 }
             }
@@ -12610,8 +15200,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.Rec709Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rec709settings.html) property type.
     #[derive(Debug, Default)]
-    pub struct Rec709Settings {
-    }
+    pub struct Rec709Settings {}
 
     impl ::codec::SerializeValue for Rec709Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -12621,7 +15210,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for Rec709Settings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Rec709Settings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Rec709Settings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12631,7 +15222,10 @@ pub mod channel {
                     write!(f, "a struct of type Rec709Settings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(Rec709Settings {})
                 }
             }
@@ -12664,7 +15258,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref channel_mappings) = self.channel_mappings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ChannelMappings", channel_mappings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ChannelMappings",
+                    channel_mappings,
+                )?;
             }
             if let Some(ref channels_in) = self.channels_in {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ChannelsIn", channels_in)?;
@@ -12677,7 +15275,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for RemixSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RemixSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RemixSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12687,12 +15287,17 @@ pub mod channel {
                     write!(f, "a struct of type RemixSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut channel_mappings: Option<::ValueList<AudioChannelMapping>> = None;
                     let mut channels_in: Option<::Value<u32>> = None;
                     let mut channels_out: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ChannelMappings" => {
                                 channel_mappings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12721,8 +15326,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.RtmpCaptionInfoDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpcaptioninfodestinationsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct RtmpCaptionInfoDestinationSettings {
-    }
+    pub struct RtmpCaptionInfoDestinationSettings {}
 
     impl ::codec::SerializeValue for RtmpCaptionInfoDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -12732,7 +15336,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for RtmpCaptionInfoDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RtmpCaptionInfoDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RtmpCaptionInfoDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12742,7 +15348,10 @@ pub mod channel {
                     write!(f, "a struct of type RtmpCaptionInfoDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(RtmpCaptionInfoDestinationSettings {})
                 }
             }
@@ -12798,10 +15407,18 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdMarkers", ad_markers)?;
             }
             if let Some(ref authentication_scheme) = self.authentication_scheme {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AuthenticationScheme", authentication_scheme)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AuthenticationScheme",
+                    authentication_scheme,
+                )?;
             }
             if let Some(ref cache_full_behavior) = self.cache_full_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CacheFullBehavior", cache_full_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CacheFullBehavior",
+                    cache_full_behavior,
+                )?;
             }
             if let Some(ref cache_length) = self.cache_length {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CacheLength", cache_length)?;
@@ -12810,17 +15427,27 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptionData", caption_data)?;
             }
             if let Some(ref input_loss_action) = self.input_loss_action {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossAction", input_loss_action)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossAction",
+                    input_loss_action,
+                )?;
             }
             if let Some(ref restart_delay) = self.restart_delay {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RestartDelay", restart_delay)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RestartDelay",
+                    restart_delay,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RtmpGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RtmpGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RtmpGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12830,7 +15457,10 @@ pub mod channel {
                     write!(f, "a struct of type RtmpGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ad_markers: Option<::ValueList<String>> = None;
                     let mut authentication_scheme: Option<::Value<String>> = None;
                     let mut cache_full_behavior: Option<::Value<String>> = None;
@@ -12839,13 +15469,16 @@ pub mod channel {
                     let mut input_loss_action: Option<::Value<String>> = None;
                     let mut restart_delay: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdMarkers" => {
                                 ad_markers = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AuthenticationScheme" => {
-                                authentication_scheme = ::serde::de::MapAccess::next_value(&mut map)?;
+                                authentication_scheme =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CacheFullBehavior" => {
                                 cache_full_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12911,10 +15544,18 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref certificate_mode) = self.certificate_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateMode", certificate_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CertificateMode",
+                    certificate_mode,
+                )?;
             }
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionRetryInterval", connection_retry_interval)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConnectionRetryInterval",
+                    connection_retry_interval,
+                )?;
             }
             if let Some(ref destination) = self.destination {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destination", destination)?;
@@ -12927,7 +15568,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for RtmpOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RtmpOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RtmpOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12937,19 +15580,25 @@ pub mod channel {
                     write!(f, "a struct of type RtmpOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut certificate_mode: Option<::Value<String>> = None;
                     let mut connection_retry_interval: Option<::Value<u32>> = None;
                     let mut destination: Option<::Value<OutputLocationRef>> = None;
                     let mut num_retries: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CertificateMode" => {
                                 certificate_mode = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ConnectionRetryInterval" => {
-                                connection_retry_interval = ::serde::de::MapAccess::next_value(&mut map)?;
+                                connection_retry_interval =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Destination" => {
                                 destination = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -12976,8 +15625,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.Scte20PlusEmbeddedDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20plusembeddeddestinationsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct Scte20PlusEmbeddedDestinationSettings {
-    }
+    pub struct Scte20PlusEmbeddedDestinationSettings {}
 
     impl ::codec::SerializeValue for Scte20PlusEmbeddedDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -12987,7 +15635,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for Scte20PlusEmbeddedDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Scte20PlusEmbeddedDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Scte20PlusEmbeddedDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -12997,7 +15647,10 @@ pub mod channel {
                     write!(f, "a struct of type Scte20PlusEmbeddedDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(Scte20PlusEmbeddedDestinationSettings {})
                 }
             }
@@ -13025,17 +15678,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref convert608_to708) = self.convert608_to708 {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Convert608To708", convert608_to708)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Convert608To708",
+                    convert608_to708,
+                )?;
             }
             if let Some(ref source608_channel_number) = self.source608_channel_number {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Source608ChannelNumber", source608_channel_number)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Source608ChannelNumber",
+                    source608_channel_number,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for Scte20SourceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Scte20SourceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Scte20SourceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13045,17 +15708,23 @@ pub mod channel {
                     write!(f, "a struct of type Scte20SourceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut convert608_to708: Option<::Value<String>> = None;
                     let mut source608_channel_number: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Convert608To708" => {
                                 convert608_to708 = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Source608ChannelNumber" => {
-                                source608_channel_number = ::serde::de::MapAccess::next_value(&mut map)?;
+                                source608_channel_number =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -13074,8 +15743,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.Scte27DestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27destinationsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct Scte27DestinationSettings {
-    }
+    pub struct Scte27DestinationSettings {}
 
     impl ::codec::SerializeValue for Scte27DestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -13085,7 +15753,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for Scte27DestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Scte27DestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Scte27DestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13095,7 +15765,10 @@ pub mod channel {
                     write!(f, "a struct of type Scte27DestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(Scte27DestinationSettings {})
                 }
             }
@@ -13133,7 +15806,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for Scte27SourceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Scte27SourceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Scte27SourceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13143,11 +15818,16 @@ pub mod channel {
                     write!(f, "a struct of type Scte27SourceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ocr_language: Option<::Value<String>> = None;
                     let mut pid: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "OcrLanguage" => {
                                 ocr_language = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -13194,20 +15874,34 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_avail_offset) = self.ad_avail_offset {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdAvailOffset", ad_avail_offset)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AdAvailOffset",
+                    ad_avail_offset,
+                )?;
             }
             if let Some(ref no_regional_blackout_flag) = self.no_regional_blackout_flag {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NoRegionalBlackoutFlag", no_regional_blackout_flag)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NoRegionalBlackoutFlag",
+                    no_regional_blackout_flag,
+                )?;
             }
             if let Some(ref web_delivery_allowed_flag) = self.web_delivery_allowed_flag {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "WebDeliveryAllowedFlag", web_delivery_allowed_flag)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "WebDeliveryAllowedFlag",
+                    web_delivery_allowed_flag,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for Scte35SpliceInsert {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Scte35SpliceInsert, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Scte35SpliceInsert, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13217,21 +15911,28 @@ pub mod channel {
                     write!(f, "a struct of type Scte35SpliceInsert")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ad_avail_offset: Option<::Value<u32>> = None;
                     let mut no_regional_blackout_flag: Option<::Value<String>> = None;
                     let mut web_delivery_allowed_flag: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdAvailOffset" => {
                                 ad_avail_offset = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NoRegionalBlackoutFlag" => {
-                                no_regional_blackout_flag = ::serde::de::MapAccess::next_value(&mut map)?;
+                                no_regional_blackout_flag =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "WebDeliveryAllowedFlag" => {
-                                web_delivery_allowed_flag = ::serde::de::MapAccess::next_value(&mut map)?;
+                                web_delivery_allowed_flag =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -13273,20 +15974,34 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_avail_offset) = self.ad_avail_offset {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdAvailOffset", ad_avail_offset)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AdAvailOffset",
+                    ad_avail_offset,
+                )?;
             }
             if let Some(ref no_regional_blackout_flag) = self.no_regional_blackout_flag {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NoRegionalBlackoutFlag", no_regional_blackout_flag)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NoRegionalBlackoutFlag",
+                    no_regional_blackout_flag,
+                )?;
             }
             if let Some(ref web_delivery_allowed_flag) = self.web_delivery_allowed_flag {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "WebDeliveryAllowedFlag", web_delivery_allowed_flag)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "WebDeliveryAllowedFlag",
+                    web_delivery_allowed_flag,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for Scte35TimeSignalApos {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Scte35TimeSignalApos, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<Scte35TimeSignalApos, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13296,21 +16011,28 @@ pub mod channel {
                     write!(f, "a struct of type Scte35TimeSignalApos")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ad_avail_offset: Option<::Value<u32>> = None;
                     let mut no_regional_blackout_flag: Option<::Value<String>> = None;
                     let mut web_delivery_allowed_flag: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdAvailOffset" => {
                                 ad_avail_offset = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NoRegionalBlackoutFlag" => {
-                                no_regional_blackout_flag = ::serde::de::MapAccess::next_value(&mut map)?;
+                                no_regional_blackout_flag =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "WebDeliveryAllowedFlag" => {
-                                web_delivery_allowed_flag = ::serde::de::MapAccess::next_value(&mut map)?;
+                                web_delivery_allowed_flag =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -13330,8 +16052,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.SmpteTtDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-smptettdestinationsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct SmpteTtDestinationSettings {
-    }
+    pub struct SmpteTtDestinationSettings {}
 
     impl ::codec::SerializeValue for SmpteTtDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -13341,7 +16062,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for SmpteTtDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SmpteTtDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SmpteTtDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13351,7 +16074,10 @@ pub mod channel {
                     write!(f, "a struct of type SmpteTtDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(SmpteTtDestinationSettings {})
                 }
             }
@@ -13379,17 +16105,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_rendition_sets) = self.audio_rendition_sets {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AudioRenditionSets", audio_rendition_sets)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AudioRenditionSets",
+                    audio_rendition_sets,
+                )?;
             }
             if let Some(ref m3u8_settings) = self.m3u8_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "M3u8Settings", m3u8_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "M3u8Settings",
+                    m3u8_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for StandardHlsSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StandardHlsSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StandardHlsSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13399,14 +16135,20 @@ pub mod channel {
                     write!(f, "a struct of type StandardHlsSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audio_rendition_sets: Option<::Value<String>> = None;
                     let mut m3u8_settings: Option<::Value<M3u8Settings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AudioRenditionSets" => {
-                                audio_rendition_sets = ::serde::de::MapAccess::next_value(&mut map)?;
+                                audio_rendition_sets =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "M3u8Settings" => {
                                 m3u8_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -13445,17 +16187,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key_provider_server) = self.key_provider_server {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyProviderServer", key_provider_server)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "KeyProviderServer",
+                    key_provider_server,
+                )?;
             }
             if let Some(ref static_key_value) = self.static_key_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StaticKeyValue", static_key_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StaticKeyValue",
+                    static_key_value,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for StaticKeySettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StaticKeySettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StaticKeySettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13465,11 +16217,16 @@ pub mod channel {
                     write!(f, "a struct of type StaticKeySettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key_provider_server: Option<::Value<InputLocation>> = None;
                     let mut static_key_value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "KeyProviderServer" => {
                                 key_provider_server = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -13494,8 +16251,7 @@ pub mod channel {
 
     /// The [`AWS::MediaLive::Channel.TeletextDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextdestinationsettings.html) property type.
     #[derive(Debug, Default)]
-    pub struct TeletextDestinationSettings {
-    }
+    pub struct TeletextDestinationSettings {}
 
     impl ::codec::SerializeValue for TeletextDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -13505,7 +16261,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for TeletextDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TeletextDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TeletextDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13515,7 +16273,10 @@ pub mod channel {
                     write!(f, "a struct of type TeletextDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(TeletextDestinationSettings {})
                 }
             }
@@ -13543,7 +16304,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref output_rectangle) = self.output_rectangle {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OutputRectangle", output_rectangle)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OutputRectangle",
+                    output_rectangle,
+                )?;
             }
             if let Some(ref page_number) = self.page_number {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "PageNumber", page_number)?;
@@ -13553,7 +16318,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for TeletextSourceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TeletextSourceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TeletextSourceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13563,11 +16330,16 @@ pub mod channel {
                     write!(f, "a struct of type TeletextSourceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut output_rectangle: Option<::Value<CaptionRectangle>> = None;
                     let mut page_number: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "OutputRectangle" => {
                                 output_rectangle = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -13609,7 +16381,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref post_filter_sharpening) = self.post_filter_sharpening {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PostFilterSharpening", post_filter_sharpening)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PostFilterSharpening",
+                    post_filter_sharpening,
+                )?;
             }
             if let Some(ref strength) = self.strength {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Strength", strength)?;
@@ -13619,7 +16395,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for TemporalFilterSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TemporalFilterSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TemporalFilterSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13629,14 +16407,20 @@ pub mod channel {
                     write!(f, "a struct of type TemporalFilterSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut post_filter_sharpening: Option<::Value<String>> = None;
                     let mut strength: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PostFilterSharpening" => {
-                                post_filter_sharpening = ::serde::de::MapAccess::next_value(&mut map)?;
+                                post_filter_sharpening =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Strength" => {
                                 strength = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -13678,14 +16462,20 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Source", source)?;
             }
             if let Some(ref sync_threshold) = self.sync_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SyncThreshold", sync_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SyncThreshold",
+                    sync_threshold,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for TimecodeConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TimecodeConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TimecodeConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13695,11 +16485,16 @@ pub mod channel {
                     write!(f, "a struct of type TimecodeConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut source: Option<::Value<String>> = None;
                     let mut sync_threshold: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Source" => {
                                 source = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -13736,14 +16531,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref style_control) = self.style_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StyleControl", style_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StyleControl",
+                    style_control,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for TtmlDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TtmlDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TtmlDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13753,10 +16554,15 @@ pub mod channel {
                     write!(f, "a struct of type TtmlDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut style_control: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "StyleControl" => {
                                 style_control = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -13789,14 +16595,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref m2ts_settings) = self.m2ts_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "M2tsSettings", m2ts_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "M2tsSettings",
+                    m2ts_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for UdpContainerSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UdpContainerSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UdpContainerSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13806,10 +16618,15 @@ pub mod channel {
                     write!(f, "a struct of type UdpContainerSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut m2ts_settings: Option<::Value<M2tsSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "M2tsSettings" => {
                                 m2ts_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -13852,20 +16669,34 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref input_loss_action) = self.input_loss_action {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InputLossAction", input_loss_action)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InputLossAction",
+                    input_loss_action,
+                )?;
             }
             if let Some(ref timed_metadata_id3_frame) = self.timed_metadata_id3_frame {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataId3Frame", timed_metadata_id3_frame)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataId3Frame",
+                    timed_metadata_id3_frame,
+                )?;
             }
             if let Some(ref timed_metadata_id3_period) = self.timed_metadata_id3_period {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimedMetadataId3Period", timed_metadata_id3_period)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimedMetadataId3Period",
+                    timed_metadata_id3_period,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for UdpGroupSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UdpGroupSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UdpGroupSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13875,21 +16706,28 @@ pub mod channel {
                     write!(f, "a struct of type UdpGroupSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut input_loss_action: Option<::Value<String>> = None;
                     let mut timed_metadata_id3_frame: Option<::Value<String>> = None;
                     let mut timed_metadata_id3_period: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InputLossAction" => {
                                 input_loss_action = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataId3Frame" => {
-                                timed_metadata_id3_frame = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timed_metadata_id3_frame =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TimedMetadataId3Period" => {
-                                timed_metadata_id3_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timed_metadata_id3_period =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -13939,20 +16777,30 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "BufferMsec", buffer_msec)?;
             }
             if let Some(ref container_settings) = self.container_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerSettings", container_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContainerSettings",
+                    container_settings,
+                )?;
             }
             if let Some(ref destination) = self.destination {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destination", destination)?;
             }
             if let Some(ref fec_output_settings) = self.fec_output_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FecOutputSettings", fec_output_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FecOutputSettings",
+                    fec_output_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for UdpOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UdpOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UdpOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -13962,13 +16810,18 @@ pub mod channel {
                     write!(f, "a struct of type UdpOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut buffer_msec: Option<::Value<u32>> = None;
                     let mut container_settings: Option<::Value<UdpContainerSettings>> = None;
                     let mut destination: Option<::Value<OutputLocationRef>> = None;
                     let mut fec_output_settings: Option<::Value<FecOutputSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BufferMsec" => {
                                 buffer_msec = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14018,17 +16871,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref black_detect_threshold) = self.black_detect_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlackDetectThreshold", black_detect_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BlackDetectThreshold",
+                    black_detect_threshold,
+                )?;
             }
             if let Some(ref video_black_threshold_msec) = self.video_black_threshold_msec {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoBlackThresholdMsec", video_black_threshold_msec)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VideoBlackThresholdMsec",
+                    video_black_threshold_msec,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VideoBlackFailoverSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VideoBlackFailoverSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VideoBlackFailoverSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14038,17 +16901,24 @@ pub mod channel {
                     write!(f, "a struct of type VideoBlackFailoverSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut black_detect_threshold: Option<::Value<f64>> = None;
                     let mut video_black_threshold_msec: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BlackDetectThreshold" => {
-                                black_detect_threshold = ::serde::de::MapAccess::next_value(&mut map)?;
+                                black_detect_threshold =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "VideoBlackThresholdMsec" => {
-                                video_black_threshold_msec = ::serde::de::MapAccess::next_value(&mut map)?;
+                                video_black_threshold_msec =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -14094,23 +16964,41 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref frame_capture_settings) = self.frame_capture_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FrameCaptureSettings", frame_capture_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FrameCaptureSettings",
+                    frame_capture_settings,
+                )?;
             }
             if let Some(ref h264_settings) = self.h264_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "H264Settings", h264_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "H264Settings",
+                    h264_settings,
+                )?;
             }
             if let Some(ref h265_settings) = self.h265_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "H265Settings", h265_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "H265Settings",
+                    h265_settings,
+                )?;
             }
             if let Some(ref mpeg2_settings) = self.mpeg2_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Mpeg2Settings", mpeg2_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Mpeg2Settings",
+                    mpeg2_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VideoCodecSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VideoCodecSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VideoCodecSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14120,16 +17008,22 @@ pub mod channel {
                     write!(f, "a struct of type VideoCodecSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut frame_capture_settings: Option<::Value<FrameCaptureSettings>> = None;
                     let mut h264_settings: Option<::Value<H264Settings>> = None;
                     let mut h265_settings: Option<::Value<H265Settings>> = None;
                     let mut mpeg2_settings: Option<::Value<Mpeg2Settings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FrameCaptureSettings" => {
-                                frame_capture_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                frame_capture_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "H264Settings" => {
                                 h264_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14201,7 +17095,11 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref codec_settings) = self.codec_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CodecSettings", codec_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CodecSettings",
+                    codec_settings,
+                )?;
             }
             if let Some(ref height) = self.height {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Height", height)?;
@@ -14210,10 +17108,18 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
             }
             if let Some(ref respond_to_afd) = self.respond_to_afd {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RespondToAfd", respond_to_afd)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RespondToAfd",
+                    respond_to_afd,
+                )?;
             }
             if let Some(ref scaling_behavior) = self.scaling_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScalingBehavior", scaling_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ScalingBehavior",
+                    scaling_behavior,
+                )?;
             }
             if let Some(ref sharpness) = self.sharpness {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Sharpness", sharpness)?;
@@ -14226,7 +17132,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for VideoDescription {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VideoDescription, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VideoDescription, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14236,7 +17144,10 @@ pub mod channel {
                     write!(f, "a struct of type VideoDescription")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut codec_settings: Option<::Value<VideoCodecSettings>> = None;
                     let mut height: Option<::Value<u32>> = None;
                     let mut name: Option<::Value<String>> = None;
@@ -14245,7 +17156,9 @@ pub mod channel {
                     let mut sharpness: Option<::Value<u32>> = None;
                     let mut width: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CodecSettings" => {
                                 codec_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14320,20 +17233,34 @@ pub mod channel {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorSpace", color_space)?;
             }
             if let Some(ref color_space_settings) = self.color_space_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorSpaceSettings", color_space_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorSpaceSettings",
+                    color_space_settings,
+                )?;
             }
             if let Some(ref color_space_usage) = self.color_space_usage {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColorSpaceUsage", color_space_usage)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColorSpaceUsage",
+                    color_space_usage,
+                )?;
             }
             if let Some(ref selector_settings) = self.selector_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SelectorSettings", selector_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SelectorSettings",
+                    selector_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VideoSelector {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VideoSelector, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VideoSelector, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14343,19 +17270,26 @@ pub mod channel {
                     write!(f, "a struct of type VideoSelector")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut color_space: Option<::Value<String>> = None;
-                    let mut color_space_settings: Option<::Value<VideoSelectorColorSpaceSettings>> = None;
+                    let mut color_space_settings: Option<::Value<VideoSelectorColorSpaceSettings>> =
+                        None;
                     let mut color_space_usage: Option<::Value<String>> = None;
                     let mut selector_settings: Option<::Value<VideoSelectorSettings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ColorSpace" => {
                                 color_space = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ColorSpaceSettings" => {
-                                color_space_settings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                color_space_settings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ColorSpaceUsage" => {
                                 color_space_usage = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14394,14 +17328,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref hdr10_settings) = self.hdr10_settings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Hdr10Settings", hdr10_settings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Hdr10Settings",
+                    hdr10_settings,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VideoSelectorColorSpaceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VideoSelectorColorSpaceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VideoSelectorColorSpaceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14411,10 +17351,15 @@ pub mod channel {
                     write!(f, "a struct of type VideoSelectorColorSpaceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut hdr10_settings: Option<::Value<Hdr10Settings>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Hdr10Settings" => {
                                 hdr10_settings = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14454,7 +17399,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for VideoSelectorPid {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VideoSelectorPid, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VideoSelectorPid, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14464,10 +17411,15 @@ pub mod channel {
                     write!(f, "a struct of type VideoSelectorPid")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut pid: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Pid" => {
                                 pid = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14476,9 +17428,7 @@ pub mod channel {
                         }
                     }
 
-                    Ok(VideoSelectorPid {
-                        pid: pid,
-                    })
+                    Ok(VideoSelectorPid { pid: pid })
                 }
             }
 
@@ -14507,7 +17457,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for VideoSelectorProgramId {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VideoSelectorProgramId, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VideoSelectorProgramId, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14517,10 +17469,15 @@ pub mod channel {
                     write!(f, "a struct of type VideoSelectorProgramId")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut program_id: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ProgramId" => {
                                 program_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14558,17 +17515,27 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref video_selector_pid) = self.video_selector_pid {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoSelectorPid", video_selector_pid)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VideoSelectorPid",
+                    video_selector_pid,
+                )?;
             }
             if let Some(ref video_selector_program_id) = self.video_selector_program_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoSelectorProgramId", video_selector_program_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VideoSelectorProgramId",
+                    video_selector_program_id,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VideoSelectorSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VideoSelectorSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VideoSelectorSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14578,17 +17545,24 @@ pub mod channel {
                     write!(f, "a struct of type VideoSelectorSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut video_selector_pid: Option<::Value<VideoSelectorPid>> = None;
-                    let mut video_selector_program_id: Option<::Value<VideoSelectorProgramId>> = None;
+                    let mut video_selector_program_id: Option<::Value<VideoSelectorProgramId>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "VideoSelectorPid" => {
                                 video_selector_pid = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "VideoSelectorProgramId" => {
-                                video_selector_program_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                                video_selector_program_id =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -14629,10 +17603,18 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref public_address_allocation_ids) = self.public_address_allocation_ids {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PublicAddressAllocationIds", public_address_allocation_ids)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PublicAddressAllocationIds",
+                    public_address_allocation_ids,
+                )?;
             }
             if let Some(ref security_group_ids) = self.security_group_ids {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", security_group_ids)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SecurityGroupIds",
+                    security_group_ids,
+                )?;
             }
             if let Some(ref subnet_ids) = self.subnet_ids {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetIds", subnet_ids)?;
@@ -14642,7 +17624,9 @@ pub mod channel {
     }
 
     impl ::codec::DeserializeValue for VpcOutputSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcOutputSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VpcOutputSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14652,15 +17636,21 @@ pub mod channel {
                     write!(f, "a struct of type VpcOutputSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut public_address_allocation_ids: Option<::ValueList<String>> = None;
                     let mut security_group_ids: Option<::ValueList<String>> = None;
                     let mut subnet_ids: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PublicAddressAllocationIds" => {
-                                public_address_allocation_ids = ::serde::de::MapAccess::next_value(&mut map)?;
+                                public_address_allocation_ids =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SecurityGroupIds" => {
                                 security_group_ids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14731,12 +17721,17 @@ pub mod channel {
                     write!(f, "a struct of type WavSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bit_depth: Option<::Value<f64>> = None;
                     let mut coding_mode: Option<::Value<String>> = None;
                     let mut sample_rate: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BitDepth" => {
                                 bit_depth = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14777,14 +17772,20 @@ pub mod channel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref style_control) = self.style_control {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StyleControl", style_control)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StyleControl",
+                    style_control,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for WebvttDestinationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<WebvttDestinationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<WebvttDestinationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14794,10 +17795,15 @@ pub mod channel {
                     write!(f, "a struct of type WebvttDestinationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut style_control: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "StyleControl" => {
                                 style_control = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14841,7 +17847,9 @@ pub mod input {
     }
 
     impl ::codec::DeserializeValue for InputDestinationRequest {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputDestinationRequest, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputDestinationRequest, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14851,10 +17859,15 @@ pub mod input {
                     write!(f, "a struct of type InputDestinationRequest")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut stream_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "StreamName" => {
                                 stream_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14894,7 +17907,9 @@ pub mod input {
     }
 
     impl ::codec::DeserializeValue for InputDeviceRequest {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputDeviceRequest, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputDeviceRequest, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14904,10 +17919,15 @@ pub mod input {
                     write!(f, "a struct of type InputDeviceRequest")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Id" => {
                                 id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14916,9 +17936,7 @@ pub mod input {
                         }
                     }
 
-                    Ok(InputDeviceRequest {
-                        id: id,
-                    })
+                    Ok(InputDeviceRequest { id: id })
                 }
             }
 
@@ -14947,7 +17965,9 @@ pub mod input {
     }
 
     impl ::codec::DeserializeValue for InputDeviceSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputDeviceSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputDeviceSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -14957,10 +17977,15 @@ pub mod input {
                     write!(f, "a struct of type InputDeviceSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Id" => {
                                 id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -14969,9 +17994,7 @@ pub mod input {
                         }
                     }
 
-                    Ok(InputDeviceSettings {
-                        id: id,
-                    })
+                    Ok(InputDeviceSettings { id: id })
                 }
             }
 
@@ -15003,7 +18026,11 @@ pub mod input {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref password_param) = self.password_param {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PasswordParam", password_param)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PasswordParam",
+                    password_param,
+                )?;
             }
             if let Some(ref url) = self.url {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Url", url)?;
@@ -15016,7 +18043,9 @@ pub mod input {
     }
 
     impl ::codec::DeserializeValue for InputSourceRequest {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputSourceRequest, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputSourceRequest, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -15026,12 +18055,17 @@ pub mod input {
                     write!(f, "a struct of type InputSourceRequest")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut password_param: Option<::Value<String>> = None;
                     let mut url: Option<::Value<String>> = None;
                     let mut username: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PasswordParam" => {
                                 password_param = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -15077,7 +18111,11 @@ pub mod input {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref security_group_ids) = self.security_group_ids {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", security_group_ids)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SecurityGroupIds",
+                    security_group_ids,
+                )?;
             }
             if let Some(ref subnet_ids) = self.subnet_ids {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetIds", subnet_ids)?;
@@ -15087,7 +18125,9 @@ pub mod input {
     }
 
     impl ::codec::DeserializeValue for InputVpcRequest {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputVpcRequest, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputVpcRequest, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -15097,11 +18137,16 @@ pub mod input {
                     write!(f, "a struct of type InputVpcRequest")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut security_group_ids: Option<::ValueList<String>> = None;
                     let mut subnet_ids: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SecurityGroupIds" => {
                                 security_group_ids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -15145,7 +18190,9 @@ pub mod input {
     }
 
     impl ::codec::DeserializeValue for MediaConnectFlowRequest {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MediaConnectFlowRequest, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MediaConnectFlowRequest, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -15155,10 +18202,15 @@ pub mod input {
                     write!(f, "a struct of type MediaConnectFlowRequest")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut flow_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FlowArn" => {
                                 flow_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -15167,9 +18219,7 @@ pub mod input {
                         }
                     }
 
-                    Ok(MediaConnectFlowRequest {
-                        flow_arn: flow_arn,
-                    })
+                    Ok(MediaConnectFlowRequest { flow_arn: flow_arn })
                 }
             }
 
@@ -15202,7 +18252,9 @@ pub mod input_security_group {
     }
 
     impl ::codec::DeserializeValue for InputWhitelistRuleCidr {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputWhitelistRuleCidr, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InputWhitelistRuleCidr, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -15212,10 +18264,15 @@ pub mod input_security_group {
                     write!(f, "a struct of type InputWhitelistRuleCidr")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cidr: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Cidr" => {
                                 cidr = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -15224,9 +18281,7 @@ pub mod input_security_group {
                         }
                     }
 
-                    Ok(InputWhitelistRuleCidr {
-                        cidr: cidr,
-                    })
+                    Ok(InputWhitelistRuleCidr { cidr: cidr })
                 }
             }
 

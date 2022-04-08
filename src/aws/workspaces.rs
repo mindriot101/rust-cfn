@@ -3,7 +3,7 @@
 /// The [`AWS::WorkSpaces::ConnectionAlias`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html) resource type.
 #[derive(Debug, Default)]
 pub struct ConnectionAlias {
-    properties: ConnectionAliasProperties
+    properties: ConnectionAliasProperties,
 }
 
 /// Properties for the `ConnectionAlias` resource.
@@ -24,7 +24,11 @@ pub struct ConnectionAliasProperties {
 impl ::serde::Serialize for ConnectionAliasProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionString", &self.connection_string)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ConnectionString",
+            &self.connection_string,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -33,7 +37,9 @@ impl ::serde::Serialize for ConnectionAliasProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ConnectionAliasProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ConnectionAliasProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ConnectionAliasProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -43,7 +49,10 @@ impl<'de> ::serde::Deserialize<'de> for ConnectionAliasProperties {
                 write!(f, "a struct of type ConnectionAliasProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut connection_string: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -60,7 +69,8 @@ impl<'de> ::serde::Deserialize<'de> for ConnectionAliasProperties {
                 }
 
                 Ok(ConnectionAliasProperties {
-                    connection_string: connection_string.ok_or(::serde::de::Error::missing_field("ConnectionString"))?,
+                    connection_string: connection_string
+                        .ok_or(::serde::de::Error::missing_field("ConnectionString"))?,
                     tags: tags,
                 })
             }
@@ -92,7 +102,7 @@ impl From<ConnectionAliasProperties> for ConnectionAlias {
 /// The [`AWS::WorkSpaces::Workspace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html) resource type.
 #[derive(Debug, Default)]
 pub struct Workspace {
-    properties: WorkspaceProperties
+    properties: WorkspaceProperties,
 }
 
 /// Properties for the `Workspace` resource.
@@ -151,20 +161,36 @@ impl ::serde::Serialize for WorkspaceProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BundleId", &self.bundle_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DirectoryId", &self.directory_id)?;
         if let Some(ref root_volume_encryption_enabled) = self.root_volume_encryption_enabled {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RootVolumeEncryptionEnabled", root_volume_encryption_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RootVolumeEncryptionEnabled",
+                root_volume_encryption_enabled,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserName", &self.user_name)?;
         if let Some(ref user_volume_encryption_enabled) = self.user_volume_encryption_enabled {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserVolumeEncryptionEnabled", user_volume_encryption_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "UserVolumeEncryptionEnabled",
+                user_volume_encryption_enabled,
+            )?;
         }
         if let Some(ref volume_encryption_key) = self.volume_encryption_key {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VolumeEncryptionKey", volume_encryption_key)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VolumeEncryptionKey",
+                volume_encryption_key,
+            )?;
         }
         if let Some(ref workspace_properties) = self.workspace_properties {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "WorkspaceProperties", workspace_properties)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "WorkspaceProperties",
+                workspace_properties,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -181,7 +207,10 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
                 write!(f, "a struct of type WorkspaceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut bundle_id: Option<::Value<String>> = None;
                 let mut directory_id: Option<::Value<String>> = None;
                 let mut root_volume_encryption_enabled: Option<::Value<bool>> = None;
@@ -189,7 +218,9 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
                 let mut user_name: Option<::Value<String>> = None;
                 let mut user_volume_encryption_enabled: Option<::Value<bool>> = None;
                 let mut volume_encryption_key: Option<::Value<String>> = None;
-                let mut workspace_properties: Option<::Value<self::workspace::WorkspaceProperties>> = None;
+                let mut workspace_properties: Option<
+                    ::Value<self::workspace::WorkspaceProperties>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -200,7 +231,8 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
                             directory_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RootVolumeEncryptionEnabled" => {
-                            root_volume_encryption_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                            root_volume_encryption_enabled =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -209,7 +241,8 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
                             user_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "UserVolumeEncryptionEnabled" => {
-                            user_volume_encryption_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                            user_volume_encryption_enabled =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "VolumeEncryptionKey" => {
                             volume_encryption_key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -223,7 +256,8 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
 
                 Ok(WorkspaceProperties {
                     bundle_id: bundle_id.ok_or(::serde::de::Error::missing_field("BundleId"))?,
-                    directory_id: directory_id.ok_or(::serde::de::Error::missing_field("DirectoryId"))?,
+                    directory_id: directory_id
+                        .ok_or(::serde::de::Error::missing_field("DirectoryId"))?,
                     root_volume_encryption_enabled: root_volume_encryption_enabled,
                     tags: tags,
                     user_name: user_name.ok_or(::serde::de::Error::missing_field("UserName"))?,
@@ -289,13 +323,25 @@ pub mod connection_alias {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref associated_account_id) = self.associated_account_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociatedAccountId", associated_account_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AssociatedAccountId",
+                    associated_account_id,
+                )?;
             }
             if let Some(ref association_status) = self.association_status {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociationStatus", association_status)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AssociationStatus",
+                    association_status,
+                )?;
             }
             if let Some(ref connection_identifier) = self.connection_identifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionIdentifier", connection_identifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConnectionIdentifier",
+                    connection_identifier,
+                )?;
             }
             if let Some(ref resource_id) = self.resource_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceId", resource_id)?;
@@ -305,7 +351,9 @@ pub mod connection_alias {
     }
 
     impl ::codec::DeserializeValue for ConnectionAliasAssociation {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ConnectionAliasAssociation, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ConnectionAliasAssociation, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -315,22 +363,29 @@ pub mod connection_alias {
                     write!(f, "a struct of type ConnectionAliasAssociation")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut associated_account_id: Option<::Value<String>> = None;
                     let mut association_status: Option<::Value<String>> = None;
                     let mut connection_identifier: Option<::Value<String>> = None;
                     let mut resource_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AssociatedAccountId" => {
-                                associated_account_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                                associated_account_id =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AssociationStatus" => {
                                 association_status = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ConnectionIdentifier" => {
-                                connection_identifier = ::serde::de::MapAccess::next_value(&mut map)?;
+                                connection_identifier =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ResourceId" => {
                                 resource_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -390,26 +445,46 @@ pub mod workspace {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref compute_type_name) = self.compute_type_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComputeTypeName", compute_type_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ComputeTypeName",
+                    compute_type_name,
+                )?;
             }
             if let Some(ref root_volume_size_gib) = self.root_volume_size_gib {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RootVolumeSizeGib", root_volume_size_gib)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RootVolumeSizeGib",
+                    root_volume_size_gib,
+                )?;
             }
             if let Some(ref running_mode) = self.running_mode {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RunningMode", running_mode)?;
             }
-            if let Some(ref running_mode_auto_stop_timeout_in_minutes) = self.running_mode_auto_stop_timeout_in_minutes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RunningModeAutoStopTimeoutInMinutes", running_mode_auto_stop_timeout_in_minutes)?;
+            if let Some(ref running_mode_auto_stop_timeout_in_minutes) =
+                self.running_mode_auto_stop_timeout_in_minutes
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RunningModeAutoStopTimeoutInMinutes",
+                    running_mode_auto_stop_timeout_in_minutes,
+                )?;
             }
             if let Some(ref user_volume_size_gib) = self.user_volume_size_gib {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserVolumeSizeGib", user_volume_size_gib)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UserVolumeSizeGib",
+                    user_volume_size_gib,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for WorkspaceProperties {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<WorkspaceProperties, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<WorkspaceProperties, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -419,29 +494,37 @@ pub mod workspace {
                     write!(f, "a struct of type WorkspaceProperties")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut compute_type_name: Option<::Value<String>> = None;
                     let mut root_volume_size_gib: Option<::Value<u32>> = None;
                     let mut running_mode: Option<::Value<String>> = None;
                     let mut running_mode_auto_stop_timeout_in_minutes: Option<::Value<u32>> = None;
                     let mut user_volume_size_gib: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ComputeTypeName" => {
                                 compute_type_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RootVolumeSizeGib" => {
-                                root_volume_size_gib = ::serde::de::MapAccess::next_value(&mut map)?;
+                                root_volume_size_gib =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RunningMode" => {
                                 running_mode = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RunningModeAutoStopTimeoutInMinutes" => {
-                                running_mode_auto_stop_timeout_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                                running_mode_auto_stop_timeout_in_minutes =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "UserVolumeSizeGib" => {
-                                user_volume_size_gib = ::serde::de::MapAccess::next_value(&mut map)?;
+                                user_volume_size_gib =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -451,7 +534,8 @@ pub mod workspace {
                         compute_type_name: compute_type_name,
                         root_volume_size_gib: root_volume_size_gib,
                         running_mode: running_mode,
-                        running_mode_auto_stop_timeout_in_minutes: running_mode_auto_stop_timeout_in_minutes,
+                        running_mode_auto_stop_timeout_in_minutes:
+                            running_mode_auto_stop_timeout_in_minutes,
                         user_volume_size_gib: user_volume_size_gib,
                     })
                 }

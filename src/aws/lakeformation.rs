@@ -3,7 +3,7 @@
 /// The [`AWS::LakeFormation::DataLakeSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html) resource type.
 #[derive(Debug, Default)]
 pub struct DataLakeSettings {
-    properties: DataLakeSettingsProperties
+    properties: DataLakeSettingsProperties,
 }
 
 /// Properties for the `DataLakeSettings` resource.
@@ -28,14 +28,20 @@ impl ::serde::Serialize for DataLakeSettingsProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Admins", admins)?;
         }
         if let Some(ref trusted_resource_owners) = self.trusted_resource_owners {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TrustedResourceOwners", trusted_resource_owners)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TrustedResourceOwners",
+                trusted_resource_owners,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for DataLakeSettingsProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<DataLakeSettingsProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<DataLakeSettingsProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -45,7 +51,10 @@ impl<'de> ::serde::Deserialize<'de> for DataLakeSettingsProperties {
                 write!(f, "a struct of type DataLakeSettingsProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut admins: Option<::Value<self::data_lake_settings::Admins>> = None;
                 let mut trusted_resource_owners: Option<::ValueList<String>> = None;
 
@@ -94,7 +103,7 @@ impl From<DataLakeSettingsProperties> for DataLakeSettings {
 /// The [`AWS::LakeFormation::Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html) resource type.
 #[derive(Debug, Default)]
 pub struct Permissions {
-    properties: PermissionsProperties
+    properties: PermissionsProperties,
 }
 
 /// Properties for the `Permissions` resource.
@@ -125,12 +134,20 @@ pub struct PermissionsProperties {
 impl ::serde::Serialize for PermissionsProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataLakePrincipal", &self.data_lake_principal)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DataLakePrincipal",
+            &self.data_lake_principal,
+        )?;
         if let Some(ref permissions) = self.permissions {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Permissions", permissions)?;
         }
         if let Some(ref permissions_with_grant_option) = self.permissions_with_grant_option {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionsWithGrantOption", permissions_with_grant_option)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PermissionsWithGrantOption",
+                permissions_with_grant_option,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Resource", &self.resource)?;
         ::serde::ser::SerializeMap::end(map)
@@ -148,8 +165,12 @@ impl<'de> ::serde::Deserialize<'de> for PermissionsProperties {
                 write!(f, "a struct of type PermissionsProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut data_lake_principal: Option<::Value<self::permissions::DataLakePrincipal>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut data_lake_principal: Option<::Value<self::permissions::DataLakePrincipal>> =
+                    None;
                 let mut permissions: Option<::ValueList<String>> = None;
                 let mut permissions_with_grant_option: Option<::ValueList<String>> = None;
                 let mut resource: Option<::Value<self::permissions::Resource>> = None;
@@ -163,7 +184,8 @@ impl<'de> ::serde::Deserialize<'de> for PermissionsProperties {
                             permissions = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PermissionsWithGrantOption" => {
-                            permissions_with_grant_option = ::serde::de::MapAccess::next_value(&mut map)?;
+                            permissions_with_grant_option =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Resource" => {
                             resource = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -173,7 +195,8 @@ impl<'de> ::serde::Deserialize<'de> for PermissionsProperties {
                 }
 
                 Ok(PermissionsProperties {
-                    data_lake_principal: data_lake_principal.ok_or(::serde::de::Error::missing_field("DataLakePrincipal"))?,
+                    data_lake_principal: data_lake_principal
+                        .ok_or(::serde::de::Error::missing_field("DataLakePrincipal"))?,
                     permissions: permissions,
                     permissions_with_grant_option: permissions_with_grant_option,
                     resource: resource.ok_or(::serde::de::Error::missing_field("Resource"))?,
@@ -207,7 +230,7 @@ impl From<PermissionsProperties> for Permissions {
 /// The [`AWS::LakeFormation::Resource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html) resource type.
 #[derive(Debug, Default)]
 pub struct Resource {
-    properties: ResourceProperties
+    properties: ResourceProperties,
 }
 
 /// Properties for the `Resource` resource.
@@ -237,7 +260,11 @@ impl ::serde::Serialize for ResourceProperties {
         if let Some(ref role_arn) = self.role_arn {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", role_arn)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "UseServiceLinkedRole", &self.use_service_linked_role)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "UseServiceLinkedRole",
+            &self.use_service_linked_role,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -253,7 +280,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceProperties {
                 write!(f, "a struct of type ResourceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut resource_arn: Option<::Value<String>> = None;
                 let mut role_arn: Option<::Value<String>> = None;
                 let mut use_service_linked_role: Option<::Value<bool>> = None;
@@ -274,9 +304,11 @@ impl<'de> ::serde::Deserialize<'de> for ResourceProperties {
                 }
 
                 Ok(ResourceProperties {
-                    resource_arn: resource_arn.ok_or(::serde::de::Error::missing_field("ResourceArn"))?,
+                    resource_arn: resource_arn
+                        .ok_or(::serde::de::Error::missing_field("ResourceArn"))?,
                     role_arn: role_arn,
-                    use_service_linked_role: use_service_linked_role.ok_or(::serde::de::Error::missing_field("UseServiceLinkedRole"))?,
+                    use_service_linked_role: use_service_linked_role
+                        .ok_or(::serde::de::Error::missing_field("UseServiceLinkedRole"))?,
                 })
             }
         }
@@ -309,8 +341,7 @@ pub mod data_lake_settings {
 
     /// The [`AWS::LakeFormation::DataLakeSettings.Admins`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-admins.html) property type.
     #[derive(Debug, Default)]
-    pub struct Admins {
-    }
+    pub struct Admins {}
 
     impl ::codec::SerializeValue for Admins {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -330,7 +361,10 @@ pub mod data_lake_settings {
                     write!(f, "a struct of type Admins")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(Admins {})
                 }
             }
@@ -353,14 +387,20 @@ pub mod data_lake_settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_lake_principal_identifier) = self.data_lake_principal_identifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataLakePrincipalIdentifier", data_lake_principal_identifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DataLakePrincipalIdentifier",
+                    data_lake_principal_identifier,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DataLakePrincipal {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DataLakePrincipal, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DataLakePrincipal, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -370,13 +410,19 @@ pub mod data_lake_settings {
                     write!(f, "a struct of type DataLakePrincipal")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut data_lake_principal_identifier: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DataLakePrincipalIdentifier" => {
-                                data_lake_principal_identifier = ::serde::de::MapAccess::next_value(&mut map)?;
+                                data_lake_principal_identifier =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -410,14 +456,20 @@ pub mod permissions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref excluded_column_names) = self.excluded_column_names {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExcludedColumnNames", excluded_column_names)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ExcludedColumnNames",
+                    excluded_column_names,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ColumnWildcard {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ColumnWildcard, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ColumnWildcard, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -427,13 +479,19 @@ pub mod permissions {
                     write!(f, "a struct of type ColumnWildcard")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut excluded_column_names: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ExcludedColumnNames" => {
-                                excluded_column_names = ::serde::de::MapAccess::next_value(&mut map)?;
+                                excluded_column_names =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -463,14 +521,20 @@ pub mod permissions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_lake_principal_identifier) = self.data_lake_principal_identifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataLakePrincipalIdentifier", data_lake_principal_identifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DataLakePrincipalIdentifier",
+                    data_lake_principal_identifier,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DataLakePrincipal {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DataLakePrincipal, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DataLakePrincipal, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -480,13 +544,19 @@ pub mod permissions {
                     write!(f, "a struct of type DataLakePrincipal")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut data_lake_principal_identifier: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DataLakePrincipalIdentifier" => {
-                                data_lake_principal_identifier = ::serde::de::MapAccess::next_value(&mut map)?;
+                                data_lake_principal_identifier =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -531,7 +601,9 @@ pub mod permissions {
     }
 
     impl ::codec::DeserializeValue for DataLocationResource {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DataLocationResource, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DataLocationResource, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -541,11 +613,16 @@ pub mod permissions {
                     write!(f, "a struct of type DataLocationResource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut catalog_id: Option<::Value<String>> = None;
                     let mut s3_resource: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CatalogId" => {
                                 catalog_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -597,7 +674,9 @@ pub mod permissions {
     }
 
     impl ::codec::DeserializeValue for DatabaseResource {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DatabaseResource, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DatabaseResource, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -607,11 +686,16 @@ pub mod permissions {
                     write!(f, "a struct of type DatabaseResource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut catalog_id: Option<::Value<String>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CatalogId" => {
                                 catalog_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -663,16 +747,32 @@ pub mod permissions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_location_resource) = self.data_location_resource {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataLocationResource", data_location_resource)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DataLocationResource",
+                    data_location_resource,
+                )?;
             }
             if let Some(ref database_resource) = self.database_resource {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseResource", database_resource)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DatabaseResource",
+                    database_resource,
+                )?;
             }
             if let Some(ref table_resource) = self.table_resource {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableResource", table_resource)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TableResource",
+                    table_resource,
+                )?;
             }
             if let Some(ref table_with_columns_resource) = self.table_with_columns_resource {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableWithColumnsResource", table_with_columns_resource)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TableWithColumnsResource",
+                    table_with_columns_resource,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -689,16 +789,23 @@ pub mod permissions {
                     write!(f, "a struct of type Resource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut data_location_resource: Option<::Value<DataLocationResource>> = None;
                     let mut database_resource: Option<::Value<DatabaseResource>> = None;
                     let mut table_resource: Option<::Value<TableResource>> = None;
-                    let mut table_with_columns_resource: Option<::Value<TableWithColumnsResource>> = None;
+                    let mut table_with_columns_resource: Option<::Value<TableWithColumnsResource>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DataLocationResource" => {
-                                data_location_resource = ::serde::de::MapAccess::next_value(&mut map)?;
+                                data_location_resource =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DatabaseResource" => {
                                 database_resource = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -707,7 +814,8 @@ pub mod permissions {
                                 table_resource = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TableWithColumnsResource" => {
-                                table_with_columns_resource = ::serde::de::MapAccess::next_value(&mut map)?;
+                                table_with_columns_resource =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -758,20 +866,30 @@ pub mod permissions {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "CatalogId", catalog_id)?;
             }
             if let Some(ref database_name) = self.database_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseName", database_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DatabaseName",
+                    database_name,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
             }
             if let Some(ref table_wildcard) = self.table_wildcard {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableWildcard", table_wildcard)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TableWildcard",
+                    table_wildcard,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for TableResource {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TableResource, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TableResource, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -781,13 +899,18 @@ pub mod permissions {
                     write!(f, "a struct of type TableResource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut catalog_id: Option<::Value<String>> = None;
                     let mut database_name: Option<::Value<String>> = None;
                     let mut name: Option<::Value<String>> = None;
                     let mut table_wildcard: Option<::Value<TableWildcard>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CatalogId" => {
                                 catalog_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -820,8 +943,7 @@ pub mod permissions {
 
     /// The [`AWS::LakeFormation::Permissions.TableWildcard`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewildcard.html) property type.
     #[derive(Debug, Default)]
-    pub struct TableWildcard {
-    }
+    pub struct TableWildcard {}
 
     impl ::codec::SerializeValue for TableWildcard {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -831,7 +953,9 @@ pub mod permissions {
     }
 
     impl ::codec::DeserializeValue for TableWildcard {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TableWildcard, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TableWildcard, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -841,7 +965,10 @@ pub mod permissions {
                     write!(f, "a struct of type TableWildcard")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(TableWildcard {})
                 }
             }
@@ -890,10 +1017,18 @@ pub mod permissions {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnNames", column_names)?;
             }
             if let Some(ref column_wildcard) = self.column_wildcard {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnWildcard", column_wildcard)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColumnWildcard",
+                    column_wildcard,
+                )?;
             }
             if let Some(ref database_name) = self.database_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseName", database_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DatabaseName",
+                    database_name,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -903,7 +1038,9 @@ pub mod permissions {
     }
 
     impl ::codec::DeserializeValue for TableWithColumnsResource {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TableWithColumnsResource, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TableWithColumnsResource, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -913,14 +1050,19 @@ pub mod permissions {
                     write!(f, "a struct of type TableWithColumnsResource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut catalog_id: Option<::Value<String>> = None;
                     let mut column_names: Option<::ValueList<String>> = None;
                     let mut column_wildcard: Option<::Value<ColumnWildcard>> = None;
                     let mut database_name: Option<::Value<String>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CatalogId" => {
                                 catalog_id = ::serde::de::MapAccess::next_value(&mut map)?;

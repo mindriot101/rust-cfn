@@ -3,7 +3,7 @@
 /// The [`AWS::Inspector::AssessmentTarget`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html) resource type.
 #[derive(Debug, Default)]
 pub struct AssessmentTarget {
-    properties: AssessmentTargetProperties
+    properties: AssessmentTargetProperties,
 }
 
 /// Properties for the `AssessmentTarget` resource.
@@ -25,17 +25,27 @@ impl ::serde::Serialize for AssessmentTargetProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref assessment_target_name) = self.assessment_target_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssessmentTargetName", assessment_target_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssessmentTargetName",
+                assessment_target_name,
+            )?;
         }
         if let Some(ref resource_group_arn) = self.resource_group_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceGroupArn", resource_group_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResourceGroupArn",
+                resource_group_arn,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for AssessmentTargetProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AssessmentTargetProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AssessmentTargetProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -45,7 +55,10 @@ impl<'de> ::serde::Deserialize<'de> for AssessmentTargetProperties {
                 write!(f, "a struct of type AssessmentTargetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut assessment_target_name: Option<::Value<String>> = None;
                 let mut resource_group_arn: Option<::Value<String>> = None;
 
@@ -94,7 +107,7 @@ impl From<AssessmentTargetProperties> for AssessmentTarget {
 /// The [`AWS::Inspector::AssessmentTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html) resource type.
 #[derive(Debug, Default)]
 pub struct AssessmentTemplate {
-    properties: AssessmentTemplateProperties
+    properties: AssessmentTemplateProperties,
 }
 
 /// Properties for the `AssessmentTemplate` resource.
@@ -130,21 +143,43 @@ pub struct AssessmentTemplateProperties {
 impl ::serde::Serialize for AssessmentTemplateProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssessmentTargetArn", &self.assessment_target_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AssessmentTargetArn",
+            &self.assessment_target_arn,
+        )?;
         if let Some(ref assessment_template_name) = self.assessment_template_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssessmentTemplateName", assessment_template_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssessmentTemplateName",
+                assessment_template_name,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DurationInSeconds", &self.duration_in_seconds)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RulesPackageArns", &self.rules_package_arns)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DurationInSeconds",
+            &self.duration_in_seconds,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RulesPackageArns",
+            &self.rules_package_arns,
+        )?;
         if let Some(ref user_attributes_for_findings) = self.user_attributes_for_findings {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserAttributesForFindings", user_attributes_for_findings)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "UserAttributesForFindings",
+                user_attributes_for_findings,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for AssessmentTemplateProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AssessmentTemplateProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AssessmentTemplateProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -154,7 +189,10 @@ impl<'de> ::serde::Deserialize<'de> for AssessmentTemplateProperties {
                 write!(f, "a struct of type AssessmentTemplateProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut assessment_target_arn: Option<::Value<String>> = None;
                 let mut assessment_template_name: Option<::Value<String>> = None;
                 let mut duration_in_seconds: Option<::Value<u32>> = None;
@@ -167,7 +205,8 @@ impl<'de> ::serde::Deserialize<'de> for AssessmentTemplateProperties {
                             assessment_target_arn = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AssessmentTemplateName" => {
-                            assessment_template_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                            assessment_template_name =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DurationInSeconds" => {
                             duration_in_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -176,17 +215,21 @@ impl<'de> ::serde::Deserialize<'de> for AssessmentTemplateProperties {
                             rules_package_arns = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "UserAttributesForFindings" => {
-                            user_attributes_for_findings = ::serde::de::MapAccess::next_value(&mut map)?;
+                            user_attributes_for_findings =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
                 }
 
                 Ok(AssessmentTemplateProperties {
-                    assessment_target_arn: assessment_target_arn.ok_or(::serde::de::Error::missing_field("AssessmentTargetArn"))?,
+                    assessment_target_arn: assessment_target_arn
+                        .ok_or(::serde::de::Error::missing_field("AssessmentTargetArn"))?,
                     assessment_template_name: assessment_template_name,
-                    duration_in_seconds: duration_in_seconds.ok_or(::serde::de::Error::missing_field("DurationInSeconds"))?,
-                    rules_package_arns: rules_package_arns.ok_or(::serde::de::Error::missing_field("RulesPackageArns"))?,
+                    duration_in_seconds: duration_in_seconds
+                        .ok_or(::serde::de::Error::missing_field("DurationInSeconds"))?,
+                    rules_package_arns: rules_package_arns
+                        .ok_or(::serde::de::Error::missing_field("RulesPackageArns"))?,
                     user_attributes_for_findings: user_attributes_for_findings,
                 })
             }
@@ -218,7 +261,7 @@ impl From<AssessmentTemplateProperties> for AssessmentTemplate {
 /// The [`AWS::Inspector::ResourceGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-resourcegroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourceGroup {
-    properties: ResourceGroupProperties
+    properties: ResourceGroupProperties,
 }
 
 /// Properties for the `ResourceGroup` resource.
@@ -234,13 +277,19 @@ pub struct ResourceGroupProperties {
 impl ::serde::Serialize for ResourceGroupProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceGroupTags", &self.resource_group_tags)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ResourceGroupTags",
+            &self.resource_group_tags,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResourceGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResourceGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -250,7 +299,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceGroupProperties {
                 write!(f, "a struct of type ResourceGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut resource_group_tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -263,7 +315,8 @@ impl<'de> ::serde::Deserialize<'de> for ResourceGroupProperties {
                 }
 
                 Ok(ResourceGroupProperties {
-                    resource_group_tags: resource_group_tags.ok_or(::serde::de::Error::missing_field("ResourceGroupTags"))?,
+                    resource_group_tags: resource_group_tags
+                        .ok_or(::serde::de::Error::missing_field("ResourceGroupTags"))?,
                 })
             }
         }

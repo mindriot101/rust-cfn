@@ -3,7 +3,7 @@
 /// The [`AWS::XRay::Group`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html) resource type.
 #[derive(Debug, Default)]
 pub struct Group {
-    properties: GroupProperties
+    properties: GroupProperties,
 }
 
 /// Properties for the `Group` resource.
@@ -35,13 +35,21 @@ impl ::serde::Serialize for GroupProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref filter_expression) = self.filter_expression {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterExpression", filter_expression)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FilterExpression",
+                filter_expression,
+            )?;
         }
         if let Some(ref group_name) = self.group_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "GroupName", group_name)?;
         }
         if let Some(ref insights_configuration) = self.insights_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InsightsConfiguration", insights_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InsightsConfiguration",
+                insights_configuration,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -61,10 +69,15 @@ impl<'de> ::serde::Deserialize<'de> for GroupProperties {
                 write!(f, "a struct of type GroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut filter_expression: Option<::Value<String>> = None;
                 let mut group_name: Option<::Value<String>> = None;
-                let mut insights_configuration: Option<::Value<self::group::InsightsConfiguration>> = None;
+                let mut insights_configuration: Option<
+                    ::Value<self::group::InsightsConfiguration>,
+                > = None;
                 let mut tags: Option<::ValueList<::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -120,7 +133,7 @@ impl From<GroupProperties> for Group {
 /// The [`AWS::XRay::SamplingRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html) resource type.
 #[derive(Debug, Default)]
 pub struct SamplingRule {
-    properties: SamplingRuleProperties
+    properties: SamplingRuleProperties,
 }
 
 /// Properties for the `SamplingRule` resource.
@@ -163,10 +176,18 @@ impl ::serde::Serialize for SamplingRuleProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SamplingRule", sampling_rule)?;
         }
         if let Some(ref sampling_rule_record) = self.sampling_rule_record {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SamplingRuleRecord", sampling_rule_record)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SamplingRuleRecord",
+                sampling_rule_record,
+            )?;
         }
         if let Some(ref sampling_rule_update) = self.sampling_rule_update {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SamplingRuleUpdate", sampling_rule_update)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SamplingRuleUpdate",
+                sampling_rule_update,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -176,7 +197,9 @@ impl ::serde::Serialize for SamplingRuleProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for SamplingRuleProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SamplingRuleProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SamplingRuleProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -186,11 +209,18 @@ impl<'de> ::serde::Deserialize<'de> for SamplingRuleProperties {
                 write!(f, "a struct of type SamplingRuleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut rule_name: Option<::Value<String>> = None;
                 let mut sampling_rule: Option<::Value<self::sampling_rule::SamplingRule>> = None;
-                let mut sampling_rule_record: Option<::Value<self::sampling_rule::SamplingRuleRecord>> = None;
-                let mut sampling_rule_update: Option<::Value<self::sampling_rule::SamplingRuleUpdate>> = None;
+                let mut sampling_rule_record: Option<
+                    ::Value<self::sampling_rule::SamplingRuleRecord>,
+                > = None;
+                let mut sampling_rule_update: Option<
+                    ::Value<self::sampling_rule::SamplingRuleUpdate>,
+                > = None;
                 let mut tags: Option<::ValueList<::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -269,17 +299,27 @@ pub mod group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref insights_enabled) = self.insights_enabled {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InsightsEnabled", insights_enabled)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InsightsEnabled",
+                    insights_enabled,
+                )?;
             }
             if let Some(ref notifications_enabled) = self.notifications_enabled {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationsEnabled", notifications_enabled)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NotificationsEnabled",
+                    notifications_enabled,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for InsightsConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InsightsConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InsightsConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -289,17 +329,23 @@ pub mod group {
                     write!(f, "a struct of type InsightsConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut insights_enabled: Option<::Value<bool>> = None;
                     let mut notifications_enabled: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InsightsEnabled" => {
                                 insights_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NotificationsEnabled" => {
-                                notifications_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                                notifications_enabled =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -409,7 +455,11 @@ pub mod sampling_rule {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Priority", priority)?;
             }
             if let Some(ref reservoir_size) = self.reservoir_size {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReservoirSize", reservoir_size)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ReservoirSize",
+                    reservoir_size,
+                )?;
             }
             if let Some(ref resource_arn) = self.resource_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceARN", resource_arn)?;
@@ -447,7 +497,10 @@ pub mod sampling_rule {
                     write!(f, "a struct of type SamplingRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut attributes: Option<::ValueMap<String>> = None;
                     let mut fixed_rate: Option<::Value<f64>> = None;
                     let mut http_method: Option<::Value<String>> = None;
@@ -462,7 +515,9 @@ pub mod sampling_rule {
                     let mut url_path: Option<::Value<String>> = None;
                     let mut version: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Attributes" => {
                                 attributes = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -559,14 +614,20 @@ pub mod sampling_rule {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ModifiedAt", modified_at)?;
             }
             if let Some(ref sampling_rule) = self.sampling_rule {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SamplingRule", sampling_rule)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SamplingRule",
+                    sampling_rule,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SamplingRuleRecord {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SamplingRuleRecord, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SamplingRuleRecord, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -576,12 +637,17 @@ pub mod sampling_rule {
                     write!(f, "a struct of type SamplingRuleRecord")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut created_at: Option<::Value<String>> = None;
                     let mut modified_at: Option<::Value<String>> = None;
                     let mut sampling_rule: Option<::Value<SamplingRule>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CreatedAt" => {
                                 created_at = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -692,7 +758,11 @@ pub mod sampling_rule {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Priority", priority)?;
             }
             if let Some(ref reservoir_size) = self.reservoir_size {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReservoirSize", reservoir_size)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ReservoirSize",
+                    reservoir_size,
+                )?;
             }
             if let Some(ref resource_arn) = self.resource_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceARN", resource_arn)?;
@@ -717,7 +787,9 @@ pub mod sampling_rule {
     }
 
     impl ::codec::DeserializeValue for SamplingRuleUpdate {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SamplingRuleUpdate, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SamplingRuleUpdate, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -727,7 +799,10 @@ pub mod sampling_rule {
                     write!(f, "a struct of type SamplingRuleUpdate")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut attributes: Option<::ValueMap<String>> = None;
                     let mut fixed_rate: Option<::Value<f64>> = None;
                     let mut http_method: Option<::Value<String>> = None;
@@ -741,7 +816,9 @@ pub mod sampling_rule {
                     let mut service_type: Option<::Value<String>> = None;
                     let mut url_path: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Attributes" => {
                                 attributes = ::serde::de::MapAccess::next_value(&mut map)?;

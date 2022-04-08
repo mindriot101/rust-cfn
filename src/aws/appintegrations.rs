@@ -3,7 +3,7 @@
 /// The [`AWS::AppIntegrations::DataIntegration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html) resource type.
 #[derive(Debug, Default)]
 pub struct DataIntegration {
-    properties: DataIntegrationProperties
+    properties: DataIntegrationProperties,
 }
 
 /// Properties for the `DataIntegration` resource.
@@ -49,7 +49,11 @@ impl ::serde::Serialize for DataIntegrationProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKey", &self.kms_key)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScheduleConfig", &self.schedule_config)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ScheduleConfig",
+            &self.schedule_config,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceURI", &self.source_uri)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -59,7 +63,9 @@ impl ::serde::Serialize for DataIntegrationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for DataIntegrationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<DataIntegrationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<DataIntegrationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -69,11 +75,15 @@ impl<'de> ::serde::Deserialize<'de> for DataIntegrationProperties {
                 write!(f, "a struct of type DataIntegrationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut kms_key: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut schedule_config: Option<::Value<self::data_integration::ScheduleConfig>> = None;
+                let mut schedule_config: Option<::Value<self::data_integration::ScheduleConfig>> =
+                    None;
                 let mut source_uri: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -105,7 +115,8 @@ impl<'de> ::serde::Deserialize<'de> for DataIntegrationProperties {
                     description: description,
                     kms_key: kms_key.ok_or(::serde::de::Error::missing_field("KmsKey"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    schedule_config: schedule_config.ok_or(::serde::de::Error::missing_field("ScheduleConfig"))?,
+                    schedule_config: schedule_config
+                        .ok_or(::serde::de::Error::missing_field("ScheduleConfig"))?,
                     source_uri: source_uri.ok_or(::serde::de::Error::missing_field("SourceURI"))?,
                     tags: tags,
                 })
@@ -138,7 +149,7 @@ impl From<DataIntegrationProperties> for DataIntegration {
 /// The [`AWS::AppIntegrations::EventIntegration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html) resource type.
 #[derive(Debug, Default)]
 pub struct EventIntegration {
-    properties: EventIntegrationProperties
+    properties: EventIntegrationProperties,
 }
 
 /// Properties for the `EventIntegration` resource.
@@ -177,7 +188,11 @@ impl ::serde::Serialize for EventIntegrationProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventBridgeBus", &self.event_bridge_bus)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EventBridgeBus",
+            &self.event_bridge_bus,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventFilter", &self.event_filter)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref tags) = self.tags {
@@ -188,7 +203,9 @@ impl ::serde::Serialize for EventIntegrationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for EventIntegrationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<EventIntegrationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<EventIntegrationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -198,7 +215,10 @@ impl<'de> ::serde::Deserialize<'de> for EventIntegrationProperties {
                 write!(f, "a struct of type EventIntegrationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut event_bridge_bus: Option<::Value<String>> = None;
                 let mut event_filter: Option<::Value<self::event_integration::EventFilter>> = None;
@@ -228,8 +248,10 @@ impl<'de> ::serde::Deserialize<'de> for EventIntegrationProperties {
 
                 Ok(EventIntegrationProperties {
                     description: description,
-                    event_bridge_bus: event_bridge_bus.ok_or(::serde::de::Error::missing_field("EventBridgeBus"))?,
-                    event_filter: event_filter.ok_or(::serde::de::Error::missing_field("EventFilter"))?,
+                    event_bridge_bus: event_bridge_bus
+                        .ok_or(::serde::de::Error::missing_field("EventBridgeBus"))?,
+                    event_filter: event_filter
+                        .ok_or(::serde::de::Error::missing_field("EventFilter"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     tags: tags,
                 })
@@ -285,15 +307,25 @@ pub mod data_integration {
     impl ::codec::SerializeValue for ScheduleConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FirstExecutionFrom", &self.first_execution_from)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FirstExecutionFrom",
+                &self.first_execution_from,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScheduleExpression", &self.schedule_expression)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ScheduleExpression",
+                &self.schedule_expression,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ScheduleConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ScheduleConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ScheduleConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -303,15 +335,21 @@ pub mod data_integration {
                     write!(f, "a struct of type ScheduleConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut first_execution_from: Option<::Value<String>> = None;
                     let mut object: Option<::Value<String>> = None;
                     let mut schedule_expression: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FirstExecutionFrom" => {
-                                first_execution_from = ::serde::de::MapAccess::next_value(&mut map)?;
+                                first_execution_from =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Object" => {
                                 object = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -324,9 +362,11 @@ pub mod data_integration {
                     }
 
                     Ok(ScheduleConfig {
-                        first_execution_from: first_execution_from.ok_or(::serde::de::Error::missing_field("FirstExecutionFrom"))?,
+                        first_execution_from: first_execution_from
+                            .ok_or(::serde::de::Error::missing_field("FirstExecutionFrom"))?,
                         object: object.ok_or(::serde::de::Error::missing_field("Object"))?,
-                        schedule_expression: schedule_expression.ok_or(::serde::de::Error::missing_field("ScheduleExpression"))?,
+                        schedule_expression: schedule_expression
+                            .ok_or(::serde::de::Error::missing_field("ScheduleExpression"))?,
                     })
                 }
             }
@@ -368,10 +408,15 @@ pub mod event_integration {
                     write!(f, "a struct of type EventFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut source: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Source" => {
                                 source = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -424,26 +469,48 @@ pub mod event_integration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref client_association_metadata) = self.client_association_metadata {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClientAssociationMetadata", client_association_metadata)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ClientAssociationMetadata",
+                    client_association_metadata,
+                )?;
             }
             if let Some(ref client_id) = self.client_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClientId", client_id)?;
             }
             if let Some(ref event_bridge_rule_name) = self.event_bridge_rule_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventBridgeRuleName", event_bridge_rule_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EventBridgeRuleName",
+                    event_bridge_rule_name,
+                )?;
             }
-            if let Some(ref event_integration_association_arn) = self.event_integration_association_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventIntegrationAssociationArn", event_integration_association_arn)?;
+            if let Some(ref event_integration_association_arn) =
+                self.event_integration_association_arn
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EventIntegrationAssociationArn",
+                    event_integration_association_arn,
+                )?;
             }
-            if let Some(ref event_integration_association_id) = self.event_integration_association_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventIntegrationAssociationId", event_integration_association_id)?;
+            if let Some(ref event_integration_association_id) =
+                self.event_integration_association_id
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EventIntegrationAssociationId",
+                    event_integration_association_id,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EventIntegrationAssociation {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EventIntegrationAssociation, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EventIntegrationAssociation, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -453,29 +520,38 @@ pub mod event_integration {
                     write!(f, "a struct of type EventIntegrationAssociation")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut client_association_metadata: Option<::ValueList<Metadata>> = None;
                     let mut client_id: Option<::Value<String>> = None;
                     let mut event_bridge_rule_name: Option<::Value<String>> = None;
                     let mut event_integration_association_arn: Option<::Value<String>> = None;
                     let mut event_integration_association_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ClientAssociationMetadata" => {
-                                client_association_metadata = ::serde::de::MapAccess::next_value(&mut map)?;
+                                client_association_metadata =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ClientId" => {
                                 client_id = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EventBridgeRuleName" => {
-                                event_bridge_rule_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                event_bridge_rule_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EventIntegrationAssociationArn" => {
-                                event_integration_association_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                                event_integration_association_arn =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EventIntegrationAssociationId" => {
-                                event_integration_association_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                                event_integration_association_id =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -530,11 +606,16 @@ pub mod event_integration {
                     write!(f, "a struct of type Metadata")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;

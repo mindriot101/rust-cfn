@@ -3,7 +3,7 @@
 /// The [`AWS::IoTCoreDeviceAdvisor::SuiteDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotcoredeviceadvisor-suitedefinition.html) resource type.
 #[derive(Debug, Default)]
 pub struct SuiteDefinition {
-    properties: SuiteDefinitionProperties
+    properties: SuiteDefinitionProperties,
 }
 
 /// Properties for the `SuiteDefinition` resource.
@@ -24,7 +24,11 @@ pub struct SuiteDefinitionProperties {
 impl ::serde::Serialize for SuiteDefinitionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SuiteDefinitionConfiguration", &self.suite_definition_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SuiteDefinitionConfiguration",
+            &self.suite_definition_configuration,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -33,7 +37,9 @@ impl ::serde::Serialize for SuiteDefinitionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for SuiteDefinitionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SuiteDefinitionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SuiteDefinitionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -43,14 +49,18 @@ impl<'de> ::serde::Deserialize<'de> for SuiteDefinitionProperties {
                 write!(f, "a struct of type SuiteDefinitionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut suite_definition_configuration: Option<::Value<::json::Value>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "SuiteDefinitionConfiguration" => {
-                            suite_definition_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            suite_definition_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -60,7 +70,9 @@ impl<'de> ::serde::Deserialize<'de> for SuiteDefinitionProperties {
                 }
 
                 Ok(SuiteDefinitionProperties {
-                    suite_definition_configuration: suite_definition_configuration.ok_or(::serde::de::Error::missing_field("SuiteDefinitionConfiguration"))?,
+                    suite_definition_configuration: suite_definition_configuration.ok_or(
+                        ::serde::de::Error::missing_field("SuiteDefinitionConfiguration"),
+                    )?,
                     tags: tags,
                 })
             }

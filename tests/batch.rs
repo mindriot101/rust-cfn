@@ -58,7 +58,13 @@ fn managed_ec2_batch_environment() {
         .get::<cfn::aws::ec2::Subnet>("Subnet")
         .unwrap();
     assert_eq!(
-        subnet.properties().cidr_block.as_ref().unwrap().as_value().unwrap(),
+        subnet
+            .properties()
+            .cidr_block
+            .as_ref()
+            .unwrap()
+            .as_value()
+            .unwrap(),
         "10.0.0.0/24"
     );
     assert_eq!(subnet.properties().vpc_id.as_reference().unwrap(), "VPC");

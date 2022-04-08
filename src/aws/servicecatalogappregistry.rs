@@ -3,7 +3,7 @@
 /// The [`AWS::ServiceCatalogAppRegistry::Application`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-application.html) resource type.
 #[derive(Debug, Default)]
 pub struct Application {
-    properties: ApplicationProperties
+    properties: ApplicationProperties,
 }
 
 /// Properties for the `Application` resource.
@@ -51,7 +51,10 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
                 write!(f, "a struct of type ApplicationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueMap<String>> = None;
@@ -105,7 +108,7 @@ impl From<ApplicationProperties> for Application {
 /// The [`AWS::ServiceCatalogAppRegistry::AttributeGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-attributegroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct AttributeGroup {
-    properties: AttributeGroupProperties
+    properties: AttributeGroupProperties,
 }
 
 /// Properties for the `AttributeGroup` resource.
@@ -149,7 +152,9 @@ impl ::serde::Serialize for AttributeGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for AttributeGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AttributeGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AttributeGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -159,7 +164,10 @@ impl<'de> ::serde::Deserialize<'de> for AttributeGroupProperties {
                 write!(f, "a struct of type AttributeGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut attributes: Option<::Value<::json::Value>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -184,7 +192,8 @@ impl<'de> ::serde::Deserialize<'de> for AttributeGroupProperties {
                 }
 
                 Ok(AttributeGroupProperties {
-                    attributes: attributes.ok_or(::serde::de::Error::missing_field("Attributes"))?,
+                    attributes: attributes
+                        .ok_or(::serde::de::Error::missing_field("Attributes"))?,
                     description: description,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     tags: tags,
@@ -218,7 +227,7 @@ impl From<AttributeGroupProperties> for AttributeGroup {
 /// The [`AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-attributegroupassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct AttributeGroupAssociation {
-    properties: AttributeGroupAssociationProperties
+    properties: AttributeGroupAssociationProperties,
 }
 
 /// Properties for the `AttributeGroupAssociation` resource.
@@ -240,13 +249,19 @@ impl ::serde::Serialize for AttributeGroupAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Application", &self.application)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AttributeGroup", &self.attribute_group)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AttributeGroup",
+            &self.attribute_group,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for AttributeGroupAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AttributeGroupAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AttributeGroupAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -256,7 +271,10 @@ impl<'de> ::serde::Deserialize<'de> for AttributeGroupAssociationProperties {
                 write!(f, "a struct of type AttributeGroupAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application: Option<::Value<String>> = None;
                 let mut attribute_group: Option<::Value<String>> = None;
 
@@ -273,8 +291,10 @@ impl<'de> ::serde::Deserialize<'de> for AttributeGroupAssociationProperties {
                 }
 
                 Ok(AttributeGroupAssociationProperties {
-                    application: application.ok_or(::serde::de::Error::missing_field("Application"))?,
-                    attribute_group: attribute_group.ok_or(::serde::de::Error::missing_field("AttributeGroup"))?,
+                    application: application
+                        .ok_or(::serde::de::Error::missing_field("Application"))?,
+                    attribute_group: attribute_group
+                        .ok_or(::serde::de::Error::missing_field("AttributeGroup"))?,
                 })
             }
         }
@@ -305,7 +325,7 @@ impl From<AttributeGroupAssociationProperties> for AttributeGroupAssociation {
 /// The [`AWS::ServiceCatalogAppRegistry::ResourceAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-resourceassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourceAssociation {
-    properties: ResourceAssociationProperties
+    properties: ResourceAssociationProperties,
 }
 
 /// Properties for the `ResourceAssociation` resource.
@@ -339,7 +359,9 @@ impl ::serde::Serialize for ResourceAssociationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResourceAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResourceAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -349,7 +371,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceAssociationProperties {
                 write!(f, "a struct of type ResourceAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application: Option<::Value<String>> = None;
                 let mut resource: Option<::Value<String>> = None;
                 let mut resource_type: Option<::Value<String>> = None;
@@ -370,9 +395,11 @@ impl<'de> ::serde::Deserialize<'de> for ResourceAssociationProperties {
                 }
 
                 Ok(ResourceAssociationProperties {
-                    application: application.ok_or(::serde::de::Error::missing_field("Application"))?,
+                    application: application
+                        .ok_or(::serde::de::Error::missing_field("Application"))?,
                     resource: resource.ok_or(::serde::de::Error::missing_field("Resource"))?,
-                    resource_type: resource_type.ok_or(::serde::de::Error::missing_field("ResourceType"))?,
+                    resource_type: resource_type
+                        .ok_or(::serde::de::Error::missing_field("ResourceType"))?,
                 })
             }
         }

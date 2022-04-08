@@ -3,7 +3,7 @@
 /// The [`AWS::KinesisVideo::SignalingChannel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-signalingchannel.html) resource type.
 #[derive(Debug, Default)]
 pub struct SignalingChannel {
-    properties: SignalingChannelProperties
+    properties: SignalingChannelProperties,
 }
 
 /// Properties for the `SignalingChannel` resource.
@@ -35,7 +35,11 @@ impl ::serde::Serialize for SignalingChannelProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref message_ttl_seconds) = self.message_ttl_seconds {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MessageTtlSeconds", message_ttl_seconds)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MessageTtlSeconds",
+                message_ttl_seconds,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -51,7 +55,9 @@ impl ::serde::Serialize for SignalingChannelProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for SignalingChannelProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SignalingChannelProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SignalingChannelProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -61,7 +67,10 @@ impl<'de> ::serde::Deserialize<'de> for SignalingChannelProperties {
                 write!(f, "a struct of type SignalingChannelProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut message_ttl_seconds: Option<::Value<u32>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -120,7 +129,7 @@ impl From<SignalingChannelProperties> for SignalingChannel {
 /// The [`AWS::KinesisVideo::Stream`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html) resource type.
 #[derive(Debug, Default)]
 pub struct Stream {
-    properties: StreamProperties
+    properties: StreamProperties,
 }
 
 /// Properties for the `Stream` resource.
@@ -162,7 +171,11 @@ impl ::serde::Serialize for StreamProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref data_retention_in_hours) = self.data_retention_in_hours {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataRetentionInHours", data_retention_in_hours)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DataRetentionInHours",
+                data_retention_in_hours,
+            )?;
         }
         if let Some(ref device_name) = self.device_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceName", device_name)?;
@@ -194,7 +207,10 @@ impl<'de> ::serde::Deserialize<'de> for StreamProperties {
                 write!(f, "a struct of type StreamProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data_retention_in_hours: Option<::Value<u32>> = None;
                 let mut device_name: Option<::Value<String>> = None;
                 let mut kms_key_id: Option<::Value<String>> = None;
