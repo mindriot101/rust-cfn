@@ -3,7 +3,7 @@
 /// The [`AWS::DAX::Cluster`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html) resource type.
 #[derive(Debug, Default)]
 pub struct Cluster {
-    properties: ClusterProperties
+    properties: ClusterProperties,
 }
 
 /// Properties for the `Cluster` resource.
@@ -85,10 +85,18 @@ impl ::serde::Serialize for ClusterProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref availability_zones) = self.availability_zones {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailabilityZones", availability_zones)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AvailabilityZones",
+                availability_zones,
+            )?;
         }
         if let Some(ref cluster_endpoint_encryption_type) = self.cluster_endpoint_encryption_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClusterEndpointEncryptionType", cluster_endpoint_encryption_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ClusterEndpointEncryptionType",
+                cluster_endpoint_encryption_type,
+            )?;
         }
         if let Some(ref cluster_name) = self.cluster_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClusterName", cluster_name)?;
@@ -99,23 +107,51 @@ impl ::serde::Serialize for ClusterProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "IAMRoleARN", &self.iam_role_arn)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "NodeType", &self.node_type)?;
         if let Some(ref notification_topic_arn) = self.notification_topic_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationTopicARN", notification_topic_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationTopicARN",
+                notification_topic_arn,
+            )?;
         }
         if let Some(ref parameter_group_name) = self.parameter_group_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterGroupName", parameter_group_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ParameterGroupName",
+                parameter_group_name,
+            )?;
         }
         if let Some(ref preferred_maintenance_window) = self.preferred_maintenance_window {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreferredMaintenanceWindow", preferred_maintenance_window)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PreferredMaintenanceWindow",
+                preferred_maintenance_window,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReplicationFactor", &self.replication_factor)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ReplicationFactor",
+            &self.replication_factor,
+        )?;
         if let Some(ref sse_specification) = self.sse_specification {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SSESpecification", sse_specification)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SSESpecification",
+                sse_specification,
+            )?;
         }
         if let Some(ref security_group_ids) = self.security_group_ids {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", security_group_ids)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroupIds",
+                security_group_ids,
+            )?;
         }
         if let Some(ref subnet_group_name) = self.subnet_group_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetGroupName", subnet_group_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SubnetGroupName",
+                subnet_group_name,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -135,7 +171,10 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                 write!(f, "a struct of type ClusterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut availability_zones: Option<::ValueList<String>> = None;
                 let mut cluster_endpoint_encryption_type: Option<::Value<String>> = None;
                 let mut cluster_name: Option<::Value<String>> = None;
@@ -157,7 +196,8 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                             availability_zones = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ClusterEndpointEncryptionType" => {
-                            cluster_endpoint_encryption_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                            cluster_endpoint_encryption_type =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ClusterName" => {
                             cluster_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -178,7 +218,8 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                             parameter_group_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PreferredMaintenanceWindow" => {
-                            preferred_maintenance_window = ::serde::de::MapAccess::next_value(&mut map)?;
+                            preferred_maintenance_window =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ReplicationFactor" => {
                             replication_factor = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -204,12 +245,14 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                     cluster_endpoint_encryption_type: cluster_endpoint_encryption_type,
                     cluster_name: cluster_name,
                     description: description,
-                    iam_role_arn: iam_role_arn.ok_or(::serde::de::Error::missing_field("IAMRoleARN"))?,
+                    iam_role_arn: iam_role_arn
+                        .ok_or(::serde::de::Error::missing_field("IAMRoleARN"))?,
                     node_type: node_type.ok_or(::serde::de::Error::missing_field("NodeType"))?,
                     notification_topic_arn: notification_topic_arn,
                     parameter_group_name: parameter_group_name,
                     preferred_maintenance_window: preferred_maintenance_window,
-                    replication_factor: replication_factor.ok_or(::serde::de::Error::missing_field("ReplicationFactor"))?,
+                    replication_factor: replication_factor
+                        .ok_or(::serde::de::Error::missing_field("ReplicationFactor"))?,
                     sse_specification: sse_specification,
                     security_group_ids: security_group_ids,
                     subnet_group_name: subnet_group_name,
@@ -244,7 +287,7 @@ impl From<ClusterProperties> for Cluster {
 /// The [`AWS::DAX::ParameterGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct ParameterGroup {
-    properties: ParameterGroupProperties
+    properties: ParameterGroupProperties,
 }
 
 /// Properties for the `ParameterGroup` resource.
@@ -274,17 +317,27 @@ impl ::serde::Serialize for ParameterGroupProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref parameter_group_name) = self.parameter_group_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterGroupName", parameter_group_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ParameterGroupName",
+                parameter_group_name,
+            )?;
         }
         if let Some(ref parameter_name_values) = self.parameter_name_values {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterNameValues", parameter_name_values)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ParameterNameValues",
+                parameter_name_values,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ParameterGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ParameterGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -294,7 +347,10 @@ impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
                 write!(f, "a struct of type ParameterGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut parameter_group_name: Option<::Value<String>> = None;
                 let mut parameter_name_values: Option<::Value<::json::Value>> = None;
@@ -348,7 +404,7 @@ impl From<ParameterGroupProperties> for ParameterGroup {
 /// The [`AWS::DAX::SubnetGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct SubnetGroup {
-    properties: SubnetGroupProperties
+    properties: SubnetGroupProperties,
 }
 
 /// Properties for the `SubnetGroup` resource.
@@ -378,7 +434,11 @@ impl ::serde::Serialize for SubnetGroupProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref subnet_group_name) = self.subnet_group_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetGroupName", subnet_group_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SubnetGroupName",
+                subnet_group_name,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetIds", &self.subnet_ids)?;
         ::serde::ser::SerializeMap::end(map)
@@ -396,7 +456,10 @@ impl<'de> ::serde::Deserialize<'de> for SubnetGroupProperties {
                 write!(f, "a struct of type SubnetGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut subnet_group_name: Option<::Value<String>> = None;
                 let mut subnet_ids: Option<::ValueList<String>> = None;
@@ -471,7 +534,9 @@ pub mod cluster {
     }
 
     impl ::codec::DeserializeValue for SSESpecification {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SSESpecification, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SSESpecification, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -481,10 +546,15 @@ pub mod cluster {
                     write!(f, "a struct of type SSESpecification")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut sse_enabled: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SSEEnabled" => {
                                 sse_enabled = ::serde::de::MapAccess::next_value(&mut map)?;

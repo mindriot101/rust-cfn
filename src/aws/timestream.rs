@@ -3,7 +3,7 @@
 /// The [`AWS::Timestream::Database`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-database.html) resource type.
 #[derive(Debug, Default)]
 pub struct Database {
-    properties: DatabaseProperties
+    properties: DatabaseProperties,
 }
 
 /// Properties for the `Database` resource.
@@ -53,7 +53,10 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
                 write!(f, "a struct of type DatabaseProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut database_name: Option<::Value<String>> = None;
                 let mut kms_key_id: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -107,7 +110,7 @@ impl From<DatabaseProperties> for Database {
 /// The [`AWS::Timestream::ScheduledQuery`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html) resource type.
 #[derive(Debug, Default)]
 pub struct ScheduledQuery {
-    properties: ScheduledQueryProperties
+    properties: ScheduledQueryProperties,
 }
 
 /// Properties for the `ScheduledQuery` resource.
@@ -171,29 +174,55 @@ impl ::serde::Serialize for ScheduledQueryProperties {
         if let Some(ref client_token) = self.client_token {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClientToken", client_token)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ErrorReportConfiguration", &self.error_report_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ErrorReportConfiguration",
+            &self.error_report_configuration,
+        )?;
         if let Some(ref kms_key_id) = self.kms_key_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyId", kms_key_id)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationConfiguration", &self.notification_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "NotificationConfiguration",
+            &self.notification_configuration,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueryString", &self.query_string)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScheduleConfiguration", &self.schedule_configuration)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScheduledQueryExecutionRoleArn", &self.scheduled_query_execution_role_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ScheduleConfiguration",
+            &self.schedule_configuration,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ScheduledQueryExecutionRoleArn",
+            &self.scheduled_query_execution_role_arn,
+        )?;
         if let Some(ref scheduled_query_name) = self.scheduled_query_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScheduledQueryName", scheduled_query_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ScheduledQueryName",
+                scheduled_query_name,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref target_configuration) = self.target_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetConfiguration", target_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TargetConfiguration",
+                target_configuration,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ScheduledQueryProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ScheduledQueryProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ScheduledQueryProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -203,17 +232,28 @@ impl<'de> ::serde::Deserialize<'de> for ScheduledQueryProperties {
                 write!(f, "a struct of type ScheduledQueryProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut client_token: Option<::Value<String>> = None;
-                let mut error_report_configuration: Option<::Value<self::scheduled_query::ErrorReportConfiguration>> = None;
+                let mut error_report_configuration: Option<
+                    ::Value<self::scheduled_query::ErrorReportConfiguration>,
+                > = None;
                 let mut kms_key_id: Option<::Value<String>> = None;
-                let mut notification_configuration: Option<::Value<self::scheduled_query::NotificationConfiguration>> = None;
+                let mut notification_configuration: Option<
+                    ::Value<self::scheduled_query::NotificationConfiguration>,
+                > = None;
                 let mut query_string: Option<::Value<String>> = None;
-                let mut schedule_configuration: Option<::Value<self::scheduled_query::ScheduleConfiguration>> = None;
+                let mut schedule_configuration: Option<
+                    ::Value<self::scheduled_query::ScheduleConfiguration>,
+                > = None;
                 let mut scheduled_query_execution_role_arn: Option<::Value<String>> = None;
                 let mut scheduled_query_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut target_configuration: Option<::Value<self::scheduled_query::TargetConfiguration>> = None;
+                let mut target_configuration: Option<
+                    ::Value<self::scheduled_query::TargetConfiguration>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -221,13 +261,15 @@ impl<'de> ::serde::Deserialize<'de> for ScheduledQueryProperties {
                             client_token = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ErrorReportConfiguration" => {
-                            error_report_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            error_report_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "KmsKeyId" => {
                             kms_key_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "NotificationConfiguration" => {
-                            notification_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            notification_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "QueryString" => {
                             query_string = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -236,7 +278,8 @@ impl<'de> ::serde::Deserialize<'de> for ScheduledQueryProperties {
                             schedule_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ScheduledQueryExecutionRoleArn" => {
-                            scheduled_query_execution_role_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            scheduled_query_execution_role_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ScheduledQueryName" => {
                             scheduled_query_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -253,12 +296,20 @@ impl<'de> ::serde::Deserialize<'de> for ScheduledQueryProperties {
 
                 Ok(ScheduledQueryProperties {
                     client_token: client_token,
-                    error_report_configuration: error_report_configuration.ok_or(::serde::de::Error::missing_field("ErrorReportConfiguration"))?,
+                    error_report_configuration: error_report_configuration.ok_or(
+                        ::serde::de::Error::missing_field("ErrorReportConfiguration"),
+                    )?,
                     kms_key_id: kms_key_id,
-                    notification_configuration: notification_configuration.ok_or(::serde::de::Error::missing_field("NotificationConfiguration"))?,
-                    query_string: query_string.ok_or(::serde::de::Error::missing_field("QueryString"))?,
-                    schedule_configuration: schedule_configuration.ok_or(::serde::de::Error::missing_field("ScheduleConfiguration"))?,
-                    scheduled_query_execution_role_arn: scheduled_query_execution_role_arn.ok_or(::serde::de::Error::missing_field("ScheduledQueryExecutionRoleArn"))?,
+                    notification_configuration: notification_configuration.ok_or(
+                        ::serde::de::Error::missing_field("NotificationConfiguration"),
+                    )?,
+                    query_string: query_string
+                        .ok_or(::serde::de::Error::missing_field("QueryString"))?,
+                    schedule_configuration: schedule_configuration
+                        .ok_or(::serde::de::Error::missing_field("ScheduleConfiguration"))?,
+                    scheduled_query_execution_role_arn: scheduled_query_execution_role_arn.ok_or(
+                        ::serde::de::Error::missing_field("ScheduledQueryExecutionRoleArn"),
+                    )?,
                     scheduled_query_name: scheduled_query_name,
                     tags: tags,
                     target_configuration: target_configuration,
@@ -292,7 +343,7 @@ impl From<ScheduledQueryProperties> for ScheduledQuery {
 /// The [`AWS::Timestream::Table`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html) resource type.
 #[derive(Debug, Default)]
 pub struct Table {
-    properties: TableProperties
+    properties: TableProperties,
 }
 
 /// Properties for the `Table` resource.
@@ -330,10 +381,18 @@ impl ::serde::Serialize for TableProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseName", &self.database_name)?;
         if let Some(ref magnetic_store_write_properties) = self.magnetic_store_write_properties {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MagneticStoreWriteProperties", magnetic_store_write_properties)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MagneticStoreWriteProperties",
+                magnetic_store_write_properties,
+            )?;
         }
         if let Some(ref retention_properties) = self.retention_properties {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RetentionProperties", retention_properties)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RetentionProperties",
+                retention_properties,
+            )?;
         }
         if let Some(ref table_name) = self.table_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableName", table_name)?;
@@ -356,7 +415,10 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                 write!(f, "a struct of type TableProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut database_name: Option<::Value<String>> = None;
                 let mut magnetic_store_write_properties: Option<::Value<::json::Value>> = None;
                 let mut retention_properties: Option<::Value<::json::Value>> = None;
@@ -369,7 +431,8 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                             database_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "MagneticStoreWriteProperties" => {
-                            magnetic_store_write_properties = ::serde::de::MapAccess::next_value(&mut map)?;
+                            magnetic_store_write_properties =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RetentionProperties" => {
                             retention_properties = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -385,7 +448,8 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                 }
 
                 Ok(TableProperties {
-                    database_name: database_name.ok_or(::serde::de::Error::missing_field("DatabaseName"))?,
+                    database_name: database_name
+                        .ok_or(::serde::de::Error::missing_field("DatabaseName"))?,
                     magnetic_store_write_properties: magnetic_store_write_properties,
                     retention_properties: retention_properties,
                     table_name: table_name,
@@ -438,14 +502,20 @@ pub mod scheduled_query {
     impl ::codec::SerializeValue for DimensionMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DimensionValueType", &self.dimension_value_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DimensionValueType",
+                &self.dimension_value_type,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DimensionMapping {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DimensionMapping, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DimensionMapping, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -455,14 +525,20 @@ pub mod scheduled_query {
                     write!(f, "a struct of type DimensionMapping")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dimension_value_type: Option<::Value<String>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DimensionValueType" => {
-                                dimension_value_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                                dimension_value_type =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -472,7 +548,8 @@ pub mod scheduled_query {
                     }
 
                     Ok(DimensionMapping {
-                        dimension_value_type: dimension_value_type.ok_or(::serde::de::Error::missing_field("DimensionValueType"))?,
+                        dimension_value_type: dimension_value_type
+                            .ok_or(::serde::de::Error::missing_field("DimensionValueType"))?,
                         name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     })
                 }
@@ -495,13 +572,19 @@ pub mod scheduled_query {
     impl ::codec::SerializeValue for ErrorReportConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Configuration", &self.s3_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "S3Configuration",
+                &self.s3_configuration,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ErrorReportConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ErrorReportConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ErrorReportConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -511,10 +594,15 @@ pub mod scheduled_query {
                     write!(f, "a struct of type ErrorReportConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut s3_configuration: Option<::Value<S3Configuration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "S3Configuration" => {
                                 s3_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -524,7 +612,8 @@ pub mod scheduled_query {
                     }
 
                     Ok(ErrorReportConfiguration {
-                        s3_configuration: s3_configuration.ok_or(::serde::de::Error::missing_field("S3Configuration"))?,
+                        s3_configuration: s3_configuration
+                            .ok_or(::serde::de::Error::missing_field("S3Configuration"))?,
                     })
                 }
             }
@@ -569,22 +658,42 @@ pub mod scheduled_query {
             if let Some(ref measure_name) = self.measure_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MeasureName", measure_name)?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MeasureValueType", &self.measure_value_type)?;
-            if let Some(ref multi_measure_attribute_mappings) = self.multi_measure_attribute_mappings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiMeasureAttributeMappings", multi_measure_attribute_mappings)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MeasureValueType",
+                &self.measure_value_type,
+            )?;
+            if let Some(ref multi_measure_attribute_mappings) =
+                self.multi_measure_attribute_mappings
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MultiMeasureAttributeMappings",
+                    multi_measure_attribute_mappings,
+                )?;
             }
             if let Some(ref source_column) = self.source_column {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceColumn", source_column)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SourceColumn",
+                    source_column,
+                )?;
             }
             if let Some(ref target_measure_name) = self.target_measure_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetMeasureName", target_measure_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TargetMeasureName",
+                    target_measure_name,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MixedMeasureMapping {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MixedMeasureMapping, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MixedMeasureMapping, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -594,14 +703,21 @@ pub mod scheduled_query {
                     write!(f, "a struct of type MixedMeasureMapping")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut measure_name: Option<::Value<String>> = None;
                     let mut measure_value_type: Option<::Value<String>> = None;
-                    let mut multi_measure_attribute_mappings: Option<::ValueList<MultiMeasureAttributeMapping>> = None;
+                    let mut multi_measure_attribute_mappings: Option<
+                        ::ValueList<MultiMeasureAttributeMapping>,
+                    > = None;
                     let mut source_column: Option<::Value<String>> = None;
                     let mut target_measure_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MeasureName" => {
                                 measure_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -610,7 +726,8 @@ pub mod scheduled_query {
                                 measure_value_type = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MultiMeasureAttributeMappings" => {
-                                multi_measure_attribute_mappings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                multi_measure_attribute_mappings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SourceColumn" => {
                                 source_column = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -624,7 +741,8 @@ pub mod scheduled_query {
 
                     Ok(MixedMeasureMapping {
                         measure_name: measure_name,
-                        measure_value_type: measure_value_type.ok_or(::serde::de::Error::missing_field("MeasureValueType"))?,
+                        measure_value_type: measure_value_type
+                            .ok_or(::serde::de::Error::missing_field("MeasureValueType"))?,
                         multi_measure_attribute_mappings: multi_measure_attribute_mappings,
                         source_column: source_column,
                         target_measure_name: target_measure_name,
@@ -659,17 +777,33 @@ pub mod scheduled_query {
     impl ::codec::SerializeValue for MultiMeasureAttributeMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MeasureValueType", &self.measure_value_type)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceColumn", &self.source_column)?;
-            if let Some(ref target_multi_measure_attribute_name) = self.target_multi_measure_attribute_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetMultiMeasureAttributeName", target_multi_measure_attribute_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MeasureValueType",
+                &self.measure_value_type,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SourceColumn",
+                &self.source_column,
+            )?;
+            if let Some(ref target_multi_measure_attribute_name) =
+                self.target_multi_measure_attribute_name
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TargetMultiMeasureAttributeName",
+                    target_multi_measure_attribute_name,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MultiMeasureAttributeMapping {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MultiMeasureAttributeMapping, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MultiMeasureAttributeMapping, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -679,12 +813,17 @@ pub mod scheduled_query {
                     write!(f, "a struct of type MultiMeasureAttributeMapping")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut measure_value_type: Option<::Value<String>> = None;
                     let mut source_column: Option<::Value<String>> = None;
                     let mut target_multi_measure_attribute_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MeasureValueType" => {
                                 measure_value_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -693,15 +832,18 @@ pub mod scheduled_query {
                                 source_column = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TargetMultiMeasureAttributeName" => {
-                                target_multi_measure_attribute_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                target_multi_measure_attribute_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(MultiMeasureAttributeMapping {
-                        measure_value_type: measure_value_type.ok_or(::serde::de::Error::missing_field("MeasureValueType"))?,
-                        source_column: source_column.ok_or(::serde::de::Error::missing_field("SourceColumn"))?,
+                        measure_value_type: measure_value_type
+                            .ok_or(::serde::de::Error::missing_field("MeasureValueType"))?,
+                        source_column: source_column
+                            .ok_or(::serde::de::Error::missing_field("SourceColumn"))?,
                         target_multi_measure_attribute_name: target_multi_measure_attribute_name,
                     })
                 }
@@ -729,16 +871,26 @@ pub mod scheduled_query {
     impl ::codec::SerializeValue for MultiMeasureMappings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiMeasureAttributeMappings", &self.multi_measure_attribute_mappings)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MultiMeasureAttributeMappings",
+                &self.multi_measure_attribute_mappings,
+            )?;
             if let Some(ref target_multi_measure_name) = self.target_multi_measure_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetMultiMeasureName", target_multi_measure_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TargetMultiMeasureName",
+                    target_multi_measure_name,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MultiMeasureMappings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MultiMeasureMappings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MultiMeasureMappings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -748,24 +900,35 @@ pub mod scheduled_query {
                     write!(f, "a struct of type MultiMeasureMappings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut multi_measure_attribute_mappings: Option<::ValueList<MultiMeasureAttributeMapping>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut multi_measure_attribute_mappings: Option<
+                        ::ValueList<MultiMeasureAttributeMapping>,
+                    > = None;
                     let mut target_multi_measure_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MultiMeasureAttributeMappings" => {
-                                multi_measure_attribute_mappings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                multi_measure_attribute_mappings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TargetMultiMeasureName" => {
-                                target_multi_measure_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                target_multi_measure_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(MultiMeasureMappings {
-                        multi_measure_attribute_mappings: multi_measure_attribute_mappings.ok_or(::serde::de::Error::missing_field("MultiMeasureAttributeMappings"))?,
+                        multi_measure_attribute_mappings: multi_measure_attribute_mappings.ok_or(
+                            ::serde::de::Error::missing_field("MultiMeasureAttributeMappings"),
+                        )?,
                         target_multi_measure_name: target_multi_measure_name,
                     })
                 }
@@ -788,13 +951,19 @@ pub mod scheduled_query {
     impl ::codec::SerializeValue for NotificationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnsConfiguration", &self.sns_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SnsConfiguration",
+                &self.sns_configuration,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for NotificationConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NotificationConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NotificationConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -804,10 +973,15 @@ pub mod scheduled_query {
                     write!(f, "a struct of type NotificationConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut sns_configuration: Option<::Value<SnsConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SnsConfiguration" => {
                                 sns_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -817,7 +991,8 @@ pub mod scheduled_query {
                     }
 
                     Ok(NotificationConfiguration {
-                        sns_configuration: sns_configuration.ok_or(::serde::de::Error::missing_field("SnsConfiguration"))?,
+                        sns_configuration: sns_configuration
+                            .ok_or(::serde::de::Error::missing_field("SnsConfiguration"))?,
                     })
                 }
             }
@@ -851,17 +1026,27 @@ pub mod scheduled_query {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
             if let Some(ref encryption_option) = self.encryption_option {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionOption", encryption_option)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EncryptionOption",
+                    encryption_option,
+                )?;
             }
             if let Some(ref object_key_prefix) = self.object_key_prefix {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectKeyPrefix", object_key_prefix)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ObjectKeyPrefix",
+                    object_key_prefix,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for S3Configuration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Configuration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<S3Configuration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -871,12 +1056,17 @@ pub mod scheduled_query {
                     write!(f, "a struct of type S3Configuration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bucket_name: Option<::Value<String>> = None;
                     let mut encryption_option: Option<::Value<String>> = None;
                     let mut object_key_prefix: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BucketName" => {
                                 bucket_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -892,7 +1082,8 @@ pub mod scheduled_query {
                     }
 
                     Ok(S3Configuration {
-                        bucket_name: bucket_name.ok_or(::serde::de::Error::missing_field("BucketName"))?,
+                        bucket_name: bucket_name
+                            .ok_or(::serde::de::Error::missing_field("BucketName"))?,
                         encryption_option: encryption_option,
                         object_key_prefix: object_key_prefix,
                     })
@@ -916,13 +1107,19 @@ pub mod scheduled_query {
     impl ::codec::SerializeValue for ScheduleConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScheduleExpression", &self.schedule_expression)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ScheduleExpression",
+                &self.schedule_expression,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ScheduleConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ScheduleConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ScheduleConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -932,10 +1129,15 @@ pub mod scheduled_query {
                     write!(f, "a struct of type ScheduleConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut schedule_expression: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ScheduleExpression" => {
                                 schedule_expression = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -945,7 +1147,8 @@ pub mod scheduled_query {
                     }
 
                     Ok(ScheduleConfiguration {
-                        schedule_expression: schedule_expression.ok_or(::serde::de::Error::missing_field("ScheduleExpression"))?,
+                        schedule_expression: schedule_expression
+                            .ok_or(::serde::de::Error::missing_field("ScheduleExpression"))?,
                     })
                 }
             }
@@ -973,7 +1176,9 @@ pub mod scheduled_query {
     }
 
     impl ::codec::DeserializeValue for SnsConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SnsConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SnsConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -983,10 +1188,15 @@ pub mod scheduled_query {
                     write!(f, "a struct of type SnsConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut topic_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TopicArn" => {
                                 topic_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -996,7 +1206,8 @@ pub mod scheduled_query {
                     }
 
                     Ok(SnsConfiguration {
-                        topic_arn: topic_arn.ok_or(::serde::de::Error::missing_field("TopicArn"))?,
+                        topic_arn: topic_arn
+                            .ok_or(::serde::de::Error::missing_field("TopicArn"))?,
                     })
                 }
             }
@@ -1018,13 +1229,19 @@ pub mod scheduled_query {
     impl ::codec::SerializeValue for TargetConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimestreamConfiguration", &self.timestream_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TimestreamConfiguration",
+                &self.timestream_configuration,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for TargetConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TargetConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TargetConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1034,20 +1251,28 @@ pub mod scheduled_query {
                     write!(f, "a struct of type TargetConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut timestream_configuration: Option<::Value<TimestreamConfiguration>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut timestream_configuration: Option<::Value<TimestreamConfiguration>> =
+                        None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TimestreamConfiguration" => {
-                                timestream_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                timestream_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(TargetConfiguration {
-                        timestream_configuration: timestream_configuration.ok_or(::serde::de::Error::missing_field("TimestreamConfiguration"))?,
+                        timestream_configuration: timestream_configuration
+                            .ok_or(::serde::de::Error::missing_field("TimestreamConfiguration"))?,
                     })
                 }
             }
@@ -1099,16 +1324,36 @@ pub mod scheduled_query {
     impl ::codec::SerializeValue for TimestreamConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseName", &self.database_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DimensionMappings", &self.dimension_mappings)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatabaseName",
+                &self.database_name,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DimensionMappings",
+                &self.dimension_mappings,
+            )?;
             if let Some(ref measure_name_column) = self.measure_name_column {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MeasureNameColumn", measure_name_column)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MeasureNameColumn",
+                    measure_name_column,
+                )?;
             }
             if let Some(ref mixed_measure_mappings) = self.mixed_measure_mappings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MixedMeasureMappings", mixed_measure_mappings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MixedMeasureMappings",
+                    mixed_measure_mappings,
+                )?;
             }
             if let Some(ref multi_measure_mappings) = self.multi_measure_mappings {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiMeasureMappings", multi_measure_mappings)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MultiMeasureMappings",
+                    multi_measure_mappings,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableName", &self.table_name)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimeColumn", &self.time_column)?;
@@ -1117,7 +1362,9 @@ pub mod scheduled_query {
     }
 
     impl ::codec::DeserializeValue for TimestreamConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TimestreamConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TimestreamConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1127,7 +1374,10 @@ pub mod scheduled_query {
                     write!(f, "a struct of type TimestreamConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut database_name: Option<::Value<String>> = None;
                     let mut dimension_mappings: Option<::ValueList<DimensionMapping>> = None;
                     let mut measure_name_column: Option<::Value<String>> = None;
@@ -1136,7 +1386,9 @@ pub mod scheduled_query {
                     let mut table_name: Option<::Value<String>> = None;
                     let mut time_column: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DatabaseName" => {
                                 database_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1148,10 +1400,12 @@ pub mod scheduled_query {
                                 measure_name_column = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MixedMeasureMappings" => {
-                                mixed_measure_mappings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                mixed_measure_mappings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MultiMeasureMappings" => {
-                                multi_measure_mappings = ::serde::de::MapAccess::next_value(&mut map)?;
+                                multi_measure_mappings =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TableName" => {
                                 table_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1164,13 +1418,17 @@ pub mod scheduled_query {
                     }
 
                     Ok(TimestreamConfiguration {
-                        database_name: database_name.ok_or(::serde::de::Error::missing_field("DatabaseName"))?,
-                        dimension_mappings: dimension_mappings.ok_or(::serde::de::Error::missing_field("DimensionMappings"))?,
+                        database_name: database_name
+                            .ok_or(::serde::de::Error::missing_field("DatabaseName"))?,
+                        dimension_mappings: dimension_mappings
+                            .ok_or(::serde::de::Error::missing_field("DimensionMappings"))?,
                         measure_name_column: measure_name_column,
                         mixed_measure_mappings: mixed_measure_mappings,
                         multi_measure_mappings: multi_measure_mappings,
-                        table_name: table_name.ok_or(::serde::de::Error::missing_field("TableName"))?,
-                        time_column: time_column.ok_or(::serde::de::Error::missing_field("TimeColumn"))?,
+                        table_name: table_name
+                            .ok_or(::serde::de::Error::missing_field("TableName"))?,
+                        time_column: time_column
+                            .ok_or(::serde::de::Error::missing_field("TimeColumn"))?,
                     })
                 }
             }

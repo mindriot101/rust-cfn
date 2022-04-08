@@ -3,7 +3,7 @@
 /// The [`AWS::Cassandra::Keyspace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-keyspace.html) resource type.
 #[derive(Debug, Default)]
 pub struct Keyspace {
-    properties: KeyspaceProperties
+    properties: KeyspaceProperties,
 }
 
 /// Properties for the `Keyspace` resource.
@@ -45,7 +45,10 @@ impl<'de> ::serde::Deserialize<'de> for KeyspaceProperties {
                 write!(f, "a struct of type KeyspaceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut keyspace_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -94,7 +97,7 @@ impl From<KeyspaceProperties> for Keyspace {
 /// The [`AWS::Cassandra::Table`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html) resource type.
 #[derive(Debug, Default)]
 pub struct Table {
-    properties: TableProperties
+    properties: TableProperties,
 }
 
 /// Properties for the `Table` resource.
@@ -159,21 +162,45 @@ impl ::serde::Serialize for TableProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BillingMode", billing_mode)?;
         }
         if let Some(ref clustering_key_columns) = self.clustering_key_columns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClusteringKeyColumns", clustering_key_columns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ClusteringKeyColumns",
+                clustering_key_columns,
+            )?;
         }
         if let Some(ref default_time_to_live) = self.default_time_to_live {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultTimeToLive", default_time_to_live)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DefaultTimeToLive",
+                default_time_to_live,
+            )?;
         }
         if let Some(ref encryption_specification) = self.encryption_specification {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionSpecification", encryption_specification)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionSpecification",
+                encryption_specification,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyspaceName", &self.keyspace_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PartitionKeyColumns", &self.partition_key_columns)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PartitionKeyColumns",
+            &self.partition_key_columns,
+        )?;
         if let Some(ref point_in_time_recovery_enabled) = self.point_in_time_recovery_enabled {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PointInTimeRecoveryEnabled", point_in_time_recovery_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PointInTimeRecoveryEnabled",
+                point_in_time_recovery_enabled,
+            )?;
         }
         if let Some(ref regular_columns) = self.regular_columns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegularColumns", regular_columns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RegularColumns",
+                regular_columns,
+            )?;
         }
         if let Some(ref table_name) = self.table_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableName", table_name)?;
@@ -196,11 +223,18 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                 write!(f, "a struct of type TableProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut billing_mode: Option<::Value<self::table::BillingMode>> = None;
-                let mut clustering_key_columns: Option<::ValueList<self::table::ClusteringKeyColumn>> = None;
+                let mut clustering_key_columns: Option<
+                    ::ValueList<self::table::ClusteringKeyColumn>,
+                > = None;
                 let mut default_time_to_live: Option<::Value<u32>> = None;
-                let mut encryption_specification: Option<::Value<self::table::EncryptionSpecification>> = None;
+                let mut encryption_specification: Option<
+                    ::Value<self::table::EncryptionSpecification>,
+                > = None;
                 let mut keyspace_name: Option<::Value<String>> = None;
                 let mut partition_key_columns: Option<::ValueList<self::table::Column>> = None;
                 let mut point_in_time_recovery_enabled: Option<::Value<bool>> = None;
@@ -220,7 +254,8 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                             default_time_to_live = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "EncryptionSpecification" => {
-                            encryption_specification = ::serde::de::MapAccess::next_value(&mut map)?;
+                            encryption_specification =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "KeyspaceName" => {
                             keyspace_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -229,7 +264,8 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                             partition_key_columns = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PointInTimeRecoveryEnabled" => {
-                            point_in_time_recovery_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                            point_in_time_recovery_enabled =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RegularColumns" => {
                             regular_columns = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -249,8 +285,10 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                     clustering_key_columns: clustering_key_columns,
                     default_time_to_live: default_time_to_live,
                     encryption_specification: encryption_specification,
-                    keyspace_name: keyspace_name.ok_or(::serde::de::Error::missing_field("KeyspaceName"))?,
-                    partition_key_columns: partition_key_columns.ok_or(::serde::de::Error::missing_field("PartitionKeyColumns"))?,
+                    keyspace_name: keyspace_name
+                        .ok_or(::serde::de::Error::missing_field("KeyspaceName"))?,
+                    partition_key_columns: partition_key_columns
+                        .ok_or(::serde::de::Error::missing_field("PartitionKeyColumns"))?,
                     point_in_time_recovery_enabled: point_in_time_recovery_enabled,
                     regular_columns: regular_columns,
                     table_name: table_name,
@@ -305,7 +343,11 @@ pub mod table {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Mode", &self.mode)?;
             if let Some(ref provisioned_throughput) = self.provisioned_throughput {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisionedThroughput", provisioned_throughput)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ProvisionedThroughput",
+                    provisioned_throughput,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -322,17 +364,23 @@ pub mod table {
                     write!(f, "a struct of type BillingMode")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut mode: Option<::Value<String>> = None;
                     let mut provisioned_throughput: Option<::Value<ProvisionedThroughput>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Mode" => {
                                 mode = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ProvisionedThroughput" => {
-                                provisioned_throughput = ::serde::de::MapAccess::next_value(&mut map)?;
+                                provisioned_throughput =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -376,7 +424,9 @@ pub mod table {
     }
 
     impl ::codec::DeserializeValue for ClusteringKeyColumn {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ClusteringKeyColumn, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ClusteringKeyColumn, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -386,11 +436,16 @@ pub mod table {
                     write!(f, "a struct of type ClusteringKeyColumn")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut column: Option<::Value<Column>> = None;
                     let mut order_by: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Column" => {
                                 column = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -448,11 +503,16 @@ pub mod table {
                     write!(f, "a struct of type Column")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut column_name: Option<::Value<String>> = None;
                     let mut column_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ColumnName" => {
                                 column_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -465,8 +525,10 @@ pub mod table {
                     }
 
                     Ok(Column {
-                        column_name: column_name.ok_or(::serde::de::Error::missing_field("ColumnName"))?,
-                        column_type: column_type.ok_or(::serde::de::Error::missing_field("ColumnType"))?,
+                        column_name: column_name
+                            .ok_or(::serde::de::Error::missing_field("ColumnName"))?,
+                        column_type: column_type
+                            .ok_or(::serde::de::Error::missing_field("ColumnType"))?,
                     })
                 }
             }
@@ -493,16 +555,26 @@ pub mod table {
     impl ::codec::SerializeValue for EncryptionSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionType", &self.encryption_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionType",
+                &self.encryption_type,
+            )?;
             if let Some(ref kms_key_identifier) = self.kms_key_identifier {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyIdentifier", kms_key_identifier)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "KmsKeyIdentifier",
+                    kms_key_identifier,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EncryptionSpecification {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EncryptionSpecification, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EncryptionSpecification, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -512,11 +584,16 @@ pub mod table {
                     write!(f, "a struct of type EncryptionSpecification")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut encryption_type: Option<::Value<String>> = None;
                     let mut kms_key_identifier: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EncryptionType" => {
                                 encryption_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -529,7 +606,8 @@ pub mod table {
                     }
 
                     Ok(EncryptionSpecification {
-                        encryption_type: encryption_type.ok_or(::serde::de::Error::missing_field("EncryptionType"))?,
+                        encryption_type: encryption_type
+                            .ok_or(::serde::de::Error::missing_field("EncryptionType"))?,
                         kms_key_identifier: kms_key_identifier,
                     })
                 }
@@ -557,14 +635,24 @@ pub mod table {
     impl ::codec::SerializeValue for ProvisionedThroughput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReadCapacityUnits", &self.read_capacity_units)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "WriteCapacityUnits", &self.write_capacity_units)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ReadCapacityUnits",
+                &self.read_capacity_units,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "WriteCapacityUnits",
+                &self.write_capacity_units,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ProvisionedThroughput {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ProvisionedThroughput, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ProvisionedThroughput, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -574,25 +662,33 @@ pub mod table {
                     write!(f, "a struct of type ProvisionedThroughput")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut read_capacity_units: Option<::Value<u32>> = None;
                     let mut write_capacity_units: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ReadCapacityUnits" => {
                                 read_capacity_units = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "WriteCapacityUnits" => {
-                                write_capacity_units = ::serde::de::MapAccess::next_value(&mut map)?;
+                                write_capacity_units =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(ProvisionedThroughput {
-                        read_capacity_units: read_capacity_units.ok_or(::serde::de::Error::missing_field("ReadCapacityUnits"))?,
-                        write_capacity_units: write_capacity_units.ok_or(::serde::de::Error::missing_field("WriteCapacityUnits"))?,
+                        read_capacity_units: read_capacity_units
+                            .ok_or(::serde::de::Error::missing_field("ReadCapacityUnits"))?,
+                        write_capacity_units: write_capacity_units
+                            .ok_or(::serde::de::Error::missing_field("WriteCapacityUnits"))?,
                     })
                 }
             }

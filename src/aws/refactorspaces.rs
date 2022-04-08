@@ -3,7 +3,7 @@
 /// The [`AWS::RefactorSpaces::Application`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html) resource type.
 #[derive(Debug, Default)]
 pub struct Application {
-    properties: ApplicationProperties
+    properties: ApplicationProperties,
 }
 
 /// Properties for the `Application` resource.
@@ -45,10 +45,18 @@ impl ::serde::Serialize for ApplicationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref api_gateway_proxy) = self.api_gateway_proxy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApiGatewayProxy", api_gateway_proxy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ApiGatewayProxy",
+                api_gateway_proxy,
+            )?;
         }
         if let Some(ref environment_identifier) = self.environment_identifier {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentIdentifier", environment_identifier)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnvironmentIdentifier",
+                environment_identifier,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -77,8 +85,13 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
                 write!(f, "a struct of type ApplicationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut api_gateway_proxy: Option<::Value<self::application::ApiGatewayProxyInput>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut api_gateway_proxy: Option<
+                    ::Value<self::application::ApiGatewayProxyInput>,
+                > = None;
                 let mut environment_identifier: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut proxy_type: Option<::Value<String>> = None;
@@ -146,7 +159,7 @@ impl From<ApplicationProperties> for Application {
 /// The [`AWS::RefactorSpaces::Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html) resource type.
 #[derive(Debug, Default)]
 pub struct Environment {
-    properties: EnvironmentProperties
+    properties: EnvironmentProperties,
 }
 
 /// Properties for the `Environment` resource.
@@ -184,7 +197,11 @@ impl ::serde::Serialize for EnvironmentProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
         if let Some(ref network_fabric_type) = self.network_fabric_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NetworkFabricType", network_fabric_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NetworkFabricType",
+                network_fabric_type,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -204,7 +221,10 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 write!(f, "a struct of type EnvironmentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut network_fabric_type: Option<::Value<String>> = None;
@@ -263,7 +283,7 @@ impl From<EnvironmentProperties> for Environment {
 /// The [`AWS::RefactorSpaces::Route`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html) resource type.
 #[derive(Debug, Default)]
 pub struct Route {
-    properties: RouteProperties
+    properties: RouteProperties,
 }
 
 /// Properties for the `Route` resource.
@@ -304,12 +324,24 @@ pub struct RouteProperties {
 impl ::serde::Serialize for RouteProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationIdentifier", &self.application_identifier)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentIdentifier", &self.environment_identifier)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ApplicationIdentifier",
+            &self.application_identifier,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EnvironmentIdentifier",
+            &self.environment_identifier,
+        )?;
         if let Some(ref route_type) = self.route_type {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RouteType", route_type)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceIdentifier", &self.service_identifier)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ServiceIdentifier",
+            &self.service_identifier,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -331,7 +363,10 @@ impl<'de> ::serde::Deserialize<'de> for RouteProperties {
                 write!(f, "a struct of type RouteProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application_identifier: Option<::Value<String>> = None;
                 let mut environment_identifier: Option<::Value<String>> = None;
                 let mut route_type: Option<::Value<String>> = None;
@@ -364,10 +399,13 @@ impl<'de> ::serde::Deserialize<'de> for RouteProperties {
                 }
 
                 Ok(RouteProperties {
-                    application_identifier: application_identifier.ok_or(::serde::de::Error::missing_field("ApplicationIdentifier"))?,
-                    environment_identifier: environment_identifier.ok_or(::serde::de::Error::missing_field("EnvironmentIdentifier"))?,
+                    application_identifier: application_identifier
+                        .ok_or(::serde::de::Error::missing_field("ApplicationIdentifier"))?,
+                    environment_identifier: environment_identifier
+                        .ok_or(::serde::de::Error::missing_field("EnvironmentIdentifier"))?,
                     route_type: route_type,
-                    service_identifier: service_identifier.ok_or(::serde::de::Error::missing_field("ServiceIdentifier"))?,
+                    service_identifier: service_identifier
+                        .ok_or(::serde::de::Error::missing_field("ServiceIdentifier"))?,
                     tags: tags,
                     uri_path_route: uri_path_route,
                 })
@@ -400,7 +438,7 @@ impl From<RouteProperties> for Route {
 /// The [`AWS::RefactorSpaces::Service`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html) resource type.
 #[derive(Debug, Default)]
 pub struct Service {
-    properties: ServiceProperties
+    properties: ServiceProperties,
 }
 
 /// Properties for the `Service` resource.
@@ -456,16 +494,28 @@ pub struct ServiceProperties {
 impl ::serde::Serialize for ServiceProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationIdentifier", &self.application_identifier)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ApplicationIdentifier",
+            &self.application_identifier,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref endpoint_type) = self.endpoint_type {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EndpointType", endpoint_type)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentIdentifier", &self.environment_identifier)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EnvironmentIdentifier",
+            &self.environment_identifier,
+        )?;
         if let Some(ref lambda_endpoint) = self.lambda_endpoint {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LambdaEndpoint", lambda_endpoint)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LambdaEndpoint",
+                lambda_endpoint,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -494,7 +544,10 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
                 write!(f, "a struct of type ServiceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application_identifier: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut endpoint_type: Option<::Value<String>> = None;
@@ -539,10 +592,12 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
                 }
 
                 Ok(ServiceProperties {
-                    application_identifier: application_identifier.ok_or(::serde::de::Error::missing_field("ApplicationIdentifier"))?,
+                    application_identifier: application_identifier
+                        .ok_or(::serde::de::Error::missing_field("ApplicationIdentifier"))?,
                     description: description,
                     endpoint_type: endpoint_type,
-                    environment_identifier: environment_identifier.ok_or(::serde::de::Error::missing_field("EnvironmentIdentifier"))?,
+                    environment_identifier: environment_identifier
+                        .ok_or(::serde::de::Error::missing_field("EnvironmentIdentifier"))?,
                     lambda_endpoint: lambda_endpoint,
                     name: name,
                     tags: tags,
@@ -597,7 +652,11 @@ pub mod application {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref endpoint_type) = self.endpoint_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EndpointType", endpoint_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EndpointType",
+                    endpoint_type,
+                )?;
             }
             if let Some(ref stage_name) = self.stage_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "StageName", stage_name)?;
@@ -607,7 +666,9 @@ pub mod application {
     }
 
     impl ::codec::DeserializeValue for ApiGatewayProxyInput {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ApiGatewayProxyInput, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ApiGatewayProxyInput, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -617,11 +678,16 @@ pub mod application {
                     write!(f, "a struct of type ApiGatewayProxyInput")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut endpoint_type: Option<::Value<String>> = None;
                     let mut stage_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EndpointType" => {
                                 endpoint_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -676,9 +742,17 @@ pub mod route {
     impl ::codec::SerializeValue for UriPathRouteInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ActivationState", &self.activation_state)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ActivationState",
+                &self.activation_state,
+            )?;
             if let Some(ref include_child_paths) = self.include_child_paths {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludeChildPaths", include_child_paths)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludeChildPaths",
+                    include_child_paths,
+                )?;
             }
             if let Some(ref methods) = self.methods {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Methods", methods)?;
@@ -691,7 +765,9 @@ pub mod route {
     }
 
     impl ::codec::DeserializeValue for UriPathRouteInput {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UriPathRouteInput, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UriPathRouteInput, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -701,13 +777,18 @@ pub mod route {
                     write!(f, "a struct of type UriPathRouteInput")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut activation_state: Option<::Value<String>> = None;
                     let mut include_child_paths: Option<::Value<bool>> = None;
                     let mut methods: Option<::ValueList<String>> = None;
                     let mut source_path: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ActivationState" => {
                                 activation_state = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -726,7 +807,8 @@ pub mod route {
                     }
 
                     Ok(UriPathRouteInput {
-                        activation_state: activation_state.ok_or(::serde::de::Error::missing_field("ActivationState"))?,
+                        activation_state: activation_state
+                            .ok_or(::serde::de::Error::missing_field("ActivationState"))?,
                         include_child_paths: include_child_paths,
                         methods: methods,
                         source_path: source_path,
@@ -761,7 +843,9 @@ pub mod service {
     }
 
     impl ::codec::DeserializeValue for LambdaEndpointInput {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LambdaEndpointInput, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LambdaEndpointInput, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -771,10 +855,15 @@ pub mod service {
                     write!(f, "a struct of type LambdaEndpointInput")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -820,7 +909,9 @@ pub mod service {
     }
 
     impl ::codec::DeserializeValue for UrlEndpointInput {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UrlEndpointInput, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UrlEndpointInput, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -830,11 +921,16 @@ pub mod service {
                     write!(f, "a struct of type UrlEndpointInput")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut health_url: Option<::Value<String>> = None;
                     let mut url: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "HealthUrl" => {
                                 health_url = ::serde::de::MapAccess::next_value(&mut map)?;

@@ -3,7 +3,7 @@
 /// The [`AWS::AmazonMQ::Broker`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html) resource type.
 #[derive(Debug, Default)]
 pub struct Broker {
-    properties: BrokerProperties
+    properties: BrokerProperties,
 }
 
 /// Properties for the `Broker` resource.
@@ -105,32 +105,72 @@ impl ::serde::Serialize for BrokerProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref authentication_strategy) = self.authentication_strategy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AuthenticationStrategy", authentication_strategy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AuthenticationStrategy",
+                authentication_strategy,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoMinorVersionUpgrade", &self.auto_minor_version_upgrade)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AutoMinorVersionUpgrade",
+            &self.auto_minor_version_upgrade,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "BrokerName", &self.broker_name)?;
         if let Some(ref configuration) = self.configuration {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Configuration", configuration)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeploymentMode", &self.deployment_mode)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DeploymentMode",
+            &self.deployment_mode,
+        )?;
         if let Some(ref encryption_options) = self.encryption_options {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionOptions", encryption_options)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionOptions",
+                encryption_options,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "EngineType", &self.engine_type)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EngineVersion", &self.engine_version)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostInstanceType", &self.host_instance_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EngineVersion",
+            &self.engine_version,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "HostInstanceType",
+            &self.host_instance_type,
+        )?;
         if let Some(ref ldap_server_metadata) = self.ldap_server_metadata {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LdapServerMetadata", ldap_server_metadata)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LdapServerMetadata",
+                ldap_server_metadata,
+            )?;
         }
         if let Some(ref logs) = self.logs {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Logs", logs)?;
         }
         if let Some(ref maintenance_window_start_time) = self.maintenance_window_start_time {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaintenanceWindowStartTime", maintenance_window_start_time)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MaintenanceWindowStartTime",
+                maintenance_window_start_time,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PubliclyAccessible", &self.publicly_accessible)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PubliclyAccessible",
+            &self.publicly_accessible,
+        )?;
         if let Some(ref security_groups) = self.security_groups {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroups", security_groups)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroups",
+                security_groups,
+            )?;
         }
         if let Some(ref storage_type) = self.storage_type {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "StorageType", storage_type)?;
@@ -157,7 +197,10 @@ impl<'de> ::serde::Deserialize<'de> for BrokerProperties {
                 write!(f, "a struct of type BrokerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut authentication_strategy: Option<::Value<String>> = None;
                 let mut auto_minor_version_upgrade: Option<::Value<bool>> = None;
                 let mut broker_name: Option<::Value<String>> = None;
@@ -167,9 +210,12 @@ impl<'de> ::serde::Deserialize<'de> for BrokerProperties {
                 let mut engine_type: Option<::Value<String>> = None;
                 let mut engine_version: Option<::Value<String>> = None;
                 let mut host_instance_type: Option<::Value<String>> = None;
-                let mut ldap_server_metadata: Option<::Value<self::broker::LdapServerMetadata>> = None;
+                let mut ldap_server_metadata: Option<::Value<self::broker::LdapServerMetadata>> =
+                    None;
                 let mut logs: Option<::Value<self::broker::LogList>> = None;
-                let mut maintenance_window_start_time: Option<::Value<self::broker::MaintenanceWindow>> = None;
+                let mut maintenance_window_start_time: Option<
+                    ::Value<self::broker::MaintenanceWindow>,
+                > = None;
                 let mut publicly_accessible: Option<::Value<bool>> = None;
                 let mut security_groups: Option<::ValueList<String>> = None;
                 let mut storage_type: Option<::Value<String>> = None;
@@ -183,7 +229,8 @@ impl<'de> ::serde::Deserialize<'de> for BrokerProperties {
                             authentication_strategy = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AutoMinorVersionUpgrade" => {
-                            auto_minor_version_upgrade = ::serde::de::MapAccess::next_value(&mut map)?;
+                            auto_minor_version_upgrade =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "BrokerName" => {
                             broker_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -213,7 +260,8 @@ impl<'de> ::serde::Deserialize<'de> for BrokerProperties {
                             logs = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "MaintenanceWindowStartTime" => {
-                            maintenance_window_start_time = ::serde::de::MapAccess::next_value(&mut map)?;
+                            maintenance_window_start_time =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PubliclyAccessible" => {
                             publicly_accessible = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -239,18 +287,25 @@ impl<'de> ::serde::Deserialize<'de> for BrokerProperties {
 
                 Ok(BrokerProperties {
                     authentication_strategy: authentication_strategy,
-                    auto_minor_version_upgrade: auto_minor_version_upgrade.ok_or(::serde::de::Error::missing_field("AutoMinorVersionUpgrade"))?,
-                    broker_name: broker_name.ok_or(::serde::de::Error::missing_field("BrokerName"))?,
+                    auto_minor_version_upgrade: auto_minor_version_upgrade
+                        .ok_or(::serde::de::Error::missing_field("AutoMinorVersionUpgrade"))?,
+                    broker_name: broker_name
+                        .ok_or(::serde::de::Error::missing_field("BrokerName"))?,
                     configuration: configuration,
-                    deployment_mode: deployment_mode.ok_or(::serde::de::Error::missing_field("DeploymentMode"))?,
+                    deployment_mode: deployment_mode
+                        .ok_or(::serde::de::Error::missing_field("DeploymentMode"))?,
                     encryption_options: encryption_options,
-                    engine_type: engine_type.ok_or(::serde::de::Error::missing_field("EngineType"))?,
-                    engine_version: engine_version.ok_or(::serde::de::Error::missing_field("EngineVersion"))?,
-                    host_instance_type: host_instance_type.ok_or(::serde::de::Error::missing_field("HostInstanceType"))?,
+                    engine_type: engine_type
+                        .ok_or(::serde::de::Error::missing_field("EngineType"))?,
+                    engine_version: engine_version
+                        .ok_or(::serde::de::Error::missing_field("EngineVersion"))?,
+                    host_instance_type: host_instance_type
+                        .ok_or(::serde::de::Error::missing_field("HostInstanceType"))?,
                     ldap_server_metadata: ldap_server_metadata,
                     logs: logs,
                     maintenance_window_start_time: maintenance_window_start_time,
-                    publicly_accessible: publicly_accessible.ok_or(::serde::de::Error::missing_field("PubliclyAccessible"))?,
+                    publicly_accessible: publicly_accessible
+                        .ok_or(::serde::de::Error::missing_field("PubliclyAccessible"))?,
                     security_groups: security_groups,
                     storage_type: storage_type,
                     subnet_ids: subnet_ids,
@@ -286,7 +341,7 @@ impl From<BrokerProperties> for Broker {
 /// The [`AWS::AmazonMQ::Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html) resource type.
 #[derive(Debug, Default)]
 pub struct Configuration {
-    properties: ConfigurationProperties
+    properties: ConfigurationProperties,
 }
 
 /// Properties for the `Configuration` resource.
@@ -333,14 +388,22 @@ impl ::serde::Serialize for ConfigurationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref authentication_strategy) = self.authentication_strategy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AuthenticationStrategy", authentication_strategy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AuthenticationStrategy",
+                authentication_strategy,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Data", &self.data)?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "EngineType", &self.engine_type)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EngineVersion", &self.engine_version)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EngineVersion",
+            &self.engine_version,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -350,7 +413,9 @@ impl ::serde::Serialize for ConfigurationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ConfigurationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ConfigurationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ConfigurationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -360,7 +425,10 @@ impl<'de> ::serde::Deserialize<'de> for ConfigurationProperties {
                 write!(f, "a struct of type ConfigurationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut authentication_strategy: Option<::Value<String>> = None;
                 let mut data: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
@@ -400,8 +468,10 @@ impl<'de> ::serde::Deserialize<'de> for ConfigurationProperties {
                     authentication_strategy: authentication_strategy,
                     data: data.ok_or(::serde::de::Error::missing_field("Data"))?,
                     description: description,
-                    engine_type: engine_type.ok_or(::serde::de::Error::missing_field("EngineType"))?,
-                    engine_version: engine_version.ok_or(::serde::de::Error::missing_field("EngineVersion"))?,
+                    engine_type: engine_type
+                        .ok_or(::serde::de::Error::missing_field("EngineType"))?,
+                    engine_version: engine_version
+                        .ok_or(::serde::de::Error::missing_field("EngineVersion"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     tags: tags,
                 })
@@ -434,7 +504,7 @@ impl From<ConfigurationProperties> for Configuration {
 /// The [`AWS::AmazonMQ::ConfigurationAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct ConfigurationAssociation {
-    properties: ConfigurationAssociationProperties
+    properties: ConfigurationAssociationProperties,
 }
 
 /// Properties for the `ConfigurationAssociation` resource.
@@ -456,13 +526,19 @@ impl ::serde::Serialize for ConfigurationAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Broker", &self.broker)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "Configuration", &self.configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "Configuration",
+            &self.configuration,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ConfigurationAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ConfigurationAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ConfigurationAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -472,9 +548,14 @@ impl<'de> ::serde::Deserialize<'de> for ConfigurationAssociationProperties {
                 write!(f, "a struct of type ConfigurationAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut broker: Option<::Value<String>> = None;
-                let mut configuration: Option<::Value<self::configuration_association::ConfigurationId>> = None;
+                let mut configuration: Option<
+                    ::Value<self::configuration_association::ConfigurationId>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -490,7 +571,8 @@ impl<'de> ::serde::Deserialize<'de> for ConfigurationAssociationProperties {
 
                 Ok(ConfigurationAssociationProperties {
                     broker: broker.ok_or(::serde::de::Error::missing_field("Broker"))?,
-                    configuration: configuration.ok_or(::serde::de::Error::missing_field("Configuration"))?,
+                    configuration: configuration
+                        .ok_or(::serde::de::Error::missing_field("Configuration"))?,
                 })
             }
         }
@@ -546,7 +628,9 @@ pub mod broker {
     }
 
     impl ::codec::DeserializeValue for ConfigurationId {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ConfigurationId, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ConfigurationId, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -556,11 +640,16 @@ pub mod broker {
                     write!(f, "a struct of type ConfigurationId")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut id: Option<::Value<String>> = None;
                     let mut revision: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Id" => {
                                 id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -604,13 +693,19 @@ pub mod broker {
             if let Some(ref kms_key_id) = self.kms_key_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyId", kms_key_id)?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "UseAwsOwnedKey", &self.use_aws_owned_key)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "UseAwsOwnedKey",
+                &self.use_aws_owned_key,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EncryptionOptions {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EncryptionOptions, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EncryptionOptions, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -620,11 +715,16 @@ pub mod broker {
                     write!(f, "a struct of type EncryptionOptions")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut kms_key_id: Option<::Value<String>> = None;
                     let mut use_aws_owned_key: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "KmsKeyId" => {
                                 kms_key_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -638,7 +738,8 @@ pub mod broker {
 
                     Ok(EncryptionOptions {
                         kms_key_id: kms_key_id,
-                        use_aws_owned_key: use_aws_owned_key.ok_or(::serde::de::Error::missing_field("UseAwsOwnedKey"))?,
+                        use_aws_owned_key: use_aws_owned_key
+                            .ok_or(::serde::de::Error::missing_field("UseAwsOwnedKey"))?,
                     })
                 }
             }
@@ -715,26 +816,56 @@ pub mod broker {
             if let Some(ref role_name) = self.role_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleName", role_name)?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleSearchMatching", &self.role_search_matching)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RoleSearchMatching",
+                &self.role_search_matching,
+            )?;
             if let Some(ref role_search_subtree) = self.role_search_subtree {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleSearchSubtree", role_search_subtree)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RoleSearchSubtree",
+                    role_search_subtree,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceAccountPassword", &self.service_account_password)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceAccountUsername", &self.service_account_username)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ServiceAccountPassword",
+                &self.service_account_password,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ServiceAccountUsername",
+                &self.service_account_username,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserBase", &self.user_base)?;
             if let Some(ref user_role_name) = self.user_role_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserRoleName", user_role_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UserRoleName",
+                    user_role_name,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserSearchMatching", &self.user_search_matching)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "UserSearchMatching",
+                &self.user_search_matching,
+            )?;
             if let Some(ref user_search_subtree) = self.user_search_subtree {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserSearchSubtree", user_search_subtree)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UserSearchSubtree",
+                    user_search_subtree,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LdapServerMetadata {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LdapServerMetadata, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LdapServerMetadata, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -744,7 +875,10 @@ pub mod broker {
                     write!(f, "a struct of type LdapServerMetadata")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut hosts: Option<::ValueList<String>> = None;
                     let mut role_base: Option<::Value<String>> = None;
                     let mut role_name: Option<::Value<String>> = None;
@@ -757,7 +891,9 @@ pub mod broker {
                     let mut user_search_matching: Option<::Value<String>> = None;
                     let mut user_search_subtree: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Hosts" => {
                                 hosts = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -769,16 +905,19 @@ pub mod broker {
                                 role_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RoleSearchMatching" => {
-                                role_search_matching = ::serde::de::MapAccess::next_value(&mut map)?;
+                                role_search_matching =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RoleSearchSubtree" => {
                                 role_search_subtree = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ServiceAccountPassword" => {
-                                service_account_password = ::serde::de::MapAccess::next_value(&mut map)?;
+                                service_account_password =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ServiceAccountUsername" => {
-                                service_account_username = ::serde::de::MapAccess::next_value(&mut map)?;
+                                service_account_username =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "UserBase" => {
                                 user_base = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -787,7 +926,8 @@ pub mod broker {
                                 user_role_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "UserSearchMatching" => {
-                                user_search_matching = ::serde::de::MapAccess::next_value(&mut map)?;
+                                user_search_matching =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "UserSearchSubtree" => {
                                 user_search_subtree = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -798,15 +938,21 @@ pub mod broker {
 
                     Ok(LdapServerMetadata {
                         hosts: hosts.ok_or(::serde::de::Error::missing_field("Hosts"))?,
-                        role_base: role_base.ok_or(::serde::de::Error::missing_field("RoleBase"))?,
+                        role_base: role_base
+                            .ok_or(::serde::de::Error::missing_field("RoleBase"))?,
                         role_name: role_name,
-                        role_search_matching: role_search_matching.ok_or(::serde::de::Error::missing_field("RoleSearchMatching"))?,
+                        role_search_matching: role_search_matching
+                            .ok_or(::serde::de::Error::missing_field("RoleSearchMatching"))?,
                         role_search_subtree: role_search_subtree,
-                        service_account_password: service_account_password.ok_or(::serde::de::Error::missing_field("ServiceAccountPassword"))?,
-                        service_account_username: service_account_username.ok_or(::serde::de::Error::missing_field("ServiceAccountUsername"))?,
-                        user_base: user_base.ok_or(::serde::de::Error::missing_field("UserBase"))?,
+                        service_account_password: service_account_password
+                            .ok_or(::serde::de::Error::missing_field("ServiceAccountPassword"))?,
+                        service_account_username: service_account_username
+                            .ok_or(::serde::de::Error::missing_field("ServiceAccountUsername"))?,
+                        user_base: user_base
+                            .ok_or(::serde::de::Error::missing_field("UserBase"))?,
                         user_role_name: user_role_name,
-                        user_search_matching: user_search_matching.ok_or(::serde::de::Error::missing_field("UserSearchMatching"))?,
+                        user_search_matching: user_search_matching
+                            .ok_or(::serde::de::Error::missing_field("UserSearchMatching"))?,
                         user_search_subtree: user_search_subtree,
                     })
                 }
@@ -855,11 +1001,16 @@ pub mod broker {
                     write!(f, "a struct of type LogList")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audit: Option<::Value<bool>> = None;
                     let mut general: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Audit" => {
                                 audit = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -913,7 +1064,9 @@ pub mod broker {
     }
 
     impl ::codec::DeserializeValue for MaintenanceWindow {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MaintenanceWindow, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MaintenanceWindow, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -923,12 +1076,17 @@ pub mod broker {
                     write!(f, "a struct of type MaintenanceWindow")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut day_of_week: Option<::Value<String>> = None;
                     let mut time_of_day: Option<::Value<String>> = None;
                     let mut time_zone: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DayOfWeek" => {
                                 day_of_week = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -944,9 +1102,12 @@ pub mod broker {
                     }
 
                     Ok(MaintenanceWindow {
-                        day_of_week: day_of_week.ok_or(::serde::de::Error::missing_field("DayOfWeek"))?,
-                        time_of_day: time_of_day.ok_or(::serde::de::Error::missing_field("TimeOfDay"))?,
-                        time_zone: time_zone.ok_or(::serde::de::Error::missing_field("TimeZone"))?,
+                        day_of_week: day_of_week
+                            .ok_or(::serde::de::Error::missing_field("DayOfWeek"))?,
+                        time_of_day: time_of_day
+                            .ok_or(::serde::de::Error::missing_field("TimeOfDay"))?,
+                        time_zone: time_zone
+                            .ok_or(::serde::de::Error::missing_field("TimeZone"))?,
                     })
                 }
             }
@@ -990,11 +1151,16 @@ pub mod broker {
                     write!(f, "a struct of type TagsEntry")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1046,7 +1212,11 @@ pub mod broker {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref console_access) = self.console_access {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConsoleAccess", console_access)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConsoleAccess",
+                    console_access,
+                )?;
             }
             if let Some(ref groups) = self.groups {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Groups", groups)?;
@@ -1068,13 +1238,18 @@ pub mod broker {
                     write!(f, "a struct of type User")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut console_access: Option<::Value<bool>> = None;
                     let mut groups: Option<::ValueList<String>> = None;
                     let mut password: Option<::Value<String>> = None;
                     let mut username: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ConsoleAccess" => {
                                 console_access = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1144,11 +1319,16 @@ pub mod configuration {
                     write!(f, "a struct of type TagsEntry")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1200,7 +1380,9 @@ pub mod configuration_association {
     }
 
     impl ::codec::DeserializeValue for ConfigurationId {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ConfigurationId, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ConfigurationId, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1210,11 +1392,16 @@ pub mod configuration_association {
                     write!(f, "a struct of type ConfigurationId")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut id: Option<::Value<String>> = None;
                     let mut revision: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Id" => {
                                 id = ::serde::de::MapAccess::next_value(&mut map)?;

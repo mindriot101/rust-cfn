@@ -3,7 +3,7 @@
 /// The [`AWS::NimbleStudio::LaunchProfile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html) resource type.
 #[derive(Debug, Default)]
 pub struct LaunchProfile {
-    properties: LaunchProfileProperties
+    properties: LaunchProfileProperties,
 }
 
 /// Properties for the `LaunchProfile` resource.
@@ -57,11 +57,27 @@ impl ::serde::Serialize for LaunchProfileProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ec2SubnetIds", &self.ec2_subnet_ids)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "LaunchProfileProtocolVersions", &self.launch_profile_protocol_versions)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "Ec2SubnetIds",
+            &self.ec2_subnet_ids,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "LaunchProfileProtocolVersions",
+            &self.launch_profile_protocol_versions,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamConfiguration", &self.stream_configuration)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "StudioComponentIds", &self.studio_component_ids)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "StreamConfiguration",
+            &self.stream_configuration,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "StudioComponentIds",
+            &self.studio_component_ids,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "StudioId", &self.studio_id)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -71,7 +87,9 @@ impl ::serde::Serialize for LaunchProfileProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LaunchProfileProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LaunchProfileProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LaunchProfileProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -81,12 +99,17 @@ impl<'de> ::serde::Deserialize<'de> for LaunchProfileProperties {
                 write!(f, "a struct of type LaunchProfileProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut ec2_subnet_ids: Option<::ValueList<String>> = None;
                 let mut launch_profile_protocol_versions: Option<::ValueList<String>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut stream_configuration: Option<::Value<self::launch_profile::StreamConfiguration>> = None;
+                let mut stream_configuration: Option<
+                    ::Value<self::launch_profile::StreamConfiguration>,
+                > = None;
                 let mut studio_component_ids: Option<::ValueList<String>> = None;
                 let mut studio_id: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueMap<String>> = None;
@@ -100,7 +123,8 @@ impl<'de> ::serde::Deserialize<'de> for LaunchProfileProperties {
                             ec2_subnet_ids = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "LaunchProfileProtocolVersions" => {
-                            launch_profile_protocol_versions = ::serde::de::MapAccess::next_value(&mut map)?;
+                            launch_profile_protocol_versions =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Name" => {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -123,11 +147,16 @@ impl<'de> ::serde::Deserialize<'de> for LaunchProfileProperties {
 
                 Ok(LaunchProfileProperties {
                     description: description,
-                    ec2_subnet_ids: ec2_subnet_ids.ok_or(::serde::de::Error::missing_field("Ec2SubnetIds"))?,
-                    launch_profile_protocol_versions: launch_profile_protocol_versions.ok_or(::serde::de::Error::missing_field("LaunchProfileProtocolVersions"))?,
+                    ec2_subnet_ids: ec2_subnet_ids
+                        .ok_or(::serde::de::Error::missing_field("Ec2SubnetIds"))?,
+                    launch_profile_protocol_versions: launch_profile_protocol_versions.ok_or(
+                        ::serde::de::Error::missing_field("LaunchProfileProtocolVersions"),
+                    )?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    stream_configuration: stream_configuration.ok_or(::serde::de::Error::missing_field("StreamConfiguration"))?,
-                    studio_component_ids: studio_component_ids.ok_or(::serde::de::Error::missing_field("StudioComponentIds"))?,
+                    stream_configuration: stream_configuration
+                        .ok_or(::serde::de::Error::missing_field("StreamConfiguration"))?,
+                    studio_component_ids: studio_component_ids
+                        .ok_or(::serde::de::Error::missing_field("StudioComponentIds"))?,
                     studio_id: studio_id.ok_or(::serde::de::Error::missing_field("StudioId"))?,
                     tags: tags,
                 })
@@ -160,7 +189,7 @@ impl From<LaunchProfileProperties> for LaunchProfile {
 /// The [`AWS::NimbleStudio::StreamingImage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html) resource type.
 #[derive(Debug, Default)]
 pub struct StreamingImage {
-    properties: StreamingImageProperties
+    properties: StreamingImageProperties,
 }
 
 /// Properties for the `StreamingImage` resource.
@@ -210,7 +239,9 @@ impl ::serde::Serialize for StreamingImageProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for StreamingImageProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<StreamingImageProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<StreamingImageProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -220,7 +251,10 @@ impl<'de> ::serde::Deserialize<'de> for StreamingImageProperties {
                 write!(f, "a struct of type StreamingImageProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut ec2_image_id: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -250,7 +284,8 @@ impl<'de> ::serde::Deserialize<'de> for StreamingImageProperties {
 
                 Ok(StreamingImageProperties {
                     description: description,
-                    ec2_image_id: ec2_image_id.ok_or(::serde::de::Error::missing_field("Ec2ImageId"))?,
+                    ec2_image_id: ec2_image_id
+                        .ok_or(::serde::de::Error::missing_field("Ec2ImageId"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     studio_id: studio_id.ok_or(::serde::de::Error::missing_field("StudioId"))?,
                     tags: tags,
@@ -284,7 +319,7 @@ impl From<StreamingImageProperties> for StreamingImage {
 /// The [`AWS::NimbleStudio::Studio`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html) resource type.
 #[derive(Debug, Default)]
 pub struct Studio {
-    properties: StudioProperties
+    properties: StudioProperties,
 }
 
 /// Properties for the `Studio` resource.
@@ -304,7 +339,8 @@ pub struct StudioProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub studio_encryption_configuration: Option<::Value<self::studio::StudioEncryptionConfiguration>>,
+    pub studio_encryption_configuration:
+        Option<::Value<self::studio::StudioEncryptionConfiguration>>,
     /// Property [`StudioName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-studioname).
     ///
     /// Update type: _Immutable_.
@@ -325,10 +361,18 @@ pub struct StudioProperties {
 impl ::serde::Serialize for StudioProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdminRoleArn", &self.admin_role_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AdminRoleArn",
+            &self.admin_role_arn,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisplayName", &self.display_name)?;
         if let Some(ref studio_encryption_configuration) = self.studio_encryption_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StudioEncryptionConfiguration", studio_encryption_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StudioEncryptionConfiguration",
+                studio_encryption_configuration,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "StudioName", &self.studio_name)?;
         if let Some(ref tags) = self.tags {
@@ -350,10 +394,15 @@ impl<'de> ::serde::Deserialize<'de> for StudioProperties {
                 write!(f, "a struct of type StudioProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut admin_role_arn: Option<::Value<String>> = None;
                 let mut display_name: Option<::Value<String>> = None;
-                let mut studio_encryption_configuration: Option<::Value<self::studio::StudioEncryptionConfiguration>> = None;
+                let mut studio_encryption_configuration: Option<
+                    ::Value<self::studio::StudioEncryptionConfiguration>,
+                > = None;
                 let mut studio_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueMap<String>> = None;
                 let mut user_role_arn: Option<::Value<String>> = None;
@@ -367,7 +416,8 @@ impl<'de> ::serde::Deserialize<'de> for StudioProperties {
                             display_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "StudioEncryptionConfiguration" => {
-                            studio_encryption_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            studio_encryption_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "StudioName" => {
                             studio_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -383,12 +433,16 @@ impl<'de> ::serde::Deserialize<'de> for StudioProperties {
                 }
 
                 Ok(StudioProperties {
-                    admin_role_arn: admin_role_arn.ok_or(::serde::de::Error::missing_field("AdminRoleArn"))?,
-                    display_name: display_name.ok_or(::serde::de::Error::missing_field("DisplayName"))?,
+                    admin_role_arn: admin_role_arn
+                        .ok_or(::serde::de::Error::missing_field("AdminRoleArn"))?,
+                    display_name: display_name
+                        .ok_or(::serde::de::Error::missing_field("DisplayName"))?,
                     studio_encryption_configuration: studio_encryption_configuration,
-                    studio_name: studio_name.ok_or(::serde::de::Error::missing_field("StudioName"))?,
+                    studio_name: studio_name
+                        .ok_or(::serde::de::Error::missing_field("StudioName"))?,
                     tags: tags,
-                    user_role_arn: user_role_arn.ok_or(::serde::de::Error::missing_field("UserRoleArn"))?,
+                    user_role_arn: user_role_arn
+                        .ok_or(::serde::de::Error::missing_field("UserRoleArn"))?,
                 })
             }
         }
@@ -419,7 +473,7 @@ impl From<StudioProperties> for Studio {
 /// The [`AWS::NimbleStudio::StudioComponent`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html) resource type.
 #[derive(Debug, Default)]
 pub struct StudioComponent {
-    properties: StudioComponentProperties
+    properties: StudioComponentProperties,
 }
 
 /// Properties for the `StudioComponent` resource.
@@ -444,7 +498,8 @@ pub struct StudioComponentProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub initialization_scripts: Option<::ValueList<self::studio_component::StudioComponentInitializationScript>>,
+    pub initialization_scripts:
+        Option<::ValueList<self::studio_component::StudioComponentInitializationScript>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-name).
     ///
     /// Update type: _Mutable_.
@@ -487,14 +542,26 @@ impl ::serde::Serialize for StudioComponentProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref ec2_security_group_ids) = self.ec2_security_group_ids {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ec2SecurityGroupIds", ec2_security_group_ids)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "Ec2SecurityGroupIds",
+                ec2_security_group_ids,
+            )?;
         }
         if let Some(ref initialization_scripts) = self.initialization_scripts {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InitializationScripts", initialization_scripts)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InitializationScripts",
+                initialization_scripts,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref script_parameters) = self.script_parameters {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScriptParameters", script_parameters)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ScriptParameters",
+                script_parameters,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "StudioId", &self.studio_id)?;
         if let Some(ref subtype) = self.subtype {
@@ -509,7 +576,9 @@ impl ::serde::Serialize for StudioComponentProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for StudioComponentProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<StudioComponentProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<StudioComponentProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -519,13 +588,22 @@ impl<'de> ::serde::Deserialize<'de> for StudioComponentProperties {
                 write!(f, "a struct of type StudioComponentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut configuration: Option<::Value<self::studio_component::StudioComponentConfiguration>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut configuration: Option<
+                    ::Value<self::studio_component::StudioComponentConfiguration>,
+                > = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut ec2_security_group_ids: Option<::ValueList<String>> = None;
-                let mut initialization_scripts: Option<::ValueList<self::studio_component::StudioComponentInitializationScript>> = None;
+                let mut initialization_scripts: Option<
+                    ::ValueList<self::studio_component::StudioComponentInitializationScript>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut script_parameters: Option<::ValueList<self::studio_component::ScriptParameterKeyValue>> = None;
+                let mut script_parameters: Option<
+                    ::ValueList<self::studio_component::ScriptParameterKeyValue>,
+                > = None;
                 let mut studio_id: Option<::Value<String>> = None;
                 let mut subtype: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueMap<String>> = None;
@@ -646,24 +724,52 @@ pub mod launch_profile {
     impl ::codec::SerializeValue for StreamConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClipboardMode", &self.clipboard_mode)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ec2InstanceTypes", &self.ec2_instance_types)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ClipboardMode",
+                &self.clipboard_mode,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "Ec2InstanceTypes",
+                &self.ec2_instance_types,
+            )?;
             if let Some(ref max_session_length_in_minutes) = self.max_session_length_in_minutes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxSessionLengthInMinutes", max_session_length_in_minutes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaxSessionLengthInMinutes",
+                    max_session_length_in_minutes,
+                )?;
             }
-            if let Some(ref max_stopped_session_length_in_minutes) = self.max_stopped_session_length_in_minutes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxStoppedSessionLengthInMinutes", max_stopped_session_length_in_minutes)?;
+            if let Some(ref max_stopped_session_length_in_minutes) =
+                self.max_stopped_session_length_in_minutes
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaxStoppedSessionLengthInMinutes",
+                    max_stopped_session_length_in_minutes,
+                )?;
             }
             if let Some(ref session_storage) = self.session_storage {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SessionStorage", session_storage)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SessionStorage",
+                    session_storage,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamingImageIds", &self.streaming_image_ids)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StreamingImageIds",
+                &self.streaming_image_ids,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for StreamConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StreamConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StreamConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -673,15 +779,21 @@ pub mod launch_profile {
                     write!(f, "a struct of type StreamConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut clipboard_mode: Option<::Value<String>> = None;
                     let mut ec2_instance_types: Option<::ValueList<String>> = None;
                     let mut max_session_length_in_minutes: Option<::Value<f64>> = None;
                     let mut max_stopped_session_length_in_minutes: Option<::Value<f64>> = None;
-                    let mut session_storage: Option<::Value<StreamConfigurationSessionStorage>> = None;
+                    let mut session_storage: Option<::Value<StreamConfigurationSessionStorage>> =
+                        None;
                     let mut streaming_image_ids: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ClipboardMode" => {
                                 clipboard_mode = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -690,10 +802,12 @@ pub mod launch_profile {
                                 ec2_instance_types = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxSessionLengthInMinutes" => {
-                                max_session_length_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                                max_session_length_in_minutes =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxStoppedSessionLengthInMinutes" => {
-                                max_stopped_session_length_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                                max_stopped_session_length_in_minutes =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SessionStorage" => {
                                 session_storage = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -706,12 +820,16 @@ pub mod launch_profile {
                     }
 
                     Ok(StreamConfiguration {
-                        clipboard_mode: clipboard_mode.ok_or(::serde::de::Error::missing_field("ClipboardMode"))?,
-                        ec2_instance_types: ec2_instance_types.ok_or(::serde::de::Error::missing_field("Ec2InstanceTypes"))?,
+                        clipboard_mode: clipboard_mode
+                            .ok_or(::serde::de::Error::missing_field("ClipboardMode"))?,
+                        ec2_instance_types: ec2_instance_types
+                            .ok_or(::serde::de::Error::missing_field("Ec2InstanceTypes"))?,
                         max_session_length_in_minutes: max_session_length_in_minutes,
-                        max_stopped_session_length_in_minutes: max_stopped_session_length_in_minutes,
+                        max_stopped_session_length_in_minutes:
+                            max_stopped_session_length_in_minutes,
                         session_storage: session_storage,
-                        streaming_image_ids: streaming_image_ids.ok_or(::serde::de::Error::missing_field("StreamingImageIds"))?,
+                        streaming_image_ids: streaming_image_ids
+                            .ok_or(::serde::de::Error::missing_field("StreamingImageIds"))?,
                     })
                 }
             }
@@ -749,7 +867,9 @@ pub mod launch_profile {
     }
 
     impl ::codec::DeserializeValue for StreamConfigurationSessionStorage {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StreamConfigurationSessionStorage, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StreamConfigurationSessionStorage, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -759,11 +879,16 @@ pub mod launch_profile {
                     write!(f, "a struct of type StreamConfigurationSessionStorage")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut mode: Option<::ValueList<String>> = None;
                     let mut root: Option<::Value<StreamingSessionStorageRoot>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Mode" => {
                                 mode = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -815,7 +940,9 @@ pub mod launch_profile {
     }
 
     impl ::codec::DeserializeValue for StreamingSessionStorageRoot {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StreamingSessionStorageRoot, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StreamingSessionStorageRoot, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -825,11 +952,16 @@ pub mod launch_profile {
                     write!(f, "a struct of type StreamingSessionStorageRoot")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut linux: Option<::Value<String>> = None;
                     let mut windows: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Linux" => {
                                 linux = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -883,7 +1015,9 @@ pub mod studio {
     }
 
     impl ::codec::DeserializeValue for StudioEncryptionConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StudioEncryptionConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StudioEncryptionConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -893,11 +1027,16 @@ pub mod studio {
                     write!(f, "a struct of type StudioEncryptionConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key_arn: Option<::Value<String>> = None;
                     let mut key_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "KeyArn" => {
                                 key_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -953,7 +1092,9 @@ pub mod studio_component {
     }
 
     impl ::codec::DeserializeValue for ActiveDirectoryComputerAttribute {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ActiveDirectoryComputerAttribute, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ActiveDirectoryComputerAttribute, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -963,11 +1104,16 @@ pub mod studio_component {
                     write!(f, "a struct of type ActiveDirectoryComputerAttribute")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1014,20 +1160,32 @@ pub mod studio_component {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref computer_attributes) = self.computer_attributes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComputerAttributes", computer_attributes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ComputerAttributes",
+                    computer_attributes,
+                )?;
             }
             if let Some(ref directory_id) = self.directory_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DirectoryId", directory_id)?;
             }
-            if let Some(ref organizational_unit_distinguished_name) = self.organizational_unit_distinguished_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OrganizationalUnitDistinguishedName", organizational_unit_distinguished_name)?;
+            if let Some(ref organizational_unit_distinguished_name) =
+                self.organizational_unit_distinguished_name
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OrganizationalUnitDistinguishedName",
+                    organizational_unit_distinguished_name,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ActiveDirectoryConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ActiveDirectoryConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ActiveDirectoryConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1037,12 +1195,19 @@ pub mod studio_component {
                     write!(f, "a struct of type ActiveDirectoryConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut computer_attributes: Option<::ValueList<ActiveDirectoryComputerAttribute>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut computer_attributes: Option<
+                        ::ValueList<ActiveDirectoryComputerAttribute>,
+                    > = None;
                     let mut directory_id: Option<::Value<String>> = None;
                     let mut organizational_unit_distinguished_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ComputerAttributes" => {
                                 computer_attributes = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1051,7 +1216,8 @@ pub mod studio_component {
                                 directory_id = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "OrganizationalUnitDistinguishedName" => {
-                                organizational_unit_distinguished_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                organizational_unit_distinguished_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1060,7 +1226,8 @@ pub mod studio_component {
                     Ok(ActiveDirectoryConfiguration {
                         computer_attributes: computer_attributes,
                         directory_id: directory_id,
-                        organizational_unit_distinguished_name: organizational_unit_distinguished_name,
+                        organizational_unit_distinguished_name:
+                            organizational_unit_distinguished_name,
                     })
                 }
             }
@@ -1088,7 +1255,11 @@ pub mod studio_component {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref active_directory_user) = self.active_directory_user {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ActiveDirectoryUser", active_directory_user)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ActiveDirectoryUser",
+                    active_directory_user,
+                )?;
             }
             if let Some(ref endpoint) = self.endpoint {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Endpoint", endpoint)?;
@@ -1098,7 +1269,9 @@ pub mod studio_component {
     }
 
     impl ::codec::DeserializeValue for ComputeFarmConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComputeFarmConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComputeFarmConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1108,14 +1281,20 @@ pub mod studio_component {
                     write!(f, "a struct of type ComputeFarmConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut active_directory_user: Option<::Value<String>> = None;
                     let mut endpoint: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ActiveDirectoryUser" => {
-                                active_directory_user = ::serde::de::MapAccess::next_value(&mut map)?;
+                                active_directory_user =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Endpoint" => {
                                 endpoint = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1156,7 +1335,9 @@ pub mod studio_component {
     }
 
     impl ::codec::DeserializeValue for LicenseServiceConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LicenseServiceConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LicenseServiceConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1166,10 +1347,15 @@ pub mod studio_component {
                     write!(f, "a struct of type LicenseServiceConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut endpoint: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Endpoint" => {
                                 endpoint = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1178,9 +1364,7 @@ pub mod studio_component {
                         }
                     }
 
-                    Ok(LicenseServiceConfiguration {
-                        endpoint: endpoint,
-                    })
+                    Ok(LicenseServiceConfiguration { endpoint: endpoint })
                 }
             }
 
@@ -1217,7 +1401,9 @@ pub mod studio_component {
     }
 
     impl ::codec::DeserializeValue for ScriptParameterKeyValue {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ScriptParameterKeyValue, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ScriptParameterKeyValue, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1227,11 +1413,16 @@ pub mod studio_component {
                     write!(f, "a struct of type ScriptParameterKeyValue")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1291,23 +1482,37 @@ pub mod studio_component {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Endpoint", endpoint)?;
             }
             if let Some(ref file_system_id) = self.file_system_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FileSystemId", file_system_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FileSystemId",
+                    file_system_id,
+                )?;
             }
             if let Some(ref linux_mount_point) = self.linux_mount_point {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LinuxMountPoint", linux_mount_point)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LinuxMountPoint",
+                    linux_mount_point,
+                )?;
             }
             if let Some(ref share_name) = self.share_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShareName", share_name)?;
             }
             if let Some(ref windows_mount_drive) = self.windows_mount_drive {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "WindowsMountDrive", windows_mount_drive)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "WindowsMountDrive",
+                    windows_mount_drive,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SharedFileSystemConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SharedFileSystemConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SharedFileSystemConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1317,14 +1522,19 @@ pub mod studio_component {
                     write!(f, "a struct of type SharedFileSystemConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut endpoint: Option<::Value<String>> = None;
                     let mut file_system_id: Option<::Value<String>> = None;
                     let mut linux_mount_point: Option<::Value<String>> = None;
                     let mut share_name: Option<::Value<String>> = None;
                     let mut windows_mount_drive: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Endpoint" => {
                                 endpoint = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1388,23 +1598,43 @@ pub mod studio_component {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref active_directory_configuration) = self.active_directory_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ActiveDirectoryConfiguration", active_directory_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ActiveDirectoryConfiguration",
+                    active_directory_configuration,
+                )?;
             }
             if let Some(ref compute_farm_configuration) = self.compute_farm_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComputeFarmConfiguration", compute_farm_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ComputeFarmConfiguration",
+                    compute_farm_configuration,
+                )?;
             }
             if let Some(ref license_service_configuration) = self.license_service_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LicenseServiceConfiguration", license_service_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LicenseServiceConfiguration",
+                    license_service_configuration,
+                )?;
             }
-            if let Some(ref shared_file_system_configuration) = self.shared_file_system_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SharedFileSystemConfiguration", shared_file_system_configuration)?;
+            if let Some(ref shared_file_system_configuration) =
+                self.shared_file_system_configuration
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SharedFileSystemConfiguration",
+                    shared_file_system_configuration,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for StudioComponentConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StudioComponentConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StudioComponentConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1414,25 +1644,41 @@ pub mod studio_component {
                     write!(f, "a struct of type StudioComponentConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut active_directory_configuration: Option<::Value<ActiveDirectoryConfiguration>> = None;
-                    let mut compute_farm_configuration: Option<::Value<ComputeFarmConfiguration>> = None;
-                    let mut license_service_configuration: Option<::Value<LicenseServiceConfiguration>> = None;
-                    let mut shared_file_system_configuration: Option<::Value<SharedFileSystemConfiguration>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut active_directory_configuration: Option<
+                        ::Value<ActiveDirectoryConfiguration>,
+                    > = None;
+                    let mut compute_farm_configuration: Option<::Value<ComputeFarmConfiguration>> =
+                        None;
+                    let mut license_service_configuration: Option<
+                        ::Value<LicenseServiceConfiguration>,
+                    > = None;
+                    let mut shared_file_system_configuration: Option<
+                        ::Value<SharedFileSystemConfiguration>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ActiveDirectoryConfiguration" => {
-                                active_directory_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                active_directory_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ComputeFarmConfiguration" => {
-                                compute_farm_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                compute_farm_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LicenseServiceConfiguration" => {
-                                license_service_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                license_service_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SharedFileSystemConfiguration" => {
-                                shared_file_system_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                shared_file_system_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1479,8 +1725,13 @@ pub mod studio_component {
     impl ::codec::SerializeValue for StudioComponentInitializationScript {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            if let Some(ref launch_profile_protocol_version) = self.launch_profile_protocol_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LaunchProfileProtocolVersion", launch_profile_protocol_version)?;
+            if let Some(ref launch_profile_protocol_version) = self.launch_profile_protocol_version
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LaunchProfileProtocolVersion",
+                    launch_profile_protocol_version,
+                )?;
             }
             if let Some(ref platform) = self.platform {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Platform", platform)?;
@@ -1496,7 +1747,9 @@ pub mod studio_component {
     }
 
     impl ::codec::DeserializeValue for StudioComponentInitializationScript {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StudioComponentInitializationScript, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StudioComponentInitializationScript, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1506,16 +1759,22 @@ pub mod studio_component {
                     write!(f, "a struct of type StudioComponentInitializationScript")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut launch_profile_protocol_version: Option<::Value<String>> = None;
                     let mut platform: Option<::Value<String>> = None;
                     let mut run_context: Option<::Value<String>> = None;
                     let mut script: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LaunchProfileProtocolVersion" => {
-                                launch_profile_protocol_version = ::serde::de::MapAccess::next_value(&mut map)?;
+                                launch_profile_protocol_version =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Platform" => {
                                 platform = ::serde::de::MapAccess::next_value(&mut map)?;

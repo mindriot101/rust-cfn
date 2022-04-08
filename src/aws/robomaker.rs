@@ -3,7 +3,7 @@
 /// The [`AWS::RoboMaker::Fleet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html) resource type.
 #[derive(Debug, Default)]
 pub struct Fleet {
-    properties: FleetProperties
+    properties: FleetProperties,
 }
 
 /// Properties for the `Fleet` resource.
@@ -45,7 +45,10 @@ impl<'de> ::serde::Deserialize<'de> for FleetProperties {
                 write!(f, "a struct of type FleetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueMap<String>> = None;
 
@@ -94,7 +97,7 @@ impl From<FleetProperties> for Fleet {
 /// The [`AWS::RoboMaker::Robot`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html) resource type.
 #[derive(Debug, Default)]
 pub struct Robot {
-    properties: RobotProperties
+    properties: RobotProperties,
 }
 
 /// Properties for the `Robot` resource.
@@ -134,7 +137,11 @@ impl ::serde::Serialize for RobotProperties {
         if let Some(ref fleet) = self.fleet {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Fleet", fleet)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "GreengrassGroupId", &self.greengrass_group_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "GreengrassGroupId",
+            &self.greengrass_group_id,
+        )?;
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
@@ -156,7 +163,10 @@ impl<'de> ::serde::Deserialize<'de> for RobotProperties {
                 write!(f, "a struct of type RobotProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut architecture: Option<::Value<String>> = None;
                 let mut fleet: Option<::Value<String>> = None;
                 let mut greengrass_group_id: Option<::Value<String>> = None;
@@ -185,9 +195,11 @@ impl<'de> ::serde::Deserialize<'de> for RobotProperties {
                 }
 
                 Ok(RobotProperties {
-                    architecture: architecture.ok_or(::serde::de::Error::missing_field("Architecture"))?,
+                    architecture: architecture
+                        .ok_or(::serde::de::Error::missing_field("Architecture"))?,
                     fleet: fleet,
-                    greengrass_group_id: greengrass_group_id.ok_or(::serde::de::Error::missing_field("GreengrassGroupId"))?,
+                    greengrass_group_id: greengrass_group_id
+                        .ok_or(::serde::de::Error::missing_field("GreengrassGroupId"))?,
                     name: name,
                     tags: tags,
                 })
@@ -220,7 +232,7 @@ impl From<RobotProperties> for Robot {
 /// The [`AWS::RoboMaker::RobotApplication`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html) resource type.
 #[derive(Debug, Default)]
 pub struct RobotApplication {
-    properties: RobotApplicationProperties
+    properties: RobotApplicationProperties,
 }
 
 /// Properties for the `RobotApplication` resource.
@@ -262,7 +274,11 @@ impl ::serde::Serialize for RobotApplicationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref current_revision_id) = self.current_revision_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CurrentRevisionId", current_revision_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CurrentRevisionId",
+                current_revision_id,
+            )?;
         }
         if let Some(ref environment) = self.environment {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Environment", environment)?;
@@ -270,7 +286,11 @@ impl ::serde::Serialize for RobotApplicationProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RobotSoftwareSuite", &self.robot_software_suite)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RobotSoftwareSuite",
+            &self.robot_software_suite,
+        )?;
         if let Some(ref sources) = self.sources {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Sources", sources)?;
         }
@@ -282,7 +302,9 @@ impl ::serde::Serialize for RobotApplicationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RobotApplicationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RobotApplicationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RobotApplicationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -292,11 +314,16 @@ impl<'de> ::serde::Deserialize<'de> for RobotApplicationProperties {
                 write!(f, "a struct of type RobotApplicationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut current_revision_id: Option<::Value<String>> = None;
                 let mut environment: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut robot_software_suite: Option<::Value<self::robot_application::RobotSoftwareSuite>> = None;
+                let mut robot_software_suite: Option<
+                    ::Value<self::robot_application::RobotSoftwareSuite>,
+                > = None;
                 let mut sources: Option<::ValueList<self::robot_application::SourceConfig>> = None;
                 let mut tags: Option<::ValueMap<String>> = None;
 
@@ -328,7 +355,8 @@ impl<'de> ::serde::Deserialize<'de> for RobotApplicationProperties {
                     current_revision_id: current_revision_id,
                     environment: environment,
                     name: name,
-                    robot_software_suite: robot_software_suite.ok_or(::serde::de::Error::missing_field("RobotSoftwareSuite"))?,
+                    robot_software_suite: robot_software_suite
+                        .ok_or(::serde::de::Error::missing_field("RobotSoftwareSuite"))?,
                     sources: sources,
                     tags: tags,
                 })
@@ -361,7 +389,7 @@ impl From<RobotApplicationProperties> for RobotApplication {
 /// The [`AWS::RoboMaker::RobotApplicationVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct RobotApplicationVersion {
-    properties: RobotApplicationVersionProperties
+    properties: RobotApplicationVersionProperties,
 }
 
 /// Properties for the `RobotApplicationVersion` resource.
@@ -384,14 +412,20 @@ impl ::serde::Serialize for RobotApplicationVersionProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Application", &self.application)?;
         if let Some(ref current_revision_id) = self.current_revision_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CurrentRevisionId", current_revision_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CurrentRevisionId",
+                current_revision_id,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for RobotApplicationVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RobotApplicationVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RobotApplicationVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -401,7 +435,10 @@ impl<'de> ::serde::Deserialize<'de> for RobotApplicationVersionProperties {
                 write!(f, "a struct of type RobotApplicationVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application: Option<::Value<String>> = None;
                 let mut current_revision_id: Option<::Value<String>> = None;
 
@@ -418,7 +455,8 @@ impl<'de> ::serde::Deserialize<'de> for RobotApplicationVersionProperties {
                 }
 
                 Ok(RobotApplicationVersionProperties {
-                    application: application.ok_or(::serde::de::Error::missing_field("Application"))?,
+                    application: application
+                        .ok_or(::serde::de::Error::missing_field("Application"))?,
                     current_revision_id: current_revision_id,
                 })
             }
@@ -450,7 +488,7 @@ impl From<RobotApplicationVersionProperties> for RobotApplicationVersion {
 /// The [`AWS::RoboMaker::SimulationApplication`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html) resource type.
 #[derive(Debug, Default)]
 pub struct SimulationApplication {
-    properties: SimulationApplicationProperties
+    properties: SimulationApplicationProperties,
 }
 
 /// Properties for the `SimulationApplication` resource.
@@ -502,7 +540,11 @@ impl ::serde::Serialize for SimulationApplicationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref current_revision_id) = self.current_revision_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CurrentRevisionId", current_revision_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CurrentRevisionId",
+                current_revision_id,
+            )?;
         }
         if let Some(ref environment) = self.environment {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Environment", environment)?;
@@ -511,10 +553,22 @@ impl ::serde::Serialize for SimulationApplicationProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
         if let Some(ref rendering_engine) = self.rendering_engine {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RenderingEngine", rendering_engine)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RenderingEngine",
+                rendering_engine,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RobotSoftwareSuite", &self.robot_software_suite)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SimulationSoftwareSuite", &self.simulation_software_suite)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RobotSoftwareSuite",
+            &self.robot_software_suite,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SimulationSoftwareSuite",
+            &self.simulation_software_suite,
+        )?;
         if let Some(ref sources) = self.sources {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Sources", sources)?;
         }
@@ -526,7 +580,9 @@ impl ::serde::Serialize for SimulationApplicationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for SimulationApplicationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SimulationApplicationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SimulationApplicationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -536,14 +592,24 @@ impl<'de> ::serde::Deserialize<'de> for SimulationApplicationProperties {
                 write!(f, "a struct of type SimulationApplicationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut current_revision_id: Option<::Value<String>> = None;
                 let mut environment: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut rendering_engine: Option<::Value<self::simulation_application::RenderingEngine>> = None;
-                let mut robot_software_suite: Option<::Value<self::simulation_application::RobotSoftwareSuite>> = None;
-                let mut simulation_software_suite: Option<::Value<self::simulation_application::SimulationSoftwareSuite>> = None;
-                let mut sources: Option<::ValueList<self::simulation_application::SourceConfig>> = None;
+                let mut rendering_engine: Option<
+                    ::Value<self::simulation_application::RenderingEngine>,
+                > = None;
+                let mut robot_software_suite: Option<
+                    ::Value<self::simulation_application::RobotSoftwareSuite>,
+                > = None;
+                let mut simulation_software_suite: Option<
+                    ::Value<self::simulation_application::SimulationSoftwareSuite>,
+                > = None;
+                let mut sources: Option<::ValueList<self::simulation_application::SourceConfig>> =
+                    None;
                 let mut tags: Option<::ValueMap<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -564,7 +630,8 @@ impl<'de> ::serde::Deserialize<'de> for SimulationApplicationProperties {
                             robot_software_suite = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SimulationSoftwareSuite" => {
-                            simulation_software_suite = ::serde::de::MapAccess::next_value(&mut map)?;
+                            simulation_software_suite =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Sources" => {
                             sources = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -581,8 +648,10 @@ impl<'de> ::serde::Deserialize<'de> for SimulationApplicationProperties {
                     environment: environment,
                     name: name,
                     rendering_engine: rendering_engine,
-                    robot_software_suite: robot_software_suite.ok_or(::serde::de::Error::missing_field("RobotSoftwareSuite"))?,
-                    simulation_software_suite: simulation_software_suite.ok_or(::serde::de::Error::missing_field("SimulationSoftwareSuite"))?,
+                    robot_software_suite: robot_software_suite
+                        .ok_or(::serde::de::Error::missing_field("RobotSoftwareSuite"))?,
+                    simulation_software_suite: simulation_software_suite
+                        .ok_or(::serde::de::Error::missing_field("SimulationSoftwareSuite"))?,
                     sources: sources,
                     tags: tags,
                 })
@@ -615,7 +684,7 @@ impl From<SimulationApplicationProperties> for SimulationApplication {
 /// The [`AWS::RoboMaker::SimulationApplicationVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct SimulationApplicationVersion {
-    properties: SimulationApplicationVersionProperties
+    properties: SimulationApplicationVersionProperties,
 }
 
 /// Properties for the `SimulationApplicationVersion` resource.
@@ -638,14 +707,20 @@ impl ::serde::Serialize for SimulationApplicationVersionProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Application", &self.application)?;
         if let Some(ref current_revision_id) = self.current_revision_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CurrentRevisionId", current_revision_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CurrentRevisionId",
+                current_revision_id,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for SimulationApplicationVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SimulationApplicationVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SimulationApplicationVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -655,7 +730,10 @@ impl<'de> ::serde::Deserialize<'de> for SimulationApplicationVersionProperties {
                 write!(f, "a struct of type SimulationApplicationVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application: Option<::Value<String>> = None;
                 let mut current_revision_id: Option<::Value<String>> = None;
 
@@ -672,7 +750,8 @@ impl<'de> ::serde::Deserialize<'de> for SimulationApplicationVersionProperties {
                 }
 
                 Ok(SimulationApplicationVersionProperties {
-                    application: application.ok_or(::serde::de::Error::missing_field("Application"))?,
+                    application: application
+                        .ok_or(::serde::de::Error::missing_field("Application"))?,
                     current_revision_id: current_revision_id,
                 })
             }
@@ -731,7 +810,9 @@ pub mod robot_application {
     }
 
     impl ::codec::DeserializeValue for RobotSoftwareSuite {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RobotSoftwareSuite, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RobotSoftwareSuite, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -741,11 +822,16 @@ pub mod robot_application {
                     write!(f, "a struct of type RobotSoftwareSuite")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -791,7 +877,11 @@ pub mod robot_application {
     impl ::codec::SerializeValue for SourceConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "Architecture", &self.architecture)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "Architecture",
+                &self.architecture,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Bucket", &self.s3_bucket)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Key", &self.s3_key)?;
             ::serde::ser::SerializeMap::end(map)
@@ -809,12 +899,17 @@ pub mod robot_application {
                     write!(f, "a struct of type SourceConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut architecture: Option<::Value<String>> = None;
                     let mut s3_bucket: Option<::Value<String>> = None;
                     let mut s3_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Architecture" => {
                                 architecture = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -830,8 +925,10 @@ pub mod robot_application {
                     }
 
                     Ok(SourceConfig {
-                        architecture: architecture.ok_or(::serde::de::Error::missing_field("Architecture"))?,
-                        s3_bucket: s3_bucket.ok_or(::serde::de::Error::missing_field("S3Bucket"))?,
+                        architecture: architecture
+                            .ok_or(::serde::de::Error::missing_field("Architecture"))?,
+                        s3_bucket: s3_bucket
+                            .ok_or(::serde::de::Error::missing_field("S3Bucket"))?,
                         s3_key: s3_key.ok_or(::serde::de::Error::missing_field("S3Key"))?,
                     })
                 }
@@ -870,7 +967,9 @@ pub mod simulation_application {
     }
 
     impl ::codec::DeserializeValue for RenderingEngine {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RenderingEngine, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RenderingEngine, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -880,11 +979,16 @@ pub mod simulation_application {
                     write!(f, "a struct of type RenderingEngine")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -934,7 +1038,9 @@ pub mod simulation_application {
     }
 
     impl ::codec::DeserializeValue for RobotSoftwareSuite {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RobotSoftwareSuite, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RobotSoftwareSuite, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -944,11 +1050,16 @@ pub mod simulation_application {
                     write!(f, "a struct of type RobotSoftwareSuite")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -998,7 +1109,9 @@ pub mod simulation_application {
     }
 
     impl ::codec::DeserializeValue for SimulationSoftwareSuite {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SimulationSoftwareSuite, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SimulationSoftwareSuite, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1008,11 +1121,16 @@ pub mod simulation_application {
                     write!(f, "a struct of type SimulationSoftwareSuite")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1058,7 +1176,11 @@ pub mod simulation_application {
     impl ::codec::SerializeValue for SourceConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "Architecture", &self.architecture)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "Architecture",
+                &self.architecture,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Bucket", &self.s3_bucket)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Key", &self.s3_key)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1076,12 +1198,17 @@ pub mod simulation_application {
                     write!(f, "a struct of type SourceConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut architecture: Option<::Value<String>> = None;
                     let mut s3_bucket: Option<::Value<String>> = None;
                     let mut s3_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Architecture" => {
                                 architecture = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1097,8 +1224,10 @@ pub mod simulation_application {
                     }
 
                     Ok(SourceConfig {
-                        architecture: architecture.ok_or(::serde::de::Error::missing_field("Architecture"))?,
-                        s3_bucket: s3_bucket.ok_or(::serde::de::Error::missing_field("S3Bucket"))?,
+                        architecture: architecture
+                            .ok_or(::serde::de::Error::missing_field("Architecture"))?,
+                        s3_bucket: s3_bucket
+                            .ok_or(::serde::de::Error::missing_field("S3Bucket"))?,
                         s3_key: s3_key.ok_or(::serde::de::Error::missing_field("S3Key"))?,
                     })
                 }

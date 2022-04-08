@@ -3,7 +3,7 @@
 /// The [`AWS::GameLift::Alias`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html) resource type.
 #[derive(Debug, Default)]
 pub struct Alias {
-    properties: AliasProperties
+    properties: AliasProperties,
 }
 
 /// Properties for the `Alias` resource.
@@ -33,7 +33,11 @@ impl ::serde::Serialize for AliasProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoutingStrategy", &self.routing_strategy)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RoutingStrategy",
+            &self.routing_strategy,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -49,7 +53,10 @@ impl<'de> ::serde::Deserialize<'de> for AliasProperties {
                 write!(f, "a struct of type AliasProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut routing_strategy: Option<::Value<self::alias::RoutingStrategy>> = None;
@@ -72,7 +79,8 @@ impl<'de> ::serde::Deserialize<'de> for AliasProperties {
                 Ok(AliasProperties {
                     description: description,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    routing_strategy: routing_strategy.ok_or(::serde::de::Error::missing_field("RoutingStrategy"))?,
+                    routing_strategy: routing_strategy
+                        .ok_or(::serde::de::Error::missing_field("RoutingStrategy"))?,
                 })
             }
         }
@@ -103,7 +111,7 @@ impl From<AliasProperties> for Alias {
 /// The [`AWS::GameLift::Build`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html) resource type.
 #[derive(Debug, Default)]
 pub struct Build {
-    properties: BuildProperties
+    properties: BuildProperties,
 }
 
 /// Properties for the `Build` resource.
@@ -138,10 +146,18 @@ impl ::serde::Serialize for BuildProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
         if let Some(ref operating_system) = self.operating_system {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "OperatingSystem", operating_system)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "OperatingSystem",
+                operating_system,
+            )?;
         }
         if let Some(ref storage_location) = self.storage_location {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StorageLocation", storage_location)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StorageLocation",
+                storage_location,
+            )?;
         }
         if let Some(ref version) = self.version {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Version", version)?;
@@ -161,7 +177,10 @@ impl<'de> ::serde::Deserialize<'de> for BuildProperties {
                 write!(f, "a struct of type BuildProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut operating_system: Option<::Value<String>> = None;
                 let mut storage_location: Option<::Value<self::build::S3Location>> = None;
@@ -220,7 +239,7 @@ impl From<BuildProperties> for Build {
 /// The [`AWS::GameLift::Fleet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html) resource type.
 #[derive(Debug, Default)]
 pub struct Fleet {
-    properties: FleetProperties
+    properties: FleetProperties,
 }
 
 /// Properties for the `Fleet` resource.
@@ -330,25 +349,45 @@ impl ::serde::Serialize for FleetProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BuildId", build_id)?;
         }
         if let Some(ref certificate_configuration) = self.certificate_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateConfiguration", certificate_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CertificateConfiguration",
+                certificate_configuration,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref desired_ec2_instances) = self.desired_ec2_instances {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DesiredEC2Instances", desired_ec2_instances)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DesiredEC2Instances",
+                desired_ec2_instances,
+            )?;
         }
         if let Some(ref ec2_inbound_permissions) = self.ec2_inbound_permissions {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EC2InboundPermissions", ec2_inbound_permissions)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EC2InboundPermissions",
+                ec2_inbound_permissions,
+            )?;
         }
         if let Some(ref ec2_instance_type) = self.ec2_instance_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EC2InstanceType", ec2_instance_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EC2InstanceType",
+                ec2_instance_type,
+            )?;
         }
         if let Some(ref fleet_type) = self.fleet_type {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "FleetType", fleet_type)?;
         }
         if let Some(ref instance_role_arn) = self.instance_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceRoleARN", instance_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InstanceRoleARN",
+                instance_role_arn,
+            )?;
         }
         if let Some(ref locations) = self.locations {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Locations", locations)?;
@@ -365,20 +404,38 @@ impl ::serde::Serialize for FleetProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        if let Some(ref new_game_session_protection_policy) = self.new_game_session_protection_policy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NewGameSessionProtectionPolicy", new_game_session_protection_policy)?;
+        if let Some(ref new_game_session_protection_policy) =
+            self.new_game_session_protection_policy
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NewGameSessionProtectionPolicy",
+                new_game_session_protection_policy,
+            )?;
         }
         if let Some(ref peer_vpc_aws_account_id) = self.peer_vpc_aws_account_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PeerVpcAwsAccountId", peer_vpc_aws_account_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PeerVpcAwsAccountId",
+                peer_vpc_aws_account_id,
+            )?;
         }
         if let Some(ref peer_vpc_id) = self.peer_vpc_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PeerVpcId", peer_vpc_id)?;
         }
         if let Some(ref resource_creation_limit_policy) = self.resource_creation_limit_policy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceCreationLimitPolicy", resource_creation_limit_policy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResourceCreationLimitPolicy",
+                resource_creation_limit_policy,
+            )?;
         }
         if let Some(ref runtime_configuration) = self.runtime_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuntimeConfiguration", runtime_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RuntimeConfiguration",
+                runtime_configuration,
+            )?;
         }
         if let Some(ref script_id) = self.script_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScriptId", script_id)?;
@@ -398,12 +455,18 @@ impl<'de> ::serde::Deserialize<'de> for FleetProperties {
                 write!(f, "a struct of type FleetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut build_id: Option<::Value<String>> = None;
-                let mut certificate_configuration: Option<::Value<self::fleet::CertificateConfiguration>> = None;
+                let mut certificate_configuration: Option<
+                    ::Value<self::fleet::CertificateConfiguration>,
+                > = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut desired_ec2_instances: Option<::Value<u32>> = None;
-                let mut ec2_inbound_permissions: Option<::ValueList<self::fleet::IpPermission>> = None;
+                let mut ec2_inbound_permissions: Option<::ValueList<self::fleet::IpPermission>> =
+                    None;
                 let mut ec2_instance_type: Option<::Value<String>> = None;
                 let mut fleet_type: Option<::Value<String>> = None;
                 let mut instance_role_arn: Option<::Value<String>> = None;
@@ -415,8 +478,11 @@ impl<'de> ::serde::Deserialize<'de> for FleetProperties {
                 let mut new_game_session_protection_policy: Option<::Value<String>> = None;
                 let mut peer_vpc_aws_account_id: Option<::Value<String>> = None;
                 let mut peer_vpc_id: Option<::Value<String>> = None;
-                let mut resource_creation_limit_policy: Option<::Value<self::fleet::ResourceCreationLimitPolicy>> = None;
-                let mut runtime_configuration: Option<::Value<self::fleet::RuntimeConfiguration>> = None;
+                let mut resource_creation_limit_policy: Option<
+                    ::Value<self::fleet::ResourceCreationLimitPolicy>,
+                > = None;
+                let mut runtime_configuration: Option<::Value<self::fleet::RuntimeConfiguration>> =
+                    None;
                 let mut script_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -425,7 +491,8 @@ impl<'de> ::serde::Deserialize<'de> for FleetProperties {
                             build_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "CertificateConfiguration" => {
-                            certificate_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            certificate_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -461,7 +528,8 @@ impl<'de> ::serde::Deserialize<'de> for FleetProperties {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "NewGameSessionProtectionPolicy" => {
-                            new_game_session_protection_policy = ::serde::de::MapAccess::next_value(&mut map)?;
+                            new_game_session_protection_policy =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PeerVpcAwsAccountId" => {
                             peer_vpc_aws_account_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -470,7 +538,8 @@ impl<'de> ::serde::Deserialize<'de> for FleetProperties {
                             peer_vpc_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ResourceCreationLimitPolicy" => {
-                            resource_creation_limit_policy = ::serde::de::MapAccess::next_value(&mut map)?;
+                            resource_creation_limit_policy =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RuntimeConfiguration" => {
                             runtime_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -532,7 +601,7 @@ impl From<FleetProperties> for Fleet {
 /// The [`AWS::GameLift::GameServerGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct GameServerGroup {
-    properties: GameServerGroupProperties
+    properties: GameServerGroupProperties,
 }
 
 /// Properties for the `GameServerGroup` resource.
@@ -604,20 +673,44 @@ impl ::serde::Serialize for GameServerGroupProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref auto_scaling_policy) = self.auto_scaling_policy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoScalingPolicy", auto_scaling_policy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AutoScalingPolicy",
+                auto_scaling_policy,
+            )?;
         }
         if let Some(ref balancing_strategy) = self.balancing_strategy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BalancingStrategy", balancing_strategy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BalancingStrategy",
+                balancing_strategy,
+            )?;
         }
         if let Some(ref delete_option) = self.delete_option {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeleteOption", delete_option)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "GameServerGroupName", &self.game_server_group_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "GameServerGroupName",
+            &self.game_server_group_name,
+        )?;
         if let Some(ref game_server_protection_policy) = self.game_server_protection_policy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "GameServerProtectionPolicy", game_server_protection_policy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "GameServerProtectionPolicy",
+                game_server_protection_policy,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceDefinitions", &self.instance_definitions)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "LaunchTemplate", &self.launch_template)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "InstanceDefinitions",
+            &self.instance_definitions,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "LaunchTemplate",
+            &self.launch_template,
+        )?;
         if let Some(ref max_size) = self.max_size {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxSize", max_size)?;
         }
@@ -636,7 +729,9 @@ impl ::serde::Serialize for GameServerGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for GameServerGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<GameServerGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<GameServerGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -646,14 +741,22 @@ impl<'de> ::serde::Deserialize<'de> for GameServerGroupProperties {
                 write!(f, "a struct of type GameServerGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut auto_scaling_policy: Option<::Value<self::game_server_group::AutoScalingPolicy>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut auto_scaling_policy: Option<
+                    ::Value<self::game_server_group::AutoScalingPolicy>,
+                > = None;
                 let mut balancing_strategy: Option<::Value<String>> = None;
                 let mut delete_option: Option<::Value<String>> = None;
                 let mut game_server_group_name: Option<::Value<String>> = None;
                 let mut game_server_protection_policy: Option<::Value<String>> = None;
-                let mut instance_definitions: Option<::ValueList<self::game_server_group::InstanceDefinition>> = None;
-                let mut launch_template: Option<::Value<self::game_server_group::LaunchTemplate>> = None;
+                let mut instance_definitions: Option<
+                    ::ValueList<self::game_server_group::InstanceDefinition>,
+                > = None;
+                let mut launch_template: Option<::Value<self::game_server_group::LaunchTemplate>> =
+                    None;
                 let mut max_size: Option<::Value<f64>> = None;
                 let mut min_size: Option<::Value<f64>> = None;
                 let mut role_arn: Option<::Value<String>> = None;
@@ -675,7 +778,8 @@ impl<'de> ::serde::Deserialize<'de> for GameServerGroupProperties {
                             game_server_group_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "GameServerProtectionPolicy" => {
-                            game_server_protection_policy = ::serde::de::MapAccess::next_value(&mut map)?;
+                            game_server_protection_policy =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "InstanceDefinitions" => {
                             instance_definitions = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -706,10 +810,13 @@ impl<'de> ::serde::Deserialize<'de> for GameServerGroupProperties {
                     auto_scaling_policy: auto_scaling_policy,
                     balancing_strategy: balancing_strategy,
                     delete_option: delete_option,
-                    game_server_group_name: game_server_group_name.ok_or(::serde::de::Error::missing_field("GameServerGroupName"))?,
+                    game_server_group_name: game_server_group_name
+                        .ok_or(::serde::de::Error::missing_field("GameServerGroupName"))?,
                     game_server_protection_policy: game_server_protection_policy,
-                    instance_definitions: instance_definitions.ok_or(::serde::de::Error::missing_field("InstanceDefinitions"))?,
-                    launch_template: launch_template.ok_or(::serde::de::Error::missing_field("LaunchTemplate"))?,
+                    instance_definitions: instance_definitions
+                        .ok_or(::serde::de::Error::missing_field("InstanceDefinitions"))?,
+                    launch_template: launch_template
+                        .ok_or(::serde::de::Error::missing_field("LaunchTemplate"))?,
                     max_size: max_size,
                     min_size: min_size,
                     role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
@@ -745,7 +852,7 @@ impl From<GameServerGroupProperties> for GameServerGroup {
 /// The [`AWS::GameLift::GameSessionQueue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html) resource type.
 #[derive(Debug, Default)]
 pub struct GameSessionQueue {
-    properties: GameSessionQueueProperties
+    properties: GameSessionQueueProperties,
 }
 
 /// Properties for the `GameSessionQueue` resource.
@@ -802,36 +909,62 @@ impl ::serde::Serialize for GameSessionQueueProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref custom_event_data) = self.custom_event_data {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomEventData", custom_event_data)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CustomEventData",
+                custom_event_data,
+            )?;
         }
         if let Some(ref destinations) = self.destinations {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destinations", destinations)?;
         }
         if let Some(ref filter_configuration) = self.filter_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterConfiguration", filter_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FilterConfiguration",
+                filter_configuration,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref notification_target) = self.notification_target {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationTarget", notification_target)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationTarget",
+                notification_target,
+            )?;
         }
         if let Some(ref player_latency_policies) = self.player_latency_policies {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PlayerLatencyPolicies", player_latency_policies)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PlayerLatencyPolicies",
+                player_latency_policies,
+            )?;
         }
         if let Some(ref priority_configuration) = self.priority_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PriorityConfiguration", priority_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PriorityConfiguration",
+                priority_configuration,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref timeout_in_seconds) = self.timeout_in_seconds {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimeoutInSeconds", timeout_in_seconds)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TimeoutInSeconds",
+                timeout_in_seconds,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for GameSessionQueueProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<GameSessionQueueProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<GameSessionQueueProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -841,14 +974,24 @@ impl<'de> ::serde::Deserialize<'de> for GameSessionQueueProperties {
                 write!(f, "a struct of type GameSessionQueueProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut custom_event_data: Option<::Value<String>> = None;
-                let mut destinations: Option<::ValueList<self::game_session_queue::Destination>> = None;
-                let mut filter_configuration: Option<::Value<self::game_session_queue::FilterConfiguration>> = None;
+                let mut destinations: Option<::ValueList<self::game_session_queue::Destination>> =
+                    None;
+                let mut filter_configuration: Option<
+                    ::Value<self::game_session_queue::FilterConfiguration>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut notification_target: Option<::Value<String>> = None;
-                let mut player_latency_policies: Option<::ValueList<self::game_session_queue::PlayerLatencyPolicy>> = None;
-                let mut priority_configuration: Option<::Value<self::game_session_queue::PriorityConfiguration>> = None;
+                let mut player_latency_policies: Option<
+                    ::ValueList<self::game_session_queue::PlayerLatencyPolicy>,
+                > = None;
+                let mut priority_configuration: Option<
+                    ::Value<self::game_session_queue::PriorityConfiguration>,
+                > = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut timeout_in_seconds: Option<::Value<u32>> = None;
 
@@ -925,7 +1068,7 @@ impl From<GameSessionQueueProperties> for GameSessionQueue {
 /// The [`AWS::GameLift::MatchmakingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html) resource type.
 #[derive(Debug, Default)]
 pub struct MatchmakingConfiguration {
-    properties: MatchmakingConfigurationProperties
+    properties: MatchmakingConfigurationProperties,
 }
 
 /// Properties for the `MatchmakingConfiguration` resource.
@@ -1011,39 +1154,79 @@ pub struct MatchmakingConfigurationProperties {
 impl ::serde::Serialize for MatchmakingConfigurationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptanceRequired", &self.acceptance_required)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AcceptanceRequired",
+            &self.acceptance_required,
+        )?;
         if let Some(ref acceptance_timeout_seconds) = self.acceptance_timeout_seconds {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptanceTimeoutSeconds", acceptance_timeout_seconds)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AcceptanceTimeoutSeconds",
+                acceptance_timeout_seconds,
+            )?;
         }
         if let Some(ref additional_player_count) = self.additional_player_count {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdditionalPlayerCount", additional_player_count)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AdditionalPlayerCount",
+                additional_player_count,
+            )?;
         }
         if let Some(ref backfill_mode) = self.backfill_mode {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BackfillMode", backfill_mode)?;
         }
         if let Some(ref custom_event_data) = self.custom_event_data {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomEventData", custom_event_data)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CustomEventData",
+                custom_event_data,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref flex_match_mode) = self.flex_match_mode {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FlexMatchMode", flex_match_mode)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FlexMatchMode",
+                flex_match_mode,
+            )?;
         }
         if let Some(ref game_properties) = self.game_properties {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "GameProperties", game_properties)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "GameProperties",
+                game_properties,
+            )?;
         }
         if let Some(ref game_session_data) = self.game_session_data {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "GameSessionData", game_session_data)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "GameSessionData",
+                game_session_data,
+            )?;
         }
         if let Some(ref game_session_queue_arns) = self.game_session_queue_arns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "GameSessionQueueArns", game_session_queue_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "GameSessionQueueArns",
+                game_session_queue_arns,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref notification_target) = self.notification_target {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationTarget", notification_target)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationTarget",
+                notification_target,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RequestTimeoutSeconds", &self.request_timeout_seconds)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RequestTimeoutSeconds",
+            &self.request_timeout_seconds,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuleSetName", &self.rule_set_name)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -1053,7 +1236,9 @@ impl ::serde::Serialize for MatchmakingConfigurationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for MatchmakingConfigurationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<MatchmakingConfigurationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<MatchmakingConfigurationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1063,7 +1248,10 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingConfigurationProperties {
                 write!(f, "a struct of type MatchmakingConfigurationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut acceptance_required: Option<::Value<bool>> = None;
                 let mut acceptance_timeout_seconds: Option<::Value<u32>> = None;
                 let mut additional_player_count: Option<::Value<u32>> = None;
@@ -1071,7 +1259,9 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingConfigurationProperties {
                 let mut custom_event_data: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut flex_match_mode: Option<::Value<String>> = None;
-                let mut game_properties: Option<::ValueList<self::matchmaking_configuration::GameProperty>> = None;
+                let mut game_properties: Option<
+                    ::ValueList<self::matchmaking_configuration::GameProperty>,
+                > = None;
                 let mut game_session_data: Option<::Value<String>> = None;
                 let mut game_session_queue_arns: Option<::ValueList<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -1086,7 +1276,8 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingConfigurationProperties {
                             acceptance_required = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AcceptanceTimeoutSeconds" => {
-                            acceptance_timeout_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                            acceptance_timeout_seconds =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AdditionalPlayerCount" => {
                             additional_player_count = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1132,7 +1323,8 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingConfigurationProperties {
                 }
 
                 Ok(MatchmakingConfigurationProperties {
-                    acceptance_required: acceptance_required.ok_or(::serde::de::Error::missing_field("AcceptanceRequired"))?,
+                    acceptance_required: acceptance_required
+                        .ok_or(::serde::de::Error::missing_field("AcceptanceRequired"))?,
                     acceptance_timeout_seconds: acceptance_timeout_seconds,
                     additional_player_count: additional_player_count,
                     backfill_mode: backfill_mode,
@@ -1144,8 +1336,10 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingConfigurationProperties {
                     game_session_queue_arns: game_session_queue_arns,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     notification_target: notification_target,
-                    request_timeout_seconds: request_timeout_seconds.ok_or(::serde::de::Error::missing_field("RequestTimeoutSeconds"))?,
-                    rule_set_name: rule_set_name.ok_or(::serde::de::Error::missing_field("RuleSetName"))?,
+                    request_timeout_seconds: request_timeout_seconds
+                        .ok_or(::serde::de::Error::missing_field("RequestTimeoutSeconds"))?,
+                    rule_set_name: rule_set_name
+                        .ok_or(::serde::de::Error::missing_field("RuleSetName"))?,
                     tags: tags,
                 })
             }
@@ -1177,7 +1371,7 @@ impl From<MatchmakingConfigurationProperties> for MatchmakingConfiguration {
 /// The [`AWS::GameLift::MatchmakingRuleSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html) resource type.
 #[derive(Debug, Default)]
 pub struct MatchmakingRuleSet {
-    properties: MatchmakingRuleSetProperties
+    properties: MatchmakingRuleSetProperties,
 }
 
 /// Properties for the `MatchmakingRuleSet` resource.
@@ -1213,7 +1407,9 @@ impl ::serde::Serialize for MatchmakingRuleSetProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for MatchmakingRuleSetProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<MatchmakingRuleSetProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<MatchmakingRuleSetProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1223,7 +1419,10 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingRuleSetProperties {
                 write!(f, "a struct of type MatchmakingRuleSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut rule_set_body: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -1245,7 +1444,8 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingRuleSetProperties {
 
                 Ok(MatchmakingRuleSetProperties {
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    rule_set_body: rule_set_body.ok_or(::serde::de::Error::missing_field("RuleSetBody"))?,
+                    rule_set_body: rule_set_body
+                        .ok_or(::serde::de::Error::missing_field("RuleSetBody"))?,
                     tags: tags,
                 })
             }
@@ -1277,7 +1477,7 @@ impl From<MatchmakingRuleSetProperties> for MatchmakingRuleSet {
 /// The [`AWS::GameLift::Script`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html) resource type.
 #[derive(Debug, Default)]
 pub struct Script {
-    properties: ScriptProperties
+    properties: ScriptProperties,
 }
 
 /// Properties for the `Script` resource.
@@ -1311,7 +1511,11 @@ impl ::serde::Serialize for ScriptProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "StorageLocation", &self.storage_location)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "StorageLocation",
+            &self.storage_location,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -1333,7 +1537,10 @@ impl<'de> ::serde::Deserialize<'de> for ScriptProperties {
                 write!(f, "a struct of type ScriptProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut storage_location: Option<::Value<self::script::S3Location>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -1359,7 +1566,8 @@ impl<'de> ::serde::Deserialize<'de> for ScriptProperties {
 
                 Ok(ScriptProperties {
                     name: name,
-                    storage_location: storage_location.ok_or(::serde::de::Error::missing_field("StorageLocation"))?,
+                    storage_location: storage_location
+                        .ok_or(::serde::de::Error::missing_field("StorageLocation"))?,
                     tags: tags,
                     version: version,
                 })
@@ -1427,7 +1635,9 @@ pub mod alias {
     }
 
     impl ::codec::DeserializeValue for RoutingStrategy {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RoutingStrategy, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RoutingStrategy, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1437,12 +1647,17 @@ pub mod alias {
                     write!(f, "a struct of type RoutingStrategy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut fleet_id: Option<::Value<String>> = None;
                     let mut message: Option<::Value<String>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FleetId" => {
                                 fleet_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1504,7 +1719,11 @@ pub mod build {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
             if let Some(ref object_version) = self.object_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectVersion", object_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ObjectVersion",
+                    object_version,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1522,13 +1741,18 @@ pub mod build {
                     write!(f, "a struct of type S3Location")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bucket: Option<::Value<String>> = None;
                     let mut key: Option<::Value<String>> = None;
                     let mut object_version: Option<::Value<String>> = None;
                     let mut role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bucket" => {
                                 bucket = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1576,13 +1800,19 @@ pub mod fleet {
     impl ::codec::SerializeValue for CertificateConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateType", &self.certificate_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CertificateType",
+                &self.certificate_type,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CertificateConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CertificateConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CertificateConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1592,10 +1822,15 @@ pub mod fleet {
                     write!(f, "a struct of type CertificateConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut certificate_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CertificateType" => {
                                 certificate_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1605,7 +1840,8 @@ pub mod fleet {
                     }
 
                     Ok(CertificateConfiguration {
-                        certificate_type: certificate_type.ok_or(::serde::de::Error::missing_field("CertificateType"))?,
+                        certificate_type: certificate_type
+                            .ok_or(::serde::de::Error::missing_field("CertificateType"))?,
                     })
                 }
             }
@@ -1661,13 +1897,18 @@ pub mod fleet {
                     write!(f, "a struct of type IpPermission")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut from_port: Option<::Value<u32>> = None;
                     let mut ip_range: Option<::Value<String>> = None;
                     let mut protocol: Option<::Value<String>> = None;
                     let mut to_port: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FromPort" => {
                                 from_port = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1686,7 +1927,8 @@ pub mod fleet {
                     }
 
                     Ok(IpPermission {
-                        from_port: from_port.ok_or(::serde::de::Error::missing_field("FromPort"))?,
+                        from_port: from_port
+                            .ok_or(::serde::de::Error::missing_field("FromPort"))?,
                         ip_range: ip_range.ok_or(::serde::de::Error::missing_field("IpRange"))?,
                         protocol: protocol.ok_or(::serde::de::Error::missing_field("Protocol"))?,
                         to_port: to_port.ok_or(::serde::de::Error::missing_field("ToPort"))?,
@@ -1721,7 +1963,11 @@ pub mod fleet {
     impl ::codec::SerializeValue for LocationCapacity {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DesiredEC2Instances", &self.desired_ec2_instances)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DesiredEC2Instances",
+                &self.desired_ec2_instances,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxSize", &self.max_size)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MinSize", &self.min_size)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1729,7 +1975,9 @@ pub mod fleet {
     }
 
     impl ::codec::DeserializeValue for LocationCapacity {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LocationCapacity, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LocationCapacity, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1739,15 +1987,21 @@ pub mod fleet {
                     write!(f, "a struct of type LocationCapacity")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut desired_ec2_instances: Option<::Value<u32>> = None;
                     let mut max_size: Option<::Value<u32>> = None;
                     let mut min_size: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DesiredEC2Instances" => {
-                                desired_ec2_instances = ::serde::de::MapAccess::next_value(&mut map)?;
+                                desired_ec2_instances =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxSize" => {
                                 max_size = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1760,7 +2014,8 @@ pub mod fleet {
                     }
 
                     Ok(LocationCapacity {
-                        desired_ec2_instances: desired_ec2_instances.ok_or(::serde::de::Error::missing_field("DesiredEC2Instances"))?,
+                        desired_ec2_instances: desired_ec2_instances
+                            .ok_or(::serde::de::Error::missing_field("DesiredEC2Instances"))?,
                         max_size: max_size.ok_or(::serde::de::Error::missing_field("MaxSize"))?,
                         min_size: min_size.ok_or(::serde::de::Error::missing_field("MinSize"))?,
                     })
@@ -1791,14 +2046,20 @@ pub mod fleet {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Location", &self.location)?;
             if let Some(ref location_capacity) = self.location_capacity {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocationCapacity", location_capacity)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LocationCapacity",
+                    location_capacity,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LocationConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LocationConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LocationConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1808,11 +2069,16 @@ pub mod fleet {
                     write!(f, "a struct of type LocationConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut location: Option<::Value<String>> = None;
                     let mut location_capacity: Option<::Value<LocationCapacity>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Location" => {
                                 location = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1854,17 +2120,27 @@ pub mod fleet {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref new_game_sessions_per_creator) = self.new_game_sessions_per_creator {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NewGameSessionsPerCreator", new_game_sessions_per_creator)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NewGameSessionsPerCreator",
+                    new_game_sessions_per_creator,
+                )?;
             }
             if let Some(ref policy_period_in_minutes) = self.policy_period_in_minutes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyPeriodInMinutes", policy_period_in_minutes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PolicyPeriodInMinutes",
+                    policy_period_in_minutes,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ResourceCreationLimitPolicy {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceCreationLimitPolicy, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ResourceCreationLimitPolicy, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1874,17 +2150,24 @@ pub mod fleet {
                     write!(f, "a struct of type ResourceCreationLimitPolicy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut new_game_sessions_per_creator: Option<::Value<u32>> = None;
                     let mut policy_period_in_minutes: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "NewGameSessionsPerCreator" => {
-                                new_game_sessions_per_creator = ::serde::de::MapAccess::next_value(&mut map)?;
+                                new_game_sessions_per_creator =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PolicyPeriodInMinutes" => {
-                                policy_period_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                                policy_period_in_minutes =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1924,21 +2207,39 @@ pub mod fleet {
     impl ::codec::SerializeValue for RuntimeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            if let Some(ref game_session_activation_timeout_seconds) = self.game_session_activation_timeout_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GameSessionActivationTimeoutSeconds", game_session_activation_timeout_seconds)?;
+            if let Some(ref game_session_activation_timeout_seconds) =
+                self.game_session_activation_timeout_seconds
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GameSessionActivationTimeoutSeconds",
+                    game_session_activation_timeout_seconds,
+                )?;
             }
-            if let Some(ref max_concurrent_game_session_activations) = self.max_concurrent_game_session_activations {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxConcurrentGameSessionActivations", max_concurrent_game_session_activations)?;
+            if let Some(ref max_concurrent_game_session_activations) =
+                self.max_concurrent_game_session_activations
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaxConcurrentGameSessionActivations",
+                    max_concurrent_game_session_activations,
+                )?;
             }
             if let Some(ref server_processes) = self.server_processes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerProcesses", server_processes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ServerProcesses",
+                    server_processes,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RuntimeConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RuntimeConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RuntimeConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1948,18 +2249,25 @@ pub mod fleet {
                     write!(f, "a struct of type RuntimeConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut game_session_activation_timeout_seconds: Option<::Value<u32>> = None;
                     let mut max_concurrent_game_session_activations: Option<::Value<u32>> = None;
                     let mut server_processes: Option<::ValueList<ServerProcess>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "GameSessionActivationTimeoutSeconds" => {
-                                game_session_activation_timeout_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                                game_session_activation_timeout_seconds =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxConcurrentGameSessionActivations" => {
-                                max_concurrent_game_session_activations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                max_concurrent_game_session_activations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ServerProcesses" => {
                                 server_processes = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1969,8 +2277,10 @@ pub mod fleet {
                     }
 
                     Ok(RuntimeConfiguration {
-                        game_session_activation_timeout_seconds: game_session_activation_timeout_seconds,
-                        max_concurrent_game_session_activations: max_concurrent_game_session_activations,
+                        game_session_activation_timeout_seconds:
+                            game_session_activation_timeout_seconds,
+                        max_concurrent_game_session_activations:
+                            max_concurrent_game_session_activations,
                         server_processes: server_processes,
                     })
                 }
@@ -2003,7 +2313,11 @@ pub mod fleet {
     impl ::codec::SerializeValue for ServerProcess {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConcurrentExecutions", &self.concurrent_executions)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ConcurrentExecutions",
+                &self.concurrent_executions,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LaunchPath", &self.launch_path)?;
             if let Some(ref parameters) = self.parameters {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Parameters", parameters)?;
@@ -2013,7 +2327,9 @@ pub mod fleet {
     }
 
     impl ::codec::DeserializeValue for ServerProcess {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ServerProcess, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ServerProcess, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2023,15 +2339,21 @@ pub mod fleet {
                     write!(f, "a struct of type ServerProcess")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut concurrent_executions: Option<::Value<u32>> = None;
                     let mut launch_path: Option<::Value<String>> = None;
                     let mut parameters: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ConcurrentExecutions" => {
-                                concurrent_executions = ::serde::de::MapAccess::next_value(&mut map)?;
+                                concurrent_executions =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LaunchPath" => {
                                 launch_path = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2044,8 +2366,10 @@ pub mod fleet {
                     }
 
                     Ok(ServerProcess {
-                        concurrent_executions: concurrent_executions.ok_or(::serde::de::Error::missing_field("ConcurrentExecutions"))?,
-                        launch_path: launch_path.ok_or(::serde::de::Error::missing_field("LaunchPath"))?,
+                        concurrent_executions: concurrent_executions
+                            .ok_or(::serde::de::Error::missing_field("ConcurrentExecutions"))?,
+                        launch_path: launch_path
+                            .ok_or(::serde::de::Error::missing_field("LaunchPath"))?,
                         parameters: parameters,
                     })
                 }
@@ -2078,15 +2402,25 @@ pub mod game_server_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref estimated_instance_warmup) = self.estimated_instance_warmup {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EstimatedInstanceWarmup", estimated_instance_warmup)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EstimatedInstanceWarmup",
+                    estimated_instance_warmup,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetTrackingConfiguration", &self.target_tracking_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TargetTrackingConfiguration",
+                &self.target_tracking_configuration,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AutoScalingPolicy {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AutoScalingPolicy, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AutoScalingPolicy, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2096,17 +2430,26 @@ pub mod game_server_group {
                     write!(f, "a struct of type AutoScalingPolicy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut estimated_instance_warmup: Option<::Value<f64>> = None;
-                    let mut target_tracking_configuration: Option<::Value<TargetTrackingConfiguration>> = None;
+                    let mut target_tracking_configuration: Option<
+                        ::Value<TargetTrackingConfiguration>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EstimatedInstanceWarmup" => {
-                                estimated_instance_warmup = ::serde::de::MapAccess::next_value(&mut map)?;
+                                estimated_instance_warmup =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TargetTrackingConfiguration" => {
-                                target_tracking_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                target_tracking_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2114,7 +2457,9 @@ pub mod game_server_group {
 
                     Ok(AutoScalingPolicy {
                         estimated_instance_warmup: estimated_instance_warmup,
-                        target_tracking_configuration: target_tracking_configuration.ok_or(::serde::de::Error::missing_field("TargetTrackingConfiguration"))?,
+                        target_tracking_configuration: target_tracking_configuration.ok_or(
+                            ::serde::de::Error::missing_field("TargetTrackingConfiguration"),
+                        )?,
                     })
                 }
             }
@@ -2141,16 +2486,26 @@ pub mod game_server_group {
     impl ::codec::SerializeValue for InstanceDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceType", &self.instance_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InstanceType",
+                &self.instance_type,
+            )?;
             if let Some(ref weighted_capacity) = self.weighted_capacity {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "WeightedCapacity", weighted_capacity)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "WeightedCapacity",
+                    weighted_capacity,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for InstanceDefinition {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InstanceDefinition, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InstanceDefinition, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2160,11 +2515,16 @@ pub mod game_server_group {
                     write!(f, "a struct of type InstanceDefinition")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut instance_type: Option<::Value<String>> = None;
                     let mut weighted_capacity: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InstanceType" => {
                                 instance_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2177,7 +2537,8 @@ pub mod game_server_group {
                     }
 
                     Ok(InstanceDefinition {
-                        instance_type: instance_type.ok_or(::serde::de::Error::missing_field("InstanceType"))?,
+                        instance_type: instance_type
+                            .ok_or(::serde::de::Error::missing_field("InstanceType"))?,
                         weighted_capacity: weighted_capacity,
                     })
                 }
@@ -2211,10 +2572,18 @@ pub mod game_server_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref launch_template_id) = self.launch_template_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LaunchTemplateId", launch_template_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LaunchTemplateId",
+                    launch_template_id,
+                )?;
             }
             if let Some(ref launch_template_name) = self.launch_template_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LaunchTemplateName", launch_template_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LaunchTemplateName",
+                    launch_template_name,
+                )?;
             }
             if let Some(ref version) = self.version {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Version", version)?;
@@ -2224,7 +2593,9 @@ pub mod game_server_group {
     }
 
     impl ::codec::DeserializeValue for LaunchTemplate {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LaunchTemplate, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LaunchTemplate, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2234,18 +2605,24 @@ pub mod game_server_group {
                     write!(f, "a struct of type LaunchTemplate")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut launch_template_id: Option<::Value<String>> = None;
                     let mut launch_template_name: Option<::Value<String>> = None;
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LaunchTemplateId" => {
                                 launch_template_id = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LaunchTemplateName" => {
-                                launch_template_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                launch_template_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Version" => {
                                 version = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2279,13 +2656,19 @@ pub mod game_server_group {
     impl ::codec::SerializeValue for TargetTrackingConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetValue", &self.target_value)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TargetValue",
+                &self.target_value,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for TargetTrackingConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TargetTrackingConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TargetTrackingConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2295,10 +2678,15 @@ pub mod game_server_group {
                     write!(f, "a struct of type TargetTrackingConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut target_value: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TargetValue" => {
                                 target_value = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2308,7 +2696,8 @@ pub mod game_server_group {
                     }
 
                     Ok(TargetTrackingConfiguration {
-                        target_value: target_value.ok_or(::serde::de::Error::missing_field("TargetValue"))?,
+                        target_value: target_value
+                            .ok_or(::serde::de::Error::missing_field("TargetValue"))?,
                     })
                 }
             }
@@ -2335,7 +2724,11 @@ pub mod game_session_queue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination_arn) = self.destination_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationArn", destination_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DestinationArn",
+                    destination_arn,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -2352,10 +2745,15 @@ pub mod game_session_queue {
                     write!(f, "a struct of type Destination")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut destination_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DestinationArn" => {
                                 destination_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2388,14 +2786,20 @@ pub mod game_session_queue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_locations) = self.allowed_locations {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowedLocations", allowed_locations)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowedLocations",
+                    allowed_locations,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FilterConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FilterConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FilterConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2405,10 +2809,15 @@ pub mod game_session_queue {
                     write!(f, "a struct of type FilterConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allowed_locations: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllowedLocations" => {
                                 allowed_locations = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2445,18 +2854,30 @@ pub mod game_session_queue {
     impl ::codec::SerializeValue for PlayerLatencyPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            if let Some(ref maximum_individual_player_latency_milliseconds) = self.maximum_individual_player_latency_milliseconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaximumIndividualPlayerLatencyMilliseconds", maximum_individual_player_latency_milliseconds)?;
+            if let Some(ref maximum_individual_player_latency_milliseconds) =
+                self.maximum_individual_player_latency_milliseconds
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaximumIndividualPlayerLatencyMilliseconds",
+                    maximum_individual_player_latency_milliseconds,
+                )?;
             }
             if let Some(ref policy_duration_seconds) = self.policy_duration_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDurationSeconds", policy_duration_seconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PolicyDurationSeconds",
+                    policy_duration_seconds,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for PlayerLatencyPolicy {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PlayerLatencyPolicy, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PlayerLatencyPolicy, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2466,24 +2887,33 @@ pub mod game_session_queue {
                     write!(f, "a struct of type PlayerLatencyPolicy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut maximum_individual_player_latency_milliseconds: Option<::Value<u32>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut maximum_individual_player_latency_milliseconds: Option<::Value<u32>> =
+                        None;
                     let mut policy_duration_seconds: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MaximumIndividualPlayerLatencyMilliseconds" => {
-                                maximum_individual_player_latency_milliseconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                                maximum_individual_player_latency_milliseconds =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PolicyDurationSeconds" => {
-                                policy_duration_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                                policy_duration_seconds =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(PlayerLatencyPolicy {
-                        maximum_individual_player_latency_milliseconds: maximum_individual_player_latency_milliseconds,
+                        maximum_individual_player_latency_milliseconds:
+                            maximum_individual_player_latency_milliseconds,
                         policy_duration_seconds: policy_duration_seconds,
                     })
                 }
@@ -2512,17 +2942,27 @@ pub mod game_session_queue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref location_order) = self.location_order {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocationOrder", location_order)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LocationOrder",
+                    location_order,
+                )?;
             }
             if let Some(ref priority_order) = self.priority_order {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PriorityOrder", priority_order)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PriorityOrder",
+                    priority_order,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for PriorityConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PriorityConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PriorityConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2532,11 +2972,16 @@ pub mod game_session_queue {
                     write!(f, "a struct of type PriorityConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut location_order: Option<::ValueList<String>> = None;
                     let mut priority_order: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LocationOrder" => {
                                 location_order = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2598,11 +3043,16 @@ pub mod matchmaking_configuration {
                     write!(f, "a struct of type GameProperty")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2660,7 +3110,11 @@ pub mod script {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
             if let Some(ref object_version) = self.object_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectVersion", object_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ObjectVersion",
+                    object_version,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
             ::serde::ser::SerializeMap::end(map)
@@ -2678,13 +3132,18 @@ pub mod script {
                     write!(f, "a struct of type S3Location")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bucket: Option<::Value<String>> = None;
                     let mut key: Option<::Value<String>> = None;
                     let mut object_version: Option<::Value<String>> = None;
                     let mut role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bucket" => {
                                 bucket = ::serde::de::MapAccess::next_value(&mut map)?;

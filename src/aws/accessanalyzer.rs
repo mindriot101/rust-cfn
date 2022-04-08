@@ -3,7 +3,7 @@
 /// The [`AWS::AccessAnalyzer::Analyzer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html) resource type.
 #[derive(Debug, Default)]
 pub struct Analyzer {
-    properties: AnalyzerProperties
+    properties: AnalyzerProperties,
 }
 
 /// Properties for the `Analyzer` resource.
@@ -59,7 +59,10 @@ impl<'de> ::serde::Deserialize<'de> for AnalyzerProperties {
                 write!(f, "a struct of type AnalyzerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut analyzer_name: Option<::Value<String>> = None;
                 let mut archive_rules: Option<::ValueList<self::analyzer::ArchiveRule>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -153,11 +156,16 @@ pub mod analyzer {
                     write!(f, "a struct of type ArchiveRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut filter: Option<::ValueList<Filter>> = None;
                     let mut rule_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Filter" => {
                                 filter = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -171,7 +179,8 @@ pub mod analyzer {
 
                     Ok(ArchiveRule {
                         filter: filter.ok_or(::serde::de::Error::missing_field("Filter"))?,
-                        rule_name: rule_name.ok_or(::serde::de::Error::missing_field("RuleName"))?,
+                        rule_name: rule_name
+                            .ok_or(::serde::de::Error::missing_field("RuleName"))?,
                     })
                 }
             }
@@ -241,14 +250,19 @@ pub mod analyzer {
                     write!(f, "a struct of type Filter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut contains: Option<::ValueList<String>> = None;
                     let mut eq: Option<::ValueList<String>> = None;
                     let mut exists: Option<::Value<bool>> = None;
                     let mut neq: Option<::ValueList<String>> = None;
                     let mut property: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Contains" => {
                                 contains = ::serde::de::MapAccess::next_value(&mut map)?;

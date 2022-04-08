@@ -3,7 +3,7 @@
 /// The [`AWS::CodeGuruProfiler::ProfilingGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct ProfilingGroup {
-    properties: ProfilingGroupProperties
+    properties: ProfilingGroupProperties,
 }
 
 /// Properties for the `ProfilingGroup` resource.
@@ -18,7 +18,8 @@ pub struct ProfilingGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub anomaly_detection_notification_configuration: Option<::ValueList<self::profiling_group::Channel>>,
+    pub anomaly_detection_notification_configuration:
+        Option<::ValueList<self::profiling_group::Channel>>,
     /// Property [`ComputePlatform`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-computeplatform).
     ///
     /// Update type: _Immutable_.
@@ -40,15 +41,33 @@ impl ::serde::Serialize for ProfilingGroupProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref agent_permissions) = self.agent_permissions {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AgentPermissions", agent_permissions)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AgentPermissions",
+                agent_permissions,
+            )?;
         }
-        if let Some(ref anomaly_detection_notification_configuration) = self.anomaly_detection_notification_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AnomalyDetectionNotificationConfiguration", anomaly_detection_notification_configuration)?;
+        if let Some(ref anomaly_detection_notification_configuration) =
+            self.anomaly_detection_notification_configuration
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AnomalyDetectionNotificationConfiguration",
+                anomaly_detection_notification_configuration,
+            )?;
         }
         if let Some(ref compute_platform) = self.compute_platform {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComputePlatform", compute_platform)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ComputePlatform",
+                compute_platform,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProfilingGroupName", &self.profiling_group_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ProfilingGroupName",
+            &self.profiling_group_name,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -57,7 +76,9 @@ impl ::serde::Serialize for ProfilingGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ProfilingGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ProfilingGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ProfilingGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -67,9 +88,14 @@ impl<'de> ::serde::Deserialize<'de> for ProfilingGroupProperties {
                 write!(f, "a struct of type ProfilingGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut agent_permissions: Option<::Value<::json::Value>> = None;
-                let mut anomaly_detection_notification_configuration: Option<::ValueList<self::profiling_group::Channel>> = None;
+                let mut anomaly_detection_notification_configuration: Option<
+                    ::ValueList<self::profiling_group::Channel>,
+                > = None;
                 let mut compute_platform: Option<::Value<String>> = None;
                 let mut profiling_group_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -80,7 +106,8 @@ impl<'de> ::serde::Deserialize<'de> for ProfilingGroupProperties {
                             agent_permissions = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AnomalyDetectionNotificationConfiguration" => {
-                            anomaly_detection_notification_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            anomaly_detection_notification_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ComputePlatform" => {
                             compute_platform = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -97,9 +124,11 @@ impl<'de> ::serde::Deserialize<'de> for ProfilingGroupProperties {
 
                 Ok(ProfilingGroupProperties {
                     agent_permissions: agent_permissions,
-                    anomaly_detection_notification_configuration: anomaly_detection_notification_configuration,
+                    anomaly_detection_notification_configuration:
+                        anomaly_detection_notification_configuration,
                     compute_platform: compute_platform,
-                    profiling_group_name: profiling_group_name.ok_or(::serde::de::Error::missing_field("ProfilingGroupName"))?,
+                    profiling_group_name: profiling_group_name
+                        .ok_or(::serde::de::Error::missing_field("ProfilingGroupName"))?,
                     tags: tags,
                 })
             }
@@ -168,11 +197,16 @@ pub mod profiling_group {
                     write!(f, "a struct of type Channel")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut channel_id: Option<::Value<String>> = None;
                     let mut channel_uri: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "channelId" => {
                                 channel_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -186,7 +220,8 @@ pub mod profiling_group {
 
                     Ok(Channel {
                         channel_id: channel_id,
-                        channel_uri: channel_uri.ok_or(::serde::de::Error::missing_field("channelUri"))?,
+                        channel_uri: channel_uri
+                            .ok_or(::serde::de::Error::missing_field("channelUri"))?,
                     })
                 }
             }

@@ -3,7 +3,7 @@
 /// The [`AWS::IoTWireless::Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html) resource type.
 #[derive(Debug, Default)]
 pub struct Destination {
-    properties: DestinationProperties
+    properties: DestinationProperties,
 }
 
 /// Properties for the `Destination` resource.
@@ -48,7 +48,11 @@ impl ::serde::Serialize for DestinationProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Expression", &self.expression)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExpressionType", &self.expression_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ExpressionType",
+            &self.expression_type,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
         if let Some(ref tags) = self.tags {
@@ -69,7 +73,10 @@ impl<'de> ::serde::Deserialize<'de> for DestinationProperties {
                 write!(f, "a struct of type DestinationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut expression: Option<::Value<String>> = None;
                 let mut expression_type: Option<::Value<String>> = None;
@@ -103,8 +110,10 @@ impl<'de> ::serde::Deserialize<'de> for DestinationProperties {
 
                 Ok(DestinationProperties {
                     description: description,
-                    expression: expression.ok_or(::serde::de::Error::missing_field("Expression"))?,
-                    expression_type: expression_type.ok_or(::serde::de::Error::missing_field("ExpressionType"))?,
+                    expression: expression
+                        .ok_or(::serde::de::Error::missing_field("Expression"))?,
+                    expression_type: expression_type
+                        .ok_or(::serde::de::Error::missing_field("ExpressionType"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
                     tags: tags,
@@ -138,7 +147,7 @@ impl From<DestinationProperties> for Destination {
 /// The [`AWS::IoTWireless::DeviceProfile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html) resource type.
 #[derive(Debug, Default)]
 pub struct DeviceProfile {
-    properties: DeviceProfileProperties
+    properties: DeviceProfileProperties,
 }
 
 /// Properties for the `DeviceProfile` resource.
@@ -178,7 +187,9 @@ impl ::serde::Serialize for DeviceProfileProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for DeviceProfileProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<DeviceProfileProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<DeviceProfileProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -188,8 +199,12 @@ impl<'de> ::serde::Deserialize<'de> for DeviceProfileProperties {
                 write!(f, "a struct of type DeviceProfileProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut lo_ra_wan: Option<::Value<self::device_profile::LoRaWANDeviceProfile>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut lo_ra_wan: Option<::Value<self::device_profile::LoRaWANDeviceProfile>> =
+                    None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -242,7 +257,7 @@ impl From<DeviceProfileProperties> for DeviceProfile {
 /// The [`AWS::IoTWireless::FuotaTask`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html) resource type.
 #[derive(Debug, Default)]
 pub struct FuotaTask {
-    properties: FuotaTaskProperties
+    properties: FuotaTaskProperties,
 }
 
 /// Properties for the `FuotaTask` resource.
@@ -304,22 +319,46 @@ impl ::serde::Serialize for FuotaTaskProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref associate_multicast_group) = self.associate_multicast_group {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociateMulticastGroup", associate_multicast_group)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssociateMulticastGroup",
+                associate_multicast_group,
+            )?;
         }
         if let Some(ref associate_wireless_device) = self.associate_wireless_device {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociateWirelessDevice", associate_wireless_device)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssociateWirelessDevice",
+                associate_wireless_device,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref disassociate_multicast_group) = self.disassociate_multicast_group {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisassociateMulticastGroup", disassociate_multicast_group)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DisassociateMulticastGroup",
+                disassociate_multicast_group,
+            )?;
         }
         if let Some(ref disassociate_wireless_device) = self.disassociate_wireless_device {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisassociateWirelessDevice", disassociate_wireless_device)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DisassociateWirelessDevice",
+                disassociate_wireless_device,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FirmwareUpdateImage", &self.firmware_update_image)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FirmwareUpdateRole", &self.firmware_update_role)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FirmwareUpdateImage",
+            &self.firmware_update_image,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FirmwareUpdateRole",
+            &self.firmware_update_role,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoRaWAN", &self.lo_ra_wan)?;
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -342,7 +381,10 @@ impl<'de> ::serde::Deserialize<'de> for FuotaTaskProperties {
                 write!(f, "a struct of type FuotaTaskProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut associate_multicast_group: Option<::Value<String>> = None;
                 let mut associate_wireless_device: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
@@ -357,19 +399,23 @@ impl<'de> ::serde::Deserialize<'de> for FuotaTaskProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AssociateMulticastGroup" => {
-                            associate_multicast_group = ::serde::de::MapAccess::next_value(&mut map)?;
+                            associate_multicast_group =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AssociateWirelessDevice" => {
-                            associate_wireless_device = ::serde::de::MapAccess::next_value(&mut map)?;
+                            associate_wireless_device =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DisassociateMulticastGroup" => {
-                            disassociate_multicast_group = ::serde::de::MapAccess::next_value(&mut map)?;
+                            disassociate_multicast_group =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DisassociateWirelessDevice" => {
-                            disassociate_wireless_device = ::serde::de::MapAccess::next_value(&mut map)?;
+                            disassociate_wireless_device =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "FirmwareUpdateImage" => {
                             firmware_update_image = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -396,8 +442,10 @@ impl<'de> ::serde::Deserialize<'de> for FuotaTaskProperties {
                     description: description,
                     disassociate_multicast_group: disassociate_multicast_group,
                     disassociate_wireless_device: disassociate_wireless_device,
-                    firmware_update_image: firmware_update_image.ok_or(::serde::de::Error::missing_field("FirmwareUpdateImage"))?,
-                    firmware_update_role: firmware_update_role.ok_or(::serde::de::Error::missing_field("FirmwareUpdateRole"))?,
+                    firmware_update_image: firmware_update_image
+                        .ok_or(::serde::de::Error::missing_field("FirmwareUpdateImage"))?,
+                    firmware_update_role: firmware_update_role
+                        .ok_or(::serde::de::Error::missing_field("FirmwareUpdateRole"))?,
                     lo_ra_wan: lo_ra_wan.ok_or(::serde::de::Error::missing_field("LoRaWAN"))?,
                     name: name,
                     tags: tags,
@@ -431,7 +479,7 @@ impl From<FuotaTaskProperties> for FuotaTask {
 /// The [`AWS::IoTWireless::MulticastGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct MulticastGroup {
-    properties: MulticastGroupProperties
+    properties: MulticastGroupProperties,
 }
 
 /// Properties for the `MulticastGroup` resource.
@@ -473,13 +521,21 @@ impl ::serde::Serialize for MulticastGroupProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref associate_wireless_device) = self.associate_wireless_device {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociateWirelessDevice", associate_wireless_device)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssociateWirelessDevice",
+                associate_wireless_device,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref disassociate_wireless_device) = self.disassociate_wireless_device {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisassociateWirelessDevice", disassociate_wireless_device)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DisassociateWirelessDevice",
+                disassociate_wireless_device,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoRaWAN", &self.lo_ra_wan)?;
         if let Some(ref name) = self.name {
@@ -493,7 +549,9 @@ impl ::serde::Serialize for MulticastGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for MulticastGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<MulticastGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<MulticastGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -503,7 +561,10 @@ impl<'de> ::serde::Deserialize<'de> for MulticastGroupProperties {
                 write!(f, "a struct of type MulticastGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut associate_wireless_device: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut disassociate_wireless_device: Option<::Value<String>> = None;
@@ -514,13 +575,15 @@ impl<'de> ::serde::Deserialize<'de> for MulticastGroupProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AssociateWirelessDevice" => {
-                            associate_wireless_device = ::serde::de::MapAccess::next_value(&mut map)?;
+                            associate_wireless_device =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DisassociateWirelessDevice" => {
-                            disassociate_wireless_device = ::serde::de::MapAccess::next_value(&mut map)?;
+                            disassociate_wireless_device =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "LoRaWAN" => {
                             lo_ra_wan = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -572,7 +635,7 @@ impl From<MulticastGroupProperties> for MulticastGroup {
 /// The [`AWS::IoTWireless::PartnerAccount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html) resource type.
 #[derive(Debug, Default)]
 pub struct PartnerAccount {
-    properties: PartnerAccountProperties
+    properties: PartnerAccountProperties,
 }
 
 /// Properties for the `PartnerAccount` resource.
@@ -625,7 +688,11 @@ impl ::serde::Serialize for PartnerAccountProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Fingerprint", fingerprint)?;
         }
         if let Some(ref partner_account_id) = self.partner_account_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PartnerAccountId", partner_account_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PartnerAccountId",
+                partner_account_id,
+            )?;
         }
         if let Some(ref partner_type) = self.partner_type {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PartnerType", partner_type)?;
@@ -634,7 +701,11 @@ impl ::serde::Serialize for PartnerAccountProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Sidewalk", sidewalk)?;
         }
         if let Some(ref sidewalk_update) = self.sidewalk_update {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SidewalkUpdate", sidewalk_update)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SidewalkUpdate",
+                sidewalk_update,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -644,7 +715,9 @@ impl ::serde::Serialize for PartnerAccountProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for PartnerAccountProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PartnerAccountProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PartnerAccountProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -654,13 +727,19 @@ impl<'de> ::serde::Deserialize<'de> for PartnerAccountProperties {
                 write!(f, "a struct of type PartnerAccountProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut account_linked: Option<::Value<bool>> = None;
                 let mut fingerprint: Option<::Value<String>> = None;
                 let mut partner_account_id: Option<::Value<String>> = None;
                 let mut partner_type: Option<::Value<String>> = None;
-                let mut sidewalk: Option<::Value<self::partner_account::SidewalkAccountInfo>> = None;
-                let mut sidewalk_update: Option<::Value<self::partner_account::SidewalkUpdateAccount>> = None;
+                let mut sidewalk: Option<::Value<self::partner_account::SidewalkAccountInfo>> =
+                    None;
+                let mut sidewalk_update: Option<
+                    ::Value<self::partner_account::SidewalkUpdateAccount>,
+                > = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -728,7 +807,7 @@ impl From<PartnerAccountProperties> for PartnerAccount {
 /// The [`AWS::IoTWireless::ServiceProfile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html) resource type.
 #[derive(Debug, Default)]
 pub struct ServiceProfile {
-    properties: ServiceProfileProperties
+    properties: ServiceProfileProperties,
 }
 
 /// Properties for the `ServiceProfile` resource.
@@ -768,7 +847,9 @@ impl ::serde::Serialize for ServiceProfileProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ServiceProfileProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ServiceProfileProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ServiceProfileProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -778,8 +859,12 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProfileProperties {
                 write!(f, "a struct of type ServiceProfileProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut lo_ra_wan: Option<::Value<self::service_profile::LoRaWANServiceProfile>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut lo_ra_wan: Option<::Value<self::service_profile::LoRaWANServiceProfile>> =
+                    None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -832,7 +917,7 @@ impl From<ServiceProfileProperties> for ServiceProfile {
 /// The [`AWS::IoTWireless::TaskDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html) resource type.
 #[derive(Debug, Default)]
 pub struct TaskDefinition {
-    properties: TaskDefinitionProperties
+    properties: TaskDefinitionProperties,
 }
 
 /// Properties for the `TaskDefinition` resource.
@@ -847,7 +932,8 @@ pub struct TaskDefinitionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub lo_ra_wan_update_gateway_task_entry: Option<::Value<self::task_definition::LoRaWANUpdateGatewayTaskEntry>>,
+    pub lo_ra_wan_update_gateway_task_entry:
+        Option<::Value<self::task_definition::LoRaWANUpdateGatewayTaskEntry>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-name).
     ///
     /// Update type: _Mutable_.
@@ -873,9 +959,19 @@ pub struct TaskDefinitionProperties {
 impl ::serde::Serialize for TaskDefinitionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoCreateTasks", &self.auto_create_tasks)?;
-        if let Some(ref lo_ra_wan_update_gateway_task_entry) = self.lo_ra_wan_update_gateway_task_entry {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoRaWANUpdateGatewayTaskEntry", lo_ra_wan_update_gateway_task_entry)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AutoCreateTasks",
+            &self.auto_create_tasks,
+        )?;
+        if let Some(ref lo_ra_wan_update_gateway_task_entry) =
+            self.lo_ra_wan_update_gateway_task_entry
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LoRaWANUpdateGatewayTaskEntry",
+                lo_ra_wan_update_gateway_task_entry,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -884,7 +980,11 @@ impl ::serde::Serialize for TaskDefinitionProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref task_definition_type) = self.task_definition_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TaskDefinitionType", task_definition_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TaskDefinitionType",
+                task_definition_type,
+            )?;
         }
         if let Some(ref update) = self.update {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Update", update)?;
@@ -894,7 +994,9 @@ impl ::serde::Serialize for TaskDefinitionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for TaskDefinitionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<TaskDefinitionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<TaskDefinitionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -904,13 +1006,20 @@ impl<'de> ::serde::Deserialize<'de> for TaskDefinitionProperties {
                 write!(f, "a struct of type TaskDefinitionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut auto_create_tasks: Option<::Value<bool>> = None;
-                let mut lo_ra_wan_update_gateway_task_entry: Option<::Value<self::task_definition::LoRaWANUpdateGatewayTaskEntry>> = None;
+                let mut lo_ra_wan_update_gateway_task_entry: Option<
+                    ::Value<self::task_definition::LoRaWANUpdateGatewayTaskEntry>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut task_definition_type: Option<::Value<String>> = None;
-                let mut update: Option<::Value<self::task_definition::UpdateWirelessGatewayTaskCreate>> = None;
+                let mut update: Option<
+                    ::Value<self::task_definition::UpdateWirelessGatewayTaskCreate>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -918,7 +1027,8 @@ impl<'de> ::serde::Deserialize<'de> for TaskDefinitionProperties {
                             auto_create_tasks = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "LoRaWANUpdateGatewayTaskEntry" => {
-                            lo_ra_wan_update_gateway_task_entry = ::serde::de::MapAccess::next_value(&mut map)?;
+                            lo_ra_wan_update_gateway_task_entry =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Name" => {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -937,7 +1047,8 @@ impl<'de> ::serde::Deserialize<'de> for TaskDefinitionProperties {
                 }
 
                 Ok(TaskDefinitionProperties {
-                    auto_create_tasks: auto_create_tasks.ok_or(::serde::de::Error::missing_field("AutoCreateTasks"))?,
+                    auto_create_tasks: auto_create_tasks
+                        .ok_or(::serde::de::Error::missing_field("AutoCreateTasks"))?,
                     lo_ra_wan_update_gateway_task_entry: lo_ra_wan_update_gateway_task_entry,
                     name: name,
                     tags: tags,
@@ -973,7 +1084,7 @@ impl From<TaskDefinitionProperties> for TaskDefinition {
 /// The [`AWS::IoTWireless::WirelessDevice`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html) resource type.
 #[derive(Debug, Default)]
 pub struct WirelessDevice {
-    properties: WirelessDeviceProperties
+    properties: WirelessDeviceProperties,
 }
 
 /// Properties for the `WirelessDevice` resource.
@@ -1027,9 +1138,17 @@ impl ::serde::Serialize for WirelessDeviceProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationName", &self.destination_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DestinationName",
+            &self.destination_name,
+        )?;
         if let Some(ref last_uplink_received_at) = self.last_uplink_received_at {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUplinkReceivedAt", last_uplink_received_at)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LastUplinkReceivedAt",
+                last_uplink_received_at,
+            )?;
         }
         if let Some(ref lo_ra_wan) = self.lo_ra_wan {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoRaWAN", lo_ra_wan)?;
@@ -1049,7 +1168,9 @@ impl ::serde::Serialize for WirelessDeviceProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for WirelessDeviceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<WirelessDeviceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<WirelessDeviceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1059,7 +1180,10 @@ impl<'de> ::serde::Deserialize<'de> for WirelessDeviceProperties {
                 write!(f, "a struct of type WirelessDeviceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut destination_name: Option<::Value<String>> = None;
                 let mut last_uplink_received_at: Option<::Value<String>> = None;
@@ -1101,7 +1225,8 @@ impl<'de> ::serde::Deserialize<'de> for WirelessDeviceProperties {
 
                 Ok(WirelessDeviceProperties {
                     description: description,
-                    destination_name: destination_name.ok_or(::serde::de::Error::missing_field("DestinationName"))?,
+                    destination_name: destination_name
+                        .ok_or(::serde::de::Error::missing_field("DestinationName"))?,
                     last_uplink_received_at: last_uplink_received_at,
                     lo_ra_wan: lo_ra_wan,
                     name: name,
@@ -1138,7 +1263,7 @@ impl From<WirelessDeviceProperties> for WirelessDevice {
 /// The [`AWS::IoTWireless::WirelessGateway`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html) resource type.
 #[derive(Debug, Default)]
 pub struct WirelessGateway {
-    properties: WirelessGatewayProperties
+    properties: WirelessGatewayProperties,
 }
 
 /// Properties for the `WirelessGateway` resource.
@@ -1183,7 +1308,11 @@ impl ::serde::Serialize for WirelessGatewayProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref last_uplink_received_at) = self.last_uplink_received_at {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUplinkReceivedAt", last_uplink_received_at)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LastUplinkReceivedAt",
+                last_uplink_received_at,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoRaWAN", &self.lo_ra_wan)?;
         if let Some(ref name) = self.name {
@@ -1200,7 +1329,9 @@ impl ::serde::Serialize for WirelessGatewayProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for WirelessGatewayProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<WirelessGatewayProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<WirelessGatewayProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1210,7 +1341,10 @@ impl<'de> ::serde::Deserialize<'de> for WirelessGatewayProperties {
                 write!(f, "a struct of type WirelessGatewayProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut last_uplink_received_at: Option<::Value<String>> = None;
                 let mut lo_ra_wan: Option<::Value<self::wireless_gateway::LoRaWANGateway>> = None;
@@ -1358,16 +1492,28 @@ pub mod device_profile {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref class_b_timeout) = self.class_b_timeout {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClassBTimeout", class_b_timeout)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ClassBTimeout",
+                    class_b_timeout,
+                )?;
             }
             if let Some(ref class_c_timeout) = self.class_c_timeout {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClassCTimeout", class_c_timeout)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ClassCTimeout",
+                    class_c_timeout,
+                )?;
             }
             if let Some(ref mac_version) = self.mac_version {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MacVersion", mac_version)?;
             }
             if let Some(ref max_duty_cycle) = self.max_duty_cycle {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxDutyCycle", max_duty_cycle)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaxDutyCycle",
+                    max_duty_cycle,
+                )?;
             }
             if let Some(ref max_eirp) = self.max_eirp {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxEirp", max_eirp)?;
@@ -1376,35 +1522,65 @@ pub mod device_profile {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "PingSlotDr", ping_slot_dr)?;
             }
             if let Some(ref ping_slot_freq) = self.ping_slot_freq {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PingSlotFreq", ping_slot_freq)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PingSlotFreq",
+                    ping_slot_freq,
+                )?;
             }
             if let Some(ref ping_slot_period) = self.ping_slot_period {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PingSlotPeriod", ping_slot_period)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PingSlotPeriod",
+                    ping_slot_period,
+                )?;
             }
             if let Some(ref reg_params_revision) = self.reg_params_revision {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegParamsRevision", reg_params_revision)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RegParamsRevision",
+                    reg_params_revision,
+                )?;
             }
             if let Some(ref rf_region) = self.rf_region {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RfRegion", rf_region)?;
             }
             if let Some(ref supports32_bit_f_cnt) = self.supports32_bit_f_cnt {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Supports32BitFCnt", supports32_bit_f_cnt)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Supports32BitFCnt",
+                    supports32_bit_f_cnt,
+                )?;
             }
             if let Some(ref supports_class_b) = self.supports_class_b {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SupportsClassB", supports_class_b)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SupportsClassB",
+                    supports_class_b,
+                )?;
             }
             if let Some(ref supports_class_c) = self.supports_class_c {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SupportsClassC", supports_class_c)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SupportsClassC",
+                    supports_class_c,
+                )?;
             }
             if let Some(ref supports_join) = self.supports_join {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SupportsJoin", supports_join)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SupportsJoin",
+                    supports_join,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LoRaWANDeviceProfile {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoRaWANDeviceProfile, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoRaWANDeviceProfile, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1414,7 +1590,10 @@ pub mod device_profile {
                     write!(f, "a struct of type LoRaWANDeviceProfile")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut class_b_timeout: Option<::Value<u32>> = None;
                     let mut class_c_timeout: Option<::Value<u32>> = None;
                     let mut mac_version: Option<::Value<String>> = None;
@@ -1430,7 +1609,9 @@ pub mod device_profile {
                     let mut supports_class_c: Option<::Value<bool>> = None;
                     let mut supports_join: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ClassBTimeout" => {
                                 class_b_timeout = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1463,7 +1644,8 @@ pub mod device_profile {
                                 rf_region = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Supports32BitFCnt" => {
-                                supports32_bit_f_cnt = ::serde::de::MapAccess::next_value(&mut map)?;
+                                supports32_bit_f_cnt =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SupportsClassB" => {
                                 supports_class_b = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1542,11 +1724,16 @@ pub mod fuota_task {
                     write!(f, "a struct of type LoRaWAN")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut rf_region: Option<::Value<String>> = None;
                     let mut start_time: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "RfRegion" => {
                                 rf_region = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1559,7 +1746,8 @@ pub mod fuota_task {
                     }
 
                     Ok(LoRaWAN {
-                        rf_region: rf_region.ok_or(::serde::de::Error::missing_field("RfRegion"))?,
+                        rf_region: rf_region
+                            .ok_or(::serde::de::Error::missing_field("RfRegion"))?,
                         start_time: start_time,
                     })
                 }
@@ -1603,10 +1791,18 @@ pub mod multicast_group {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DlClass", &self.dl_class)?;
             if let Some(ref number_of_devices_in_group) = self.number_of_devices_in_group {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumberOfDevicesInGroup", number_of_devices_in_group)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NumberOfDevicesInGroup",
+                    number_of_devices_in_group,
+                )?;
             }
             if let Some(ref number_of_devices_requested) = self.number_of_devices_requested {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NumberOfDevicesRequested", number_of_devices_requested)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NumberOfDevicesRequested",
+                    number_of_devices_requested,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RfRegion", &self.rf_region)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1624,22 +1820,29 @@ pub mod multicast_group {
                     write!(f, "a struct of type LoRaWAN")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dl_class: Option<::Value<String>> = None;
                     let mut number_of_devices_in_group: Option<::Value<u32>> = None;
                     let mut number_of_devices_requested: Option<::Value<u32>> = None;
                     let mut rf_region: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DlClass" => {
                                 dl_class = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NumberOfDevicesInGroup" => {
-                                number_of_devices_in_group = ::serde::de::MapAccess::next_value(&mut map)?;
+                                number_of_devices_in_group =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NumberOfDevicesRequested" => {
-                                number_of_devices_requested = ::serde::de::MapAccess::next_value(&mut map)?;
+                                number_of_devices_requested =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RfRegion" => {
                                 rf_region = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1652,7 +1855,8 @@ pub mod multicast_group {
                         dl_class: dl_class.ok_or(::serde::de::Error::missing_field("DlClass"))?,
                         number_of_devices_in_group: number_of_devices_in_group,
                         number_of_devices_requested: number_of_devices_requested,
-                        rf_region: rf_region.ok_or(::serde::de::Error::missing_field("RfRegion"))?,
+                        rf_region: rf_region
+                            .ok_or(::serde::de::Error::missing_field("RfRegion"))?,
                     })
                 }
             }
@@ -1678,13 +1882,19 @@ pub mod partner_account {
     impl ::codec::SerializeValue for SidewalkAccountInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppServerPrivateKey", &self.app_server_private_key)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AppServerPrivateKey",
+                &self.app_server_private_key,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SidewalkAccountInfo {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SidewalkAccountInfo, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SidewalkAccountInfo, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1694,20 +1904,27 @@ pub mod partner_account {
                     write!(f, "a struct of type SidewalkAccountInfo")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_server_private_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppServerPrivateKey" => {
-                                app_server_private_key = ::serde::de::MapAccess::next_value(&mut map)?;
+                                app_server_private_key =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(SidewalkAccountInfo {
-                        app_server_private_key: app_server_private_key.ok_or(::serde::de::Error::missing_field("AppServerPrivateKey"))?,
+                        app_server_private_key: app_server_private_key
+                            .ok_or(::serde::de::Error::missing_field("AppServerPrivateKey"))?,
                     })
                 }
             }
@@ -1730,14 +1947,20 @@ pub mod partner_account {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref app_server_private_key) = self.app_server_private_key {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppServerPrivateKey", app_server_private_key)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AppServerPrivateKey",
+                    app_server_private_key,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SidewalkUpdateAccount {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SidewalkUpdateAccount, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SidewalkUpdateAccount, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1747,13 +1970,19 @@ pub mod partner_account {
                     write!(f, "a struct of type SidewalkUpdateAccount")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_server_private_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppServerPrivateKey" => {
-                                app_server_private_key = ::serde::de::MapAccess::next_value(&mut map)?;
+                                app_server_private_key =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1877,22 +2106,38 @@ pub mod service_profile {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref add_gw_metadata) = self.add_gw_metadata {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AddGwMetadata", add_gw_metadata)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AddGwMetadata",
+                    add_gw_metadata,
+                )?;
             }
             if let Some(ref channel_mask) = self.channel_mask {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ChannelMask", channel_mask)?;
             }
             if let Some(ref dev_status_req_freq) = self.dev_status_req_freq {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DevStatusReqFreq", dev_status_req_freq)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DevStatusReqFreq",
+                    dev_status_req_freq,
+                )?;
             }
             if let Some(ref dl_bucket_size) = self.dl_bucket_size {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DlBucketSize", dl_bucket_size)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DlBucketSize",
+                    dl_bucket_size,
+                )?;
             }
             if let Some(ref dl_rate) = self.dl_rate {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DlRate", dl_rate)?;
             }
             if let Some(ref dl_rate_policy) = self.dl_rate_policy {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DlRatePolicy", dl_rate_policy)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DlRatePolicy",
+                    dl_rate_policy,
+                )?;
             }
             if let Some(ref dr_max) = self.dr_max {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DrMax", dr_max)?;
@@ -1904,7 +2149,11 @@ pub mod service_profile {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "HrAllowed", hr_allowed)?;
             }
             if let Some(ref min_gw_diversity) = self.min_gw_diversity {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MinGwDiversity", min_gw_diversity)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MinGwDiversity",
+                    min_gw_diversity,
+                )?;
             }
             if let Some(ref nwk_geo_loc) = self.nwk_geo_loc {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "NwkGeoLoc", nwk_geo_loc)?;
@@ -1916,29 +2165,47 @@ pub mod service_profile {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RaAllowed", ra_allowed)?;
             }
             if let Some(ref report_dev_status_battery) = self.report_dev_status_battery {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReportDevStatusBattery", report_dev_status_battery)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ReportDevStatusBattery",
+                    report_dev_status_battery,
+                )?;
             }
             if let Some(ref report_dev_status_margin) = self.report_dev_status_margin {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReportDevStatusMargin", report_dev_status_margin)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ReportDevStatusMargin",
+                    report_dev_status_margin,
+                )?;
             }
             if let Some(ref target_per) = self.target_per {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetPer", target_per)?;
             }
             if let Some(ref ul_bucket_size) = self.ul_bucket_size {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UlBucketSize", ul_bucket_size)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UlBucketSize",
+                    ul_bucket_size,
+                )?;
             }
             if let Some(ref ul_rate) = self.ul_rate {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "UlRate", ul_rate)?;
             }
             if let Some(ref ul_rate_policy) = self.ul_rate_policy {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UlRatePolicy", ul_rate_policy)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UlRatePolicy",
+                    ul_rate_policy,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LoRaWANServiceProfile {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoRaWANServiceProfile, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoRaWANServiceProfile, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1948,7 +2215,10 @@ pub mod service_profile {
                     write!(f, "a struct of type LoRaWANServiceProfile")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut add_gw_metadata: Option<::Value<bool>> = None;
                     let mut channel_mask: Option<::Value<String>> = None;
                     let mut dev_status_req_freq: Option<::Value<u32>> = None;
@@ -1969,7 +2239,9 @@ pub mod service_profile {
                     let mut ul_rate: Option<::Value<u32>> = None;
                     let mut ul_rate_policy: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AddGwMetadata" => {
                                 add_gw_metadata = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2011,10 +2283,12 @@ pub mod service_profile {
                                 ra_allowed = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ReportDevStatusBattery" => {
-                                report_dev_status_battery = ::serde::de::MapAccess::next_value(&mut map)?;
+                                report_dev_status_battery =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ReportDevStatusMargin" => {
-                                report_dev_status_margin = ::serde::de::MapAccess::next_value(&mut map)?;
+                                report_dev_status_margin =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TargetPer" => {
                                 target_per = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2091,7 +2365,11 @@ pub mod task_definition {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Model", model)?;
             }
             if let Some(ref package_version) = self.package_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PackageVersion", package_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PackageVersion",
+                    package_version,
+                )?;
             }
             if let Some(ref station) = self.station {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Station", station)?;
@@ -2101,7 +2379,9 @@ pub mod task_definition {
     }
 
     impl ::codec::DeserializeValue for LoRaWANGatewayVersion {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoRaWANGatewayVersion, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoRaWANGatewayVersion, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2111,12 +2391,17 @@ pub mod task_definition {
                     write!(f, "a struct of type LoRaWANGatewayVersion")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut model: Option<::Value<String>> = None;
                     let mut package_version: Option<::Value<String>> = None;
                     let mut station: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Model" => {
                                 model = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2172,23 +2457,37 @@ pub mod task_definition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref current_version) = self.current_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CurrentVersion", current_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CurrentVersion",
+                    current_version,
+                )?;
             }
             if let Some(ref sig_key_crc) = self.sig_key_crc {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "SigKeyCrc", sig_key_crc)?;
             }
             if let Some(ref update_signature) = self.update_signature {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpdateSignature", update_signature)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UpdateSignature",
+                    update_signature,
+                )?;
             }
             if let Some(ref update_version) = self.update_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpdateVersion", update_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UpdateVersion",
+                    update_version,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LoRaWANUpdateGatewayTaskCreate {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoRaWANUpdateGatewayTaskCreate, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoRaWANUpdateGatewayTaskCreate, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2198,13 +2497,18 @@ pub mod task_definition {
                     write!(f, "a struct of type LoRaWANUpdateGatewayTaskCreate")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut current_version: Option<::Value<LoRaWANGatewayVersion>> = None;
                     let mut sig_key_crc: Option<::Value<u32>> = None;
                     let mut update_signature: Option<::Value<String>> = None;
                     let mut update_version: Option<::Value<LoRaWANGatewayVersion>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CurrentVersion" => {
                                 current_version = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2254,17 +2558,27 @@ pub mod task_definition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref current_version) = self.current_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CurrentVersion", current_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CurrentVersion",
+                    current_version,
+                )?;
             }
             if let Some(ref update_version) = self.update_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpdateVersion", update_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UpdateVersion",
+                    update_version,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LoRaWANUpdateGatewayTaskEntry {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoRaWANUpdateGatewayTaskEntry, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoRaWANUpdateGatewayTaskEntry, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2274,11 +2588,16 @@ pub mod task_definition {
                     write!(f, "a struct of type LoRaWANUpdateGatewayTaskEntry")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut current_version: Option<::Value<LoRaWANGatewayVersion>> = None;
                     let mut update_version: Option<::Value<LoRaWANGatewayVersion>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CurrentVersion" => {
                                 current_version = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2328,17 +2647,27 @@ pub mod task_definition {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoRaWAN", lo_ra_wan)?;
             }
             if let Some(ref update_data_role) = self.update_data_role {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpdateDataRole", update_data_role)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UpdateDataRole",
+                    update_data_role,
+                )?;
             }
             if let Some(ref update_data_source) = self.update_data_source {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpdateDataSource", update_data_source)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UpdateDataSource",
+                    update_data_source,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for UpdateWirelessGatewayTaskCreate {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UpdateWirelessGatewayTaskCreate, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<UpdateWirelessGatewayTaskCreate, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2348,12 +2677,17 @@ pub mod task_definition {
                     write!(f, "a struct of type UpdateWirelessGatewayTaskCreate")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut lo_ra_wan: Option<::Value<LoRaWANUpdateGatewayTaskCreate>> = None;
                     let mut update_data_role: Option<::Value<String>> = None;
                     let mut update_data_source: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LoRaWAN" => {
                                 lo_ra_wan = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2403,7 +2737,11 @@ pub mod wireless_device {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DevAddr", &self.dev_addr)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SessionKeys", &self.session_keys)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SessionKeys",
+                &self.session_keys,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -2419,11 +2757,16 @@ pub mod wireless_device {
                     write!(f, "a struct of type AbpV10x")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dev_addr: Option<::Value<String>> = None;
                     let mut session_keys: Option<::Value<SessionKeysAbpV10x>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DevAddr" => {
                                 dev_addr = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2437,7 +2780,8 @@ pub mod wireless_device {
 
                     Ok(AbpV10x {
                         dev_addr: dev_addr.ok_or(::serde::de::Error::missing_field("DevAddr"))?,
-                        session_keys: session_keys.ok_or(::serde::de::Error::missing_field("SessionKeys"))?,
+                        session_keys: session_keys
+                            .ok_or(::serde::de::Error::missing_field("SessionKeys"))?,
                     })
                 }
             }
@@ -2465,7 +2809,11 @@ pub mod wireless_device {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DevAddr", &self.dev_addr)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SessionKeys", &self.session_keys)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SessionKeys",
+                &self.session_keys,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -2481,11 +2829,16 @@ pub mod wireless_device {
                     write!(f, "a struct of type AbpV11")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dev_addr: Option<::Value<String>> = None;
                     let mut session_keys: Option<::Value<SessionKeysAbpV11>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DevAddr" => {
                                 dev_addr = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2499,7 +2852,8 @@ pub mod wireless_device {
 
                     Ok(AbpV11 {
                         dev_addr: dev_addr.ok_or(::serde::de::Error::missing_field("DevAddr"))?,
-                        session_keys: session_keys.ok_or(::serde::de::Error::missing_field("SessionKeys"))?,
+                        session_keys: session_keys
+                            .ok_or(::serde::de::Error::missing_field("SessionKeys"))?,
                     })
                 }
             }
@@ -2561,7 +2915,11 @@ pub mod wireless_device {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DevEui", dev_eui)?;
             }
             if let Some(ref device_profile_id) = self.device_profile_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceProfileId", device_profile_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DeviceProfileId",
+                    device_profile_id,
+                )?;
             }
             if let Some(ref otaa_v10x) = self.otaa_v10x {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "OtaaV10x", otaa_v10x)?;
@@ -2570,14 +2928,20 @@ pub mod wireless_device {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "OtaaV11", otaa_v11)?;
             }
             if let Some(ref service_profile_id) = self.service_profile_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceProfileId", service_profile_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ServiceProfileId",
+                    service_profile_id,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LoRaWANDevice {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoRaWANDevice, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoRaWANDevice, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2587,7 +2951,10 @@ pub mod wireless_device {
                     write!(f, "a struct of type LoRaWANDevice")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut abp_v10x: Option<::Value<AbpV10x>> = None;
                     let mut abp_v11: Option<::Value<AbpV11>> = None;
                     let mut dev_eui: Option<::Value<String>> = None;
@@ -2596,7 +2963,9 @@ pub mod wireless_device {
                     let mut otaa_v11: Option<::Value<OtaaV11>> = None;
                     let mut service_profile_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AbpV10x" => {
                                 abp_v10x = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2674,11 +3043,16 @@ pub mod wireless_device {
                     write!(f, "a struct of type OtaaV10x")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_eui: Option<::Value<String>> = None;
                     let mut app_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppEui" => {
                                 app_eui = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2742,12 +3116,17 @@ pub mod wireless_device {
                     write!(f, "a struct of type OtaaV11")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_key: Option<::Value<String>> = None;
                     let mut join_eui: Option<::Value<String>> = None;
                     let mut nwk_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppKey" => {
                                 app_key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2799,7 +3178,9 @@ pub mod wireless_device {
     }
 
     impl ::codec::DeserializeValue for SessionKeysAbpV10x {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SessionKeysAbpV10x, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SessionKeysAbpV10x, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2809,11 +3190,16 @@ pub mod wireless_device {
                     write!(f, "a struct of type SessionKeysAbpV10x")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_s_key: Option<::Value<String>> = None;
                     let mut nwk_s_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppSKey" => {
                                 app_s_key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2865,15 +3251,29 @@ pub mod wireless_device {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppSKey", &self.app_s_key)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FNwkSIntKey", &self.f_nwk_s_int_key)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NwkSEncKey", &self.nwk_s_enc_key)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SNwkSIntKey", &self.s_nwk_s_int_key)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FNwkSIntKey",
+                &self.f_nwk_s_int_key,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NwkSEncKey",
+                &self.nwk_s_enc_key,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SNwkSIntKey",
+                &self.s_nwk_s_int_key,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SessionKeysAbpV11 {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SessionKeysAbpV11, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SessionKeysAbpV11, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2883,13 +3283,18 @@ pub mod wireless_device {
                     write!(f, "a struct of type SessionKeysAbpV11")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_s_key: Option<::Value<String>> = None;
                     let mut f_nwk_s_int_key: Option<::Value<String>> = None;
                     let mut nwk_s_enc_key: Option<::Value<String>> = None;
                     let mut s_nwk_s_int_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppSKey" => {
                                 app_s_key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2909,9 +3314,12 @@ pub mod wireless_device {
 
                     Ok(SessionKeysAbpV11 {
                         app_s_key: app_s_key.ok_or(::serde::de::Error::missing_field("AppSKey"))?,
-                        f_nwk_s_int_key: f_nwk_s_int_key.ok_or(::serde::de::Error::missing_field("FNwkSIntKey"))?,
-                        nwk_s_enc_key: nwk_s_enc_key.ok_or(::serde::de::Error::missing_field("NwkSEncKey"))?,
-                        s_nwk_s_int_key: s_nwk_s_int_key.ok_or(::serde::de::Error::missing_field("SNwkSIntKey"))?,
+                        f_nwk_s_int_key: f_nwk_s_int_key
+                            .ok_or(::serde::de::Error::missing_field("FNwkSIntKey"))?,
+                        nwk_s_enc_key: nwk_s_enc_key
+                            .ok_or(::serde::de::Error::missing_field("NwkSEncKey"))?,
+                        s_nwk_s_int_key: s_nwk_s_int_key
+                            .ok_or(::serde::de::Error::missing_field("SNwkSIntKey"))?,
                     })
                 }
             }
@@ -2949,7 +3357,9 @@ pub mod wireless_gateway {
     }
 
     impl ::codec::DeserializeValue for LoRaWANGateway {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoRaWANGateway, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoRaWANGateway, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2959,11 +3369,16 @@ pub mod wireless_gateway {
                     write!(f, "a struct of type LoRaWANGateway")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut gateway_eui: Option<::Value<String>> = None;
                     let mut rf_region: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "GatewayEui" => {
                                 gateway_eui = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2976,8 +3391,10 @@ pub mod wireless_gateway {
                     }
 
                     Ok(LoRaWANGateway {
-                        gateway_eui: gateway_eui.ok_or(::serde::de::Error::missing_field("GatewayEui"))?,
-                        rf_region: rf_region.ok_or(::serde::de::Error::missing_field("RfRegion"))?,
+                        gateway_eui: gateway_eui
+                            .ok_or(::serde::de::Error::missing_field("GatewayEui"))?,
+                        rf_region: rf_region
+                            .ok_or(::serde::de::Error::missing_field("RfRegion"))?,
                     })
                 }
             }

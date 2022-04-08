@@ -3,7 +3,7 @@
 /// The [`AWS::AmplifyUIBuilder::Component`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html) resource type.
 #[derive(Debug, Default)]
 pub struct Component {
-    properties: ComponentProperties
+    properties: ComponentProperties,
 }
 
 /// Properties for the `Component` resource.
@@ -74,14 +74,26 @@ pub struct ComponentProperties {
 impl ::serde::Serialize for ComponentProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "BindingProperties", &self.binding_properties)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "BindingProperties",
+            &self.binding_properties,
+        )?;
         if let Some(ref children) = self.children {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Children", children)?;
         }
         if let Some(ref collection_properties) = self.collection_properties {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CollectionProperties", collection_properties)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CollectionProperties",
+                collection_properties,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComponentType", &self.component_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ComponentType",
+            &self.component_type,
+        )?;
         if let Some(ref events) = self.events {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Events", events)?;
         }
@@ -113,14 +125,22 @@ impl<'de> ::serde::Deserialize<'de> for ComponentProperties {
                 write!(f, "a struct of type ComponentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut binding_properties: Option<::ValueMap<self::component::ComponentBindingPropertiesValue>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut binding_properties: Option<
+                    ::ValueMap<self::component::ComponentBindingPropertiesValue>,
+                > = None;
                 let mut children: Option<::ValueList<self::component::ComponentChild>> = None;
-                let mut collection_properties: Option<::ValueMap<self::component::ComponentDataConfiguration>> = None;
+                let mut collection_properties: Option<
+                    ::ValueMap<self::component::ComponentDataConfiguration>,
+                > = None;
                 let mut component_type: Option<::Value<String>> = None;
                 let mut events: Option<::ValueMap<self::component::ComponentEvent>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut overrides: Option<::ValueMap<self::component::ComponentOverridesValue>> = None;
+                let mut overrides: Option<::ValueMap<self::component::ComponentOverridesValue>> =
+                    None;
                 let mut properties: Option<::ValueMap<self::component::ComponentProperty>> = None;
                 let mut schema_version: Option<::Value<String>> = None;
                 let mut source_id: Option<::Value<String>> = None;
@@ -170,14 +190,17 @@ impl<'de> ::serde::Deserialize<'de> for ComponentProperties {
                 }
 
                 Ok(ComponentProperties {
-                    binding_properties: binding_properties.ok_or(::serde::de::Error::missing_field("BindingProperties"))?,
+                    binding_properties: binding_properties
+                        .ok_or(::serde::de::Error::missing_field("BindingProperties"))?,
                     children: children,
                     collection_properties: collection_properties,
-                    component_type: component_type.ok_or(::serde::de::Error::missing_field("ComponentType"))?,
+                    component_type: component_type
+                        .ok_or(::serde::de::Error::missing_field("ComponentType"))?,
                     events: events,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     overrides: overrides.ok_or(::serde::de::Error::missing_field("Overrides"))?,
-                    properties: properties.ok_or(::serde::de::Error::missing_field("Properties"))?,
+                    properties: properties
+                        .ok_or(::serde::de::Error::missing_field("Properties"))?,
                     schema_version: schema_version,
                     source_id: source_id,
                     tags: tags,
@@ -212,7 +235,7 @@ impl From<ComponentProperties> for Component {
 /// The [`AWS::AmplifyUIBuilder::Theme`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html) resource type.
 #[derive(Debug, Default)]
 pub struct Theme {
-    properties: ThemeProperties
+    properties: ThemeProperties,
 }
 
 /// Properties for the `Theme` resource.
@@ -266,7 +289,10 @@ impl<'de> ::serde::Deserialize<'de> for ThemeProperties {
                 write!(f, "a struct of type ThemeProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut overrides: Option<::ValueList<self::theme::ThemeValues>> = None;
                 let mut tags: Option<::ValueMap<String>> = None;
@@ -410,7 +436,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ActionParameters {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ActionParameters, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ActionParameters, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -420,7 +448,10 @@ pub mod component {
                     write!(f, "a struct of type ActionParameters")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut anchor: Option<::Value<ComponentProperty>> = None;
                     let mut fields: Option<::Value<ComponentProperties>> = None;
                     let mut global: Option<::Value<ComponentProperty>> = None;
@@ -431,7 +462,9 @@ pub mod component {
                     let mut r#type: Option<::Value<ComponentProperty>> = None;
                     let mut url: Option<::Value<ComponentProperty>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Anchor" => {
                                 anchor = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -506,10 +539,18 @@ pub mod component {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref binding_properties) = self.binding_properties {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BindingProperties", binding_properties)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BindingProperties",
+                    binding_properties,
+                )?;
             }
             if let Some(ref default_value) = self.default_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultValue", default_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DefaultValue",
+                    default_value,
+                )?;
             }
             if let Some(ref r#type) = self.r#type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", r#type)?;
@@ -519,7 +560,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentBindingPropertiesValue {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentBindingPropertiesValue, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentBindingPropertiesValue, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -529,12 +572,19 @@ pub mod component {
                     write!(f, "a struct of type ComponentBindingPropertiesValue")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut binding_properties: Option<::Value<ComponentBindingPropertiesValueProperties>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut binding_properties: Option<
+                        ::Value<ComponentBindingPropertiesValueProperties>,
+                    > = None;
                     let mut default_value: Option<::Value<String>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BindingProperties" => {
                                 binding_properties = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -608,7 +658,11 @@ pub mod component {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", bucket)?;
             }
             if let Some(ref default_value) = self.default_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultValue", default_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DefaultValue",
+                    default_value,
+                )?;
             }
             if let Some(ref field) = self.field {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Field", field)?;
@@ -623,24 +677,36 @@ pub mod component {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Predicates", predicates)?;
             }
             if let Some(ref user_attribute) = self.user_attribute {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserAttribute", user_attribute)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UserAttribute",
+                    user_attribute,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ComponentBindingPropertiesValueProperties {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentBindingPropertiesValueProperties, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentBindingPropertiesValueProperties, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
                 type Value = ComponentBindingPropertiesValueProperties;
 
                 fn expecting(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-                    write!(f, "a struct of type ComponentBindingPropertiesValueProperties")
+                    write!(
+                        f,
+                        "a struct of type ComponentBindingPropertiesValueProperties"
+                    )
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bucket: Option<::Value<String>> = None;
                     let mut default_value: Option<::Value<String>> = None;
                     let mut field: Option<::Value<String>> = None;
@@ -649,7 +715,9 @@ pub mod component {
                     let mut predicates: Option<::ValueList<Predicate>> = None;
                     let mut user_attribute: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Bucket" => {
                                 bucket = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -728,7 +796,11 @@ pub mod component {
             if let Some(ref children) = self.children {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Children", children)?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComponentType", &self.component_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ComponentType",
+                &self.component_type,
+            )?;
             if let Some(ref events) = self.events {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Events", events)?;
             }
@@ -739,7 +811,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentChild {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentChild, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentChild, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -749,14 +823,19 @@ pub mod component {
                     write!(f, "a struct of type ComponentChild")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut children: Option<::ValueList<ComponentChild>> = None;
                     let mut component_type: Option<::Value<String>> = None;
                     let mut events: Option<::Value<ComponentEvents>> = None;
                     let mut name: Option<::Value<String>> = None;
                     let mut properties: Option<::Value<ComponentProperties>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Children" => {
                                 children = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -779,10 +858,12 @@ pub mod component {
 
                     Ok(ComponentChild {
                         children: children,
-                        component_type: component_type.ok_or(::serde::de::Error::missing_field("ComponentType"))?,
+                        component_type: component_type
+                            .ok_or(::serde::de::Error::missing_field("ComponentType"))?,
                         events: events,
                         name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                        properties: properties.ok_or(::serde::de::Error::missing_field("Properties"))?,
+                        properties: properties
+                            .ok_or(::serde::de::Error::missing_field("Properties"))?,
                     })
                 }
             }
@@ -860,7 +941,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentConditionProperty {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentConditionProperty, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentConditionProperty, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -870,7 +953,10 @@ pub mod component {
                     write!(f, "a struct of type ComponentConditionProperty")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut r#else: Option<::Value<ComponentProperty>> = None;
                     let mut field: Option<::Value<String>> = None;
                     let mut operand: Option<::Value<String>> = None;
@@ -879,7 +965,9 @@ pub mod component {
                     let mut property: Option<::Value<String>> = None;
                     let mut then: Option<::Value<ComponentProperty>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Else" => {
                                 r#else = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -965,7 +1053,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentDataConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentDataConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentDataConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -975,13 +1065,18 @@ pub mod component {
                     write!(f, "a struct of type ComponentDataConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut identifiers: Option<::ValueList<String>> = None;
                     let mut model: Option<::Value<String>> = None;
                     let mut predicate: Option<::Value<Predicate>> = None;
                     let mut sort: Option<::ValueList<SortProperty>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Identifiers" => {
                                 identifiers = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1041,7 +1136,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentEvent {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentEvent, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentEvent, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1051,11 +1148,16 @@ pub mod component {
                     write!(f, "a struct of type ComponentEvent")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut action: Option<::Value<String>> = None;
                     let mut parameters: Option<::Value<ActionParameters>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Action" => {
                                 action = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1080,8 +1182,7 @@ pub mod component {
 
     /// The [`AWS::AmplifyUIBuilder::Component.ComponentEvents`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentevents.html) property type.
     #[derive(Debug, Default)]
-    pub struct ComponentEvents {
-    }
+    pub struct ComponentEvents {}
 
     impl ::codec::SerializeValue for ComponentEvents {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1091,7 +1192,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentEvents {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentEvents, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentEvents, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1101,7 +1204,10 @@ pub mod component {
                     write!(f, "a struct of type ComponentEvents")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(ComponentEvents {})
                 }
             }
@@ -1112,8 +1218,7 @@ pub mod component {
 
     /// The [`AWS::AmplifyUIBuilder::Component.ComponentOverrides`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentoverrides.html) property type.
     #[derive(Debug, Default)]
-    pub struct ComponentOverrides {
-    }
+    pub struct ComponentOverrides {}
 
     impl ::codec::SerializeValue for ComponentOverrides {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1123,7 +1228,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentOverrides {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentOverrides, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentOverrides, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1133,7 +1240,10 @@ pub mod component {
                     write!(f, "a struct of type ComponentOverrides")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(ComponentOverrides {})
                 }
             }
@@ -1144,8 +1254,7 @@ pub mod component {
 
     /// The [`AWS::AmplifyUIBuilder::Component.ComponentOverridesValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentoverridesvalue.html) property type.
     #[derive(Debug, Default)]
-    pub struct ComponentOverridesValue {
-    }
+    pub struct ComponentOverridesValue {}
 
     impl ::codec::SerializeValue for ComponentOverridesValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1155,7 +1264,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentOverridesValue {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentOverridesValue, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentOverridesValue, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1165,7 +1276,10 @@ pub mod component {
                     write!(f, "a struct of type ComponentOverridesValue")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(ComponentOverridesValue {})
                 }
             }
@@ -1176,8 +1290,7 @@ pub mod component {
 
     /// The [`AWS::AmplifyUIBuilder::Component.ComponentProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperties.html) property type.
     #[derive(Debug, Default)]
-    pub struct ComponentProperties {
-    }
+    pub struct ComponentProperties {}
 
     impl ::codec::SerializeValue for ComponentProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1187,7 +1300,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentProperties {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentProperties, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentProperties, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1197,7 +1312,10 @@ pub mod component {
                     write!(f, "a struct of type ComponentProperties")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(ComponentProperties {})
                 }
             }
@@ -1290,16 +1408,28 @@ pub mod component {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref binding_properties) = self.binding_properties {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BindingProperties", binding_properties)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BindingProperties",
+                    binding_properties,
+                )?;
             }
             if let Some(ref bindings) = self.bindings {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bindings", bindings)?;
             }
             if let Some(ref collection_binding_properties) = self.collection_binding_properties {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CollectionBindingProperties", collection_binding_properties)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CollectionBindingProperties",
+                    collection_binding_properties,
+                )?;
             }
             if let Some(ref component_name) = self.component_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComponentName", component_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ComponentName",
+                    component_name,
+                )?;
             }
             if let Some(ref concat) = self.concat {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Concat", concat)?;
@@ -1311,13 +1441,21 @@ pub mod component {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Configured", configured)?;
             }
             if let Some(ref default_value) = self.default_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultValue", default_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DefaultValue",
+                    default_value,
+                )?;
             }
             if let Some(ref event) = self.event {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Event", event)?;
             }
             if let Some(ref imported_value) = self.imported_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImportedValue", imported_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ImportedValue",
+                    imported_value,
+                )?;
             }
             if let Some(ref model) = self.model {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Model", model)?;
@@ -1329,7 +1467,11 @@ pub mod component {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", r#type)?;
             }
             if let Some(ref user_attribute) = self.user_attribute {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UserAttribute", user_attribute)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UserAttribute",
+                    user_attribute,
+                )?;
             }
             if let Some(ref value) = self.value {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Value", value)?;
@@ -1339,7 +1481,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentProperty {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentProperty, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentProperty, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1349,10 +1493,17 @@ pub mod component {
                     write!(f, "a struct of type ComponentProperty")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut binding_properties: Option<::Value<ComponentPropertyBindingProperties>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut binding_properties: Option<
+                        ::Value<ComponentPropertyBindingProperties>,
+                    > = None;
                     let mut bindings: Option<::Value<FormBindings>> = None;
-                    let mut collection_binding_properties: Option<::Value<ComponentPropertyBindingProperties>> = None;
+                    let mut collection_binding_properties: Option<
+                        ::Value<ComponentPropertyBindingProperties>,
+                    > = None;
                     let mut component_name: Option<::Value<String>> = None;
                     let mut concat: Option<::ValueList<ComponentProperty>> = None;
                     let mut condition: Option<::Value<ComponentConditionProperty>> = None;
@@ -1366,7 +1517,9 @@ pub mod component {
                     let mut user_attribute: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BindingProperties" => {
                                 binding_properties = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1375,7 +1528,8 @@ pub mod component {
                                 bindings = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CollectionBindingProperties" => {
-                                collection_binding_properties = ::serde::de::MapAccess::next_value(&mut map)?;
+                                collection_binding_properties =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ComponentName" => {
                                 component_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1468,7 +1622,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentPropertyBindingProperties {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentPropertyBindingProperties, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentPropertyBindingProperties, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1478,11 +1634,16 @@ pub mod component {
                     write!(f, "a struct of type ComponentPropertyBindingProperties")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field: Option<::Value<String>> = None;
                     let mut property: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Field" => {
                                 field = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1527,14 +1688,20 @@ pub mod component {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Overrides", overrides)?;
             }
             if let Some(ref variant_values) = self.variant_values {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VariantValues", variant_values)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VariantValues",
+                    variant_values,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ComponentVariant {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentVariant, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentVariant, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1544,11 +1711,16 @@ pub mod component {
                     write!(f, "a struct of type ComponentVariant")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut overrides: Option<::Value<ComponentOverrides>> = None;
                     let mut variant_values: Option<::Value<ComponentVariantValues>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Overrides" => {
                                 overrides = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1573,8 +1745,7 @@ pub mod component {
 
     /// The [`AWS::AmplifyUIBuilder::Component.ComponentVariantValues`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentvariantvalues.html) property type.
     #[derive(Debug, Default)]
-    pub struct ComponentVariantValues {
-    }
+    pub struct ComponentVariantValues {}
 
     impl ::codec::SerializeValue for ComponentVariantValues {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1584,7 +1755,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for ComponentVariantValues {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComponentVariantValues, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComponentVariantValues, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1594,7 +1767,10 @@ pub mod component {
                     write!(f, "a struct of type ComponentVariantValues")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(ComponentVariantValues {})
                 }
             }
@@ -1605,8 +1781,7 @@ pub mod component {
 
     /// The [`AWS::AmplifyUIBuilder::Component.FormBindings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-formbindings.html) property type.
     #[derive(Debug, Default)]
-    pub struct FormBindings {
-    }
+    pub struct FormBindings {}
 
     impl ::codec::SerializeValue for FormBindings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1626,7 +1801,10 @@ pub mod component {
                     write!(f, "a struct of type FormBindings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(FormBindings {})
                 }
             }
@@ -1658,7 +1836,11 @@ pub mod component {
     impl ::codec::SerializeValue for MutationActionSetStateParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComponentName", &self.component_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ComponentName",
+                &self.component_name,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Property", &self.property)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Set", &self.set)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1666,7 +1848,9 @@ pub mod component {
     }
 
     impl ::codec::DeserializeValue for MutationActionSetStateParameter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MutationActionSetStateParameter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MutationActionSetStateParameter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1676,12 +1860,17 @@ pub mod component {
                     write!(f, "a struct of type MutationActionSetStateParameter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut component_name: Option<::Value<String>> = None;
                     let mut property: Option<::Value<String>> = None;
                     let mut set: Option<::Value<ComponentProperty>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ComponentName" => {
                                 component_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1697,7 +1886,8 @@ pub mod component {
                     }
 
                     Ok(MutationActionSetStateParameter {
-                        component_name: component_name.ok_or(::serde::de::Error::missing_field("ComponentName"))?,
+                        component_name: component_name
+                            .ok_or(::serde::de::Error::missing_field("ComponentName"))?,
                         property: property.ok_or(::serde::de::Error::missing_field("Property"))?,
                         set: set.ok_or(::serde::de::Error::missing_field("Set"))?,
                     })
@@ -1771,14 +1961,19 @@ pub mod component {
                     write!(f, "a struct of type Predicate")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut and: Option<::ValueList<Predicate>> = None;
                     let mut field: Option<::Value<String>> = None;
                     let mut operand: Option<::Value<String>> = None;
                     let mut operator: Option<::Value<String>> = None;
                     let mut or: Option<::ValueList<Predicate>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "And" => {
                                 and = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1848,11 +2043,16 @@ pub mod component {
                     write!(f, "a struct of type SortProperty")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut direction: Option<::Value<String>> = None;
                     let mut field: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Direction" => {
                                 direction = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1865,7 +2065,8 @@ pub mod component {
                     }
 
                     Ok(SortProperty {
-                        direction: direction.ok_or(::serde::de::Error::missing_field("Direction"))?,
+                        direction: direction
+                            .ok_or(::serde::de::Error::missing_field("Direction"))?,
                         field: field.ok_or(::serde::de::Error::missing_field("Field"))?,
                     })
                 }
@@ -1918,11 +2119,16 @@ pub mod theme {
                     write!(f, "a struct of type ThemeValue")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut children: Option<::ValueList<ThemeValues>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Children" => {
                                 children = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1984,11 +2190,16 @@ pub mod theme {
                     write!(f, "a struct of type ThemeValues")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<ThemeValue>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;

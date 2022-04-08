@@ -3,7 +3,7 @@
 /// The [`AWS::WAFv2::IPSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html) resource type.
 #[derive(Debug, Default)]
 pub struct IPSet {
-    properties: IPSetProperties
+    properties: IPSetProperties,
 }
 
 /// Properties for the `IPSet` resource.
@@ -48,7 +48,11 @@ impl ::serde::Serialize for IPSetProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "IPAddressVersion", &self.ip_address_version)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "IPAddressVersion",
+            &self.ip_address_version,
+        )?;
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
@@ -71,7 +75,10 @@ impl<'de> ::serde::Deserialize<'de> for IPSetProperties {
                 write!(f, "a struct of type IPSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut addresses: Option<::ValueList<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut ip_address_version: Option<::Value<String>> = None;
@@ -106,7 +113,8 @@ impl<'de> ::serde::Deserialize<'de> for IPSetProperties {
                 Ok(IPSetProperties {
                     addresses: addresses.ok_or(::serde::de::Error::missing_field("Addresses"))?,
                     description: description,
-                    ip_address_version: ip_address_version.ok_or(::serde::de::Error::missing_field("IPAddressVersion"))?,
+                    ip_address_version: ip_address_version
+                        .ok_or(::serde::de::Error::missing_field("IPAddressVersion"))?,
                     name: name,
                     scope: scope.ok_or(::serde::de::Error::missing_field("Scope"))?,
                     tags: tags,
@@ -140,7 +148,7 @@ impl From<IPSetProperties> for IPSet {
 /// The [`AWS::WAFv2::LoggingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-loggingconfiguration.html) resource type.
 #[derive(Debug, Default)]
 pub struct LoggingConfiguration {
-    properties: LoggingConfigurationProperties
+    properties: LoggingConfigurationProperties,
 }
 
 /// Properties for the `LoggingConfiguration` resource.
@@ -171,12 +179,20 @@ pub struct LoggingConfigurationProperties {
 impl ::serde::Serialize for LoggingConfigurationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogDestinationConfigs", &self.log_destination_configs)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "LogDestinationConfigs",
+            &self.log_destination_configs,
+        )?;
         if let Some(ref logging_filter) = self.logging_filter {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoggingFilter", logging_filter)?;
         }
         if let Some(ref redacted_fields) = self.redacted_fields {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RedactedFields", redacted_fields)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RedactedFields",
+                redacted_fields,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceArn", &self.resource_arn)?;
         ::serde::ser::SerializeMap::end(map)
@@ -184,7 +200,9 @@ impl ::serde::Serialize for LoggingConfigurationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for LoggingConfigurationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LoggingConfigurationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LoggingConfigurationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -194,10 +212,15 @@ impl<'de> ::serde::Deserialize<'de> for LoggingConfigurationProperties {
                 write!(f, "a struct of type LoggingConfigurationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut log_destination_configs: Option<::ValueList<String>> = None;
                 let mut logging_filter: Option<::Value<::json::Value>> = None;
-                let mut redacted_fields: Option<::ValueList<self::logging_configuration::FieldToMatch>> = None;
+                let mut redacted_fields: Option<
+                    ::ValueList<self::logging_configuration::FieldToMatch>,
+                > = None;
                 let mut resource_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -219,10 +242,12 @@ impl<'de> ::serde::Deserialize<'de> for LoggingConfigurationProperties {
                 }
 
                 Ok(LoggingConfigurationProperties {
-                    log_destination_configs: log_destination_configs.ok_or(::serde::de::Error::missing_field("LogDestinationConfigs"))?,
+                    log_destination_configs: log_destination_configs
+                        .ok_or(::serde::de::Error::missing_field("LogDestinationConfigs"))?,
                     logging_filter: logging_filter,
                     redacted_fields: redacted_fields,
-                    resource_arn: resource_arn.ok_or(::serde::de::Error::missing_field("ResourceArn"))?,
+                    resource_arn: resource_arn
+                        .ok_or(::serde::de::Error::missing_field("ResourceArn"))?,
                 })
             }
         }
@@ -253,7 +278,7 @@ impl From<LoggingConfigurationProperties> for LoggingConfiguration {
 /// The [`AWS::WAFv2::RegexPatternSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html) resource type.
 #[derive(Debug, Default)]
 pub struct RegexPatternSet {
-    properties: RegexPatternSetProperties
+    properties: RegexPatternSetProperties,
 }
 
 /// Properties for the `RegexPatternSet` resource.
@@ -295,7 +320,11 @@ impl ::serde::Serialize for RegexPatternSetProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegularExpressionList", &self.regular_expression_list)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RegularExpressionList",
+            &self.regular_expression_list,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scope", &self.scope)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -305,7 +334,9 @@ impl ::serde::Serialize for RegexPatternSetProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RegexPatternSetProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RegexPatternSetProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RegexPatternSetProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -315,7 +346,10 @@ impl<'de> ::serde::Deserialize<'de> for RegexPatternSetProperties {
                 write!(f, "a struct of type RegexPatternSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut regular_expression_list: Option<::ValueList<String>> = None;
@@ -346,7 +380,8 @@ impl<'de> ::serde::Deserialize<'de> for RegexPatternSetProperties {
                 Ok(RegexPatternSetProperties {
                     description: description,
                     name: name,
-                    regular_expression_list: regular_expression_list.ok_or(::serde::de::Error::missing_field("RegularExpressionList"))?,
+                    regular_expression_list: regular_expression_list
+                        .ok_or(::serde::de::Error::missing_field("RegularExpressionList"))?,
                     scope: scope.ok_or(::serde::de::Error::missing_field("Scope"))?,
                     tags: tags,
                 })
@@ -379,7 +414,7 @@ impl From<RegexPatternSetProperties> for RegexPatternSet {
 /// The [`AWS::WAFv2::RuleGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct RuleGroup {
-    properties: RuleGroupProperties
+    properties: RuleGroupProperties,
 }
 
 /// Properties for the `RuleGroup` resource.
@@ -432,7 +467,11 @@ impl ::serde::Serialize for RuleGroupProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Capacity", &self.capacity)?;
         if let Some(ref custom_response_bodies) = self.custom_response_bodies {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomResponseBodies", custom_response_bodies)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CustomResponseBodies",
+                custom_response_bodies,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -447,7 +486,11 @@ impl ::serde::Serialize for RuleGroupProperties {
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "VisibilityConfig", &self.visibility_config)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "VisibilityConfig",
+            &self.visibility_config,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -463,15 +506,21 @@ impl<'de> ::serde::Deserialize<'de> for RuleGroupProperties {
                 write!(f, "a struct of type RuleGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut capacity: Option<::Value<u32>> = None;
-                let mut custom_response_bodies: Option<::ValueMap<self::rule_group::CustomResponseBody>> = None;
+                let mut custom_response_bodies: Option<
+                    ::ValueMap<self::rule_group::CustomResponseBody>,
+                > = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut rules: Option<::ValueList<self::rule_group::Rule>> = None;
                 let mut scope: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut visibility_config: Option<::Value<self::rule_group::VisibilityConfig>> = None;
+                let mut visibility_config: Option<::Value<self::rule_group::VisibilityConfig>> =
+                    None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -511,7 +560,8 @@ impl<'de> ::serde::Deserialize<'de> for RuleGroupProperties {
                     rules: rules,
                     scope: scope.ok_or(::serde::de::Error::missing_field("Scope"))?,
                     tags: tags,
-                    visibility_config: visibility_config.ok_or(::serde::de::Error::missing_field("VisibilityConfig"))?,
+                    visibility_config: visibility_config
+                        .ok_or(::serde::de::Error::missing_field("VisibilityConfig"))?,
                 })
             }
         }
@@ -542,7 +592,7 @@ impl From<RuleGroupProperties> for RuleGroup {
 /// The [`AWS::WAFv2::WebACL`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html) resource type.
 #[derive(Debug, Default)]
 pub struct WebACL {
-    properties: WebACLProperties
+    properties: WebACLProperties,
 }
 
 /// Properties for the `WebACL` resource.
@@ -602,9 +652,17 @@ impl ::serde::Serialize for WebACLProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptchaConfig", captcha_config)?;
         }
         if let Some(ref custom_response_bodies) = self.custom_response_bodies {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomResponseBodies", custom_response_bodies)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CustomResponseBodies",
+                custom_response_bodies,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultAction", &self.default_action)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DefaultAction",
+            &self.default_action,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
@@ -618,7 +676,11 @@ impl ::serde::Serialize for WebACLProperties {
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "VisibilityConfig", &self.visibility_config)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "VisibilityConfig",
+            &self.visibility_config,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -634,9 +696,14 @@ impl<'de> ::serde::Deserialize<'de> for WebACLProperties {
                 write!(f, "a struct of type WebACLProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut captcha_config: Option<::Value<self::web_acl::CaptchaConfig>> = None;
-                let mut custom_response_bodies: Option<::ValueMap<self::web_acl::CustomResponseBody>> = None;
+                let mut custom_response_bodies: Option<
+                    ::ValueMap<self::web_acl::CustomResponseBody>,
+                > = None;
                 let mut default_action: Option<::Value<self::web_acl::DefaultAction>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -681,13 +748,15 @@ impl<'de> ::serde::Deserialize<'de> for WebACLProperties {
                 Ok(WebACLProperties {
                     captcha_config: captcha_config,
                     custom_response_bodies: custom_response_bodies,
-                    default_action: default_action.ok_or(::serde::de::Error::missing_field("DefaultAction"))?,
+                    default_action: default_action
+                        .ok_or(::serde::de::Error::missing_field("DefaultAction"))?,
                     description: description,
                     name: name,
                     rules: rules,
                     scope: scope.ok_or(::serde::de::Error::missing_field("Scope"))?,
                     tags: tags,
-                    visibility_config: visibility_config.ok_or(::serde::de::Error::missing_field("VisibilityConfig"))?,
+                    visibility_config: visibility_config
+                        .ok_or(::serde::de::Error::missing_field("VisibilityConfig"))?,
                 })
             }
         }
@@ -718,7 +787,7 @@ impl From<WebACLProperties> for WebACL {
 /// The [`AWS::WAFv2::WebACLAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webaclassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct WebACLAssociation {
-    properties: WebACLAssociationProperties
+    properties: WebACLAssociationProperties,
 }
 
 /// Properties for the `WebACLAssociation` resource.
@@ -746,7 +815,9 @@ impl ::serde::Serialize for WebACLAssociationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for WebACLAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<WebACLAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<WebACLAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -756,7 +827,10 @@ impl<'de> ::serde::Deserialize<'de> for WebACLAssociationProperties {
                 write!(f, "a struct of type WebACLAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut resource_arn: Option<::Value<String>> = None;
                 let mut web_acl_arn: Option<::Value<String>> = None;
 
@@ -773,8 +847,10 @@ impl<'de> ::serde::Deserialize<'de> for WebACLAssociationProperties {
                 }
 
                 Ok(WebACLAssociationProperties {
-                    resource_arn: resource_arn.ok_or(::serde::de::Error::missing_field("ResourceArn"))?,
-                    web_acl_arn: web_acl_arn.ok_or(::serde::de::Error::missing_field("WebACLArn"))?,
+                    resource_arn: resource_arn
+                        .ok_or(::serde::de::Error::missing_field("ResourceArn"))?,
+                    web_acl_arn: web_acl_arn
+                        .ok_or(::serde::de::Error::missing_field("WebACLArn"))?,
                 })
             }
         }
@@ -848,7 +924,11 @@ pub mod logging_configuration {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueryString", query_string)?;
             }
             if let Some(ref single_header) = self.single_header {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SingleHeader", single_header)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SingleHeader",
+                    single_header,
+                )?;
             }
             if let Some(ref uri_path) = self.uri_path {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "UriPath", uri_path)?;
@@ -868,14 +948,19 @@ pub mod logging_configuration {
                     write!(f, "a struct of type FieldToMatch")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut json_body: Option<::Value<::json::Value>> = None;
                     let mut method: Option<::Value<::json::Value>> = None;
                     let mut query_string: Option<::Value<::json::Value>> = None;
                     let mut single_header: Option<::Value<::json::Value>> = None;
                     let mut uri_path: Option<::Value<::json::Value>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "JsonBody" => {
                                 json_body = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -943,10 +1028,15 @@ pub mod rule_group {
                     write!(f, "a struct of type AndStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut statements: Option<::ValueList<Statement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Statements" => {
                                 statements = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -956,7 +1046,8 @@ pub mod rule_group {
                     }
 
                     Ok(AndStatement {
-                        statements: statements.ok_or(::serde::de::Error::missing_field("Statements"))?,
+                        statements: statements
+                            .ok_or(::serde::de::Error::missing_field("Statements"))?,
                     })
                 }
             }
@@ -998,21 +1089,43 @@ pub mod rule_group {
     impl ::codec::SerializeValue for ByteMatchStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PositionalConstraint", &self.positional_constraint)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PositionalConstraint",
+                &self.positional_constraint,
+            )?;
             if let Some(ref search_string) = self.search_string {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SearchString", search_string)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SearchString",
+                    search_string,
+                )?;
             }
             if let Some(ref search_string_base64) = self.search_string_base64 {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SearchStringBase64", search_string_base64)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SearchStringBase64",
+                    search_string_base64,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ByteMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ByteMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ByteMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1022,40 +1135,51 @@ pub mod rule_group {
                     write!(f, "a struct of type ByteMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut positional_constraint: Option<::Value<String>> = None;
                     let mut search_string: Option<::Value<String>> = None;
                     let mut search_string_base64: Option<::Value<String>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FieldToMatch" => {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PositionalConstraint" => {
-                                positional_constraint = ::serde::de::MapAccess::next_value(&mut map)?;
+                                positional_constraint =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SearchString" => {
                                 search_string = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SearchStringBase64" => {
-                                search_string_base64 = ::serde::de::MapAccess::next_value(&mut map)?;
+                                search_string_base64 =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(ByteMatchStatement {
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        positional_constraint: positional_constraint.ok_or(::serde::de::Error::missing_field("PositionalConstraint"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        positional_constraint: positional_constraint
+                            .ok_or(::serde::de::Error::missing_field("PositionalConstraint"))?,
                         search_string: search_string,
                         search_string_base64: search_string_base64,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -1078,14 +1202,20 @@ pub mod rule_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref immunity_time_property) = self.immunity_time_property {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImmunityTimeProperty", immunity_time_property)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ImmunityTimeProperty",
+                    immunity_time_property,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CaptchaConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptchaConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptchaConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1095,13 +1225,19 @@ pub mod rule_group {
                     write!(f, "a struct of type CaptchaConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut immunity_time_property: Option<::Value<ImmunityTimeProperty>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ImmunityTimeProperty" => {
-                                immunity_time_property = ::serde::de::MapAccess::next_value(&mut map)?;
+                                immunity_time_property =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1136,13 +1272,19 @@ pub mod rule_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Content", &self.content)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContentType", &self.content_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContentType",
+                &self.content_type,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CustomResponseBody {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomResponseBody, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CustomResponseBody, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1152,11 +1294,16 @@ pub mod rule_group {
                     write!(f, "a struct of type CustomResponseBody")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut content: Option<::Value<String>> = None;
                     let mut content_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Content" => {
                                 content = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1170,7 +1317,8 @@ pub mod rule_group {
 
                     Ok(CustomResponseBody {
                         content: content.ok_or(::serde::de::Error::missing_field("Content"))?,
-                        content_type: content_type.ok_or(::serde::de::Error::missing_field("ContentType"))?,
+                        content_type: content_type
+                            .ok_or(::serde::de::Error::missing_field("ContentType"))?,
                     })
                 }
             }
@@ -1228,7 +1376,11 @@ pub mod rule_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref all_query_arguments) = self.all_query_arguments {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllQueryArguments", all_query_arguments)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllQueryArguments",
+                    all_query_arguments,
+                )?;
             }
             if let Some(ref body) = self.body {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Body", body)?;
@@ -1243,10 +1395,18 @@ pub mod rule_group {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueryString", query_string)?;
             }
             if let Some(ref single_header) = self.single_header {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SingleHeader", single_header)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SingleHeader",
+                    single_header,
+                )?;
             }
             if let Some(ref single_query_argument) = self.single_query_argument {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SingleQueryArgument", single_query_argument)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SingleQueryArgument",
+                    single_query_argument,
+                )?;
             }
             if let Some(ref uri_path) = self.uri_path {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "UriPath", uri_path)?;
@@ -1266,7 +1426,10 @@ pub mod rule_group {
                     write!(f, "a struct of type FieldToMatch")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut all_query_arguments: Option<::Value<::json::Value>> = None;
                     let mut body: Option<::Value<::json::Value>> = None;
                     let mut json_body: Option<::Value<JsonBody>> = None;
@@ -1276,7 +1439,9 @@ pub mod rule_group {
                     let mut single_query_argument: Option<::Value<::json::Value>> = None;
                     let mut uri_path: Option<::Value<::json::Value>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllQueryArguments" => {
                                 all_query_arguments = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1297,7 +1462,8 @@ pub mod rule_group {
                                 single_header = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SingleQueryArgument" => {
-                                single_query_argument = ::serde::de::MapAccess::next_value(&mut map)?;
+                                single_query_argument =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "UriPath" => {
                                 uri_path = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1341,14 +1507,20 @@ pub mod rule_group {
     impl ::codec::SerializeValue for ForwardedIPConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FallbackBehavior", &self.fallback_behavior)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FallbackBehavior",
+                &self.fallback_behavior,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "HeaderName", &self.header_name)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ForwardedIPConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ForwardedIPConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ForwardedIPConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1358,11 +1530,16 @@ pub mod rule_group {
                     write!(f, "a struct of type ForwardedIPConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut fallback_behavior: Option<::Value<String>> = None;
                     let mut header_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FallbackBehavior" => {
                                 fallback_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1375,8 +1552,10 @@ pub mod rule_group {
                     }
 
                     Ok(ForwardedIPConfiguration {
-                        fallback_behavior: fallback_behavior.ok_or(::serde::de::Error::missing_field("FallbackBehavior"))?,
-                        header_name: header_name.ok_or(::serde::de::Error::missing_field("HeaderName"))?,
+                        fallback_behavior: fallback_behavior
+                            .ok_or(::serde::de::Error::missing_field("FallbackBehavior"))?,
+                        header_name: header_name
+                            .ok_or(::serde::de::Error::missing_field("HeaderName"))?,
                     })
                 }
             }
@@ -1404,17 +1583,27 @@ pub mod rule_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref country_codes) = self.country_codes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CountryCodes", country_codes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CountryCodes",
+                    country_codes,
+                )?;
             }
             if let Some(ref forwarded_ip_config) = self.forwarded_ip_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ForwardedIPConfig", forwarded_ip_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ForwardedIPConfig",
+                    forwarded_ip_config,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for GeoMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GeoMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<GeoMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1424,11 +1613,16 @@ pub mod rule_group {
                     write!(f, "a struct of type GeoMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut country_codes: Option<::ValueList<String>> = None;
                     let mut forwarded_ip_config: Option<::Value<ForwardedIPConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CountryCodes" => {
                                 country_codes = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1474,7 +1668,11 @@ pub mod rule_group {
     impl ::codec::SerializeValue for IPSetForwardedIPConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FallbackBehavior", &self.fallback_behavior)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FallbackBehavior",
+                &self.fallback_behavior,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "HeaderName", &self.header_name)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Position", &self.position)?;
             ::serde::ser::SerializeMap::end(map)
@@ -1482,7 +1680,9 @@ pub mod rule_group {
     }
 
     impl ::codec::DeserializeValue for IPSetForwardedIPConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<IPSetForwardedIPConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<IPSetForwardedIPConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1492,12 +1692,17 @@ pub mod rule_group {
                     write!(f, "a struct of type IPSetForwardedIPConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut fallback_behavior: Option<::Value<String>> = None;
                     let mut header_name: Option<::Value<String>> = None;
                     let mut position: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FallbackBehavior" => {
                                 fallback_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1513,8 +1718,10 @@ pub mod rule_group {
                     }
 
                     Ok(IPSetForwardedIPConfiguration {
-                        fallback_behavior: fallback_behavior.ok_or(::serde::de::Error::missing_field("FallbackBehavior"))?,
-                        header_name: header_name.ok_or(::serde::de::Error::missing_field("HeaderName"))?,
+                        fallback_behavior: fallback_behavior
+                            .ok_or(::serde::de::Error::missing_field("FallbackBehavior"))?,
+                        header_name: header_name
+                            .ok_or(::serde::de::Error::missing_field("HeaderName"))?,
                         position: position.ok_or(::serde::de::Error::missing_field("Position"))?,
                     })
                 }
@@ -1544,14 +1751,20 @@ pub mod rule_group {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
             if let Some(ref ip_set_forwarded_ip_config) = self.ip_set_forwarded_ip_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IPSetForwardedIPConfig", ip_set_forwarded_ip_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IPSetForwardedIPConfig",
+                    ip_set_forwarded_ip_config,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for IPSetReferenceStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<IPSetReferenceStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<IPSetReferenceStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1561,17 +1774,25 @@ pub mod rule_group {
                     write!(f, "a struct of type IPSetReferenceStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
-                    let mut ip_set_forwarded_ip_config: Option<::Value<IPSetForwardedIPConfiguration>> = None;
+                    let mut ip_set_forwarded_ip_config: Option<
+                        ::Value<IPSetForwardedIPConfiguration>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IPSetForwardedIPConfig" => {
-                                ip_set_forwarded_ip_config = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ip_set_forwarded_ip_config =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1601,13 +1822,19 @@ pub mod rule_group {
     impl ::codec::SerializeValue for ImmunityTimeProperty {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImmunityTime", &self.immunity_time)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ImmunityTime",
+                &self.immunity_time,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ImmunityTimeProperty {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ImmunityTimeProperty, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ImmunityTimeProperty, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1617,10 +1844,15 @@ pub mod rule_group {
                     write!(f, "a struct of type ImmunityTimeProperty")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut immunity_time: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ImmunityTime" => {
                                 immunity_time = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1630,7 +1862,8 @@ pub mod rule_group {
                     }
 
                     Ok(ImmunityTimeProperty {
-                        immunity_time: immunity_time.ok_or(::serde::de::Error::missing_field("ImmunityTime"))?,
+                        immunity_time: immunity_time
+                            .ok_or(::serde::de::Error::missing_field("ImmunityTime"))?,
                     })
                 }
             }
@@ -1663,9 +1896,17 @@ pub mod rule_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref invalid_fallback_behavior) = self.invalid_fallback_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InvalidFallbackBehavior", invalid_fallback_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InvalidFallbackBehavior",
+                    invalid_fallback_behavior,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MatchPattern", &self.match_pattern)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MatchPattern",
+                &self.match_pattern,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MatchScope", &self.match_scope)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1682,15 +1923,21 @@ pub mod rule_group {
                     write!(f, "a struct of type JsonBody")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut invalid_fallback_behavior: Option<::Value<String>> = None;
                     let mut match_pattern: Option<::Value<JsonMatchPattern>> = None;
                     let mut match_scope: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InvalidFallbackBehavior" => {
-                                invalid_fallback_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                invalid_fallback_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MatchPattern" => {
                                 match_pattern = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1704,8 +1951,10 @@ pub mod rule_group {
 
                     Ok(JsonBody {
                         invalid_fallback_behavior: invalid_fallback_behavior,
-                        match_pattern: match_pattern.ok_or(::serde::de::Error::missing_field("MatchPattern"))?,
-                        match_scope: match_scope.ok_or(::serde::de::Error::missing_field("MatchScope"))?,
+                        match_pattern: match_pattern
+                            .ok_or(::serde::de::Error::missing_field("MatchPattern"))?,
+                        match_scope: match_scope
+                            .ok_or(::serde::de::Error::missing_field("MatchScope"))?,
                     })
                 }
             }
@@ -1736,14 +1985,20 @@ pub mod rule_group {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "All", all)?;
             }
             if let Some(ref included_paths) = self.included_paths {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludedPaths", included_paths)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludedPaths",
+                    included_paths,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for JsonMatchPattern {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<JsonMatchPattern, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<JsonMatchPattern, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1753,11 +2008,16 @@ pub mod rule_group {
                     write!(f, "a struct of type JsonMatchPattern")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut all: Option<::Value<::json::Value>> = None;
                     let mut included_paths: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "All" => {
                                 all = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1809,10 +2069,15 @@ pub mod rule_group {
                     write!(f, "a struct of type Label")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1856,7 +2121,9 @@ pub mod rule_group {
     }
 
     impl ::codec::DeserializeValue for LabelMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LabelMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LabelMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1866,11 +2133,16 @@ pub mod rule_group {
                     write!(f, "a struct of type LabelMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut scope: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1924,10 +2196,15 @@ pub mod rule_group {
                     write!(f, "a struct of type LabelSummary")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1936,9 +2213,7 @@ pub mod rule_group {
                         }
                     }
 
-                    Ok(LabelSummary {
-                        name: name,
-                    })
+                    Ok(LabelSummary { name: name })
                 }
             }
 
@@ -1975,10 +2250,15 @@ pub mod rule_group {
                     write!(f, "a struct of type NotStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut statement: Option<::Value<Statement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Statement" => {
                                 statement = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1988,7 +2268,8 @@ pub mod rule_group {
                     }
 
                     Ok(NotStatement {
-                        statement: statement.ok_or(::serde::de::Error::missing_field("Statement"))?,
+                        statement: statement
+                            .ok_or(::serde::de::Error::missing_field("Statement"))?,
                     })
                 }
             }
@@ -2026,10 +2307,15 @@ pub mod rule_group {
                     write!(f, "a struct of type OrStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut statements: Option<::ValueList<Statement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Statements" => {
                                 statements = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2039,7 +2325,8 @@ pub mod rule_group {
                     }
 
                     Ok(OrStatement {
-                        statements: statements.ok_or(::serde::de::Error::missing_field("Statements"))?,
+                        statements: statements
+                            .ok_or(::serde::de::Error::missing_field("Statements"))?,
                     })
                 }
             }
@@ -2076,20 +2363,34 @@ pub mod rule_group {
     impl ::codec::SerializeValue for RateBasedStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AggregateKeyType", &self.aggregate_key_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AggregateKeyType",
+                &self.aggregate_key_type,
+            )?;
             if let Some(ref forwarded_ip_config) = self.forwarded_ip_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ForwardedIPConfig", forwarded_ip_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ForwardedIPConfig",
+                    forwarded_ip_config,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Limit", &self.limit)?;
             if let Some(ref scope_down_statement) = self.scope_down_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScopeDownStatement", scope_down_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ScopeDownStatement",
+                    scope_down_statement,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RateBasedStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RateBasedStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RateBasedStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2099,13 +2400,18 @@ pub mod rule_group {
                     write!(f, "a struct of type RateBasedStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut aggregate_key_type: Option<::Value<String>> = None;
                     let mut forwarded_ip_config: Option<::Value<ForwardedIPConfiguration>> = None;
                     let mut limit: Option<::Value<u32>> = None;
                     let mut scope_down_statement: Option<::Value<Statement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AggregateKeyType" => {
                                 aggregate_key_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2117,14 +2423,16 @@ pub mod rule_group {
                                 limit = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ScopeDownStatement" => {
-                                scope_down_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scope_down_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(RateBasedStatement {
-                        aggregate_key_type: aggregate_key_type.ok_or(::serde::de::Error::missing_field("AggregateKeyType"))?,
+                        aggregate_key_type: aggregate_key_type
+                            .ok_or(::serde::de::Error::missing_field("AggregateKeyType"))?,
                         forwarded_ip_config: forwarded_ip_config,
                         limit: limit.ok_or(::serde::de::Error::missing_field("Limit"))?,
                         scope_down_statement: scope_down_statement,
@@ -2159,15 +2467,29 @@ pub mod rule_group {
     impl ::codec::SerializeValue for RegexMatchStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegexString", &self.regex_string)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RegexString",
+                &self.regex_string,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RegexMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RegexMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RegexMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2177,12 +2499,17 @@ pub mod rule_group {
                     write!(f, "a struct of type RegexMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut regex_string: Option<::Value<String>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FieldToMatch" => {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2191,16 +2518,20 @@ pub mod rule_group {
                                 regex_string = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(RegexMatchStatement {
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        regex_string: regex_string.ok_or(::serde::de::Error::missing_field("RegexString"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        regex_string: regex_string
+                            .ok_or(::serde::de::Error::missing_field("RegexString"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -2233,14 +2564,24 @@ pub mod rule_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RegexPatternSetReferenceStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RegexPatternSetReferenceStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RegexPatternSetReferenceStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2250,12 +2591,17 @@ pub mod rule_group {
                     write!(f, "a struct of type RegexPatternSetReferenceStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2264,7 +2610,8 @@ pub mod rule_group {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2272,8 +2619,10 @@ pub mod rule_group {
 
                     Ok(RegexPatternSetReferenceStatement {
                         arn: arn.ok_or(::serde::de::Error::missing_field("Arn"))?,
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -2329,7 +2678,11 @@ pub mod rule_group {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Action", action)?;
             }
             if let Some(ref captcha_config) = self.captcha_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptchaConfig", captcha_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptchaConfig",
+                    captcha_config,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Priority", &self.priority)?;
@@ -2337,7 +2690,11 @@ pub mod rule_group {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuleLabels", rule_labels)?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Statement", &self.statement)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VisibilityConfig", &self.visibility_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VisibilityConfig",
+                &self.visibility_config,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -2353,7 +2710,10 @@ pub mod rule_group {
                     write!(f, "a struct of type Rule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut action: Option<::Value<RuleAction>> = None;
                     let mut captcha_config: Option<::Value<CaptchaConfig>> = None;
                     let mut name: Option<::Value<String>> = None;
@@ -2362,7 +2722,9 @@ pub mod rule_group {
                     let mut statement: Option<::Value<Statement>> = None;
                     let mut visibility_config: Option<::Value<VisibilityConfig>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Action" => {
                                 action = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2395,8 +2757,10 @@ pub mod rule_group {
                         name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                         priority: priority.ok_or(::serde::de::Error::missing_field("Priority"))?,
                         rule_labels: rule_labels,
-                        statement: statement.ok_or(::serde::de::Error::missing_field("Statement"))?,
-                        visibility_config: visibility_config.ok_or(::serde::de::Error::missing_field("VisibilityConfig"))?,
+                        statement: statement
+                            .ok_or(::serde::de::Error::missing_field("Statement"))?,
+                        visibility_config: visibility_config
+                            .ok_or(::serde::de::Error::missing_field("VisibilityConfig"))?,
                     })
                 }
             }
@@ -2460,13 +2824,18 @@ pub mod rule_group {
                     write!(f, "a struct of type RuleAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allow: Option<::Value<::json::Value>> = None;
                     let mut block: Option<::Value<::json::Value>> = None;
                     let mut captcha: Option<::Value<::json::Value>> = None;
                     let mut count: Option<::Value<::json::Value>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Allow" => {
                                 allow = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2525,16 +2894,30 @@ pub mod rule_group {
     impl ::codec::SerializeValue for SizeConstraintStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComparisonOperator", &self.comparison_operator)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ComparisonOperator",
+                &self.comparison_operator,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Size", &self.size)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SizeConstraintStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SizeConstraintStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SizeConstraintStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2544,13 +2927,18 @@ pub mod rule_group {
                     write!(f, "a struct of type SizeConstraintStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut comparison_operator: Option<::Value<String>> = None;
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut size: Option<::Value<f64>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ComparisonOperator" => {
                                 comparison_operator = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2562,17 +2950,21 @@ pub mod rule_group {
                                 size = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(SizeConstraintStatement {
-                        comparison_operator: comparison_operator.ok_or(::serde::de::Error::missing_field("ComparisonOperator"))?,
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        comparison_operator: comparison_operator
+                            .ok_or(::serde::de::Error::missing_field("ComparisonOperator"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
                         size: size.ok_or(::serde::de::Error::missing_field("Size"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -2599,14 +2991,24 @@ pub mod rule_group {
     impl ::codec::SerializeValue for SqliMatchStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SqliMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SqliMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SqliMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2616,25 +3018,33 @@ pub mod rule_group {
                     write!(f, "a struct of type SqliMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FieldToMatch" => {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(SqliMatchStatement {
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -2695,7 +3105,8 @@ pub mod rule_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub regex_pattern_set_reference_statement: Option<::Value<RegexPatternSetReferenceStatement>>,
+        pub regex_pattern_set_reference_statement:
+            Option<::Value<RegexPatternSetReferenceStatement>>,
         /// Property [`SizeConstraintStatement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-sizeconstraintstatement).
         ///
         /// Update type: _Mutable_.
@@ -2717,43 +3128,93 @@ pub mod rule_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref and_statement) = self.and_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AndStatement", and_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AndStatement",
+                    and_statement,
+                )?;
             }
             if let Some(ref byte_match_statement) = self.byte_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ByteMatchStatement", byte_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ByteMatchStatement",
+                    byte_match_statement,
+                )?;
             }
             if let Some(ref geo_match_statement) = self.geo_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GeoMatchStatement", geo_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GeoMatchStatement",
+                    geo_match_statement,
+                )?;
             }
             if let Some(ref ip_set_reference_statement) = self.ip_set_reference_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IPSetReferenceStatement", ip_set_reference_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IPSetReferenceStatement",
+                    ip_set_reference_statement,
+                )?;
             }
             if let Some(ref label_match_statement) = self.label_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LabelMatchStatement", label_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LabelMatchStatement",
+                    label_match_statement,
+                )?;
             }
             if let Some(ref not_statement) = self.not_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotStatement", not_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NotStatement",
+                    not_statement,
+                )?;
             }
             if let Some(ref or_statement) = self.or_statement {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "OrStatement", or_statement)?;
             }
             if let Some(ref rate_based_statement) = self.rate_based_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RateBasedStatement", rate_based_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RateBasedStatement",
+                    rate_based_statement,
+                )?;
             }
             if let Some(ref regex_match_statement) = self.regex_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegexMatchStatement", regex_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RegexMatchStatement",
+                    regex_match_statement,
+                )?;
             }
-            if let Some(ref regex_pattern_set_reference_statement) = self.regex_pattern_set_reference_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegexPatternSetReferenceStatement", regex_pattern_set_reference_statement)?;
+            if let Some(ref regex_pattern_set_reference_statement) =
+                self.regex_pattern_set_reference_statement
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RegexPatternSetReferenceStatement",
+                    regex_pattern_set_reference_statement,
+                )?;
             }
             if let Some(ref size_constraint_statement) = self.size_constraint_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SizeConstraintStatement", size_constraint_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SizeConstraintStatement",
+                    size_constraint_statement,
+                )?;
             }
             if let Some(ref sqli_match_statement) = self.sqli_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SqliMatchStatement", sqli_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SqliMatchStatement",
+                    sqli_match_statement,
+                )?;
             }
             if let Some(ref xss_match_statement) = self.xss_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "XssMatchStatement", xss_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "XssMatchStatement",
+                    xss_match_statement,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -2770,37 +3231,49 @@ pub mod rule_group {
                     write!(f, "a struct of type Statement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut and_statement: Option<::Value<AndStatement>> = None;
                     let mut byte_match_statement: Option<::Value<ByteMatchStatement>> = None;
                     let mut geo_match_statement: Option<::Value<GeoMatchStatement>> = None;
-                    let mut ip_set_reference_statement: Option<::Value<IPSetReferenceStatement>> = None;
+                    let mut ip_set_reference_statement: Option<::Value<IPSetReferenceStatement>> =
+                        None;
                     let mut label_match_statement: Option<::Value<LabelMatchStatement>> = None;
                     let mut not_statement: Option<::Value<NotStatement>> = None;
                     let mut or_statement: Option<::Value<OrStatement>> = None;
                     let mut rate_based_statement: Option<::Value<RateBasedStatement>> = None;
                     let mut regex_match_statement: Option<::Value<RegexMatchStatement>> = None;
-                    let mut regex_pattern_set_reference_statement: Option<::Value<RegexPatternSetReferenceStatement>> = None;
-                    let mut size_constraint_statement: Option<::Value<SizeConstraintStatement>> = None;
+                    let mut regex_pattern_set_reference_statement: Option<
+                        ::Value<RegexPatternSetReferenceStatement>,
+                    > = None;
+                    let mut size_constraint_statement: Option<::Value<SizeConstraintStatement>> =
+                        None;
                     let mut sqli_match_statement: Option<::Value<SqliMatchStatement>> = None;
                     let mut xss_match_statement: Option<::Value<XssMatchStatement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AndStatement" => {
                                 and_statement = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ByteMatchStatement" => {
-                                byte_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                byte_match_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "GeoMatchStatement" => {
                                 geo_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IPSetReferenceStatement" => {
-                                ip_set_reference_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ip_set_reference_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LabelMatchStatement" => {
-                                label_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                label_match_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NotStatement" => {
                                 not_statement = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2809,19 +3282,24 @@ pub mod rule_group {
                                 or_statement = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RateBasedStatement" => {
-                                rate_based_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                rate_based_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RegexMatchStatement" => {
-                                regex_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                regex_match_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RegexPatternSetReferenceStatement" => {
-                                regex_pattern_set_reference_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                regex_pattern_set_reference_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SizeConstraintStatement" => {
-                                size_constraint_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                size_constraint_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SqliMatchStatement" => {
-                                sqli_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                sqli_match_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "XssMatchStatement" => {
                                 xss_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2840,7 +3318,8 @@ pub mod rule_group {
                         or_statement: or_statement,
                         rate_based_statement: rate_based_statement,
                         regex_match_statement: regex_match_statement,
-                        regex_pattern_set_reference_statement: regex_pattern_set_reference_statement,
+                        regex_pattern_set_reference_statement:
+                            regex_pattern_set_reference_statement,
                         size_constraint_statement: size_constraint_statement,
                         sqli_match_statement: sqli_match_statement,
                         xss_match_statement: xss_match_statement,
@@ -2877,7 +3356,9 @@ pub mod rule_group {
     }
 
     impl ::codec::DeserializeValue for TextTransformation {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TextTransformation, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TextTransformation, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2887,11 +3368,16 @@ pub mod rule_group {
                     write!(f, "a struct of type TextTransformation")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut priority: Option<::Value<u32>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Priority" => {
                                 priority = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2937,15 +3423,25 @@ pub mod rule_group {
     impl ::codec::SerializeValue for VisibilityConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchMetricsEnabled", &self.cloud_watch_metrics_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CloudWatchMetricsEnabled",
+                &self.cloud_watch_metrics_enabled,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricName", &self.metric_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SampledRequestsEnabled", &self.sampled_requests_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SampledRequestsEnabled",
+                &self.sampled_requests_enabled,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VisibilityConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VisibilityConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VisibilityConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2955,30 +3451,41 @@ pub mod rule_group {
                     write!(f, "a struct of type VisibilityConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cloud_watch_metrics_enabled: Option<::Value<bool>> = None;
                     let mut metric_name: Option<::Value<String>> = None;
                     let mut sampled_requests_enabled: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CloudWatchMetricsEnabled" => {
-                                cloud_watch_metrics_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                                cloud_watch_metrics_enabled =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MetricName" => {
                                 metric_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SampledRequestsEnabled" => {
-                                sampled_requests_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                                sampled_requests_enabled =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(VisibilityConfig {
-                        cloud_watch_metrics_enabled: cloud_watch_metrics_enabled.ok_or(::serde::de::Error::missing_field("CloudWatchMetricsEnabled"))?,
-                        metric_name: metric_name.ok_or(::serde::de::Error::missing_field("MetricName"))?,
-                        sampled_requests_enabled: sampled_requests_enabled.ok_or(::serde::de::Error::missing_field("SampledRequestsEnabled"))?,
+                        cloud_watch_metrics_enabled: cloud_watch_metrics_enabled.ok_or(
+                            ::serde::de::Error::missing_field("CloudWatchMetricsEnabled"),
+                        )?,
+                        metric_name: metric_name
+                            .ok_or(::serde::de::Error::missing_field("MetricName"))?,
+                        sampled_requests_enabled: sampled_requests_enabled
+                            .ok_or(::serde::de::Error::missing_field("SampledRequestsEnabled"))?,
                     })
                 }
             }
@@ -3005,14 +3512,24 @@ pub mod rule_group {
     impl ::codec::SerializeValue for XssMatchStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for XssMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<XssMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<XssMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3022,25 +3539,33 @@ pub mod rule_group {
                     write!(f, "a struct of type XssMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FieldToMatch" => {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(XssMatchStatement {
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -3067,7 +3592,11 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_request_handling) = self.custom_request_handling {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomRequestHandling", custom_request_handling)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CustomRequestHandling",
+                    custom_request_handling,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -3084,13 +3613,19 @@ pub mod web_acl {
                     write!(f, "a struct of type AllowAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut custom_request_handling: Option<::Value<CustomRequestHandling>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CustomRequestHandling" => {
-                                custom_request_handling = ::serde::de::MapAccess::next_value(&mut map)?;
+                                custom_request_handling =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3135,10 +3670,15 @@ pub mod web_acl {
                     write!(f, "a struct of type AndStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut statements: Option<::ValueList<Statement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Statements" => {
                                 statements = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3148,7 +3688,8 @@ pub mod web_acl {
                     }
 
                     Ok(AndStatement {
-                        statements: statements.ok_or(::serde::de::Error::missing_field("Statements"))?,
+                        statements: statements
+                            .ok_or(::serde::de::Error::missing_field("Statements"))?,
                     })
                 }
             }
@@ -3171,7 +3712,11 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_response) = self.custom_response {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomResponse", custom_response)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CustomResponse",
+                    custom_response,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -3188,10 +3733,15 @@ pub mod web_acl {
                     write!(f, "a struct of type BlockAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut custom_response: Option<::Value<CustomResponse>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CustomResponse" => {
                                 custom_response = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3243,21 +3793,43 @@ pub mod web_acl {
     impl ::codec::SerializeValue for ByteMatchStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PositionalConstraint", &self.positional_constraint)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PositionalConstraint",
+                &self.positional_constraint,
+            )?;
             if let Some(ref search_string) = self.search_string {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SearchString", search_string)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SearchString",
+                    search_string,
+                )?;
             }
             if let Some(ref search_string_base64) = self.search_string_base64 {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SearchStringBase64", search_string_base64)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SearchStringBase64",
+                    search_string_base64,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ByteMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ByteMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ByteMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3267,40 +3839,51 @@ pub mod web_acl {
                     write!(f, "a struct of type ByteMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut positional_constraint: Option<::Value<String>> = None;
                     let mut search_string: Option<::Value<String>> = None;
                     let mut search_string_base64: Option<::Value<String>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FieldToMatch" => {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PositionalConstraint" => {
-                                positional_constraint = ::serde::de::MapAccess::next_value(&mut map)?;
+                                positional_constraint =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SearchString" => {
                                 search_string = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SearchStringBase64" => {
-                                search_string_base64 = ::serde::de::MapAccess::next_value(&mut map)?;
+                                search_string_base64 =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(ByteMatchStatement {
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        positional_constraint: positional_constraint.ok_or(::serde::de::Error::missing_field("PositionalConstraint"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        positional_constraint: positional_constraint
+                            .ok_or(::serde::de::Error::missing_field("PositionalConstraint"))?,
                         search_string: search_string,
                         search_string_base64: search_string_base64,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -3323,14 +3906,20 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_request_handling) = self.custom_request_handling {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomRequestHandling", custom_request_handling)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CustomRequestHandling",
+                    custom_request_handling,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CaptchaAction {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptchaAction, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptchaAction, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3340,13 +3929,19 @@ pub mod web_acl {
                     write!(f, "a struct of type CaptchaAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut custom_request_handling: Option<::Value<CustomRequestHandling>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CustomRequestHandling" => {
-                                custom_request_handling = ::serde::de::MapAccess::next_value(&mut map)?;
+                                custom_request_handling =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3376,14 +3971,20 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref immunity_time_property) = self.immunity_time_property {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImmunityTimeProperty", immunity_time_property)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ImmunityTimeProperty",
+                    immunity_time_property,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CaptchaConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CaptchaConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CaptchaConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3393,13 +3994,19 @@ pub mod web_acl {
                     write!(f, "a struct of type CaptchaConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut immunity_time_property: Option<::Value<ImmunityTimeProperty>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ImmunityTimeProperty" => {
-                                immunity_time_property = ::serde::de::MapAccess::next_value(&mut map)?;
+                                immunity_time_property =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3429,7 +4036,11 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_request_handling) = self.custom_request_handling {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomRequestHandling", custom_request_handling)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CustomRequestHandling",
+                    custom_request_handling,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -3446,13 +4057,19 @@ pub mod web_acl {
                     write!(f, "a struct of type CountAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut custom_request_handling: Option<::Value<CustomRequestHandling>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CustomRequestHandling" => {
-                                custom_request_handling = ::serde::de::MapAccess::next_value(&mut map)?;
+                                custom_request_handling =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -3493,7 +4110,9 @@ pub mod web_acl {
     }
 
     impl ::codec::DeserializeValue for CustomHTTPHeader {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomHTTPHeader, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CustomHTTPHeader, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3503,11 +4122,16 @@ pub mod web_acl {
                     write!(f, "a struct of type CustomHTTPHeader")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3543,13 +4167,19 @@ pub mod web_acl {
     impl ::codec::SerializeValue for CustomRequestHandling {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InsertHeaders", &self.insert_headers)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InsertHeaders",
+                &self.insert_headers,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CustomRequestHandling {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomRequestHandling, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CustomRequestHandling, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3559,10 +4189,15 @@ pub mod web_acl {
                     write!(f, "a struct of type CustomRequestHandling")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut insert_headers: Option<::ValueList<CustomHTTPHeader>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InsertHeaders" => {
                                 insert_headers = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3572,7 +4207,8 @@ pub mod web_acl {
                     }
 
                     Ok(CustomRequestHandling {
-                        insert_headers: insert_headers.ok_or(::serde::de::Error::missing_field("InsertHeaders"))?,
+                        insert_headers: insert_headers
+                            .ok_or(::serde::de::Error::missing_field("InsertHeaders"))?,
                     })
                 }
             }
@@ -3605,18 +4241,32 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_response_body_key) = self.custom_response_body_key {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomResponseBodyKey", custom_response_body_key)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CustomResponseBodyKey",
+                    custom_response_body_key,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResponseCode", &self.response_code)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResponseCode",
+                &self.response_code,
+            )?;
             if let Some(ref response_headers) = self.response_headers {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResponseHeaders", response_headers)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ResponseHeaders",
+                    response_headers,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CustomResponse {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomResponse, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CustomResponse, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3626,15 +4276,21 @@ pub mod web_acl {
                     write!(f, "a struct of type CustomResponse")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut custom_response_body_key: Option<::Value<String>> = None;
                     let mut response_code: Option<::Value<u32>> = None;
                     let mut response_headers: Option<::ValueList<CustomHTTPHeader>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CustomResponseBodyKey" => {
-                                custom_response_body_key = ::serde::de::MapAccess::next_value(&mut map)?;
+                                custom_response_body_key =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ResponseCode" => {
                                 response_code = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3648,7 +4304,8 @@ pub mod web_acl {
 
                     Ok(CustomResponse {
                         custom_response_body_key: custom_response_body_key,
-                        response_code: response_code.ok_or(::serde::de::Error::missing_field("ResponseCode"))?,
+                        response_code: response_code
+                            .ok_or(::serde::de::Error::missing_field("ResponseCode"))?,
                         response_headers: response_headers,
                     })
                 }
@@ -3677,13 +4334,19 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Content", &self.content)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContentType", &self.content_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContentType",
+                &self.content_type,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CustomResponseBody {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomResponseBody, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CustomResponseBody, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3693,11 +4356,16 @@ pub mod web_acl {
                     write!(f, "a struct of type CustomResponseBody")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut content: Option<::Value<String>> = None;
                     let mut content_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Content" => {
                                 content = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3711,7 +4379,8 @@ pub mod web_acl {
 
                     Ok(CustomResponseBody {
                         content: content.ok_or(::serde::de::Error::missing_field("Content"))?,
-                        content_type: content_type.ok_or(::serde::de::Error::missing_field("ContentType"))?,
+                        content_type: content_type
+                            .ok_or(::serde::de::Error::missing_field("ContentType"))?,
                     })
                 }
             }
@@ -3749,7 +4418,9 @@ pub mod web_acl {
     }
 
     impl ::codec::DeserializeValue for DefaultAction {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DefaultAction, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DefaultAction, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3759,11 +4430,16 @@ pub mod web_acl {
                     write!(f, "a struct of type DefaultAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allow: Option<::Value<AllowAction>> = None;
                     let mut block: Option<::Value<BlockAction>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Allow" => {
                                 allow = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3815,10 +4491,15 @@ pub mod web_acl {
                     write!(f, "a struct of type ExcludedRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3856,7 +4537,9 @@ pub mod web_acl {
     }
 
     impl ::codec::DeserializeValue for FieldIdentifier {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FieldIdentifier, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FieldIdentifier, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -3866,10 +4549,15 @@ pub mod web_acl {
                     write!(f, "a struct of type FieldIdentifier")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut identifier: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Identifier" => {
                                 identifier = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -3879,7 +4567,8 @@ pub mod web_acl {
                     }
 
                     Ok(FieldIdentifier {
-                        identifier: identifier.ok_or(::serde::de::Error::missing_field("Identifier"))?,
+                        identifier: identifier
+                            .ok_or(::serde::de::Error::missing_field("Identifier"))?,
                     })
                 }
             }
@@ -3937,7 +4626,11 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref all_query_arguments) = self.all_query_arguments {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllQueryArguments", all_query_arguments)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllQueryArguments",
+                    all_query_arguments,
+                )?;
             }
             if let Some(ref body) = self.body {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Body", body)?;
@@ -3952,10 +4645,18 @@ pub mod web_acl {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "QueryString", query_string)?;
             }
             if let Some(ref single_header) = self.single_header {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SingleHeader", single_header)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SingleHeader",
+                    single_header,
+                )?;
             }
             if let Some(ref single_query_argument) = self.single_query_argument {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SingleQueryArgument", single_query_argument)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SingleQueryArgument",
+                    single_query_argument,
+                )?;
             }
             if let Some(ref uri_path) = self.uri_path {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "UriPath", uri_path)?;
@@ -3975,7 +4676,10 @@ pub mod web_acl {
                     write!(f, "a struct of type FieldToMatch")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut all_query_arguments: Option<::Value<::json::Value>> = None;
                     let mut body: Option<::Value<::json::Value>> = None;
                     let mut json_body: Option<::Value<JsonBody>> = None;
@@ -3985,7 +4689,9 @@ pub mod web_acl {
                     let mut single_query_argument: Option<::Value<::json::Value>> = None;
                     let mut uri_path: Option<::Value<::json::Value>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllQueryArguments" => {
                                 all_query_arguments = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4006,7 +4712,8 @@ pub mod web_acl {
                                 single_header = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SingleQueryArgument" => {
-                                single_query_argument = ::serde::de::MapAccess::next_value(&mut map)?;
+                                single_query_argument =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "UriPath" => {
                                 uri_path = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4050,14 +4757,20 @@ pub mod web_acl {
     impl ::codec::SerializeValue for ForwardedIPConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FallbackBehavior", &self.fallback_behavior)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FallbackBehavior",
+                &self.fallback_behavior,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "HeaderName", &self.header_name)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ForwardedIPConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ForwardedIPConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ForwardedIPConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4067,11 +4780,16 @@ pub mod web_acl {
                     write!(f, "a struct of type ForwardedIPConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut fallback_behavior: Option<::Value<String>> = None;
                     let mut header_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FallbackBehavior" => {
                                 fallback_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4084,8 +4802,10 @@ pub mod web_acl {
                     }
 
                     Ok(ForwardedIPConfiguration {
-                        fallback_behavior: fallback_behavior.ok_or(::serde::de::Error::missing_field("FallbackBehavior"))?,
-                        header_name: header_name.ok_or(::serde::de::Error::missing_field("HeaderName"))?,
+                        fallback_behavior: fallback_behavior
+                            .ok_or(::serde::de::Error::missing_field("FallbackBehavior"))?,
+                        header_name: header_name
+                            .ok_or(::serde::de::Error::missing_field("HeaderName"))?,
                     })
                 }
             }
@@ -4113,17 +4833,27 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref country_codes) = self.country_codes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CountryCodes", country_codes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CountryCodes",
+                    country_codes,
+                )?;
             }
             if let Some(ref forwarded_ip_config) = self.forwarded_ip_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ForwardedIPConfig", forwarded_ip_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ForwardedIPConfig",
+                    forwarded_ip_config,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for GeoMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GeoMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<GeoMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4133,11 +4863,16 @@ pub mod web_acl {
                     write!(f, "a struct of type GeoMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut country_codes: Option<::ValueList<String>> = None;
                     let mut forwarded_ip_config: Option<::Value<ForwardedIPConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CountryCodes" => {
                                 country_codes = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4183,7 +4918,11 @@ pub mod web_acl {
     impl ::codec::SerializeValue for IPSetForwardedIPConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FallbackBehavior", &self.fallback_behavior)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FallbackBehavior",
+                &self.fallback_behavior,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "HeaderName", &self.header_name)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Position", &self.position)?;
             ::serde::ser::SerializeMap::end(map)
@@ -4191,7 +4930,9 @@ pub mod web_acl {
     }
 
     impl ::codec::DeserializeValue for IPSetForwardedIPConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<IPSetForwardedIPConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<IPSetForwardedIPConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4201,12 +4942,17 @@ pub mod web_acl {
                     write!(f, "a struct of type IPSetForwardedIPConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut fallback_behavior: Option<::Value<String>> = None;
                     let mut header_name: Option<::Value<String>> = None;
                     let mut position: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FallbackBehavior" => {
                                 fallback_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4222,8 +4968,10 @@ pub mod web_acl {
                     }
 
                     Ok(IPSetForwardedIPConfiguration {
-                        fallback_behavior: fallback_behavior.ok_or(::serde::de::Error::missing_field("FallbackBehavior"))?,
-                        header_name: header_name.ok_or(::serde::de::Error::missing_field("HeaderName"))?,
+                        fallback_behavior: fallback_behavior
+                            .ok_or(::serde::de::Error::missing_field("FallbackBehavior"))?,
+                        header_name: header_name
+                            .ok_or(::serde::de::Error::missing_field("HeaderName"))?,
                         position: position.ok_or(::serde::de::Error::missing_field("Position"))?,
                     })
                 }
@@ -4253,14 +5001,20 @@ pub mod web_acl {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
             if let Some(ref ip_set_forwarded_ip_config) = self.ip_set_forwarded_ip_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IPSetForwardedIPConfig", ip_set_forwarded_ip_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IPSetForwardedIPConfig",
+                    ip_set_forwarded_ip_config,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for IPSetReferenceStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<IPSetReferenceStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<IPSetReferenceStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4270,17 +5024,25 @@ pub mod web_acl {
                     write!(f, "a struct of type IPSetReferenceStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
-                    let mut ip_set_forwarded_ip_config: Option<::Value<IPSetForwardedIPConfiguration>> = None;
+                    let mut ip_set_forwarded_ip_config: Option<
+                        ::Value<IPSetForwardedIPConfiguration>,
+                    > = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IPSetForwardedIPConfig" => {
-                                ip_set_forwarded_ip_config = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ip_set_forwarded_ip_config =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -4310,13 +5072,19 @@ pub mod web_acl {
     impl ::codec::SerializeValue for ImmunityTimeProperty {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImmunityTime", &self.immunity_time)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ImmunityTime",
+                &self.immunity_time,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ImmunityTimeProperty {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ImmunityTimeProperty, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ImmunityTimeProperty, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4326,10 +5094,15 @@ pub mod web_acl {
                     write!(f, "a struct of type ImmunityTimeProperty")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut immunity_time: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ImmunityTime" => {
                                 immunity_time = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4339,7 +5112,8 @@ pub mod web_acl {
                     }
 
                     Ok(ImmunityTimeProperty {
-                        immunity_time: immunity_time.ok_or(::serde::de::Error::missing_field("ImmunityTime"))?,
+                        immunity_time: immunity_time
+                            .ok_or(::serde::de::Error::missing_field("ImmunityTime"))?,
                     })
                 }
             }
@@ -4372,9 +5146,17 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref invalid_fallback_behavior) = self.invalid_fallback_behavior {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InvalidFallbackBehavior", invalid_fallback_behavior)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InvalidFallbackBehavior",
+                    invalid_fallback_behavior,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MatchPattern", &self.match_pattern)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MatchPattern",
+                &self.match_pattern,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MatchScope", &self.match_scope)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -4391,15 +5173,21 @@ pub mod web_acl {
                     write!(f, "a struct of type JsonBody")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut invalid_fallback_behavior: Option<::Value<String>> = None;
                     let mut match_pattern: Option<::Value<JsonMatchPattern>> = None;
                     let mut match_scope: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "InvalidFallbackBehavior" => {
-                                invalid_fallback_behavior = ::serde::de::MapAccess::next_value(&mut map)?;
+                                invalid_fallback_behavior =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MatchPattern" => {
                                 match_pattern = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4413,8 +5201,10 @@ pub mod web_acl {
 
                     Ok(JsonBody {
                         invalid_fallback_behavior: invalid_fallback_behavior,
-                        match_pattern: match_pattern.ok_or(::serde::de::Error::missing_field("MatchPattern"))?,
-                        match_scope: match_scope.ok_or(::serde::de::Error::missing_field("MatchScope"))?,
+                        match_pattern: match_pattern
+                            .ok_or(::serde::de::Error::missing_field("MatchPattern"))?,
+                        match_scope: match_scope
+                            .ok_or(::serde::de::Error::missing_field("MatchScope"))?,
                     })
                 }
             }
@@ -4445,14 +5235,20 @@ pub mod web_acl {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "All", all)?;
             }
             if let Some(ref included_paths) = self.included_paths {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IncludedPaths", included_paths)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IncludedPaths",
+                    included_paths,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for JsonMatchPattern {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<JsonMatchPattern, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<JsonMatchPattern, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4462,11 +5258,16 @@ pub mod web_acl {
                     write!(f, "a struct of type JsonMatchPattern")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut all: Option<::Value<::json::Value>> = None;
                     let mut included_paths: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "All" => {
                                 all = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4518,10 +5319,15 @@ pub mod web_acl {
                     write!(f, "a struct of type Label")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4565,7 +5371,9 @@ pub mod web_acl {
     }
 
     impl ::codec::DeserializeValue for LabelMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LabelMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LabelMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4575,11 +5383,16 @@ pub mod web_acl {
                     write!(f, "a struct of type LabelMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut scope: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4634,20 +5447,30 @@ pub mod web_acl {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoginPath", login_path)?;
             }
             if let Some(ref password_field) = self.password_field {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PasswordField", password_field)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PasswordField",
+                    password_field,
+                )?;
             }
             if let Some(ref payload_type) = self.payload_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "PayloadType", payload_type)?;
             }
             if let Some(ref username_field) = self.username_field {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UsernameField", username_field)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UsernameField",
+                    username_field,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ManagedRuleGroupConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ManagedRuleGroupConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ManagedRuleGroupConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4657,13 +5480,18 @@ pub mod web_acl {
                     write!(f, "a struct of type ManagedRuleGroupConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut login_path: Option<::Value<String>> = None;
                     let mut password_field: Option<::Value<FieldIdentifier>> = None;
                     let mut payload_type: Option<::Value<String>> = None;
                     let mut username_field: Option<::Value<FieldIdentifier>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LoginPath" => {
                                 login_path = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4733,14 +5561,26 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref excluded_rules) = self.excluded_rules {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExcludedRules", excluded_rules)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ExcludedRules",
+                    excluded_rules,
+                )?;
             }
             if let Some(ref managed_rule_group_configs) = self.managed_rule_group_configs {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManagedRuleGroupConfigs", managed_rule_group_configs)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ManagedRuleGroupConfigs",
+                    managed_rule_group_configs,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
             if let Some(ref scope_down_statement) = self.scope_down_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScopeDownStatement", scope_down_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ScopeDownStatement",
+                    scope_down_statement,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "VendorName", &self.vendor_name)?;
             if let Some(ref version) = self.version {
@@ -4751,7 +5591,9 @@ pub mod web_acl {
     }
 
     impl ::codec::DeserializeValue for ManagedRuleGroupStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ManagedRuleGroupStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ManagedRuleGroupStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4761,27 +5603,36 @@ pub mod web_acl {
                     write!(f, "a struct of type ManagedRuleGroupStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut excluded_rules: Option<::ValueList<ExcludedRule>> = None;
-                    let mut managed_rule_group_configs: Option<::ValueList<ManagedRuleGroupConfig>> = None;
+                    let mut managed_rule_group_configs: Option<
+                        ::ValueList<ManagedRuleGroupConfig>,
+                    > = None;
                     let mut name: Option<::Value<String>> = None;
                     let mut scope_down_statement: Option<::Value<Statement>> = None;
                     let mut vendor_name: Option<::Value<String>> = None;
                     let mut version: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ExcludedRules" => {
                                 excluded_rules = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ManagedRuleGroupConfigs" => {
-                                managed_rule_group_configs = ::serde::de::MapAccess::next_value(&mut map)?;
+                                managed_rule_group_configs =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ScopeDownStatement" => {
-                                scope_down_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scope_down_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "VendorName" => {
                                 vendor_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4798,7 +5649,8 @@ pub mod web_acl {
                         managed_rule_group_configs: managed_rule_group_configs,
                         name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                         scope_down_statement: scope_down_statement,
-                        vendor_name: vendor_name.ok_or(::serde::de::Error::missing_field("VendorName"))?,
+                        vendor_name: vendor_name
+                            .ok_or(::serde::de::Error::missing_field("VendorName"))?,
                         version: version,
                     })
                 }
@@ -4837,10 +5689,15 @@ pub mod web_acl {
                     write!(f, "a struct of type NotStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut statement: Option<::Value<Statement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Statement" => {
                                 statement = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4850,7 +5707,8 @@ pub mod web_acl {
                     }
 
                     Ok(NotStatement {
-                        statement: statement.ok_or(::serde::de::Error::missing_field("Statement"))?,
+                        statement: statement
+                            .ok_or(::serde::de::Error::missing_field("Statement"))?,
                     })
                 }
             }
@@ -4888,10 +5746,15 @@ pub mod web_acl {
                     write!(f, "a struct of type OrStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut statements: Option<::ValueList<Statement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Statements" => {
                                 statements = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -4901,7 +5764,8 @@ pub mod web_acl {
                     }
 
                     Ok(OrStatement {
-                        statements: statements.ok_or(::serde::de::Error::missing_field("Statements"))?,
+                        statements: statements
+                            .ok_or(::serde::de::Error::missing_field("Statements"))?,
                     })
                 }
             }
@@ -4939,7 +5803,9 @@ pub mod web_acl {
     }
 
     impl ::codec::DeserializeValue for OverrideAction {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OverrideAction, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<OverrideAction, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -4949,11 +5815,16 @@ pub mod web_acl {
                     write!(f, "a struct of type OverrideAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut count: Option<::Value<::json::Value>> = None;
                     let mut none: Option<::Value<::json::Value>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Count" => {
                                 count = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5004,20 +5875,34 @@ pub mod web_acl {
     impl ::codec::SerializeValue for RateBasedStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AggregateKeyType", &self.aggregate_key_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AggregateKeyType",
+                &self.aggregate_key_type,
+            )?;
             if let Some(ref forwarded_ip_config) = self.forwarded_ip_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ForwardedIPConfig", forwarded_ip_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ForwardedIPConfig",
+                    forwarded_ip_config,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Limit", &self.limit)?;
             if let Some(ref scope_down_statement) = self.scope_down_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScopeDownStatement", scope_down_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ScopeDownStatement",
+                    scope_down_statement,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RateBasedStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RateBasedStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RateBasedStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5027,13 +5912,18 @@ pub mod web_acl {
                     write!(f, "a struct of type RateBasedStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut aggregate_key_type: Option<::Value<String>> = None;
                     let mut forwarded_ip_config: Option<::Value<ForwardedIPConfiguration>> = None;
                     let mut limit: Option<::Value<u32>> = None;
                     let mut scope_down_statement: Option<::Value<Statement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AggregateKeyType" => {
                                 aggregate_key_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5045,14 +5935,16 @@ pub mod web_acl {
                                 limit = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ScopeDownStatement" => {
-                                scope_down_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                scope_down_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(RateBasedStatement {
-                        aggregate_key_type: aggregate_key_type.ok_or(::serde::de::Error::missing_field("AggregateKeyType"))?,
+                        aggregate_key_type: aggregate_key_type
+                            .ok_or(::serde::de::Error::missing_field("AggregateKeyType"))?,
                         forwarded_ip_config: forwarded_ip_config,
                         limit: limit.ok_or(::serde::de::Error::missing_field("Limit"))?,
                         scope_down_statement: scope_down_statement,
@@ -5087,15 +5979,29 @@ pub mod web_acl {
     impl ::codec::SerializeValue for RegexMatchStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegexString", &self.regex_string)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RegexString",
+                &self.regex_string,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RegexMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RegexMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RegexMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5105,12 +6011,17 @@ pub mod web_acl {
                     write!(f, "a struct of type RegexMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut regex_string: Option<::Value<String>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FieldToMatch" => {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5119,16 +6030,20 @@ pub mod web_acl {
                                 regex_string = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(RegexMatchStatement {
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        regex_string: regex_string.ok_or(::serde::de::Error::missing_field("RegexString"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        regex_string: regex_string
+                            .ok_or(::serde::de::Error::missing_field("RegexString"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -5161,14 +6076,24 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RegexPatternSetReferenceStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RegexPatternSetReferenceStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RegexPatternSetReferenceStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5178,12 +6103,17 @@ pub mod web_acl {
                     write!(f, "a struct of type RegexPatternSetReferenceStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5192,7 +6122,8 @@ pub mod web_acl {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -5200,8 +6131,10 @@ pub mod web_acl {
 
                     Ok(RegexPatternSetReferenceStatement {
                         arn: arn.ok_or(::serde::de::Error::missing_field("Arn"))?,
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -5262,18 +6195,30 @@ pub mod web_acl {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Action", action)?;
             }
             if let Some(ref captcha_config) = self.captcha_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CaptchaConfig", captcha_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CaptchaConfig",
+                    captcha_config,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
             if let Some(ref override_action) = self.override_action {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OverrideAction", override_action)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OverrideAction",
+                    override_action,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Priority", &self.priority)?;
             if let Some(ref rule_labels) = self.rule_labels {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuleLabels", rule_labels)?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Statement", &self.statement)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VisibilityConfig", &self.visibility_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VisibilityConfig",
+                &self.visibility_config,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -5289,7 +6234,10 @@ pub mod web_acl {
                     write!(f, "a struct of type Rule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut action: Option<::Value<RuleAction>> = None;
                     let mut captcha_config: Option<::Value<CaptchaConfig>> = None;
                     let mut name: Option<::Value<String>> = None;
@@ -5299,7 +6247,9 @@ pub mod web_acl {
                     let mut statement: Option<::Value<Statement>> = None;
                     let mut visibility_config: Option<::Value<VisibilityConfig>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Action" => {
                                 action = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5336,8 +6286,10 @@ pub mod web_acl {
                         override_action: override_action,
                         priority: priority.ok_or(::serde::de::Error::missing_field("Priority"))?,
                         rule_labels: rule_labels,
-                        statement: statement.ok_or(::serde::de::Error::missing_field("Statement"))?,
-                        visibility_config: visibility_config.ok_or(::serde::de::Error::missing_field("VisibilityConfig"))?,
+                        statement: statement
+                            .ok_or(::serde::de::Error::missing_field("Statement"))?,
+                        visibility_config: visibility_config
+                            .ok_or(::serde::de::Error::missing_field("VisibilityConfig"))?,
                     })
                 }
             }
@@ -5401,13 +6353,18 @@ pub mod web_acl {
                     write!(f, "a struct of type RuleAction")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allow: Option<::Value<AllowAction>> = None;
                     let mut block: Option<::Value<BlockAction>> = None;
                     let mut captcha: Option<::Value<CaptchaAction>> = None;
                     let mut count: Option<::Value<CountAction>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Allow" => {
                                 allow = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5458,14 +6415,20 @@ pub mod web_acl {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
             if let Some(ref excluded_rules) = self.excluded_rules {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExcludedRules", excluded_rules)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ExcludedRules",
+                    excluded_rules,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RuleGroupReferenceStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RuleGroupReferenceStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RuleGroupReferenceStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5475,11 +6438,16 @@ pub mod web_acl {
                     write!(f, "a struct of type RuleGroupReferenceStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut excluded_rules: Option<::ValueList<ExcludedRule>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5530,16 +6498,30 @@ pub mod web_acl {
     impl ::codec::SerializeValue for SizeConstraintStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComparisonOperator", &self.comparison_operator)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ComparisonOperator",
+                &self.comparison_operator,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Size", &self.size)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SizeConstraintStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SizeConstraintStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SizeConstraintStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5549,13 +6531,18 @@ pub mod web_acl {
                     write!(f, "a struct of type SizeConstraintStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut comparison_operator: Option<::Value<String>> = None;
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut size: Option<::Value<f64>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ComparisonOperator" => {
                                 comparison_operator = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5567,17 +6554,21 @@ pub mod web_acl {
                                 size = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(SizeConstraintStatement {
-                        comparison_operator: comparison_operator.ok_or(::serde::de::Error::missing_field("ComparisonOperator"))?,
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        comparison_operator: comparison_operator
+                            .ok_or(::serde::de::Error::missing_field("ComparisonOperator"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
                         size: size.ok_or(::serde::de::Error::missing_field("Size"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -5604,14 +6595,24 @@ pub mod web_acl {
     impl ::codec::SerializeValue for SqliMatchStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SqliMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SqliMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SqliMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5621,25 +6622,33 @@ pub mod web_acl {
                     write!(f, "a struct of type SqliMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FieldToMatch" => {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(SqliMatchStatement {
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }
@@ -5705,7 +6714,8 @@ pub mod web_acl {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub regex_pattern_set_reference_statement: Option<::Value<RegexPatternSetReferenceStatement>>,
+        pub regex_pattern_set_reference_statement:
+            Option<::Value<RegexPatternSetReferenceStatement>>,
         /// Property [`RuleGroupReferenceStatement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-rulegroupreferencestatement).
         ///
         /// Update type: _Mutable_.
@@ -5732,49 +6742,107 @@ pub mod web_acl {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref and_statement) = self.and_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AndStatement", and_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AndStatement",
+                    and_statement,
+                )?;
             }
             if let Some(ref byte_match_statement) = self.byte_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ByteMatchStatement", byte_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ByteMatchStatement",
+                    byte_match_statement,
+                )?;
             }
             if let Some(ref geo_match_statement) = self.geo_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "GeoMatchStatement", geo_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "GeoMatchStatement",
+                    geo_match_statement,
+                )?;
             }
             if let Some(ref ip_set_reference_statement) = self.ip_set_reference_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IPSetReferenceStatement", ip_set_reference_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IPSetReferenceStatement",
+                    ip_set_reference_statement,
+                )?;
             }
             if let Some(ref label_match_statement) = self.label_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LabelMatchStatement", label_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LabelMatchStatement",
+                    label_match_statement,
+                )?;
             }
             if let Some(ref managed_rule_group_statement) = self.managed_rule_group_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManagedRuleGroupStatement", managed_rule_group_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ManagedRuleGroupStatement",
+                    managed_rule_group_statement,
+                )?;
             }
             if let Some(ref not_statement) = self.not_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotStatement", not_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NotStatement",
+                    not_statement,
+                )?;
             }
             if let Some(ref or_statement) = self.or_statement {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "OrStatement", or_statement)?;
             }
             if let Some(ref rate_based_statement) = self.rate_based_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RateBasedStatement", rate_based_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RateBasedStatement",
+                    rate_based_statement,
+                )?;
             }
             if let Some(ref regex_match_statement) = self.regex_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegexMatchStatement", regex_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RegexMatchStatement",
+                    regex_match_statement,
+                )?;
             }
-            if let Some(ref regex_pattern_set_reference_statement) = self.regex_pattern_set_reference_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegexPatternSetReferenceStatement", regex_pattern_set_reference_statement)?;
+            if let Some(ref regex_pattern_set_reference_statement) =
+                self.regex_pattern_set_reference_statement
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RegexPatternSetReferenceStatement",
+                    regex_pattern_set_reference_statement,
+                )?;
             }
             if let Some(ref rule_group_reference_statement) = self.rule_group_reference_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuleGroupReferenceStatement", rule_group_reference_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RuleGroupReferenceStatement",
+                    rule_group_reference_statement,
+                )?;
             }
             if let Some(ref size_constraint_statement) = self.size_constraint_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SizeConstraintStatement", size_constraint_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SizeConstraintStatement",
+                    size_constraint_statement,
+                )?;
             }
             if let Some(ref sqli_match_statement) = self.sqli_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SqliMatchStatement", sqli_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SqliMatchStatement",
+                    sqli_match_statement,
+                )?;
             }
             if let Some(ref xss_match_statement) = self.xss_match_statement {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "XssMatchStatement", xss_match_statement)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "XssMatchStatement",
+                    xss_match_statement,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -5791,42 +6859,59 @@ pub mod web_acl {
                     write!(f, "a struct of type Statement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut and_statement: Option<::Value<AndStatement>> = None;
                     let mut byte_match_statement: Option<::Value<ByteMatchStatement>> = None;
                     let mut geo_match_statement: Option<::Value<GeoMatchStatement>> = None;
-                    let mut ip_set_reference_statement: Option<::Value<IPSetReferenceStatement>> = None;
+                    let mut ip_set_reference_statement: Option<::Value<IPSetReferenceStatement>> =
+                        None;
                     let mut label_match_statement: Option<::Value<LabelMatchStatement>> = None;
-                    let mut managed_rule_group_statement: Option<::Value<ManagedRuleGroupStatement>> = None;
+                    let mut managed_rule_group_statement: Option<
+                        ::Value<ManagedRuleGroupStatement>,
+                    > = None;
                     let mut not_statement: Option<::Value<NotStatement>> = None;
                     let mut or_statement: Option<::Value<OrStatement>> = None;
                     let mut rate_based_statement: Option<::Value<RateBasedStatement>> = None;
                     let mut regex_match_statement: Option<::Value<RegexMatchStatement>> = None;
-                    let mut regex_pattern_set_reference_statement: Option<::Value<RegexPatternSetReferenceStatement>> = None;
-                    let mut rule_group_reference_statement: Option<::Value<RuleGroupReferenceStatement>> = None;
-                    let mut size_constraint_statement: Option<::Value<SizeConstraintStatement>> = None;
+                    let mut regex_pattern_set_reference_statement: Option<
+                        ::Value<RegexPatternSetReferenceStatement>,
+                    > = None;
+                    let mut rule_group_reference_statement: Option<
+                        ::Value<RuleGroupReferenceStatement>,
+                    > = None;
+                    let mut size_constraint_statement: Option<::Value<SizeConstraintStatement>> =
+                        None;
                     let mut sqli_match_statement: Option<::Value<SqliMatchStatement>> = None;
                     let mut xss_match_statement: Option<::Value<XssMatchStatement>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AndStatement" => {
                                 and_statement = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ByteMatchStatement" => {
-                                byte_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                byte_match_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "GeoMatchStatement" => {
                                 geo_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "IPSetReferenceStatement" => {
-                                ip_set_reference_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ip_set_reference_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "LabelMatchStatement" => {
-                                label_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                label_match_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ManagedRuleGroupStatement" => {
-                                managed_rule_group_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                managed_rule_group_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "NotStatement" => {
                                 not_statement = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5835,22 +6920,28 @@ pub mod web_acl {
                                 or_statement = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RateBasedStatement" => {
-                                rate_based_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                rate_based_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RegexMatchStatement" => {
-                                regex_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                regex_match_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RegexPatternSetReferenceStatement" => {
-                                regex_pattern_set_reference_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                regex_pattern_set_reference_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RuleGroupReferenceStatement" => {
-                                rule_group_reference_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                rule_group_reference_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SizeConstraintStatement" => {
-                                size_constraint_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                size_constraint_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SqliMatchStatement" => {
-                                sqli_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
+                                sqli_match_statement =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "XssMatchStatement" => {
                                 xss_match_statement = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5870,7 +6961,8 @@ pub mod web_acl {
                         or_statement: or_statement,
                         rate_based_statement: rate_based_statement,
                         regex_match_statement: regex_match_statement,
-                        regex_pattern_set_reference_statement: regex_pattern_set_reference_statement,
+                        regex_pattern_set_reference_statement:
+                            regex_pattern_set_reference_statement,
                         rule_group_reference_statement: rule_group_reference_statement,
                         size_constraint_statement: size_constraint_statement,
                         sqli_match_statement: sqli_match_statement,
@@ -5908,7 +7000,9 @@ pub mod web_acl {
     }
 
     impl ::codec::DeserializeValue for TextTransformation {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TextTransformation, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TextTransformation, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5918,11 +7012,16 @@ pub mod web_acl {
                     write!(f, "a struct of type TextTransformation")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut priority: Option<::Value<u32>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Priority" => {
                                 priority = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -5968,15 +7067,25 @@ pub mod web_acl {
     impl ::codec::SerializeValue for VisibilityConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatchMetricsEnabled", &self.cloud_watch_metrics_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CloudWatchMetricsEnabled",
+                &self.cloud_watch_metrics_enabled,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricName", &self.metric_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SampledRequestsEnabled", &self.sampled_requests_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SampledRequestsEnabled",
+                &self.sampled_requests_enabled,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VisibilityConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VisibilityConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VisibilityConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -5986,30 +7095,41 @@ pub mod web_acl {
                     write!(f, "a struct of type VisibilityConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cloud_watch_metrics_enabled: Option<::Value<bool>> = None;
                     let mut metric_name: Option<::Value<String>> = None;
                     let mut sampled_requests_enabled: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CloudWatchMetricsEnabled" => {
-                                cloud_watch_metrics_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                                cloud_watch_metrics_enabled =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MetricName" => {
                                 metric_name = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SampledRequestsEnabled" => {
-                                sampled_requests_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                                sampled_requests_enabled =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(VisibilityConfig {
-                        cloud_watch_metrics_enabled: cloud_watch_metrics_enabled.ok_or(::serde::de::Error::missing_field("CloudWatchMetricsEnabled"))?,
-                        metric_name: metric_name.ok_or(::serde::de::Error::missing_field("MetricName"))?,
-                        sampled_requests_enabled: sampled_requests_enabled.ok_or(::serde::de::Error::missing_field("SampledRequestsEnabled"))?,
+                        cloud_watch_metrics_enabled: cloud_watch_metrics_enabled.ok_or(
+                            ::serde::de::Error::missing_field("CloudWatchMetricsEnabled"),
+                        )?,
+                        metric_name: metric_name
+                            .ok_or(::serde::de::Error::missing_field("MetricName"))?,
+                        sampled_requests_enabled: sampled_requests_enabled
+                            .ok_or(::serde::de::Error::missing_field("SampledRequestsEnabled"))?,
                     })
                 }
             }
@@ -6036,14 +7156,24 @@ pub mod web_acl {
     impl ::codec::SerializeValue for XssMatchStatement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FieldToMatch", &self.field_to_match)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TextTransformations", &self.text_transformations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FieldToMatch",
+                &self.field_to_match,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TextTransformations",
+                &self.text_transformations,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for XssMatchStatement {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<XssMatchStatement, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<XssMatchStatement, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -6053,25 +7183,33 @@ pub mod web_acl {
                     write!(f, "a struct of type XssMatchStatement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut field_to_match: Option<::Value<FieldToMatch>> = None;
                     let mut text_transformations: Option<::ValueList<TextTransformation>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FieldToMatch" => {
                                 field_to_match = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TextTransformations" => {
-                                text_transformations = ::serde::de::MapAccess::next_value(&mut map)?;
+                                text_transformations =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(XssMatchStatement {
-                        field_to_match: field_to_match.ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
-                        text_transformations: text_transformations.ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
+                        field_to_match: field_to_match
+                            .ok_or(::serde::de::Error::missing_field("FieldToMatch"))?,
+                        text_transformations: text_transformations
+                            .ok_or(::serde::de::Error::missing_field("TextTransformations"))?,
                     })
                 }
             }

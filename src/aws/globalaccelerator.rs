@@ -3,7 +3,7 @@
 /// The [`AWS::GlobalAccelerator::Accelerator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html) resource type.
 #[derive(Debug, Default)]
 pub struct Accelerator {
-    properties: AcceleratorProperties
+    properties: AcceleratorProperties,
 }
 
 /// Properties for the `Accelerator` resource.
@@ -43,7 +43,11 @@ impl ::serde::Serialize for AcceleratorProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", enabled)?;
         }
         if let Some(ref ip_address_type) = self.ip_address_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "IpAddressType", ip_address_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "IpAddressType",
+                ip_address_type,
+            )?;
         }
         if let Some(ref ip_addresses) = self.ip_addresses {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IpAddresses", ip_addresses)?;
@@ -67,7 +71,10 @@ impl<'de> ::serde::Deserialize<'de> for AcceleratorProperties {
                 write!(f, "a struct of type AcceleratorProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut enabled: Option<::Value<bool>> = None;
                 let mut ip_address_type: Option<::Value<String>> = None;
                 let mut ip_addresses: Option<::ValueList<String>> = None;
@@ -131,7 +138,7 @@ impl From<AcceleratorProperties> for Accelerator {
 /// The [`AWS::GlobalAccelerator::EndpointGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct EndpointGroup {
-    properties: EndpointGroupProperties
+    properties: EndpointGroupProperties,
 }
 
 /// Properties for the `EndpointGroup` resource.
@@ -193,37 +200,71 @@ impl ::serde::Serialize for EndpointGroupProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref endpoint_configurations) = self.endpoint_configurations {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EndpointConfigurations", endpoint_configurations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EndpointConfigurations",
+                endpoint_configurations,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EndpointGroupRegion", &self.endpoint_group_region)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EndpointGroupRegion",
+            &self.endpoint_group_region,
+        )?;
         if let Some(ref health_check_interval_seconds) = self.health_check_interval_seconds {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckIntervalSeconds", health_check_interval_seconds)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckIntervalSeconds",
+                health_check_interval_seconds,
+            )?;
         }
         if let Some(ref health_check_path) = self.health_check_path {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckPath", health_check_path)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckPath",
+                health_check_path,
+            )?;
         }
         if let Some(ref health_check_port) = self.health_check_port {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckPort", health_check_port)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckPort",
+                health_check_port,
+            )?;
         }
         if let Some(ref health_check_protocol) = self.health_check_protocol {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckProtocol", health_check_protocol)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckProtocol",
+                health_check_protocol,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ListenerArn", &self.listener_arn)?;
         if let Some(ref port_overrides) = self.port_overrides {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortOverrides", port_overrides)?;
         }
         if let Some(ref threshold_count) = self.threshold_count {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ThresholdCount", threshold_count)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ThresholdCount",
+                threshold_count,
+            )?;
         }
         if let Some(ref traffic_dial_percentage) = self.traffic_dial_percentage {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TrafficDialPercentage", traffic_dial_percentage)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TrafficDialPercentage",
+                traffic_dial_percentage,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for EndpointGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<EndpointGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<EndpointGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -233,15 +274,21 @@ impl<'de> ::serde::Deserialize<'de> for EndpointGroupProperties {
                 write!(f, "a struct of type EndpointGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut endpoint_configurations: Option<::ValueList<self::endpoint_group::EndpointConfiguration>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut endpoint_configurations: Option<
+                    ::ValueList<self::endpoint_group::EndpointConfiguration>,
+                > = None;
                 let mut endpoint_group_region: Option<::Value<String>> = None;
                 let mut health_check_interval_seconds: Option<::Value<u32>> = None;
                 let mut health_check_path: Option<::Value<String>> = None;
                 let mut health_check_port: Option<::Value<u32>> = None;
                 let mut health_check_protocol: Option<::Value<String>> = None;
                 let mut listener_arn: Option<::Value<String>> = None;
-                let mut port_overrides: Option<::ValueList<self::endpoint_group::PortOverride>> = None;
+                let mut port_overrides: Option<::ValueList<self::endpoint_group::PortOverride>> =
+                    None;
                 let mut threshold_count: Option<::Value<u32>> = None;
                 let mut traffic_dial_percentage: Option<::Value<f64>> = None;
 
@@ -254,7 +301,8 @@ impl<'de> ::serde::Deserialize<'de> for EndpointGroupProperties {
                             endpoint_group_region = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "HealthCheckIntervalSeconds" => {
-                            health_check_interval_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                            health_check_interval_seconds =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "HealthCheckPath" => {
                             health_check_path = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -283,12 +331,14 @@ impl<'de> ::serde::Deserialize<'de> for EndpointGroupProperties {
 
                 Ok(EndpointGroupProperties {
                     endpoint_configurations: endpoint_configurations,
-                    endpoint_group_region: endpoint_group_region.ok_or(::serde::de::Error::missing_field("EndpointGroupRegion"))?,
+                    endpoint_group_region: endpoint_group_region
+                        .ok_or(::serde::de::Error::missing_field("EndpointGroupRegion"))?,
                     health_check_interval_seconds: health_check_interval_seconds,
                     health_check_path: health_check_path,
                     health_check_port: health_check_port,
                     health_check_protocol: health_check_protocol,
-                    listener_arn: listener_arn.ok_or(::serde::de::Error::missing_field("ListenerArn"))?,
+                    listener_arn: listener_arn
+                        .ok_or(::serde::de::Error::missing_field("ListenerArn"))?,
                     port_overrides: port_overrides,
                     threshold_count: threshold_count,
                     traffic_dial_percentage: traffic_dial_percentage,
@@ -322,7 +372,7 @@ impl From<EndpointGroupProperties> for EndpointGroup {
 /// The [`AWS::GlobalAccelerator::Listener`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html) resource type.
 #[derive(Debug, Default)]
 pub struct Listener {
-    properties: ListenerProperties
+    properties: ListenerProperties,
 }
 
 /// Properties for the `Listener` resource.
@@ -353,9 +403,17 @@ pub struct ListenerProperties {
 impl ::serde::Serialize for ListenerProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceleratorArn", &self.accelerator_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AcceleratorArn",
+            &self.accelerator_arn,
+        )?;
         if let Some(ref client_affinity) = self.client_affinity {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClientAffinity", client_affinity)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ClientAffinity",
+                client_affinity,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortRanges", &self.port_ranges)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Protocol", &self.protocol)?;
@@ -374,7 +432,10 @@ impl<'de> ::serde::Deserialize<'de> for ListenerProperties {
                 write!(f, "a struct of type ListenerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accelerator_arn: Option<::Value<String>> = None;
                 let mut client_affinity: Option<::Value<String>> = None;
                 let mut port_ranges: Option<::ValueList<self::listener::PortRange>> = None;
@@ -399,9 +460,11 @@ impl<'de> ::serde::Deserialize<'de> for ListenerProperties {
                 }
 
                 Ok(ListenerProperties {
-                    accelerator_arn: accelerator_arn.ok_or(::serde::de::Error::missing_field("AcceleratorArn"))?,
+                    accelerator_arn: accelerator_arn
+                        .ok_or(::serde::de::Error::missing_field("AcceleratorArn"))?,
                     client_affinity: client_affinity,
-                    port_ranges: port_ranges.ok_or(::serde::de::Error::missing_field("PortRanges"))?,
+                    port_ranges: port_ranges
+                        .ok_or(::serde::de::Error::missing_field("PortRanges"))?,
                     protocol: protocol.ok_or(::serde::de::Error::missing_field("Protocol"))?,
                 })
             }
@@ -457,7 +520,11 @@ pub mod endpoint_group {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref client_ip_preservation_enabled) = self.client_ip_preservation_enabled {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClientIPPreservationEnabled", client_ip_preservation_enabled)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ClientIPPreservationEnabled",
+                    client_ip_preservation_enabled,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EndpointId", &self.endpoint_id)?;
             if let Some(ref weight) = self.weight {
@@ -468,7 +535,9 @@ pub mod endpoint_group {
     }
 
     impl ::codec::DeserializeValue for EndpointConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EndpointConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EndpointConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -478,15 +547,21 @@ pub mod endpoint_group {
                     write!(f, "a struct of type EndpointConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut client_ip_preservation_enabled: Option<::Value<bool>> = None;
                     let mut endpoint_id: Option<::Value<String>> = None;
                     let mut weight: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ClientIPPreservationEnabled" => {
-                                client_ip_preservation_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                                client_ip_preservation_enabled =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EndpointId" => {
                                 endpoint_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -500,7 +575,8 @@ pub mod endpoint_group {
 
                     Ok(EndpointConfiguration {
                         client_ip_preservation_enabled: client_ip_preservation_enabled,
-                        endpoint_id: endpoint_id.ok_or(::serde::de::Error::missing_field("EndpointId"))?,
+                        endpoint_id: endpoint_id
+                            .ok_or(::serde::de::Error::missing_field("EndpointId"))?,
                         weight: weight,
                     })
                 }
@@ -528,8 +604,16 @@ pub mod endpoint_group {
     impl ::codec::SerializeValue for PortOverride {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EndpointPort", &self.endpoint_port)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ListenerPort", &self.listener_port)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EndpointPort",
+                &self.endpoint_port,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ListenerPort",
+                &self.listener_port,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -545,11 +629,16 @@ pub mod endpoint_group {
                     write!(f, "a struct of type PortOverride")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut endpoint_port: Option<::Value<u32>> = None;
                     let mut listener_port: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EndpointPort" => {
                                 endpoint_port = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -562,8 +651,10 @@ pub mod endpoint_group {
                     }
 
                     Ok(PortOverride {
-                        endpoint_port: endpoint_port.ok_or(::serde::de::Error::missing_field("EndpointPort"))?,
-                        listener_port: listener_port.ok_or(::serde::de::Error::missing_field("ListenerPort"))?,
+                        endpoint_port: endpoint_port
+                            .ok_or(::serde::de::Error::missing_field("EndpointPort"))?,
+                        listener_port: listener_port
+                            .ok_or(::serde::de::Error::missing_field("ListenerPort"))?,
                     })
                 }
             }
@@ -611,11 +702,16 @@ pub mod listener {
                     write!(f, "a struct of type PortRange")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut from_port: Option<::Value<u32>> = None;
                     let mut to_port: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FromPort" => {
                                 from_port = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -628,7 +724,8 @@ pub mod listener {
                     }
 
                     Ok(PortRange {
-                        from_port: from_port.ok_or(::serde::de::Error::missing_field("FromPort"))?,
+                        from_port: from_port
+                            .ok_or(::serde::de::Error::missing_field("FromPort"))?,
                         to_port: to_port.ok_or(::serde::de::Error::missing_field("ToPort"))?,
                     })
                 }

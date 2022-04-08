@@ -3,7 +3,7 @@
 /// The [`AWS::Macie::CustomDataIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html) resource type.
 #[derive(Debug, Default)]
 pub struct CustomDataIdentifier {
-    properties: CustomDataIdentifierProperties
+    properties: CustomDataIdentifierProperties,
 }
 
 /// Properties for the `CustomDataIdentifier` resource.
@@ -54,7 +54,11 @@ impl ::serde::Serialize for CustomDataIdentifierProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Keywords", keywords)?;
         }
         if let Some(ref maximum_match_distance) = self.maximum_match_distance {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaximumMatchDistance", maximum_match_distance)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MaximumMatchDistance",
+                maximum_match_distance,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Regex", &self.regex)?;
@@ -63,7 +67,9 @@ impl ::serde::Serialize for CustomDataIdentifierProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for CustomDataIdentifierProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomDataIdentifierProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<CustomDataIdentifierProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -73,7 +79,10 @@ impl<'de> ::serde::Deserialize<'de> for CustomDataIdentifierProperties {
                 write!(f, "a struct of type CustomDataIdentifierProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut ignore_words: Option<::ValueList<String>> = None;
                 let mut keywords: Option<::ValueList<String>> = None;
@@ -142,7 +151,7 @@ impl From<CustomDataIdentifierProperties> for CustomDataIdentifier {
 /// The [`AWS::Macie::FindingsFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html) resource type.
 #[derive(Debug, Default)]
 pub struct FindingsFilter {
-    properties: FindingsFilterProperties
+    properties: FindingsFilterProperties,
 }
 
 /// Properties for the `FindingsFilter` resource.
@@ -184,7 +193,11 @@ impl ::serde::Serialize for FindingsFilterProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FindingCriteria", &self.finding_criteria)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FindingCriteria",
+            &self.finding_criteria,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref position) = self.position {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Position", position)?;
@@ -194,7 +207,9 @@ impl ::serde::Serialize for FindingsFilterProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for FindingsFilterProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<FindingsFilterProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<FindingsFilterProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -204,10 +219,14 @@ impl<'de> ::serde::Deserialize<'de> for FindingsFilterProperties {
                 write!(f, "a struct of type FindingsFilterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut action: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
-                let mut finding_criteria: Option<::Value<self::findings_filter::FindingCriteria>> = None;
+                let mut finding_criteria: Option<::Value<self::findings_filter::FindingCriteria>> =
+                    None;
                 let mut name: Option<::Value<String>> = None;
                 let mut position: Option<::Value<u32>> = None;
 
@@ -235,7 +254,8 @@ impl<'de> ::serde::Deserialize<'de> for FindingsFilterProperties {
                 Ok(FindingsFilterProperties {
                     action: action,
                     description: description,
-                    finding_criteria: finding_criteria.ok_or(::serde::de::Error::missing_field("FindingCriteria"))?,
+                    finding_criteria: finding_criteria
+                        .ok_or(::serde::de::Error::missing_field("FindingCriteria"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     position: position,
                 })
@@ -268,7 +288,7 @@ impl From<FindingsFilterProperties> for FindingsFilter {
 /// The [`AWS::Macie::Session`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html) resource type.
 #[derive(Debug, Default)]
 pub struct Session {
-    properties: SessionProperties
+    properties: SessionProperties,
 }
 
 /// Properties for the `Session` resource.
@@ -290,7 +310,11 @@ impl ::serde::Serialize for SessionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref finding_publishing_frequency) = self.finding_publishing_frequency {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FindingPublishingFrequency", finding_publishing_frequency)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FindingPublishingFrequency",
+                finding_publishing_frequency,
+            )?;
         }
         if let Some(ref status) = self.status {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Status", status)?;
@@ -310,14 +334,18 @@ impl<'de> ::serde::Deserialize<'de> for SessionProperties {
                 write!(f, "a struct of type SessionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut finding_publishing_frequency: Option<::Value<String>> = None;
                 let mut status: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "FindingPublishingFrequency" => {
-                            finding_publishing_frequency = ::serde::de::MapAccess::next_value(&mut map)?;
+                            finding_publishing_frequency =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Status" => {
                             status = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -361,8 +389,7 @@ pub mod findings_filter {
 
     /// The [`AWS::Macie::FindingsFilter.Criterion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterion.html) property type.
     #[derive(Debug, Default)]
-    pub struct Criterion {
-    }
+    pub struct Criterion {}
 
     impl ::codec::SerializeValue for Criterion {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -382,7 +409,10 @@ pub mod findings_filter {
                     write!(f, "a struct of type Criterion")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    _map: A,
+                ) -> Result<Self::Value, A::Error> {
                     Ok(Criterion {})
                 }
             }
@@ -412,7 +442,9 @@ pub mod findings_filter {
     }
 
     impl ::codec::DeserializeValue for FindingCriteria {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FindingCriteria, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FindingCriteria, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -422,10 +454,15 @@ pub mod findings_filter {
                     write!(f, "a struct of type FindingCriteria")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut criterion: Option<::Value<Criterion>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Criterion" => {
                                 criterion = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -473,7 +510,9 @@ pub mod findings_filter {
     }
 
     impl ::codec::DeserializeValue for FindingsFilterListItem {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FindingsFilterListItem, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FindingsFilterListItem, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -483,11 +522,16 @@ pub mod findings_filter {
                     write!(f, "a struct of type FindingsFilterListItem")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut id: Option<::Value<String>> = None;
                     let mut name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Id" => {
                                 id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -499,10 +543,7 @@ pub mod findings_filter {
                         }
                     }
 
-                    Ok(FindingsFilterListItem {
-                        id: id,
-                        name: name,
-                    })
+                    Ok(FindingsFilterListItem { id: id, name: name })
                 }
             }
 

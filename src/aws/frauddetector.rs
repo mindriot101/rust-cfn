@@ -3,7 +3,7 @@
 /// The [`AWS::FraudDetector::Detector`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html) resource type.
 #[derive(Debug, Default)]
 pub struct Detector {
-    properties: DetectorProperties
+    properties: DetectorProperties,
 }
 
 /// Properties for the `Detector` resource.
@@ -55,18 +55,30 @@ impl ::serde::Serialize for DetectorProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref associated_models) = self.associated_models {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociatedModels", associated_models)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssociatedModels",
+                associated_models,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DetectorId", &self.detector_id)?;
         if let Some(ref detector_version_status) = self.detector_version_status {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DetectorVersionStatus", detector_version_status)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DetectorVersionStatus",
+                detector_version_status,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventType", &self.event_type)?;
         if let Some(ref rule_execution_mode) = self.rule_execution_mode {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuleExecutionMode", rule_execution_mode)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RuleExecutionMode",
+                rule_execution_mode,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rules", &self.rules)?;
         if let Some(ref tags) = self.tags {
@@ -87,7 +99,10 @@ impl<'de> ::serde::Deserialize<'de> for DetectorProperties {
                 write!(f, "a struct of type DetectorProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut associated_models: Option<::ValueList<self::detector::Model>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut detector_id: Option<::Value<String>> = None;
@@ -130,7 +145,8 @@ impl<'de> ::serde::Deserialize<'de> for DetectorProperties {
                 Ok(DetectorProperties {
                     associated_models: associated_models,
                     description: description,
-                    detector_id: detector_id.ok_or(::serde::de::Error::missing_field("DetectorId"))?,
+                    detector_id: detector_id
+                        .ok_or(::serde::de::Error::missing_field("DetectorId"))?,
                     detector_version_status: detector_version_status,
                     event_type: event_type.ok_or(::serde::de::Error::missing_field("EventType"))?,
                     rule_execution_mode: rule_execution_mode,
@@ -166,7 +182,7 @@ impl From<DetectorProperties> for Detector {
 /// The [`AWS::FraudDetector::EntityType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-entitytype.html) resource type.
 #[derive(Debug, Default)]
 pub struct EntityType {
-    properties: EntityTypeProperties
+    properties: EntityTypeProperties,
 }
 
 /// Properties for the `EntityType` resource.
@@ -214,7 +230,10 @@ impl<'de> ::serde::Deserialize<'de> for EntityTypeProperties {
                 write!(f, "a struct of type EntityTypeProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -268,7 +287,7 @@ impl From<EntityTypeProperties> for EntityType {
 /// The [`AWS::FraudDetector::EventType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html) resource type.
 #[derive(Debug, Default)]
 pub struct EventType {
-    properties: EventTypeProperties
+    properties: EventTypeProperties,
 }
 
 /// Properties for the `EventType` resource.
@@ -313,7 +332,11 @@ impl ::serde::Serialize for EventTypeProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "EntityTypes", &self.entity_types)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventVariables", &self.event_variables)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EventVariables",
+            &self.event_variables,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Labels", &self.labels)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref tags) = self.tags {
@@ -334,10 +357,14 @@ impl<'de> ::serde::Deserialize<'de> for EventTypeProperties {
                 write!(f, "a struct of type EventTypeProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut entity_types: Option<::ValueList<self::event_type::EntityType>> = None;
-                let mut event_variables: Option<::ValueList<self::event_type::EventVariable>> = None;
+                let mut event_variables: Option<::ValueList<self::event_type::EventVariable>> =
+                    None;
                 let mut labels: Option<::ValueList<self::event_type::Label>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -368,8 +395,10 @@ impl<'de> ::serde::Deserialize<'de> for EventTypeProperties {
 
                 Ok(EventTypeProperties {
                     description: description,
-                    entity_types: entity_types.ok_or(::serde::de::Error::missing_field("EntityTypes"))?,
-                    event_variables: event_variables.ok_or(::serde::de::Error::missing_field("EventVariables"))?,
+                    entity_types: entity_types
+                        .ok_or(::serde::de::Error::missing_field("EntityTypes"))?,
+                    event_variables: event_variables
+                        .ok_or(::serde::de::Error::missing_field("EventVariables"))?,
                     labels: labels.ok_or(::serde::de::Error::missing_field("Labels"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     tags: tags,
@@ -403,7 +432,7 @@ impl From<EventTypeProperties> for EventType {
 /// The [`AWS::FraudDetector::Label`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-label.html) resource type.
 #[derive(Debug, Default)]
 pub struct Label {
-    properties: LabelProperties
+    properties: LabelProperties,
 }
 
 /// Properties for the `Label` resource.
@@ -451,7 +480,10 @@ impl<'de> ::serde::Deserialize<'de> for LabelProperties {
                 write!(f, "a struct of type LabelProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -505,7 +537,7 @@ impl From<LabelProperties> for Label {
 /// The [`AWS::FraudDetector::Outcome`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-outcome.html) resource type.
 #[derive(Debug, Default)]
 pub struct Outcome {
-    properties: OutcomeProperties
+    properties: OutcomeProperties,
 }
 
 /// Properties for the `Outcome` resource.
@@ -553,7 +585,10 @@ impl<'de> ::serde::Deserialize<'de> for OutcomeProperties {
                 write!(f, "a struct of type OutcomeProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -607,7 +642,7 @@ impl From<OutcomeProperties> for Outcome {
 /// The [`AWS::FraudDetector::Variable`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-variable.html) resource type.
 #[derive(Debug, Default)]
 pub struct Variable {
-    properties: VariableProperties
+    properties: VariableProperties,
 }
 
 /// Properties for the `Variable` resource.
@@ -681,7 +716,10 @@ impl<'de> ::serde::Deserialize<'de> for VariableProperties {
                 write!(f, "a struct of type VariableProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data_source: Option<::Value<String>> = None;
                 let mut data_type: Option<::Value<String>> = None;
                 let mut default_value: Option<::Value<String>> = None;
@@ -718,9 +756,11 @@ impl<'de> ::serde::Deserialize<'de> for VariableProperties {
                 }
 
                 Ok(VariableProperties {
-                    data_source: data_source.ok_or(::serde::de::Error::missing_field("DataSource"))?,
+                    data_source: data_source
+                        .ok_or(::serde::de::Error::missing_field("DataSource"))?,
                     data_type: data_type.ok_or(::serde::de::Error::missing_field("DataType"))?,
-                    default_value: default_value.ok_or(::serde::de::Error::missing_field("DefaultValue"))?,
+                    default_value: default_value
+                        .ok_or(::serde::de::Error::missing_field("DefaultValue"))?,
                     description: description,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     tags: tags,
@@ -811,7 +851,11 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inline", inline)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -834,7 +878,10 @@ pub mod detector {
                     write!(f, "a struct of type EntityType")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut description: Option<::Value<String>> = None;
@@ -843,7 +890,9 @@ pub mod detector {
                     let mut name: Option<::Value<String>> = None;
                     let mut tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -957,7 +1006,11 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "EntityTypes", entity_types)?;
             }
             if let Some(ref event_variables) = self.event_variables {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventVariables", event_variables)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EventVariables",
+                    event_variables,
+                )?;
             }
             if let Some(ref inline) = self.inline {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inline", inline)?;
@@ -966,7 +1019,11 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Labels", labels)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -989,7 +1046,10 @@ pub mod detector {
                     write!(f, "a struct of type EventType")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut description: Option<::Value<String>> = None;
@@ -1001,7 +1061,9 @@ pub mod detector {
                     let mut name: Option<::Value<String>> = None;
                     let mut tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1132,7 +1194,11 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataType", data_type)?;
             }
             if let Some(ref default_value) = self.default_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultValue", default_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DefaultValue",
+                    default_value,
+                )?;
             }
             if let Some(ref description) = self.description {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -1141,7 +1207,11 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inline", inline)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -1150,14 +1220,20 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
             }
             if let Some(ref variable_type) = self.variable_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VariableType", variable_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VariableType",
+                    variable_type,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EventVariable {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EventVariable, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EventVariable, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1167,7 +1243,10 @@ pub mod detector {
                     write!(f, "a struct of type EventVariable")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut data_source: Option<::Value<String>> = None;
@@ -1180,7 +1259,9 @@ pub mod detector {
                     let mut tags: Option<::ValueList<::Tag>> = None;
                     let mut variable_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1295,7 +1376,11 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inline", inline)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -1318,7 +1403,10 @@ pub mod detector {
                     write!(f, "a struct of type Label")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut description: Option<::Value<String>> = None;
@@ -1327,7 +1415,9 @@ pub mod detector {
                     let mut name: Option<::Value<String>> = None;
                     let mut tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1401,10 +1491,15 @@ pub mod detector {
                     write!(f, "a struct of type Model")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1413,9 +1508,7 @@ pub mod detector {
                         }
                     }
 
-                    Ok(Model {
-                        arn: arn,
-                    })
+                    Ok(Model { arn: arn })
                 }
             }
 
@@ -1479,7 +1572,11 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inline", inline)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -1502,7 +1599,10 @@ pub mod detector {
                     write!(f, "a struct of type Outcome")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut description: Option<::Value<String>> = None;
@@ -1511,7 +1611,9 @@ pub mod detector {
                     let mut name: Option<::Value<String>> = None;
                     let mut tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1636,7 +1738,11 @@ pub mod detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Language", language)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref outcomes) = self.outcomes {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Outcomes", outcomes)?;
@@ -1665,7 +1771,10 @@ pub mod detector {
                     write!(f, "a struct of type Rule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut description: Option<::Value<String>> = None;
@@ -1678,7 +1787,9 @@ pub mod detector {
                     let mut rule_version: Option<::Value<String>> = None;
                     let mut tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1797,7 +1908,11 @@ pub mod event_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inline", inline)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -1820,7 +1935,10 @@ pub mod event_type {
                     write!(f, "a struct of type EntityType")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut description: Option<::Value<String>> = None;
@@ -1829,7 +1947,9 @@ pub mod event_type {
                     let mut name: Option<::Value<String>> = None;
                     let mut tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1948,7 +2068,11 @@ pub mod event_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataType", data_type)?;
             }
             if let Some(ref default_value) = self.default_value {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultValue", default_value)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DefaultValue",
+                    default_value,
+                )?;
             }
             if let Some(ref description) = self.description {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -1957,7 +2081,11 @@ pub mod event_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inline", inline)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -1966,14 +2094,20 @@ pub mod event_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
             }
             if let Some(ref variable_type) = self.variable_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VariableType", variable_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VariableType",
+                    variable_type,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EventVariable {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EventVariable, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EventVariable, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1983,7 +2117,10 @@ pub mod event_type {
                     write!(f, "a struct of type EventVariable")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut data_source: Option<::Value<String>> = None;
@@ -1996,7 +2133,9 @@ pub mod event_type {
                     let mut tags: Option<::ValueList<::Tag>> = None;
                     let mut variable_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2111,7 +2250,11 @@ pub mod event_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inline", inline)?;
             }
             if let Some(ref last_updated_time) = self.last_updated_time {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastUpdatedTime", last_updated_time)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastUpdatedTime",
+                    last_updated_time,
+                )?;
             }
             if let Some(ref name) = self.name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -2134,7 +2277,10 @@ pub mod event_type {
                     write!(f, "a struct of type Label")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
                     let mut created_time: Option<::Value<String>> = None;
                     let mut description: Option<::Value<String>> = None;
@@ -2143,7 +2289,9 @@ pub mod event_type {
                     let mut name: Option<::Value<String>> = None;
                     let mut tags: Option<::ValueList<::Tag>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;

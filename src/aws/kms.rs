@@ -3,7 +3,7 @@
 /// The [`AWS::KMS::Alias`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html) resource type.
 #[derive(Debug, Default)]
 pub struct Alias {
-    properties: AliasProperties
+    properties: AliasProperties,
 }
 
 /// Properties for the `Alias` resource.
@@ -41,7 +41,10 @@ impl<'de> ::serde::Deserialize<'de> for AliasProperties {
                 write!(f, "a struct of type AliasProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut alias_name: Option<::Value<String>> = None;
                 let mut target_key_id: Option<::Value<String>> = None;
 
@@ -59,7 +62,8 @@ impl<'de> ::serde::Deserialize<'de> for AliasProperties {
 
                 Ok(AliasProperties {
                     alias_name: alias_name.ok_or(::serde::de::Error::missing_field("AliasName"))?,
-                    target_key_id: target_key_id.ok_or(::serde::de::Error::missing_field("TargetKeyId"))?,
+                    target_key_id: target_key_id
+                        .ok_or(::serde::de::Error::missing_field("TargetKeyId"))?,
                 })
             }
         }
@@ -90,7 +94,7 @@ impl From<AliasProperties> for Alias {
 /// The [`AWS::KMS::Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html) resource type.
 #[derive(Debug, Default)]
 pub struct Key {
-    properties: KeyProperties
+    properties: KeyProperties,
 }
 
 /// Properties for the `Key` resource.
@@ -150,7 +154,11 @@ impl ::serde::Serialize for KeyProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref enable_key_rotation) = self.enable_key_rotation {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnableKeyRotation", enable_key_rotation)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EnableKeyRotation",
+                enable_key_rotation,
+            )?;
         }
         if let Some(ref enabled) = self.enabled {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", enabled)?;
@@ -166,7 +174,11 @@ impl ::serde::Serialize for KeyProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MultiRegion", multi_region)?;
         }
         if let Some(ref pending_window_in_days) = self.pending_window_in_days {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PendingWindowInDays", pending_window_in_days)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PendingWindowInDays",
+                pending_window_in_days,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -186,7 +198,10 @@ impl<'de> ::serde::Deserialize<'de> for KeyProperties {
                 write!(f, "a struct of type KeyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut enable_key_rotation: Option<::Value<bool>> = None;
                 let mut enabled: Option<::Value<bool>> = None;
@@ -270,7 +285,7 @@ impl From<KeyProperties> for Key {
 /// The [`AWS::KMS::ReplicaKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html) resource type.
 #[derive(Debug, Default)]
 pub struct ReplicaKey {
-    properties: ReplicaKeyProperties
+    properties: ReplicaKeyProperties,
 }
 
 /// Properties for the `ReplicaKey` resource.
@@ -319,9 +334,17 @@ impl ::serde::Serialize for ReplicaKeyProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyPolicy", &self.key_policy)?;
         if let Some(ref pending_window_in_days) = self.pending_window_in_days {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PendingWindowInDays", pending_window_in_days)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PendingWindowInDays",
+                pending_window_in_days,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PrimaryKeyArn", &self.primary_key_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PrimaryKeyArn",
+            &self.primary_key_arn,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -340,7 +363,10 @@ impl<'de> ::serde::Deserialize<'de> for ReplicaKeyProperties {
                 write!(f, "a struct of type ReplicaKeyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut enabled: Option<::Value<bool>> = None;
                 let mut key_policy: Option<::Value<::json::Value>> = None;
@@ -377,7 +403,8 @@ impl<'de> ::serde::Deserialize<'de> for ReplicaKeyProperties {
                     enabled: enabled,
                     key_policy: key_policy.ok_or(::serde::de::Error::missing_field("KeyPolicy"))?,
                     pending_window_in_days: pending_window_in_days,
-                    primary_key_arn: primary_key_arn.ok_or(::serde::de::Error::missing_field("PrimaryKeyArn"))?,
+                    primary_key_arn: primary_key_arn
+                        .ok_or(::serde::de::Error::missing_field("PrimaryKeyArn"))?,
                     tags: tags,
                 })
             }

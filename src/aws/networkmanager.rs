@@ -3,7 +3,7 @@
 /// The [`AWS::NetworkManager::CustomerGatewayAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct CustomerGatewayAssociation {
-    properties: CustomerGatewayAssociationProperties
+    properties: CustomerGatewayAssociationProperties,
 }
 
 /// Properties for the `CustomerGatewayAssociation` resource.
@@ -34,9 +34,17 @@ pub struct CustomerGatewayAssociationProperties {
 impl ::serde::Serialize for CustomerGatewayAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomerGatewayArn", &self.customer_gateway_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "CustomerGatewayArn",
+            &self.customer_gateway_arn,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceId", &self.device_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "GlobalNetworkId", &self.global_network_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "GlobalNetworkId",
+            &self.global_network_id,
+        )?;
         if let Some(ref link_id) = self.link_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LinkId", link_id)?;
         }
@@ -45,7 +53,9 @@ impl ::serde::Serialize for CustomerGatewayAssociationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for CustomerGatewayAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomerGatewayAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<CustomerGatewayAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -55,7 +65,10 @@ impl<'de> ::serde::Deserialize<'de> for CustomerGatewayAssociationProperties {
                 write!(f, "a struct of type CustomerGatewayAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut customer_gateway_arn: Option<::Value<String>> = None;
                 let mut device_id: Option<::Value<String>> = None;
                 let mut global_network_id: Option<::Value<String>> = None;
@@ -80,9 +93,11 @@ impl<'de> ::serde::Deserialize<'de> for CustomerGatewayAssociationProperties {
                 }
 
                 Ok(CustomerGatewayAssociationProperties {
-                    customer_gateway_arn: customer_gateway_arn.ok_or(::serde::de::Error::missing_field("CustomerGatewayArn"))?,
+                    customer_gateway_arn: customer_gateway_arn
+                        .ok_or(::serde::de::Error::missing_field("CustomerGatewayArn"))?,
                     device_id: device_id.ok_or(::serde::de::Error::missing_field("DeviceId"))?,
-                    global_network_id: global_network_id.ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
+                    global_network_id: global_network_id
+                        .ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
                     link_id: link_id,
                 })
             }
@@ -114,7 +129,7 @@ impl From<CustomerGatewayAssociationProperties> for CustomerGatewayAssociation {
 /// The [`AWS::NetworkManager::Device`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html) resource type.
 #[derive(Debug, Default)]
 pub struct Device {
-    properties: DeviceProperties
+    properties: DeviceProperties,
 }
 
 /// Properties for the `Device` resource.
@@ -173,7 +188,11 @@ impl ::serde::Serialize for DeviceProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "GlobalNetworkId", &self.global_network_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "GlobalNetworkId",
+            &self.global_network_id,
+        )?;
         if let Some(ref location) = self.location {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Location", location)?;
         }
@@ -210,7 +229,10 @@ impl<'de> ::serde::Deserialize<'de> for DeviceProperties {
                 write!(f, "a struct of type DeviceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut global_network_id: Option<::Value<String>> = None;
                 let mut location: Option<::Value<self::device::Location>> = None;
@@ -256,7 +278,8 @@ impl<'de> ::serde::Deserialize<'de> for DeviceProperties {
 
                 Ok(DeviceProperties {
                     description: description,
-                    global_network_id: global_network_id.ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
+                    global_network_id: global_network_id
+                        .ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
                     location: location,
                     model: model,
                     serial_number: serial_number,
@@ -294,7 +317,7 @@ impl From<DeviceProperties> for Device {
 /// The [`AWS::NetworkManager::GlobalNetwork`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-globalnetwork.html) resource type.
 #[derive(Debug, Default)]
 pub struct GlobalNetwork {
-    properties: GlobalNetworkProperties
+    properties: GlobalNetworkProperties,
 }
 
 /// Properties for the `GlobalNetwork` resource.
@@ -326,7 +349,9 @@ impl ::serde::Serialize for GlobalNetworkProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for GlobalNetworkProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<GlobalNetworkProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<GlobalNetworkProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -336,7 +361,10 @@ impl<'de> ::serde::Deserialize<'de> for GlobalNetworkProperties {
                 write!(f, "a struct of type GlobalNetworkProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -385,7 +413,7 @@ impl From<GlobalNetworkProperties> for GlobalNetwork {
 /// The [`AWS::NetworkManager::Link`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html) resource type.
 #[derive(Debug, Default)]
 pub struct Link {
-    properties: LinkProperties
+    properties: LinkProperties,
 }
 
 /// Properties for the `Link` resource.
@@ -435,7 +463,11 @@ impl ::serde::Serialize for LinkProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "GlobalNetworkId", &self.global_network_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "GlobalNetworkId",
+            &self.global_network_id,
+        )?;
         if let Some(ref provider) = self.provider {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Provider", provider)?;
         }
@@ -461,7 +493,10 @@ impl<'de> ::serde::Deserialize<'de> for LinkProperties {
                 write!(f, "a struct of type LinkProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut bandwidth: Option<::Value<self::link::Bandwidth>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut global_network_id: Option<::Value<String>> = None;
@@ -500,7 +535,8 @@ impl<'de> ::serde::Deserialize<'de> for LinkProperties {
                 Ok(LinkProperties {
                     bandwidth: bandwidth.ok_or(::serde::de::Error::missing_field("Bandwidth"))?,
                     description: description,
-                    global_network_id: global_network_id.ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
+                    global_network_id: global_network_id
+                        .ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
                     provider: provider,
                     site_id: site_id.ok_or(::serde::de::Error::missing_field("SiteId"))?,
                     tags: tags,
@@ -535,7 +571,7 @@ impl From<LinkProperties> for Link {
 /// The [`AWS::NetworkManager::LinkAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-linkassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct LinkAssociation {
-    properties: LinkAssociationProperties
+    properties: LinkAssociationProperties,
 }
 
 /// Properties for the `LinkAssociation` resource.
@@ -562,14 +598,20 @@ impl ::serde::Serialize for LinkAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceId", &self.device_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "GlobalNetworkId", &self.global_network_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "GlobalNetworkId",
+            &self.global_network_id,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "LinkId", &self.link_id)?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for LinkAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<LinkAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<LinkAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -579,7 +621,10 @@ impl<'de> ::serde::Deserialize<'de> for LinkAssociationProperties {
                 write!(f, "a struct of type LinkAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut device_id: Option<::Value<String>> = None;
                 let mut global_network_id: Option<::Value<String>> = None;
                 let mut link_id: Option<::Value<String>> = None;
@@ -601,7 +646,8 @@ impl<'de> ::serde::Deserialize<'de> for LinkAssociationProperties {
 
                 Ok(LinkAssociationProperties {
                     device_id: device_id.ok_or(::serde::de::Error::missing_field("DeviceId"))?,
-                    global_network_id: global_network_id.ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
+                    global_network_id: global_network_id
+                        .ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
                     link_id: link_id.ok_or(::serde::de::Error::missing_field("LinkId"))?,
                 })
             }
@@ -633,7 +679,7 @@ impl From<LinkAssociationProperties> for LinkAssociation {
 /// The [`AWS::NetworkManager::Site`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html) resource type.
 #[derive(Debug, Default)]
 pub struct Site {
-    properties: SiteProperties
+    properties: SiteProperties,
 }
 
 /// Properties for the `Site` resource.
@@ -667,7 +713,11 @@ impl ::serde::Serialize for SiteProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "GlobalNetworkId", &self.global_network_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "GlobalNetworkId",
+            &self.global_network_id,
+        )?;
         if let Some(ref location) = self.location {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Location", location)?;
         }
@@ -689,7 +739,10 @@ impl<'de> ::serde::Deserialize<'de> for SiteProperties {
                 write!(f, "a struct of type SiteProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut global_network_id: Option<::Value<String>> = None;
                 let mut location: Option<::Value<self::site::Location>> = None;
@@ -715,7 +768,8 @@ impl<'de> ::serde::Deserialize<'de> for SiteProperties {
 
                 Ok(SiteProperties {
                     description: description,
-                    global_network_id: global_network_id.ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
+                    global_network_id: global_network_id
+                        .ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
                     location: location,
                     tags: tags,
                 })
@@ -748,7 +802,7 @@ impl From<SiteProperties> for Site {
 /// The [`AWS::NetworkManager::TransitGatewayRegistration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayregistration.html) resource type.
 #[derive(Debug, Default)]
 pub struct TransitGatewayRegistration {
-    properties: TransitGatewayRegistrationProperties
+    properties: TransitGatewayRegistrationProperties,
 }
 
 /// Properties for the `TransitGatewayRegistration` resource.
@@ -769,14 +823,24 @@ pub struct TransitGatewayRegistrationProperties {
 impl ::serde::Serialize for TransitGatewayRegistrationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "GlobalNetworkId", &self.global_network_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "TransitGatewayArn", &self.transit_gateway_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "GlobalNetworkId",
+            &self.global_network_id,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "TransitGatewayArn",
+            &self.transit_gateway_arn,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for TransitGatewayRegistrationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<TransitGatewayRegistrationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<TransitGatewayRegistrationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -786,7 +850,10 @@ impl<'de> ::serde::Deserialize<'de> for TransitGatewayRegistrationProperties {
                 write!(f, "a struct of type TransitGatewayRegistrationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut global_network_id: Option<::Value<String>> = None;
                 let mut transit_gateway_arn: Option<::Value<String>> = None;
 
@@ -803,8 +870,10 @@ impl<'de> ::serde::Deserialize<'de> for TransitGatewayRegistrationProperties {
                 }
 
                 Ok(TransitGatewayRegistrationProperties {
-                    global_network_id: global_network_id.ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
-                    transit_gateway_arn: transit_gateway_arn.ok_or(::serde::de::Error::missing_field("TransitGatewayArn"))?,
+                    global_network_id: global_network_id
+                        .ok_or(::serde::de::Error::missing_field("GlobalNetworkId"))?,
+                    transit_gateway_arn: transit_gateway_arn
+                        .ok_or(::serde::de::Error::missing_field("TransitGatewayArn"))?,
                 })
             }
         }
@@ -882,12 +951,17 @@ pub mod device {
                     write!(f, "a struct of type Location")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut address: Option<::Value<String>> = None;
                     let mut latitude: Option<::Value<String>> = None;
                     let mut longitude: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Address" => {
                                 address = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -937,7 +1011,11 @@ pub mod link {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref download_speed) = self.download_speed {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DownloadSpeed", download_speed)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DownloadSpeed",
+                    download_speed,
+                )?;
             }
             if let Some(ref upload_speed) = self.upload_speed {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "UploadSpeed", upload_speed)?;
@@ -957,11 +1035,16 @@ pub mod link {
                     write!(f, "a struct of type Bandwidth")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut download_speed: Option<::Value<u32>> = None;
                     let mut upload_speed: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DownloadSpeed" => {
                                 download_speed = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1035,12 +1118,17 @@ pub mod site {
                     write!(f, "a struct of type Location")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut address: Option<::Value<String>> = None;
                     let mut latitude: Option<::Value<String>> = None;
                     let mut longitude: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Address" => {
                                 address = ::serde::de::MapAccess::next_value(&mut map)?;

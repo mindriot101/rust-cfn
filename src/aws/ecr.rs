@@ -3,7 +3,7 @@
 /// The [`AWS::ECR::PublicRepository`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html) resource type.
 #[derive(Debug, Default)]
 pub struct PublicRepository {
-    properties: PublicRepositoryProperties
+    properties: PublicRepositoryProperties,
 }
 
 /// Properties for the `PublicRepository` resource.
@@ -35,13 +35,25 @@ impl ::serde::Serialize for PublicRepositoryProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref repository_catalog_data) = self.repository_catalog_data {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryCatalogData", repository_catalog_data)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryCatalogData",
+                repository_catalog_data,
+            )?;
         }
         if let Some(ref repository_name) = self.repository_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryName", repository_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryName",
+                repository_name,
+            )?;
         }
         if let Some(ref repository_policy_text) = self.repository_policy_text {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryPolicyText", repository_policy_text)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryPolicyText",
+                repository_policy_text,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -51,7 +63,9 @@ impl ::serde::Serialize for PublicRepositoryProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for PublicRepositoryProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PublicRepositoryProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PublicRepositoryProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -61,7 +75,10 @@ impl<'de> ::serde::Deserialize<'de> for PublicRepositoryProperties {
                 write!(f, "a struct of type PublicRepositoryProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut repository_catalog_data: Option<::Value<::json::Value>> = None;
                 let mut repository_name: Option<::Value<String>> = None;
                 let mut repository_policy_text: Option<::Value<::json::Value>> = None;
@@ -120,7 +137,7 @@ impl From<PublicRepositoryProperties> for PublicRepository {
 /// The [`AWS::ECR::PullThroughCacheRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html) resource type.
 #[derive(Debug, Default)]
 pub struct PullThroughCacheRule {
-    properties: PullThroughCacheRuleProperties
+    properties: PullThroughCacheRuleProperties,
 }
 
 /// Properties for the `PullThroughCacheRule` resource.
@@ -142,17 +159,27 @@ impl ::serde::Serialize for PullThroughCacheRuleProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref ecr_repository_prefix) = self.ecr_repository_prefix {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcrRepositoryPrefix", ecr_repository_prefix)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EcrRepositoryPrefix",
+                ecr_repository_prefix,
+            )?;
         }
         if let Some(ref upstream_registry_url) = self.upstream_registry_url {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpstreamRegistryUrl", upstream_registry_url)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "UpstreamRegistryUrl",
+                upstream_registry_url,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for PullThroughCacheRuleProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PullThroughCacheRuleProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PullThroughCacheRuleProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -162,7 +189,10 @@ impl<'de> ::serde::Deserialize<'de> for PullThroughCacheRuleProperties {
                 write!(f, "a struct of type PullThroughCacheRuleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut ecr_repository_prefix: Option<::Value<String>> = None;
                 let mut upstream_registry_url: Option<::Value<String>> = None;
 
@@ -211,7 +241,7 @@ impl From<PullThroughCacheRuleProperties> for PullThroughCacheRule {
 /// The [`AWS::ECR::RegistryPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html) resource type.
 #[derive(Debug, Default)]
 pub struct RegistryPolicy {
-    properties: RegistryPolicyProperties
+    properties: RegistryPolicyProperties,
 }
 
 /// Properties for the `RegistryPolicy` resource.
@@ -233,7 +263,9 @@ impl ::serde::Serialize for RegistryPolicyProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RegistryPolicyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RegistryPolicyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -243,7 +275,10 @@ impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
                 write!(f, "a struct of type RegistryPolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut policy_text: Option<::Value<::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -256,7 +291,8 @@ impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
                 }
 
                 Ok(RegistryPolicyProperties {
-                    policy_text: policy_text.ok_or(::serde::de::Error::missing_field("PolicyText"))?,
+                    policy_text: policy_text
+                        .ok_or(::serde::de::Error::missing_field("PolicyText"))?,
                 })
             }
         }
@@ -287,7 +323,7 @@ impl From<RegistryPolicyProperties> for RegistryPolicy {
 /// The [`AWS::ECR::ReplicationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html) resource type.
 #[derive(Debug, Default)]
 pub struct ReplicationConfiguration {
-    properties: ReplicationConfigurationProperties
+    properties: ReplicationConfigurationProperties,
 }
 
 /// Properties for the `ReplicationConfiguration` resource.
@@ -297,19 +333,26 @@ pub struct ReplicationConfigurationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub replication_configuration: ::Value<self::replication_configuration::ReplicationConfiguration>,
+    pub replication_configuration:
+        ::Value<self::replication_configuration::ReplicationConfiguration>,
 }
 
 impl ::serde::Serialize for ReplicationConfigurationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReplicationConfiguration", &self.replication_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ReplicationConfiguration",
+            &self.replication_configuration,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ReplicationConfigurationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ReplicationConfigurationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ReplicationConfigurationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -319,20 +362,28 @@ impl<'de> ::serde::Deserialize<'de> for ReplicationConfigurationProperties {
                 write!(f, "a struct of type ReplicationConfigurationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut replication_configuration: Option<::Value<self::replication_configuration::ReplicationConfiguration>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut replication_configuration: Option<
+                    ::Value<self::replication_configuration::ReplicationConfiguration>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ReplicationConfiguration" => {
-                            replication_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            replication_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
                 }
 
                 Ok(ReplicationConfigurationProperties {
-                    replication_configuration: replication_configuration.ok_or(::serde::de::Error::missing_field("ReplicationConfiguration"))?,
+                    replication_configuration: replication_configuration.ok_or(
+                        ::serde::de::Error::missing_field("ReplicationConfiguration"),
+                    )?,
                 })
             }
         }
@@ -363,7 +414,7 @@ impl From<ReplicationConfigurationProperties> for ReplicationConfiguration {
 /// The [`AWS::ECR::Repository`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html) resource type.
 #[derive(Debug, Default)]
 pub struct Repository {
-    properties: RepositoryProperties
+    properties: RepositoryProperties,
 }
 
 /// Properties for the `Repository` resource.
@@ -410,22 +461,46 @@ impl ::serde::Serialize for RepositoryProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref encryption_configuration) = self.encryption_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionConfiguration", encryption_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionConfiguration",
+                encryption_configuration,
+            )?;
         }
         if let Some(ref image_scanning_configuration) = self.image_scanning_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImageScanningConfiguration", image_scanning_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ImageScanningConfiguration",
+                image_scanning_configuration,
+            )?;
         }
         if let Some(ref image_tag_mutability) = self.image_tag_mutability {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImageTagMutability", image_tag_mutability)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ImageTagMutability",
+                image_tag_mutability,
+            )?;
         }
         if let Some(ref lifecycle_policy) = self.lifecycle_policy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LifecyclePolicy", lifecycle_policy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LifecyclePolicy",
+                lifecycle_policy,
+            )?;
         }
         if let Some(ref repository_name) = self.repository_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryName", repository_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryName",
+                repository_name,
+            )?;
         }
         if let Some(ref repository_policy_text) = self.repository_policy_text {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryPolicyText", repository_policy_text)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryPolicyText",
+                repository_policy_text,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -445,9 +520,16 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
                 write!(f, "a struct of type RepositoryProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut encryption_configuration: Option<::Value<self::repository::EncryptionConfiguration>> = None;
-                let mut image_scanning_configuration: Option<::Value<self::repository::ImageScanningConfiguration>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut encryption_configuration: Option<
+                    ::Value<self::repository::EncryptionConfiguration>,
+                > = None;
+                let mut image_scanning_configuration: Option<
+                    ::Value<self::repository::ImageScanningConfiguration>,
+                > = None;
                 let mut image_tag_mutability: Option<::Value<String>> = None;
                 let mut lifecycle_policy: Option<::Value<self::repository::LifecyclePolicy>> = None;
                 let mut repository_name: Option<::Value<String>> = None;
@@ -457,10 +539,12 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "EncryptionConfiguration" => {
-                            encryption_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            encryption_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ImageScanningConfiguration" => {
-                            image_scanning_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            image_scanning_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ImageTagMutability" => {
                             image_tag_mutability = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -538,7 +622,9 @@ pub mod replication_configuration {
     }
 
     impl ::codec::DeserializeValue for ReplicationConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ReplicationConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ReplicationConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -548,10 +634,15 @@ pub mod replication_configuration {
                     write!(f, "a struct of type ReplicationConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut rules: Option<::ValueList<ReplicationRule>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Rules" => {
                                 rules = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -595,7 +686,9 @@ pub mod replication_configuration {
     }
 
     impl ::codec::DeserializeValue for ReplicationDestination {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ReplicationDestination, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ReplicationDestination, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -605,11 +698,16 @@ pub mod replication_configuration {
                     write!(f, "a struct of type ReplicationDestination")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut region: Option<::Value<String>> = None;
                     let mut registry_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Region" => {
                                 region = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -623,7 +721,8 @@ pub mod replication_configuration {
 
                     Ok(ReplicationDestination {
                         region: region.ok_or(::serde::de::Error::missing_field("Region"))?,
-                        registry_id: registry_id.ok_or(::serde::de::Error::missing_field("RegistryId"))?,
+                        registry_id: registry_id
+                            .ok_or(::serde::de::Error::missing_field("RegistryId"))?,
                     })
                 }
             }
@@ -650,16 +749,26 @@ pub mod replication_configuration {
     impl ::codec::SerializeValue for ReplicationRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "Destinations", &self.destinations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "Destinations",
+                &self.destinations,
+            )?;
             if let Some(ref repository_filters) = self.repository_filters {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryFilters", repository_filters)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RepositoryFilters",
+                    repository_filters,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ReplicationRule {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ReplicationRule, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ReplicationRule, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -669,11 +778,16 @@ pub mod replication_configuration {
                     write!(f, "a struct of type ReplicationRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut destinations: Option<::ValueList<ReplicationDestination>> = None;
                     let mut repository_filters: Option<::ValueList<RepositoryFilter>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Destinations" => {
                                 destinations = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -686,7 +800,8 @@ pub mod replication_configuration {
                     }
 
                     Ok(ReplicationRule {
-                        destinations: destinations.ok_or(::serde::de::Error::missing_field("Destinations"))?,
+                        destinations: destinations
+                            .ok_or(::serde::de::Error::missing_field("Destinations"))?,
                         repository_filters: repository_filters,
                     })
                 }
@@ -721,7 +836,9 @@ pub mod replication_configuration {
     }
 
     impl ::codec::DeserializeValue for RepositoryFilter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RepositoryFilter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RepositoryFilter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -731,11 +848,16 @@ pub mod replication_configuration {
                     write!(f, "a struct of type RepositoryFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut filter: Option<::Value<String>> = None;
                     let mut filter_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Filter" => {
                                 filter = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -749,7 +871,8 @@ pub mod replication_configuration {
 
                     Ok(RepositoryFilter {
                         filter: filter.ok_or(::serde::de::Error::missing_field("Filter"))?,
-                        filter_type: filter_type.ok_or(::serde::de::Error::missing_field("FilterType"))?,
+                        filter_type: filter_type
+                            .ok_or(::serde::de::Error::missing_field("FilterType"))?,
                     })
                 }
             }
@@ -780,7 +903,11 @@ pub mod repository {
     impl ::codec::SerializeValue for EncryptionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionType", &self.encryption_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionType",
+                &self.encryption_type,
+            )?;
             if let Some(ref kms_key) = self.kms_key {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKey", kms_key)?;
             }
@@ -789,7 +916,9 @@ pub mod repository {
     }
 
     impl ::codec::DeserializeValue for EncryptionConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EncryptionConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EncryptionConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -799,11 +928,16 @@ pub mod repository {
                     write!(f, "a struct of type EncryptionConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut encryption_type: Option<::Value<String>> = None;
                     let mut kms_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EncryptionType" => {
                                 encryption_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -816,7 +950,8 @@ pub mod repository {
                     }
 
                     Ok(EncryptionConfiguration {
-                        encryption_type: encryption_type.ok_or(::serde::de::Error::missing_field("EncryptionType"))?,
+                        encryption_type: encryption_type
+                            .ok_or(::serde::de::Error::missing_field("EncryptionType"))?,
                         kms_key: kms_key,
                     })
                 }
@@ -847,7 +982,9 @@ pub mod repository {
     }
 
     impl ::codec::DeserializeValue for ImageScanningConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ImageScanningConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ImageScanningConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -857,10 +994,15 @@ pub mod repository {
                     write!(f, "a struct of type ImageScanningConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut scan_on_push: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ScanOnPush" => {
                                 scan_on_push = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -898,7 +1040,11 @@ pub mod repository {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref lifecycle_policy_text) = self.lifecycle_policy_text {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LifecyclePolicyText", lifecycle_policy_text)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LifecyclePolicyText",
+                    lifecycle_policy_text,
+                )?;
             }
             if let Some(ref registry_id) = self.registry_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegistryId", registry_id)?;
@@ -908,7 +1054,9 @@ pub mod repository {
     }
 
     impl ::codec::DeserializeValue for LifecyclePolicy {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LifecyclePolicy, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LifecyclePolicy, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -918,14 +1066,20 @@ pub mod repository {
                     write!(f, "a struct of type LifecyclePolicy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut lifecycle_policy_text: Option<::Value<String>> = None;
                     let mut registry_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LifecyclePolicyText" => {
-                                lifecycle_policy_text = ::serde::de::MapAccess::next_value(&mut map)?;
+                                lifecycle_policy_text =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RegistryId" => {
                                 registry_id = ::serde::de::MapAccess::next_value(&mut map)?;

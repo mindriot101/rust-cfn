@@ -3,7 +3,7 @@
 /// The [`AWS::MediaConvert::JobTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html) resource type.
 #[derive(Debug, Default)]
 pub struct JobTemplate {
-    properties: JobTemplateProperties
+    properties: JobTemplateProperties,
 }
 
 /// Properties for the `JobTemplate` resource.
@@ -65,7 +65,11 @@ impl ::serde::Serialize for JobTemplateProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref acceleration_settings) = self.acceleration_settings {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccelerationSettings", acceleration_settings)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AccelerationSettings",
+                acceleration_settings,
+            )?;
         }
         if let Some(ref category) = self.category {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Category", category)?;
@@ -74,7 +78,11 @@ impl ::serde::Serialize for JobTemplateProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref hop_destinations) = self.hop_destinations {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HopDestinations", hop_destinations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HopDestinations",
+                hop_destinations,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -87,7 +95,11 @@ impl ::serde::Serialize for JobTemplateProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "SettingsJson", &self.settings_json)?;
         if let Some(ref status_update_interval) = self.status_update_interval {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StatusUpdateInterval", status_update_interval)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StatusUpdateInterval",
+                status_update_interval,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -107,11 +119,17 @@ impl<'de> ::serde::Deserialize<'de> for JobTemplateProperties {
                 write!(f, "a struct of type JobTemplateProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut acceleration_settings: Option<::Value<self::job_template::AccelerationSettings>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut acceleration_settings: Option<
+                    ::Value<self::job_template::AccelerationSettings>,
+                > = None;
                 let mut category: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
-                let mut hop_destinations: Option<::ValueList<self::job_template::HopDestination>> = None;
+                let mut hop_destinations: Option<::ValueList<self::job_template::HopDestination>> =
+                    None;
                 let mut name: Option<::Value<String>> = None;
                 let mut priority: Option<::Value<u32>> = None;
                 let mut queue: Option<::Value<String>> = None;
@@ -163,7 +181,8 @@ impl<'de> ::serde::Deserialize<'de> for JobTemplateProperties {
                     name: name,
                     priority: priority,
                     queue: queue,
-                    settings_json: settings_json.ok_or(::serde::de::Error::missing_field("SettingsJson"))?,
+                    settings_json: settings_json
+                        .ok_or(::serde::de::Error::missing_field("SettingsJson"))?,
                     status_update_interval: status_update_interval,
                     tags: tags,
                 })
@@ -196,7 +215,7 @@ impl From<JobTemplateProperties> for JobTemplate {
 /// The [`AWS::MediaConvert::Preset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html) resource type.
 #[derive(Debug, Default)]
 pub struct Preset {
-    properties: PresetProperties
+    properties: PresetProperties,
 }
 
 /// Properties for the `Preset` resource.
@@ -260,7 +279,10 @@ impl<'de> ::serde::Deserialize<'de> for PresetProperties {
                 write!(f, "a struct of type PresetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut category: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -292,7 +314,8 @@ impl<'de> ::serde::Deserialize<'de> for PresetProperties {
                     category: category,
                     description: description,
                     name: name,
-                    settings_json: settings_json.ok_or(::serde::de::Error::missing_field("SettingsJson"))?,
+                    settings_json: settings_json
+                        .ok_or(::serde::de::Error::missing_field("SettingsJson"))?,
                     tags: tags,
                 })
             }
@@ -324,7 +347,7 @@ impl From<PresetProperties> for Preset {
 /// The [`AWS::MediaConvert::Queue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html) resource type.
 #[derive(Debug, Default)]
 pub struct Queue {
-    properties: QueueProperties
+    properties: QueueProperties,
 }
 
 /// Properties for the `Queue` resource.
@@ -390,7 +413,10 @@ impl<'de> ::serde::Deserialize<'de> for QueueProperties {
                 write!(f, "a struct of type QueueProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut pricing_plan: Option<::Value<String>> = None;
@@ -473,7 +499,9 @@ pub mod job_template {
     }
 
     impl ::codec::DeserializeValue for AccelerationSettings {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AccelerationSettings, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AccelerationSettings, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -483,10 +511,15 @@ pub mod job_template {
                     write!(f, "a struct of type AccelerationSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut mode: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Mode" => {
                                 mode = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -542,7 +575,9 @@ pub mod job_template {
     }
 
     impl ::codec::DeserializeValue for HopDestination {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HopDestination, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HopDestination, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -552,12 +587,17 @@ pub mod job_template {
                     write!(f, "a struct of type HopDestination")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut priority: Option<::Value<u32>> = None;
                     let mut queue: Option<::Value<String>> = None;
                     let mut wait_minutes: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Priority" => {
                                 priority = ::serde::de::MapAccess::next_value(&mut map)?;

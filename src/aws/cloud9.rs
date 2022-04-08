@@ -3,7 +3,7 @@
 /// The [`AWS::Cloud9::EnvironmentEC2`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html) resource type.
 #[derive(Debug, Default)]
 pub struct EnvironmentEC2 {
-    properties: EnvironmentEC2Properties
+    properties: EnvironmentEC2Properties,
 }
 
 /// Properties for the `EnvironmentEC2` resource.
@@ -65,10 +65,18 @@ impl ::serde::Serialize for EnvironmentEC2Properties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref automatic_stop_time_minutes) = self.automatic_stop_time_minutes {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutomaticStopTimeMinutes", automatic_stop_time_minutes)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AutomaticStopTimeMinutes",
+                automatic_stop_time_minutes,
+            )?;
         }
         if let Some(ref connection_type) = self.connection_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionType", connection_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ConnectionType",
+                connection_type,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -97,7 +105,9 @@ impl ::serde::Serialize for EnvironmentEC2Properties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for EnvironmentEC2Properties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<EnvironmentEC2Properties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<EnvironmentEC2Properties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -107,7 +117,10 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentEC2Properties {
                 write!(f, "a struct of type EnvironmentEC2Properties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut automatic_stop_time_minutes: Option<::Value<u32>> = None;
                 let mut connection_type: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
@@ -122,7 +135,8 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentEC2Properties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AutomaticStopTimeMinutes" => {
-                            automatic_stop_time_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                            automatic_stop_time_minutes =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ConnectionType" => {
                             connection_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -160,7 +174,8 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentEC2Properties {
                     connection_type: connection_type,
                     description: description,
                     image_id: image_id,
-                    instance_type: instance_type.ok_or(::serde::de::Error::missing_field("InstanceType"))?,
+                    instance_type: instance_type
+                        .ok_or(::serde::de::Error::missing_field("InstanceType"))?,
                     name: name,
                     owner_arn: owner_arn,
                     repositories: repositories,
@@ -214,8 +229,16 @@ pub mod environment_ec2 {
     impl ::codec::SerializeValue for Repository {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PathComponent", &self.path_component)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryUrl", &self.repository_url)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PathComponent",
+                &self.path_component,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryUrl",
+                &self.repository_url,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -231,11 +254,16 @@ pub mod environment_ec2 {
                     write!(f, "a struct of type Repository")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut path_component: Option<::Value<String>> = None;
                     let mut repository_url: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PathComponent" => {
                                 path_component = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -248,8 +276,10 @@ pub mod environment_ec2 {
                     }
 
                     Ok(Repository {
-                        path_component: path_component.ok_or(::serde::de::Error::missing_field("PathComponent"))?,
-                        repository_url: repository_url.ok_or(::serde::de::Error::missing_field("RepositoryUrl"))?,
+                        path_component: path_component
+                            .ok_or(::serde::de::Error::missing_field("PathComponent"))?,
+                        repository_url: repository_url
+                            .ok_or(::serde::de::Error::missing_field("RepositoryUrl"))?,
                     })
                 }
             }

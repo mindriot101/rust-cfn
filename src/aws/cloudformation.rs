@@ -3,7 +3,7 @@
 /// The [`AWS::CloudFormation::CustomResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html) resource type.
 #[derive(Debug, Default)]
 pub struct CustomResource {
-    properties: CustomResourceProperties
+    properties: CustomResourceProperties,
 }
 
 /// Properties for the `CustomResource` resource.
@@ -25,7 +25,9 @@ impl ::serde::Serialize for CustomResourceProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for CustomResourceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomResourceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<CustomResourceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -35,7 +37,10 @@ impl<'de> ::serde::Deserialize<'de> for CustomResourceProperties {
                 write!(f, "a struct of type CustomResourceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut service_token: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -48,7 +53,8 @@ impl<'de> ::serde::Deserialize<'de> for CustomResourceProperties {
                 }
 
                 Ok(CustomResourceProperties {
-                    service_token: service_token.ok_or(::serde::de::Error::missing_field("ServiceToken"))?,
+                    service_token: service_token
+                        .ok_or(::serde::de::Error::missing_field("ServiceToken"))?,
                 })
             }
         }
@@ -79,7 +85,7 @@ impl From<CustomResourceProperties> for CustomResource {
 /// The [`AWS::CloudFormation::HookDefaultVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookdefaultversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct HookDefaultVersion {
-    properties: HookDefaultVersionProperties
+    properties: HookDefaultVersionProperties,
 }
 
 /// Properties for the `HookDefaultVersion` resource.
@@ -109,7 +115,11 @@ impl ::serde::Serialize for HookDefaultVersionProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeName", type_name)?;
         }
         if let Some(ref type_version_arn) = self.type_version_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeVersionArn", type_version_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TypeVersionArn",
+                type_version_arn,
+            )?;
         }
         if let Some(ref version_id) = self.version_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "VersionId", version_id)?;
@@ -119,7 +129,9 @@ impl ::serde::Serialize for HookDefaultVersionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for HookDefaultVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<HookDefaultVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<HookDefaultVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -129,7 +141,10 @@ impl<'de> ::serde::Deserialize<'de> for HookDefaultVersionProperties {
                 write!(f, "a struct of type HookDefaultVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut type_name: Option<::Value<String>> = None;
                 let mut type_version_arn: Option<::Value<String>> = None;
                 let mut version_id: Option<::Value<String>> = None;
@@ -183,7 +198,7 @@ impl From<HookDefaultVersionProperties> for HookDefaultVersion {
 /// The [`AWS::CloudFormation::HookTypeConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hooktypeconfig.html) resource type.
 #[derive(Debug, Default)]
 pub struct HookTypeConfig {
-    properties: HookTypeConfigProperties
+    properties: HookTypeConfigProperties,
 }
 
 /// Properties for the `HookTypeConfig` resource.
@@ -214,9 +229,17 @@ pub struct HookTypeConfigProperties {
 impl ::serde::Serialize for HookTypeConfigProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "Configuration", &self.configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "Configuration",
+            &self.configuration,
+        )?;
         if let Some(ref configuration_alias) = self.configuration_alias {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConfigurationAlias", configuration_alias)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ConfigurationAlias",
+                configuration_alias,
+            )?;
         }
         if let Some(ref type_arn) = self.type_arn {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeArn", type_arn)?;
@@ -229,7 +252,9 @@ impl ::serde::Serialize for HookTypeConfigProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for HookTypeConfigProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<HookTypeConfigProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<HookTypeConfigProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -239,7 +264,10 @@ impl<'de> ::serde::Deserialize<'de> for HookTypeConfigProperties {
                 write!(f, "a struct of type HookTypeConfigProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut configuration: Option<::Value<String>> = None;
                 let mut configuration_alias: Option<::Value<String>> = None;
                 let mut type_arn: Option<::Value<String>> = None;
@@ -264,7 +292,8 @@ impl<'de> ::serde::Deserialize<'de> for HookTypeConfigProperties {
                 }
 
                 Ok(HookTypeConfigProperties {
-                    configuration: configuration.ok_or(::serde::de::Error::missing_field("Configuration"))?,
+                    configuration: configuration
+                        .ok_or(::serde::de::Error::missing_field("Configuration"))?,
                     configuration_alias: configuration_alias,
                     type_arn: type_arn,
                     type_name: type_name,
@@ -298,7 +327,7 @@ impl From<HookTypeConfigProperties> for HookTypeConfig {
 /// The [`AWS::CloudFormation::HookVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct HookVersion {
-    properties: HookVersionProperties
+    properties: HookVersionProperties,
 }
 
 /// Properties for the `HookVersion` resource.
@@ -330,12 +359,20 @@ impl ::serde::Serialize for HookVersionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref execution_role_arn) = self.execution_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRoleArn", execution_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ExecutionRoleArn",
+                execution_role_arn,
+            )?;
         }
         if let Some(ref logging_config) = self.logging_config {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoggingConfig", logging_config)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SchemaHandlerPackage", &self.schema_handler_package)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SchemaHandlerPackage",
+            &self.schema_handler_package,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeName", &self.type_name)?;
         ::serde::ser::SerializeMap::end(map)
     }
@@ -352,7 +389,10 @@ impl<'de> ::serde::Deserialize<'de> for HookVersionProperties {
                 write!(f, "a struct of type HookVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut execution_role_arn: Option<::Value<String>> = None;
                 let mut logging_config: Option<::Value<self::hook_version::LoggingConfig>> = None;
                 let mut schema_handler_package: Option<::Value<String>> = None;
@@ -379,7 +419,8 @@ impl<'de> ::serde::Deserialize<'de> for HookVersionProperties {
                 Ok(HookVersionProperties {
                     execution_role_arn: execution_role_arn,
                     logging_config: logging_config,
-                    schema_handler_package: schema_handler_package.ok_or(::serde::de::Error::missing_field("SchemaHandlerPackage"))?,
+                    schema_handler_package: schema_handler_package
+                        .ok_or(::serde::de::Error::missing_field("SchemaHandlerPackage"))?,
                     type_name: type_name.ok_or(::serde::de::Error::missing_field("TypeName"))?,
                 })
             }
@@ -411,7 +452,7 @@ impl From<HookVersionProperties> for HookVersion {
 /// The [`AWS::CloudFormation::Macro`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html) resource type.
 #[derive(Debug, Default)]
 pub struct Macro {
-    properties: MacroProperties
+    properties: MacroProperties,
 }
 
 /// Properties for the `Macro` resource.
@@ -473,7 +514,10 @@ impl<'de> ::serde::Deserialize<'de> for MacroProperties {
                 write!(f, "a struct of type MacroProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut function_name: Option<::Value<String>> = None;
                 let mut log_group_name: Option<::Value<String>> = None;
@@ -503,7 +547,8 @@ impl<'de> ::serde::Deserialize<'de> for MacroProperties {
 
                 Ok(MacroProperties {
                     description: description,
-                    function_name: function_name.ok_or(::serde::de::Error::missing_field("FunctionName"))?,
+                    function_name: function_name
+                        .ok_or(::serde::de::Error::missing_field("FunctionName"))?,
                     log_group_name: log_group_name,
                     log_role_arn: log_role_arn,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
@@ -537,7 +582,7 @@ impl From<MacroProperties> for Macro {
 /// The [`AWS::CloudFormation::ModuleDefaultVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct ModuleDefaultVersion {
-    properties: ModuleDefaultVersionProperties
+    properties: ModuleDefaultVersionProperties,
 }
 
 /// Properties for the `ModuleDefaultVersion` resource.
@@ -577,7 +622,9 @@ impl ::serde::Serialize for ModuleDefaultVersionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ModuleDefaultVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ModuleDefaultVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ModuleDefaultVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -587,7 +634,10 @@ impl<'de> ::serde::Deserialize<'de> for ModuleDefaultVersionProperties {
                 write!(f, "a struct of type ModuleDefaultVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut arn: Option<::Value<String>> = None;
                 let mut module_name: Option<::Value<String>> = None;
                 let mut version_id: Option<::Value<String>> = None;
@@ -641,7 +691,7 @@ impl From<ModuleDefaultVersionProperties> for ModuleDefaultVersion {
 /// The [`AWS::CloudFormation::ModuleVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct ModuleVersion {
-    properties: ModuleVersionProperties
+    properties: ModuleVersionProperties,
 }
 
 /// Properties for the `ModuleVersion` resource.
@@ -663,13 +713,19 @@ impl ::serde::Serialize for ModuleVersionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ModuleName", &self.module_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ModulePackage", &self.module_package)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ModulePackage",
+            &self.module_package,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ModuleVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ModuleVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ModuleVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -679,7 +735,10 @@ impl<'de> ::serde::Deserialize<'de> for ModuleVersionProperties {
                 write!(f, "a struct of type ModuleVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut module_name: Option<::Value<String>> = None;
                 let mut module_package: Option<::Value<String>> = None;
 
@@ -696,8 +755,10 @@ impl<'de> ::serde::Deserialize<'de> for ModuleVersionProperties {
                 }
 
                 Ok(ModuleVersionProperties {
-                    module_name: module_name.ok_or(::serde::de::Error::missing_field("ModuleName"))?,
-                    module_package: module_package.ok_or(::serde::de::Error::missing_field("ModulePackage"))?,
+                    module_name: module_name
+                        .ok_or(::serde::de::Error::missing_field("ModuleName"))?,
+                    module_package: module_package
+                        .ok_or(::serde::de::Error::missing_field("ModulePackage"))?,
                 })
             }
         }
@@ -728,7 +789,7 @@ impl From<ModuleVersionProperties> for ModuleVersion {
 /// The [`AWS::CloudFormation::PublicTypeVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publictypeversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct PublicTypeVersion {
-    properties: PublicTypeVersionProperties
+    properties: PublicTypeVersionProperties,
 }
 
 /// Properties for the `PublicTypeVersion` resource.
@@ -768,10 +829,18 @@ impl ::serde::Serialize for PublicTypeVersionProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", arn)?;
         }
         if let Some(ref log_delivery_bucket) = self.log_delivery_bucket {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogDeliveryBucket", log_delivery_bucket)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LogDeliveryBucket",
+                log_delivery_bucket,
+            )?;
         }
         if let Some(ref public_version_number) = self.public_version_number {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PublicVersionNumber", public_version_number)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PublicVersionNumber",
+                public_version_number,
+            )?;
         }
         if let Some(ref r#type) = self.r#type {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", r#type)?;
@@ -784,7 +853,9 @@ impl ::serde::Serialize for PublicTypeVersionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for PublicTypeVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PublicTypeVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PublicTypeVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -794,7 +865,10 @@ impl<'de> ::serde::Deserialize<'de> for PublicTypeVersionProperties {
                 write!(f, "a struct of type PublicTypeVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut arn: Option<::Value<String>> = None;
                 let mut log_delivery_bucket: Option<::Value<String>> = None;
                 let mut public_version_number: Option<::Value<String>> = None;
@@ -858,7 +932,7 @@ impl From<PublicTypeVersionProperties> for PublicTypeVersion {
 /// The [`AWS::CloudFormation::Publisher`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publisher.html) resource type.
 #[derive(Debug, Default)]
 pub struct Publisher {
-    properties: PublisherProperties
+    properties: PublisherProperties,
 }
 
 /// Properties for the `Publisher` resource.
@@ -879,7 +953,11 @@ pub struct PublisherProperties {
 impl ::serde::Serialize for PublisherProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AcceptTermsAndConditions", &self.accept_terms_and_conditions)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AcceptTermsAndConditions",
+            &self.accept_terms_and_conditions,
+        )?;
         if let Some(ref connection_arn) = self.connection_arn {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionArn", connection_arn)?;
         }
@@ -898,14 +976,18 @@ impl<'de> ::serde::Deserialize<'de> for PublisherProperties {
                 write!(f, "a struct of type PublisherProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut accept_terms_and_conditions: Option<::Value<bool>> = None;
                 let mut connection_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AcceptTermsAndConditions" => {
-                            accept_terms_and_conditions = ::serde::de::MapAccess::next_value(&mut map)?;
+                            accept_terms_and_conditions =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ConnectionArn" => {
                             connection_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -915,7 +997,9 @@ impl<'de> ::serde::Deserialize<'de> for PublisherProperties {
                 }
 
                 Ok(PublisherProperties {
-                    accept_terms_and_conditions: accept_terms_and_conditions.ok_or(::serde::de::Error::missing_field("AcceptTermsAndConditions"))?,
+                    accept_terms_and_conditions: accept_terms_and_conditions.ok_or(
+                        ::serde::de::Error::missing_field("AcceptTermsAndConditions"),
+                    )?,
                     connection_arn: connection_arn,
                 })
             }
@@ -947,7 +1031,7 @@ impl From<PublisherProperties> for Publisher {
 /// The [`AWS::CloudFormation::ResourceDefaultVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourcedefaultversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourceDefaultVersion {
-    properties: ResourceDefaultVersionProperties
+    properties: ResourceDefaultVersionProperties,
 }
 
 /// Properties for the `ResourceDefaultVersion` resource.
@@ -977,7 +1061,11 @@ impl ::serde::Serialize for ResourceDefaultVersionProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeName", type_name)?;
         }
         if let Some(ref type_version_arn) = self.type_version_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeVersionArn", type_version_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TypeVersionArn",
+                type_version_arn,
+            )?;
         }
         if let Some(ref version_id) = self.version_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "VersionId", version_id)?;
@@ -987,7 +1075,9 @@ impl ::serde::Serialize for ResourceDefaultVersionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResourceDefaultVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceDefaultVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResourceDefaultVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -997,7 +1087,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceDefaultVersionProperties {
                 write!(f, "a struct of type ResourceDefaultVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut type_name: Option<::Value<String>> = None;
                 let mut type_version_arn: Option<::Value<String>> = None;
                 let mut version_id: Option<::Value<String>> = None;
@@ -1051,7 +1144,7 @@ impl From<ResourceDefaultVersionProperties> for ResourceDefaultVersion {
 /// The [`AWS::CloudFormation::ResourceVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourceVersion {
-    properties: ResourceVersionProperties
+    properties: ResourceVersionProperties,
 }
 
 /// Properties for the `ResourceVersion` resource.
@@ -1083,19 +1176,29 @@ impl ::serde::Serialize for ResourceVersionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref execution_role_arn) = self.execution_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRoleArn", execution_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ExecutionRoleArn",
+                execution_role_arn,
+            )?;
         }
         if let Some(ref logging_config) = self.logging_config {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoggingConfig", logging_config)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SchemaHandlerPackage", &self.schema_handler_package)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SchemaHandlerPackage",
+            &self.schema_handler_package,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeName", &self.type_name)?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResourceVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResourceVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1105,9 +1208,13 @@ impl<'de> ::serde::Deserialize<'de> for ResourceVersionProperties {
                 write!(f, "a struct of type ResourceVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut execution_role_arn: Option<::Value<String>> = None;
-                let mut logging_config: Option<::Value<self::resource_version::LoggingConfig>> = None;
+                let mut logging_config: Option<::Value<self::resource_version::LoggingConfig>> =
+                    None;
                 let mut schema_handler_package: Option<::Value<String>> = None;
                 let mut type_name: Option<::Value<String>> = None;
 
@@ -1132,7 +1239,8 @@ impl<'de> ::serde::Deserialize<'de> for ResourceVersionProperties {
                 Ok(ResourceVersionProperties {
                     execution_role_arn: execution_role_arn,
                     logging_config: logging_config,
-                    schema_handler_package: schema_handler_package.ok_or(::serde::de::Error::missing_field("SchemaHandlerPackage"))?,
+                    schema_handler_package: schema_handler_package
+                        .ok_or(::serde::de::Error::missing_field("SchemaHandlerPackage"))?,
                     type_name: type_name.ok_or(::serde::de::Error::missing_field("TypeName"))?,
                 })
             }
@@ -1164,7 +1272,7 @@ impl From<ResourceVersionProperties> for ResourceVersion {
 /// The [`AWS::CloudFormation::Stack`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html) resource type.
 #[derive(Debug, Default)]
 pub struct Stack {
-    properties: StackProperties
+    properties: StackProperties,
 }
 
 /// Properties for the `Stack` resource.
@@ -1201,7 +1309,11 @@ impl ::serde::Serialize for StackProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref notification_ar_ns) = self.notification_ar_ns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NotificationARNs", notification_ar_ns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NotificationARNs",
+                notification_ar_ns,
+            )?;
         }
         if let Some(ref parameters) = self.parameters {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Parameters", parameters)?;
@@ -1211,7 +1323,11 @@ impl ::serde::Serialize for StackProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "TemplateURL", &self.template_url)?;
         if let Some(ref timeout_in_minutes) = self.timeout_in_minutes {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimeoutInMinutes", timeout_in_minutes)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TimeoutInMinutes",
+                timeout_in_minutes,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -1228,7 +1344,10 @@ impl<'de> ::serde::Deserialize<'de> for StackProperties {
                 write!(f, "a struct of type StackProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut notification_ar_ns: Option<::ValueList<String>> = None;
                 let mut parameters: Option<::ValueMap<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -1260,7 +1379,8 @@ impl<'de> ::serde::Deserialize<'de> for StackProperties {
                     notification_ar_ns: notification_ar_ns,
                     parameters: parameters,
                     tags: tags,
-                    template_url: template_url.ok_or(::serde::de::Error::missing_field("TemplateURL"))?,
+                    template_url: template_url
+                        .ok_or(::serde::de::Error::missing_field("TemplateURL"))?,
                     timeout_in_minutes: timeout_in_minutes,
                 })
             }
@@ -1292,7 +1412,7 @@ impl From<StackProperties> for Stack {
 /// The [`AWS::CloudFormation::StackSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html) resource type.
 #[derive(Debug, Default)]
 pub struct StackSet {
-    properties: StackSetProperties
+    properties: StackSetProperties,
 }
 
 /// Properties for the `StackSet` resource.
@@ -1379,10 +1499,18 @@ impl ::serde::Serialize for StackSetProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref administration_role_arn) = self.administration_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdministrationRoleARN", administration_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AdministrationRoleARN",
+                administration_role_arn,
+            )?;
         }
         if let Some(ref auto_deployment) = self.auto_deployment {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoDeployment", auto_deployment)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AutoDeployment",
+                auto_deployment,
+            )?;
         }
         if let Some(ref call_as) = self.call_as {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CallAs", call_as)?;
@@ -1394,22 +1522,46 @@ impl ::serde::Serialize for StackSetProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref execution_role_name) = self.execution_role_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRoleName", execution_role_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ExecutionRoleName",
+                execution_role_name,
+            )?;
         }
         if let Some(ref managed_execution) = self.managed_execution {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManagedExecution", managed_execution)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ManagedExecution",
+                managed_execution,
+            )?;
         }
         if let Some(ref operation_preferences) = self.operation_preferences {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "OperationPreferences", operation_preferences)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "OperationPreferences",
+                operation_preferences,
+            )?;
         }
         if let Some(ref parameters) = self.parameters {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Parameters", parameters)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionModel", &self.permission_model)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PermissionModel",
+            &self.permission_model,
+        )?;
         if let Some(ref stack_instances_group) = self.stack_instances_group {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackInstancesGroup", stack_instances_group)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StackInstancesGroup",
+                stack_instances_group,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "StackSetName", &self.stack_set_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "StackSetName",
+            &self.stack_set_name,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -1434,7 +1586,10 @@ impl<'de> ::serde::Deserialize<'de> for StackSetProperties {
                 write!(f, "a struct of type StackSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut administration_role_arn: Option<::Value<String>> = None;
                 let mut auto_deployment: Option<::Value<self::stack_set::AutoDeployment>> = None;
                 let mut call_as: Option<::Value<String>> = None;
@@ -1442,10 +1597,14 @@ impl<'de> ::serde::Deserialize<'de> for StackSetProperties {
                 let mut description: Option<::Value<String>> = None;
                 let mut execution_role_name: Option<::Value<String>> = None;
                 let mut managed_execution: Option<::Value<::json::Value>> = None;
-                let mut operation_preferences: Option<::Value<self::stack_set::OperationPreferences>> = None;
+                let mut operation_preferences: Option<
+                    ::Value<self::stack_set::OperationPreferences>,
+                > = None;
                 let mut parameters: Option<::ValueList<self::stack_set::Parameter>> = None;
                 let mut permission_model: Option<::Value<String>> = None;
-                let mut stack_instances_group: Option<::ValueList<self::stack_set::StackInstances>> = None;
+                let mut stack_instances_group: Option<
+                    ::ValueList<self::stack_set::StackInstances>,
+                > = None;
                 let mut stack_set_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut template_body: Option<::Value<String>> = None;
@@ -1512,9 +1671,11 @@ impl<'de> ::serde::Deserialize<'de> for StackSetProperties {
                     managed_execution: managed_execution,
                     operation_preferences: operation_preferences,
                     parameters: parameters,
-                    permission_model: permission_model.ok_or(::serde::de::Error::missing_field("PermissionModel"))?,
+                    permission_model: permission_model
+                        .ok_or(::serde::de::Error::missing_field("PermissionModel"))?,
                     stack_instances_group: stack_instances_group,
-                    stack_set_name: stack_set_name.ok_or(::serde::de::Error::missing_field("StackSetName"))?,
+                    stack_set_name: stack_set_name
+                        .ok_or(::serde::de::Error::missing_field("StackSetName"))?,
                     tags: tags,
                     template_body: template_body,
                     template_url: template_url,
@@ -1548,7 +1709,7 @@ impl From<StackSetProperties> for StackSet {
 /// The [`AWS::CloudFormation::TypeActivation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-typeactivation.html) resource type.
 #[derive(Debug, Default)]
 pub struct TypeActivation {
-    properties: TypeActivationProperties
+    properties: TypeActivationProperties,
 }
 
 /// Properties for the `TypeActivation` resource.
@@ -1613,7 +1774,11 @@ impl ::serde::Serialize for TypeActivationProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoUpdate", auto_update)?;
         }
         if let Some(ref execution_role_arn) = self.execution_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRoleArn", execution_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ExecutionRoleArn",
+                execution_role_arn,
+            )?;
         }
         if let Some(ref logging_config) = self.logging_config {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoggingConfig", logging_config)?;
@@ -1622,7 +1787,11 @@ impl ::serde::Serialize for TypeActivationProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MajorVersion", major_version)?;
         }
         if let Some(ref public_type_arn) = self.public_type_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PublicTypeArn", public_type_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PublicTypeArn",
+                public_type_arn,
+            )?;
         }
         if let Some(ref publisher_id) = self.publisher_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PublisherId", publisher_id)?;
@@ -1634,7 +1803,11 @@ impl ::serde::Serialize for TypeActivationProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeName", type_name)?;
         }
         if let Some(ref type_name_alias) = self.type_name_alias {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeNameAlias", type_name_alias)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TypeNameAlias",
+                type_name_alias,
+            )?;
         }
         if let Some(ref version_bump) = self.version_bump {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "VersionBump", version_bump)?;
@@ -1644,7 +1817,9 @@ impl ::serde::Serialize for TypeActivationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for TypeActivationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<TypeActivationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<TypeActivationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1654,10 +1829,14 @@ impl<'de> ::serde::Deserialize<'de> for TypeActivationProperties {
                 write!(f, "a struct of type TypeActivationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut auto_update: Option<::Value<bool>> = None;
                 let mut execution_role_arn: Option<::Value<String>> = None;
-                let mut logging_config: Option<::Value<self::type_activation::LoggingConfig>> = None;
+                let mut logging_config: Option<::Value<self::type_activation::LoggingConfig>> =
+                    None;
                 let mut major_version: Option<::Value<String>> = None;
                 let mut public_type_arn: Option<::Value<String>> = None;
                 let mut publisher_id: Option<::Value<String>> = None;
@@ -1743,7 +1922,7 @@ impl From<TypeActivationProperties> for TypeActivation {
 /// The [`AWS::CloudFormation::WaitCondition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html) resource type.
 #[derive(Debug, Default)]
 pub struct WaitCondition {
-    properties: WaitConditionProperties
+    properties: WaitConditionProperties,
 }
 
 /// Properties for the `WaitCondition` resource.
@@ -1783,7 +1962,9 @@ impl ::serde::Serialize for WaitConditionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for WaitConditionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<WaitConditionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<WaitConditionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1793,7 +1974,10 @@ impl<'de> ::serde::Deserialize<'de> for WaitConditionProperties {
                 write!(f, "a struct of type WaitConditionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut count: Option<::Value<u32>> = None;
                 let mut handle: Option<::Value<String>> = None;
                 let mut timeout: Option<::Value<String>> = None;
@@ -1847,13 +2031,12 @@ impl From<WaitConditionProperties> for WaitCondition {
 /// The [`AWS::CloudFormation::WaitConditionHandle`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitconditionhandle.html) resource type.
 #[derive(Debug, Default)]
 pub struct WaitConditionHandle {
-    properties: WaitConditionHandleProperties
+    properties: WaitConditionHandleProperties,
 }
 
 /// Properties for the `WaitConditionHandle` resource.
 #[derive(Debug, Default)]
-pub struct WaitConditionHandleProperties {
-}
+pub struct WaitConditionHandleProperties {}
 
 impl ::serde::Serialize for WaitConditionHandleProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
@@ -1863,7 +2046,9 @@ impl ::serde::Serialize for WaitConditionHandleProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for WaitConditionHandleProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<WaitConditionHandleProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<WaitConditionHandleProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1873,7 +2058,10 @@ impl<'de> ::serde::Deserialize<'de> for WaitConditionHandleProperties {
                 write!(f, "a struct of type WaitConditionHandleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, _map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                _map: A,
+            ) -> Result<Self::Value, A::Error> {
                 Ok(WaitConditionHandleProperties {})
             }
         }
@@ -1923,7 +2111,11 @@ pub mod hook_version {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref log_group_name) = self.log_group_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupName", log_group_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LogGroupName",
+                    log_group_name,
+                )?;
             }
             if let Some(ref log_role_arn) = self.log_role_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogRoleArn", log_role_arn)?;
@@ -1933,7 +2125,9 @@ pub mod hook_version {
     }
 
     impl ::codec::DeserializeValue for LoggingConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoggingConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoggingConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1943,11 +2137,16 @@ pub mod hook_version {
                     write!(f, "a struct of type LoggingConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut log_group_name: Option<::Value<String>> = None;
                     let mut log_role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LogGroupName" => {
                                 log_group_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1993,7 +2192,11 @@ pub mod resource_version {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref log_group_name) = self.log_group_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupName", log_group_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LogGroupName",
+                    log_group_name,
+                )?;
             }
             if let Some(ref log_role_arn) = self.log_role_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogRoleArn", log_role_arn)?;
@@ -2003,7 +2206,9 @@ pub mod resource_version {
     }
 
     impl ::codec::DeserializeValue for LoggingConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoggingConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoggingConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2013,11 +2218,16 @@ pub mod resource_version {
                     write!(f, "a struct of type LoggingConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut log_group_name: Option<::Value<String>> = None;
                     let mut log_role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LogGroupName" => {
                                 log_group_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2065,15 +2275,23 @@ pub mod stack_set {
             if let Some(ref enabled) = self.enabled {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", enabled)?;
             }
-            if let Some(ref retain_stacks_on_account_removal) = self.retain_stacks_on_account_removal {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RetainStacksOnAccountRemoval", retain_stacks_on_account_removal)?;
+            if let Some(ref retain_stacks_on_account_removal) =
+                self.retain_stacks_on_account_removal
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RetainStacksOnAccountRemoval",
+                    retain_stacks_on_account_removal,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AutoDeployment {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AutoDeployment, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AutoDeployment, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2083,17 +2301,23 @@ pub mod stack_set {
                     write!(f, "a struct of type AutoDeployment")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut enabled: Option<::Value<bool>> = None;
                     let mut retain_stacks_on_account_removal: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Enabled" => {
                                 enabled = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RetainStacksOnAccountRemoval" => {
-                                retain_stacks_on_account_removal = ::serde::de::MapAccess::next_value(&mut map)?;
+                                retain_stacks_on_account_removal =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2132,14 +2356,20 @@ pub mod stack_set {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Accounts", accounts)?;
             }
             if let Some(ref organizational_unit_ids) = self.organizational_unit_ids {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OrganizationalUnitIds", organizational_unit_ids)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OrganizationalUnitIds",
+                    organizational_unit_ids,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DeploymentTargets {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DeploymentTargets, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DeploymentTargets, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2149,17 +2379,23 @@ pub mod stack_set {
                     write!(f, "a struct of type DeploymentTargets")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut accounts: Option<::ValueList<String>> = None;
                     let mut organizational_unit_ids: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Accounts" => {
                                 accounts = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "OrganizationalUnitIds" => {
-                                organizational_unit_ids = ::serde::de::MapAccess::next_value(&mut map)?;
+                                organizational_unit_ids =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -2215,19 +2451,39 @@ pub mod stack_set {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref failure_tolerance_count) = self.failure_tolerance_count {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FailureToleranceCount", failure_tolerance_count)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FailureToleranceCount",
+                    failure_tolerance_count,
+                )?;
             }
             if let Some(ref failure_tolerance_percentage) = self.failure_tolerance_percentage {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FailureTolerancePercentage", failure_tolerance_percentage)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FailureTolerancePercentage",
+                    failure_tolerance_percentage,
+                )?;
             }
             if let Some(ref max_concurrent_count) = self.max_concurrent_count {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxConcurrentCount", max_concurrent_count)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaxConcurrentCount",
+                    max_concurrent_count,
+                )?;
             }
             if let Some(ref max_concurrent_percentage) = self.max_concurrent_percentage {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxConcurrentPercentage", max_concurrent_percentage)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaxConcurrentPercentage",
+                    max_concurrent_percentage,
+                )?;
             }
             if let Some(ref region_concurrency_type) = self.region_concurrency_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegionConcurrencyType", region_concurrency_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RegionConcurrencyType",
+                    region_concurrency_type,
+                )?;
             }
             if let Some(ref region_order) = self.region_order {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RegionOrder", region_order)?;
@@ -2237,7 +2493,9 @@ pub mod stack_set {
     }
 
     impl ::codec::DeserializeValue for OperationPreferences {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OperationPreferences, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<OperationPreferences, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2247,7 +2505,10 @@ pub mod stack_set {
                     write!(f, "a struct of type OperationPreferences")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut failure_tolerance_count: Option<::Value<u32>> = None;
                     let mut failure_tolerance_percentage: Option<::Value<u32>> = None;
                     let mut max_concurrent_count: Option<::Value<u32>> = None;
@@ -2255,22 +2516,29 @@ pub mod stack_set {
                     let mut region_concurrency_type: Option<::Value<String>> = None;
                     let mut region_order: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FailureToleranceCount" => {
-                                failure_tolerance_count = ::serde::de::MapAccess::next_value(&mut map)?;
+                                failure_tolerance_count =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FailureTolerancePercentage" => {
-                                failure_tolerance_percentage = ::serde::de::MapAccess::next_value(&mut map)?;
+                                failure_tolerance_percentage =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxConcurrentCount" => {
-                                max_concurrent_count = ::serde::de::MapAccess::next_value(&mut map)?;
+                                max_concurrent_count =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxConcurrentPercentage" => {
-                                max_concurrent_percentage = ::serde::de::MapAccess::next_value(&mut map)?;
+                                max_concurrent_percentage =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RegionConcurrencyType" => {
-                                region_concurrency_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                                region_concurrency_type =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RegionOrder" => {
                                 region_order = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2312,8 +2580,16 @@ pub mod stack_set {
     impl ::codec::SerializeValue for Parameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterKey", &self.parameter_key)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterValue", &self.parameter_value)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ParameterKey",
+                &self.parameter_key,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ParameterValue",
+                &self.parameter_value,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -2329,11 +2605,16 @@ pub mod stack_set {
                     write!(f, "a struct of type Parameter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut parameter_key: Option<::Value<String>> = None;
                     let mut parameter_value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ParameterKey" => {
                                 parameter_key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2346,8 +2627,10 @@ pub mod stack_set {
                     }
 
                     Ok(Parameter {
-                        parameter_key: parameter_key.ok_or(::serde::de::Error::missing_field("ParameterKey"))?,
-                        parameter_value: parameter_value.ok_or(::serde::de::Error::missing_field("ParameterValue"))?,
+                        parameter_key: parameter_key
+                            .ok_or(::serde::de::Error::missing_field("ParameterKey"))?,
+                        parameter_value: parameter_value
+                            .ok_or(::serde::de::Error::missing_field("ParameterValue"))?,
                     })
                 }
             }
@@ -2379,9 +2662,17 @@ pub mod stack_set {
     impl ::codec::SerializeValue for StackInstances {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeploymentTargets", &self.deployment_targets)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DeploymentTargets",
+                &self.deployment_targets,
+            )?;
             if let Some(ref parameter_overrides) = self.parameter_overrides {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ParameterOverrides", parameter_overrides)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ParameterOverrides",
+                    parameter_overrides,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Regions", &self.regions)?;
             ::serde::ser::SerializeMap::end(map)
@@ -2389,7 +2680,9 @@ pub mod stack_set {
     }
 
     impl ::codec::DeserializeValue for StackInstances {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StackInstances, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StackInstances, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2399,12 +2692,17 @@ pub mod stack_set {
                     write!(f, "a struct of type StackInstances")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut deployment_targets: Option<::Value<DeploymentTargets>> = None;
                     let mut parameter_overrides: Option<::ValueList<Parameter>> = None;
                     let mut regions: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DeploymentTargets" => {
                                 deployment_targets = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -2420,7 +2718,8 @@ pub mod stack_set {
                     }
 
                     Ok(StackInstances {
-                        deployment_targets: deployment_targets.ok_or(::serde::de::Error::missing_field("DeploymentTargets"))?,
+                        deployment_targets: deployment_targets
+                            .ok_or(::serde::de::Error::missing_field("DeploymentTargets"))?,
                         parameter_overrides: parameter_overrides,
                         regions: regions.ok_or(::serde::de::Error::missing_field("Regions"))?,
                     })
@@ -2454,7 +2753,11 @@ pub mod type_activation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref log_group_name) = self.log_group_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroupName", log_group_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LogGroupName",
+                    log_group_name,
+                )?;
             }
             if let Some(ref log_role_arn) = self.log_role_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogRoleArn", log_role_arn)?;
@@ -2464,7 +2767,9 @@ pub mod type_activation {
     }
 
     impl ::codec::DeserializeValue for LoggingConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LoggingConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LoggingConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -2474,11 +2779,16 @@ pub mod type_activation {
                     write!(f, "a struct of type LoggingConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut log_group_name: Option<::Value<String>> = None;
                     let mut log_role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LogGroupName" => {
                                 log_group_name = ::serde::de::MapAccess::next_value(&mut map)?;

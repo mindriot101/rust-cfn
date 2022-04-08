@@ -3,7 +3,7 @@
 /// The [`AWS::Panorama::ApplicationInstance`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html) resource type.
 #[derive(Debug, Default)]
 pub struct ApplicationInstance {
-    properties: ApplicationInstanceProperties
+    properties: ApplicationInstanceProperties,
 }
 
 /// Properties for the `ApplicationInstance` resource.
@@ -33,7 +33,8 @@ pub struct ApplicationInstanceProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub manifest_overrides_payload: Option<::Value<self::application_instance::ManifestOverridesPayload>>,
+    pub manifest_overrides_payload:
+        Option<::Value<self::application_instance::ManifestOverridesPayload>>,
     /// Property [`ManifestPayload`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-manifestpayload).
     ///
     /// Update type: _Immutable_.
@@ -64,10 +65,20 @@ pub struct ApplicationInstanceProperties {
 impl ::serde::Serialize for ApplicationInstanceProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        if let Some(ref application_instance_id_to_replace) = self.application_instance_id_to_replace {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationInstanceIdToReplace", application_instance_id_to_replace)?;
+        if let Some(ref application_instance_id_to_replace) =
+            self.application_instance_id_to_replace
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ApplicationInstanceIdToReplace",
+                application_instance_id_to_replace,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DefaultRuntimeContextDevice", &self.default_runtime_context_device)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DefaultRuntimeContextDevice",
+            &self.default_runtime_context_device,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
@@ -75,14 +86,26 @@ impl ::serde::Serialize for ApplicationInstanceProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceId", device_id)?;
         }
         if let Some(ref manifest_overrides_payload) = self.manifest_overrides_payload {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManifestOverridesPayload", manifest_overrides_payload)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ManifestOverridesPayload",
+                manifest_overrides_payload,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManifestPayload", &self.manifest_payload)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ManifestPayload",
+            &self.manifest_payload,
+        )?;
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
         if let Some(ref runtime_role_arn) = self.runtime_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuntimeRoleArn", runtime_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RuntimeRoleArn",
+                runtime_role_arn,
+            )?;
         }
         if let Some(ref status_filter) = self.status_filter {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "StatusFilter", status_filter)?;
@@ -95,7 +118,9 @@ impl ::serde::Serialize for ApplicationInstanceProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ApplicationInstanceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ApplicationInstanceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ApplicationInstanceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -105,13 +130,20 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationInstanceProperties {
                 write!(f, "a struct of type ApplicationInstanceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application_instance_id_to_replace: Option<::Value<String>> = None;
                 let mut default_runtime_context_device: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut device_id: Option<::Value<String>> = None;
-                let mut manifest_overrides_payload: Option<::Value<self::application_instance::ManifestOverridesPayload>> = None;
-                let mut manifest_payload: Option<::Value<self::application_instance::ManifestPayload>> = None;
+                let mut manifest_overrides_payload: Option<
+                    ::Value<self::application_instance::ManifestOverridesPayload>,
+                > = None;
+                let mut manifest_payload: Option<
+                    ::Value<self::application_instance::ManifestPayload>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut runtime_role_arn: Option<::Value<String>> = None;
                 let mut status_filter: Option<::Value<String>> = None;
@@ -120,10 +152,12 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationInstanceProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ApplicationInstanceIdToReplace" => {
-                            application_instance_id_to_replace = ::serde::de::MapAccess::next_value(&mut map)?;
+                            application_instance_id_to_replace =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DefaultRuntimeContextDevice" => {
-                            default_runtime_context_device = ::serde::de::MapAccess::next_value(&mut map)?;
+                            default_runtime_context_device =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -132,7 +166,8 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationInstanceProperties {
                             device_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ManifestOverridesPayload" => {
-                            manifest_overrides_payload = ::serde::de::MapAccess::next_value(&mut map)?;
+                            manifest_overrides_payload =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ManifestPayload" => {
                             manifest_payload = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -155,11 +190,14 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationInstanceProperties {
 
                 Ok(ApplicationInstanceProperties {
                     application_instance_id_to_replace: application_instance_id_to_replace,
-                    default_runtime_context_device: default_runtime_context_device.ok_or(::serde::de::Error::missing_field("DefaultRuntimeContextDevice"))?,
+                    default_runtime_context_device: default_runtime_context_device.ok_or(
+                        ::serde::de::Error::missing_field("DefaultRuntimeContextDevice"),
+                    )?,
                     description: description,
                     device_id: device_id,
                     manifest_overrides_payload: manifest_overrides_payload,
-                    manifest_payload: manifest_payload.ok_or(::serde::de::Error::missing_field("ManifestPayload"))?,
+                    manifest_payload: manifest_payload
+                        .ok_or(::serde::de::Error::missing_field("ManifestPayload"))?,
                     name: name,
                     runtime_role_arn: runtime_role_arn,
                     status_filter: status_filter,
@@ -194,7 +232,7 @@ impl From<ApplicationInstanceProperties> for ApplicationInstance {
 /// The [`AWS::Panorama::Package`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html) resource type.
 #[derive(Debug, Default)]
 pub struct Package {
-    properties: PackageProperties
+    properties: PackageProperties,
 }
 
 /// Properties for the `Package` resource.
@@ -234,7 +272,10 @@ impl<'de> ::serde::Deserialize<'de> for PackageProperties {
                 write!(f, "a struct of type PackageProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut package_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -251,7 +292,8 @@ impl<'de> ::serde::Deserialize<'de> for PackageProperties {
                 }
 
                 Ok(PackageProperties {
-                    package_name: package_name.ok_or(::serde::de::Error::missing_field("PackageName"))?,
+                    package_name: package_name
+                        .ok_or(::serde::de::Error::missing_field("PackageName"))?,
                     tags: tags,
                 })
             }
@@ -283,7 +325,7 @@ impl From<PackageProperties> for Package {
 /// The [`AWS::Panorama::PackageVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct PackageVersion {
-    properties: PackageVersionProperties
+    properties: PackageVersionProperties,
 }
 
 /// Properties for the `PackageVersion` resource.
@@ -331,17 +373,27 @@ impl ::serde::Serialize for PackageVersionProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "OwnerAccount", owner_account)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PackageId", &self.package_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PackageVersion", &self.package_version)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PackageVersion",
+            &self.package_version,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PatchVersion", &self.patch_version)?;
         if let Some(ref updated_latest_patch_version) = self.updated_latest_patch_version {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpdatedLatestPatchVersion", updated_latest_patch_version)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "UpdatedLatestPatchVersion",
+                updated_latest_patch_version,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for PackageVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PackageVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PackageVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -351,7 +403,10 @@ impl<'de> ::serde::Deserialize<'de> for PackageVersionProperties {
                 write!(f, "a struct of type PackageVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut mark_latest: Option<::Value<bool>> = None;
                 let mut owner_account: Option<::Value<String>> = None;
                 let mut package_id: Option<::Value<String>> = None;
@@ -377,7 +432,8 @@ impl<'de> ::serde::Deserialize<'de> for PackageVersionProperties {
                             patch_version = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "UpdatedLatestPatchVersion" => {
-                            updated_latest_patch_version = ::serde::de::MapAccess::next_value(&mut map)?;
+                            updated_latest_patch_version =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
@@ -387,8 +443,10 @@ impl<'de> ::serde::Deserialize<'de> for PackageVersionProperties {
                     mark_latest: mark_latest,
                     owner_account: owner_account,
                     package_id: package_id.ok_or(::serde::de::Error::missing_field("PackageId"))?,
-                    package_version: package_version.ok_or(::serde::de::Error::missing_field("PackageVersion"))?,
-                    patch_version: patch_version.ok_or(::serde::de::Error::missing_field("PatchVersion"))?,
+                    package_version: package_version
+                        .ok_or(::serde::de::Error::missing_field("PackageVersion"))?,
+                    patch_version: patch_version
+                        .ok_or(::serde::de::Error::missing_field("PatchVersion"))?,
                     updated_latest_patch_version: updated_latest_patch_version,
                 })
             }
@@ -441,7 +499,9 @@ pub mod application_instance {
     }
 
     impl ::codec::DeserializeValue for ManifestOverridesPayload {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ManifestOverridesPayload, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ManifestOverridesPayload, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -451,10 +511,15 @@ pub mod application_instance {
                     write!(f, "a struct of type ManifestOverridesPayload")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut payload_data: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PayloadData" => {
                                 payload_data = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -494,7 +559,9 @@ pub mod application_instance {
     }
 
     impl ::codec::DeserializeValue for ManifestPayload {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ManifestPayload, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ManifestPayload, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -504,10 +571,15 @@ pub mod application_instance {
                     write!(f, "a struct of type ManifestPayload")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut payload_data: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PayloadData" => {
                                 payload_data = ::serde::de::MapAccess::next_value(&mut map)?;

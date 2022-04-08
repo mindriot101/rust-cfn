@@ -3,7 +3,7 @@
 /// The [`AWS::OpsWorksCM::Server`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html) resource type.
 #[derive(Debug, Default)]
 pub struct Server {
-    properties: ServerProperties
+    properties: ServerProperties,
 }
 
 /// Properties for the `Server` resource.
@@ -120,31 +120,55 @@ impl ::serde::Serialize for ServerProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref associate_public_ip_address) = self.associate_public_ip_address {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociatePublicIpAddress", associate_public_ip_address)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssociatePublicIpAddress",
+                associate_public_ip_address,
+            )?;
         }
         if let Some(ref backup_id) = self.backup_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BackupId", backup_id)?;
         }
         if let Some(ref backup_retention_count) = self.backup_retention_count {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BackupRetentionCount", backup_retention_count)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BackupRetentionCount",
+                backup_retention_count,
+            )?;
         }
         if let Some(ref custom_certificate) = self.custom_certificate {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomCertificate", custom_certificate)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CustomCertificate",
+                custom_certificate,
+            )?;
         }
         if let Some(ref custom_domain) = self.custom_domain {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomDomain", custom_domain)?;
         }
         if let Some(ref custom_private_key) = self.custom_private_key {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomPrivateKey", custom_private_key)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CustomPrivateKey",
+                custom_private_key,
+            )?;
         }
         if let Some(ref disable_automated_backup) = self.disable_automated_backup {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisableAutomatedBackup", disable_automated_backup)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DisableAutomatedBackup",
+                disable_automated_backup,
+            )?;
         }
         if let Some(ref engine) = self.engine {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Engine", engine)?;
         }
         if let Some(ref engine_attributes) = self.engine_attributes {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EngineAttributes", engine_attributes)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EngineAttributes",
+                engine_attributes,
+            )?;
         }
         if let Some(ref engine_model) = self.engine_model {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EngineModel", engine_model)?;
@@ -152,24 +176,44 @@ impl ::serde::Serialize for ServerProperties {
         if let Some(ref engine_version) = self.engine_version {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EngineVersion", engine_version)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceProfileArn", &self.instance_profile_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "InstanceProfileArn",
+            &self.instance_profile_arn,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceType", &self.instance_type)?;
         if let Some(ref key_pair) = self.key_pair {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyPair", key_pair)?;
         }
         if let Some(ref preferred_backup_window) = self.preferred_backup_window {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreferredBackupWindow", preferred_backup_window)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PreferredBackupWindow",
+                preferred_backup_window,
+            )?;
         }
         if let Some(ref preferred_maintenance_window) = self.preferred_maintenance_window {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreferredMaintenanceWindow", preferred_maintenance_window)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PreferredMaintenanceWindow",
+                preferred_maintenance_window,
+            )?;
         }
         if let Some(ref security_group_ids) = self.security_group_ids {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", security_group_ids)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroupIds",
+                security_group_ids,
+            )?;
         }
         if let Some(ref server_name) = self.server_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerName", server_name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceRoleArn", &self.service_role_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ServiceRoleArn",
+            &self.service_role_arn,
+        )?;
         if let Some(ref subnet_ids) = self.subnet_ids {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetIds", subnet_ids)?;
         }
@@ -191,7 +235,10 @@ impl<'de> ::serde::Deserialize<'de> for ServerProperties {
                 write!(f, "a struct of type ServerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut associate_public_ip_address: Option<::Value<bool>> = None;
                 let mut backup_id: Option<::Value<String>> = None;
                 let mut backup_retention_count: Option<::Value<u32>> = None;
@@ -200,7 +247,8 @@ impl<'de> ::serde::Deserialize<'de> for ServerProperties {
                 let mut custom_private_key: Option<::Value<String>> = None;
                 let mut disable_automated_backup: Option<::Value<bool>> = None;
                 let mut engine: Option<::Value<String>> = None;
-                let mut engine_attributes: Option<::ValueList<self::server::EngineAttribute>> = None;
+                let mut engine_attributes: Option<::ValueList<self::server::EngineAttribute>> =
+                    None;
                 let mut engine_model: Option<::Value<String>> = None;
                 let mut engine_version: Option<::Value<String>> = None;
                 let mut instance_profile_arn: Option<::Value<String>> = None;
@@ -217,7 +265,8 @@ impl<'de> ::serde::Deserialize<'de> for ServerProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AssociatePublicIpAddress" => {
-                            associate_public_ip_address = ::serde::de::MapAccess::next_value(&mut map)?;
+                            associate_public_ip_address =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "BackupId" => {
                             backup_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -235,7 +284,8 @@ impl<'de> ::serde::Deserialize<'de> for ServerProperties {
                             custom_private_key = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DisableAutomatedBackup" => {
-                            disable_automated_backup = ::serde::de::MapAccess::next_value(&mut map)?;
+                            disable_automated_backup =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Engine" => {
                             engine = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -262,7 +312,8 @@ impl<'de> ::serde::Deserialize<'de> for ServerProperties {
                             preferred_backup_window = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PreferredMaintenanceWindow" => {
-                            preferred_maintenance_window = ::serde::de::MapAccess::next_value(&mut map)?;
+                            preferred_maintenance_window =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SecurityGroupIds" => {
                             security_group_ids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -295,14 +346,17 @@ impl<'de> ::serde::Deserialize<'de> for ServerProperties {
                     engine_attributes: engine_attributes,
                     engine_model: engine_model,
                     engine_version: engine_version,
-                    instance_profile_arn: instance_profile_arn.ok_or(::serde::de::Error::missing_field("InstanceProfileArn"))?,
-                    instance_type: instance_type.ok_or(::serde::de::Error::missing_field("InstanceType"))?,
+                    instance_profile_arn: instance_profile_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceProfileArn"))?,
+                    instance_type: instance_type
+                        .ok_or(::serde::de::Error::missing_field("InstanceType"))?,
                     key_pair: key_pair,
                     preferred_backup_window: preferred_backup_window,
                     preferred_maintenance_window: preferred_maintenance_window,
                     security_group_ids: security_group_ids,
                     server_name: server_name,
-                    service_role_arn: service_role_arn.ok_or(::serde::de::Error::missing_field("ServiceRoleArn"))?,
+                    service_role_arn: service_role_arn
+                        .ok_or(::serde::de::Error::missing_field("ServiceRoleArn"))?,
                     subnet_ids: subnet_ids,
                     tags: tags,
                 })
@@ -364,7 +418,9 @@ pub mod server {
     }
 
     impl ::codec::DeserializeValue for EngineAttribute {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EngineAttribute, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EngineAttribute, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -374,11 +430,16 @@ pub mod server {
                     write!(f, "a struct of type EngineAttribute")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;

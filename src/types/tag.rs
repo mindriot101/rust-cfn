@@ -4,7 +4,7 @@ pub struct Tag {
     #[serde(rename = "Key")]
     key: String,
     #[serde(rename = "Value")]
-    value: String
+    value: String,
 }
 
 impl Tag {
@@ -12,7 +12,7 @@ impl Tag {
     pub fn new<K: Into<String>, V: Into<String>>(&mut self, key: K, value: V) -> Tag {
         Tag {
             key: key.into(),
-            value: value.into()
+            value: value.into(),
         }
     }
 }

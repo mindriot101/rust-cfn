@@ -17,19 +17,22 @@ pub enum ErrorKind {
     /// Any error not part of this list.
     Other,
     #[doc(hidden)]
-    __Nonexhaustive
+    __Nonexhaustive,
 }
 
 #[derive(Debug)]
 /// The error type for CloudFormation operations.
 pub struct Error {
     kind: ErrorKind,
-    message: String
+    message: String,
 }
 
 impl Error {
     pub(crate) fn new<E: fmt::Display>(kind: ErrorKind, err: E) -> Error {
-        Error { kind, message: err.to_string() }
+        Error {
+            kind,
+            message: err.to_string(),
+        }
     }
 
     /// Returns the corresponding `ErrorKind` for this error.
@@ -41,13 +44,14 @@ impl Error {
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self.kind {
-            ErrorKind::Serialization =>
-                write!(f, "An error occurred during serialization or deserialization: {}", self.message),
-            ErrorKind::NotFound =>
-                write!(f, "An item was not found: {}", self.message),
-            ErrorKind::Other =>
-                write!(f, "An unknown error occurred: {}", self.message),
-            ErrorKind::__Nonexhaustive => unreachable!()
+            ErrorKind::Serialization => write!(
+                f,
+                "An error occurred during serialization or deserialization: {}",
+                self.message
+            ),
+            ErrorKind::NotFound => write!(f, "An item was not found: {}", self.message),
+            ErrorKind::Other => write!(f, "An unknown error occurred: {}", self.message),
+            ErrorKind::__Nonexhaustive => unreachable!(),
         }
     }
 }

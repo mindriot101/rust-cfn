@@ -3,7 +3,7 @@
 /// The [`AWS::Personalize::Dataset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html) resource type.
 #[derive(Debug, Default)]
 pub struct Dataset {
-    properties: DatasetProperties
+    properties: DatasetProperties,
 }
 
 /// Properties for the `Dataset` resource.
@@ -39,9 +39,17 @@ pub struct DatasetProperties {
 impl ::serde::Serialize for DatasetProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetGroupArn", &self.dataset_group_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DatasetGroupArn",
+            &self.dataset_group_arn,
+        )?;
         if let Some(ref dataset_import_job) = self.dataset_import_job {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetImportJob", dataset_import_job)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatasetImportJob",
+                dataset_import_job,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetType", &self.dataset_type)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -61,7 +69,10 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
                 write!(f, "a struct of type DatasetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut dataset_group_arn: Option<::Value<String>> = None;
                 let mut dataset_import_job: Option<::Value<self::dataset::DatasetImportJob>> = None;
                 let mut dataset_type: Option<::Value<String>> = None;
@@ -90,9 +101,11 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
                 }
 
                 Ok(DatasetProperties {
-                    dataset_group_arn: dataset_group_arn.ok_or(::serde::de::Error::missing_field("DatasetGroupArn"))?,
+                    dataset_group_arn: dataset_group_arn
+                        .ok_or(::serde::de::Error::missing_field("DatasetGroupArn"))?,
                     dataset_import_job: dataset_import_job,
-                    dataset_type: dataset_type.ok_or(::serde::de::Error::missing_field("DatasetType"))?,
+                    dataset_type: dataset_type
+                        .ok_or(::serde::de::Error::missing_field("DatasetType"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     schema_arn: schema_arn.ok_or(::serde::de::Error::missing_field("SchemaArn"))?,
                 })
@@ -125,7 +138,7 @@ impl From<DatasetProperties> for Dataset {
 /// The [`AWS::Personalize::DatasetGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-datasetgroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct DatasetGroup {
-    properties: DatasetGroupProperties
+    properties: DatasetGroupProperties,
 }
 
 /// Properties for the `DatasetGroup` resource.
@@ -171,7 +184,9 @@ impl ::serde::Serialize for DatasetGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<DatasetGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<DatasetGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -181,7 +196,10 @@ impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
                 write!(f, "a struct of type DatasetGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut domain: Option<::Value<String>> = None;
                 let mut kms_key_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -240,7 +258,7 @@ impl From<DatasetGroupProperties> for DatasetGroup {
 /// The [`AWS::Personalize::Schema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-schema.html) resource type.
 #[derive(Debug, Default)]
 pub struct Schema {
-    properties: SchemaProperties
+    properties: SchemaProperties,
 }
 
 /// Properties for the `Schema` resource.
@@ -286,7 +304,10 @@ impl<'de> ::serde::Deserialize<'de> for SchemaProperties {
                 write!(f, "a struct of type SchemaProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut domain: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut schema: Option<::Value<String>> = None;
@@ -340,7 +361,7 @@ impl From<SchemaProperties> for Schema {
 /// The [`AWS::Personalize::Solution`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html) resource type.
 #[derive(Debug, Default)]
 pub struct Solution {
-    properties: SolutionProperties
+    properties: SolutionProperties,
 }
 
 /// Properties for the `Solution` resource.
@@ -386,13 +407,21 @@ pub struct SolutionProperties {
 impl ::serde::Serialize for SolutionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetGroupArn", &self.dataset_group_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DatasetGroupArn",
+            &self.dataset_group_arn,
+        )?;
         if let Some(ref event_type) = self.event_type {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventType", event_type)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref perform_auto_ml) = self.perform_auto_ml {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PerformAutoML", perform_auto_ml)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PerformAutoML",
+                perform_auto_ml,
+            )?;
         }
         if let Some(ref perform_hpo) = self.perform_hpo {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PerformHPO", perform_hpo)?;
@@ -401,7 +430,11 @@ impl ::serde::Serialize for SolutionProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecipeArn", recipe_arn)?;
         }
         if let Some(ref solution_config) = self.solution_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SolutionConfig", solution_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SolutionConfig",
+                solution_config,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -418,7 +451,10 @@ impl<'de> ::serde::Deserialize<'de> for SolutionProperties {
                 write!(f, "a struct of type SolutionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut dataset_group_arn: Option<::Value<String>> = None;
                 let mut event_type: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -455,7 +491,8 @@ impl<'de> ::serde::Deserialize<'de> for SolutionProperties {
                 }
 
                 Ok(SolutionProperties {
-                    dataset_group_arn: dataset_group_arn.ok_or(::serde::de::Error::missing_field("DatasetGroupArn"))?,
+                    dataset_group_arn: dataset_group_arn
+                        .ok_or(::serde::de::Error::missing_field("DatasetGroupArn"))?,
                     event_type: event_type,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     perform_auto_ml: perform_auto_ml,
@@ -532,7 +569,11 @@ pub mod dataset {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetArn", dataset_arn)?;
             }
             if let Some(ref dataset_import_job_arn) = self.dataset_import_job_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetImportJobArn", dataset_import_job_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DatasetImportJobArn",
+                    dataset_import_job_arn,
+                )?;
             }
             if let Some(ref job_name) = self.job_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "JobName", job_name)?;
@@ -545,7 +586,9 @@ pub mod dataset {
     }
 
     impl ::codec::DeserializeValue for DatasetImportJob {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DatasetImportJob, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DatasetImportJob, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -555,14 +598,19 @@ pub mod dataset {
                     write!(f, "a struct of type DatasetImportJob")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut data_source: Option<::Value<::json::Value>> = None;
                     let mut dataset_arn: Option<::Value<String>> = None;
                     let mut dataset_import_job_arn: Option<::Value<String>> = None;
                     let mut job_name: Option<::Value<String>> = None;
                     let mut role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DataSource" => {
                                 data_source = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -571,7 +619,8 @@ pub mod dataset {
                                 dataset_arn = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DatasetImportJobArn" => {
-                                dataset_import_job_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                                dataset_import_job_arn =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "JobName" => {
                                 job_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -635,16 +684,34 @@ pub mod solution {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref algorithm_hyper_parameters) = self.algorithm_hyper_parameters {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlgorithmHyperParameters", algorithm_hyper_parameters)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AlgorithmHyperParameters",
+                    algorithm_hyper_parameters,
+                )?;
             }
             if let Some(ref auto_ml_config) = self.auto_ml_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoMLConfig", auto_ml_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AutoMLConfig",
+                    auto_ml_config,
+                )?;
             }
             if let Some(ref event_value_threshold) = self.event_value_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventValueThreshold", event_value_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EventValueThreshold",
+                    event_value_threshold,
+                )?;
             }
-            if let Some(ref feature_transformation_parameters) = self.feature_transformation_parameters {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FeatureTransformationParameters", feature_transformation_parameters)?;
+            if let Some(ref feature_transformation_parameters) =
+                self.feature_transformation_parameters
+            {
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FeatureTransformationParameters",
+                    feature_transformation_parameters,
+                )?;
             }
             if let Some(ref hpo_config) = self.hpo_config {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "HpoConfig", hpo_config)?;
@@ -654,7 +721,9 @@ pub mod solution {
     }
 
     impl ::codec::DeserializeValue for SolutionConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SolutionConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SolutionConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -664,26 +733,34 @@ pub mod solution {
                     write!(f, "a struct of type SolutionConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut algorithm_hyper_parameters: Option<::ValueMap<String>> = None;
                     let mut auto_ml_config: Option<::Value<::json::Value>> = None;
                     let mut event_value_threshold: Option<::Value<String>> = None;
                     let mut feature_transformation_parameters: Option<::ValueMap<String>> = None;
                     let mut hpo_config: Option<::Value<::json::Value>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AlgorithmHyperParameters" => {
-                                algorithm_hyper_parameters = ::serde::de::MapAccess::next_value(&mut map)?;
+                                algorithm_hyper_parameters =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AutoMLConfig" => {
                                 auto_ml_config = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EventValueThreshold" => {
-                                event_value_threshold = ::serde::de::MapAccess::next_value(&mut map)?;
+                                event_value_threshold =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FeatureTransformationParameters" => {
-                                feature_transformation_parameters = ::serde::de::MapAccess::next_value(&mut map)?;
+                                feature_transformation_parameters =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HpoConfig" => {
                                 hpo_config = ::serde::de::MapAccess::next_value(&mut map)?;

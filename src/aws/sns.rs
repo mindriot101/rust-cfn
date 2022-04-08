@@ -3,7 +3,7 @@
 /// The [`AWS::SNS::Subscription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html) resource type.
 #[derive(Debug, Default)]
 pub struct Subscription {
-    properties: SubscriptionProperties
+    properties: SubscriptionProperties,
 }
 
 /// Properties for the `Subscription` resource.
@@ -60,7 +60,11 @@ impl ::serde::Serialize for SubscriptionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref delivery_policy) = self.delivery_policy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeliveryPolicy", delivery_policy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DeliveryPolicy",
+                delivery_policy,
+            )?;
         }
         if let Some(ref endpoint) = self.endpoint {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Endpoint", endpoint)?;
@@ -70,7 +74,11 @@ impl ::serde::Serialize for SubscriptionProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Protocol", &self.protocol)?;
         if let Some(ref raw_message_delivery) = self.raw_message_delivery {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RawMessageDelivery", raw_message_delivery)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RawMessageDelivery",
+                raw_message_delivery,
+            )?;
         }
         if let Some(ref redrive_policy) = self.redrive_policy {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RedrivePolicy", redrive_policy)?;
@@ -79,7 +87,11 @@ impl ::serde::Serialize for SubscriptionProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Region", region)?;
         }
         if let Some(ref subscription_role_arn) = self.subscription_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubscriptionRoleArn", subscription_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SubscriptionRoleArn",
+                subscription_role_arn,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "TopicArn", &self.topic_arn)?;
         ::serde::ser::SerializeMap::end(map)
@@ -87,7 +99,9 @@ impl ::serde::Serialize for SubscriptionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for SubscriptionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SubscriptionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SubscriptionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -97,7 +111,10 @@ impl<'de> ::serde::Deserialize<'de> for SubscriptionProperties {
                 write!(f, "a struct of type SubscriptionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut delivery_policy: Option<::Value<::json::Value>> = None;
                 let mut endpoint: Option<::Value<String>> = None;
                 let mut filter_policy: Option<::Value<::json::Value>> = None;
@@ -181,7 +198,7 @@ impl From<SubscriptionProperties> for Subscription {
 /// The [`AWS::SNS::Topic`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html) resource type.
 #[derive(Debug, Default)]
 pub struct Topic {
-    properties: TopicProperties
+    properties: TopicProperties,
 }
 
 /// Properties for the `Topic` resource.
@@ -228,7 +245,11 @@ impl ::serde::Serialize for TopicProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref content_based_deduplication) = self.content_based_deduplication {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContentBasedDeduplication", content_based_deduplication)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContentBasedDeduplication",
+                content_based_deduplication,
+            )?;
         }
         if let Some(ref display_name) = self.display_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisplayName", display_name)?;
@@ -237,7 +258,11 @@ impl ::serde::Serialize for TopicProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "FifoTopic", fifo_topic)?;
         }
         if let Some(ref kms_master_key_id) = self.kms_master_key_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsMasterKeyId", kms_master_key_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KmsMasterKeyId",
+                kms_master_key_id,
+            )?;
         }
         if let Some(ref subscription) = self.subscription {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subscription", subscription)?;
@@ -263,7 +288,10 @@ impl<'de> ::serde::Deserialize<'de> for TopicProperties {
                 write!(f, "a struct of type TopicProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut content_based_deduplication: Option<::Value<bool>> = None;
                 let mut display_name: Option<::Value<String>> = None;
                 let mut fifo_topic: Option<::Value<bool>> = None;
@@ -275,7 +303,8 @@ impl<'de> ::serde::Deserialize<'de> for TopicProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ContentBasedDeduplication" => {
-                            content_based_deduplication = ::serde::de::MapAccess::next_value(&mut map)?;
+                            content_based_deduplication =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DisplayName" => {
                             display_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -337,7 +366,7 @@ impl From<TopicProperties> for Topic {
 /// The [`AWS::SNS::TopicPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html) resource type.
 #[derive(Debug, Default)]
 pub struct TopicPolicy {
-    properties: TopicPolicyProperties
+    properties: TopicPolicyProperties,
 }
 
 /// Properties for the `TopicPolicy` resource.
@@ -358,7 +387,11 @@ pub struct TopicPolicyProperties {
 impl ::serde::Serialize for TopicPolicyProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PolicyDocument",
+            &self.policy_document,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Topics", &self.topics)?;
         ::serde::ser::SerializeMap::end(map)
     }
@@ -375,7 +408,10 @@ impl<'de> ::serde::Deserialize<'de> for TopicPolicyProperties {
                 write!(f, "a struct of type TopicPolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut policy_document: Option<::Value<::json::Value>> = None;
                 let mut topics: Option<::ValueList<String>> = None;
 
@@ -392,7 +428,8 @@ impl<'de> ::serde::Deserialize<'de> for TopicPolicyProperties {
                 }
 
                 Ok(TopicPolicyProperties {
-                    policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                    policy_document: policy_document
+                        .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
                     topics: topics.ok_or(::serde::de::Error::missing_field("Topics"))?,
                 })
             }
@@ -459,11 +496,16 @@ pub mod topic {
                     write!(f, "a struct of type Subscription")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut endpoint: Option<::Value<String>> = None;
                     let mut protocol: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Endpoint" => {
                                 endpoint = ::serde::de::MapAccess::next_value(&mut map)?;

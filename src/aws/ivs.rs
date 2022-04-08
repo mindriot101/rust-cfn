@@ -3,7 +3,7 @@
 /// The [`AWS::IVS::Channel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html) resource type.
 #[derive(Debug, Default)]
 pub struct Channel {
-    properties: ChannelProperties
+    properties: ChannelProperties,
 }
 
 /// Properties for the `Channel` resource.
@@ -54,7 +54,11 @@ impl ::serde::Serialize for ChannelProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
         if let Some(ref recording_configuration_arn) = self.recording_configuration_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecordingConfigurationArn", recording_configuration_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RecordingConfigurationArn",
+                recording_configuration_arn,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -77,7 +81,10 @@ impl<'de> ::serde::Deserialize<'de> for ChannelProperties {
                 write!(f, "a struct of type ChannelProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut authorized: Option<::Value<bool>> = None;
                 let mut latency_mode: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -97,7 +104,8 @@ impl<'de> ::serde::Deserialize<'de> for ChannelProperties {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RecordingConfigurationArn" => {
-                            recording_configuration_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            recording_configuration_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -146,7 +154,7 @@ impl From<ChannelProperties> for Channel {
 /// The [`AWS::IVS::PlaybackKeyPair`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html) resource type.
 #[derive(Debug, Default)]
 pub struct PlaybackKeyPair {
-    properties: PlaybackKeyPairProperties
+    properties: PlaybackKeyPairProperties,
 }
 
 /// Properties for the `PlaybackKeyPair` resource.
@@ -175,7 +183,11 @@ impl ::serde::Serialize for PlaybackKeyPairProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PublicKeyMaterial", &self.public_key_material)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PublicKeyMaterial",
+            &self.public_key_material,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -184,7 +196,9 @@ impl ::serde::Serialize for PlaybackKeyPairProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for PlaybackKeyPairProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PlaybackKeyPairProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PlaybackKeyPairProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -194,7 +208,10 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackKeyPairProperties {
                 write!(f, "a struct of type PlaybackKeyPairProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut public_key_material: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -216,7 +233,8 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackKeyPairProperties {
 
                 Ok(PlaybackKeyPairProperties {
                     name: name,
-                    public_key_material: public_key_material.ok_or(::serde::de::Error::missing_field("PublicKeyMaterial"))?,
+                    public_key_material: public_key_material
+                        .ok_or(::serde::de::Error::missing_field("PublicKeyMaterial"))?,
                     tags: tags,
                 })
             }
@@ -248,7 +266,7 @@ impl From<PlaybackKeyPairProperties> for PlaybackKeyPair {
 /// The [`AWS::IVS::RecordingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html) resource type.
 #[derive(Debug, Default)]
 pub struct RecordingConfiguration {
-    properties: RecordingConfigurationProperties
+    properties: RecordingConfigurationProperties,
 }
 
 /// Properties for the `RecordingConfiguration` resource.
@@ -273,13 +291,18 @@ pub struct RecordingConfigurationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub thumbnail_configuration: Option<::Value<self::recording_configuration::ThumbnailConfiguration>>,
+    pub thumbnail_configuration:
+        Option<::Value<self::recording_configuration::ThumbnailConfiguration>>,
 }
 
 impl ::serde::Serialize for RecordingConfigurationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationConfiguration", &self.destination_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DestinationConfiguration",
+            &self.destination_configuration,
+        )?;
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
@@ -287,14 +310,20 @@ impl ::serde::Serialize for RecordingConfigurationProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref thumbnail_configuration) = self.thumbnail_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ThumbnailConfiguration", thumbnail_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ThumbnailConfiguration",
+                thumbnail_configuration,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for RecordingConfigurationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RecordingConfigurationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RecordingConfigurationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -304,16 +333,24 @@ impl<'de> ::serde::Deserialize<'de> for RecordingConfigurationProperties {
                 write!(f, "a struct of type RecordingConfigurationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut destination_configuration: Option<::Value<self::recording_configuration::DestinationConfiguration>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut destination_configuration: Option<
+                    ::Value<self::recording_configuration::DestinationConfiguration>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut thumbnail_configuration: Option<::Value<self::recording_configuration::ThumbnailConfiguration>> = None;
+                let mut thumbnail_configuration: Option<
+                    ::Value<self::recording_configuration::ThumbnailConfiguration>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "DestinationConfiguration" => {
-                            destination_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            destination_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Name" => {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -329,7 +366,9 @@ impl<'de> ::serde::Deserialize<'de> for RecordingConfigurationProperties {
                 }
 
                 Ok(RecordingConfigurationProperties {
-                    destination_configuration: destination_configuration.ok_or(::serde::de::Error::missing_field("DestinationConfiguration"))?,
+                    destination_configuration: destination_configuration.ok_or(
+                        ::serde::de::Error::missing_field("DestinationConfiguration"),
+                    )?,
                     name: name,
                     tags: tags,
                     thumbnail_configuration: thumbnail_configuration,
@@ -363,7 +402,7 @@ impl From<RecordingConfigurationProperties> for RecordingConfiguration {
 /// The [`AWS::IVS::StreamKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-streamkey.html) resource type.
 #[derive(Debug, Default)]
 pub struct StreamKey {
-    properties: StreamKeyProperties
+    properties: StreamKeyProperties,
 }
 
 /// Properties for the `StreamKey` resource.
@@ -403,7 +442,10 @@ impl<'de> ::serde::Deserialize<'de> for StreamKeyProperties {
                 write!(f, "a struct of type StreamKeyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut channel_arn: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -420,7 +462,8 @@ impl<'de> ::serde::Deserialize<'de> for StreamKeyProperties {
                 }
 
                 Ok(StreamKeyProperties {
-                    channel_arn: channel_arn.ok_or(::serde::de::Error::missing_field("ChannelArn"))?,
+                    channel_arn: channel_arn
+                        .ok_or(::serde::de::Error::missing_field("ChannelArn"))?,
                     tags: tags,
                 })
             }
@@ -471,7 +514,9 @@ pub mod recording_configuration {
     }
 
     impl ::codec::DeserializeValue for DestinationConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DestinationConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DestinationConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -481,10 +526,15 @@ pub mod recording_configuration {
                     write!(f, "a struct of type DestinationConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut s3: Option<::Value<S3DestinationConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "S3" => {
                                 s3 = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -522,7 +572,9 @@ pub mod recording_configuration {
     }
 
     impl ::codec::DeserializeValue for S3DestinationConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3DestinationConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<S3DestinationConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -532,10 +584,15 @@ pub mod recording_configuration {
                     write!(f, "a struct of type S3DestinationConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut bucket_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BucketName" => {
                                 bucket_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -545,7 +602,8 @@ pub mod recording_configuration {
                     }
 
                     Ok(S3DestinationConfiguration {
-                        bucket_name: bucket_name.ok_or(::serde::de::Error::missing_field("BucketName"))?,
+                        bucket_name: bucket_name
+                            .ok_or(::serde::de::Error::missing_field("BucketName"))?,
                     })
                 }
             }
@@ -572,16 +630,26 @@ pub mod recording_configuration {
     impl ::codec::SerializeValue for ThumbnailConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecordingMode", &self.recording_mode)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RecordingMode",
+                &self.recording_mode,
+            )?;
             if let Some(ref target_interval_seconds) = self.target_interval_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetIntervalSeconds", target_interval_seconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TargetIntervalSeconds",
+                    target_interval_seconds,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ThumbnailConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ThumbnailConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ThumbnailConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -591,24 +659,31 @@ pub mod recording_configuration {
                     write!(f, "a struct of type ThumbnailConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut recording_mode: Option<::Value<String>> = None;
                     let mut target_interval_seconds: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "RecordingMode" => {
                                 recording_mode = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "TargetIntervalSeconds" => {
-                                target_interval_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                                target_interval_seconds =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(ThumbnailConfiguration {
-                        recording_mode: recording_mode.ok_or(::serde::de::Error::missing_field("RecordingMode"))?,
+                        recording_mode: recording_mode
+                            .ok_or(::serde::de::Error::missing_field("RecordingMode"))?,
                         target_interval_seconds: target_interval_seconds,
                     })
                 }

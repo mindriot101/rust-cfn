@@ -3,7 +3,7 @@
 /// The [`AWS::IoTFleetHub::Application`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html) resource type.
 #[derive(Debug, Default)]
 pub struct Application {
-    properties: ApplicationProperties
+    properties: ApplicationProperties,
 }
 
 /// Properties for the `Application` resource.
@@ -35,9 +35,17 @@ impl ::serde::Serialize for ApplicationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref application_description) = self.application_description {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationDescription", application_description)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ApplicationDescription",
+                application_description,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationName", &self.application_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ApplicationName",
+            &self.application_name,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -57,7 +65,10 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
                 write!(f, "a struct of type ApplicationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application_description: Option<::Value<String>> = None;
                 let mut application_name: Option<::Value<String>> = None;
                 let mut role_arn: Option<::Value<String>> = None;
@@ -83,7 +94,8 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
 
                 Ok(ApplicationProperties {
                     application_description: application_description,
-                    application_name: application_name.ok_or(::serde::de::Error::missing_field("ApplicationName"))?,
+                    application_name: application_name
+                        .ok_or(::serde::de::Error::missing_field("ApplicationName"))?,
                     role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
                     tags: tags,
                 })

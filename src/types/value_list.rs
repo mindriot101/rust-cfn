@@ -1,8 +1,8 @@
 use std::iter::FromIterator;
 
-use serde::{Serialize, Serializer, Deserialize, Deserializer};
+use serde::{Deserialize, Deserializer, Serialize, Serializer};
 
-use ::codec::{SerializeValue, DeserializeValue};
+use codec::{DeserializeValue, SerializeValue};
 
 /// Like `Value`, except it is used in place of lists of `Value`s in
 /// templates.
@@ -16,7 +16,8 @@ pub struct ValueList<T>(ValueListInner<T>);
 impl<T> ValueList<T> {
     /// Create a new value list.
     pub fn new<I>(values: I) -> ValueList<T>
-        where I: IntoIterator<Item = ::Value<T>>
+    where
+        I: IntoIterator<Item = ::Value<T>>,
     {
         ValueList(ValueListInner::Values(Vec::from_iter(values)))
     }
@@ -57,7 +58,8 @@ impl<T> Default for ValueList<T> {
 
 impl<T> FromIterator<::Value<T>> for ValueList<T> {
     fn from_iter<I>(iter: I) -> ValueList<T>
-        where I: IntoIterator<Item = ::Value<T>>
+    where
+        I: IntoIterator<Item = ::Value<T>>,
     {
         ValueList::new(iter)
     }
@@ -66,13 +68,13 @@ impl<T> FromIterator<::Value<T>> for ValueList<T> {
 #[derive(Debug)]
 enum ValueListInner<T> {
     Values(Vec<::Value<T>>),
-    Ref(String)
+    Ref(String),
 }
 
 #[derive(Serialize, Deserialize)]
 struct SerdeRef<'a> {
     #[serde(rename = "Ref", borrow)]
-    id: &'a str
+    id: &'a str,
 }
 
 #[derive(Serialize)]
@@ -80,7 +82,7 @@ struct SerdeRef<'a> {
 enum SerializeValueList<'a, T: 'a> {
     Values(&'a Vec<::Value<T>>),
     #[serde(borrow)]
-    Ref(SerdeRef<'a>)
+    Ref(SerdeRef<'a>),
 }
 
 #[derive(Deserialize)]
@@ -88,14 +90,14 @@ enum SerializeValueList<'a, T: 'a> {
 enum DeserializeValueList<'a, T> {
     Values(Vec<::Value<T>>),
     #[serde(borrow)]
-    Ref(SerdeRef<'a>)
+    Ref(SerdeRef<'a>),
 }
 
 impl<T: SerializeValue> Serialize for ValueList<T> {
     fn serialize<S: Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let proxy = match self.0 {
             ValueListInner::Values(ref values) => SerializeValueList::Values(values),
-            ValueListInner::Ref(ref id) => SerializeValueList::Ref(SerdeRef { id })
+            ValueListInner::Ref(ref id) => SerializeValueList::Ref(SerdeRef { id }),
         };
         Serialize::serialize(&proxy, s)
     }
@@ -105,10 +107,8 @@ impl<'de, T: DeserializeValue> Deserialize<'de> for ValueList<T> {
     fn deserialize<D: Deserializer<'de>>(d: D) -> Result<Self, D::Error> {
         Deserialize::deserialize(d).map(|proxy| {
             let inner = match proxy {
-                DeserializeValueList::Values(t) =>
-                    ValueListInner::Values(t),
-                DeserializeValueList::Ref(SerdeRef { id }) =>
-                    ValueListInner::Ref(id.to_owned())
+                DeserializeValueList::Values(t) => ValueListInner::Values(t),
+                DeserializeValueList::Ref(SerdeRef { id }) => ValueListInner::Ref(id.to_owned()),
             };
             ValueList(inner)
         })

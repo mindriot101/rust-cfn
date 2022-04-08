@@ -3,7 +3,7 @@
 /// The [`AWS::RAM::ResourceShare`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourceShare {
-    properties: ResourceShareProperties
+    properties: ResourceShareProperties,
 }
 
 /// Properties for the `ResourceShare` resource.
@@ -45,11 +45,19 @@ impl ::serde::Serialize for ResourceShareProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref allow_external_principals) = self.allow_external_principals {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowExternalPrincipals", allow_external_principals)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AllowExternalPrincipals",
+                allow_external_principals,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref permission_arns) = self.permission_arns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionArns", permission_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PermissionArns",
+                permission_arns,
+            )?;
         }
         if let Some(ref principals) = self.principals {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Principals", principals)?;
@@ -65,7 +73,9 @@ impl ::serde::Serialize for ResourceShareProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResourceShareProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceShareProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResourceShareProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -75,7 +85,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceShareProperties {
                 write!(f, "a struct of type ResourceShareProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut allow_external_principals: Option<::Value<bool>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut permission_arns: Option<::ValueList<String>> = None;
@@ -86,7 +99,8 @@ impl<'de> ::serde::Deserialize<'de> for ResourceShareProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AllowExternalPrincipals" => {
-                            allow_external_principals = ::serde::de::MapAccess::next_value(&mut map)?;
+                            allow_external_principals =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Name" => {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;

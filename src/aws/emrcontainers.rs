@@ -3,7 +3,7 @@
 /// The [`AWS::EMRContainers::VirtualCluster`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrcontainers-virtualcluster.html) resource type.
 #[derive(Debug, Default)]
 pub struct VirtualCluster {
-    properties: VirtualClusterProperties
+    properties: VirtualClusterProperties,
 }
 
 /// Properties for the `VirtualCluster` resource.
@@ -29,7 +29,11 @@ pub struct VirtualClusterProperties {
 impl ::serde::Serialize for VirtualClusterProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerProvider", &self.container_provider)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ContainerProvider",
+            &self.container_provider,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -39,7 +43,9 @@ impl ::serde::Serialize for VirtualClusterProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for VirtualClusterProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<VirtualClusterProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<VirtualClusterProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -49,8 +55,13 @@ impl<'de> ::serde::Deserialize<'de> for VirtualClusterProperties {
                 write!(f, "a struct of type VirtualClusterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut container_provider: Option<::Value<self::virtual_cluster::ContainerProvider>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut container_provider: Option<
+                    ::Value<self::virtual_cluster::ContainerProvider>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -70,7 +81,8 @@ impl<'de> ::serde::Deserialize<'de> for VirtualClusterProperties {
                 }
 
                 Ok(VirtualClusterProperties {
-                    container_provider: container_provider.ok_or(::serde::de::Error::missing_field("ContainerProvider"))?,
+                    container_provider: container_provider
+                        .ok_or(::serde::de::Error::missing_field("ContainerProvider"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     tags: tags,
                 })
@@ -122,7 +134,9 @@ pub mod virtual_cluster {
     }
 
     impl ::codec::DeserializeValue for ContainerInfo {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ContainerInfo, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ContainerInfo, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -132,10 +146,15 @@ pub mod virtual_cluster {
                     write!(f, "a struct of type ContainerInfo")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut eks_info: Option<::Value<EksInfo>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EksInfo" => {
                                 eks_info = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -185,7 +204,9 @@ pub mod virtual_cluster {
     }
 
     impl ::codec::DeserializeValue for ContainerProvider {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ContainerProvider, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ContainerProvider, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -195,12 +216,17 @@ pub mod virtual_cluster {
                     write!(f, "a struct of type ContainerProvider")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut id: Option<::Value<String>> = None;
                     let mut info: Option<::Value<ContainerInfo>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Id" => {
                                 id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -256,10 +282,15 @@ pub mod virtual_cluster {
                     write!(f, "a struct of type EksInfo")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut namespace: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Namespace" => {
                                 namespace = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -269,7 +300,8 @@ pub mod virtual_cluster {
                     }
 
                     Ok(EksInfo {
-                        namespace: namespace.ok_or(::serde::de::Error::missing_field("Namespace"))?,
+                        namespace: namespace
+                            .ok_or(::serde::de::Error::missing_field("Namespace"))?,
                     })
                 }
             }

@@ -3,7 +3,7 @@
 /// The [`AWS::EventSchemas::Discoverer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html) resource type.
 #[derive(Debug, Default)]
 pub struct Discoverer {
-    properties: DiscovererProperties
+    properties: DiscovererProperties,
 }
 
 /// Properties for the `Discoverer` resource.
@@ -59,7 +59,10 @@ impl<'de> ::serde::Deserialize<'de> for DiscovererProperties {
                 write!(f, "a struct of type DiscovererProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut cross_account: Option<::Value<bool>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut source_arn: Option<::Value<String>> = None;
@@ -118,7 +121,7 @@ impl From<DiscovererProperties> for Discoverer {
 /// The [`AWS::EventSchemas::Registry`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html) resource type.
 #[derive(Debug, Default)]
 pub struct Registry {
-    properties: RegistryProperties
+    properties: RegistryProperties,
 }
 
 /// Properties for the `Registry` resource.
@@ -168,7 +171,10 @@ impl<'de> ::serde::Deserialize<'de> for RegistryProperties {
                 write!(f, "a struct of type RegistryProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut registry_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<self::registry::TagsEntry>> = None;
@@ -222,7 +228,7 @@ impl From<RegistryProperties> for Registry {
 /// The [`AWS::EventSchemas::RegistryPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registrypolicy.html) resource type.
 #[derive(Debug, Default)]
 pub struct RegistryPolicy {
-    properties: RegistryPolicyProperties
+    properties: RegistryPolicyProperties,
 }
 
 /// Properties for the `RegistryPolicy` resource.
@@ -258,7 +264,9 @@ impl ::serde::Serialize for RegistryPolicyProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RegistryPolicyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RegistryPolicyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -268,7 +276,10 @@ impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
                 write!(f, "a struct of type RegistryPolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut policy: Option<::Value<::json::Value>> = None;
                 let mut registry_name: Option<::Value<String>> = None;
                 let mut revision_id: Option<::Value<String>> = None;
@@ -290,7 +301,8 @@ impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
 
                 Ok(RegistryPolicyProperties {
                     policy: policy.ok_or(::serde::de::Error::missing_field("Policy"))?,
-                    registry_name: registry_name.ok_or(::serde::de::Error::missing_field("RegistryName"))?,
+                    registry_name: registry_name
+                        .ok_or(::serde::de::Error::missing_field("RegistryName"))?,
                     revision_id: revision_id,
                 })
             }
@@ -322,7 +334,7 @@ impl From<RegistryPolicyProperties> for RegistryPolicy {
 /// The [`AWS::EventSchemas::Schema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html) resource type.
 #[derive(Debug, Default)]
 pub struct Schema {
-    properties: SchemaProperties
+    properties: SchemaProperties,
 }
 
 /// Properties for the `Schema` resource.
@@ -390,7 +402,10 @@ impl<'de> ::serde::Deserialize<'de> for SchemaProperties {
                 write!(f, "a struct of type SchemaProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut content: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut registry_name: Option<::Value<String>> = None;
@@ -425,7 +440,8 @@ impl<'de> ::serde::Deserialize<'de> for SchemaProperties {
                 Ok(SchemaProperties {
                     content: content.ok_or(::serde::de::Error::missing_field("Content"))?,
                     description: description,
-                    registry_name: registry_name.ok_or(::serde::de::Error::missing_field("RegistryName"))?,
+                    registry_name: registry_name
+                        .ok_or(::serde::de::Error::missing_field("RegistryName"))?,
                     schema_name: schema_name,
                     tags: tags,
                     r#type: r#type.ok_or(::serde::de::Error::missing_field("Type"))?,
@@ -494,11 +510,16 @@ pub mod discoverer {
                     write!(f, "a struct of type TagsEntry")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -560,11 +581,16 @@ pub mod registry {
                     write!(f, "a struct of type TagsEntry")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -626,11 +652,16 @@ pub mod schema {
                     write!(f, "a struct of type TagsEntry")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;

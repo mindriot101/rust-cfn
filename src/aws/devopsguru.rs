@@ -3,7 +3,7 @@
 /// The [`AWS::DevOpsGuru::NotificationChannel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-notificationchannel.html) resource type.
 #[derive(Debug, Default)]
 pub struct NotificationChannel {
-    properties: NotificationChannelProperties
+    properties: NotificationChannelProperties,
 }
 
 /// Properties for the `NotificationChannel` resource.
@@ -25,7 +25,9 @@ impl ::serde::Serialize for NotificationChannelProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for NotificationChannelProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<NotificationChannelProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<NotificationChannelProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -35,8 +37,13 @@ impl<'de> ::serde::Deserialize<'de> for NotificationChannelProperties {
                 write!(f, "a struct of type NotificationChannelProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut config: Option<::Value<self::notification_channel::NotificationChannelConfig>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut config: Option<
+                    ::Value<self::notification_channel::NotificationChannelConfig>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -79,7 +86,7 @@ impl From<NotificationChannelProperties> for NotificationChannel {
 /// The [`AWS::DevOpsGuru::ResourceCollection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-resourcecollection.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourceCollection {
-    properties: ResourceCollectionProperties
+    properties: ResourceCollectionProperties,
 }
 
 /// Properties for the `ResourceCollection` resource.
@@ -95,13 +102,19 @@ pub struct ResourceCollectionProperties {
 impl ::serde::Serialize for ResourceCollectionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceCollectionFilter", &self.resource_collection_filter)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ResourceCollectionFilter",
+            &self.resource_collection_filter,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResourceCollectionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceCollectionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResourceCollectionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -111,20 +124,28 @@ impl<'de> ::serde::Deserialize<'de> for ResourceCollectionProperties {
                 write!(f, "a struct of type ResourceCollectionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut resource_collection_filter: Option<::Value<self::resource_collection::ResourceCollectionFilter>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut resource_collection_filter: Option<
+                    ::Value<self::resource_collection::ResourceCollectionFilter>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ResourceCollectionFilter" => {
-                            resource_collection_filter = ::serde::de::MapAccess::next_value(&mut map)?;
+                            resource_collection_filter =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
                 }
 
                 Ok(ResourceCollectionProperties {
-                    resource_collection_filter: resource_collection_filter.ok_or(::serde::de::Error::missing_field("ResourceCollectionFilter"))?,
+                    resource_collection_filter: resource_collection_filter.ok_or(
+                        ::serde::de::Error::missing_field("ResourceCollectionFilter"),
+                    )?,
                 })
             }
         }
@@ -176,7 +197,9 @@ pub mod notification_channel {
     }
 
     impl ::codec::DeserializeValue for NotificationChannelConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NotificationChannelConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NotificationChannelConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -186,10 +209,15 @@ pub mod notification_channel {
                     write!(f, "a struct of type NotificationChannelConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut sns: Option<::Value<SnsChannelConfig>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Sns" => {
                                 sns = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -198,9 +226,7 @@ pub mod notification_channel {
                         }
                     }
 
-                    Ok(NotificationChannelConfig {
-                        sns: sns,
-                    })
+                    Ok(NotificationChannelConfig { sns: sns })
                 }
             }
 
@@ -229,7 +255,9 @@ pub mod notification_channel {
     }
 
     impl ::codec::DeserializeValue for SnsChannelConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SnsChannelConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SnsChannelConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -239,10 +267,15 @@ pub mod notification_channel {
                     write!(f, "a struct of type SnsChannelConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut topic_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TopicArn" => {
                                 topic_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -286,7 +319,9 @@ pub mod resource_collection {
     }
 
     impl ::codec::DeserializeValue for CloudFormationCollectionFilter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CloudFormationCollectionFilter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CloudFormationCollectionFilter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -296,10 +331,15 @@ pub mod resource_collection {
                     write!(f, "a struct of type CloudFormationCollectionFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut stack_names: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "StackNames" => {
                                 stack_names = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -337,7 +377,11 @@ pub mod resource_collection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_formation) = self.cloud_formation {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudFormation", cloud_formation)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CloudFormation",
+                    cloud_formation,
+                )?;
             }
             if let Some(ref tags) = self.tags {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -347,7 +391,9 @@ pub mod resource_collection {
     }
 
     impl ::codec::DeserializeValue for ResourceCollectionFilter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceCollectionFilter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ResourceCollectionFilter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -357,11 +403,16 @@ pub mod resource_collection {
                     write!(f, "a struct of type ResourceCollectionFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cloud_formation: Option<::Value<CloudFormationCollectionFilter>> = None;
                     let mut tags: Option<::ValueList<TagCollection>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CloudFormation" => {
                                 cloud_formation = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -403,7 +454,11 @@ pub mod resource_collection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref app_boundary_key) = self.app_boundary_key {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppBoundaryKey", app_boundary_key)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AppBoundaryKey",
+                    app_boundary_key,
+                )?;
             }
             if let Some(ref tag_values) = self.tag_values {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "TagValues", tag_values)?;
@@ -413,7 +468,9 @@ pub mod resource_collection {
     }
 
     impl ::codec::DeserializeValue for TagCollection {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TagCollection, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TagCollection, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -423,11 +480,16 @@ pub mod resource_collection {
                     write!(f, "a struct of type TagCollection")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_boundary_key: Option<::Value<String>> = None;
                     let mut tag_values: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppBoundaryKey" => {
                                 app_boundary_key = ::serde::de::MapAccess::next_value(&mut map)?;
