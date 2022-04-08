@@ -2,7 +2,7 @@ use std::collections::BTreeMap;
 use std::io;
 
 use super::{generate_field_type, mutate_field_name, Printer};
-use model::*;
+use crate::model::*;
 
 pub(super) fn generate_serialize(
     trait_name: &str,
