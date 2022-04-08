@@ -13,22 +13,22 @@ pub struct PublicRepositoryProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub repository_catalog_data: Option<::Value<::json::Value>>,
+    pub repository_catalog_data: Option<crate::Value<crate::json::Value>>,
     /// Property [`RepositoryName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub repository_name: Option<::Value<String>>,
+    pub repository_name: Option<crate::Value<String>>,
     /// Property [`RepositoryPolicyText`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub repository_policy_text: Option<::Value<::json::Value>>,
+    pub repository_policy_text: Option<crate::Value<crate::json::Value>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for PublicRepositoryProperties {
@@ -79,10 +79,10 @@ impl<'de> ::serde::Deserialize<'de> for PublicRepositoryProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut repository_catalog_data: Option<::Value<::json::Value>> = None;
-                let mut repository_name: Option<::Value<String>> = None;
-                let mut repository_policy_text: Option<::Value<::json::Value>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut repository_catalog_data: Option<crate::Value<crate::json::Value>> = None;
+                let mut repository_name: Option<crate::Value<String>> = None;
+                let mut repository_policy_text: Option<crate::Value<crate::json::Value>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -115,7 +115,7 @@ impl<'de> ::serde::Deserialize<'de> for PublicRepositoryProperties {
     }
 }
 
-impl ::Resource for PublicRepository {
+impl crate::Resource for PublicRepository {
     type Properties = PublicRepositoryProperties;
     const TYPE: &'static str = "AWS::ECR::PublicRepository";
     fn properties(&self) -> &PublicRepositoryProperties {
@@ -126,7 +126,7 @@ impl ::Resource for PublicRepository {
     }
 }
 
-impl ::private::Sealed for PublicRepository {}
+impl crate::private::Sealed for PublicRepository {}
 
 impl From<PublicRepositoryProperties> for PublicRepository {
     fn from(properties: PublicRepositoryProperties) -> PublicRepository {
@@ -147,12 +147,12 @@ pub struct PullThroughCacheRuleProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ecr_repository_prefix: Option<::Value<String>>,
+    pub ecr_repository_prefix: Option<crate::Value<String>>,
     /// Property [`UpstreamRegistryUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html#cfn-ecr-pullthroughcacherule-upstreamregistryurl).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub upstream_registry_url: Option<::Value<String>>,
+    pub upstream_registry_url: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for PullThroughCacheRuleProperties {
@@ -193,8 +193,8 @@ impl<'de> ::serde::Deserialize<'de> for PullThroughCacheRuleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut ecr_repository_prefix: Option<::Value<String>> = None;
-                let mut upstream_registry_url: Option<::Value<String>> = None;
+                let mut ecr_repository_prefix: Option<crate::Value<String>> = None;
+                let mut upstream_registry_url: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -219,7 +219,7 @@ impl<'de> ::serde::Deserialize<'de> for PullThroughCacheRuleProperties {
     }
 }
 
-impl ::Resource for PullThroughCacheRule {
+impl crate::Resource for PullThroughCacheRule {
     type Properties = PullThroughCacheRuleProperties;
     const TYPE: &'static str = "AWS::ECR::PullThroughCacheRule";
     fn properties(&self) -> &PullThroughCacheRuleProperties {
@@ -230,7 +230,7 @@ impl ::Resource for PullThroughCacheRule {
     }
 }
 
-impl ::private::Sealed for PullThroughCacheRule {}
+impl crate::private::Sealed for PullThroughCacheRule {}
 
 impl From<PullThroughCacheRuleProperties> for PullThroughCacheRule {
     fn from(properties: PullThroughCacheRuleProperties) -> PullThroughCacheRule {
@@ -251,7 +251,7 @@ pub struct RegistryPolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy_text: ::Value<::json::Value>,
+    pub policy_text: crate::Value<crate::json::Value>,
 }
 
 impl ::serde::Serialize for RegistryPolicyProperties {
@@ -279,7 +279,7 @@ impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut policy_text: Option<::Value<::json::Value>> = None;
+                let mut policy_text: Option<crate::Value<crate::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -301,7 +301,7 @@ impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
     }
 }
 
-impl ::Resource for RegistryPolicy {
+impl crate::Resource for RegistryPolicy {
     type Properties = RegistryPolicyProperties;
     const TYPE: &'static str = "AWS::ECR::RegistryPolicy";
     fn properties(&self) -> &RegistryPolicyProperties {
@@ -312,7 +312,7 @@ impl ::Resource for RegistryPolicy {
     }
 }
 
-impl ::private::Sealed for RegistryPolicy {}
+impl crate::private::Sealed for RegistryPolicy {}
 
 impl From<RegistryPolicyProperties> for RegistryPolicy {
     fn from(properties: RegistryPolicyProperties) -> RegistryPolicy {
@@ -334,7 +334,7 @@ pub struct ReplicationConfigurationProperties {
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub replication_configuration:
-        ::Value<self::replication_configuration::ReplicationConfiguration>,
+        crate::Value<self::replication_configuration::ReplicationConfiguration>,
 }
 
 impl ::serde::Serialize for ReplicationConfigurationProperties {
@@ -367,7 +367,7 @@ impl<'de> ::serde::Deserialize<'de> for ReplicationConfigurationProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut replication_configuration: Option<
-                    ::Value<self::replication_configuration::ReplicationConfiguration>,
+                    crate::Value<self::replication_configuration::ReplicationConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -392,7 +392,7 @@ impl<'de> ::serde::Deserialize<'de> for ReplicationConfigurationProperties {
     }
 }
 
-impl ::Resource for ReplicationConfiguration {
+impl crate::Resource for ReplicationConfiguration {
     type Properties = ReplicationConfigurationProperties;
     const TYPE: &'static str = "AWS::ECR::ReplicationConfiguration";
     fn properties(&self) -> &ReplicationConfigurationProperties {
@@ -403,7 +403,7 @@ impl ::Resource for ReplicationConfiguration {
     }
 }
 
-impl ::private::Sealed for ReplicationConfiguration {}
+impl crate::private::Sealed for ReplicationConfiguration {}
 
 impl From<ReplicationConfigurationProperties> for ReplicationConfiguration {
     fn from(properties: ReplicationConfigurationProperties) -> ReplicationConfiguration {
@@ -424,37 +424,37 @@ pub struct RepositoryProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub encryption_configuration: Option<::Value<self::repository::EncryptionConfiguration>>,
+    pub encryption_configuration: Option<crate::Value<self::repository::EncryptionConfiguration>>,
     /// Property [`ImageScanningConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub image_scanning_configuration: Option<::Value<self::repository::ImageScanningConfiguration>>,
+    pub image_scanning_configuration: Option<crate::Value<self::repository::ImageScanningConfiguration>>,
     /// Property [`ImageTagMutability`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub image_tag_mutability: Option<::Value<String>>,
+    pub image_tag_mutability: Option<crate::Value<String>>,
     /// Property [`LifecyclePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub lifecycle_policy: Option<::Value<self::repository::LifecyclePolicy>>,
+    pub lifecycle_policy: Option<crate::Value<self::repository::LifecyclePolicy>>,
     /// Property [`RepositoryName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub repository_name: Option<::Value<String>>,
+    pub repository_name: Option<crate::Value<String>>,
     /// Property [`RepositoryPolicyText`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub repository_policy_text: Option<::Value<::json::Value>>,
+    pub repository_policy_text: Option<crate::Value<crate::json::Value>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for RepositoryProperties {
@@ -525,16 +525,16 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut encryption_configuration: Option<
-                    ::Value<self::repository::EncryptionConfiguration>,
+                    crate::Value<self::repository::EncryptionConfiguration>,
                 > = None;
                 let mut image_scanning_configuration: Option<
-                    ::Value<self::repository::ImageScanningConfiguration>,
+                    crate::Value<self::repository::ImageScanningConfiguration>,
                 > = None;
-                let mut image_tag_mutability: Option<::Value<String>> = None;
-                let mut lifecycle_policy: Option<::Value<self::repository::LifecyclePolicy>> = None;
-                let mut repository_name: Option<::Value<String>> = None;
-                let mut repository_policy_text: Option<::Value<::json::Value>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut image_tag_mutability: Option<crate::Value<String>> = None;
+                let mut lifecycle_policy: Option<crate::Value<self::repository::LifecyclePolicy>> = None;
+                let mut repository_name: Option<crate::Value<String>> = None;
+                let mut repository_policy_text: Option<crate::Value<crate::json::Value>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -581,7 +581,7 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
     }
 }
 
-impl ::Resource for Repository {
+impl crate::Resource for Repository {
     type Properties = RepositoryProperties;
     const TYPE: &'static str = "AWS::ECR::Repository";
     fn properties(&self) -> &RepositoryProperties {
@@ -592,7 +592,7 @@ impl ::Resource for Repository {
     }
 }
 
-impl ::private::Sealed for Repository {}
+impl crate::private::Sealed for Repository {}
 
 impl From<RepositoryProperties> for Repository {
     fn from(properties: RepositoryProperties) -> Repository {
@@ -610,10 +610,10 @@ pub mod replication_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rules: ::ValueList<ReplicationRule>,
+        pub rules: crate::ValueList<ReplicationRule>,
     }
 
-    impl ::codec::SerializeValue for ReplicationConfiguration {
+    impl crate::codec::SerializeValue for ReplicationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rules", &self.rules)?;
@@ -621,7 +621,7 @@ pub mod replication_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for ReplicationConfiguration {
+    impl crate::codec::DeserializeValue for ReplicationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReplicationConfiguration, D::Error> {
@@ -638,7 +638,7 @@ pub mod replication_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut rules: Option<::ValueList<ReplicationRule>> = None;
+                    let mut rules: Option<crate::ValueList<ReplicationRule>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -668,15 +668,15 @@ pub mod replication_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: ::Value<String>,
+        pub region: crate::Value<String>,
         /// Property [`RegistryId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-registryid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub registry_id: ::Value<String>,
+        pub registry_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ReplicationDestination {
+    impl crate::codec::SerializeValue for ReplicationDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Region", &self.region)?;
@@ -685,7 +685,7 @@ pub mod replication_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for ReplicationDestination {
+    impl crate::codec::DeserializeValue for ReplicationDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReplicationDestination, D::Error> {
@@ -702,8 +702,8 @@ pub mod replication_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut region: Option<::Value<String>> = None;
-                    let mut registry_id: Option<::Value<String>> = None;
+                    let mut region: Option<crate::Value<String>> = None;
+                    let mut registry_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -738,15 +738,15 @@ pub mod replication_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destinations: ::ValueList<ReplicationDestination>,
+        pub destinations: crate::ValueList<ReplicationDestination>,
         /// Property [`RepositoryFilters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-repositoryfilters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub repository_filters: Option<::ValueList<RepositoryFilter>>,
+        pub repository_filters: Option<crate::ValueList<RepositoryFilter>>,
     }
 
-    impl ::codec::SerializeValue for ReplicationRule {
+    impl crate::codec::SerializeValue for ReplicationRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -765,7 +765,7 @@ pub mod replication_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for ReplicationRule {
+    impl crate::codec::DeserializeValue for ReplicationRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReplicationRule, D::Error> {
@@ -782,8 +782,8 @@ pub mod replication_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destinations: Option<::ValueList<ReplicationDestination>> = None;
-                    let mut repository_filters: Option<::ValueList<RepositoryFilter>> = None;
+                    let mut destinations: Option<crate::ValueList<ReplicationDestination>> = None;
+                    let mut repository_filters: Option<crate::ValueList<RepositoryFilter>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -818,15 +818,15 @@ pub mod replication_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter: ::Value<String>,
+        pub filter: crate::Value<String>,
         /// Property [`FilterType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-repositoryfilter.html#cfn-ecr-replicationconfiguration-repositoryfilter-filtertype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_type: ::Value<String>,
+        pub filter_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for RepositoryFilter {
+    impl crate::codec::SerializeValue for RepositoryFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Filter", &self.filter)?;
@@ -835,7 +835,7 @@ pub mod replication_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for RepositoryFilter {
+    impl crate::codec::DeserializeValue for RepositoryFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RepositoryFilter, D::Error> {
@@ -852,8 +852,8 @@ pub mod replication_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut filter: Option<::Value<String>> = None;
-                    let mut filter_type: Option<::Value<String>> = None;
+                    let mut filter: Option<crate::Value<String>> = None;
+                    let mut filter_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -892,15 +892,15 @@ pub mod repository {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub encryption_type: ::Value<String>,
+        pub encryption_type: crate::Value<String>,
         /// Property [`KmsKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-encryptionconfiguration.html#cfn-ecr-repository-encryptionconfiguration-kmskey).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key: Option<::Value<String>>,
+        pub kms_key: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for EncryptionConfiguration {
+    impl crate::codec::SerializeValue for EncryptionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -915,7 +915,7 @@ pub mod repository {
         }
     }
 
-    impl ::codec::DeserializeValue for EncryptionConfiguration {
+    impl crate::codec::DeserializeValue for EncryptionConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EncryptionConfiguration, D::Error> {
@@ -932,8 +932,8 @@ pub mod repository {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut encryption_type: Option<::Value<String>> = None;
-                    let mut kms_key: Option<::Value<String>> = None;
+                    let mut encryption_type: Option<crate::Value<String>> = None;
+                    let mut kms_key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -968,10 +968,10 @@ pub mod repository {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scan_on_push: Option<::Value<bool>>,
+        pub scan_on_push: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for ImageScanningConfiguration {
+    impl crate::codec::SerializeValue for ImageScanningConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref scan_on_push) = self.scan_on_push {
@@ -981,7 +981,7 @@ pub mod repository {
         }
     }
 
-    impl ::codec::DeserializeValue for ImageScanningConfiguration {
+    impl crate::codec::DeserializeValue for ImageScanningConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ImageScanningConfiguration, D::Error> {
@@ -998,7 +998,7 @@ pub mod repository {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut scan_on_push: Option<::Value<bool>> = None;
+                    let mut scan_on_push: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1028,15 +1028,15 @@ pub mod repository {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lifecycle_policy_text: Option<::Value<String>>,
+        pub lifecycle_policy_text: Option<crate::Value<String>>,
         /// Property [`RegistryId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub registry_id: Option<::Value<String>>,
+        pub registry_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for LifecyclePolicy {
+    impl crate::codec::SerializeValue for LifecyclePolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref lifecycle_policy_text) = self.lifecycle_policy_text {
@@ -1053,7 +1053,7 @@ pub mod repository {
         }
     }
 
-    impl ::codec::DeserializeValue for LifecyclePolicy {
+    impl crate::codec::DeserializeValue for LifecyclePolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LifecyclePolicy, D::Error> {
@@ -1070,8 +1070,8 @@ pub mod repository {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut lifecycle_policy_text: Option<::Value<String>> = None;
-                    let mut registry_id: Option<::Value<String>> = None;
+                    let mut lifecycle_policy_text: Option<crate::Value<String>> = None;
+                    let mut registry_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

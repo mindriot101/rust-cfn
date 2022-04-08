@@ -13,47 +13,47 @@ pub struct InferenceSchedulerProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_delay_offset_in_minutes: Option<::Value<u32>>,
+    pub data_delay_offset_in_minutes: Option<crate::Value<u32>>,
     /// Property [`DataInputConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_input_configuration: ::Value<::json::Value>,
+    pub data_input_configuration: crate::Value<crate::json::Value>,
     /// Property [`DataOutputConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-dataoutputconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_output_configuration: ::Value<::json::Value>,
+    pub data_output_configuration: crate::Value<crate::json::Value>,
     /// Property [`DataUploadFrequency`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datauploadfrequency).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_upload_frequency: ::Value<String>,
+    pub data_upload_frequency: crate::Value<String>,
     /// Property [`InferenceSchedulerName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-inferenceschedulername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub inference_scheduler_name: Option<::Value<String>>,
+    pub inference_scheduler_name: Option<crate::Value<String>>,
     /// Property [`ModelName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-modelname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub model_name: ::Value<String>,
+    pub model_name: crate::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
     /// Property [`ServerSideKmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-serversidekmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub server_side_kms_key_id: Option<::Value<String>>,
+    pub server_side_kms_key_id: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for InferenceSchedulerProperties {
@@ -121,15 +121,15 @@ impl<'de> ::serde::Deserialize<'de> for InferenceSchedulerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_delay_offset_in_minutes: Option<::Value<u32>> = None;
-                let mut data_input_configuration: Option<::Value<::json::Value>> = None;
-                let mut data_output_configuration: Option<::Value<::json::Value>> = None;
-                let mut data_upload_frequency: Option<::Value<String>> = None;
-                let mut inference_scheduler_name: Option<::Value<String>> = None;
-                let mut model_name: Option<::Value<String>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
-                let mut server_side_kms_key_id: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut data_delay_offset_in_minutes: Option<crate::Value<u32>> = None;
+                let mut data_input_configuration: Option<crate::Value<crate::json::Value>> = None;
+                let mut data_output_configuration: Option<crate::Value<crate::json::Value>> = None;
+                let mut data_upload_frequency: Option<crate::Value<String>> = None;
+                let mut inference_scheduler_name: Option<crate::Value<String>> = None;
+                let mut model_name: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut server_side_kms_key_id: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -189,7 +189,7 @@ impl<'de> ::serde::Deserialize<'de> for InferenceSchedulerProperties {
     }
 }
 
-impl ::Resource for InferenceScheduler {
+impl crate::Resource for InferenceScheduler {
     type Properties = InferenceSchedulerProperties;
     const TYPE: &'static str = "AWS::LookoutEquipment::InferenceScheduler";
     fn properties(&self) -> &InferenceSchedulerProperties {
@@ -200,7 +200,7 @@ impl ::Resource for InferenceScheduler {
     }
 }
 
-impl ::private::Sealed for InferenceScheduler {}
+impl crate::private::Sealed for InferenceScheduler {}
 
 impl From<InferenceSchedulerProperties> for InferenceScheduler {
     fn from(properties: InferenceSchedulerProperties) -> InferenceScheduler {

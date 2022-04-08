@@ -14,47 +14,47 @@ pub struct DataSourceProperties {
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub custom_document_enrichment_configuration:
-        Option<::Value<self::data_source::CustomDocumentEnrichmentConfiguration>>,
+        Option<crate::Value<self::data_source::CustomDocumentEnrichmentConfiguration>>,
     /// Property [`DataSourceConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-datasourceconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_source_configuration: Option<::Value<self::data_source::DataSourceConfiguration>>,
+    pub data_source_configuration: Option<crate::Value<self::data_source::DataSourceConfiguration>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`IndexId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-indexid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub index_id: ::Value<String>,
+    pub index_id: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: Option<::Value<String>>,
+    pub role_arn: Option<crate::Value<String>>,
     /// Property [`Schedule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-schedule).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub schedule: Option<::Value<String>>,
+    pub schedule: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for DataSourceProperties {
@@ -111,18 +111,18 @@ impl<'de> ::serde::Deserialize<'de> for DataSourceProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut custom_document_enrichment_configuration: Option<
-                    ::Value<self::data_source::CustomDocumentEnrichmentConfiguration>,
+                    crate::Value<self::data_source::CustomDocumentEnrichmentConfiguration>,
                 > = None;
                 let mut data_source_configuration: Option<
-                    ::Value<self::data_source::DataSourceConfiguration>,
+                    crate::Value<self::data_source::DataSourceConfiguration>,
                 > = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut index_id: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
-                let mut schedule: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut index_id: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut schedule: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -178,7 +178,7 @@ impl<'de> ::serde::Deserialize<'de> for DataSourceProperties {
     }
 }
 
-impl ::Resource for DataSource {
+impl crate::Resource for DataSource {
     type Properties = DataSourceProperties;
     const TYPE: &'static str = "AWS::Kendra::DataSource";
     fn properties(&self) -> &DataSourceProperties {
@@ -189,7 +189,7 @@ impl ::Resource for DataSource {
     }
 }
 
-impl ::private::Sealed for DataSource {}
+impl crate::private::Sealed for DataSource {}
 
 impl From<DataSourceProperties> for DataSource {
     fn from(properties: DataSourceProperties) -> DataSource {
@@ -210,37 +210,37 @@ pub struct FaqProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`FileFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-fileformat).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub file_format: Option<::Value<String>>,
+    pub file_format: Option<crate::Value<String>>,
     /// Property [`IndexId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-indexid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub index_id: ::Value<String>,
+    pub index_id: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
     /// Property [`S3Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-s3path).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub s3_path: ::Value<self::faq::S3Path>,
+    pub s3_path: crate::Value<self::faq::S3Path>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for FaqProperties {
@@ -278,13 +278,13 @@ impl<'de> ::serde::Deserialize<'de> for FaqProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut file_format: Option<::Value<String>> = None;
-                let mut index_id: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
-                let mut s3_path: Option<::Value<self::faq::S3Path>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut file_format: Option<crate::Value<String>> = None;
+                let mut index_id: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut s3_path: Option<crate::Value<self::faq::S3Path>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -329,7 +329,7 @@ impl<'de> ::serde::Deserialize<'de> for FaqProperties {
     }
 }
 
-impl ::Resource for Faq {
+impl crate::Resource for Faq {
     type Properties = FaqProperties;
     const TYPE: &'static str = "AWS::Kendra::Faq";
     fn properties(&self) -> &FaqProperties {
@@ -340,7 +340,7 @@ impl ::Resource for Faq {
     }
 }
 
-impl ::private::Sealed for Faq {}
+impl crate::private::Sealed for Faq {}
 
 impl From<FaqProperties> for Faq {
     fn from(properties: FaqProperties) -> Faq {
@@ -361,54 +361,54 @@ pub struct IndexProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub capacity_units: Option<::Value<self::index::CapacityUnitsConfiguration>>,
+    pub capacity_units: Option<crate::Value<self::index::CapacityUnitsConfiguration>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`DocumentMetadataConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-documentmetadataconfigurations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub document_metadata_configurations:
-        Option<::ValueList<self::index::DocumentMetadataConfiguration>>,
+        Option<crate::ValueList<self::index::DocumentMetadataConfiguration>>,
     /// Property [`Edition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-edition).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub edition: ::Value<String>,
+    pub edition: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
     /// Property [`ServerSideEncryptionConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-serversideencryptionconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub server_side_encryption_configuration:
-        Option<::Value<self::index::ServerSideEncryptionConfiguration>>,
+        Option<crate::Value<self::index::ServerSideEncryptionConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`UserContextPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-usercontextpolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub user_context_policy: Option<::Value<String>>,
+    pub user_context_policy: Option<crate::Value<String>>,
     /// Property [`UserTokenConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-usertokenconfigurations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub user_token_configurations: Option<::ValueList<self::index::UserTokenConfiguration>>,
+    pub user_token_configurations: Option<crate::ValueList<self::index::UserTokenConfiguration>>,
 }
 
 impl ::serde::Serialize for IndexProperties {
@@ -475,22 +475,22 @@ impl<'de> ::serde::Deserialize<'de> for IndexProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut capacity_units: Option<::Value<self::index::CapacityUnitsConfiguration>> =
+                let mut capacity_units: Option<crate::Value<self::index::CapacityUnitsConfiguration>> =
                     None;
-                let mut description: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
                 let mut document_metadata_configurations: Option<
-                    ::ValueList<self::index::DocumentMetadataConfiguration>,
+                    crate::ValueList<self::index::DocumentMetadataConfiguration>,
                 > = None;
-                let mut edition: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
+                let mut edition: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
                 let mut server_side_encryption_configuration: Option<
-                    ::Value<self::index::ServerSideEncryptionConfiguration>,
+                    crate::Value<self::index::ServerSideEncryptionConfiguration>,
                 > = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut user_context_policy: Option<::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut user_context_policy: Option<crate::Value<String>> = None;
                 let mut user_token_configurations: Option<
-                    ::ValueList<self::index::UserTokenConfiguration>,
+                    crate::ValueList<self::index::UserTokenConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -551,7 +551,7 @@ impl<'de> ::serde::Deserialize<'de> for IndexProperties {
     }
 }
 
-impl ::Resource for Index {
+impl crate::Resource for Index {
     type Properties = IndexProperties;
     const TYPE: &'static str = "AWS::Kendra::Index";
     fn properties(&self) -> &IndexProperties {
@@ -562,7 +562,7 @@ impl ::Resource for Index {
     }
 }
 
-impl ::private::Sealed for Index {}
+impl crate::private::Sealed for Index {}
 
 impl From<IndexProperties> for Index {
     fn from(properties: IndexProperties) -> Index {
@@ -580,10 +580,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_path: Option<::Value<String>>,
+        pub key_path: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AccessControlListConfiguration {
+    impl crate::codec::SerializeValue for AccessControlListConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key_path) = self.key_path {
@@ -593,7 +593,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for AccessControlListConfiguration {
+    impl crate::codec::DeserializeValue for AccessControlListConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AccessControlListConfiguration, D::Error> {
@@ -610,7 +610,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key_path: Option<::Value<String>> = None;
+                    let mut key_path: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -638,10 +638,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allowed_groups_column_name: ::Value<String>,
+        pub allowed_groups_column_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for AclConfiguration {
+    impl crate::codec::SerializeValue for AclConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -653,7 +653,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for AclConfiguration {
+    impl crate::codec::DeserializeValue for AclConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AclConfiguration, D::Error> {
@@ -670,7 +670,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allowed_groups_column_name: Option<::Value<String>> = None;
+                    let mut allowed_groups_column_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -702,30 +702,30 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub change_detecting_columns: ::ValueList<String>,
+        pub change_detecting_columns: crate::ValueList<String>,
         /// Property [`DocumentDataColumnName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-documentdatacolumnname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_data_column_name: ::Value<String>,
+        pub document_data_column_name: crate::Value<String>,
         /// Property [`DocumentIdColumnName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-documentidcolumnname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_id_column_name: ::Value<String>,
+        pub document_id_column_name: crate::Value<String>,
         /// Property [`DocumentTitleColumnName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-documenttitlecolumnname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_column_name: Option<::Value<String>>,
+        pub document_title_column_name: Option<crate::Value<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
     }
 
-    impl ::codec::SerializeValue for ColumnConfiguration {
+    impl crate::codec::SerializeValue for ColumnConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -761,7 +761,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ColumnConfiguration {
+    impl crate::codec::DeserializeValue for ColumnConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ColumnConfiguration, D::Error> {
@@ -778,11 +778,11 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut change_detecting_columns: Option<::ValueList<String>> = None;
-                    let mut document_data_column_name: Option<::Value<String>> = None;
-                    let mut document_id_column_name: Option<::Value<String>> = None;
-                    let mut document_title_column_name: Option<::Value<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut change_detecting_columns: Option<crate::ValueList<String>> = None;
+                    let mut document_data_column_name: Option<crate::Value<String>> = None;
+                    let mut document_id_column_name: Option<crate::Value<String>> = None;
+                    let mut document_title_column_name: Option<crate::Value<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -836,15 +836,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attachment_field_mappings: Option<::ValueList<ConfluenceAttachmentToIndexFieldMapping>>,
+        pub attachment_field_mappings: Option<crate::ValueList<ConfluenceAttachmentToIndexFieldMapping>>,
         /// Property [`CrawlAttachments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html#cfn-kendra-datasource-confluenceattachmentconfiguration-crawlattachments).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_attachments: Option<::Value<bool>>,
+        pub crawl_attachments: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for ConfluenceAttachmentConfiguration {
+    impl crate::codec::SerializeValue for ConfluenceAttachmentConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attachment_field_mappings) = self.attachment_field_mappings {
@@ -865,7 +865,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluenceAttachmentConfiguration {
+    impl crate::codec::DeserializeValue for ConfluenceAttachmentConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluenceAttachmentConfiguration, D::Error> {
@@ -883,9 +883,9 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut attachment_field_mappings: Option<
-                        ::ValueList<ConfluenceAttachmentToIndexFieldMapping>,
+                        crate::ValueList<ConfluenceAttachmentToIndexFieldMapping>,
                     > = None;
-                    let mut crawl_attachments: Option<::Value<bool>> = None;
+                    let mut crawl_attachments: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -920,20 +920,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source_field_name: ::Value<String>,
+        pub data_source_field_name: crate::Value<String>,
         /// Property [`DateFieldFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmenttoindexfieldmapping.html#cfn-kendra-datasource-confluenceattachmenttoindexfieldmapping-datefieldformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_field_format: Option<::Value<String>>,
+        pub date_field_format: Option<crate::Value<String>>,
         /// Property [`IndexFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmenttoindexfieldmapping.html#cfn-kendra-datasource-confluenceattachmenttoindexfieldmapping-indexfieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_field_name: ::Value<String>,
+        pub index_field_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ConfluenceAttachmentToIndexFieldMapping {
+    impl crate::codec::SerializeValue for ConfluenceAttachmentToIndexFieldMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -957,7 +957,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluenceAttachmentToIndexFieldMapping {
+    impl crate::codec::DeserializeValue for ConfluenceAttachmentToIndexFieldMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluenceAttachmentToIndexFieldMapping, D::Error> {
@@ -977,9 +977,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_source_field_name: Option<::Value<String>> = None;
-                    let mut date_field_format: Option<::Value<String>> = None;
-                    let mut index_field_name: Option<::Value<String>> = None;
+                    let mut data_source_field_name: Option<crate::Value<String>> = None;
+                    let mut date_field_format: Option<crate::Value<String>> = None;
+                    let mut index_field_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1020,10 +1020,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub blog_field_mappings: Option<::ValueList<ConfluenceBlogToIndexFieldMapping>>,
+        pub blog_field_mappings: Option<crate::ValueList<ConfluenceBlogToIndexFieldMapping>>,
     }
 
-    impl ::codec::SerializeValue for ConfluenceBlogConfiguration {
+    impl crate::codec::SerializeValue for ConfluenceBlogConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref blog_field_mappings) = self.blog_field_mappings {
@@ -1037,7 +1037,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluenceBlogConfiguration {
+    impl crate::codec::DeserializeValue for ConfluenceBlogConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluenceBlogConfiguration, D::Error> {
@@ -1055,7 +1055,7 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut blog_field_mappings: Option<
-                        ::ValueList<ConfluenceBlogToIndexFieldMapping>,
+                        crate::ValueList<ConfluenceBlogToIndexFieldMapping>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -1086,20 +1086,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source_field_name: ::Value<String>,
+        pub data_source_field_name: crate::Value<String>,
         /// Property [`DateFieldFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html#cfn-kendra-datasource-confluenceblogtoindexfieldmapping-datefieldformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_field_format: Option<::Value<String>>,
+        pub date_field_format: Option<crate::Value<String>>,
         /// Property [`IndexFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html#cfn-kendra-datasource-confluenceblogtoindexfieldmapping-indexfieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_field_name: ::Value<String>,
+        pub index_field_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ConfluenceBlogToIndexFieldMapping {
+    impl crate::codec::SerializeValue for ConfluenceBlogToIndexFieldMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1123,7 +1123,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluenceBlogToIndexFieldMapping {
+    impl crate::codec::DeserializeValue for ConfluenceBlogToIndexFieldMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluenceBlogToIndexFieldMapping, D::Error> {
@@ -1140,9 +1140,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_source_field_name: Option<::Value<String>> = None;
-                    let mut date_field_format: Option<::Value<String>> = None;
-                    let mut index_field_name: Option<::Value<String>> = None;
+                    let mut data_source_field_name: Option<crate::Value<String>> = None;
+                    let mut date_field_format: Option<crate::Value<String>> = None;
+                    let mut index_field_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1183,55 +1183,55 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attachment_configuration: Option<::Value<ConfluenceAttachmentConfiguration>>,
+        pub attachment_configuration: Option<crate::Value<ConfluenceAttachmentConfiguration>>,
         /// Property [`BlogConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-blogconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub blog_configuration: Option<::Value<ConfluenceBlogConfiguration>>,
+        pub blog_configuration: Option<crate::Value<ConfluenceBlogConfiguration>>,
         /// Property [`ExclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-exclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclusion_patterns: Option<::ValueList<String>>,
+        pub exclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`InclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-inclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inclusion_patterns: Option<::ValueList<String>>,
+        pub inclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`PageConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-pageconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub page_configuration: Option<::Value<ConfluencePageConfiguration>>,
+        pub page_configuration: Option<crate::Value<ConfluencePageConfiguration>>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: ::Value<String>,
+        pub secret_arn: crate::Value<String>,
         /// Property [`ServerUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-serverurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub server_url: ::Value<String>,
+        pub server_url: crate::Value<String>,
         /// Property [`SpaceConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-spaceconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub space_configuration: Option<::Value<ConfluenceSpaceConfiguration>>,
+        pub space_configuration: Option<crate::Value<ConfluenceSpaceConfiguration>>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: ::Value<String>,
+        pub version: crate::Value<String>,
         /// Property [`VpcConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-vpcconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_configuration: Option<::Value<DataSourceVpcConfiguration>>,
+        pub vpc_configuration: Option<crate::Value<DataSourceVpcConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for ConfluenceConfiguration {
+    impl crate::codec::SerializeValue for ConfluenceConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attachment_configuration) = self.attachment_configuration {
@@ -1290,7 +1290,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluenceConfiguration {
+    impl crate::codec::DeserializeValue for ConfluenceConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluenceConfiguration, D::Error> {
@@ -1308,18 +1308,18 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut attachment_configuration: Option<
-                        ::Value<ConfluenceAttachmentConfiguration>,
+                        crate::Value<ConfluenceAttachmentConfiguration>,
                     > = None;
-                    let mut blog_configuration: Option<::Value<ConfluenceBlogConfiguration>> = None;
-                    let mut exclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut inclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut page_configuration: Option<::Value<ConfluencePageConfiguration>> = None;
-                    let mut secret_arn: Option<::Value<String>> = None;
-                    let mut server_url: Option<::Value<String>> = None;
-                    let mut space_configuration: Option<::Value<ConfluenceSpaceConfiguration>> =
+                    let mut blog_configuration: Option<crate::Value<ConfluenceBlogConfiguration>> = None;
+                    let mut exclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut inclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut page_configuration: Option<crate::Value<ConfluencePageConfiguration>> = None;
+                    let mut secret_arn: Option<crate::Value<String>> = None;
+                    let mut server_url: Option<crate::Value<String>> = None;
+                    let mut space_configuration: Option<crate::Value<ConfluenceSpaceConfiguration>> =
                         None;
-                    let mut version: Option<::Value<String>> = None;
-                    let mut vpc_configuration: Option<::Value<DataSourceVpcConfiguration>> = None;
+                    let mut version: Option<crate::Value<String>> = None;
+                    let mut vpc_configuration: Option<crate::Value<DataSourceVpcConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1388,10 +1388,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub page_field_mappings: Option<::ValueList<ConfluencePageToIndexFieldMapping>>,
+        pub page_field_mappings: Option<crate::ValueList<ConfluencePageToIndexFieldMapping>>,
     }
 
-    impl ::codec::SerializeValue for ConfluencePageConfiguration {
+    impl crate::codec::SerializeValue for ConfluencePageConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref page_field_mappings) = self.page_field_mappings {
@@ -1405,7 +1405,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluencePageConfiguration {
+    impl crate::codec::DeserializeValue for ConfluencePageConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluencePageConfiguration, D::Error> {
@@ -1423,7 +1423,7 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut page_field_mappings: Option<
-                        ::ValueList<ConfluencePageToIndexFieldMapping>,
+                        crate::ValueList<ConfluencePageToIndexFieldMapping>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -1454,20 +1454,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source_field_name: ::Value<String>,
+        pub data_source_field_name: crate::Value<String>,
         /// Property [`DateFieldFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagetoindexfieldmapping.html#cfn-kendra-datasource-confluencepagetoindexfieldmapping-datefieldformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_field_format: Option<::Value<String>>,
+        pub date_field_format: Option<crate::Value<String>>,
         /// Property [`IndexFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagetoindexfieldmapping.html#cfn-kendra-datasource-confluencepagetoindexfieldmapping-indexfieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_field_name: ::Value<String>,
+        pub index_field_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ConfluencePageToIndexFieldMapping {
+    impl crate::codec::SerializeValue for ConfluencePageToIndexFieldMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1491,7 +1491,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluencePageToIndexFieldMapping {
+    impl crate::codec::DeserializeValue for ConfluencePageToIndexFieldMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluencePageToIndexFieldMapping, D::Error> {
@@ -1508,9 +1508,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_source_field_name: Option<::Value<String>> = None;
-                    let mut date_field_format: Option<::Value<String>> = None;
-                    let mut index_field_name: Option<::Value<String>> = None;
+                    let mut data_source_field_name: Option<crate::Value<String>> = None;
+                    let mut date_field_format: Option<crate::Value<String>> = None;
+                    let mut index_field_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1551,30 +1551,30 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_archived_spaces: Option<::Value<bool>>,
+        pub crawl_archived_spaces: Option<crate::Value<bool>>,
         /// Property [`CrawlPersonalSpaces`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-crawlpersonalspaces).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_personal_spaces: Option<::Value<bool>>,
+        pub crawl_personal_spaces: Option<crate::Value<bool>>,
         /// Property [`ExcludeSpaces`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-excludespaces).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_spaces: Option<::ValueList<String>>,
+        pub exclude_spaces: Option<crate::ValueList<String>>,
         /// Property [`IncludeSpaces`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-includespaces).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_spaces: Option<::ValueList<String>>,
+        pub include_spaces: Option<crate::ValueList<String>>,
         /// Property [`SpaceFieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-spacefieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub space_field_mappings: Option<::ValueList<ConfluenceSpaceToIndexFieldMapping>>,
+        pub space_field_mappings: Option<crate::ValueList<ConfluenceSpaceToIndexFieldMapping>>,
     }
 
-    impl ::codec::SerializeValue for ConfluenceSpaceConfiguration {
+    impl crate::codec::SerializeValue for ConfluenceSpaceConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref crawl_archived_spaces) = self.crawl_archived_spaces {
@@ -1616,7 +1616,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluenceSpaceConfiguration {
+    impl crate::codec::DeserializeValue for ConfluenceSpaceConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluenceSpaceConfiguration, D::Error> {
@@ -1633,12 +1633,12 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut crawl_archived_spaces: Option<::Value<bool>> = None;
-                    let mut crawl_personal_spaces: Option<::Value<bool>> = None;
-                    let mut exclude_spaces: Option<::ValueList<String>> = None;
-                    let mut include_spaces: Option<::ValueList<String>> = None;
+                    let mut crawl_archived_spaces: Option<crate::Value<bool>> = None;
+                    let mut crawl_personal_spaces: Option<crate::Value<bool>> = None;
+                    let mut exclude_spaces: Option<crate::ValueList<String>> = None;
+                    let mut include_spaces: Option<crate::ValueList<String>> = None;
                     let mut space_field_mappings: Option<
-                        ::ValueList<ConfluenceSpaceToIndexFieldMapping>,
+                        crate::ValueList<ConfluenceSpaceToIndexFieldMapping>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -1688,20 +1688,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source_field_name: ::Value<String>,
+        pub data_source_field_name: crate::Value<String>,
         /// Property [`DateFieldFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-datefieldformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_field_format: Option<::Value<String>>,
+        pub date_field_format: Option<crate::Value<String>>,
         /// Property [`IndexFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-indexfieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_field_name: ::Value<String>,
+        pub index_field_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ConfluenceSpaceToIndexFieldMapping {
+    impl crate::codec::SerializeValue for ConfluenceSpaceToIndexFieldMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1725,7 +1725,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConfluenceSpaceToIndexFieldMapping {
+    impl crate::codec::DeserializeValue for ConfluenceSpaceToIndexFieldMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConfluenceSpaceToIndexFieldMapping, D::Error> {
@@ -1742,9 +1742,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_source_field_name: Option<::Value<String>> = None;
-                    let mut date_field_format: Option<::Value<String>> = None;
-                    let mut index_field_name: Option<::Value<String>> = None;
+                    let mut data_source_field_name: Option<crate::Value<String>> = None;
+                    let mut date_field_format: Option<crate::Value<String>> = None;
+                    let mut index_field_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1785,30 +1785,30 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_host: ::Value<String>,
+        pub database_host: crate::Value<String>,
         /// Property [`DatabaseName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html#cfn-kendra-datasource-connectionconfiguration-databasename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_name: ::Value<String>,
+        pub database_name: crate::Value<String>,
         /// Property [`DatabasePort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html#cfn-kendra-datasource-connectionconfiguration-databaseport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_port: ::Value<u32>,
+        pub database_port: crate::Value<u32>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html#cfn-kendra-datasource-connectionconfiguration-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: ::Value<String>,
+        pub secret_arn: crate::Value<String>,
         /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html#cfn-kendra-datasource-connectionconfiguration-tablename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub table_name: ::Value<String>,
+        pub table_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ConnectionConfiguration {
+    impl crate::codec::SerializeValue for ConnectionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1832,7 +1832,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ConnectionConfiguration {
+    impl crate::codec::DeserializeValue for ConnectionConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConnectionConfiguration, D::Error> {
@@ -1849,11 +1849,11 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database_host: Option<::Value<String>> = None;
-                    let mut database_name: Option<::Value<String>> = None;
-                    let mut database_port: Option<::Value<u32>> = None;
-                    let mut secret_arn: Option<::Value<String>> = None;
-                    let mut table_name: Option<::Value<String>> = None;
+                    let mut database_host: Option<crate::Value<String>> = None;
+                    let mut database_name: Option<crate::Value<String>> = None;
+                    let mut database_port: Option<crate::Value<u32>> = None;
+                    let mut secret_arn: Option<crate::Value<String>> = None;
+                    let mut table_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1904,25 +1904,25 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inline_configurations: Option<::ValueList<InlineCustomDocumentEnrichmentConfiguration>>,
+        pub inline_configurations: Option<crate::ValueList<InlineCustomDocumentEnrichmentConfiguration>>,
         /// Property [`PostExtractionHookConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-postextractionhookconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub post_extraction_hook_configuration: Option<::Value<HookConfiguration>>,
+        pub post_extraction_hook_configuration: Option<crate::Value<HookConfiguration>>,
         /// Property [`PreExtractionHookConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-preextractionhookconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pre_extraction_hook_configuration: Option<::Value<HookConfiguration>>,
+        pub pre_extraction_hook_configuration: Option<crate::Value<HookConfiguration>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: Option<::Value<String>>,
+        pub role_arn: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CustomDocumentEnrichmentConfiguration {
+    impl crate::codec::SerializeValue for CustomDocumentEnrichmentConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref inline_configurations) = self.inline_configurations {
@@ -1957,7 +1957,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomDocumentEnrichmentConfiguration {
+    impl crate::codec::DeserializeValue for CustomDocumentEnrichmentConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomDocumentEnrichmentConfiguration, D::Error> {
@@ -1975,13 +1975,13 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut inline_configurations: Option<
-                        ::ValueList<InlineCustomDocumentEnrichmentConfiguration>,
+                        crate::ValueList<InlineCustomDocumentEnrichmentConfiguration>,
                     > = None;
-                    let mut post_extraction_hook_configuration: Option<::Value<HookConfiguration>> =
+                    let mut post_extraction_hook_configuration: Option<crate::Value<HookConfiguration>> =
                         None;
-                    let mut pre_extraction_hook_configuration: Option<::Value<HookConfiguration>> =
+                    let mut pre_extraction_hook_configuration: Option<crate::Value<HookConfiguration>> =
                         None;
-                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut role_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2026,55 +2026,55 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub confluence_configuration: Option<::Value<ConfluenceConfiguration>>,
+        pub confluence_configuration: Option<crate::Value<ConfluenceConfiguration>>,
         /// Property [`DatabaseConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-databaseconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_configuration: Option<::Value<DatabaseConfiguration>>,
+        pub database_configuration: Option<crate::Value<DatabaseConfiguration>>,
         /// Property [`GoogleDriveConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-googledriveconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub google_drive_configuration: Option<::Value<GoogleDriveConfiguration>>,
+        pub google_drive_configuration: Option<crate::Value<GoogleDriveConfiguration>>,
         /// Property [`OneDriveConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-onedriveconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub one_drive_configuration: Option<::Value<OneDriveConfiguration>>,
+        pub one_drive_configuration: Option<crate::Value<OneDriveConfiguration>>,
         /// Property [`S3Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-s3configuration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_configuration: Option<::Value<S3DataSourceConfiguration>>,
+        pub s3_configuration: Option<crate::Value<S3DataSourceConfiguration>>,
         /// Property [`SalesforceConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-salesforceconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub salesforce_configuration: Option<::Value<SalesforceConfiguration>>,
+        pub salesforce_configuration: Option<crate::Value<SalesforceConfiguration>>,
         /// Property [`ServiceNowConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-servicenowconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_now_configuration: Option<::Value<ServiceNowConfiguration>>,
+        pub service_now_configuration: Option<crate::Value<ServiceNowConfiguration>>,
         /// Property [`SharePointConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-sharepointconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub share_point_configuration: Option<::Value<SharePointConfiguration>>,
+        pub share_point_configuration: Option<crate::Value<SharePointConfiguration>>,
         /// Property [`WebCrawlerConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-webcrawlerconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub web_crawler_configuration: Option<::Value<WebCrawlerConfiguration>>,
+        pub web_crawler_configuration: Option<crate::Value<WebCrawlerConfiguration>>,
         /// Property [`WorkDocsConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-workdocsconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub work_docs_configuration: Option<::Value<WorkDocsConfiguration>>,
+        pub work_docs_configuration: Option<crate::Value<WorkDocsConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for DataSourceConfiguration {
+    impl crate::codec::SerializeValue for DataSourceConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref confluence_configuration) = self.confluence_configuration {
@@ -2151,7 +2151,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for DataSourceConfiguration {
+    impl crate::codec::DeserializeValue for DataSourceConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSourceConfiguration, D::Error> {
@@ -2168,22 +2168,22 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut confluence_configuration: Option<::Value<ConfluenceConfiguration>> =
+                    let mut confluence_configuration: Option<crate::Value<ConfluenceConfiguration>> =
                         None;
-                    let mut database_configuration: Option<::Value<DatabaseConfiguration>> = None;
-                    let mut google_drive_configuration: Option<::Value<GoogleDriveConfiguration>> =
+                    let mut database_configuration: Option<crate::Value<DatabaseConfiguration>> = None;
+                    let mut google_drive_configuration: Option<crate::Value<GoogleDriveConfiguration>> =
                         None;
-                    let mut one_drive_configuration: Option<::Value<OneDriveConfiguration>> = None;
-                    let mut s3_configuration: Option<::Value<S3DataSourceConfiguration>> = None;
-                    let mut salesforce_configuration: Option<::Value<SalesforceConfiguration>> =
+                    let mut one_drive_configuration: Option<crate::Value<OneDriveConfiguration>> = None;
+                    let mut s3_configuration: Option<crate::Value<S3DataSourceConfiguration>> = None;
+                    let mut salesforce_configuration: Option<crate::Value<SalesforceConfiguration>> =
                         None;
-                    let mut service_now_configuration: Option<::Value<ServiceNowConfiguration>> =
+                    let mut service_now_configuration: Option<crate::Value<ServiceNowConfiguration>> =
                         None;
-                    let mut share_point_configuration: Option<::Value<SharePointConfiguration>> =
+                    let mut share_point_configuration: Option<crate::Value<SharePointConfiguration>> =
                         None;
-                    let mut web_crawler_configuration: Option<::Value<WebCrawlerConfiguration>> =
+                    let mut web_crawler_configuration: Option<crate::Value<WebCrawlerConfiguration>> =
                         None;
-                    let mut work_docs_configuration: Option<::Value<WorkDocsConfiguration>> = None;
+                    let mut work_docs_configuration: Option<crate::Value<WorkDocsConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2258,20 +2258,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source_field_name: ::Value<String>,
+        pub data_source_field_name: crate::Value<String>,
         /// Property [`DateFieldFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourcetoindexfieldmapping.html#cfn-kendra-datasource-datasourcetoindexfieldmapping-datefieldformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_field_format: Option<::Value<String>>,
+        pub date_field_format: Option<crate::Value<String>>,
         /// Property [`IndexFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourcetoindexfieldmapping.html#cfn-kendra-datasource-datasourcetoindexfieldmapping-indexfieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_field_name: ::Value<String>,
+        pub index_field_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DataSourceToIndexFieldMapping {
+    impl crate::codec::SerializeValue for DataSourceToIndexFieldMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2295,7 +2295,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for DataSourceToIndexFieldMapping {
+    impl crate::codec::DeserializeValue for DataSourceToIndexFieldMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSourceToIndexFieldMapping, D::Error> {
@@ -2312,9 +2312,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_source_field_name: Option<::Value<String>> = None;
-                    let mut date_field_format: Option<::Value<String>> = None;
-                    let mut index_field_name: Option<::Value<String>> = None;
+                    let mut data_source_field_name: Option<crate::Value<String>> = None;
+                    let mut date_field_format: Option<crate::Value<String>> = None;
+                    let mut index_field_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2355,15 +2355,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_group_ids: ::ValueList<String>,
+        pub security_group_ids: crate::ValueList<String>,
         /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourcevpcconfiguration.html#cfn-kendra-datasource-datasourcevpcconfiguration-subnetids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subnet_ids: ::ValueList<String>,
+        pub subnet_ids: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for DataSourceVpcConfiguration {
+    impl crate::codec::SerializeValue for DataSourceVpcConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2376,7 +2376,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for DataSourceVpcConfiguration {
+    impl crate::codec::DeserializeValue for DataSourceVpcConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSourceVpcConfiguration, D::Error> {
@@ -2393,8 +2393,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<::ValueList<String>> = None;
-                    let mut subnet_ids: Option<::ValueList<String>> = None;
+                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
+                    let mut subnet_ids: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2430,35 +2430,35 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub acl_configuration: Option<::Value<AclConfiguration>>,
+        pub acl_configuration: Option<crate::Value<AclConfiguration>>,
         /// Property [`ColumnConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-columnconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_configuration: ::Value<ColumnConfiguration>,
+        pub column_configuration: crate::Value<ColumnConfiguration>,
         /// Property [`ConnectionConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-connectionconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_configuration: ::Value<ConnectionConfiguration>,
+        pub connection_configuration: crate::Value<ConnectionConfiguration>,
         /// Property [`DatabaseEngineType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-databaseenginetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_engine_type: ::Value<String>,
+        pub database_engine_type: crate::Value<String>,
         /// Property [`SqlConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-sqlconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sql_configuration: Option<::Value<SqlConfiguration>>,
+        pub sql_configuration: Option<crate::Value<SqlConfiguration>>,
         /// Property [`VpcConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-vpcconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_configuration: Option<::Value<DataSourceVpcConfiguration>>,
+        pub vpc_configuration: Option<crate::Value<DataSourceVpcConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for DatabaseConfiguration {
+    impl crate::codec::SerializeValue for DatabaseConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref acl_configuration) = self.acl_configuration {
@@ -2501,7 +2501,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for DatabaseConfiguration {
+    impl crate::codec::DeserializeValue for DatabaseConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatabaseConfiguration, D::Error> {
@@ -2518,13 +2518,13 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut acl_configuration: Option<::Value<AclConfiguration>> = None;
-                    let mut column_configuration: Option<::Value<ColumnConfiguration>> = None;
-                    let mut connection_configuration: Option<::Value<ConnectionConfiguration>> =
+                    let mut acl_configuration: Option<crate::Value<AclConfiguration>> = None;
+                    let mut column_configuration: Option<crate::Value<ColumnConfiguration>> = None;
+                    let mut connection_configuration: Option<crate::Value<ConnectionConfiguration>> =
                         None;
-                    let mut database_engine_type: Option<::Value<String>> = None;
-                    let mut sql_configuration: Option<::Value<SqlConfiguration>> = None;
-                    let mut vpc_configuration: Option<::Value<DataSourceVpcConfiguration>> = None;
+                    let mut database_engine_type: Option<crate::Value<String>> = None;
+                    let mut sql_configuration: Option<crate::Value<SqlConfiguration>> = None;
+                    let mut vpc_configuration: Option<crate::Value<DataSourceVpcConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2580,20 +2580,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub condition_document_attribute_key: ::Value<String>,
+        pub condition_document_attribute_key: crate::Value<String>,
         /// Property [`ConditionOnValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-conditiononvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub condition_on_value: Option<::Value<DocumentAttributeValue>>,
+        pub condition_on_value: Option<crate::Value<DocumentAttributeValue>>,
         /// Property [`Operator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-operator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub operator: ::Value<String>,
+        pub operator: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DocumentAttributeCondition {
+    impl crate::codec::SerializeValue for DocumentAttributeCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2613,7 +2613,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for DocumentAttributeCondition {
+    impl crate::codec::DeserializeValue for DocumentAttributeCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DocumentAttributeCondition, D::Error> {
@@ -2630,9 +2630,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut condition_document_attribute_key: Option<::Value<String>> = None;
-                    let mut condition_on_value: Option<::Value<DocumentAttributeValue>> = None;
-                    let mut operator: Option<::Value<String>> = None;
+                    let mut condition_document_attribute_key: Option<crate::Value<String>> = None;
+                    let mut condition_on_value: Option<crate::Value<DocumentAttributeValue>> = None;
+                    let mut operator: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2673,20 +2673,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_document_attribute_key: ::Value<String>,
+        pub target_document_attribute_key: crate::Value<String>,
         /// Property [`TargetDocumentAttributeValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_document_attribute_value: Option<::Value<DocumentAttributeValue>>,
+        pub target_document_attribute_value: Option<crate::Value<DocumentAttributeValue>>,
         /// Property [`TargetDocumentAttributeValueDeletion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevaluedeletion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_document_attribute_value_deletion: Option<::Value<bool>>,
+        pub target_document_attribute_value_deletion: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for DocumentAttributeTarget {
+    impl crate::codec::SerializeValue for DocumentAttributeTarget {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2715,7 +2715,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for DocumentAttributeTarget {
+    impl crate::codec::DeserializeValue for DocumentAttributeTarget {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DocumentAttributeTarget, D::Error> {
@@ -2732,11 +2732,11 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut target_document_attribute_key: Option<::Value<String>> = None;
+                    let mut target_document_attribute_key: Option<crate::Value<String>> = None;
                     let mut target_document_attribute_value: Option<
-                        ::Value<DocumentAttributeValue>,
+                        crate::Value<DocumentAttributeValue>,
                     > = None;
-                    let mut target_document_attribute_value_deletion: Option<::Value<bool>> = None;
+                    let mut target_document_attribute_value_deletion: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2780,25 +2780,25 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_value: Option<::Value<String>>,
+        pub date_value: Option<crate::Value<String>>,
         /// Property [`LongValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-longvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub long_value: Option<::Value<u32>>,
+        pub long_value: Option<crate::Value<u32>>,
         /// Property [`StringListValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-stringlistvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub string_list_value: Option<::ValueList<String>>,
+        pub string_list_value: Option<crate::ValueList<String>>,
         /// Property [`StringValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-stringvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub string_value: Option<::Value<String>>,
+        pub string_value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DocumentAttributeValue {
+    impl crate::codec::SerializeValue for DocumentAttributeValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref date_value) = self.date_value {
@@ -2821,7 +2821,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for DocumentAttributeValue {
+    impl crate::codec::DeserializeValue for DocumentAttributeValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DocumentAttributeValue, D::Error> {
@@ -2838,10 +2838,10 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut date_value: Option<::Value<String>> = None;
-                    let mut long_value: Option<::Value<u32>> = None;
-                    let mut string_list_value: Option<::ValueList<String>> = None;
-                    let mut string_value: Option<::Value<String>> = None;
+                    let mut date_value: Option<crate::Value<String>> = None;
+                    let mut long_value: Option<crate::Value<u32>> = None;
+                    let mut string_list_value: Option<crate::ValueList<String>> = None;
+                    let mut string_value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2883,10 +2883,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_prefix: Option<::Value<String>>,
+        pub s3_prefix: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DocumentsMetadataConfiguration {
+    impl crate::codec::SerializeValue for DocumentsMetadataConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_prefix) = self.s3_prefix {
@@ -2896,7 +2896,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for DocumentsMetadataConfiguration {
+    impl crate::codec::DeserializeValue for DocumentsMetadataConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DocumentsMetadataConfiguration, D::Error> {
@@ -2913,7 +2913,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_prefix: Option<::Value<String>> = None;
+                    let mut s3_prefix: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2943,40 +2943,40 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_mime_types: Option<::ValueList<String>>,
+        pub exclude_mime_types: Option<crate::ValueList<String>>,
         /// Property [`ExcludeSharedDrives`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-excludeshareddrives).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_shared_drives: Option<::ValueList<String>>,
+        pub exclude_shared_drives: Option<crate::ValueList<String>>,
         /// Property [`ExcludeUserAccounts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-excludeuseraccounts).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_user_accounts: Option<::ValueList<String>>,
+        pub exclude_user_accounts: Option<crate::ValueList<String>>,
         /// Property [`ExclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-exclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclusion_patterns: Option<::ValueList<String>>,
+        pub exclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`InclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-inclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inclusion_patterns: Option<::ValueList<String>>,
+        pub inclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: ::Value<String>,
+        pub secret_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for GoogleDriveConfiguration {
+    impl crate::codec::SerializeValue for GoogleDriveConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref exclude_mime_types) = self.exclude_mime_types {
@@ -3026,7 +3026,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for GoogleDriveConfiguration {
+    impl crate::codec::DeserializeValue for GoogleDriveConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GoogleDriveConfiguration, D::Error> {
@@ -3043,14 +3043,14 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut exclude_mime_types: Option<::ValueList<String>> = None;
-                    let mut exclude_shared_drives: Option<::ValueList<String>> = None;
-                    let mut exclude_user_accounts: Option<::ValueList<String>> = None;
-                    let mut exclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut exclude_mime_types: Option<crate::ValueList<String>> = None;
+                    let mut exclude_shared_drives: Option<crate::ValueList<String>> = None;
+                    let mut exclude_user_accounts: Option<crate::ValueList<String>> = None;
+                    let mut exclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut inclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut secret_arn: Option<::Value<String>> = None;
+                    let mut inclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut secret_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3107,20 +3107,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub invocation_condition: Option<::Value<DocumentAttributeCondition>>,
+        pub invocation_condition: Option<crate::Value<DocumentAttributeCondition>>,
         /// Property [`LambdaArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-lambdaarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lambda_arn: ::Value<String>,
+        pub lambda_arn: crate::Value<String>,
         /// Property [`S3Bucket`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-s3bucket).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_bucket: ::Value<String>,
+        pub s3_bucket: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for HookConfiguration {
+    impl crate::codec::SerializeValue for HookConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref invocation_condition) = self.invocation_condition {
@@ -3136,7 +3136,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for HookConfiguration {
+    impl crate::codec::DeserializeValue for HookConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HookConfiguration, D::Error> {
@@ -3153,10 +3153,10 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut invocation_condition: Option<::Value<DocumentAttributeCondition>> =
+                    let mut invocation_condition: Option<crate::Value<DocumentAttributeCondition>> =
                         None;
-                    let mut lambda_arn: Option<::Value<String>> = None;
-                    let mut s3_bucket: Option<::Value<String>> = None;
+                    let mut lambda_arn: Option<crate::Value<String>> = None;
+                    let mut s3_bucket: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3197,20 +3197,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub condition: Option<::Value<DocumentAttributeCondition>>,
+        pub condition: Option<crate::Value<DocumentAttributeCondition>>,
         /// Property [`DocumentContentDeletion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-documentcontentdeletion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_content_deletion: Option<::Value<bool>>,
+        pub document_content_deletion: Option<crate::Value<bool>>,
         /// Property [`Target`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-target).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target: Option<::Value<DocumentAttributeTarget>>,
+        pub target: Option<crate::Value<DocumentAttributeTarget>>,
     }
 
-    impl ::codec::SerializeValue for InlineCustomDocumentEnrichmentConfiguration {
+    impl crate::codec::SerializeValue for InlineCustomDocumentEnrichmentConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref condition) = self.condition {
@@ -3230,7 +3230,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for InlineCustomDocumentEnrichmentConfiguration {
+    impl crate::codec::DeserializeValue for InlineCustomDocumentEnrichmentConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InlineCustomDocumentEnrichmentConfiguration, D::Error> {
@@ -3250,9 +3250,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut condition: Option<::Value<DocumentAttributeCondition>> = None;
-                    let mut document_content_deletion: Option<::Value<bool>> = None;
-                    let mut target: Option<::Value<DocumentAttributeTarget>> = None;
+                    let mut condition: Option<crate::Value<DocumentAttributeCondition>> = None;
+                    let mut document_content_deletion: Option<crate::Value<bool>> = None;
+                    let mut target: Option<crate::Value<DocumentAttributeTarget>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3291,40 +3291,40 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disable_local_groups: Option<::Value<bool>>,
+        pub disable_local_groups: Option<crate::Value<bool>>,
         /// Property [`ExclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-exclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclusion_patterns: Option<::ValueList<String>>,
+        pub exclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`InclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-inclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inclusion_patterns: Option<::ValueList<String>>,
+        pub inclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`OneDriveUsers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-onedriveusers).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub one_drive_users: ::Value<OneDriveUsers>,
+        pub one_drive_users: crate::Value<OneDriveUsers>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: ::Value<String>,
+        pub secret_arn: crate::Value<String>,
         /// Property [`TenantDomain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-tenantdomain).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tenant_domain: ::Value<String>,
+        pub tenant_domain: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for OneDriveConfiguration {
+    impl crate::codec::SerializeValue for OneDriveConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref disable_local_groups) = self.disable_local_groups {
@@ -3370,7 +3370,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for OneDriveConfiguration {
+    impl crate::codec::DeserializeValue for OneDriveConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OneDriveConfiguration, D::Error> {
@@ -3387,14 +3387,14 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut disable_local_groups: Option<::Value<bool>> = None;
-                    let mut exclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut disable_local_groups: Option<crate::Value<bool>> = None;
+                    let mut exclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut inclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut one_drive_users: Option<::Value<OneDriveUsers>> = None;
-                    let mut secret_arn: Option<::Value<String>> = None;
-                    let mut tenant_domain: Option<::Value<String>> = None;
+                    let mut inclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut one_drive_users: Option<crate::Value<OneDriveUsers>> = None;
+                    let mut secret_arn: Option<crate::Value<String>> = None;
+                    let mut tenant_domain: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3452,15 +3452,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub one_drive_user_list: Option<::ValueList<String>>,
+        pub one_drive_user_list: Option<crate::ValueList<String>>,
         /// Property [`OneDriveUserS3Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveusers.html#cfn-kendra-datasource-onedriveusers-onedriveusers3path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub one_drive_user_s3_path: Option<::Value<S3Path>>,
+        pub one_drive_user_s3_path: Option<crate::Value<S3Path>>,
     }
 
-    impl ::codec::SerializeValue for OneDriveUsers {
+    impl crate::codec::SerializeValue for OneDriveUsers {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref one_drive_user_list) = self.one_drive_user_list {
@@ -3481,7 +3481,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for OneDriveUsers {
+    impl crate::codec::DeserializeValue for OneDriveUsers {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OneDriveUsers, D::Error> {
@@ -3498,8 +3498,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut one_drive_user_list: Option<::ValueList<String>> = None;
-                    let mut one_drive_user_s3_path: Option<::Value<S3Path>> = None;
+                    let mut one_drive_user_list: Option<crate::ValueList<String>> = None;
+                    let mut one_drive_user_s3_path: Option<crate::Value<S3Path>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3534,20 +3534,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub credentials: Option<::Value<String>>,
+        pub credentials: Option<crate::Value<String>>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-proxyconfiguration.html#cfn-kendra-datasource-proxyconfiguration-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: ::Value<String>,
+        pub host: crate::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-proxyconfiguration.html#cfn-kendra-datasource-proxyconfiguration-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: ::Value<u32>,
+        pub port: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for ProxyConfiguration {
+    impl crate::codec::SerializeValue for ProxyConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref credentials) = self.credentials {
@@ -3559,7 +3559,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ProxyConfiguration {
+    impl crate::codec::DeserializeValue for ProxyConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProxyConfiguration, D::Error> {
@@ -3576,9 +3576,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut credentials: Option<::Value<String>> = None;
-                    let mut host: Option<::Value<String>> = None;
-                    let mut port: Option<::Value<u32>> = None;
+                    let mut credentials: Option<crate::Value<String>> = None;
+                    let mut host: Option<crate::Value<String>> = None;
+                    let mut port: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3616,35 +3616,35 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_control_list_configuration: Option<::Value<AccessControlListConfiguration>>,
+        pub access_control_list_configuration: Option<crate::Value<AccessControlListConfiguration>>,
         /// Property [`BucketName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-bucketname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: ::Value<String>,
+        pub bucket_name: crate::Value<String>,
         /// Property [`DocumentsMetadataConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-documentsmetadataconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub documents_metadata_configuration: Option<::Value<DocumentsMetadataConfiguration>>,
+        pub documents_metadata_configuration: Option<crate::Value<DocumentsMetadataConfiguration>>,
         /// Property [`ExclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-exclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclusion_patterns: Option<::ValueList<String>>,
+        pub exclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`InclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-inclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inclusion_patterns: Option<::ValueList<String>>,
+        pub inclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`InclusionPrefixes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-inclusionprefixes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inclusion_prefixes: Option<::ValueList<String>>,
+        pub inclusion_prefixes: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for S3DataSourceConfiguration {
+    impl crate::codec::SerializeValue for S3DataSourceConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_control_list_configuration) =
@@ -3691,7 +3691,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for S3DataSourceConfiguration {
+    impl crate::codec::DeserializeValue for S3DataSourceConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3DataSourceConfiguration, D::Error> {
@@ -3709,15 +3709,15 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut access_control_list_configuration: Option<
-                        ::Value<AccessControlListConfiguration>,
+                        crate::Value<AccessControlListConfiguration>,
                     > = None;
-                    let mut bucket_name: Option<::Value<String>> = None;
+                    let mut bucket_name: Option<crate::Value<String>> = None;
                     let mut documents_metadata_configuration: Option<
-                        ::Value<DocumentsMetadataConfiguration>,
+                        crate::Value<DocumentsMetadataConfiguration>,
                     > = None;
-                    let mut exclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut inclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut inclusion_prefixes: Option<::ValueList<String>> = None;
+                    let mut exclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut inclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut inclusion_prefixes: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3770,15 +3770,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: ::Value<String>,
+        pub bucket: crate::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3path.html#cfn-kendra-datasource-s3path-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for S3Path {
+    impl crate::codec::SerializeValue for S3Path {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -3787,7 +3787,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Path {
+    impl crate::codec::DeserializeValue for S3Path {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Path, D::Error> {
             struct Visitor;
 
@@ -3802,8 +3802,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3837,25 +3837,25 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_data_field_name: ::Value<String>,
+        pub document_data_field_name: crate::Value<String>,
         /// Property [`DocumentTitleFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcechatterfeedconfiguration.html#cfn-kendra-datasource-salesforcechatterfeedconfiguration-documenttitlefieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_field_name: Option<::Value<String>>,
+        pub document_title_field_name: Option<crate::Value<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcechatterfeedconfiguration.html#cfn-kendra-datasource-salesforcechatterfeedconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`IncludeFilterTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcechatterfeedconfiguration.html#cfn-kendra-datasource-salesforcechatterfeedconfiguration-includefiltertypes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_filter_types: Option<::ValueList<String>>,
+        pub include_filter_types: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for SalesforceChatterFeedConfiguration {
+    impl crate::codec::SerializeValue for SalesforceChatterFeedConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3888,7 +3888,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceChatterFeedConfiguration {
+    impl crate::codec::DeserializeValue for SalesforceChatterFeedConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceChatterFeedConfiguration, D::Error> {
@@ -3905,11 +3905,11 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut document_data_field_name: Option<::Value<String>> = None;
-                    let mut document_title_field_name: Option<::Value<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut document_data_field_name: Option<crate::Value<String>> = None;
+                    let mut document_title_field_name: Option<crate::Value<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut include_filter_types: Option<::ValueList<String>> = None;
+                    let mut include_filter_types: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3955,53 +3955,53 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub chatter_feed_configuration: Option<::Value<SalesforceChatterFeedConfiguration>>,
+        pub chatter_feed_configuration: Option<crate::Value<SalesforceChatterFeedConfiguration>>,
         /// Property [`CrawlAttachments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-crawlattachments).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_attachments: Option<::Value<bool>>,
+        pub crawl_attachments: Option<crate::Value<bool>>,
         /// Property [`ExcludeAttachmentFilePatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-excludeattachmentfilepatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_attachment_file_patterns: Option<::ValueList<String>>,
+        pub exclude_attachment_file_patterns: Option<crate::ValueList<String>>,
         /// Property [`IncludeAttachmentFilePatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-includeattachmentfilepatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_attachment_file_patterns: Option<::ValueList<String>>,
+        pub include_attachment_file_patterns: Option<crate::ValueList<String>>,
         /// Property [`KnowledgeArticleConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-knowledgearticleconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub knowledge_article_configuration:
-            Option<::Value<SalesforceKnowledgeArticleConfiguration>>,
+            Option<crate::Value<SalesforceKnowledgeArticleConfiguration>>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: ::Value<String>,
+        pub secret_arn: crate::Value<String>,
         /// Property [`ServerUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-serverurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub server_url: ::Value<String>,
+        pub server_url: crate::Value<String>,
         /// Property [`StandardObjectAttachmentConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-standardobjectattachmentconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub standard_object_attachment_configuration:
-            Option<::Value<SalesforceStandardObjectAttachmentConfiguration>>,
+            Option<crate::Value<SalesforceStandardObjectAttachmentConfiguration>>,
         /// Property [`StandardObjectConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-standardobjectconfigurations).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub standard_object_configurations:
-            Option<::ValueList<SalesforceStandardObjectConfiguration>>,
+            Option<crate::ValueList<SalesforceStandardObjectConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for SalesforceConfiguration {
+    impl crate::codec::SerializeValue for SalesforceConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref chatter_feed_configuration) = self.chatter_feed_configuration {
@@ -4066,7 +4066,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceConfiguration {
+    impl crate::codec::DeserializeValue for SalesforceConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceConfiguration, D::Error> {
@@ -4084,21 +4084,21 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut chatter_feed_configuration: Option<
-                        ::Value<SalesforceChatterFeedConfiguration>,
+                        crate::Value<SalesforceChatterFeedConfiguration>,
                     > = None;
-                    let mut crawl_attachments: Option<::Value<bool>> = None;
-                    let mut exclude_attachment_file_patterns: Option<::ValueList<String>> = None;
-                    let mut include_attachment_file_patterns: Option<::ValueList<String>> = None;
+                    let mut crawl_attachments: Option<crate::Value<bool>> = None;
+                    let mut exclude_attachment_file_patterns: Option<crate::ValueList<String>> = None;
+                    let mut include_attachment_file_patterns: Option<crate::ValueList<String>> = None;
                     let mut knowledge_article_configuration: Option<
-                        ::Value<SalesforceKnowledgeArticleConfiguration>,
+                        crate::Value<SalesforceKnowledgeArticleConfiguration>,
                     > = None;
-                    let mut secret_arn: Option<::Value<String>> = None;
-                    let mut server_url: Option<::Value<String>> = None;
+                    let mut secret_arn: Option<crate::Value<String>> = None;
+                    let mut server_url: Option<crate::Value<String>> = None;
                     let mut standard_object_attachment_configuration: Option<
-                        ::Value<SalesforceStandardObjectAttachmentConfiguration>,
+                        crate::Value<SalesforceStandardObjectAttachmentConfiguration>,
                     > = None;
                     let mut standard_object_configurations: Option<
-                        ::ValueList<SalesforceStandardObjectConfiguration>,
+                        crate::ValueList<SalesforceStandardObjectConfiguration>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -4170,25 +4170,25 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_data_field_name: ::Value<String>,
+        pub document_data_field_name: crate::Value<String>,
         /// Property [`DocumentTitleFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-documenttitlefieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_field_name: Option<::Value<String>>,
+        pub document_title_field_name: Option<crate::Value<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SalesforceCustomKnowledgeArticleTypeConfiguration {
+    impl crate::codec::SerializeValue for SalesforceCustomKnowledgeArticleTypeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -4215,7 +4215,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceCustomKnowledgeArticleTypeConfiguration {
+    impl crate::codec::DeserializeValue for SalesforceCustomKnowledgeArticleTypeConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceCustomKnowledgeArticleTypeConfiguration, D::Error> {
@@ -4235,11 +4235,11 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut document_data_field_name: Option<::Value<String>> = None;
-                    let mut document_title_field_name: Option<::Value<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut document_data_field_name: Option<crate::Value<String>> = None;
+                    let mut document_title_field_name: Option<crate::Value<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut name: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4285,21 +4285,21 @@ pub mod data_source {
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub custom_knowledge_article_type_configurations:
-            Option<::ValueList<SalesforceCustomKnowledgeArticleTypeConfiguration>>,
+            Option<crate::ValueList<SalesforceCustomKnowledgeArticleTypeConfiguration>>,
         /// Property [`IncludedStates`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceknowledgearticleconfiguration.html#cfn-kendra-datasource-salesforceknowledgearticleconfiguration-includedstates).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub included_states: ::ValueList<String>,
+        pub included_states: crate::ValueList<String>,
         /// Property [`StandardKnowledgeArticleTypeConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceknowledgearticleconfiguration.html#cfn-kendra-datasource-salesforceknowledgearticleconfiguration-standardknowledgearticletypeconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub standard_knowledge_article_type_configuration:
-            Option<::Value<SalesforceStandardKnowledgeArticleTypeConfiguration>>,
+            Option<crate::Value<SalesforceStandardKnowledgeArticleTypeConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for SalesforceKnowledgeArticleConfiguration {
+    impl crate::codec::SerializeValue for SalesforceKnowledgeArticleConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_knowledge_article_type_configurations) =
@@ -4329,7 +4329,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceKnowledgeArticleConfiguration {
+    impl crate::codec::DeserializeValue for SalesforceKnowledgeArticleConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceKnowledgeArticleConfiguration, D::Error> {
@@ -4350,11 +4350,11 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut custom_knowledge_article_type_configurations: Option<
-                        ::ValueList<SalesforceCustomKnowledgeArticleTypeConfiguration>,
+                        crate::ValueList<SalesforceCustomKnowledgeArticleTypeConfiguration>,
                     > = None;
-                    let mut included_states: Option<::ValueList<String>> = None;
+                    let mut included_states: Option<crate::ValueList<String>> = None;
                     let mut standard_knowledge_article_type_configuration: Option<
-                        ::Value<SalesforceStandardKnowledgeArticleTypeConfiguration>,
+                        crate::Value<SalesforceStandardKnowledgeArticleTypeConfiguration>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -4398,20 +4398,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_data_field_name: ::Value<String>,
+        pub document_data_field_name: crate::Value<String>,
         /// Property [`DocumentTitleFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration-documenttitlefieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_field_name: Option<::Value<String>>,
+        pub document_title_field_name: Option<crate::Value<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
     }
 
-    impl ::codec::SerializeValue for SalesforceStandardKnowledgeArticleTypeConfiguration {
+    impl crate::codec::SerializeValue for SalesforceStandardKnowledgeArticleTypeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -4437,7 +4437,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceStandardKnowledgeArticleTypeConfiguration {
+    impl crate::codec::DeserializeValue for SalesforceStandardKnowledgeArticleTypeConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceStandardKnowledgeArticleTypeConfiguration, D::Error> {
@@ -4457,9 +4457,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut document_data_field_name: Option<::Value<String>> = None;
-                    let mut document_title_field_name: Option<::Value<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut document_data_field_name: Option<crate::Value<String>> = None;
+                    let mut document_title_field_name: Option<crate::Value<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -4501,15 +4501,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_field_name: Option<::Value<String>>,
+        pub document_title_field_name: Option<crate::Value<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectattachmentconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectattachmentconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
     }
 
-    impl ::codec::SerializeValue for SalesforceStandardObjectAttachmentConfiguration {
+    impl crate::codec::SerializeValue for SalesforceStandardObjectAttachmentConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref document_title_field_name) = self.document_title_field_name {
@@ -4530,7 +4530,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceStandardObjectAttachmentConfiguration {
+    impl crate::codec::DeserializeValue for SalesforceStandardObjectAttachmentConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceStandardObjectAttachmentConfiguration, D::Error> {
@@ -4550,8 +4550,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut document_title_field_name: Option<::Value<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut document_title_field_name: Option<crate::Value<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -4587,25 +4587,25 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_data_field_name: ::Value<String>,
+        pub document_data_field_name: crate::Value<String>,
         /// Property [`DocumentTitleFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectconfiguration-documenttitlefieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_field_name: Option<::Value<String>>,
+        pub document_title_field_name: Option<crate::Value<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectconfiguration-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SalesforceStandardObjectConfiguration {
+    impl crate::codec::SerializeValue for SalesforceStandardObjectConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -4632,7 +4632,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceStandardObjectConfiguration {
+    impl crate::codec::DeserializeValue for SalesforceStandardObjectConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceStandardObjectConfiguration, D::Error> {
@@ -4649,11 +4649,11 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut document_data_field_name: Option<::Value<String>> = None;
-                    let mut document_title_field_name: Option<::Value<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut document_data_field_name: Option<crate::Value<String>> = None;
+                    let mut document_title_field_name: Option<crate::Value<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut name: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4698,36 +4698,36 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authentication_type: Option<::Value<String>>,
+        pub authentication_type: Option<crate::Value<String>>,
         /// Property [`HostUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-hosturl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host_url: ::Value<String>,
+        pub host_url: crate::Value<String>,
         /// Property [`KnowledgeArticleConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-knowledgearticleconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub knowledge_article_configuration:
-            Option<::Value<ServiceNowKnowledgeArticleConfiguration>>,
+            Option<crate::Value<ServiceNowKnowledgeArticleConfiguration>>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: ::Value<String>,
+        pub secret_arn: crate::Value<String>,
         /// Property [`ServiceCatalogConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-servicecatalogconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_catalog_configuration: Option<::Value<ServiceNowServiceCatalogConfiguration>>,
+        pub service_catalog_configuration: Option<crate::Value<ServiceNowServiceCatalogConfiguration>>,
         /// Property [`ServiceNowBuildVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-servicenowbuildversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_now_build_version: ::Value<String>,
+        pub service_now_build_version: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ServiceNowConfiguration {
+    impl crate::codec::SerializeValue for ServiceNowConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authentication_type) = self.authentication_type {
@@ -4763,7 +4763,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ServiceNowConfiguration {
+    impl crate::codec::DeserializeValue for ServiceNowConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServiceNowConfiguration, D::Error> {
@@ -4780,16 +4780,16 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut authentication_type: Option<::Value<String>> = None;
-                    let mut host_url: Option<::Value<String>> = None;
+                    let mut authentication_type: Option<crate::Value<String>> = None;
+                    let mut host_url: Option<crate::Value<String>> = None;
                     let mut knowledge_article_configuration: Option<
-                        ::Value<ServiceNowKnowledgeArticleConfiguration>,
+                        crate::Value<ServiceNowKnowledgeArticleConfiguration>,
                     > = None;
-                    let mut secret_arn: Option<::Value<String>> = None;
+                    let mut secret_arn: Option<crate::Value<String>> = None;
                     let mut service_catalog_configuration: Option<
-                        ::Value<ServiceNowServiceCatalogConfiguration>,
+                        crate::Value<ServiceNowServiceCatalogConfiguration>,
                     > = None;
-                    let mut service_now_build_version: Option<::Value<String>> = None;
+                    let mut service_now_build_version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4844,40 +4844,40 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_attachments: Option<::Value<bool>>,
+        pub crawl_attachments: Option<crate::Value<bool>>,
         /// Property [`DocumentDataFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-documentdatafieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_data_field_name: ::Value<String>,
+        pub document_data_field_name: crate::Value<String>,
         /// Property [`DocumentTitleFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-documenttitlefieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_field_name: Option<::Value<String>>,
+        pub document_title_field_name: Option<crate::Value<String>>,
         /// Property [`ExcludeAttachmentFilePatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-excludeattachmentfilepatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_attachment_file_patterns: Option<::ValueList<String>>,
+        pub exclude_attachment_file_patterns: Option<crate::ValueList<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`FilterQuery`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-filterquery).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_query: Option<::Value<String>>,
+        pub filter_query: Option<crate::Value<String>>,
         /// Property [`IncludeAttachmentFilePatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-includeattachmentfilepatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_attachment_file_patterns: Option<::ValueList<String>>,
+        pub include_attachment_file_patterns: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for ServiceNowKnowledgeArticleConfiguration {
+    impl crate::codec::SerializeValue for ServiceNowKnowledgeArticleConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref crawl_attachments) = self.crawl_attachments {
@@ -4931,7 +4931,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ServiceNowKnowledgeArticleConfiguration {
+    impl crate::codec::DeserializeValue for ServiceNowKnowledgeArticleConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServiceNowKnowledgeArticleConfiguration, D::Error> {
@@ -4951,14 +4951,14 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut crawl_attachments: Option<::Value<bool>> = None;
-                    let mut document_data_field_name: Option<::Value<String>> = None;
-                    let mut document_title_field_name: Option<::Value<String>> = None;
-                    let mut exclude_attachment_file_patterns: Option<::ValueList<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut crawl_attachments: Option<crate::Value<bool>> = None;
+                    let mut document_data_field_name: Option<crate::Value<String>> = None;
+                    let mut document_title_field_name: Option<crate::Value<String>> = None;
+                    let mut exclude_attachment_file_patterns: Option<crate::ValueList<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut filter_query: Option<::Value<String>> = None;
-                    let mut include_attachment_file_patterns: Option<::ValueList<String>> = None;
+                    let mut filter_query: Option<crate::Value<String>> = None;
+                    let mut include_attachment_file_patterns: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5017,35 +5017,35 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_attachments: Option<::Value<bool>>,
+        pub crawl_attachments: Option<crate::Value<bool>>,
         /// Property [`DocumentDataFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-documentdatafieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_data_field_name: ::Value<String>,
+        pub document_data_field_name: crate::Value<String>,
         /// Property [`DocumentTitleFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-documenttitlefieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_field_name: Option<::Value<String>>,
+        pub document_title_field_name: Option<crate::Value<String>>,
         /// Property [`ExcludeAttachmentFilePatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-excludeattachmentfilepatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_attachment_file_patterns: Option<::ValueList<String>>,
+        pub exclude_attachment_file_patterns: Option<crate::ValueList<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`IncludeAttachmentFilePatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-includeattachmentfilepatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_attachment_file_patterns: Option<::ValueList<String>>,
+        pub include_attachment_file_patterns: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for ServiceNowServiceCatalogConfiguration {
+    impl crate::codec::SerializeValue for ServiceNowServiceCatalogConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref crawl_attachments) = self.crawl_attachments {
@@ -5096,7 +5096,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for ServiceNowServiceCatalogConfiguration {
+    impl crate::codec::DeserializeValue for ServiceNowServiceCatalogConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServiceNowServiceCatalogConfiguration, D::Error> {
@@ -5113,13 +5113,13 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut crawl_attachments: Option<::Value<bool>> = None;
-                    let mut document_data_field_name: Option<::Value<String>> = None;
-                    let mut document_title_field_name: Option<::Value<String>> = None;
-                    let mut exclude_attachment_file_patterns: Option<::ValueList<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut crawl_attachments: Option<crate::Value<bool>> = None;
+                    let mut document_data_field_name: Option<crate::Value<String>> = None;
+                    let mut document_title_field_name: Option<crate::Value<String>> = None;
+                    let mut exclude_attachment_file_patterns: Option<crate::ValueList<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut include_attachment_file_patterns: Option<::ValueList<String>> = None;
+                    let mut include_attachment_file_patterns: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5174,65 +5174,65 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_attachments: Option<::Value<bool>>,
+        pub crawl_attachments: Option<crate::Value<bool>>,
         /// Property [`DisableLocalGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-disablelocalgroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disable_local_groups: Option<::Value<bool>>,
+        pub disable_local_groups: Option<crate::Value<bool>>,
         /// Property [`DocumentTitleFieldName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-documenttitlefieldname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_title_field_name: Option<::Value<String>>,
+        pub document_title_field_name: Option<crate::Value<String>>,
         /// Property [`ExclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-exclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclusion_patterns: Option<::ValueList<String>>,
+        pub exclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`InclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-inclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inclusion_patterns: Option<::ValueList<String>>,
+        pub inclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: ::Value<String>,
+        pub secret_arn: crate::Value<String>,
         /// Property [`SharePointVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-sharepointversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub share_point_version: ::Value<String>,
+        pub share_point_version: crate::Value<String>,
         /// Property [`SslCertificateS3Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-sslcertificates3path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ssl_certificate_s3_path: Option<::Value<S3Path>>,
+        pub ssl_certificate_s3_path: Option<crate::Value<S3Path>>,
         /// Property [`Urls`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-urls).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub urls: ::ValueList<String>,
+        pub urls: crate::ValueList<String>,
         /// Property [`UseChangeLog`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-usechangelog).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub use_change_log: Option<::Value<bool>>,
+        pub use_change_log: Option<crate::Value<bool>>,
         /// Property [`VpcConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-vpcconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_configuration: Option<::Value<DataSourceVpcConfiguration>>,
+        pub vpc_configuration: Option<crate::Value<DataSourceVpcConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for SharePointConfiguration {
+    impl crate::codec::SerializeValue for SharePointConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref crawl_attachments) = self.crawl_attachments {
@@ -5309,7 +5309,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SharePointConfiguration {
+    impl crate::codec::DeserializeValue for SharePointConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SharePointConfiguration, D::Error> {
@@ -5326,19 +5326,19 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut crawl_attachments: Option<::Value<bool>> = None;
-                    let mut disable_local_groups: Option<::Value<bool>> = None;
-                    let mut document_title_field_name: Option<::Value<String>> = None;
-                    let mut exclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut crawl_attachments: Option<crate::Value<bool>> = None;
+                    let mut disable_local_groups: Option<crate::Value<bool>> = None;
+                    let mut document_title_field_name: Option<crate::Value<String>> = None;
+                    let mut exclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut inclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut secret_arn: Option<::Value<String>> = None;
-                    let mut share_point_version: Option<::Value<String>> = None;
-                    let mut ssl_certificate_s3_path: Option<::Value<S3Path>> = None;
-                    let mut urls: Option<::ValueList<String>> = None;
-                    let mut use_change_log: Option<::Value<bool>> = None;
-                    let mut vpc_configuration: Option<::Value<DataSourceVpcConfiguration>> = None;
+                    let mut inclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut secret_arn: Option<crate::Value<String>> = None;
+                    let mut share_point_version: Option<crate::Value<String>> = None;
+                    let mut ssl_certificate_s3_path: Option<crate::Value<S3Path>> = None;
+                    let mut urls: Option<crate::ValueList<String>> = None;
+                    let mut use_change_log: Option<crate::Value<bool>> = None;
+                    let mut vpc_configuration: Option<crate::Value<DataSourceVpcConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5417,10 +5417,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query_identifiers_enclosing_option: Option<::Value<String>>,
+        pub query_identifiers_enclosing_option: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SqlConfiguration {
+    impl crate::codec::SerializeValue for SqlConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref query_identifiers_enclosing_option) =
@@ -5436,7 +5436,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for SqlConfiguration {
+    impl crate::codec::DeserializeValue for SqlConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SqlConfiguration, D::Error> {
@@ -5453,7 +5453,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut query_identifiers_enclosing_option: Option<::Value<String>> = None;
+                    let mut query_identifiers_enclosing_option: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5484,10 +5484,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub basic_authentication: Option<::ValueList<WebCrawlerBasicAuthentication>>,
+        pub basic_authentication: Option<crate::ValueList<WebCrawlerBasicAuthentication>>,
     }
 
-    impl ::codec::SerializeValue for WebCrawlerAuthenticationConfiguration {
+    impl crate::codec::SerializeValue for WebCrawlerAuthenticationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref basic_authentication) = self.basic_authentication {
@@ -5501,7 +5501,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for WebCrawlerAuthenticationConfiguration {
+    impl crate::codec::DeserializeValue for WebCrawlerAuthenticationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WebCrawlerAuthenticationConfiguration, D::Error> {
@@ -5519,7 +5519,7 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut basic_authentication: Option<
-                        ::ValueList<WebCrawlerBasicAuthentication>,
+                        crate::ValueList<WebCrawlerBasicAuthentication>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -5551,20 +5551,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub credentials: ::Value<String>,
+        pub credentials: crate::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerbasicauthentication.html#cfn-kendra-datasource-webcrawlerbasicauthentication-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: ::Value<String>,
+        pub host: crate::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerbasicauthentication.html#cfn-kendra-datasource-webcrawlerbasicauthentication-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: ::Value<u32>,
+        pub port: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for WebCrawlerBasicAuthentication {
+    impl crate::codec::SerializeValue for WebCrawlerBasicAuthentication {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5578,7 +5578,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for WebCrawlerBasicAuthentication {
+    impl crate::codec::DeserializeValue for WebCrawlerBasicAuthentication {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WebCrawlerBasicAuthentication, D::Error> {
@@ -5595,9 +5595,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut credentials: Option<::Value<String>> = None;
-                    let mut host: Option<::Value<String>> = None;
-                    let mut port: Option<::Value<u32>> = None;
+                    let mut credentials: Option<crate::Value<String>> = None;
+                    let mut host: Option<crate::Value<String>> = None;
+                    let mut port: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5636,50 +5636,50 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authentication_configuration: Option<::Value<WebCrawlerAuthenticationConfiguration>>,
+        pub authentication_configuration: Option<crate::Value<WebCrawlerAuthenticationConfiguration>>,
         /// Property [`CrawlDepth`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-crawldepth).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_depth: Option<::Value<u32>>,
+        pub crawl_depth: Option<crate::Value<u32>>,
         /// Property [`MaxContentSizePerPageInMegaBytes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-maxcontentsizeperpageinmegabytes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_content_size_per_page_in_mega_bytes: Option<::Value<f64>>,
+        pub max_content_size_per_page_in_mega_bytes: Option<crate::Value<f64>>,
         /// Property [`MaxLinksPerPage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-maxlinksperpage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_links_per_page: Option<::Value<u32>>,
+        pub max_links_per_page: Option<crate::Value<u32>>,
         /// Property [`MaxUrlsPerMinuteCrawlRate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-maxurlsperminutecrawlrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_urls_per_minute_crawl_rate: Option<::Value<u32>>,
+        pub max_urls_per_minute_crawl_rate: Option<crate::Value<u32>>,
         /// Property [`ProxyConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-proxyconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub proxy_configuration: Option<::Value<ProxyConfiguration>>,
+        pub proxy_configuration: Option<crate::Value<ProxyConfiguration>>,
         /// Property [`UrlExclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-urlexclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url_exclusion_patterns: Option<::ValueList<String>>,
+        pub url_exclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`UrlInclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-urlinclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url_inclusion_patterns: Option<::ValueList<String>>,
+        pub url_inclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`Urls`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-urls).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub urls: ::Value<WebCrawlerUrls>,
+        pub urls: crate::Value<WebCrawlerUrls>,
     }
 
-    impl ::codec::SerializeValue for WebCrawlerConfiguration {
+    impl crate::codec::SerializeValue for WebCrawlerConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authentication_configuration) = self.authentication_configuration {
@@ -5741,7 +5741,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for WebCrawlerConfiguration {
+    impl crate::codec::DeserializeValue for WebCrawlerConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WebCrawlerConfiguration, D::Error> {
@@ -5759,16 +5759,16 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut authentication_configuration: Option<
-                        ::Value<WebCrawlerAuthenticationConfiguration>,
+                        crate::Value<WebCrawlerAuthenticationConfiguration>,
                     > = None;
-                    let mut crawl_depth: Option<::Value<u32>> = None;
-                    let mut max_content_size_per_page_in_mega_bytes: Option<::Value<f64>> = None;
-                    let mut max_links_per_page: Option<::Value<u32>> = None;
-                    let mut max_urls_per_minute_crawl_rate: Option<::Value<u32>> = None;
-                    let mut proxy_configuration: Option<::Value<ProxyConfiguration>> = None;
-                    let mut url_exclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut url_inclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut urls: Option<::Value<WebCrawlerUrls>> = None;
+                    let mut crawl_depth: Option<crate::Value<u32>> = None;
+                    let mut max_content_size_per_page_in_mega_bytes: Option<crate::Value<f64>> = None;
+                    let mut max_links_per_page: Option<crate::Value<u32>> = None;
+                    let mut max_urls_per_minute_crawl_rate: Option<crate::Value<u32>> = None;
+                    let mut proxy_configuration: Option<crate::Value<ProxyConfiguration>> = None;
+                    let mut url_exclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut url_inclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut urls: Option<crate::Value<WebCrawlerUrls>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5836,15 +5836,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub seed_urls: ::ValueList<String>,
+        pub seed_urls: crate::ValueList<String>,
         /// Property [`WebCrawlerMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerseedurlconfiguration.html#cfn-kendra-datasource-webcrawlerseedurlconfiguration-webcrawlermode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub web_crawler_mode: Option<::Value<String>>,
+        pub web_crawler_mode: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for WebCrawlerSeedUrlConfiguration {
+    impl crate::codec::SerializeValue for WebCrawlerSeedUrlConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SeedUrls", &self.seed_urls)?;
@@ -5859,7 +5859,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for WebCrawlerSeedUrlConfiguration {
+    impl crate::codec::DeserializeValue for WebCrawlerSeedUrlConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WebCrawlerSeedUrlConfiguration, D::Error> {
@@ -5876,8 +5876,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut seed_urls: Option<::ValueList<String>> = None;
-                    let mut web_crawler_mode: Option<::Value<String>> = None;
+                    let mut seed_urls: Option<crate::ValueList<String>> = None;
+                    let mut web_crawler_mode: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5912,10 +5912,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub site_maps: ::ValueList<String>,
+        pub site_maps: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for WebCrawlerSiteMapsConfiguration {
+    impl crate::codec::SerializeValue for WebCrawlerSiteMapsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SiteMaps", &self.site_maps)?;
@@ -5923,7 +5923,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for WebCrawlerSiteMapsConfiguration {
+    impl crate::codec::DeserializeValue for WebCrawlerSiteMapsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WebCrawlerSiteMapsConfiguration, D::Error> {
@@ -5940,7 +5940,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut site_maps: Option<::ValueList<String>> = None;
+                    let mut site_maps: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5971,15 +5971,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub seed_url_configuration: Option<::Value<WebCrawlerSeedUrlConfiguration>>,
+        pub seed_url_configuration: Option<crate::Value<WebCrawlerSeedUrlConfiguration>>,
         /// Property [`SiteMapsConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerurls.html#cfn-kendra-datasource-webcrawlerurls-sitemapsconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub site_maps_configuration: Option<::Value<WebCrawlerSiteMapsConfiguration>>,
+        pub site_maps_configuration: Option<crate::Value<WebCrawlerSiteMapsConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for WebCrawlerUrls {
+    impl crate::codec::SerializeValue for WebCrawlerUrls {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref seed_url_configuration) = self.seed_url_configuration {
@@ -6000,7 +6000,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for WebCrawlerUrls {
+    impl crate::codec::DeserializeValue for WebCrawlerUrls {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WebCrawlerUrls, D::Error> {
@@ -6018,10 +6018,10 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut seed_url_configuration: Option<
-                        ::Value<WebCrawlerSeedUrlConfiguration>,
+                        crate::Value<WebCrawlerSeedUrlConfiguration>,
                     > = None;
                     let mut site_maps_configuration: Option<
-                        ::Value<WebCrawlerSiteMapsConfiguration>,
+                        crate::Value<WebCrawlerSiteMapsConfiguration>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -6058,35 +6058,35 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crawl_comments: Option<::Value<bool>>,
+        pub crawl_comments: Option<crate::Value<bool>>,
         /// Property [`ExclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-exclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclusion_patterns: Option<::ValueList<String>>,
+        pub exclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`FieldMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-fieldmappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>>,
+        pub field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>>,
         /// Property [`InclusionPatterns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-inclusionpatterns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inclusion_patterns: Option<::ValueList<String>>,
+        pub inclusion_patterns: Option<crate::ValueList<String>>,
         /// Property [`OrganizationId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-organizationid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub organization_id: ::Value<String>,
+        pub organization_id: crate::Value<String>,
         /// Property [`UseChangeLog`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-usechangelog).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub use_change_log: Option<::Value<bool>>,
+        pub use_change_log: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for WorkDocsConfiguration {
+    impl crate::codec::SerializeValue for WorkDocsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref crawl_comments) = self.crawl_comments {
@@ -6133,7 +6133,7 @@ pub mod data_source {
         }
     }
 
-    impl ::codec::DeserializeValue for WorkDocsConfiguration {
+    impl crate::codec::DeserializeValue for WorkDocsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WorkDocsConfiguration, D::Error> {
@@ -6150,13 +6150,13 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut crawl_comments: Option<::Value<bool>> = None;
-                    let mut exclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut field_mappings: Option<::ValueList<DataSourceToIndexFieldMapping>> =
+                    let mut crawl_comments: Option<crate::Value<bool>> = None;
+                    let mut exclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut field_mappings: Option<crate::ValueList<DataSourceToIndexFieldMapping>> =
                         None;
-                    let mut inclusion_patterns: Option<::ValueList<String>> = None;
-                    let mut organization_id: Option<::Value<String>> = None;
-                    let mut use_change_log: Option<::Value<bool>> = None;
+                    let mut inclusion_patterns: Option<crate::ValueList<String>> = None;
+                    let mut organization_id: Option<crate::Value<String>> = None;
+                    let mut use_change_log: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6211,15 +6211,15 @@ pub mod faq {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub bucket: ::Value<String>,
+        pub bucket: crate::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-faq-s3path.html#cfn-kendra-faq-s3path-key).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for S3Path {
+    impl crate::codec::SerializeValue for S3Path {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -6228,7 +6228,7 @@ pub mod faq {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Path {
+    impl crate::codec::DeserializeValue for S3Path {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Path, D::Error> {
             struct Visitor;
 
@@ -6243,8 +6243,8 @@ pub mod faq {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6282,15 +6282,15 @@ pub mod index {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query_capacity_units: ::Value<u32>,
+        pub query_capacity_units: crate::Value<u32>,
         /// Property [`StorageCapacityUnits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-capacityunitsconfiguration.html#cfn-kendra-index-capacityunitsconfiguration-storagecapacityunits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub storage_capacity_units: ::Value<u32>,
+        pub storage_capacity_units: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for CapacityUnitsConfiguration {
+    impl crate::codec::SerializeValue for CapacityUnitsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -6307,7 +6307,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for CapacityUnitsConfiguration {
+    impl crate::codec::DeserializeValue for CapacityUnitsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CapacityUnitsConfiguration, D::Error> {
@@ -6324,8 +6324,8 @@ pub mod index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut query_capacity_units: Option<::Value<u32>> = None;
-                    let mut storage_capacity_units: Option<::Value<u32>> = None;
+                    let mut query_capacity_units: Option<crate::Value<u32>> = None;
+                    let mut storage_capacity_units: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6363,25 +6363,25 @@ pub mod index {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`Relevance`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html#cfn-kendra-index-documentmetadataconfiguration-relevance).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub relevance: Option<::Value<Relevance>>,
+        pub relevance: Option<crate::Value<Relevance>>,
         /// Property [`Search`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html#cfn-kendra-index-documentmetadataconfiguration-search).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub search: Option<::Value<Search>>,
+        pub search: Option<crate::Value<Search>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html#cfn-kendra-index-documentmetadataconfiguration-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DocumentMetadataConfiguration {
+    impl crate::codec::SerializeValue for DocumentMetadataConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -6396,7 +6396,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for DocumentMetadataConfiguration {
+    impl crate::codec::DeserializeValue for DocumentMetadataConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DocumentMetadataConfiguration, D::Error> {
@@ -6413,10 +6413,10 @@ pub mod index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut relevance: Option<::Value<Relevance>> = None;
-                    let mut search: Option<::Value<Search>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut relevance: Option<crate::Value<Relevance>> = None;
+                    let mut search: Option<crate::Value<Search>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6458,15 +6458,15 @@ pub mod index {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_attribute_field: ::Value<String>,
+        pub group_attribute_field: crate::Value<String>,
         /// Property [`UserNameAttributeField`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jsontokentypeconfiguration.html#cfn-kendra-index-jsontokentypeconfiguration-usernameattributefield).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_name_attribute_field: ::Value<String>,
+        pub user_name_attribute_field: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for JsonTokenTypeConfiguration {
+    impl crate::codec::SerializeValue for JsonTokenTypeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -6483,7 +6483,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for JsonTokenTypeConfiguration {
+    impl crate::codec::DeserializeValue for JsonTokenTypeConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<JsonTokenTypeConfiguration, D::Error> {
@@ -6500,8 +6500,8 @@ pub mod index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut group_attribute_field: Option<::Value<String>> = None;
-                    let mut user_name_attribute_field: Option<::Value<String>> = None;
+                    let mut group_attribute_field: Option<crate::Value<String>> = None;
+                    let mut user_name_attribute_field: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6539,40 +6539,40 @@ pub mod index {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub claim_regex: Option<::Value<String>>,
+        pub claim_regex: Option<crate::Value<String>>,
         /// Property [`GroupAttributeField`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-groupattributefield).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_attribute_field: Option<::Value<String>>,
+        pub group_attribute_field: Option<crate::Value<String>>,
         /// Property [`Issuer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-issuer).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub issuer: Option<::Value<String>>,
+        pub issuer: Option<crate::Value<String>>,
         /// Property [`KeyLocation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-keylocation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_location: ::Value<String>,
+        pub key_location: crate::Value<String>,
         /// Property [`SecretManagerArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-secretmanagerarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_manager_arn: Option<::Value<String>>,
+        pub secret_manager_arn: Option<crate::Value<String>>,
         /// Property [`URL`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<::Value<String>>,
+        pub url: Option<crate::Value<String>>,
         /// Property [`UserNameAttributeField`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-usernameattributefield).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_name_attribute_field: Option<::Value<String>>,
+        pub user_name_attribute_field: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for JwtTokenTypeConfiguration {
+    impl crate::codec::SerializeValue for JwtTokenTypeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref claim_regex) = self.claim_regex {
@@ -6614,7 +6614,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for JwtTokenTypeConfiguration {
+    impl crate::codec::DeserializeValue for JwtTokenTypeConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<JwtTokenTypeConfiguration, D::Error> {
@@ -6631,13 +6631,13 @@ pub mod index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut claim_regex: Option<::Value<String>> = None;
-                    let mut group_attribute_field: Option<::Value<String>> = None;
-                    let mut issuer: Option<::Value<String>> = None;
-                    let mut key_location: Option<::Value<String>> = None;
-                    let mut secret_manager_arn: Option<::Value<String>> = None;
-                    let mut url: Option<::Value<String>> = None;
-                    let mut user_name_attribute_field: Option<::Value<String>> = None;
+                    let mut claim_regex: Option<crate::Value<String>> = None;
+                    let mut group_attribute_field: Option<crate::Value<String>> = None;
+                    let mut issuer: Option<crate::Value<String>> = None;
+                    let mut key_location: Option<crate::Value<String>> = None;
+                    let mut secret_manager_arn: Option<crate::Value<String>> = None;
+                    let mut url: Option<crate::Value<String>> = None;
+                    let mut user_name_attribute_field: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6694,30 +6694,30 @@ pub mod index {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration: Option<::Value<String>>,
+        pub duration: Option<crate::Value<String>>,
         /// Property [`Freshness`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-freshness).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub freshness: Option<::Value<bool>>,
+        pub freshness: Option<crate::Value<bool>>,
         /// Property [`Importance`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-importance).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub importance: Option<::Value<u32>>,
+        pub importance: Option<crate::Value<u32>>,
         /// Property [`RankOrder`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-rankorder).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rank_order: Option<::Value<String>>,
+        pub rank_order: Option<crate::Value<String>>,
         /// Property [`ValueImportanceItems`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-valueimportanceitems).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_importance_items: Option<::ValueList<ValueImportanceItem>>,
+        pub value_importance_items: Option<crate::ValueList<ValueImportanceItem>>,
     }
 
-    impl ::codec::SerializeValue for Relevance {
+    impl crate::codec::SerializeValue for Relevance {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration) = self.duration {
@@ -6743,7 +6743,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for Relevance {
+    impl crate::codec::DeserializeValue for Relevance {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Relevance, D::Error> {
             struct Visitor;
 
@@ -6758,11 +6758,11 @@ pub mod index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration: Option<::Value<String>> = None;
-                    let mut freshness: Option<::Value<bool>> = None;
-                    let mut importance: Option<::Value<u32>> = None;
-                    let mut rank_order: Option<::Value<String>> = None;
-                    let mut value_importance_items: Option<::ValueList<ValueImportanceItem>> = None;
+                    let mut duration: Option<crate::Value<String>> = None;
+                    let mut freshness: Option<crate::Value<bool>> = None;
+                    let mut importance: Option<crate::Value<u32>> = None;
+                    let mut rank_order: Option<crate::Value<String>> = None;
+                    let mut value_importance_items: Option<crate::ValueList<ValueImportanceItem>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6809,25 +6809,25 @@ pub mod index {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub displayable: Option<::Value<bool>>,
+        pub displayable: Option<crate::Value<bool>>,
         /// Property [`Facetable`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html#cfn-kendra-index-search-facetable).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub facetable: Option<::Value<bool>>,
+        pub facetable: Option<crate::Value<bool>>,
         /// Property [`Searchable`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html#cfn-kendra-index-search-searchable).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub searchable: Option<::Value<bool>>,
+        pub searchable: Option<crate::Value<bool>>,
         /// Property [`Sortable`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html#cfn-kendra-index-search-sortable).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sortable: Option<::Value<bool>>,
+        pub sortable: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for Search {
+    impl crate::codec::SerializeValue for Search {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref displayable) = self.displayable {
@@ -6846,7 +6846,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for Search {
+    impl crate::codec::DeserializeValue for Search {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Search, D::Error> {
             struct Visitor;
 
@@ -6861,10 +6861,10 @@ pub mod index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut displayable: Option<::Value<bool>> = None;
-                    let mut facetable: Option<::Value<bool>> = None;
-                    let mut searchable: Option<::Value<bool>> = None;
-                    let mut sortable: Option<::Value<bool>> = None;
+                    let mut displayable: Option<crate::Value<bool>> = None;
+                    let mut facetable: Option<crate::Value<bool>> = None;
+                    let mut searchable: Option<crate::Value<bool>> = None;
+                    let mut sortable: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6906,10 +6906,10 @@ pub mod index {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<::Value<String>>,
+        pub kms_key_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ServerSideEncryptionConfiguration {
+    impl crate::codec::SerializeValue for ServerSideEncryptionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -6919,7 +6919,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for ServerSideEncryptionConfiguration {
+    impl crate::codec::DeserializeValue for ServerSideEncryptionConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServerSideEncryptionConfiguration, D::Error> {
@@ -6936,7 +6936,7 @@ pub mod index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut kms_key_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6966,15 +6966,15 @@ pub mod index {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub json_token_type_configuration: Option<::Value<JsonTokenTypeConfiguration>>,
+        pub json_token_type_configuration: Option<crate::Value<JsonTokenTypeConfiguration>>,
         /// Property [`JwtTokenTypeConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html#cfn-kendra-index-usertokenconfiguration-jwttokentypeconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub jwt_token_type_configuration: Option<::Value<JwtTokenTypeConfiguration>>,
+        pub jwt_token_type_configuration: Option<crate::Value<JwtTokenTypeConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for UserTokenConfiguration {
+    impl crate::codec::SerializeValue for UserTokenConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref json_token_type_configuration) = self.json_token_type_configuration {
@@ -6995,7 +6995,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for UserTokenConfiguration {
+    impl crate::codec::DeserializeValue for UserTokenConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UserTokenConfiguration, D::Error> {
@@ -7013,10 +7013,10 @@ pub mod index {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut json_token_type_configuration: Option<
-                        ::Value<JsonTokenTypeConfiguration>,
+                        crate::Value<JsonTokenTypeConfiguration>,
                     > = None;
                     let mut jwt_token_type_configuration: Option<
-                        ::Value<JwtTokenTypeConfiguration>,
+                        crate::Value<JwtTokenTypeConfiguration>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -7053,15 +7053,15 @@ pub mod index {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-valueimportanceitem.html#cfn-kendra-index-valueimportanceitem-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<u32>>,
+        pub value: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for ValueImportanceItem {
+    impl crate::codec::SerializeValue for ValueImportanceItem {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key) = self.key {
@@ -7074,7 +7074,7 @@ pub mod index {
         }
     }
 
-    impl ::codec::DeserializeValue for ValueImportanceItem {
+    impl crate::codec::DeserializeValue for ValueImportanceItem {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ValueImportanceItem, D::Error> {
@@ -7091,8 +7091,8 @@ pub mod index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<u32>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

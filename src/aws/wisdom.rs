@@ -13,28 +13,28 @@ pub struct AssistantProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistant.html#cfn-wisdom-assistant-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`ServerSideEncryptionConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistant.html#cfn-wisdom-assistant-serversideencryptionconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub server_side_encryption_configuration:
-        Option<::Value<self::assistant::ServerSideEncryptionConfiguration>>,
+        Option<crate::Value<self::assistant::ServerSideEncryptionConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistant.html#cfn-wisdom-assistant-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistant.html#cfn-wisdom-assistant-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for AssistantProperties {
@@ -76,13 +76,13 @@ impl<'de> ::serde::Deserialize<'de> for AssistantProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
                 let mut server_side_encryption_configuration: Option<
-                    ::Value<self::assistant::ServerSideEncryptionConfiguration>,
+                    crate::Value<self::assistant::ServerSideEncryptionConfiguration>,
                 > = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -120,7 +120,7 @@ impl<'de> ::serde::Deserialize<'de> for AssistantProperties {
     }
 }
 
-impl ::Resource for Assistant {
+impl crate::Resource for Assistant {
     type Properties = AssistantProperties;
     const TYPE: &'static str = "AWS::Wisdom::Assistant";
     fn properties(&self) -> &AssistantProperties {
@@ -131,7 +131,7 @@ impl ::Resource for Assistant {
     }
 }
 
-impl ::private::Sealed for Assistant {}
+impl crate::private::Sealed for Assistant {}
 
 impl From<AssistantProperties> for Assistant {
     fn from(properties: AssistantProperties) -> Assistant {
@@ -152,22 +152,22 @@ pub struct AssistantAssociationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub assistant_id: ::Value<String>,
+    pub assistant_id: crate::Value<String>,
     /// Property [`Association`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html#cfn-wisdom-assistantassociation-association).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub association: ::Value<self::assistant_association::AssociationData>,
+    pub association: crate::Value<self::assistant_association::AssociationData>,
     /// Property [`AssociationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html#cfn-wisdom-assistantassociation-associationtype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub association_type: ::Value<String>,
+    pub association_type: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html#cfn-wisdom-assistantassociation-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for AssistantAssociationProperties {
@@ -204,11 +204,11 @@ impl<'de> ::serde::Deserialize<'de> for AssistantAssociationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut assistant_id: Option<::Value<String>> = None;
-                let mut association: Option<::Value<self::assistant_association::AssociationData>> =
+                let mut assistant_id: Option<crate::Value<String>> = None;
+                let mut association: Option<crate::Value<self::assistant_association::AssociationData>> =
                     None;
-                let mut association_type: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut association_type: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -244,7 +244,7 @@ impl<'de> ::serde::Deserialize<'de> for AssistantAssociationProperties {
     }
 }
 
-impl ::Resource for AssistantAssociation {
+impl crate::Resource for AssistantAssociation {
     type Properties = AssistantAssociationProperties;
     const TYPE: &'static str = "AWS::Wisdom::AssistantAssociation";
     fn properties(&self) -> &AssistantAssociationProperties {
@@ -255,7 +255,7 @@ impl ::Resource for AssistantAssociation {
     }
 }
 
-impl ::private::Sealed for AssistantAssociation {}
+impl crate::private::Sealed for AssistantAssociation {}
 
 impl From<AssistantAssociationProperties> for AssistantAssociation {
     fn from(properties: AssistantAssociationProperties) -> AssistantAssociation {
@@ -276,38 +276,38 @@ pub struct KnowledgeBaseProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`KnowledgeBaseType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-knowledgebasetype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub knowledge_base_type: ::Value<String>,
+    pub knowledge_base_type: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`RenderingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-renderingconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rendering_configuration: Option<::Value<self::knowledge_base::RenderingConfiguration>>,
+    pub rendering_configuration: Option<crate::Value<self::knowledge_base::RenderingConfiguration>>,
     /// Property [`ServerSideEncryptionConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-serversideencryptionconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub server_side_encryption_configuration:
-        Option<::Value<self::knowledge_base::ServerSideEncryptionConfiguration>>,
+        Option<crate::Value<self::knowledge_base::ServerSideEncryptionConfiguration>>,
     /// Property [`SourceConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-sourceconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub source_configuration: Option<::Value<self::knowledge_base::SourceConfiguration>>,
+    pub source_configuration: Option<crate::Value<self::knowledge_base::SourceConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for KnowledgeBaseProperties {
@@ -369,19 +369,19 @@ impl<'de> ::serde::Deserialize<'de> for KnowledgeBaseProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut knowledge_base_type: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut knowledge_base_type: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
                 let mut rendering_configuration: Option<
-                    ::Value<self::knowledge_base::RenderingConfiguration>,
+                    crate::Value<self::knowledge_base::RenderingConfiguration>,
                 > = None;
                 let mut server_side_encryption_configuration: Option<
-                    ::Value<self::knowledge_base::ServerSideEncryptionConfiguration>,
+                    crate::Value<self::knowledge_base::ServerSideEncryptionConfiguration>,
                 > = None;
                 let mut source_configuration: Option<
-                    ::Value<self::knowledge_base::SourceConfiguration>,
+                    crate::Value<self::knowledge_base::SourceConfiguration>,
                 > = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -428,7 +428,7 @@ impl<'de> ::serde::Deserialize<'de> for KnowledgeBaseProperties {
     }
 }
 
-impl ::Resource for KnowledgeBase {
+impl crate::Resource for KnowledgeBase {
     type Properties = KnowledgeBaseProperties;
     const TYPE: &'static str = "AWS::Wisdom::KnowledgeBase";
     fn properties(&self) -> &KnowledgeBaseProperties {
@@ -439,7 +439,7 @@ impl ::Resource for KnowledgeBase {
     }
 }
 
-impl ::private::Sealed for KnowledgeBase {}
+impl crate::private::Sealed for KnowledgeBase {}
 
 impl From<KnowledgeBaseProperties> for KnowledgeBase {
     fn from(properties: KnowledgeBaseProperties) -> KnowledgeBase {
@@ -457,10 +457,10 @@ pub mod assistant {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<::Value<String>>,
+        pub kms_key_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ServerSideEncryptionConfiguration {
+    impl crate::codec::SerializeValue for ServerSideEncryptionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -470,7 +470,7 @@ pub mod assistant {
         }
     }
 
-    impl ::codec::DeserializeValue for ServerSideEncryptionConfiguration {
+    impl crate::codec::DeserializeValue for ServerSideEncryptionConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServerSideEncryptionConfiguration, D::Error> {
@@ -487,7 +487,7 @@ pub mod assistant {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut kms_key_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -521,10 +521,10 @@ pub mod assistant_association {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub knowledge_base_id: ::Value<String>,
+        pub knowledge_base_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for AssociationData {
+    impl crate::codec::SerializeValue for AssociationData {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -536,7 +536,7 @@ pub mod assistant_association {
         }
     }
 
-    impl ::codec::DeserializeValue for AssociationData {
+    impl crate::codec::DeserializeValue for AssociationData {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AssociationData, D::Error> {
@@ -553,7 +553,7 @@ pub mod assistant_association {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut knowledge_base_id: Option<::Value<String>> = None;
+                    let mut knowledge_base_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -588,15 +588,15 @@ pub mod knowledge_base {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub app_integration_arn: ::Value<String>,
+        pub app_integration_arn: crate::Value<String>,
         /// Property [`ObjectFields`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-knowledgebase-appintegrationsconfiguration.html#cfn-wisdom-knowledgebase-appintegrationsconfiguration-objectfields).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub object_fields: ::ValueList<String>,
+        pub object_fields: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for AppIntegrationsConfiguration {
+    impl crate::codec::SerializeValue for AppIntegrationsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -613,7 +613,7 @@ pub mod knowledge_base {
         }
     }
 
-    impl ::codec::DeserializeValue for AppIntegrationsConfiguration {
+    impl crate::codec::DeserializeValue for AppIntegrationsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AppIntegrationsConfiguration, D::Error> {
@@ -630,8 +630,8 @@ pub mod knowledge_base {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut app_integration_arn: Option<::Value<String>> = None;
-                    let mut object_fields: Option<::ValueList<String>> = None;
+                    let mut app_integration_arn: Option<crate::Value<String>> = None;
+                    let mut object_fields: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -667,10 +667,10 @@ pub mod knowledge_base {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub template_uri: Option<::Value<String>>,
+        pub template_uri: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for RenderingConfiguration {
+    impl crate::codec::SerializeValue for RenderingConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref template_uri) = self.template_uri {
@@ -680,7 +680,7 @@ pub mod knowledge_base {
         }
     }
 
-    impl ::codec::DeserializeValue for RenderingConfiguration {
+    impl crate::codec::DeserializeValue for RenderingConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RenderingConfiguration, D::Error> {
@@ -697,7 +697,7 @@ pub mod knowledge_base {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut template_uri: Option<::Value<String>> = None;
+                    let mut template_uri: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -727,10 +727,10 @@ pub mod knowledge_base {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<::Value<String>>,
+        pub kms_key_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ServerSideEncryptionConfiguration {
+    impl crate::codec::SerializeValue for ServerSideEncryptionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -740,7 +740,7 @@ pub mod knowledge_base {
         }
     }
 
-    impl ::codec::DeserializeValue for ServerSideEncryptionConfiguration {
+    impl crate::codec::DeserializeValue for ServerSideEncryptionConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServerSideEncryptionConfiguration, D::Error> {
@@ -757,7 +757,7 @@ pub mod knowledge_base {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut kms_key_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -787,10 +787,10 @@ pub mod knowledge_base {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub app_integrations: Option<::Value<AppIntegrationsConfiguration>>,
+        pub app_integrations: Option<crate::Value<AppIntegrationsConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for SourceConfiguration {
+    impl crate::codec::SerializeValue for SourceConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref app_integrations) = self.app_integrations {
@@ -804,7 +804,7 @@ pub mod knowledge_base {
         }
     }
 
-    impl ::codec::DeserializeValue for SourceConfiguration {
+    impl crate::codec::DeserializeValue for SourceConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SourceConfiguration, D::Error> {
@@ -821,7 +821,7 @@ pub mod knowledge_base {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut app_integrations: Option<::Value<AppIntegrationsConfiguration>> = None;
+                    let mut app_integrations: Option<crate::Value<AppIntegrationsConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

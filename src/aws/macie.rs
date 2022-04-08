@@ -13,32 +13,32 @@ pub struct CustomDataIdentifierProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`IgnoreWords`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-ignorewords).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ignore_words: Option<::ValueList<String>>,
+    pub ignore_words: Option<crate::ValueList<String>>,
     /// Property [`Keywords`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-keywords).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub keywords: Option<::ValueList<String>>,
+    pub keywords: Option<crate::ValueList<String>>,
     /// Property [`MaximumMatchDistance`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-maximummatchdistance).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub maximum_match_distance: Option<::Value<u32>>,
+    pub maximum_match_distance: Option<crate::Value<u32>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Regex`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-regex).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub regex: ::Value<String>,
+    pub regex: crate::Value<String>,
 }
 
 impl ::serde::Serialize for CustomDataIdentifierProperties {
@@ -83,12 +83,12 @@ impl<'de> ::serde::Deserialize<'de> for CustomDataIdentifierProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut ignore_words: Option<::ValueList<String>> = None;
-                let mut keywords: Option<::ValueList<String>> = None;
-                let mut maximum_match_distance: Option<::Value<u32>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut regex: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut ignore_words: Option<crate::ValueList<String>> = None;
+                let mut keywords: Option<crate::ValueList<String>> = None;
+                let mut maximum_match_distance: Option<crate::Value<u32>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut regex: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -129,7 +129,7 @@ impl<'de> ::serde::Deserialize<'de> for CustomDataIdentifierProperties {
     }
 }
 
-impl ::Resource for CustomDataIdentifier {
+impl crate::Resource for CustomDataIdentifier {
     type Properties = CustomDataIdentifierProperties;
     const TYPE: &'static str = "AWS::Macie::CustomDataIdentifier";
     fn properties(&self) -> &CustomDataIdentifierProperties {
@@ -140,7 +140,7 @@ impl ::Resource for CustomDataIdentifier {
     }
 }
 
-impl ::private::Sealed for CustomDataIdentifier {}
+impl crate::private::Sealed for CustomDataIdentifier {}
 
 impl From<CustomDataIdentifierProperties> for CustomDataIdentifier {
     fn from(properties: CustomDataIdentifierProperties) -> CustomDataIdentifier {
@@ -161,27 +161,27 @@ pub struct FindingsFilterProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub action: Option<::Value<String>>,
+    pub action: Option<crate::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`FindingCriteria`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-findingcriteria).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub finding_criteria: ::Value<self::findings_filter::FindingCriteria>,
+    pub finding_criteria: crate::Value<self::findings_filter::FindingCriteria>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Position`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-position).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub position: Option<::Value<u32>>,
+    pub position: Option<crate::Value<u32>>,
 }
 
 impl ::serde::Serialize for FindingsFilterProperties {
@@ -223,12 +223,12 @@ impl<'de> ::serde::Deserialize<'de> for FindingsFilterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut action: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut finding_criteria: Option<::Value<self::findings_filter::FindingCriteria>> =
+                let mut action: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut finding_criteria: Option<crate::Value<self::findings_filter::FindingCriteria>> =
                     None;
-                let mut name: Option<::Value<String>> = None;
-                let mut position: Option<::Value<u32>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut position: Option<crate::Value<u32>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -266,7 +266,7 @@ impl<'de> ::serde::Deserialize<'de> for FindingsFilterProperties {
     }
 }
 
-impl ::Resource for FindingsFilter {
+impl crate::Resource for FindingsFilter {
     type Properties = FindingsFilterProperties;
     const TYPE: &'static str = "AWS::Macie::FindingsFilter";
     fn properties(&self) -> &FindingsFilterProperties {
@@ -277,7 +277,7 @@ impl ::Resource for FindingsFilter {
     }
 }
 
-impl ::private::Sealed for FindingsFilter {}
+impl crate::private::Sealed for FindingsFilter {}
 
 impl From<FindingsFilterProperties> for FindingsFilter {
     fn from(properties: FindingsFilterProperties) -> FindingsFilter {
@@ -298,12 +298,12 @@ pub struct SessionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub finding_publishing_frequency: Option<::Value<String>>,
+    pub finding_publishing_frequency: Option<crate::Value<String>>,
     /// Property [`Status`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html#cfn-macie-session-status).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub status: Option<::Value<String>>,
+    pub status: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for SessionProperties {
@@ -338,8 +338,8 @@ impl<'de> ::serde::Deserialize<'de> for SessionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut finding_publishing_frequency: Option<::Value<String>> = None;
-                let mut status: Option<::Value<String>> = None;
+                let mut finding_publishing_frequency: Option<crate::Value<String>> = None;
+                let mut status: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -365,7 +365,7 @@ impl<'de> ::serde::Deserialize<'de> for SessionProperties {
     }
 }
 
-impl ::Resource for Session {
+impl crate::Resource for Session {
     type Properties = SessionProperties;
     const TYPE: &'static str = "AWS::Macie::Session";
     fn properties(&self) -> &SessionProperties {
@@ -376,7 +376,7 @@ impl ::Resource for Session {
     }
 }
 
-impl ::private::Sealed for Session {}
+impl crate::private::Sealed for Session {}
 
 impl From<SessionProperties> for Session {
     fn from(properties: SessionProperties) -> Session {
@@ -391,14 +391,14 @@ pub mod findings_filter {
     #[derive(Debug, Default)]
     pub struct Criterion {}
 
-    impl ::codec::SerializeValue for Criterion {
+    impl crate::codec::SerializeValue for Criterion {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl ::codec::DeserializeValue for Criterion {
+    impl crate::codec::DeserializeValue for Criterion {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Criterion, D::Error> {
             struct Visitor;
 
@@ -428,10 +428,10 @@ pub mod findings_filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub criterion: Option<::Value<Criterion>>,
+        pub criterion: Option<crate::Value<Criterion>>,
     }
 
-    impl ::codec::SerializeValue for FindingCriteria {
+    impl crate::codec::SerializeValue for FindingCriteria {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref criterion) = self.criterion {
@@ -441,7 +441,7 @@ pub mod findings_filter {
         }
     }
 
-    impl ::codec::DeserializeValue for FindingCriteria {
+    impl crate::codec::DeserializeValue for FindingCriteria {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FindingCriteria, D::Error> {
@@ -458,7 +458,7 @@ pub mod findings_filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut criterion: Option<::Value<Criterion>> = None;
+                    let mut criterion: Option<crate::Value<Criterion>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -488,15 +488,15 @@ pub mod findings_filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: Option<::Value<String>>,
+        pub id: Option<crate::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingsfilterlistitem.html#cfn-macie-findingsfilter-findingsfilterlistitem-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for FindingsFilterListItem {
+    impl crate::codec::SerializeValue for FindingsFilterListItem {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref id) = self.id {
@@ -509,7 +509,7 @@ pub mod findings_filter {
         }
     }
 
-    impl ::codec::DeserializeValue for FindingsFilterListItem {
+    impl crate::codec::DeserializeValue for FindingsFilterListItem {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FindingsFilterListItem, D::Error> {
@@ -526,8 +526,8 @@ pub mod findings_filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<::Value<String>> = None;
-                    let mut name: Option<::Value<String>> = None;
+                    let mut id: Option<crate::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

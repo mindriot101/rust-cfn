@@ -13,58 +13,58 @@ pub struct GlobalTableProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub attribute_definitions: ::ValueList<self::global_table::AttributeDefinition>,
+    pub attribute_definitions: crate::ValueList<self::global_table::AttributeDefinition>,
     /// Property [`BillingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-billingmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub billing_mode: Option<::Value<String>>,
+    pub billing_mode: Option<crate::Value<String>>,
     /// Property [`GlobalSecondaryIndexes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-globalsecondaryindexes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub global_secondary_indexes: Option<::ValueList<self::global_table::GlobalSecondaryIndex>>,
+    pub global_secondary_indexes: Option<crate::ValueList<self::global_table::GlobalSecondaryIndex>>,
     /// Property [`KeySchema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-keyschema).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub key_schema: ::ValueList<self::global_table::KeySchema>,
+    pub key_schema: crate::ValueList<self::global_table::KeySchema>,
     /// Property [`LocalSecondaryIndexes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-localsecondaryindexes).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub local_secondary_indexes: Option<::ValueList<self::global_table::LocalSecondaryIndex>>,
+    pub local_secondary_indexes: Option<crate::ValueList<self::global_table::LocalSecondaryIndex>>,
     /// Property [`Replicas`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-replicas).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub replicas: ::ValueList<self::global_table::ReplicaSpecification>,
+    pub replicas: crate::ValueList<self::global_table::ReplicaSpecification>,
     /// Property [`SSESpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-ssespecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sse_specification: Option<::Value<self::global_table::SSESpecification>>,
+    pub sse_specification: Option<crate::Value<self::global_table::SSESpecification>>,
     /// Property [`StreamSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-streamspecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stream_specification: Option<::Value<self::global_table::StreamSpecification>>,
+    pub stream_specification: Option<crate::Value<self::global_table::StreamSpecification>>,
     /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-tablename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub table_name: Option<::Value<String>>,
+    pub table_name: Option<crate::Value<String>>,
     /// Property [`TimeToLiveSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-timetolivespecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub time_to_live_specification: Option<::Value<self::global_table::TimeToLiveSpecification>>,
+    pub time_to_live_specification: Option<crate::Value<self::global_table::TimeToLiveSpecification>>,
     /// Property [`WriteProvisionedThroughputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-writeprovisionedthroughputsettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub write_provisioned_throughput_settings:
-        Option<::Value<self::global_table::WriteProvisionedThroughputSettings>>,
+        Option<crate::Value<self::global_table::WriteProvisionedThroughputSettings>>,
 }
 
 impl ::serde::Serialize for GlobalTableProperties {
@@ -147,29 +147,29 @@ impl<'de> ::serde::Deserialize<'de> for GlobalTableProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut attribute_definitions: Option<
-                    ::ValueList<self::global_table::AttributeDefinition>,
+                    crate::ValueList<self::global_table::AttributeDefinition>,
                 > = None;
-                let mut billing_mode: Option<::Value<String>> = None;
+                let mut billing_mode: Option<crate::Value<String>> = None;
                 let mut global_secondary_indexes: Option<
-                    ::ValueList<self::global_table::GlobalSecondaryIndex>,
+                    crate::ValueList<self::global_table::GlobalSecondaryIndex>,
                 > = None;
-                let mut key_schema: Option<::ValueList<self::global_table::KeySchema>> = None;
+                let mut key_schema: Option<crate::ValueList<self::global_table::KeySchema>> = None;
                 let mut local_secondary_indexes: Option<
-                    ::ValueList<self::global_table::LocalSecondaryIndex>,
+                    crate::ValueList<self::global_table::LocalSecondaryIndex>,
                 > = None;
-                let mut replicas: Option<::ValueList<self::global_table::ReplicaSpecification>> =
+                let mut replicas: Option<crate::ValueList<self::global_table::ReplicaSpecification>> =
                     None;
-                let mut sse_specification: Option<::Value<self::global_table::SSESpecification>> =
+                let mut sse_specification: Option<crate::Value<self::global_table::SSESpecification>> =
                     None;
                 let mut stream_specification: Option<
-                    ::Value<self::global_table::StreamSpecification>,
+                    crate::Value<self::global_table::StreamSpecification>,
                 > = None;
-                let mut table_name: Option<::Value<String>> = None;
+                let mut table_name: Option<crate::Value<String>> = None;
                 let mut time_to_live_specification: Option<
-                    ::Value<self::global_table::TimeToLiveSpecification>,
+                    crate::Value<self::global_table::TimeToLiveSpecification>,
                 > = None;
                 let mut write_provisioned_throughput_settings: Option<
-                    ::Value<self::global_table::WriteProvisionedThroughputSettings>,
+                    crate::Value<self::global_table::WriteProvisionedThroughputSettings>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -235,7 +235,7 @@ impl<'de> ::serde::Deserialize<'de> for GlobalTableProperties {
     }
 }
 
-impl ::Resource for GlobalTable {
+impl crate::Resource for GlobalTable {
     type Properties = GlobalTableProperties;
     const TYPE: &'static str = "AWS::DynamoDB::GlobalTable";
     fn properties(&self) -> &GlobalTableProperties {
@@ -246,7 +246,7 @@ impl ::Resource for GlobalTable {
     }
 }
 
-impl ::private::Sealed for GlobalTable {}
+impl crate::private::Sealed for GlobalTable {}
 
 impl From<GlobalTableProperties> for GlobalTable {
     fn from(properties: GlobalTableProperties) -> GlobalTable {
@@ -268,79 +268,79 @@ pub struct TableProperties {
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub attribute_definitions: Option<::ValueList<self::table::AttributeDefinition>>,
+    pub attribute_definitions: Option<crate::ValueList<self::table::AttributeDefinition>>,
     /// Property [`BillingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub billing_mode: Option<::Value<String>>,
+    pub billing_mode: Option<crate::Value<String>>,
     /// Property [`ContributorInsightsSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-contributorinsightsspecification-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub contributor_insights_specification:
-        Option<::Value<self::table::ContributorInsightsSpecification>>,
+        Option<crate::Value<self::table::ContributorInsightsSpecification>>,
     /// Property [`GlobalSecondaryIndexes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub global_secondary_indexes: Option<::ValueList<self::table::GlobalSecondaryIndex>>,
+    pub global_secondary_indexes: Option<crate::ValueList<self::table::GlobalSecondaryIndex>>,
     /// Property [`KeySchema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub key_schema: ::ValueList<self::table::KeySchema>,
+    pub key_schema: crate::ValueList<self::table::KeySchema>,
     /// Property [`KinesisStreamSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-kinesisstreamspecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kinesis_stream_specification: Option<::Value<self::table::KinesisStreamSpecification>>,
+    pub kinesis_stream_specification: Option<crate::Value<self::table::KinesisStreamSpecification>>,
     /// Property [`LocalSecondaryIndexes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub local_secondary_indexes: Option<::ValueList<self::table::LocalSecondaryIndex>>,
+    pub local_secondary_indexes: Option<crate::ValueList<self::table::LocalSecondaryIndex>>,
     /// Property [`PointInTimeRecoverySpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-pointintimerecoveryspecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub point_in_time_recovery_specification:
-        Option<::Value<self::table::PointInTimeRecoverySpecification>>,
+        Option<crate::Value<self::table::PointInTimeRecoverySpecification>>,
     /// Property [`ProvisionedThroughput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provisioned_throughput: Option<::Value<self::table::ProvisionedThroughput>>,
+    pub provisioned_throughput: Option<crate::Value<self::table::ProvisionedThroughput>>,
     /// Property [`SSESpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ssespecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sse_specification: Option<::Value<self::table::SSESpecification>>,
+    pub sse_specification: Option<crate::Value<self::table::SSESpecification>>,
     /// Property [`StreamSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stream_specification: Option<::Value<self::table::StreamSpecification>>,
+    pub stream_specification: Option<crate::Value<self::table::StreamSpecification>>,
     /// Property [`TableClass`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tableclass).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub table_class: Option<::Value<String>>,
+    pub table_class: Option<crate::Value<String>>,
     /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub table_name: Option<::Value<String>>,
+    pub table_name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`TimeToLiveSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-timetolivespecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub time_to_live_specification: Option<::Value<self::table::TimeToLiveSpecification>>,
+    pub time_to_live_specification: Option<crate::Value<self::table::TimeToLiveSpecification>>,
 }
 
 impl ::serde::Serialize for TableProperties {
@@ -453,36 +453,36 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut attribute_definitions: Option<
-                    ::ValueList<self::table::AttributeDefinition>,
+                    crate::ValueList<self::table::AttributeDefinition>,
                 > = None;
-                let mut billing_mode: Option<::Value<String>> = None;
+                let mut billing_mode: Option<crate::Value<String>> = None;
                 let mut contributor_insights_specification: Option<
-                    ::Value<self::table::ContributorInsightsSpecification>,
+                    crate::Value<self::table::ContributorInsightsSpecification>,
                 > = None;
                 let mut global_secondary_indexes: Option<
-                    ::ValueList<self::table::GlobalSecondaryIndex>,
+                    crate::ValueList<self::table::GlobalSecondaryIndex>,
                 > = None;
-                let mut key_schema: Option<::ValueList<self::table::KeySchema>> = None;
+                let mut key_schema: Option<crate::ValueList<self::table::KeySchema>> = None;
                 let mut kinesis_stream_specification: Option<
-                    ::Value<self::table::KinesisStreamSpecification>,
+                    crate::Value<self::table::KinesisStreamSpecification>,
                 > = None;
                 let mut local_secondary_indexes: Option<
-                    ::ValueList<self::table::LocalSecondaryIndex>,
+                    crate::ValueList<self::table::LocalSecondaryIndex>,
                 > = None;
                 let mut point_in_time_recovery_specification: Option<
-                    ::Value<self::table::PointInTimeRecoverySpecification>,
+                    crate::Value<self::table::PointInTimeRecoverySpecification>,
                 > = None;
                 let mut provisioned_throughput: Option<
-                    ::Value<self::table::ProvisionedThroughput>,
+                    crate::Value<self::table::ProvisionedThroughput>,
                 > = None;
-                let mut sse_specification: Option<::Value<self::table::SSESpecification>> = None;
-                let mut stream_specification: Option<::Value<self::table::StreamSpecification>> =
+                let mut sse_specification: Option<crate::Value<self::table::SSESpecification>> = None;
+                let mut stream_specification: Option<crate::Value<self::table::StreamSpecification>> =
                     None;
-                let mut table_class: Option<::Value<String>> = None;
-                let mut table_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut table_class: Option<crate::Value<String>> = None;
+                let mut table_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
                 let mut time_to_live_specification: Option<
-                    ::Value<self::table::TimeToLiveSpecification>,
+                    crate::Value<self::table::TimeToLiveSpecification>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -565,7 +565,7 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
     }
 }
 
-impl ::Resource for Table {
+impl crate::Resource for Table {
     type Properties = TableProperties;
     const TYPE: &'static str = "AWS::DynamoDB::Table";
     fn properties(&self) -> &TableProperties {
@@ -576,7 +576,7 @@ impl ::Resource for Table {
     }
 }
 
-impl ::private::Sealed for Table {}
+impl crate::private::Sealed for Table {}
 
 impl From<TableProperties> for Table {
     fn from(properties: TableProperties) -> Table {
@@ -594,15 +594,15 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_name: ::Value<String>,
+        pub attribute_name: crate::Value<String>,
         /// Property [`AttributeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-attributedefinition.html#cfn-dynamodb-globaltable-attributedefinition-attributetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_type: ::Value<String>,
+        pub attribute_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for AttributeDefinition {
+    impl crate::codec::SerializeValue for AttributeDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -619,7 +619,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for AttributeDefinition {
+    impl crate::codec::DeserializeValue for AttributeDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AttributeDefinition, D::Error> {
@@ -636,8 +636,8 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_name: Option<::Value<String>> = None;
-                    let mut attribute_type: Option<::Value<String>> = None;
+                    let mut attribute_name: Option<crate::Value<String>> = None;
+                    let mut attribute_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -673,26 +673,26 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_capacity: ::Value<u32>,
+        pub max_capacity: crate::Value<u32>,
         /// Property [`MinCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-mincapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_capacity: ::Value<u32>,
+        pub min_capacity: crate::Value<u32>,
         /// Property [`SeedCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-seedcapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub seed_capacity: Option<::Value<u32>>,
+        pub seed_capacity: Option<crate::Value<u32>>,
         /// Property [`TargetTrackingScalingPolicyConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-targettrackingscalingpolicyconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub target_tracking_scaling_policy_configuration:
-            ::Value<TargetTrackingScalingPolicyConfiguration>,
+            crate::Value<TargetTrackingScalingPolicyConfiguration>,
     }
 
-    impl ::codec::SerializeValue for CapacityAutoScalingSettings {
+    impl crate::codec::SerializeValue for CapacityAutoScalingSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -721,7 +721,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for CapacityAutoScalingSettings {
+    impl crate::codec::DeserializeValue for CapacityAutoScalingSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CapacityAutoScalingSettings, D::Error> {
@@ -738,11 +738,11 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_capacity: Option<::Value<u32>> = None;
-                    let mut min_capacity: Option<::Value<u32>> = None;
-                    let mut seed_capacity: Option<::Value<u32>> = None;
+                    let mut max_capacity: Option<crate::Value<u32>> = None;
+                    let mut min_capacity: Option<crate::Value<u32>> = None;
+                    let mut seed_capacity: Option<crate::Value<u32>> = None;
                     let mut target_tracking_scaling_policy_configuration: Option<
-                        ::Value<TargetTrackingScalingPolicyConfiguration>,
+                        crate::Value<TargetTrackingScalingPolicyConfiguration>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -793,10 +793,10 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for ContributorInsightsSpecification {
+    impl crate::codec::SerializeValue for ContributorInsightsSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", &self.enabled)?;
@@ -804,7 +804,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for ContributorInsightsSpecification {
+    impl crate::codec::DeserializeValue for ContributorInsightsSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ContributorInsightsSpecification, D::Error> {
@@ -821,7 +821,7 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -851,26 +851,26 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_name: ::Value<String>,
+        pub index_name: crate::Value<String>,
         /// Property [`KeySchema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-keyschema).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_schema: ::ValueList<KeySchema>,
+        pub key_schema: crate::ValueList<KeySchema>,
         /// Property [`Projection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-projection).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub projection: ::Value<Projection>,
+        pub projection: crate::Value<Projection>,
         /// Property [`WriteProvisionedThroughputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-writeprovisionedthroughputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub write_provisioned_throughput_settings:
-            Option<::Value<WriteProvisionedThroughputSettings>>,
+            Option<crate::Value<WriteProvisionedThroughputSettings>>,
     }
 
-    impl ::codec::SerializeValue for GlobalSecondaryIndex {
+    impl crate::codec::SerializeValue for GlobalSecondaryIndex {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IndexName", &self.index_name)?;
@@ -889,7 +889,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for GlobalSecondaryIndex {
+    impl crate::codec::DeserializeValue for GlobalSecondaryIndex {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GlobalSecondaryIndex, D::Error> {
@@ -906,11 +906,11 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut index_name: Option<::Value<String>> = None;
-                    let mut key_schema: Option<::ValueList<KeySchema>> = None;
-                    let mut projection: Option<::Value<Projection>> = None;
+                    let mut index_name: Option<crate::Value<String>> = None;
+                    let mut key_schema: Option<crate::ValueList<KeySchema>> = None;
+                    let mut projection: Option<crate::Value<Projection>> = None;
                     let mut write_provisioned_throughput_settings: Option<
-                        ::Value<WriteProvisionedThroughputSettings>,
+                        crate::Value<WriteProvisionedThroughputSettings>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -958,15 +958,15 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_name: ::Value<String>,
+        pub attribute_name: crate::Value<String>,
         /// Property [`KeyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-keyschema.html#cfn-dynamodb-globaltable-keyschema-keytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_type: ::Value<String>,
+        pub key_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for KeySchema {
+    impl crate::codec::SerializeValue for KeySchema {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -979,7 +979,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for KeySchema {
+    impl crate::codec::DeserializeValue for KeySchema {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KeySchema, D::Error> {
             struct Visitor;
 
@@ -994,8 +994,8 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_name: Option<::Value<String>> = None;
-                    let mut key_type: Option<::Value<String>> = None;
+                    let mut attribute_name: Option<crate::Value<String>> = None;
+                    let mut key_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1030,20 +1030,20 @@ pub mod global_table {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub index_name: ::Value<String>,
+        pub index_name: crate::Value<String>,
         /// Property [`KeySchema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-localsecondaryindex.html#cfn-dynamodb-globaltable-localsecondaryindex-keyschema).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_schema: ::ValueList<KeySchema>,
+        pub key_schema: crate::ValueList<KeySchema>,
         /// Property [`Projection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-localsecondaryindex.html#cfn-dynamodb-globaltable-localsecondaryindex-projection).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub projection: ::Value<Projection>,
+        pub projection: crate::Value<Projection>,
     }
 
-    impl ::codec::SerializeValue for LocalSecondaryIndex {
+    impl crate::codec::SerializeValue for LocalSecondaryIndex {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IndexName", &self.index_name)?;
@@ -1053,7 +1053,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for LocalSecondaryIndex {
+    impl crate::codec::DeserializeValue for LocalSecondaryIndex {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LocalSecondaryIndex, D::Error> {
@@ -1070,9 +1070,9 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut index_name: Option<::Value<String>> = None;
-                    let mut key_schema: Option<::ValueList<KeySchema>> = None;
-                    let mut projection: Option<::Value<Projection>> = None;
+                    let mut index_name: Option<crate::Value<String>> = None;
+                    let mut key_schema: Option<crate::ValueList<KeySchema>> = None;
+                    let mut projection: Option<crate::Value<Projection>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1113,10 +1113,10 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub point_in_time_recovery_enabled: Option<::Value<bool>>,
+        pub point_in_time_recovery_enabled: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for PointInTimeRecoverySpecification {
+    impl crate::codec::SerializeValue for PointInTimeRecoverySpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref point_in_time_recovery_enabled) = self.point_in_time_recovery_enabled {
@@ -1130,7 +1130,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for PointInTimeRecoverySpecification {
+    impl crate::codec::DeserializeValue for PointInTimeRecoverySpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PointInTimeRecoverySpecification, D::Error> {
@@ -1147,7 +1147,7 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut point_in_time_recovery_enabled: Option<::Value<bool>> = None;
+                    let mut point_in_time_recovery_enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1178,15 +1178,15 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub non_key_attributes: Option<::ValueList<String>>,
+        pub non_key_attributes: Option<crate::ValueList<String>>,
         /// Property [`ProjectionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-projection.html#cfn-dynamodb-globaltable-projection-projectiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub projection_type: Option<::Value<String>>,
+        pub projection_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Projection {
+    impl crate::codec::SerializeValue for Projection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref non_key_attributes) = self.non_key_attributes {
@@ -1207,7 +1207,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for Projection {
+    impl crate::codec::DeserializeValue for Projection {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Projection, D::Error> {
             struct Visitor;
 
@@ -1222,8 +1222,8 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut non_key_attributes: Option<::ValueList<String>> = None;
-                    let mut projection_type: Option<::Value<String>> = None;
+                    let mut non_key_attributes: Option<crate::ValueList<String>> = None;
+                    let mut projection_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1257,15 +1257,15 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub read_capacity_auto_scaling_settings: Option<::Value<CapacityAutoScalingSettings>>,
+        pub read_capacity_auto_scaling_settings: Option<crate::Value<CapacityAutoScalingSettings>>,
         /// Property [`ReadCapacityUnits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityunits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub read_capacity_units: Option<::Value<u32>>,
+        pub read_capacity_units: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for ReadProvisionedThroughputSettings {
+    impl crate::codec::SerializeValue for ReadProvisionedThroughputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref read_capacity_auto_scaling_settings) =
@@ -1288,7 +1288,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for ReadProvisionedThroughputSettings {
+    impl crate::codec::DeserializeValue for ReadProvisionedThroughputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReadProvisionedThroughputSettings, D::Error> {
@@ -1306,9 +1306,9 @@ pub mod global_table {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut read_capacity_auto_scaling_settings: Option<
-                        ::Value<CapacityAutoScalingSettings>,
+                        crate::Value<CapacityAutoScalingSettings>,
                     > = None;
-                    let mut read_capacity_units: Option<::Value<u32>> = None;
+                    let mut read_capacity_units: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1343,21 +1343,21 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub contributor_insights_specification: Option<::Value<ContributorInsightsSpecification>>,
+        pub contributor_insights_specification: Option<crate::Value<ContributorInsightsSpecification>>,
         /// Property [`IndexName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html#cfn-dynamodb-globaltable-replicaglobalsecondaryindexspecification-indexname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_name: ::Value<String>,
+        pub index_name: crate::Value<String>,
         /// Property [`ReadProvisionedThroughputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html#cfn-dynamodb-globaltable-replicaglobalsecondaryindexspecification-readprovisionedthroughputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub read_provisioned_throughput_settings:
-            Option<::Value<ReadProvisionedThroughputSettings>>,
+            Option<crate::Value<ReadProvisionedThroughputSettings>>,
     }
 
-    impl ::codec::SerializeValue for ReplicaGlobalSecondaryIndexSpecification {
+    impl crate::codec::SerializeValue for ReplicaGlobalSecondaryIndexSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref contributor_insights_specification) =
@@ -1383,7 +1383,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for ReplicaGlobalSecondaryIndexSpecification {
+    impl crate::codec::DeserializeValue for ReplicaGlobalSecondaryIndexSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReplicaGlobalSecondaryIndexSpecification, D::Error> {
@@ -1404,11 +1404,11 @@ pub mod global_table {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut contributor_insights_specification: Option<
-                        ::Value<ContributorInsightsSpecification>,
+                        crate::Value<ContributorInsightsSpecification>,
                     > = None;
-                    let mut index_name: Option<::Value<String>> = None;
+                    let mut index_name: Option<crate::Value<String>> = None;
                     let mut read_provisioned_throughput_settings: Option<
-                        ::Value<ReadProvisionedThroughputSettings>,
+                        crate::Value<ReadProvisionedThroughputSettings>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -1450,10 +1450,10 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_master_key_id: ::Value<String>,
+        pub kms_master_key_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ReplicaSSESpecification {
+    impl crate::codec::SerializeValue for ReplicaSSESpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1465,7 +1465,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for ReplicaSSESpecification {
+    impl crate::codec::DeserializeValue for ReplicaSSESpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReplicaSSESpecification, D::Error> {
@@ -1482,7 +1482,7 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_master_key_id: Option<::Value<String>> = None;
+                    let mut kms_master_key_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1513,46 +1513,46 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub contributor_insights_specification: Option<::Value<ContributorInsightsSpecification>>,
+        pub contributor_insights_specification: Option<crate::Value<ContributorInsightsSpecification>>,
         /// Property [`GlobalSecondaryIndexes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-globalsecondaryindexes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub global_secondary_indexes: Option<::ValueList<ReplicaGlobalSecondaryIndexSpecification>>,
+        pub global_secondary_indexes: Option<crate::ValueList<ReplicaGlobalSecondaryIndexSpecification>>,
         /// Property [`PointInTimeRecoverySpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-pointintimerecoveryspecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub point_in_time_recovery_specification: Option<::Value<PointInTimeRecoverySpecification>>,
+        pub point_in_time_recovery_specification: Option<crate::Value<PointInTimeRecoverySpecification>>,
         /// Property [`ReadProvisionedThroughputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-readprovisionedthroughputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub read_provisioned_throughput_settings:
-            Option<::Value<ReadProvisionedThroughputSettings>>,
+            Option<crate::Value<ReadProvisionedThroughputSettings>>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: ::Value<String>,
+        pub region: crate::Value<String>,
         /// Property [`SSESpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-ssespecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sse_specification: Option<::Value<ReplicaSSESpecification>>,
+        pub sse_specification: Option<crate::Value<ReplicaSSESpecification>>,
         /// Property [`TableClass`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-tableclass).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub table_class: Option<::Value<String>>,
+        pub table_class: Option<crate::Value<String>>,
         /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-tags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tags: Option<::ValueList<::Tag>>,
+        pub tags: Option<crate::ValueList<crate::Tag>>,
     }
 
-    impl ::codec::SerializeValue for ReplicaSpecification {
+    impl crate::codec::SerializeValue for ReplicaSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref contributor_insights_specification) =
@@ -1607,7 +1607,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for ReplicaSpecification {
+    impl crate::codec::DeserializeValue for ReplicaSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReplicaSpecification, D::Error> {
@@ -1625,21 +1625,21 @@ pub mod global_table {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut contributor_insights_specification: Option<
-                        ::Value<ContributorInsightsSpecification>,
+                        crate::Value<ContributorInsightsSpecification>,
                     > = None;
                     let mut global_secondary_indexes: Option<
-                        ::ValueList<ReplicaGlobalSecondaryIndexSpecification>,
+                        crate::ValueList<ReplicaGlobalSecondaryIndexSpecification>,
                     > = None;
                     let mut point_in_time_recovery_specification: Option<
-                        ::Value<PointInTimeRecoverySpecification>,
+                        crate::Value<PointInTimeRecoverySpecification>,
                     > = None;
                     let mut read_provisioned_throughput_settings: Option<
-                        ::Value<ReadProvisionedThroughputSettings>,
+                        crate::Value<ReadProvisionedThroughputSettings>,
                     > = None;
-                    let mut region: Option<::Value<String>> = None;
-                    let mut sse_specification: Option<::Value<ReplicaSSESpecification>> = None;
-                    let mut table_class: Option<::Value<String>> = None;
-                    let mut tags: Option<::ValueList<::Tag>> = None;
+                    let mut region: Option<crate::Value<String>> = None;
+                    let mut sse_specification: Option<crate::Value<ReplicaSSESpecification>> = None;
+                    let mut table_class: Option<crate::Value<String>> = None;
+                    let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1701,15 +1701,15 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sse_enabled: ::Value<bool>,
+        pub sse_enabled: crate::Value<bool>,
         /// Property [`SSEType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-ssespecification.html#cfn-dynamodb-globaltable-ssespecification-ssetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sse_type: Option<::Value<String>>,
+        pub sse_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SSESpecification {
+    impl crate::codec::SerializeValue for SSESpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SSEEnabled", &self.sse_enabled)?;
@@ -1720,7 +1720,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for SSESpecification {
+    impl crate::codec::DeserializeValue for SSESpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SSESpecification, D::Error> {
@@ -1737,8 +1737,8 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut sse_enabled: Option<::Value<bool>> = None;
-                    let mut sse_type: Option<::Value<String>> = None;
+                    let mut sse_enabled: Option<crate::Value<bool>> = None;
+                    let mut sse_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1773,10 +1773,10 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_view_type: ::Value<String>,
+        pub stream_view_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for StreamSpecification {
+    impl crate::codec::SerializeValue for StreamSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1788,7 +1788,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for StreamSpecification {
+    impl crate::codec::DeserializeValue for StreamSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StreamSpecification, D::Error> {
@@ -1805,7 +1805,7 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut stream_view_type: Option<::Value<String>> = None;
+                    let mut stream_view_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1836,25 +1836,25 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disable_scale_in: Option<::Value<bool>>,
+        pub disable_scale_in: Option<crate::Value<bool>>,
         /// Property [`ScaleInCooldown`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html#cfn-dynamodb-globaltable-targettrackingscalingpolicyconfiguration-scaleincooldown).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scale_in_cooldown: Option<::Value<u32>>,
+        pub scale_in_cooldown: Option<crate::Value<u32>>,
         /// Property [`ScaleOutCooldown`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html#cfn-dynamodb-globaltable-targettrackingscalingpolicyconfiguration-scaleoutcooldown).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scale_out_cooldown: Option<::Value<u32>>,
+        pub scale_out_cooldown: Option<crate::Value<u32>>,
         /// Property [`TargetValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html#cfn-dynamodb-globaltable-targettrackingscalingpolicyconfiguration-targetvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_value: ::Value<f64>,
+        pub target_value: crate::Value<f64>,
     }
 
-    impl ::codec::SerializeValue for TargetTrackingScalingPolicyConfiguration {
+    impl crate::codec::SerializeValue for TargetTrackingScalingPolicyConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref disable_scale_in) = self.disable_scale_in {
@@ -1887,7 +1887,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for TargetTrackingScalingPolicyConfiguration {
+    impl crate::codec::DeserializeValue for TargetTrackingScalingPolicyConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetTrackingScalingPolicyConfiguration, D::Error> {
@@ -1907,10 +1907,10 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut disable_scale_in: Option<::Value<bool>> = None;
-                    let mut scale_in_cooldown: Option<::Value<u32>> = None;
-                    let mut scale_out_cooldown: Option<::Value<u32>> = None;
-                    let mut target_value: Option<::Value<f64>> = None;
+                    let mut disable_scale_in: Option<crate::Value<bool>> = None;
+                    let mut scale_in_cooldown: Option<crate::Value<u32>> = None;
+                    let mut scale_out_cooldown: Option<crate::Value<u32>> = None;
+                    let mut target_value: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1953,15 +1953,15 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_name: Option<::Value<String>>,
+        pub attribute_name: Option<crate::Value<String>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-timetolivespecification.html#cfn-dynamodb-globaltable-timetolivespecification-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for TimeToLiveSpecification {
+    impl crate::codec::SerializeValue for TimeToLiveSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attribute_name) = self.attribute_name {
@@ -1976,7 +1976,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for TimeToLiveSpecification {
+    impl crate::codec::DeserializeValue for TimeToLiveSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TimeToLiveSpecification, D::Error> {
@@ -1993,8 +1993,8 @@ pub mod global_table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_name: Option<::Value<String>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut attribute_name: Option<crate::Value<String>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2028,10 +2028,10 @@ pub mod global_table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub write_capacity_auto_scaling_settings: Option<::Value<CapacityAutoScalingSettings>>,
+        pub write_capacity_auto_scaling_settings: Option<crate::Value<CapacityAutoScalingSettings>>,
     }
 
-    impl ::codec::SerializeValue for WriteProvisionedThroughputSettings {
+    impl crate::codec::SerializeValue for WriteProvisionedThroughputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref write_capacity_auto_scaling_settings) =
@@ -2047,7 +2047,7 @@ pub mod global_table {
         }
     }
 
-    impl ::codec::DeserializeValue for WriteProvisionedThroughputSettings {
+    impl crate::codec::DeserializeValue for WriteProvisionedThroughputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WriteProvisionedThroughputSettings, D::Error> {
@@ -2065,7 +2065,7 @@ pub mod global_table {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut write_capacity_auto_scaling_settings: Option<
-                        ::Value<CapacityAutoScalingSettings>,
+                        crate::Value<CapacityAutoScalingSettings>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2101,15 +2101,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_name: ::Value<String>,
+        pub attribute_name: crate::Value<String>,
         /// Property [`AttributeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html#cfn-dynamodb-attributedef-attributename-attributetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_type: ::Value<String>,
+        pub attribute_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for AttributeDefinition {
+    impl crate::codec::SerializeValue for AttributeDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2126,7 +2126,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for AttributeDefinition {
+    impl crate::codec::DeserializeValue for AttributeDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AttributeDefinition, D::Error> {
@@ -2143,8 +2143,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_name: Option<::Value<String>> = None;
-                    let mut attribute_type: Option<::Value<String>> = None;
+                    let mut attribute_name: Option<crate::Value<String>> = None;
+                    let mut attribute_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2180,10 +2180,10 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for ContributorInsightsSpecification {
+    impl crate::codec::SerializeValue for ContributorInsightsSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", &self.enabled)?;
@@ -2191,7 +2191,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for ContributorInsightsSpecification {
+    impl crate::codec::DeserializeValue for ContributorInsightsSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ContributorInsightsSpecification, D::Error> {
@@ -2208,7 +2208,7 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2238,30 +2238,30 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub contributor_insights_specification: Option<::Value<ContributorInsightsSpecification>>,
+        pub contributor_insights_specification: Option<crate::Value<ContributorInsightsSpecification>>,
         /// Property [`IndexName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-indexname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_name: ::Value<String>,
+        pub index_name: crate::Value<String>,
         /// Property [`KeySchema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_schema: ::ValueList<KeySchema>,
+        pub key_schema: crate::ValueList<KeySchema>,
         /// Property [`Projection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-projection).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub projection: ::Value<Projection>,
+        pub projection: crate::Value<Projection>,
         /// Property [`ProvisionedThroughput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-provisionedthroughput).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub provisioned_throughput: Option<::Value<ProvisionedThroughput>>,
+        pub provisioned_throughput: Option<crate::Value<ProvisionedThroughput>>,
     }
 
-    impl ::codec::SerializeValue for GlobalSecondaryIndex {
+    impl crate::codec::SerializeValue for GlobalSecondaryIndex {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref contributor_insights_specification) =
@@ -2287,7 +2287,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for GlobalSecondaryIndex {
+    impl crate::codec::DeserializeValue for GlobalSecondaryIndex {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GlobalSecondaryIndex, D::Error> {
@@ -2305,12 +2305,12 @@ pub mod table {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut contributor_insights_specification: Option<
-                        ::Value<ContributorInsightsSpecification>,
+                        crate::Value<ContributorInsightsSpecification>,
                     > = None;
-                    let mut index_name: Option<::Value<String>> = None;
-                    let mut key_schema: Option<::ValueList<KeySchema>> = None;
-                    let mut projection: Option<::Value<Projection>> = None;
-                    let mut provisioned_throughput: Option<::Value<ProvisionedThroughput>> = None;
+                    let mut index_name: Option<crate::Value<String>> = None;
+                    let mut key_schema: Option<crate::ValueList<KeySchema>> = None;
+                    let mut projection: Option<crate::Value<Projection>> = None;
+                    let mut provisioned_throughput: Option<crate::Value<ProvisionedThroughput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2361,15 +2361,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_name: ::Value<String>,
+        pub attribute_name: crate::Value<String>,
         /// Property [`KeyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-keyschema.html#aws-properties-dynamodb-keyschema-keytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_type: ::Value<String>,
+        pub key_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for KeySchema {
+    impl crate::codec::SerializeValue for KeySchema {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2382,7 +2382,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for KeySchema {
+    impl crate::codec::DeserializeValue for KeySchema {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KeySchema, D::Error> {
             struct Visitor;
 
@@ -2397,8 +2397,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_name: Option<::Value<String>> = None;
-                    let mut key_type: Option<::Value<String>> = None;
+                    let mut attribute_name: Option<crate::Value<String>> = None;
+                    let mut key_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2433,10 +2433,10 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_arn: ::Value<String>,
+        pub stream_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for KinesisStreamSpecification {
+    impl crate::codec::SerializeValue for KinesisStreamSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamArn", &self.stream_arn)?;
@@ -2444,7 +2444,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for KinesisStreamSpecification {
+    impl crate::codec::DeserializeValue for KinesisStreamSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KinesisStreamSpecification, D::Error> {
@@ -2461,7 +2461,7 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut stream_arn: Option<::Value<String>> = None;
+                    let mut stream_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2492,20 +2492,20 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_name: ::Value<String>,
+        pub index_name: crate::Value<String>,
         /// Property [`KeySchema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_schema: ::ValueList<KeySchema>,
+        pub key_schema: crate::ValueList<KeySchema>,
         /// Property [`Projection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-projection).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub projection: ::Value<Projection>,
+        pub projection: crate::Value<Projection>,
     }
 
-    impl ::codec::SerializeValue for LocalSecondaryIndex {
+    impl crate::codec::SerializeValue for LocalSecondaryIndex {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "IndexName", &self.index_name)?;
@@ -2515,7 +2515,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for LocalSecondaryIndex {
+    impl crate::codec::DeserializeValue for LocalSecondaryIndex {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LocalSecondaryIndex, D::Error> {
@@ -2532,9 +2532,9 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut index_name: Option<::Value<String>> = None;
-                    let mut key_schema: Option<::ValueList<KeySchema>> = None;
-                    let mut projection: Option<::Value<Projection>> = None;
+                    let mut index_name: Option<crate::Value<String>> = None;
+                    let mut key_schema: Option<crate::ValueList<KeySchema>> = None;
+                    let mut projection: Option<crate::Value<Projection>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2575,10 +2575,10 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub point_in_time_recovery_enabled: Option<::Value<bool>>,
+        pub point_in_time_recovery_enabled: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for PointInTimeRecoverySpecification {
+    impl crate::codec::SerializeValue for PointInTimeRecoverySpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref point_in_time_recovery_enabled) = self.point_in_time_recovery_enabled {
@@ -2592,7 +2592,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for PointInTimeRecoverySpecification {
+    impl crate::codec::DeserializeValue for PointInTimeRecoverySpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PointInTimeRecoverySpecification, D::Error> {
@@ -2609,7 +2609,7 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut point_in_time_recovery_enabled: Option<::Value<bool>> = None;
+                    let mut point_in_time_recovery_enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2640,15 +2640,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub non_key_attributes: Option<::ValueList<String>>,
+        pub non_key_attributes: Option<crate::ValueList<String>>,
         /// Property [`ProjectionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html#cfn-dynamodb-projectionobj-projtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub projection_type: Option<::Value<String>>,
+        pub projection_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Projection {
+    impl crate::codec::SerializeValue for Projection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref non_key_attributes) = self.non_key_attributes {
@@ -2669,7 +2669,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for Projection {
+    impl crate::codec::DeserializeValue for Projection {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Projection, D::Error> {
             struct Visitor;
 
@@ -2684,8 +2684,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut non_key_attributes: Option<::ValueList<String>> = None;
-                    let mut projection_type: Option<::Value<String>> = None;
+                    let mut non_key_attributes: Option<crate::ValueList<String>> = None;
+                    let mut projection_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2719,15 +2719,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub read_capacity_units: ::Value<u64>,
+        pub read_capacity_units: crate::Value<u64>,
         /// Property [`WriteCapacityUnits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html#cfn-dynamodb-provisionedthroughput-writecapacityunits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub write_capacity_units: ::Value<u64>,
+        pub write_capacity_units: crate::Value<u64>,
     }
 
-    impl ::codec::SerializeValue for ProvisionedThroughput {
+    impl crate::codec::SerializeValue for ProvisionedThroughput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2744,7 +2744,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for ProvisionedThroughput {
+    impl crate::codec::DeserializeValue for ProvisionedThroughput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProvisionedThroughput, D::Error> {
@@ -2761,8 +2761,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut read_capacity_units: Option<::Value<u64>> = None;
-                    let mut write_capacity_units: Option<::Value<u64>> = None;
+                    let mut read_capacity_units: Option<crate::Value<u64>> = None;
+                    let mut write_capacity_units: Option<crate::Value<u64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2799,20 +2799,20 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_master_key_id: Option<::Value<String>>,
+        pub kms_master_key_id: Option<crate::Value<String>>,
         /// Property [`SSEEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html#cfn-dynamodb-table-ssespecification-sseenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sse_enabled: ::Value<bool>,
+        pub sse_enabled: crate::Value<bool>,
         /// Property [`SSEType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html#cfn-dynamodb-table-ssespecification-ssetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sse_type: Option<::Value<String>>,
+        pub sse_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SSESpecification {
+    impl crate::codec::SerializeValue for SSESpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_master_key_id) = self.kms_master_key_id {
@@ -2830,7 +2830,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for SSESpecification {
+    impl crate::codec::DeserializeValue for SSESpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SSESpecification, D::Error> {
@@ -2847,9 +2847,9 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_master_key_id: Option<::Value<String>> = None;
-                    let mut sse_enabled: Option<::Value<bool>> = None;
-                    let mut sse_type: Option<::Value<String>> = None;
+                    let mut kms_master_key_id: Option<crate::Value<String>> = None;
+                    let mut sse_enabled: Option<crate::Value<bool>> = None;
+                    let mut sse_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2888,10 +2888,10 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_view_type: ::Value<String>,
+        pub stream_view_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for StreamSpecification {
+    impl crate::codec::SerializeValue for StreamSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2903,7 +2903,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for StreamSpecification {
+    impl crate::codec::DeserializeValue for StreamSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StreamSpecification, D::Error> {
@@ -2920,7 +2920,7 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut stream_view_type: Option<::Value<String>> = None;
+                    let mut stream_view_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2951,15 +2951,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_name: ::Value<String>,
+        pub attribute_name: crate::Value<String>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for TimeToLiveSpecification {
+    impl crate::codec::SerializeValue for TimeToLiveSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2972,7 +2972,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for TimeToLiveSpecification {
+    impl crate::codec::DeserializeValue for TimeToLiveSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TimeToLiveSpecification, D::Error> {
@@ -2989,8 +2989,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_name: Option<::Value<String>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut attribute_name: Option<crate::Value<String>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

@@ -13,22 +13,22 @@ pub struct DiscovererProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cross_account: Option<::Value<bool>>,
+    pub cross_account: Option<crate::Value<bool>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`SourceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-sourcearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub source_arn: ::Value<String>,
+    pub source_arn: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<self::discoverer::TagsEntry>>,
+    pub tags: Option<crate::ValueList<self::discoverer::TagsEntry>>,
 }
 
 impl ::serde::Serialize for DiscovererProperties {
@@ -63,10 +63,10 @@ impl<'de> ::serde::Deserialize<'de> for DiscovererProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cross_account: Option<::Value<bool>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut source_arn: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<self::discoverer::TagsEntry>> = None;
+                let mut cross_account: Option<crate::Value<bool>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut source_arn: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<self::discoverer::TagsEntry>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -99,7 +99,7 @@ impl<'de> ::serde::Deserialize<'de> for DiscovererProperties {
     }
 }
 
-impl ::Resource for Discoverer {
+impl crate::Resource for Discoverer {
     type Properties = DiscovererProperties;
     const TYPE: &'static str = "AWS::EventSchemas::Discoverer";
     fn properties(&self) -> &DiscovererProperties {
@@ -110,7 +110,7 @@ impl ::Resource for Discoverer {
     }
 }
 
-impl ::private::Sealed for Discoverer {}
+impl crate::private::Sealed for Discoverer {}
 
 impl From<DiscovererProperties> for Discoverer {
     fn from(properties: DiscovererProperties) -> Discoverer {
@@ -131,17 +131,17 @@ pub struct RegistryProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`RegistryName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-registryname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub registry_name: Option<::Value<String>>,
+    pub registry_name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<self::registry::TagsEntry>>,
+    pub tags: Option<crate::ValueList<self::registry::TagsEntry>>,
 }
 
 impl ::serde::Serialize for RegistryProperties {
@@ -175,9 +175,9 @@ impl<'de> ::serde::Deserialize<'de> for RegistryProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut registry_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<self::registry::TagsEntry>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut registry_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<self::registry::TagsEntry>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -206,7 +206,7 @@ impl<'de> ::serde::Deserialize<'de> for RegistryProperties {
     }
 }
 
-impl ::Resource for Registry {
+impl crate::Resource for Registry {
     type Properties = RegistryProperties;
     const TYPE: &'static str = "AWS::EventSchemas::Registry";
     fn properties(&self) -> &RegistryProperties {
@@ -217,7 +217,7 @@ impl ::Resource for Registry {
     }
 }
 
-impl ::private::Sealed for Registry {}
+impl crate::private::Sealed for Registry {}
 
 impl From<RegistryProperties> for Registry {
     fn from(properties: RegistryProperties) -> Registry {
@@ -238,17 +238,17 @@ pub struct RegistryPolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy: ::Value<::json::Value>,
+    pub policy: crate::Value<crate::json::Value>,
     /// Property [`RegistryName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registrypolicy.html#cfn-eventschemas-registrypolicy-registryname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub registry_name: ::Value<String>,
+    pub registry_name: crate::Value<String>,
     /// Property [`RevisionId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registrypolicy.html#cfn-eventschemas-registrypolicy-revisionid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub revision_id: Option<::Value<String>>,
+    pub revision_id: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for RegistryPolicyProperties {
@@ -280,9 +280,9 @@ impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut policy: Option<::Value<::json::Value>> = None;
-                let mut registry_name: Option<::Value<String>> = None;
-                let mut revision_id: Option<::Value<String>> = None;
+                let mut policy: Option<crate::Value<crate::json::Value>> = None;
+                let mut registry_name: Option<crate::Value<String>> = None;
+                let mut revision_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -312,7 +312,7 @@ impl<'de> ::serde::Deserialize<'de> for RegistryPolicyProperties {
     }
 }
 
-impl ::Resource for RegistryPolicy {
+impl crate::Resource for RegistryPolicy {
     type Properties = RegistryPolicyProperties;
     const TYPE: &'static str = "AWS::EventSchemas::RegistryPolicy";
     fn properties(&self) -> &RegistryPolicyProperties {
@@ -323,7 +323,7 @@ impl ::Resource for RegistryPolicy {
     }
 }
 
-impl ::private::Sealed for RegistryPolicy {}
+impl crate::private::Sealed for RegistryPolicy {}
 
 impl From<RegistryPolicyProperties> for RegistryPolicy {
     fn from(properties: RegistryPolicyProperties) -> RegistryPolicy {
@@ -344,32 +344,32 @@ pub struct SchemaProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub content: ::Value<String>,
+    pub content: crate::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`RegistryName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-registryname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub registry_name: ::Value<String>,
+    pub registry_name: crate::Value<String>,
     /// Property [`SchemaName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-schemaname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub schema_name: Option<::Value<String>>,
+    pub schema_name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<self::schema::TagsEntry>>,
+    pub tags: Option<crate::ValueList<self::schema::TagsEntry>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-type).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for SchemaProperties {
@@ -406,12 +406,12 @@ impl<'de> ::serde::Deserialize<'de> for SchemaProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut content: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut registry_name: Option<::Value<String>> = None;
-                let mut schema_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<self::schema::TagsEntry>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut content: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut registry_name: Option<crate::Value<String>> = None;
+                let mut schema_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<self::schema::TagsEntry>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -453,7 +453,7 @@ impl<'de> ::serde::Deserialize<'de> for SchemaProperties {
     }
 }
 
-impl ::Resource for Schema {
+impl crate::Resource for Schema {
     type Properties = SchemaProperties;
     const TYPE: &'static str = "AWS::EventSchemas::Schema";
     fn properties(&self) -> &SchemaProperties {
@@ -464,7 +464,7 @@ impl ::Resource for Schema {
     }
 }
 
-impl ::private::Sealed for Schema {}
+impl crate::private::Sealed for Schema {}
 
 impl From<SchemaProperties> for Schema {
     fn from(properties: SchemaProperties) -> Schema {
@@ -482,15 +482,15 @@ pub mod discoverer {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-discoverer-tagsentry.html#cfn-eventschemas-discoverer-tagsentry-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TagsEntry {
+    impl crate::codec::SerializeValue for TagsEntry {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -499,7 +499,7 @@ pub mod discoverer {
         }
     }
 
-    impl ::codec::DeserializeValue for TagsEntry {
+    impl crate::codec::DeserializeValue for TagsEntry {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TagsEntry, D::Error> {
             struct Visitor;
 
@@ -514,8 +514,8 @@ pub mod discoverer {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -553,15 +553,15 @@ pub mod registry {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-registry-tagsentry.html#cfn-eventschemas-registry-tagsentry-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TagsEntry {
+    impl crate::codec::SerializeValue for TagsEntry {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -570,7 +570,7 @@ pub mod registry {
         }
     }
 
-    impl ::codec::DeserializeValue for TagsEntry {
+    impl crate::codec::DeserializeValue for TagsEntry {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TagsEntry, D::Error> {
             struct Visitor;
 
@@ -585,8 +585,8 @@ pub mod registry {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -624,15 +624,15 @@ pub mod schema {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-schema-tagsentry.html#cfn-eventschemas-schema-tagsentry-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TagsEntry {
+    impl crate::codec::SerializeValue for TagsEntry {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -641,7 +641,7 @@ pub mod schema {
         }
     }
 
-    impl ::codec::DeserializeValue for TagsEntry {
+    impl crate::codec::DeserializeValue for TagsEntry {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TagsEntry, D::Error> {
             struct Visitor;
 
@@ -656,8 +656,8 @@ pub mod schema {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

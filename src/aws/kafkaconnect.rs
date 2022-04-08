@@ -13,64 +13,64 @@ pub struct ConnectorProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub capacity: ::Value<self::connector::Capacity>,
+    pub capacity: crate::Value<self::connector::Capacity>,
     /// Property [`ConnectorConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectorconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub connector_configuration: ::ValueMap<String>,
+    pub connector_configuration: crate::ValueMap<String>,
     /// Property [`ConnectorDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectordescription).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub connector_description: Option<::Value<String>>,
+    pub connector_description: Option<crate::Value<String>>,
     /// Property [`ConnectorName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectorname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub connector_name: ::Value<String>,
+    pub connector_name: crate::Value<String>,
     /// Property [`KafkaCluster`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkacluster).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kafka_cluster: ::Value<self::connector::KafkaCluster>,
+    pub kafka_cluster: crate::Value<self::connector::KafkaCluster>,
     /// Property [`KafkaClusterClientAuthentication`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaclusterclientauthentication).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub kafka_cluster_client_authentication:
-        ::Value<self::connector::KafkaClusterClientAuthentication>,
+        crate::Value<self::connector::KafkaClusterClientAuthentication>,
     /// Property [`KafkaClusterEncryptionInTransit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaclusterencryptionintransit).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub kafka_cluster_encryption_in_transit:
-        ::Value<self::connector::KafkaClusterEncryptionInTransit>,
+        crate::Value<self::connector::KafkaClusterEncryptionInTransit>,
     /// Property [`KafkaConnectVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaconnectversion).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kafka_connect_version: ::Value<String>,
+    pub kafka_connect_version: crate::Value<String>,
     /// Property [`LogDelivery`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-logdelivery).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub log_delivery: Option<::Value<self::connector::LogDelivery>>,
+    pub log_delivery: Option<crate::Value<self::connector::LogDelivery>>,
     /// Property [`Plugins`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-plugins).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub plugins: ::ValueList<self::connector::Plugin>,
+    pub plugins: crate::ValueList<self::connector::Plugin>,
     /// Property [`ServiceExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-serviceexecutionrolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service_execution_role_arn: ::Value<String>,
+    pub service_execution_role_arn: crate::Value<String>,
     /// Property [`WorkerConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-workerconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub worker_configuration: Option<::Value<self::connector::WorkerConfiguration>>,
+    pub worker_configuration: Option<crate::Value<self::connector::WorkerConfiguration>>,
 }
 
 impl ::serde::Serialize for ConnectorProperties {
@@ -145,23 +145,23 @@ impl<'de> ::serde::Deserialize<'de> for ConnectorProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut capacity: Option<::Value<self::connector::Capacity>> = None;
-                let mut connector_configuration: Option<::ValueMap<String>> = None;
-                let mut connector_description: Option<::Value<String>> = None;
-                let mut connector_name: Option<::Value<String>> = None;
-                let mut kafka_cluster: Option<::Value<self::connector::KafkaCluster>> = None;
+                let mut capacity: Option<crate::Value<self::connector::Capacity>> = None;
+                let mut connector_configuration: Option<crate::ValueMap<String>> = None;
+                let mut connector_description: Option<crate::Value<String>> = None;
+                let mut connector_name: Option<crate::Value<String>> = None;
+                let mut kafka_cluster: Option<crate::Value<self::connector::KafkaCluster>> = None;
                 let mut kafka_cluster_client_authentication: Option<
-                    ::Value<self::connector::KafkaClusterClientAuthentication>,
+                    crate::Value<self::connector::KafkaClusterClientAuthentication>,
                 > = None;
                 let mut kafka_cluster_encryption_in_transit: Option<
-                    ::Value<self::connector::KafkaClusterEncryptionInTransit>,
+                    crate::Value<self::connector::KafkaClusterEncryptionInTransit>,
                 > = None;
-                let mut kafka_connect_version: Option<::Value<String>> = None;
-                let mut log_delivery: Option<::Value<self::connector::LogDelivery>> = None;
-                let mut plugins: Option<::ValueList<self::connector::Plugin>> = None;
-                let mut service_execution_role_arn: Option<::Value<String>> = None;
+                let mut kafka_connect_version: Option<crate::Value<String>> = None;
+                let mut log_delivery: Option<crate::Value<self::connector::LogDelivery>> = None;
+                let mut plugins: Option<crate::ValueList<self::connector::Plugin>> = None;
+                let mut service_execution_role_arn: Option<crate::Value<String>> = None;
                 let mut worker_configuration: Option<
-                    ::Value<self::connector::WorkerConfiguration>,
+                    crate::Value<self::connector::WorkerConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -241,7 +241,7 @@ impl<'de> ::serde::Deserialize<'de> for ConnectorProperties {
     }
 }
 
-impl ::Resource for Connector {
+impl crate::Resource for Connector {
     type Properties = ConnectorProperties;
     const TYPE: &'static str = "AWS::KafkaConnect::Connector";
     fn properties(&self) -> &ConnectorProperties {
@@ -252,7 +252,7 @@ impl ::Resource for Connector {
     }
 }
 
-impl ::private::Sealed for Connector {}
+impl crate::private::Sealed for Connector {}
 
 impl From<ConnectorProperties> for Connector {
     fn from(properties: ConnectorProperties) -> Connector {
@@ -270,15 +270,15 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub bootstrap_servers: ::Value<String>,
+        pub bootstrap_servers: crate::Value<String>,
         /// Property [`Vpc`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-apachekafkacluster.html#cfn-kafkaconnect-connector-apachekafkacluster-vpc).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub vpc: ::Value<Vpc>,
+        pub vpc: crate::Value<Vpc>,
     }
 
-    impl ::codec::SerializeValue for ApacheKafkaCluster {
+    impl crate::codec::SerializeValue for ApacheKafkaCluster {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -291,7 +291,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for ApacheKafkaCluster {
+    impl crate::codec::DeserializeValue for ApacheKafkaCluster {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ApacheKafkaCluster, D::Error> {
@@ -308,8 +308,8 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bootstrap_servers: Option<::Value<String>> = None;
-                    let mut vpc: Option<::Value<Vpc>> = None;
+                    let mut bootstrap_servers: Option<crate::Value<String>> = None;
+                    let mut vpc: Option<crate::Value<Vpc>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -344,30 +344,30 @@ pub mod connector {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_worker_count: ::Value<u32>,
+        pub max_worker_count: crate::Value<u32>,
         /// Property [`McuCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-mcucount).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mcu_count: ::Value<u32>,
+        pub mcu_count: crate::Value<u32>,
         /// Property [`MinWorkerCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-minworkercount).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_worker_count: ::Value<u32>,
+        pub min_worker_count: crate::Value<u32>,
         /// Property [`ScaleInPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-scaleinpolicy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scale_in_policy: ::Value<ScaleInPolicy>,
+        pub scale_in_policy: crate::Value<ScaleInPolicy>,
         /// Property [`ScaleOutPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-scaleoutpolicy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scale_out_policy: ::Value<ScaleOutPolicy>,
+        pub scale_out_policy: crate::Value<ScaleOutPolicy>,
     }
 
-    impl ::codec::SerializeValue for AutoScaling {
+    impl crate::codec::SerializeValue for AutoScaling {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -395,7 +395,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for AutoScaling {
+    impl crate::codec::DeserializeValue for AutoScaling {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AutoScaling, D::Error> {
             struct Visitor;
 
@@ -410,11 +410,11 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_worker_count: Option<::Value<u32>> = None;
-                    let mut mcu_count: Option<::Value<u32>> = None;
-                    let mut min_worker_count: Option<::Value<u32>> = None;
-                    let mut scale_in_policy: Option<::Value<ScaleInPolicy>> = None;
-                    let mut scale_out_policy: Option<::Value<ScaleOutPolicy>> = None;
+                    let mut max_worker_count: Option<crate::Value<u32>> = None;
+                    let mut mcu_count: Option<crate::Value<u32>> = None;
+                    let mut min_worker_count: Option<crate::Value<u32>> = None;
+                    let mut scale_in_policy: Option<crate::Value<ScaleInPolicy>> = None;
+                    let mut scale_out_policy: Option<crate::Value<ScaleOutPolicy>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -465,15 +465,15 @@ pub mod connector {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auto_scaling: Option<::Value<AutoScaling>>,
+        pub auto_scaling: Option<crate::Value<AutoScaling>>,
         /// Property [`ProvisionedCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-capacity.html#cfn-kafkaconnect-connector-capacity-provisionedcapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub provisioned_capacity: Option<::Value<ProvisionedCapacity>>,
+        pub provisioned_capacity: Option<crate::Value<ProvisionedCapacity>>,
     }
 
-    impl ::codec::SerializeValue for Capacity {
+    impl crate::codec::SerializeValue for Capacity {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref auto_scaling) = self.auto_scaling {
@@ -490,7 +490,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for Capacity {
+    impl crate::codec::DeserializeValue for Capacity {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Capacity, D::Error> {
             struct Visitor;
 
@@ -505,8 +505,8 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut auto_scaling: Option<::Value<AutoScaling>> = None;
-                    let mut provisioned_capacity: Option<::Value<ProvisionedCapacity>> = None;
+                    let mut auto_scaling: Option<crate::Value<AutoScaling>> = None;
+                    let mut provisioned_capacity: Option<crate::Value<ProvisionedCapacity>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -541,15 +541,15 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
         /// Property [`LogGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-cloudwatchlogslogdelivery.html#cfn-kafkaconnect-connector-cloudwatchlogslogdelivery-loggroup).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub log_group: Option<::Value<String>>,
+        pub log_group: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CloudWatchLogsLogDelivery {
+    impl crate::codec::SerializeValue for CloudWatchLogsLogDelivery {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", &self.enabled)?;
@@ -560,7 +560,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for CloudWatchLogsLogDelivery {
+    impl crate::codec::DeserializeValue for CloudWatchLogsLogDelivery {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CloudWatchLogsLogDelivery, D::Error> {
@@ -577,8 +577,8 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<::Value<bool>> = None;
-                    let mut log_group: Option<::Value<String>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
+                    let mut log_group: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -612,15 +612,15 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub custom_plugin_arn: ::Value<String>,
+        pub custom_plugin_arn: crate::Value<String>,
         /// Property [`Revision`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-customplugin.html#cfn-kafkaconnect-connector-customplugin-revision).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub revision: ::Value<u32>,
+        pub revision: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for CustomPlugin {
+    impl crate::codec::SerializeValue for CustomPlugin {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -633,7 +633,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomPlugin {
+    impl crate::codec::DeserializeValue for CustomPlugin {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomPlugin, D::Error> {
             struct Visitor;
 
@@ -648,8 +648,8 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_plugin_arn: Option<::Value<String>> = None;
-                    let mut revision: Option<::Value<u32>> = None;
+                    let mut custom_plugin_arn: Option<crate::Value<String>> = None;
+                    let mut revision: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -684,15 +684,15 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub delivery_stream: Option<::Value<String>>,
+        pub delivery_stream: Option<crate::Value<String>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-firehoselogdelivery.html#cfn-kafkaconnect-connector-firehoselogdelivery-enabled).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for FirehoseLogDelivery {
+    impl crate::codec::SerializeValue for FirehoseLogDelivery {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref delivery_stream) = self.delivery_stream {
@@ -707,7 +707,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for FirehoseLogDelivery {
+    impl crate::codec::DeserializeValue for FirehoseLogDelivery {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FirehoseLogDelivery, D::Error> {
@@ -724,8 +724,8 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut delivery_stream: Option<::Value<String>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut delivery_stream: Option<crate::Value<String>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -759,10 +759,10 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub apache_kafka_cluster: ::Value<ApacheKafkaCluster>,
+        pub apache_kafka_cluster: crate::Value<ApacheKafkaCluster>,
     }
 
-    impl ::codec::SerializeValue for KafkaCluster {
+    impl crate::codec::SerializeValue for KafkaCluster {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -774,7 +774,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for KafkaCluster {
+    impl crate::codec::DeserializeValue for KafkaCluster {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KafkaCluster, D::Error> {
             struct Visitor;
 
@@ -789,7 +789,7 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut apache_kafka_cluster: Option<::Value<ApacheKafkaCluster>> = None;
+                    let mut apache_kafka_cluster: Option<crate::Value<ApacheKafkaCluster>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -821,10 +821,10 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub authentication_type: ::Value<String>,
+        pub authentication_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for KafkaClusterClientAuthentication {
+    impl crate::codec::SerializeValue for KafkaClusterClientAuthentication {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -836,7 +836,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for KafkaClusterClientAuthentication {
+    impl crate::codec::DeserializeValue for KafkaClusterClientAuthentication {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KafkaClusterClientAuthentication, D::Error> {
@@ -853,7 +853,7 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut authentication_type: Option<::Value<String>> = None;
+                    let mut authentication_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -884,10 +884,10 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub encryption_type: ::Value<String>,
+        pub encryption_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for KafkaClusterEncryptionInTransit {
+    impl crate::codec::SerializeValue for KafkaClusterEncryptionInTransit {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -899,7 +899,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for KafkaClusterEncryptionInTransit {
+    impl crate::codec::DeserializeValue for KafkaClusterEncryptionInTransit {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KafkaClusterEncryptionInTransit, D::Error> {
@@ -916,7 +916,7 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut encryption_type: Option<::Value<String>> = None;
+                    let mut encryption_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -947,10 +947,10 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub worker_log_delivery: ::Value<WorkerLogDelivery>,
+        pub worker_log_delivery: crate::Value<WorkerLogDelivery>,
     }
 
-    impl ::codec::SerializeValue for LogDelivery {
+    impl crate::codec::SerializeValue for LogDelivery {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -962,7 +962,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for LogDelivery {
+    impl crate::codec::DeserializeValue for LogDelivery {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LogDelivery, D::Error> {
             struct Visitor;
 
@@ -977,7 +977,7 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut worker_log_delivery: Option<::Value<WorkerLogDelivery>> = None;
+                    let mut worker_log_delivery: Option<crate::Value<WorkerLogDelivery>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1008,10 +1008,10 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub custom_plugin: ::Value<CustomPlugin>,
+        pub custom_plugin: crate::Value<CustomPlugin>,
     }
 
-    impl ::codec::SerializeValue for Plugin {
+    impl crate::codec::SerializeValue for Plugin {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1023,7 +1023,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for Plugin {
+    impl crate::codec::DeserializeValue for Plugin {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Plugin, D::Error> {
             struct Visitor;
 
@@ -1038,7 +1038,7 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_plugin: Option<::Value<CustomPlugin>> = None;
+                    let mut custom_plugin: Option<crate::Value<CustomPlugin>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1069,15 +1069,15 @@ pub mod connector {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mcu_count: Option<::Value<u32>>,
+        pub mcu_count: Option<crate::Value<u32>>,
         /// Property [`WorkerCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-provisionedcapacity.html#cfn-kafkaconnect-connector-provisionedcapacity-workercount).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub worker_count: ::Value<u32>,
+        pub worker_count: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for ProvisionedCapacity {
+    impl crate::codec::SerializeValue for ProvisionedCapacity {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref mcu_count) = self.mcu_count {
@@ -1092,7 +1092,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for ProvisionedCapacity {
+    impl crate::codec::DeserializeValue for ProvisionedCapacity {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProvisionedCapacity, D::Error> {
@@ -1109,8 +1109,8 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut mcu_count: Option<::Value<u32>> = None;
-                    let mut worker_count: Option<::Value<u32>> = None;
+                    let mut mcu_count: Option<crate::Value<u32>> = None;
+                    let mut worker_count: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1145,20 +1145,20 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub bucket: Option<::Value<String>>,
+        pub bucket: Option<crate::Value<String>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-s3logdelivery.html#cfn-kafkaconnect-connector-s3logdelivery-enabled).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
         /// Property [`Prefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-s3logdelivery.html#cfn-kafkaconnect-connector-s3logdelivery-prefix).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub prefix: Option<::Value<String>>,
+        pub prefix: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3LogDelivery {
+    impl crate::codec::SerializeValue for S3LogDelivery {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bucket) = self.bucket {
@@ -1172,7 +1172,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for S3LogDelivery {
+    impl crate::codec::DeserializeValue for S3LogDelivery {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3LogDelivery, D::Error> {
@@ -1189,9 +1189,9 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
-                    let mut prefix: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
+                    let mut prefix: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1229,10 +1229,10 @@ pub mod connector {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cpu_utilization_percentage: ::Value<u32>,
+        pub cpu_utilization_percentage: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for ScaleInPolicy {
+    impl crate::codec::SerializeValue for ScaleInPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1244,7 +1244,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for ScaleInPolicy {
+    impl crate::codec::DeserializeValue for ScaleInPolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScaleInPolicy, D::Error> {
@@ -1261,7 +1261,7 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cpu_utilization_percentage: Option<::Value<u32>> = None;
+                    let mut cpu_utilization_percentage: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1294,10 +1294,10 @@ pub mod connector {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cpu_utilization_percentage: ::Value<u32>,
+        pub cpu_utilization_percentage: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for ScaleOutPolicy {
+    impl crate::codec::SerializeValue for ScaleOutPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1309,7 +1309,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for ScaleOutPolicy {
+    impl crate::codec::DeserializeValue for ScaleOutPolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScaleOutPolicy, D::Error> {
@@ -1326,7 +1326,7 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cpu_utilization_percentage: Option<::Value<u32>> = None;
+                    let mut cpu_utilization_percentage: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1359,15 +1359,15 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_groups: ::ValueList<String>,
+        pub security_groups: crate::ValueList<String>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-vpc.html#cfn-kafkaconnect-connector-vpc-subnets).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnets: ::ValueList<String>,
+        pub subnets: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for Vpc {
+    impl crate::codec::SerializeValue for Vpc {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1380,7 +1380,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for Vpc {
+    impl crate::codec::DeserializeValue for Vpc {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Vpc, D::Error> {
             struct Visitor;
 
@@ -1395,8 +1395,8 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_groups: Option<::ValueList<String>> = None;
-                    let mut subnets: Option<::ValueList<String>> = None;
+                    let mut security_groups: Option<crate::ValueList<String>> = None;
+                    let mut subnets: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1431,15 +1431,15 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub revision: ::Value<u32>,
+        pub revision: crate::Value<u32>,
         /// Property [`WorkerConfigurationArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-workerconfigurationarn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub worker_configuration_arn: ::Value<String>,
+        pub worker_configuration_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for WorkerConfiguration {
+    impl crate::codec::SerializeValue for WorkerConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Revision", &self.revision)?;
@@ -1452,7 +1452,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for WorkerConfiguration {
+    impl crate::codec::DeserializeValue for WorkerConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WorkerConfiguration, D::Error> {
@@ -1469,8 +1469,8 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut revision: Option<::Value<u32>> = None;
-                    let mut worker_configuration_arn: Option<::Value<String>> = None;
+                    let mut revision: Option<crate::Value<u32>> = None;
+                    let mut worker_configuration_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1506,20 +1506,20 @@ pub mod connector {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cloud_watch_logs: Option<::Value<CloudWatchLogsLogDelivery>>,
+        pub cloud_watch_logs: Option<crate::Value<CloudWatchLogsLogDelivery>>,
         /// Property [`Firehose`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-firehose).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub firehose: Option<::Value<FirehoseLogDelivery>>,
+        pub firehose: Option<crate::Value<FirehoseLogDelivery>>,
         /// Property [`S3`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-s3).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3: Option<::Value<S3LogDelivery>>,
+        pub s3: Option<crate::Value<S3LogDelivery>>,
     }
 
-    impl ::codec::SerializeValue for WorkerLogDelivery {
+    impl crate::codec::SerializeValue for WorkerLogDelivery {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_logs) = self.cloud_watch_logs {
@@ -1539,7 +1539,7 @@ pub mod connector {
         }
     }
 
-    impl ::codec::DeserializeValue for WorkerLogDelivery {
+    impl crate::codec::DeserializeValue for WorkerLogDelivery {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WorkerLogDelivery, D::Error> {
@@ -1556,9 +1556,9 @@ pub mod connector {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_logs: Option<::Value<CloudWatchLogsLogDelivery>> = None;
-                    let mut firehose: Option<::Value<FirehoseLogDelivery>> = None;
-                    let mut s3: Option<::Value<S3LogDelivery>> = None;
+                    let mut cloud_watch_logs: Option<crate::Value<CloudWatchLogsLogDelivery>> = None;
+                    let mut firehose: Option<crate::Value<FirehoseLogDelivery>> = None;
+                    let mut s3: Option<crate::Value<S3LogDelivery>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

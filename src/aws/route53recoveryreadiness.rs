@@ -13,17 +13,17 @@ pub struct CellProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cell_name: ::Value<String>,
+    pub cell_name: crate::Value<String>,
     /// Property [`Cells`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-cell.html#cfn-route53recoveryreadiness-cell-cells).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cells: Option<::ValueList<String>>,
+    pub cells: Option<crate::ValueList<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-cell.html#cfn-route53recoveryreadiness-cell-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for CellProperties {
@@ -55,9 +55,9 @@ impl<'de> ::serde::Deserialize<'de> for CellProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cell_name: Option<::Value<String>> = None;
-                let mut cells: Option<::ValueList<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut cell_name: Option<crate::Value<String>> = None;
+                let mut cells: Option<crate::ValueList<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -86,7 +86,7 @@ impl<'de> ::serde::Deserialize<'de> for CellProperties {
     }
 }
 
-impl ::Resource for Cell {
+impl crate::Resource for Cell {
     type Properties = CellProperties;
     const TYPE: &'static str = "AWS::Route53RecoveryReadiness::Cell";
     fn properties(&self) -> &CellProperties {
@@ -97,7 +97,7 @@ impl ::Resource for Cell {
     }
 }
 
-impl ::private::Sealed for Cell {}
+impl crate::private::Sealed for Cell {}
 
 impl From<CellProperties> for Cell {
     fn from(properties: CellProperties) -> Cell {
@@ -118,17 +118,17 @@ pub struct ReadinessCheckProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub readiness_check_name: ::Value<String>,
+    pub readiness_check_name: crate::Value<String>,
     /// Property [`ResourceSetName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-readinesscheck.html#cfn-route53recoveryreadiness-readinesscheck-resourcesetname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_set_name: Option<::Value<String>>,
+    pub resource_set_name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-readinesscheck.html#cfn-route53recoveryreadiness-readinesscheck-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ReadinessCheckProperties {
@@ -170,9 +170,9 @@ impl<'de> ::serde::Deserialize<'de> for ReadinessCheckProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut readiness_check_name: Option<::Value<String>> = None;
-                let mut resource_set_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut readiness_check_name: Option<crate::Value<String>> = None;
+                let mut resource_set_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -202,7 +202,7 @@ impl<'de> ::serde::Deserialize<'de> for ReadinessCheckProperties {
     }
 }
 
-impl ::Resource for ReadinessCheck {
+impl crate::Resource for ReadinessCheck {
     type Properties = ReadinessCheckProperties;
     const TYPE: &'static str = "AWS::Route53RecoveryReadiness::ReadinessCheck";
     fn properties(&self) -> &ReadinessCheckProperties {
@@ -213,7 +213,7 @@ impl ::Resource for ReadinessCheck {
     }
 }
 
-impl ::private::Sealed for ReadinessCheck {}
+impl crate::private::Sealed for ReadinessCheck {}
 
 impl From<ReadinessCheckProperties> for ReadinessCheck {
     fn from(properties: ReadinessCheckProperties) -> ReadinessCheck {
@@ -234,17 +234,17 @@ pub struct RecoveryGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cells: Option<::ValueList<String>>,
+    pub cells: Option<crate::ValueList<String>>,
     /// Property [`RecoveryGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-recoverygroup.html#cfn-route53recoveryreadiness-recoverygroup-recoverygroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub recovery_group_name: ::Value<String>,
+    pub recovery_group_name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-recoverygroup.html#cfn-route53recoveryreadiness-recoverygroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for RecoveryGroupProperties {
@@ -282,9 +282,9 @@ impl<'de> ::serde::Deserialize<'de> for RecoveryGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cells: Option<::ValueList<String>> = None;
-                let mut recovery_group_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut cells: Option<crate::ValueList<String>> = None;
+                let mut recovery_group_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -314,7 +314,7 @@ impl<'de> ::serde::Deserialize<'de> for RecoveryGroupProperties {
     }
 }
 
-impl ::Resource for RecoveryGroup {
+impl crate::Resource for RecoveryGroup {
     type Properties = RecoveryGroupProperties;
     const TYPE: &'static str = "AWS::Route53RecoveryReadiness::RecoveryGroup";
     fn properties(&self) -> &RecoveryGroupProperties {
@@ -325,7 +325,7 @@ impl ::Resource for RecoveryGroup {
     }
 }
 
-impl ::private::Sealed for RecoveryGroup {}
+impl crate::private::Sealed for RecoveryGroup {}
 
 impl From<RecoveryGroupProperties> for RecoveryGroup {
     fn from(properties: RecoveryGroupProperties) -> RecoveryGroup {
@@ -346,22 +346,22 @@ pub struct ResourceSetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub resource_set_name: ::Value<String>,
+    pub resource_set_name: crate::Value<String>,
     /// Property [`ResourceSetType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html#cfn-route53recoveryreadiness-resourceset-resourcesettype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub resource_set_type: ::Value<String>,
+    pub resource_set_type: crate::Value<String>,
     /// Property [`Resources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html#cfn-route53recoveryreadiness-resourceset-resources).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resources: ::ValueList<self::resource_set::Resource>,
+    pub resources: crate::ValueList<self::resource_set::Resource>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html#cfn-route53recoveryreadiness-resourceset-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ResourceSetProperties {
@@ -400,10 +400,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceSetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut resource_set_name: Option<::Value<String>> = None;
-                let mut resource_set_type: Option<::Value<String>> = None;
-                let mut resources: Option<::ValueList<self::resource_set::Resource>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut resource_set_name: Option<crate::Value<String>> = None;
+                let mut resource_set_type: Option<crate::Value<String>> = None;
+                let mut resources: Option<crate::ValueList<self::resource_set::Resource>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -438,7 +438,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourceSetProperties {
     }
 }
 
-impl ::Resource for ResourceSet {
+impl crate::Resource for ResourceSet {
     type Properties = ResourceSetProperties;
     const TYPE: &'static str = "AWS::Route53RecoveryReadiness::ResourceSet";
     fn properties(&self) -> &ResourceSetProperties {
@@ -449,7 +449,7 @@ impl ::Resource for ResourceSet {
     }
 }
 
-impl ::private::Sealed for ResourceSet {}
+impl crate::private::Sealed for ResourceSet {}
 
 impl From<ResourceSetProperties> for ResourceSet {
     fn from(properties: ResourceSetProperties) -> ResourceSet {
@@ -467,30 +467,30 @@ pub mod resource_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub domain_name: Option<::Value<String>>,
+        pub domain_name: Option<crate::Value<String>>,
         /// Property [`HostedZoneArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-dnstargetresource.html#cfn-route53recoveryreadiness-resourceset-dnstargetresource-hostedzonearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hosted_zone_arn: Option<::Value<String>>,
+        pub hosted_zone_arn: Option<crate::Value<String>>,
         /// Property [`RecordSetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-dnstargetresource.html#cfn-route53recoveryreadiness-resourceset-dnstargetresource-recordsetid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub record_set_id: Option<::Value<String>>,
+        pub record_set_id: Option<crate::Value<String>>,
         /// Property [`RecordType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-dnstargetresource.html#cfn-route53recoveryreadiness-resourceset-dnstargetresource-recordtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub record_type: Option<::Value<String>>,
+        pub record_type: Option<crate::Value<String>>,
         /// Property [`TargetResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-dnstargetresource.html#cfn-route53recoveryreadiness-resourceset-dnstargetresource-targetresource).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_resource: Option<::Value<TargetResource>>,
+        pub target_resource: Option<crate::Value<TargetResource>>,
     }
 
-    impl ::codec::SerializeValue for DNSTargetResource {
+    impl crate::codec::SerializeValue for DNSTargetResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref domain_name) = self.domain_name {
@@ -524,7 +524,7 @@ pub mod resource_set {
         }
     }
 
-    impl ::codec::DeserializeValue for DNSTargetResource {
+    impl crate::codec::DeserializeValue for DNSTargetResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DNSTargetResource, D::Error> {
@@ -541,11 +541,11 @@ pub mod resource_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut domain_name: Option<::Value<String>> = None;
-                    let mut hosted_zone_arn: Option<::Value<String>> = None;
-                    let mut record_set_id: Option<::Value<String>> = None;
-                    let mut record_type: Option<::Value<String>> = None;
-                    let mut target_resource: Option<::Value<TargetResource>> = None;
+                    let mut domain_name: Option<crate::Value<String>> = None;
+                    let mut hosted_zone_arn: Option<crate::Value<String>> = None;
+                    let mut record_set_id: Option<crate::Value<String>> = None;
+                    let mut record_type: Option<crate::Value<String>> = None;
+                    let mut target_resource: Option<crate::Value<TargetResource>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -591,10 +591,10 @@ pub mod resource_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arn: Option<::Value<String>>,
+        pub arn: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for NLBResource {
+    impl crate::codec::SerializeValue for NLBResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref arn) = self.arn {
@@ -604,7 +604,7 @@ pub mod resource_set {
         }
     }
 
-    impl ::codec::DeserializeValue for NLBResource {
+    impl crate::codec::DeserializeValue for NLBResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NLBResource, D::Error> {
             struct Visitor;
 
@@ -619,7 +619,7 @@ pub mod resource_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut arn: Option<::Value<String>> = None;
+                    let mut arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -647,15 +647,15 @@ pub mod resource_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub domain_name: Option<::Value<String>>,
+        pub domain_name: Option<crate::Value<String>>,
         /// Property [`RecordSetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-r53resourcerecord.html#cfn-route53recoveryreadiness-resourceset-r53resourcerecord-recordsetid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub record_set_id: Option<::Value<String>>,
+        pub record_set_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for R53ResourceRecord {
+    impl crate::codec::SerializeValue for R53ResourceRecord {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref domain_name) = self.domain_name {
@@ -672,7 +672,7 @@ pub mod resource_set {
         }
     }
 
-    impl ::codec::DeserializeValue for R53ResourceRecord {
+    impl crate::codec::DeserializeValue for R53ResourceRecord {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<R53ResourceRecord, D::Error> {
@@ -689,8 +689,8 @@ pub mod resource_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut domain_name: Option<::Value<String>> = None;
-                    let mut record_set_id: Option<::Value<String>> = None;
+                    let mut domain_name: Option<crate::Value<String>> = None;
+                    let mut record_set_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -724,25 +724,25 @@ pub mod resource_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub component_id: Option<::Value<String>>,
+        pub component_id: Option<crate::Value<String>>,
         /// Property [`DnsTargetResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html#cfn-route53recoveryreadiness-resourceset-resource-dnstargetresource).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dns_target_resource: Option<::Value<DNSTargetResource>>,
+        pub dns_target_resource: Option<crate::Value<DNSTargetResource>>,
         /// Property [`ReadinessScopes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html#cfn-route53recoveryreadiness-resourceset-resource-readinessscopes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub readiness_scopes: Option<::ValueList<String>>,
+        pub readiness_scopes: Option<crate::ValueList<String>>,
         /// Property [`ResourceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html#cfn-route53recoveryreadiness-resourceset-resource-resourcearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_arn: Option<::Value<String>>,
+        pub resource_arn: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Resource {
+    impl crate::codec::SerializeValue for Resource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref component_id) = self.component_id {
@@ -769,7 +769,7 @@ pub mod resource_set {
         }
     }
 
-    impl ::codec::DeserializeValue for Resource {
+    impl crate::codec::DeserializeValue for Resource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Resource, D::Error> {
             struct Visitor;
 
@@ -784,10 +784,10 @@ pub mod resource_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut component_id: Option<::Value<String>> = None;
-                    let mut dns_target_resource: Option<::Value<DNSTargetResource>> = None;
-                    let mut readiness_scopes: Option<::ValueList<String>> = None;
-                    let mut resource_arn: Option<::Value<String>> = None;
+                    let mut component_id: Option<crate::Value<String>> = None;
+                    let mut dns_target_resource: Option<crate::Value<DNSTargetResource>> = None;
+                    let mut readiness_scopes: Option<crate::ValueList<String>> = None;
+                    let mut resource_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -829,15 +829,15 @@ pub mod resource_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nlb_resource: Option<::Value<NLBResource>>,
+        pub nlb_resource: Option<crate::Value<NLBResource>>,
         /// Property [`R53Resource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-targetresource.html#cfn-route53recoveryreadiness-resourceset-targetresource-r53resource).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r53_resource: Option<::Value<R53ResourceRecord>>,
+        pub r53_resource: Option<crate::Value<R53ResourceRecord>>,
     }
 
-    impl ::codec::SerializeValue for TargetResource {
+    impl crate::codec::SerializeValue for TargetResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref nlb_resource) = self.nlb_resource {
@@ -850,7 +850,7 @@ pub mod resource_set {
         }
     }
 
-    impl ::codec::DeserializeValue for TargetResource {
+    impl crate::codec::DeserializeValue for TargetResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetResource, D::Error> {
@@ -867,8 +867,8 @@ pub mod resource_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut nlb_resource: Option<::Value<NLBResource>> = None;
-                    let mut r53_resource: Option<::Value<R53ResourceRecord>> = None;
+                    let mut nlb_resource: Option<crate::Value<NLBResource>> = None;
+                    let mut r53_resource: Option<crate::Value<R53ResourceRecord>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
