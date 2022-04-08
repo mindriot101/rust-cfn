@@ -13,12 +13,12 @@ pub struct ClusterProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-cluster.html#cfn-route53recoverycontrol-cluster-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ClusterProperties {
@@ -49,8 +49,8 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -75,7 +75,7 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
     }
 }
 
-impl ::Resource for Cluster {
+impl crate::Resource for Cluster {
     type Properties = ClusterProperties;
     const TYPE: &'static str = "AWS::Route53RecoveryControl::Cluster";
     fn properties(&self) -> &ClusterProperties {
@@ -86,7 +86,7 @@ impl ::Resource for Cluster {
     }
 }
 
-impl ::private::Sealed for Cluster {}
+impl crate::private::Sealed for Cluster {}
 
 impl From<ClusterProperties> for Cluster {
     fn from(properties: ClusterProperties) -> Cluster {
@@ -107,17 +107,17 @@ pub struct ControlPanelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_arn: Option<::Value<String>>,
+    pub cluster_arn: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-controlpanel.html#cfn-route53recoverycontrol-controlpanel-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-controlpanel.html#cfn-route53recoverycontrol-controlpanel-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ControlPanelProperties {
@@ -151,9 +151,9 @@ impl<'de> ::serde::Deserialize<'de> for ControlPanelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cluster_arn: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut cluster_arn: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -182,7 +182,7 @@ impl<'de> ::serde::Deserialize<'de> for ControlPanelProperties {
     }
 }
 
-impl ::Resource for ControlPanel {
+impl crate::Resource for ControlPanel {
     type Properties = ControlPanelProperties;
     const TYPE: &'static str = "AWS::Route53RecoveryControl::ControlPanel";
     fn properties(&self) -> &ControlPanelProperties {
@@ -193,7 +193,7 @@ impl ::Resource for ControlPanel {
     }
 }
 
-impl ::private::Sealed for ControlPanel {}
+impl crate::private::Sealed for ControlPanel {}
 
 impl From<ControlPanelProperties> for ControlPanel {
     fn from(properties: ControlPanelProperties) -> ControlPanel {
@@ -214,17 +214,17 @@ pub struct RoutingControlProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_arn: Option<::Value<String>>,
+    pub cluster_arn: Option<crate::Value<String>>,
     /// Property [`ControlPanelArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-routingcontrol.html#cfn-route53recoverycontrol-routingcontrol-controlpanelarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub control_panel_arn: Option<::Value<String>>,
+    pub control_panel_arn: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-routingcontrol.html#cfn-route53recoverycontrol-routingcontrol-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for RoutingControlProperties {
@@ -262,9 +262,9 @@ impl<'de> ::serde::Deserialize<'de> for RoutingControlProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cluster_arn: Option<::Value<String>> = None;
-                let mut control_panel_arn: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
+                let mut cluster_arn: Option<crate::Value<String>> = None;
+                let mut control_panel_arn: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -293,7 +293,7 @@ impl<'de> ::serde::Deserialize<'de> for RoutingControlProperties {
     }
 }
 
-impl ::Resource for RoutingControl {
+impl crate::Resource for RoutingControl {
     type Properties = RoutingControlProperties;
     const TYPE: &'static str = "AWS::Route53RecoveryControl::RoutingControl";
     fn properties(&self) -> &RoutingControlProperties {
@@ -304,7 +304,7 @@ impl ::Resource for RoutingControl {
     }
 }
 
-impl ::private::Sealed for RoutingControl {}
+impl crate::private::Sealed for RoutingControl {}
 
 impl From<RoutingControlProperties> for RoutingControl {
     fn from(properties: RoutingControlProperties) -> RoutingControl {
@@ -325,32 +325,32 @@ pub struct SafetyRuleProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub assertion_rule: Option<::Value<self::safety_rule::AssertionRule>>,
+    pub assertion_rule: Option<crate::Value<self::safety_rule::AssertionRule>>,
     /// Property [`ControlPanelArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-controlpanelarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub control_panel_arn: ::Value<String>,
+    pub control_panel_arn: crate::Value<String>,
     /// Property [`GatingRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-gatingrule).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub gating_rule: Option<::Value<self::safety_rule::GatingRule>>,
+    pub gating_rule: Option<crate::Value<self::safety_rule::GatingRule>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`RuleConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-ruleconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rule_config: ::Value<self::safety_rule::RuleConfig>,
+    pub rule_config: crate::Value<self::safety_rule::RuleConfig>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for SafetyRuleProperties {
@@ -391,12 +391,12 @@ impl<'de> ::serde::Deserialize<'de> for SafetyRuleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut assertion_rule: Option<::Value<self::safety_rule::AssertionRule>> = None;
-                let mut control_panel_arn: Option<::Value<String>> = None;
-                let mut gating_rule: Option<::Value<self::safety_rule::GatingRule>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut rule_config: Option<::Value<self::safety_rule::RuleConfig>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut assertion_rule: Option<crate::Value<self::safety_rule::AssertionRule>> = None;
+                let mut control_panel_arn: Option<crate::Value<String>> = None;
+                let mut gating_rule: Option<crate::Value<self::safety_rule::GatingRule>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut rule_config: Option<crate::Value<self::safety_rule::RuleConfig>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -439,7 +439,7 @@ impl<'de> ::serde::Deserialize<'de> for SafetyRuleProperties {
     }
 }
 
-impl ::Resource for SafetyRule {
+impl crate::Resource for SafetyRule {
     type Properties = SafetyRuleProperties;
     const TYPE: &'static str = "AWS::Route53RecoveryControl::SafetyRule";
     fn properties(&self) -> &SafetyRuleProperties {
@@ -450,7 +450,7 @@ impl ::Resource for SafetyRule {
     }
 }
 
-impl ::private::Sealed for SafetyRule {}
+impl crate::private::Sealed for SafetyRule {}
 
 impl From<SafetyRuleProperties> for SafetyRule {
     fn from(properties: SafetyRuleProperties) -> SafetyRule {
@@ -468,15 +468,15 @@ pub mod cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub endpoint: Option<::Value<String>>,
+        pub endpoint: Option<crate::Value<String>>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-cluster-clusterendpoint.html#cfn-route53recoverycontrol-cluster-clusterendpoint-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: Option<::Value<String>>,
+        pub region: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ClusterEndpoint {
+    impl crate::codec::SerializeValue for ClusterEndpoint {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref endpoint) = self.endpoint {
@@ -489,7 +489,7 @@ pub mod cluster {
         }
     }
 
-    impl ::codec::DeserializeValue for ClusterEndpoint {
+    impl crate::codec::DeserializeValue for ClusterEndpoint {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClusterEndpoint, D::Error> {
@@ -506,8 +506,8 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint: Option<::Value<String>> = None;
-                    let mut region: Option<::Value<String>> = None;
+                    let mut endpoint: Option<crate::Value<String>> = None;
+                    let mut region: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -545,15 +545,15 @@ pub mod safety_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub asserted_controls: ::ValueList<String>,
+        pub asserted_controls: crate::ValueList<String>,
         /// Property [`WaitPeriodMs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-assertionrule.html#cfn-route53recoverycontrol-safetyrule-assertionrule-waitperiodms).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub wait_period_ms: ::Value<u32>,
+        pub wait_period_ms: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for AssertionRule {
+    impl crate::codec::SerializeValue for AssertionRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -570,7 +570,7 @@ pub mod safety_rule {
         }
     }
 
-    impl ::codec::DeserializeValue for AssertionRule {
+    impl crate::codec::DeserializeValue for AssertionRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AssertionRule, D::Error> {
@@ -587,8 +587,8 @@ pub mod safety_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut asserted_controls: Option<::ValueList<String>> = None;
-                    let mut wait_period_ms: Option<::Value<u32>> = None;
+                    let mut asserted_controls: Option<crate::ValueList<String>> = None;
+                    let mut wait_period_ms: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -624,20 +624,20 @@ pub mod safety_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gating_controls: ::ValueList<String>,
+        pub gating_controls: crate::ValueList<String>,
         /// Property [`TargetControls`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-gatingrule.html#cfn-route53recoverycontrol-safetyrule-gatingrule-targetcontrols).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_controls: ::ValueList<String>,
+        pub target_controls: crate::ValueList<String>,
         /// Property [`WaitPeriodMs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-gatingrule.html#cfn-route53recoverycontrol-safetyrule-gatingrule-waitperiodms).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub wait_period_ms: ::Value<u32>,
+        pub wait_period_ms: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for GatingRule {
+    impl crate::codec::SerializeValue for GatingRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -659,7 +659,7 @@ pub mod safety_rule {
         }
     }
 
-    impl ::codec::DeserializeValue for GatingRule {
+    impl crate::codec::DeserializeValue for GatingRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GatingRule, D::Error> {
             struct Visitor;
 
@@ -674,9 +674,9 @@ pub mod safety_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut gating_controls: Option<::ValueList<String>> = None;
-                    let mut target_controls: Option<::ValueList<String>> = None;
-                    let mut wait_period_ms: Option<::Value<u32>> = None;
+                    let mut gating_controls: Option<crate::ValueList<String>> = None;
+                    let mut target_controls: Option<crate::ValueList<String>> = None;
+                    let mut wait_period_ms: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -717,20 +717,20 @@ pub mod safety_rule {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub inverted: ::Value<bool>,
+        pub inverted: crate::Value<bool>,
         /// Property [`Threshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-ruleconfig.html#cfn-route53recoverycontrol-safetyrule-ruleconfig-threshold).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub threshold: ::Value<u32>,
+        pub threshold: crate::Value<u32>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-ruleconfig.html#cfn-route53recoverycontrol-safetyrule-ruleconfig-type).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for RuleConfig {
+    impl crate::codec::SerializeValue for RuleConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Inverted", &self.inverted)?;
@@ -740,7 +740,7 @@ pub mod safety_rule {
         }
     }
 
-    impl ::codec::DeserializeValue for RuleConfig {
+    impl crate::codec::DeserializeValue for RuleConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RuleConfig, D::Error> {
             struct Visitor;
 
@@ -755,9 +755,9 @@ pub mod safety_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut inverted: Option<::Value<bool>> = None;
-                    let mut threshold: Option<::Value<u32>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut inverted: Option<crate::Value<bool>> = None;
+                    let mut threshold: Option<crate::Value<u32>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

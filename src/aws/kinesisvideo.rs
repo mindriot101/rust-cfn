@@ -13,22 +13,22 @@ pub struct SignalingChannelProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub message_ttl_seconds: Option<::Value<u32>>,
+    pub message_ttl_seconds: Option<crate::Value<u32>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-signalingchannel.html#cfn-kinesisvideo-signalingchannel-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-signalingchannel.html#cfn-kinesisvideo-signalingchannel-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-signalingchannel.html#cfn-kinesisvideo-signalingchannel-type).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub r#type: Option<::Value<String>>,
+    pub r#type: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for SignalingChannelProperties {
@@ -71,10 +71,10 @@ impl<'de> ::serde::Deserialize<'de> for SignalingChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut message_ttl_seconds: Option<::Value<u32>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut message_ttl_seconds: Option<crate::Value<u32>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -107,7 +107,7 @@ impl<'de> ::serde::Deserialize<'de> for SignalingChannelProperties {
     }
 }
 
-impl ::Resource for SignalingChannel {
+impl crate::Resource for SignalingChannel {
     type Properties = SignalingChannelProperties;
     const TYPE: &'static str = "AWS::KinesisVideo::SignalingChannel";
     fn properties(&self) -> &SignalingChannelProperties {
@@ -118,7 +118,7 @@ impl ::Resource for SignalingChannel {
     }
 }
 
-impl ::private::Sealed for SignalingChannel {}
+impl crate::private::Sealed for SignalingChannel {}
 
 impl From<SignalingChannelProperties> for SignalingChannel {
     fn from(properties: SignalingChannelProperties) -> SignalingChannel {
@@ -139,32 +139,32 @@ pub struct StreamProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_retention_in_hours: Option<::Value<u32>>,
+    pub data_retention_in_hours: Option<crate::Value<u32>>,
     /// Property [`DeviceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html#cfn-kinesisvideo-stream-devicename).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub device_name: Option<::Value<String>>,
+    pub device_name: Option<crate::Value<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html#cfn-kinesisvideo-stream-kmskeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kms_key_id: Option<::Value<String>>,
+    pub kms_key_id: Option<crate::Value<String>>,
     /// Property [`MediaType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html#cfn-kinesisvideo-stream-mediatype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub media_type: Option<::Value<String>>,
+    pub media_type: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html#cfn-kinesisvideo-stream-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html#cfn-kinesisvideo-stream-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for StreamProperties {
@@ -211,12 +211,12 @@ impl<'de> ::serde::Deserialize<'de> for StreamProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_retention_in_hours: Option<::Value<u32>> = None;
-                let mut device_name: Option<::Value<String>> = None;
-                let mut kms_key_id: Option<::Value<String>> = None;
-                let mut media_type: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut data_retention_in_hours: Option<crate::Value<u32>> = None;
+                let mut device_name: Option<crate::Value<String>> = None;
+                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut media_type: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -257,7 +257,7 @@ impl<'de> ::serde::Deserialize<'de> for StreamProperties {
     }
 }
 
-impl ::Resource for Stream {
+impl crate::Resource for Stream {
     type Properties = StreamProperties;
     const TYPE: &'static str = "AWS::KinesisVideo::Stream";
     fn properties(&self) -> &StreamProperties {
@@ -268,7 +268,7 @@ impl ::Resource for Stream {
     }
 }
 
-impl ::private::Sealed for Stream {}
+impl crate::private::Sealed for Stream {}
 
 impl From<StreamProperties> for Stream {
     fn from(properties: StreamProperties) -> Stream {

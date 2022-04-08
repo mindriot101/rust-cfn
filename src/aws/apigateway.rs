@@ -13,7 +13,7 @@ pub struct AccountProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cloud_watch_role_arn: Option<::Value<String>>,
+    pub cloud_watch_role_arn: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for AccountProperties {
@@ -45,7 +45,7 @@ impl<'de> ::serde::Deserialize<'de> for AccountProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cloud_watch_role_arn: Option<::Value<String>> = None;
+                let mut cloud_watch_role_arn: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -66,7 +66,7 @@ impl<'de> ::serde::Deserialize<'de> for AccountProperties {
     }
 }
 
-impl ::Resource for Account {
+impl crate::Resource for Account {
     type Properties = AccountProperties;
     const TYPE: &'static str = "AWS::ApiGateway::Account";
     fn properties(&self) -> &AccountProperties {
@@ -77,7 +77,7 @@ impl ::Resource for Account {
     }
 }
 
-impl ::private::Sealed for Account {}
+impl crate::private::Sealed for Account {}
 
 impl From<AccountProperties> for Account {
     fn from(properties: AccountProperties) -> Account {
@@ -98,42 +98,42 @@ pub struct ApiKeyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub customer_id: Option<::Value<String>>,
+    pub customer_id: Option<crate::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
     /// Property [`GenerateDistinctId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub generate_distinct_id: Option<::Value<bool>>,
+    pub generate_distinct_id: Option<crate::Value<bool>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`StageKeys`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-stagekeys).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stage_keys: Option<::ValueList<self::api_key::StageKey>>,
+    pub stage_keys: Option<crate::ValueList<self::api_key::StageKey>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-value).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub value: Option<::Value<String>>,
+    pub value: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for ApiKeyProperties {
@@ -186,14 +186,14 @@ impl<'de> ::serde::Deserialize<'de> for ApiKeyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut customer_id: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
-                let mut generate_distinct_id: Option<::Value<bool>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut stage_keys: Option<::ValueList<self::api_key::StageKey>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut value: Option<::Value<String>> = None;
+                let mut customer_id: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut generate_distinct_id: Option<crate::Value<bool>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut stage_keys: Option<crate::ValueList<self::api_key::StageKey>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut value: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -242,7 +242,7 @@ impl<'de> ::serde::Deserialize<'de> for ApiKeyProperties {
     }
 }
 
-impl ::Resource for ApiKey {
+impl crate::Resource for ApiKey {
     type Properties = ApiKeyProperties;
     const TYPE: &'static str = "AWS::ApiGateway::ApiKey";
     fn properties(&self) -> &ApiKeyProperties {
@@ -253,7 +253,7 @@ impl ::Resource for ApiKey {
     }
 }
 
-impl ::private::Sealed for ApiKey {}
+impl crate::private::Sealed for ApiKey {}
 
 impl From<ApiKeyProperties> for ApiKey {
     fn from(properties: ApiKeyProperties) -> ApiKey {
@@ -274,52 +274,52 @@ pub struct AuthorizerProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub auth_type: Option<::Value<String>>,
+    pub auth_type: Option<crate::Value<String>>,
     /// Property [`AuthorizerCredentials`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizercredentials).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub authorizer_credentials: Option<::Value<String>>,
+    pub authorizer_credentials: Option<crate::Value<String>>,
     /// Property [`AuthorizerResultTtlInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizerresultttlinseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub authorizer_result_ttl_in_seconds: Option<::Value<u32>>,
+    pub authorizer_result_ttl_in_seconds: Option<crate::Value<u32>>,
     /// Property [`AuthorizerUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizeruri).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub authorizer_uri: Option<::Value<String>>,
+    pub authorizer_uri: Option<crate::Value<String>>,
     /// Property [`IdentitySource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identitysource).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub identity_source: Option<::Value<String>>,
+    pub identity_source: Option<crate::Value<String>>,
     /// Property [`IdentityValidationExpression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identityvalidationexpression).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub identity_validation_expression: Option<::Value<String>>,
+    pub identity_validation_expression: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`ProviderARNs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-providerarns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provider_ar_ns: Option<::ValueList<String>>,
+    pub provider_ar_ns: Option<crate::ValueList<String>>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-type).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for AuthorizerProperties {
@@ -384,16 +384,16 @@ impl<'de> ::serde::Deserialize<'de> for AuthorizerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut auth_type: Option<::Value<String>> = None;
-                let mut authorizer_credentials: Option<::Value<String>> = None;
-                let mut authorizer_result_ttl_in_seconds: Option<::Value<u32>> = None;
-                let mut authorizer_uri: Option<::Value<String>> = None;
-                let mut identity_source: Option<::Value<String>> = None;
-                let mut identity_validation_expression: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut provider_ar_ns: Option<::ValueList<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut auth_type: Option<crate::Value<String>> = None;
+                let mut authorizer_credentials: Option<crate::Value<String>> = None;
+                let mut authorizer_result_ttl_in_seconds: Option<crate::Value<u32>> = None;
+                let mut authorizer_uri: Option<crate::Value<String>> = None;
+                let mut identity_source: Option<crate::Value<String>> = None;
+                let mut identity_validation_expression: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut provider_ar_ns: Option<crate::ValueList<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -453,7 +453,7 @@ impl<'de> ::serde::Deserialize<'de> for AuthorizerProperties {
     }
 }
 
-impl ::Resource for Authorizer {
+impl crate::Resource for Authorizer {
     type Properties = AuthorizerProperties;
     const TYPE: &'static str = "AWS::ApiGateway::Authorizer";
     fn properties(&self) -> &AuthorizerProperties {
@@ -464,7 +464,7 @@ impl ::Resource for Authorizer {
     }
 }
 
-impl ::private::Sealed for Authorizer {}
+impl crate::private::Sealed for Authorizer {}
 
 impl From<AuthorizerProperties> for Authorizer {
     fn from(properties: AuthorizerProperties) -> Authorizer {
@@ -485,27 +485,27 @@ pub struct BasePathMappingProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub base_path: Option<::Value<String>>,
+    pub base_path: Option<crate::Value<String>>,
     /// Property [`DomainName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-domainname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain_name: ::Value<String>,
+    pub domain_name: crate::Value<String>,
     /// Property [`Id`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-id).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub id: Option<::Value<String>>,
+    pub id: Option<crate::Value<String>>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-restapiid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rest_api_id: Option<::Value<String>>,
+    pub rest_api_id: Option<crate::Value<String>>,
     /// Property [`Stage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-stage).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stage: Option<::Value<String>>,
+    pub stage: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for BasePathMappingProperties {
@@ -545,11 +545,11 @@ impl<'de> ::serde::Deserialize<'de> for BasePathMappingProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut base_path: Option<::Value<String>> = None;
-                let mut domain_name: Option<::Value<String>> = None;
-                let mut id: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
-                let mut stage: Option<::Value<String>> = None;
+                let mut base_path: Option<crate::Value<String>> = None;
+                let mut domain_name: Option<crate::Value<String>> = None;
+                let mut id: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
+                let mut stage: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -587,7 +587,7 @@ impl<'de> ::serde::Deserialize<'de> for BasePathMappingProperties {
     }
 }
 
-impl ::Resource for BasePathMapping {
+impl crate::Resource for BasePathMapping {
     type Properties = BasePathMappingProperties;
     const TYPE: &'static str = "AWS::ApiGateway::BasePathMapping";
     fn properties(&self) -> &BasePathMappingProperties {
@@ -598,7 +598,7 @@ impl ::Resource for BasePathMapping {
     }
 }
 
-impl ::private::Sealed for BasePathMapping {}
+impl crate::private::Sealed for BasePathMapping {}
 
 impl From<BasePathMappingProperties> for BasePathMapping {
     fn from(properties: BasePathMappingProperties) -> BasePathMapping {
@@ -619,12 +619,12 @@ pub struct ClientCertificateProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ClientCertificateProperties {
@@ -657,8 +657,8 @@ impl<'de> ::serde::Deserialize<'de> for ClientCertificateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -683,7 +683,7 @@ impl<'de> ::serde::Deserialize<'de> for ClientCertificateProperties {
     }
 }
 
-impl ::Resource for ClientCertificate {
+impl crate::Resource for ClientCertificate {
     type Properties = ClientCertificateProperties;
     const TYPE: &'static str = "AWS::ApiGateway::ClientCertificate";
     fn properties(&self) -> &ClientCertificateProperties {
@@ -694,7 +694,7 @@ impl ::Resource for ClientCertificate {
     }
 }
 
-impl ::private::Sealed for ClientCertificate {}
+impl crate::private::Sealed for ClientCertificate {}
 
 impl From<ClientCertificateProperties> for ClientCertificate {
     fn from(properties: ClientCertificateProperties) -> ClientCertificate {
@@ -715,27 +715,27 @@ pub struct DeploymentProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub deployment_canary_settings: Option<::Value<self::deployment::DeploymentCanarySettings>>,
+    pub deployment_canary_settings: Option<crate::Value<self::deployment::DeploymentCanarySettings>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
     /// Property [`StageDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagedescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stage_description: Option<::Value<self::deployment::StageDescription>>,
+    pub stage_description: Option<crate::Value<self::deployment::StageDescription>>,
     /// Property [`StageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagename).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stage_name: Option<::Value<String>>,
+    pub stage_name: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for DeploymentProperties {
@@ -782,13 +782,13 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut deployment_canary_settings: Option<
-                    ::Value<self::deployment::DeploymentCanarySettings>,
+                    crate::Value<self::deployment::DeploymentCanarySettings>,
                 > = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
-                let mut stage_description: Option<::Value<self::deployment::StageDescription>> =
+                let mut description: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
+                let mut stage_description: Option<crate::Value<self::deployment::StageDescription>> =
                     None;
-                let mut stage_name: Option<::Value<String>> = None;
+                let mut stage_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -827,7 +827,7 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentProperties {
     }
 }
 
-impl ::Resource for Deployment {
+impl crate::Resource for Deployment {
     type Properties = DeploymentProperties;
     const TYPE: &'static str = "AWS::ApiGateway::Deployment";
     fn properties(&self) -> &DeploymentProperties {
@@ -838,7 +838,7 @@ impl ::Resource for Deployment {
     }
 }
 
-impl ::private::Sealed for Deployment {}
+impl crate::private::Sealed for Deployment {}
 
 impl From<DeploymentProperties> for Deployment {
     fn from(properties: DeploymentProperties) -> Deployment {
@@ -859,17 +859,17 @@ pub struct DocumentationPartProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub location: ::Value<self::documentation_part::Location>,
+    pub location: crate::Value<self::documentation_part::Location>,
     /// Property [`Properties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-properties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub properties: ::Value<String>,
+    pub properties: crate::Value<String>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for DocumentationPartProperties {
@@ -899,9 +899,9 @@ impl<'de> ::serde::Deserialize<'de> for DocumentationPartProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut location: Option<::Value<self::documentation_part::Location>> = None;
-                let mut properties: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
+                let mut location: Option<crate::Value<self::documentation_part::Location>> = None;
+                let mut properties: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -932,7 +932,7 @@ impl<'de> ::serde::Deserialize<'de> for DocumentationPartProperties {
     }
 }
 
-impl ::Resource for DocumentationPart {
+impl crate::Resource for DocumentationPart {
     type Properties = DocumentationPartProperties;
     const TYPE: &'static str = "AWS::ApiGateway::DocumentationPart";
     fn properties(&self) -> &DocumentationPartProperties {
@@ -943,7 +943,7 @@ impl ::Resource for DocumentationPart {
     }
 }
 
-impl ::private::Sealed for DocumentationPart {}
+impl crate::private::Sealed for DocumentationPart {}
 
 impl From<DocumentationPartProperties> for DocumentationPart {
     fn from(properties: DocumentationPartProperties) -> DocumentationPart {
@@ -964,17 +964,17 @@ pub struct DocumentationVersionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`DocumentationVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-documentationversion).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub documentation_version: ::Value<String>,
+    pub documentation_version: crate::Value<String>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for DocumentationVersionProperties {
@@ -1010,9 +1010,9 @@ impl<'de> ::serde::Deserialize<'de> for DocumentationVersionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut documentation_version: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut documentation_version: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1043,7 +1043,7 @@ impl<'de> ::serde::Deserialize<'de> for DocumentationVersionProperties {
     }
 }
 
-impl ::Resource for DocumentationVersion {
+impl crate::Resource for DocumentationVersion {
     type Properties = DocumentationVersionProperties;
     const TYPE: &'static str = "AWS::ApiGateway::DocumentationVersion";
     fn properties(&self) -> &DocumentationVersionProperties {
@@ -1054,7 +1054,7 @@ impl ::Resource for DocumentationVersion {
     }
 }
 
-impl ::private::Sealed for DocumentationVersion {}
+impl crate::private::Sealed for DocumentationVersion {}
 
 impl From<DocumentationVersionProperties> for DocumentationVersion {
     fn from(properties: DocumentationVersionProperties) -> DocumentationVersion {
@@ -1075,42 +1075,42 @@ pub struct DomainNameProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate_arn: Option<::Value<String>>,
+    pub certificate_arn: Option<crate::Value<String>>,
     /// Property [`DomainName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain_name: Option<::Value<String>>,
+    pub domain_name: Option<crate::Value<String>>,
     /// Property [`EndpointConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-endpointconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub endpoint_configuration: Option<::Value<self::domain_name::EndpointConfiguration>>,
+    pub endpoint_configuration: Option<crate::Value<self::domain_name::EndpointConfiguration>>,
     /// Property [`MutualTlsAuthentication`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub mutual_tls_authentication: Option<::Value<self::domain_name::MutualTlsAuthentication>>,
+    pub mutual_tls_authentication: Option<crate::Value<self::domain_name::MutualTlsAuthentication>>,
     /// Property [`OwnershipVerificationCertificateArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-ownershipverificationcertificatearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ownership_verification_certificate_arn: Option<::Value<String>>,
+    pub ownership_verification_certificate_arn: Option<crate::Value<String>>,
     /// Property [`RegionalCertificateArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub regional_certificate_arn: Option<::Value<String>>,
+    pub regional_certificate_arn: Option<crate::Value<String>>,
     /// Property [`SecurityPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-securitypolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub security_policy: Option<::Value<String>>,
+    pub security_policy: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for DomainNameProperties {
@@ -1185,18 +1185,18 @@ impl<'de> ::serde::Deserialize<'de> for DomainNameProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut certificate_arn: Option<::Value<String>> = None;
-                let mut domain_name: Option<::Value<String>> = None;
+                let mut certificate_arn: Option<crate::Value<String>> = None;
+                let mut domain_name: Option<crate::Value<String>> = None;
                 let mut endpoint_configuration: Option<
-                    ::Value<self::domain_name::EndpointConfiguration>,
+                    crate::Value<self::domain_name::EndpointConfiguration>,
                 > = None;
                 let mut mutual_tls_authentication: Option<
-                    ::Value<self::domain_name::MutualTlsAuthentication>,
+                    crate::Value<self::domain_name::MutualTlsAuthentication>,
                 > = None;
-                let mut ownership_verification_certificate_arn: Option<::Value<String>> = None;
-                let mut regional_certificate_arn: Option<::Value<String>> = None;
-                let mut security_policy: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut ownership_verification_certificate_arn: Option<crate::Value<String>> = None;
+                let mut regional_certificate_arn: Option<crate::Value<String>> = None;
+                let mut security_policy: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1248,7 +1248,7 @@ impl<'de> ::serde::Deserialize<'de> for DomainNameProperties {
     }
 }
 
-impl ::Resource for DomainName {
+impl crate::Resource for DomainName {
     type Properties = DomainNameProperties;
     const TYPE: &'static str = "AWS::ApiGateway::DomainName";
     fn properties(&self) -> &DomainNameProperties {
@@ -1259,7 +1259,7 @@ impl ::Resource for DomainName {
     }
 }
 
-impl ::private::Sealed for DomainName {}
+impl crate::private::Sealed for DomainName {}
 
 impl From<DomainNameProperties> for DomainName {
     fn from(properties: DomainNameProperties) -> DomainName {
@@ -1280,27 +1280,27 @@ pub struct GatewayResponseProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub response_parameters: Option<::ValueMap<String>>,
+    pub response_parameters: Option<crate::ValueMap<String>>,
     /// Property [`ResponseTemplates`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetemplates).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub response_templates: Option<::ValueMap<String>>,
+    pub response_templates: Option<crate::ValueMap<String>>,
     /// Property [`ResponseType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub response_type: ::Value<String>,
+    pub response_type: crate::Value<String>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
     /// Property [`StatusCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-statuscode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub status_code: Option<::Value<String>>,
+    pub status_code: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for GatewayResponseProperties {
@@ -1346,11 +1346,11 @@ impl<'de> ::serde::Deserialize<'de> for GatewayResponseProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut response_parameters: Option<::ValueMap<String>> = None;
-                let mut response_templates: Option<::ValueMap<String>> = None;
-                let mut response_type: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
-                let mut status_code: Option<::Value<String>> = None;
+                let mut response_parameters: Option<crate::ValueMap<String>> = None;
+                let mut response_templates: Option<crate::ValueMap<String>> = None;
+                let mut response_type: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
+                let mut status_code: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1389,7 +1389,7 @@ impl<'de> ::serde::Deserialize<'de> for GatewayResponseProperties {
     }
 }
 
-impl ::Resource for GatewayResponse {
+impl crate::Resource for GatewayResponse {
     type Properties = GatewayResponseProperties;
     const TYPE: &'static str = "AWS::ApiGateway::GatewayResponse";
     fn properties(&self) -> &GatewayResponseProperties {
@@ -1400,7 +1400,7 @@ impl ::Resource for GatewayResponse {
     }
 }
 
-impl ::private::Sealed for GatewayResponse {}
+impl crate::private::Sealed for GatewayResponse {}
 
 impl From<GatewayResponseProperties> for GatewayResponse {
     fn from(properties: GatewayResponseProperties) -> GatewayResponse {
@@ -1421,67 +1421,67 @@ pub struct MethodProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub api_key_required: Option<::Value<bool>>,
+    pub api_key_required: Option<crate::Value<bool>>,
     /// Property [`AuthorizationScopes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationscopes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub authorization_scopes: Option<::ValueList<String>>,
+    pub authorization_scopes: Option<crate::ValueList<String>>,
     /// Property [`AuthorizationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub authorization_type: Option<::Value<String>>,
+    pub authorization_type: Option<crate::Value<String>>,
     /// Property [`AuthorizerId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub authorizer_id: Option<::Value<String>>,
+    pub authorizer_id: Option<crate::Value<String>>,
     /// Property [`HttpMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub http_method: ::Value<String>,
+    pub http_method: crate::Value<String>,
     /// Property [`Integration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub integration: Option<::Value<self::method::Integration>>,
+    pub integration: Option<crate::Value<self::method::Integration>>,
     /// Property [`MethodResponses`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub method_responses: Option<::ValueList<self::method::MethodResponse>>,
+    pub method_responses: Option<crate::ValueList<self::method::MethodResponse>>,
     /// Property [`OperationName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-operationname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub operation_name: Option<::Value<String>>,
+    pub operation_name: Option<crate::Value<String>>,
     /// Property [`RequestModels`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub request_models: Option<::ValueMap<String>>,
+    pub request_models: Option<crate::ValueMap<String>>,
     /// Property [`RequestParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub request_parameters: Option<::ValueMap<bool>>,
+    pub request_parameters: Option<crate::ValueMap<bool>>,
     /// Property [`RequestValidatorId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestvalidatorid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub request_validator_id: Option<::Value<String>>,
+    pub request_validator_id: Option<crate::Value<String>>,
     /// Property [`ResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_id: ::Value<String>,
+    pub resource_id: crate::Value<String>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for MethodProperties {
@@ -1563,19 +1563,19 @@ impl<'de> ::serde::Deserialize<'de> for MethodProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut api_key_required: Option<::Value<bool>> = None;
-                let mut authorization_scopes: Option<::ValueList<String>> = None;
-                let mut authorization_type: Option<::Value<String>> = None;
-                let mut authorizer_id: Option<::Value<String>> = None;
-                let mut http_method: Option<::Value<String>> = None;
-                let mut integration: Option<::Value<self::method::Integration>> = None;
-                let mut method_responses: Option<::ValueList<self::method::MethodResponse>> = None;
-                let mut operation_name: Option<::Value<String>> = None;
-                let mut request_models: Option<::ValueMap<String>> = None;
-                let mut request_parameters: Option<::ValueMap<bool>> = None;
-                let mut request_validator_id: Option<::Value<String>> = None;
-                let mut resource_id: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
+                let mut api_key_required: Option<crate::Value<bool>> = None;
+                let mut authorization_scopes: Option<crate::ValueList<String>> = None;
+                let mut authorization_type: Option<crate::Value<String>> = None;
+                let mut authorizer_id: Option<crate::Value<String>> = None;
+                let mut http_method: Option<crate::Value<String>> = None;
+                let mut integration: Option<crate::Value<self::method::Integration>> = None;
+                let mut method_responses: Option<crate::ValueList<self::method::MethodResponse>> = None;
+                let mut operation_name: Option<crate::Value<String>> = None;
+                let mut request_models: Option<crate::ValueMap<String>> = None;
+                let mut request_parameters: Option<crate::ValueMap<bool>> = None;
+                let mut request_validator_id: Option<crate::Value<String>> = None;
+                let mut resource_id: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1647,7 +1647,7 @@ impl<'de> ::serde::Deserialize<'de> for MethodProperties {
     }
 }
 
-impl ::Resource for Method {
+impl crate::Resource for Method {
     type Properties = MethodProperties;
     const TYPE: &'static str = "AWS::ApiGateway::Method";
     fn properties(&self) -> &MethodProperties {
@@ -1658,7 +1658,7 @@ impl ::Resource for Method {
     }
 }
 
-impl ::private::Sealed for Method {}
+impl crate::private::Sealed for Method {}
 
 impl From<MethodProperties> for Method {
     fn from(properties: MethodProperties) -> Method {
@@ -1679,27 +1679,27 @@ pub struct ModelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub content_type: Option<::Value<String>>,
+    pub content_type: Option<crate::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
     /// Property [`Schema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-schema).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub schema: Option<::Value<::json::Value>>,
+    pub schema: Option<crate::Value<crate::json::Value>>,
 }
 
 impl ::serde::Serialize for ModelProperties {
@@ -1737,11 +1737,11 @@ impl<'de> ::serde::Deserialize<'de> for ModelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut content_type: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
-                let mut schema: Option<::Value<::json::Value>> = None;
+                let mut content_type: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
+                let mut schema: Option<crate::Value<crate::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1779,7 +1779,7 @@ impl<'de> ::serde::Deserialize<'de> for ModelProperties {
     }
 }
 
-impl ::Resource for Model {
+impl crate::Resource for Model {
     type Properties = ModelProperties;
     const TYPE: &'static str = "AWS::ApiGateway::Model";
     fn properties(&self) -> &ModelProperties {
@@ -1790,7 +1790,7 @@ impl ::Resource for Model {
     }
 }
 
-impl ::private::Sealed for Model {}
+impl crate::private::Sealed for Model {}
 
 impl From<ModelProperties> for Model {
     fn from(properties: ModelProperties) -> Model {
@@ -1811,22 +1811,22 @@ pub struct RequestValidatorProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
     /// Property [`ValidateRequestBody`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub validate_request_body: Option<::Value<bool>>,
+    pub validate_request_body: Option<crate::Value<bool>>,
     /// Property [`ValidateRequestParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub validate_request_parameters: Option<::Value<bool>>,
+    pub validate_request_parameters: Option<crate::Value<bool>>,
 }
 
 impl ::serde::Serialize for RequestValidatorProperties {
@@ -1871,10 +1871,10 @@ impl<'de> ::serde::Deserialize<'de> for RequestValidatorProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
-                let mut validate_request_body: Option<::Value<bool>> = None;
-                let mut validate_request_parameters: Option<::Value<bool>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
+                let mut validate_request_body: Option<crate::Value<bool>> = None;
+                let mut validate_request_parameters: Option<crate::Value<bool>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1909,7 +1909,7 @@ impl<'de> ::serde::Deserialize<'de> for RequestValidatorProperties {
     }
 }
 
-impl ::Resource for RequestValidator {
+impl crate::Resource for RequestValidator {
     type Properties = RequestValidatorProperties;
     const TYPE: &'static str = "AWS::ApiGateway::RequestValidator";
     fn properties(&self) -> &RequestValidatorProperties {
@@ -1920,7 +1920,7 @@ impl ::Resource for RequestValidator {
     }
 }
 
-impl ::private::Sealed for RequestValidator {}
+impl crate::private::Sealed for RequestValidator {}
 
 impl From<RequestValidatorProperties> for RequestValidator {
     fn from(properties: RequestValidatorProperties) -> RequestValidator {
@@ -1941,17 +1941,17 @@ pub struct ResourceProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub parent_id: ::Value<String>,
+    pub parent_id: crate::Value<String>,
     /// Property [`PathPart`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-pathpart).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub path_part: ::Value<String>,
+    pub path_part: crate::Value<String>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for ResourceProperties {
@@ -1979,9 +1979,9 @@ impl<'de> ::serde::Deserialize<'de> for ResourceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut parent_id: Option<::Value<String>> = None;
-                let mut path_part: Option<::Value<String>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
+                let mut parent_id: Option<crate::Value<String>> = None;
+                let mut path_part: Option<crate::Value<String>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2011,7 +2011,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourceProperties {
     }
 }
 
-impl ::Resource for Resource {
+impl crate::Resource for Resource {
     type Properties = ResourceProperties;
     const TYPE: &'static str = "AWS::ApiGateway::Resource";
     fn properties(&self) -> &ResourceProperties {
@@ -2022,7 +2022,7 @@ impl ::Resource for Resource {
     }
 }
 
-impl ::private::Sealed for Resource {}
+impl crate::private::Sealed for Resource {}
 
 impl From<ResourceProperties> for Resource {
     fn from(properties: ResourceProperties) -> Resource {
@@ -2043,77 +2043,77 @@ pub struct RestApiProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub api_key_source_type: Option<::Value<String>>,
+    pub api_key_source_type: Option<crate::Value<String>>,
     /// Property [`BinaryMediaTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub binary_media_types: Option<::ValueList<String>>,
+    pub binary_media_types: Option<crate::ValueList<String>>,
     /// Property [`Body`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub body: Option<::Value<::json::Value>>,
+    pub body: Option<crate::Value<crate::json::Value>>,
     /// Property [`BodyS3Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub body_s3_location: Option<::Value<self::rest_api::S3Location>>,
+    pub body_s3_location: Option<crate::Value<self::rest_api::S3Location>>,
     /// Property [`CloneFrom`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-clonefrom).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub clone_from: Option<::Value<String>>,
+    pub clone_from: Option<crate::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`DisableExecuteApiEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-disableexecuteapiendpoint).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub disable_execute_api_endpoint: Option<::Value<bool>>,
+    pub disable_execute_api_endpoint: Option<crate::Value<bool>>,
     /// Property [`EndpointConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub endpoint_configuration: Option<::Value<self::rest_api::EndpointConfiguration>>,
+    pub endpoint_configuration: Option<crate::Value<self::rest_api::EndpointConfiguration>>,
     /// Property [`FailOnWarnings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-failonwarnings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub fail_on_warnings: Option<::Value<bool>>,
+    pub fail_on_warnings: Option<crate::Value<bool>>,
     /// Property [`MinimumCompressionSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub minimum_compression_size: Option<::Value<u32>>,
+    pub minimum_compression_size: Option<crate::Value<u32>>,
     /// Property [`Mode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-mode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub mode: Option<::Value<String>>,
+    pub mode: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-parameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameters: Option<::ValueMap<String>>,
+    pub parameters: Option<crate::ValueMap<String>>,
     /// Property [`Policy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-policy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy: Option<::Value<::json::Value>>,
+    pub policy: Option<crate::Value<crate::json::Value>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for RestApiProperties {
@@ -2211,23 +2211,23 @@ impl<'de> ::serde::Deserialize<'de> for RestApiProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut api_key_source_type: Option<::Value<String>> = None;
-                let mut binary_media_types: Option<::ValueList<String>> = None;
-                let mut body: Option<::Value<::json::Value>> = None;
-                let mut body_s3_location: Option<::Value<self::rest_api::S3Location>> = None;
-                let mut clone_from: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut disable_execute_api_endpoint: Option<::Value<bool>> = None;
+                let mut api_key_source_type: Option<crate::Value<String>> = None;
+                let mut binary_media_types: Option<crate::ValueList<String>> = None;
+                let mut body: Option<crate::Value<crate::json::Value>> = None;
+                let mut body_s3_location: Option<crate::Value<self::rest_api::S3Location>> = None;
+                let mut clone_from: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut disable_execute_api_endpoint: Option<crate::Value<bool>> = None;
                 let mut endpoint_configuration: Option<
-                    ::Value<self::rest_api::EndpointConfiguration>,
+                    crate::Value<self::rest_api::EndpointConfiguration>,
                 > = None;
-                let mut fail_on_warnings: Option<::Value<bool>> = None;
-                let mut minimum_compression_size: Option<::Value<u32>> = None;
-                let mut mode: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut parameters: Option<::ValueMap<String>> = None;
-                let mut policy: Option<::Value<::json::Value>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut fail_on_warnings: Option<crate::Value<bool>> = None;
+                let mut minimum_compression_size: Option<crate::Value<u32>> = None;
+                let mut mode: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut parameters: Option<crate::ValueMap<String>> = None;
+                let mut policy: Option<crate::Value<crate::json::Value>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2306,7 +2306,7 @@ impl<'de> ::serde::Deserialize<'de> for RestApiProperties {
     }
 }
 
-impl ::Resource for RestApi {
+impl crate::Resource for RestApi {
     type Properties = RestApiProperties;
     const TYPE: &'static str = "AWS::ApiGateway::RestApi";
     fn properties(&self) -> &RestApiProperties {
@@ -2317,7 +2317,7 @@ impl ::Resource for RestApi {
     }
 }
 
-impl ::private::Sealed for RestApi {}
+impl crate::private::Sealed for RestApi {}
 
 impl From<RestApiProperties> for RestApi {
     fn from(properties: RestApiProperties) -> RestApi {
@@ -2338,72 +2338,72 @@ pub struct StageProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub access_log_setting: Option<::Value<self::stage::AccessLogSetting>>,
+    pub access_log_setting: Option<crate::Value<self::stage::AccessLogSetting>>,
     /// Property [`CacheClusterEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_cluster_enabled: Option<::Value<bool>>,
+    pub cache_cluster_enabled: Option<crate::Value<bool>>,
     /// Property [`CacheClusterSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_cluster_size: Option<::Value<String>>,
+    pub cache_cluster_size: Option<crate::Value<String>>,
     /// Property [`CanarySetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub canary_setting: Option<::Value<self::stage::CanarySetting>>,
+    pub canary_setting: Option<crate::Value<self::stage::CanarySetting>>,
     /// Property [`ClientCertificateId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-clientcertificateid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub client_certificate_id: Option<::Value<String>>,
+    pub client_certificate_id: Option<crate::Value<String>>,
     /// Property [`DeploymentId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub deployment_id: Option<::Value<String>>,
+    pub deployment_id: Option<crate::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`DocumentationVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub documentation_version: Option<::Value<String>>,
+    pub documentation_version: Option<crate::Value<String>>,
     /// Property [`MethodSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub method_settings: Option<::ValueList<self::stage::MethodSetting>>,
+    pub method_settings: Option<crate::ValueList<self::stage::MethodSetting>>,
     /// Property [`RestApiId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rest_api_id: ::Value<String>,
+    pub rest_api_id: crate::Value<String>,
     /// Property [`StageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub stage_name: Option<::Value<String>>,
+    pub stage_name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`TracingEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tracing_enabled: Option<::Value<bool>>,
+    pub tracing_enabled: Option<crate::Value<bool>>,
     /// Property [`Variables`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub variables: Option<::ValueMap<String>>,
+    pub variables: Option<crate::ValueMap<String>>,
 }
 
 impl ::serde::Serialize for StageProperties {
@@ -2496,20 +2496,20 @@ impl<'de> ::serde::Deserialize<'de> for StageProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut access_log_setting: Option<::Value<self::stage::AccessLogSetting>> = None;
-                let mut cache_cluster_enabled: Option<::Value<bool>> = None;
-                let mut cache_cluster_size: Option<::Value<String>> = None;
-                let mut canary_setting: Option<::Value<self::stage::CanarySetting>> = None;
-                let mut client_certificate_id: Option<::Value<String>> = None;
-                let mut deployment_id: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut documentation_version: Option<::Value<String>> = None;
-                let mut method_settings: Option<::ValueList<self::stage::MethodSetting>> = None;
-                let mut rest_api_id: Option<::Value<String>> = None;
-                let mut stage_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut tracing_enabled: Option<::Value<bool>> = None;
-                let mut variables: Option<::ValueMap<String>> = None;
+                let mut access_log_setting: Option<crate::Value<self::stage::AccessLogSetting>> = None;
+                let mut cache_cluster_enabled: Option<crate::Value<bool>> = None;
+                let mut cache_cluster_size: Option<crate::Value<String>> = None;
+                let mut canary_setting: Option<crate::Value<self::stage::CanarySetting>> = None;
+                let mut client_certificate_id: Option<crate::Value<String>> = None;
+                let mut deployment_id: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut documentation_version: Option<crate::Value<String>> = None;
+                let mut method_settings: Option<crate::ValueList<self::stage::MethodSetting>> = None;
+                let mut rest_api_id: Option<crate::Value<String>> = None;
+                let mut stage_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tracing_enabled: Option<crate::Value<bool>> = None;
+                let mut variables: Option<crate::ValueMap<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2583,7 +2583,7 @@ impl<'de> ::serde::Deserialize<'de> for StageProperties {
     }
 }
 
-impl ::Resource for Stage {
+impl crate::Resource for Stage {
     type Properties = StageProperties;
     const TYPE: &'static str = "AWS::ApiGateway::Stage";
     fn properties(&self) -> &StageProperties {
@@ -2594,7 +2594,7 @@ impl ::Resource for Stage {
     }
 }
 
-impl ::private::Sealed for Stage {}
+impl crate::private::Sealed for Stage {}
 
 impl From<StageProperties> for Stage {
     fn from(properties: StageProperties) -> Stage {
@@ -2615,32 +2615,32 @@ pub struct UsagePlanProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub api_stages: Option<::ValueList<self::usage_plan::ApiStage>>,
+    pub api_stages: Option<crate::ValueList<self::usage_plan::ApiStage>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Quota`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub quota: Option<::Value<self::usage_plan::QuotaSettings>>,
+    pub quota: Option<crate::Value<self::usage_plan::QuotaSettings>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Throttle`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub throttle: Option<::Value<self::usage_plan::ThrottleSettings>>,
+    pub throttle: Option<crate::Value<self::usage_plan::ThrottleSettings>>,
     /// Property [`UsagePlanName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub usage_plan_name: Option<::Value<String>>,
+    pub usage_plan_name: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for UsagePlanProperties {
@@ -2687,12 +2687,12 @@ impl<'de> ::serde::Deserialize<'de> for UsagePlanProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut api_stages: Option<::ValueList<self::usage_plan::ApiStage>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut quota: Option<::Value<self::usage_plan::QuotaSettings>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut throttle: Option<::Value<self::usage_plan::ThrottleSettings>> = None;
-                let mut usage_plan_name: Option<::Value<String>> = None;
+                let mut api_stages: Option<crate::ValueList<self::usage_plan::ApiStage>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut quota: Option<crate::Value<self::usage_plan::QuotaSettings>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut throttle: Option<crate::Value<self::usage_plan::ThrottleSettings>> = None;
+                let mut usage_plan_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2733,7 +2733,7 @@ impl<'de> ::serde::Deserialize<'de> for UsagePlanProperties {
     }
 }
 
-impl ::Resource for UsagePlan {
+impl crate::Resource for UsagePlan {
     type Properties = UsagePlanProperties;
     const TYPE: &'static str = "AWS::ApiGateway::UsagePlan";
     fn properties(&self) -> &UsagePlanProperties {
@@ -2744,7 +2744,7 @@ impl ::Resource for UsagePlan {
     }
 }
 
-impl ::private::Sealed for UsagePlan {}
+impl crate::private::Sealed for UsagePlan {}
 
 impl From<UsagePlanProperties> for UsagePlan {
     fn from(properties: UsagePlanProperties) -> UsagePlan {
@@ -2765,17 +2765,17 @@ pub struct UsagePlanKeyProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub key_id: ::Value<String>,
+    pub key_id: crate::Value<String>,
     /// Property [`KeyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keytype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub key_type: ::Value<String>,
+    pub key_type: crate::Value<String>,
     /// Property [`UsagePlanId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-usageplanid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub usage_plan_id: ::Value<String>,
+    pub usage_plan_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for UsagePlanKeyProperties {
@@ -2805,9 +2805,9 @@ impl<'de> ::serde::Deserialize<'de> for UsagePlanKeyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut key_id: Option<::Value<String>> = None;
-                let mut key_type: Option<::Value<String>> = None;
-                let mut usage_plan_id: Option<::Value<String>> = None;
+                let mut key_id: Option<crate::Value<String>> = None;
+                let mut key_type: Option<crate::Value<String>> = None;
+                let mut usage_plan_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2837,7 +2837,7 @@ impl<'de> ::serde::Deserialize<'de> for UsagePlanKeyProperties {
     }
 }
 
-impl ::Resource for UsagePlanKey {
+impl crate::Resource for UsagePlanKey {
     type Properties = UsagePlanKeyProperties;
     const TYPE: &'static str = "AWS::ApiGateway::UsagePlanKey";
     fn properties(&self) -> &UsagePlanKeyProperties {
@@ -2848,7 +2848,7 @@ impl ::Resource for UsagePlanKey {
     }
 }
 
-impl ::private::Sealed for UsagePlanKey {}
+impl crate::private::Sealed for UsagePlanKey {}
 
 impl From<UsagePlanKeyProperties> for UsagePlanKey {
     fn from(properties: UsagePlanKeyProperties) -> UsagePlanKey {
@@ -2869,22 +2869,22 @@ pub struct VpcLinkProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`TargetArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-targetarns).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub target_arns: ::ValueList<String>,
+    pub target_arns: crate::ValueList<String>,
 }
 
 impl ::serde::Serialize for VpcLinkProperties {
@@ -2917,10 +2917,10 @@ impl<'de> ::serde::Deserialize<'de> for VpcLinkProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut target_arns: Option<::ValueList<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut target_arns: Option<crate::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2954,7 +2954,7 @@ impl<'de> ::serde::Deserialize<'de> for VpcLinkProperties {
     }
 }
 
-impl ::Resource for VpcLink {
+impl crate::Resource for VpcLink {
     type Properties = VpcLinkProperties;
     const TYPE: &'static str = "AWS::ApiGateway::VpcLink";
     fn properties(&self) -> &VpcLinkProperties {
@@ -2965,7 +2965,7 @@ impl ::Resource for VpcLink {
     }
 }
 
-impl ::private::Sealed for VpcLink {}
+impl crate::private::Sealed for VpcLink {}
 
 impl From<VpcLinkProperties> for VpcLink {
     fn from(properties: VpcLinkProperties) -> VpcLink {
@@ -2983,15 +2983,15 @@ pub mod api_key {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rest_api_id: Option<::Value<String>>,
+        pub rest_api_id: Option<crate::Value<String>>,
         /// Property [`StageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-stagename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stage_name: Option<::Value<String>>,
+        pub stage_name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for StageKey {
+    impl crate::codec::SerializeValue for StageKey {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref rest_api_id) = self.rest_api_id {
@@ -3004,7 +3004,7 @@ pub mod api_key {
         }
     }
 
-    impl ::codec::DeserializeValue for StageKey {
+    impl crate::codec::DeserializeValue for StageKey {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StageKey, D::Error> {
             struct Visitor;
 
@@ -3019,8 +3019,8 @@ pub mod api_key {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut rest_api_id: Option<::Value<String>> = None;
-                    let mut stage_name: Option<::Value<String>> = None;
+                    let mut rest_api_id: Option<crate::Value<String>> = None;
+                    let mut stage_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3058,15 +3058,15 @@ pub mod deployment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_arn: Option<::Value<String>>,
+        pub destination_arn: Option<crate::Value<String>>,
         /// Property [`Format`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-format).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format: Option<::Value<String>>,
+        pub format: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AccessLogSetting {
+    impl crate::codec::SerializeValue for AccessLogSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination_arn) = self.destination_arn {
@@ -3083,7 +3083,7 @@ pub mod deployment {
         }
     }
 
-    impl ::codec::DeserializeValue for AccessLogSetting {
+    impl crate::codec::DeserializeValue for AccessLogSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AccessLogSetting, D::Error> {
@@ -3100,8 +3100,8 @@ pub mod deployment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination_arn: Option<::Value<String>> = None;
-                    let mut format: Option<::Value<String>> = None;
+                    let mut destination_arn: Option<crate::Value<String>> = None;
+                    let mut format: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3135,20 +3135,20 @@ pub mod deployment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub percent_traffic: Option<::Value<f64>>,
+        pub percent_traffic: Option<crate::Value<f64>>,
         /// Property [`StageVariableOverrides`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-stagevariableoverrides).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stage_variable_overrides: Option<::ValueMap<String>>,
+        pub stage_variable_overrides: Option<crate::ValueMap<String>>,
         /// Property [`UseStageCache`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-usestagecache).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub use_stage_cache: Option<::Value<bool>>,
+        pub use_stage_cache: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for CanarySetting {
+    impl crate::codec::SerializeValue for CanarySetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref percent_traffic) = self.percent_traffic {
@@ -3176,7 +3176,7 @@ pub mod deployment {
         }
     }
 
-    impl ::codec::DeserializeValue for CanarySetting {
+    impl crate::codec::DeserializeValue for CanarySetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CanarySetting, D::Error> {
@@ -3193,9 +3193,9 @@ pub mod deployment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut percent_traffic: Option<::Value<f64>> = None;
-                    let mut stage_variable_overrides: Option<::ValueMap<String>> = None;
-                    let mut use_stage_cache: Option<::Value<bool>> = None;
+                    let mut percent_traffic: Option<crate::Value<f64>> = None;
+                    let mut stage_variable_overrides: Option<crate::ValueMap<String>> = None;
+                    let mut use_stage_cache: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3234,20 +3234,20 @@ pub mod deployment {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub percent_traffic: Option<::Value<f64>>,
+        pub percent_traffic: Option<crate::Value<f64>>,
         /// Property [`StageVariableOverrides`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html#cfn-apigateway-deployment-deploymentcanarysettings-stagevariableoverrides).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub stage_variable_overrides: Option<::ValueMap<String>>,
+        pub stage_variable_overrides: Option<crate::ValueMap<String>>,
         /// Property [`UseStageCache`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html#cfn-apigateway-deployment-deploymentcanarysettings-usestagecache).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub use_stage_cache: Option<::Value<bool>>,
+        pub use_stage_cache: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for DeploymentCanarySettings {
+    impl crate::codec::SerializeValue for DeploymentCanarySettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref percent_traffic) = self.percent_traffic {
@@ -3275,7 +3275,7 @@ pub mod deployment {
         }
     }
 
-    impl ::codec::DeserializeValue for DeploymentCanarySettings {
+    impl crate::codec::DeserializeValue for DeploymentCanarySettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DeploymentCanarySettings, D::Error> {
@@ -3292,9 +3292,9 @@ pub mod deployment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut percent_traffic: Option<::Value<f64>> = None;
-                    let mut stage_variable_overrides: Option<::ValueMap<String>> = None;
-                    let mut use_stage_cache: Option<::Value<bool>> = None;
+                    let mut percent_traffic: Option<crate::Value<f64>> = None;
+                    let mut stage_variable_overrides: Option<crate::ValueMap<String>> = None;
+                    let mut use_stage_cache: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3333,55 +3333,55 @@ pub mod deployment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_data_encrypted: Option<::Value<bool>>,
+        pub cache_data_encrypted: Option<crate::Value<bool>>,
         /// Property [`CacheTtlInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-cachettlinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_ttl_in_seconds: Option<::Value<u32>>,
+        pub cache_ttl_in_seconds: Option<crate::Value<u32>>,
         /// Property [`CachingEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-cachingenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caching_enabled: Option<::Value<bool>>,
+        pub caching_enabled: Option<crate::Value<bool>>,
         /// Property [`DataTraceEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-datatraceenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_trace_enabled: Option<::Value<bool>>,
+        pub data_trace_enabled: Option<crate::Value<bool>>,
         /// Property [`HttpMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-httpmethod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_method: Option<::Value<String>>,
+        pub http_method: Option<crate::Value<String>>,
         /// Property [`LoggingLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-logginglevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub logging_level: Option<::Value<String>>,
+        pub logging_level: Option<crate::Value<String>>,
         /// Property [`MetricsEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-metricsenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metrics_enabled: Option<::Value<bool>>,
+        pub metrics_enabled: Option<crate::Value<bool>>,
         /// Property [`ResourcePath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-resourcepath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_path: Option<::Value<String>>,
+        pub resource_path: Option<crate::Value<String>>,
         /// Property [`ThrottlingBurstLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-throttlingburstlimit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throttling_burst_limit: Option<::Value<u32>>,
+        pub throttling_burst_limit: Option<crate::Value<u32>>,
         /// Property [`ThrottlingRateLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-throttlingratelimit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throttling_rate_limit: Option<::Value<f64>>,
+        pub throttling_rate_limit: Option<crate::Value<f64>>,
     }
 
-    impl ::codec::SerializeValue for MethodSetting {
+    impl crate::codec::SerializeValue for MethodSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cache_data_encrypted) = self.cache_data_encrypted {
@@ -3454,7 +3454,7 @@ pub mod deployment {
         }
     }
 
-    impl ::codec::DeserializeValue for MethodSetting {
+    impl crate::codec::DeserializeValue for MethodSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MethodSetting, D::Error> {
@@ -3471,16 +3471,16 @@ pub mod deployment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cache_data_encrypted: Option<::Value<bool>> = None;
-                    let mut cache_ttl_in_seconds: Option<::Value<u32>> = None;
-                    let mut caching_enabled: Option<::Value<bool>> = None;
-                    let mut data_trace_enabled: Option<::Value<bool>> = None;
-                    let mut http_method: Option<::Value<String>> = None;
-                    let mut logging_level: Option<::Value<String>> = None;
-                    let mut metrics_enabled: Option<::Value<bool>> = None;
-                    let mut resource_path: Option<::Value<String>> = None;
-                    let mut throttling_burst_limit: Option<::Value<u32>> = None;
-                    let mut throttling_rate_limit: Option<::Value<f64>> = None;
+                    let mut cache_data_encrypted: Option<crate::Value<bool>> = None;
+                    let mut cache_ttl_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut caching_enabled: Option<crate::Value<bool>> = None;
+                    let mut data_trace_enabled: Option<crate::Value<bool>> = None;
+                    let mut http_method: Option<crate::Value<String>> = None;
+                    let mut logging_level: Option<crate::Value<String>> = None;
+                    let mut metrics_enabled: Option<crate::Value<bool>> = None;
+                    let mut resource_path: Option<crate::Value<String>> = None;
+                    let mut throttling_burst_limit: Option<crate::Value<u32>> = None;
+                    let mut throttling_rate_limit: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3550,100 +3550,100 @@ pub mod deployment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_log_setting: Option<::Value<AccessLogSetting>>,
+        pub access_log_setting: Option<crate::Value<AccessLogSetting>>,
         /// Property [`CacheClusterEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_cluster_enabled: Option<::Value<bool>>,
+        pub cache_cluster_enabled: Option<crate::Value<bool>>,
         /// Property [`CacheClusterSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclustersize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_cluster_size: Option<::Value<String>>,
+        pub cache_cluster_size: Option<crate::Value<String>>,
         /// Property [`CacheDataEncrypted`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachedataencrypted).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_data_encrypted: Option<::Value<bool>>,
+        pub cache_data_encrypted: Option<crate::Value<bool>>,
         /// Property [`CacheTtlInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachettlinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_ttl_in_seconds: Option<::Value<u32>>,
+        pub cache_ttl_in_seconds: Option<crate::Value<u32>>,
         /// Property [`CachingEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caching_enabled: Option<::Value<bool>>,
+        pub caching_enabled: Option<crate::Value<bool>>,
         /// Property [`CanarySetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-canarysetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub canary_setting: Option<::Value<CanarySetting>>,
+        pub canary_setting: Option<crate::Value<CanarySetting>>,
         /// Property [`ClientCertificateId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-clientcertificateid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_certificate_id: Option<::Value<String>>,
+        pub client_certificate_id: Option<crate::Value<String>>,
         /// Property [`DataTraceEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-datatraceenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_trace_enabled: Option<::Value<bool>>,
+        pub data_trace_enabled: Option<crate::Value<bool>>,
         /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-description).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`DocumentationVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-documentationversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub documentation_version: Option<::Value<String>>,
+        pub documentation_version: Option<crate::Value<String>>,
         /// Property [`LoggingLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-logginglevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub logging_level: Option<::Value<String>>,
+        pub logging_level: Option<crate::Value<String>>,
         /// Property [`MethodSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-methodsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub method_settings: Option<::ValueList<MethodSetting>>,
+        pub method_settings: Option<crate::ValueList<MethodSetting>>,
         /// Property [`MetricsEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-metricsenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metrics_enabled: Option<::Value<bool>>,
+        pub metrics_enabled: Option<crate::Value<bool>>,
         /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-tags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tags: Option<::ValueList<::Tag>>,
+        pub tags: Option<crate::ValueList<crate::Tag>>,
         /// Property [`ThrottlingBurstLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throttling_burst_limit: Option<::Value<u32>>,
+        pub throttling_burst_limit: Option<crate::Value<u32>>,
         /// Property [`ThrottlingRateLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingratelimit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throttling_rate_limit: Option<::Value<f64>>,
+        pub throttling_rate_limit: Option<crate::Value<f64>>,
         /// Property [`TracingEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-tracingenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tracing_enabled: Option<::Value<bool>>,
+        pub tracing_enabled: Option<crate::Value<bool>>,
         /// Property [`Variables`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variables: Option<::ValueMap<String>>,
+        pub variables: Option<crate::ValueMap<String>>,
     }
 
-    impl ::codec::SerializeValue for StageDescription {
+    impl crate::codec::SerializeValue for StageDescription {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_log_setting) = self.access_log_setting {
@@ -3771,7 +3771,7 @@ pub mod deployment {
         }
     }
 
-    impl ::codec::DeserializeValue for StageDescription {
+    impl crate::codec::DeserializeValue for StageDescription {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StageDescription, D::Error> {
@@ -3788,25 +3788,25 @@ pub mod deployment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_log_setting: Option<::Value<AccessLogSetting>> = None;
-                    let mut cache_cluster_enabled: Option<::Value<bool>> = None;
-                    let mut cache_cluster_size: Option<::Value<String>> = None;
-                    let mut cache_data_encrypted: Option<::Value<bool>> = None;
-                    let mut cache_ttl_in_seconds: Option<::Value<u32>> = None;
-                    let mut caching_enabled: Option<::Value<bool>> = None;
-                    let mut canary_setting: Option<::Value<CanarySetting>> = None;
-                    let mut client_certificate_id: Option<::Value<String>> = None;
-                    let mut data_trace_enabled: Option<::Value<bool>> = None;
-                    let mut description: Option<::Value<String>> = None;
-                    let mut documentation_version: Option<::Value<String>> = None;
-                    let mut logging_level: Option<::Value<String>> = None;
-                    let mut method_settings: Option<::ValueList<MethodSetting>> = None;
-                    let mut metrics_enabled: Option<::Value<bool>> = None;
-                    let mut tags: Option<::ValueList<::Tag>> = None;
-                    let mut throttling_burst_limit: Option<::Value<u32>> = None;
-                    let mut throttling_rate_limit: Option<::Value<f64>> = None;
-                    let mut tracing_enabled: Option<::Value<bool>> = None;
-                    let mut variables: Option<::ValueMap<String>> = None;
+                    let mut access_log_setting: Option<crate::Value<AccessLogSetting>> = None;
+                    let mut cache_cluster_enabled: Option<crate::Value<bool>> = None;
+                    let mut cache_cluster_size: Option<crate::Value<String>> = None;
+                    let mut cache_data_encrypted: Option<crate::Value<bool>> = None;
+                    let mut cache_ttl_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut caching_enabled: Option<crate::Value<bool>> = None;
+                    let mut canary_setting: Option<crate::Value<CanarySetting>> = None;
+                    let mut client_certificate_id: Option<crate::Value<String>> = None;
+                    let mut data_trace_enabled: Option<crate::Value<bool>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut documentation_version: Option<crate::Value<String>> = None;
+                    let mut logging_level: Option<crate::Value<String>> = None;
+                    let mut method_settings: Option<crate::ValueList<MethodSetting>> = None;
+                    let mut metrics_enabled: Option<crate::Value<bool>> = None;
+                    let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                    let mut throttling_burst_limit: Option<crate::Value<u32>> = None;
+                    let mut throttling_rate_limit: Option<crate::Value<f64>> = None;
+                    let mut tracing_enabled: Option<crate::Value<bool>> = None;
+                    let mut variables: Option<crate::ValueMap<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3919,30 +3919,30 @@ pub mod documentation_part {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub method: Option<::Value<String>>,
+        pub method: Option<crate::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-name).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-path).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub path: Option<::Value<String>>,
+        pub path: Option<crate::Value<String>>,
         /// Property [`StatusCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-statuscode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub status_code: Option<::Value<String>>,
+        pub status_code: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-type).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Location {
+    impl crate::codec::SerializeValue for Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref method) = self.method {
@@ -3964,7 +3964,7 @@ pub mod documentation_part {
         }
     }
 
-    impl ::codec::DeserializeValue for Location {
+    impl crate::codec::DeserializeValue for Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Location, D::Error> {
             struct Visitor;
 
@@ -3979,11 +3979,11 @@ pub mod documentation_part {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut method: Option<::Value<String>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut path: Option<::Value<String>> = None;
-                    let mut status_code: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut method: Option<crate::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut path: Option<crate::Value<String>> = None;
+                    let mut status_code: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4033,10 +4033,10 @@ pub mod domain_name {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub types: Option<::ValueList<String>>,
+        pub types: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for EndpointConfiguration {
+    impl crate::codec::SerializeValue for EndpointConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref types) = self.types {
@@ -4046,7 +4046,7 @@ pub mod domain_name {
         }
     }
 
-    impl ::codec::DeserializeValue for EndpointConfiguration {
+    impl crate::codec::DeserializeValue for EndpointConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EndpointConfiguration, D::Error> {
@@ -4063,7 +4063,7 @@ pub mod domain_name {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut types: Option<::ValueList<String>> = None;
+                    let mut types: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4091,15 +4091,15 @@ pub mod domain_name {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub truststore_uri: Option<::Value<String>>,
+        pub truststore_uri: Option<crate::Value<String>>,
         /// Property [`TruststoreVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-mutualtlsauthentication.html#cfn-apigateway-domainname-mutualtlsauthentication-truststoreversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub truststore_version: Option<::Value<String>>,
+        pub truststore_version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for MutualTlsAuthentication {
+    impl crate::codec::SerializeValue for MutualTlsAuthentication {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref truststore_uri) = self.truststore_uri {
@@ -4120,7 +4120,7 @@ pub mod domain_name {
         }
     }
 
-    impl ::codec::DeserializeValue for MutualTlsAuthentication {
+    impl crate::codec::DeserializeValue for MutualTlsAuthentication {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MutualTlsAuthentication, D::Error> {
@@ -4137,8 +4137,8 @@ pub mod domain_name {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut truststore_uri: Option<::Value<String>> = None;
-                    let mut truststore_version: Option<::Value<String>> = None;
+                    let mut truststore_uri: Option<crate::Value<String>> = None;
+                    let mut truststore_version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4176,75 +4176,75 @@ pub mod method {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_key_parameters: Option<::ValueList<String>>,
+        pub cache_key_parameters: Option<crate::ValueList<String>>,
         /// Property [`CacheNamespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-cachenamespace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_namespace: Option<::Value<String>>,
+        pub cache_namespace: Option<crate::Value<String>>,
         /// Property [`ConnectionId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-connectionid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_id: Option<::Value<String>>,
+        pub connection_id: Option<crate::Value<String>>,
         /// Property [`ConnectionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-connectiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_type: Option<::Value<String>>,
+        pub connection_type: Option<crate::Value<String>>,
         /// Property [`ContentHandling`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-contenthandling).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub content_handling: Option<::Value<String>>,
+        pub content_handling: Option<crate::Value<String>>,
         /// Property [`Credentials`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-credentials).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub credentials: Option<::Value<String>>,
+        pub credentials: Option<crate::Value<String>>,
         /// Property [`IntegrationHttpMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-integrationhttpmethod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub integration_http_method: Option<::Value<String>>,
+        pub integration_http_method: Option<crate::Value<String>>,
         /// Property [`IntegrationResponses`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-integrationresponses).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub integration_responses: Option<::ValueList<IntegrationResponse>>,
+        pub integration_responses: Option<crate::ValueList<IntegrationResponse>>,
         /// Property [`PassthroughBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-passthroughbehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub passthrough_behavior: Option<::Value<String>>,
+        pub passthrough_behavior: Option<crate::Value<String>>,
         /// Property [`RequestParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-requestparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub request_parameters: Option<::ValueMap<String>>,
+        pub request_parameters: Option<crate::ValueMap<String>>,
         /// Property [`RequestTemplates`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-requesttemplates).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub request_templates: Option<::ValueMap<String>>,
+        pub request_templates: Option<crate::ValueMap<String>>,
         /// Property [`TimeoutInMillis`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-timeoutinmillis).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timeout_in_millis: Option<::Value<u32>>,
+        pub timeout_in_millis: Option<crate::Value<u32>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
         /// Property [`Uri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-uri).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub uri: Option<::Value<String>>,
+        pub uri: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Integration {
+    impl crate::codec::SerializeValue for Integration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cache_key_parameters) = self.cache_key_parameters {
@@ -4337,7 +4337,7 @@ pub mod method {
         }
     }
 
-    impl ::codec::DeserializeValue for Integration {
+    impl crate::codec::DeserializeValue for Integration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Integration, D::Error> {
             struct Visitor;
 
@@ -4352,20 +4352,20 @@ pub mod method {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cache_key_parameters: Option<::ValueList<String>> = None;
-                    let mut cache_namespace: Option<::Value<String>> = None;
-                    let mut connection_id: Option<::Value<String>> = None;
-                    let mut connection_type: Option<::Value<String>> = None;
-                    let mut content_handling: Option<::Value<String>> = None;
-                    let mut credentials: Option<::Value<String>> = None;
-                    let mut integration_http_method: Option<::Value<String>> = None;
-                    let mut integration_responses: Option<::ValueList<IntegrationResponse>> = None;
-                    let mut passthrough_behavior: Option<::Value<String>> = None;
-                    let mut request_parameters: Option<::ValueMap<String>> = None;
-                    let mut request_templates: Option<::ValueMap<String>> = None;
-                    let mut timeout_in_millis: Option<::Value<u32>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut uri: Option<::Value<String>> = None;
+                    let mut cache_key_parameters: Option<crate::ValueList<String>> = None;
+                    let mut cache_namespace: Option<crate::Value<String>> = None;
+                    let mut connection_id: Option<crate::Value<String>> = None;
+                    let mut connection_type: Option<crate::Value<String>> = None;
+                    let mut content_handling: Option<crate::Value<String>> = None;
+                    let mut credentials: Option<crate::Value<String>> = None;
+                    let mut integration_http_method: Option<crate::Value<String>> = None;
+                    let mut integration_responses: Option<crate::ValueList<IntegrationResponse>> = None;
+                    let mut passthrough_behavior: Option<crate::Value<String>> = None;
+                    let mut request_parameters: Option<crate::ValueMap<String>> = None;
+                    let mut request_templates: Option<crate::ValueMap<String>> = None;
+                    let mut timeout_in_millis: Option<crate::Value<u32>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut uri: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4451,30 +4451,30 @@ pub mod method {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub content_handling: Option<::Value<String>>,
+        pub content_handling: Option<crate::Value<String>>,
         /// Property [`ResponseParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-responseparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub response_parameters: Option<::ValueMap<String>>,
+        pub response_parameters: Option<crate::ValueMap<String>>,
         /// Property [`ResponseTemplates`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-responsetemplates).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub response_templates: Option<::ValueMap<String>>,
+        pub response_templates: Option<crate::ValueMap<String>>,
         /// Property [`SelectionPattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-selectionpattern).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub selection_pattern: Option<::Value<String>>,
+        pub selection_pattern: Option<crate::Value<String>>,
         /// Property [`StatusCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-statuscode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status_code: ::Value<String>,
+        pub status_code: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for IntegrationResponse {
+    impl crate::codec::SerializeValue for IntegrationResponse {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref content_handling) = self.content_handling {
@@ -4510,7 +4510,7 @@ pub mod method {
         }
     }
 
-    impl ::codec::DeserializeValue for IntegrationResponse {
+    impl crate::codec::DeserializeValue for IntegrationResponse {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IntegrationResponse, D::Error> {
@@ -4527,11 +4527,11 @@ pub mod method {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut content_handling: Option<::Value<String>> = None;
-                    let mut response_parameters: Option<::ValueMap<String>> = None;
-                    let mut response_templates: Option<::ValueMap<String>> = None;
-                    let mut selection_pattern: Option<::Value<String>> = None;
-                    let mut status_code: Option<::Value<String>> = None;
+                    let mut content_handling: Option<crate::Value<String>> = None;
+                    let mut response_parameters: Option<crate::ValueMap<String>> = None;
+                    let mut response_templates: Option<crate::ValueMap<String>> = None;
+                    let mut selection_pattern: Option<crate::Value<String>> = None;
+                    let mut status_code: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4578,20 +4578,20 @@ pub mod method {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub response_models: Option<::ValueMap<String>>,
+        pub response_models: Option<crate::ValueMap<String>>,
         /// Property [`ResponseParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-responseparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub response_parameters: Option<::ValueMap<bool>>,
+        pub response_parameters: Option<crate::ValueMap<bool>>,
         /// Property [`StatusCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-statuscode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status_code: ::Value<String>,
+        pub status_code: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for MethodResponse {
+    impl crate::codec::SerializeValue for MethodResponse {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref response_models) = self.response_models {
@@ -4613,7 +4613,7 @@ pub mod method {
         }
     }
 
-    impl ::codec::DeserializeValue for MethodResponse {
+    impl crate::codec::DeserializeValue for MethodResponse {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MethodResponse, D::Error> {
@@ -4630,9 +4630,9 @@ pub mod method {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut response_models: Option<::ValueMap<String>> = None;
-                    let mut response_parameters: Option<::ValueMap<bool>> = None;
-                    let mut status_code: Option<::Value<String>> = None;
+                    let mut response_models: Option<crate::ValueMap<String>> = None;
+                    let mut response_parameters: Option<crate::ValueMap<bool>> = None;
+                    let mut status_code: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4675,15 +4675,15 @@ pub mod rest_api {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub types: Option<::ValueList<String>>,
+        pub types: Option<crate::ValueList<String>>,
         /// Property [`VpcEndpointIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-vpcendpointids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_endpoint_ids: Option<::ValueList<String>>,
+        pub vpc_endpoint_ids: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for EndpointConfiguration {
+    impl crate::codec::SerializeValue for EndpointConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref types) = self.types {
@@ -4700,7 +4700,7 @@ pub mod rest_api {
         }
     }
 
-    impl ::codec::DeserializeValue for EndpointConfiguration {
+    impl crate::codec::DeserializeValue for EndpointConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EndpointConfiguration, D::Error> {
@@ -4717,8 +4717,8 @@ pub mod rest_api {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut types: Option<::ValueList<String>> = None;
-                    let mut vpc_endpoint_ids: Option<::ValueList<String>> = None;
+                    let mut types: Option<crate::ValueList<String>> = None;
+                    let mut vpc_endpoint_ids: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4752,25 +4752,25 @@ pub mod rest_api {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: Option<::Value<String>>,
+        pub bucket: Option<crate::Value<String>>,
         /// Property [`ETag`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-etag).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub e_tag: Option<::Value<String>>,
+        pub e_tag: Option<crate::Value<String>>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<::Value<String>>,
+        pub version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3Location {
+    impl crate::codec::SerializeValue for S3Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bucket) = self.bucket {
@@ -4789,7 +4789,7 @@ pub mod rest_api {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Location {
+    impl crate::codec::DeserializeValue for S3Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Location, D::Error> {
             struct Visitor;
 
@@ -4804,10 +4804,10 @@ pub mod rest_api {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut e_tag: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
-                    let mut version: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut e_tag: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4853,15 +4853,15 @@ pub mod stage {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_arn: Option<::Value<String>>,
+        pub destination_arn: Option<crate::Value<String>>,
         /// Property [`Format`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-format).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format: Option<::Value<String>>,
+        pub format: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AccessLogSetting {
+    impl crate::codec::SerializeValue for AccessLogSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination_arn) = self.destination_arn {
@@ -4878,7 +4878,7 @@ pub mod stage {
         }
     }
 
-    impl ::codec::DeserializeValue for AccessLogSetting {
+    impl crate::codec::DeserializeValue for AccessLogSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AccessLogSetting, D::Error> {
@@ -4895,8 +4895,8 @@ pub mod stage {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination_arn: Option<::Value<String>> = None;
-                    let mut format: Option<::Value<String>> = None;
+                    let mut destination_arn: Option<crate::Value<String>> = None;
+                    let mut format: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4930,25 +4930,25 @@ pub mod stage {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub deployment_id: Option<::Value<String>>,
+        pub deployment_id: Option<crate::Value<String>>,
         /// Property [`PercentTraffic`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-percenttraffic).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub percent_traffic: Option<::Value<f64>>,
+        pub percent_traffic: Option<crate::Value<f64>>,
         /// Property [`StageVariableOverrides`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-stagevariableoverrides).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stage_variable_overrides: Option<::ValueMap<String>>,
+        pub stage_variable_overrides: Option<crate::ValueMap<String>>,
         /// Property [`UseStageCache`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-usestagecache).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub use_stage_cache: Option<::Value<bool>>,
+        pub use_stage_cache: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for CanarySetting {
+    impl crate::codec::SerializeValue for CanarySetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref deployment_id) = self.deployment_id {
@@ -4983,7 +4983,7 @@ pub mod stage {
         }
     }
 
-    impl ::codec::DeserializeValue for CanarySetting {
+    impl crate::codec::DeserializeValue for CanarySetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CanarySetting, D::Error> {
@@ -5000,10 +5000,10 @@ pub mod stage {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut deployment_id: Option<::Value<String>> = None;
-                    let mut percent_traffic: Option<::Value<f64>> = None;
-                    let mut stage_variable_overrides: Option<::ValueMap<String>> = None;
-                    let mut use_stage_cache: Option<::Value<bool>> = None;
+                    let mut deployment_id: Option<crate::Value<String>> = None;
+                    let mut percent_traffic: Option<crate::Value<f64>> = None;
+                    let mut stage_variable_overrides: Option<crate::ValueMap<String>> = None;
+                    let mut use_stage_cache: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5046,55 +5046,55 @@ pub mod stage {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_data_encrypted: Option<::Value<bool>>,
+        pub cache_data_encrypted: Option<crate::Value<bool>>,
         /// Property [`CacheTtlInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachettlinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_ttl_in_seconds: Option<::Value<u32>>,
+        pub cache_ttl_in_seconds: Option<crate::Value<u32>>,
         /// Property [`CachingEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachingenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caching_enabled: Option<::Value<bool>>,
+        pub caching_enabled: Option<crate::Value<bool>>,
         /// Property [`DataTraceEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-datatraceenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_trace_enabled: Option<::Value<bool>>,
+        pub data_trace_enabled: Option<crate::Value<bool>>,
         /// Property [`HttpMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-httpmethod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_method: Option<::Value<String>>,
+        pub http_method: Option<crate::Value<String>>,
         /// Property [`LoggingLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-logginglevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub logging_level: Option<::Value<String>>,
+        pub logging_level: Option<crate::Value<String>>,
         /// Property [`MetricsEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-metricsenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metrics_enabled: Option<::Value<bool>>,
+        pub metrics_enabled: Option<crate::Value<bool>>,
         /// Property [`ResourcePath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-resourcepath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_path: Option<::Value<String>>,
+        pub resource_path: Option<crate::Value<String>>,
         /// Property [`ThrottlingBurstLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingburstlimit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throttling_burst_limit: Option<::Value<u32>>,
+        pub throttling_burst_limit: Option<crate::Value<u32>>,
         /// Property [`ThrottlingRateLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingratelimit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throttling_rate_limit: Option<::Value<f64>>,
+        pub throttling_rate_limit: Option<crate::Value<f64>>,
     }
 
-    impl ::codec::SerializeValue for MethodSetting {
+    impl crate::codec::SerializeValue for MethodSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cache_data_encrypted) = self.cache_data_encrypted {
@@ -5167,7 +5167,7 @@ pub mod stage {
         }
     }
 
-    impl ::codec::DeserializeValue for MethodSetting {
+    impl crate::codec::DeserializeValue for MethodSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MethodSetting, D::Error> {
@@ -5184,16 +5184,16 @@ pub mod stage {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cache_data_encrypted: Option<::Value<bool>> = None;
-                    let mut cache_ttl_in_seconds: Option<::Value<u32>> = None;
-                    let mut caching_enabled: Option<::Value<bool>> = None;
-                    let mut data_trace_enabled: Option<::Value<bool>> = None;
-                    let mut http_method: Option<::Value<String>> = None;
-                    let mut logging_level: Option<::Value<String>> = None;
-                    let mut metrics_enabled: Option<::Value<bool>> = None;
-                    let mut resource_path: Option<::Value<String>> = None;
-                    let mut throttling_burst_limit: Option<::Value<u32>> = None;
-                    let mut throttling_rate_limit: Option<::Value<f64>> = None;
+                    let mut cache_data_encrypted: Option<crate::Value<bool>> = None;
+                    let mut cache_ttl_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut caching_enabled: Option<crate::Value<bool>> = None;
+                    let mut data_trace_enabled: Option<crate::Value<bool>> = None;
+                    let mut http_method: Option<crate::Value<String>> = None;
+                    let mut logging_level: Option<crate::Value<String>> = None;
+                    let mut metrics_enabled: Option<crate::Value<bool>> = None;
+                    let mut resource_path: Option<crate::Value<String>> = None;
+                    let mut throttling_burst_limit: Option<crate::Value<u32>> = None;
+                    let mut throttling_rate_limit: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5267,20 +5267,20 @@ pub mod usage_plan {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub api_id: Option<::Value<String>>,
+        pub api_id: Option<crate::Value<String>>,
         /// Property [`Stage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stage: Option<::Value<String>>,
+        pub stage: Option<crate::Value<String>>,
         /// Property [`Throttle`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throttle: Option<::ValueMap<ThrottleSettings>>,
+        pub throttle: Option<crate::ValueMap<ThrottleSettings>>,
     }
 
-    impl ::codec::SerializeValue for ApiStage {
+    impl crate::codec::SerializeValue for ApiStage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref api_id) = self.api_id {
@@ -5296,7 +5296,7 @@ pub mod usage_plan {
         }
     }
 
-    impl ::codec::DeserializeValue for ApiStage {
+    impl crate::codec::DeserializeValue for ApiStage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ApiStage, D::Error> {
             struct Visitor;
 
@@ -5311,9 +5311,9 @@ pub mod usage_plan {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut api_id: Option<::Value<String>> = None;
-                    let mut stage: Option<::Value<String>> = None;
-                    let mut throttle: Option<::ValueMap<ThrottleSettings>> = None;
+                    let mut api_id: Option<crate::Value<String>> = None;
+                    let mut stage: Option<crate::Value<String>> = None;
+                    let mut throttle: Option<crate::ValueMap<ThrottleSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5351,20 +5351,20 @@ pub mod usage_plan {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub limit: Option<::Value<u32>>,
+        pub limit: Option<crate::Value<u32>>,
         /// Property [`Offset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-offset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub offset: Option<::Value<u32>>,
+        pub offset: Option<crate::Value<u32>>,
         /// Property [`Period`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub period: Option<::Value<String>>,
+        pub period: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for QuotaSettings {
+    impl crate::codec::SerializeValue for QuotaSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref limit) = self.limit {
@@ -5380,7 +5380,7 @@ pub mod usage_plan {
         }
     }
 
-    impl ::codec::DeserializeValue for QuotaSettings {
+    impl crate::codec::DeserializeValue for QuotaSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<QuotaSettings, D::Error> {
@@ -5397,9 +5397,9 @@ pub mod usage_plan {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut limit: Option<::Value<u32>> = None;
-                    let mut offset: Option<::Value<u32>> = None;
-                    let mut period: Option<::Value<String>> = None;
+                    let mut limit: Option<crate::Value<u32>> = None;
+                    let mut offset: Option<crate::Value<u32>> = None;
+                    let mut period: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5437,15 +5437,15 @@ pub mod usage_plan {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub burst_limit: Option<::Value<u32>>,
+        pub burst_limit: Option<crate::Value<u32>>,
         /// Property [`RateLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rate_limit: Option<::Value<f64>>,
+        pub rate_limit: Option<crate::Value<f64>>,
     }
 
-    impl ::codec::SerializeValue for ThrottleSettings {
+    impl crate::codec::SerializeValue for ThrottleSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref burst_limit) = self.burst_limit {
@@ -5458,7 +5458,7 @@ pub mod usage_plan {
         }
     }
 
-    impl ::codec::DeserializeValue for ThrottleSettings {
+    impl crate::codec::DeserializeValue for ThrottleSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ThrottleSettings, D::Error> {
@@ -5475,8 +5475,8 @@ pub mod usage_plan {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut burst_limit: Option<::Value<u32>> = None;
-                    let mut rate_limit: Option<::Value<f64>> = None;
+                    let mut burst_limit: Option<crate::Value<u32>> = None;
+                    let mut rate_limit: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

@@ -13,57 +13,57 @@ pub struct BotProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub auto_build_bot_locales: Option<::Value<bool>>,
+    pub auto_build_bot_locales: Option<crate::Value<bool>>,
     /// Property [`BotFileS3Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-botfiles3location).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bot_file_s3_location: Option<::Value<self::bot::S3Location>>,
+    pub bot_file_s3_location: Option<crate::Value<self::bot::S3Location>>,
     /// Property [`BotLocales`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-botlocales).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bot_locales: Option<::ValueList<self::bot::BotLocale>>,
+    pub bot_locales: Option<crate::ValueList<self::bot::BotLocale>>,
     /// Property [`BotTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-bottags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bot_tags: Option<::ValueList<::Tag>>,
+    pub bot_tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`DataPrivacy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-dataprivacy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_privacy: ::Value<::json::Value>,
+    pub data_privacy: crate::Value<crate::json::Value>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`IdleSessionTTLInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-idlesessionttlinseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub idle_session_ttl_in_seconds: ::Value<u32>,
+    pub idle_session_ttl_in_seconds: crate::Value<u32>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
     /// Property [`TestBotAliasSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliassettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub test_bot_alias_settings: Option<::Value<self::bot::TestBotAliasSettings>>,
+    pub test_bot_alias_settings: Option<crate::Value<self::bot::TestBotAliasSettings>>,
     /// Property [`TestBotAliasTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliastags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub test_bot_alias_tags: Option<::ValueList<::Tag>>,
+    pub test_bot_alias_tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for BotProperties {
@@ -133,18 +133,18 @@ impl<'de> ::serde::Deserialize<'de> for BotProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut auto_build_bot_locales: Option<::Value<bool>> = None;
-                let mut bot_file_s3_location: Option<::Value<self::bot::S3Location>> = None;
-                let mut bot_locales: Option<::ValueList<self::bot::BotLocale>> = None;
-                let mut bot_tags: Option<::ValueList<::Tag>> = None;
-                let mut data_privacy: Option<::Value<::json::Value>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut idle_session_ttl_in_seconds: Option<::Value<u32>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
-                let mut test_bot_alias_settings: Option<::Value<self::bot::TestBotAliasSettings>> =
+                let mut auto_build_bot_locales: Option<crate::Value<bool>> = None;
+                let mut bot_file_s3_location: Option<crate::Value<self::bot::S3Location>> = None;
+                let mut bot_locales: Option<crate::ValueList<self::bot::BotLocale>> = None;
+                let mut bot_tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut data_privacy: Option<crate::Value<crate::json::Value>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut idle_session_ttl_in_seconds: Option<crate::Value<u32>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut test_bot_alias_settings: Option<crate::Value<self::bot::TestBotAliasSettings>> =
                     None;
-                let mut test_bot_alias_tags: Option<::ValueList<::Tag>> = None;
+                let mut test_bot_alias_tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -208,7 +208,7 @@ impl<'de> ::serde::Deserialize<'de> for BotProperties {
     }
 }
 
-impl ::Resource for Bot {
+impl crate::Resource for Bot {
     type Properties = BotProperties;
     const TYPE: &'static str = "AWS::Lex::Bot";
     fn properties(&self) -> &BotProperties {
@@ -219,7 +219,7 @@ impl ::Resource for Bot {
     }
 }
 
-impl ::private::Sealed for Bot {}
+impl crate::private::Sealed for Bot {}
 
 impl From<BotProperties> for Bot {
     fn from(properties: BotProperties) -> Bot {
@@ -240,42 +240,42 @@ pub struct BotAliasProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bot_alias_locale_settings: Option<::ValueList<self::bot_alias::BotAliasLocaleSettingsItem>>,
+    pub bot_alias_locale_settings: Option<crate::ValueList<self::bot_alias::BotAliasLocaleSettingsItem>>,
     /// Property [`BotAliasName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botaliasname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bot_alias_name: ::Value<String>,
+    pub bot_alias_name: crate::Value<String>,
     /// Property [`BotAliasTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botaliastags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bot_alias_tags: Option<::ValueList<::Tag>>,
+    pub bot_alias_tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`BotId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub bot_id: ::Value<String>,
+    pub bot_id: crate::Value<String>,
     /// Property [`BotVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bot_version: Option<::Value<String>>,
+    pub bot_version: Option<crate::Value<String>>,
     /// Property [`ConversationLogSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-conversationlogsettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub conversation_log_settings: Option<::Value<self::bot_alias::ConversationLogSettings>>,
+    pub conversation_log_settings: Option<crate::Value<self::bot_alias::ConversationLogSettings>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`SentimentAnalysisSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-sentimentanalysissettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sentiment_analysis_settings: Option<::Value<::json::Value>>,
+    pub sentiment_analysis_settings: Option<crate::Value<crate::json::Value>>,
 }
 
 impl ::serde::Serialize for BotAliasProperties {
@@ -337,17 +337,17 @@ impl<'de> ::serde::Deserialize<'de> for BotAliasProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut bot_alias_locale_settings: Option<
-                    ::ValueList<self::bot_alias::BotAliasLocaleSettingsItem>,
+                    crate::ValueList<self::bot_alias::BotAliasLocaleSettingsItem>,
                 > = None;
-                let mut bot_alias_name: Option<::Value<String>> = None;
-                let mut bot_alias_tags: Option<::ValueList<::Tag>> = None;
-                let mut bot_id: Option<::Value<String>> = None;
-                let mut bot_version: Option<::Value<String>> = None;
+                let mut bot_alias_name: Option<crate::Value<String>> = None;
+                let mut bot_alias_tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut bot_id: Option<crate::Value<String>> = None;
+                let mut bot_version: Option<crate::Value<String>> = None;
                 let mut conversation_log_settings: Option<
-                    ::Value<self::bot_alias::ConversationLogSettings>,
+                    crate::Value<self::bot_alias::ConversationLogSettings>,
                 > = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut sentiment_analysis_settings: Option<::Value<::json::Value>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut sentiment_analysis_settings: Option<crate::Value<crate::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -400,7 +400,7 @@ impl<'de> ::serde::Deserialize<'de> for BotAliasProperties {
     }
 }
 
-impl ::Resource for BotAlias {
+impl crate::Resource for BotAlias {
     type Properties = BotAliasProperties;
     const TYPE: &'static str = "AWS::Lex::BotAlias";
     fn properties(&self) -> &BotAliasProperties {
@@ -411,7 +411,7 @@ impl ::Resource for BotAlias {
     }
 }
 
-impl ::private::Sealed for BotAlias {}
+impl crate::private::Sealed for BotAlias {}
 
 impl From<BotAliasProperties> for BotAlias {
     fn from(properties: BotAliasProperties) -> BotAlias {
@@ -432,18 +432,18 @@ pub struct BotVersionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub bot_id: ::Value<String>,
+    pub bot_id: crate::Value<String>,
     /// Property [`BotVersionLocaleSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botversion.html#cfn-lex-botversion-botversionlocalespecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub bot_version_locale_specification:
-        ::ValueList<self::bot_version::BotVersionLocaleSpecification>,
+        crate::ValueList<self::bot_version::BotVersionLocaleSpecification>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botversion.html#cfn-lex-botversion-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for BotVersionProperties {
@@ -477,11 +477,11 @@ impl<'de> ::serde::Deserialize<'de> for BotVersionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut bot_id: Option<::Value<String>> = None;
+                let mut bot_id: Option<crate::Value<String>> = None;
                 let mut bot_version_locale_specification: Option<
-                    ::ValueList<self::bot_version::BotVersionLocaleSpecification>,
+                    crate::ValueList<self::bot_version::BotVersionLocaleSpecification>,
                 > = None;
-                let mut description: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -513,7 +513,7 @@ impl<'de> ::serde::Deserialize<'de> for BotVersionProperties {
     }
 }
 
-impl ::Resource for BotVersion {
+impl crate::Resource for BotVersion {
     type Properties = BotVersionProperties;
     const TYPE: &'static str = "AWS::Lex::BotVersion";
     fn properties(&self) -> &BotVersionProperties {
@@ -524,7 +524,7 @@ impl ::Resource for BotVersion {
     }
 }
 
-impl ::private::Sealed for BotVersion {}
+impl crate::private::Sealed for BotVersion {}
 
 impl From<BotVersionProperties> for BotVersion {
     fn from(properties: BotVersionProperties) -> BotVersion {
@@ -545,12 +545,12 @@ pub struct ResourcePolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy: ::Value<self::resource_policy::Policy>,
+    pub policy: crate::Value<self::resource_policy::Policy>,
     /// Property [`ResourceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-resourcepolicy.html#cfn-lex-resourcepolicy-resourcearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_arn: ::Value<String>,
+    pub resource_arn: crate::Value<String>,
 }
 
 impl ::serde::Serialize for ResourcePolicyProperties {
@@ -579,8 +579,8 @@ impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut policy: Option<::Value<self::resource_policy::Policy>> = None;
-                let mut resource_arn: Option<::Value<String>> = None;
+                let mut policy: Option<crate::Value<self::resource_policy::Policy>> = None;
+                let mut resource_arn: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -606,7 +606,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
     }
 }
 
-impl ::Resource for ResourcePolicy {
+impl crate::Resource for ResourcePolicy {
     type Properties = ResourcePolicyProperties;
     const TYPE: &'static str = "AWS::Lex::ResourcePolicy";
     fn properties(&self) -> &ResourcePolicyProperties {
@@ -617,7 +617,7 @@ impl ::Resource for ResourcePolicy {
     }
 }
 
-impl ::private::Sealed for ResourcePolicy {}
+impl crate::private::Sealed for ResourcePolicy {}
 
 impl From<ResourcePolicyProperties> for ResourcePolicy {
     fn from(properties: ResourcePolicyProperties) -> ResourcePolicy {
@@ -635,10 +635,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_recognition_strategy: Option<::Value<String>>,
+        pub audio_recognition_strategy: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AdvancedRecognitionSetting {
+    impl crate::codec::SerializeValue for AdvancedRecognitionSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_recognition_strategy) = self.audio_recognition_strategy {
@@ -652,7 +652,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for AdvancedRecognitionSetting {
+    impl crate::codec::DeserializeValue for AdvancedRecognitionSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AdvancedRecognitionSetting, D::Error> {
@@ -669,7 +669,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_recognition_strategy: Option<::Value<String>> = None;
+                    let mut audio_recognition_strategy: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -700,10 +700,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_bucket: ::Value<S3BucketLogDestination>,
+        pub s3_bucket: crate::Value<S3BucketLogDestination>,
     }
 
-    impl ::codec::SerializeValue for AudioLogDestination {
+    impl crate::codec::SerializeValue for AudioLogDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Bucket", &self.s3_bucket)?;
@@ -711,7 +711,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for AudioLogDestination {
+    impl crate::codec::DeserializeValue for AudioLogDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioLogDestination, D::Error> {
@@ -728,7 +728,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_bucket: Option<::Value<S3BucketLogDestination>> = None;
+                    let mut s3_bucket: Option<crate::Value<S3BucketLogDestination>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -759,15 +759,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: ::Value<AudioLogDestination>,
+        pub destination: crate::Value<AudioLogDestination>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologsetting.html#cfn-lex-bot-audiologsetting-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for AudioLogSetting {
+    impl crate::codec::SerializeValue for AudioLogSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -780,7 +780,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for AudioLogSetting {
+    impl crate::codec::DeserializeValue for AudioLogSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioLogSetting, D::Error> {
@@ -797,8 +797,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination: Option<::Value<AudioLogDestination>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut destination: Option<crate::Value<AudioLogDestination>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -833,15 +833,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub code_hook_specification: Option<::Value<CodeHookSpecification>>,
+        pub code_hook_specification: Option<crate::Value<CodeHookSpecification>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html#cfn-lex-bot-botaliaslocalesettings-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for BotAliasLocaleSettings {
+    impl crate::codec::SerializeValue for BotAliasLocaleSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref code_hook_specification) = self.code_hook_specification {
@@ -856,7 +856,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for BotAliasLocaleSettings {
+    impl crate::codec::DeserializeValue for BotAliasLocaleSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BotAliasLocaleSettings, D::Error> {
@@ -873,8 +873,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut code_hook_specification: Option<::Value<CodeHookSpecification>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut code_hook_specification: Option<crate::Value<CodeHookSpecification>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -909,15 +909,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bot_alias_locale_setting: ::Value<BotAliasLocaleSettings>,
+        pub bot_alias_locale_setting: crate::Value<BotAliasLocaleSettings>,
         /// Property [`LocaleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettingsitem.html#cfn-lex-bot-botaliaslocalesettingsitem-localeid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub locale_id: ::Value<String>,
+        pub locale_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for BotAliasLocaleSettingsItem {
+    impl crate::codec::SerializeValue for BotAliasLocaleSettingsItem {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -930,7 +930,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for BotAliasLocaleSettingsItem {
+    impl crate::codec::DeserializeValue for BotAliasLocaleSettingsItem {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BotAliasLocaleSettingsItem, D::Error> {
@@ -947,9 +947,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bot_alias_locale_setting: Option<::Value<BotAliasLocaleSettings>> =
+                    let mut bot_alias_locale_setting: Option<crate::Value<BotAliasLocaleSettings>> =
                         None;
-                    let mut locale_id: Option<::Value<String>> = None;
+                    let mut locale_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -986,40 +986,40 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_vocabulary: Option<::Value<CustomVocabulary>>,
+        pub custom_vocabulary: Option<crate::Value<CustomVocabulary>>,
         /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-description).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`Intents`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-intents).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub intents: Option<::ValueList<Intent>>,
+        pub intents: Option<crate::ValueList<Intent>>,
         /// Property [`LocaleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-localeid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub locale_id: ::Value<String>,
+        pub locale_id: crate::Value<String>,
         /// Property [`NluConfidenceThreshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-nluconfidencethreshold).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nlu_confidence_threshold: ::Value<f64>,
+        pub nlu_confidence_threshold: crate::Value<f64>,
         /// Property [`SlotTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-slottypes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slot_types: Option<::ValueList<SlotType>>,
+        pub slot_types: Option<crate::ValueList<SlotType>>,
         /// Property [`VoiceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-voicesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub voice_settings: Option<::Value<VoiceSettings>>,
+        pub voice_settings: Option<crate::Value<VoiceSettings>>,
     }
 
-    impl ::codec::SerializeValue for BotLocale {
+    impl crate::codec::SerializeValue for BotLocale {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_vocabulary) = self.custom_vocabulary {
@@ -1055,7 +1055,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for BotLocale {
+    impl crate::codec::DeserializeValue for BotLocale {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BotLocale, D::Error> {
             struct Visitor;
 
@@ -1070,13 +1070,13 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_vocabulary: Option<::Value<CustomVocabulary>> = None;
-                    let mut description: Option<::Value<String>> = None;
-                    let mut intents: Option<::ValueList<Intent>> = None;
-                    let mut locale_id: Option<::Value<String>> = None;
-                    let mut nlu_confidence_threshold: Option<::Value<f64>> = None;
-                    let mut slot_types: Option<::ValueList<SlotType>> = None;
-                    let mut voice_settings: Option<::Value<VoiceSettings>> = None;
+                    let mut custom_vocabulary: Option<crate::Value<CustomVocabulary>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut intents: Option<crate::ValueList<Intent>> = None;
+                    let mut locale_id: Option<crate::Value<String>> = None;
+                    let mut nlu_confidence_threshold: Option<crate::Value<f64>> = None;
+                    let mut slot_types: Option<crate::ValueList<SlotType>> = None;
+                    let mut voice_settings: Option<crate::Value<VoiceSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1133,15 +1133,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text: ::Value<String>,
+        pub text: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-button.html#cfn-lex-bot-button-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Button {
+    impl crate::codec::SerializeValue for Button {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Text", &self.text)?;
@@ -1150,7 +1150,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for Button {
+    impl crate::codec::DeserializeValue for Button {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Button, D::Error> {
             struct Visitor;
 
@@ -1165,8 +1165,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut text: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut text: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1200,15 +1200,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_log_group_arn: ::Value<String>,
+        pub cloud_watch_log_group_arn: crate::Value<String>,
         /// Property [`LogPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html#cfn-lex-bot-cloudwatchloggrouplogdestination-logprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_prefix: ::Value<String>,
+        pub log_prefix: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CloudWatchLogGroupLogDestination {
+    impl crate::codec::SerializeValue for CloudWatchLogGroupLogDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1221,7 +1221,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for CloudWatchLogGroupLogDestination {
+    impl crate::codec::DeserializeValue for CloudWatchLogGroupLogDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CloudWatchLogGroupLogDestination, D::Error> {
@@ -1238,8 +1238,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_log_group_arn: Option<::Value<String>> = None;
-                    let mut log_prefix: Option<::Value<String>> = None;
+                    let mut cloud_watch_log_group_arn: Option<crate::Value<String>> = None;
+                    let mut log_prefix: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1276,10 +1276,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lambda_code_hook: ::Value<LambdaCodeHook>,
+        pub lambda_code_hook: crate::Value<LambdaCodeHook>,
     }
 
-    impl ::codec::SerializeValue for CodeHookSpecification {
+    impl crate::codec::SerializeValue for CodeHookSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1291,7 +1291,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for CodeHookSpecification {
+    impl crate::codec::DeserializeValue for CodeHookSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CodeHookSpecification, D::Error> {
@@ -1308,7 +1308,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut lambda_code_hook: Option<::Value<LambdaCodeHook>> = None;
+                    let mut lambda_code_hook: Option<crate::Value<LambdaCodeHook>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1339,15 +1339,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_log_settings: Option<::ValueList<AudioLogSetting>>,
+        pub audio_log_settings: Option<crate::ValueList<AudioLogSetting>>,
         /// Property [`TextLogSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conversationlogsettings.html#cfn-lex-bot-conversationlogsettings-textlogsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_log_settings: Option<::ValueList<TextLogSetting>>,
+        pub text_log_settings: Option<crate::ValueList<TextLogSetting>>,
     }
 
-    impl ::codec::SerializeValue for ConversationLogSettings {
+    impl crate::codec::SerializeValue for ConversationLogSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_log_settings) = self.audio_log_settings {
@@ -1368,7 +1368,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for ConversationLogSettings {
+    impl crate::codec::DeserializeValue for ConversationLogSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConversationLogSettings, D::Error> {
@@ -1385,8 +1385,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_log_settings: Option<::ValueList<AudioLogSetting>> = None;
-                    let mut text_log_settings: Option<::ValueList<TextLogSetting>> = None;
+                    let mut audio_log_settings: Option<crate::ValueList<AudioLogSetting>> = None;
+                    let mut text_log_settings: Option<crate::ValueList<TextLogSetting>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1420,10 +1420,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CustomPayload {
+    impl crate::codec::SerializeValue for CustomPayload {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Value", &self.value)?;
@@ -1431,7 +1431,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomPayload {
+    impl crate::codec::DeserializeValue for CustomPayload {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomPayload, D::Error> {
@@ -1448,7 +1448,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut value: Option<::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1478,10 +1478,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_vocabulary_items: ::ValueList<CustomVocabularyItem>,
+        pub custom_vocabulary_items: crate::ValueList<CustomVocabularyItem>,
     }
 
-    impl ::codec::SerializeValue for CustomVocabulary {
+    impl crate::codec::SerializeValue for CustomVocabulary {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1493,7 +1493,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomVocabulary {
+    impl crate::codec::DeserializeValue for CustomVocabulary {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomVocabulary, D::Error> {
@@ -1510,7 +1510,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_vocabulary_items: Option<::ValueList<CustomVocabularyItem>> =
+                    let mut custom_vocabulary_items: Option<crate::ValueList<CustomVocabularyItem>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -1543,15 +1543,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub phrase: ::Value<String>,
+        pub phrase: crate::Value<String>,
         /// Property [`Weight`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabularyitem.html#cfn-lex-bot-customvocabularyitem-weight).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weight: Option<::Value<u32>>,
+        pub weight: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for CustomVocabularyItem {
+    impl crate::codec::SerializeValue for CustomVocabularyItem {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Phrase", &self.phrase)?;
@@ -1562,7 +1562,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomVocabularyItem {
+    impl crate::codec::DeserializeValue for CustomVocabularyItem {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomVocabularyItem, D::Error> {
@@ -1579,8 +1579,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut phrase: Option<::Value<String>> = None;
-                    let mut weight: Option<::Value<u32>> = None;
+                    let mut phrase: Option<crate::Value<String>> = None;
+                    let mut weight: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1614,10 +1614,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for DialogCodeHookSetting {
+    impl crate::codec::SerializeValue for DialogCodeHookSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", &self.enabled)?;
@@ -1625,7 +1625,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for DialogCodeHookSetting {
+    impl crate::codec::DeserializeValue for DialogCodeHookSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DialogCodeHookSetting, D::Error> {
@@ -1642,7 +1642,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1672,10 +1672,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub grammar_slot_type_setting: Option<::Value<GrammarSlotTypeSetting>>,
+        pub grammar_slot_type_setting: Option<crate::Value<GrammarSlotTypeSetting>>,
     }
 
-    impl ::codec::SerializeValue for ExternalSourceSetting {
+    impl crate::codec::SerializeValue for ExternalSourceSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref grammar_slot_type_setting) = self.grammar_slot_type_setting {
@@ -1689,7 +1689,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for ExternalSourceSetting {
+    impl crate::codec::DeserializeValue for ExternalSourceSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExternalSourceSetting, D::Error> {
@@ -1706,7 +1706,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut grammar_slot_type_setting: Option<::Value<GrammarSlotTypeSetting>> =
+                    let mut grammar_slot_type_setting: Option<crate::Value<GrammarSlotTypeSetting>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -1738,21 +1738,21 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
         /// Property [`FulfillmentUpdatesSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-fulfillmentupdatesspecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fulfillment_updates_specification: Option<::Value<FulfillmentUpdatesSpecification>>,
+        pub fulfillment_updates_specification: Option<crate::Value<FulfillmentUpdatesSpecification>>,
         /// Property [`PostFulfillmentStatusSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-postfulfillmentstatusspecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub post_fulfillment_status_specification:
-            Option<::Value<PostFulfillmentStatusSpecification>>,
+            Option<crate::Value<PostFulfillmentStatusSpecification>>,
     }
 
-    impl ::codec::SerializeValue for FulfillmentCodeHookSetting {
+    impl crate::codec::SerializeValue for FulfillmentCodeHookSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enabled", &self.enabled)?;
@@ -1778,7 +1778,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for FulfillmentCodeHookSetting {
+    impl crate::codec::DeserializeValue for FulfillmentCodeHookSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FulfillmentCodeHookSetting, D::Error> {
@@ -1795,12 +1795,12 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
                     let mut fulfillment_updates_specification: Option<
-                        ::Value<FulfillmentUpdatesSpecification>,
+                        crate::Value<FulfillmentUpdatesSpecification>,
                     > = None;
                     let mut post_fulfillment_status_specification: Option<
-                        ::Value<PostFulfillmentStatusSpecification>,
+                        crate::Value<PostFulfillmentStatusSpecification>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -1842,20 +1842,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allow_interrupt: Option<::Value<bool>>,
+        pub allow_interrupt: Option<crate::Value<bool>>,
         /// Property [`DelayInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentstartresponsespecification.html#cfn-lex-bot-fulfillmentstartresponsespecification-delayinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub delay_in_seconds: ::Value<u32>,
+        pub delay_in_seconds: crate::Value<u32>,
         /// Property [`MessageGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentstartresponsespecification.html#cfn-lex-bot-fulfillmentstartresponsespecification-messagegroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_groups: ::ValueList<MessageGroup>,
+        pub message_groups: crate::ValueList<MessageGroup>,
     }
 
-    impl ::codec::SerializeValue for FulfillmentStartResponseSpecification {
+    impl crate::codec::SerializeValue for FulfillmentStartResponseSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_interrupt) = self.allow_interrupt {
@@ -1879,7 +1879,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for FulfillmentStartResponseSpecification {
+    impl crate::codec::DeserializeValue for FulfillmentStartResponseSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FulfillmentStartResponseSpecification, D::Error> {
@@ -1896,9 +1896,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allow_interrupt: Option<::Value<bool>> = None;
-                    let mut delay_in_seconds: Option<::Value<u32>> = None;
-                    let mut message_groups: Option<::ValueList<MessageGroup>> = None;
+                    let mut allow_interrupt: Option<crate::Value<bool>> = None;
+                    let mut delay_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut message_groups: Option<crate::ValueList<MessageGroup>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1938,20 +1938,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allow_interrupt: Option<::Value<bool>>,
+        pub allow_interrupt: Option<crate::Value<bool>>,
         /// Property [`FrequencyInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html#cfn-lex-bot-fulfillmentupdateresponsespecification-frequencyinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frequency_in_seconds: ::Value<u32>,
+        pub frequency_in_seconds: crate::Value<u32>,
         /// Property [`MessageGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html#cfn-lex-bot-fulfillmentupdateresponsespecification-messagegroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_groups: ::ValueList<MessageGroup>,
+        pub message_groups: crate::ValueList<MessageGroup>,
     }
 
-    impl ::codec::SerializeValue for FulfillmentUpdateResponseSpecification {
+    impl crate::codec::SerializeValue for FulfillmentUpdateResponseSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_interrupt) = self.allow_interrupt {
@@ -1975,7 +1975,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for FulfillmentUpdateResponseSpecification {
+    impl crate::codec::DeserializeValue for FulfillmentUpdateResponseSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FulfillmentUpdateResponseSpecification, D::Error> {
@@ -1992,9 +1992,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allow_interrupt: Option<::Value<bool>> = None;
-                    let mut frequency_in_seconds: Option<::Value<u32>> = None;
-                    let mut message_groups: Option<::ValueList<MessageGroup>> = None;
+                    let mut allow_interrupt: Option<crate::Value<bool>> = None;
+                    let mut frequency_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut message_groups: Option<crate::ValueList<MessageGroup>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2035,25 +2035,25 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub active: ::Value<bool>,
+        pub active: crate::Value<bool>,
         /// Property [`StartResponse`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-startresponse).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_response: Option<::Value<FulfillmentStartResponseSpecification>>,
+        pub start_response: Option<crate::Value<FulfillmentStartResponseSpecification>>,
         /// Property [`TimeoutInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-timeoutinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timeout_in_seconds: Option<::Value<u32>>,
+        pub timeout_in_seconds: Option<crate::Value<u32>>,
         /// Property [`UpdateResponse`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-updateresponse).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub update_response: Option<::Value<FulfillmentUpdateResponseSpecification>>,
+        pub update_response: Option<crate::Value<FulfillmentUpdateResponseSpecification>>,
     }
 
-    impl ::codec::SerializeValue for FulfillmentUpdatesSpecification {
+    impl crate::codec::SerializeValue for FulfillmentUpdatesSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Active", &self.active)?;
@@ -2082,7 +2082,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for FulfillmentUpdatesSpecification {
+    impl crate::codec::DeserializeValue for FulfillmentUpdatesSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FulfillmentUpdatesSpecification, D::Error> {
@@ -2099,12 +2099,12 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut active: Option<::Value<bool>> = None;
-                    let mut start_response: Option<::Value<FulfillmentStartResponseSpecification>> =
+                    let mut active: Option<crate::Value<bool>> = None;
+                    let mut start_response: Option<crate::Value<FulfillmentStartResponseSpecification>> =
                         None;
-                    let mut timeout_in_seconds: Option<::Value<u32>> = None;
+                    let mut timeout_in_seconds: Option<crate::Value<u32>> = None;
                     let mut update_response: Option<
-                        ::Value<FulfillmentUpdateResponseSpecification>,
+                        crate::Value<FulfillmentUpdateResponseSpecification>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2147,10 +2147,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source: Option<::Value<GrammarSlotTypeSource>>,
+        pub source: Option<crate::Value<GrammarSlotTypeSource>>,
     }
 
-    impl ::codec::SerializeValue for GrammarSlotTypeSetting {
+    impl crate::codec::SerializeValue for GrammarSlotTypeSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref source) = self.source {
@@ -2160,7 +2160,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for GrammarSlotTypeSetting {
+    impl crate::codec::DeserializeValue for GrammarSlotTypeSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GrammarSlotTypeSetting, D::Error> {
@@ -2177,7 +2177,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source: Option<::Value<GrammarSlotTypeSource>> = None;
+                    let mut source: Option<crate::Value<GrammarSlotTypeSource>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2205,20 +2205,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_key_arn: Option<::Value<String>>,
+        pub kms_key_arn: Option<crate::Value<String>>,
         /// Property [`S3BucketName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesource.html#cfn-lex-bot-grammarslottypesource-s3bucketname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_bucket_name: ::Value<String>,
+        pub s3_bucket_name: crate::Value<String>,
         /// Property [`S3ObjectKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesource.html#cfn-lex-bot-grammarslottypesource-s3objectkey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_object_key: ::Value<String>,
+        pub s3_object_key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for GrammarSlotTypeSource {
+    impl crate::codec::SerializeValue for GrammarSlotTypeSource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_arn) = self.kms_key_arn {
@@ -2238,7 +2238,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for GrammarSlotTypeSource {
+    impl crate::codec::DeserializeValue for GrammarSlotTypeSource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GrammarSlotTypeSource, D::Error> {
@@ -2255,9 +2255,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_arn: Option<::Value<String>> = None;
-                    let mut s3_bucket_name: Option<::Value<String>> = None;
-                    let mut s3_object_key: Option<::Value<String>> = None;
+                    let mut kms_key_arn: Option<crate::Value<String>> = None;
+                    let mut s3_bucket_name: Option<crate::Value<String>> = None;
+                    let mut s3_object_key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2297,25 +2297,25 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buttons: Option<::ValueList<Button>>,
+        pub buttons: Option<crate::ValueList<Button>>,
         /// Property [`ImageUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-imageresponsecard.html#cfn-lex-bot-imageresponsecard-imageurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_url: Option<::Value<String>>,
+        pub image_url: Option<crate::Value<String>>,
         /// Property [`Subtitle`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-imageresponsecard.html#cfn-lex-bot-imageresponsecard-subtitle).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subtitle: Option<::Value<String>>,
+        pub subtitle: Option<crate::Value<String>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-imageresponsecard.html#cfn-lex-bot-imageresponsecard-title).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub title: ::Value<String>,
+        pub title: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ImageResponseCard {
+    impl crate::codec::SerializeValue for ImageResponseCard {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref buttons) = self.buttons {
@@ -2332,7 +2332,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for ImageResponseCard {
+    impl crate::codec::DeserializeValue for ImageResponseCard {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ImageResponseCard, D::Error> {
@@ -2349,10 +2349,10 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut buttons: Option<::ValueList<Button>> = None;
-                    let mut image_url: Option<::Value<String>> = None;
-                    let mut subtitle: Option<::Value<String>> = None;
-                    let mut title: Option<::Value<String>> = None;
+                    let mut buttons: Option<crate::ValueList<Button>> = None;
+                    let mut image_url: Option<crate::Value<String>> = None;
+                    let mut subtitle: Option<crate::Value<String>> = None;
+                    let mut title: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2394,10 +2394,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for InputContext {
+    impl crate::codec::SerializeValue for InputContext {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -2405,7 +2405,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for InputContext {
+    impl crate::codec::DeserializeValue for InputContext {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputContext, D::Error> {
             struct Visitor;
 
@@ -2420,7 +2420,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2450,70 +2450,70 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`DialogCodeHook`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-dialogcodehook).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dialog_code_hook: Option<::Value<DialogCodeHookSetting>>,
+        pub dialog_code_hook: Option<crate::Value<DialogCodeHookSetting>>,
         /// Property [`FulfillmentCodeHook`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-fulfillmentcodehook).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fulfillment_code_hook: Option<::Value<FulfillmentCodeHookSetting>>,
+        pub fulfillment_code_hook: Option<crate::Value<FulfillmentCodeHookSetting>>,
         /// Property [`InputContexts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-inputcontexts).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_contexts: Option<::ValueList<InputContext>>,
+        pub input_contexts: Option<crate::ValueList<InputContext>>,
         /// Property [`IntentClosingSetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-intentclosingsetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub intent_closing_setting: Option<::Value<IntentClosingSetting>>,
+        pub intent_closing_setting: Option<crate::Value<IntentClosingSetting>>,
         /// Property [`IntentConfirmationSetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-intentconfirmationsetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub intent_confirmation_setting: Option<::Value<IntentConfirmationSetting>>,
+        pub intent_confirmation_setting: Option<crate::Value<IntentConfirmationSetting>>,
         /// Property [`KendraConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-kendraconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kendra_configuration: Option<::Value<KendraConfiguration>>,
+        pub kendra_configuration: Option<crate::Value<KendraConfiguration>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`OutputContexts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-outputcontexts).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_contexts: Option<::ValueList<OutputContext>>,
+        pub output_contexts: Option<crate::ValueList<OutputContext>>,
         /// Property [`ParentIntentSignature`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-parentintentsignature).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parent_intent_signature: Option<::Value<String>>,
+        pub parent_intent_signature: Option<crate::Value<String>>,
         /// Property [`SampleUtterances`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-sampleutterances).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sample_utterances: Option<::ValueList<SampleUtterance>>,
+        pub sample_utterances: Option<crate::ValueList<SampleUtterance>>,
         /// Property [`SlotPriorities`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-slotpriorities).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slot_priorities: Option<::ValueList<SlotPriority>>,
+        pub slot_priorities: Option<crate::ValueList<SlotPriority>>,
         /// Property [`Slots`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-slots).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slots: Option<::ValueList<Slot>>,
+        pub slots: Option<crate::ValueList<Slot>>,
     }
 
-    impl ::codec::SerializeValue for Intent {
+    impl crate::codec::SerializeValue for Intent {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -2597,7 +2597,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for Intent {
+    impl crate::codec::DeserializeValue for Intent {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Intent, D::Error> {
             struct Visitor;
 
@@ -2612,22 +2612,22 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<::Value<String>> = None;
-                    let mut dialog_code_hook: Option<::Value<DialogCodeHookSetting>> = None;
-                    let mut fulfillment_code_hook: Option<::Value<FulfillmentCodeHookSetting>> =
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut dialog_code_hook: Option<crate::Value<DialogCodeHookSetting>> = None;
+                    let mut fulfillment_code_hook: Option<crate::Value<FulfillmentCodeHookSetting>> =
                         None;
-                    let mut input_contexts: Option<::ValueList<InputContext>> = None;
-                    let mut intent_closing_setting: Option<::Value<IntentClosingSetting>> = None;
+                    let mut input_contexts: Option<crate::ValueList<InputContext>> = None;
+                    let mut intent_closing_setting: Option<crate::Value<IntentClosingSetting>> = None;
                     let mut intent_confirmation_setting: Option<
-                        ::Value<IntentConfirmationSetting>,
+                        crate::Value<IntentConfirmationSetting>,
                     > = None;
-                    let mut kendra_configuration: Option<::Value<KendraConfiguration>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut output_contexts: Option<::ValueList<OutputContext>> = None;
-                    let mut parent_intent_signature: Option<::Value<String>> = None;
-                    let mut sample_utterances: Option<::ValueList<SampleUtterance>> = None;
-                    let mut slot_priorities: Option<::ValueList<SlotPriority>> = None;
-                    let mut slots: Option<::ValueList<Slot>> = None;
+                    let mut kendra_configuration: Option<crate::Value<KendraConfiguration>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut output_contexts: Option<crate::ValueList<OutputContext>> = None;
+                    let mut parent_intent_signature: Option<crate::Value<String>> = None;
+                    let mut sample_utterances: Option<crate::ValueList<SampleUtterance>> = None;
+                    let mut slot_priorities: Option<crate::ValueList<SlotPriority>> = None;
+                    let mut slots: Option<crate::ValueList<Slot>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2710,15 +2710,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub closing_response: ::Value<ResponseSpecification>,
+        pub closing_response: crate::Value<ResponseSpecification>,
         /// Property [`IsActive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentclosingsetting.html#cfn-lex-bot-intentclosingsetting-isactive).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_active: Option<::Value<bool>>,
+        pub is_active: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for IntentClosingSetting {
+    impl crate::codec::SerializeValue for IntentClosingSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2733,7 +2733,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for IntentClosingSetting {
+    impl crate::codec::DeserializeValue for IntentClosingSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IntentClosingSetting, D::Error> {
@@ -2750,8 +2750,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut closing_response: Option<::Value<ResponseSpecification>> = None;
-                    let mut is_active: Option<::Value<bool>> = None;
+                    let mut closing_response: Option<crate::Value<ResponseSpecification>> = None;
+                    let mut is_active: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2786,20 +2786,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub declination_response: ::Value<ResponseSpecification>,
+        pub declination_response: crate::Value<ResponseSpecification>,
         /// Property [`IsActive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-isactive).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_active: Option<::Value<bool>>,
+        pub is_active: Option<crate::Value<bool>>,
         /// Property [`PromptSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-promptspecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prompt_specification: ::Value<PromptSpecification>,
+        pub prompt_specification: crate::Value<PromptSpecification>,
     }
 
-    impl ::codec::SerializeValue for IntentConfirmationSetting {
+    impl crate::codec::SerializeValue for IntentConfirmationSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2819,7 +2819,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for IntentConfirmationSetting {
+    impl crate::codec::DeserializeValue for IntentConfirmationSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IntentConfirmationSetting, D::Error> {
@@ -2836,9 +2836,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut declination_response: Option<::Value<ResponseSpecification>> = None;
-                    let mut is_active: Option<::Value<bool>> = None;
-                    let mut prompt_specification: Option<::Value<PromptSpecification>> = None;
+                    let mut declination_response: Option<crate::Value<ResponseSpecification>> = None;
+                    let mut is_active: Option<crate::Value<bool>> = None;
+                    let mut prompt_specification: Option<crate::Value<PromptSpecification>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2880,20 +2880,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kendra_index: ::Value<String>,
+        pub kendra_index: crate::Value<String>,
         /// Property [`QueryFilterString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-kendraconfiguration.html#cfn-lex-bot-kendraconfiguration-queryfilterstring).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query_filter_string: Option<::Value<String>>,
+        pub query_filter_string: Option<crate::Value<String>>,
         /// Property [`QueryFilterStringEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-kendraconfiguration.html#cfn-lex-bot-kendraconfiguration-queryfilterstringenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query_filter_string_enabled: Option<::Value<bool>>,
+        pub query_filter_string_enabled: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for KendraConfiguration {
+    impl crate::codec::SerializeValue for KendraConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2919,7 +2919,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for KendraConfiguration {
+    impl crate::codec::DeserializeValue for KendraConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KendraConfiguration, D::Error> {
@@ -2936,9 +2936,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kendra_index: Option<::Value<String>> = None;
-                    let mut query_filter_string: Option<::Value<String>> = None;
-                    let mut query_filter_string_enabled: Option<::Value<bool>> = None;
+                    let mut kendra_index: Option<crate::Value<String>> = None;
+                    let mut query_filter_string: Option<crate::Value<String>> = None;
+                    let mut query_filter_string_enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2978,15 +2978,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub code_hook_interface_version: ::Value<String>,
+        pub code_hook_interface_version: crate::Value<String>,
         /// Property [`LambdaArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-lambdacodehook.html#cfn-lex-bot-lambdacodehook-lambdaarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lambda_arn: ::Value<String>,
+        pub lambda_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for LambdaCodeHook {
+    impl crate::codec::SerializeValue for LambdaCodeHook {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2999,7 +2999,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for LambdaCodeHook {
+    impl crate::codec::DeserializeValue for LambdaCodeHook {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaCodeHook, D::Error> {
@@ -3016,8 +3016,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut code_hook_interface_version: Option<::Value<String>> = None;
-                    let mut lambda_arn: Option<::Value<String>> = None;
+                    let mut code_hook_interface_version: Option<crate::Value<String>> = None;
+                    let mut lambda_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3055,25 +3055,25 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_payload: Option<::Value<CustomPayload>>,
+        pub custom_payload: Option<crate::Value<CustomPayload>>,
         /// Property [`ImageResponseCard`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-message.html#cfn-lex-bot-message-imageresponsecard).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_response_card: Option<::Value<ImageResponseCard>>,
+        pub image_response_card: Option<crate::Value<ImageResponseCard>>,
         /// Property [`PlainTextMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-message.html#cfn-lex-bot-message-plaintextmessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub plain_text_message: Option<::Value<PlainTextMessage>>,
+        pub plain_text_message: Option<crate::Value<PlainTextMessage>>,
         /// Property [`SSMLMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-message.html#cfn-lex-bot-message-ssmlmessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ssml_message: Option<::Value<SSMLMessage>>,
+        pub ssml_message: Option<crate::Value<SSMLMessage>>,
     }
 
-    impl ::codec::SerializeValue for Message {
+    impl crate::codec::SerializeValue for Message {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_payload) = self.custom_payload {
@@ -3104,7 +3104,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for Message {
+    impl crate::codec::DeserializeValue for Message {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Message, D::Error> {
             struct Visitor;
 
@@ -3119,10 +3119,10 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_payload: Option<::Value<CustomPayload>> = None;
-                    let mut image_response_card: Option<::Value<ImageResponseCard>> = None;
-                    let mut plain_text_message: Option<::Value<PlainTextMessage>> = None;
-                    let mut ssml_message: Option<::Value<SSMLMessage>> = None;
+                    let mut custom_payload: Option<crate::Value<CustomPayload>> = None;
+                    let mut image_response_card: Option<crate::Value<ImageResponseCard>> = None;
+                    let mut plain_text_message: Option<crate::Value<PlainTextMessage>> = None;
+                    let mut ssml_message: Option<crate::Value<SSMLMessage>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3164,15 +3164,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message: ::Value<Message>,
+        pub message: crate::Value<Message>,
         /// Property [`Variations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-messagegroup.html#cfn-lex-bot-messagegroup-variations).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variations: Option<::ValueList<Message>>,
+        pub variations: Option<crate::ValueList<Message>>,
     }
 
-    impl ::codec::SerializeValue for MessageGroup {
+    impl crate::codec::SerializeValue for MessageGroup {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Message", &self.message)?;
@@ -3183,7 +3183,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for MessageGroup {
+    impl crate::codec::DeserializeValue for MessageGroup {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MessageGroup, D::Error> {
             struct Visitor;
 
@@ -3198,8 +3198,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut message: Option<::Value<Message>> = None;
-                    let mut variations: Option<::ValueList<Message>> = None;
+                    let mut message: Option<crate::Value<Message>> = None;
+                    let mut variations: Option<crate::ValueList<Message>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3233,10 +3233,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allow_multiple_values: Option<::Value<bool>>,
+        pub allow_multiple_values: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for MultipleValuesSetting {
+    impl crate::codec::SerializeValue for MultipleValuesSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_multiple_values) = self.allow_multiple_values {
@@ -3250,7 +3250,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for MultipleValuesSetting {
+    impl crate::codec::DeserializeValue for MultipleValuesSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MultipleValuesSetting, D::Error> {
@@ -3267,7 +3267,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allow_multiple_values: Option<::Value<bool>> = None;
+                    let mut allow_multiple_values: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3298,10 +3298,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub obfuscation_setting_type: ::Value<String>,
+        pub obfuscation_setting_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ObfuscationSetting {
+    impl crate::codec::SerializeValue for ObfuscationSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3313,7 +3313,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for ObfuscationSetting {
+    impl crate::codec::DeserializeValue for ObfuscationSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ObfuscationSetting, D::Error> {
@@ -3330,7 +3330,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut obfuscation_setting_type: Option<::Value<String>> = None;
+                    let mut obfuscation_setting_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3362,20 +3362,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`TimeToLiveInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-timetoliveinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_to_live_in_seconds: ::Value<u32>,
+        pub time_to_live_in_seconds: crate::Value<u32>,
         /// Property [`TurnsToLive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-turnstolive).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub turns_to_live: ::Value<u32>,
+        pub turns_to_live: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for OutputContext {
+    impl crate::codec::SerializeValue for OutputContext {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -3393,7 +3393,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for OutputContext {
+    impl crate::codec::DeserializeValue for OutputContext {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputContext, D::Error> {
@@ -3410,9 +3410,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut time_to_live_in_seconds: Option<::Value<u32>> = None;
-                    let mut turns_to_live: Option<::Value<u32>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut time_to_live_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut turns_to_live: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3453,10 +3453,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for PlainTextMessage {
+    impl crate::codec::SerializeValue for PlainTextMessage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Value", &self.value)?;
@@ -3464,7 +3464,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for PlainTextMessage {
+    impl crate::codec::DeserializeValue for PlainTextMessage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PlainTextMessage, D::Error> {
@@ -3481,7 +3481,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut value: Option<::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3511,20 +3511,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub failure_response: Option<::Value<ResponseSpecification>>,
+        pub failure_response: Option<crate::Value<ResponseSpecification>>,
         /// Property [`SuccessResponse`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postfulfillmentstatusspecification.html#cfn-lex-bot-postfulfillmentstatusspecification-successresponse).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub success_response: Option<::Value<ResponseSpecification>>,
+        pub success_response: Option<crate::Value<ResponseSpecification>>,
         /// Property [`TimeoutResponse`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postfulfillmentstatusspecification.html#cfn-lex-bot-postfulfillmentstatusspecification-timeoutresponse).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timeout_response: Option<::Value<ResponseSpecification>>,
+        pub timeout_response: Option<crate::Value<ResponseSpecification>>,
     }
 
-    impl ::codec::SerializeValue for PostFulfillmentStatusSpecification {
+    impl crate::codec::SerializeValue for PostFulfillmentStatusSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref failure_response) = self.failure_response {
@@ -3552,7 +3552,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for PostFulfillmentStatusSpecification {
+    impl crate::codec::DeserializeValue for PostFulfillmentStatusSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PostFulfillmentStatusSpecification, D::Error> {
@@ -3569,9 +3569,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut failure_response: Option<::Value<ResponseSpecification>> = None;
-                    let mut success_response: Option<::Value<ResponseSpecification>> = None;
-                    let mut timeout_response: Option<::Value<ResponseSpecification>> = None;
+                    let mut failure_response: Option<crate::Value<ResponseSpecification>> = None;
+                    let mut success_response: Option<crate::Value<ResponseSpecification>> = None;
+                    let mut timeout_response: Option<crate::Value<ResponseSpecification>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3609,20 +3609,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allow_interrupt: Option<::Value<bool>>,
+        pub allow_interrupt: Option<crate::Value<bool>>,
         /// Property [`MaxRetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-maxretries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_retries: ::Value<u32>,
+        pub max_retries: crate::Value<u32>,
         /// Property [`MessageGroupsList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messagegroupslist).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_groups_list: ::ValueList<MessageGroup>,
+        pub message_groups_list: crate::ValueList<MessageGroup>,
     }
 
-    impl ::codec::SerializeValue for PromptSpecification {
+    impl crate::codec::SerializeValue for PromptSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_interrupt) = self.allow_interrupt {
@@ -3642,7 +3642,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for PromptSpecification {
+    impl crate::codec::DeserializeValue for PromptSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PromptSpecification, D::Error> {
@@ -3659,9 +3659,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allow_interrupt: Option<::Value<bool>> = None;
-                    let mut max_retries: Option<::Value<u32>> = None;
-                    let mut message_groups_list: Option<::ValueList<MessageGroup>> = None;
+                    let mut allow_interrupt: Option<crate::Value<bool>> = None;
+                    let mut max_retries: Option<crate::Value<u32>> = None;
+                    let mut message_groups_list: Option<crate::ValueList<MessageGroup>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3701,15 +3701,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allow_interrupt: Option<::Value<bool>>,
+        pub allow_interrupt: Option<crate::Value<bool>>,
         /// Property [`MessageGroupsList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-responsespecification.html#cfn-lex-bot-responsespecification-messagegroupslist).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_groups_list: ::ValueList<MessageGroup>,
+        pub message_groups_list: crate::ValueList<MessageGroup>,
     }
 
-    impl ::codec::SerializeValue for ResponseSpecification {
+    impl crate::codec::SerializeValue for ResponseSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_interrupt) = self.allow_interrupt {
@@ -3728,7 +3728,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for ResponseSpecification {
+    impl crate::codec::DeserializeValue for ResponseSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResponseSpecification, D::Error> {
@@ -3745,8 +3745,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allow_interrupt: Option<::Value<bool>> = None;
-                    let mut message_groups_list: Option<::ValueList<MessageGroup>> = None;
+                    let mut allow_interrupt: Option<crate::Value<bool>> = None;
+                    let mut message_groups_list: Option<crate::ValueList<MessageGroup>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3781,20 +3781,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_key_arn: Option<::Value<String>>,
+        pub kms_key_arn: Option<crate::Value<String>>,
         /// Property [`LogPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html#cfn-lex-bot-s3bucketlogdestination-logprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_prefix: ::Value<String>,
+        pub log_prefix: crate::Value<String>,
         /// Property [`S3BucketArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html#cfn-lex-bot-s3bucketlogdestination-s3bucketarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_bucket_arn: ::Value<String>,
+        pub s3_bucket_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for S3BucketLogDestination {
+    impl crate::codec::SerializeValue for S3BucketLogDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_arn) = self.kms_key_arn {
@@ -3810,7 +3810,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for S3BucketLogDestination {
+    impl crate::codec::DeserializeValue for S3BucketLogDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3BucketLogDestination, D::Error> {
@@ -3827,9 +3827,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_arn: Option<::Value<String>> = None;
-                    let mut log_prefix: Option<::Value<String>> = None;
-                    let mut s3_bucket_arn: Option<::Value<String>> = None;
+                    let mut kms_key_arn: Option<crate::Value<String>> = None;
+                    let mut log_prefix: Option<crate::Value<String>> = None;
+                    let mut s3_bucket_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3869,20 +3869,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_bucket: ::Value<String>,
+        pub s3_bucket: crate::Value<String>,
         /// Property [`S3ObjectKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3location.html#cfn-lex-bot-s3location-s3objectkey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_object_key: ::Value<String>,
+        pub s3_object_key: crate::Value<String>,
         /// Property [`S3ObjectVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3location.html#cfn-lex-bot-s3location-s3objectversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_object_version: Option<::Value<String>>,
+        pub s3_object_version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3Location {
+    impl crate::codec::SerializeValue for S3Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Bucket", &self.s3_bucket)?;
@@ -3902,7 +3902,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Location {
+    impl crate::codec::DeserializeValue for S3Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Location, D::Error> {
             struct Visitor;
 
@@ -3917,9 +3917,9 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_bucket: Option<::Value<String>> = None;
-                    let mut s3_object_key: Option<::Value<String>> = None;
-                    let mut s3_object_version: Option<::Value<String>> = None;
+                    let mut s3_bucket: Option<crate::Value<String>> = None;
+                    let mut s3_object_key: Option<crate::Value<String>> = None;
+                    let mut s3_object_version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3959,10 +3959,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SSMLMessage {
+    impl crate::codec::SerializeValue for SSMLMessage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Value", &self.value)?;
@@ -3970,7 +3970,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SSMLMessage {
+    impl crate::codec::DeserializeValue for SSMLMessage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SSMLMessage, D::Error> {
             struct Visitor;
 
@@ -3985,7 +3985,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut value: Option<::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4015,10 +4015,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub utterance: ::Value<String>,
+        pub utterance: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SampleUtterance {
+    impl crate::codec::SerializeValue for SampleUtterance {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Utterance", &self.utterance)?;
@@ -4026,7 +4026,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SampleUtterance {
+    impl crate::codec::DeserializeValue for SampleUtterance {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SampleUtterance, D::Error> {
@@ -4043,7 +4043,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut utterance: Option<::Value<String>> = None;
+                    let mut utterance: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4074,10 +4074,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SampleValue {
+    impl crate::codec::SerializeValue for SampleValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Value", &self.value)?;
@@ -4085,7 +4085,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SampleValue {
+    impl crate::codec::DeserializeValue for SampleValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SampleValue, D::Error> {
             struct Visitor;
 
@@ -4100,7 +4100,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut value: Option<::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4130,35 +4130,35 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`MultipleValuesSetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-multiplevaluessetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub multiple_values_setting: Option<::Value<MultipleValuesSetting>>,
+        pub multiple_values_setting: Option<crate::Value<MultipleValuesSetting>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`ObfuscationSetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-obfuscationsetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub obfuscation_setting: Option<::Value<ObfuscationSetting>>,
+        pub obfuscation_setting: Option<crate::Value<ObfuscationSetting>>,
         /// Property [`SlotTypeName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-slottypename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slot_type_name: ::Value<String>,
+        pub slot_type_name: crate::Value<String>,
         /// Property [`ValueElicitationSetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-valueelicitationsetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_elicitation_setting: ::Value<SlotValueElicitationSetting>,
+        pub value_elicitation_setting: crate::Value<SlotValueElicitationSetting>,
     }
 
-    impl ::codec::SerializeValue for Slot {
+    impl crate::codec::SerializeValue for Slot {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -4193,7 +4193,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for Slot {
+    impl crate::codec::DeserializeValue for Slot {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Slot, D::Error> {
             struct Visitor;
 
@@ -4208,13 +4208,13 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<::Value<String>> = None;
-                    let mut multiple_values_setting: Option<::Value<MultipleValuesSetting>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut obfuscation_setting: Option<::Value<ObfuscationSetting>> = None;
-                    let mut slot_type_name: Option<::Value<String>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut multiple_values_setting: Option<crate::Value<MultipleValuesSetting>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut obfuscation_setting: Option<crate::Value<ObfuscationSetting>> = None;
+                    let mut slot_type_name: Option<crate::Value<String>> = None;
                     let mut value_elicitation_setting: Option<
-                        ::Value<SlotValueElicitationSetting>,
+                        crate::Value<SlotValueElicitationSetting>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -4269,10 +4269,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_value: ::Value<String>,
+        pub default_value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SlotDefaultValue {
+    impl crate::codec::SerializeValue for SlotDefaultValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -4284,7 +4284,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SlotDefaultValue {
+    impl crate::codec::DeserializeValue for SlotDefaultValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlotDefaultValue, D::Error> {
@@ -4301,7 +4301,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut default_value: Option<::Value<String>> = None;
+                    let mut default_value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4332,10 +4332,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_value_list: ::ValueList<SlotDefaultValue>,
+        pub default_value_list: crate::ValueList<SlotDefaultValue>,
     }
 
-    impl ::codec::SerializeValue for SlotDefaultValueSpecification {
+    impl crate::codec::SerializeValue for SlotDefaultValueSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -4347,7 +4347,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SlotDefaultValueSpecification {
+    impl crate::codec::DeserializeValue for SlotDefaultValueSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlotDefaultValueSpecification, D::Error> {
@@ -4364,7 +4364,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut default_value_list: Option<::ValueList<SlotDefaultValue>> = None;
+                    let mut default_value_list: Option<crate::ValueList<SlotDefaultValue>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4395,15 +4395,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub priority: ::Value<u32>,
+        pub priority: crate::Value<u32>,
         /// Property [`SlotName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotpriority.html#cfn-lex-bot-slotpriority-slotname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slot_name: ::Value<String>,
+        pub slot_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SlotPriority {
+    impl crate::codec::SerializeValue for SlotPriority {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Priority", &self.priority)?;
@@ -4412,7 +4412,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SlotPriority {
+    impl crate::codec::DeserializeValue for SlotPriority {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SlotPriority, D::Error> {
             struct Visitor;
 
@@ -4427,8 +4427,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut priority: Option<::Value<u32>> = None;
-                    let mut slot_name: Option<::Value<String>> = None;
+                    let mut priority: Option<crate::Value<u32>> = None;
+                    let mut slot_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4463,35 +4463,35 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`ExternalSourceSetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-externalsourcesetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub external_source_setting: Option<::Value<ExternalSourceSetting>>,
+        pub external_source_setting: Option<crate::Value<ExternalSourceSetting>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`ParentSlotTypeSignature`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-parentslottypesignature).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parent_slot_type_signature: Option<::Value<String>>,
+        pub parent_slot_type_signature: Option<crate::Value<String>>,
         /// Property [`SlotTypeValues`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-slottypevalues).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slot_type_values: Option<::ValueList<SlotTypeValue>>,
+        pub slot_type_values: Option<crate::ValueList<SlotTypeValue>>,
         /// Property [`ValueSelectionSetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-valueselectionsetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_selection_setting: Option<::Value<SlotValueSelectionSetting>>,
+        pub value_selection_setting: Option<crate::Value<SlotValueSelectionSetting>>,
     }
 
-    impl ::codec::SerializeValue for SlotType {
+    impl crate::codec::SerializeValue for SlotType {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -4530,7 +4530,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SlotType {
+    impl crate::codec::DeserializeValue for SlotType {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SlotType, D::Error> {
             struct Visitor;
 
@@ -4545,12 +4545,12 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<::Value<String>> = None;
-                    let mut external_source_setting: Option<::Value<ExternalSourceSetting>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut parent_slot_type_signature: Option<::Value<String>> = None;
-                    let mut slot_type_values: Option<::ValueList<SlotTypeValue>> = None;
-                    let mut value_selection_setting: Option<::Value<SlotValueSelectionSetting>> =
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut external_source_setting: Option<crate::Value<ExternalSourceSetting>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut parent_slot_type_signature: Option<crate::Value<String>> = None;
+                    let mut slot_type_values: Option<crate::ValueList<SlotTypeValue>> = None;
+                    let mut value_selection_setting: Option<crate::Value<SlotValueSelectionSetting>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -4604,15 +4604,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sample_value: ::Value<SampleValue>,
+        pub sample_value: crate::Value<SampleValue>,
         /// Property [`Synonyms`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottypevalue.html#cfn-lex-bot-slottypevalue-synonyms).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub synonyms: Option<::ValueList<SampleValue>>,
+        pub synonyms: Option<crate::ValueList<SampleValue>>,
     }
 
-    impl ::codec::SerializeValue for SlotTypeValue {
+    impl crate::codec::SerializeValue for SlotTypeValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -4627,7 +4627,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SlotTypeValue {
+    impl crate::codec::DeserializeValue for SlotTypeValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlotTypeValue, D::Error> {
@@ -4644,8 +4644,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut sample_value: Option<::Value<SampleValue>> = None;
-                    let mut synonyms: Option<::ValueList<SampleValue>> = None;
+                    let mut sample_value: Option<crate::Value<SampleValue>> = None;
+                    let mut synonyms: Option<crate::ValueList<SampleValue>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4680,30 +4680,30 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_value_specification: Option<::Value<SlotDefaultValueSpecification>>,
+        pub default_value_specification: Option<crate::Value<SlotDefaultValueSpecification>>,
         /// Property [`PromptSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-promptspecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prompt_specification: Option<::Value<PromptSpecification>>,
+        pub prompt_specification: Option<crate::Value<PromptSpecification>>,
         /// Property [`SampleUtterances`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-sampleutterances).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sample_utterances: Option<::ValueList<SampleUtterance>>,
+        pub sample_utterances: Option<crate::ValueList<SampleUtterance>>,
         /// Property [`SlotConstraint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-slotconstraint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slot_constraint: ::Value<String>,
+        pub slot_constraint: crate::Value<String>,
         /// Property [`WaitAndContinueSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-waitandcontinuespecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub wait_and_continue_specification: Option<::Value<WaitAndContinueSpecification>>,
+        pub wait_and_continue_specification: Option<crate::Value<WaitAndContinueSpecification>>,
     }
 
-    impl ::codec::SerializeValue for SlotValueElicitationSetting {
+    impl crate::codec::SerializeValue for SlotValueElicitationSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_value_specification) = self.default_value_specification {
@@ -4744,7 +4744,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SlotValueElicitationSetting {
+    impl crate::codec::DeserializeValue for SlotValueElicitationSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlotValueElicitationSetting, D::Error> {
@@ -4762,13 +4762,13 @@ pub mod bot {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut default_value_specification: Option<
-                        ::Value<SlotDefaultValueSpecification>,
+                        crate::Value<SlotDefaultValueSpecification>,
                     > = None;
-                    let mut prompt_specification: Option<::Value<PromptSpecification>> = None;
-                    let mut sample_utterances: Option<::ValueList<SampleUtterance>> = None;
-                    let mut slot_constraint: Option<::Value<String>> = None;
+                    let mut prompt_specification: Option<crate::Value<PromptSpecification>> = None;
+                    let mut sample_utterances: Option<crate::ValueList<SampleUtterance>> = None;
+                    let mut slot_constraint: Option<crate::Value<String>> = None;
                     let mut wait_and_continue_specification: Option<
-                        ::Value<WaitAndContinueSpecification>,
+                        crate::Value<WaitAndContinueSpecification>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -4819,10 +4819,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pattern: ::Value<String>,
+        pub pattern: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SlotValueRegexFilter {
+    impl crate::codec::SerializeValue for SlotValueRegexFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Pattern", &self.pattern)?;
@@ -4830,7 +4830,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SlotValueRegexFilter {
+    impl crate::codec::DeserializeValue for SlotValueRegexFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlotValueRegexFilter, D::Error> {
@@ -4847,7 +4847,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut pattern: Option<::Value<String>> = None;
+                    let mut pattern: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4877,20 +4877,20 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub advanced_recognition_setting: Option<::Value<AdvancedRecognitionSetting>>,
+        pub advanced_recognition_setting: Option<crate::Value<AdvancedRecognitionSetting>>,
         /// Property [`RegexFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-regexfilter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub regex_filter: Option<::Value<SlotValueRegexFilter>>,
+        pub regex_filter: Option<crate::Value<SlotValueRegexFilter>>,
         /// Property [`ResolutionStrategy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-resolutionstrategy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resolution_strategy: ::Value<String>,
+        pub resolution_strategy: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SlotValueSelectionSetting {
+    impl crate::codec::SerializeValue for SlotValueSelectionSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref advanced_recognition_setting) = self.advanced_recognition_setting {
@@ -4912,7 +4912,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for SlotValueSelectionSetting {
+    impl crate::codec::DeserializeValue for SlotValueSelectionSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlotValueSelectionSetting, D::Error> {
@@ -4930,10 +4930,10 @@ pub mod bot {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut advanced_recognition_setting: Option<
-                        ::Value<AdvancedRecognitionSetting>,
+                        crate::Value<AdvancedRecognitionSetting>,
                     > = None;
-                    let mut regex_filter: Option<::Value<SlotValueRegexFilter>> = None;
-                    let mut resolution_strategy: Option<::Value<String>> = None;
+                    let mut regex_filter: Option<crate::Value<SlotValueRegexFilter>> = None;
+                    let mut resolution_strategy: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4973,25 +4973,25 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allow_interrupt: Option<::Value<bool>>,
+        pub allow_interrupt: Option<crate::Value<bool>>,
         /// Property [`FrequencyInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-stillwaitingresponsespecification.html#cfn-lex-bot-stillwaitingresponsespecification-frequencyinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frequency_in_seconds: ::Value<u32>,
+        pub frequency_in_seconds: crate::Value<u32>,
         /// Property [`MessageGroupsList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-stillwaitingresponsespecification.html#cfn-lex-bot-stillwaitingresponsespecification-messagegroupslist).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_groups_list: ::ValueList<MessageGroup>,
+        pub message_groups_list: crate::ValueList<MessageGroup>,
         /// Property [`TimeoutInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-stillwaitingresponsespecification.html#cfn-lex-bot-stillwaitingresponsespecification-timeoutinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timeout_in_seconds: ::Value<u32>,
+        pub timeout_in_seconds: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for StillWaitingResponseSpecification {
+    impl crate::codec::SerializeValue for StillWaitingResponseSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_interrupt) = self.allow_interrupt {
@@ -5020,7 +5020,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for StillWaitingResponseSpecification {
+    impl crate::codec::DeserializeValue for StillWaitingResponseSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StillWaitingResponseSpecification, D::Error> {
@@ -5037,10 +5037,10 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allow_interrupt: Option<::Value<bool>> = None;
-                    let mut frequency_in_seconds: Option<::Value<u32>> = None;
-                    let mut message_groups_list: Option<::ValueList<MessageGroup>> = None;
-                    let mut timeout_in_seconds: Option<::Value<u32>> = None;
+                    let mut allow_interrupt: Option<crate::Value<bool>> = None;
+                    let mut frequency_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut message_groups_list: Option<crate::ValueList<MessageGroup>> = None;
+                    let mut timeout_in_seconds: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5086,25 +5086,25 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bot_alias_locale_settings: Option<::ValueList<BotAliasLocaleSettingsItem>>,
+        pub bot_alias_locale_settings: Option<crate::ValueList<BotAliasLocaleSettingsItem>>,
         /// Property [`ConversationLogSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-conversationlogsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub conversation_log_settings: Option<::Value<ConversationLogSettings>>,
+        pub conversation_log_settings: Option<crate::Value<ConversationLogSettings>>,
         /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-description).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`SentimentAnalysisSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-sentimentanalysissettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sentiment_analysis_settings: Option<::Value<::json::Value>>,
+        pub sentiment_analysis_settings: Option<crate::Value<crate::json::Value>>,
     }
 
-    impl ::codec::SerializeValue for TestBotAliasSettings {
+    impl crate::codec::SerializeValue for TestBotAliasSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bot_alias_locale_settings) = self.bot_alias_locale_settings {
@@ -5135,7 +5135,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for TestBotAliasSettings {
+    impl crate::codec::DeserializeValue for TestBotAliasSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TestBotAliasSettings, D::Error> {
@@ -5153,12 +5153,12 @@ pub mod bot {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut bot_alias_locale_settings: Option<
-                        ::ValueList<BotAliasLocaleSettingsItem>,
+                        crate::ValueList<BotAliasLocaleSettingsItem>,
                     > = None;
-                    let mut conversation_log_settings: Option<::Value<ConversationLogSettings>> =
+                    let mut conversation_log_settings: Option<crate::Value<ConversationLogSettings>> =
                         None;
-                    let mut description: Option<::Value<String>> = None;
-                    let mut sentiment_analysis_settings: Option<::Value<::json::Value>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut sentiment_analysis_settings: Option<crate::Value<crate::json::Value>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5203,10 +5203,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch: ::Value<CloudWatchLogGroupLogDestination>,
+        pub cloud_watch: crate::Value<CloudWatchLogGroupLogDestination>,
     }
 
-    impl ::codec::SerializeValue for TextLogDestination {
+    impl crate::codec::SerializeValue for TextLogDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatch", &self.cloud_watch)?;
@@ -5214,7 +5214,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for TextLogDestination {
+    impl crate::codec::DeserializeValue for TextLogDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TextLogDestination, D::Error> {
@@ -5231,7 +5231,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch: Option<::Value<CloudWatchLogGroupLogDestination>> = None;
+                    let mut cloud_watch: Option<crate::Value<CloudWatchLogGroupLogDestination>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5262,15 +5262,15 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: ::Value<TextLogDestination>,
+        pub destination: crate::Value<TextLogDestination>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html#cfn-lex-bot-textlogsetting-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for TextLogSetting {
+    impl crate::codec::SerializeValue for TextLogSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5283,7 +5283,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for TextLogSetting {
+    impl crate::codec::DeserializeValue for TextLogSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TextLogSetting, D::Error> {
@@ -5300,8 +5300,8 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination: Option<::Value<TextLogDestination>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut destination: Option<crate::Value<TextLogDestination>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5336,10 +5336,10 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub voice_id: ::Value<String>,
+        pub voice_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for VoiceSettings {
+    impl crate::codec::SerializeValue for VoiceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "VoiceId", &self.voice_id)?;
@@ -5347,7 +5347,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for VoiceSettings {
+    impl crate::codec::DeserializeValue for VoiceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VoiceSettings, D::Error> {
@@ -5364,7 +5364,7 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut voice_id: Option<::Value<String>> = None;
+                    let mut voice_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5394,25 +5394,25 @@ pub mod bot {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub continue_response: ::Value<ResponseSpecification>,
+        pub continue_response: crate::Value<ResponseSpecification>,
         /// Property [`IsActive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-isactive).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_active: Option<::Value<bool>>,
+        pub is_active: Option<crate::Value<bool>>,
         /// Property [`StillWaitingResponse`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-stillwaitingresponse).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub still_waiting_response: Option<::Value<StillWaitingResponseSpecification>>,
+        pub still_waiting_response: Option<crate::Value<StillWaitingResponseSpecification>>,
         /// Property [`WaitingResponse`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-waitingresponse).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub waiting_response: ::Value<ResponseSpecification>,
+        pub waiting_response: crate::Value<ResponseSpecification>,
     }
 
-    impl ::codec::SerializeValue for WaitAndContinueSpecification {
+    impl crate::codec::SerializeValue for WaitAndContinueSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5439,7 +5439,7 @@ pub mod bot {
         }
     }
 
-    impl ::codec::DeserializeValue for WaitAndContinueSpecification {
+    impl crate::codec::DeserializeValue for WaitAndContinueSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WaitAndContinueSpecification, D::Error> {
@@ -5456,12 +5456,12 @@ pub mod bot {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut continue_response: Option<::Value<ResponseSpecification>> = None;
-                    let mut is_active: Option<::Value<bool>> = None;
+                    let mut continue_response: Option<crate::Value<ResponseSpecification>> = None;
+                    let mut is_active: Option<crate::Value<bool>> = None;
                     let mut still_waiting_response: Option<
-                        ::Value<StillWaitingResponseSpecification>,
+                        crate::Value<StillWaitingResponseSpecification>,
                     > = None;
-                    let mut waiting_response: Option<::Value<ResponseSpecification>> = None;
+                    let mut waiting_response: Option<crate::Value<ResponseSpecification>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5510,10 +5510,10 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_bucket: ::Value<S3BucketLogDestination>,
+        pub s3_bucket: crate::Value<S3BucketLogDestination>,
     }
 
-    impl ::codec::SerializeValue for AudioLogDestination {
+    impl crate::codec::SerializeValue for AudioLogDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Bucket", &self.s3_bucket)?;
@@ -5521,7 +5521,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for AudioLogDestination {
+    impl crate::codec::DeserializeValue for AudioLogDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioLogDestination, D::Error> {
@@ -5538,7 +5538,7 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_bucket: Option<::Value<S3BucketLogDestination>> = None;
+                    let mut s3_bucket: Option<crate::Value<S3BucketLogDestination>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5569,15 +5569,15 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: ::Value<AudioLogDestination>,
+        pub destination: crate::Value<AudioLogDestination>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for AudioLogSetting {
+    impl crate::codec::SerializeValue for AudioLogSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5590,7 +5590,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for AudioLogSetting {
+    impl crate::codec::DeserializeValue for AudioLogSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioLogSetting, D::Error> {
@@ -5607,8 +5607,8 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination: Option<::Value<AudioLogDestination>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut destination: Option<crate::Value<AudioLogDestination>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5643,15 +5643,15 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub code_hook_specification: Option<::Value<CodeHookSpecification>>,
+        pub code_hook_specification: Option<crate::Value<CodeHookSpecification>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-botaliaslocalesettings.html#cfn-lex-botalias-botaliaslocalesettings-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for BotAliasLocaleSettings {
+    impl crate::codec::SerializeValue for BotAliasLocaleSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref code_hook_specification) = self.code_hook_specification {
@@ -5666,7 +5666,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for BotAliasLocaleSettings {
+    impl crate::codec::DeserializeValue for BotAliasLocaleSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BotAliasLocaleSettings, D::Error> {
@@ -5683,8 +5683,8 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut code_hook_specification: Option<::Value<CodeHookSpecification>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut code_hook_specification: Option<crate::Value<CodeHookSpecification>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5719,15 +5719,15 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bot_alias_locale_setting: ::Value<BotAliasLocaleSettings>,
+        pub bot_alias_locale_setting: crate::Value<BotAliasLocaleSettings>,
         /// Property [`LocaleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-botaliaslocalesettingsitem.html#cfn-lex-botalias-botaliaslocalesettingsitem-localeid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub locale_id: ::Value<String>,
+        pub locale_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for BotAliasLocaleSettingsItem {
+    impl crate::codec::SerializeValue for BotAliasLocaleSettingsItem {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5740,7 +5740,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for BotAliasLocaleSettingsItem {
+    impl crate::codec::DeserializeValue for BotAliasLocaleSettingsItem {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BotAliasLocaleSettingsItem, D::Error> {
@@ -5757,9 +5757,9 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bot_alias_locale_setting: Option<::Value<BotAliasLocaleSettings>> =
+                    let mut bot_alias_locale_setting: Option<crate::Value<BotAliasLocaleSettings>> =
                         None;
-                    let mut locale_id: Option<::Value<String>> = None;
+                    let mut locale_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5796,15 +5796,15 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_log_group_arn: ::Value<String>,
+        pub cloud_watch_log_group_arn: crate::Value<String>,
         /// Property [`LogPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-cloudwatchloggrouplogdestination.html#cfn-lex-botalias-cloudwatchloggrouplogdestination-logprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_prefix: ::Value<String>,
+        pub log_prefix: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CloudWatchLogGroupLogDestination {
+    impl crate::codec::SerializeValue for CloudWatchLogGroupLogDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5817,7 +5817,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for CloudWatchLogGroupLogDestination {
+    impl crate::codec::DeserializeValue for CloudWatchLogGroupLogDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CloudWatchLogGroupLogDestination, D::Error> {
@@ -5834,8 +5834,8 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_log_group_arn: Option<::Value<String>> = None;
-                    let mut log_prefix: Option<::Value<String>> = None;
+                    let mut cloud_watch_log_group_arn: Option<crate::Value<String>> = None;
+                    let mut log_prefix: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5872,10 +5872,10 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lambda_code_hook: ::Value<LambdaCodeHook>,
+        pub lambda_code_hook: crate::Value<LambdaCodeHook>,
     }
 
-    impl ::codec::SerializeValue for CodeHookSpecification {
+    impl crate::codec::SerializeValue for CodeHookSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5887,7 +5887,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for CodeHookSpecification {
+    impl crate::codec::DeserializeValue for CodeHookSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CodeHookSpecification, D::Error> {
@@ -5904,7 +5904,7 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut lambda_code_hook: Option<::Value<LambdaCodeHook>> = None;
+                    let mut lambda_code_hook: Option<crate::Value<LambdaCodeHook>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5935,15 +5935,15 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_log_settings: Option<::ValueList<AudioLogSetting>>,
+        pub audio_log_settings: Option<crate::ValueList<AudioLogSetting>>,
         /// Property [`TextLogSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-conversationlogsettings.html#cfn-lex-botalias-conversationlogsettings-textlogsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_log_settings: Option<::ValueList<TextLogSetting>>,
+        pub text_log_settings: Option<crate::ValueList<TextLogSetting>>,
     }
 
-    impl ::codec::SerializeValue for ConversationLogSettings {
+    impl crate::codec::SerializeValue for ConversationLogSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_log_settings) = self.audio_log_settings {
@@ -5964,7 +5964,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for ConversationLogSettings {
+    impl crate::codec::DeserializeValue for ConversationLogSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConversationLogSettings, D::Error> {
@@ -5981,8 +5981,8 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_log_settings: Option<::ValueList<AudioLogSetting>> = None;
-                    let mut text_log_settings: Option<::ValueList<TextLogSetting>> = None;
+                    let mut audio_log_settings: Option<crate::ValueList<AudioLogSetting>> = None;
+                    let mut text_log_settings: Option<crate::ValueList<TextLogSetting>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6016,15 +6016,15 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub code_hook_interface_version: ::Value<String>,
+        pub code_hook_interface_version: crate::Value<String>,
         /// Property [`LambdaArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-lambdacodehook.html#cfn-lex-botalias-lambdacodehook-lambdaarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lambda_arn: ::Value<String>,
+        pub lambda_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for LambdaCodeHook {
+    impl crate::codec::SerializeValue for LambdaCodeHook {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -6037,7 +6037,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for LambdaCodeHook {
+    impl crate::codec::DeserializeValue for LambdaCodeHook {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaCodeHook, D::Error> {
@@ -6054,8 +6054,8 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut code_hook_interface_version: Option<::Value<String>> = None;
-                    let mut lambda_arn: Option<::Value<String>> = None;
+                    let mut code_hook_interface_version: Option<crate::Value<String>> = None;
+                    let mut lambda_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6093,20 +6093,20 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_key_arn: Option<::Value<String>>,
+        pub kms_key_arn: Option<crate::Value<String>>,
         /// Property [`LogPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-s3bucketlogdestination.html#cfn-lex-botalias-s3bucketlogdestination-logprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_prefix: ::Value<String>,
+        pub log_prefix: crate::Value<String>,
         /// Property [`S3BucketArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-s3bucketlogdestination.html#cfn-lex-botalias-s3bucketlogdestination-s3bucketarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_bucket_arn: ::Value<String>,
+        pub s3_bucket_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for S3BucketLogDestination {
+    impl crate::codec::SerializeValue for S3BucketLogDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_arn) = self.kms_key_arn {
@@ -6122,7 +6122,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for S3BucketLogDestination {
+    impl crate::codec::DeserializeValue for S3BucketLogDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3BucketLogDestination, D::Error> {
@@ -6139,9 +6139,9 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_arn: Option<::Value<String>> = None;
-                    let mut log_prefix: Option<::Value<String>> = None;
-                    let mut s3_bucket_arn: Option<::Value<String>> = None;
+                    let mut kms_key_arn: Option<crate::Value<String>> = None;
+                    let mut log_prefix: Option<crate::Value<String>> = None;
+                    let mut s3_bucket_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6181,10 +6181,10 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch: ::Value<CloudWatchLogGroupLogDestination>,
+        pub cloud_watch: crate::Value<CloudWatchLogGroupLogDestination>,
     }
 
-    impl ::codec::SerializeValue for TextLogDestination {
+    impl crate::codec::SerializeValue for TextLogDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudWatch", &self.cloud_watch)?;
@@ -6192,7 +6192,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for TextLogDestination {
+    impl crate::codec::DeserializeValue for TextLogDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TextLogDestination, D::Error> {
@@ -6209,7 +6209,7 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch: Option<::Value<CloudWatchLogGroupLogDestination>> = None;
+                    let mut cloud_watch: Option<crate::Value<CloudWatchLogGroupLogDestination>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6240,15 +6240,15 @@ pub mod bot_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: ::Value<TextLogDestination>,
+        pub destination: crate::Value<TextLogDestination>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-textlogsetting.html#cfn-lex-botalias-textlogsetting-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: ::Value<bool>,
+        pub enabled: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for TextLogSetting {
+    impl crate::codec::SerializeValue for TextLogSetting {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -6261,7 +6261,7 @@ pub mod bot_alias {
         }
     }
 
-    impl ::codec::DeserializeValue for TextLogSetting {
+    impl crate::codec::DeserializeValue for TextLogSetting {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TextLogSetting, D::Error> {
@@ -6278,8 +6278,8 @@ pub mod bot_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination: Option<::Value<TextLogDestination>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut destination: Option<crate::Value<TextLogDestination>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6318,10 +6318,10 @@ pub mod bot_version {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_bot_version: ::Value<String>,
+        pub source_bot_version: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for BotVersionLocaleDetails {
+    impl crate::codec::SerializeValue for BotVersionLocaleDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -6333,7 +6333,7 @@ pub mod bot_version {
         }
     }
 
-    impl ::codec::DeserializeValue for BotVersionLocaleDetails {
+    impl crate::codec::DeserializeValue for BotVersionLocaleDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BotVersionLocaleDetails, D::Error> {
@@ -6350,7 +6350,7 @@ pub mod bot_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source_bot_version: Option<::Value<String>> = None;
+                    let mut source_bot_version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6381,15 +6381,15 @@ pub mod bot_version {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bot_version_locale_details: ::Value<BotVersionLocaleDetails>,
+        pub bot_version_locale_details: crate::Value<BotVersionLocaleDetails>,
         /// Property [`LocaleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-localeid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub locale_id: ::Value<String>,
+        pub locale_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for BotVersionLocaleSpecification {
+    impl crate::codec::SerializeValue for BotVersionLocaleSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -6402,7 +6402,7 @@ pub mod bot_version {
         }
     }
 
-    impl ::codec::DeserializeValue for BotVersionLocaleSpecification {
+    impl crate::codec::DeserializeValue for BotVersionLocaleSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BotVersionLocaleSpecification, D::Error> {
@@ -6419,9 +6419,9 @@ pub mod bot_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bot_version_locale_details: Option<::Value<BotVersionLocaleDetails>> =
+                    let mut bot_version_locale_details: Option<crate::Value<BotVersionLocaleDetails>> =
                         None;
-                    let mut locale_id: Option<::Value<String>> = None;
+                    let mut locale_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6459,14 +6459,14 @@ pub mod resource_policy {
     #[derive(Debug, Default)]
     pub struct Policy {}
 
-    impl ::codec::SerializeValue for Policy {
+    impl crate::codec::SerializeValue for Policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl ::codec::DeserializeValue for Policy {
+    impl crate::codec::DeserializeValue for Policy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Policy, D::Error> {
             struct Visitor;
 

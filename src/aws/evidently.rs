@@ -13,47 +13,47 @@ pub struct ExperimentProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`MetricGoals`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-metricgoals).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub metric_goals: ::ValueList<self::experiment::MetricGoalObject>,
+    pub metric_goals: crate::ValueList<self::experiment::MetricGoalObject>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`OnlineAbConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-onlineabconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub online_ab_config: ::Value<self::experiment::OnlineAbConfigObject>,
+    pub online_ab_config: crate::Value<self::experiment::OnlineAbConfigObject>,
     /// Property [`Project`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-project).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub project: ::Value<String>,
+    pub project: crate::Value<String>,
     /// Property [`RandomizationSalt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-randomizationsalt).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub randomization_salt: Option<::Value<String>>,
+    pub randomization_salt: Option<crate::Value<String>>,
     /// Property [`SamplingRate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-samplingrate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sampling_rate: Option<::Value<u32>>,
+    pub sampling_rate: Option<crate::Value<u32>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Treatments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-treatments).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub treatments: ::ValueList<self::experiment::TreatmentObject>,
+    pub treatments: crate::ValueList<self::experiment::TreatmentObject>,
 }
 
 impl ::serde::Serialize for ExperimentProperties {
@@ -103,17 +103,17 @@ impl<'de> ::serde::Deserialize<'de> for ExperimentProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut metric_goals: Option<::ValueList<self::experiment::MetricGoalObject>> =
+                let mut description: Option<crate::Value<String>> = None;
+                let mut metric_goals: Option<crate::ValueList<self::experiment::MetricGoalObject>> =
                     None;
-                let mut name: Option<::Value<String>> = None;
-                let mut online_ab_config: Option<::Value<self::experiment::OnlineAbConfigObject>> =
+                let mut name: Option<crate::Value<String>> = None;
+                let mut online_ab_config: Option<crate::Value<self::experiment::OnlineAbConfigObject>> =
                     None;
-                let mut project: Option<::Value<String>> = None;
-                let mut randomization_salt: Option<::Value<String>> = None;
-                let mut sampling_rate: Option<::Value<u32>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut treatments: Option<::ValueList<self::experiment::TreatmentObject>> = None;
+                let mut project: Option<crate::Value<String>> = None;
+                let mut randomization_salt: Option<crate::Value<String>> = None;
+                let mut sampling_rate: Option<crate::Value<u32>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut treatments: Option<crate::ValueList<self::experiment::TreatmentObject>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -169,7 +169,7 @@ impl<'de> ::serde::Deserialize<'de> for ExperimentProperties {
     }
 }
 
-impl ::Resource for Experiment {
+impl crate::Resource for Experiment {
     type Properties = ExperimentProperties;
     const TYPE: &'static str = "AWS::Evidently::Experiment";
     fn properties(&self) -> &ExperimentProperties {
@@ -180,7 +180,7 @@ impl ::Resource for Experiment {
     }
 }
 
-impl ::private::Sealed for Experiment {}
+impl crate::private::Sealed for Experiment {}
 
 impl From<ExperimentProperties> for Experiment {
     fn from(properties: ExperimentProperties) -> Experiment {
@@ -201,42 +201,42 @@ pub struct FeatureProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_variation: Option<::Value<String>>,
+    pub default_variation: Option<crate::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`EntityOverrides`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-entityoverrides).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub entity_overrides: Option<::ValueList<self::feature::EntityOverride>>,
+    pub entity_overrides: Option<crate::ValueList<self::feature::EntityOverride>>,
     /// Property [`EvaluationStrategy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-evaluationstrategy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub evaluation_strategy: Option<::Value<String>>,
+    pub evaluation_strategy: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Project`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-project).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub project: ::Value<String>,
+    pub project: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Variations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-variations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub variations: ::ValueList<self::feature::VariationObject>,
+    pub variations: crate::ValueList<self::feature::VariationObject>,
 }
 
 impl ::serde::Serialize for FeatureProperties {
@@ -291,14 +291,14 @@ impl<'de> ::serde::Deserialize<'de> for FeatureProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut default_variation: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut entity_overrides: Option<::ValueList<self::feature::EntityOverride>> = None;
-                let mut evaluation_strategy: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut project: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut variations: Option<::ValueList<self::feature::VariationObject>> = None;
+                let mut default_variation: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut entity_overrides: Option<crate::ValueList<self::feature::EntityOverride>> = None;
+                let mut evaluation_strategy: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut project: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut variations: Option<crate::ValueList<self::feature::VariationObject>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -348,7 +348,7 @@ impl<'de> ::serde::Deserialize<'de> for FeatureProperties {
     }
 }
 
-impl ::Resource for Feature {
+impl crate::Resource for Feature {
     type Properties = FeatureProperties;
     const TYPE: &'static str = "AWS::Evidently::Feature";
     fn properties(&self) -> &FeatureProperties {
@@ -359,7 +359,7 @@ impl ::Resource for Feature {
     }
 }
 
-impl ::private::Sealed for Feature {}
+impl crate::private::Sealed for Feature {}
 
 impl From<FeatureProperties> for Feature {
     fn from(properties: FeatureProperties) -> Feature {
@@ -380,42 +380,42 @@ pub struct LaunchProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Groups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-groups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub groups: ::ValueList<self::launch::LaunchGroupObject>,
+    pub groups: crate::ValueList<self::launch::LaunchGroupObject>,
     /// Property [`MetricMonitors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-metricmonitors).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub metric_monitors: Option<::ValueList<self::launch::MetricDefinitionObject>>,
+    pub metric_monitors: Option<crate::ValueList<self::launch::MetricDefinitionObject>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Project`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-project).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub project: ::Value<String>,
+    pub project: crate::Value<String>,
     /// Property [`RandomizationSalt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-randomizationsalt).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub randomization_salt: Option<::Value<String>>,
+    pub randomization_salt: Option<crate::Value<String>>,
     /// Property [`ScheduledSplitsConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-scheduledsplitsconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub scheduled_splits_config: ::ValueList<self::launch::StepConfig>,
+    pub scheduled_splits_config: crate::ValueList<self::launch::StepConfig>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for LaunchProperties {
@@ -468,16 +468,16 @@ impl<'de> ::serde::Deserialize<'de> for LaunchProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut groups: Option<::ValueList<self::launch::LaunchGroupObject>> = None;
-                let mut metric_monitors: Option<::ValueList<self::launch::MetricDefinitionObject>> =
+                let mut description: Option<crate::Value<String>> = None;
+                let mut groups: Option<crate::ValueList<self::launch::LaunchGroupObject>> = None;
+                let mut metric_monitors: Option<crate::ValueList<self::launch::MetricDefinitionObject>> =
                     None;
-                let mut name: Option<::Value<String>> = None;
-                let mut project: Option<::Value<String>> = None;
-                let mut randomization_salt: Option<::Value<String>> = None;
-                let mut scheduled_splits_config: Option<::ValueList<self::launch::StepConfig>> =
+                let mut name: Option<crate::Value<String>> = None;
+                let mut project: Option<crate::Value<String>> = None;
+                let mut randomization_salt: Option<crate::Value<String>> = None;
+                let mut scheduled_splits_config: Option<crate::ValueList<self::launch::StepConfig>> =
                     None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -527,7 +527,7 @@ impl<'de> ::serde::Deserialize<'de> for LaunchProperties {
     }
 }
 
-impl ::Resource for Launch {
+impl crate::Resource for Launch {
     type Properties = LaunchProperties;
     const TYPE: &'static str = "AWS::Evidently::Launch";
     fn properties(&self) -> &LaunchProperties {
@@ -538,7 +538,7 @@ impl ::Resource for Launch {
     }
 }
 
-impl ::private::Sealed for Launch {}
+impl crate::private::Sealed for Launch {}
 
 impl From<LaunchProperties> for Launch {
     fn from(properties: LaunchProperties) -> Launch {
@@ -559,22 +559,22 @@ pub struct ProjectProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_delivery: Option<::Value<self::project::DataDeliveryObject>>,
+    pub data_delivery: Option<crate::Value<self::project::DataDeliveryObject>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-project.html#cfn-evidently-project-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-project.html#cfn-evidently-project-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-project.html#cfn-evidently-project-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ProjectProperties {
@@ -609,10 +609,10 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_delivery: Option<::Value<self::project::DataDeliveryObject>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut data_delivery: Option<crate::Value<self::project::DataDeliveryObject>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -645,7 +645,7 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
     }
 }
 
-impl ::Resource for Project {
+impl crate::Resource for Project {
     type Properties = ProjectProperties;
     const TYPE: &'static str = "AWS::Evidently::Project";
     fn properties(&self) -> &ProjectProperties {
@@ -656,7 +656,7 @@ impl ::Resource for Project {
     }
 }
 
-impl ::private::Sealed for Project {}
+impl crate::private::Sealed for Project {}
 
 impl From<ProjectProperties> for Project {
     fn from(properties: ProjectProperties) -> Project {
@@ -674,35 +674,35 @@ pub mod experiment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub desired_change: ::Value<String>,
+        pub desired_change: crate::Value<String>,
         /// Property [`EntityIdKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-metricgoalobject.html#cfn-evidently-experiment-metricgoalobject-entityidkey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entity_id_key: ::Value<String>,
+        pub entity_id_key: crate::Value<String>,
         /// Property [`EventPattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-metricgoalobject.html#cfn-evidently-experiment-metricgoalobject-eventpattern).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_pattern: ::Value<String>,
+        pub event_pattern: crate::Value<String>,
         /// Property [`MetricName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-metricgoalobject.html#cfn-evidently-experiment-metricgoalobject-metricname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_name: ::Value<String>,
+        pub metric_name: crate::Value<String>,
         /// Property [`UnitLabel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-metricgoalobject.html#cfn-evidently-experiment-metricgoalobject-unitlabel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unit_label: Option<::Value<String>>,
+        pub unit_label: Option<crate::Value<String>>,
         /// Property [`ValueKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-metricgoalobject.html#cfn-evidently-experiment-metricgoalobject-valuekey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_key: ::Value<String>,
+        pub value_key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for MetricGoalObject {
+    impl crate::codec::SerializeValue for MetricGoalObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -729,7 +729,7 @@ pub mod experiment {
         }
     }
 
-    impl ::codec::DeserializeValue for MetricGoalObject {
+    impl crate::codec::DeserializeValue for MetricGoalObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MetricGoalObject, D::Error> {
@@ -746,12 +746,12 @@ pub mod experiment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut desired_change: Option<::Value<String>> = None;
-                    let mut entity_id_key: Option<::Value<String>> = None;
-                    let mut event_pattern: Option<::Value<String>> = None;
-                    let mut metric_name: Option<::Value<String>> = None;
-                    let mut unit_label: Option<::Value<String>> = None;
-                    let mut value_key: Option<::Value<String>> = None;
+                    let mut desired_change: Option<crate::Value<String>> = None;
+                    let mut entity_id_key: Option<crate::Value<String>> = None;
+                    let mut event_pattern: Option<crate::Value<String>> = None;
+                    let mut metric_name: Option<crate::Value<String>> = None;
+                    let mut unit_label: Option<crate::Value<String>> = None;
+                    let mut value_key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -806,15 +806,15 @@ pub mod experiment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub control_treatment_name: Option<::Value<String>>,
+        pub control_treatment_name: Option<crate::Value<String>>,
         /// Property [`TreatmentWeights`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-onlineabconfigobject.html#cfn-evidently-experiment-onlineabconfigobject-treatmentweights).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub treatment_weights: Option<::ValueList<TreatmentToWeight>>,
+        pub treatment_weights: Option<crate::ValueList<TreatmentToWeight>>,
     }
 
-    impl ::codec::SerializeValue for OnlineAbConfigObject {
+    impl crate::codec::SerializeValue for OnlineAbConfigObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref control_treatment_name) = self.control_treatment_name {
@@ -835,7 +835,7 @@ pub mod experiment {
         }
     }
 
-    impl ::codec::DeserializeValue for OnlineAbConfigObject {
+    impl crate::codec::DeserializeValue for OnlineAbConfigObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OnlineAbConfigObject, D::Error> {
@@ -852,8 +852,8 @@ pub mod experiment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut control_treatment_name: Option<::Value<String>> = None;
-                    let mut treatment_weights: Option<::ValueList<TreatmentToWeight>> = None;
+                    let mut control_treatment_name: Option<crate::Value<String>> = None;
+                    let mut treatment_weights: Option<crate::ValueList<TreatmentToWeight>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -888,25 +888,25 @@ pub mod experiment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`Feature`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmentobject.html#cfn-evidently-experiment-treatmentobject-feature).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub feature: ::Value<String>,
+        pub feature: crate::Value<String>,
         /// Property [`TreatmentName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmentobject.html#cfn-evidently-experiment-treatmentobject-treatmentname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub treatment_name: ::Value<String>,
+        pub treatment_name: crate::Value<String>,
         /// Property [`Variation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmentobject.html#cfn-evidently-experiment-treatmentobject-variation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variation: ::Value<String>,
+        pub variation: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TreatmentObject {
+    impl crate::codec::SerializeValue for TreatmentObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -923,7 +923,7 @@ pub mod experiment {
         }
     }
 
-    impl ::codec::DeserializeValue for TreatmentObject {
+    impl crate::codec::DeserializeValue for TreatmentObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TreatmentObject, D::Error> {
@@ -940,10 +940,10 @@ pub mod experiment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<::Value<String>> = None;
-                    let mut feature: Option<::Value<String>> = None;
-                    let mut treatment_name: Option<::Value<String>> = None;
-                    let mut variation: Option<::Value<String>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut feature: Option<crate::Value<String>> = None;
+                    let mut treatment_name: Option<crate::Value<String>> = None;
+                    let mut variation: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -987,15 +987,15 @@ pub mod experiment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub split_weight: ::Value<u32>,
+        pub split_weight: crate::Value<u32>,
         /// Property [`Treatment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmenttoweight.html#cfn-evidently-experiment-treatmenttoweight-treatment).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub treatment: ::Value<String>,
+        pub treatment: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TreatmentToWeight {
+    impl crate::codec::SerializeValue for TreatmentToWeight {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1008,7 +1008,7 @@ pub mod experiment {
         }
     }
 
-    impl ::codec::DeserializeValue for TreatmentToWeight {
+    impl crate::codec::DeserializeValue for TreatmentToWeight {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TreatmentToWeight, D::Error> {
@@ -1025,8 +1025,8 @@ pub mod experiment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut split_weight: Option<::Value<u32>> = None;
-                    let mut treatment: Option<::Value<String>> = None;
+                    let mut split_weight: Option<crate::Value<u32>> = None;
+                    let mut treatment: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1066,15 +1066,15 @@ pub mod feature {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entity_id: Option<::Value<String>>,
+        pub entity_id: Option<crate::Value<String>>,
         /// Property [`Variation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-entityoverride.html#cfn-evidently-feature-entityoverride-variation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variation: Option<::Value<String>>,
+        pub variation: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for EntityOverride {
+    impl crate::codec::SerializeValue for EntityOverride {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref entity_id) = self.entity_id {
@@ -1087,7 +1087,7 @@ pub mod feature {
         }
     }
 
-    impl ::codec::DeserializeValue for EntityOverride {
+    impl crate::codec::DeserializeValue for EntityOverride {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EntityOverride, D::Error> {
@@ -1104,8 +1104,8 @@ pub mod feature {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut entity_id: Option<::Value<String>> = None;
-                    let mut variation: Option<::Value<String>> = None;
+                    let mut entity_id: Option<crate::Value<String>> = None;
+                    let mut variation: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1139,30 +1139,30 @@ pub mod feature {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub boolean_value: Option<::Value<bool>>,
+        pub boolean_value: Option<crate::Value<bool>>,
         /// Property [`DoubleValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-doublevalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub double_value: Option<::Value<f64>>,
+        pub double_value: Option<crate::Value<f64>>,
         /// Property [`LongValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-longvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub long_value: Option<::Value<f64>>,
+        pub long_value: Option<crate::Value<f64>>,
         /// Property [`StringValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-stringvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub string_value: Option<::Value<String>>,
+        pub string_value: Option<crate::Value<String>>,
         /// Property [`VariationName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-variationname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variation_name: Option<::Value<String>>,
+        pub variation_name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for VariationObject {
+    impl crate::codec::SerializeValue for VariationObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref boolean_value) = self.boolean_value {
@@ -1192,7 +1192,7 @@ pub mod feature {
         }
     }
 
-    impl ::codec::DeserializeValue for VariationObject {
+    impl crate::codec::DeserializeValue for VariationObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VariationObject, D::Error> {
@@ -1209,11 +1209,11 @@ pub mod feature {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut boolean_value: Option<::Value<bool>> = None;
-                    let mut double_value: Option<::Value<f64>> = None;
-                    let mut long_value: Option<::Value<f64>> = None;
-                    let mut string_value: Option<::Value<String>> = None;
-                    let mut variation_name: Option<::Value<String>> = None;
+                    let mut boolean_value: Option<crate::Value<bool>> = None;
+                    let mut double_value: Option<crate::Value<f64>> = None;
+                    let mut long_value: Option<crate::Value<f64>> = None;
+                    let mut string_value: Option<crate::Value<String>> = None;
+                    let mut variation_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1263,15 +1263,15 @@ pub mod launch {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_name: ::Value<String>,
+        pub group_name: crate::Value<String>,
         /// Property [`SplitWeight`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-grouptoweight.html#cfn-evidently-launch-grouptoweight-splitweight).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub split_weight: ::Value<u32>,
+        pub split_weight: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for GroupToWeight {
+    impl crate::codec::SerializeValue for GroupToWeight {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "GroupName", &self.group_name)?;
@@ -1284,7 +1284,7 @@ pub mod launch {
         }
     }
 
-    impl ::codec::DeserializeValue for GroupToWeight {
+    impl crate::codec::DeserializeValue for GroupToWeight {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GroupToWeight, D::Error> {
@@ -1301,8 +1301,8 @@ pub mod launch {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut group_name: Option<::Value<String>> = None;
-                    let mut split_weight: Option<::Value<u32>> = None;
+                    let mut group_name: Option<crate::Value<String>> = None;
+                    let mut split_weight: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1338,25 +1338,25 @@ pub mod launch {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`Feature`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-launchgroupobject.html#cfn-evidently-launch-launchgroupobject-feature).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub feature: ::Value<String>,
+        pub feature: crate::Value<String>,
         /// Property [`GroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-launchgroupobject.html#cfn-evidently-launch-launchgroupobject-groupname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_name: ::Value<String>,
+        pub group_name: crate::Value<String>,
         /// Property [`Variation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-launchgroupobject.html#cfn-evidently-launch-launchgroupobject-variation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variation: ::Value<String>,
+        pub variation: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for LaunchGroupObject {
+    impl crate::codec::SerializeValue for LaunchGroupObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -1369,7 +1369,7 @@ pub mod launch {
         }
     }
 
-    impl ::codec::DeserializeValue for LaunchGroupObject {
+    impl crate::codec::DeserializeValue for LaunchGroupObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LaunchGroupObject, D::Error> {
@@ -1386,10 +1386,10 @@ pub mod launch {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<::Value<String>> = None;
-                    let mut feature: Option<::Value<String>> = None;
-                    let mut group_name: Option<::Value<String>> = None;
-                    let mut variation: Option<::Value<String>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut feature: Option<crate::Value<String>> = None;
+                    let mut group_name: Option<crate::Value<String>> = None;
+                    let mut variation: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1433,30 +1433,30 @@ pub mod launch {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entity_id_key: ::Value<String>,
+        pub entity_id_key: crate::Value<String>,
         /// Property [`EventPattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-metricdefinitionobject.html#cfn-evidently-launch-metricdefinitionobject-eventpattern).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_pattern: ::Value<String>,
+        pub event_pattern: crate::Value<String>,
         /// Property [`MetricName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-metricdefinitionobject.html#cfn-evidently-launch-metricdefinitionobject-metricname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_name: ::Value<String>,
+        pub metric_name: crate::Value<String>,
         /// Property [`UnitLabel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-metricdefinitionobject.html#cfn-evidently-launch-metricdefinitionobject-unitlabel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unit_label: Option<::Value<String>>,
+        pub unit_label: Option<crate::Value<String>>,
         /// Property [`ValueKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-metricdefinitionobject.html#cfn-evidently-launch-metricdefinitionobject-valuekey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_key: ::Value<String>,
+        pub value_key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for MetricDefinitionObject {
+    impl crate::codec::SerializeValue for MetricDefinitionObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1478,7 +1478,7 @@ pub mod launch {
         }
     }
 
-    impl ::codec::DeserializeValue for MetricDefinitionObject {
+    impl crate::codec::DeserializeValue for MetricDefinitionObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MetricDefinitionObject, D::Error> {
@@ -1495,11 +1495,11 @@ pub mod launch {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut entity_id_key: Option<::Value<String>> = None;
-                    let mut event_pattern: Option<::Value<String>> = None;
-                    let mut metric_name: Option<::Value<String>> = None;
-                    let mut unit_label: Option<::Value<String>> = None;
-                    let mut value_key: Option<::Value<String>> = None;
+                    let mut entity_id_key: Option<crate::Value<String>> = None;
+                    let mut event_pattern: Option<crate::Value<String>> = None;
+                    let mut metric_name: Option<crate::Value<String>> = None;
+                    let mut unit_label: Option<crate::Value<String>> = None;
+                    let mut value_key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1549,15 +1549,15 @@ pub mod launch {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_weights: ::ValueList<GroupToWeight>,
+        pub group_weights: crate::ValueList<GroupToWeight>,
         /// Property [`StartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-stepconfig.html#cfn-evidently-launch-stepconfig-starttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_time: ::Value<String>,
+        pub start_time: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for StepConfig {
+    impl crate::codec::SerializeValue for StepConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1570,7 +1570,7 @@ pub mod launch {
         }
     }
 
-    impl ::codec::DeserializeValue for StepConfig {
+    impl crate::codec::DeserializeValue for StepConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StepConfig, D::Error> {
             struct Visitor;
 
@@ -1585,8 +1585,8 @@ pub mod launch {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut group_weights: Option<::ValueList<GroupToWeight>> = None;
-                    let mut start_time: Option<::Value<String>> = None;
+                    let mut group_weights: Option<crate::ValueList<GroupToWeight>> = None;
+                    let mut start_time: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1626,15 +1626,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_group: Option<::Value<String>>,
+        pub log_group: Option<crate::Value<String>>,
         /// Property [`S3`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-project-datadeliveryobject.html#cfn-evidently-project-datadeliveryobject-s3).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3: Option<::Value<S3Destination>>,
+        pub s3: Option<crate::Value<S3Destination>>,
     }
 
-    impl ::codec::SerializeValue for DataDeliveryObject {
+    impl crate::codec::SerializeValue for DataDeliveryObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref log_group) = self.log_group {
@@ -1647,7 +1647,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for DataDeliveryObject {
+    impl crate::codec::DeserializeValue for DataDeliveryObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataDeliveryObject, D::Error> {
@@ -1664,8 +1664,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut log_group: Option<::Value<String>> = None;
-                    let mut s3: Option<::Value<S3Destination>> = None;
+                    let mut log_group: Option<crate::Value<String>> = None;
+                    let mut s3: Option<crate::Value<S3Destination>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1699,15 +1699,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: ::Value<String>,
+        pub bucket_name: crate::Value<String>,
         /// Property [`Prefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-project-s3destination.html#cfn-evidently-project-s3destination-prefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prefix: Option<::Value<String>>,
+        pub prefix: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3Destination {
+    impl crate::codec::SerializeValue for S3Destination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
@@ -1718,7 +1718,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Destination {
+    impl crate::codec::DeserializeValue for S3Destination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3Destination, D::Error> {
@@ -1735,8 +1735,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<::Value<String>> = None;
-                    let mut prefix: Option<::Value<String>> = None;
+                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut prefix: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

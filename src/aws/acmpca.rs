@@ -13,37 +13,37 @@ pub struct CertificateProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub api_passthrough: Option<::Value<self::certificate::ApiPassthrough>>,
+    pub api_passthrough: Option<crate::Value<self::certificate::ApiPassthrough>>,
     /// Property [`CertificateAuthorityArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-certificateauthorityarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_authority_arn: ::Value<String>,
+    pub certificate_authority_arn: crate::Value<String>,
     /// Property [`CertificateSigningRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-certificatesigningrequest).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_signing_request: ::Value<String>,
+    pub certificate_signing_request: crate::Value<String>,
     /// Property [`SigningAlgorithm`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-signingalgorithm).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub signing_algorithm: ::Value<String>,
+    pub signing_algorithm: crate::Value<String>,
     /// Property [`TemplateArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-templatearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub template_arn: Option<::Value<String>>,
+    pub template_arn: Option<crate::Value<String>>,
     /// Property [`Validity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-validity).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub validity: ::Value<self::certificate::Validity>,
+    pub validity: crate::Value<self::certificate::Validity>,
     /// Property [`ValidityNotBefore`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-validitynotbefore).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub validity_not_before: Option<::Value<self::certificate::Validity>>,
+    pub validity_not_before: Option<crate::Value<self::certificate::Validity>>,
 }
 
 impl ::serde::Serialize for CertificateProperties {
@@ -101,13 +101,13 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut api_passthrough: Option<::Value<self::certificate::ApiPassthrough>> = None;
-                let mut certificate_authority_arn: Option<::Value<String>> = None;
-                let mut certificate_signing_request: Option<::Value<String>> = None;
-                let mut signing_algorithm: Option<::Value<String>> = None;
-                let mut template_arn: Option<::Value<String>> = None;
-                let mut validity: Option<::Value<self::certificate::Validity>> = None;
-                let mut validity_not_before: Option<::Value<self::certificate::Validity>> = None;
+                let mut api_passthrough: Option<crate::Value<self::certificate::ApiPassthrough>> = None;
+                let mut certificate_authority_arn: Option<crate::Value<String>> = None;
+                let mut certificate_signing_request: Option<crate::Value<String>> = None;
+                let mut signing_algorithm: Option<crate::Value<String>> = None;
+                let mut template_arn: Option<crate::Value<String>> = None;
+                let mut validity: Option<crate::Value<self::certificate::Validity>> = None;
+                let mut validity_not_before: Option<crate::Value<self::certificate::Validity>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -158,7 +158,7 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
     }
 }
 
-impl ::Resource for Certificate {
+impl crate::Resource for Certificate {
     type Properties = CertificateProperties;
     const TYPE: &'static str = "AWS::ACMPCA::Certificate";
     fn properties(&self) -> &CertificateProperties {
@@ -169,7 +169,7 @@ impl ::Resource for Certificate {
     }
 }
 
-impl ::private::Sealed for Certificate {}
+impl crate::private::Sealed for Certificate {}
 
 impl From<CertificateProperties> for Certificate {
     fn from(properties: CertificateProperties) -> Certificate {
@@ -190,43 +190,43 @@ pub struct CertificateAuthorityProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub csr_extensions: Option<::Value<self::certificate_authority::CsrExtensions>>,
+    pub csr_extensions: Option<crate::Value<self::certificate_authority::CsrExtensions>>,
     /// Property [`KeyAlgorithm`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-keyalgorithm).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub key_algorithm: ::Value<String>,
+    pub key_algorithm: crate::Value<String>,
     /// Property [`KeyStorageSecurityStandard`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-keystoragesecuritystandard).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub key_storage_security_standard: Option<::Value<String>>,
+    pub key_storage_security_standard: Option<crate::Value<String>>,
     /// Property [`RevocationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-revocationconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub revocation_configuration:
-        Option<::Value<self::certificate_authority::RevocationConfiguration>>,
+        Option<crate::Value<self::certificate_authority::RevocationConfiguration>>,
     /// Property [`SigningAlgorithm`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-signingalgorithm).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub signing_algorithm: ::Value<String>,
+    pub signing_algorithm: crate::Value<String>,
     /// Property [`Subject`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-subject).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subject: ::Value<self::certificate_authority::Subject>,
+    pub subject: crate::Value<self::certificate_authority::Subject>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for CertificateAuthorityProperties {
@@ -282,17 +282,17 @@ impl<'de> ::serde::Deserialize<'de> for CertificateAuthorityProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut csr_extensions: Option<
-                    ::Value<self::certificate_authority::CsrExtensions>,
+                    crate::Value<self::certificate_authority::CsrExtensions>,
                 > = None;
-                let mut key_algorithm: Option<::Value<String>> = None;
-                let mut key_storage_security_standard: Option<::Value<String>> = None;
+                let mut key_algorithm: Option<crate::Value<String>> = None;
+                let mut key_storage_security_standard: Option<crate::Value<String>> = None;
                 let mut revocation_configuration: Option<
-                    ::Value<self::certificate_authority::RevocationConfiguration>,
+                    crate::Value<self::certificate_authority::RevocationConfiguration>,
                 > = None;
-                let mut signing_algorithm: Option<::Value<String>> = None;
-                let mut subject: Option<::Value<self::certificate_authority::Subject>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut signing_algorithm: Option<crate::Value<String>> = None;
+                let mut subject: Option<crate::Value<self::certificate_authority::Subject>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -345,7 +345,7 @@ impl<'de> ::serde::Deserialize<'de> for CertificateAuthorityProperties {
     }
 }
 
-impl ::Resource for CertificateAuthority {
+impl crate::Resource for CertificateAuthority {
     type Properties = CertificateAuthorityProperties;
     const TYPE: &'static str = "AWS::ACMPCA::CertificateAuthority";
     fn properties(&self) -> &CertificateAuthorityProperties {
@@ -356,7 +356,7 @@ impl ::Resource for CertificateAuthority {
     }
 }
 
-impl ::private::Sealed for CertificateAuthority {}
+impl crate::private::Sealed for CertificateAuthority {}
 
 impl From<CertificateAuthorityProperties> for CertificateAuthority {
     fn from(properties: CertificateAuthorityProperties) -> CertificateAuthority {
@@ -377,22 +377,22 @@ pub struct CertificateAuthorityActivationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate: ::Value<String>,
+    pub certificate: crate::Value<String>,
     /// Property [`CertificateAuthorityArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-certificateauthorityarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_authority_arn: ::Value<String>,
+    pub certificate_authority_arn: crate::Value<String>,
     /// Property [`CertificateChain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-certificatechain).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate_chain: Option<::Value<String>>,
+    pub certificate_chain: Option<crate::Value<String>>,
     /// Property [`Status`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-status).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub status: Option<::Value<String>>,
+    pub status: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for CertificateAuthorityActivationProperties {
@@ -438,10 +438,10 @@ impl<'de> ::serde::Deserialize<'de> for CertificateAuthorityActivationProperties
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut certificate: Option<::Value<String>> = None;
-                let mut certificate_authority_arn: Option<::Value<String>> = None;
-                let mut certificate_chain: Option<::Value<String>> = None;
-                let mut status: Option<::Value<String>> = None;
+                let mut certificate: Option<crate::Value<String>> = None;
+                let mut certificate_authority_arn: Option<crate::Value<String>> = None;
+                let mut certificate_chain: Option<crate::Value<String>> = None;
+                let mut status: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -477,7 +477,7 @@ impl<'de> ::serde::Deserialize<'de> for CertificateAuthorityActivationProperties
     }
 }
 
-impl ::Resource for CertificateAuthorityActivation {
+impl crate::Resource for CertificateAuthorityActivation {
     type Properties = CertificateAuthorityActivationProperties;
     const TYPE: &'static str = "AWS::ACMPCA::CertificateAuthorityActivation";
     fn properties(&self) -> &CertificateAuthorityActivationProperties {
@@ -488,7 +488,7 @@ impl ::Resource for CertificateAuthorityActivation {
     }
 }
 
-impl ::private::Sealed for CertificateAuthorityActivation {}
+impl crate::private::Sealed for CertificateAuthorityActivation {}
 
 impl From<CertificateAuthorityActivationProperties> for CertificateAuthorityActivation {
     fn from(
@@ -511,22 +511,22 @@ pub struct PermissionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub actions: ::ValueList<String>,
+    pub actions: crate::ValueList<String>,
     /// Property [`CertificateAuthorityArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-certificateauthorityarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_authority_arn: ::Value<String>,
+    pub certificate_authority_arn: crate::Value<String>,
     /// Property [`Principal`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-principal).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub principal: ::Value<String>,
+    pub principal: crate::Value<String>,
     /// Property [`SourceAccount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-sourceaccount).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub source_account: Option<::Value<String>>,
+    pub source_account: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for PermissionProperties {
@@ -561,10 +561,10 @@ impl<'de> ::serde::Deserialize<'de> for PermissionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut actions: Option<::ValueList<String>> = None;
-                let mut certificate_authority_arn: Option<::Value<String>> = None;
-                let mut principal: Option<::Value<String>> = None;
-                let mut source_account: Option<::Value<String>> = None;
+                let mut actions: Option<crate::ValueList<String>> = None;
+                let mut certificate_authority_arn: Option<crate::Value<String>> = None;
+                let mut principal: Option<crate::Value<String>> = None;
+                let mut source_account: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -599,7 +599,7 @@ impl<'de> ::serde::Deserialize<'de> for PermissionProperties {
     }
 }
 
-impl ::Resource for Permission {
+impl crate::Resource for Permission {
     type Properties = PermissionProperties;
     const TYPE: &'static str = "AWS::ACMPCA::Permission";
     fn properties(&self) -> &PermissionProperties {
@@ -610,7 +610,7 @@ impl ::Resource for Permission {
     }
 }
 
-impl ::private::Sealed for Permission {}
+impl crate::private::Sealed for Permission {}
 
 impl From<PermissionProperties> for Permission {
     fn from(properties: PermissionProperties) -> Permission {
@@ -628,15 +628,15 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub extensions: Option<::Value<Extensions>>,
+        pub extensions: Option<crate::Value<Extensions>>,
         /// Property [`Subject`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-apipassthrough.html#cfn-acmpca-certificate-apipassthrough-subject).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subject: Option<::Value<Subject>>,
+        pub subject: Option<crate::Value<Subject>>,
     }
 
-    impl ::codec::SerializeValue for ApiPassthrough {
+    impl crate::codec::SerializeValue for ApiPassthrough {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref extensions) = self.extensions {
@@ -649,7 +649,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for ApiPassthrough {
+    impl crate::codec::DeserializeValue for ApiPassthrough {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ApiPassthrough, D::Error> {
@@ -666,8 +666,8 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut extensions: Option<::Value<Extensions>> = None;
-                    let mut subject: Option<::Value<Subject>> = None;
+                    let mut extensions: Option<crate::Value<Extensions>> = None;
+                    let mut subject: Option<crate::Value<Subject>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -701,15 +701,15 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub object_identifier: ::Value<String>,
+        pub object_identifier: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-customattribute.html#cfn-acmpca-certificate-customattribute-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CustomAttribute {
+    impl crate::codec::SerializeValue for CustomAttribute {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -722,7 +722,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomAttribute {
+    impl crate::codec::DeserializeValue for CustomAttribute {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomAttribute, D::Error> {
@@ -739,8 +739,8 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object_identifier: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut object_identifier: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -775,20 +775,20 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub critical: Option<::Value<bool>>,
+        pub critical: Option<crate::Value<bool>>,
         /// Property [`ObjectIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-customextension.html#cfn-acmpca-certificate-customextension-objectidentifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub object_identifier: ::Value<String>,
+        pub object_identifier: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-customextension.html#cfn-acmpca-certificate-customextension-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CustomExtension {
+    impl crate::codec::SerializeValue for CustomExtension {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref critical) = self.critical {
@@ -804,7 +804,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomExtension {
+    impl crate::codec::DeserializeValue for CustomExtension {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomExtension, D::Error> {
@@ -821,9 +821,9 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut critical: Option<::Value<bool>> = None;
-                    let mut object_identifier: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut critical: Option<crate::Value<bool>> = None;
+                    let mut object_identifier: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -862,15 +862,15 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub name_assigner: ::Value<String>,
+        pub name_assigner: crate::Value<String>,
         /// Property [`PartyName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-edipartyname.html#cfn-acmpca-certificate-edipartyname-partyname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub party_name: ::Value<String>,
+        pub party_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for EdiPartyName {
+    impl crate::codec::SerializeValue for EdiPartyName {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -883,7 +883,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for EdiPartyName {
+    impl crate::codec::DeserializeValue for EdiPartyName {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EdiPartyName, D::Error> {
             struct Visitor;
 
@@ -898,8 +898,8 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name_assigner: Option<::Value<String>> = None;
-                    let mut party_name: Option<::Value<String>> = None;
+                    let mut name_assigner: Option<crate::Value<String>> = None;
+                    let mut party_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -935,15 +935,15 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub extended_key_usage_object_identifier: Option<::Value<String>>,
+        pub extended_key_usage_object_identifier: Option<crate::Value<String>>,
         /// Property [`ExtendedKeyUsageType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extendedkeyusage.html#cfn-acmpca-certificate-extendedkeyusage-extendedkeyusagetype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub extended_key_usage_type: Option<::Value<String>>,
+        pub extended_key_usage_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ExtendedKeyUsage {
+    impl crate::codec::SerializeValue for ExtendedKeyUsage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref extended_key_usage_object_identifier) =
@@ -966,7 +966,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for ExtendedKeyUsage {
+    impl crate::codec::DeserializeValue for ExtendedKeyUsage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExtendedKeyUsage, D::Error> {
@@ -983,8 +983,8 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut extended_key_usage_object_identifier: Option<::Value<String>> = None;
-                    let mut extended_key_usage_type: Option<::Value<String>> = None;
+                    let mut extended_key_usage_object_identifier: Option<crate::Value<String>> = None;
+                    let mut extended_key_usage_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1020,30 +1020,30 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub certificate_policies: Option<::ValueList<PolicyInformation>>,
+        pub certificate_policies: Option<crate::ValueList<PolicyInformation>>,
         /// Property [`CustomExtensions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-customextensions).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub custom_extensions: Option<::ValueList<CustomExtension>>,
+        pub custom_extensions: Option<crate::ValueList<CustomExtension>>,
         /// Property [`ExtendedKeyUsage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-extendedkeyusage).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub extended_key_usage: Option<::ValueList<ExtendedKeyUsage>>,
+        pub extended_key_usage: Option<crate::ValueList<ExtendedKeyUsage>>,
         /// Property [`KeyUsage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-keyusage).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_usage: Option<::Value<KeyUsage>>,
+        pub key_usage: Option<crate::Value<KeyUsage>>,
         /// Property [`SubjectAlternativeNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-subjectalternativenames).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subject_alternative_names: Option<::ValueList<GeneralName>>,
+        pub subject_alternative_names: Option<crate::ValueList<GeneralName>>,
     }
 
-    impl ::codec::SerializeValue for Extensions {
+    impl crate::codec::SerializeValue for Extensions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref certificate_policies) = self.certificate_policies {
@@ -1081,7 +1081,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for Extensions {
+    impl crate::codec::DeserializeValue for Extensions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Extensions, D::Error> {
             struct Visitor;
 
@@ -1096,11 +1096,11 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut certificate_policies: Option<::ValueList<PolicyInformation>> = None;
-                    let mut custom_extensions: Option<::ValueList<CustomExtension>> = None;
-                    let mut extended_key_usage: Option<::ValueList<ExtendedKeyUsage>> = None;
-                    let mut key_usage: Option<::Value<KeyUsage>> = None;
-                    let mut subject_alternative_names: Option<::ValueList<GeneralName>> = None;
+                    let mut certificate_policies: Option<crate::ValueList<PolicyInformation>> = None;
+                    let mut custom_extensions: Option<crate::ValueList<CustomExtension>> = None;
+                    let mut extended_key_usage: Option<crate::ValueList<ExtendedKeyUsage>> = None;
+                    let mut key_usage: Option<crate::Value<KeyUsage>> = None;
+                    let mut subject_alternative_names: Option<crate::ValueList<GeneralName>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1148,45 +1148,45 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub directory_name: Option<::Value<Subject>>,
+        pub directory_name: Option<crate::Value<Subject>>,
         /// Property [`DnsName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-dnsname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub dns_name: Option<::Value<String>>,
+        pub dns_name: Option<crate::Value<String>>,
         /// Property [`EdiPartyName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-edipartyname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub edi_party_name: Option<::Value<EdiPartyName>>,
+        pub edi_party_name: Option<crate::Value<EdiPartyName>>,
         /// Property [`IpAddress`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-ipaddress).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub ip_address: Option<::Value<String>>,
+        pub ip_address: Option<crate::Value<String>>,
         /// Property [`OtherName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-othername).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub other_name: Option<::Value<OtherName>>,
+        pub other_name: Option<crate::Value<OtherName>>,
         /// Property [`RegisteredId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-registeredid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub registered_id: Option<::Value<String>>,
+        pub registered_id: Option<crate::Value<String>>,
         /// Property [`Rfc822Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-rfc822name).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub rfc822_name: Option<::Value<String>>,
+        pub rfc822_name: Option<crate::Value<String>>,
         /// Property [`UniformResourceIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-uniformresourceidentifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub uniform_resource_identifier: Option<::Value<String>>,
+        pub uniform_resource_identifier: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for GeneralName {
+    impl crate::codec::SerializeValue for GeneralName {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref directory_name) = self.directory_name {
@@ -1233,7 +1233,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for GeneralName {
+    impl crate::codec::DeserializeValue for GeneralName {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GeneralName, D::Error> {
             struct Visitor;
 
@@ -1248,14 +1248,14 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut directory_name: Option<::Value<Subject>> = None;
-                    let mut dns_name: Option<::Value<String>> = None;
-                    let mut edi_party_name: Option<::Value<EdiPartyName>> = None;
-                    let mut ip_address: Option<::Value<String>> = None;
-                    let mut other_name: Option<::Value<OtherName>> = None;
-                    let mut registered_id: Option<::Value<String>> = None;
-                    let mut rfc822_name: Option<::Value<String>> = None;
-                    let mut uniform_resource_identifier: Option<::Value<String>> = None;
+                    let mut directory_name: Option<crate::Value<Subject>> = None;
+                    let mut dns_name: Option<crate::Value<String>> = None;
+                    let mut edi_party_name: Option<crate::Value<EdiPartyName>> = None;
+                    let mut ip_address: Option<crate::Value<String>> = None;
+                    let mut other_name: Option<crate::Value<OtherName>> = None;
+                    let mut registered_id: Option<crate::Value<String>> = None;
+                    let mut rfc822_name: Option<crate::Value<String>> = None;
+                    let mut uniform_resource_identifier: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1314,50 +1314,50 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub crl_sign: Option<::Value<bool>>,
+        pub crl_sign: Option<crate::Value<bool>>,
         /// Property [`DataEncipherment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-dataencipherment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub data_encipherment: Option<::Value<bool>>,
+        pub data_encipherment: Option<crate::Value<bool>>,
         /// Property [`DecipherOnly`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-decipheronly).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub decipher_only: Option<::Value<bool>>,
+        pub decipher_only: Option<crate::Value<bool>>,
         /// Property [`DigitalSignature`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-digitalsignature).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub digital_signature: Option<::Value<bool>>,
+        pub digital_signature: Option<crate::Value<bool>>,
         /// Property [`EncipherOnly`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-encipheronly).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub encipher_only: Option<::Value<bool>>,
+        pub encipher_only: Option<crate::Value<bool>>,
         /// Property [`KeyAgreement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-keyagreement).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_agreement: Option<::Value<bool>>,
+        pub key_agreement: Option<crate::Value<bool>>,
         /// Property [`KeyCertSign`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-keycertsign).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_cert_sign: Option<::Value<bool>>,
+        pub key_cert_sign: Option<crate::Value<bool>>,
         /// Property [`KeyEncipherment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-keyencipherment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_encipherment: Option<::Value<bool>>,
+        pub key_encipherment: Option<crate::Value<bool>>,
         /// Property [`NonRepudiation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-nonrepudiation).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub non_repudiation: Option<::Value<bool>>,
+        pub non_repudiation: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for KeyUsage {
+    impl crate::codec::SerializeValue for KeyUsage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref crl_sign) = self.crl_sign {
@@ -1423,7 +1423,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for KeyUsage {
+    impl crate::codec::DeserializeValue for KeyUsage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KeyUsage, D::Error> {
             struct Visitor;
 
@@ -1438,15 +1438,15 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut crl_sign: Option<::Value<bool>> = None;
-                    let mut data_encipherment: Option<::Value<bool>> = None;
-                    let mut decipher_only: Option<::Value<bool>> = None;
-                    let mut digital_signature: Option<::Value<bool>> = None;
-                    let mut encipher_only: Option<::Value<bool>> = None;
-                    let mut key_agreement: Option<::Value<bool>> = None;
-                    let mut key_cert_sign: Option<::Value<bool>> = None;
-                    let mut key_encipherment: Option<::Value<bool>> = None;
-                    let mut non_repudiation: Option<::Value<bool>> = None;
+                    let mut crl_sign: Option<crate::Value<bool>> = None;
+                    let mut data_encipherment: Option<crate::Value<bool>> = None;
+                    let mut decipher_only: Option<crate::Value<bool>> = None;
+                    let mut digital_signature: Option<crate::Value<bool>> = None;
+                    let mut encipher_only: Option<crate::Value<bool>> = None;
+                    let mut key_agreement: Option<crate::Value<bool>> = None;
+                    let mut key_cert_sign: Option<crate::Value<bool>> = None;
+                    let mut key_encipherment: Option<crate::Value<bool>> = None;
+                    let mut non_repudiation: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1508,15 +1508,15 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub type_id: ::Value<String>,
+        pub type_id: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-othername.html#cfn-acmpca-certificate-othername-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for OtherName {
+    impl crate::codec::SerializeValue for OtherName {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeId", &self.type_id)?;
@@ -1525,7 +1525,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for OtherName {
+    impl crate::codec::DeserializeValue for OtherName {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OtherName, D::Error> {
             struct Visitor;
 
@@ -1540,8 +1540,8 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut type_id: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut type_id: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1575,15 +1575,15 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cert_policy_id: ::Value<String>,
+        pub cert_policy_id: crate::Value<String>,
         /// Property [`PolicyQualifiers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyinformation.html#cfn-acmpca-certificate-policyinformation-policyqualifiers).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub policy_qualifiers: Option<::ValueList<PolicyQualifierInfo>>,
+        pub policy_qualifiers: Option<crate::ValueList<PolicyQualifierInfo>>,
     }
 
-    impl ::codec::SerializeValue for PolicyInformation {
+    impl crate::codec::SerializeValue for PolicyInformation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1602,7 +1602,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for PolicyInformation {
+    impl crate::codec::DeserializeValue for PolicyInformation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PolicyInformation, D::Error> {
@@ -1619,8 +1619,8 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cert_policy_id: Option<::Value<String>> = None;
-                    let mut policy_qualifiers: Option<::ValueList<PolicyQualifierInfo>> = None;
+                    let mut cert_policy_id: Option<crate::Value<String>> = None;
+                    let mut policy_qualifiers: Option<crate::ValueList<PolicyQualifierInfo>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1655,15 +1655,15 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub policy_qualifier_id: ::Value<String>,
+        pub policy_qualifier_id: crate::Value<String>,
         /// Property [`Qualifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyqualifierinfo.html#cfn-acmpca-certificate-policyqualifierinfo-qualifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub qualifier: ::Value<Qualifier>,
+        pub qualifier: crate::Value<Qualifier>,
     }
 
-    impl ::codec::SerializeValue for PolicyQualifierInfo {
+    impl crate::codec::SerializeValue for PolicyQualifierInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1676,7 +1676,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for PolicyQualifierInfo {
+    impl crate::codec::DeserializeValue for PolicyQualifierInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PolicyQualifierInfo, D::Error> {
@@ -1693,8 +1693,8 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut policy_qualifier_id: Option<::Value<String>> = None;
-                    let mut qualifier: Option<::Value<Qualifier>> = None;
+                    let mut policy_qualifier_id: Option<crate::Value<String>> = None;
+                    let mut qualifier: Option<crate::Value<Qualifier>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1730,10 +1730,10 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cps_uri: ::Value<String>,
+        pub cps_uri: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Qualifier {
+    impl crate::codec::SerializeValue for Qualifier {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CpsUri", &self.cps_uri)?;
@@ -1741,7 +1741,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for Qualifier {
+    impl crate::codec::DeserializeValue for Qualifier {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Qualifier, D::Error> {
             struct Visitor;
 
@@ -1756,7 +1756,7 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cps_uri: Option<::Value<String>> = None;
+                    let mut cps_uri: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1786,80 +1786,80 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub common_name: Option<::Value<String>>,
+        pub common_name: Option<crate::Value<String>>,
         /// Property [`Country`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-country).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub country: Option<::Value<String>>,
+        pub country: Option<crate::Value<String>>,
         /// Property [`CustomAttributes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-customattributes).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub custom_attributes: Option<::ValueList<CustomAttribute>>,
+        pub custom_attributes: Option<crate::ValueList<CustomAttribute>>,
         /// Property [`DistinguishedNameQualifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-distinguishednamequalifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub distinguished_name_qualifier: Option<::Value<String>>,
+        pub distinguished_name_qualifier: Option<crate::Value<String>>,
         /// Property [`GenerationQualifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-generationqualifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub generation_qualifier: Option<::Value<String>>,
+        pub generation_qualifier: Option<crate::Value<String>>,
         /// Property [`GivenName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-givenname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub given_name: Option<::Value<String>>,
+        pub given_name: Option<crate::Value<String>>,
         /// Property [`Initials`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-initials).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub initials: Option<::Value<String>>,
+        pub initials: Option<crate::Value<String>>,
         /// Property [`Locality`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-locality).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub locality: Option<::Value<String>>,
+        pub locality: Option<crate::Value<String>>,
         /// Property [`Organization`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-organization).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub organization: Option<::Value<String>>,
+        pub organization: Option<crate::Value<String>>,
         /// Property [`OrganizationalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-organizationalunit).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub organizational_unit: Option<::Value<String>>,
+        pub organizational_unit: Option<crate::Value<String>>,
         /// Property [`Pseudonym`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-pseudonym).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub pseudonym: Option<::Value<String>>,
+        pub pseudonym: Option<crate::Value<String>>,
         /// Property [`SerialNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-serialnumber).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub serial_number: Option<::Value<String>>,
+        pub serial_number: Option<crate::Value<String>>,
         /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-state).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub state: Option<::Value<String>>,
+        pub state: Option<crate::Value<String>>,
         /// Property [`Surname`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-surname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub surname: Option<::Value<String>>,
+        pub surname: Option<crate::Value<String>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-title).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub title: Option<::Value<String>>,
+        pub title: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Subject {
+    impl crate::codec::SerializeValue for Subject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref common_name) = self.common_name {
@@ -1935,7 +1935,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for Subject {
+    impl crate::codec::DeserializeValue for Subject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Subject, D::Error> {
             struct Visitor;
 
@@ -1950,21 +1950,21 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut common_name: Option<::Value<String>> = None;
-                    let mut country: Option<::Value<String>> = None;
-                    let mut custom_attributes: Option<::ValueList<CustomAttribute>> = None;
-                    let mut distinguished_name_qualifier: Option<::Value<String>> = None;
-                    let mut generation_qualifier: Option<::Value<String>> = None;
-                    let mut given_name: Option<::Value<String>> = None;
-                    let mut initials: Option<::Value<String>> = None;
-                    let mut locality: Option<::Value<String>> = None;
-                    let mut organization: Option<::Value<String>> = None;
-                    let mut organizational_unit: Option<::Value<String>> = None;
-                    let mut pseudonym: Option<::Value<String>> = None;
-                    let mut serial_number: Option<::Value<String>> = None;
-                    let mut state: Option<::Value<String>> = None;
-                    let mut surname: Option<::Value<String>> = None;
-                    let mut title: Option<::Value<String>> = None;
+                    let mut common_name: Option<crate::Value<String>> = None;
+                    let mut country: Option<crate::Value<String>> = None;
+                    let mut custom_attributes: Option<crate::ValueList<CustomAttribute>> = None;
+                    let mut distinguished_name_qualifier: Option<crate::Value<String>> = None;
+                    let mut generation_qualifier: Option<crate::Value<String>> = None;
+                    let mut given_name: Option<crate::Value<String>> = None;
+                    let mut initials: Option<crate::Value<String>> = None;
+                    let mut locality: Option<crate::Value<String>> = None;
+                    let mut organization: Option<crate::Value<String>> = None;
+                    let mut organizational_unit: Option<crate::Value<String>> = None;
+                    let mut pseudonym: Option<crate::Value<String>> = None;
+                    let mut serial_number: Option<crate::Value<String>> = None;
+                    let mut state: Option<crate::Value<String>> = None;
+                    let mut surname: Option<crate::Value<String>> = None;
+                    let mut title: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2052,15 +2052,15 @@ pub mod certificate {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-validity.html#cfn-acmpca-certificate-validity-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: ::Value<f64>,
+        pub value: crate::Value<f64>,
     }
 
-    impl ::codec::SerializeValue for Validity {
+    impl crate::codec::SerializeValue for Validity {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", &self.r#type)?;
@@ -2069,7 +2069,7 @@ pub mod certificate {
         }
     }
 
-    impl ::codec::DeserializeValue for Validity {
+    impl crate::codec::DeserializeValue for Validity {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Validity, D::Error> {
             struct Visitor;
 
@@ -2084,8 +2084,8 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<f64>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2123,15 +2123,15 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub access_location: ::Value<GeneralName>,
+        pub access_location: crate::Value<GeneralName>,
         /// Property [`AccessMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessdescription.html#cfn-acmpca-certificateauthority-accessdescription-accessmethod).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub access_method: ::Value<AccessMethod>,
+        pub access_method: crate::Value<AccessMethod>,
     }
 
-    impl ::codec::SerializeValue for AccessDescription {
+    impl crate::codec::SerializeValue for AccessDescription {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2148,7 +2148,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for AccessDescription {
+    impl crate::codec::DeserializeValue for AccessDescription {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AccessDescription, D::Error> {
@@ -2165,8 +2165,8 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_location: Option<::Value<GeneralName>> = None;
-                    let mut access_method: Option<::Value<AccessMethod>> = None;
+                    let mut access_location: Option<crate::Value<GeneralName>> = None;
+                    let mut access_method: Option<crate::Value<AccessMethod>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2202,15 +2202,15 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub access_method_type: Option<::Value<String>>,
+        pub access_method_type: Option<crate::Value<String>>,
         /// Property [`CustomObjectIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessmethod.html#cfn-acmpca-certificateauthority-accessmethod-customobjectidentifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub custom_object_identifier: Option<::Value<String>>,
+        pub custom_object_identifier: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AccessMethod {
+    impl crate::codec::SerializeValue for AccessMethod {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_method_type) = self.access_method_type {
@@ -2231,7 +2231,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for AccessMethod {
+    impl crate::codec::DeserializeValue for AccessMethod {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AccessMethod, D::Error> {
             struct Visitor;
 
@@ -2246,8 +2246,8 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_method_type: Option<::Value<String>> = None;
-                    let mut custom_object_identifier: Option<::Value<String>> = None;
+                    let mut access_method_type: Option<crate::Value<String>> = None;
+                    let mut custom_object_identifier: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2282,30 +2282,30 @@ pub mod certificate_authority {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_cname: Option<::Value<String>>,
+        pub custom_cname: Option<crate::Value<String>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<::Value<bool>>,
+        pub enabled: Option<crate::Value<bool>>,
         /// Property [`ExpirationInDays`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-expirationindays).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub expiration_in_days: Option<::Value<u32>>,
+        pub expiration_in_days: Option<crate::Value<u32>>,
         /// Property [`S3BucketName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-s3bucketname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_bucket_name: Option<::Value<String>>,
+        pub s3_bucket_name: Option<crate::Value<String>>,
         /// Property [`S3ObjectAcl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-s3objectacl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_object_acl: Option<::Value<String>>,
+        pub s3_object_acl: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CrlConfiguration {
+    impl crate::codec::SerializeValue for CrlConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_cname) = self.custom_cname {
@@ -2339,7 +2339,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for CrlConfiguration {
+    impl crate::codec::DeserializeValue for CrlConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CrlConfiguration, D::Error> {
@@ -2356,11 +2356,11 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_cname: Option<::Value<String>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
-                    let mut expiration_in_days: Option<::Value<u32>> = None;
-                    let mut s3_bucket_name: Option<::Value<String>> = None;
-                    let mut s3_object_acl: Option<::Value<String>> = None;
+                    let mut custom_cname: Option<crate::Value<String>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
+                    let mut expiration_in_days: Option<crate::Value<u32>> = None;
+                    let mut s3_bucket_name: Option<crate::Value<String>> = None;
+                    let mut s3_object_acl: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2406,15 +2406,15 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_usage: Option<::Value<KeyUsage>>,
+        pub key_usage: Option<crate::Value<KeyUsage>>,
         /// Property [`SubjectInformationAccess`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-csrextensions.html#cfn-acmpca-certificateauthority-csrextensions-subjectinformationaccess).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subject_information_access: Option<::ValueList<AccessDescription>>,
+        pub subject_information_access: Option<crate::ValueList<AccessDescription>>,
     }
 
-    impl ::codec::SerializeValue for CsrExtensions {
+    impl crate::codec::SerializeValue for CsrExtensions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key_usage) = self.key_usage {
@@ -2431,7 +2431,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for CsrExtensions {
+    impl crate::codec::DeserializeValue for CsrExtensions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CsrExtensions, D::Error> {
@@ -2448,8 +2448,8 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key_usage: Option<::Value<KeyUsage>> = None;
-                    let mut subject_information_access: Option<::ValueList<AccessDescription>> =
+                    let mut key_usage: Option<crate::Value<KeyUsage>> = None;
+                    let mut subject_information_access: Option<crate::ValueList<AccessDescription>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -2485,15 +2485,15 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub object_identifier: ::Value<String>,
+        pub object_identifier: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-customattribute.html#cfn-acmpca-certificateauthority-customattribute-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CustomAttribute {
+    impl crate::codec::SerializeValue for CustomAttribute {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2506,7 +2506,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomAttribute {
+    impl crate::codec::DeserializeValue for CustomAttribute {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomAttribute, D::Error> {
@@ -2523,8 +2523,8 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object_identifier: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut object_identifier: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2559,15 +2559,15 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub name_assigner: ::Value<String>,
+        pub name_assigner: crate::Value<String>,
         /// Property [`PartyName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-edipartyname.html#cfn-acmpca-certificateauthority-edipartyname-partyname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub party_name: ::Value<String>,
+        pub party_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for EdiPartyName {
+    impl crate::codec::SerializeValue for EdiPartyName {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2580,7 +2580,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for EdiPartyName {
+    impl crate::codec::DeserializeValue for EdiPartyName {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EdiPartyName, D::Error> {
             struct Visitor;
 
@@ -2595,8 +2595,8 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name_assigner: Option<::Value<String>> = None;
-                    let mut party_name: Option<::Value<String>> = None;
+                    let mut name_assigner: Option<crate::Value<String>> = None;
+                    let mut party_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2632,45 +2632,45 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub directory_name: Option<::Value<Subject>>,
+        pub directory_name: Option<crate::Value<Subject>>,
         /// Property [`DnsName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-dnsname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub dns_name: Option<::Value<String>>,
+        pub dns_name: Option<crate::Value<String>>,
         /// Property [`EdiPartyName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-edipartyname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub edi_party_name: Option<::Value<EdiPartyName>>,
+        pub edi_party_name: Option<crate::Value<EdiPartyName>>,
         /// Property [`IpAddress`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-ipaddress).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub ip_address: Option<::Value<String>>,
+        pub ip_address: Option<crate::Value<String>>,
         /// Property [`OtherName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-othername).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub other_name: Option<::Value<OtherName>>,
+        pub other_name: Option<crate::Value<OtherName>>,
         /// Property [`RegisteredId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-registeredid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub registered_id: Option<::Value<String>>,
+        pub registered_id: Option<crate::Value<String>>,
         /// Property [`Rfc822Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-rfc822name).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub rfc822_name: Option<::Value<String>>,
+        pub rfc822_name: Option<crate::Value<String>>,
         /// Property [`UniformResourceIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-uniformresourceidentifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub uniform_resource_identifier: Option<::Value<String>>,
+        pub uniform_resource_identifier: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for GeneralName {
+    impl crate::codec::SerializeValue for GeneralName {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref directory_name) = self.directory_name {
@@ -2717,7 +2717,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for GeneralName {
+    impl crate::codec::DeserializeValue for GeneralName {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GeneralName, D::Error> {
             struct Visitor;
 
@@ -2732,14 +2732,14 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut directory_name: Option<::Value<Subject>> = None;
-                    let mut dns_name: Option<::Value<String>> = None;
-                    let mut edi_party_name: Option<::Value<EdiPartyName>> = None;
-                    let mut ip_address: Option<::Value<String>> = None;
-                    let mut other_name: Option<::Value<OtherName>> = None;
-                    let mut registered_id: Option<::Value<String>> = None;
-                    let mut rfc822_name: Option<::Value<String>> = None;
-                    let mut uniform_resource_identifier: Option<::Value<String>> = None;
+                    let mut directory_name: Option<crate::Value<Subject>> = None;
+                    let mut dns_name: Option<crate::Value<String>> = None;
+                    let mut edi_party_name: Option<crate::Value<EdiPartyName>> = None;
+                    let mut ip_address: Option<crate::Value<String>> = None;
+                    let mut other_name: Option<crate::Value<OtherName>> = None;
+                    let mut registered_id: Option<crate::Value<String>> = None;
+                    let mut rfc822_name: Option<crate::Value<String>> = None;
+                    let mut uniform_resource_identifier: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2798,50 +2798,50 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub crl_sign: Option<::Value<bool>>,
+        pub crl_sign: Option<crate::Value<bool>>,
         /// Property [`DataEncipherment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-dataencipherment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub data_encipherment: Option<::Value<bool>>,
+        pub data_encipherment: Option<crate::Value<bool>>,
         /// Property [`DecipherOnly`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-decipheronly).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub decipher_only: Option<::Value<bool>>,
+        pub decipher_only: Option<crate::Value<bool>>,
         /// Property [`DigitalSignature`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-digitalsignature).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub digital_signature: Option<::Value<bool>>,
+        pub digital_signature: Option<crate::Value<bool>>,
         /// Property [`EncipherOnly`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-encipheronly).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub encipher_only: Option<::Value<bool>>,
+        pub encipher_only: Option<crate::Value<bool>>,
         /// Property [`KeyAgreement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-keyagreement).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_agreement: Option<::Value<bool>>,
+        pub key_agreement: Option<crate::Value<bool>>,
         /// Property [`KeyCertSign`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-keycertsign).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_cert_sign: Option<::Value<bool>>,
+        pub key_cert_sign: Option<crate::Value<bool>>,
         /// Property [`KeyEncipherment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-keyencipherment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_encipherment: Option<::Value<bool>>,
+        pub key_encipherment: Option<crate::Value<bool>>,
         /// Property [`NonRepudiation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-nonrepudiation).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub non_repudiation: Option<::Value<bool>>,
+        pub non_repudiation: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for KeyUsage {
+    impl crate::codec::SerializeValue for KeyUsage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref crl_sign) = self.crl_sign {
@@ -2907,7 +2907,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for KeyUsage {
+    impl crate::codec::DeserializeValue for KeyUsage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KeyUsage, D::Error> {
             struct Visitor;
 
@@ -2922,15 +2922,15 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut crl_sign: Option<::Value<bool>> = None;
-                    let mut data_encipherment: Option<::Value<bool>> = None;
-                    let mut decipher_only: Option<::Value<bool>> = None;
-                    let mut digital_signature: Option<::Value<bool>> = None;
-                    let mut encipher_only: Option<::Value<bool>> = None;
-                    let mut key_agreement: Option<::Value<bool>> = None;
-                    let mut key_cert_sign: Option<::Value<bool>> = None;
-                    let mut key_encipherment: Option<::Value<bool>> = None;
-                    let mut non_repudiation: Option<::Value<bool>> = None;
+                    let mut crl_sign: Option<crate::Value<bool>> = None;
+                    let mut data_encipherment: Option<crate::Value<bool>> = None;
+                    let mut decipher_only: Option<crate::Value<bool>> = None;
+                    let mut digital_signature: Option<crate::Value<bool>> = None;
+                    let mut encipher_only: Option<crate::Value<bool>> = None;
+                    let mut key_agreement: Option<crate::Value<bool>> = None;
+                    let mut key_cert_sign: Option<crate::Value<bool>> = None;
+                    let mut key_encipherment: Option<crate::Value<bool>> = None;
+                    let mut non_repudiation: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2992,15 +2992,15 @@ pub mod certificate_authority {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<::Value<bool>>,
+        pub enabled: Option<crate::Value<bool>>,
         /// Property [`OcspCustomCname`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-ocspconfiguration.html#cfn-acmpca-certificateauthority-ocspconfiguration-ocspcustomcname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ocsp_custom_cname: Option<::Value<String>>,
+        pub ocsp_custom_cname: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for OcspConfiguration {
+    impl crate::codec::SerializeValue for OcspConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enabled) = self.enabled {
@@ -3017,7 +3017,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for OcspConfiguration {
+    impl crate::codec::DeserializeValue for OcspConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OcspConfiguration, D::Error> {
@@ -3034,8 +3034,8 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<::Value<bool>> = None;
-                    let mut ocsp_custom_cname: Option<::Value<String>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
+                    let mut ocsp_custom_cname: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3069,15 +3069,15 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub type_id: ::Value<String>,
+        pub type_id: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-othername.html#cfn-acmpca-certificateauthority-othername-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for OtherName {
+    impl crate::codec::SerializeValue for OtherName {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TypeId", &self.type_id)?;
@@ -3086,7 +3086,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for OtherName {
+    impl crate::codec::DeserializeValue for OtherName {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OtherName, D::Error> {
             struct Visitor;
 
@@ -3101,8 +3101,8 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut type_id: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut type_id: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3136,15 +3136,15 @@ pub mod certificate_authority {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub crl_configuration: Option<::Value<CrlConfiguration>>,
+        pub crl_configuration: Option<crate::Value<CrlConfiguration>>,
         /// Property [`OcspConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-revocationconfiguration.html#cfn-acmpca-certificateauthority-revocationconfiguration-ocspconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ocsp_configuration: Option<::Value<OcspConfiguration>>,
+        pub ocsp_configuration: Option<crate::Value<OcspConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for RevocationConfiguration {
+    impl crate::codec::SerializeValue for RevocationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref crl_configuration) = self.crl_configuration {
@@ -3165,7 +3165,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for RevocationConfiguration {
+    impl crate::codec::DeserializeValue for RevocationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RevocationConfiguration, D::Error> {
@@ -3182,8 +3182,8 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut crl_configuration: Option<::Value<CrlConfiguration>> = None;
-                    let mut ocsp_configuration: Option<::Value<OcspConfiguration>> = None;
+                    let mut crl_configuration: Option<crate::Value<CrlConfiguration>> = None;
+                    let mut ocsp_configuration: Option<crate::Value<OcspConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3217,80 +3217,80 @@ pub mod certificate_authority {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub common_name: Option<::Value<String>>,
+        pub common_name: Option<crate::Value<String>>,
         /// Property [`Country`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-country).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub country: Option<::Value<String>>,
+        pub country: Option<crate::Value<String>>,
         /// Property [`CustomAttributes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-customattributes).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub custom_attributes: Option<::ValueList<CustomAttribute>>,
+        pub custom_attributes: Option<crate::ValueList<CustomAttribute>>,
         /// Property [`DistinguishedNameQualifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-distinguishednamequalifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub distinguished_name_qualifier: Option<::Value<String>>,
+        pub distinguished_name_qualifier: Option<crate::Value<String>>,
         /// Property [`GenerationQualifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-generationqualifier).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub generation_qualifier: Option<::Value<String>>,
+        pub generation_qualifier: Option<crate::Value<String>>,
         /// Property [`GivenName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-givenname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub given_name: Option<::Value<String>>,
+        pub given_name: Option<crate::Value<String>>,
         /// Property [`Initials`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-initials).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub initials: Option<::Value<String>>,
+        pub initials: Option<crate::Value<String>>,
         /// Property [`Locality`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-locality).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub locality: Option<::Value<String>>,
+        pub locality: Option<crate::Value<String>>,
         /// Property [`Organization`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-organization).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub organization: Option<::Value<String>>,
+        pub organization: Option<crate::Value<String>>,
         /// Property [`OrganizationalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-organizationalunit).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub organizational_unit: Option<::Value<String>>,
+        pub organizational_unit: Option<crate::Value<String>>,
         /// Property [`Pseudonym`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-pseudonym).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub pseudonym: Option<::Value<String>>,
+        pub pseudonym: Option<crate::Value<String>>,
         /// Property [`SerialNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-serialnumber).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub serial_number: Option<::Value<String>>,
+        pub serial_number: Option<crate::Value<String>>,
         /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-state).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub state: Option<::Value<String>>,
+        pub state: Option<crate::Value<String>>,
         /// Property [`Surname`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-surname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub surname: Option<::Value<String>>,
+        pub surname: Option<crate::Value<String>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-title).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub title: Option<::Value<String>>,
+        pub title: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Subject {
+    impl crate::codec::SerializeValue for Subject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref common_name) = self.common_name {
@@ -3366,7 +3366,7 @@ pub mod certificate_authority {
         }
     }
 
-    impl ::codec::DeserializeValue for Subject {
+    impl crate::codec::DeserializeValue for Subject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Subject, D::Error> {
             struct Visitor;
 
@@ -3381,21 +3381,21 @@ pub mod certificate_authority {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut common_name: Option<::Value<String>> = None;
-                    let mut country: Option<::Value<String>> = None;
-                    let mut custom_attributes: Option<::ValueList<CustomAttribute>> = None;
-                    let mut distinguished_name_qualifier: Option<::Value<String>> = None;
-                    let mut generation_qualifier: Option<::Value<String>> = None;
-                    let mut given_name: Option<::Value<String>> = None;
-                    let mut initials: Option<::Value<String>> = None;
-                    let mut locality: Option<::Value<String>> = None;
-                    let mut organization: Option<::Value<String>> = None;
-                    let mut organizational_unit: Option<::Value<String>> = None;
-                    let mut pseudonym: Option<::Value<String>> = None;
-                    let mut serial_number: Option<::Value<String>> = None;
-                    let mut state: Option<::Value<String>> = None;
-                    let mut surname: Option<::Value<String>> = None;
-                    let mut title: Option<::Value<String>> = None;
+                    let mut common_name: Option<crate::Value<String>> = None;
+                    let mut country: Option<crate::Value<String>> = None;
+                    let mut custom_attributes: Option<crate::ValueList<CustomAttribute>> = None;
+                    let mut distinguished_name_qualifier: Option<crate::Value<String>> = None;
+                    let mut generation_qualifier: Option<crate::Value<String>> = None;
+                    let mut given_name: Option<crate::Value<String>> = None;
+                    let mut initials: Option<crate::Value<String>> = None;
+                    let mut locality: Option<crate::Value<String>> = None;
+                    let mut organization: Option<crate::Value<String>> = None;
+                    let mut organizational_unit: Option<crate::Value<String>> = None;
+                    let mut pseudonym: Option<crate::Value<String>> = None;
+                    let mut serial_number: Option<crate::Value<String>> = None;
+                    let mut state: Option<crate::Value<String>> = None;
+                    let mut surname: Option<crate::Value<String>> = None;
+                    let mut title: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

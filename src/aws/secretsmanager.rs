@@ -13,17 +13,17 @@ pub struct ResourcePolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub block_public_policy: Option<::Value<bool>>,
+    pub block_public_policy: Option<crate::Value<bool>>,
     /// Property [`ResourcePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-resourcepolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_policy: ::Value<::json::Value>,
+    pub resource_policy: crate::Value<crate::json::Value>,
     /// Property [`SecretId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-secretid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub secret_id: ::Value<String>,
+    pub secret_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for ResourcePolicyProperties {
@@ -63,9 +63,9 @@ impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut block_public_policy: Option<::Value<bool>> = None;
-                let mut resource_policy: Option<::Value<::json::Value>> = None;
-                let mut secret_id: Option<::Value<String>> = None;
+                let mut block_public_policy: Option<crate::Value<bool>> = None;
+                let mut resource_policy: Option<crate::Value<crate::json::Value>> = None;
+                let mut secret_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -95,7 +95,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
     }
 }
 
-impl ::Resource for ResourcePolicy {
+impl crate::Resource for ResourcePolicy {
     type Properties = ResourcePolicyProperties;
     const TYPE: &'static str = "AWS::SecretsManager::ResourcePolicy";
     fn properties(&self) -> &ResourcePolicyProperties {
@@ -106,7 +106,7 @@ impl ::Resource for ResourcePolicy {
     }
 }
 
-impl ::private::Sealed for ResourcePolicy {}
+impl crate::private::Sealed for ResourcePolicy {}
 
 impl From<ResourcePolicyProperties> for ResourcePolicy {
     fn from(properties: ResourcePolicyProperties) -> ResourcePolicy {
@@ -127,27 +127,27 @@ pub struct RotationScheduleProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub hosted_rotation_lambda: Option<::Value<self::rotation_schedule::HostedRotationLambda>>,
+    pub hosted_rotation_lambda: Option<crate::Value<self::rotation_schedule::HostedRotationLambda>>,
     /// Property [`RotateImmediatelyOnUpdate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotateimmediatelyonupdate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rotate_immediately_on_update: Option<::Value<bool>>,
+    pub rotate_immediately_on_update: Option<crate::Value<bool>>,
     /// Property [`RotationLambdaARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationlambdaarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rotation_lambda_arn: Option<::Value<String>>,
+    pub rotation_lambda_arn: Option<crate::Value<String>>,
     /// Property [`RotationRules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationrules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rotation_rules: Option<::Value<self::rotation_schedule::RotationRules>>,
+    pub rotation_rules: Option<crate::Value<self::rotation_schedule::RotationRules>>,
     /// Property [`SecretId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-secretid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub secret_id: ::Value<String>,
+    pub secret_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for RotationScheduleProperties {
@@ -200,13 +200,13 @@ impl<'de> ::serde::Deserialize<'de> for RotationScheduleProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut hosted_rotation_lambda: Option<
-                    ::Value<self::rotation_schedule::HostedRotationLambda>,
+                    crate::Value<self::rotation_schedule::HostedRotationLambda>,
                 > = None;
-                let mut rotate_immediately_on_update: Option<::Value<bool>> = None;
-                let mut rotation_lambda_arn: Option<::Value<String>> = None;
-                let mut rotation_rules: Option<::Value<self::rotation_schedule::RotationRules>> =
+                let mut rotate_immediately_on_update: Option<crate::Value<bool>> = None;
+                let mut rotation_lambda_arn: Option<crate::Value<String>> = None;
+                let mut rotation_rules: Option<crate::Value<self::rotation_schedule::RotationRules>> =
                     None;
-                let mut secret_id: Option<::Value<String>> = None;
+                let mut secret_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -244,7 +244,7 @@ impl<'de> ::serde::Deserialize<'de> for RotationScheduleProperties {
     }
 }
 
-impl ::Resource for RotationSchedule {
+impl crate::Resource for RotationSchedule {
     type Properties = RotationScheduleProperties;
     const TYPE: &'static str = "AWS::SecretsManager::RotationSchedule";
     fn properties(&self) -> &RotationScheduleProperties {
@@ -255,7 +255,7 @@ impl ::Resource for RotationSchedule {
     }
 }
 
-impl ::private::Sealed for RotationSchedule {}
+impl crate::private::Sealed for RotationSchedule {}
 
 impl From<RotationScheduleProperties> for RotationSchedule {
     fn from(properties: RotationScheduleProperties) -> RotationSchedule {
@@ -276,37 +276,37 @@ pub struct SecretProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`GenerateSecretString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-generatesecretstring).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub generate_secret_string: Option<::Value<self::secret::GenerateSecretString>>,
+    pub generate_secret_string: Option<crate::Value<self::secret::GenerateSecretString>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-kmskeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kms_key_id: Option<::Value<String>>,
+    pub kms_key_id: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`ReplicaRegions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-replicaregions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub replica_regions: Option<::ValueList<self::secret::ReplicaRegion>>,
+    pub replica_regions: Option<crate::ValueList<self::secret::ReplicaRegion>>,
     /// Property [`SecretString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-secretstring).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub secret_string: Option<::Value<String>>,
+    pub secret_string: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for SecretProperties {
@@ -360,15 +360,15 @@ impl<'de> ::serde::Deserialize<'de> for SecretProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
                 let mut generate_secret_string: Option<
-                    ::Value<self::secret::GenerateSecretString>,
+                    crate::Value<self::secret::GenerateSecretString>,
                 > = None;
-                let mut kms_key_id: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut replica_regions: Option<::ValueList<self::secret::ReplicaRegion>> = None;
-                let mut secret_string: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut replica_regions: Option<crate::ValueList<self::secret::ReplicaRegion>> = None;
+                let mut secret_string: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -413,7 +413,7 @@ impl<'de> ::serde::Deserialize<'de> for SecretProperties {
     }
 }
 
-impl ::Resource for Secret {
+impl crate::Resource for Secret {
     type Properties = SecretProperties;
     const TYPE: &'static str = "AWS::SecretsManager::Secret";
     fn properties(&self) -> &SecretProperties {
@@ -424,7 +424,7 @@ impl ::Resource for Secret {
     }
 }
 
-impl ::private::Sealed for Secret {}
+impl crate::private::Sealed for Secret {}
 
 impl From<SecretProperties> for Secret {
     fn from(properties: SecretProperties) -> Secret {
@@ -445,17 +445,17 @@ pub struct SecretTargetAttachmentProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub secret_id: ::Value<String>,
+    pub secret_id: crate::Value<String>,
     /// Property [`TargetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targetid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub target_id: ::Value<String>,
+    pub target_id: crate::Value<String>,
     /// Property [`TargetType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targettype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub target_type: ::Value<String>,
+    pub target_type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for SecretTargetAttachmentProperties {
@@ -485,9 +485,9 @@ impl<'de> ::serde::Deserialize<'de> for SecretTargetAttachmentProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut secret_id: Option<::Value<String>> = None;
-                let mut target_id: Option<::Value<String>> = None;
-                let mut target_type: Option<::Value<String>> = None;
+                let mut secret_id: Option<crate::Value<String>> = None;
+                let mut target_id: Option<crate::Value<String>> = None;
+                let mut target_type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -517,7 +517,7 @@ impl<'de> ::serde::Deserialize<'de> for SecretTargetAttachmentProperties {
     }
 }
 
-impl ::Resource for SecretTargetAttachment {
+impl crate::Resource for SecretTargetAttachment {
     type Properties = SecretTargetAttachmentProperties;
     const TYPE: &'static str = "AWS::SecretsManager::SecretTargetAttachment";
     fn properties(&self) -> &SecretTargetAttachmentProperties {
@@ -528,7 +528,7 @@ impl ::Resource for SecretTargetAttachment {
     }
 }
 
-impl ::private::Sealed for SecretTargetAttachment {}
+impl crate::private::Sealed for SecretTargetAttachment {}
 
 impl From<SecretTargetAttachmentProperties> for SecretTargetAttachment {
     fn from(properties: SecretTargetAttachmentProperties) -> SecretTargetAttachment {
@@ -546,50 +546,50 @@ pub mod rotation_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_key_arn: Option<::Value<String>>,
+        pub kms_key_arn: Option<crate::Value<String>>,
         /// Property [`MasterSecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-mastersecretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub master_secret_arn: Option<::Value<String>>,
+        pub master_secret_arn: Option<crate::Value<String>>,
         /// Property [`MasterSecretKmsKeyArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-mastersecretkmskeyarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub master_secret_kms_key_arn: Option<::Value<String>>,
+        pub master_secret_kms_key_arn: Option<crate::Value<String>>,
         /// Property [`RotationLambdaName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-rotationlambdaname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rotation_lambda_name: Option<::Value<String>>,
+        pub rotation_lambda_name: Option<crate::Value<String>>,
         /// Property [`RotationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-rotationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rotation_type: ::Value<String>,
+        pub rotation_type: crate::Value<String>,
         /// Property [`SuperuserSecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-superusersecretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub superuser_secret_arn: Option<::Value<String>>,
+        pub superuser_secret_arn: Option<crate::Value<String>>,
         /// Property [`SuperuserSecretKmsKeyArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-superusersecretkmskeyarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub superuser_secret_kms_key_arn: Option<::Value<String>>,
+        pub superuser_secret_kms_key_arn: Option<crate::Value<String>>,
         /// Property [`VpcSecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-vpcsecuritygroupids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_security_group_ids: Option<::Value<String>>,
+        pub vpc_security_group_ids: Option<crate::Value<String>>,
         /// Property [`VpcSubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-vpcsubnetids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_subnet_ids: Option<::Value<String>>,
+        pub vpc_subnet_ids: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for HostedRotationLambda {
+    impl crate::codec::SerializeValue for HostedRotationLambda {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_arn) = self.kms_key_arn {
@@ -653,7 +653,7 @@ pub mod rotation_schedule {
         }
     }
 
-    impl ::codec::DeserializeValue for HostedRotationLambda {
+    impl crate::codec::DeserializeValue for HostedRotationLambda {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HostedRotationLambda, D::Error> {
@@ -670,15 +670,15 @@ pub mod rotation_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_arn: Option<::Value<String>> = None;
-                    let mut master_secret_arn: Option<::Value<String>> = None;
-                    let mut master_secret_kms_key_arn: Option<::Value<String>> = None;
-                    let mut rotation_lambda_name: Option<::Value<String>> = None;
-                    let mut rotation_type: Option<::Value<String>> = None;
-                    let mut superuser_secret_arn: Option<::Value<String>> = None;
-                    let mut superuser_secret_kms_key_arn: Option<::Value<String>> = None;
-                    let mut vpc_security_group_ids: Option<::Value<String>> = None;
-                    let mut vpc_subnet_ids: Option<::Value<String>> = None;
+                    let mut kms_key_arn: Option<crate::Value<String>> = None;
+                    let mut master_secret_arn: Option<crate::Value<String>> = None;
+                    let mut master_secret_kms_key_arn: Option<crate::Value<String>> = None;
+                    let mut rotation_lambda_name: Option<crate::Value<String>> = None;
+                    let mut rotation_type: Option<crate::Value<String>> = None;
+                    let mut superuser_secret_arn: Option<crate::Value<String>> = None;
+                    let mut superuser_secret_kms_key_arn: Option<crate::Value<String>> = None;
+                    let mut vpc_security_group_ids: Option<crate::Value<String>> = None;
+                    let mut vpc_subnet_ids: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -746,20 +746,20 @@ pub mod rotation_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub automatically_after_days: Option<::Value<u32>>,
+        pub automatically_after_days: Option<crate::Value<u32>>,
         /// Property [`Duration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-duration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration: Option<::Value<String>>,
+        pub duration: Option<crate::Value<String>>,
         /// Property [`ScheduleExpression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-scheduleexpression).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule_expression: Option<::Value<String>>,
+        pub schedule_expression: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for RotationRules {
+    impl crate::codec::SerializeValue for RotationRules {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref automatically_after_days) = self.automatically_after_days {
@@ -783,7 +783,7 @@ pub mod rotation_schedule {
         }
     }
 
-    impl ::codec::DeserializeValue for RotationRules {
+    impl crate::codec::DeserializeValue for RotationRules {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RotationRules, D::Error> {
@@ -800,9 +800,9 @@ pub mod rotation_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut automatically_after_days: Option<::Value<u32>> = None;
-                    let mut duration: Option<::Value<String>> = None;
-                    let mut schedule_expression: Option<::Value<String>> = None;
+                    let mut automatically_after_days: Option<crate::Value<u32>> = None;
+                    let mut duration: Option<crate::Value<String>> = None;
+                    let mut schedule_expression: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -845,55 +845,55 @@ pub mod secret {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_characters: Option<::Value<String>>,
+        pub exclude_characters: Option<crate::Value<String>>,
         /// Property [`ExcludeLowercase`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludelowercase).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_lowercase: Option<::Value<bool>>,
+        pub exclude_lowercase: Option<crate::Value<bool>>,
         /// Property [`ExcludeNumbers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludenumbers).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_numbers: Option<::Value<bool>>,
+        pub exclude_numbers: Option<crate::Value<bool>>,
         /// Property [`ExcludePunctuation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludepunctuation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_punctuation: Option<::Value<bool>>,
+        pub exclude_punctuation: Option<crate::Value<bool>>,
         /// Property [`ExcludeUppercase`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludeuppercase).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_uppercase: Option<::Value<bool>>,
+        pub exclude_uppercase: Option<crate::Value<bool>>,
         /// Property [`GenerateStringKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-generatestringkey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub generate_string_key: Option<::Value<String>>,
+        pub generate_string_key: Option<crate::Value<String>>,
         /// Property [`IncludeSpace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-includespace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_space: Option<::Value<bool>>,
+        pub include_space: Option<crate::Value<bool>>,
         /// Property [`PasswordLength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-passwordlength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password_length: Option<::Value<u32>>,
+        pub password_length: Option<crate::Value<u32>>,
         /// Property [`RequireEachIncludedType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-requireeachincludedtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub require_each_included_type: Option<::Value<bool>>,
+        pub require_each_included_type: Option<crate::Value<bool>>,
         /// Property [`SecretStringTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-secretstringtemplate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_string_template: Option<::Value<String>>,
+        pub secret_string_template: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for GenerateSecretString {
+    impl crate::codec::SerializeValue for GenerateSecretString {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref exclude_characters) = self.exclude_characters {
@@ -970,7 +970,7 @@ pub mod secret {
         }
     }
 
-    impl ::codec::DeserializeValue for GenerateSecretString {
+    impl crate::codec::DeserializeValue for GenerateSecretString {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GenerateSecretString, D::Error> {
@@ -987,16 +987,16 @@ pub mod secret {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut exclude_characters: Option<::Value<String>> = None;
-                    let mut exclude_lowercase: Option<::Value<bool>> = None;
-                    let mut exclude_numbers: Option<::Value<bool>> = None;
-                    let mut exclude_punctuation: Option<::Value<bool>> = None;
-                    let mut exclude_uppercase: Option<::Value<bool>> = None;
-                    let mut generate_string_key: Option<::Value<String>> = None;
-                    let mut include_space: Option<::Value<bool>> = None;
-                    let mut password_length: Option<::Value<u32>> = None;
-                    let mut require_each_included_type: Option<::Value<bool>> = None;
-                    let mut secret_string_template: Option<::Value<String>> = None;
+                    let mut exclude_characters: Option<crate::Value<String>> = None;
+                    let mut exclude_lowercase: Option<crate::Value<bool>> = None;
+                    let mut exclude_numbers: Option<crate::Value<bool>> = None;
+                    let mut exclude_punctuation: Option<crate::Value<bool>> = None;
+                    let mut exclude_uppercase: Option<crate::Value<bool>> = None;
+                    let mut generate_string_key: Option<crate::Value<String>> = None;
+                    let mut include_space: Option<crate::Value<bool>> = None;
+                    let mut password_length: Option<crate::Value<u32>> = None;
+                    let mut require_each_included_type: Option<crate::Value<bool>> = None;
+                    let mut secret_string_template: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1064,15 +1064,15 @@ pub mod secret {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_key_id: Option<::Value<String>>,
+        pub kms_key_id: Option<crate::Value<String>>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-replicaregion.html#cfn-secretsmanager-secret-replicaregion-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: ::Value<String>,
+        pub region: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ReplicaRegion {
+    impl crate::codec::SerializeValue for ReplicaRegion {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -1083,7 +1083,7 @@ pub mod secret {
         }
     }
 
-    impl ::codec::DeserializeValue for ReplicaRegion {
+    impl crate::codec::DeserializeValue for ReplicaRegion {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReplicaRegion, D::Error> {
@@ -1100,8 +1100,8 @@ pub mod secret {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<::Value<String>> = None;
-                    let mut region: Option<::Value<String>> = None;
+                    let mut kms_key_id: Option<crate::Value<String>> = None;
+                    let mut region: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

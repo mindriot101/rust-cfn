@@ -13,79 +13,79 @@ pub struct PlaybackConfigurationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ad_decision_server_url: ::Value<String>,
+    pub ad_decision_server_url: crate::Value<String>,
     /// Property [`AvailSuppression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-availsuppression).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub avail_suppression: Option<::Value<self::playback_configuration::AvailSuppression>>,
+    pub avail_suppression: Option<crate::Value<self::playback_configuration::AvailSuppression>>,
     /// Property [`Bumper`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-bumper).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bumper: Option<::Value<self::playback_configuration::Bumper>>,
+    pub bumper: Option<crate::Value<self::playback_configuration::Bumper>>,
     /// Property [`CdnConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-cdnconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cdn_configuration: Option<::Value<self::playback_configuration::CdnConfiguration>>,
+    pub cdn_configuration: Option<crate::Value<self::playback_configuration::CdnConfiguration>>,
     /// Property [`ConfigurationAliases`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-configurationaliases).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub configuration_aliases: Option<::ValueMap<::json::Value>>,
+    pub configuration_aliases: Option<crate::ValueMap<crate::json::Value>>,
     /// Property [`DashConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-dashconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dash_configuration: Option<::Value<self::playback_configuration::DashConfigurationForPut>>,
+    pub dash_configuration: Option<crate::Value<self::playback_configuration::DashConfigurationForPut>>,
     /// Property [`LivePreRollConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub live_pre_roll_configuration:
-        Option<::Value<self::playback_configuration::LivePreRollConfiguration>>,
+        Option<crate::Value<self::playback_configuration::LivePreRollConfiguration>>,
     /// Property [`ManifestProcessingRules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-manifestprocessingrules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub manifest_processing_rules:
-        Option<::Value<self::playback_configuration::ManifestProcessingRules>>,
+        Option<crate::Value<self::playback_configuration::ManifestProcessingRules>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`PersonalizationThresholdSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-personalizationthresholdseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub personalization_threshold_seconds: Option<::Value<u32>>,
+    pub personalization_threshold_seconds: Option<crate::Value<u32>>,
     /// Property [`SessionInitializationEndpointPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-sessioninitializationendpointprefix).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub session_initialization_endpoint_prefix: Option<::Value<String>>,
+    pub session_initialization_endpoint_prefix: Option<crate::Value<String>>,
     /// Property [`SlateAdUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-slateadurl).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub slate_ad_url: Option<::Value<String>>,
+    pub slate_ad_url: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`TranscodeProfileName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-transcodeprofilename).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub transcode_profile_name: Option<::Value<String>>,
+    pub transcode_profile_name: Option<crate::Value<String>>,
     /// Property [`VideoContentSourceUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-videocontentsourceurl).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub video_content_source_url: ::Value<String>,
+    pub video_content_source_url: crate::Value<String>,
 }
 
 impl ::serde::Serialize for PlaybackConfigurationProperties {
@@ -198,31 +198,31 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackConfigurationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut ad_decision_server_url: Option<::Value<String>> = None;
+                let mut ad_decision_server_url: Option<crate::Value<String>> = None;
                 let mut avail_suppression: Option<
-                    ::Value<self::playback_configuration::AvailSuppression>,
+                    crate::Value<self::playback_configuration::AvailSuppression>,
                 > = None;
-                let mut bumper: Option<::Value<self::playback_configuration::Bumper>> = None;
+                let mut bumper: Option<crate::Value<self::playback_configuration::Bumper>> = None;
                 let mut cdn_configuration: Option<
-                    ::Value<self::playback_configuration::CdnConfiguration>,
+                    crate::Value<self::playback_configuration::CdnConfiguration>,
                 > = None;
-                let mut configuration_aliases: Option<::ValueMap<::json::Value>> = None;
+                let mut configuration_aliases: Option<crate::ValueMap<crate::json::Value>> = None;
                 let mut dash_configuration: Option<
-                    ::Value<self::playback_configuration::DashConfigurationForPut>,
+                    crate::Value<self::playback_configuration::DashConfigurationForPut>,
                 > = None;
                 let mut live_pre_roll_configuration: Option<
-                    ::Value<self::playback_configuration::LivePreRollConfiguration>,
+                    crate::Value<self::playback_configuration::LivePreRollConfiguration>,
                 > = None;
                 let mut manifest_processing_rules: Option<
-                    ::Value<self::playback_configuration::ManifestProcessingRules>,
+                    crate::Value<self::playback_configuration::ManifestProcessingRules>,
                 > = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut personalization_threshold_seconds: Option<::Value<u32>> = None;
-                let mut session_initialization_endpoint_prefix: Option<::Value<String>> = None;
-                let mut slate_ad_url: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut transcode_profile_name: Option<::Value<String>> = None;
-                let mut video_content_source_url: Option<::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut personalization_threshold_seconds: Option<crate::Value<u32>> = None;
+                let mut session_initialization_endpoint_prefix: Option<crate::Value<String>> = None;
+                let mut slate_ad_url: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut transcode_profile_name: Option<crate::Value<String>> = None;
+                let mut video_content_source_url: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -306,7 +306,7 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackConfigurationProperties {
     }
 }
 
-impl ::Resource for PlaybackConfiguration {
+impl crate::Resource for PlaybackConfiguration {
     type Properties = PlaybackConfigurationProperties;
     const TYPE: &'static str = "AWS::MediaTailor::PlaybackConfiguration";
     fn properties(&self) -> &PlaybackConfigurationProperties {
@@ -317,7 +317,7 @@ impl ::Resource for PlaybackConfiguration {
     }
 }
 
-impl ::private::Sealed for PlaybackConfiguration {}
+impl crate::private::Sealed for PlaybackConfiguration {}
 
 impl From<PlaybackConfigurationProperties> for PlaybackConfiguration {
     fn from(properties: PlaybackConfigurationProperties) -> PlaybackConfiguration {
@@ -335,10 +335,10 @@ pub mod playback_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<::Value<bool>>,
+        pub enabled: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for AdMarkerPassthrough {
+    impl crate::codec::SerializeValue for AdMarkerPassthrough {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enabled) = self.enabled {
@@ -348,7 +348,7 @@ pub mod playback_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for AdMarkerPassthrough {
+    impl crate::codec::DeserializeValue for AdMarkerPassthrough {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AdMarkerPassthrough, D::Error> {
@@ -365,7 +365,7 @@ pub mod playback_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -393,15 +393,15 @@ pub mod playback_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mode: Option<::Value<String>>,
+        pub mode: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-availsuppression.html#cfn-mediatailor-playbackconfiguration-availsuppression-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AvailSuppression {
+    impl crate::codec::SerializeValue for AvailSuppression {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref mode) = self.mode {
@@ -414,7 +414,7 @@ pub mod playback_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for AvailSuppression {
+    impl crate::codec::DeserializeValue for AvailSuppression {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AvailSuppression, D::Error> {
@@ -431,8 +431,8 @@ pub mod playback_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut mode: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut mode: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -466,15 +466,15 @@ pub mod playback_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_url: Option<::Value<String>>,
+        pub end_url: Option<crate::Value<String>>,
         /// Property [`StartUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-bumper.html#cfn-mediatailor-playbackconfiguration-bumper-starturl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_url: Option<::Value<String>>,
+        pub start_url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Bumper {
+    impl crate::codec::SerializeValue for Bumper {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref end_url) = self.end_url {
@@ -487,7 +487,7 @@ pub mod playback_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for Bumper {
+    impl crate::codec::DeserializeValue for Bumper {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Bumper, D::Error> {
             struct Visitor;
 
@@ -502,8 +502,8 @@ pub mod playback_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end_url: Option<::Value<String>> = None;
-                    let mut start_url: Option<::Value<String>> = None;
+                    let mut end_url: Option<crate::Value<String>> = None;
+                    let mut start_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -537,15 +537,15 @@ pub mod playback_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ad_segment_url_prefix: Option<::Value<String>>,
+        pub ad_segment_url_prefix: Option<crate::Value<String>>,
         /// Property [`ContentSegmentUrlPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-cdnconfiguration.html#cfn-mediatailor-playbackconfiguration-cdnconfiguration-contentsegmenturlprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub content_segment_url_prefix: Option<::Value<String>>,
+        pub content_segment_url_prefix: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CdnConfiguration {
+    impl crate::codec::SerializeValue for CdnConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_segment_url_prefix) = self.ad_segment_url_prefix {
@@ -566,7 +566,7 @@ pub mod playback_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for CdnConfiguration {
+    impl crate::codec::DeserializeValue for CdnConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CdnConfiguration, D::Error> {
@@ -583,8 +583,8 @@ pub mod playback_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ad_segment_url_prefix: Option<::Value<String>> = None;
-                    let mut content_segment_url_prefix: Option<::Value<String>> = None;
+                    let mut ad_segment_url_prefix: Option<crate::Value<String>> = None;
+                    let mut content_segment_url_prefix: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -620,15 +620,15 @@ pub mod playback_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mpd_location: Option<::Value<String>>,
+        pub mpd_location: Option<crate::Value<String>>,
         /// Property [`OriginManifestType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-dashconfigurationforput.html#cfn-mediatailor-playbackconfiguration-dashconfigurationforput-originmanifesttype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub origin_manifest_type: Option<::Value<String>>,
+        pub origin_manifest_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DashConfigurationForPut {
+    impl crate::codec::SerializeValue for DashConfigurationForPut {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref mpd_location) = self.mpd_location {
@@ -645,7 +645,7 @@ pub mod playback_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for DashConfigurationForPut {
+    impl crate::codec::DeserializeValue for DashConfigurationForPut {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DashConfigurationForPut, D::Error> {
@@ -662,8 +662,8 @@ pub mod playback_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut mpd_location: Option<::Value<String>> = None;
-                    let mut origin_manifest_type: Option<::Value<String>> = None;
+                    let mut mpd_location: Option<crate::Value<String>> = None;
+                    let mut origin_manifest_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -698,15 +698,15 @@ pub mod playback_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ad_decision_server_url: Option<::Value<String>>,
+        pub ad_decision_server_url: Option<crate::Value<String>>,
         /// Property [`MaxDurationSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-liveprerollconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration-maxdurationseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_duration_seconds: Option<::Value<u32>>,
+        pub max_duration_seconds: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for LivePreRollConfiguration {
+    impl crate::codec::SerializeValue for LivePreRollConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_decision_server_url) = self.ad_decision_server_url {
@@ -727,7 +727,7 @@ pub mod playback_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for LivePreRollConfiguration {
+    impl crate::codec::DeserializeValue for LivePreRollConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LivePreRollConfiguration, D::Error> {
@@ -744,8 +744,8 @@ pub mod playback_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ad_decision_server_url: Option<::Value<String>> = None;
-                    let mut max_duration_seconds: Option<::Value<u32>> = None;
+                    let mut ad_decision_server_url: Option<crate::Value<String>> = None;
+                    let mut max_duration_seconds: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -781,10 +781,10 @@ pub mod playback_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ad_marker_passthrough: Option<::Value<AdMarkerPassthrough>>,
+        pub ad_marker_passthrough: Option<crate::Value<AdMarkerPassthrough>>,
     }
 
-    impl ::codec::SerializeValue for ManifestProcessingRules {
+    impl crate::codec::SerializeValue for ManifestProcessingRules {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_marker_passthrough) = self.ad_marker_passthrough {
@@ -798,7 +798,7 @@ pub mod playback_configuration {
         }
     }
 
-    impl ::codec::DeserializeValue for ManifestProcessingRules {
+    impl crate::codec::DeserializeValue for ManifestProcessingRules {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ManifestProcessingRules, D::Error> {
@@ -815,7 +815,7 @@ pub mod playback_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ad_marker_passthrough: Option<::Value<AdMarkerPassthrough>> = None;
+                    let mut ad_marker_passthrough: Option<crate::Value<AdMarkerPassthrough>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

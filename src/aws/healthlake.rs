@@ -13,27 +13,27 @@ pub struct FHIRDatastoreProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub datastore_name: Option<::Value<String>>,
+    pub datastore_name: Option<crate::Value<String>>,
     /// Property [`DatastoreTypeVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-datastoretypeversion).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub datastore_type_version: ::Value<String>,
+    pub datastore_type_version: crate::Value<String>,
     /// Property [`PreloadDataConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-preloaddataconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub preload_data_config: Option<::Value<self::fhir_datastore::PreloadDataConfig>>,
+    pub preload_data_config: Option<crate::Value<self::fhir_datastore::PreloadDataConfig>>,
     /// Property [`SseConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-sseconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub sse_configuration: Option<::Value<self::fhir_datastore::SseConfiguration>>,
+    pub sse_configuration: Option<crate::Value<self::fhir_datastore::SseConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for FHIRDatastoreProperties {
@@ -85,14 +85,14 @@ impl<'de> ::serde::Deserialize<'de> for FHIRDatastoreProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut datastore_name: Option<::Value<String>> = None;
-                let mut datastore_type_version: Option<::Value<String>> = None;
+                let mut datastore_name: Option<crate::Value<String>> = None;
+                let mut datastore_type_version: Option<crate::Value<String>> = None;
                 let mut preload_data_config: Option<
-                    ::Value<self::fhir_datastore::PreloadDataConfig>,
+                    crate::Value<self::fhir_datastore::PreloadDataConfig>,
                 > = None;
-                let mut sse_configuration: Option<::Value<self::fhir_datastore::SseConfiguration>> =
+                let mut sse_configuration: Option<crate::Value<self::fhir_datastore::SseConfiguration>> =
                     None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -130,7 +130,7 @@ impl<'de> ::serde::Deserialize<'de> for FHIRDatastoreProperties {
     }
 }
 
-impl ::Resource for FHIRDatastore {
+impl crate::Resource for FHIRDatastore {
     type Properties = FHIRDatastoreProperties;
     const TYPE: &'static str = "AWS::HealthLake::FHIRDatastore";
     fn properties(&self) -> &FHIRDatastoreProperties {
@@ -141,7 +141,7 @@ impl ::Resource for FHIRDatastore {
     }
 }
 
-impl ::private::Sealed for FHIRDatastore {}
+impl crate::private::Sealed for FHIRDatastore {}
 
 impl From<FHIRDatastoreProperties> for FHIRDatastore {
     fn from(properties: FHIRDatastoreProperties) -> FHIRDatastore {
@@ -159,15 +159,15 @@ pub mod fhir_datastore {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cmk_type: ::Value<String>,
+        pub cmk_type: crate::Value<String>,
         /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-kmsencryptionconfig.html#cfn-healthlake-fhirdatastore-kmsencryptionconfig-kmskeyid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<::Value<String>>,
+        pub kms_key_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for KmsEncryptionConfig {
+    impl crate::codec::SerializeValue for KmsEncryptionConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CmkType", &self.cmk_type)?;
@@ -178,7 +178,7 @@ pub mod fhir_datastore {
         }
     }
 
-    impl ::codec::DeserializeValue for KmsEncryptionConfig {
+    impl crate::codec::DeserializeValue for KmsEncryptionConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KmsEncryptionConfig, D::Error> {
@@ -195,8 +195,8 @@ pub mod fhir_datastore {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cmk_type: Option<::Value<String>> = None;
-                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut cmk_type: Option<crate::Value<String>> = None;
+                    let mut kms_key_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -230,10 +230,10 @@ pub mod fhir_datastore {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub preload_data_type: ::Value<String>,
+        pub preload_data_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for PreloadDataConfig {
+    impl crate::codec::SerializeValue for PreloadDataConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -245,7 +245,7 @@ pub mod fhir_datastore {
         }
     }
 
-    impl ::codec::DeserializeValue for PreloadDataConfig {
+    impl crate::codec::DeserializeValue for PreloadDataConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PreloadDataConfig, D::Error> {
@@ -262,7 +262,7 @@ pub mod fhir_datastore {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut preload_data_type: Option<::Value<String>> = None;
+                    let mut preload_data_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -293,10 +293,10 @@ pub mod fhir_datastore {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_encryption_config: ::Value<KmsEncryptionConfig>,
+        pub kms_encryption_config: crate::Value<KmsEncryptionConfig>,
     }
 
-    impl ::codec::SerializeValue for SseConfiguration {
+    impl crate::codec::SerializeValue for SseConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -308,7 +308,7 @@ pub mod fhir_datastore {
         }
     }
 
-    impl ::codec::DeserializeValue for SseConfiguration {
+    impl crate::codec::DeserializeValue for SseConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SseConfiguration, D::Error> {
@@ -325,7 +325,7 @@ pub mod fhir_datastore {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_encryption_config: Option<::Value<KmsEncryptionConfig>> = None;
+                    let mut kms_encryption_config: Option<crate::Value<KmsEncryptionConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

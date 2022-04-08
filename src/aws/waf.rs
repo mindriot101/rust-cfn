@@ -13,12 +13,12 @@ pub struct ByteMatchSetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub byte_match_tuples: Option<::ValueList<self::byte_match_set::ByteMatchTuple>>,
+    pub byte_match_tuples: Option<crate::ValueList<self::byte_match_set::ByteMatchTuple>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for ByteMatchSetProperties {
@@ -54,9 +54,9 @@ impl<'de> ::serde::Deserialize<'de> for ByteMatchSetProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut byte_match_tuples: Option<
-                    ::ValueList<self::byte_match_set::ByteMatchTuple>,
+                    crate::ValueList<self::byte_match_set::ByteMatchTuple>,
                 > = None;
-                let mut name: Option<::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -81,7 +81,7 @@ impl<'de> ::serde::Deserialize<'de> for ByteMatchSetProperties {
     }
 }
 
-impl ::Resource for ByteMatchSet {
+impl crate::Resource for ByteMatchSet {
     type Properties = ByteMatchSetProperties;
     const TYPE: &'static str = "AWS::WAF::ByteMatchSet";
     fn properties(&self) -> &ByteMatchSetProperties {
@@ -92,7 +92,7 @@ impl ::Resource for ByteMatchSet {
     }
 }
 
-impl ::private::Sealed for ByteMatchSet {}
+impl crate::private::Sealed for ByteMatchSet {}
 
 impl From<ByteMatchSetProperties> for ByteMatchSet {
     fn from(properties: ByteMatchSetProperties) -> ByteMatchSet {
@@ -113,12 +113,12 @@ pub struct IPSetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ip_set_descriptors: Option<::ValueList<self::ip_set::IPSetDescriptor>>,
+    pub ip_set_descriptors: Option<crate::ValueList<self::ip_set::IPSetDescriptor>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for IPSetProperties {
@@ -151,9 +151,9 @@ impl<'de> ::serde::Deserialize<'de> for IPSetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut ip_set_descriptors: Option<::ValueList<self::ip_set::IPSetDescriptor>> =
+                let mut ip_set_descriptors: Option<crate::ValueList<self::ip_set::IPSetDescriptor>> =
                     None;
-                let mut name: Option<::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -178,7 +178,7 @@ impl<'de> ::serde::Deserialize<'de> for IPSetProperties {
     }
 }
 
-impl ::Resource for IPSet {
+impl crate::Resource for IPSet {
     type Properties = IPSetProperties;
     const TYPE: &'static str = "AWS::WAF::IPSet";
     fn properties(&self) -> &IPSetProperties {
@@ -189,7 +189,7 @@ impl ::Resource for IPSet {
     }
 }
 
-impl ::private::Sealed for IPSet {}
+impl crate::private::Sealed for IPSet {}
 
 impl From<IPSetProperties> for IPSet {
     fn from(properties: IPSetProperties) -> IPSet {
@@ -210,17 +210,17 @@ pub struct RuleProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub metric_name: ::Value<String>,
+    pub metric_name: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Predicates`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-predicates).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub predicates: Option<::ValueList<self::rule::Predicate>>,
+    pub predicates: Option<crate::ValueList<self::rule::Predicate>>,
 }
 
 impl ::serde::Serialize for RuleProperties {
@@ -250,9 +250,9 @@ impl<'de> ::serde::Deserialize<'de> for RuleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut metric_name: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut predicates: Option<::ValueList<self::rule::Predicate>> = None;
+                let mut metric_name: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut predicates: Option<crate::ValueList<self::rule::Predicate>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -282,7 +282,7 @@ impl<'de> ::serde::Deserialize<'de> for RuleProperties {
     }
 }
 
-impl ::Resource for Rule {
+impl crate::Resource for Rule {
     type Properties = RuleProperties;
     const TYPE: &'static str = "AWS::WAF::Rule";
     fn properties(&self) -> &RuleProperties {
@@ -293,7 +293,7 @@ impl ::Resource for Rule {
     }
 }
 
-impl ::private::Sealed for Rule {}
+impl crate::private::Sealed for Rule {}
 
 impl From<RuleProperties> for Rule {
     fn from(properties: RuleProperties) -> Rule {
@@ -314,12 +314,12 @@ pub struct SizeConstraintSetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`SizeConstraints`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub size_constraints: ::ValueList<self::size_constraint_set::SizeConstraint>,
+    pub size_constraints: crate::ValueList<self::size_constraint_set::SizeConstraint>,
 }
 
 impl ::serde::Serialize for SizeConstraintSetProperties {
@@ -352,9 +352,9 @@ impl<'de> ::serde::Deserialize<'de> for SizeConstraintSetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
                 let mut size_constraints: Option<
-                    ::ValueList<self::size_constraint_set::SizeConstraint>,
+                    crate::ValueList<self::size_constraint_set::SizeConstraint>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -381,7 +381,7 @@ impl<'de> ::serde::Deserialize<'de> for SizeConstraintSetProperties {
     }
 }
 
-impl ::Resource for SizeConstraintSet {
+impl crate::Resource for SizeConstraintSet {
     type Properties = SizeConstraintSetProperties;
     const TYPE: &'static str = "AWS::WAF::SizeConstraintSet";
     fn properties(&self) -> &SizeConstraintSetProperties {
@@ -392,7 +392,7 @@ impl ::Resource for SizeConstraintSet {
     }
 }
 
-impl ::private::Sealed for SizeConstraintSet {}
+impl crate::private::Sealed for SizeConstraintSet {}
 
 impl From<SizeConstraintSetProperties> for SizeConstraintSet {
     fn from(properties: SizeConstraintSetProperties) -> SizeConstraintSet {
@@ -413,13 +413,13 @@ pub struct SqlInjectionMatchSetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`SqlInjectionMatchTuples`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub sql_injection_match_tuples:
-        Option<::ValueList<self::sql_injection_match_set::SqlInjectionMatchTuple>>,
+        Option<crate::ValueList<self::sql_injection_match_set::SqlInjectionMatchTuple>>,
 }
 
 impl ::serde::Serialize for SqlInjectionMatchSetProperties {
@@ -454,9 +454,9 @@ impl<'de> ::serde::Deserialize<'de> for SqlInjectionMatchSetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
                 let mut sql_injection_match_tuples: Option<
-                    ::ValueList<self::sql_injection_match_set::SqlInjectionMatchTuple>,
+                    crate::ValueList<self::sql_injection_match_set::SqlInjectionMatchTuple>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -483,7 +483,7 @@ impl<'de> ::serde::Deserialize<'de> for SqlInjectionMatchSetProperties {
     }
 }
 
-impl ::Resource for SqlInjectionMatchSet {
+impl crate::Resource for SqlInjectionMatchSet {
     type Properties = SqlInjectionMatchSetProperties;
     const TYPE: &'static str = "AWS::WAF::SqlInjectionMatchSet";
     fn properties(&self) -> &SqlInjectionMatchSetProperties {
@@ -494,7 +494,7 @@ impl ::Resource for SqlInjectionMatchSet {
     }
 }
 
-impl ::private::Sealed for SqlInjectionMatchSet {}
+impl crate::private::Sealed for SqlInjectionMatchSet {}
 
 impl From<SqlInjectionMatchSetProperties> for SqlInjectionMatchSet {
     fn from(properties: SqlInjectionMatchSetProperties) -> SqlInjectionMatchSet {
@@ -515,22 +515,22 @@ pub struct WebACLProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_action: ::Value<self::web_acl::WafAction>,
+    pub default_action: crate::Value<self::web_acl::WafAction>,
     /// Property [`MetricName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub metric_name: ::Value<String>,
+    pub metric_name: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Rules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-rules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rules: Option<::ValueList<self::web_acl::ActivatedRule>>,
+    pub rules: Option<crate::ValueList<self::web_acl::ActivatedRule>>,
 }
 
 impl ::serde::Serialize for WebACLProperties {
@@ -565,10 +565,10 @@ impl<'de> ::serde::Deserialize<'de> for WebACLProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut default_action: Option<::Value<self::web_acl::WafAction>> = None;
-                let mut metric_name: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut rules: Option<::ValueList<self::web_acl::ActivatedRule>> = None;
+                let mut default_action: Option<crate::Value<self::web_acl::WafAction>> = None;
+                let mut metric_name: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut rules: Option<crate::ValueList<self::web_acl::ActivatedRule>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -603,7 +603,7 @@ impl<'de> ::serde::Deserialize<'de> for WebACLProperties {
     }
 }
 
-impl ::Resource for WebACL {
+impl crate::Resource for WebACL {
     type Properties = WebACLProperties;
     const TYPE: &'static str = "AWS::WAF::WebACL";
     fn properties(&self) -> &WebACLProperties {
@@ -614,7 +614,7 @@ impl ::Resource for WebACL {
     }
 }
 
-impl ::private::Sealed for WebACL {}
+impl crate::private::Sealed for WebACL {}
 
 impl From<WebACLProperties> for WebACL {
     fn from(properties: WebACLProperties) -> WebACL {
@@ -635,12 +635,12 @@ pub struct XssMatchSetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`XssMatchTuples`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-xssmatchtuples).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub xss_match_tuples: ::ValueList<self::xss_match_set::XssMatchTuple>,
+    pub xss_match_tuples: crate::ValueList<self::xss_match_set::XssMatchTuple>,
 }
 
 impl ::serde::Serialize for XssMatchSetProperties {
@@ -671,8 +671,8 @@ impl<'de> ::serde::Deserialize<'de> for XssMatchSetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<::Value<String>> = None;
-                let mut xss_match_tuples: Option<::ValueList<self::xss_match_set::XssMatchTuple>> =
+                let mut name: Option<crate::Value<String>> = None;
+                let mut xss_match_tuples: Option<crate::ValueList<self::xss_match_set::XssMatchTuple>> =
                     None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -699,7 +699,7 @@ impl<'de> ::serde::Deserialize<'de> for XssMatchSetProperties {
     }
 }
 
-impl ::Resource for XssMatchSet {
+impl crate::Resource for XssMatchSet {
     type Properties = XssMatchSetProperties;
     const TYPE: &'static str = "AWS::WAF::XssMatchSet";
     fn properties(&self) -> &XssMatchSetProperties {
@@ -710,7 +710,7 @@ impl ::Resource for XssMatchSet {
     }
 }
 
-impl ::private::Sealed for XssMatchSet {}
+impl crate::private::Sealed for XssMatchSet {}
 
 impl From<XssMatchSetProperties> for XssMatchSet {
     fn from(properties: XssMatchSetProperties) -> XssMatchSet {
@@ -728,30 +728,30 @@ pub mod byte_match_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_to_match: ::Value<FieldToMatch>,
+        pub field_to_match: crate::Value<FieldToMatch>,
         /// Property [`PositionalConstraint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-positionalconstraint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub positional_constraint: ::Value<String>,
+        pub positional_constraint: crate::Value<String>,
         /// Property [`TargetString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-targetstring).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_string: Option<::Value<String>>,
+        pub target_string: Option<crate::Value<String>>,
         /// Property [`TargetStringBase64`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-targetstringbase64).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_string_base64: Option<::Value<String>>,
+        pub target_string_base64: Option<crate::Value<String>>,
         /// Property [`TextTransformation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-texttransformation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_transformation: ::Value<String>,
+        pub text_transformation: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ByteMatchTuple {
+    impl crate::codec::SerializeValue for ByteMatchTuple {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -787,7 +787,7 @@ pub mod byte_match_set {
         }
     }
 
-    impl ::codec::DeserializeValue for ByteMatchTuple {
+    impl crate::codec::DeserializeValue for ByteMatchTuple {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ByteMatchTuple, D::Error> {
@@ -804,11 +804,11 @@ pub mod byte_match_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut field_to_match: Option<::Value<FieldToMatch>> = None;
-                    let mut positional_constraint: Option<::Value<String>> = None;
-                    let mut target_string: Option<::Value<String>> = None;
-                    let mut target_string_base64: Option<::Value<String>> = None;
-                    let mut text_transformation: Option<::Value<String>> = None;
+                    let mut field_to_match: Option<crate::Value<FieldToMatch>> = None;
+                    let mut positional_constraint: Option<crate::Value<String>> = None;
+                    let mut target_string: Option<crate::Value<String>> = None;
+                    let mut target_string_base64: Option<crate::Value<String>> = None;
+                    let mut text_transformation: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -859,15 +859,15 @@ pub mod byte_match_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data: Option<::Value<String>>,
+        pub data: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for FieldToMatch {
+    impl crate::codec::SerializeValue for FieldToMatch {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data) = self.data {
@@ -878,7 +878,7 @@ pub mod byte_match_set {
         }
     }
 
-    impl ::codec::DeserializeValue for FieldToMatch {
+    impl crate::codec::DeserializeValue for FieldToMatch {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FieldToMatch, D::Error> {
             struct Visitor;
 
@@ -893,8 +893,8 @@ pub mod byte_match_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut data: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -932,15 +932,15 @@ pub mod ip_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-ipset-ipsetdescriptors.html#cfn-waf-ipset-ipsetdescriptors-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for IPSetDescriptor {
+    impl crate::codec::SerializeValue for IPSetDescriptor {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", &self.r#type)?;
@@ -949,7 +949,7 @@ pub mod ip_set {
         }
     }
 
-    impl ::codec::DeserializeValue for IPSetDescriptor {
+    impl crate::codec::DeserializeValue for IPSetDescriptor {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IPSetDescriptor, D::Error> {
@@ -966,8 +966,8 @@ pub mod ip_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1005,20 +1005,20 @@ pub mod rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_id: ::Value<String>,
+        pub data_id: crate::Value<String>,
         /// Property [`Negated`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html#cfn-waf-rule-predicates-negated).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub negated: ::Value<bool>,
+        pub negated: crate::Value<bool>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html#cfn-waf-rule-predicates-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Predicate {
+    impl crate::codec::SerializeValue for Predicate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataId", &self.data_id)?;
@@ -1028,7 +1028,7 @@ pub mod rule {
         }
     }
 
-    impl ::codec::DeserializeValue for Predicate {
+    impl crate::codec::DeserializeValue for Predicate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Predicate, D::Error> {
             struct Visitor;
 
@@ -1043,9 +1043,9 @@ pub mod rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_id: Option<::Value<String>> = None;
-                    let mut negated: Option<::Value<bool>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut data_id: Option<crate::Value<String>> = None;
+                    let mut negated: Option<crate::Value<bool>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1087,15 +1087,15 @@ pub mod size_constraint_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data: Option<::Value<String>>,
+        pub data: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for FieldToMatch {
+    impl crate::codec::SerializeValue for FieldToMatch {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data) = self.data {
@@ -1106,7 +1106,7 @@ pub mod size_constraint_set {
         }
     }
 
-    impl ::codec::DeserializeValue for FieldToMatch {
+    impl crate::codec::DeserializeValue for FieldToMatch {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FieldToMatch, D::Error> {
             struct Visitor;
 
@@ -1121,8 +1121,8 @@ pub mod size_constraint_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut data: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1156,25 +1156,25 @@ pub mod size_constraint_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub comparison_operator: ::Value<String>,
+        pub comparison_operator: crate::Value<String>,
         /// Property [`FieldToMatch`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_to_match: ::Value<FieldToMatch>,
+        pub field_to_match: crate::Value<FieldToMatch>,
         /// Property [`Size`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-size).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size: ::Value<u32>,
+        pub size: crate::Value<u32>,
         /// Property [`TextTransformation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-texttransformation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_transformation: ::Value<String>,
+        pub text_transformation: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SizeConstraint {
+    impl crate::codec::SerializeValue for SizeConstraint {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1197,7 +1197,7 @@ pub mod size_constraint_set {
         }
     }
 
-    impl ::codec::DeserializeValue for SizeConstraint {
+    impl crate::codec::DeserializeValue for SizeConstraint {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SizeConstraint, D::Error> {
@@ -1214,10 +1214,10 @@ pub mod size_constraint_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut comparison_operator: Option<::Value<String>> = None;
-                    let mut field_to_match: Option<::Value<FieldToMatch>> = None;
-                    let mut size: Option<::Value<u32>> = None;
-                    let mut text_transformation: Option<::Value<String>> = None;
+                    let mut comparison_operator: Option<crate::Value<String>> = None;
+                    let mut field_to_match: Option<crate::Value<FieldToMatch>> = None;
+                    let mut size: Option<crate::Value<u32>> = None;
+                    let mut text_transformation: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1266,15 +1266,15 @@ pub mod sql_injection_match_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data: Option<::Value<String>>,
+        pub data: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for FieldToMatch {
+    impl crate::codec::SerializeValue for FieldToMatch {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data) = self.data {
@@ -1285,7 +1285,7 @@ pub mod sql_injection_match_set {
         }
     }
 
-    impl ::codec::DeserializeValue for FieldToMatch {
+    impl crate::codec::DeserializeValue for FieldToMatch {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FieldToMatch, D::Error> {
             struct Visitor;
 
@@ -1300,8 +1300,8 @@ pub mod sql_injection_match_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut data: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1335,15 +1335,15 @@ pub mod sql_injection_match_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_to_match: ::Value<FieldToMatch>,
+        pub field_to_match: crate::Value<FieldToMatch>,
         /// Property [`TextTransformation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sqlinjectionmatchset-sqlinjectionmatchtuples.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples-texttransformation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_transformation: ::Value<String>,
+        pub text_transformation: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SqlInjectionMatchTuple {
+    impl crate::codec::SerializeValue for SqlInjectionMatchTuple {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1360,7 +1360,7 @@ pub mod sql_injection_match_set {
         }
     }
 
-    impl ::codec::DeserializeValue for SqlInjectionMatchTuple {
+    impl crate::codec::DeserializeValue for SqlInjectionMatchTuple {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SqlInjectionMatchTuple, D::Error> {
@@ -1377,8 +1377,8 @@ pub mod sql_injection_match_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut field_to_match: Option<::Value<FieldToMatch>> = None;
-                    let mut text_transformation: Option<::Value<String>> = None;
+                    let mut field_to_match: Option<crate::Value<FieldToMatch>> = None;
+                    let mut text_transformation: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1418,20 +1418,20 @@ pub mod web_acl {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: Option<::Value<WafAction>>,
+        pub action: Option<crate::Value<WafAction>>,
         /// Property [`Priority`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-priority).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub priority: ::Value<u32>,
+        pub priority: crate::Value<u32>,
         /// Property [`RuleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-ruleid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rule_id: ::Value<String>,
+        pub rule_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ActivatedRule {
+    impl crate::codec::SerializeValue for ActivatedRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action) = self.action {
@@ -1443,7 +1443,7 @@ pub mod web_acl {
         }
     }
 
-    impl ::codec::DeserializeValue for ActivatedRule {
+    impl crate::codec::DeserializeValue for ActivatedRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ActivatedRule, D::Error> {
@@ -1460,9 +1460,9 @@ pub mod web_acl {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<WafAction>> = None;
-                    let mut priority: Option<::Value<u32>> = None;
-                    let mut rule_id: Option<::Value<String>> = None;
+                    let mut action: Option<crate::Value<WafAction>> = None;
+                    let mut priority: Option<crate::Value<u32>> = None;
+                    let mut rule_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1500,10 +1500,10 @@ pub mod web_acl {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for WafAction {
+    impl crate::codec::SerializeValue for WafAction {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", &self.r#type)?;
@@ -1511,7 +1511,7 @@ pub mod web_acl {
         }
     }
 
-    impl ::codec::DeserializeValue for WafAction {
+    impl crate::codec::DeserializeValue for WafAction {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<WafAction, D::Error> {
             struct Visitor;
 
@@ -1526,7 +1526,7 @@ pub mod web_acl {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1560,15 +1560,15 @@ pub mod xss_match_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data: Option<::Value<String>>,
+        pub data: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple-fieldtomatch.html#cfn-waf-xssmatchset-xssmatchtuple-fieldtomatch-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for FieldToMatch {
+    impl crate::codec::SerializeValue for FieldToMatch {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data) = self.data {
@@ -1579,7 +1579,7 @@ pub mod xss_match_set {
         }
     }
 
-    impl ::codec::DeserializeValue for FieldToMatch {
+    impl crate::codec::DeserializeValue for FieldToMatch {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FieldToMatch, D::Error> {
             struct Visitor;
 
@@ -1594,8 +1594,8 @@ pub mod xss_match_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut data: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1629,15 +1629,15 @@ pub mod xss_match_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field_to_match: ::Value<FieldToMatch>,
+        pub field_to_match: crate::Value<FieldToMatch>,
         /// Property [`TextTransformation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html#cfn-waf-xssmatchset-xssmatchtuple-texttransformation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_transformation: ::Value<String>,
+        pub text_transformation: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for XssMatchTuple {
+    impl crate::codec::SerializeValue for XssMatchTuple {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1654,7 +1654,7 @@ pub mod xss_match_set {
         }
     }
 
-    impl ::codec::DeserializeValue for XssMatchTuple {
+    impl crate::codec::DeserializeValue for XssMatchTuple {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<XssMatchTuple, D::Error> {
@@ -1671,8 +1671,8 @@ pub mod xss_match_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut field_to_match: Option<::Value<FieldToMatch>> = None;
-                    let mut text_transformation: Option<::Value<String>> = None;
+                    let mut field_to_match: Option<crate::Value<FieldToMatch>> = None;
+                    let mut text_transformation: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

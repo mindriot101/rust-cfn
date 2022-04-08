@@ -13,38 +13,38 @@ pub struct ExperimentTemplateProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub actions: Option<::ValueMap<self::experiment_template::ExperimentTemplateAction>>,
+    pub actions: Option<crate::ValueMap<self::experiment_template::ExperimentTemplateAction>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: ::Value<String>,
+    pub description: crate::Value<String>,
     /// Property [`LogConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-logconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub log_configuration:
-        Option<::Value<self::experiment_template::ExperimentTemplateLogConfiguration>>,
+        Option<crate::Value<self::experiment_template::ExperimentTemplateLogConfiguration>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
     /// Property [`StopConditions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-stopconditions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stop_conditions: ::ValueList<self::experiment_template::ExperimentTemplateStopCondition>,
+    pub stop_conditions: crate::ValueList<self::experiment_template::ExperimentTemplateStopCondition>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: ::ValueMap<String>,
+    pub tags: crate::ValueMap<String>,
     /// Property [`Targets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-targets).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub targets: ::ValueMap<self::experiment_template::ExperimentTemplateTarget>,
+    pub targets: crate::ValueMap<self::experiment_template::ExperimentTemplateTarget>,
 }
 
 impl ::serde::Serialize for ExperimentTemplateProperties {
@@ -91,19 +91,19 @@ impl<'de> ::serde::Deserialize<'de> for ExperimentTemplateProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut actions: Option<
-                    ::ValueMap<self::experiment_template::ExperimentTemplateAction>,
+                    crate::ValueMap<self::experiment_template::ExperimentTemplateAction>,
                 > = None;
-                let mut description: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
                 let mut log_configuration: Option<
-                    ::Value<self::experiment_template::ExperimentTemplateLogConfiguration>,
+                    crate::Value<self::experiment_template::ExperimentTemplateLogConfiguration>,
                 > = None;
-                let mut role_arn: Option<::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
                 let mut stop_conditions: Option<
-                    ::ValueList<self::experiment_template::ExperimentTemplateStopCondition>,
+                    crate::ValueList<self::experiment_template::ExperimentTemplateStopCondition>,
                 > = None;
-                let mut tags: Option<::ValueMap<String>> = None;
+                let mut tags: Option<crate::ValueMap<String>> = None;
                 let mut targets: Option<
-                    ::ValueMap<self::experiment_template::ExperimentTemplateTarget>,
+                    crate::ValueMap<self::experiment_template::ExperimentTemplateTarget>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -151,7 +151,7 @@ impl<'de> ::serde::Deserialize<'de> for ExperimentTemplateProperties {
     }
 }
 
-impl ::Resource for ExperimentTemplate {
+impl crate::Resource for ExperimentTemplate {
     type Properties = ExperimentTemplateProperties;
     const TYPE: &'static str = "AWS::FIS::ExperimentTemplate";
     fn properties(&self) -> &ExperimentTemplateProperties {
@@ -162,7 +162,7 @@ impl ::Resource for ExperimentTemplate {
     }
 }
 
-impl ::private::Sealed for ExperimentTemplate {}
+impl crate::private::Sealed for ExperimentTemplate {}
 
 impl From<ExperimentTemplateProperties> for ExperimentTemplate {
     fn from(properties: ExperimentTemplateProperties) -> ExperimentTemplate {
@@ -180,30 +180,30 @@ pub mod experiment_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action_id: ::Value<String>,
+        pub action_id: crate::Value<String>,
         /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateaction.html#cfn-fis-experimenttemplate-experimenttemplateaction-description).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateaction.html#cfn-fis-experimenttemplate-experimenttemplateaction-parameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<::ValueMap<String>>,
+        pub parameters: Option<crate::ValueMap<String>>,
         /// Property [`StartAfter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateaction.html#cfn-fis-experimenttemplate-experimenttemplateaction-startafter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_after: Option<::ValueList<String>>,
+        pub start_after: Option<crate::ValueList<String>>,
         /// Property [`Targets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateaction.html#cfn-fis-experimenttemplate-experimenttemplateaction-targets).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub targets: Option<::ValueMap<String>>,
+        pub targets: Option<crate::ValueMap<String>>,
     }
 
-    impl ::codec::SerializeValue for ExperimentTemplateAction {
+    impl crate::codec::SerializeValue for ExperimentTemplateAction {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ActionId", &self.action_id)?;
@@ -223,7 +223,7 @@ pub mod experiment_template {
         }
     }
 
-    impl ::codec::DeserializeValue for ExperimentTemplateAction {
+    impl crate::codec::DeserializeValue for ExperimentTemplateAction {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExperimentTemplateAction, D::Error> {
@@ -240,11 +240,11 @@ pub mod experiment_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action_id: Option<::Value<String>> = None;
-                    let mut description: Option<::Value<String>> = None;
-                    let mut parameters: Option<::ValueMap<String>> = None;
-                    let mut start_after: Option<::ValueList<String>> = None;
-                    let mut targets: Option<::ValueMap<String>> = None;
+                    let mut action_id: Option<crate::Value<String>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut parameters: Option<crate::ValueMap<String>> = None;
+                    let mut start_after: Option<crate::ValueList<String>> = None;
+                    let mut targets: Option<crate::ValueMap<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -291,20 +291,20 @@ pub mod experiment_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logs_configuration: Option<::Value<::json::Value>>,
+        pub cloud_watch_logs_configuration: Option<crate::Value<crate::json::Value>>,
         /// Property [`LogSchemaVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatelogconfiguration.html#cfn-fis-experimenttemplate-experimenttemplatelogconfiguration-logschemaversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_schema_version: ::Value<u32>,
+        pub log_schema_version: crate::Value<u32>,
         /// Property [`S3Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatelogconfiguration.html#cfn-fis-experimenttemplate-experimenttemplatelogconfiguration-s3configuration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_configuration: Option<::Value<::json::Value>>,
+        pub s3_configuration: Option<crate::Value<crate::json::Value>>,
     }
 
-    impl ::codec::SerializeValue for ExperimentTemplateLogConfiguration {
+    impl crate::codec::SerializeValue for ExperimentTemplateLogConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_logs_configuration) = self.cloud_watch_logs_configuration {
@@ -330,7 +330,7 @@ pub mod experiment_template {
         }
     }
 
-    impl ::codec::DeserializeValue for ExperimentTemplateLogConfiguration {
+    impl crate::codec::DeserializeValue for ExperimentTemplateLogConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExperimentTemplateLogConfiguration, D::Error> {
@@ -347,9 +347,9 @@ pub mod experiment_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_logs_configuration: Option<::Value<::json::Value>> = None;
-                    let mut log_schema_version: Option<::Value<u32>> = None;
-                    let mut s3_configuration: Option<::Value<::json::Value>> = None;
+                    let mut cloud_watch_logs_configuration: Option<crate::Value<crate::json::Value>> = None;
+                    let mut log_schema_version: Option<crate::Value<u32>> = None;
+                    let mut s3_configuration: Option<crate::Value<crate::json::Value>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -389,15 +389,15 @@ pub mod experiment_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source: ::Value<String>,
+        pub source: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatestopcondition.html#cfn-fis-experimenttemplate-experimenttemplatestopcondition-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ExperimentTemplateStopCondition {
+    impl crate::codec::SerializeValue for ExperimentTemplateStopCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Source", &self.source)?;
@@ -408,7 +408,7 @@ pub mod experiment_template {
         }
     }
 
-    impl ::codec::DeserializeValue for ExperimentTemplateStopCondition {
+    impl crate::codec::DeserializeValue for ExperimentTemplateStopCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExperimentTemplateStopCondition, D::Error> {
@@ -425,8 +425,8 @@ pub mod experiment_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut source: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -460,35 +460,35 @@ pub mod experiment_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filters: Option<::ValueList<ExperimentTemplateTargetFilter>>,
+        pub filters: Option<crate::ValueList<ExperimentTemplateTargetFilter>>,
         /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html#cfn-fis-experimenttemplate-experimenttemplatetarget-parameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<::ValueMap<String>>,
+        pub parameters: Option<crate::ValueMap<String>>,
         /// Property [`ResourceArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html#cfn-fis-experimenttemplate-experimenttemplatetarget-resourcearns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_arns: Option<::ValueList<String>>,
+        pub resource_arns: Option<crate::ValueList<String>>,
         /// Property [`ResourceTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html#cfn-fis-experimenttemplate-experimenttemplatetarget-resourcetags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_tags: Option<::ValueMap<String>>,
+        pub resource_tags: Option<crate::ValueMap<String>>,
         /// Property [`ResourceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html#cfn-fis-experimenttemplate-experimenttemplatetarget-resourcetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_type: ::Value<String>,
+        pub resource_type: crate::Value<String>,
         /// Property [`SelectionMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html#cfn-fis-experimenttemplate-experimenttemplatetarget-selectionmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub selection_mode: ::Value<String>,
+        pub selection_mode: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ExperimentTemplateTarget {
+    impl crate::codec::SerializeValue for ExperimentTemplateTarget {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref filters) = self.filters {
@@ -525,7 +525,7 @@ pub mod experiment_template {
         }
     }
 
-    impl ::codec::DeserializeValue for ExperimentTemplateTarget {
+    impl crate::codec::DeserializeValue for ExperimentTemplateTarget {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExperimentTemplateTarget, D::Error> {
@@ -542,12 +542,12 @@ pub mod experiment_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut filters: Option<::ValueList<ExperimentTemplateTargetFilter>> = None;
-                    let mut parameters: Option<::ValueMap<String>> = None;
-                    let mut resource_arns: Option<::ValueList<String>> = None;
-                    let mut resource_tags: Option<::ValueMap<String>> = None;
-                    let mut resource_type: Option<::Value<String>> = None;
-                    let mut selection_mode: Option<::Value<String>> = None;
+                    let mut filters: Option<crate::ValueList<ExperimentTemplateTargetFilter>> = None;
+                    let mut parameters: Option<crate::ValueMap<String>> = None;
+                    let mut resource_arns: Option<crate::ValueList<String>> = None;
+                    let mut resource_tags: Option<crate::ValueMap<String>> = None;
+                    let mut resource_type: Option<crate::Value<String>> = None;
+                    let mut selection_mode: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -599,15 +599,15 @@ pub mod experiment_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path: ::Value<String>,
+        pub path: crate::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: ::ValueList<String>,
+        pub values: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for ExperimentTemplateTargetFilter {
+    impl crate::codec::SerializeValue for ExperimentTemplateTargetFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", &self.path)?;
@@ -616,7 +616,7 @@ pub mod experiment_template {
         }
     }
 
-    impl ::codec::DeserializeValue for ExperimentTemplateTargetFilter {
+    impl crate::codec::DeserializeValue for ExperimentTemplateTargetFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExperimentTemplateTargetFilter, D::Error> {
@@ -633,8 +633,8 @@ pub mod experiment_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut path: Option<::Value<String>> = None;
-                    let mut values: Option<::ValueList<String>> = None;
+                    let mut path: Option<crate::Value<String>> = None;
+                    let mut values: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

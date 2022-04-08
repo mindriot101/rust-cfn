@@ -13,32 +13,32 @@ pub struct DatasetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub format: Option<::Value<String>>,
+    pub format: Option<crate::Value<String>>,
     /// Property [`FormatOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-formatoptions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub format_options: Option<::Value<self::dataset::FormatOptions>>,
+    pub format_options: Option<crate::Value<self::dataset::FormatOptions>>,
     /// Property [`Input`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-input).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub input: ::Value<self::dataset::Input>,
+    pub input: crate::Value<self::dataset::Input>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`PathOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-pathoptions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub path_options: Option<::Value<self::dataset::PathOptions>>,
+    pub path_options: Option<crate::Value<self::dataset::PathOptions>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for DatasetProperties {
@@ -77,12 +77,12 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut format: Option<::Value<String>> = None;
-                let mut format_options: Option<::Value<self::dataset::FormatOptions>> = None;
-                let mut input: Option<::Value<self::dataset::Input>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut path_options: Option<::Value<self::dataset::PathOptions>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut format: Option<crate::Value<String>> = None;
+                let mut format_options: Option<crate::Value<self::dataset::FormatOptions>> = None;
+                let mut input: Option<crate::Value<self::dataset::Input>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut path_options: Option<crate::Value<self::dataset::PathOptions>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -123,7 +123,7 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
     }
 }
 
-impl ::Resource for Dataset {
+impl crate::Resource for Dataset {
     type Properties = DatasetProperties;
     const TYPE: &'static str = "AWS::DataBrew::Dataset";
     fn properties(&self) -> &DatasetProperties {
@@ -134,7 +134,7 @@ impl ::Resource for Dataset {
     }
 }
 
-impl ::private::Sealed for Dataset {}
+impl crate::private::Sealed for Dataset {}
 
 impl From<DatasetProperties> for Dataset {
     fn from(properties: DatasetProperties) -> Dataset {
@@ -155,102 +155,102 @@ pub struct JobProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_catalog_outputs: Option<::ValueList<self::job::DataCatalogOutput>>,
+    pub data_catalog_outputs: Option<crate::ValueList<self::job::DataCatalogOutput>>,
     /// Property [`DatabaseOutputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-databaseoutputs).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub database_outputs: Option<::ValueList<self::job::DatabaseOutput>>,
+    pub database_outputs: Option<crate::ValueList<self::job::DatabaseOutput>>,
     /// Property [`DatasetName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-datasetname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dataset_name: Option<::Value<String>>,
+    pub dataset_name: Option<crate::Value<String>>,
     /// Property [`EncryptionKeyArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-encryptionkeyarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encryption_key_arn: Option<::Value<String>>,
+    pub encryption_key_arn: Option<crate::Value<String>>,
     /// Property [`EncryptionMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-encryptionmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encryption_mode: Option<::Value<String>>,
+    pub encryption_mode: Option<crate::Value<String>>,
     /// Property [`JobSample`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-jobsample).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub job_sample: Option<::Value<self::job::JobSample>>,
+    pub job_sample: Option<crate::Value<self::job::JobSample>>,
     /// Property [`LogSubscription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-logsubscription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub log_subscription: Option<::Value<String>>,
+    pub log_subscription: Option<crate::Value<String>>,
     /// Property [`MaxCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-maxcapacity).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_capacity: Option<::Value<u32>>,
+    pub max_capacity: Option<crate::Value<u32>>,
     /// Property [`MaxRetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-maxretries).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_retries: Option<::Value<u32>>,
+    pub max_retries: Option<crate::Value<u32>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`OutputLocation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputlocation).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub output_location: Option<::Value<self::job::OutputLocation>>,
+    pub output_location: Option<crate::Value<self::job::OutputLocation>>,
     /// Property [`Outputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputs).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub outputs: Option<::ValueList<self::job::Output>>,
+    pub outputs: Option<crate::ValueList<self::job::Output>>,
     /// Property [`ProfileConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-profileconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub profile_configuration: Option<::Value<self::job::ProfileConfiguration>>,
+    pub profile_configuration: Option<crate::Value<self::job::ProfileConfiguration>>,
     /// Property [`ProjectName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-projectname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub project_name: Option<::Value<String>>,
+    pub project_name: Option<crate::Value<String>>,
     /// Property [`Recipe`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-recipe).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub recipe: Option<::Value<self::job::Recipe>>,
+    pub recipe: Option<crate::Value<self::job::Recipe>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Timeout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-timeout).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub timeout: Option<::Value<u32>>,
+    pub timeout: Option<crate::Value<u32>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
     /// Property [`ValidationConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-validationconfigurations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub validation_configurations: Option<::ValueList<self::job::ValidationConfiguration>>,
+    pub validation_configurations: Option<crate::ValueList<self::job::ValidationConfiguration>>,
 }
 
 impl ::serde::Serialize for JobProperties {
@@ -361,29 +361,29 @@ impl<'de> ::serde::Deserialize<'de> for JobProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_catalog_outputs: Option<::ValueList<self::job::DataCatalogOutput>> =
+                let mut data_catalog_outputs: Option<crate::ValueList<self::job::DataCatalogOutput>> =
                     None;
-                let mut database_outputs: Option<::ValueList<self::job::DatabaseOutput>> = None;
-                let mut dataset_name: Option<::Value<String>> = None;
-                let mut encryption_key_arn: Option<::Value<String>> = None;
-                let mut encryption_mode: Option<::Value<String>> = None;
-                let mut job_sample: Option<::Value<self::job::JobSample>> = None;
-                let mut log_subscription: Option<::Value<String>> = None;
-                let mut max_capacity: Option<::Value<u32>> = None;
-                let mut max_retries: Option<::Value<u32>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut output_location: Option<::Value<self::job::OutputLocation>> = None;
-                let mut outputs: Option<::ValueList<self::job::Output>> = None;
-                let mut profile_configuration: Option<::Value<self::job::ProfileConfiguration>> =
+                let mut database_outputs: Option<crate::ValueList<self::job::DatabaseOutput>> = None;
+                let mut dataset_name: Option<crate::Value<String>> = None;
+                let mut encryption_key_arn: Option<crate::Value<String>> = None;
+                let mut encryption_mode: Option<crate::Value<String>> = None;
+                let mut job_sample: Option<crate::Value<self::job::JobSample>> = None;
+                let mut log_subscription: Option<crate::Value<String>> = None;
+                let mut max_capacity: Option<crate::Value<u32>> = None;
+                let mut max_retries: Option<crate::Value<u32>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut output_location: Option<crate::Value<self::job::OutputLocation>> = None;
+                let mut outputs: Option<crate::ValueList<self::job::Output>> = None;
+                let mut profile_configuration: Option<crate::Value<self::job::ProfileConfiguration>> =
                     None;
-                let mut project_name: Option<::Value<String>> = None;
-                let mut recipe: Option<::Value<self::job::Recipe>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut timeout: Option<::Value<u32>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut project_name: Option<crate::Value<String>> = None;
+                let mut recipe: Option<crate::Value<self::job::Recipe>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut timeout: Option<crate::Value<u32>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
                 let mut validation_configurations: Option<
-                    ::ValueList<self::job::ValidationConfiguration>,
+                    crate::ValueList<self::job::ValidationConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -482,7 +482,7 @@ impl<'de> ::serde::Deserialize<'de> for JobProperties {
     }
 }
 
-impl ::Resource for Job {
+impl crate::Resource for Job {
     type Properties = JobProperties;
     const TYPE: &'static str = "AWS::DataBrew::Job";
     fn properties(&self) -> &JobProperties {
@@ -493,7 +493,7 @@ impl ::Resource for Job {
     }
 }
 
-impl ::private::Sealed for Job {}
+impl crate::private::Sealed for Job {}
 
 impl From<JobProperties> for Job {
     fn from(properties: JobProperties) -> Job {
@@ -514,32 +514,32 @@ pub struct ProjectProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dataset_name: ::Value<String>,
+    pub dataset_name: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`RecipeName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-recipename).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub recipe_name: ::Value<String>,
+    pub recipe_name: crate::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
     /// Property [`Sample`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-sample).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sample: Option<::Value<self::project::Sample>>,
+    pub sample: Option<crate::Value<self::project::Sample>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ProjectProperties {
@@ -574,12 +574,12 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut dataset_name: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut recipe_name: Option<::Value<String>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
-                let mut sample: Option<::Value<self::project::Sample>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut dataset_name: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut recipe_name: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut sample: Option<crate::Value<self::project::Sample>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -622,7 +622,7 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
     }
 }
 
-impl ::Resource for Project {
+impl crate::Resource for Project {
     type Properties = ProjectProperties;
     const TYPE: &'static str = "AWS::DataBrew::Project";
     fn properties(&self) -> &ProjectProperties {
@@ -633,7 +633,7 @@ impl ::Resource for Project {
     }
 }
 
-impl ::private::Sealed for Project {}
+impl crate::private::Sealed for Project {}
 
 impl From<ProjectProperties> for Project {
     fn from(properties: ProjectProperties) -> Project {
@@ -654,22 +654,22 @@ pub struct RecipeProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Steps`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-steps).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub steps: ::ValueList<self::recipe::RecipeStep>,
+    pub steps: crate::ValueList<self::recipe::RecipeStep>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for RecipeProperties {
@@ -702,10 +702,10 @@ impl<'de> ::serde::Deserialize<'de> for RecipeProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut steps: Option<::ValueList<self::recipe::RecipeStep>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut steps: Option<crate::ValueList<self::recipe::RecipeStep>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -738,7 +738,7 @@ impl<'de> ::serde::Deserialize<'de> for RecipeProperties {
     }
 }
 
-impl ::Resource for Recipe {
+impl crate::Resource for Recipe {
     type Properties = RecipeProperties;
     const TYPE: &'static str = "AWS::DataBrew::Recipe";
     fn properties(&self) -> &RecipeProperties {
@@ -749,7 +749,7 @@ impl ::Resource for Recipe {
     }
 }
 
-impl ::private::Sealed for Recipe {}
+impl crate::private::Sealed for Recipe {}
 
 impl From<RecipeProperties> for Recipe {
     fn from(properties: RecipeProperties) -> Recipe {
@@ -770,27 +770,27 @@ pub struct RulesetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Rules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-rules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rules: ::ValueList<self::ruleset::Rule>,
+    pub rules: crate::ValueList<self::ruleset::Rule>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`TargetArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-targetarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub target_arn: ::Value<String>,
+    pub target_arn: crate::Value<String>,
 }
 
 impl ::serde::Serialize for RulesetProperties {
@@ -824,11 +824,11 @@ impl<'de> ::serde::Deserialize<'de> for RulesetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut rules: Option<::ValueList<self::ruleset::Rule>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut target_arn: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut rules: Option<crate::ValueList<self::ruleset::Rule>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut target_arn: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -865,7 +865,7 @@ impl<'de> ::serde::Deserialize<'de> for RulesetProperties {
     }
 }
 
-impl ::Resource for Ruleset {
+impl crate::Resource for Ruleset {
     type Properties = RulesetProperties;
     const TYPE: &'static str = "AWS::DataBrew::Ruleset";
     fn properties(&self) -> &RulesetProperties {
@@ -876,7 +876,7 @@ impl ::Resource for Ruleset {
     }
 }
 
-impl ::private::Sealed for Ruleset {}
+impl crate::private::Sealed for Ruleset {}
 
 impl From<RulesetProperties> for Ruleset {
     fn from(properties: RulesetProperties) -> Ruleset {
@@ -897,22 +897,22 @@ pub struct ScheduleProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cron_expression: ::Value<String>,
+    pub cron_expression: crate::Value<String>,
     /// Property [`JobNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-jobnames).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub job_names: Option<::ValueList<String>>,
+    pub job_names: Option<crate::ValueList<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ScheduleProperties {
@@ -949,10 +949,10 @@ impl<'de> ::serde::Deserialize<'de> for ScheduleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cron_expression: Option<::Value<String>> = None;
-                let mut job_names: Option<::ValueList<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut cron_expression: Option<crate::Value<String>> = None;
+                let mut job_names: Option<crate::ValueList<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -986,7 +986,7 @@ impl<'de> ::serde::Deserialize<'de> for ScheduleProperties {
     }
 }
 
-impl ::Resource for Schedule {
+impl crate::Resource for Schedule {
     type Properties = ScheduleProperties;
     const TYPE: &'static str = "AWS::DataBrew::Schedule";
     fn properties(&self) -> &ScheduleProperties {
@@ -997,7 +997,7 @@ impl ::Resource for Schedule {
     }
 }
 
-impl ::private::Sealed for Schedule {}
+impl crate::private::Sealed for Schedule {}
 
 impl From<ScheduleProperties> for Schedule {
     fn from(properties: ScheduleProperties) -> Schedule {
@@ -1015,15 +1015,15 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub delimiter: Option<::Value<String>>,
+        pub delimiter: Option<crate::Value<String>>,
         /// Property [`HeaderRow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-csvoptions.html#cfn-databrew-dataset-csvoptions-headerrow).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub header_row: Option<::Value<bool>>,
+        pub header_row: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for CsvOptions {
+    impl crate::codec::SerializeValue for CsvOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref delimiter) = self.delimiter {
@@ -1036,7 +1036,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for CsvOptions {
+    impl crate::codec::DeserializeValue for CsvOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CsvOptions, D::Error> {
             struct Visitor;
 
@@ -1051,8 +1051,8 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut delimiter: Option<::Value<String>> = None;
-                    let mut header_row: Option<::Value<bool>> = None;
+                    let mut delimiter: Option<crate::Value<String>> = None;
+                    let mut header_row: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1086,25 +1086,25 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub catalog_id: Option<::Value<String>>,
+        pub catalog_id: Option<crate::Value<String>>,
         /// Property [`DatabaseName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datacataloginputdefinition.html#cfn-databrew-dataset-datacataloginputdefinition-databasename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_name: Option<::Value<String>>,
+        pub database_name: Option<crate::Value<String>>,
         /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datacataloginputdefinition.html#cfn-databrew-dataset-datacataloginputdefinition-tablename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub table_name: Option<::Value<String>>,
+        pub table_name: Option<crate::Value<String>>,
         /// Property [`TempDirectory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datacataloginputdefinition.html#cfn-databrew-dataset-datacataloginputdefinition-tempdirectory).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub temp_directory: Option<::Value<S3Location>>,
+        pub temp_directory: Option<crate::Value<S3Location>>,
     }
 
-    impl ::codec::SerializeValue for DataCatalogInputDefinition {
+    impl crate::codec::SerializeValue for DataCatalogInputDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref catalog_id) = self.catalog_id {
@@ -1131,7 +1131,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for DataCatalogInputDefinition {
+    impl crate::codec::DeserializeValue for DataCatalogInputDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataCatalogInputDefinition, D::Error> {
@@ -1148,10 +1148,10 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut catalog_id: Option<::Value<String>> = None;
-                    let mut database_name: Option<::Value<String>> = None;
-                    let mut table_name: Option<::Value<String>> = None;
-                    let mut temp_directory: Option<::Value<S3Location>> = None;
+                    let mut catalog_id: Option<crate::Value<String>> = None;
+                    let mut database_name: Option<crate::Value<String>> = None;
+                    let mut table_name: Option<crate::Value<String>> = None;
+                    let mut temp_directory: Option<crate::Value<S3Location>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1193,25 +1193,25 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_table_name: Option<::Value<String>>,
+        pub database_table_name: Option<crate::Value<String>>,
         /// Property [`GlueConnectionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-glueconnectionname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub glue_connection_name: ::Value<String>,
+        pub glue_connection_name: crate::Value<String>,
         /// Property [`QueryString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-querystring).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query_string: Option<::Value<String>>,
+        pub query_string: Option<crate::Value<String>>,
         /// Property [`TempDirectory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-tempdirectory).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub temp_directory: Option<::Value<S3Location>>,
+        pub temp_directory: Option<crate::Value<S3Location>>,
     }
 
-    impl ::codec::SerializeValue for DatabaseInputDefinition {
+    impl crate::codec::SerializeValue for DatabaseInputDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref database_table_name) = self.database_table_name {
@@ -1240,7 +1240,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for DatabaseInputDefinition {
+    impl crate::codec::DeserializeValue for DatabaseInputDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatabaseInputDefinition, D::Error> {
@@ -1257,10 +1257,10 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database_table_name: Option<::Value<String>> = None;
-                    let mut glue_connection_name: Option<::Value<String>> = None;
-                    let mut query_string: Option<::Value<String>> = None;
-                    let mut temp_directory: Option<::Value<S3Location>> = None;
+                    let mut database_table_name: Option<crate::Value<String>> = None;
+                    let mut glue_connection_name: Option<crate::Value<String>> = None;
+                    let mut query_string: Option<crate::Value<String>> = None;
+                    let mut temp_directory: Option<crate::Value<S3Location>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1304,30 +1304,30 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub create_column: Option<::Value<bool>>,
+        pub create_column: Option<crate::Value<bool>>,
         /// Property [`DatetimeOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-datetimeoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub datetime_options: Option<::Value<DatetimeOptions>>,
+        pub datetime_options: Option<crate::Value<DatetimeOptions>>,
         /// Property [`Filter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-filter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter: Option<::Value<FilterExpression>>,
+        pub filter: Option<crate::Value<FilterExpression>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DatasetParameter {
+    impl crate::codec::SerializeValue for DatasetParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref create_column) = self.create_column {
@@ -1353,7 +1353,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for DatasetParameter {
+    impl crate::codec::DeserializeValue for DatasetParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatasetParameter, D::Error> {
@@ -1370,11 +1370,11 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut create_column: Option<::Value<bool>> = None;
-                    let mut datetime_options: Option<::Value<DatetimeOptions>> = None;
-                    let mut filter: Option<::Value<FilterExpression>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut create_column: Option<crate::Value<bool>> = None;
+                    let mut datetime_options: Option<crate::Value<DatetimeOptions>> = None;
+                    let mut filter: Option<crate::Value<FilterExpression>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1420,20 +1420,20 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format: ::Value<String>,
+        pub format: crate::Value<String>,
         /// Property [`LocaleCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datetimeoptions.html#cfn-databrew-dataset-datetimeoptions-localecode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub locale_code: Option<::Value<String>>,
+        pub locale_code: Option<crate::Value<String>>,
         /// Property [`TimezoneOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datetimeoptions.html#cfn-databrew-dataset-datetimeoptions-timezoneoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timezone_offset: Option<::Value<String>>,
+        pub timezone_offset: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DatetimeOptions {
+    impl crate::codec::SerializeValue for DatetimeOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Format", &self.format)?;
@@ -1451,7 +1451,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for DatetimeOptions {
+    impl crate::codec::DeserializeValue for DatetimeOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatetimeOptions, D::Error> {
@@ -1468,9 +1468,9 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut format: Option<::Value<String>> = None;
-                    let mut locale_code: Option<::Value<String>> = None;
-                    let mut timezone_offset: Option<::Value<String>> = None;
+                    let mut format: Option<crate::Value<String>> = None;
+                    let mut locale_code: Option<crate::Value<String>> = None;
+                    let mut timezone_offset: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1508,20 +1508,20 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub header_row: Option<::Value<bool>>,
+        pub header_row: Option<crate::Value<bool>>,
         /// Property [`SheetIndexes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html#cfn-databrew-dataset-exceloptions-sheetindexes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sheet_indexes: Option<::ValueList<u32>>,
+        pub sheet_indexes: Option<crate::ValueList<u32>>,
         /// Property [`SheetNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html#cfn-databrew-dataset-exceloptions-sheetnames).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sheet_names: Option<::ValueList<String>>,
+        pub sheet_names: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for ExcelOptions {
+    impl crate::codec::SerializeValue for ExcelOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref header_row) = self.header_row {
@@ -1541,7 +1541,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for ExcelOptions {
+    impl crate::codec::DeserializeValue for ExcelOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ExcelOptions, D::Error> {
             struct Visitor;
 
@@ -1556,9 +1556,9 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut header_row: Option<::Value<bool>> = None;
-                    let mut sheet_indexes: Option<::ValueList<u32>> = None;
-                    let mut sheet_names: Option<::ValueList<String>> = None;
+                    let mut header_row: Option<crate::Value<bool>> = None;
+                    let mut sheet_indexes: Option<crate::ValueList<u32>> = None;
+                    let mut sheet_names: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1596,20 +1596,20 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_files: ::Value<u32>,
+        pub max_files: crate::Value<u32>,
         /// Property [`Order`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-fileslimit.html#cfn-databrew-dataset-fileslimit-order).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub order: Option<::Value<String>>,
+        pub order: Option<crate::Value<String>>,
         /// Property [`OrderedBy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-fileslimit.html#cfn-databrew-dataset-fileslimit-orderedby).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ordered_by: Option<::Value<String>>,
+        pub ordered_by: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for FilesLimit {
+    impl crate::codec::SerializeValue for FilesLimit {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxFiles", &self.max_files)?;
@@ -1623,7 +1623,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for FilesLimit {
+    impl crate::codec::DeserializeValue for FilesLimit {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FilesLimit, D::Error> {
             struct Visitor;
 
@@ -1638,9 +1638,9 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_files: Option<::Value<u32>> = None;
-                    let mut order: Option<::Value<String>> = None;
-                    let mut ordered_by: Option<::Value<String>> = None;
+                    let mut max_files: Option<crate::Value<u32>> = None;
+                    let mut order: Option<crate::Value<String>> = None;
+                    let mut ordered_by: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1679,15 +1679,15 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub expression: ::Value<String>,
+        pub expression: crate::Value<String>,
         /// Property [`ValuesMap`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-valuesmap).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values_map: ::ValueList<FilterValue>,
+        pub values_map: crate::ValueList<FilterValue>,
     }
 
-    impl ::codec::SerializeValue for FilterExpression {
+    impl crate::codec::SerializeValue for FilterExpression {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Expression", &self.expression)?;
@@ -1696,7 +1696,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for FilterExpression {
+    impl crate::codec::DeserializeValue for FilterExpression {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FilterExpression, D::Error> {
@@ -1713,8 +1713,8 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut expression: Option<::Value<String>> = None;
-                    let mut values_map: Option<::ValueList<FilterValue>> = None;
+                    let mut expression: Option<crate::Value<String>> = None;
+                    let mut values_map: Option<crate::ValueList<FilterValue>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1750,15 +1750,15 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
         /// Property [`ValueReference`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-valuereference).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_reference: ::Value<String>,
+        pub value_reference: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for FilterValue {
+    impl crate::codec::SerializeValue for FilterValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Value", &self.value)?;
@@ -1771,7 +1771,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for FilterValue {
+    impl crate::codec::DeserializeValue for FilterValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FilterValue, D::Error> {
             struct Visitor;
 
@@ -1786,8 +1786,8 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut value: Option<::Value<String>> = None;
-                    let mut value_reference: Option<::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
+                    let mut value_reference: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1822,20 +1822,20 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub csv: Option<::Value<CsvOptions>>,
+        pub csv: Option<crate::Value<CsvOptions>>,
         /// Property [`Excel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-excel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub excel: Option<::Value<ExcelOptions>>,
+        pub excel: Option<crate::Value<ExcelOptions>>,
         /// Property [`Json`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-json).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub json: Option<::Value<JsonOptions>>,
+        pub json: Option<crate::Value<JsonOptions>>,
     }
 
-    impl ::codec::SerializeValue for FormatOptions {
+    impl crate::codec::SerializeValue for FormatOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref csv) = self.csv {
@@ -1851,7 +1851,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for FormatOptions {
+    impl crate::codec::DeserializeValue for FormatOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FormatOptions, D::Error> {
@@ -1868,9 +1868,9 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut csv: Option<::Value<CsvOptions>> = None;
-                    let mut excel: Option<::Value<ExcelOptions>> = None;
-                    let mut json: Option<::Value<JsonOptions>> = None;
+                    let mut csv: Option<crate::Value<CsvOptions>> = None;
+                    let mut excel: Option<crate::Value<ExcelOptions>> = None;
+                    let mut json: Option<crate::Value<JsonOptions>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1908,25 +1908,25 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_catalog_input_definition: Option<::Value<DataCatalogInputDefinition>>,
+        pub data_catalog_input_definition: Option<crate::Value<DataCatalogInputDefinition>>,
         /// Property [`DatabaseInputDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-input.html#cfn-databrew-dataset-input-databaseinputdefinition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_input_definition: Option<::Value<DatabaseInputDefinition>>,
+        pub database_input_definition: Option<crate::Value<DatabaseInputDefinition>>,
         /// Property [`Metadata`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-input.html#cfn-databrew-dataset-input-metadata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metadata: Option<::Value<Metadata>>,
+        pub metadata: Option<crate::Value<Metadata>>,
         /// Property [`S3InputDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-input.html#cfn-databrew-dataset-input-s3inputdefinition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_input_definition: Option<::Value<S3Location>>,
+        pub s3_input_definition: Option<crate::Value<S3Location>>,
     }
 
-    impl ::codec::SerializeValue for Input {
+    impl crate::codec::SerializeValue for Input {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_catalog_input_definition) = self.data_catalog_input_definition {
@@ -1957,7 +1957,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for Input {
+    impl crate::codec::DeserializeValue for Input {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Input, D::Error> {
             struct Visitor;
 
@@ -1973,12 +1973,12 @@ pub mod dataset {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut data_catalog_input_definition: Option<
-                        ::Value<DataCatalogInputDefinition>,
+                        crate::Value<DataCatalogInputDefinition>,
                     > = None;
-                    let mut database_input_definition: Option<::Value<DatabaseInputDefinition>> =
+                    let mut database_input_definition: Option<crate::Value<DatabaseInputDefinition>> =
                         None;
-                    let mut metadata: Option<::Value<Metadata>> = None;
-                    let mut s3_input_definition: Option<::Value<S3Location>> = None;
+                    let mut metadata: Option<crate::Value<Metadata>> = None;
+                    let mut s3_input_definition: Option<crate::Value<S3Location>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2022,10 +2022,10 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub multi_line: Option<::Value<bool>>,
+        pub multi_line: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for JsonOptions {
+    impl crate::codec::SerializeValue for JsonOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref multi_line) = self.multi_line {
@@ -2035,7 +2035,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for JsonOptions {
+    impl crate::codec::DeserializeValue for JsonOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<JsonOptions, D::Error> {
             struct Visitor;
 
@@ -2050,7 +2050,7 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut multi_line: Option<::Value<bool>> = None;
+                    let mut multi_line: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2080,10 +2080,10 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_arn: Option<::Value<String>>,
+        pub source_arn: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Metadata {
+    impl crate::codec::SerializeValue for Metadata {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref source_arn) = self.source_arn {
@@ -2093,7 +2093,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for Metadata {
+    impl crate::codec::DeserializeValue for Metadata {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Metadata, D::Error> {
             struct Visitor;
 
@@ -2108,7 +2108,7 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source_arn: Option<::Value<String>> = None;
+                    let mut source_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2138,20 +2138,20 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub files_limit: Option<::Value<FilesLimit>>,
+        pub files_limit: Option<crate::Value<FilesLimit>>,
         /// Property [`LastModifiedDateCondition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-lastmodifieddatecondition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub last_modified_date_condition: Option<::Value<FilterExpression>>,
+        pub last_modified_date_condition: Option<crate::Value<FilterExpression>>,
         /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-parameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<::ValueList<PathParameter>>,
+        pub parameters: Option<crate::ValueList<PathParameter>>,
     }
 
-    impl ::codec::SerializeValue for PathOptions {
+    impl crate::codec::SerializeValue for PathOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref files_limit) = self.files_limit {
@@ -2171,7 +2171,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for PathOptions {
+    impl crate::codec::DeserializeValue for PathOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PathOptions, D::Error> {
             struct Visitor;
 
@@ -2186,9 +2186,9 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut files_limit: Option<::Value<FilesLimit>> = None;
-                    let mut last_modified_date_condition: Option<::Value<FilterExpression>> = None;
-                    let mut parameters: Option<::ValueList<PathParameter>> = None;
+                    let mut files_limit: Option<crate::Value<FilesLimit>> = None;
+                    let mut last_modified_date_condition: Option<crate::Value<FilterExpression>> = None;
+                    let mut parameters: Option<crate::ValueList<PathParameter>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2227,15 +2227,15 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dataset_parameter: ::Value<DatasetParameter>,
+        pub dataset_parameter: crate::Value<DatasetParameter>,
         /// Property [`PathParameterName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-pathparametername).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path_parameter_name: ::Value<String>,
+        pub path_parameter_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for PathParameter {
+    impl crate::codec::SerializeValue for PathParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2252,7 +2252,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for PathParameter {
+    impl crate::codec::DeserializeValue for PathParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PathParameter, D::Error> {
@@ -2269,8 +2269,8 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dataset_parameter: Option<::Value<DatasetParameter>> = None;
-                    let mut path_parameter_name: Option<::Value<String>> = None;
+                    let mut dataset_parameter: Option<crate::Value<DatasetParameter>> = None;
+                    let mut path_parameter_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2306,15 +2306,15 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: ::Value<String>,
+        pub bucket: crate::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-s3location.html#cfn-databrew-dataset-s3location-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3Location {
+    impl crate::codec::SerializeValue for S3Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -2325,7 +2325,7 @@ pub mod dataset {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Location {
+    impl crate::codec::DeserializeValue for S3Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Location, D::Error> {
             struct Visitor;
 
@@ -2340,8 +2340,8 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2379,10 +2379,10 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub statistics: ::ValueList<String>,
+        pub statistics: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for AllowedStatistics {
+    impl crate::codec::SerializeValue for AllowedStatistics {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Statistics", &self.statistics)?;
@@ -2390,7 +2390,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for AllowedStatistics {
+    impl crate::codec::DeserializeValue for AllowedStatistics {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AllowedStatistics, D::Error> {
@@ -2407,7 +2407,7 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut statistics: Option<::ValueList<String>> = None;
+                    let mut statistics: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2438,15 +2438,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
         /// Property [`Regex`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-regex).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub regex: Option<::Value<String>>,
+        pub regex: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ColumnSelector {
+    impl crate::codec::SerializeValue for ColumnSelector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -2459,7 +2459,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for ColumnSelector {
+    impl crate::codec::DeserializeValue for ColumnSelector {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ColumnSelector, D::Error> {
@@ -2476,8 +2476,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut regex: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut regex: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2511,15 +2511,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub selectors: Option<::ValueList<ColumnSelector>>,
+        pub selectors: Option<crate::ValueList<ColumnSelector>>,
         /// Property [`Statistics`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-statistics).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub statistics: ::Value<StatisticsConfiguration>,
+        pub statistics: crate::Value<StatisticsConfiguration>,
     }
 
-    impl ::codec::SerializeValue for ColumnStatisticsConfiguration {
+    impl crate::codec::SerializeValue for ColumnStatisticsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref selectors) = self.selectors {
@@ -2530,7 +2530,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for ColumnStatisticsConfiguration {
+    impl crate::codec::DeserializeValue for ColumnStatisticsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ColumnStatisticsConfiguration, D::Error> {
@@ -2547,8 +2547,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut selectors: Option<::ValueList<ColumnSelector>> = None;
-                    let mut statistics: Option<::Value<StatisticsConfiguration>> = None;
+                    let mut selectors: Option<crate::ValueList<ColumnSelector>> = None;
+                    let mut statistics: Option<crate::Value<StatisticsConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2583,10 +2583,10 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub delimiter: Option<::Value<String>>,
+        pub delimiter: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CsvOutputOptions {
+    impl crate::codec::SerializeValue for CsvOutputOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref delimiter) = self.delimiter {
@@ -2596,7 +2596,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for CsvOutputOptions {
+    impl crate::codec::DeserializeValue for CsvOutputOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CsvOutputOptions, D::Error> {
@@ -2613,7 +2613,7 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut delimiter: Option<::Value<String>> = None;
+                    let mut delimiter: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2643,35 +2643,35 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub catalog_id: Option<::Value<String>>,
+        pub catalog_id: Option<crate::Value<String>>,
         /// Property [`DatabaseName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-databasename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_name: ::Value<String>,
+        pub database_name: crate::Value<String>,
         /// Property [`DatabaseOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-databaseoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_options: Option<::Value<DatabaseTableOutputOptions>>,
+        pub database_options: Option<crate::Value<DatabaseTableOutputOptions>>,
         /// Property [`Overwrite`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-overwrite).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub overwrite: Option<::Value<bool>>,
+        pub overwrite: Option<crate::Value<bool>>,
         /// Property [`S3Options`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-s3options).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_options: Option<::Value<S3TableOutputOptions>>,
+        pub s3_options: Option<crate::Value<S3TableOutputOptions>>,
         /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-tablename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub table_name: ::Value<String>,
+        pub table_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DataCatalogOutput {
+    impl crate::codec::SerializeValue for DataCatalogOutput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref catalog_id) = self.catalog_id {
@@ -2700,7 +2700,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for DataCatalogOutput {
+    impl crate::codec::DeserializeValue for DataCatalogOutput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataCatalogOutput, D::Error> {
@@ -2717,12 +2717,12 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut catalog_id: Option<::Value<String>> = None;
-                    let mut database_name: Option<::Value<String>> = None;
-                    let mut database_options: Option<::Value<DatabaseTableOutputOptions>> = None;
-                    let mut overwrite: Option<::Value<bool>> = None;
-                    let mut s3_options: Option<::Value<S3TableOutputOptions>> = None;
-                    let mut table_name: Option<::Value<String>> = None;
+                    let mut catalog_id: Option<crate::Value<String>> = None;
+                    let mut database_name: Option<crate::Value<String>> = None;
+                    let mut database_options: Option<crate::Value<DatabaseTableOutputOptions>> = None;
+                    let mut overwrite: Option<crate::Value<bool>> = None;
+                    let mut s3_options: Option<crate::Value<S3TableOutputOptions>> = None;
+                    let mut table_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2774,20 +2774,20 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_options: ::Value<DatabaseTableOutputOptions>,
+        pub database_options: crate::Value<DatabaseTableOutputOptions>,
         /// Property [`DatabaseOutputMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoutputmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_output_mode: Option<::Value<String>>,
+        pub database_output_mode: Option<crate::Value<String>>,
         /// Property [`GlueConnectionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-glueconnectionname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub glue_connection_name: ::Value<String>,
+        pub glue_connection_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DatabaseOutput {
+    impl crate::codec::SerializeValue for DatabaseOutput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2811,7 +2811,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for DatabaseOutput {
+    impl crate::codec::DeserializeValue for DatabaseOutput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatabaseOutput, D::Error> {
@@ -2828,9 +2828,9 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database_options: Option<::Value<DatabaseTableOutputOptions>> = None;
-                    let mut database_output_mode: Option<::Value<String>> = None;
-                    let mut glue_connection_name: Option<::Value<String>> = None;
+                    let mut database_options: Option<crate::Value<DatabaseTableOutputOptions>> = None;
+                    let mut database_output_mode: Option<crate::Value<String>> = None;
+                    let mut glue_connection_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2872,15 +2872,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub table_name: ::Value<String>,
+        pub table_name: crate::Value<String>,
         /// Property [`TempDirectory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tempdirectory).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub temp_directory: Option<::Value<S3Location>>,
+        pub temp_directory: Option<crate::Value<S3Location>>,
     }
 
-    impl ::codec::SerializeValue for DatabaseTableOutputOptions {
+    impl crate::codec::SerializeValue for DatabaseTableOutputOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableName", &self.table_name)?;
@@ -2895,7 +2895,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for DatabaseTableOutputOptions {
+    impl crate::codec::DeserializeValue for DatabaseTableOutputOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatabaseTableOutputOptions, D::Error> {
@@ -2912,8 +2912,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut table_name: Option<::Value<String>> = None;
-                    let mut temp_directory: Option<::Value<S3Location>> = None;
+                    let mut table_name: Option<crate::Value<String>> = None;
+                    let mut temp_directory: Option<crate::Value<S3Location>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2948,15 +2948,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allowed_statistics: Option<::Value<AllowedStatistics>>,
+        pub allowed_statistics: Option<crate::Value<AllowedStatistics>>,
         /// Property [`EntityTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-entitytypes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entity_types: ::ValueList<String>,
+        pub entity_types: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for EntityDetectorConfiguration {
+    impl crate::codec::SerializeValue for EntityDetectorConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_statistics) = self.allowed_statistics {
@@ -2975,7 +2975,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for EntityDetectorConfiguration {
+    impl crate::codec::DeserializeValue for EntityDetectorConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EntityDetectorConfiguration, D::Error> {
@@ -2992,8 +2992,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allowed_statistics: Option<::Value<AllowedStatistics>> = None;
-                    let mut entity_types: Option<::ValueList<String>> = None;
+                    let mut allowed_statistics: Option<crate::Value<AllowedStatistics>> = None;
+                    let mut entity_types: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3028,15 +3028,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mode: Option<::Value<String>>,
+        pub mode: Option<crate::Value<String>>,
         /// Property [`Size`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-jobsample.html#cfn-databrew-job-jobsample-size).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size: Option<::Value<u32>>,
+        pub size: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for JobSample {
+    impl crate::codec::SerializeValue for JobSample {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref mode) = self.mode {
@@ -3049,7 +3049,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for JobSample {
+    impl crate::codec::DeserializeValue for JobSample {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<JobSample, D::Error> {
             struct Visitor;
 
@@ -3064,8 +3064,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut mode: Option<::Value<String>> = None;
-                    let mut size: Option<::Value<u32>> = None;
+                    let mut mode: Option<crate::Value<String>> = None;
+                    let mut size: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3099,40 +3099,40 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compression_format: Option<::Value<String>>,
+        pub compression_format: Option<crate::Value<String>>,
         /// Property [`Format`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-format).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format: Option<::Value<String>>,
+        pub format: Option<crate::Value<String>>,
         /// Property [`FormatOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-formatoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format_options: Option<::Value<OutputFormatOptions>>,
+        pub format_options: Option<crate::Value<OutputFormatOptions>>,
         /// Property [`Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-location).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: ::Value<S3Location>,
+        pub location: crate::Value<S3Location>,
         /// Property [`MaxOutputFiles`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-maxoutputfiles).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_output_files: Option<::Value<u32>>,
+        pub max_output_files: Option<crate::Value<u32>>,
         /// Property [`Overwrite`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-overwrite).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub overwrite: Option<::Value<bool>>,
+        pub overwrite: Option<crate::Value<bool>>,
         /// Property [`PartitionColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-partitioncolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub partition_columns: Option<::ValueList<String>>,
+        pub partition_columns: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for Output {
+    impl crate::codec::SerializeValue for Output {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref compression_format) = self.compression_format {
@@ -3174,7 +3174,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for Output {
+    impl crate::codec::DeserializeValue for Output {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Output, D::Error> {
             struct Visitor;
 
@@ -3189,13 +3189,13 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut compression_format: Option<::Value<String>> = None;
-                    let mut format: Option<::Value<String>> = None;
-                    let mut format_options: Option<::Value<OutputFormatOptions>> = None;
-                    let mut location: Option<::Value<S3Location>> = None;
-                    let mut max_output_files: Option<::Value<u32>> = None;
-                    let mut overwrite: Option<::Value<bool>> = None;
-                    let mut partition_columns: Option<::ValueList<String>> = None;
+                    let mut compression_format: Option<crate::Value<String>> = None;
+                    let mut format: Option<crate::Value<String>> = None;
+                    let mut format_options: Option<crate::Value<OutputFormatOptions>> = None;
+                    let mut location: Option<crate::Value<S3Location>> = None;
+                    let mut max_output_files: Option<crate::Value<u32>> = None;
+                    let mut overwrite: Option<crate::Value<bool>> = None;
+                    let mut partition_columns: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3249,10 +3249,10 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub csv: Option<::Value<CsvOutputOptions>>,
+        pub csv: Option<crate::Value<CsvOutputOptions>>,
     }
 
-    impl ::codec::SerializeValue for OutputFormatOptions {
+    impl crate::codec::SerializeValue for OutputFormatOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref csv) = self.csv {
@@ -3262,7 +3262,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for OutputFormatOptions {
+    impl crate::codec::DeserializeValue for OutputFormatOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputFormatOptions, D::Error> {
@@ -3279,7 +3279,7 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut csv: Option<::Value<CsvOutputOptions>> = None;
+                    let mut csv: Option<crate::Value<CsvOutputOptions>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3307,20 +3307,20 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: ::Value<String>,
+        pub bucket: crate::Value<String>,
         /// Property [`BucketOwner`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-outputlocation.html#cfn-databrew-job-outputlocation-bucketowner).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_owner: Option<::Value<String>>,
+        pub bucket_owner: Option<crate::Value<String>>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-outputlocation.html#cfn-databrew-job-outputlocation-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for OutputLocation {
+    impl crate::codec::SerializeValue for OutputLocation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -3334,7 +3334,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for OutputLocation {
+    impl crate::codec::DeserializeValue for OutputLocation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputLocation, D::Error> {
@@ -3351,9 +3351,9 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut bucket_owner: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut bucket_owner: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3388,14 +3388,14 @@ pub mod job {
     #[derive(Debug, Default)]
     pub struct ParameterMap {}
 
-    impl ::codec::SerializeValue for ParameterMap {
+    impl crate::codec::SerializeValue for ParameterMap {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl ::codec::DeserializeValue for ParameterMap {
+    impl crate::codec::DeserializeValue for ParameterMap {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ParameterMap, D::Error> {
             struct Visitor;
 
@@ -3425,25 +3425,25 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_statistics_configurations: Option<::ValueList<ColumnStatisticsConfiguration>>,
+        pub column_statistics_configurations: Option<crate::ValueList<ColumnStatisticsConfiguration>>,
         /// Property [`DatasetStatisticsConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-datasetstatisticsconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dataset_statistics_configuration: Option<::Value<StatisticsConfiguration>>,
+        pub dataset_statistics_configuration: Option<crate::Value<StatisticsConfiguration>>,
         /// Property [`EntityDetectorConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-entitydetectorconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entity_detector_configuration: Option<::Value<EntityDetectorConfiguration>>,
+        pub entity_detector_configuration: Option<crate::Value<EntityDetectorConfiguration>>,
         /// Property [`ProfileColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-profilecolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub profile_columns: Option<::ValueList<ColumnSelector>>,
+        pub profile_columns: Option<crate::ValueList<ColumnSelector>>,
     }
 
-    impl ::codec::SerializeValue for ProfileConfiguration {
+    impl crate::codec::SerializeValue for ProfileConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref column_statistics_configurations) =
@@ -3482,7 +3482,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for ProfileConfiguration {
+    impl crate::codec::DeserializeValue for ProfileConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProfileConfiguration, D::Error> {
@@ -3500,15 +3500,15 @@ pub mod job {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut column_statistics_configurations: Option<
-                        ::ValueList<ColumnStatisticsConfiguration>,
+                        crate::ValueList<ColumnStatisticsConfiguration>,
                     > = None;
                     let mut dataset_statistics_configuration: Option<
-                        ::Value<StatisticsConfiguration>,
+                        crate::Value<StatisticsConfiguration>,
                     > = None;
                     let mut entity_detector_configuration: Option<
-                        ::Value<EntityDetectorConfiguration>,
+                        crate::Value<EntityDetectorConfiguration>,
                     > = None;
-                    let mut profile_columns: Option<::ValueList<ColumnSelector>> = None;
+                    let mut profile_columns: Option<crate::ValueList<ColumnSelector>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3553,15 +3553,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<::Value<String>>,
+        pub version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Recipe {
+    impl crate::codec::SerializeValue for Recipe {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -3572,7 +3572,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for Recipe {
+    impl crate::codec::DeserializeValue for Recipe {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Recipe, D::Error> {
             struct Visitor;
 
@@ -3587,8 +3587,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut version: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3622,20 +3622,20 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: ::Value<String>,
+        pub bucket: crate::Value<String>,
         /// Property [`BucketOwner`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-s3location.html#cfn-databrew-job-s3location-bucketowner).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_owner: Option<::Value<String>>,
+        pub bucket_owner: Option<crate::Value<String>>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-s3location.html#cfn-databrew-job-s3location-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3Location {
+    impl crate::codec::SerializeValue for S3Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -3649,7 +3649,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Location {
+    impl crate::codec::DeserializeValue for S3Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Location, D::Error> {
             struct Visitor;
 
@@ -3664,9 +3664,9 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut bucket_owner: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut bucket_owner: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3704,10 +3704,10 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: ::Value<S3Location>,
+        pub location: crate::Value<S3Location>,
     }
 
-    impl ::codec::SerializeValue for S3TableOutputOptions {
+    impl crate::codec::SerializeValue for S3TableOutputOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Location", &self.location)?;
@@ -3715,7 +3715,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for S3TableOutputOptions {
+    impl crate::codec::DeserializeValue for S3TableOutputOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3TableOutputOptions, D::Error> {
@@ -3732,7 +3732,7 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut location: Option<::Value<S3Location>> = None;
+                    let mut location: Option<crate::Value<S3Location>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3762,15 +3762,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: ::Value<ParameterMap>,
+        pub parameters: crate::Value<ParameterMap>,
         /// Property [`Statistic`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-statisticoverride.html#cfn-databrew-job-statisticoverride-statistic).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub statistic: ::Value<String>,
+        pub statistic: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for StatisticOverride {
+    impl crate::codec::SerializeValue for StatisticOverride {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Parameters", &self.parameters)?;
@@ -3779,7 +3779,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for StatisticOverride {
+    impl crate::codec::DeserializeValue for StatisticOverride {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StatisticOverride, D::Error> {
@@ -3796,8 +3796,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut parameters: Option<::Value<ParameterMap>> = None;
-                    let mut statistic: Option<::Value<String>> = None;
+                    let mut parameters: Option<crate::Value<ParameterMap>> = None;
+                    let mut statistic: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3833,15 +3833,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub included_statistics: Option<::ValueList<String>>,
+        pub included_statistics: Option<crate::ValueList<String>>,
         /// Property [`Overrides`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-statisticsconfiguration.html#cfn-databrew-job-statisticsconfiguration-overrides).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub overrides: Option<::ValueList<StatisticOverride>>,
+        pub overrides: Option<crate::ValueList<StatisticOverride>>,
     }
 
-    impl ::codec::SerializeValue for StatisticsConfiguration {
+    impl crate::codec::SerializeValue for StatisticsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref included_statistics) = self.included_statistics {
@@ -3858,7 +3858,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for StatisticsConfiguration {
+    impl crate::codec::DeserializeValue for StatisticsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StatisticsConfiguration, D::Error> {
@@ -3875,8 +3875,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut included_statistics: Option<::ValueList<String>> = None;
-                    let mut overrides: Option<::ValueList<StatisticOverride>> = None;
+                    let mut included_statistics: Option<crate::ValueList<String>> = None;
+                    let mut overrides: Option<crate::ValueList<StatisticOverride>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3910,15 +3910,15 @@ pub mod job {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ruleset_arn: ::Value<String>,
+        pub ruleset_arn: crate::Value<String>,
         /// Property [`ValidationMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-validationconfiguration.html#cfn-databrew-job-validationconfiguration-validationmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub validation_mode: Option<::Value<String>>,
+        pub validation_mode: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ValidationConfiguration {
+    impl crate::codec::SerializeValue for ValidationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RulesetArn", &self.ruleset_arn)?;
@@ -3933,7 +3933,7 @@ pub mod job {
         }
     }
 
-    impl ::codec::DeserializeValue for ValidationConfiguration {
+    impl crate::codec::DeserializeValue for ValidationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ValidationConfiguration, D::Error> {
@@ -3950,8 +3950,8 @@ pub mod job {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ruleset_arn: Option<::Value<String>> = None;
-                    let mut validation_mode: Option<::Value<String>> = None;
+                    let mut ruleset_arn: Option<crate::Value<String>> = None;
+                    let mut validation_mode: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3990,15 +3990,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size: Option<::Value<u32>>,
+        pub size: Option<crate::Value<u32>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Sample {
+    impl crate::codec::SerializeValue for Sample {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref size) = self.size {
@@ -4009,7 +4009,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for Sample {
+    impl crate::codec::DeserializeValue for Sample {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Sample, D::Error> {
             struct Visitor;
 
@@ -4024,8 +4024,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut size: Option<::Value<u32>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut size: Option<crate::Value<u32>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4063,15 +4063,15 @@ pub mod recipe {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub operation: ::Value<String>,
+        pub operation: crate::Value<String>,
         /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<::Value<ParameterMap>>,
+        pub parameters: Option<crate::Value<ParameterMap>>,
     }
 
-    impl ::codec::SerializeValue for Action {
+    impl crate::codec::SerializeValue for Action {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Operation", &self.operation)?;
@@ -4082,7 +4082,7 @@ pub mod recipe {
         }
     }
 
-    impl ::codec::DeserializeValue for Action {
+    impl crate::codec::DeserializeValue for Action {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Action, D::Error> {
             struct Visitor;
 
@@ -4097,8 +4097,8 @@ pub mod recipe {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut operation: Option<::Value<String>> = None;
-                    let mut parameters: Option<::Value<ParameterMap>> = None;
+                    let mut operation: Option<crate::Value<String>> = None;
+                    let mut parameters: Option<crate::Value<ParameterMap>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4133,20 +4133,20 @@ pub mod recipe {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub condition: ::Value<String>,
+        pub condition: crate::Value<String>,
         /// Property [`TargetColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-targetcolumn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_column: ::Value<String>,
+        pub target_column: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ConditionExpression {
+    impl crate::codec::SerializeValue for ConditionExpression {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Condition", &self.condition)?;
@@ -4162,7 +4162,7 @@ pub mod recipe {
         }
     }
 
-    impl ::codec::DeserializeValue for ConditionExpression {
+    impl crate::codec::DeserializeValue for ConditionExpression {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConditionExpression, D::Error> {
@@ -4179,9 +4179,9 @@ pub mod recipe {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut condition: Option<::Value<String>> = None;
-                    let mut target_column: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut condition: Option<crate::Value<String>> = None;
+                    let mut target_column: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4221,25 +4221,25 @@ pub mod recipe {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub catalog_id: Option<::Value<String>>,
+        pub catalog_id: Option<crate::Value<String>>,
         /// Property [`DatabaseName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-databasename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_name: Option<::Value<String>>,
+        pub database_name: Option<crate::Value<String>>,
         /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-tablename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub table_name: Option<::Value<String>>,
+        pub table_name: Option<crate::Value<String>>,
         /// Property [`TempDirectory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-tempdirectory).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub temp_directory: Option<::Value<S3Location>>,
+        pub temp_directory: Option<crate::Value<S3Location>>,
     }
 
-    impl ::codec::SerializeValue for DataCatalogInputDefinition {
+    impl crate::codec::SerializeValue for DataCatalogInputDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref catalog_id) = self.catalog_id {
@@ -4266,7 +4266,7 @@ pub mod recipe {
         }
     }
 
-    impl ::codec::DeserializeValue for DataCatalogInputDefinition {
+    impl crate::codec::DeserializeValue for DataCatalogInputDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataCatalogInputDefinition, D::Error> {
@@ -4283,10 +4283,10 @@ pub mod recipe {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut catalog_id: Option<::Value<String>> = None;
-                    let mut database_name: Option<::Value<String>> = None;
-                    let mut table_name: Option<::Value<String>> = None;
-                    let mut temp_directory: Option<::Value<S3Location>> = None;
+                    let mut catalog_id: Option<crate::Value<String>> = None;
+                    let mut database_name: Option<crate::Value<String>> = None;
+                    let mut table_name: Option<crate::Value<String>> = None;
+                    let mut temp_directory: Option<crate::Value<S3Location>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4325,14 +4325,14 @@ pub mod recipe {
     #[derive(Debug, Default)]
     pub struct ParameterMap {}
 
-    impl ::codec::SerializeValue for ParameterMap {
+    impl crate::codec::SerializeValue for ParameterMap {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl ::codec::DeserializeValue for ParameterMap {
+    impl crate::codec::DeserializeValue for ParameterMap {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ParameterMap, D::Error> {
             struct Visitor;
 
@@ -4362,510 +4362,510 @@ pub mod recipe {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aggregate_function: Option<::Value<String>>,
+        pub aggregate_function: Option<crate::Value<String>>,
         /// Property [`Base`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-base).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub base: Option<::Value<String>>,
+        pub base: Option<crate::Value<String>>,
         /// Property [`CaseStatement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-casestatement).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub case_statement: Option<::Value<String>>,
+        pub case_statement: Option<crate::Value<String>>,
         /// Property [`CategoryMap`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-categorymap).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub category_map: Option<::Value<String>>,
+        pub category_map: Option<crate::Value<String>>,
         /// Property [`CharsToRemove`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-charstoremove).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub chars_to_remove: Option<::Value<String>>,
+        pub chars_to_remove: Option<crate::Value<String>>,
         /// Property [`CollapseConsecutiveWhitespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-collapseconsecutivewhitespace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub collapse_consecutive_whitespace: Option<::Value<String>>,
+        pub collapse_consecutive_whitespace: Option<crate::Value<String>>,
         /// Property [`ColumnDataType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-columndatatype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_data_type: Option<::Value<String>>,
+        pub column_data_type: Option<crate::Value<String>>,
         /// Property [`ColumnRange`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-columnrange).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_range: Option<::Value<String>>,
+        pub column_range: Option<crate::Value<String>>,
         /// Property [`Count`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-count).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub count: Option<::Value<String>>,
+        pub count: Option<crate::Value<String>>,
         /// Property [`CustomCharacters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-customcharacters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_characters: Option<::Value<String>>,
+        pub custom_characters: Option<crate::Value<String>>,
         /// Property [`CustomStopWords`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-customstopwords).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_stop_words: Option<::Value<String>>,
+        pub custom_stop_words: Option<crate::Value<String>>,
         /// Property [`CustomValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-customvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_value: Option<::Value<String>>,
+        pub custom_value: Option<crate::Value<String>>,
         /// Property [`DatasetsColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-datasetscolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub datasets_columns: Option<::Value<String>>,
+        pub datasets_columns: Option<crate::Value<String>>,
         /// Property [`DateAddValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-dateaddvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_add_value: Option<::Value<String>>,
+        pub date_add_value: Option<crate::Value<String>>,
         /// Property [`DateTimeFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-datetimeformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_time_format: Option<::Value<String>>,
+        pub date_time_format: Option<crate::Value<String>>,
         /// Property [`DateTimeParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-datetimeparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_time_parameters: Option<::Value<String>>,
+        pub date_time_parameters: Option<crate::Value<String>>,
         /// Property [`DeleteOtherRows`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-deleteotherrows).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub delete_other_rows: Option<::Value<String>>,
+        pub delete_other_rows: Option<crate::Value<String>>,
         /// Property [`Delimiter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-delimiter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub delimiter: Option<::Value<String>>,
+        pub delimiter: Option<crate::Value<String>>,
         /// Property [`EndPattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-endpattern).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_pattern: Option<::Value<String>>,
+        pub end_pattern: Option<crate::Value<String>>,
         /// Property [`EndPosition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-endposition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_position: Option<::Value<String>>,
+        pub end_position: Option<crate::Value<String>>,
         /// Property [`EndValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-endvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_value: Option<::Value<String>>,
+        pub end_value: Option<crate::Value<String>>,
         /// Property [`ExpandContractions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-expandcontractions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub expand_contractions: Option<::Value<String>>,
+        pub expand_contractions: Option<crate::Value<String>>,
         /// Property [`Exponent`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-exponent).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exponent: Option<::Value<String>>,
+        pub exponent: Option<crate::Value<String>>,
         /// Property [`FalseString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-falsestring).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub false_string: Option<::Value<String>>,
+        pub false_string: Option<crate::Value<String>>,
         /// Property [`GroupByAggFunctionOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-groupbyaggfunctionoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_by_agg_function_options: Option<::Value<String>>,
+        pub group_by_agg_function_options: Option<crate::Value<String>>,
         /// Property [`GroupByColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-groupbycolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_by_columns: Option<::Value<String>>,
+        pub group_by_columns: Option<crate::Value<String>>,
         /// Property [`HiddenColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-hiddencolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hidden_columns: Option<::Value<String>>,
+        pub hidden_columns: Option<crate::Value<String>>,
         /// Property [`IgnoreCase`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-ignorecase).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ignore_case: Option<::Value<String>>,
+        pub ignore_case: Option<crate::Value<String>>,
         /// Property [`IncludeInSplit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-includeinsplit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_in_split: Option<::Value<String>>,
+        pub include_in_split: Option<crate::Value<String>>,
         /// Property [`Input`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-input).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input: Option<::Value<::json::Value>>,
+        pub input: Option<crate::Value<crate::json::Value>>,
         /// Property [`Interval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-interval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval: Option<::Value<String>>,
+        pub interval: Option<crate::Value<String>>,
         /// Property [`IsText`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-istext).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_text: Option<::Value<String>>,
+        pub is_text: Option<crate::Value<String>>,
         /// Property [`JoinKeys`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-joinkeys).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub join_keys: Option<::Value<String>>,
+        pub join_keys: Option<crate::Value<String>>,
         /// Property [`JoinType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-jointype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub join_type: Option<::Value<String>>,
+        pub join_type: Option<crate::Value<String>>,
         /// Property [`LeftColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-leftcolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub left_columns: Option<::Value<String>>,
+        pub left_columns: Option<crate::Value<String>>,
         /// Property [`Limit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-limit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub limit: Option<::Value<String>>,
+        pub limit: Option<crate::Value<String>>,
         /// Property [`LowerBound`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-lowerbound).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lower_bound: Option<::Value<String>>,
+        pub lower_bound: Option<crate::Value<String>>,
         /// Property [`MapType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-maptype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub map_type: Option<::Value<String>>,
+        pub map_type: Option<crate::Value<String>>,
         /// Property [`ModeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-modetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mode_type: Option<::Value<String>>,
+        pub mode_type: Option<crate::Value<String>>,
         /// Property [`MultiLine`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-multiline).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub multi_line: Option<::Value<bool>>,
+        pub multi_line: Option<crate::Value<bool>>,
         /// Property [`NumRows`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-numrows).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_rows: Option<::Value<String>>,
+        pub num_rows: Option<crate::Value<String>>,
         /// Property [`NumRowsAfter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-numrowsafter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_rows_after: Option<::Value<String>>,
+        pub num_rows_after: Option<crate::Value<String>>,
         /// Property [`NumRowsBefore`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-numrowsbefore).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_rows_before: Option<::Value<String>>,
+        pub num_rows_before: Option<crate::Value<String>>,
         /// Property [`OrderByColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-orderbycolumn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub order_by_column: Option<::Value<String>>,
+        pub order_by_column: Option<crate::Value<String>>,
         /// Property [`OrderByColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-orderbycolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub order_by_columns: Option<::Value<String>>,
+        pub order_by_columns: Option<crate::Value<String>>,
         /// Property [`Other`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-other).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub other: Option<::Value<String>>,
+        pub other: Option<crate::Value<String>>,
         /// Property [`Pattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-pattern).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pattern: Option<::Value<String>>,
+        pub pattern: Option<crate::Value<String>>,
         /// Property [`PatternOption1`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-patternoption1).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pattern_option1: Option<::Value<String>>,
+        pub pattern_option1: Option<crate::Value<String>>,
         /// Property [`PatternOption2`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-patternoption2).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pattern_option2: Option<::Value<String>>,
+        pub pattern_option2: Option<crate::Value<String>>,
         /// Property [`PatternOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-patternoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pattern_options: Option<::Value<String>>,
+        pub pattern_options: Option<crate::Value<String>>,
         /// Property [`Period`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-period).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub period: Option<::Value<String>>,
+        pub period: Option<crate::Value<String>>,
         /// Property [`Position`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-position).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub position: Option<::Value<String>>,
+        pub position: Option<crate::Value<String>>,
         /// Property [`RemoveAllPunctuation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removeallpunctuation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_all_punctuation: Option<::Value<String>>,
+        pub remove_all_punctuation: Option<crate::Value<String>>,
         /// Property [`RemoveAllQuotes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removeallquotes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_all_quotes: Option<::Value<String>>,
+        pub remove_all_quotes: Option<crate::Value<String>>,
         /// Property [`RemoveAllWhitespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removeallwhitespace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_all_whitespace: Option<::Value<String>>,
+        pub remove_all_whitespace: Option<crate::Value<String>>,
         /// Property [`RemoveCustomCharacters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removecustomcharacters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_custom_characters: Option<::Value<String>>,
+        pub remove_custom_characters: Option<crate::Value<String>>,
         /// Property [`RemoveCustomValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removecustomvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_custom_value: Option<::Value<String>>,
+        pub remove_custom_value: Option<crate::Value<String>>,
         /// Property [`RemoveLeadingAndTrailingPunctuation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removeleadingandtrailingpunctuation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_leading_and_trailing_punctuation: Option<::Value<String>>,
+        pub remove_leading_and_trailing_punctuation: Option<crate::Value<String>>,
         /// Property [`RemoveLeadingAndTrailingQuotes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removeleadingandtrailingquotes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_leading_and_trailing_quotes: Option<::Value<String>>,
+        pub remove_leading_and_trailing_quotes: Option<crate::Value<String>>,
         /// Property [`RemoveLeadingAndTrailingWhitespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removeleadingandtrailingwhitespace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_leading_and_trailing_whitespace: Option<::Value<String>>,
+        pub remove_leading_and_trailing_whitespace: Option<crate::Value<String>>,
         /// Property [`RemoveLetters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removeletters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_letters: Option<::Value<String>>,
+        pub remove_letters: Option<crate::Value<String>>,
         /// Property [`RemoveNumbers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removenumbers).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_numbers: Option<::Value<String>>,
+        pub remove_numbers: Option<crate::Value<String>>,
         /// Property [`RemoveSourceColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removesourcecolumn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_source_column: Option<::Value<String>>,
+        pub remove_source_column: Option<crate::Value<String>>,
         /// Property [`RemoveSpecialCharacters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-removespecialcharacters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remove_special_characters: Option<::Value<String>>,
+        pub remove_special_characters: Option<crate::Value<String>>,
         /// Property [`RightColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-rightcolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub right_columns: Option<::Value<String>>,
+        pub right_columns: Option<crate::Value<String>>,
         /// Property [`SampleSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-samplesize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sample_size: Option<::Value<String>>,
+        pub sample_size: Option<crate::Value<String>>,
         /// Property [`SampleType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-sampletype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sample_type: Option<::Value<String>>,
+        pub sample_type: Option<crate::Value<String>>,
         /// Property [`SecondInput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-secondinput).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub second_input: Option<::Value<String>>,
+        pub second_input: Option<crate::Value<String>>,
         /// Property [`SecondaryInputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-secondaryinputs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secondary_inputs: Option<::ValueList<SecondaryInput>>,
+        pub secondary_inputs: Option<crate::ValueList<SecondaryInput>>,
         /// Property [`SheetIndexes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-sheetindexes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sheet_indexes: Option<::ValueList<u32>>,
+        pub sheet_indexes: Option<crate::ValueList<u32>>,
         /// Property [`SheetNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-sheetnames).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sheet_names: Option<::ValueList<String>>,
+        pub sheet_names: Option<crate::ValueList<String>>,
         /// Property [`SourceColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-sourcecolumn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_column: Option<::Value<String>>,
+        pub source_column: Option<crate::Value<String>>,
         /// Property [`SourceColumn1`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-sourcecolumn1).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_column1: Option<::Value<String>>,
+        pub source_column1: Option<crate::Value<String>>,
         /// Property [`SourceColumn2`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-sourcecolumn2).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_column2: Option<::Value<String>>,
+        pub source_column2: Option<crate::Value<String>>,
         /// Property [`SourceColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-sourcecolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_columns: Option<::Value<String>>,
+        pub source_columns: Option<crate::Value<String>>,
         /// Property [`StartColumnIndex`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-startcolumnindex).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_column_index: Option<::Value<String>>,
+        pub start_column_index: Option<crate::Value<String>>,
         /// Property [`StartPattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-startpattern).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_pattern: Option<::Value<String>>,
+        pub start_pattern: Option<crate::Value<String>>,
         /// Property [`StartPosition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-startposition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_position: Option<::Value<String>>,
+        pub start_position: Option<crate::Value<String>>,
         /// Property [`StartValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-startvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_value: Option<::Value<String>>,
+        pub start_value: Option<crate::Value<String>>,
         /// Property [`StemmingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-stemmingmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stemming_mode: Option<::Value<String>>,
+        pub stemming_mode: Option<crate::Value<String>>,
         /// Property [`StepCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-stepcount).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub step_count: Option<::Value<String>>,
+        pub step_count: Option<crate::Value<String>>,
         /// Property [`StepIndex`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-stepindex).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub step_index: Option<::Value<String>>,
+        pub step_index: Option<crate::Value<String>>,
         /// Property [`StopWordsMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-stopwordsmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stop_words_mode: Option<::Value<String>>,
+        pub stop_words_mode: Option<crate::Value<String>>,
         /// Property [`Strategy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-strategy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub strategy: Option<::Value<String>>,
+        pub strategy: Option<crate::Value<String>>,
         /// Property [`TargetColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-targetcolumn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_column: Option<::Value<String>>,
+        pub target_column: Option<crate::Value<String>>,
         /// Property [`TargetColumnNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-targetcolumnnames).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_column_names: Option<::Value<String>>,
+        pub target_column_names: Option<crate::Value<String>>,
         /// Property [`TargetDateFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-targetdateformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_date_format: Option<::Value<String>>,
+        pub target_date_format: Option<crate::Value<String>>,
         /// Property [`TargetIndex`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-targetindex).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_index: Option<::Value<String>>,
+        pub target_index: Option<crate::Value<String>>,
         /// Property [`TimeZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-timezone).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_zone: Option<::Value<String>>,
+        pub time_zone: Option<crate::Value<String>>,
         /// Property [`TokenizerPattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-tokenizerpattern).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tokenizer_pattern: Option<::Value<String>>,
+        pub tokenizer_pattern: Option<crate::Value<String>>,
         /// Property [`TrueString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-truestring).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub true_string: Option<::Value<String>>,
+        pub true_string: Option<crate::Value<String>>,
         /// Property [`UdfLang`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-udflang).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub udf_lang: Option<::Value<String>>,
+        pub udf_lang: Option<crate::Value<String>>,
         /// Property [`Units`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-units).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub units: Option<::Value<String>>,
+        pub units: Option<crate::Value<String>>,
         /// Property [`UnpivotColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-unpivotcolumn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unpivot_column: Option<::Value<String>>,
+        pub unpivot_column: Option<crate::Value<String>>,
         /// Property [`UpperBound`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-upperbound).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub upper_bound: Option<::Value<String>>,
+        pub upper_bound: Option<crate::Value<String>>,
         /// Property [`UseNewDataFrame`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-usenewdataframe).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub use_new_data_frame: Option<::Value<String>>,
+        pub use_new_data_frame: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
         /// Property [`Value1`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-value1).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value1: Option<::Value<String>>,
+        pub value1: Option<crate::Value<String>>,
         /// Property [`Value2`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-value2).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value2: Option<::Value<String>>,
+        pub value2: Option<crate::Value<String>>,
         /// Property [`ValueColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-valuecolumn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_column: Option<::Value<String>>,
+        pub value_column: Option<crate::Value<String>>,
         /// Property [`ViewFrame`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-viewframe).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub view_frame: Option<::Value<String>>,
+        pub view_frame: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for RecipeParameters {
+    impl crate::codec::SerializeValue for RecipeParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aggregate_function) = self.aggregate_function {
@@ -5398,7 +5398,7 @@ pub mod recipe {
         }
     }
 
-    impl ::codec::DeserializeValue for RecipeParameters {
+    impl crate::codec::DeserializeValue for RecipeParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RecipeParameters, D::Error> {
@@ -5415,107 +5415,107 @@ pub mod recipe {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut aggregate_function: Option<::Value<String>> = None;
-                    let mut base: Option<::Value<String>> = None;
-                    let mut case_statement: Option<::Value<String>> = None;
-                    let mut category_map: Option<::Value<String>> = None;
-                    let mut chars_to_remove: Option<::Value<String>> = None;
-                    let mut collapse_consecutive_whitespace: Option<::Value<String>> = None;
-                    let mut column_data_type: Option<::Value<String>> = None;
-                    let mut column_range: Option<::Value<String>> = None;
-                    let mut count: Option<::Value<String>> = None;
-                    let mut custom_characters: Option<::Value<String>> = None;
-                    let mut custom_stop_words: Option<::Value<String>> = None;
-                    let mut custom_value: Option<::Value<String>> = None;
-                    let mut datasets_columns: Option<::Value<String>> = None;
-                    let mut date_add_value: Option<::Value<String>> = None;
-                    let mut date_time_format: Option<::Value<String>> = None;
-                    let mut date_time_parameters: Option<::Value<String>> = None;
-                    let mut delete_other_rows: Option<::Value<String>> = None;
-                    let mut delimiter: Option<::Value<String>> = None;
-                    let mut end_pattern: Option<::Value<String>> = None;
-                    let mut end_position: Option<::Value<String>> = None;
-                    let mut end_value: Option<::Value<String>> = None;
-                    let mut expand_contractions: Option<::Value<String>> = None;
-                    let mut exponent: Option<::Value<String>> = None;
-                    let mut false_string: Option<::Value<String>> = None;
-                    let mut group_by_agg_function_options: Option<::Value<String>> = None;
-                    let mut group_by_columns: Option<::Value<String>> = None;
-                    let mut hidden_columns: Option<::Value<String>> = None;
-                    let mut ignore_case: Option<::Value<String>> = None;
-                    let mut include_in_split: Option<::Value<String>> = None;
-                    let mut input: Option<::Value<::json::Value>> = None;
-                    let mut interval: Option<::Value<String>> = None;
-                    let mut is_text: Option<::Value<String>> = None;
-                    let mut join_keys: Option<::Value<String>> = None;
-                    let mut join_type: Option<::Value<String>> = None;
-                    let mut left_columns: Option<::Value<String>> = None;
-                    let mut limit: Option<::Value<String>> = None;
-                    let mut lower_bound: Option<::Value<String>> = None;
-                    let mut map_type: Option<::Value<String>> = None;
-                    let mut mode_type: Option<::Value<String>> = None;
-                    let mut multi_line: Option<::Value<bool>> = None;
-                    let mut num_rows: Option<::Value<String>> = None;
-                    let mut num_rows_after: Option<::Value<String>> = None;
-                    let mut num_rows_before: Option<::Value<String>> = None;
-                    let mut order_by_column: Option<::Value<String>> = None;
-                    let mut order_by_columns: Option<::Value<String>> = None;
-                    let mut other: Option<::Value<String>> = None;
-                    let mut pattern: Option<::Value<String>> = None;
-                    let mut pattern_option1: Option<::Value<String>> = None;
-                    let mut pattern_option2: Option<::Value<String>> = None;
-                    let mut pattern_options: Option<::Value<String>> = None;
-                    let mut period: Option<::Value<String>> = None;
-                    let mut position: Option<::Value<String>> = None;
-                    let mut remove_all_punctuation: Option<::Value<String>> = None;
-                    let mut remove_all_quotes: Option<::Value<String>> = None;
-                    let mut remove_all_whitespace: Option<::Value<String>> = None;
-                    let mut remove_custom_characters: Option<::Value<String>> = None;
-                    let mut remove_custom_value: Option<::Value<String>> = None;
-                    let mut remove_leading_and_trailing_punctuation: Option<::Value<String>> = None;
-                    let mut remove_leading_and_trailing_quotes: Option<::Value<String>> = None;
-                    let mut remove_leading_and_trailing_whitespace: Option<::Value<String>> = None;
-                    let mut remove_letters: Option<::Value<String>> = None;
-                    let mut remove_numbers: Option<::Value<String>> = None;
-                    let mut remove_source_column: Option<::Value<String>> = None;
-                    let mut remove_special_characters: Option<::Value<String>> = None;
-                    let mut right_columns: Option<::Value<String>> = None;
-                    let mut sample_size: Option<::Value<String>> = None;
-                    let mut sample_type: Option<::Value<String>> = None;
-                    let mut second_input: Option<::Value<String>> = None;
-                    let mut secondary_inputs: Option<::ValueList<SecondaryInput>> = None;
-                    let mut sheet_indexes: Option<::ValueList<u32>> = None;
-                    let mut sheet_names: Option<::ValueList<String>> = None;
-                    let mut source_column: Option<::Value<String>> = None;
-                    let mut source_column1: Option<::Value<String>> = None;
-                    let mut source_column2: Option<::Value<String>> = None;
-                    let mut source_columns: Option<::Value<String>> = None;
-                    let mut start_column_index: Option<::Value<String>> = None;
-                    let mut start_pattern: Option<::Value<String>> = None;
-                    let mut start_position: Option<::Value<String>> = None;
-                    let mut start_value: Option<::Value<String>> = None;
-                    let mut stemming_mode: Option<::Value<String>> = None;
-                    let mut step_count: Option<::Value<String>> = None;
-                    let mut step_index: Option<::Value<String>> = None;
-                    let mut stop_words_mode: Option<::Value<String>> = None;
-                    let mut strategy: Option<::Value<String>> = None;
-                    let mut target_column: Option<::Value<String>> = None;
-                    let mut target_column_names: Option<::Value<String>> = None;
-                    let mut target_date_format: Option<::Value<String>> = None;
-                    let mut target_index: Option<::Value<String>> = None;
-                    let mut time_zone: Option<::Value<String>> = None;
-                    let mut tokenizer_pattern: Option<::Value<String>> = None;
-                    let mut true_string: Option<::Value<String>> = None;
-                    let mut udf_lang: Option<::Value<String>> = None;
-                    let mut units: Option<::Value<String>> = None;
-                    let mut unpivot_column: Option<::Value<String>> = None;
-                    let mut upper_bound: Option<::Value<String>> = None;
-                    let mut use_new_data_frame: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
-                    let mut value1: Option<::Value<String>> = None;
-                    let mut value2: Option<::Value<String>> = None;
-                    let mut value_column: Option<::Value<String>> = None;
-                    let mut view_frame: Option<::Value<String>> = None;
+                    let mut aggregate_function: Option<crate::Value<String>> = None;
+                    let mut base: Option<crate::Value<String>> = None;
+                    let mut case_statement: Option<crate::Value<String>> = None;
+                    let mut category_map: Option<crate::Value<String>> = None;
+                    let mut chars_to_remove: Option<crate::Value<String>> = None;
+                    let mut collapse_consecutive_whitespace: Option<crate::Value<String>> = None;
+                    let mut column_data_type: Option<crate::Value<String>> = None;
+                    let mut column_range: Option<crate::Value<String>> = None;
+                    let mut count: Option<crate::Value<String>> = None;
+                    let mut custom_characters: Option<crate::Value<String>> = None;
+                    let mut custom_stop_words: Option<crate::Value<String>> = None;
+                    let mut custom_value: Option<crate::Value<String>> = None;
+                    let mut datasets_columns: Option<crate::Value<String>> = None;
+                    let mut date_add_value: Option<crate::Value<String>> = None;
+                    let mut date_time_format: Option<crate::Value<String>> = None;
+                    let mut date_time_parameters: Option<crate::Value<String>> = None;
+                    let mut delete_other_rows: Option<crate::Value<String>> = None;
+                    let mut delimiter: Option<crate::Value<String>> = None;
+                    let mut end_pattern: Option<crate::Value<String>> = None;
+                    let mut end_position: Option<crate::Value<String>> = None;
+                    let mut end_value: Option<crate::Value<String>> = None;
+                    let mut expand_contractions: Option<crate::Value<String>> = None;
+                    let mut exponent: Option<crate::Value<String>> = None;
+                    let mut false_string: Option<crate::Value<String>> = None;
+                    let mut group_by_agg_function_options: Option<crate::Value<String>> = None;
+                    let mut group_by_columns: Option<crate::Value<String>> = None;
+                    let mut hidden_columns: Option<crate::Value<String>> = None;
+                    let mut ignore_case: Option<crate::Value<String>> = None;
+                    let mut include_in_split: Option<crate::Value<String>> = None;
+                    let mut input: Option<crate::Value<crate::json::Value>> = None;
+                    let mut interval: Option<crate::Value<String>> = None;
+                    let mut is_text: Option<crate::Value<String>> = None;
+                    let mut join_keys: Option<crate::Value<String>> = None;
+                    let mut join_type: Option<crate::Value<String>> = None;
+                    let mut left_columns: Option<crate::Value<String>> = None;
+                    let mut limit: Option<crate::Value<String>> = None;
+                    let mut lower_bound: Option<crate::Value<String>> = None;
+                    let mut map_type: Option<crate::Value<String>> = None;
+                    let mut mode_type: Option<crate::Value<String>> = None;
+                    let mut multi_line: Option<crate::Value<bool>> = None;
+                    let mut num_rows: Option<crate::Value<String>> = None;
+                    let mut num_rows_after: Option<crate::Value<String>> = None;
+                    let mut num_rows_before: Option<crate::Value<String>> = None;
+                    let mut order_by_column: Option<crate::Value<String>> = None;
+                    let mut order_by_columns: Option<crate::Value<String>> = None;
+                    let mut other: Option<crate::Value<String>> = None;
+                    let mut pattern: Option<crate::Value<String>> = None;
+                    let mut pattern_option1: Option<crate::Value<String>> = None;
+                    let mut pattern_option2: Option<crate::Value<String>> = None;
+                    let mut pattern_options: Option<crate::Value<String>> = None;
+                    let mut period: Option<crate::Value<String>> = None;
+                    let mut position: Option<crate::Value<String>> = None;
+                    let mut remove_all_punctuation: Option<crate::Value<String>> = None;
+                    let mut remove_all_quotes: Option<crate::Value<String>> = None;
+                    let mut remove_all_whitespace: Option<crate::Value<String>> = None;
+                    let mut remove_custom_characters: Option<crate::Value<String>> = None;
+                    let mut remove_custom_value: Option<crate::Value<String>> = None;
+                    let mut remove_leading_and_trailing_punctuation: Option<crate::Value<String>> = None;
+                    let mut remove_leading_and_trailing_quotes: Option<crate::Value<String>> = None;
+                    let mut remove_leading_and_trailing_whitespace: Option<crate::Value<String>> = None;
+                    let mut remove_letters: Option<crate::Value<String>> = None;
+                    let mut remove_numbers: Option<crate::Value<String>> = None;
+                    let mut remove_source_column: Option<crate::Value<String>> = None;
+                    let mut remove_special_characters: Option<crate::Value<String>> = None;
+                    let mut right_columns: Option<crate::Value<String>> = None;
+                    let mut sample_size: Option<crate::Value<String>> = None;
+                    let mut sample_type: Option<crate::Value<String>> = None;
+                    let mut second_input: Option<crate::Value<String>> = None;
+                    let mut secondary_inputs: Option<crate::ValueList<SecondaryInput>> = None;
+                    let mut sheet_indexes: Option<crate::ValueList<u32>> = None;
+                    let mut sheet_names: Option<crate::ValueList<String>> = None;
+                    let mut source_column: Option<crate::Value<String>> = None;
+                    let mut source_column1: Option<crate::Value<String>> = None;
+                    let mut source_column2: Option<crate::Value<String>> = None;
+                    let mut source_columns: Option<crate::Value<String>> = None;
+                    let mut start_column_index: Option<crate::Value<String>> = None;
+                    let mut start_pattern: Option<crate::Value<String>> = None;
+                    let mut start_position: Option<crate::Value<String>> = None;
+                    let mut start_value: Option<crate::Value<String>> = None;
+                    let mut stemming_mode: Option<crate::Value<String>> = None;
+                    let mut step_count: Option<crate::Value<String>> = None;
+                    let mut step_index: Option<crate::Value<String>> = None;
+                    let mut stop_words_mode: Option<crate::Value<String>> = None;
+                    let mut strategy: Option<crate::Value<String>> = None;
+                    let mut target_column: Option<crate::Value<String>> = None;
+                    let mut target_column_names: Option<crate::Value<String>> = None;
+                    let mut target_date_format: Option<crate::Value<String>> = None;
+                    let mut target_index: Option<crate::Value<String>> = None;
+                    let mut time_zone: Option<crate::Value<String>> = None;
+                    let mut tokenizer_pattern: Option<crate::Value<String>> = None;
+                    let mut true_string: Option<crate::Value<String>> = None;
+                    let mut udf_lang: Option<crate::Value<String>> = None;
+                    let mut units: Option<crate::Value<String>> = None;
+                    let mut unpivot_column: Option<crate::Value<String>> = None;
+                    let mut upper_bound: Option<crate::Value<String>> = None;
+                    let mut use_new_data_frame: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
+                    let mut value1: Option<crate::Value<String>> = None;
+                    let mut value2: Option<crate::Value<String>> = None;
+                    let mut value_column: Option<crate::Value<String>> = None;
+                    let mut view_frame: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5958,15 +5958,15 @@ pub mod recipe {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: ::Value<Action>,
+        pub action: crate::Value<Action>,
         /// Property [`ConditionExpressions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub condition_expressions: Option<::ValueList<ConditionExpression>>,
+        pub condition_expressions: Option<crate::ValueList<ConditionExpression>>,
     }
 
-    impl ::codec::SerializeValue for RecipeStep {
+    impl crate::codec::SerializeValue for RecipeStep {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Action", &self.action)?;
@@ -5981,7 +5981,7 @@ pub mod recipe {
         }
     }
 
-    impl ::codec::DeserializeValue for RecipeStep {
+    impl crate::codec::DeserializeValue for RecipeStep {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RecipeStep, D::Error> {
             struct Visitor;
 
@@ -5996,8 +5996,8 @@ pub mod recipe {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<Action>> = None;
-                    let mut condition_expressions: Option<::ValueList<ConditionExpression>> = None;
+                    let mut action: Option<crate::Value<Action>> = None;
+                    let mut condition_expressions: Option<crate::ValueList<ConditionExpression>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6032,15 +6032,15 @@ pub mod recipe {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: ::Value<String>,
+        pub bucket: crate::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-s3location.html#cfn-databrew-recipe-s3location-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3Location {
+    impl crate::codec::SerializeValue for S3Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -6051,7 +6051,7 @@ pub mod recipe {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Location {
+    impl crate::codec::DeserializeValue for S3Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Location, D::Error> {
             struct Visitor;
 
@@ -6066,8 +6066,8 @@ pub mod recipe {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6101,15 +6101,15 @@ pub mod recipe {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_catalog_input_definition: Option<::Value<DataCatalogInputDefinition>>,
+        pub data_catalog_input_definition: Option<crate::Value<DataCatalogInputDefinition>>,
         /// Property [`S3InputDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-secondaryinput.html#cfn-databrew-recipe-secondaryinput-s3inputdefinition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_input_definition: Option<::Value<S3Location>>,
+        pub s3_input_definition: Option<crate::Value<S3Location>>,
     }
 
-    impl ::codec::SerializeValue for SecondaryInput {
+    impl crate::codec::SerializeValue for SecondaryInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_catalog_input_definition) = self.data_catalog_input_definition {
@@ -6130,7 +6130,7 @@ pub mod recipe {
         }
     }
 
-    impl ::codec::DeserializeValue for SecondaryInput {
+    impl crate::codec::DeserializeValue for SecondaryInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SecondaryInput, D::Error> {
@@ -6148,9 +6148,9 @@ pub mod recipe {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut data_catalog_input_definition: Option<
-                        ::Value<DataCatalogInputDefinition>,
+                        crate::Value<DataCatalogInputDefinition>,
                     > = None;
-                    let mut s3_input_definition: Option<::Value<S3Location>> = None;
+                    let mut s3_input_definition: Option<crate::Value<S3Location>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6189,15 +6189,15 @@ pub mod ruleset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
         /// Property [`Regex`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-columnselector.html#cfn-databrew-ruleset-columnselector-regex).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub regex: Option<::Value<String>>,
+        pub regex: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ColumnSelector {
+    impl crate::codec::SerializeValue for ColumnSelector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -6210,7 +6210,7 @@ pub mod ruleset {
         }
     }
 
-    impl ::codec::DeserializeValue for ColumnSelector {
+    impl crate::codec::DeserializeValue for ColumnSelector {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ColumnSelector, D::Error> {
@@ -6227,8 +6227,8 @@ pub mod ruleset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut regex: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut regex: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6262,35 +6262,35 @@ pub mod ruleset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub check_expression: ::Value<String>,
+        pub check_expression: crate::Value<String>,
         /// Property [`ColumnSelectors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-columnselectors).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_selectors: Option<::ValueList<ColumnSelector>>,
+        pub column_selectors: Option<crate::ValueList<ColumnSelector>>,
         /// Property [`Disabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-disabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disabled: Option<::Value<bool>>,
+        pub disabled: Option<crate::Value<bool>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`SubstitutionMap`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-substitutionmap).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub substitution_map: Option<::ValueList<SubstitutionValue>>,
+        pub substitution_map: Option<crate::ValueList<SubstitutionValue>>,
         /// Property [`Threshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-threshold).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub threshold: Option<::Value<Threshold>>,
+        pub threshold: Option<crate::Value<Threshold>>,
     }
 
-    impl ::codec::SerializeValue for Rule {
+    impl crate::codec::SerializeValue for Rule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -6323,7 +6323,7 @@ pub mod ruleset {
         }
     }
 
-    impl ::codec::DeserializeValue for Rule {
+    impl crate::codec::DeserializeValue for Rule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Rule, D::Error> {
             struct Visitor;
 
@@ -6338,12 +6338,12 @@ pub mod ruleset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut check_expression: Option<::Value<String>> = None;
-                    let mut column_selectors: Option<::ValueList<ColumnSelector>> = None;
-                    let mut disabled: Option<::Value<bool>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut substitution_map: Option<::ValueList<SubstitutionValue>> = None;
-                    let mut threshold: Option<::Value<Threshold>> = None;
+                    let mut check_expression: Option<crate::Value<String>> = None;
+                    let mut column_selectors: Option<crate::ValueList<ColumnSelector>> = None;
+                    let mut disabled: Option<crate::Value<bool>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut substitution_map: Option<crate::ValueList<SubstitutionValue>> = None;
+                    let mut threshold: Option<crate::Value<Threshold>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6394,15 +6394,15 @@ pub mod ruleset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
         /// Property [`ValueReference`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-valuereference).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_reference: ::Value<String>,
+        pub value_reference: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SubstitutionValue {
+    impl crate::codec::SerializeValue for SubstitutionValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Value", &self.value)?;
@@ -6415,7 +6415,7 @@ pub mod ruleset {
         }
     }
 
-    impl ::codec::DeserializeValue for SubstitutionValue {
+    impl crate::codec::DeserializeValue for SubstitutionValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SubstitutionValue, D::Error> {
@@ -6432,8 +6432,8 @@ pub mod ruleset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut value: Option<::Value<String>> = None;
-                    let mut value_reference: Option<::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
+                    let mut value_reference: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6468,20 +6468,20 @@ pub mod ruleset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
         /// Property [`Unit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-unit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unit: Option<::Value<String>>,
+        pub unit: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<f64>,
+        pub value: crate::Value<f64>,
     }
 
-    impl ::codec::SerializeValue for Threshold {
+    impl crate::codec::SerializeValue for Threshold {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref r#type) = self.r#type {
@@ -6495,7 +6495,7 @@ pub mod ruleset {
         }
     }
 
-    impl ::codec::DeserializeValue for Threshold {
+    impl crate::codec::DeserializeValue for Threshold {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Threshold, D::Error> {
             struct Visitor;
 
@@ -6510,9 +6510,9 @@ pub mod ruleset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut unit: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<f64>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut unit: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

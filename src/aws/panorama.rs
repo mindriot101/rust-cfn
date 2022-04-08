@@ -13,53 +13,53 @@ pub struct ApplicationInstanceProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_instance_id_to_replace: Option<::Value<String>>,
+    pub application_instance_id_to_replace: Option<crate::Value<String>>,
     /// Property [`DefaultRuntimeContextDevice`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-defaultruntimecontextdevice).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub default_runtime_context_device: ::Value<String>,
+    pub default_runtime_context_device: crate::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-description).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`DeviceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-deviceid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub device_id: Option<::Value<String>>,
+    pub device_id: Option<crate::Value<String>>,
     /// Property [`ManifestOverridesPayload`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-manifestoverridespayload).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub manifest_overrides_payload:
-        Option<::Value<self::application_instance::ManifestOverridesPayload>>,
+        Option<crate::Value<self::application_instance::ManifestOverridesPayload>>,
     /// Property [`ManifestPayload`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-manifestpayload).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub manifest_payload: ::Value<self::application_instance::ManifestPayload>,
+    pub manifest_payload: crate::Value<self::application_instance::ManifestPayload>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`RuntimeRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-runtimerolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub runtime_role_arn: Option<::Value<String>>,
+    pub runtime_role_arn: Option<crate::Value<String>>,
     /// Property [`StatusFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-statusfilter).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub status_filter: Option<::Value<String>>,
+    pub status_filter: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ApplicationInstanceProperties {
@@ -134,20 +134,20 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationInstanceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_instance_id_to_replace: Option<::Value<String>> = None;
-                let mut default_runtime_context_device: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut device_id: Option<::Value<String>> = None;
+                let mut application_instance_id_to_replace: Option<crate::Value<String>> = None;
+                let mut default_runtime_context_device: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut device_id: Option<crate::Value<String>> = None;
                 let mut manifest_overrides_payload: Option<
-                    ::Value<self::application_instance::ManifestOverridesPayload>,
+                    crate::Value<self::application_instance::ManifestOverridesPayload>,
                 > = None;
                 let mut manifest_payload: Option<
-                    ::Value<self::application_instance::ManifestPayload>,
+                    crate::Value<self::application_instance::ManifestPayload>,
                 > = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut runtime_role_arn: Option<::Value<String>> = None;
-                let mut status_filter: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut runtime_role_arn: Option<crate::Value<String>> = None;
+                let mut status_filter: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -210,7 +210,7 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationInstanceProperties {
     }
 }
 
-impl ::Resource for ApplicationInstance {
+impl crate::Resource for ApplicationInstance {
     type Properties = ApplicationInstanceProperties;
     const TYPE: &'static str = "AWS::Panorama::ApplicationInstance";
     fn properties(&self) -> &ApplicationInstanceProperties {
@@ -221,7 +221,7 @@ impl ::Resource for ApplicationInstance {
     }
 }
 
-impl ::private::Sealed for ApplicationInstance {}
+impl crate::private::Sealed for ApplicationInstance {}
 
 impl From<ApplicationInstanceProperties> for ApplicationInstance {
     fn from(properties: ApplicationInstanceProperties) -> ApplicationInstance {
@@ -242,12 +242,12 @@ pub struct PackageProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub package_name: ::Value<String>,
+    pub package_name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for PackageProperties {
@@ -276,8 +276,8 @@ impl<'de> ::serde::Deserialize<'de> for PackageProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut package_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut package_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -303,7 +303,7 @@ impl<'de> ::serde::Deserialize<'de> for PackageProperties {
     }
 }
 
-impl ::Resource for Package {
+impl crate::Resource for Package {
     type Properties = PackageProperties;
     const TYPE: &'static str = "AWS::Panorama::Package";
     fn properties(&self) -> &PackageProperties {
@@ -314,7 +314,7 @@ impl ::Resource for Package {
     }
 }
 
-impl ::private::Sealed for Package {}
+impl crate::private::Sealed for Package {}
 
 impl From<PackageProperties> for Package {
     fn from(properties: PackageProperties) -> Package {
@@ -335,32 +335,32 @@ pub struct PackageVersionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub mark_latest: Option<::Value<bool>>,
+    pub mark_latest: Option<crate::Value<bool>>,
     /// Property [`OwnerAccount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-owneraccount).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub owner_account: Option<::Value<String>>,
+    pub owner_account: Option<crate::Value<String>>,
     /// Property [`PackageId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-packageid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub package_id: ::Value<String>,
+    pub package_id: crate::Value<String>,
     /// Property [`PackageVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-packageversion).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub package_version: ::Value<String>,
+    pub package_version: crate::Value<String>,
     /// Property [`PatchVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-patchversion).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub patch_version: ::Value<String>,
+    pub patch_version: crate::Value<String>,
     /// Property [`UpdatedLatestPatchVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-updatedlatestpatchversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub updated_latest_patch_version: Option<::Value<String>>,
+    pub updated_latest_patch_version: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for PackageVersionProperties {
@@ -407,12 +407,12 @@ impl<'de> ::serde::Deserialize<'de> for PackageVersionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut mark_latest: Option<::Value<bool>> = None;
-                let mut owner_account: Option<::Value<String>> = None;
-                let mut package_id: Option<::Value<String>> = None;
-                let mut package_version: Option<::Value<String>> = None;
-                let mut patch_version: Option<::Value<String>> = None;
-                let mut updated_latest_patch_version: Option<::Value<String>> = None;
+                let mut mark_latest: Option<crate::Value<bool>> = None;
+                let mut owner_account: Option<crate::Value<String>> = None;
+                let mut package_id: Option<crate::Value<String>> = None;
+                let mut package_version: Option<crate::Value<String>> = None;
+                let mut patch_version: Option<crate::Value<String>> = None;
+                let mut updated_latest_patch_version: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -456,7 +456,7 @@ impl<'de> ::serde::Deserialize<'de> for PackageVersionProperties {
     }
 }
 
-impl ::Resource for PackageVersion {
+impl crate::Resource for PackageVersion {
     type Properties = PackageVersionProperties;
     const TYPE: &'static str = "AWS::Panorama::PackageVersion";
     fn properties(&self) -> &PackageVersionProperties {
@@ -467,7 +467,7 @@ impl ::Resource for PackageVersion {
     }
 }
 
-impl ::private::Sealed for PackageVersion {}
+impl crate::private::Sealed for PackageVersion {}
 
 impl From<PackageVersionProperties> for PackageVersion {
     fn from(properties: PackageVersionProperties) -> PackageVersion {
@@ -485,10 +485,10 @@ pub mod application_instance {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub payload_data: Option<::Value<String>>,
+        pub payload_data: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ManifestOverridesPayload {
+    impl crate::codec::SerializeValue for ManifestOverridesPayload {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref payload_data) = self.payload_data {
@@ -498,7 +498,7 @@ pub mod application_instance {
         }
     }
 
-    impl ::codec::DeserializeValue for ManifestOverridesPayload {
+    impl crate::codec::DeserializeValue for ManifestOverridesPayload {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ManifestOverridesPayload, D::Error> {
@@ -515,7 +515,7 @@ pub mod application_instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut payload_data: Option<::Value<String>> = None;
+                    let mut payload_data: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -545,10 +545,10 @@ pub mod application_instance {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub payload_data: Option<::Value<String>>,
+        pub payload_data: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ManifestPayload {
+    impl crate::codec::SerializeValue for ManifestPayload {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref payload_data) = self.payload_data {
@@ -558,7 +558,7 @@ pub mod application_instance {
         }
     }
 
-    impl ::codec::DeserializeValue for ManifestPayload {
+    impl crate::codec::DeserializeValue for ManifestPayload {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ManifestPayload, D::Error> {
@@ -575,7 +575,7 @@ pub mod application_instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut payload_data: Option<::Value<String>> = None;
+                    let mut payload_data: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

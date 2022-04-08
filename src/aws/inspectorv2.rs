@@ -13,22 +13,22 @@ pub struct FilterProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`FilterAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-filteraction).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub filter_action: ::Value<String>,
+    pub filter_action: crate::Value<String>,
     /// Property [`FilterCriteria`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-filtercriteria).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub filter_criteria: ::Value<self::filter::FilterCriteria>,
+    pub filter_criteria: crate::Value<self::filter::FilterCriteria>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for FilterProperties {
@@ -63,10 +63,10 @@ impl<'de> ::serde::Deserialize<'de> for FilterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut filter_action: Option<::Value<String>> = None;
-                let mut filter_criteria: Option<::Value<self::filter::FilterCriteria>> = None;
-                let mut name: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut filter_action: Option<crate::Value<String>> = None;
+                let mut filter_criteria: Option<crate::Value<self::filter::FilterCriteria>> = None;
+                let mut name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -101,7 +101,7 @@ impl<'de> ::serde::Deserialize<'de> for FilterProperties {
     }
 }
 
-impl ::Resource for Filter {
+impl crate::Resource for Filter {
     type Properties = FilterProperties;
     const TYPE: &'static str = "AWS::InspectorV2::Filter";
     fn properties(&self) -> &FilterProperties {
@@ -112,7 +112,7 @@ impl ::Resource for Filter {
     }
 }
 
-impl ::private::Sealed for Filter {}
+impl crate::private::Sealed for Filter {}
 
 impl From<FilterProperties> for Filter {
     fn from(properties: FilterProperties) -> Filter {
@@ -130,15 +130,15 @@ pub mod filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_inclusive: Option<::Value<u32>>,
+        pub end_inclusive: Option<crate::Value<u32>>,
         /// Property [`StartInclusive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html#cfn-inspectorv2-filter-datefilter-startinclusive).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_inclusive: Option<::Value<u32>>,
+        pub start_inclusive: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for DateFilter {
+    impl crate::codec::SerializeValue for DateFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref end_inclusive) = self.end_inclusive {
@@ -159,7 +159,7 @@ pub mod filter {
         }
     }
 
-    impl ::codec::DeserializeValue for DateFilter {
+    impl crate::codec::DeserializeValue for DateFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DateFilter, D::Error> {
             struct Visitor;
 
@@ -174,8 +174,8 @@ pub mod filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end_inclusive: Option<::Value<u32>> = None;
-                    let mut start_inclusive: Option<::Value<u32>> = None;
+                    let mut end_inclusive: Option<crate::Value<u32>> = None;
+                    let mut start_inclusive: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -209,160 +209,160 @@ pub mod filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aws_account_id: Option<::ValueList<StringFilter>>,
+        pub aws_account_id: Option<crate::ValueList<StringFilter>>,
         /// Property [`ComponentId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-componentid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub component_id: Option<::ValueList<StringFilter>>,
+        pub component_id: Option<crate::ValueList<StringFilter>>,
         /// Property [`ComponentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-componenttype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub component_type: Option<::ValueList<StringFilter>>,
+        pub component_type: Option<crate::ValueList<StringFilter>>,
         /// Property [`Ec2InstanceImageId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ec2instanceimageid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ec2_instance_image_id: Option<::ValueList<StringFilter>>,
+        pub ec2_instance_image_id: Option<crate::ValueList<StringFilter>>,
         /// Property [`Ec2InstanceSubnetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ec2instancesubnetid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ec2_instance_subnet_id: Option<::ValueList<StringFilter>>,
+        pub ec2_instance_subnet_id: Option<crate::ValueList<StringFilter>>,
         /// Property [`Ec2InstanceVpcId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ec2instancevpcid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ec2_instance_vpc_id: Option<::ValueList<StringFilter>>,
+        pub ec2_instance_vpc_id: Option<crate::ValueList<StringFilter>>,
         /// Property [`EcrImageArchitecture`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimagearchitecture).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ecr_image_architecture: Option<::ValueList<StringFilter>>,
+        pub ecr_image_architecture: Option<crate::ValueList<StringFilter>>,
         /// Property [`EcrImageHash`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimagehash).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ecr_image_hash: Option<::ValueList<StringFilter>>,
+        pub ecr_image_hash: Option<crate::ValueList<StringFilter>>,
         /// Property [`EcrImagePushedAt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimagepushedat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ecr_image_pushed_at: Option<::ValueList<DateFilter>>,
+        pub ecr_image_pushed_at: Option<crate::ValueList<DateFilter>>,
         /// Property [`EcrImageRegistry`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimageregistry).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ecr_image_registry: Option<::ValueList<StringFilter>>,
+        pub ecr_image_registry: Option<crate::ValueList<StringFilter>>,
         /// Property [`EcrImageRepositoryName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimagerepositoryname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ecr_image_repository_name: Option<::ValueList<StringFilter>>,
+        pub ecr_image_repository_name: Option<crate::ValueList<StringFilter>>,
         /// Property [`EcrImageTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimagetags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ecr_image_tags: Option<::ValueList<StringFilter>>,
+        pub ecr_image_tags: Option<crate::ValueList<StringFilter>>,
         /// Property [`FindingArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-findingarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub finding_arn: Option<::ValueList<StringFilter>>,
+        pub finding_arn: Option<crate::ValueList<StringFilter>>,
         /// Property [`FindingStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-findingstatus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub finding_status: Option<::ValueList<StringFilter>>,
+        pub finding_status: Option<crate::ValueList<StringFilter>>,
         /// Property [`FindingType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-findingtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub finding_type: Option<::ValueList<StringFilter>>,
+        pub finding_type: Option<crate::ValueList<StringFilter>>,
         /// Property [`FirstObservedAt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-firstobservedat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub first_observed_at: Option<::ValueList<DateFilter>>,
+        pub first_observed_at: Option<crate::ValueList<DateFilter>>,
         /// Property [`InspectorScore`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-inspectorscore).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub inspector_score: Option<::ValueList<NumberFilter>>,
+        pub inspector_score: Option<crate::ValueList<NumberFilter>>,
         /// Property [`LastObservedAt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-lastobservedat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub last_observed_at: Option<::ValueList<DateFilter>>,
+        pub last_observed_at: Option<crate::ValueList<DateFilter>>,
         /// Property [`NetworkProtocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-networkprotocol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_protocol: Option<::ValueList<StringFilter>>,
+        pub network_protocol: Option<crate::ValueList<StringFilter>>,
         /// Property [`PortRange`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-portrange).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port_range: Option<::ValueList<PortRangeFilter>>,
+        pub port_range: Option<crate::ValueList<PortRangeFilter>>,
         /// Property [`RelatedVulnerabilities`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-relatedvulnerabilities).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub related_vulnerabilities: Option<::ValueList<StringFilter>>,
+        pub related_vulnerabilities: Option<crate::ValueList<StringFilter>>,
         /// Property [`ResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-resourceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_id: Option<::ValueList<StringFilter>>,
+        pub resource_id: Option<crate::ValueList<StringFilter>>,
         /// Property [`ResourceTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-resourcetags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_tags: Option<::ValueList<MapFilter>>,
+        pub resource_tags: Option<crate::ValueList<MapFilter>>,
         /// Property [`ResourceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-resourcetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_type: Option<::ValueList<StringFilter>>,
+        pub resource_type: Option<crate::ValueList<StringFilter>>,
         /// Property [`Severity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-severity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub severity: Option<::ValueList<StringFilter>>,
+        pub severity: Option<crate::ValueList<StringFilter>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-title).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub title: Option<::ValueList<StringFilter>>,
+        pub title: Option<crate::ValueList<StringFilter>>,
         /// Property [`UpdatedAt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-updatedat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub updated_at: Option<::ValueList<DateFilter>>,
+        pub updated_at: Option<crate::ValueList<DateFilter>>,
         /// Property [`VendorSeverity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-vendorseverity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vendor_severity: Option<::ValueList<StringFilter>>,
+        pub vendor_severity: Option<crate::ValueList<StringFilter>>,
         /// Property [`VulnerabilityId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-vulnerabilityid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vulnerability_id: Option<::ValueList<StringFilter>>,
+        pub vulnerability_id: Option<crate::ValueList<StringFilter>>,
         /// Property [`VulnerabilitySource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-vulnerabilitysource).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vulnerability_source: Option<::ValueList<StringFilter>>,
+        pub vulnerability_source: Option<crate::ValueList<StringFilter>>,
         /// Property [`VulnerablePackages`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-vulnerablepackages).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vulnerable_packages: Option<::ValueList<PackageFilter>>,
+        pub vulnerable_packages: Option<crate::ValueList<PackageFilter>>,
     }
 
-    impl ::codec::SerializeValue for FilterCriteria {
+    impl crate::codec::SerializeValue for FilterCriteria {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aws_account_id) = self.aws_account_id {
@@ -554,7 +554,7 @@ pub mod filter {
         }
     }
 
-    impl ::codec::DeserializeValue for FilterCriteria {
+    impl crate::codec::DeserializeValue for FilterCriteria {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FilterCriteria, D::Error> {
@@ -571,37 +571,37 @@ pub mod filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut aws_account_id: Option<::ValueList<StringFilter>> = None;
-                    let mut component_id: Option<::ValueList<StringFilter>> = None;
-                    let mut component_type: Option<::ValueList<StringFilter>> = None;
-                    let mut ec2_instance_image_id: Option<::ValueList<StringFilter>> = None;
-                    let mut ec2_instance_subnet_id: Option<::ValueList<StringFilter>> = None;
-                    let mut ec2_instance_vpc_id: Option<::ValueList<StringFilter>> = None;
-                    let mut ecr_image_architecture: Option<::ValueList<StringFilter>> = None;
-                    let mut ecr_image_hash: Option<::ValueList<StringFilter>> = None;
-                    let mut ecr_image_pushed_at: Option<::ValueList<DateFilter>> = None;
-                    let mut ecr_image_registry: Option<::ValueList<StringFilter>> = None;
-                    let mut ecr_image_repository_name: Option<::ValueList<StringFilter>> = None;
-                    let mut ecr_image_tags: Option<::ValueList<StringFilter>> = None;
-                    let mut finding_arn: Option<::ValueList<StringFilter>> = None;
-                    let mut finding_status: Option<::ValueList<StringFilter>> = None;
-                    let mut finding_type: Option<::ValueList<StringFilter>> = None;
-                    let mut first_observed_at: Option<::ValueList<DateFilter>> = None;
-                    let mut inspector_score: Option<::ValueList<NumberFilter>> = None;
-                    let mut last_observed_at: Option<::ValueList<DateFilter>> = None;
-                    let mut network_protocol: Option<::ValueList<StringFilter>> = None;
-                    let mut port_range: Option<::ValueList<PortRangeFilter>> = None;
-                    let mut related_vulnerabilities: Option<::ValueList<StringFilter>> = None;
-                    let mut resource_id: Option<::ValueList<StringFilter>> = None;
-                    let mut resource_tags: Option<::ValueList<MapFilter>> = None;
-                    let mut resource_type: Option<::ValueList<StringFilter>> = None;
-                    let mut severity: Option<::ValueList<StringFilter>> = None;
-                    let mut title: Option<::ValueList<StringFilter>> = None;
-                    let mut updated_at: Option<::ValueList<DateFilter>> = None;
-                    let mut vendor_severity: Option<::ValueList<StringFilter>> = None;
-                    let mut vulnerability_id: Option<::ValueList<StringFilter>> = None;
-                    let mut vulnerability_source: Option<::ValueList<StringFilter>> = None;
-                    let mut vulnerable_packages: Option<::ValueList<PackageFilter>> = None;
+                    let mut aws_account_id: Option<crate::ValueList<StringFilter>> = None;
+                    let mut component_id: Option<crate::ValueList<StringFilter>> = None;
+                    let mut component_type: Option<crate::ValueList<StringFilter>> = None;
+                    let mut ec2_instance_image_id: Option<crate::ValueList<StringFilter>> = None;
+                    let mut ec2_instance_subnet_id: Option<crate::ValueList<StringFilter>> = None;
+                    let mut ec2_instance_vpc_id: Option<crate::ValueList<StringFilter>> = None;
+                    let mut ecr_image_architecture: Option<crate::ValueList<StringFilter>> = None;
+                    let mut ecr_image_hash: Option<crate::ValueList<StringFilter>> = None;
+                    let mut ecr_image_pushed_at: Option<crate::ValueList<DateFilter>> = None;
+                    let mut ecr_image_registry: Option<crate::ValueList<StringFilter>> = None;
+                    let mut ecr_image_repository_name: Option<crate::ValueList<StringFilter>> = None;
+                    let mut ecr_image_tags: Option<crate::ValueList<StringFilter>> = None;
+                    let mut finding_arn: Option<crate::ValueList<StringFilter>> = None;
+                    let mut finding_status: Option<crate::ValueList<StringFilter>> = None;
+                    let mut finding_type: Option<crate::ValueList<StringFilter>> = None;
+                    let mut first_observed_at: Option<crate::ValueList<DateFilter>> = None;
+                    let mut inspector_score: Option<crate::ValueList<NumberFilter>> = None;
+                    let mut last_observed_at: Option<crate::ValueList<DateFilter>> = None;
+                    let mut network_protocol: Option<crate::ValueList<StringFilter>> = None;
+                    let mut port_range: Option<crate::ValueList<PortRangeFilter>> = None;
+                    let mut related_vulnerabilities: Option<crate::ValueList<StringFilter>> = None;
+                    let mut resource_id: Option<crate::ValueList<StringFilter>> = None;
+                    let mut resource_tags: Option<crate::ValueList<MapFilter>> = None;
+                    let mut resource_type: Option<crate::ValueList<StringFilter>> = None;
+                    let mut severity: Option<crate::ValueList<StringFilter>> = None;
+                    let mut title: Option<crate::ValueList<StringFilter>> = None;
+                    let mut updated_at: Option<crate::ValueList<DateFilter>> = None;
+                    let mut vendor_severity: Option<crate::ValueList<StringFilter>> = None;
+                    let mut vulnerability_id: Option<crate::ValueList<StringFilter>> = None;
+                    let mut vulnerability_source: Option<crate::ValueList<StringFilter>> = None;
+                    let mut vulnerable_packages: Option<crate::ValueList<PackageFilter>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -757,20 +757,20 @@ pub mod filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub comparison: ::Value<String>,
+        pub comparison: crate::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-mapfilter.html#cfn-inspectorv2-filter-mapfilter-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-mapfilter.html#cfn-inspectorv2-filter-mapfilter-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for MapFilter {
+    impl crate::codec::SerializeValue for MapFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Comparison", &self.comparison)?;
@@ -784,7 +784,7 @@ pub mod filter {
         }
     }
 
-    impl ::codec::DeserializeValue for MapFilter {
+    impl crate::codec::DeserializeValue for MapFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MapFilter, D::Error> {
             struct Visitor;
 
@@ -799,9 +799,9 @@ pub mod filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut comparison: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut comparison: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -840,15 +840,15 @@ pub mod filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lower_inclusive: Option<::Value<f64>>,
+        pub lower_inclusive: Option<crate::Value<f64>>,
         /// Property [`UpperInclusive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-numberfilter.html#cfn-inspectorv2-filter-numberfilter-upperinclusive).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub upper_inclusive: Option<::Value<f64>>,
+        pub upper_inclusive: Option<crate::Value<f64>>,
     }
 
-    impl ::codec::SerializeValue for NumberFilter {
+    impl crate::codec::SerializeValue for NumberFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref lower_inclusive) = self.lower_inclusive {
@@ -869,7 +869,7 @@ pub mod filter {
         }
     }
 
-    impl ::codec::DeserializeValue for NumberFilter {
+    impl crate::codec::DeserializeValue for NumberFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NumberFilter, D::Error> {
             struct Visitor;
 
@@ -884,8 +884,8 @@ pub mod filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut lower_inclusive: Option<::Value<f64>> = None;
-                    let mut upper_inclusive: Option<::Value<f64>> = None;
+                    let mut lower_inclusive: Option<crate::Value<f64>> = None;
+                    let mut upper_inclusive: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -919,35 +919,35 @@ pub mod filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub architecture: Option<::Value<StringFilter>>,
+        pub architecture: Option<crate::Value<StringFilter>>,
         /// Property [`Epoch`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-epoch).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub epoch: Option<::Value<NumberFilter>>,
+        pub epoch: Option<crate::Value<NumberFilter>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<StringFilter>>,
+        pub name: Option<crate::Value<StringFilter>>,
         /// Property [`Release`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-release).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub release: Option<::Value<StringFilter>>,
+        pub release: Option<crate::Value<StringFilter>>,
         /// Property [`SourceLayerHash`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-sourcelayerhash).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_layer_hash: Option<::Value<StringFilter>>,
+        pub source_layer_hash: Option<crate::Value<StringFilter>>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<::Value<StringFilter>>,
+        pub version: Option<crate::Value<StringFilter>>,
     }
 
-    impl ::codec::SerializeValue for PackageFilter {
+    impl crate::codec::SerializeValue for PackageFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref architecture) = self.architecture {
@@ -980,7 +980,7 @@ pub mod filter {
         }
     }
 
-    impl ::codec::DeserializeValue for PackageFilter {
+    impl crate::codec::DeserializeValue for PackageFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PackageFilter, D::Error> {
@@ -997,12 +997,12 @@ pub mod filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut architecture: Option<::Value<StringFilter>> = None;
-                    let mut epoch: Option<::Value<NumberFilter>> = None;
-                    let mut name: Option<::Value<StringFilter>> = None;
-                    let mut release: Option<::Value<StringFilter>> = None;
-                    let mut source_layer_hash: Option<::Value<StringFilter>> = None;
-                    let mut version: Option<::Value<StringFilter>> = None;
+                    let mut architecture: Option<crate::Value<StringFilter>> = None;
+                    let mut epoch: Option<crate::Value<NumberFilter>> = None;
+                    let mut name: Option<crate::Value<StringFilter>> = None;
+                    let mut release: Option<crate::Value<StringFilter>> = None;
+                    let mut source_layer_hash: Option<crate::Value<StringFilter>> = None;
+                    let mut version: Option<crate::Value<StringFilter>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1052,15 +1052,15 @@ pub mod filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub begin_inclusive: Option<::Value<u32>>,
+        pub begin_inclusive: Option<crate::Value<u32>>,
         /// Property [`EndInclusive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-portrangefilter.html#cfn-inspectorv2-filter-portrangefilter-endinclusive).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_inclusive: Option<::Value<u32>>,
+        pub end_inclusive: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for PortRangeFilter {
+    impl crate::codec::SerializeValue for PortRangeFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref begin_inclusive) = self.begin_inclusive {
@@ -1081,7 +1081,7 @@ pub mod filter {
         }
     }
 
-    impl ::codec::DeserializeValue for PortRangeFilter {
+    impl crate::codec::DeserializeValue for PortRangeFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PortRangeFilter, D::Error> {
@@ -1098,8 +1098,8 @@ pub mod filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut begin_inclusive: Option<::Value<u32>> = None;
-                    let mut end_inclusive: Option<::Value<u32>> = None;
+                    let mut begin_inclusive: Option<crate::Value<u32>> = None;
+                    let mut end_inclusive: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1133,15 +1133,15 @@ pub mod filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub comparison: ::Value<String>,
+        pub comparison: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for StringFilter {
+    impl crate::codec::SerializeValue for StringFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Comparison", &self.comparison)?;
@@ -1150,7 +1150,7 @@ pub mod filter {
         }
     }
 
-    impl ::codec::DeserializeValue for StringFilter {
+    impl crate::codec::DeserializeValue for StringFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StringFilter, D::Error> {
             struct Visitor;
 
@@ -1165,8 +1165,8 @@ pub mod filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut comparison: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut comparison: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

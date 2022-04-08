@@ -13,22 +13,22 @@ pub struct AccessPointProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub bucket: ::Value<String>,
+    pub bucket: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Policy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-policy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy: Option<::Value<::json::Value>>,
+    pub policy: Option<crate::Value<crate::json::Value>>,
     /// Property [`VpcConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-vpcconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc_configuration: ::Value<self::access_point::VpcConfiguration>,
+    pub vpc_configuration: crate::Value<self::access_point::VpcConfiguration>,
 }
 
 impl ::serde::Serialize for AccessPointProperties {
@@ -63,10 +63,10 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut bucket: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut policy: Option<::Value<::json::Value>> = None;
-                let mut vpc_configuration: Option<::Value<self::access_point::VpcConfiguration>> =
+                let mut bucket: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut policy: Option<crate::Value<crate::json::Value>> = None;
+                let mut vpc_configuration: Option<crate::Value<self::access_point::VpcConfiguration>> =
                     None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -101,7 +101,7 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointProperties {
     }
 }
 
-impl ::Resource for AccessPoint {
+impl crate::Resource for AccessPoint {
     type Properties = AccessPointProperties;
     const TYPE: &'static str = "AWS::S3Outposts::AccessPoint";
     fn properties(&self) -> &AccessPointProperties {
@@ -112,7 +112,7 @@ impl ::Resource for AccessPoint {
     }
 }
 
-impl ::private::Sealed for AccessPoint {}
+impl crate::private::Sealed for AccessPoint {}
 
 impl From<AccessPointProperties> for AccessPoint {
     fn from(properties: AccessPointProperties) -> AccessPoint {
@@ -133,22 +133,22 @@ pub struct BucketProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub bucket_name: ::Value<String>,
+    pub bucket_name: crate::Value<String>,
     /// Property [`LifecycleConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucket.html#cfn-s3outposts-bucket-lifecycleconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub lifecycle_configuration: Option<::Value<self::bucket::LifecycleConfiguration>>,
+    pub lifecycle_configuration: Option<crate::Value<self::bucket::LifecycleConfiguration>>,
     /// Property [`OutpostId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucket.html#cfn-s3outposts-bucket-outpostid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub outpost_id: ::Value<String>,
+    pub outpost_id: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucket.html#cfn-s3outposts-bucket-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for BucketProperties {
@@ -185,12 +185,12 @@ impl<'de> ::serde::Deserialize<'de> for BucketProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut bucket_name: Option<::Value<String>> = None;
+                let mut bucket_name: Option<crate::Value<String>> = None;
                 let mut lifecycle_configuration: Option<
-                    ::Value<self::bucket::LifecycleConfiguration>,
+                    crate::Value<self::bucket::LifecycleConfiguration>,
                 > = None;
-                let mut outpost_id: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut outpost_id: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -224,7 +224,7 @@ impl<'de> ::serde::Deserialize<'de> for BucketProperties {
     }
 }
 
-impl ::Resource for Bucket {
+impl crate::Resource for Bucket {
     type Properties = BucketProperties;
     const TYPE: &'static str = "AWS::S3Outposts::Bucket";
     fn properties(&self) -> &BucketProperties {
@@ -235,7 +235,7 @@ impl ::Resource for Bucket {
     }
 }
 
-impl ::private::Sealed for Bucket {}
+impl crate::private::Sealed for Bucket {}
 
 impl From<BucketProperties> for Bucket {
     fn from(properties: BucketProperties) -> Bucket {
@@ -256,12 +256,12 @@ pub struct BucketPolicyProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub bucket: ::Value<String>,
+    pub bucket: crate::Value<String>,
     /// Property [`PolicyDocument`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucketpolicy.html#cfn-s3outposts-bucketpolicy-policydocument).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy_document: ::Value<::json::Value>,
+    pub policy_document: crate::Value<crate::json::Value>,
 }
 
 impl ::serde::Serialize for BucketPolicyProperties {
@@ -294,8 +294,8 @@ impl<'de> ::serde::Deserialize<'de> for BucketPolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut bucket: Option<::Value<String>> = None;
-                let mut policy_document: Option<::Value<::json::Value>> = None;
+                let mut bucket: Option<crate::Value<String>> = None;
+                let mut policy_document: Option<crate::Value<crate::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -321,7 +321,7 @@ impl<'de> ::serde::Deserialize<'de> for BucketPolicyProperties {
     }
 }
 
-impl ::Resource for BucketPolicy {
+impl crate::Resource for BucketPolicy {
     type Properties = BucketPolicyProperties;
     const TYPE: &'static str = "AWS::S3Outposts::BucketPolicy";
     fn properties(&self) -> &BucketPolicyProperties {
@@ -332,7 +332,7 @@ impl ::Resource for BucketPolicy {
     }
 }
 
-impl ::private::Sealed for BucketPolicy {}
+impl crate::private::Sealed for BucketPolicy {}
 
 impl From<BucketPolicyProperties> for BucketPolicy {
     fn from(properties: BucketPolicyProperties) -> BucketPolicy {
@@ -353,27 +353,27 @@ pub struct EndpointProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub access_type: Option<::Value<String>>,
+    pub access_type: Option<crate::Value<String>>,
     /// Property [`CustomerOwnedIpv4Pool`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-customerownedipv4pool).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub customer_owned_ipv4_pool: Option<::Value<String>>,
+    pub customer_owned_ipv4_pool: Option<crate::Value<String>>,
     /// Property [`OutpostId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-outpostid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub outpost_id: ::Value<String>,
+    pub outpost_id: crate::Value<String>,
     /// Property [`SecurityGroupId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-securitygroupid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub security_group_id: ::Value<String>,
+    pub security_group_id: crate::Value<String>,
     /// Property [`SubnetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-subnetid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnet_id: ::Value<String>,
+    pub subnet_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for EndpointProperties {
@@ -415,11 +415,11 @@ impl<'de> ::serde::Deserialize<'de> for EndpointProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut access_type: Option<::Value<String>> = None;
-                let mut customer_owned_ipv4_pool: Option<::Value<String>> = None;
-                let mut outpost_id: Option<::Value<String>> = None;
-                let mut security_group_id: Option<::Value<String>> = None;
-                let mut subnet_id: Option<::Value<String>> = None;
+                let mut access_type: Option<crate::Value<String>> = None;
+                let mut customer_owned_ipv4_pool: Option<crate::Value<String>> = None;
+                let mut outpost_id: Option<crate::Value<String>> = None;
+                let mut security_group_id: Option<crate::Value<String>> = None;
+                let mut subnet_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -458,7 +458,7 @@ impl<'de> ::serde::Deserialize<'de> for EndpointProperties {
     }
 }
 
-impl ::Resource for Endpoint {
+impl crate::Resource for Endpoint {
     type Properties = EndpointProperties;
     const TYPE: &'static str = "AWS::S3Outposts::Endpoint";
     fn properties(&self) -> &EndpointProperties {
@@ -469,7 +469,7 @@ impl ::Resource for Endpoint {
     }
 }
 
-impl ::private::Sealed for Endpoint {}
+impl crate::private::Sealed for Endpoint {}
 
 impl From<EndpointProperties> for Endpoint {
     fn from(properties: EndpointProperties) -> Endpoint {
@@ -487,10 +487,10 @@ pub mod access_point {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub vpc_id: Option<::Value<String>>,
+        pub vpc_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for VpcConfiguration {
+    impl crate::codec::SerializeValue for VpcConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref vpc_id) = self.vpc_id {
@@ -500,7 +500,7 @@ pub mod access_point {
         }
     }
 
-    impl ::codec::DeserializeValue for VpcConfiguration {
+    impl crate::codec::DeserializeValue for VpcConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VpcConfiguration, D::Error> {
@@ -517,7 +517,7 @@ pub mod access_point {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut vpc_id: Option<::Value<String>> = None;
+                    let mut vpc_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -549,10 +549,10 @@ pub mod bucket {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub days_after_initiation: ::Value<u32>,
+        pub days_after_initiation: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for AbortIncompleteMultipartUpload {
+    impl crate::codec::SerializeValue for AbortIncompleteMultipartUpload {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -564,7 +564,7 @@ pub mod bucket {
         }
     }
 
-    impl ::codec::DeserializeValue for AbortIncompleteMultipartUpload {
+    impl crate::codec::DeserializeValue for AbortIncompleteMultipartUpload {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AbortIncompleteMultipartUpload, D::Error> {
@@ -581,7 +581,7 @@ pub mod bucket {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut days_after_initiation: Option<::Value<u32>> = None;
+                    let mut days_after_initiation: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -613,10 +613,10 @@ pub mod bucket {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rules: ::ValueList<Rule>,
+        pub rules: crate::ValueList<Rule>,
     }
 
-    impl ::codec::SerializeValue for LifecycleConfiguration {
+    impl crate::codec::SerializeValue for LifecycleConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rules", &self.rules)?;
@@ -624,7 +624,7 @@ pub mod bucket {
         }
     }
 
-    impl ::codec::DeserializeValue for LifecycleConfiguration {
+    impl crate::codec::DeserializeValue for LifecycleConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LifecycleConfiguration, D::Error> {
@@ -641,7 +641,7 @@ pub mod bucket {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut rules: Option<::ValueList<Rule>> = None;
+                    let mut rules: Option<crate::ValueList<Rule>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -671,35 +671,35 @@ pub mod bucket {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub abort_incomplete_multipart_upload: Option<::Value<AbortIncompleteMultipartUpload>>,
+        pub abort_incomplete_multipart_upload: Option<crate::Value<AbortIncompleteMultipartUpload>>,
         /// Property [`ExpirationDate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationdate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub expiration_date: Option<::Value<String>>,
+        pub expiration_date: Option<crate::Value<String>>,
         /// Property [`ExpirationInDays`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationindays).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub expiration_in_days: Option<::Value<u32>>,
+        pub expiration_in_days: Option<crate::Value<u32>>,
         /// Property [`Filter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-filter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter: Option<::Value<::json::Value>>,
+        pub filter: Option<crate::Value<crate::json::Value>>,
         /// Property [`Id`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-id).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: Option<::Value<String>>,
+        pub id: Option<crate::Value<String>>,
         /// Property [`Status`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-status).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status: Option<::Value<String>>,
+        pub status: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Rule {
+    impl crate::codec::SerializeValue for Rule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref abort_incomplete_multipart_upload) =
@@ -738,7 +738,7 @@ pub mod bucket {
         }
     }
 
-    impl ::codec::DeserializeValue for Rule {
+    impl crate::codec::DeserializeValue for Rule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Rule, D::Error> {
             struct Visitor;
 
@@ -754,13 +754,13 @@ pub mod bucket {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut abort_incomplete_multipart_upload: Option<
-                        ::Value<AbortIncompleteMultipartUpload>,
+                        crate::Value<AbortIncompleteMultipartUpload>,
                     > = None;
-                    let mut expiration_date: Option<::Value<String>> = None;
-                    let mut expiration_in_days: Option<::Value<u32>> = None;
-                    let mut filter: Option<::Value<::json::Value>> = None;
-                    let mut id: Option<::Value<String>> = None;
-                    let mut status: Option<::Value<String>> = None;
+                    let mut expiration_date: Option<crate::Value<String>> = None;
+                    let mut expiration_in_days: Option<crate::Value<u32>> = None;
+                    let mut filter: Option<crate::Value<crate::json::Value>> = None;
+                    let mut id: Option<crate::Value<String>> = None;
+                    let mut status: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -815,10 +815,10 @@ pub mod endpoint {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_interface_id: ::Value<String>,
+        pub network_interface_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for NetworkInterface {
+    impl crate::codec::SerializeValue for NetworkInterface {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -830,7 +830,7 @@ pub mod endpoint {
         }
     }
 
-    impl ::codec::DeserializeValue for NetworkInterface {
+    impl crate::codec::DeserializeValue for NetworkInterface {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkInterface, D::Error> {
@@ -847,7 +847,7 @@ pub mod endpoint {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut network_interface_id: Option<::Value<String>> = None;
+                    let mut network_interface_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

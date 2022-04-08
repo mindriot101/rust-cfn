@@ -13,22 +13,22 @@ pub struct GroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub filter_expression: Option<::Value<String>>,
+    pub filter_expression: Option<crate::Value<String>>,
     /// Property [`GroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html#cfn-xray-group-groupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub group_name: Option<::Value<String>>,
+    pub group_name: Option<crate::Value<String>>,
     /// Property [`InsightsConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html#cfn-xray-group-insightsconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub insights_configuration: Option<::Value<self::group::InsightsConfiguration>>,
+    pub insights_configuration: Option<crate::Value<self::group::InsightsConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html#cfn-xray-group-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::json::Value>>,
+    pub tags: Option<crate::ValueList<crate::json::Value>>,
 }
 
 impl ::serde::Serialize for GroupProperties {
@@ -73,12 +73,12 @@ impl<'de> ::serde::Deserialize<'de> for GroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut filter_expression: Option<::Value<String>> = None;
-                let mut group_name: Option<::Value<String>> = None;
+                let mut filter_expression: Option<crate::Value<String>> = None;
+                let mut group_name: Option<crate::Value<String>> = None;
                 let mut insights_configuration: Option<
-                    ::Value<self::group::InsightsConfiguration>,
+                    crate::Value<self::group::InsightsConfiguration>,
                 > = None;
-                let mut tags: Option<::ValueList<::json::Value>> = None;
+                let mut tags: Option<crate::ValueList<crate::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -111,7 +111,7 @@ impl<'de> ::serde::Deserialize<'de> for GroupProperties {
     }
 }
 
-impl ::Resource for Group {
+impl crate::Resource for Group {
     type Properties = GroupProperties;
     const TYPE: &'static str = "AWS::XRay::Group";
     fn properties(&self) -> &GroupProperties {
@@ -122,7 +122,7 @@ impl ::Resource for Group {
     }
 }
 
-impl ::private::Sealed for Group {}
+impl crate::private::Sealed for Group {}
 
 impl From<GroupProperties> for Group {
     fn from(properties: GroupProperties) -> Group {
@@ -143,27 +143,27 @@ pub struct SamplingRuleProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rule_name: Option<::Value<String>>,
+    pub rule_name: Option<crate::Value<String>>,
     /// Property [`SamplingRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-samplingrule).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sampling_rule: Option<::Value<self::sampling_rule::SamplingRule>>,
+    pub sampling_rule: Option<crate::Value<self::sampling_rule::SamplingRule>>,
     /// Property [`SamplingRuleRecord`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-samplingrulerecord).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sampling_rule_record: Option<::Value<self::sampling_rule::SamplingRuleRecord>>,
+    pub sampling_rule_record: Option<crate::Value<self::sampling_rule::SamplingRuleRecord>>,
     /// Property [`SamplingRuleUpdate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-samplingruleupdate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sampling_rule_update: Option<::Value<self::sampling_rule::SamplingRuleUpdate>>,
+    pub sampling_rule_update: Option<crate::Value<self::sampling_rule::SamplingRuleUpdate>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::json::Value>>,
+    pub tags: Option<crate::ValueList<crate::json::Value>>,
 }
 
 impl ::serde::Serialize for SamplingRuleProperties {
@@ -213,15 +213,15 @@ impl<'de> ::serde::Deserialize<'de> for SamplingRuleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut rule_name: Option<::Value<String>> = None;
-                let mut sampling_rule: Option<::Value<self::sampling_rule::SamplingRule>> = None;
+                let mut rule_name: Option<crate::Value<String>> = None;
+                let mut sampling_rule: Option<crate::Value<self::sampling_rule::SamplingRule>> = None;
                 let mut sampling_rule_record: Option<
-                    ::Value<self::sampling_rule::SamplingRuleRecord>,
+                    crate::Value<self::sampling_rule::SamplingRuleRecord>,
                 > = None;
                 let mut sampling_rule_update: Option<
-                    ::Value<self::sampling_rule::SamplingRuleUpdate>,
+                    crate::Value<self::sampling_rule::SamplingRuleUpdate>,
                 > = None;
-                let mut tags: Option<::ValueList<::json::Value>> = None;
+                let mut tags: Option<crate::ValueList<crate::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -258,7 +258,7 @@ impl<'de> ::serde::Deserialize<'de> for SamplingRuleProperties {
     }
 }
 
-impl ::Resource for SamplingRule {
+impl crate::Resource for SamplingRule {
     type Properties = SamplingRuleProperties;
     const TYPE: &'static str = "AWS::XRay::SamplingRule";
     fn properties(&self) -> &SamplingRuleProperties {
@@ -269,7 +269,7 @@ impl ::Resource for SamplingRule {
     }
 }
 
-impl ::private::Sealed for SamplingRule {}
+impl crate::private::Sealed for SamplingRule {}
 
 impl From<SamplingRuleProperties> for SamplingRule {
     fn from(properties: SamplingRuleProperties) -> SamplingRule {
@@ -287,15 +287,15 @@ pub mod group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub insights_enabled: Option<::Value<bool>>,
+        pub insights_enabled: Option<crate::Value<bool>>,
         /// Property [`NotificationsEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-insightsconfiguration.html#cfn-xray-group-insightsconfiguration-notificationsenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub notifications_enabled: Option<::Value<bool>>,
+        pub notifications_enabled: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for InsightsConfiguration {
+    impl crate::codec::SerializeValue for InsightsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref insights_enabled) = self.insights_enabled {
@@ -316,7 +316,7 @@ pub mod group {
         }
     }
 
-    impl ::codec::DeserializeValue for InsightsConfiguration {
+    impl crate::codec::DeserializeValue for InsightsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InsightsConfiguration, D::Error> {
@@ -333,8 +333,8 @@ pub mod group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut insights_enabled: Option<::Value<bool>> = None;
-                    let mut notifications_enabled: Option<::Value<bool>> = None;
+                    let mut insights_enabled: Option<crate::Value<bool>> = None;
+                    let mut notifications_enabled: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -373,70 +373,70 @@ pub mod sampling_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attributes: Option<::ValueMap<String>>,
+        pub attributes: Option<crate::ValueMap<String>>,
         /// Property [`FixedRate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-fixedrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fixed_rate: Option<::Value<f64>>,
+        pub fixed_rate: Option<crate::Value<f64>>,
         /// Property [`HTTPMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-httpmethod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_method: Option<::Value<String>>,
+        pub http_method: Option<crate::Value<String>>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: Option<::Value<String>>,
+        pub host: Option<crate::Value<String>>,
         /// Property [`Priority`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-priority).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub priority: Option<::Value<u32>>,
+        pub priority: Option<crate::Value<u32>>,
         /// Property [`ReservoirSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-reservoirsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub reservoir_size: Option<::Value<u32>>,
+        pub reservoir_size: Option<crate::Value<u32>>,
         /// Property [`ResourceARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-resourcearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_arn: Option<::Value<String>>,
+        pub resource_arn: Option<crate::Value<String>>,
         /// Property [`RuleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-rulearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rule_arn: Option<::Value<String>>,
+        pub rule_arn: Option<crate::Value<String>>,
         /// Property [`RuleName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-rulename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rule_name: Option<::Value<String>>,
+        pub rule_name: Option<crate::Value<String>>,
         /// Property [`ServiceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-servicename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_name: Option<::Value<String>>,
+        pub service_name: Option<crate::Value<String>>,
         /// Property [`ServiceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-servicetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_type: Option<::Value<String>>,
+        pub service_type: Option<crate::Value<String>>,
         /// Property [`URLPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-urlpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url_path: Option<::Value<String>>,
+        pub url_path: Option<crate::Value<String>>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<::Value<u32>>,
+        pub version: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for SamplingRule {
+    impl crate::codec::SerializeValue for SamplingRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attributes) = self.attributes {
@@ -486,7 +486,7 @@ pub mod sampling_rule {
         }
     }
 
-    impl ::codec::DeserializeValue for SamplingRule {
+    impl crate::codec::DeserializeValue for SamplingRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SamplingRule, D::Error> {
             struct Visitor;
 
@@ -501,19 +501,19 @@ pub mod sampling_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attributes: Option<::ValueMap<String>> = None;
-                    let mut fixed_rate: Option<::Value<f64>> = None;
-                    let mut http_method: Option<::Value<String>> = None;
-                    let mut host: Option<::Value<String>> = None;
-                    let mut priority: Option<::Value<u32>> = None;
-                    let mut reservoir_size: Option<::Value<u32>> = None;
-                    let mut resource_arn: Option<::Value<String>> = None;
-                    let mut rule_arn: Option<::Value<String>> = None;
-                    let mut rule_name: Option<::Value<String>> = None;
-                    let mut service_name: Option<::Value<String>> = None;
-                    let mut service_type: Option<::Value<String>> = None;
-                    let mut url_path: Option<::Value<String>> = None;
-                    let mut version: Option<::Value<u32>> = None;
+                    let mut attributes: Option<crate::ValueMap<String>> = None;
+                    let mut fixed_rate: Option<crate::Value<f64>> = None;
+                    let mut http_method: Option<crate::Value<String>> = None;
+                    let mut host: Option<crate::Value<String>> = None;
+                    let mut priority: Option<crate::Value<u32>> = None;
+                    let mut reservoir_size: Option<crate::Value<u32>> = None;
+                    let mut resource_arn: Option<crate::Value<String>> = None;
+                    let mut rule_arn: Option<crate::Value<String>> = None;
+                    let mut rule_name: Option<crate::Value<String>> = None;
+                    let mut service_name: Option<crate::Value<String>> = None;
+                    let mut service_type: Option<crate::Value<String>> = None;
+                    let mut url_path: Option<crate::Value<String>> = None;
+                    let mut version: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -591,20 +591,20 @@ pub mod sampling_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub created_at: Option<::Value<String>>,
+        pub created_at: Option<crate::Value<String>>,
         /// Property [`ModifiedAt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrulerecord.html#cfn-xray-samplingrule-samplingrulerecord-modifiedat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub modified_at: Option<::Value<String>>,
+        pub modified_at: Option<crate::Value<String>>,
         /// Property [`SamplingRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrulerecord.html#cfn-xray-samplingrule-samplingrulerecord-samplingrule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sampling_rule: Option<::Value<SamplingRule>>,
+        pub sampling_rule: Option<crate::Value<SamplingRule>>,
     }
 
-    impl ::codec::SerializeValue for SamplingRuleRecord {
+    impl crate::codec::SerializeValue for SamplingRuleRecord {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref created_at) = self.created_at {
@@ -624,7 +624,7 @@ pub mod sampling_rule {
         }
     }
 
-    impl ::codec::DeserializeValue for SamplingRuleRecord {
+    impl crate::codec::DeserializeValue for SamplingRuleRecord {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SamplingRuleRecord, D::Error> {
@@ -641,9 +641,9 @@ pub mod sampling_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut created_at: Option<::Value<String>> = None;
-                    let mut modified_at: Option<::Value<String>> = None;
-                    let mut sampling_rule: Option<::Value<SamplingRule>> = None;
+                    let mut created_at: Option<crate::Value<String>> = None;
+                    let mut modified_at: Option<crate::Value<String>> = None;
+                    let mut sampling_rule: Option<crate::Value<SamplingRule>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -681,65 +681,65 @@ pub mod sampling_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attributes: Option<::ValueMap<String>>,
+        pub attributes: Option<crate::ValueMap<String>>,
         /// Property [`FixedRate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-fixedrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fixed_rate: Option<::Value<f64>>,
+        pub fixed_rate: Option<crate::Value<f64>>,
         /// Property [`HTTPMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-httpmethod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_method: Option<::Value<String>>,
+        pub http_method: Option<crate::Value<String>>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: Option<::Value<String>>,
+        pub host: Option<crate::Value<String>>,
         /// Property [`Priority`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-priority).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub priority: Option<::Value<u32>>,
+        pub priority: Option<crate::Value<u32>>,
         /// Property [`ReservoirSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-reservoirsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub reservoir_size: Option<::Value<u32>>,
+        pub reservoir_size: Option<crate::Value<u32>>,
         /// Property [`ResourceARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-resourcearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_arn: Option<::Value<String>>,
+        pub resource_arn: Option<crate::Value<String>>,
         /// Property [`RuleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-rulearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rule_arn: Option<::Value<String>>,
+        pub rule_arn: Option<crate::Value<String>>,
         /// Property [`RuleName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-rulename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rule_name: Option<::Value<String>>,
+        pub rule_name: Option<crate::Value<String>>,
         /// Property [`ServiceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-servicename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_name: Option<::Value<String>>,
+        pub service_name: Option<crate::Value<String>>,
         /// Property [`ServiceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-servicetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_type: Option<::Value<String>>,
+        pub service_type: Option<crate::Value<String>>,
         /// Property [`URLPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-urlpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url_path: Option<::Value<String>>,
+        pub url_path: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SamplingRuleUpdate {
+    impl crate::codec::SerializeValue for SamplingRuleUpdate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attributes) = self.attributes {
@@ -786,7 +786,7 @@ pub mod sampling_rule {
         }
     }
 
-    impl ::codec::DeserializeValue for SamplingRuleUpdate {
+    impl crate::codec::DeserializeValue for SamplingRuleUpdate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SamplingRuleUpdate, D::Error> {
@@ -803,18 +803,18 @@ pub mod sampling_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attributes: Option<::ValueMap<String>> = None;
-                    let mut fixed_rate: Option<::Value<f64>> = None;
-                    let mut http_method: Option<::Value<String>> = None;
-                    let mut host: Option<::Value<String>> = None;
-                    let mut priority: Option<::Value<u32>> = None;
-                    let mut reservoir_size: Option<::Value<u32>> = None;
-                    let mut resource_arn: Option<::Value<String>> = None;
-                    let mut rule_arn: Option<::Value<String>> = None;
-                    let mut rule_name: Option<::Value<String>> = None;
-                    let mut service_name: Option<::Value<String>> = None;
-                    let mut service_type: Option<::Value<String>> = None;
-                    let mut url_path: Option<::Value<String>> = None;
+                    let mut attributes: Option<crate::ValueMap<String>> = None;
+                    let mut fixed_rate: Option<crate::Value<f64>> = None;
+                    let mut http_method: Option<crate::Value<String>> = None;
+                    let mut host: Option<crate::Value<String>> = None;
+                    let mut priority: Option<crate::Value<u32>> = None;
+                    let mut reservoir_size: Option<crate::Value<u32>> = None;
+                    let mut resource_arn: Option<crate::Value<String>> = None;
+                    let mut rule_arn: Option<crate::Value<String>> = None;
+                    let mut rule_name: Option<crate::Value<String>> = None;
+                    let mut service_name: Option<crate::Value<String>> = None;
+                    let mut service_type: Option<crate::Value<String>> = None;
+                    let mut url_path: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

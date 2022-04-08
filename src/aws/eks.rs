@@ -13,32 +13,32 @@ pub struct AddonProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub addon_name: ::Value<String>,
+    pub addon_name: crate::Value<String>,
     /// Property [`AddonVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-addonversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub addon_version: Option<::Value<String>>,
+    pub addon_version: Option<crate::Value<String>>,
     /// Property [`ClusterName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-clustername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_name: ::Value<String>,
+    pub cluster_name: crate::Value<String>,
     /// Property [`ResolveConflicts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-resolveconflicts).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resolve_conflicts: Option<::Value<String>>,
+    pub resolve_conflicts: Option<crate::Value<String>>,
     /// Property [`ServiceAccountRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-serviceaccountrolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub service_account_role_arn: Option<::Value<String>>,
+    pub service_account_role_arn: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for AddonProperties {
@@ -85,12 +85,12 @@ impl<'de> ::serde::Deserialize<'de> for AddonProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut addon_name: Option<::Value<String>> = None;
-                let mut addon_version: Option<::Value<String>> = None;
-                let mut cluster_name: Option<::Value<String>> = None;
-                let mut resolve_conflicts: Option<::Value<String>> = None;
-                let mut service_account_role_arn: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut addon_name: Option<crate::Value<String>> = None;
+                let mut addon_version: Option<crate::Value<String>> = None;
+                let mut cluster_name: Option<crate::Value<String>> = None;
+                let mut resolve_conflicts: Option<crate::Value<String>> = None;
+                let mut service_account_role_arn: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -133,7 +133,7 @@ impl<'de> ::serde::Deserialize<'de> for AddonProperties {
     }
 }
 
-impl ::Resource for Addon {
+impl crate::Resource for Addon {
     type Properties = AddonProperties;
     const TYPE: &'static str = "AWS::EKS::Addon";
     fn properties(&self) -> &AddonProperties {
@@ -144,7 +144,7 @@ impl ::Resource for Addon {
     }
 }
 
-impl ::private::Sealed for Addon {}
+impl crate::private::Sealed for Addon {}
 
 impl From<AddonProperties> for Addon {
     fn from(properties: AddonProperties) -> Addon {
@@ -165,42 +165,42 @@ pub struct ClusterProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub encryption_config: Option<::ValueList<self::cluster::EncryptionConfig>>,
+    pub encryption_config: Option<crate::ValueList<self::cluster::EncryptionConfig>>,
     /// Property [`KubernetesNetworkConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-kubernetesnetworkconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kubernetes_network_config: Option<::Value<self::cluster::KubernetesNetworkConfig>>,
+    pub kubernetes_network_config: Option<crate::Value<self::cluster::KubernetesNetworkConfig>>,
     /// Property [`Logging`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-logging).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub logging: Option<::Value<self::cluster::Logging>>,
+    pub logging: Option<crate::Value<self::cluster::Logging>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`ResourcesVpcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resources_vpc_config: ::Value<self::cluster::ResourcesVpcConfig>,
+    pub resources_vpc_config: crate::Value<self::cluster::ResourcesVpcConfig>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub version: Option<::Value<String>>,
+    pub version: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for ClusterProperties {
@@ -257,18 +257,18 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut encryption_config: Option<::ValueList<self::cluster::EncryptionConfig>> =
+                let mut encryption_config: Option<crate::ValueList<self::cluster::EncryptionConfig>> =
                     None;
                 let mut kubernetes_network_config: Option<
-                    ::Value<self::cluster::KubernetesNetworkConfig>,
+                    crate::Value<self::cluster::KubernetesNetworkConfig>,
                 > = None;
-                let mut logging: Option<::Value<self::cluster::Logging>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut resources_vpc_config: Option<::Value<self::cluster::ResourcesVpcConfig>> =
+                let mut logging: Option<crate::Value<self::cluster::Logging>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut resources_vpc_config: Option<crate::Value<self::cluster::ResourcesVpcConfig>> =
                     None;
-                let mut role_arn: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut version: Option<::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut version: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -319,7 +319,7 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
     }
 }
 
-impl ::Resource for Cluster {
+impl crate::Resource for Cluster {
     type Properties = ClusterProperties;
     const TYPE: &'static str = "AWS::EKS::Cluster";
     fn properties(&self) -> &ClusterProperties {
@@ -330,7 +330,7 @@ impl ::Resource for Cluster {
     }
 }
 
-impl ::private::Sealed for Cluster {}
+impl crate::private::Sealed for Cluster {}
 
 impl From<ClusterProperties> for Cluster {
     fn from(properties: ClusterProperties) -> Cluster {
@@ -351,32 +351,32 @@ pub struct FargateProfileProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_name: ::Value<String>,
+    pub cluster_name: crate::Value<String>,
     /// Property [`FargateProfileName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-fargateprofilename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub fargate_profile_name: Option<::Value<String>>,
+    pub fargate_profile_name: Option<crate::Value<String>>,
     /// Property [`PodExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-podexecutionrolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pod_execution_role_arn: ::Value<String>,
+    pub pod_execution_role_arn: crate::Value<String>,
     /// Property [`Selectors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-selectors).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub selectors: ::ValueList<self::fargate_profile::Selector>,
+    pub selectors: crate::ValueList<self::fargate_profile::Selector>,
     /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-subnets).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnets: Option<::ValueList<String>>,
+    pub subnets: Option<crate::ValueList<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for FargateProfileProperties {
@@ -423,12 +423,12 @@ impl<'de> ::serde::Deserialize<'de> for FargateProfileProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cluster_name: Option<::Value<String>> = None;
-                let mut fargate_profile_name: Option<::Value<String>> = None;
-                let mut pod_execution_role_arn: Option<::Value<String>> = None;
-                let mut selectors: Option<::ValueList<self::fargate_profile::Selector>> = None;
-                let mut subnets: Option<::ValueList<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut cluster_name: Option<crate::Value<String>> = None;
+                let mut fargate_profile_name: Option<crate::Value<String>> = None;
+                let mut pod_execution_role_arn: Option<crate::Value<String>> = None;
+                let mut selectors: Option<crate::ValueList<self::fargate_profile::Selector>> = None;
+                let mut subnets: Option<crate::ValueList<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -471,7 +471,7 @@ impl<'de> ::serde::Deserialize<'de> for FargateProfileProperties {
     }
 }
 
-impl ::Resource for FargateProfile {
+impl crate::Resource for FargateProfile {
     type Properties = FargateProfileProperties;
     const TYPE: &'static str = "AWS::EKS::FargateProfile";
     fn properties(&self) -> &FargateProfileProperties {
@@ -482,7 +482,7 @@ impl ::Resource for FargateProfile {
     }
 }
 
-impl ::private::Sealed for FargateProfile {}
+impl crate::private::Sealed for FargateProfile {}
 
 impl From<FargateProfileProperties> for FargateProfile {
     fn from(properties: FargateProfileProperties) -> FargateProfile {
@@ -503,27 +503,27 @@ pub struct IdentityProviderConfigProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_name: ::Value<String>,
+    pub cluster_name: crate::Value<String>,
     /// Property [`IdentityProviderConfigName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-identityproviderconfigname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub identity_provider_config_name: Option<::Value<String>>,
+    pub identity_provider_config_name: Option<crate::Value<String>>,
     /// Property [`Oidc`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-oidc).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub oidc: Option<::Value<self::identity_provider_config::OidcIdentityProviderConfig>>,
+    pub oidc: Option<crate::Value<self::identity_provider_config::OidcIdentityProviderConfig>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for IdentityProviderConfigProperties {
@@ -565,13 +565,13 @@ impl<'de> ::serde::Deserialize<'de> for IdentityProviderConfigProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cluster_name: Option<::Value<String>> = None;
-                let mut identity_provider_config_name: Option<::Value<String>> = None;
+                let mut cluster_name: Option<crate::Value<String>> = None;
+                let mut identity_provider_config_name: Option<crate::Value<String>> = None;
                 let mut oidc: Option<
-                    ::Value<self::identity_provider_config::OidcIdentityProviderConfig>,
+                    crate::Value<self::identity_provider_config::OidcIdentityProviderConfig>,
                 > = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -610,7 +610,7 @@ impl<'de> ::serde::Deserialize<'de> for IdentityProviderConfigProperties {
     }
 }
 
-impl ::Resource for IdentityProviderConfig {
+impl crate::Resource for IdentityProviderConfig {
     type Properties = IdentityProviderConfigProperties;
     const TYPE: &'static str = "AWS::EKS::IdentityProviderConfig";
     fn properties(&self) -> &IdentityProviderConfigProperties {
@@ -621,7 +621,7 @@ impl ::Resource for IdentityProviderConfig {
     }
 }
 
-impl ::private::Sealed for IdentityProviderConfig {}
+impl crate::private::Sealed for IdentityProviderConfig {}
 
 impl From<IdentityProviderConfigProperties> for IdentityProviderConfig {
     fn from(properties: IdentityProviderConfigProperties) -> IdentityProviderConfig {
@@ -642,92 +642,92 @@ pub struct NodegroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ami_type: Option<::Value<String>>,
+    pub ami_type: Option<crate::Value<String>>,
     /// Property [`CapacityType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-capacitytype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub capacity_type: Option<::Value<String>>,
+    pub capacity_type: Option<crate::Value<String>>,
     /// Property [`ClusterName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-clustername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_name: ::Value<String>,
+    pub cluster_name: crate::Value<String>,
     /// Property [`DiskSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-disksize).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub disk_size: Option<::Value<u32>>,
+    pub disk_size: Option<crate::Value<u32>>,
     /// Property [`ForceUpdateEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-forceupdateenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub force_update_enabled: Option<::Value<bool>>,
+    pub force_update_enabled: Option<crate::Value<bool>>,
     /// Property [`InstanceTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-instancetypes).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub instance_types: Option<::ValueList<String>>,
+    pub instance_types: Option<crate::ValueList<String>>,
     /// Property [`Labels`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-labels).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub labels: Option<::Value<::json::Value>>,
+    pub labels: Option<crate::Value<crate::json::Value>>,
     /// Property [`LaunchTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-launchtemplate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub launch_template: Option<::Value<self::nodegroup::LaunchTemplateSpecification>>,
+    pub launch_template: Option<crate::Value<self::nodegroup::LaunchTemplateSpecification>>,
     /// Property [`NodeRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-noderole).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub node_role: ::Value<String>,
+    pub node_role: crate::Value<String>,
     /// Property [`NodegroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-nodegroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub nodegroup_name: Option<::Value<String>>,
+    pub nodegroup_name: Option<crate::Value<String>>,
     /// Property [`ReleaseVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-releaseversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub release_version: Option<::Value<String>>,
+    pub release_version: Option<crate::Value<String>>,
     /// Property [`RemoteAccess`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-remoteaccess).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub remote_access: Option<::Value<self::nodegroup::RemoteAccess>>,
+    pub remote_access: Option<crate::Value<self::nodegroup::RemoteAccess>>,
     /// Property [`ScalingConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-scalingconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub scaling_config: Option<::Value<self::nodegroup::ScalingConfig>>,
+    pub scaling_config: Option<crate::Value<self::nodegroup::ScalingConfig>>,
     /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-subnets).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnets: ::ValueList<String>,
+    pub subnets: crate::ValueList<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
     /// Property [`Taints`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-taints).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub taints: Option<::ValueList<self::nodegroup::Taint>>,
+    pub taints: Option<crate::ValueList<self::nodegroup::Taint>>,
     /// Property [`UpdateConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-updateconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub update_config: Option<::Value<self::nodegroup::UpdateConfig>>,
+    pub update_config: Option<crate::Value<self::nodegroup::UpdateConfig>>,
     /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-version).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub version: Option<::Value<String>>,
+    pub version: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for NodegroupProperties {
@@ -812,26 +812,26 @@ impl<'de> ::serde::Deserialize<'de> for NodegroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut ami_type: Option<::Value<String>> = None;
-                let mut capacity_type: Option<::Value<String>> = None;
-                let mut cluster_name: Option<::Value<String>> = None;
-                let mut disk_size: Option<::Value<u32>> = None;
-                let mut force_update_enabled: Option<::Value<bool>> = None;
-                let mut instance_types: Option<::ValueList<String>> = None;
-                let mut labels: Option<::Value<::json::Value>> = None;
+                let mut ami_type: Option<crate::Value<String>> = None;
+                let mut capacity_type: Option<crate::Value<String>> = None;
+                let mut cluster_name: Option<crate::Value<String>> = None;
+                let mut disk_size: Option<crate::Value<u32>> = None;
+                let mut force_update_enabled: Option<crate::Value<bool>> = None;
+                let mut instance_types: Option<crate::ValueList<String>> = None;
+                let mut labels: Option<crate::Value<crate::json::Value>> = None;
                 let mut launch_template: Option<
-                    ::Value<self::nodegroup::LaunchTemplateSpecification>,
+                    crate::Value<self::nodegroup::LaunchTemplateSpecification>,
                 > = None;
-                let mut node_role: Option<::Value<String>> = None;
-                let mut nodegroup_name: Option<::Value<String>> = None;
-                let mut release_version: Option<::Value<String>> = None;
-                let mut remote_access: Option<::Value<self::nodegroup::RemoteAccess>> = None;
-                let mut scaling_config: Option<::Value<self::nodegroup::ScalingConfig>> = None;
-                let mut subnets: Option<::ValueList<String>> = None;
-                let mut tags: Option<::Value<::json::Value>> = None;
-                let mut taints: Option<::ValueList<self::nodegroup::Taint>> = None;
-                let mut update_config: Option<::Value<self::nodegroup::UpdateConfig>> = None;
-                let mut version: Option<::Value<String>> = None;
+                let mut node_role: Option<crate::Value<String>> = None;
+                let mut nodegroup_name: Option<crate::Value<String>> = None;
+                let mut release_version: Option<crate::Value<String>> = None;
+                let mut remote_access: Option<crate::Value<self::nodegroup::RemoteAccess>> = None;
+                let mut scaling_config: Option<crate::Value<self::nodegroup::ScalingConfig>> = None;
+                let mut subnets: Option<crate::ValueList<String>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
+                let mut taints: Option<crate::ValueList<self::nodegroup::Taint>> = None;
+                let mut update_config: Option<crate::Value<self::nodegroup::UpdateConfig>> = None;
+                let mut version: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -921,7 +921,7 @@ impl<'de> ::serde::Deserialize<'de> for NodegroupProperties {
     }
 }
 
-impl ::Resource for Nodegroup {
+impl crate::Resource for Nodegroup {
     type Properties = NodegroupProperties;
     const TYPE: &'static str = "AWS::EKS::Nodegroup";
     fn properties(&self) -> &NodegroupProperties {
@@ -932,7 +932,7 @@ impl ::Resource for Nodegroup {
     }
 }
 
-impl ::private::Sealed for Nodegroup {}
+impl crate::private::Sealed for Nodegroup {}
 
 impl From<NodegroupProperties> for Nodegroup {
     fn from(properties: NodegroupProperties) -> Nodegroup {
@@ -950,10 +950,10 @@ pub mod cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled_types: Option<::ValueList<LoggingTypeConfig>>,
+        pub enabled_types: Option<crate::ValueList<LoggingTypeConfig>>,
     }
 
-    impl ::codec::SerializeValue for ClusterLogging {
+    impl crate::codec::SerializeValue for ClusterLogging {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enabled_types) = self.enabled_types {
@@ -967,7 +967,7 @@ pub mod cluster {
         }
     }
 
-    impl ::codec::DeserializeValue for ClusterLogging {
+    impl crate::codec::DeserializeValue for ClusterLogging {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClusterLogging, D::Error> {
@@ -984,7 +984,7 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled_types: Option<::ValueList<LoggingTypeConfig>> = None;
+                    let mut enabled_types: Option<crate::ValueList<LoggingTypeConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1014,15 +1014,15 @@ pub mod cluster {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub provider: Option<::Value<Provider>>,
+        pub provider: Option<crate::Value<Provider>>,
         /// Property [`Resources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-encryptionconfig.html#cfn-eks-cluster-encryptionconfig-resources).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub resources: Option<::ValueList<String>>,
+        pub resources: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for EncryptionConfig {
+    impl crate::codec::SerializeValue for EncryptionConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref provider) = self.provider {
@@ -1035,7 +1035,7 @@ pub mod cluster {
         }
     }
 
-    impl ::codec::DeserializeValue for EncryptionConfig {
+    impl crate::codec::DeserializeValue for EncryptionConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EncryptionConfig, D::Error> {
@@ -1052,8 +1052,8 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut provider: Option<::Value<Provider>> = None;
-                    let mut resources: Option<::ValueList<String>> = None;
+                    let mut provider: Option<crate::Value<Provider>> = None;
+                    let mut resources: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1087,20 +1087,20 @@ pub mod cluster {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub ip_family: Option<::Value<String>>,
+        pub ip_family: Option<crate::Value<String>>,
         /// Property [`ServiceIpv4Cidr`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-kubernetesnetworkconfig.html#cfn-eks-cluster-kubernetesnetworkconfig-serviceipv4cidr).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub service_ipv4_cidr: Option<::Value<String>>,
+        pub service_ipv4_cidr: Option<crate::Value<String>>,
         /// Property [`ServiceIpv6Cidr`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-kubernetesnetworkconfig.html#cfn-eks-cluster-kubernetesnetworkconfig-serviceipv6cidr).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub service_ipv6_cidr: Option<::Value<String>>,
+        pub service_ipv6_cidr: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for KubernetesNetworkConfig {
+    impl crate::codec::SerializeValue for KubernetesNetworkConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ip_family) = self.ip_family {
@@ -1124,7 +1124,7 @@ pub mod cluster {
         }
     }
 
-    impl ::codec::DeserializeValue for KubernetesNetworkConfig {
+    impl crate::codec::DeserializeValue for KubernetesNetworkConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KubernetesNetworkConfig, D::Error> {
@@ -1141,9 +1141,9 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ip_family: Option<::Value<String>> = None;
-                    let mut service_ipv4_cidr: Option<::Value<String>> = None;
-                    let mut service_ipv6_cidr: Option<::Value<String>> = None;
+                    let mut ip_family: Option<crate::Value<String>> = None;
+                    let mut service_ipv4_cidr: Option<crate::Value<String>> = None;
+                    let mut service_ipv6_cidr: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1181,10 +1181,10 @@ pub mod cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_logging: Option<::Value<ClusterLogging>>,
+        pub cluster_logging: Option<crate::Value<ClusterLogging>>,
     }
 
-    impl ::codec::SerializeValue for Logging {
+    impl crate::codec::SerializeValue for Logging {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cluster_logging) = self.cluster_logging {
@@ -1198,7 +1198,7 @@ pub mod cluster {
         }
     }
 
-    impl ::codec::DeserializeValue for Logging {
+    impl crate::codec::DeserializeValue for Logging {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Logging, D::Error> {
             struct Visitor;
 
@@ -1213,7 +1213,7 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_logging: Option<::Value<ClusterLogging>> = None;
+                    let mut cluster_logging: Option<crate::Value<ClusterLogging>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1243,10 +1243,10 @@ pub mod cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for LoggingTypeConfig {
+    impl crate::codec::SerializeValue for LoggingTypeConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref r#type) = self.r#type {
@@ -1256,7 +1256,7 @@ pub mod cluster {
         }
     }
 
-    impl ::codec::DeserializeValue for LoggingTypeConfig {
+    impl crate::codec::DeserializeValue for LoggingTypeConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LoggingTypeConfig, D::Error> {
@@ -1273,7 +1273,7 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1301,10 +1301,10 @@ pub mod cluster {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key_arn: Option<::Value<String>>,
+        pub key_arn: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Provider {
+    impl crate::codec::SerializeValue for Provider {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key_arn) = self.key_arn {
@@ -1314,7 +1314,7 @@ pub mod cluster {
         }
     }
 
-    impl ::codec::DeserializeValue for Provider {
+    impl crate::codec::DeserializeValue for Provider {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Provider, D::Error> {
             struct Visitor;
 
@@ -1329,7 +1329,7 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key_arn: Option<::Value<String>> = None;
+                    let mut key_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1357,30 +1357,30 @@ pub mod cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub endpoint_private_access: Option<::Value<bool>>,
+        pub endpoint_private_access: Option<crate::Value<bool>>,
         /// Property [`EndpointPublicAccess`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-endpointpublicaccess).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub endpoint_public_access: Option<::Value<bool>>,
+        pub endpoint_public_access: Option<crate::Value<bool>>,
         /// Property [`PublicAccessCidrs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-publicaccesscidrs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub public_access_cidrs: Option<::ValueList<String>>,
+        pub public_access_cidrs: Option<crate::ValueList<String>>,
         /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-securitygroupids).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_group_ids: Option<::ValueList<String>>,
+        pub security_group_ids: Option<crate::ValueList<String>>,
         /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-subnetids).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnet_ids: ::ValueList<String>,
+        pub subnet_ids: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for ResourcesVpcConfig {
+    impl crate::codec::SerializeValue for ResourcesVpcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref endpoint_private_access) = self.endpoint_private_access {
@@ -1416,7 +1416,7 @@ pub mod cluster {
         }
     }
 
-    impl ::codec::DeserializeValue for ResourcesVpcConfig {
+    impl crate::codec::DeserializeValue for ResourcesVpcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourcesVpcConfig, D::Error> {
@@ -1433,11 +1433,11 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_private_access: Option<::Value<bool>> = None;
-                    let mut endpoint_public_access: Option<::Value<bool>> = None;
-                    let mut public_access_cidrs: Option<::ValueList<String>> = None;
-                    let mut security_group_ids: Option<::ValueList<String>> = None;
-                    let mut subnet_ids: Option<::ValueList<String>> = None;
+                    let mut endpoint_private_access: Option<crate::Value<bool>> = None;
+                    let mut endpoint_public_access: Option<crate::Value<bool>> = None;
+                    let mut public_access_cidrs: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
+                    let mut subnet_ids: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1490,15 +1490,15 @@ pub mod fargate_profile {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-fargateprofile-label.html#cfn-eks-fargateprofile-label-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Label {
+    impl crate::codec::SerializeValue for Label {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -1507,7 +1507,7 @@ pub mod fargate_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for Label {
+    impl crate::codec::DeserializeValue for Label {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Label, D::Error> {
             struct Visitor;
 
@@ -1522,8 +1522,8 @@ pub mod fargate_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1557,15 +1557,15 @@ pub mod fargate_profile {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub labels: Option<::ValueList<Label>>,
+        pub labels: Option<crate::ValueList<Label>>,
         /// Property [`Namespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-fargateprofile-selector.html#cfn-eks-fargateprofile-selector-namespace).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub namespace: ::Value<String>,
+        pub namespace: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Selector {
+    impl crate::codec::SerializeValue for Selector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref labels) = self.labels {
@@ -1576,7 +1576,7 @@ pub mod fargate_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for Selector {
+    impl crate::codec::DeserializeValue for Selector {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Selector, D::Error> {
             struct Visitor;
 
@@ -1591,8 +1591,8 @@ pub mod fargate_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut labels: Option<::ValueList<Label>> = None;
-                    let mut namespace: Option<::Value<String>> = None;
+                    let mut labels: Option<crate::ValueList<Label>> = None;
+                    let mut namespace: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1631,40 +1631,40 @@ pub mod identity_provider_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub client_id: ::Value<String>,
+        pub client_id: crate::Value<String>,
         /// Property [`GroupsClaim`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-oidcidentityproviderconfig.html#cfn-eks-identityproviderconfig-oidcidentityproviderconfig-groupsclaim).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub groups_claim: Option<::Value<String>>,
+        pub groups_claim: Option<crate::Value<String>>,
         /// Property [`GroupsPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-oidcidentityproviderconfig.html#cfn-eks-identityproviderconfig-oidcidentityproviderconfig-groupsprefix).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub groups_prefix: Option<::Value<String>>,
+        pub groups_prefix: Option<crate::Value<String>>,
         /// Property [`IssuerUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-oidcidentityproviderconfig.html#cfn-eks-identityproviderconfig-oidcidentityproviderconfig-issuerurl).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub issuer_url: ::Value<String>,
+        pub issuer_url: crate::Value<String>,
         /// Property [`RequiredClaims`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-oidcidentityproviderconfig.html#cfn-eks-identityproviderconfig-oidcidentityproviderconfig-requiredclaims).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub required_claims: Option<::ValueList<RequiredClaim>>,
+        pub required_claims: Option<crate::ValueList<RequiredClaim>>,
         /// Property [`UsernameClaim`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-oidcidentityproviderconfig.html#cfn-eks-identityproviderconfig-oidcidentityproviderconfig-usernameclaim).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub username_claim: Option<::Value<String>>,
+        pub username_claim: Option<crate::Value<String>>,
         /// Property [`UsernamePrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-oidcidentityproviderconfig.html#cfn-eks-identityproviderconfig-oidcidentityproviderconfig-usernameprefix).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub username_prefix: Option<::Value<String>>,
+        pub username_prefix: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for OidcIdentityProviderConfig {
+    impl crate::codec::SerializeValue for OidcIdentityProviderConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClientId", &self.client_id)?;
@@ -1704,7 +1704,7 @@ pub mod identity_provider_config {
         }
     }
 
-    impl ::codec::DeserializeValue for OidcIdentityProviderConfig {
+    impl crate::codec::DeserializeValue for OidcIdentityProviderConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OidcIdentityProviderConfig, D::Error> {
@@ -1721,13 +1721,13 @@ pub mod identity_provider_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut client_id: Option<::Value<String>> = None;
-                    let mut groups_claim: Option<::Value<String>> = None;
-                    let mut groups_prefix: Option<::Value<String>> = None;
-                    let mut issuer_url: Option<::Value<String>> = None;
-                    let mut required_claims: Option<::ValueList<RequiredClaim>> = None;
-                    let mut username_claim: Option<::Value<String>> = None;
-                    let mut username_prefix: Option<::Value<String>> = None;
+                    let mut client_id: Option<crate::Value<String>> = None;
+                    let mut groups_claim: Option<crate::Value<String>> = None;
+                    let mut groups_prefix: Option<crate::Value<String>> = None;
+                    let mut issuer_url: Option<crate::Value<String>> = None;
+                    let mut required_claims: Option<crate::ValueList<RequiredClaim>> = None;
+                    let mut username_claim: Option<crate::Value<String>> = None;
+                    let mut username_prefix: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1783,15 +1783,15 @@ pub mod identity_provider_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-requiredclaim.html#cfn-eks-identityproviderconfig-requiredclaim-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for RequiredClaim {
+    impl crate::codec::SerializeValue for RequiredClaim {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -1800,7 +1800,7 @@ pub mod identity_provider_config {
         }
     }
 
-    impl ::codec::DeserializeValue for RequiredClaim {
+    impl crate::codec::DeserializeValue for RequiredClaim {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RequiredClaim, D::Error> {
@@ -1817,8 +1817,8 @@ pub mod identity_provider_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1856,20 +1856,20 @@ pub mod nodegroup {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: Option<::Value<String>>,
+        pub id: Option<crate::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-launchtemplatespecification.html#cfn-eks-nodegroup-launchtemplatespecification-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-launchtemplatespecification.html#cfn-eks-nodegroup-launchtemplatespecification-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<::Value<String>>,
+        pub version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for LaunchTemplateSpecification {
+    impl crate::codec::SerializeValue for LaunchTemplateSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref id) = self.id {
@@ -1885,7 +1885,7 @@ pub mod nodegroup {
         }
     }
 
-    impl ::codec::DeserializeValue for LaunchTemplateSpecification {
+    impl crate::codec::DeserializeValue for LaunchTemplateSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LaunchTemplateSpecification, D::Error> {
@@ -1902,9 +1902,9 @@ pub mod nodegroup {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<::Value<String>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut version: Option<::Value<String>> = None;
+                    let mut id: Option<crate::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1942,15 +1942,15 @@ pub mod nodegroup {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub ec2_ssh_key: ::Value<String>,
+        pub ec2_ssh_key: crate::Value<String>,
         /// Property [`SourceSecurityGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-remoteaccess.html#cfn-eks-nodegroup-remoteaccess-sourcesecuritygroups).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub source_security_groups: Option<::ValueList<String>>,
+        pub source_security_groups: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for RemoteAccess {
+    impl crate::codec::SerializeValue for RemoteAccess {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ec2SshKey", &self.ec2_ssh_key)?;
@@ -1965,7 +1965,7 @@ pub mod nodegroup {
         }
     }
 
-    impl ::codec::DeserializeValue for RemoteAccess {
+    impl crate::codec::DeserializeValue for RemoteAccess {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RemoteAccess, D::Error> {
             struct Visitor;
 
@@ -1980,8 +1980,8 @@ pub mod nodegroup {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ec2_ssh_key: Option<::Value<String>> = None;
-                    let mut source_security_groups: Option<::ValueList<String>> = None;
+                    let mut ec2_ssh_key: Option<crate::Value<String>> = None;
+                    let mut source_security_groups: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2017,20 +2017,20 @@ pub mod nodegroup {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub desired_size: Option<::Value<u32>>,
+        pub desired_size: Option<crate::Value<u32>>,
         /// Property [`MaxSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-scalingconfig.html#cfn-eks-nodegroup-scalingconfig-maxsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_size: Option<::Value<u32>>,
+        pub max_size: Option<crate::Value<u32>>,
         /// Property [`MinSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-scalingconfig.html#cfn-eks-nodegroup-scalingconfig-minsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_size: Option<::Value<u32>>,
+        pub min_size: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for ScalingConfig {
+    impl crate::codec::SerializeValue for ScalingConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref desired_size) = self.desired_size {
@@ -2046,7 +2046,7 @@ pub mod nodegroup {
         }
     }
 
-    impl ::codec::DeserializeValue for ScalingConfig {
+    impl crate::codec::DeserializeValue for ScalingConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScalingConfig, D::Error> {
@@ -2063,9 +2063,9 @@ pub mod nodegroup {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut desired_size: Option<::Value<u32>> = None;
-                    let mut max_size: Option<::Value<u32>> = None;
-                    let mut min_size: Option<::Value<u32>> = None;
+                    let mut desired_size: Option<crate::Value<u32>> = None;
+                    let mut max_size: Option<crate::Value<u32>> = None;
+                    let mut min_size: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2103,20 +2103,20 @@ pub mod nodegroup {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub effect: Option<::Value<String>>,
+        pub effect: Option<crate::Value<String>>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-taint.html#cfn-eks-nodegroup-taint-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-taint.html#cfn-eks-nodegroup-taint-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Taint {
+    impl crate::codec::SerializeValue for Taint {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref effect) = self.effect {
@@ -2132,7 +2132,7 @@ pub mod nodegroup {
         }
     }
 
-    impl ::codec::DeserializeValue for Taint {
+    impl crate::codec::DeserializeValue for Taint {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Taint, D::Error> {
             struct Visitor;
 
@@ -2147,9 +2147,9 @@ pub mod nodegroup {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut effect: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut effect: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2187,15 +2187,15 @@ pub mod nodegroup {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_unavailable: Option<::Value<f64>>,
+        pub max_unavailable: Option<crate::Value<f64>>,
         /// Property [`MaxUnavailablePercentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-updateconfig.html#cfn-eks-nodegroup-updateconfig-maxunavailablepercentage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_unavailable_percentage: Option<::Value<f64>>,
+        pub max_unavailable_percentage: Option<crate::Value<f64>>,
     }
 
-    impl ::codec::SerializeValue for UpdateConfig {
+    impl crate::codec::SerializeValue for UpdateConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref max_unavailable) = self.max_unavailable {
@@ -2216,7 +2216,7 @@ pub mod nodegroup {
         }
     }
 
-    impl ::codec::DeserializeValue for UpdateConfig {
+    impl crate::codec::DeserializeValue for UpdateConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UpdateConfig, D::Error> {
             struct Visitor;
 
@@ -2231,8 +2231,8 @@ pub mod nodegroup {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_unavailable: Option<::Value<f64>> = None;
-                    let mut max_unavailable_percentage: Option<::Value<f64>> = None;
+                    let mut max_unavailable: Option<crate::Value<f64>> = None;
+                    let mut max_unavailable_percentage: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

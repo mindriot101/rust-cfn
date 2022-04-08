@@ -13,57 +13,57 @@ pub struct AlarmProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub alarm_name: ::Value<String>,
+    pub alarm_name: crate::Value<String>,
     /// Property [`ComparisonOperator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-comparisonoperator).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub comparison_operator: ::Value<String>,
+    pub comparison_operator: crate::Value<String>,
     /// Property [`ContactProtocols`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-contactprotocols).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub contact_protocols: Option<::ValueList<String>>,
+    pub contact_protocols: Option<crate::ValueList<String>>,
     /// Property [`DatapointsToAlarm`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-datapointstoalarm).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub datapoints_to_alarm: Option<::Value<u32>>,
+    pub datapoints_to_alarm: Option<crate::Value<u32>>,
     /// Property [`EvaluationPeriods`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-evaluationperiods).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub evaluation_periods: ::Value<u32>,
+    pub evaluation_periods: crate::Value<u32>,
     /// Property [`MetricName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-metricname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub metric_name: ::Value<String>,
+    pub metric_name: crate::Value<String>,
     /// Property [`MonitoredResourceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-monitoredresourcename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub monitored_resource_name: ::Value<String>,
+    pub monitored_resource_name: crate::Value<String>,
     /// Property [`NotificationEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-notificationenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_enabled: Option<::Value<bool>>,
+    pub notification_enabled: Option<crate::Value<bool>>,
     /// Property [`NotificationTriggers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-notificationtriggers).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_triggers: Option<::ValueList<String>>,
+    pub notification_triggers: Option<crate::ValueList<String>>,
     /// Property [`Threshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-threshold).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub threshold: ::Value<f64>,
+    pub threshold: crate::Value<f64>,
     /// Property [`TreatMissingData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-treatmissingdata).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub treat_missing_data: Option<::Value<String>>,
+    pub treat_missing_data: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for AlarmProperties {
@@ -141,17 +141,17 @@ impl<'de> ::serde::Deserialize<'de> for AlarmProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut alarm_name: Option<::Value<String>> = None;
-                let mut comparison_operator: Option<::Value<String>> = None;
-                let mut contact_protocols: Option<::ValueList<String>> = None;
-                let mut datapoints_to_alarm: Option<::Value<u32>> = None;
-                let mut evaluation_periods: Option<::Value<u32>> = None;
-                let mut metric_name: Option<::Value<String>> = None;
-                let mut monitored_resource_name: Option<::Value<String>> = None;
-                let mut notification_enabled: Option<::Value<bool>> = None;
-                let mut notification_triggers: Option<::ValueList<String>> = None;
-                let mut threshold: Option<::Value<f64>> = None;
-                let mut treat_missing_data: Option<::Value<String>> = None;
+                let mut alarm_name: Option<crate::Value<String>> = None;
+                let mut comparison_operator: Option<crate::Value<String>> = None;
+                let mut contact_protocols: Option<crate::ValueList<String>> = None;
+                let mut datapoints_to_alarm: Option<crate::Value<u32>> = None;
+                let mut evaluation_periods: Option<crate::Value<u32>> = None;
+                let mut metric_name: Option<crate::Value<String>> = None;
+                let mut monitored_resource_name: Option<crate::Value<String>> = None;
+                let mut notification_enabled: Option<crate::Value<bool>> = None;
+                let mut notification_triggers: Option<crate::ValueList<String>> = None;
+                let mut threshold: Option<crate::Value<f64>> = None;
+                let mut treat_missing_data: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -216,7 +216,7 @@ impl<'de> ::serde::Deserialize<'de> for AlarmProperties {
     }
 }
 
-impl ::Resource for Alarm {
+impl crate::Resource for Alarm {
     type Properties = AlarmProperties;
     const TYPE: &'static str = "AWS::Lightsail::Alarm";
     fn properties(&self) -> &AlarmProperties {
@@ -227,7 +227,7 @@ impl ::Resource for Alarm {
     }
 }
 
-impl ::private::Sealed for Alarm {}
+impl crate::private::Sealed for Alarm {}
 
 impl From<AlarmProperties> for Alarm {
     fn from(properties: AlarmProperties) -> Alarm {
@@ -248,37 +248,37 @@ pub struct BucketProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub access_rules: Option<::Value<self::bucket::AccessRules>>,
+    pub access_rules: Option<crate::Value<self::bucket::AccessRules>>,
     /// Property [`BucketName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-bucketname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub bucket_name: ::Value<String>,
+    pub bucket_name: crate::Value<String>,
     /// Property [`BundleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-bundleid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bundle_id: ::Value<String>,
+    pub bundle_id: crate::Value<String>,
     /// Property [`ObjectVersioning`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-objectversioning).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub object_versioning: Option<::Value<bool>>,
+    pub object_versioning: Option<crate::Value<bool>>,
     /// Property [`ReadOnlyAccessAccounts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-readonlyaccessaccounts).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub read_only_access_accounts: Option<::ValueList<String>>,
+    pub read_only_access_accounts: Option<crate::ValueList<String>>,
     /// Property [`ResourcesReceivingAccess`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-resourcesreceivingaccess).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resources_receiving_access: Option<::ValueList<String>>,
+    pub resources_receiving_access: Option<crate::ValueList<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for BucketProperties {
@@ -332,13 +332,13 @@ impl<'de> ::serde::Deserialize<'de> for BucketProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut access_rules: Option<::Value<self::bucket::AccessRules>> = None;
-                let mut bucket_name: Option<::Value<String>> = None;
-                let mut bundle_id: Option<::Value<String>> = None;
-                let mut object_versioning: Option<::Value<bool>> = None;
-                let mut read_only_access_accounts: Option<::ValueList<String>> = None;
-                let mut resources_receiving_access: Option<::ValueList<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut access_rules: Option<crate::Value<self::bucket::AccessRules>> = None;
+                let mut bucket_name: Option<crate::Value<String>> = None;
+                let mut bundle_id: Option<crate::Value<String>> = None;
+                let mut object_versioning: Option<crate::Value<bool>> = None;
+                let mut read_only_access_accounts: Option<crate::ValueList<String>> = None;
+                let mut resources_receiving_access: Option<crate::ValueList<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -386,7 +386,7 @@ impl<'de> ::serde::Deserialize<'de> for BucketProperties {
     }
 }
 
-impl ::Resource for Bucket {
+impl crate::Resource for Bucket {
     type Properties = BucketProperties;
     const TYPE: &'static str = "AWS::Lightsail::Bucket";
     fn properties(&self) -> &BucketProperties {
@@ -397,7 +397,7 @@ impl ::Resource for Bucket {
     }
 }
 
-impl ::private::Sealed for Bucket {}
+impl crate::private::Sealed for Bucket {}
 
 impl From<BucketProperties> for Bucket {
     fn from(properties: BucketProperties) -> Bucket {
@@ -418,22 +418,22 @@ pub struct CertificateProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_name: ::Value<String>,
+    pub certificate_name: crate::Value<String>,
     /// Property [`DomainName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-certificate.html#cfn-lightsail-certificate-domainname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain_name: ::Value<String>,
+    pub domain_name: crate::Value<String>,
     /// Property [`SubjectAlternativeNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-certificate.html#cfn-lightsail-certificate-subjectalternativenames).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subject_alternative_names: Option<::ValueList<String>>,
+    pub subject_alternative_names: Option<crate::ValueList<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-certificate.html#cfn-lightsail-certificate-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for CertificateProperties {
@@ -474,10 +474,10 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut certificate_name: Option<::Value<String>> = None;
-                let mut domain_name: Option<::Value<String>> = None;
-                let mut subject_alternative_names: Option<::ValueList<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut certificate_name: Option<crate::Value<String>> = None;
+                let mut domain_name: Option<crate::Value<String>> = None;
+                let mut subject_alternative_names: Option<crate::ValueList<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -513,7 +513,7 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
     }
 }
 
-impl ::Resource for Certificate {
+impl crate::Resource for Certificate {
     type Properties = CertificateProperties;
     const TYPE: &'static str = "AWS::Lightsail::Certificate";
     fn properties(&self) -> &CertificateProperties {
@@ -524,7 +524,7 @@ impl ::Resource for Certificate {
     }
 }
 
-impl ::private::Sealed for Certificate {}
+impl crate::private::Sealed for Certificate {}
 
 impl From<CertificateProperties> for Certificate {
     fn from(properties: CertificateProperties) -> Certificate {
@@ -545,37 +545,37 @@ pub struct ContainerProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub container_service_deployment: Option<::Value<self::container::ContainerServiceDeployment>>,
+    pub container_service_deployment: Option<crate::Value<self::container::ContainerServiceDeployment>>,
     /// Property [`IsDisabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-isdisabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub is_disabled: Option<::Value<bool>>,
+    pub is_disabled: Option<crate::Value<bool>>,
     /// Property [`Power`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-power).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub power: ::Value<String>,
+    pub power: crate::Value<String>,
     /// Property [`PublicDomainNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-publicdomainnames).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub public_domain_names: Option<::ValueList<self::container::PublicDomainName>>,
+    pub public_domain_names: Option<crate::ValueList<self::container::PublicDomainName>>,
     /// Property [`Scale`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-scale).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub scale: ::Value<u32>,
+    pub scale: crate::Value<u32>,
     /// Property [`ServiceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-servicename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service_name: ::Value<String>,
+    pub service_name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ContainerProperties {
@@ -624,16 +624,16 @@ impl<'de> ::serde::Deserialize<'de> for ContainerProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut container_service_deployment: Option<
-                    ::Value<self::container::ContainerServiceDeployment>,
+                    crate::Value<self::container::ContainerServiceDeployment>,
                 > = None;
-                let mut is_disabled: Option<::Value<bool>> = None;
-                let mut power: Option<::Value<String>> = None;
+                let mut is_disabled: Option<crate::Value<bool>> = None;
+                let mut power: Option<crate::Value<String>> = None;
                 let mut public_domain_names: Option<
-                    ::ValueList<self::container::PublicDomainName>,
+                    crate::ValueList<self::container::PublicDomainName>,
                 > = None;
-                let mut scale: Option<::Value<u32>> = None;
-                let mut service_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut scale: Option<crate::Value<u32>> = None;
+                let mut service_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -680,7 +680,7 @@ impl<'de> ::serde::Deserialize<'de> for ContainerProperties {
     }
 }
 
-impl ::Resource for Container {
+impl crate::Resource for Container {
     type Properties = ContainerProperties;
     const TYPE: &'static str = "AWS::Lightsail::Container";
     fn properties(&self) -> &ContainerProperties {
@@ -691,7 +691,7 @@ impl ::Resource for Container {
     }
 }
 
-impl ::private::Sealed for Container {}
+impl crate::private::Sealed for Container {}
 
 impl From<ContainerProperties> for Container {
     fn from(properties: ContainerProperties) -> Container {
@@ -712,78 +712,78 @@ pub struct DatabaseProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub availability_zone: Option<::Value<String>>,
+    pub availability_zone: Option<crate::Value<String>>,
     /// Property [`BackupRetention`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-backupretention).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub backup_retention: Option<::Value<bool>>,
+    pub backup_retention: Option<crate::Value<bool>>,
     /// Property [`CaCertificateIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-cacertificateidentifier).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ca_certificate_identifier: Option<::Value<String>>,
+    pub ca_certificate_identifier: Option<crate::Value<String>>,
     /// Property [`MasterDatabaseName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-masterdatabasename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub master_database_name: ::Value<String>,
+    pub master_database_name: crate::Value<String>,
     /// Property [`MasterUserPassword`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-masteruserpassword).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub master_user_password: Option<::Value<String>>,
+    pub master_user_password: Option<crate::Value<String>>,
     /// Property [`MasterUsername`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-masterusername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub master_username: ::Value<String>,
+    pub master_username: crate::Value<String>,
     /// Property [`PreferredBackupWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-preferredbackupwindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub preferred_backup_window: Option<::Value<String>>,
+    pub preferred_backup_window: Option<crate::Value<String>>,
     /// Property [`PreferredMaintenanceWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-preferredmaintenancewindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub preferred_maintenance_window: Option<::Value<String>>,
+    pub preferred_maintenance_window: Option<crate::Value<String>>,
     /// Property [`PubliclyAccessible`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-publiclyaccessible).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub publicly_accessible: Option<::Value<bool>>,
+    pub publicly_accessible: Option<crate::Value<bool>>,
     /// Property [`RelationalDatabaseBlueprintId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-relationaldatabaseblueprintid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub relational_database_blueprint_id: ::Value<String>,
+    pub relational_database_blueprint_id: crate::Value<String>,
     /// Property [`RelationalDatabaseBundleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-relationaldatabasebundleid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub relational_database_bundle_id: ::Value<String>,
+    pub relational_database_bundle_id: crate::Value<String>,
     /// Property [`RelationalDatabaseName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-relationaldatabasename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub relational_database_name: ::Value<String>,
+    pub relational_database_name: crate::Value<String>,
     /// Property [`RelationalDatabaseParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-relationaldatabaseparameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub relational_database_parameters:
-        Option<::ValueList<self::database::RelationalDatabaseParameter>>,
+        Option<crate::ValueList<self::database::RelationalDatabaseParameter>>,
     /// Property [`RotateMasterUserPassword`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-rotatemasteruserpassword).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rotate_master_user_password: Option<::Value<bool>>,
+    pub rotate_master_user_password: Option<crate::Value<bool>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for DatabaseProperties {
@@ -899,23 +899,23 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut availability_zone: Option<::Value<String>> = None;
-                let mut backup_retention: Option<::Value<bool>> = None;
-                let mut ca_certificate_identifier: Option<::Value<String>> = None;
-                let mut master_database_name: Option<::Value<String>> = None;
-                let mut master_user_password: Option<::Value<String>> = None;
-                let mut master_username: Option<::Value<String>> = None;
-                let mut preferred_backup_window: Option<::Value<String>> = None;
-                let mut preferred_maintenance_window: Option<::Value<String>> = None;
-                let mut publicly_accessible: Option<::Value<bool>> = None;
-                let mut relational_database_blueprint_id: Option<::Value<String>> = None;
-                let mut relational_database_bundle_id: Option<::Value<String>> = None;
-                let mut relational_database_name: Option<::Value<String>> = None;
+                let mut availability_zone: Option<crate::Value<String>> = None;
+                let mut backup_retention: Option<crate::Value<bool>> = None;
+                let mut ca_certificate_identifier: Option<crate::Value<String>> = None;
+                let mut master_database_name: Option<crate::Value<String>> = None;
+                let mut master_user_password: Option<crate::Value<String>> = None;
+                let mut master_username: Option<crate::Value<String>> = None;
+                let mut preferred_backup_window: Option<crate::Value<String>> = None;
+                let mut preferred_maintenance_window: Option<crate::Value<String>> = None;
+                let mut publicly_accessible: Option<crate::Value<bool>> = None;
+                let mut relational_database_blueprint_id: Option<crate::Value<String>> = None;
+                let mut relational_database_bundle_id: Option<crate::Value<String>> = None;
+                let mut relational_database_name: Option<crate::Value<String>> = None;
                 let mut relational_database_parameters: Option<
-                    ::ValueList<self::database::RelationalDatabaseParameter>,
+                    crate::ValueList<self::database::RelationalDatabaseParameter>,
                 > = None;
-                let mut rotate_master_user_password: Option<::Value<bool>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut rotate_master_user_password: Option<crate::Value<bool>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1006,7 +1006,7 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
     }
 }
 
-impl ::Resource for Database {
+impl crate::Resource for Database {
     type Properties = DatabaseProperties;
     const TYPE: &'static str = "AWS::Lightsail::Database";
     fn properties(&self) -> &DatabaseProperties {
@@ -1017,7 +1017,7 @@ impl ::Resource for Database {
     }
 }
 
-impl ::private::Sealed for Database {}
+impl crate::private::Sealed for Database {}
 
 impl From<DatabaseProperties> for Database {
     fn from(properties: DatabaseProperties) -> Database {
@@ -1038,27 +1038,27 @@ pub struct DiskProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub add_ons: Option<::ValueList<self::disk::AddOn>>,
+    pub add_ons: Option<crate::ValueList<self::disk::AddOn>>,
     /// Property [`AvailabilityZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-availabilityzone).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub availability_zone: Option<::Value<String>>,
+    pub availability_zone: Option<crate::Value<String>>,
     /// Property [`DiskName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-diskname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub disk_name: ::Value<String>,
+    pub disk_name: crate::Value<String>,
     /// Property [`SizeInGb`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-sizeingb).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub size_in_gb: ::Value<u32>,
+    pub size_in_gb: crate::Value<u32>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for DiskProperties {
@@ -1098,11 +1098,11 @@ impl<'de> ::serde::Deserialize<'de> for DiskProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut add_ons: Option<::ValueList<self::disk::AddOn>> = None;
-                let mut availability_zone: Option<::Value<String>> = None;
-                let mut disk_name: Option<::Value<String>> = None;
-                let mut size_in_gb: Option<::Value<u32>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut add_ons: Option<crate::ValueList<self::disk::AddOn>> = None;
+                let mut availability_zone: Option<crate::Value<String>> = None;
+                let mut disk_name: Option<crate::Value<String>> = None;
+                let mut size_in_gb: Option<crate::Value<u32>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1139,7 +1139,7 @@ impl<'de> ::serde::Deserialize<'de> for DiskProperties {
     }
 }
 
-impl ::Resource for Disk {
+impl crate::Resource for Disk {
     type Properties = DiskProperties;
     const TYPE: &'static str = "AWS::Lightsail::Disk";
     fn properties(&self) -> &DiskProperties {
@@ -1150,7 +1150,7 @@ impl ::Resource for Disk {
     }
 }
 
-impl ::private::Sealed for Disk {}
+impl crate::private::Sealed for Disk {}
 
 impl From<DiskProperties> for Disk {
     fn from(properties: DiskProperties) -> Disk {
@@ -1171,52 +1171,52 @@ pub struct DistributionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bundle_id: ::Value<String>,
+    pub bundle_id: crate::Value<String>,
     /// Property [`CacheBehaviorSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-cachebehaviorsettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_behavior_settings: Option<::Value<self::distribution::CacheSettings>>,
+    pub cache_behavior_settings: Option<crate::Value<self::distribution::CacheSettings>>,
     /// Property [`CacheBehaviors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-cachebehaviors).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_behaviors: Option<::ValueList<self::distribution::CacheBehaviorPerPath>>,
+    pub cache_behaviors: Option<crate::ValueList<self::distribution::CacheBehaviorPerPath>>,
     /// Property [`CertificateName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-certificatename).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate_name: Option<::Value<String>>,
+    pub certificate_name: Option<crate::Value<String>>,
     /// Property [`DefaultCacheBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-defaultcachebehavior).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_cache_behavior: ::Value<self::distribution::CacheBehavior>,
+    pub default_cache_behavior: crate::Value<self::distribution::CacheBehavior>,
     /// Property [`DistributionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-distributionname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub distribution_name: ::Value<String>,
+    pub distribution_name: crate::Value<String>,
     /// Property [`IpAddressType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-ipaddresstype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ip_address_type: Option<::Value<String>>,
+    pub ip_address_type: Option<crate::Value<String>>,
     /// Property [`IsEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-isenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub is_enabled: Option<::Value<bool>>,
+    pub is_enabled: Option<crate::Value<bool>>,
     /// Property [`Origin`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-origin).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub origin: ::Value<self::distribution::InputOrigin>,
+    pub origin: crate::Value<self::distribution::InputOrigin>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for DistributionProperties {
@@ -1289,21 +1289,21 @@ impl<'de> ::serde::Deserialize<'de> for DistributionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut bundle_id: Option<::Value<String>> = None;
+                let mut bundle_id: Option<crate::Value<String>> = None;
                 let mut cache_behavior_settings: Option<
-                    ::Value<self::distribution::CacheSettings>,
+                    crate::Value<self::distribution::CacheSettings>,
                 > = None;
                 let mut cache_behaviors: Option<
-                    ::ValueList<self::distribution::CacheBehaviorPerPath>,
+                    crate::ValueList<self::distribution::CacheBehaviorPerPath>,
                 > = None;
-                let mut certificate_name: Option<::Value<String>> = None;
-                let mut default_cache_behavior: Option<::Value<self::distribution::CacheBehavior>> =
+                let mut certificate_name: Option<crate::Value<String>> = None;
+                let mut default_cache_behavior: Option<crate::Value<self::distribution::CacheBehavior>> =
                     None;
-                let mut distribution_name: Option<::Value<String>> = None;
-                let mut ip_address_type: Option<::Value<String>> = None;
-                let mut is_enabled: Option<::Value<bool>> = None;
-                let mut origin: Option<::Value<self::distribution::InputOrigin>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut distribution_name: Option<crate::Value<String>> = None;
+                let mut ip_address_type: Option<crate::Value<String>> = None;
+                let mut is_enabled: Option<crate::Value<bool>> = None;
+                let mut origin: Option<crate::Value<self::distribution::InputOrigin>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1362,7 +1362,7 @@ impl<'de> ::serde::Deserialize<'de> for DistributionProperties {
     }
 }
 
-impl ::Resource for Distribution {
+impl crate::Resource for Distribution {
     type Properties = DistributionProperties;
     const TYPE: &'static str = "AWS::Lightsail::Distribution";
     fn properties(&self) -> &DistributionProperties {
@@ -1373,7 +1373,7 @@ impl ::Resource for Distribution {
     }
 }
 
-impl ::private::Sealed for Distribution {}
+impl crate::private::Sealed for Distribution {}
 
 impl From<DistributionProperties> for Distribution {
     fn from(properties: DistributionProperties) -> Distribution {
@@ -1394,52 +1394,52 @@ pub struct InstanceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub add_ons: Option<::ValueList<self::instance::AddOn>>,
+    pub add_ons: Option<crate::ValueList<self::instance::AddOn>>,
     /// Property [`AvailabilityZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-availabilityzone).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub availability_zone: Option<::Value<String>>,
+    pub availability_zone: Option<crate::Value<String>>,
     /// Property [`BlueprintId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-blueprintid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub blueprint_id: ::Value<String>,
+    pub blueprint_id: crate::Value<String>,
     /// Property [`BundleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-bundleid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub bundle_id: ::Value<String>,
+    pub bundle_id: crate::Value<String>,
     /// Property [`Hardware`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-hardware).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub hardware: Option<::Value<self::instance::Hardware>>,
+    pub hardware: Option<crate::Value<self::instance::Hardware>>,
     /// Property [`InstanceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-instancename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub instance_name: ::Value<String>,
+    pub instance_name: crate::Value<String>,
     /// Property [`KeyPairName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-keypairname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub key_pair_name: Option<::Value<String>>,
+    pub key_pair_name: Option<crate::Value<String>>,
     /// Property [`Networking`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-networking).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub networking: Option<::Value<self::instance::Networking>>,
+    pub networking: Option<crate::Value<self::instance::Networking>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`UserData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-userdata).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub user_data: Option<::Value<String>>,
+    pub user_data: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for InstanceProperties {
@@ -1492,16 +1492,16 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut add_ons: Option<::ValueList<self::instance::AddOn>> = None;
-                let mut availability_zone: Option<::Value<String>> = None;
-                let mut blueprint_id: Option<::Value<String>> = None;
-                let mut bundle_id: Option<::Value<String>> = None;
-                let mut hardware: Option<::Value<self::instance::Hardware>> = None;
-                let mut instance_name: Option<::Value<String>> = None;
-                let mut key_pair_name: Option<::Value<String>> = None;
-                let mut networking: Option<::Value<self::instance::Networking>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut user_data: Option<::Value<String>> = None;
+                let mut add_ons: Option<crate::ValueList<self::instance::AddOn>> = None;
+                let mut availability_zone: Option<crate::Value<String>> = None;
+                let mut blueprint_id: Option<crate::Value<String>> = None;
+                let mut bundle_id: Option<crate::Value<String>> = None;
+                let mut hardware: Option<crate::Value<self::instance::Hardware>> = None;
+                let mut instance_name: Option<crate::Value<String>> = None;
+                let mut key_pair_name: Option<crate::Value<String>> = None;
+                let mut networking: Option<crate::Value<self::instance::Networking>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut user_data: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1560,7 +1560,7 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProperties {
     }
 }
 
-impl ::Resource for Instance {
+impl crate::Resource for Instance {
     type Properties = InstanceProperties;
     const TYPE: &'static str = "AWS::Lightsail::Instance";
     fn properties(&self) -> &InstanceProperties {
@@ -1571,7 +1571,7 @@ impl ::Resource for Instance {
     }
 }
 
-impl ::private::Sealed for Instance {}
+impl crate::private::Sealed for Instance {}
 
 impl From<InstanceProperties> for Instance {
     fn from(properties: InstanceProperties) -> Instance {
@@ -1592,42 +1592,42 @@ pub struct LoadBalancerProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub attached_instances: Option<::ValueList<String>>,
+    pub attached_instances: Option<crate::ValueList<String>>,
     /// Property [`HealthCheckPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-healthcheckpath).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub health_check_path: Option<::Value<String>>,
+    pub health_check_path: Option<crate::Value<String>>,
     /// Property [`InstancePort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-instanceport).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub instance_port: ::Value<u32>,
+    pub instance_port: crate::Value<u32>,
     /// Property [`IpAddressType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-ipaddresstype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ip_address_type: Option<::Value<String>>,
+    pub ip_address_type: Option<crate::Value<String>>,
     /// Property [`LoadBalancerName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-loadbalancername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub load_balancer_name: ::Value<String>,
+    pub load_balancer_name: crate::Value<String>,
     /// Property [`SessionStickinessEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-sessionstickinessenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub session_stickiness_enabled: Option<::Value<bool>>,
+    pub session_stickiness_enabled: Option<crate::Value<bool>>,
     /// Property [`SessionStickinessLBCookieDurationSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-sessionstickinesslbcookiedurationseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub session_stickiness_lb_cookie_duration_seconds: Option<::Value<String>>,
+    pub session_stickiness_lb_cookie_duration_seconds: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for LoadBalancerProperties {
@@ -1700,15 +1700,15 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut attached_instances: Option<::ValueList<String>> = None;
-                let mut health_check_path: Option<::Value<String>> = None;
-                let mut instance_port: Option<::Value<u32>> = None;
-                let mut ip_address_type: Option<::Value<String>> = None;
-                let mut load_balancer_name: Option<::Value<String>> = None;
-                let mut session_stickiness_enabled: Option<::Value<bool>> = None;
-                let mut session_stickiness_lb_cookie_duration_seconds: Option<::Value<String>> =
+                let mut attached_instances: Option<crate::ValueList<String>> = None;
+                let mut health_check_path: Option<crate::Value<String>> = None;
+                let mut instance_port: Option<crate::Value<u32>> = None;
+                let mut ip_address_type: Option<crate::Value<String>> = None;
+                let mut load_balancer_name: Option<crate::Value<String>> = None;
+                let mut session_stickiness_enabled: Option<crate::Value<bool>> = None;
+                let mut session_stickiness_lb_cookie_duration_seconds: Option<crate::Value<String>> =
                     None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1762,7 +1762,7 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerProperties {
     }
 }
 
-impl ::Resource for LoadBalancer {
+impl crate::Resource for LoadBalancer {
     type Properties = LoadBalancerProperties;
     const TYPE: &'static str = "AWS::Lightsail::LoadBalancer";
     fn properties(&self) -> &LoadBalancerProperties {
@@ -1773,7 +1773,7 @@ impl ::Resource for LoadBalancer {
     }
 }
 
-impl ::private::Sealed for LoadBalancer {}
+impl crate::private::Sealed for LoadBalancer {}
 
 impl From<LoadBalancerProperties> for LoadBalancer {
     fn from(properties: LoadBalancerProperties) -> LoadBalancer {
@@ -1794,27 +1794,27 @@ pub struct LoadBalancerTlsCertificateProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_alternative_names: Option<::ValueList<String>>,
+    pub certificate_alternative_names: Option<crate::ValueList<String>>,
     /// Property [`CertificateDomainName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-certificatedomainname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_domain_name: ::Value<String>,
+    pub certificate_domain_name: crate::Value<String>,
     /// Property [`CertificateName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-certificatename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_name: ::Value<String>,
+    pub certificate_name: crate::Value<String>,
     /// Property [`IsAttached`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-isattached).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub is_attached: Option<::Value<bool>>,
+    pub is_attached: Option<crate::Value<bool>>,
     /// Property [`LoadBalancerName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-loadbalancername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub load_balancer_name: ::Value<String>,
+    pub load_balancer_name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for LoadBalancerTlsCertificateProperties {
@@ -1866,11 +1866,11 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerTlsCertificateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut certificate_alternative_names: Option<::ValueList<String>> = None;
-                let mut certificate_domain_name: Option<::Value<String>> = None;
-                let mut certificate_name: Option<::Value<String>> = None;
-                let mut is_attached: Option<::Value<bool>> = None;
-                let mut load_balancer_name: Option<::Value<String>> = None;
+                let mut certificate_alternative_names: Option<crate::ValueList<String>> = None;
+                let mut certificate_domain_name: Option<crate::Value<String>> = None;
+                let mut certificate_name: Option<crate::Value<String>> = None;
+                let mut is_attached: Option<crate::Value<bool>> = None;
+                let mut load_balancer_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1911,7 +1911,7 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerTlsCertificateProperties {
     }
 }
 
-impl ::Resource for LoadBalancerTlsCertificate {
+impl crate::Resource for LoadBalancerTlsCertificate {
     type Properties = LoadBalancerTlsCertificateProperties;
     const TYPE: &'static str = "AWS::Lightsail::LoadBalancerTlsCertificate";
     fn properties(&self) -> &LoadBalancerTlsCertificateProperties {
@@ -1922,7 +1922,7 @@ impl ::Resource for LoadBalancerTlsCertificate {
     }
 }
 
-impl ::private::Sealed for LoadBalancerTlsCertificate {}
+impl crate::private::Sealed for LoadBalancerTlsCertificate {}
 
 impl From<LoadBalancerTlsCertificateProperties> for LoadBalancerTlsCertificate {
     fn from(properties: LoadBalancerTlsCertificateProperties) -> LoadBalancerTlsCertificate {
@@ -1943,12 +1943,12 @@ pub struct StaticIpProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub attached_to: Option<::Value<String>>,
+    pub attached_to: Option<crate::Value<String>>,
     /// Property [`StaticIpName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-staticip.html#cfn-lightsail-staticip-staticipname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub static_ip_name: ::Value<String>,
+    pub static_ip_name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for StaticIpProperties {
@@ -1981,8 +1981,8 @@ impl<'de> ::serde::Deserialize<'de> for StaticIpProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut attached_to: Option<::Value<String>> = None;
-                let mut static_ip_name: Option<::Value<String>> = None;
+                let mut attached_to: Option<crate::Value<String>> = None;
+                let mut static_ip_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2008,7 +2008,7 @@ impl<'de> ::serde::Deserialize<'de> for StaticIpProperties {
     }
 }
 
-impl ::Resource for StaticIp {
+impl crate::Resource for StaticIp {
     type Properties = StaticIpProperties;
     const TYPE: &'static str = "AWS::Lightsail::StaticIp";
     fn properties(&self) -> &StaticIpProperties {
@@ -2019,7 +2019,7 @@ impl ::Resource for StaticIp {
     }
 }
 
-impl ::private::Sealed for StaticIp {}
+impl crate::private::Sealed for StaticIp {}
 
 impl From<StaticIpProperties> for StaticIp {
     fn from(properties: StaticIpProperties) -> StaticIp {
@@ -2037,15 +2037,15 @@ pub mod bucket {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allow_public_overrides: Option<::Value<bool>>,
+        pub allow_public_overrides: Option<crate::Value<bool>>,
         /// Property [`GetObject`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-bucket-accessrules.html#cfn-lightsail-bucket-accessrules-getobject).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub get_object: Option<::Value<String>>,
+        pub get_object: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AccessRules {
+    impl crate::codec::SerializeValue for AccessRules {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_public_overrides) = self.allow_public_overrides {
@@ -2062,7 +2062,7 @@ pub mod bucket {
         }
     }
 
-    impl ::codec::DeserializeValue for AccessRules {
+    impl crate::codec::DeserializeValue for AccessRules {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AccessRules, D::Error> {
             struct Visitor;
 
@@ -2077,8 +2077,8 @@ pub mod bucket {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allow_public_overrides: Option<::Value<bool>> = None;
-                    let mut get_object: Option<::Value<String>> = None;
+                    let mut allow_public_overrides: Option<crate::Value<bool>> = None;
+                    let mut get_object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2117,30 +2117,30 @@ pub mod container {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub command: Option<::ValueList<String>>,
+        pub command: Option<crate::ValueList<String>>,
         /// Property [`ContainerName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-containername).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_name: Option<::Value<String>>,
+        pub container_name: Option<crate::Value<String>>,
         /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-environment).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub environment: Option<::ValueList<EnvironmentVariable>>,
+        pub environment: Option<crate::ValueList<EnvironmentVariable>>,
         /// Property [`Image`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-image).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image: Option<::Value<String>>,
+        pub image: Option<crate::Value<String>>,
         /// Property [`Ports`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-ports).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ports: Option<::ValueList<PortInfo>>,
+        pub ports: Option<crate::ValueList<PortInfo>>,
     }
 
-    impl ::codec::SerializeValue for Container {
+    impl crate::codec::SerializeValue for Container {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref command) = self.command {
@@ -2166,7 +2166,7 @@ pub mod container {
         }
     }
 
-    impl ::codec::DeserializeValue for Container {
+    impl crate::codec::DeserializeValue for Container {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Container, D::Error> {
             struct Visitor;
 
@@ -2181,11 +2181,11 @@ pub mod container {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut command: Option<::ValueList<String>> = None;
-                    let mut container_name: Option<::Value<String>> = None;
-                    let mut environment: Option<::ValueList<EnvironmentVariable>> = None;
-                    let mut image: Option<::Value<String>> = None;
-                    let mut ports: Option<::ValueList<PortInfo>> = None;
+                    let mut command: Option<crate::ValueList<String>> = None;
+                    let mut container_name: Option<crate::Value<String>> = None;
+                    let mut environment: Option<crate::ValueList<EnvironmentVariable>> = None;
+                    let mut image: Option<crate::Value<String>> = None;
+                    let mut ports: Option<crate::ValueList<PortInfo>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2231,15 +2231,15 @@ pub mod container {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub containers: Option<::ValueList<Container>>,
+        pub containers: Option<crate::ValueList<Container>>,
         /// Property [`PublicEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-containerservicedeployment.html#cfn-lightsail-container-containerservicedeployment-publicendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub public_endpoint: Option<::Value<PublicEndpoint>>,
+        pub public_endpoint: Option<crate::Value<PublicEndpoint>>,
     }
 
-    impl ::codec::SerializeValue for ContainerServiceDeployment {
+    impl crate::codec::SerializeValue for ContainerServiceDeployment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref containers) = self.containers {
@@ -2256,7 +2256,7 @@ pub mod container {
         }
     }
 
-    impl ::codec::DeserializeValue for ContainerServiceDeployment {
+    impl crate::codec::DeserializeValue for ContainerServiceDeployment {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ContainerServiceDeployment, D::Error> {
@@ -2273,8 +2273,8 @@ pub mod container {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut containers: Option<::ValueList<Container>> = None;
-                    let mut public_endpoint: Option<::Value<PublicEndpoint>> = None;
+                    let mut containers: Option<crate::ValueList<Container>> = None;
+                    let mut public_endpoint: Option<crate::Value<PublicEndpoint>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2308,15 +2308,15 @@ pub mod container {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
         /// Property [`Variable`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-environmentvariable.html#cfn-lightsail-container-environmentvariable-variable).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variable: Option<::Value<String>>,
+        pub variable: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for EnvironmentVariable {
+    impl crate::codec::SerializeValue for EnvironmentVariable {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref value) = self.value {
@@ -2329,7 +2329,7 @@ pub mod container {
         }
     }
 
-    impl ::codec::DeserializeValue for EnvironmentVariable {
+    impl crate::codec::DeserializeValue for EnvironmentVariable {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EnvironmentVariable, D::Error> {
@@ -2346,8 +2346,8 @@ pub mod container {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut value: Option<::Value<String>> = None;
-                    let mut variable: Option<::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
+                    let mut variable: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2381,35 +2381,35 @@ pub mod container {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub healthy_threshold: Option<::Value<u32>>,
+        pub healthy_threshold: Option<crate::Value<u32>>,
         /// Property [`IntervalSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-intervalseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_seconds: Option<::Value<u32>>,
+        pub interval_seconds: Option<crate::Value<u32>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path: Option<::Value<String>>,
+        pub path: Option<crate::Value<String>>,
         /// Property [`SuccessCodes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-successcodes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub success_codes: Option<::Value<String>>,
+        pub success_codes: Option<crate::Value<String>>,
         /// Property [`TimeoutSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-timeoutseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timeout_seconds: Option<::Value<u32>>,
+        pub timeout_seconds: Option<crate::Value<u32>>,
         /// Property [`UnhealthyThreshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-unhealthythreshold).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unhealthy_threshold: Option<::Value<u32>>,
+        pub unhealthy_threshold: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for HealthCheckConfig {
+    impl crate::codec::SerializeValue for HealthCheckConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref healthy_threshold) = self.healthy_threshold {
@@ -2454,7 +2454,7 @@ pub mod container {
         }
     }
 
-    impl ::codec::DeserializeValue for HealthCheckConfig {
+    impl crate::codec::DeserializeValue for HealthCheckConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HealthCheckConfig, D::Error> {
@@ -2471,12 +2471,12 @@ pub mod container {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut healthy_threshold: Option<::Value<u32>> = None;
-                    let mut interval_seconds: Option<::Value<u32>> = None;
-                    let mut path: Option<::Value<String>> = None;
-                    let mut success_codes: Option<::Value<String>> = None;
-                    let mut timeout_seconds: Option<::Value<u32>> = None;
-                    let mut unhealthy_threshold: Option<::Value<u32>> = None;
+                    let mut healthy_threshold: Option<crate::Value<u32>> = None;
+                    let mut interval_seconds: Option<crate::Value<u32>> = None;
+                    let mut path: Option<crate::Value<String>> = None;
+                    let mut success_codes: Option<crate::Value<String>> = None;
+                    let mut timeout_seconds: Option<crate::Value<u32>> = None;
+                    let mut unhealthy_threshold: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2526,15 +2526,15 @@ pub mod container {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: Option<::Value<String>>,
+        pub port: Option<crate::Value<String>>,
         /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-portinfo.html#cfn-lightsail-container-portinfo-protocol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub protocol: Option<::Value<String>>,
+        pub protocol: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for PortInfo {
+    impl crate::codec::SerializeValue for PortInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref port) = self.port {
@@ -2547,7 +2547,7 @@ pub mod container {
         }
     }
 
-    impl ::codec::DeserializeValue for PortInfo {
+    impl crate::codec::DeserializeValue for PortInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PortInfo, D::Error> {
             struct Visitor;
 
@@ -2562,8 +2562,8 @@ pub mod container {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut port: Option<::Value<String>> = None;
-                    let mut protocol: Option<::Value<String>> = None;
+                    let mut port: Option<crate::Value<String>> = None;
+                    let mut protocol: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2597,15 +2597,15 @@ pub mod container {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub certificate_name: Option<::Value<String>>,
+        pub certificate_name: Option<crate::Value<String>>,
         /// Property [`DomainNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicdomainname.html#cfn-lightsail-container-publicdomainname-domainnames).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub domain_names: Option<::ValueList<String>>,
+        pub domain_names: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for PublicDomainName {
+    impl crate::codec::SerializeValue for PublicDomainName {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref certificate_name) = self.certificate_name {
@@ -2622,7 +2622,7 @@ pub mod container {
         }
     }
 
-    impl ::codec::DeserializeValue for PublicDomainName {
+    impl crate::codec::DeserializeValue for PublicDomainName {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PublicDomainName, D::Error> {
@@ -2639,8 +2639,8 @@ pub mod container {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut certificate_name: Option<::Value<String>> = None;
-                    let mut domain_names: Option<::ValueList<String>> = None;
+                    let mut certificate_name: Option<crate::Value<String>> = None;
+                    let mut domain_names: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2674,20 +2674,20 @@ pub mod container {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_name: Option<::Value<String>>,
+        pub container_name: Option<crate::Value<String>>,
         /// Property [`ContainerPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicendpoint.html#cfn-lightsail-container-publicendpoint-containerport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_port: Option<::Value<u32>>,
+        pub container_port: Option<crate::Value<u32>>,
         /// Property [`HealthCheckConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicendpoint.html#cfn-lightsail-container-publicendpoint-healthcheckconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub health_check_config: Option<::Value<HealthCheckConfig>>,
+        pub health_check_config: Option<crate::Value<HealthCheckConfig>>,
     }
 
-    impl ::codec::SerializeValue for PublicEndpoint {
+    impl crate::codec::SerializeValue for PublicEndpoint {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_name) = self.container_name {
@@ -2715,7 +2715,7 @@ pub mod container {
         }
     }
 
-    impl ::codec::DeserializeValue for PublicEndpoint {
+    impl crate::codec::DeserializeValue for PublicEndpoint {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PublicEndpoint, D::Error> {
@@ -2732,9 +2732,9 @@ pub mod container {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_name: Option<::Value<String>> = None;
-                    let mut container_port: Option<::Value<u32>> = None;
-                    let mut health_check_config: Option<::Value<HealthCheckConfig>> = None;
+                    let mut container_name: Option<crate::Value<String>> = None;
+                    let mut container_port: Option<crate::Value<u32>> = None;
+                    let mut health_check_config: Option<crate::Value<HealthCheckConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2776,45 +2776,45 @@ pub mod database {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allowed_values: Option<::Value<String>>,
+        pub allowed_values: Option<crate::Value<String>>,
         /// Property [`ApplyMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-applymethod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub apply_method: Option<::Value<String>>,
+        pub apply_method: Option<crate::Value<String>>,
         /// Property [`ApplyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-applytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub apply_type: Option<::Value<String>>,
+        pub apply_type: Option<crate::Value<String>>,
         /// Property [`DataType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-datatype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_type: Option<::Value<String>>,
+        pub data_type: Option<crate::Value<String>>,
         /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-description).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`IsModifiable`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-ismodifiable).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_modifiable: Option<::Value<bool>>,
+        pub is_modifiable: Option<crate::Value<bool>>,
         /// Property [`ParameterName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-parametername).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameter_name: Option<::Value<String>>,
+        pub parameter_name: Option<crate::Value<String>>,
         /// Property [`ParameterValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-parametervalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameter_value: Option<::Value<String>>,
+        pub parameter_value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for RelationalDatabaseParameter {
+    impl crate::codec::SerializeValue for RelationalDatabaseParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_values) = self.allowed_values {
@@ -2861,7 +2861,7 @@ pub mod database {
         }
     }
 
-    impl ::codec::DeserializeValue for RelationalDatabaseParameter {
+    impl crate::codec::DeserializeValue for RelationalDatabaseParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RelationalDatabaseParameter, D::Error> {
@@ -2878,14 +2878,14 @@ pub mod database {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allowed_values: Option<::Value<String>> = None;
-                    let mut apply_method: Option<::Value<String>> = None;
-                    let mut apply_type: Option<::Value<String>> = None;
-                    let mut data_type: Option<::Value<String>> = None;
-                    let mut description: Option<::Value<String>> = None;
-                    let mut is_modifiable: Option<::Value<bool>> = None;
-                    let mut parameter_name: Option<::Value<String>> = None;
-                    let mut parameter_value: Option<::Value<String>> = None;
+                    let mut allowed_values: Option<crate::Value<String>> = None;
+                    let mut apply_method: Option<crate::Value<String>> = None;
+                    let mut apply_type: Option<crate::Value<String>> = None;
+                    let mut data_type: Option<crate::Value<String>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut is_modifiable: Option<crate::Value<bool>> = None;
+                    let mut parameter_name: Option<crate::Value<String>> = None;
+                    let mut parameter_value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2947,20 +2947,20 @@ pub mod disk {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub add_on_type: ::Value<String>,
+        pub add_on_type: crate::Value<String>,
         /// Property [`AutoSnapshotAddOnRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-addon.html#cfn-lightsail-disk-addon-autosnapshotaddonrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auto_snapshot_add_on_request: Option<::Value<AutoSnapshotAddOn>>,
+        pub auto_snapshot_add_on_request: Option<crate::Value<AutoSnapshotAddOn>>,
         /// Property [`Status`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-addon.html#cfn-lightsail-disk-addon-status).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status: Option<::Value<String>>,
+        pub status: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AddOn {
+    impl crate::codec::SerializeValue for AddOn {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AddOnType", &self.add_on_type)?;
@@ -2978,7 +2978,7 @@ pub mod disk {
         }
     }
 
-    impl ::codec::DeserializeValue for AddOn {
+    impl crate::codec::DeserializeValue for AddOn {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AddOn, D::Error> {
             struct Visitor;
 
@@ -2993,9 +2993,9 @@ pub mod disk {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut add_on_type: Option<::Value<String>> = None;
-                    let mut auto_snapshot_add_on_request: Option<::Value<AutoSnapshotAddOn>> = None;
-                    let mut status: Option<::Value<String>> = None;
+                    let mut add_on_type: Option<crate::Value<String>> = None;
+                    let mut auto_snapshot_add_on_request: Option<crate::Value<AutoSnapshotAddOn>> = None;
+                    let mut status: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3035,10 +3035,10 @@ pub mod disk {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub snapshot_time_of_day: Option<::Value<String>>,
+        pub snapshot_time_of_day: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AutoSnapshotAddOn {
+    impl crate::codec::SerializeValue for AutoSnapshotAddOn {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref snapshot_time_of_day) = self.snapshot_time_of_day {
@@ -3052,7 +3052,7 @@ pub mod disk {
         }
     }
 
-    impl ::codec::DeserializeValue for AutoSnapshotAddOn {
+    impl crate::codec::DeserializeValue for AutoSnapshotAddOn {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AutoSnapshotAddOn, D::Error> {
@@ -3069,7 +3069,7 @@ pub mod disk {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut snapshot_time_of_day: Option<::Value<String>> = None;
+                    let mut snapshot_time_of_day: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3104,10 +3104,10 @@ pub mod distribution {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub behavior: Option<::Value<String>>,
+        pub behavior: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CacheBehavior {
+    impl crate::codec::SerializeValue for CacheBehavior {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref behavior) = self.behavior {
@@ -3117,7 +3117,7 @@ pub mod distribution {
         }
     }
 
-    impl ::codec::DeserializeValue for CacheBehavior {
+    impl crate::codec::DeserializeValue for CacheBehavior {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CacheBehavior, D::Error> {
@@ -3134,7 +3134,7 @@ pub mod distribution {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut behavior: Option<::Value<String>> = None;
+                    let mut behavior: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3162,15 +3162,15 @@ pub mod distribution {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub behavior: Option<::Value<String>>,
+        pub behavior: Option<crate::Value<String>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachebehaviorperpath.html#cfn-lightsail-distribution-cachebehaviorperpath-path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path: Option<::Value<String>>,
+        pub path: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CacheBehaviorPerPath {
+    impl crate::codec::SerializeValue for CacheBehaviorPerPath {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref behavior) = self.behavior {
@@ -3183,7 +3183,7 @@ pub mod distribution {
         }
     }
 
-    impl ::codec::DeserializeValue for CacheBehaviorPerPath {
+    impl crate::codec::DeserializeValue for CacheBehaviorPerPath {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CacheBehaviorPerPath, D::Error> {
@@ -3200,8 +3200,8 @@ pub mod distribution {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut behavior: Option<::Value<String>> = None;
-                    let mut path: Option<::Value<String>> = None;
+                    let mut behavior: Option<crate::Value<String>> = None;
+                    let mut path: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3235,45 +3235,45 @@ pub mod distribution {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allowed_http_methods: Option<::Value<String>>,
+        pub allowed_http_methods: Option<crate::Value<String>>,
         /// Property [`CachedHTTPMethods`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-cachedhttpmethods).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cached_http_methods: Option<::Value<String>>,
+        pub cached_http_methods: Option<crate::Value<String>>,
         /// Property [`DefaultTTL`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-defaultttl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_ttl: Option<::Value<u32>>,
+        pub default_ttl: Option<crate::Value<u32>>,
         /// Property [`ForwardedCookies`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-forwardedcookies).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub forwarded_cookies: Option<::Value<CookieObject>>,
+        pub forwarded_cookies: Option<crate::Value<CookieObject>>,
         /// Property [`ForwardedHeaders`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-forwardedheaders).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub forwarded_headers: Option<::Value<HeaderObject>>,
+        pub forwarded_headers: Option<crate::Value<HeaderObject>>,
         /// Property [`ForwardedQueryStrings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-forwardedquerystrings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub forwarded_query_strings: Option<::Value<QueryStringObject>>,
+        pub forwarded_query_strings: Option<crate::Value<QueryStringObject>>,
         /// Property [`MaximumTTL`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-maximumttl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maximum_ttl: Option<::Value<u32>>,
+        pub maximum_ttl: Option<crate::Value<u32>>,
         /// Property [`MinimumTTL`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-minimumttl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub minimum_ttl: Option<::Value<u32>>,
+        pub minimum_ttl: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for CacheSettings {
+    impl crate::codec::SerializeValue for CacheSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_http_methods) = self.allowed_http_methods {
@@ -3324,7 +3324,7 @@ pub mod distribution {
         }
     }
 
-    impl ::codec::DeserializeValue for CacheSettings {
+    impl crate::codec::DeserializeValue for CacheSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CacheSettings, D::Error> {
@@ -3341,14 +3341,14 @@ pub mod distribution {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allowed_http_methods: Option<::Value<String>> = None;
-                    let mut cached_http_methods: Option<::Value<String>> = None;
-                    let mut default_ttl: Option<::Value<u32>> = None;
-                    let mut forwarded_cookies: Option<::Value<CookieObject>> = None;
-                    let mut forwarded_headers: Option<::Value<HeaderObject>> = None;
-                    let mut forwarded_query_strings: Option<::Value<QueryStringObject>> = None;
-                    let mut maximum_ttl: Option<::Value<u32>> = None;
-                    let mut minimum_ttl: Option<::Value<u32>> = None;
+                    let mut allowed_http_methods: Option<crate::Value<String>> = None;
+                    let mut cached_http_methods: Option<crate::Value<String>> = None;
+                    let mut default_ttl: Option<crate::Value<u32>> = None;
+                    let mut forwarded_cookies: Option<crate::Value<CookieObject>> = None;
+                    let mut forwarded_headers: Option<crate::Value<HeaderObject>> = None;
+                    let mut forwarded_query_strings: Option<crate::Value<QueryStringObject>> = None;
+                    let mut maximum_ttl: Option<crate::Value<u32>> = None;
+                    let mut minimum_ttl: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3408,15 +3408,15 @@ pub mod distribution {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cookies_allow_list: Option<::ValueList<String>>,
+        pub cookies_allow_list: Option<crate::ValueList<String>>,
         /// Property [`Option`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cookieobject.html#cfn-lightsail-distribution-cookieobject-option).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub option: Option<::Value<String>>,
+        pub option: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CookieObject {
+    impl crate::codec::SerializeValue for CookieObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cookies_allow_list) = self.cookies_allow_list {
@@ -3433,7 +3433,7 @@ pub mod distribution {
         }
     }
 
-    impl ::codec::DeserializeValue for CookieObject {
+    impl crate::codec::DeserializeValue for CookieObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CookieObject, D::Error> {
             struct Visitor;
 
@@ -3448,8 +3448,8 @@ pub mod distribution {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cookies_allow_list: Option<::ValueList<String>> = None;
-                    let mut option: Option<::Value<String>> = None;
+                    let mut cookies_allow_list: Option<crate::ValueList<String>> = None;
+                    let mut option: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3483,15 +3483,15 @@ pub mod distribution {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub headers_allow_list: Option<::ValueList<String>>,
+        pub headers_allow_list: Option<crate::ValueList<String>>,
         /// Property [`Option`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-headerobject.html#cfn-lightsail-distribution-headerobject-option).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub option: Option<::Value<String>>,
+        pub option: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for HeaderObject {
+    impl crate::codec::SerializeValue for HeaderObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref headers_allow_list) = self.headers_allow_list {
@@ -3508,7 +3508,7 @@ pub mod distribution {
         }
     }
 
-    impl ::codec::DeserializeValue for HeaderObject {
+    impl crate::codec::DeserializeValue for HeaderObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HeaderObject, D::Error> {
             struct Visitor;
 
@@ -3523,8 +3523,8 @@ pub mod distribution {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut headers_allow_list: Option<::ValueList<String>> = None;
-                    let mut option: Option<::Value<String>> = None;
+                    let mut headers_allow_list: Option<crate::ValueList<String>> = None;
+                    let mut option: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3558,20 +3558,20 @@ pub mod distribution {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
         /// Property [`ProtocolPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-inputorigin.html#cfn-lightsail-distribution-inputorigin-protocolpolicy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub protocol_policy: Option<::Value<String>>,
+        pub protocol_policy: Option<crate::Value<String>>,
         /// Property [`RegionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-inputorigin.html#cfn-lightsail-distribution-inputorigin-regionname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region_name: Option<::Value<String>>,
+        pub region_name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for InputOrigin {
+    impl crate::codec::SerializeValue for InputOrigin {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -3591,7 +3591,7 @@ pub mod distribution {
         }
     }
 
-    impl ::codec::DeserializeValue for InputOrigin {
+    impl crate::codec::DeserializeValue for InputOrigin {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputOrigin, D::Error> {
             struct Visitor;
 
@@ -3606,9 +3606,9 @@ pub mod distribution {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut protocol_policy: Option<::Value<String>> = None;
-                    let mut region_name: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut protocol_policy: Option<crate::Value<String>> = None;
+                    let mut region_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3646,15 +3646,15 @@ pub mod distribution {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub option: Option<::Value<bool>>,
+        pub option: Option<crate::Value<bool>>,
         /// Property [`QueryStringsAllowList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-querystringobject.html#cfn-lightsail-distribution-querystringobject-querystringsallowlist).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query_strings_allow_list: Option<::ValueList<String>>,
+        pub query_strings_allow_list: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for QueryStringObject {
+    impl crate::codec::SerializeValue for QueryStringObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref option) = self.option {
@@ -3671,7 +3671,7 @@ pub mod distribution {
         }
     }
 
-    impl ::codec::DeserializeValue for QueryStringObject {
+    impl crate::codec::DeserializeValue for QueryStringObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<QueryStringObject, D::Error> {
@@ -3688,8 +3688,8 @@ pub mod distribution {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut option: Option<::Value<bool>> = None;
-                    let mut query_strings_allow_list: Option<::ValueList<String>> = None;
+                    let mut option: Option<crate::Value<bool>> = None;
+                    let mut query_strings_allow_list: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3728,20 +3728,20 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub add_on_type: ::Value<String>,
+        pub add_on_type: crate::Value<String>,
         /// Property [`AutoSnapshotAddOnRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-addon.html#cfn-lightsail-instance-addon-autosnapshotaddonrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auto_snapshot_add_on_request: Option<::Value<AutoSnapshotAddOn>>,
+        pub auto_snapshot_add_on_request: Option<crate::Value<AutoSnapshotAddOn>>,
         /// Property [`Status`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-addon.html#cfn-lightsail-instance-addon-status).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status: Option<::Value<String>>,
+        pub status: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AddOn {
+    impl crate::codec::SerializeValue for AddOn {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AddOnType", &self.add_on_type)?;
@@ -3759,7 +3759,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for AddOn {
+    impl crate::codec::DeserializeValue for AddOn {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AddOn, D::Error> {
             struct Visitor;
 
@@ -3774,9 +3774,9 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut add_on_type: Option<::Value<String>> = None;
-                    let mut auto_snapshot_add_on_request: Option<::Value<AutoSnapshotAddOn>> = None;
-                    let mut status: Option<::Value<String>> = None;
+                    let mut add_on_type: Option<crate::Value<String>> = None;
+                    let mut auto_snapshot_add_on_request: Option<crate::Value<AutoSnapshotAddOn>> = None;
+                    let mut status: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3816,10 +3816,10 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub snapshot_time_of_day: Option<::Value<String>>,
+        pub snapshot_time_of_day: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AutoSnapshotAddOn {
+    impl crate::codec::SerializeValue for AutoSnapshotAddOn {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref snapshot_time_of_day) = self.snapshot_time_of_day {
@@ -3833,7 +3833,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for AutoSnapshotAddOn {
+    impl crate::codec::DeserializeValue for AutoSnapshotAddOn {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AutoSnapshotAddOn, D::Error> {
@@ -3850,7 +3850,7 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut snapshot_time_of_day: Option<::Value<String>> = None;
+                    let mut snapshot_time_of_day: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3881,40 +3881,40 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attached_to: Option<::Value<String>>,
+        pub attached_to: Option<crate::Value<String>>,
         /// Property [`AttachmentState`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-attachmentstate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attachment_state: Option<::Value<String>>,
+        pub attachment_state: Option<crate::Value<String>>,
         /// Property [`DiskName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-diskname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disk_name: ::Value<String>,
+        pub disk_name: crate::Value<String>,
         /// Property [`IOPS`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-iops).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub iops: Option<::Value<u32>>,
+        pub iops: Option<crate::Value<u32>>,
         /// Property [`IsSystemDisk`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-issystemdisk).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_system_disk: Option<::Value<bool>>,
+        pub is_system_disk: Option<crate::Value<bool>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path: ::Value<String>,
+        pub path: crate::Value<String>,
         /// Property [`SizeInGb`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-sizeingb).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size_in_gb: Option<::Value<String>>,
+        pub size_in_gb: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Disk {
+    impl crate::codec::SerializeValue for Disk {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attached_to) = self.attached_to {
@@ -3946,7 +3946,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for Disk {
+    impl crate::codec::DeserializeValue for Disk {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Disk, D::Error> {
             struct Visitor;
 
@@ -3961,13 +3961,13 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attached_to: Option<::Value<String>> = None;
-                    let mut attachment_state: Option<::Value<String>> = None;
-                    let mut disk_name: Option<::Value<String>> = None;
-                    let mut iops: Option<::Value<u32>> = None;
-                    let mut is_system_disk: Option<::Value<bool>> = None;
-                    let mut path: Option<::Value<String>> = None;
-                    let mut size_in_gb: Option<::Value<String>> = None;
+                    let mut attached_to: Option<crate::Value<String>> = None;
+                    let mut attachment_state: Option<crate::Value<String>> = None;
+                    let mut disk_name: Option<crate::Value<String>> = None;
+                    let mut iops: Option<crate::Value<u32>> = None;
+                    let mut is_system_disk: Option<crate::Value<bool>> = None;
+                    let mut path: Option<crate::Value<String>> = None;
+                    let mut size_in_gb: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4022,20 +4022,20 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cpu_count: Option<::Value<u32>>,
+        pub cpu_count: Option<crate::Value<u32>>,
         /// Property [`Disks`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html#cfn-lightsail-instance-hardware-disks).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disks: Option<::ValueList<Disk>>,
+        pub disks: Option<crate::ValueList<Disk>>,
         /// Property [`RamSizeInGb`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html#cfn-lightsail-instance-hardware-ramsizeingb).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ram_size_in_gb: Option<::Value<u32>>,
+        pub ram_size_in_gb: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for Hardware {
+    impl crate::codec::SerializeValue for Hardware {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cpu_count) = self.cpu_count {
@@ -4055,7 +4055,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for Hardware {
+    impl crate::codec::DeserializeValue for Hardware {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Hardware, D::Error> {
             struct Visitor;
 
@@ -4070,9 +4070,9 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cpu_count: Option<::Value<u32>> = None;
-                    let mut disks: Option<::ValueList<Disk>> = None;
-                    let mut ram_size_in_gb: Option<::Value<u32>> = None;
+                    let mut cpu_count: Option<crate::Value<u32>> = None;
+                    let mut disks: Option<crate::ValueList<Disk>> = None;
+                    let mut ram_size_in_gb: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4110,15 +4110,15 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub availability_zone: Option<::Value<String>>,
+        pub availability_zone: Option<crate::Value<String>>,
         /// Property [`RegionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-location.html#cfn-lightsail-instance-location-regionname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region_name: Option<::Value<String>>,
+        pub region_name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Location {
+    impl crate::codec::SerializeValue for Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref availability_zone) = self.availability_zone {
@@ -4135,7 +4135,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for Location {
+    impl crate::codec::DeserializeValue for Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Location, D::Error> {
             struct Visitor;
 
@@ -4150,8 +4150,8 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut availability_zone: Option<::Value<String>> = None;
-                    let mut region_name: Option<::Value<String>> = None;
+                    let mut availability_zone: Option<crate::Value<String>> = None;
+                    let mut region_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4185,10 +4185,10 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gb_per_month_allocated: Option<::Value<String>>,
+        pub gb_per_month_allocated: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for MonthlyTransfer {
+    impl crate::codec::SerializeValue for MonthlyTransfer {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref gb_per_month_allocated) = self.gb_per_month_allocated {
@@ -4202,7 +4202,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for MonthlyTransfer {
+    impl crate::codec::DeserializeValue for MonthlyTransfer {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonthlyTransfer, D::Error> {
@@ -4219,7 +4219,7 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut gb_per_month_allocated: Option<::Value<String>> = None;
+                    let mut gb_per_month_allocated: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4250,15 +4250,15 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monthly_transfer: Option<::Value<MonthlyTransfer>>,
+        pub monthly_transfer: Option<crate::Value<MonthlyTransfer>>,
         /// Property [`Ports`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-networking.html#cfn-lightsail-instance-networking-ports).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ports: ::ValueList<Port>,
+        pub ports: crate::ValueList<Port>,
     }
 
-    impl ::codec::SerializeValue for Networking {
+    impl crate::codec::SerializeValue for Networking {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref monthly_transfer) = self.monthly_transfer {
@@ -4273,7 +4273,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for Networking {
+    impl crate::codec::DeserializeValue for Networking {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Networking, D::Error> {
             struct Visitor;
 
@@ -4288,8 +4288,8 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut monthly_transfer: Option<::Value<MonthlyTransfer>> = None;
-                    let mut ports: Option<::ValueList<Port>> = None;
+                    let mut monthly_transfer: Option<crate::Value<MonthlyTransfer>> = None;
+                    let mut ports: Option<crate::ValueList<Port>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4323,55 +4323,55 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_direction: Option<::Value<String>>,
+        pub access_direction: Option<crate::Value<String>>,
         /// Property [`AccessFrom`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-accessfrom).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_from: Option<::Value<String>>,
+        pub access_from: Option<crate::Value<String>>,
         /// Property [`AccessType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-accesstype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_type: Option<::Value<String>>,
+        pub access_type: Option<crate::Value<String>>,
         /// Property [`CidrListAliases`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-cidrlistaliases).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cidr_list_aliases: Option<::ValueList<String>>,
+        pub cidr_list_aliases: Option<crate::ValueList<String>>,
         /// Property [`Cidrs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-cidrs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cidrs: Option<::ValueList<String>>,
+        pub cidrs: Option<crate::ValueList<String>>,
         /// Property [`CommonName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-commonname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub common_name: Option<::Value<String>>,
+        pub common_name: Option<crate::Value<String>>,
         /// Property [`FromPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-fromport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub from_port: Option<::Value<u32>>,
+        pub from_port: Option<crate::Value<u32>>,
         /// Property [`Ipv6Cidrs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-ipv6cidrs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ipv6_cidrs: Option<::ValueList<String>>,
+        pub ipv6_cidrs: Option<crate::ValueList<String>>,
         /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-protocol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub protocol: Option<::Value<String>>,
+        pub protocol: Option<crate::Value<String>>,
         /// Property [`ToPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-toport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub to_port: Option<::Value<u32>>,
+        pub to_port: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for Port {
+    impl crate::codec::SerializeValue for Port {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_direction) = self.access_direction {
@@ -4416,7 +4416,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for Port {
+    impl crate::codec::DeserializeValue for Port {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Port, D::Error> {
             struct Visitor;
 
@@ -4431,16 +4431,16 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_direction: Option<::Value<String>> = None;
-                    let mut access_from: Option<::Value<String>> = None;
-                    let mut access_type: Option<::Value<String>> = None;
-                    let mut cidr_list_aliases: Option<::ValueList<String>> = None;
-                    let mut cidrs: Option<::ValueList<String>> = None;
-                    let mut common_name: Option<::Value<String>> = None;
-                    let mut from_port: Option<::Value<u32>> = None;
-                    let mut ipv6_cidrs: Option<::ValueList<String>> = None;
-                    let mut protocol: Option<::Value<String>> = None;
-                    let mut to_port: Option<::Value<u32>> = None;
+                    let mut access_direction: Option<crate::Value<String>> = None;
+                    let mut access_from: Option<crate::Value<String>> = None;
+                    let mut access_type: Option<crate::Value<String>> = None;
+                    let mut cidr_list_aliases: Option<crate::ValueList<String>> = None;
+                    let mut cidrs: Option<crate::ValueList<String>> = None;
+                    let mut common_name: Option<crate::Value<String>> = None;
+                    let mut from_port: Option<crate::Value<u32>> = None;
+                    let mut ipv6_cidrs: Option<crate::ValueList<String>> = None;
+                    let mut protocol: Option<crate::Value<String>> = None;
+                    let mut to_port: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4506,15 +4506,15 @@ pub mod instance {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub code: Option<::Value<u32>>,
+        pub code: Option<crate::Value<u32>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-state.html#cfn-lightsail-instance-state-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for State {
+    impl crate::codec::SerializeValue for State {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref code) = self.code {
@@ -4527,7 +4527,7 @@ pub mod instance {
         }
     }
 
-    impl ::codec::DeserializeValue for State {
+    impl crate::codec::DeserializeValue for State {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<State, D::Error> {
             struct Visitor;
 
@@ -4542,8 +4542,8 @@ pub mod instance {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut code: Option<::Value<u32>> = None;
-                    let mut name: Option<::Value<String>> = None;
+                    let mut code: Option<crate::Value<u32>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

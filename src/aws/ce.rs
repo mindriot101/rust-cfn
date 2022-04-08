@@ -13,22 +13,22 @@ pub struct AnomalyMonitorProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub monitor_dimension: Option<::Value<String>>,
+    pub monitor_dimension: Option<crate::Value<String>>,
     /// Property [`MonitorName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html#cfn-ce-anomalymonitor-monitorname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub monitor_name: ::Value<String>,
+    pub monitor_name: crate::Value<String>,
     /// Property [`MonitorSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html#cfn-ce-anomalymonitor-monitorspecification).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub monitor_specification: Option<::Value<String>>,
+    pub monitor_specification: Option<crate::Value<String>>,
     /// Property [`MonitorType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html#cfn-ce-anomalymonitor-monitortype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub monitor_type: ::Value<String>,
+    pub monitor_type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for AnomalyMonitorProperties {
@@ -71,10 +71,10 @@ impl<'de> ::serde::Deserialize<'de> for AnomalyMonitorProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut monitor_dimension: Option<::Value<String>> = None;
-                let mut monitor_name: Option<::Value<String>> = None;
-                let mut monitor_specification: Option<::Value<String>> = None;
-                let mut monitor_type: Option<::Value<String>> = None;
+                let mut monitor_dimension: Option<crate::Value<String>> = None;
+                let mut monitor_name: Option<crate::Value<String>> = None;
+                let mut monitor_specification: Option<crate::Value<String>> = None;
+                let mut monitor_type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -109,7 +109,7 @@ impl<'de> ::serde::Deserialize<'de> for AnomalyMonitorProperties {
     }
 }
 
-impl ::Resource for AnomalyMonitor {
+impl crate::Resource for AnomalyMonitor {
     type Properties = AnomalyMonitorProperties;
     const TYPE: &'static str = "AWS::CE::AnomalyMonitor";
     fn properties(&self) -> &AnomalyMonitorProperties {
@@ -120,7 +120,7 @@ impl ::Resource for AnomalyMonitor {
     }
 }
 
-impl ::private::Sealed for AnomalyMonitor {}
+impl crate::private::Sealed for AnomalyMonitor {}
 
 impl From<AnomalyMonitorProperties> for AnomalyMonitor {
     fn from(properties: AnomalyMonitorProperties) -> AnomalyMonitor {
@@ -141,27 +141,27 @@ pub struct AnomalySubscriptionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub frequency: ::Value<String>,
+    pub frequency: crate::Value<String>,
     /// Property [`MonitorArnList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-monitorarnlist).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub monitor_arn_list: ::ValueList<String>,
+    pub monitor_arn_list: crate::ValueList<String>,
     /// Property [`Subscribers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscribers).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subscribers: ::ValueList<self::anomaly_subscription::Subscriber>,
+    pub subscribers: crate::ValueList<self::anomaly_subscription::Subscriber>,
     /// Property [`SubscriptionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscriptionname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subscription_name: ::Value<String>,
+    pub subscription_name: crate::Value<String>,
     /// Property [`Threshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-threshold).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub threshold: ::Value<f64>,
+    pub threshold: crate::Value<f64>,
 }
 
 impl ::serde::Serialize for AnomalySubscriptionProperties {
@@ -201,12 +201,12 @@ impl<'de> ::serde::Deserialize<'de> for AnomalySubscriptionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut frequency: Option<::Value<String>> = None;
-                let mut monitor_arn_list: Option<::ValueList<String>> = None;
-                let mut subscribers: Option<::ValueList<self::anomaly_subscription::Subscriber>> =
+                let mut frequency: Option<crate::Value<String>> = None;
+                let mut monitor_arn_list: Option<crate::ValueList<String>> = None;
+                let mut subscribers: Option<crate::ValueList<self::anomaly_subscription::Subscriber>> =
                     None;
-                let mut subscription_name: Option<::Value<String>> = None;
-                let mut threshold: Option<::Value<f64>> = None;
+                let mut subscription_name: Option<crate::Value<String>> = None;
+                let mut threshold: Option<crate::Value<f64>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -246,7 +246,7 @@ impl<'de> ::serde::Deserialize<'de> for AnomalySubscriptionProperties {
     }
 }
 
-impl ::Resource for AnomalySubscription {
+impl crate::Resource for AnomalySubscription {
     type Properties = AnomalySubscriptionProperties;
     const TYPE: &'static str = "AWS::CE::AnomalySubscription";
     fn properties(&self) -> &AnomalySubscriptionProperties {
@@ -257,7 +257,7 @@ impl ::Resource for AnomalySubscription {
     }
 }
 
-impl ::private::Sealed for AnomalySubscription {}
+impl crate::private::Sealed for AnomalySubscription {}
 
 impl From<AnomalySubscriptionProperties> for AnomalySubscription {
     fn from(properties: AnomalySubscriptionProperties) -> AnomalySubscription {
@@ -278,27 +278,27 @@ pub struct CostCategoryProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_value: Option<::Value<String>>,
+    pub default_value: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`RuleVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-ruleversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rule_version: ::Value<String>,
+    pub rule_version: crate::Value<String>,
     /// Property [`Rules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-rules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rules: ::Value<String>,
+    pub rules: crate::Value<String>,
     /// Property [`SplitChargeRules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-splitchargerules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub split_charge_rules: Option<::Value<String>>,
+    pub split_charge_rules: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for CostCategoryProperties {
@@ -338,11 +338,11 @@ impl<'de> ::serde::Deserialize<'de> for CostCategoryProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut default_value: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut rule_version: Option<::Value<String>> = None;
-                let mut rules: Option<::Value<String>> = None;
-                let mut split_charge_rules: Option<::Value<String>> = None;
+                let mut default_value: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut rule_version: Option<crate::Value<String>> = None;
+                let mut rules: Option<crate::Value<String>> = None;
+                let mut split_charge_rules: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -380,7 +380,7 @@ impl<'de> ::serde::Deserialize<'de> for CostCategoryProperties {
     }
 }
 
-impl ::Resource for CostCategory {
+impl crate::Resource for CostCategory {
     type Properties = CostCategoryProperties;
     const TYPE: &'static str = "AWS::CE::CostCategory";
     fn properties(&self) -> &CostCategoryProperties {
@@ -391,7 +391,7 @@ impl ::Resource for CostCategory {
     }
 }
 
-impl ::private::Sealed for CostCategory {}
+impl crate::private::Sealed for CostCategory {}
 
 impl From<CostCategoryProperties> for CostCategory {
     fn from(properties: CostCategoryProperties) -> CostCategory {
@@ -409,20 +409,20 @@ pub mod anomaly_subscription {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub address: ::Value<String>,
+        pub address: crate::Value<String>,
         /// Property [`Status`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ce-anomalysubscription-subscriber.html#cfn-ce-anomalysubscription-subscriber-status).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status: Option<::Value<String>>,
+        pub status: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ce-anomalysubscription-subscriber.html#cfn-ce-anomalysubscription-subscriber-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Subscriber {
+    impl crate::codec::SerializeValue for Subscriber {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Address", &self.address)?;
@@ -434,7 +434,7 @@ pub mod anomaly_subscription {
         }
     }
 
-    impl ::codec::DeserializeValue for Subscriber {
+    impl crate::codec::DeserializeValue for Subscriber {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Subscriber, D::Error> {
             struct Visitor;
 
@@ -449,9 +449,9 @@ pub mod anomaly_subscription {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut address: Option<::Value<String>> = None;
-                    let mut status: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut address: Option<crate::Value<String>> = None;
+                    let mut status: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

@@ -13,22 +13,22 @@ pub struct ContactProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub alias: ::Value<String>,
+    pub alias: crate::Value<String>,
     /// Property [`DisplayName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contact.html#cfn-ssmcontacts-contact-displayname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub display_name: ::Value<String>,
+    pub display_name: crate::Value<String>,
     /// Property [`Plan`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contact.html#cfn-ssmcontacts-contact-plan).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub plan: ::ValueList<self::contact::Stage>,
+    pub plan: crate::ValueList<self::contact::Stage>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contact.html#cfn-ssmcontacts-contact-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for ContactProperties {
@@ -57,10 +57,10 @@ impl<'de> ::serde::Deserialize<'de> for ContactProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut alias: Option<::Value<String>> = None;
-                let mut display_name: Option<::Value<String>> = None;
-                let mut plan: Option<::ValueList<self::contact::Stage>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut alias: Option<crate::Value<String>> = None;
+                let mut display_name: Option<crate::Value<String>> = None;
+                let mut plan: Option<crate::ValueList<self::contact::Stage>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -94,7 +94,7 @@ impl<'de> ::serde::Deserialize<'de> for ContactProperties {
     }
 }
 
-impl ::Resource for Contact {
+impl crate::Resource for Contact {
     type Properties = ContactProperties;
     const TYPE: &'static str = "AWS::SSMContacts::Contact";
     fn properties(&self) -> &ContactProperties {
@@ -105,7 +105,7 @@ impl ::Resource for Contact {
     }
 }
 
-impl ::private::Sealed for Contact {}
+impl crate::private::Sealed for Contact {}
 
 impl From<ContactProperties> for Contact {
     fn from(properties: ContactProperties) -> Contact {
@@ -126,27 +126,27 @@ pub struct ContactChannelProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub channel_address: ::Value<String>,
+    pub channel_address: crate::Value<String>,
     /// Property [`ChannelName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-channelname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub channel_name: ::Value<String>,
+    pub channel_name: crate::Value<String>,
     /// Property [`ChannelType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-channeltype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub channel_type: ::Value<String>,
+    pub channel_type: crate::Value<String>,
     /// Property [`ContactId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-contactid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub contact_id: ::Value<String>,
+    pub contact_id: crate::Value<String>,
     /// Property [`DeferActivation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-deferactivation).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub defer_activation: Option<::Value<bool>>,
+    pub defer_activation: Option<crate::Value<bool>>,
 }
 
 impl ::serde::Serialize for ContactChannelProperties {
@@ -188,11 +188,11 @@ impl<'de> ::serde::Deserialize<'de> for ContactChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut channel_address: Option<::Value<String>> = None;
-                let mut channel_name: Option<::Value<String>> = None;
-                let mut channel_type: Option<::Value<String>> = None;
-                let mut contact_id: Option<::Value<String>> = None;
-                let mut defer_activation: Option<::Value<bool>> = None;
+                let mut channel_address: Option<crate::Value<String>> = None;
+                let mut channel_name: Option<crate::Value<String>> = None;
+                let mut channel_type: Option<crate::Value<String>> = None;
+                let mut contact_id: Option<crate::Value<String>> = None;
+                let mut defer_activation: Option<crate::Value<bool>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -232,7 +232,7 @@ impl<'de> ::serde::Deserialize<'de> for ContactChannelProperties {
     }
 }
 
-impl ::Resource for ContactChannel {
+impl crate::Resource for ContactChannel {
     type Properties = ContactChannelProperties;
     const TYPE: &'static str = "AWS::SSMContacts::ContactChannel";
     fn properties(&self) -> &ContactChannelProperties {
@@ -243,7 +243,7 @@ impl ::Resource for ContactChannel {
     }
 }
 
-impl ::private::Sealed for ContactChannel {}
+impl crate::private::Sealed for ContactChannel {}
 
 impl From<ContactChannelProperties> for ContactChannel {
     fn from(properties: ContactChannelProperties) -> ContactChannel {
@@ -261,15 +261,15 @@ pub mod contact {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub channel_id: ::Value<String>,
+        pub channel_id: crate::Value<String>,
         /// Property [`RetryIntervalInMinutes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-channeltargetinfo.html#cfn-ssmcontacts-contact-channeltargetinfo-retryintervalinminutes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retry_interval_in_minutes: ::Value<u32>,
+        pub retry_interval_in_minutes: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for ChannelTargetInfo {
+    impl crate::codec::SerializeValue for ChannelTargetInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ChannelId", &self.channel_id)?;
@@ -282,7 +282,7 @@ pub mod contact {
         }
     }
 
-    impl ::codec::DeserializeValue for ChannelTargetInfo {
+    impl crate::codec::DeserializeValue for ChannelTargetInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ChannelTargetInfo, D::Error> {
@@ -299,8 +299,8 @@ pub mod contact {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut channel_id: Option<::Value<String>> = None;
-                    let mut retry_interval_in_minutes: Option<::Value<u32>> = None;
+                    let mut channel_id: Option<crate::Value<String>> = None;
+                    let mut retry_interval_in_minutes: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -337,15 +337,15 @@ pub mod contact {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub contact_id: ::Value<String>,
+        pub contact_id: crate::Value<String>,
         /// Property [`IsEssential`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-contacttargetinfo.html#cfn-ssmcontacts-contact-contacttargetinfo-isessential).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_essential: ::Value<bool>,
+        pub is_essential: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for ContactTargetInfo {
+    impl crate::codec::SerializeValue for ContactTargetInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContactId", &self.contact_id)?;
@@ -358,7 +358,7 @@ pub mod contact {
         }
     }
 
-    impl ::codec::DeserializeValue for ContactTargetInfo {
+    impl crate::codec::DeserializeValue for ContactTargetInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ContactTargetInfo, D::Error> {
@@ -375,8 +375,8 @@ pub mod contact {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut contact_id: Option<::Value<String>> = None;
-                    let mut is_essential: Option<::Value<bool>> = None;
+                    let mut contact_id: Option<crate::Value<String>> = None;
+                    let mut is_essential: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -412,15 +412,15 @@ pub mod contact {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration_in_minutes: ::Value<u32>,
+        pub duration_in_minutes: crate::Value<u32>,
         /// Property [`Targets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html#cfn-ssmcontacts-contact-stage-targets).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub targets: Option<::ValueList<Targets>>,
+        pub targets: Option<crate::ValueList<Targets>>,
     }
 
-    impl ::codec::SerializeValue for Stage {
+    impl crate::codec::SerializeValue for Stage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -435,7 +435,7 @@ pub mod contact {
         }
     }
 
-    impl ::codec::DeserializeValue for Stage {
+    impl crate::codec::DeserializeValue for Stage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Stage, D::Error> {
             struct Visitor;
 
@@ -450,8 +450,8 @@ pub mod contact {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration_in_minutes: Option<::Value<u32>> = None;
-                    let mut targets: Option<::ValueList<Targets>> = None;
+                    let mut duration_in_minutes: Option<crate::Value<u32>> = None;
+                    let mut targets: Option<crate::ValueList<Targets>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -486,15 +486,15 @@ pub mod contact {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub channel_target_info: Option<::Value<ChannelTargetInfo>>,
+        pub channel_target_info: Option<crate::Value<ChannelTargetInfo>>,
         /// Property [`ContactTargetInfo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-targets.html#cfn-ssmcontacts-contact-targets-contacttargetinfo).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub contact_target_info: Option<::Value<ContactTargetInfo>>,
+        pub contact_target_info: Option<crate::Value<ContactTargetInfo>>,
     }
 
-    impl ::codec::SerializeValue for Targets {
+    impl crate::codec::SerializeValue for Targets {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref channel_target_info) = self.channel_target_info {
@@ -515,7 +515,7 @@ pub mod contact {
         }
     }
 
-    impl ::codec::DeserializeValue for Targets {
+    impl crate::codec::DeserializeValue for Targets {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Targets, D::Error> {
             struct Visitor;
 
@@ -530,8 +530,8 @@ pub mod contact {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut channel_target_info: Option<::Value<ChannelTargetInfo>> = None;
-                    let mut contact_target_info: Option<::Value<ContactTargetInfo>> = None;
+                    let mut channel_target_info: Option<crate::Value<ChannelTargetInfo>> = None;
+                    let mut contact_target_info: Option<crate::Value<ContactTargetInfo>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
