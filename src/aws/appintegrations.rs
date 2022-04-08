@@ -13,32 +13,32 @@ pub struct DataIntegrationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`KmsKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-kmskey).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key: ::Value<String>,
+    pub kms_key: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`ScheduleConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-scheduleconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub schedule_config: ::Value<self::data_integration::ScheduleConfig>,
+    pub schedule_config: crate::Value<self::data_integration::ScheduleConfig>,
     /// Property [`SourceURI`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-sourceuri).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub source_uri: ::Value<String>,
+    pub source_uri: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for DataIntegrationProperties {
@@ -79,13 +79,13 @@ impl<'de> ::serde::Deserialize<'de> for DataIntegrationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut kms_key: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut schedule_config: Option<::Value<self::data_integration::ScheduleConfig>> =
+                let mut description: Option<crate::Value<String>> = None;
+                let mut kms_key: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut schedule_config: Option<crate::Value<self::data_integration::ScheduleConfig>> =
                     None;
-                let mut source_uri: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut source_uri: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -127,7 +127,7 @@ impl<'de> ::serde::Deserialize<'de> for DataIntegrationProperties {
     }
 }
 
-impl ::Resource for DataIntegration {
+impl crate::Resource for DataIntegration {
     type Properties = DataIntegrationProperties;
     const TYPE: &'static str = "AWS::AppIntegrations::DataIntegration";
     fn properties(&self) -> &DataIntegrationProperties {
@@ -138,7 +138,7 @@ impl ::Resource for DataIntegration {
     }
 }
 
-impl ::private::Sealed for DataIntegration {}
+impl crate::private::Sealed for DataIntegration {}
 
 impl From<DataIntegrationProperties> for DataIntegration {
     fn from(properties: DataIntegrationProperties) -> DataIntegration {
@@ -159,27 +159,27 @@ pub struct EventIntegrationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`EventBridgeBus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-eventbridgebus).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub event_bridge_bus: ::Value<String>,
+    pub event_bridge_bus: crate::Value<String>,
     /// Property [`EventFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-eventfilter).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub event_filter: ::Value<self::event_integration::EventFilter>,
+    pub event_filter: crate::Value<self::event_integration::EventFilter>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for EventIntegrationProperties {
@@ -219,11 +219,11 @@ impl<'de> ::serde::Deserialize<'de> for EventIntegrationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut event_bridge_bus: Option<::Value<String>> = None;
-                let mut event_filter: Option<::Value<self::event_integration::EventFilter>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut event_bridge_bus: Option<crate::Value<String>> = None;
+                let mut event_filter: Option<crate::Value<self::event_integration::EventFilter>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -262,7 +262,7 @@ impl<'de> ::serde::Deserialize<'de> for EventIntegrationProperties {
     }
 }
 
-impl ::Resource for EventIntegration {
+impl crate::Resource for EventIntegration {
     type Properties = EventIntegrationProperties;
     const TYPE: &'static str = "AWS::AppIntegrations::EventIntegration";
     fn properties(&self) -> &EventIntegrationProperties {
@@ -273,7 +273,7 @@ impl ::Resource for EventIntegration {
     }
 }
 
-impl ::private::Sealed for EventIntegration {}
+impl crate::private::Sealed for EventIntegration {}
 
 impl From<EventIntegrationProperties> for EventIntegration {
     fn from(properties: EventIntegrationProperties) -> EventIntegration {
@@ -291,20 +291,20 @@ pub mod data_integration {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub first_execution_from: ::Value<String>,
+        pub first_execution_from: crate::Value<String>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-dataintegration-scheduleconfig.html#cfn-appintegrations-dataintegration-scheduleconfig-object).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
         /// Property [`ScheduleExpression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-dataintegration-scheduleconfig.html#cfn-appintegrations-dataintegration-scheduleconfig-scheduleexpression).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub schedule_expression: ::Value<String>,
+        pub schedule_expression: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ScheduleConfig {
+    impl crate::codec::SerializeValue for ScheduleConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -322,7 +322,7 @@ pub mod data_integration {
         }
     }
 
-    impl ::codec::DeserializeValue for ScheduleConfig {
+    impl crate::codec::DeserializeValue for ScheduleConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScheduleConfig, D::Error> {
@@ -339,9 +339,9 @@ pub mod data_integration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut first_execution_from: Option<::Value<String>> = None;
-                    let mut object: Option<::Value<String>> = None;
-                    let mut schedule_expression: Option<::Value<String>> = None;
+                    let mut first_execution_from: Option<crate::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
+                    let mut schedule_expression: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -386,10 +386,10 @@ pub mod event_integration {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub source: ::Value<String>,
+        pub source: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for EventFilter {
+    impl crate::codec::SerializeValue for EventFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Source", &self.source)?;
@@ -397,7 +397,7 @@ pub mod event_integration {
         }
     }
 
-    impl ::codec::DeserializeValue for EventFilter {
+    impl crate::codec::DeserializeValue for EventFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EventFilter, D::Error> {
             struct Visitor;
 
@@ -412,7 +412,7 @@ pub mod event_integration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source: Option<::Value<String>> = None;
+                    let mut source: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -442,30 +442,30 @@ pub mod event_integration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_association_metadata: Option<::ValueList<Metadata>>,
+        pub client_association_metadata: Option<crate::ValueList<Metadata>>,
         /// Property [`ClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-eventintegrationassociation.html#cfn-appintegrations-eventintegration-eventintegrationassociation-clientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_id: Option<::Value<String>>,
+        pub client_id: Option<crate::Value<String>>,
         /// Property [`EventBridgeRuleName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-eventintegrationassociation.html#cfn-appintegrations-eventintegration-eventintegrationassociation-eventbridgerulename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_bridge_rule_name: Option<::Value<String>>,
+        pub event_bridge_rule_name: Option<crate::Value<String>>,
         /// Property [`EventIntegrationAssociationArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-eventintegrationassociation.html#cfn-appintegrations-eventintegration-eventintegrationassociation-eventintegrationassociationarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_integration_association_arn: Option<::Value<String>>,
+        pub event_integration_association_arn: Option<crate::Value<String>>,
         /// Property [`EventIntegrationAssociationId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-eventintegrationassociation.html#cfn-appintegrations-eventintegration-eventintegrationassociation-eventintegrationassociationid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_integration_association_id: Option<::Value<String>>,
+        pub event_integration_association_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for EventIntegrationAssociation {
+    impl crate::codec::SerializeValue for EventIntegrationAssociation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref client_association_metadata) = self.client_association_metadata {
@@ -507,7 +507,7 @@ pub mod event_integration {
         }
     }
 
-    impl ::codec::DeserializeValue for EventIntegrationAssociation {
+    impl crate::codec::DeserializeValue for EventIntegrationAssociation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EventIntegrationAssociation, D::Error> {
@@ -524,11 +524,11 @@ pub mod event_integration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut client_association_metadata: Option<::ValueList<Metadata>> = None;
-                    let mut client_id: Option<::Value<String>> = None;
-                    let mut event_bridge_rule_name: Option<::Value<String>> = None;
-                    let mut event_integration_association_arn: Option<::Value<String>> = None;
-                    let mut event_integration_association_id: Option<::Value<String>> = None;
+                    let mut client_association_metadata: Option<crate::ValueList<Metadata>> = None;
+                    let mut client_id: Option<crate::Value<String>> = None;
+                    let mut event_bridge_rule_name: Option<crate::Value<String>> = None;
+                    let mut event_integration_association_arn: Option<crate::Value<String>> = None;
+                    let mut event_integration_association_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -578,15 +578,15 @@ pub mod event_integration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-metadata.html#cfn-appintegrations-eventintegration-metadata-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Metadata {
+    impl crate::codec::SerializeValue for Metadata {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -595,7 +595,7 @@ pub mod event_integration {
         }
     }
 
-    impl ::codec::DeserializeValue for Metadata {
+    impl crate::codec::DeserializeValue for Metadata {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Metadata, D::Error> {
             struct Visitor;
 
@@ -610,8 +610,8 @@ pub mod event_integration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

@@ -13,12 +13,12 @@ pub struct CollectionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub collection_id: ::Value<String>,
+    pub collection_id: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-collection.html#cfn-rekognition-collection-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for CollectionProperties {
@@ -47,8 +47,8 @@ impl<'de> ::serde::Deserialize<'de> for CollectionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut collection_id: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut collection_id: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -74,7 +74,7 @@ impl<'de> ::serde::Deserialize<'de> for CollectionProperties {
     }
 }
 
-impl ::Resource for Collection {
+impl crate::Resource for Collection {
     type Properties = CollectionProperties;
     const TYPE: &'static str = "AWS::Rekognition::Collection";
     fn properties(&self) -> &CollectionProperties {
@@ -85,7 +85,7 @@ impl ::Resource for Collection {
     }
 }
 
-impl ::private::Sealed for Collection {}
+impl crate::private::Sealed for Collection {}
 
 impl From<CollectionProperties> for Collection {
     fn from(properties: CollectionProperties) -> Collection {
@@ -106,7 +106,7 @@ pub struct ProjectProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub project_name: ::Value<String>,
+    pub project_name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for ProjectProperties {
@@ -132,7 +132,7 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut project_name: Option<::Value<String>> = None;
+                let mut project_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -154,7 +154,7 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
     }
 }
 
-impl ::Resource for Project {
+impl crate::Resource for Project {
     type Properties = ProjectProperties;
     const TYPE: &'static str = "AWS::Rekognition::Project";
     fn properties(&self) -> &ProjectProperties {
@@ -165,7 +165,7 @@ impl ::Resource for Project {
     }
 }
 
-impl ::private::Sealed for Project {}
+impl crate::private::Sealed for Project {}
 
 impl From<ProjectProperties> for Project {
     fn from(properties: ProjectProperties) -> Project {

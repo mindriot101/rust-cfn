@@ -13,17 +13,17 @@ pub struct ApplicationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_name: Option<::Value<String>>,
+    pub application_name: Option<crate::Value<String>>,
     /// Property [`ComputePlatform`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub compute_platform: Option<::Value<String>>,
+    pub compute_platform: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for ApplicationProperties {
@@ -65,9 +65,9 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_name: Option<::Value<String>> = None;
-                let mut compute_platform: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut application_name: Option<crate::Value<String>> = None;
+                let mut compute_platform: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -96,7 +96,7 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
     }
 }
 
-impl ::Resource for Application {
+impl crate::Resource for Application {
     type Properties = ApplicationProperties;
     const TYPE: &'static str = "AWS::CodeDeploy::Application";
     fn properties(&self) -> &ApplicationProperties {
@@ -107,7 +107,7 @@ impl ::Resource for Application {
     }
 }
 
-impl ::private::Sealed for Application {}
+impl crate::private::Sealed for Application {}
 
 impl From<ApplicationProperties> for Application {
     fn from(properties: ApplicationProperties) -> Application {
@@ -128,22 +128,22 @@ pub struct DeploymentConfigProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub compute_platform: Option<::Value<String>>,
+    pub compute_platform: Option<crate::Value<String>>,
     /// Property [`DeploymentConfigName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-deploymentconfigname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub deployment_config_name: Option<::Value<String>>,
+    pub deployment_config_name: Option<crate::Value<String>>,
     /// Property [`MinimumHealthyHosts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub minimum_healthy_hosts: Option<::Value<self::deployment_config::MinimumHealthyHosts>>,
+    pub minimum_healthy_hosts: Option<crate::Value<self::deployment_config::MinimumHealthyHosts>>,
     /// Property [`TrafficRoutingConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-trafficroutingconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub traffic_routing_config: Option<::Value<self::deployment_config::TrafficRoutingConfig>>,
+    pub traffic_routing_config: Option<crate::Value<self::deployment_config::TrafficRoutingConfig>>,
 }
 
 impl ::serde::Serialize for DeploymentConfigProperties {
@@ -198,13 +198,13 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentConfigProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut compute_platform: Option<::Value<String>> = None;
-                let mut deployment_config_name: Option<::Value<String>> = None;
+                let mut compute_platform: Option<crate::Value<String>> = None;
+                let mut deployment_config_name: Option<crate::Value<String>> = None;
                 let mut minimum_healthy_hosts: Option<
-                    ::Value<self::deployment_config::MinimumHealthyHosts>,
+                    crate::Value<self::deployment_config::MinimumHealthyHosts>,
                 > = None;
                 let mut traffic_routing_config: Option<
-                    ::Value<self::deployment_config::TrafficRoutingConfig>,
+                    crate::Value<self::deployment_config::TrafficRoutingConfig>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -238,7 +238,7 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentConfigProperties {
     }
 }
 
-impl ::Resource for DeploymentConfig {
+impl crate::Resource for DeploymentConfig {
     type Properties = DeploymentConfigProperties;
     const TYPE: &'static str = "AWS::CodeDeploy::DeploymentConfig";
     fn properties(&self) -> &DeploymentConfigProperties {
@@ -249,7 +249,7 @@ impl ::Resource for DeploymentConfig {
     }
 }
 
-impl ::private::Sealed for DeploymentConfig {}
+impl crate::private::Sealed for DeploymentConfig {}
 
 impl From<DeploymentConfigProperties> for DeploymentConfig {
     fn from(properties: DeploymentConfigProperties) -> DeploymentConfig {
@@ -270,99 +270,99 @@ pub struct DeploymentGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub alarm_configuration: Option<::Value<self::deployment_group::AlarmConfiguration>>,
+    pub alarm_configuration: Option<crate::Value<self::deployment_group::AlarmConfiguration>>,
     /// Property [`ApplicationName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-applicationname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_name: ::Value<String>,
+    pub application_name: crate::Value<String>,
     /// Property [`AutoRollbackConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub auto_rollback_configuration:
-        Option<::Value<self::deployment_group::AutoRollbackConfiguration>>,
+        Option<crate::Value<self::deployment_group::AutoRollbackConfiguration>>,
     /// Property [`AutoScalingGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub auto_scaling_groups: Option<::ValueList<String>>,
+    pub auto_scaling_groups: Option<crate::ValueList<String>>,
     /// Property [`BlueGreenDeploymentConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub blue_green_deployment_configuration:
-        Option<::Value<self::deployment_group::BlueGreenDeploymentConfiguration>>,
+        Option<crate::Value<self::deployment_group::BlueGreenDeploymentConfiguration>>,
     /// Property [`Deployment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deployment).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub deployment: Option<::Value<self::deployment_group::Deployment>>,
+    pub deployment: Option<crate::Value<self::deployment_group::Deployment>>,
     /// Property [`DeploymentConfigName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentconfigname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub deployment_config_name: Option<::Value<String>>,
+    pub deployment_config_name: Option<crate::Value<String>>,
     /// Property [`DeploymentGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentgroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub deployment_group_name: Option<::Value<String>>,
+    pub deployment_group_name: Option<crate::Value<String>>,
     /// Property [`DeploymentStyle`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub deployment_style: Option<::Value<self::deployment_group::DeploymentStyle>>,
+    pub deployment_style: Option<crate::Value<self::deployment_group::DeploymentStyle>>,
     /// Property [`ECSServices`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ecsservices).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ecs_services: Option<::ValueList<self::deployment_group::ECSService>>,
+    pub ecs_services: Option<crate::ValueList<self::deployment_group::ECSService>>,
     /// Property [`Ec2TagFilters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ec2_tag_filters: Option<::ValueList<self::deployment_group::EC2TagFilter>>,
+    pub ec2_tag_filters: Option<crate::ValueList<self::deployment_group::EC2TagFilter>>,
     /// Property [`Ec2TagSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ec2_tag_set: Option<::Value<self::deployment_group::EC2TagSet>>,
+    pub ec2_tag_set: Option<crate::Value<self::deployment_group::EC2TagSet>>,
     /// Property [`LoadBalancerInfo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub load_balancer_info: Option<::Value<self::deployment_group::LoadBalancerInfo>>,
+    pub load_balancer_info: Option<crate::Value<self::deployment_group::LoadBalancerInfo>>,
     /// Property [`OnPremisesInstanceTagFilters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisesinstancetagfilters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub on_premises_instance_tag_filters: Option<::ValueList<self::deployment_group::TagFilter>>,
+    pub on_premises_instance_tag_filters: Option<crate::ValueList<self::deployment_group::TagFilter>>,
     /// Property [`OnPremisesTagSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub on_premises_tag_set: Option<::Value<self::deployment_group::OnPremisesTagSet>>,
+    pub on_premises_tag_set: Option<crate::Value<self::deployment_group::OnPremisesTagSet>>,
     /// Property [`OutdatedInstancesStrategy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-outdatedinstancesstrategy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub outdated_instances_strategy: Option<::Value<String>>,
+    pub outdated_instances_strategy: Option<crate::Value<String>>,
     /// Property [`ServiceRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub service_role_arn: ::Value<String>,
+    pub service_role_arn: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`TriggerConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub trigger_configurations: Option<::ValueList<self::deployment_group::TriggerConfig>>,
+    pub trigger_configurations: Option<crate::ValueList<self::deployment_group::TriggerConfig>>,
 }
 
 impl ::serde::Serialize for DeploymentGroupProperties {
@@ -505,40 +505,40 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentGroupProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut alarm_configuration: Option<
-                    ::Value<self::deployment_group::AlarmConfiguration>,
+                    crate::Value<self::deployment_group::AlarmConfiguration>,
                 > = None;
-                let mut application_name: Option<::Value<String>> = None;
+                let mut application_name: Option<crate::Value<String>> = None;
                 let mut auto_rollback_configuration: Option<
-                    ::Value<self::deployment_group::AutoRollbackConfiguration>,
+                    crate::Value<self::deployment_group::AutoRollbackConfiguration>,
                 > = None;
-                let mut auto_scaling_groups: Option<::ValueList<String>> = None;
+                let mut auto_scaling_groups: Option<crate::ValueList<String>> = None;
                 let mut blue_green_deployment_configuration: Option<
-                    ::Value<self::deployment_group::BlueGreenDeploymentConfiguration>,
+                    crate::Value<self::deployment_group::BlueGreenDeploymentConfiguration>,
                 > = None;
-                let mut deployment: Option<::Value<self::deployment_group::Deployment>> = None;
-                let mut deployment_config_name: Option<::Value<String>> = None;
-                let mut deployment_group_name: Option<::Value<String>> = None;
-                let mut deployment_style: Option<::Value<self::deployment_group::DeploymentStyle>> =
+                let mut deployment: Option<crate::Value<self::deployment_group::Deployment>> = None;
+                let mut deployment_config_name: Option<crate::Value<String>> = None;
+                let mut deployment_group_name: Option<crate::Value<String>> = None;
+                let mut deployment_style: Option<crate::Value<self::deployment_group::DeploymentStyle>> =
                     None;
-                let mut ecs_services: Option<::ValueList<self::deployment_group::ECSService>> =
+                let mut ecs_services: Option<crate::ValueList<self::deployment_group::ECSService>> =
                     None;
-                let mut ec2_tag_filters: Option<::ValueList<self::deployment_group::EC2TagFilter>> =
+                let mut ec2_tag_filters: Option<crate::ValueList<self::deployment_group::EC2TagFilter>> =
                     None;
-                let mut ec2_tag_set: Option<::Value<self::deployment_group::EC2TagSet>> = None;
+                let mut ec2_tag_set: Option<crate::Value<self::deployment_group::EC2TagSet>> = None;
                 let mut load_balancer_info: Option<
-                    ::Value<self::deployment_group::LoadBalancerInfo>,
+                    crate::Value<self::deployment_group::LoadBalancerInfo>,
                 > = None;
                 let mut on_premises_instance_tag_filters: Option<
-                    ::ValueList<self::deployment_group::TagFilter>,
+                    crate::ValueList<self::deployment_group::TagFilter>,
                 > = None;
                 let mut on_premises_tag_set: Option<
-                    ::Value<self::deployment_group::OnPremisesTagSet>,
+                    crate::Value<self::deployment_group::OnPremisesTagSet>,
                 > = None;
-                let mut outdated_instances_strategy: Option<::Value<String>> = None;
-                let mut service_role_arn: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut outdated_instances_strategy: Option<crate::Value<String>> = None;
+                let mut service_role_arn: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
                 let mut trigger_configurations: Option<
-                    ::ValueList<self::deployment_group::TriggerConfig>,
+                    crate::ValueList<self::deployment_group::TriggerConfig>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -638,7 +638,7 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentGroupProperties {
     }
 }
 
-impl ::Resource for DeploymentGroup {
+impl crate::Resource for DeploymentGroup {
     type Properties = DeploymentGroupProperties;
     const TYPE: &'static str = "AWS::CodeDeploy::DeploymentGroup";
     fn properties(&self) -> &DeploymentGroupProperties {
@@ -649,7 +649,7 @@ impl ::Resource for DeploymentGroup {
     }
 }
 
-impl ::private::Sealed for DeploymentGroup {}
+impl crate::private::Sealed for DeploymentGroup {}
 
 impl From<DeploymentGroupProperties> for DeploymentGroup {
     fn from(properties: DeploymentGroupProperties) -> DeploymentGroup {
@@ -667,15 +667,15 @@ pub mod deployment_config {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-minimumhealthyhosts.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<u32>,
+        pub value: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for MinimumHealthyHosts {
+    impl crate::codec::SerializeValue for MinimumHealthyHosts {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", &self.r#type)?;
@@ -684,7 +684,7 @@ pub mod deployment_config {
         }
     }
 
-    impl ::codec::DeserializeValue for MinimumHealthyHosts {
+    impl crate::codec::DeserializeValue for MinimumHealthyHosts {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MinimumHealthyHosts, D::Error> {
@@ -701,8 +701,8 @@ pub mod deployment_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<u32>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -736,15 +736,15 @@ pub mod deployment_config {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub canary_interval: ::Value<u32>,
+        pub canary_interval: crate::Value<u32>,
         /// Property [`CanaryPercentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary-canarypercentage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub canary_percentage: ::Value<u32>,
+        pub canary_percentage: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for TimeBasedCanary {
+    impl crate::codec::SerializeValue for TimeBasedCanary {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -761,7 +761,7 @@ pub mod deployment_config {
         }
     }
 
-    impl ::codec::DeserializeValue for TimeBasedCanary {
+    impl crate::codec::DeserializeValue for TimeBasedCanary {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TimeBasedCanary, D::Error> {
@@ -778,8 +778,8 @@ pub mod deployment_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut canary_interval: Option<::Value<u32>> = None;
-                    let mut canary_percentage: Option<::Value<u32>> = None;
+                    let mut canary_interval: Option<crate::Value<u32>> = None;
+                    let mut canary_percentage: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -815,15 +815,15 @@ pub mod deployment_config {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub linear_interval: ::Value<u32>,
+        pub linear_interval: crate::Value<u32>,
         /// Property [`LinearPercentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear-linearpercentage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub linear_percentage: ::Value<u32>,
+        pub linear_percentage: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for TimeBasedLinear {
+    impl crate::codec::SerializeValue for TimeBasedLinear {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -840,7 +840,7 @@ pub mod deployment_config {
         }
     }
 
-    impl ::codec::DeserializeValue for TimeBasedLinear {
+    impl crate::codec::DeserializeValue for TimeBasedLinear {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TimeBasedLinear, D::Error> {
@@ -857,8 +857,8 @@ pub mod deployment_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut linear_interval: Option<::Value<u32>> = None;
-                    let mut linear_percentage: Option<::Value<u32>> = None;
+                    let mut linear_interval: Option<crate::Value<u32>> = None;
+                    let mut linear_percentage: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -894,20 +894,20 @@ pub mod deployment_config {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_based_canary: Option<::Value<TimeBasedCanary>>,
+        pub time_based_canary: Option<crate::Value<TimeBasedCanary>>,
         /// Property [`TimeBasedLinear`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_based_linear: Option<::Value<TimeBasedLinear>>,
+        pub time_based_linear: Option<crate::Value<TimeBasedLinear>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TrafficRoutingConfig {
+    impl crate::codec::SerializeValue for TrafficRoutingConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref time_based_canary) = self.time_based_canary {
@@ -929,7 +929,7 @@ pub mod deployment_config {
         }
     }
 
-    impl ::codec::DeserializeValue for TrafficRoutingConfig {
+    impl crate::codec::DeserializeValue for TrafficRoutingConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TrafficRoutingConfig, D::Error> {
@@ -946,9 +946,9 @@ pub mod deployment_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut time_based_canary: Option<::Value<TimeBasedCanary>> = None;
-                    let mut time_based_linear: Option<::Value<TimeBasedLinear>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut time_based_canary: Option<crate::Value<TimeBasedCanary>> = None;
+                    let mut time_based_linear: Option<crate::Value<TimeBasedLinear>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -990,10 +990,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Alarm {
+    impl crate::codec::SerializeValue for Alarm {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -1003,7 +1003,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for Alarm {
+    impl crate::codec::DeserializeValue for Alarm {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Alarm, D::Error> {
             struct Visitor;
 
@@ -1018,7 +1018,7 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1046,20 +1046,20 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alarms: Option<::ValueList<Alarm>>,
+        pub alarms: Option<crate::ValueList<Alarm>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<::Value<bool>>,
+        pub enabled: Option<crate::Value<bool>>,
         /// Property [`IgnorePollAlarmFailure`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-ignorepollalarmfailure).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ignore_poll_alarm_failure: Option<::Value<bool>>,
+        pub ignore_poll_alarm_failure: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for AlarmConfiguration {
+    impl crate::codec::SerializeValue for AlarmConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref alarms) = self.alarms {
@@ -1079,7 +1079,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for AlarmConfiguration {
+    impl crate::codec::DeserializeValue for AlarmConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AlarmConfiguration, D::Error> {
@@ -1096,9 +1096,9 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alarms: Option<::ValueList<Alarm>> = None;
-                    let mut enabled: Option<::Value<bool>> = None;
-                    let mut ignore_poll_alarm_failure: Option<::Value<bool>> = None;
+                    let mut alarms: Option<crate::ValueList<Alarm>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
+                    let mut ignore_poll_alarm_failure: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1137,15 +1137,15 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<::Value<bool>>,
+        pub enabled: Option<crate::Value<bool>>,
         /// Property [`Events`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration-events).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub events: Option<::ValueList<String>>,
+        pub events: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for AutoRollbackConfiguration {
+    impl crate::codec::SerializeValue for AutoRollbackConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enabled) = self.enabled {
@@ -1158,7 +1158,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for AutoRollbackConfiguration {
+    impl crate::codec::DeserializeValue for AutoRollbackConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AutoRollbackConfiguration, D::Error> {
@@ -1175,8 +1175,8 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<::Value<bool>> = None;
-                    let mut events: Option<::ValueList<String>> = None;
+                    let mut enabled: Option<crate::Value<bool>> = None;
+                    let mut events: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1210,21 +1210,21 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub deployment_ready_option: Option<::Value<DeploymentReadyOption>>,
+        pub deployment_ready_option: Option<crate::Value<DeploymentReadyOption>>,
         /// Property [`GreenFleetProvisioningOption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-greenfleetprovisioningoption).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub green_fleet_provisioning_option: Option<::Value<GreenFleetProvisioningOption>>,
+        pub green_fleet_provisioning_option: Option<crate::Value<GreenFleetProvisioningOption>>,
         /// Property [`TerminateBlueInstancesOnDeploymentSuccess`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-terminateblueinstancesondeploymentsuccess).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub terminate_blue_instances_on_deployment_success:
-            Option<::Value<BlueInstanceTerminationOption>>,
+            Option<crate::Value<BlueInstanceTerminationOption>>,
     }
 
-    impl ::codec::SerializeValue for BlueGreenDeploymentConfiguration {
+    impl crate::codec::SerializeValue for BlueGreenDeploymentConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref deployment_ready_option) = self.deployment_ready_option {
@@ -1255,7 +1255,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for BlueGreenDeploymentConfiguration {
+    impl crate::codec::DeserializeValue for BlueGreenDeploymentConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BlueGreenDeploymentConfiguration, D::Error> {
@@ -1272,12 +1272,12 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut deployment_ready_option: Option<::Value<DeploymentReadyOption>> = None;
+                    let mut deployment_ready_option: Option<crate::Value<DeploymentReadyOption>> = None;
                     let mut green_fleet_provisioning_option: Option<
-                        ::Value<GreenFleetProvisioningOption>,
+                        crate::Value<GreenFleetProvisioningOption>,
                     > = None;
                     let mut terminate_blue_instances_on_deployment_success: Option<
-                        ::Value<BlueInstanceTerminationOption>,
+                        crate::Value<BlueInstanceTerminationOption>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -1320,15 +1320,15 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: Option<::Value<String>>,
+        pub action: Option<crate::Value<String>>,
         /// Property [`TerminationWaitTimeInMinutes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-terminationwaittimeinminutes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub termination_wait_time_in_minutes: Option<::Value<u32>>,
+        pub termination_wait_time_in_minutes: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for BlueInstanceTerminationOption {
+    impl crate::codec::SerializeValue for BlueInstanceTerminationOption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action) = self.action {
@@ -1347,7 +1347,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for BlueInstanceTerminationOption {
+    impl crate::codec::DeserializeValue for BlueInstanceTerminationOption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BlueInstanceTerminationOption, D::Error> {
@@ -1364,8 +1364,8 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<String>> = None;
-                    let mut termination_wait_time_in_minutes: Option<::Value<u32>> = None;
+                    let mut action: Option<crate::Value<String>> = None;
+                    let mut termination_wait_time_in_minutes: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1400,20 +1400,20 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<::Value<String>>,
+        pub description: Option<crate::Value<String>>,
         /// Property [`IgnoreApplicationStopFailures`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-ignoreapplicationstopfailures).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ignore_application_stop_failures: Option<::Value<bool>>,
+        pub ignore_application_stop_failures: Option<crate::Value<bool>>,
         /// Property [`Revision`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub revision: ::Value<RevisionLocation>,
+        pub revision: crate::Value<RevisionLocation>,
     }
 
-    impl ::codec::SerializeValue for Deployment {
+    impl crate::codec::SerializeValue for Deployment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -1433,7 +1433,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for Deployment {
+    impl crate::codec::DeserializeValue for Deployment {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Deployment, D::Error> {
             struct Visitor;
 
@@ -1448,9 +1448,9 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<::Value<String>> = None;
-                    let mut ignore_application_stop_failures: Option<::Value<bool>> = None;
-                    let mut revision: Option<::Value<RevisionLocation>> = None;
+                    let mut description: Option<crate::Value<String>> = None;
+                    let mut ignore_application_stop_failures: Option<crate::Value<bool>> = None;
+                    let mut revision: Option<crate::Value<RevisionLocation>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1489,15 +1489,15 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action_on_timeout: Option<::Value<String>>,
+        pub action_on_timeout: Option<crate::Value<String>>,
         /// Property [`WaitTimeInMinutes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-waittimeinminutes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub wait_time_in_minutes: Option<::Value<u32>>,
+        pub wait_time_in_minutes: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for DeploymentReadyOption {
+    impl crate::codec::SerializeValue for DeploymentReadyOption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action_on_timeout) = self.action_on_timeout {
@@ -1518,7 +1518,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for DeploymentReadyOption {
+    impl crate::codec::DeserializeValue for DeploymentReadyOption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DeploymentReadyOption, D::Error> {
@@ -1535,8 +1535,8 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action_on_timeout: Option<::Value<String>> = None;
-                    let mut wait_time_in_minutes: Option<::Value<u32>> = None;
+                    let mut action_on_timeout: Option<crate::Value<String>> = None;
+                    let mut wait_time_in_minutes: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1571,15 +1571,15 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub deployment_option: Option<::Value<String>>,
+        pub deployment_option: Option<crate::Value<String>>,
         /// Property [`DeploymentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymenttype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub deployment_type: Option<::Value<String>>,
+        pub deployment_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DeploymentStyle {
+    impl crate::codec::SerializeValue for DeploymentStyle {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref deployment_option) = self.deployment_option {
@@ -1600,7 +1600,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for DeploymentStyle {
+    impl crate::codec::DeserializeValue for DeploymentStyle {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DeploymentStyle, D::Error> {
@@ -1617,8 +1617,8 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut deployment_option: Option<::Value<String>> = None;
-                    let mut deployment_type: Option<::Value<String>> = None;
+                    let mut deployment_option: Option<crate::Value<String>> = None;
+                    let mut deployment_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1652,20 +1652,20 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for EC2TagFilter {
+    impl crate::codec::SerializeValue for EC2TagFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key) = self.key {
@@ -1681,7 +1681,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for EC2TagFilter {
+    impl crate::codec::DeserializeValue for EC2TagFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EC2TagFilter, D::Error> {
             struct Visitor;
 
@@ -1696,9 +1696,9 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1736,10 +1736,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ec2_tag_set_list: Option<::ValueList<EC2TagSetListObject>>,
+        pub ec2_tag_set_list: Option<crate::ValueList<EC2TagSetListObject>>,
     }
 
-    impl ::codec::SerializeValue for EC2TagSet {
+    impl crate::codec::SerializeValue for EC2TagSet {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ec2_tag_set_list) = self.ec2_tag_set_list {
@@ -1753,7 +1753,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for EC2TagSet {
+    impl crate::codec::DeserializeValue for EC2TagSet {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EC2TagSet, D::Error> {
             struct Visitor;
 
@@ -1768,7 +1768,7 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ec2_tag_set_list: Option<::ValueList<EC2TagSetListObject>> = None;
+                    let mut ec2_tag_set_list: Option<crate::ValueList<EC2TagSetListObject>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1798,10 +1798,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ec2_tag_group: Option<::ValueList<EC2TagFilter>>,
+        pub ec2_tag_group: Option<crate::ValueList<EC2TagFilter>>,
     }
 
-    impl ::codec::SerializeValue for EC2TagSetListObject {
+    impl crate::codec::SerializeValue for EC2TagSetListObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ec2_tag_group) = self.ec2_tag_group {
@@ -1815,7 +1815,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for EC2TagSetListObject {
+    impl crate::codec::DeserializeValue for EC2TagSetListObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EC2TagSetListObject, D::Error> {
@@ -1832,7 +1832,7 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ec2_tag_group: Option<::ValueList<EC2TagFilter>> = None;
+                    let mut ec2_tag_group: Option<crate::ValueList<EC2TagFilter>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1862,15 +1862,15 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_name: ::Value<String>,
+        pub cluster_name: crate::Value<String>,
         /// Property [`ServiceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-servicename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_name: ::Value<String>,
+        pub service_name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ECSService {
+    impl crate::codec::SerializeValue for ECSService {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1887,7 +1887,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for ECSService {
+    impl crate::codec::DeserializeValue for ECSService {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ECSService, D::Error> {
             struct Visitor;
 
@@ -1902,8 +1902,8 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_name: Option<::Value<String>> = None;
-                    let mut service_name: Option<::Value<String>> = None;
+                    let mut cluster_name: Option<crate::Value<String>> = None;
+                    let mut service_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1939,10 +1939,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ELBInfo {
+    impl crate::codec::SerializeValue for ELBInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -1952,7 +1952,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for ELBInfo {
+    impl crate::codec::DeserializeValue for ELBInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ELBInfo, D::Error> {
             struct Visitor;
 
@@ -1967,7 +1967,7 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1995,15 +1995,15 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub commit_id: ::Value<String>,
+        pub commit_id: crate::Value<String>,
         /// Property [`Repository`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-repository).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub repository: ::Value<String>,
+        pub repository: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for GitHubLocation {
+    impl crate::codec::SerializeValue for GitHubLocation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CommitId", &self.commit_id)?;
@@ -2012,7 +2012,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for GitHubLocation {
+    impl crate::codec::DeserializeValue for GitHubLocation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GitHubLocation, D::Error> {
@@ -2029,8 +2029,8 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut commit_id: Option<::Value<String>> = None;
-                    let mut repository: Option<::Value<String>> = None;
+                    let mut commit_id: Option<crate::Value<String>> = None;
+                    let mut repository: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2066,10 +2066,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: Option<::Value<String>>,
+        pub action: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for GreenFleetProvisioningOption {
+    impl crate::codec::SerializeValue for GreenFleetProvisioningOption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action) = self.action {
@@ -2079,7 +2079,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for GreenFleetProvisioningOption {
+    impl crate::codec::DeserializeValue for GreenFleetProvisioningOption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GreenFleetProvisioningOption, D::Error> {
@@ -2096,7 +2096,7 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<String>> = None;
+                    let mut action: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2124,20 +2124,20 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub elb_info_list: Option<::ValueList<ELBInfo>>,
+        pub elb_info_list: Option<crate::ValueList<ELBInfo>>,
         /// Property [`TargetGroupInfoList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_group_info_list: Option<::ValueList<TargetGroupInfo>>,
+        pub target_group_info_list: Option<crate::ValueList<TargetGroupInfo>>,
         /// Property [`TargetGroupPairInfoList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgrouppairinfolist).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_group_pair_info_list: Option<::ValueList<TargetGroupPairInfo>>,
+        pub target_group_pair_info_list: Option<crate::ValueList<TargetGroupPairInfo>>,
     }
 
-    impl ::codec::SerializeValue for LoadBalancerInfo {
+    impl crate::codec::SerializeValue for LoadBalancerInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref elb_info_list) = self.elb_info_list {
@@ -2165,7 +2165,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for LoadBalancerInfo {
+    impl crate::codec::DeserializeValue for LoadBalancerInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LoadBalancerInfo, D::Error> {
@@ -2182,9 +2182,9 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut elb_info_list: Option<::ValueList<ELBInfo>> = None;
-                    let mut target_group_info_list: Option<::ValueList<TargetGroupInfo>> = None;
-                    let mut target_group_pair_info_list: Option<::ValueList<TargetGroupPairInfo>> =
+                    let mut elb_info_list: Option<crate::ValueList<ELBInfo>> = None;
+                    let mut target_group_info_list: Option<crate::ValueList<TargetGroupInfo>> = None;
+                    let mut target_group_pair_info_list: Option<crate::ValueList<TargetGroupPairInfo>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -2225,10 +2225,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_premises_tag_set_list: Option<::ValueList<OnPremisesTagSetListObject>>,
+        pub on_premises_tag_set_list: Option<crate::ValueList<OnPremisesTagSetListObject>>,
     }
 
-    impl ::codec::SerializeValue for OnPremisesTagSet {
+    impl crate::codec::SerializeValue for OnPremisesTagSet {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref on_premises_tag_set_list) = self.on_premises_tag_set_list {
@@ -2242,7 +2242,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for OnPremisesTagSet {
+    impl crate::codec::DeserializeValue for OnPremisesTagSet {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OnPremisesTagSet, D::Error> {
@@ -2260,7 +2260,7 @@ pub mod deployment_group {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut on_premises_tag_set_list: Option<
-                        ::ValueList<OnPremisesTagSetListObject>,
+                        crate::ValueList<OnPremisesTagSetListObject>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2292,10 +2292,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_premises_tag_group: Option<::ValueList<TagFilter>>,
+        pub on_premises_tag_group: Option<crate::ValueList<TagFilter>>,
     }
 
-    impl ::codec::SerializeValue for OnPremisesTagSetListObject {
+    impl crate::codec::SerializeValue for OnPremisesTagSetListObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref on_premises_tag_group) = self.on_premises_tag_group {
@@ -2309,7 +2309,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for OnPremisesTagSetListObject {
+    impl crate::codec::DeserializeValue for OnPremisesTagSetListObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OnPremisesTagSetListObject, D::Error> {
@@ -2326,7 +2326,7 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut on_premises_tag_group: Option<::ValueList<TagFilter>> = None;
+                    let mut on_premises_tag_group: Option<crate::ValueList<TagFilter>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2357,20 +2357,20 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub git_hub_location: Option<::Value<GitHubLocation>>,
+        pub git_hub_location: Option<crate::Value<GitHubLocation>>,
         /// Property [`RevisionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-revisiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub revision_type: Option<::Value<String>>,
+        pub revision_type: Option<crate::Value<String>>,
         /// Property [`S3Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_location: Option<::Value<S3Location>>,
+        pub s3_location: Option<crate::Value<S3Location>>,
     }
 
-    impl ::codec::SerializeValue for RevisionLocation {
+    impl crate::codec::SerializeValue for RevisionLocation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref git_hub_location) = self.git_hub_location {
@@ -2394,7 +2394,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for RevisionLocation {
+    impl crate::codec::DeserializeValue for RevisionLocation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RevisionLocation, D::Error> {
@@ -2411,9 +2411,9 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut git_hub_location: Option<::Value<GitHubLocation>> = None;
-                    let mut revision_type: Option<::Value<String>> = None;
-                    let mut s3_location: Option<::Value<S3Location>> = None;
+                    let mut git_hub_location: Option<crate::Value<GitHubLocation>> = None;
+                    let mut revision_type: Option<crate::Value<String>> = None;
+                    let mut s3_location: Option<crate::Value<S3Location>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2451,30 +2451,30 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: ::Value<String>,
+        pub bucket: crate::Value<String>,
         /// Property [`BundleType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-bundletype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bundle_type: Option<::Value<String>>,
+        pub bundle_type: Option<crate::Value<String>>,
         /// Property [`ETag`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-etag).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub e_tag: Option<::Value<String>>,
+        pub e_tag: Option<crate::Value<String>>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<::Value<String>>,
+        pub version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3Location {
+    impl crate::codec::SerializeValue for S3Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -2492,7 +2492,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for S3Location {
+    impl crate::codec::DeserializeValue for S3Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Location, D::Error> {
             struct Visitor;
 
@@ -2507,11 +2507,11 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut bundle_type: Option<::Value<String>> = None;
-                    let mut e_tag: Option<::Value<String>> = None;
-                    let mut key: Option<::Value<String>> = None;
-                    let mut version: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut bundle_type: Option<crate::Value<String>> = None;
+                    let mut e_tag: Option<crate::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2557,20 +2557,20 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<::Value<String>>,
+        pub key: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html#cfn-codedeploy-deploymentgroup-tagfilter-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html#cfn-codedeploy-deploymentgroup-tagfilter-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for TagFilter {
+    impl crate::codec::SerializeValue for TagFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key) = self.key {
@@ -2586,7 +2586,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for TagFilter {
+    impl crate::codec::DeserializeValue for TagFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TagFilter, D::Error> {
             struct Visitor;
 
@@ -2601,9 +2601,9 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2641,10 +2641,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for TargetGroupInfo {
+    impl crate::codec::SerializeValue for TargetGroupInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -2654,7 +2654,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for TargetGroupInfo {
+    impl crate::codec::DeserializeValue for TargetGroupInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetGroupInfo, D::Error> {
@@ -2671,7 +2671,7 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2699,20 +2699,20 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prod_traffic_route: Option<::Value<TrafficRoute>>,
+        pub prod_traffic_route: Option<crate::Value<TrafficRoute>>,
         /// Property [`TargetGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-targetgroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_groups: Option<::ValueList<TargetGroupInfo>>,
+        pub target_groups: Option<crate::ValueList<TargetGroupInfo>>,
         /// Property [`TestTrafficRoute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-testtrafficroute).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub test_traffic_route: Option<::Value<TrafficRoute>>,
+        pub test_traffic_route: Option<crate::Value<TrafficRoute>>,
     }
 
-    impl ::codec::SerializeValue for TargetGroupPairInfo {
+    impl crate::codec::SerializeValue for TargetGroupPairInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref prod_traffic_route) = self.prod_traffic_route {
@@ -2740,7 +2740,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for TargetGroupPairInfo {
+    impl crate::codec::DeserializeValue for TargetGroupPairInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetGroupPairInfo, D::Error> {
@@ -2757,9 +2757,9 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut prod_traffic_route: Option<::Value<TrafficRoute>> = None;
-                    let mut target_groups: Option<::ValueList<TargetGroupInfo>> = None;
-                    let mut test_traffic_route: Option<::Value<TrafficRoute>> = None;
+                    let mut prod_traffic_route: Option<crate::Value<TrafficRoute>> = None;
+                    let mut target_groups: Option<crate::ValueList<TargetGroupInfo>> = None;
+                    let mut test_traffic_route: Option<crate::Value<TrafficRoute>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2797,10 +2797,10 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub listener_arns: Option<::ValueList<String>>,
+        pub listener_arns: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for TrafficRoute {
+    impl crate::codec::SerializeValue for TrafficRoute {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref listener_arns) = self.listener_arns {
@@ -2814,7 +2814,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for TrafficRoute {
+    impl crate::codec::DeserializeValue for TrafficRoute {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TrafficRoute, D::Error> {
             struct Visitor;
 
@@ -2829,7 +2829,7 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut listener_arns: Option<::ValueList<String>> = None;
+                    let mut listener_arns: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2859,20 +2859,20 @@ pub mod deployment_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub trigger_events: Option<::ValueList<String>>,
+        pub trigger_events: Option<crate::ValueList<String>>,
         /// Property [`TriggerName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggername).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub trigger_name: Option<::Value<String>>,
+        pub trigger_name: Option<crate::Value<String>>,
         /// Property [`TriggerTargetArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggertargetarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub trigger_target_arn: Option<::Value<String>>,
+        pub trigger_target_arn: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for TriggerConfig {
+    impl crate::codec::SerializeValue for TriggerConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref trigger_events) = self.trigger_events {
@@ -2896,7 +2896,7 @@ pub mod deployment_group {
         }
     }
 
-    impl ::codec::DeserializeValue for TriggerConfig {
+    impl crate::codec::DeserializeValue for TriggerConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TriggerConfig, D::Error> {
@@ -2913,9 +2913,9 @@ pub mod deployment_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut trigger_events: Option<::ValueList<String>> = None;
-                    let mut trigger_name: Option<::Value<String>> = None;
-                    let mut trigger_target_arn: Option<::Value<String>> = None;
+                    let mut trigger_events: Option<crate::ValueList<String>> = None;
+                    let mut trigger_name: Option<crate::Value<String>> = None;
+                    let mut trigger_target_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

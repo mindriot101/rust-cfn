@@ -13,47 +13,47 @@ pub struct ComputeEnvironmentProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub compute_environment_name: Option<::Value<String>>,
+    pub compute_environment_name: Option<crate::Value<String>>,
     /// Property [`ComputeResources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub compute_resources: Option<::Value<self::compute_environment::ComputeResources>>,
+    pub compute_resources: Option<crate::Value<self::compute_environment::ComputeResources>>,
     /// Property [`ReplaceComputeEnvironment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-replacecomputeenvironment).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub replace_compute_environment: Option<::Value<bool>>,
+    pub replace_compute_environment: Option<crate::Value<bool>>,
     /// Property [`ServiceRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-servicerole).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub service_role: Option<::Value<String>>,
+    pub service_role: Option<crate::Value<String>>,
     /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-state).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub state: Option<::Value<String>>,
+    pub state: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueMap<String>>,
+    pub tags: Option<crate::ValueMap<String>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
     /// Property [`UnmanagedvCpus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-unmanagedvcpus).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub unmanagedv_cpus: Option<::Value<u32>>,
+    pub unmanagedv_cpus: Option<crate::Value<u32>>,
     /// Property [`UpdatePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-updatepolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub update_policy: Option<::Value<self::compute_environment::UpdatePolicy>>,
+    pub update_policy: Option<crate::Value<self::compute_environment::UpdatePolicy>>,
 }
 
 impl ::serde::Serialize for ComputeEnvironmentProperties {
@@ -121,17 +121,17 @@ impl<'de> ::serde::Deserialize<'de> for ComputeEnvironmentProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut compute_environment_name: Option<::Value<String>> = None;
+                let mut compute_environment_name: Option<crate::Value<String>> = None;
                 let mut compute_resources: Option<
-                    ::Value<self::compute_environment::ComputeResources>,
+                    crate::Value<self::compute_environment::ComputeResources>,
                 > = None;
-                let mut replace_compute_environment: Option<::Value<bool>> = None;
-                let mut service_role: Option<::Value<String>> = None;
-                let mut state: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueMap<String>> = None;
-                let mut r#type: Option<::Value<String>> = None;
-                let mut unmanagedv_cpus: Option<::Value<u32>> = None;
-                let mut update_policy: Option<::Value<self::compute_environment::UpdatePolicy>> =
+                let mut replace_compute_environment: Option<crate::Value<bool>> = None;
+                let mut service_role: Option<crate::Value<String>> = None;
+                let mut state: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueMap<String>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
+                let mut unmanagedv_cpus: Option<crate::Value<u32>> = None;
+                let mut update_policy: Option<crate::Value<self::compute_environment::UpdatePolicy>> =
                     None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -187,7 +187,7 @@ impl<'de> ::serde::Deserialize<'de> for ComputeEnvironmentProperties {
     }
 }
 
-impl ::Resource for ComputeEnvironment {
+impl crate::Resource for ComputeEnvironment {
     type Properties = ComputeEnvironmentProperties;
     const TYPE: &'static str = "AWS::Batch::ComputeEnvironment";
     fn properties(&self) -> &ComputeEnvironmentProperties {
@@ -198,7 +198,7 @@ impl ::Resource for ComputeEnvironment {
     }
 }
 
-impl ::private::Sealed for ComputeEnvironment {}
+impl crate::private::Sealed for ComputeEnvironment {}
 
 impl From<ComputeEnvironmentProperties> for ComputeEnvironment {
     fn from(properties: ComputeEnvironmentProperties) -> ComputeEnvironment {
@@ -219,57 +219,57 @@ pub struct JobDefinitionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub container_properties: Option<::Value<self::job_definition::ContainerProperties>>,
+    pub container_properties: Option<crate::Value<self::job_definition::ContainerProperties>>,
     /// Property [`JobDefinitionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-jobdefinitionname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_definition_name: Option<::Value<String>>,
+    pub job_definition_name: Option<crate::Value<String>>,
     /// Property [`NodeProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-nodeproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub node_properties: Option<::Value<self::job_definition::NodeProperties>>,
+    pub node_properties: Option<crate::Value<self::job_definition::NodeProperties>>,
     /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-parameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameters: Option<::Value<::json::Value>>,
+    pub parameters: Option<crate::Value<crate::json::Value>>,
     /// Property [`PlatformCapabilities`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-platformcapabilities).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub platform_capabilities: Option<::ValueList<String>>,
+    pub platform_capabilities: Option<crate::ValueList<String>>,
     /// Property [`PropagateTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-propagatetags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub propagate_tags: Option<::Value<bool>>,
+    pub propagate_tags: Option<crate::Value<bool>>,
     /// Property [`RetryStrategy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-retrystrategy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub retry_strategy: Option<::Value<self::job_definition::RetryStrategy>>,
+    pub retry_strategy: Option<crate::Value<self::job_definition::RetryStrategy>>,
     /// Property [`SchedulingPriority`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-schedulingpriority).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub scheduling_priority: Option<::Value<u32>>,
+    pub scheduling_priority: Option<crate::Value<u32>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
     /// Property [`Timeout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-timeout).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub timeout: Option<::Value<self::job_definition::Timeout>>,
+    pub timeout: Option<crate::Value<self::job_definition::Timeout>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-type).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for JobDefinitionProperties {
@@ -348,19 +348,19 @@ impl<'de> ::serde::Deserialize<'de> for JobDefinitionProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut container_properties: Option<
-                    ::Value<self::job_definition::ContainerProperties>,
+                    crate::Value<self::job_definition::ContainerProperties>,
                 > = None;
-                let mut job_definition_name: Option<::Value<String>> = None;
-                let mut node_properties: Option<::Value<self::job_definition::NodeProperties>> =
+                let mut job_definition_name: Option<crate::Value<String>> = None;
+                let mut node_properties: Option<crate::Value<self::job_definition::NodeProperties>> =
                     None;
-                let mut parameters: Option<::Value<::json::Value>> = None;
-                let mut platform_capabilities: Option<::ValueList<String>> = None;
-                let mut propagate_tags: Option<::Value<bool>> = None;
-                let mut retry_strategy: Option<::Value<self::job_definition::RetryStrategy>> = None;
-                let mut scheduling_priority: Option<::Value<u32>> = None;
-                let mut tags: Option<::Value<::json::Value>> = None;
-                let mut timeout: Option<::Value<self::job_definition::Timeout>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut parameters: Option<crate::Value<crate::json::Value>> = None;
+                let mut platform_capabilities: Option<crate::ValueList<String>> = None;
+                let mut propagate_tags: Option<crate::Value<bool>> = None;
+                let mut retry_strategy: Option<crate::Value<self::job_definition::RetryStrategy>> = None;
+                let mut scheduling_priority: Option<crate::Value<u32>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
+                let mut timeout: Option<crate::Value<self::job_definition::Timeout>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -421,7 +421,7 @@ impl<'de> ::serde::Deserialize<'de> for JobDefinitionProperties {
     }
 }
 
-impl ::Resource for JobDefinition {
+impl crate::Resource for JobDefinition {
     type Properties = JobDefinitionProperties;
     const TYPE: &'static str = "AWS::Batch::JobDefinition";
     fn properties(&self) -> &JobDefinitionProperties {
@@ -432,7 +432,7 @@ impl ::Resource for JobDefinition {
     }
 }
 
-impl ::private::Sealed for JobDefinition {}
+impl crate::private::Sealed for JobDefinition {}
 
 impl From<JobDefinitionProperties> for JobDefinition {
     fn from(properties: JobDefinitionProperties) -> JobDefinition {
@@ -453,32 +453,32 @@ pub struct JobQueueProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub compute_environment_order: ::ValueList<self::job_queue::ComputeEnvironmentOrder>,
+    pub compute_environment_order: crate::ValueList<self::job_queue::ComputeEnvironmentOrder>,
     /// Property [`JobQueueName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-jobqueuename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_queue_name: Option<::Value<String>>,
+    pub job_queue_name: Option<crate::Value<String>>,
     /// Property [`Priority`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-priority).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub priority: ::Value<u32>,
+    pub priority: crate::Value<u32>,
     /// Property [`SchedulingPolicyArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-schedulingpolicyarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub scheduling_policy_arn: Option<::Value<String>>,
+    pub scheduling_policy_arn: Option<crate::Value<String>>,
     /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-state).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub state: Option<::Value<String>>,
+    pub state: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueMap<String>>,
+    pub tags: Option<crate::ValueMap<String>>,
 }
 
 impl ::serde::Serialize for JobQueueProperties {
@@ -526,13 +526,13 @@ impl<'de> ::serde::Deserialize<'de> for JobQueueProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut compute_environment_order: Option<
-                    ::ValueList<self::job_queue::ComputeEnvironmentOrder>,
+                    crate::ValueList<self::job_queue::ComputeEnvironmentOrder>,
                 > = None;
-                let mut job_queue_name: Option<::Value<String>> = None;
-                let mut priority: Option<::Value<u32>> = None;
-                let mut scheduling_policy_arn: Option<::Value<String>> = None;
-                let mut state: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueMap<String>> = None;
+                let mut job_queue_name: Option<crate::Value<String>> = None;
+                let mut priority: Option<crate::Value<u32>> = None;
+                let mut scheduling_policy_arn: Option<crate::Value<String>> = None;
+                let mut state: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueMap<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -575,7 +575,7 @@ impl<'de> ::serde::Deserialize<'de> for JobQueueProperties {
     }
 }
 
-impl ::Resource for JobQueue {
+impl crate::Resource for JobQueue {
     type Properties = JobQueueProperties;
     const TYPE: &'static str = "AWS::Batch::JobQueue";
     fn properties(&self) -> &JobQueueProperties {
@@ -586,7 +586,7 @@ impl ::Resource for JobQueue {
     }
 }
 
-impl ::private::Sealed for JobQueue {}
+impl crate::private::Sealed for JobQueue {}
 
 impl From<JobQueueProperties> for JobQueue {
     fn from(properties: JobQueueProperties) -> JobQueue {
@@ -607,17 +607,17 @@ pub struct SchedulingPolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub fairshare_policy: Option<::Value<self::scheduling_policy::FairsharePolicy>>,
+    pub fairshare_policy: Option<crate::Value<self::scheduling_policy::FairsharePolicy>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-schedulingpolicy.html#cfn-batch-schedulingpolicy-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-schedulingpolicy.html#cfn-batch-schedulingpolicy-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<::ValueMap<String>>,
+    pub tags: Option<crate::ValueMap<String>>,
 }
 
 impl ::serde::Serialize for SchedulingPolicyProperties {
@@ -658,10 +658,10 @@ impl<'de> ::serde::Deserialize<'de> for SchedulingPolicyProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut fairshare_policy: Option<
-                    ::Value<self::scheduling_policy::FairsharePolicy>,
+                    crate::Value<self::scheduling_policy::FairsharePolicy>,
                 > = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueMap<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueMap<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -690,7 +690,7 @@ impl<'de> ::serde::Deserialize<'de> for SchedulingPolicyProperties {
     }
 }
 
-impl ::Resource for SchedulingPolicy {
+impl crate::Resource for SchedulingPolicy {
     type Properties = SchedulingPolicyProperties;
     const TYPE: &'static str = "AWS::Batch::SchedulingPolicy";
     fn properties(&self) -> &SchedulingPolicyProperties {
@@ -701,7 +701,7 @@ impl ::Resource for SchedulingPolicy {
     }
 }
 
-impl ::private::Sealed for SchedulingPolicy {}
+impl crate::private::Sealed for SchedulingPolicy {}
 
 impl From<SchedulingPolicyProperties> for SchedulingPolicy {
     fn from(properties: SchedulingPolicyProperties) -> SchedulingPolicy {
@@ -719,95 +719,95 @@ pub mod compute_environment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allocation_strategy: Option<::Value<String>>,
+        pub allocation_strategy: Option<crate::Value<String>>,
         /// Property [`BidPercentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-bidpercentage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bid_percentage: Option<::Value<u32>>,
+        pub bid_percentage: Option<crate::Value<u32>>,
         /// Property [`DesiredvCpus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-desiredvcpus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub desiredv_cpus: Option<::Value<u32>>,
+        pub desiredv_cpus: Option<crate::Value<u32>>,
         /// Property [`Ec2Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-ec2configuration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ec2_configuration: Option<::ValueList<Ec2ConfigurationObject>>,
+        pub ec2_configuration: Option<crate::ValueList<Ec2ConfigurationObject>>,
         /// Property [`Ec2KeyPair`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-ec2keypair).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ec2_key_pair: Option<::Value<String>>,
+        pub ec2_key_pair: Option<crate::Value<String>>,
         /// Property [`ImageId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-imageid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_id: Option<::Value<String>>,
+        pub image_id: Option<crate::Value<String>>,
         /// Property [`InstanceRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-instancerole).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_role: Option<::Value<String>>,
+        pub instance_role: Option<crate::Value<String>>,
         /// Property [`InstanceTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-instancetypes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_types: Option<::ValueList<String>>,
+        pub instance_types: Option<crate::ValueList<String>>,
         /// Property [`LaunchTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-launchtemplate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub launch_template: Option<::Value<LaunchTemplateSpecification>>,
+        pub launch_template: Option<crate::Value<LaunchTemplateSpecification>>,
         /// Property [`MaxvCpus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-maxvcpus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maxv_cpus: ::Value<u32>,
+        pub maxv_cpus: crate::Value<u32>,
         /// Property [`MinvCpus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-minvcpus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub minv_cpus: Option<::Value<u32>>,
+        pub minv_cpus: Option<crate::Value<u32>>,
         /// Property [`PlacementGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-placementgroup).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub placement_group: Option<::Value<String>>,
+        pub placement_group: Option<crate::Value<String>>,
         /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-securitygroupids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_group_ids: Option<::ValueList<String>>,
+        pub security_group_ids: Option<crate::ValueList<String>>,
         /// Property [`SpotIamFleetRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-spotiamfleetrole).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub spot_iam_fleet_role: Option<::Value<String>>,
+        pub spot_iam_fleet_role: Option<crate::Value<String>>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-subnets).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subnets: ::ValueList<String>,
+        pub subnets: crate::ValueList<String>,
         /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-tags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tags: Option<::ValueMap<String>>,
+        pub tags: Option<crate::ValueMap<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
         /// Property [`UpdateToLatestImageVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-updatetolatestimageversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub update_to_latest_image_version: Option<::Value<bool>>,
+        pub update_to_latest_image_version: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for ComputeResources {
+    impl crate::codec::SerializeValue for ComputeResources {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allocation_strategy) = self.allocation_strategy {
@@ -906,7 +906,7 @@ pub mod compute_environment {
         }
     }
 
-    impl ::codec::DeserializeValue for ComputeResources {
+    impl crate::codec::DeserializeValue for ComputeResources {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComputeResources, D::Error> {
@@ -923,24 +923,24 @@ pub mod compute_environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allocation_strategy: Option<::Value<String>> = None;
-                    let mut bid_percentage: Option<::Value<u32>> = None;
-                    let mut desiredv_cpus: Option<::Value<u32>> = None;
-                    let mut ec2_configuration: Option<::ValueList<Ec2ConfigurationObject>> = None;
-                    let mut ec2_key_pair: Option<::Value<String>> = None;
-                    let mut image_id: Option<::Value<String>> = None;
-                    let mut instance_role: Option<::Value<String>> = None;
-                    let mut instance_types: Option<::ValueList<String>> = None;
-                    let mut launch_template: Option<::Value<LaunchTemplateSpecification>> = None;
-                    let mut maxv_cpus: Option<::Value<u32>> = None;
-                    let mut minv_cpus: Option<::Value<u32>> = None;
-                    let mut placement_group: Option<::Value<String>> = None;
-                    let mut security_group_ids: Option<::ValueList<String>> = None;
-                    let mut spot_iam_fleet_role: Option<::Value<String>> = None;
-                    let mut subnets: Option<::ValueList<String>> = None;
-                    let mut tags: Option<::ValueMap<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut update_to_latest_image_version: Option<::Value<bool>> = None;
+                    let mut allocation_strategy: Option<crate::Value<String>> = None;
+                    let mut bid_percentage: Option<crate::Value<u32>> = None;
+                    let mut desiredv_cpus: Option<crate::Value<u32>> = None;
+                    let mut ec2_configuration: Option<crate::ValueList<Ec2ConfigurationObject>> = None;
+                    let mut ec2_key_pair: Option<crate::Value<String>> = None;
+                    let mut image_id: Option<crate::Value<String>> = None;
+                    let mut instance_role: Option<crate::Value<String>> = None;
+                    let mut instance_types: Option<crate::ValueList<String>> = None;
+                    let mut launch_template: Option<crate::Value<LaunchTemplateSpecification>> = None;
+                    let mut maxv_cpus: Option<crate::Value<u32>> = None;
+                    let mut minv_cpus: Option<crate::Value<u32>> = None;
+                    let mut placement_group: Option<crate::Value<String>> = None;
+                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
+                    let mut spot_iam_fleet_role: Option<crate::Value<String>> = None;
+                    let mut subnets: Option<crate::ValueList<String>> = None;
+                    let mut tags: Option<crate::ValueMap<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut update_to_latest_image_version: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1040,15 +1040,15 @@ pub mod compute_environment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_id_override: Option<::Value<String>>,
+        pub image_id_override: Option<crate::Value<String>>,
         /// Property [`ImageType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-ec2configurationobject.html#cfn-batch-computeenvironment-ec2configurationobject-imagetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_type: ::Value<String>,
+        pub image_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Ec2ConfigurationObject {
+    impl crate::codec::SerializeValue for Ec2ConfigurationObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref image_id_override) = self.image_id_override {
@@ -1063,7 +1063,7 @@ pub mod compute_environment {
         }
     }
 
-    impl ::codec::DeserializeValue for Ec2ConfigurationObject {
+    impl crate::codec::DeserializeValue for Ec2ConfigurationObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Ec2ConfigurationObject, D::Error> {
@@ -1080,8 +1080,8 @@ pub mod compute_environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut image_id_override: Option<::Value<String>> = None;
-                    let mut image_type: Option<::Value<String>> = None;
+                    let mut image_id_override: Option<crate::Value<String>> = None;
+                    let mut image_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1116,20 +1116,20 @@ pub mod compute_environment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub launch_template_id: Option<::Value<String>>,
+        pub launch_template_id: Option<crate::Value<String>>,
         /// Property [`LaunchTemplateName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html#cfn-batch-computeenvironment-launchtemplatespecification-launchtemplatename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub launch_template_name: Option<::Value<String>>,
+        pub launch_template_name: Option<crate::Value<String>>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html#cfn-batch-computeenvironment-launchtemplatespecification-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<::Value<String>>,
+        pub version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for LaunchTemplateSpecification {
+    impl crate::codec::SerializeValue for LaunchTemplateSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref launch_template_id) = self.launch_template_id {
@@ -1153,7 +1153,7 @@ pub mod compute_environment {
         }
     }
 
-    impl ::codec::DeserializeValue for LaunchTemplateSpecification {
+    impl crate::codec::DeserializeValue for LaunchTemplateSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LaunchTemplateSpecification, D::Error> {
@@ -1170,9 +1170,9 @@ pub mod compute_environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut launch_template_id: Option<::Value<String>> = None;
-                    let mut launch_template_name: Option<::Value<String>> = None;
-                    let mut version: Option<::Value<String>> = None;
+                    let mut launch_template_id: Option<crate::Value<String>> = None;
+                    let mut launch_template_name: Option<crate::Value<String>> = None;
+                    let mut version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1211,15 +1211,15 @@ pub mod compute_environment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub job_execution_timeout_minutes: Option<::Value<u32>>,
+        pub job_execution_timeout_minutes: Option<crate::Value<u32>>,
         /// Property [`TerminateJobsOnUpdate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-updatepolicy.html#cfn-batch-computeenvironment-updatepolicy-terminatejobsonupdate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub terminate_jobs_on_update: Option<::Value<bool>>,
+        pub terminate_jobs_on_update: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for UpdatePolicy {
+    impl crate::codec::SerializeValue for UpdatePolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref job_execution_timeout_minutes) = self.job_execution_timeout_minutes {
@@ -1240,7 +1240,7 @@ pub mod compute_environment {
         }
     }
 
-    impl ::codec::DeserializeValue for UpdatePolicy {
+    impl crate::codec::DeserializeValue for UpdatePolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UpdatePolicy, D::Error> {
             struct Visitor;
 
@@ -1255,8 +1255,8 @@ pub mod compute_environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut job_execution_timeout_minutes: Option<::Value<u32>> = None;
-                    let mut terminate_jobs_on_update: Option<::Value<bool>> = None;
+                    let mut job_execution_timeout_minutes: Option<crate::Value<u32>> = None;
+                    let mut terminate_jobs_on_update: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1296,15 +1296,15 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_point_id: Option<::Value<String>>,
+        pub access_point_id: Option<crate::Value<String>>,
         /// Property [`Iam`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-authorizationconfig.html#cfn-batch-jobdefinition-authorizationconfig-iam).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub iam: Option<::Value<String>>,
+        pub iam: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AuthorizationConfig {
+    impl crate::codec::SerializeValue for AuthorizationConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_point_id) = self.access_point_id {
@@ -1321,7 +1321,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for AuthorizationConfig {
+    impl crate::codec::DeserializeValue for AuthorizationConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AuthorizationConfig, D::Error> {
@@ -1338,8 +1338,8 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_point_id: Option<::Value<String>> = None;
-                    let mut iam: Option<::Value<String>> = None;
+                    let mut access_point_id: Option<crate::Value<String>> = None;
+                    let mut iam: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1373,105 +1373,105 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub command: Option<::ValueList<String>>,
+        pub command: Option<crate::ValueList<String>>,
         /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-environment).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub environment: Option<::ValueList<Environment>>,
+        pub environment: Option<crate::ValueList<Environment>>,
         /// Property [`ExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-executionrolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub execution_role_arn: Option<::Value<String>>,
+        pub execution_role_arn: Option<crate::Value<String>>,
         /// Property [`FargatePlatformConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-fargateplatformconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fargate_platform_configuration: Option<::Value<FargatePlatformConfiguration>>,
+        pub fargate_platform_configuration: Option<crate::Value<FargatePlatformConfiguration>>,
         /// Property [`Image`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-image).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image: ::Value<String>,
+        pub image: crate::Value<String>,
         /// Property [`InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-instancetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_type: Option<::Value<String>>,
+        pub instance_type: Option<crate::Value<String>>,
         /// Property [`JobRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-jobrolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub job_role_arn: Option<::Value<String>>,
+        pub job_role_arn: Option<crate::Value<String>>,
         /// Property [`LinuxParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-linuxparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub linux_parameters: Option<::Value<LinuxParameters>>,
+        pub linux_parameters: Option<crate::Value<LinuxParameters>>,
         /// Property [`LogConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-logconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_configuration: Option<::Value<LogConfiguration>>,
+        pub log_configuration: Option<crate::Value<LogConfiguration>>,
         /// Property [`Memory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-memory).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub memory: Option<::Value<u32>>,
+        pub memory: Option<crate::Value<u32>>,
         /// Property [`MountPoints`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-mountpoints).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mount_points: Option<::ValueList<MountPoints>>,
+        pub mount_points: Option<crate::ValueList<MountPoints>>,
         /// Property [`NetworkConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-networkconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_configuration: Option<::Value<NetworkConfiguration>>,
+        pub network_configuration: Option<crate::Value<NetworkConfiguration>>,
         /// Property [`Privileged`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-privileged).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub privileged: Option<::Value<bool>>,
+        pub privileged: Option<crate::Value<bool>>,
         /// Property [`ReadonlyRootFilesystem`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-readonlyrootfilesystem).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub readonly_root_filesystem: Option<::Value<bool>>,
+        pub readonly_root_filesystem: Option<crate::Value<bool>>,
         /// Property [`ResourceRequirements`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-resourcerequirements).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_requirements: Option<::ValueList<ResourceRequirement>>,
+        pub resource_requirements: Option<crate::ValueList<ResourceRequirement>>,
         /// Property [`Secrets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-secrets).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secrets: Option<::ValueList<Secret>>,
+        pub secrets: Option<crate::ValueList<Secret>>,
         /// Property [`Ulimits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-ulimits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ulimits: Option<::ValueList<Ulimit>>,
+        pub ulimits: Option<crate::ValueList<Ulimit>>,
         /// Property [`User`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-user).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user: Option<::Value<String>>,
+        pub user: Option<crate::Value<String>>,
         /// Property [`Vcpus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-vcpus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vcpus: Option<::Value<u32>>,
+        pub vcpus: Option<crate::Value<u32>>,
         /// Property [`Volumes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-volumes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub volumes: Option<::ValueList<Volumes>>,
+        pub volumes: Option<crate::ValueList<Volumes>>,
     }
 
-    impl ::codec::SerializeValue for ContainerProperties {
+    impl crate::codec::SerializeValue for ContainerProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref command) = self.command {
@@ -1568,7 +1568,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for ContainerProperties {
+    impl crate::codec::DeserializeValue for ContainerProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ContainerProperties, D::Error> {
@@ -1585,28 +1585,28 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut command: Option<::ValueList<String>> = None;
-                    let mut environment: Option<::ValueList<Environment>> = None;
-                    let mut execution_role_arn: Option<::Value<String>> = None;
+                    let mut command: Option<crate::ValueList<String>> = None;
+                    let mut environment: Option<crate::ValueList<Environment>> = None;
+                    let mut execution_role_arn: Option<crate::Value<String>> = None;
                     let mut fargate_platform_configuration: Option<
-                        ::Value<FargatePlatformConfiguration>,
+                        crate::Value<FargatePlatformConfiguration>,
                     > = None;
-                    let mut image: Option<::Value<String>> = None;
-                    let mut instance_type: Option<::Value<String>> = None;
-                    let mut job_role_arn: Option<::Value<String>> = None;
-                    let mut linux_parameters: Option<::Value<LinuxParameters>> = None;
-                    let mut log_configuration: Option<::Value<LogConfiguration>> = None;
-                    let mut memory: Option<::Value<u32>> = None;
-                    let mut mount_points: Option<::ValueList<MountPoints>> = None;
-                    let mut network_configuration: Option<::Value<NetworkConfiguration>> = None;
-                    let mut privileged: Option<::Value<bool>> = None;
-                    let mut readonly_root_filesystem: Option<::Value<bool>> = None;
-                    let mut resource_requirements: Option<::ValueList<ResourceRequirement>> = None;
-                    let mut secrets: Option<::ValueList<Secret>> = None;
-                    let mut ulimits: Option<::ValueList<Ulimit>> = None;
-                    let mut user: Option<::Value<String>> = None;
-                    let mut vcpus: Option<::Value<u32>> = None;
-                    let mut volumes: Option<::ValueList<Volumes>> = None;
+                    let mut image: Option<crate::Value<String>> = None;
+                    let mut instance_type: Option<crate::Value<String>> = None;
+                    let mut job_role_arn: Option<crate::Value<String>> = None;
+                    let mut linux_parameters: Option<crate::Value<LinuxParameters>> = None;
+                    let mut log_configuration: Option<crate::Value<LogConfiguration>> = None;
+                    let mut memory: Option<crate::Value<u32>> = None;
+                    let mut mount_points: Option<crate::ValueList<MountPoints>> = None;
+                    let mut network_configuration: Option<crate::Value<NetworkConfiguration>> = None;
+                    let mut privileged: Option<crate::Value<bool>> = None;
+                    let mut readonly_root_filesystem: Option<crate::Value<bool>> = None;
+                    let mut resource_requirements: Option<crate::ValueList<ResourceRequirement>> = None;
+                    let mut secrets: Option<crate::ValueList<Secret>> = None;
+                    let mut ulimits: Option<crate::ValueList<Ulimit>> = None;
+                    let mut user: Option<crate::Value<String>> = None;
+                    let mut vcpus: Option<crate::Value<u32>> = None;
+                    let mut volumes: Option<crate::ValueList<Volumes>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1716,20 +1716,20 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_path: Option<::Value<String>>,
+        pub container_path: Option<crate::Value<String>>,
         /// Property [`HostPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html#cfn-batch-jobdefinition-device-hostpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host_path: Option<::Value<String>>,
+        pub host_path: Option<crate::Value<String>>,
         /// Property [`Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html#cfn-batch-jobdefinition-device-permissions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub permissions: Option<::ValueList<String>>,
+        pub permissions: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for Device {
+    impl crate::codec::SerializeValue for Device {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_path) = self.container_path {
@@ -1749,7 +1749,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for Device {
+    impl crate::codec::DeserializeValue for Device {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Device, D::Error> {
             struct Visitor;
 
@@ -1764,9 +1764,9 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_path: Option<::Value<String>> = None;
-                    let mut host_path: Option<::Value<String>> = None;
-                    let mut permissions: Option<::ValueList<String>> = None;
+                    let mut container_path: Option<crate::Value<String>> = None;
+                    let mut host_path: Option<crate::Value<String>> = None;
+                    let mut permissions: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1804,30 +1804,30 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authorization_config: Option<::Value<AuthorizationConfig>>,
+        pub authorization_config: Option<crate::Value<AuthorizationConfig>>,
         /// Property [`FileSystemId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-filesystemid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub file_system_id: ::Value<String>,
+        pub file_system_id: crate::Value<String>,
         /// Property [`RootDirectory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-rootdirectory).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub root_directory: Option<::Value<String>>,
+        pub root_directory: Option<crate::Value<String>>,
         /// Property [`TransitEncryption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-transitencryption).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub transit_encryption: Option<::Value<String>>,
+        pub transit_encryption: Option<crate::Value<String>>,
         /// Property [`TransitEncryptionPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-transitencryptionport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub transit_encryption_port: Option<::Value<u32>>,
+        pub transit_encryption_port: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for EfsVolumeConfiguration {
+    impl crate::codec::SerializeValue for EfsVolumeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authorization_config) = self.authorization_config {
@@ -1867,7 +1867,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for EfsVolumeConfiguration {
+    impl crate::codec::DeserializeValue for EfsVolumeConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EfsVolumeConfiguration, D::Error> {
@@ -1884,11 +1884,11 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut authorization_config: Option<::Value<AuthorizationConfig>> = None;
-                    let mut file_system_id: Option<::Value<String>> = None;
-                    let mut root_directory: Option<::Value<String>> = None;
-                    let mut transit_encryption: Option<::Value<String>> = None;
-                    let mut transit_encryption_port: Option<::Value<u32>> = None;
+                    let mut authorization_config: Option<crate::Value<AuthorizationConfig>> = None;
+                    let mut file_system_id: Option<crate::Value<String>> = None;
+                    let mut root_directory: Option<crate::Value<String>> = None;
+                    let mut transit_encryption: Option<crate::Value<String>> = None;
+                    let mut transit_encryption_port: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1937,15 +1937,15 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html#cfn-batch-jobdefinition-environment-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Environment {
+    impl crate::codec::SerializeValue for Environment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -1958,7 +1958,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for Environment {
+    impl crate::codec::DeserializeValue for Environment {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Environment, D::Error> {
             struct Visitor;
 
@@ -1973,8 +1973,8 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2008,25 +2008,25 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: ::Value<String>,
+        pub action: crate::Value<String>,
         /// Property [`OnExitCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html#cfn-batch-jobdefinition-evaluateonexit-onexitcode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_exit_code: Option<::Value<String>>,
+        pub on_exit_code: Option<crate::Value<String>>,
         /// Property [`OnReason`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html#cfn-batch-jobdefinition-evaluateonexit-onreason).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_reason: Option<::Value<String>>,
+        pub on_reason: Option<crate::Value<String>>,
         /// Property [`OnStatusReason`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html#cfn-batch-jobdefinition-evaluateonexit-onstatusreason).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_status_reason: Option<::Value<String>>,
+        pub on_status_reason: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for EvaluateOnExit {
+    impl crate::codec::SerializeValue for EvaluateOnExit {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Action", &self.action)?;
@@ -2047,7 +2047,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for EvaluateOnExit {
+    impl crate::codec::DeserializeValue for EvaluateOnExit {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EvaluateOnExit, D::Error> {
@@ -2064,10 +2064,10 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<String>> = None;
-                    let mut on_exit_code: Option<::Value<String>> = None;
-                    let mut on_reason: Option<::Value<String>> = None;
-                    let mut on_status_reason: Option<::Value<String>> = None;
+                    let mut action: Option<crate::Value<String>> = None;
+                    let mut on_exit_code: Option<crate::Value<String>> = None;
+                    let mut on_reason: Option<crate::Value<String>> = None;
+                    let mut on_status_reason: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2109,10 +2109,10 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub platform_version: Option<::Value<String>>,
+        pub platform_version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for FargatePlatformConfiguration {
+    impl crate::codec::SerializeValue for FargatePlatformConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref platform_version) = self.platform_version {
@@ -2126,7 +2126,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for FargatePlatformConfiguration {
+    impl crate::codec::DeserializeValue for FargatePlatformConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FargatePlatformConfiguration, D::Error> {
@@ -2143,7 +2143,7 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut platform_version: Option<::Value<String>> = None;
+                    let mut platform_version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2173,35 +2173,35 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub devices: Option<::ValueList<Device>>,
+        pub devices: Option<crate::ValueList<Device>>,
         /// Property [`InitProcessEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html#cfn-batch-jobdefinition-containerproperties-linuxparameters-initprocessenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub init_process_enabled: Option<::Value<bool>>,
+        pub init_process_enabled: Option<crate::Value<bool>>,
         /// Property [`MaxSwap`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html#cfn-batch-jobdefinition-containerproperties-linuxparameters-maxswap).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_swap: Option<::Value<u32>>,
+        pub max_swap: Option<crate::Value<u32>>,
         /// Property [`SharedMemorySize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html#cfn-batch-jobdefinition-containerproperties-linuxparameters-sharedmemorysize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shared_memory_size: Option<::Value<u32>>,
+        pub shared_memory_size: Option<crate::Value<u32>>,
         /// Property [`Swappiness`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html#cfn-batch-jobdefinition-containerproperties-linuxparameters-swappiness).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub swappiness: Option<::Value<u32>>,
+        pub swappiness: Option<crate::Value<u32>>,
         /// Property [`Tmpfs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html#cfn-batch-jobdefinition-containerproperties-linuxparameters-tmpfs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tmpfs: Option<::ValueList<Tmpfs>>,
+        pub tmpfs: Option<crate::ValueList<Tmpfs>>,
     }
 
-    impl ::codec::SerializeValue for LinuxParameters {
+    impl crate::codec::SerializeValue for LinuxParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref devices) = self.devices {
@@ -2234,7 +2234,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for LinuxParameters {
+    impl crate::codec::DeserializeValue for LinuxParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LinuxParameters, D::Error> {
@@ -2251,12 +2251,12 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut devices: Option<::ValueList<Device>> = None;
-                    let mut init_process_enabled: Option<::Value<bool>> = None;
-                    let mut max_swap: Option<::Value<u32>> = None;
-                    let mut shared_memory_size: Option<::Value<u32>> = None;
-                    let mut swappiness: Option<::Value<u32>> = None;
-                    let mut tmpfs: Option<::ValueList<Tmpfs>> = None;
+                    let mut devices: Option<crate::ValueList<Device>> = None;
+                    let mut init_process_enabled: Option<crate::Value<bool>> = None;
+                    let mut max_swap: Option<crate::Value<u32>> = None;
+                    let mut shared_memory_size: Option<crate::Value<u32>> = None;
+                    let mut swappiness: Option<crate::Value<u32>> = None;
+                    let mut tmpfs: Option<crate::ValueList<Tmpfs>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2307,20 +2307,20 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_driver: ::Value<String>,
+        pub log_driver: crate::Value<String>,
         /// Property [`Options`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html#cfn-batch-jobdefinition-containerproperties-logconfiguration-options).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub options: Option<::Value<::json::Value>>,
+        pub options: Option<crate::Value<crate::json::Value>>,
         /// Property [`SecretOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html#cfn-batch-jobdefinition-containerproperties-logconfiguration-secretoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_options: Option<::ValueList<Secret>>,
+        pub secret_options: Option<crate::ValueList<Secret>>,
     }
 
-    impl ::codec::SerializeValue for LogConfiguration {
+    impl crate::codec::SerializeValue for LogConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogDriver", &self.log_driver)?;
@@ -2338,7 +2338,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for LogConfiguration {
+    impl crate::codec::DeserializeValue for LogConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LogConfiguration, D::Error> {
@@ -2355,9 +2355,9 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut log_driver: Option<::Value<String>> = None;
-                    let mut options: Option<::Value<::json::Value>> = None;
-                    let mut secret_options: Option<::ValueList<Secret>> = None;
+                    let mut log_driver: Option<crate::Value<String>> = None;
+                    let mut options: Option<crate::Value<crate::json::Value>> = None;
+                    let mut secret_options: Option<crate::ValueList<Secret>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2396,20 +2396,20 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_path: Option<::Value<String>>,
+        pub container_path: Option<crate::Value<String>>,
         /// Property [`ReadOnly`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-readonly).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub read_only: Option<::Value<bool>>,
+        pub read_only: Option<crate::Value<bool>>,
         /// Property [`SourceVolume`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_volume: Option<::Value<String>>,
+        pub source_volume: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for MountPoints {
+    impl crate::codec::SerializeValue for MountPoints {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_path) = self.container_path {
@@ -2433,7 +2433,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for MountPoints {
+    impl crate::codec::DeserializeValue for MountPoints {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MountPoints, D::Error> {
             struct Visitor;
 
@@ -2448,9 +2448,9 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_path: Option<::Value<String>> = None;
-                    let mut read_only: Option<::Value<bool>> = None;
-                    let mut source_volume: Option<::Value<String>> = None;
+                    let mut container_path: Option<crate::Value<String>> = None;
+                    let mut read_only: Option<crate::Value<bool>> = None;
+                    let mut source_volume: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2488,10 +2488,10 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub assign_public_ip: Option<::Value<String>>,
+        pub assign_public_ip: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for NetworkConfiguration {
+    impl crate::codec::SerializeValue for NetworkConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref assign_public_ip) = self.assign_public_ip {
@@ -2505,7 +2505,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for NetworkConfiguration {
+    impl crate::codec::DeserializeValue for NetworkConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkConfiguration, D::Error> {
@@ -2522,7 +2522,7 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut assign_public_ip: Option<::Value<String>> = None;
+                    let mut assign_public_ip: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2552,20 +2552,20 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub main_node: ::Value<u32>,
+        pub main_node: crate::Value<u32>,
         /// Property [`NodeRangeProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-noderangeproperties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub node_range_properties: ::ValueList<NodeRangeProperty>,
+        pub node_range_properties: crate::ValueList<NodeRangeProperty>,
         /// Property [`NumNodes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-numnodes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_nodes: ::Value<u32>,
+        pub num_nodes: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for NodeProperties {
+    impl crate::codec::SerializeValue for NodeProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MainNode", &self.main_node)?;
@@ -2579,7 +2579,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for NodeProperties {
+    impl crate::codec::DeserializeValue for NodeProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NodeProperties, D::Error> {
@@ -2596,9 +2596,9 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut main_node: Option<::Value<u32>> = None;
-                    let mut node_range_properties: Option<::ValueList<NodeRangeProperty>> = None;
-                    let mut num_nodes: Option<::Value<u32>> = None;
+                    let mut main_node: Option<crate::Value<u32>> = None;
+                    let mut node_range_properties: Option<crate::ValueList<NodeRangeProperty>> = None;
+                    let mut num_nodes: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2640,15 +2640,15 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container: Option<::Value<ContainerProperties>>,
+        pub container: Option<crate::Value<ContainerProperties>>,
         /// Property [`TargetNodes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html#cfn-batch-jobdefinition-noderangeproperty-targetnodes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_nodes: ::Value<String>,
+        pub target_nodes: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for NodeRangeProperty {
+    impl crate::codec::SerializeValue for NodeRangeProperty {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container) = self.container {
@@ -2663,7 +2663,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for NodeRangeProperty {
+    impl crate::codec::DeserializeValue for NodeRangeProperty {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NodeRangeProperty, D::Error> {
@@ -2680,8 +2680,8 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container: Option<::Value<ContainerProperties>> = None;
-                    let mut target_nodes: Option<::Value<String>> = None;
+                    let mut container: Option<crate::Value<ContainerProperties>> = None;
+                    let mut target_nodes: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2716,15 +2716,15 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-resourcerequirement.html#cfn-batch-jobdefinition-resourcerequirement-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<String>>,
+        pub value: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ResourceRequirement {
+    impl crate::codec::SerializeValue for ResourceRequirement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref r#type) = self.r#type {
@@ -2737,7 +2737,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for ResourceRequirement {
+    impl crate::codec::DeserializeValue for ResourceRequirement {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourceRequirement, D::Error> {
@@ -2754,8 +2754,8 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2789,15 +2789,15 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attempts: Option<::Value<u32>>,
+        pub attempts: Option<crate::Value<u32>>,
         /// Property [`EvaluateOnExit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-retrystrategy.html#cfn-batch-jobdefinition-retrystrategy-evaluateonexit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub evaluate_on_exit: Option<::ValueList<EvaluateOnExit>>,
+        pub evaluate_on_exit: Option<crate::ValueList<EvaluateOnExit>>,
     }
 
-    impl ::codec::SerializeValue for RetryStrategy {
+    impl crate::codec::SerializeValue for RetryStrategy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attempts) = self.attempts {
@@ -2814,7 +2814,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for RetryStrategy {
+    impl crate::codec::DeserializeValue for RetryStrategy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RetryStrategy, D::Error> {
@@ -2831,8 +2831,8 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attempts: Option<::Value<u32>> = None;
-                    let mut evaluate_on_exit: Option<::ValueList<EvaluateOnExit>> = None;
+                    let mut attempts: Option<crate::Value<u32>> = None;
+                    let mut evaluate_on_exit: Option<crate::ValueList<EvaluateOnExit>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2866,15 +2866,15 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`ValueFrom`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-secret.html#cfn-batch-jobdefinition-secret-valuefrom).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value_from: ::Value<String>,
+        pub value_from: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Secret {
+    impl crate::codec::SerializeValue for Secret {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -2883,7 +2883,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for Secret {
+    impl crate::codec::DeserializeValue for Secret {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Secret, D::Error> {
             struct Visitor;
 
@@ -2898,8 +2898,8 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut value_from: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut value_from: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2934,10 +2934,10 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attempt_duration_seconds: Option<::Value<u32>>,
+        pub attempt_duration_seconds: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for Timeout {
+    impl crate::codec::SerializeValue for Timeout {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attempt_duration_seconds) = self.attempt_duration_seconds {
@@ -2951,7 +2951,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for Timeout {
+    impl crate::codec::DeserializeValue for Timeout {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Timeout, D::Error> {
             struct Visitor;
 
@@ -2966,7 +2966,7 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attempt_duration_seconds: Option<::Value<u32>> = None;
+                    let mut attempt_duration_seconds: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2997,20 +2997,20 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_path: ::Value<String>,
+        pub container_path: crate::Value<String>,
         /// Property [`MountOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-tmpfs.html#cfn-batch-jobdefinition-tmpfs-mountoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mount_options: Option<::ValueList<String>>,
+        pub mount_options: Option<crate::ValueList<String>>,
         /// Property [`Size`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-tmpfs.html#cfn-batch-jobdefinition-tmpfs-size).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size: ::Value<u32>,
+        pub size: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for Tmpfs {
+    impl crate::codec::SerializeValue for Tmpfs {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3030,7 +3030,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for Tmpfs {
+    impl crate::codec::DeserializeValue for Tmpfs {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Tmpfs, D::Error> {
             struct Visitor;
 
@@ -3045,9 +3045,9 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_path: Option<::Value<String>> = None;
-                    let mut mount_options: Option<::ValueList<String>> = None;
-                    let mut size: Option<::Value<u32>> = None;
+                    let mut container_path: Option<crate::Value<String>> = None;
+                    let mut mount_options: Option<crate::ValueList<String>> = None;
+                    let mut size: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3086,20 +3086,20 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hard_limit: ::Value<u32>,
+        pub hard_limit: crate::Value<u32>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html#cfn-batch-jobdefinition-ulimit-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`SoftLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html#cfn-batch-jobdefinition-ulimit-softlimit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub soft_limit: ::Value<u32>,
+        pub soft_limit: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for Ulimit {
+    impl crate::codec::SerializeValue for Ulimit {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "HardLimit", &self.hard_limit)?;
@@ -3109,7 +3109,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for Ulimit {
+    impl crate::codec::DeserializeValue for Ulimit {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Ulimit, D::Error> {
             struct Visitor;
 
@@ -3124,9 +3124,9 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut hard_limit: Option<::Value<u32>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut soft_limit: Option<::Value<u32>> = None;
+                    let mut hard_limit: Option<crate::Value<u32>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut soft_limit: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3166,20 +3166,20 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub efs_volume_configuration: Option<::Value<EfsVolumeConfiguration>>,
+        pub efs_volume_configuration: Option<crate::Value<EfsVolumeConfiguration>>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: Option<::Value<VolumesHost>>,
+        pub host: Option<crate::Value<VolumesHost>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Volumes {
+    impl crate::codec::SerializeValue for Volumes {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref efs_volume_configuration) = self.efs_volume_configuration {
@@ -3199,7 +3199,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for Volumes {
+    impl crate::codec::DeserializeValue for Volumes {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Volumes, D::Error> {
             struct Visitor;
 
@@ -3214,10 +3214,10 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut efs_volume_configuration: Option<::Value<EfsVolumeConfiguration>> =
+                    let mut efs_volume_configuration: Option<crate::Value<EfsVolumeConfiguration>> =
                         None;
-                    let mut host: Option<::Value<VolumesHost>> = None;
-                    let mut name: Option<::Value<String>> = None;
+                    let mut host: Option<crate::Value<VolumesHost>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3256,10 +3256,10 @@ pub mod job_definition {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_path: Option<::Value<String>>,
+        pub source_path: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for VolumesHost {
+    impl crate::codec::SerializeValue for VolumesHost {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref source_path) = self.source_path {
@@ -3269,7 +3269,7 @@ pub mod job_definition {
         }
     }
 
-    impl ::codec::DeserializeValue for VolumesHost {
+    impl crate::codec::DeserializeValue for VolumesHost {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VolumesHost, D::Error> {
             struct Visitor;
 
@@ -3284,7 +3284,7 @@ pub mod job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source_path: Option<::Value<String>> = None;
+                    let mut source_path: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3318,15 +3318,15 @@ pub mod job_queue {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compute_environment: ::Value<String>,
+        pub compute_environment: crate::Value<String>,
         /// Property [`Order`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-order).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub order: ::Value<u32>,
+        pub order: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for ComputeEnvironmentOrder {
+    impl crate::codec::SerializeValue for ComputeEnvironmentOrder {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3339,7 +3339,7 @@ pub mod job_queue {
         }
     }
 
-    impl ::codec::DeserializeValue for ComputeEnvironmentOrder {
+    impl crate::codec::DeserializeValue for ComputeEnvironmentOrder {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComputeEnvironmentOrder, D::Error> {
@@ -3356,8 +3356,8 @@ pub mod job_queue {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut compute_environment: Option<::Value<String>> = None;
-                    let mut order: Option<::Value<u32>> = None;
+                    let mut compute_environment: Option<crate::Value<String>> = None;
+                    let mut order: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3396,20 +3396,20 @@ pub mod scheduling_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compute_reservation: Option<::Value<f64>>,
+        pub compute_reservation: Option<crate::Value<f64>>,
         /// Property [`ShareDecaySeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy-sharedecayseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub share_decay_seconds: Option<::Value<f64>>,
+        pub share_decay_seconds: Option<crate::Value<f64>>,
         /// Property [`ShareDistribution`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy-sharedistribution).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub share_distribution: Option<::ValueList<ShareAttributes>>,
+        pub share_distribution: Option<crate::ValueList<ShareAttributes>>,
     }
 
-    impl ::codec::SerializeValue for FairsharePolicy {
+    impl crate::codec::SerializeValue for FairsharePolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref compute_reservation) = self.compute_reservation {
@@ -3437,7 +3437,7 @@ pub mod scheduling_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for FairsharePolicy {
+    impl crate::codec::DeserializeValue for FairsharePolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FairsharePolicy, D::Error> {
@@ -3454,9 +3454,9 @@ pub mod scheduling_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut compute_reservation: Option<::Value<f64>> = None;
-                    let mut share_decay_seconds: Option<::Value<f64>> = None;
-                    let mut share_distribution: Option<::ValueList<ShareAttributes>> = None;
+                    let mut compute_reservation: Option<crate::Value<f64>> = None;
+                    let mut share_decay_seconds: Option<crate::Value<f64>> = None;
+                    let mut share_distribution: Option<crate::ValueList<ShareAttributes>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3494,15 +3494,15 @@ pub mod scheduling_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub share_identifier: Option<::Value<String>>,
+        pub share_identifier: Option<crate::Value<String>>,
         /// Property [`WeightFactor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-shareattributes.html#cfn-batch-schedulingpolicy-shareattributes-weightfactor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weight_factor: Option<::Value<f64>>,
+        pub weight_factor: Option<crate::Value<f64>>,
     }
 
-    impl ::codec::SerializeValue for ShareAttributes {
+    impl crate::codec::SerializeValue for ShareAttributes {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref share_identifier) = self.share_identifier {
@@ -3523,7 +3523,7 @@ pub mod scheduling_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for ShareAttributes {
+    impl crate::codec::DeserializeValue for ShareAttributes {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ShareAttributes, D::Error> {
@@ -3540,8 +3540,8 @@ pub mod scheduling_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut share_identifier: Option<::Value<String>> = None;
-                    let mut weight_factor: Option<::Value<f64>> = None;
+                    let mut share_identifier: Option<crate::Value<String>> = None;
+                    let mut weight_factor: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

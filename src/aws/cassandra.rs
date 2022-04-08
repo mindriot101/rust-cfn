@@ -13,12 +13,12 @@ pub struct KeyspaceProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub keyspace_name: Option<::Value<String>>,
+    pub keyspace_name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-keyspace.html#cfn-cassandra-keyspace-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for KeyspaceProperties {
@@ -49,8 +49,8 @@ impl<'de> ::serde::Deserialize<'de> for KeyspaceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut keyspace_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut keyspace_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -75,7 +75,7 @@ impl<'de> ::serde::Deserialize<'de> for KeyspaceProperties {
     }
 }
 
-impl ::Resource for Keyspace {
+impl crate::Resource for Keyspace {
     type Properties = KeyspaceProperties;
     const TYPE: &'static str = "AWS::Cassandra::Keyspace";
     fn properties(&self) -> &KeyspaceProperties {
@@ -86,7 +86,7 @@ impl ::Resource for Keyspace {
     }
 }
 
-impl ::private::Sealed for Keyspace {}
+impl crate::private::Sealed for Keyspace {}
 
 impl From<KeyspaceProperties> for Keyspace {
     fn from(properties: KeyspaceProperties) -> Keyspace {
@@ -107,52 +107,52 @@ pub struct TableProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub billing_mode: Option<::Value<self::table::BillingMode>>,
+    pub billing_mode: Option<crate::Value<self::table::BillingMode>>,
     /// Property [`ClusteringKeyColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-clusteringkeycolumns).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub clustering_key_columns: Option<::ValueList<self::table::ClusteringKeyColumn>>,
+    pub clustering_key_columns: Option<crate::ValueList<self::table::ClusteringKeyColumn>>,
     /// Property [`DefaultTimeToLive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-defaulttimetolive).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_time_to_live: Option<::Value<u32>>,
+    pub default_time_to_live: Option<crate::Value<u32>>,
     /// Property [`EncryptionSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-encryptionspecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encryption_specification: Option<::Value<self::table::EncryptionSpecification>>,
+    pub encryption_specification: Option<crate::Value<self::table::EncryptionSpecification>>,
     /// Property [`KeyspaceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-keyspacename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub keyspace_name: ::Value<String>,
+    pub keyspace_name: crate::Value<String>,
     /// Property [`PartitionKeyColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-partitionkeycolumns).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub partition_key_columns: ::ValueList<self::table::Column>,
+    pub partition_key_columns: crate::ValueList<self::table::Column>,
     /// Property [`PointInTimeRecoveryEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-pointintimerecoveryenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub point_in_time_recovery_enabled: Option<::Value<bool>>,
+    pub point_in_time_recovery_enabled: Option<crate::Value<bool>>,
     /// Property [`RegularColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-regularcolumns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub regular_columns: Option<::ValueList<self::table::Column>>,
+    pub regular_columns: Option<crate::ValueList<self::table::Column>>,
     /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-tablename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub table_name: Option<::Value<String>>,
+    pub table_name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for TableProperties {
@@ -227,20 +227,20 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut billing_mode: Option<::Value<self::table::BillingMode>> = None;
+                let mut billing_mode: Option<crate::Value<self::table::BillingMode>> = None;
                 let mut clustering_key_columns: Option<
-                    ::ValueList<self::table::ClusteringKeyColumn>,
+                    crate::ValueList<self::table::ClusteringKeyColumn>,
                 > = None;
-                let mut default_time_to_live: Option<::Value<u32>> = None;
+                let mut default_time_to_live: Option<crate::Value<u32>> = None;
                 let mut encryption_specification: Option<
-                    ::Value<self::table::EncryptionSpecification>,
+                    crate::Value<self::table::EncryptionSpecification>,
                 > = None;
-                let mut keyspace_name: Option<::Value<String>> = None;
-                let mut partition_key_columns: Option<::ValueList<self::table::Column>> = None;
-                let mut point_in_time_recovery_enabled: Option<::Value<bool>> = None;
-                let mut regular_columns: Option<::ValueList<self::table::Column>> = None;
-                let mut table_name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut keyspace_name: Option<crate::Value<String>> = None;
+                let mut partition_key_columns: Option<crate::ValueList<self::table::Column>> = None;
+                let mut point_in_time_recovery_enabled: Option<crate::Value<bool>> = None;
+                let mut regular_columns: Option<crate::ValueList<self::table::Column>> = None;
+                let mut table_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -301,7 +301,7 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
     }
 }
 
-impl ::Resource for Table {
+impl crate::Resource for Table {
     type Properties = TableProperties;
     const TYPE: &'static str = "AWS::Cassandra::Table";
     fn properties(&self) -> &TableProperties {
@@ -312,7 +312,7 @@ impl ::Resource for Table {
     }
 }
 
-impl ::private::Sealed for Table {}
+impl crate::private::Sealed for Table {}
 
 impl From<TableProperties> for Table {
     fn from(properties: TableProperties) -> Table {
@@ -330,15 +330,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mode: ::Value<String>,
+        pub mode: crate::Value<String>,
         /// Property [`ProvisionedThroughput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-billingmode.html#cfn-cassandra-table-billingmode-provisionedthroughput).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub provisioned_throughput: Option<::Value<ProvisionedThroughput>>,
+        pub provisioned_throughput: Option<crate::Value<ProvisionedThroughput>>,
     }
 
-    impl ::codec::SerializeValue for BillingMode {
+    impl crate::codec::SerializeValue for BillingMode {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Mode", &self.mode)?;
@@ -353,7 +353,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for BillingMode {
+    impl crate::codec::DeserializeValue for BillingMode {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BillingMode, D::Error> {
             struct Visitor;
 
@@ -368,8 +368,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut mode: Option<::Value<String>> = None;
-                    let mut provisioned_throughput: Option<::Value<ProvisionedThroughput>> = None;
+                    let mut mode: Option<crate::Value<String>> = None;
+                    let mut provisioned_throughput: Option<crate::Value<ProvisionedThroughput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -404,15 +404,15 @@ pub mod table {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub column: ::Value<Column>,
+        pub column: crate::Value<Column>,
         /// Property [`OrderBy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html#cfn-cassandra-table-clusteringkeycolumn-orderby).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub order_by: Option<::Value<String>>,
+        pub order_by: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ClusteringKeyColumn {
+    impl crate::codec::SerializeValue for ClusteringKeyColumn {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Column", &self.column)?;
@@ -423,7 +423,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for ClusteringKeyColumn {
+    impl crate::codec::DeserializeValue for ClusteringKeyColumn {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClusteringKeyColumn, D::Error> {
@@ -440,8 +440,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column: Option<::Value<Column>> = None;
-                    let mut order_by: Option<::Value<String>> = None;
+                    let mut column: Option<crate::Value<Column>> = None;
+                    let mut order_by: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -475,15 +475,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_name: ::Value<String>,
+        pub column_name: crate::Value<String>,
         /// Property [`ColumnType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-column.html#cfn-cassandra-table-column-columntype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_type: ::Value<String>,
+        pub column_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Column {
+    impl crate::codec::SerializeValue for Column {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnName", &self.column_name)?;
@@ -492,7 +492,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for Column {
+    impl crate::codec::DeserializeValue for Column {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Column, D::Error> {
             struct Visitor;
 
@@ -507,8 +507,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column_name: Option<::Value<String>> = None;
-                    let mut column_type: Option<::Value<String>> = None;
+                    let mut column_name: Option<crate::Value<String>> = None;
+                    let mut column_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -544,15 +544,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_type: ::Value<String>,
+        pub encryption_type: crate::Value<String>,
         /// Property [`KmsKeyIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-encryptionspecification.html#cfn-cassandra-table-encryptionspecification-kmskeyidentifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_key_identifier: Option<::Value<String>>,
+        pub kms_key_identifier: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for EncryptionSpecification {
+    impl crate::codec::SerializeValue for EncryptionSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -571,7 +571,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for EncryptionSpecification {
+    impl crate::codec::DeserializeValue for EncryptionSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EncryptionSpecification, D::Error> {
@@ -588,8 +588,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut encryption_type: Option<::Value<String>> = None;
-                    let mut kms_key_identifier: Option<::Value<String>> = None;
+                    let mut encryption_type: Option<crate::Value<String>> = None;
+                    let mut kms_key_identifier: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -624,15 +624,15 @@ pub mod table {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub read_capacity_units: ::Value<u32>,
+        pub read_capacity_units: crate::Value<u32>,
         /// Property [`WriteCapacityUnits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-provisionedthroughput.html#cfn-cassandra-table-provisionedthroughput-writecapacityunits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub write_capacity_units: ::Value<u32>,
+        pub write_capacity_units: crate::Value<u32>,
     }
 
-    impl ::codec::SerializeValue for ProvisionedThroughput {
+    impl crate::codec::SerializeValue for ProvisionedThroughput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -649,7 +649,7 @@ pub mod table {
         }
     }
 
-    impl ::codec::DeserializeValue for ProvisionedThroughput {
+    impl crate::codec::DeserializeValue for ProvisionedThroughput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProvisionedThroughput, D::Error> {
@@ -666,8 +666,8 @@ pub mod table {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut read_capacity_units: Option<::Value<u32>> = None;
-                    let mut write_capacity_units: Option<::Value<u32>> = None;
+                    let mut read_capacity_units: Option<crate::Value<u32>> = None;
+                    let mut write_capacity_units: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

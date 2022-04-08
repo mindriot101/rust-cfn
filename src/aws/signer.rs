@@ -13,27 +13,27 @@ pub struct ProfilePermissionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub action: ::Value<String>,
+    pub action: crate::Value<String>,
     /// Property [`Principal`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-principal).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub principal: ::Value<String>,
+    pub principal: crate::Value<String>,
     /// Property [`ProfileName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-profilename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub profile_name: ::Value<String>,
+    pub profile_name: crate::Value<String>,
     /// Property [`ProfileVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-profileversion).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub profile_version: Option<::Value<String>>,
+    pub profile_version: Option<crate::Value<String>>,
     /// Property [`StatementId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-statementid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub statement_id: ::Value<String>,
+    pub statement_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for ProfilePermissionProperties {
@@ -71,11 +71,11 @@ impl<'de> ::serde::Deserialize<'de> for ProfilePermissionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut action: Option<::Value<String>> = None;
-                let mut principal: Option<::Value<String>> = None;
-                let mut profile_name: Option<::Value<String>> = None;
-                let mut profile_version: Option<::Value<String>> = None;
-                let mut statement_id: Option<::Value<String>> = None;
+                let mut action: Option<crate::Value<String>> = None;
+                let mut principal: Option<crate::Value<String>> = None;
+                let mut profile_name: Option<crate::Value<String>> = None;
+                let mut profile_version: Option<crate::Value<String>> = None;
+                let mut statement_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -114,7 +114,7 @@ impl<'de> ::serde::Deserialize<'de> for ProfilePermissionProperties {
     }
 }
 
-impl ::Resource for ProfilePermission {
+impl crate::Resource for ProfilePermission {
     type Properties = ProfilePermissionProperties;
     const TYPE: &'static str = "AWS::Signer::ProfilePermission";
     fn properties(&self) -> &ProfilePermissionProperties {
@@ -125,7 +125,7 @@ impl ::Resource for ProfilePermission {
     }
 }
 
-impl ::private::Sealed for ProfilePermission {}
+impl crate::private::Sealed for ProfilePermission {}
 
 impl From<ProfilePermissionProperties> for ProfilePermission {
     fn from(properties: ProfilePermissionProperties) -> ProfilePermission {
@@ -146,17 +146,17 @@ pub struct SigningProfileProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub platform_id: ::Value<String>,
+    pub platform_id: crate::Value<String>,
     /// Property [`SignatureValidityPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#cfn-signer-signingprofile-signaturevalidityperiod).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub signature_validity_period: Option<::Value<self::signing_profile::SignatureValidityPeriod>>,
+    pub signature_validity_period: Option<crate::Value<self::signing_profile::SignatureValidityPeriod>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#cfn-signer-signingprofile-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for SigningProfileProperties {
@@ -194,11 +194,11 @@ impl<'de> ::serde::Deserialize<'de> for SigningProfileProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut platform_id: Option<::Value<String>> = None;
+                let mut platform_id: Option<crate::Value<String>> = None;
                 let mut signature_validity_period: Option<
-                    ::Value<self::signing_profile::SignatureValidityPeriod>,
+                    crate::Value<self::signing_profile::SignatureValidityPeriod>,
                 > = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -229,7 +229,7 @@ impl<'de> ::serde::Deserialize<'de> for SigningProfileProperties {
     }
 }
 
-impl ::Resource for SigningProfile {
+impl crate::Resource for SigningProfile {
     type Properties = SigningProfileProperties;
     const TYPE: &'static str = "AWS::Signer::SigningProfile";
     fn properties(&self) -> &SigningProfileProperties {
@@ -240,7 +240,7 @@ impl ::Resource for SigningProfile {
     }
 }
 
-impl ::private::Sealed for SigningProfile {}
+impl crate::private::Sealed for SigningProfile {}
 
 impl From<SigningProfileProperties> for SigningProfile {
     fn from(properties: SigningProfileProperties) -> SigningProfile {
@@ -258,15 +258,15 @@ pub mod signing_profile {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-signer-signingprofile-signaturevalidityperiod.html#cfn-signer-signingprofile-signaturevalidityperiod-value).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub value: Option<::Value<u32>>,
+        pub value: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for SignatureValidityPeriod {
+    impl crate::codec::SerializeValue for SignatureValidityPeriod {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref r#type) = self.r#type {
@@ -279,7 +279,7 @@ pub mod signing_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SignatureValidityPeriod {
+    impl crate::codec::DeserializeValue for SignatureValidityPeriod {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SignatureValidityPeriod, D::Error> {
@@ -296,8 +296,8 @@ pub mod signing_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<u32>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

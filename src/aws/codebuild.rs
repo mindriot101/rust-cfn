@@ -13,122 +13,122 @@ pub struct ProjectProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub artifacts: ::Value<self::project::Artifacts>,
+    pub artifacts: crate::Value<self::project::Artifacts>,
     /// Property [`BadgeEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub badge_enabled: Option<::Value<bool>>,
+    pub badge_enabled: Option<crate::Value<bool>>,
     /// Property [`BuildBatchConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-buildbatchconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub build_batch_config: Option<::Value<self::project::ProjectBuildBatchConfig>>,
+    pub build_batch_config: Option<crate::Value<self::project::ProjectBuildBatchConfig>>,
     /// Property [`Cache`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache: Option<::Value<self::project::ProjectCache>>,
+    pub cache: Option<crate::Value<self::project::ProjectCache>>,
     /// Property [`ConcurrentBuildLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-concurrentbuildlimit).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub concurrent_build_limit: Option<::Value<u32>>,
+    pub concurrent_build_limit: Option<crate::Value<u32>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`EncryptionKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encryption_key: Option<::Value<String>>,
+    pub encryption_key: Option<crate::Value<String>>,
     /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub environment: ::Value<self::project::Environment>,
+    pub environment: crate::Value<self::project::Environment>,
     /// Property [`FileSystemLocations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-filesystemlocations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub file_system_locations: Option<::ValueList<self::project::ProjectFileSystemLocation>>,
+    pub file_system_locations: Option<crate::ValueList<self::project::ProjectFileSystemLocation>>,
     /// Property [`LogsConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-logsconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub logs_config: Option<::Value<self::project::LogsConfig>>,
+    pub logs_config: Option<crate::Value<self::project::LogsConfig>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`QueuedTimeoutInMinutes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-queuedtimeoutinminutes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub queued_timeout_in_minutes: Option<::Value<u32>>,
+    pub queued_timeout_in_minutes: Option<crate::Value<u32>>,
     /// Property [`ResourceAccessRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-resourceaccessrole).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_access_role: Option<::Value<String>>,
+    pub resource_access_role: Option<crate::Value<String>>,
     /// Property [`SecondaryArtifacts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub secondary_artifacts: Option<::ValueList<self::project::Artifacts>>,
+    pub secondary_artifacts: Option<crate::ValueList<self::project::Artifacts>>,
     /// Property [`SecondarySourceVersions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysourceversions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub secondary_source_versions: Option<::ValueList<self::project::ProjectSourceVersion>>,
+    pub secondary_source_versions: Option<crate::ValueList<self::project::ProjectSourceVersion>>,
     /// Property [`SecondarySources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysources).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub secondary_sources: Option<::ValueList<self::project::Source>>,
+    pub secondary_sources: Option<crate::ValueList<self::project::Source>>,
     /// Property [`ServiceRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub service_role: ::Value<String>,
+    pub service_role: crate::Value<String>,
     /// Property [`Source`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source: ::Value<self::project::Source>,
+    pub source: crate::Value<self::project::Source>,
     /// Property [`SourceVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-sourceversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_version: Option<::Value<String>>,
+    pub source_version: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`TimeoutInMinutes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub timeout_in_minutes: Option<::Value<u32>>,
+    pub timeout_in_minutes: Option<crate::Value<u32>>,
     /// Property [`Triggers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub triggers: Option<::Value<self::project::ProjectTriggers>>,
+    pub triggers: Option<crate::Value<self::project::ProjectTriggers>>,
     /// Property [`Visibility`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-visibility).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub visibility: Option<::Value<String>>,
+    pub visibility: Option<crate::Value<String>>,
     /// Property [`VpcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_config: Option<::Value<self::project::VpcConfig>>,
+    pub vpc_config: Option<crate::Value<self::project::VpcConfig>>,
 }
 
 impl ::serde::Serialize for ProjectProperties {
@@ -253,36 +253,36 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut artifacts: Option<::Value<self::project::Artifacts>> = None;
-                let mut badge_enabled: Option<::Value<bool>> = None;
+                let mut artifacts: Option<crate::Value<self::project::Artifacts>> = None;
+                let mut badge_enabled: Option<crate::Value<bool>> = None;
                 let mut build_batch_config: Option<
-                    ::Value<self::project::ProjectBuildBatchConfig>,
+                    crate::Value<self::project::ProjectBuildBatchConfig>,
                 > = None;
-                let mut cache: Option<::Value<self::project::ProjectCache>> = None;
-                let mut concurrent_build_limit: Option<::Value<u32>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut encryption_key: Option<::Value<String>> = None;
-                let mut environment: Option<::Value<self::project::Environment>> = None;
+                let mut cache: Option<crate::Value<self::project::ProjectCache>> = None;
+                let mut concurrent_build_limit: Option<crate::Value<u32>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut encryption_key: Option<crate::Value<String>> = None;
+                let mut environment: Option<crate::Value<self::project::Environment>> = None;
                 let mut file_system_locations: Option<
-                    ::ValueList<self::project::ProjectFileSystemLocation>,
+                    crate::ValueList<self::project::ProjectFileSystemLocation>,
                 > = None;
-                let mut logs_config: Option<::Value<self::project::LogsConfig>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut queued_timeout_in_minutes: Option<::Value<u32>> = None;
-                let mut resource_access_role: Option<::Value<String>> = None;
-                let mut secondary_artifacts: Option<::ValueList<self::project::Artifacts>> = None;
+                let mut logs_config: Option<crate::Value<self::project::LogsConfig>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut queued_timeout_in_minutes: Option<crate::Value<u32>> = None;
+                let mut resource_access_role: Option<crate::Value<String>> = None;
+                let mut secondary_artifacts: Option<crate::ValueList<self::project::Artifacts>> = None;
                 let mut secondary_source_versions: Option<
-                    ::ValueList<self::project::ProjectSourceVersion>,
+                    crate::ValueList<self::project::ProjectSourceVersion>,
                 > = None;
-                let mut secondary_sources: Option<::ValueList<self::project::Source>> = None;
-                let mut service_role: Option<::Value<String>> = None;
-                let mut source: Option<::Value<self::project::Source>> = None;
-                let mut source_version: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut timeout_in_minutes: Option<::Value<u32>> = None;
-                let mut triggers: Option<::Value<self::project::ProjectTriggers>> = None;
-                let mut visibility: Option<::Value<String>> = None;
-                let mut vpc_config: Option<::Value<self::project::VpcConfig>> = None;
+                let mut secondary_sources: Option<crate::ValueList<self::project::Source>> = None;
+                let mut service_role: Option<crate::Value<String>> = None;
+                let mut source: Option<crate::Value<self::project::Source>> = None;
+                let mut source_version: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut timeout_in_minutes: Option<crate::Value<u32>> = None;
+                let mut triggers: Option<crate::Value<self::project::ProjectTriggers>> = None;
+                let mut visibility: Option<crate::Value<String>> = None;
+                let mut vpc_config: Option<crate::Value<self::project::VpcConfig>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -399,7 +399,7 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
     }
 }
 
-impl ::Resource for Project {
+impl crate::Resource for Project {
     type Properties = ProjectProperties;
     const TYPE: &'static str = "AWS::CodeBuild::Project";
     fn properties(&self) -> &ProjectProperties {
@@ -410,7 +410,7 @@ impl ::Resource for Project {
     }
 }
 
-impl ::private::Sealed for Project {}
+impl crate::private::Sealed for Project {}
 
 impl From<ProjectProperties> for Project {
     fn from(properties: ProjectProperties) -> Project {
@@ -431,27 +431,27 @@ pub struct ReportGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub delete_reports: Option<::Value<bool>>,
+    pub delete_reports: Option<crate::Value<bool>>,
     /// Property [`ExportConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-exportconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub export_config: ::Value<self::report_group::ReportExportConfig>,
+    pub export_config: crate::Value<self::report_group::ReportExportConfig>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<::Value<String>>,
+    pub name: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for ReportGroupProperties {
@@ -487,12 +487,12 @@ impl<'de> ::serde::Deserialize<'de> for ReportGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut delete_reports: Option<::Value<bool>> = None;
-                let mut export_config: Option<::Value<self::report_group::ReportExportConfig>> =
+                let mut delete_reports: Option<crate::Value<bool>> = None;
+                let mut export_config: Option<crate::Value<self::report_group::ReportExportConfig>> =
                     None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -530,7 +530,7 @@ impl<'de> ::serde::Deserialize<'de> for ReportGroupProperties {
     }
 }
 
-impl ::Resource for ReportGroup {
+impl crate::Resource for ReportGroup {
     type Properties = ReportGroupProperties;
     const TYPE: &'static str = "AWS::CodeBuild::ReportGroup";
     fn properties(&self) -> &ReportGroupProperties {
@@ -541,7 +541,7 @@ impl ::Resource for ReportGroup {
     }
 }
 
-impl ::private::Sealed for ReportGroup {}
+impl crate::private::Sealed for ReportGroup {}
 
 impl From<ReportGroupProperties> for ReportGroup {
     fn from(properties: ReportGroupProperties) -> ReportGroup {
@@ -562,22 +562,22 @@ pub struct SourceCredentialProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub auth_type: ::Value<String>,
+    pub auth_type: crate::Value<String>,
     /// Property [`ServerType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-servertype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub server_type: ::Value<String>,
+    pub server_type: crate::Value<String>,
     /// Property [`Token`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-token).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token: ::Value<String>,
+    pub token: crate::Value<String>,
     /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-username).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub username: Option<::Value<String>>,
+    pub username: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for SourceCredentialProperties {
@@ -610,10 +610,10 @@ impl<'de> ::serde::Deserialize<'de> for SourceCredentialProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut auth_type: Option<::Value<String>> = None;
-                let mut server_type: Option<::Value<String>> = None;
-                let mut token: Option<::Value<String>> = None;
-                let mut username: Option<::Value<String>> = None;
+                let mut auth_type: Option<crate::Value<String>> = None;
+                let mut server_type: Option<crate::Value<String>> = None;
+                let mut token: Option<crate::Value<String>> = None;
+                let mut username: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -647,7 +647,7 @@ impl<'de> ::serde::Deserialize<'de> for SourceCredentialProperties {
     }
 }
 
-impl ::Resource for SourceCredential {
+impl crate::Resource for SourceCredential {
     type Properties = SourceCredentialProperties;
     const TYPE: &'static str = "AWS::CodeBuild::SourceCredential";
     fn properties(&self) -> &SourceCredentialProperties {
@@ -658,7 +658,7 @@ impl ::Resource for SourceCredential {
     }
 }
 
-impl ::private::Sealed for SourceCredential {}
+impl crate::private::Sealed for SourceCredential {}
 
 impl From<SourceCredentialProperties> for SourceCredential {
     fn from(properties: SourceCredentialProperties) -> SourceCredential {
@@ -676,50 +676,50 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub artifact_identifier: Option<::Value<String>>,
+        pub artifact_identifier: Option<crate::Value<String>>,
         /// Property [`EncryptionDisabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-encryptiondisabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_disabled: Option<::Value<bool>>,
+        pub encryption_disabled: Option<crate::Value<bool>>,
         /// Property [`Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-location).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: Option<::Value<String>>,
+        pub location: Option<crate::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
         /// Property [`NamespaceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-namespacetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub namespace_type: Option<::Value<String>>,
+        pub namespace_type: Option<crate::Value<String>>,
         /// Property [`OverrideArtifactName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-overrideartifactname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub override_artifact_name: Option<::Value<bool>>,
+        pub override_artifact_name: Option<crate::Value<bool>>,
         /// Property [`Packaging`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-packaging).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub packaging: Option<::Value<String>>,
+        pub packaging: Option<crate::Value<String>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path: Option<::Value<String>>,
+        pub path: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Artifacts {
+    impl crate::codec::SerializeValue for Artifacts {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref artifact_identifier) = self.artifact_identifier {
@@ -767,7 +767,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for Artifacts {
+    impl crate::codec::DeserializeValue for Artifacts {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Artifacts, D::Error> {
             struct Visitor;
 
@@ -782,15 +782,15 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut artifact_identifier: Option<::Value<String>> = None;
-                    let mut encryption_disabled: Option<::Value<bool>> = None;
-                    let mut location: Option<::Value<String>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut namespace_type: Option<::Value<String>> = None;
-                    let mut override_artifact_name: Option<::Value<bool>> = None;
-                    let mut packaging: Option<::Value<String>> = None;
-                    let mut path: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut artifact_identifier: Option<crate::Value<String>> = None;
+                    let mut encryption_disabled: Option<crate::Value<bool>> = None;
+                    let mut location: Option<crate::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut namespace_type: Option<crate::Value<String>> = None;
+                    let mut override_artifact_name: Option<crate::Value<bool>> = None;
+                    let mut packaging: Option<crate::Value<String>> = None;
+                    let mut path: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -853,15 +853,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compute_types_allowed: Option<::ValueList<String>>,
+        pub compute_types_allowed: Option<crate::ValueList<String>>,
         /// Property [`MaximumBuildsAllowed`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-batchrestrictions.html#cfn-codebuild-project-batchrestrictions-maximumbuildsallowed).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maximum_builds_allowed: Option<::Value<u32>>,
+        pub maximum_builds_allowed: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for BatchRestrictions {
+    impl crate::codec::SerializeValue for BatchRestrictions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref compute_types_allowed) = self.compute_types_allowed {
@@ -882,7 +882,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for BatchRestrictions {
+    impl crate::codec::DeserializeValue for BatchRestrictions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BatchRestrictions, D::Error> {
@@ -899,8 +899,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut compute_types_allowed: Option<::ValueList<String>> = None;
-                    let mut maximum_builds_allowed: Option<::Value<u32>> = None;
+                    let mut compute_types_allowed: Option<crate::ValueList<String>> = None;
+                    let mut maximum_builds_allowed: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -936,15 +936,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub context: Option<::Value<String>>,
+        pub context: Option<crate::Value<String>>,
         /// Property [`TargetUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-buildstatusconfig.html#cfn-codebuild-project-buildstatusconfig-targeturl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_url: Option<::Value<String>>,
+        pub target_url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for BuildStatusConfig {
+    impl crate::codec::SerializeValue for BuildStatusConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref context) = self.context {
@@ -957,7 +957,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for BuildStatusConfig {
+    impl crate::codec::DeserializeValue for BuildStatusConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BuildStatusConfig, D::Error> {
@@ -974,8 +974,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut context: Option<::Value<String>> = None;
-                    let mut target_url: Option<::Value<String>> = None;
+                    let mut context: Option<crate::Value<String>> = None;
+                    let mut target_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1009,20 +1009,20 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_name: Option<::Value<String>>,
+        pub group_name: Option<crate::Value<String>>,
         /// Property [`Status`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status: ::Value<String>,
+        pub status: crate::Value<String>,
         /// Property [`StreamName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-streamname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_name: Option<::Value<String>>,
+        pub stream_name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CloudWatchLogsConfig {
+    impl crate::codec::SerializeValue for CloudWatchLogsConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref group_name) = self.group_name {
@@ -1036,7 +1036,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for CloudWatchLogsConfig {
+    impl crate::codec::DeserializeValue for CloudWatchLogsConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CloudWatchLogsConfig, D::Error> {
@@ -1053,9 +1053,9 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut group_name: Option<::Value<String>> = None;
-                    let mut status: Option<::Value<String>> = None;
-                    let mut stream_name: Option<::Value<String>> = None;
+                    let mut group_name: Option<crate::Value<String>> = None;
+                    let mut status: Option<crate::Value<String>> = None;
+                    let mut stream_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1093,45 +1093,45 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub certificate: Option<::Value<String>>,
+        pub certificate: Option<crate::Value<String>>,
         /// Property [`ComputeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-computetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compute_type: ::Value<String>,
+        pub compute_type: crate::Value<String>,
         /// Property [`EnvironmentVariables`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-environmentvariables).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub environment_variables: Option<::ValueList<EnvironmentVariable>>,
+        pub environment_variables: Option<crate::ValueList<EnvironmentVariable>>,
         /// Property [`Image`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image: ::Value<String>,
+        pub image: crate::Value<String>,
         /// Property [`ImagePullCredentialsType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-imagepullcredentialstype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_pull_credentials_type: Option<::Value<String>>,
+        pub image_pull_credentials_type: Option<crate::Value<String>>,
         /// Property [`PrivilegedMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub privileged_mode: Option<::Value<bool>>,
+        pub privileged_mode: Option<crate::Value<bool>>,
         /// Property [`RegistryCredential`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-registrycredential).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub registry_credential: Option<::Value<RegistryCredential>>,
+        pub registry_credential: Option<crate::Value<RegistryCredential>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Environment {
+    impl crate::codec::SerializeValue for Environment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref certificate) = self.certificate {
@@ -1176,7 +1176,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for Environment {
+    impl crate::codec::DeserializeValue for Environment {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Environment, D::Error> {
             struct Visitor;
 
@@ -1191,14 +1191,14 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut certificate: Option<::Value<String>> = None;
-                    let mut compute_type: Option<::Value<String>> = None;
-                    let mut environment_variables: Option<::ValueList<EnvironmentVariable>> = None;
-                    let mut image: Option<::Value<String>> = None;
-                    let mut image_pull_credentials_type: Option<::Value<String>> = None;
-                    let mut privileged_mode: Option<::Value<bool>> = None;
-                    let mut registry_credential: Option<::Value<RegistryCredential>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut certificate: Option<crate::Value<String>> = None;
+                    let mut compute_type: Option<crate::Value<String>> = None;
+                    let mut environment_variables: Option<crate::ValueList<EnvironmentVariable>> = None;
+                    let mut image: Option<crate::Value<String>> = None;
+                    let mut image_pull_credentials_type: Option<crate::Value<String>> = None;
+                    let mut privileged_mode: Option<crate::Value<bool>> = None;
+                    let mut registry_credential: Option<crate::Value<RegistryCredential>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1259,20 +1259,20 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for EnvironmentVariable {
+    impl crate::codec::SerializeValue for EnvironmentVariable {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -1284,7 +1284,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for EnvironmentVariable {
+    impl crate::codec::DeserializeValue for EnvironmentVariable {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EnvironmentVariable, D::Error> {
@@ -1301,9 +1301,9 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1338,14 +1338,14 @@ pub mod project {
     #[derive(Debug, Default)]
     pub struct FilterGroup {}
 
-    impl ::codec::SerializeValue for FilterGroup {
+    impl crate::codec::SerializeValue for FilterGroup {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl ::codec::DeserializeValue for FilterGroup {
+    impl crate::codec::DeserializeValue for FilterGroup {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FilterGroup, D::Error> {
             struct Visitor;
 
@@ -1375,10 +1375,10 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fetch_submodules: ::Value<bool>,
+        pub fetch_submodules: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for GitSubmodulesConfig {
+    impl crate::codec::SerializeValue for GitSubmodulesConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1390,7 +1390,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for GitSubmodulesConfig {
+    impl crate::codec::DeserializeValue for GitSubmodulesConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GitSubmodulesConfig, D::Error> {
@@ -1407,7 +1407,7 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut fetch_submodules: Option<::Value<bool>> = None;
+                    let mut fetch_submodules: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1438,15 +1438,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logs: Option<::Value<CloudWatchLogsConfig>>,
+        pub cloud_watch_logs: Option<crate::Value<CloudWatchLogsConfig>>,
         /// Property [`S3Logs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-s3logs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_logs: Option<::Value<S3LogsConfig>>,
+        pub s3_logs: Option<crate::Value<S3LogsConfig>>,
     }
 
-    impl ::codec::SerializeValue for LogsConfig {
+    impl crate::codec::SerializeValue for LogsConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_logs) = self.cloud_watch_logs {
@@ -1463,7 +1463,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for LogsConfig {
+    impl crate::codec::DeserializeValue for LogsConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LogsConfig, D::Error> {
             struct Visitor;
 
@@ -1478,8 +1478,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_logs: Option<::Value<CloudWatchLogsConfig>> = None;
-                    let mut s3_logs: Option<::Value<S3LogsConfig>> = None;
+                    let mut cloud_watch_logs: Option<crate::Value<CloudWatchLogsConfig>> = None;
+                    let mut s3_logs: Option<crate::Value<S3LogsConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1513,30 +1513,30 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub batch_report_mode: Option<::Value<String>>,
+        pub batch_report_mode: Option<crate::Value<String>>,
         /// Property [`CombineArtifacts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-combineartifacts).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub combine_artifacts: Option<::Value<bool>>,
+        pub combine_artifacts: Option<crate::Value<bool>>,
         /// Property [`Restrictions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-restrictions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub restrictions: Option<::Value<BatchRestrictions>>,
+        pub restrictions: Option<crate::Value<BatchRestrictions>>,
         /// Property [`ServiceRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-servicerole).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_role: Option<::Value<String>>,
+        pub service_role: Option<crate::Value<String>>,
         /// Property [`TimeoutInMins`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-timeoutinmins).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timeout_in_mins: Option<::Value<u32>>,
+        pub timeout_in_mins: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for ProjectBuildBatchConfig {
+    impl crate::codec::SerializeValue for ProjectBuildBatchConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref batch_report_mode) = self.batch_report_mode {
@@ -1574,7 +1574,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for ProjectBuildBatchConfig {
+    impl crate::codec::DeserializeValue for ProjectBuildBatchConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProjectBuildBatchConfig, D::Error> {
@@ -1591,11 +1591,11 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut batch_report_mode: Option<::Value<String>> = None;
-                    let mut combine_artifacts: Option<::Value<bool>> = None;
-                    let mut restrictions: Option<::Value<BatchRestrictions>> = None;
-                    let mut service_role: Option<::Value<String>> = None;
-                    let mut timeout_in_mins: Option<::Value<u32>> = None;
+                    let mut batch_report_mode: Option<crate::Value<String>> = None;
+                    let mut combine_artifacts: Option<crate::Value<bool>> = None;
+                    let mut restrictions: Option<crate::Value<BatchRestrictions>> = None;
+                    let mut service_role: Option<crate::Value<String>> = None;
+                    let mut timeout_in_mins: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1641,20 +1641,20 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: Option<::Value<String>>,
+        pub location: Option<crate::Value<String>>,
         /// Property [`Modes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-modes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub modes: Option<::ValueList<String>>,
+        pub modes: Option<crate::ValueList<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ProjectCache {
+    impl crate::codec::SerializeValue for ProjectCache {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref location) = self.location {
@@ -1668,7 +1668,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for ProjectCache {
+    impl crate::codec::DeserializeValue for ProjectCache {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ProjectCache, D::Error> {
             struct Visitor;
 
@@ -1683,9 +1683,9 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut location: Option<::Value<String>> = None;
-                    let mut modes: Option<::ValueList<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut location: Option<crate::Value<String>> = None;
+                    let mut modes: Option<crate::ValueList<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1723,30 +1723,30 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub identifier: ::Value<String>,
+        pub identifier: crate::Value<String>,
         /// Property [`Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectfilesystemlocation.html#cfn-codebuild-project-projectfilesystemlocation-location).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: ::Value<String>,
+        pub location: crate::Value<String>,
         /// Property [`MountOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectfilesystemlocation.html#cfn-codebuild-project-projectfilesystemlocation-mountoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mount_options: Option<::Value<String>>,
+        pub mount_options: Option<crate::Value<String>>,
         /// Property [`MountPoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectfilesystemlocation.html#cfn-codebuild-project-projectfilesystemlocation-mountpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mount_point: ::Value<String>,
+        pub mount_point: crate::Value<String>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectfilesystemlocation.html#cfn-codebuild-project-projectfilesystemlocation-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ProjectFileSystemLocation {
+    impl crate::codec::SerializeValue for ProjectFileSystemLocation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Identifier", &self.identifier)?;
@@ -1764,7 +1764,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for ProjectFileSystemLocation {
+    impl crate::codec::DeserializeValue for ProjectFileSystemLocation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProjectFileSystemLocation, D::Error> {
@@ -1781,11 +1781,11 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut identifier: Option<::Value<String>> = None;
-                    let mut location: Option<::Value<String>> = None;
-                    let mut mount_options: Option<::Value<String>> = None;
-                    let mut mount_point: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut identifier: Option<crate::Value<String>> = None;
+                    let mut location: Option<crate::Value<String>> = None;
+                    let mut mount_options: Option<crate::Value<String>> = None;
+                    let mut mount_point: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1833,15 +1833,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_identifier: ::Value<String>,
+        pub source_identifier: crate::Value<String>,
         /// Property [`SourceVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectsourceversion.html#cfn-codebuild-project-projectsourceversion-sourceversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_version: Option<::Value<String>>,
+        pub source_version: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ProjectSourceVersion {
+    impl crate::codec::SerializeValue for ProjectSourceVersion {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1860,7 +1860,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for ProjectSourceVersion {
+    impl crate::codec::DeserializeValue for ProjectSourceVersion {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProjectSourceVersion, D::Error> {
@@ -1877,8 +1877,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source_identifier: Option<::Value<String>> = None;
-                    let mut source_version: Option<::Value<String>> = None;
+                    let mut source_identifier: Option<crate::Value<String>> = None;
+                    let mut source_version: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1913,20 +1913,20 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub build_type: Option<::Value<String>>,
+        pub build_type: Option<crate::Value<String>>,
         /// Property [`FilterGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_groups: Option<::ValueList<FilterGroup>>,
+        pub filter_groups: Option<crate::ValueList<FilterGroup>>,
         /// Property [`Webhook`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub webhook: Option<::Value<bool>>,
+        pub webhook: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for ProjectTriggers {
+    impl crate::codec::SerializeValue for ProjectTriggers {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref build_type) = self.build_type {
@@ -1946,7 +1946,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for ProjectTriggers {
+    impl crate::codec::DeserializeValue for ProjectTriggers {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProjectTriggers, D::Error> {
@@ -1963,9 +1963,9 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut build_type: Option<::Value<String>> = None;
-                    let mut filter_groups: Option<::ValueList<FilterGroup>> = None;
-                    let mut webhook: Option<::Value<bool>> = None;
+                    let mut build_type: Option<crate::Value<String>> = None;
+                    let mut filter_groups: Option<crate::ValueList<FilterGroup>> = None;
+                    let mut webhook: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2003,15 +2003,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub credential: ::Value<String>,
+        pub credential: crate::Value<String>,
         /// Property [`CredentialProvider`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html#cfn-codebuild-project-registrycredential-credentialprovider).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub credential_provider: ::Value<String>,
+        pub credential_provider: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for RegistryCredential {
+    impl crate::codec::SerializeValue for RegistryCredential {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Credential", &self.credential)?;
@@ -2024,7 +2024,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for RegistryCredential {
+    impl crate::codec::DeserializeValue for RegistryCredential {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RegistryCredential, D::Error> {
@@ -2041,8 +2041,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut credential: Option<::Value<String>> = None;
-                    let mut credential_provider: Option<::Value<String>> = None;
+                    let mut credential: Option<crate::Value<String>> = None;
+                    let mut credential_provider: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2078,20 +2078,20 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_disabled: Option<::Value<bool>>,
+        pub encryption_disabled: Option<crate::Value<bool>>,
         /// Property [`Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-location).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: Option<::Value<String>>,
+        pub location: Option<crate::Value<String>>,
         /// Property [`Status`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-status).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status: ::Value<String>,
+        pub status: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for S3LogsConfig {
+    impl crate::codec::SerializeValue for S3LogsConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref encryption_disabled) = self.encryption_disabled {
@@ -2109,7 +2109,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for S3LogsConfig {
+    impl crate::codec::DeserializeValue for S3LogsConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3LogsConfig, D::Error> {
             struct Visitor;
 
@@ -2124,9 +2124,9 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut encryption_disabled: Option<::Value<bool>> = None;
-                    let mut location: Option<::Value<String>> = None;
-                    let mut status: Option<::Value<String>> = None;
+                    let mut encryption_disabled: Option<crate::Value<bool>> = None;
+                    let mut location: Option<crate::Value<String>> = None;
+                    let mut status: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2164,55 +2164,55 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auth: Option<::Value<SourceAuth>>,
+        pub auth: Option<crate::Value<SourceAuth>>,
         /// Property [`BuildSpec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildspec).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub build_spec: Option<::Value<String>>,
+        pub build_spec: Option<crate::Value<String>>,
         /// Property [`BuildStatusConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildstatusconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub build_status_config: Option<::Value<BuildStatusConfig>>,
+        pub build_status_config: Option<crate::Value<BuildStatusConfig>>,
         /// Property [`GitCloneDepth`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitclonedepth).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub git_clone_depth: Option<::Value<u32>>,
+        pub git_clone_depth: Option<crate::Value<u32>>,
         /// Property [`GitSubmodulesConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitsubmodulesconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub git_submodules_config: Option<::Value<GitSubmodulesConfig>>,
+        pub git_submodules_config: Option<crate::Value<GitSubmodulesConfig>>,
         /// Property [`InsecureSsl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-insecuressl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub insecure_ssl: Option<::Value<bool>>,
+        pub insecure_ssl: Option<crate::Value<bool>>,
         /// Property [`Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-location).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: Option<::Value<String>>,
+        pub location: Option<crate::Value<String>>,
         /// Property [`ReportBuildStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-reportbuildstatus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub report_build_status: Option<::Value<bool>>,
+        pub report_build_status: Option<crate::Value<bool>>,
         /// Property [`SourceIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-sourceidentifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_identifier: Option<::Value<String>>,
+        pub source_identifier: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Source {
+    impl crate::codec::SerializeValue for Source {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref auth) = self.auth {
@@ -2267,7 +2267,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for Source {
+    impl crate::codec::DeserializeValue for Source {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Source, D::Error> {
             struct Visitor;
 
@@ -2282,16 +2282,16 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut auth: Option<::Value<SourceAuth>> = None;
-                    let mut build_spec: Option<::Value<String>> = None;
-                    let mut build_status_config: Option<::Value<BuildStatusConfig>> = None;
-                    let mut git_clone_depth: Option<::Value<u32>> = None;
-                    let mut git_submodules_config: Option<::Value<GitSubmodulesConfig>> = None;
-                    let mut insecure_ssl: Option<::Value<bool>> = None;
-                    let mut location: Option<::Value<String>> = None;
-                    let mut report_build_status: Option<::Value<bool>> = None;
-                    let mut source_identifier: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut auth: Option<crate::Value<SourceAuth>> = None;
+                    let mut build_spec: Option<crate::Value<String>> = None;
+                    let mut build_status_config: Option<crate::Value<BuildStatusConfig>> = None;
+                    let mut git_clone_depth: Option<crate::Value<u32>> = None;
+                    let mut git_submodules_config: Option<crate::Value<GitSubmodulesConfig>> = None;
+                    let mut insecure_ssl: Option<crate::Value<bool>> = None;
+                    let mut location: Option<crate::Value<String>> = None;
+                    let mut report_build_status: Option<crate::Value<bool>> = None;
+                    let mut source_identifier: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2358,15 +2358,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource: Option<::Value<String>>,
+        pub resource: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SourceAuth {
+    impl crate::codec::SerializeValue for SourceAuth {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref resource) = self.resource {
@@ -2377,7 +2377,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for SourceAuth {
+    impl crate::codec::DeserializeValue for SourceAuth {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SourceAuth, D::Error> {
             struct Visitor;
 
@@ -2392,8 +2392,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut resource: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut resource: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2427,20 +2427,20 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_group_ids: Option<::ValueList<String>>,
+        pub security_group_ids: Option<crate::ValueList<String>>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-subnets).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subnets: Option<::ValueList<String>>,
+        pub subnets: Option<crate::ValueList<String>>,
         /// Property [`VpcId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-vpcid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_id: Option<::Value<String>>,
+        pub vpc_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for VpcConfig {
+    impl crate::codec::SerializeValue for VpcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref security_group_ids) = self.security_group_ids {
@@ -2460,7 +2460,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for VpcConfig {
+    impl crate::codec::DeserializeValue for VpcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConfig, D::Error> {
             struct Visitor;
 
@@ -2475,9 +2475,9 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<::ValueList<String>> = None;
-                    let mut subnets: Option<::ValueList<String>> = None;
-                    let mut vpc_id: Option<::Value<String>> = None;
+                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
+                    let mut subnets: Option<crate::ValueList<String>> = None;
+                    let mut vpc_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2515,20 +2515,20 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_matched_pattern: Option<::Value<bool>>,
+        pub exclude_matched_pattern: Option<crate::Value<bool>>,
         /// Property [`Pattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-pattern).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pattern: ::Value<String>,
+        pub pattern: crate::Value<String>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for WebhookFilter {
+    impl crate::codec::SerializeValue for WebhookFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref exclude_matched_pattern) = self.exclude_matched_pattern {
@@ -2544,7 +2544,7 @@ pub mod project {
         }
     }
 
-    impl ::codec::DeserializeValue for WebhookFilter {
+    impl crate::codec::DeserializeValue for WebhookFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WebhookFilter, D::Error> {
@@ -2561,9 +2561,9 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut exclude_matched_pattern: Option<::Value<bool>> = None;
-                    let mut pattern: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut exclude_matched_pattern: Option<crate::Value<bool>> = None;
+                    let mut pattern: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2606,15 +2606,15 @@ pub mod report_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub export_config_type: ::Value<String>,
+        pub export_config_type: crate::Value<String>,
         /// Property [`S3Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html#cfn-codebuild-reportgroup-reportexportconfig-s3destination).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_destination: Option<::Value<S3ReportExportConfig>>,
+        pub s3_destination: Option<crate::Value<S3ReportExportConfig>>,
     }
 
-    impl ::codec::SerializeValue for ReportExportConfig {
+    impl crate::codec::SerializeValue for ReportExportConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2633,7 +2633,7 @@ pub mod report_group {
         }
     }
 
-    impl ::codec::DeserializeValue for ReportExportConfig {
+    impl crate::codec::DeserializeValue for ReportExportConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReportExportConfig, D::Error> {
@@ -2650,8 +2650,8 @@ pub mod report_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut export_config_type: Option<::Value<String>> = None;
-                    let mut s3_destination: Option<::Value<S3ReportExportConfig>> = None;
+                    let mut export_config_type: Option<crate::Value<String>> = None;
+                    let mut s3_destination: Option<crate::Value<S3ReportExportConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2686,35 +2686,35 @@ pub mod report_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: ::Value<String>,
+        pub bucket: crate::Value<String>,
         /// Property [`BucketOwner`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-bucketowner).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_owner: Option<::Value<String>>,
+        pub bucket_owner: Option<crate::Value<String>>,
         /// Property [`EncryptionDisabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-encryptiondisabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_disabled: Option<::Value<bool>>,
+        pub encryption_disabled: Option<crate::Value<bool>>,
         /// Property [`EncryptionKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-encryptionkey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_key: Option<::Value<String>>,
+        pub encryption_key: Option<crate::Value<String>>,
         /// Property [`Packaging`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-packaging).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub packaging: Option<::Value<String>>,
+        pub packaging: Option<crate::Value<String>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path: Option<::Value<String>>,
+        pub path: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3ReportExportConfig {
+    impl crate::codec::SerializeValue for S3ReportExportConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -2745,7 +2745,7 @@ pub mod report_group {
         }
     }
 
-    impl ::codec::DeserializeValue for S3ReportExportConfig {
+    impl crate::codec::DeserializeValue for S3ReportExportConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3ReportExportConfig, D::Error> {
@@ -2762,12 +2762,12 @@ pub mod report_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<::Value<String>> = None;
-                    let mut bucket_owner: Option<::Value<String>> = None;
-                    let mut encryption_disabled: Option<::Value<bool>> = None;
-                    let mut encryption_key: Option<::Value<String>> = None;
-                    let mut packaging: Option<::Value<String>> = None;
-                    let mut path: Option<::Value<String>> = None;
+                    let mut bucket: Option<crate::Value<String>> = None;
+                    let mut bucket_owner: Option<crate::Value<String>> = None;
+                    let mut encryption_disabled: Option<crate::Value<bool>> = None;
+                    let mut encryption_key: Option<crate::Value<String>> = None;
+                    let mut packaging: Option<crate::Value<String>> = None;
+                    let mut path: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

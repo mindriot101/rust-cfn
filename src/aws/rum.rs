@@ -13,27 +13,27 @@ pub struct AppMonitorProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub app_monitor_configuration: Option<::Value<self::app_monitor::AppMonitorConfiguration>>,
+    pub app_monitor_configuration: Option<crate::Value<self::app_monitor::AppMonitorConfiguration>>,
     /// Property [`CwLogEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-cwlogenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cw_log_enabled: Option<::Value<bool>>,
+    pub cw_log_enabled: Option<crate::Value<bool>>,
     /// Property [`Domain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-domain).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub domain: ::Value<String>,
+    pub domain: crate::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for AppMonitorProperties {
@@ -74,12 +74,12 @@ impl<'de> ::serde::Deserialize<'de> for AppMonitorProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut app_monitor_configuration: Option<
-                    ::Value<self::app_monitor::AppMonitorConfiguration>,
+                    crate::Value<self::app_monitor::AppMonitorConfiguration>,
                 > = None;
-                let mut cw_log_enabled: Option<::Value<bool>> = None;
-                let mut domain: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut cw_log_enabled: Option<crate::Value<bool>> = None;
+                let mut domain: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -117,7 +117,7 @@ impl<'de> ::serde::Deserialize<'de> for AppMonitorProperties {
     }
 }
 
-impl ::Resource for AppMonitor {
+impl crate::Resource for AppMonitor {
     type Properties = AppMonitorProperties;
     const TYPE: &'static str = "AWS::RUM::AppMonitor";
     fn properties(&self) -> &AppMonitorProperties {
@@ -128,7 +128,7 @@ impl ::Resource for AppMonitor {
     }
 }
 
-impl ::private::Sealed for AppMonitor {}
+impl crate::private::Sealed for AppMonitor {}
 
 impl From<AppMonitorProperties> for AppMonitor {
     fn from(properties: AppMonitorProperties) -> AppMonitor {
@@ -146,50 +146,50 @@ pub mod app_monitor {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allow_cookies: Option<::Value<bool>>,
+        pub allow_cookies: Option<crate::Value<bool>>,
         /// Property [`EnableXRay`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-enablexray).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enable_x_ray: Option<::Value<bool>>,
+        pub enable_x_ray: Option<crate::Value<bool>>,
         /// Property [`ExcludedPages`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-excludedpages).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub excluded_pages: Option<::ValueList<String>>,
+        pub excluded_pages: Option<crate::ValueList<String>>,
         /// Property [`FavoritePages`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-favoritepages).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub favorite_pages: Option<::ValueList<String>>,
+        pub favorite_pages: Option<crate::ValueList<String>>,
         /// Property [`GuestRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-guestrolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub guest_role_arn: Option<::Value<String>>,
+        pub guest_role_arn: Option<crate::Value<String>>,
         /// Property [`IdentityPoolId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-identitypoolid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub identity_pool_id: Option<::Value<String>>,
+        pub identity_pool_id: Option<crate::Value<String>>,
         /// Property [`IncludedPages`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-includedpages).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub included_pages: Option<::ValueList<String>>,
+        pub included_pages: Option<crate::ValueList<String>>,
         /// Property [`SessionSampleRate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-sessionsamplerate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_sample_rate: Option<::Value<f64>>,
+        pub session_sample_rate: Option<crate::Value<f64>>,
         /// Property [`Telemetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-telemetries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub telemetries: Option<::ValueList<String>>,
+        pub telemetries: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for AppMonitorConfiguration {
+    impl crate::codec::SerializeValue for AppMonitorConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_cookies) = self.allow_cookies {
@@ -251,7 +251,7 @@ pub mod app_monitor {
         }
     }
 
-    impl ::codec::DeserializeValue for AppMonitorConfiguration {
+    impl crate::codec::DeserializeValue for AppMonitorConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AppMonitorConfiguration, D::Error> {
@@ -268,15 +268,15 @@ pub mod app_monitor {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allow_cookies: Option<::Value<bool>> = None;
-                    let mut enable_x_ray: Option<::Value<bool>> = None;
-                    let mut excluded_pages: Option<::ValueList<String>> = None;
-                    let mut favorite_pages: Option<::ValueList<String>> = None;
-                    let mut guest_role_arn: Option<::Value<String>> = None;
-                    let mut identity_pool_id: Option<::Value<String>> = None;
-                    let mut included_pages: Option<::ValueList<String>> = None;
-                    let mut session_sample_rate: Option<::Value<f64>> = None;
-                    let mut telemetries: Option<::ValueList<String>> = None;
+                    let mut allow_cookies: Option<crate::Value<bool>> = None;
+                    let mut enable_x_ray: Option<crate::Value<bool>> = None;
+                    let mut excluded_pages: Option<crate::ValueList<String>> = None;
+                    let mut favorite_pages: Option<crate::ValueList<String>> = None;
+                    let mut guest_role_arn: Option<crate::Value<String>> = None;
+                    let mut identity_pool_id: Option<crate::Value<String>> = None;
+                    let mut included_pages: Option<crate::ValueList<String>> = None;
+                    let mut session_sample_rate: Option<crate::Value<f64>> = None;
+                    let mut telemetries: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

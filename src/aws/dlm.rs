@@ -13,27 +13,27 @@ pub struct LifecyclePolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`ExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-executionrolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub execution_role_arn: Option<::Value<String>>,
+    pub execution_role_arn: Option<crate::Value<String>>,
     /// Property [`PolicyDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-policydetails).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy_details: Option<::Value<self::lifecycle_policy::PolicyDetails>>,
+    pub policy_details: Option<crate::Value<self::lifecycle_policy::PolicyDetails>>,
     /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-state).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub state: Option<::Value<String>>,
+    pub state: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
 }
 
 impl ::serde::Serialize for LifecyclePolicyProperties {
@@ -79,12 +79,12 @@ impl<'de> ::serde::Deserialize<'de> for LifecyclePolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut execution_role_arn: Option<::Value<String>> = None;
-                let mut policy_details: Option<::Value<self::lifecycle_policy::PolicyDetails>> =
+                let mut description: Option<crate::Value<String>> = None;
+                let mut execution_role_arn: Option<crate::Value<String>> = None;
+                let mut policy_details: Option<crate::Value<self::lifecycle_policy::PolicyDetails>> =
                     None;
-                let mut state: Option<::Value<String>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut state: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -121,7 +121,7 @@ impl<'de> ::serde::Deserialize<'de> for LifecyclePolicyProperties {
     }
 }
 
-impl ::Resource for LifecyclePolicy {
+impl crate::Resource for LifecyclePolicy {
     type Properties = LifecyclePolicyProperties;
     const TYPE: &'static str = "AWS::DLM::LifecyclePolicy";
     fn properties(&self) -> &LifecyclePolicyProperties {
@@ -132,7 +132,7 @@ impl ::Resource for LifecyclePolicy {
     }
 }
 
-impl ::private::Sealed for LifecyclePolicy {}
+impl crate::private::Sealed for LifecyclePolicy {}
 
 impl From<LifecyclePolicyProperties> for LifecyclePolicy {
     fn from(properties: LifecyclePolicyProperties) -> LifecyclePolicy {
@@ -150,15 +150,15 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cross_region_copy: ::ValueList<CrossRegionCopyAction>,
+        pub cross_region_copy: crate::ValueList<CrossRegionCopyAction>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-action.html#cfn-dlm-lifecyclepolicy-action-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: ::Value<String>,
+        pub name: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Action {
+    impl crate::codec::SerializeValue for Action {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -171,7 +171,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for Action {
+    impl crate::codec::DeserializeValue for Action {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Action, D::Error> {
             struct Visitor;
 
@@ -186,8 +186,8 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cross_region_copy: Option<::ValueList<CrossRegionCopyAction>> = None;
-                    let mut name: Option<::Value<String>> = None;
+                    let mut cross_region_copy: Option<crate::ValueList<CrossRegionCopyAction>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -222,30 +222,30 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cron_expression: Option<::Value<String>>,
+        pub cron_expression: Option<crate::Value<String>>,
         /// Property [`Interval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-interval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval: Option<::Value<u32>>,
+        pub interval: Option<crate::Value<u32>>,
         /// Property [`IntervalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-intervalunit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_unit: Option<::Value<String>>,
+        pub interval_unit: Option<crate::Value<String>>,
         /// Property [`Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-location).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: Option<::Value<String>>,
+        pub location: Option<crate::Value<String>>,
         /// Property [`Times`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-times).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub times: Option<::ValueList<String>>,
+        pub times: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for CreateRule {
+    impl crate::codec::SerializeValue for CreateRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cron_expression) = self.cron_expression {
@@ -275,7 +275,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for CreateRule {
+    impl crate::codec::DeserializeValue for CreateRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CreateRule, D::Error> {
             struct Visitor;
 
@@ -290,11 +290,11 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cron_expression: Option<::Value<String>> = None;
-                    let mut interval: Option<::Value<u32>> = None;
-                    let mut interval_unit: Option<::Value<String>> = None;
-                    let mut location: Option<::Value<String>> = None;
-                    let mut times: Option<::ValueList<String>> = None;
+                    let mut cron_expression: Option<crate::Value<String>> = None;
+                    let mut interval: Option<crate::Value<u32>> = None;
+                    let mut interval_unit: Option<crate::Value<String>> = None;
+                    let mut location: Option<crate::Value<String>> = None;
+                    let mut times: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -340,20 +340,20 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_configuration: ::Value<EncryptionConfiguration>,
+        pub encryption_configuration: crate::Value<EncryptionConfiguration>,
         /// Property [`RetainRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyaction.html#cfn-dlm-lifecyclepolicy-crossregioncopyaction-retainrule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retain_rule: Option<::Value<CrossRegionCopyRetainRule>>,
+        pub retain_rule: Option<crate::Value<CrossRegionCopyRetainRule>>,
         /// Property [`Target`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyaction.html#cfn-dlm-lifecyclepolicy-crossregioncopyaction-target).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target: ::Value<String>,
+        pub target: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CrossRegionCopyAction {
+    impl crate::codec::SerializeValue for CrossRegionCopyAction {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -369,7 +369,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for CrossRegionCopyAction {
+    impl crate::codec::DeserializeValue for CrossRegionCopyAction {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CrossRegionCopyAction, D::Error> {
@@ -386,10 +386,10 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut encryption_configuration: Option<::Value<EncryptionConfiguration>> =
+                    let mut encryption_configuration: Option<crate::Value<EncryptionConfiguration>> =
                         None;
-                    let mut retain_rule: Option<::Value<CrossRegionCopyRetainRule>> = None;
-                    let mut target: Option<::Value<String>> = None;
+                    let mut retain_rule: Option<crate::Value<CrossRegionCopyRetainRule>> = None;
+                    let mut target: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -429,15 +429,15 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval: ::Value<u32>,
+        pub interval: crate::Value<u32>,
         /// Property [`IntervalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopydeprecaterule.html#cfn-dlm-lifecyclepolicy-crossregioncopydeprecaterule-intervalunit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_unit: ::Value<String>,
+        pub interval_unit: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CrossRegionCopyDeprecateRule {
+    impl crate::codec::SerializeValue for CrossRegionCopyDeprecateRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", &self.interval)?;
@@ -450,7 +450,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for CrossRegionCopyDeprecateRule {
+    impl crate::codec::DeserializeValue for CrossRegionCopyDeprecateRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CrossRegionCopyDeprecateRule, D::Error> {
@@ -467,8 +467,8 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut interval: Option<::Value<u32>> = None;
-                    let mut interval_unit: Option<::Value<String>> = None;
+                    let mut interval: Option<crate::Value<u32>> = None;
+                    let mut interval_unit: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -503,15 +503,15 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval: ::Value<u32>,
+        pub interval: crate::Value<u32>,
         /// Property [`IntervalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyretainrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyretainrule-intervalunit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_unit: ::Value<String>,
+        pub interval_unit: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CrossRegionCopyRetainRule {
+    impl crate::codec::SerializeValue for CrossRegionCopyRetainRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", &self.interval)?;
@@ -524,7 +524,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for CrossRegionCopyRetainRule {
+    impl crate::codec::DeserializeValue for CrossRegionCopyRetainRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CrossRegionCopyRetainRule, D::Error> {
@@ -541,8 +541,8 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut interval: Option<::Value<u32>> = None;
-                    let mut interval_unit: Option<::Value<String>> = None;
+                    let mut interval: Option<crate::Value<u32>> = None;
+                    let mut interval_unit: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -577,40 +577,40 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cmk_arn: Option<::Value<String>>,
+        pub cmk_arn: Option<crate::Value<String>>,
         /// Property [`CopyTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-copytags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copy_tags: Option<::Value<bool>>,
+        pub copy_tags: Option<crate::Value<bool>>,
         /// Property [`DeprecateRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-deprecaterule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub deprecate_rule: Option<::Value<CrossRegionCopyDeprecateRule>>,
+        pub deprecate_rule: Option<crate::Value<CrossRegionCopyDeprecateRule>>,
         /// Property [`Encrypted`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-encrypted).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encrypted: ::Value<bool>,
+        pub encrypted: crate::Value<bool>,
         /// Property [`RetainRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-retainrule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retain_rule: Option<::Value<CrossRegionCopyRetainRule>>,
+        pub retain_rule: Option<crate::Value<CrossRegionCopyRetainRule>>,
         /// Property [`Target`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-target).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target: Option<::Value<String>>,
+        pub target: Option<crate::Value<String>>,
         /// Property [`TargetRegion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-targetregion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_region: Option<::Value<String>>,
+        pub target_region: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CrossRegionCopyRule {
+    impl crate::codec::SerializeValue for CrossRegionCopyRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cmk_arn) = self.cmk_arn {
@@ -644,7 +644,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for CrossRegionCopyRule {
+    impl crate::codec::DeserializeValue for CrossRegionCopyRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CrossRegionCopyRule, D::Error> {
@@ -661,13 +661,13 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cmk_arn: Option<::Value<String>> = None;
-                    let mut copy_tags: Option<::Value<bool>> = None;
-                    let mut deprecate_rule: Option<::Value<CrossRegionCopyDeprecateRule>> = None;
-                    let mut encrypted: Option<::Value<bool>> = None;
-                    let mut retain_rule: Option<::Value<CrossRegionCopyRetainRule>> = None;
-                    let mut target: Option<::Value<String>> = None;
-                    let mut target_region: Option<::Value<String>> = None;
+                    let mut cmk_arn: Option<crate::Value<String>> = None;
+                    let mut copy_tags: Option<crate::Value<bool>> = None;
+                    let mut deprecate_rule: Option<crate::Value<CrossRegionCopyDeprecateRule>> = None;
+                    let mut encrypted: Option<crate::Value<bool>> = None;
+                    let mut retain_rule: Option<crate::Value<CrossRegionCopyRetainRule>> = None;
+                    let mut target: Option<crate::Value<String>> = None;
+                    let mut target_region: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -722,20 +722,20 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub count: Option<::Value<u32>>,
+        pub count: Option<crate::Value<u32>>,
         /// Property [`Interval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-deprecaterule.html#cfn-dlm-lifecyclepolicy-deprecaterule-interval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval: Option<::Value<u32>>,
+        pub interval: Option<crate::Value<u32>>,
         /// Property [`IntervalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-deprecaterule.html#cfn-dlm-lifecyclepolicy-deprecaterule-intervalunit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_unit: Option<::Value<String>>,
+        pub interval_unit: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DeprecateRule {
+    impl crate::codec::SerializeValue for DeprecateRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref count) = self.count {
@@ -755,7 +755,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for DeprecateRule {
+    impl crate::codec::DeserializeValue for DeprecateRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DeprecateRule, D::Error> {
@@ -772,9 +772,9 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut count: Option<::Value<u32>> = None;
-                    let mut interval: Option<::Value<u32>> = None;
-                    let mut interval_unit: Option<::Value<String>> = None;
+                    let mut count: Option<crate::Value<u32>> = None;
+                    let mut interval: Option<crate::Value<u32>> = None;
+                    let mut interval_unit: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -812,15 +812,15 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cmk_arn: Option<::Value<String>>,
+        pub cmk_arn: Option<crate::Value<String>>,
         /// Property [`Encrypted`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-encryptionconfiguration.html#cfn-dlm-lifecyclepolicy-encryptionconfiguration-encrypted).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encrypted: ::Value<bool>,
+        pub encrypted: crate::Value<bool>,
     }
 
-    impl ::codec::SerializeValue for EncryptionConfiguration {
+    impl crate::codec::SerializeValue for EncryptionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cmk_arn) = self.cmk_arn {
@@ -831,7 +831,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for EncryptionConfiguration {
+    impl crate::codec::DeserializeValue for EncryptionConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EncryptionConfiguration, D::Error> {
@@ -848,8 +848,8 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cmk_arn: Option<::Value<String>> = None;
-                    let mut encrypted: Option<::Value<bool>> = None;
+                    let mut cmk_arn: Option<crate::Value<String>> = None;
+                    let mut encrypted: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -884,20 +884,20 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description_regex: Option<::Value<String>>,
+        pub description_regex: Option<crate::Value<String>>,
         /// Property [`EventType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventparameters.html#cfn-dlm-lifecyclepolicy-eventparameters-eventtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_type: ::Value<String>,
+        pub event_type: crate::Value<String>,
         /// Property [`SnapshotOwner`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventparameters.html#cfn-dlm-lifecyclepolicy-eventparameters-snapshotowner).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub snapshot_owner: ::ValueList<String>,
+        pub snapshot_owner: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for EventParameters {
+    impl crate::codec::SerializeValue for EventParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description_regex) = self.description_regex {
@@ -917,7 +917,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for EventParameters {
+    impl crate::codec::DeserializeValue for EventParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EventParameters, D::Error> {
@@ -934,9 +934,9 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description_regex: Option<::Value<String>> = None;
-                    let mut event_type: Option<::Value<String>> = None;
-                    let mut snapshot_owner: Option<::ValueList<String>> = None;
+                    let mut description_regex: Option<crate::Value<String>> = None;
+                    let mut event_type: Option<crate::Value<String>> = None;
+                    let mut snapshot_owner: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -976,15 +976,15 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<::Value<EventParameters>>,
+        pub parameters: Option<crate::Value<EventParameters>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventsource.html#cfn-dlm-lifecyclepolicy-eventsource-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for EventSource {
+    impl crate::codec::SerializeValue for EventSource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref parameters) = self.parameters {
@@ -995,7 +995,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for EventSource {
+    impl crate::codec::DeserializeValue for EventSource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EventSource, D::Error> {
             struct Visitor;
 
@@ -1010,8 +1010,8 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut parameters: Option<::Value<EventParameters>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut parameters: Option<crate::Value<EventParameters>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1045,25 +1045,25 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub availability_zones: Option<::ValueList<String>>,
+        pub availability_zones: Option<crate::ValueList<String>>,
         /// Property [`Count`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-count).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub count: Option<::Value<u32>>,
+        pub count: Option<crate::Value<u32>>,
         /// Property [`Interval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-interval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval: Option<::Value<u32>>,
+        pub interval: Option<crate::Value<u32>>,
         /// Property [`IntervalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-intervalunit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_unit: Option<::Value<String>>,
+        pub interval_unit: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for FastRestoreRule {
+    impl crate::codec::SerializeValue for FastRestoreRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref availability_zones) = self.availability_zones {
@@ -1090,7 +1090,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for FastRestoreRule {
+    impl crate::codec::DeserializeValue for FastRestoreRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FastRestoreRule, D::Error> {
@@ -1107,10 +1107,10 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut availability_zones: Option<::ValueList<String>> = None;
-                    let mut count: Option<::Value<u32>> = None;
-                    let mut interval: Option<::Value<u32>> = None;
-                    let mut interval_unit: Option<::Value<String>> = None;
+                    let mut availability_zones: Option<crate::ValueList<String>> = None;
+                    let mut count: Option<crate::Value<u32>> = None;
+                    let mut interval: Option<crate::Value<u32>> = None;
+                    let mut interval_unit: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1152,15 +1152,15 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_boot_volume: Option<::Value<bool>>,
+        pub exclude_boot_volume: Option<crate::Value<bool>>,
         /// Property [`NoReboot`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html#cfn-dlm-lifecyclepolicy-parameters-noreboot).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub no_reboot: Option<::Value<bool>>,
+        pub no_reboot: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for Parameters {
+    impl crate::codec::SerializeValue for Parameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref exclude_boot_volume) = self.exclude_boot_volume {
@@ -1177,7 +1177,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for Parameters {
+    impl crate::codec::DeserializeValue for Parameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Parameters, D::Error> {
             struct Visitor;
 
@@ -1192,8 +1192,8 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut exclude_boot_volume: Option<::Value<bool>> = None;
-                    let mut no_reboot: Option<::Value<bool>> = None;
+                    let mut exclude_boot_volume: Option<crate::Value<bool>> = None;
+                    let mut no_reboot: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1227,45 +1227,45 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub actions: Option<::ValueList<Action>>,
+        pub actions: Option<crate::ValueList<Action>>,
         /// Property [`EventSource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-eventsource).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_source: Option<::Value<EventSource>>,
+        pub event_source: Option<crate::Value<EventSource>>,
         /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-parameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<::Value<Parameters>>,
+        pub parameters: Option<crate::Value<Parameters>>,
         /// Property [`PolicyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-policytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub policy_type: Option<::Value<String>>,
+        pub policy_type: Option<crate::Value<String>>,
         /// Property [`ResourceLocations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-resourcelocations).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_locations: Option<::ValueList<String>>,
+        pub resource_locations: Option<crate::ValueList<String>>,
         /// Property [`ResourceTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-resourcetypes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_types: Option<::ValueList<String>>,
+        pub resource_types: Option<crate::ValueList<String>>,
         /// Property [`Schedules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-schedules).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedules: Option<::ValueList<Schedule>>,
+        pub schedules: Option<crate::ValueList<Schedule>>,
         /// Property [`TargetTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-targettags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_tags: Option<::ValueList<::Tag>>,
+        pub target_tags: Option<crate::ValueList<crate::Tag>>,
     }
 
-    impl ::codec::SerializeValue for PolicyDetails {
+    impl crate::codec::SerializeValue for PolicyDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref actions) = self.actions {
@@ -1304,7 +1304,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for PolicyDetails {
+    impl crate::codec::DeserializeValue for PolicyDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PolicyDetails, D::Error> {
@@ -1321,14 +1321,14 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut actions: Option<::ValueList<Action>> = None;
-                    let mut event_source: Option<::Value<EventSource>> = None;
-                    let mut parameters: Option<::Value<Parameters>> = None;
-                    let mut policy_type: Option<::Value<String>> = None;
-                    let mut resource_locations: Option<::ValueList<String>> = None;
-                    let mut resource_types: Option<::ValueList<String>> = None;
-                    let mut schedules: Option<::ValueList<Schedule>> = None;
-                    let mut target_tags: Option<::ValueList<::Tag>> = None;
+                    let mut actions: Option<crate::ValueList<Action>> = None;
+                    let mut event_source: Option<crate::Value<EventSource>> = None;
+                    let mut parameters: Option<crate::Value<Parameters>> = None;
+                    let mut policy_type: Option<crate::Value<String>> = None;
+                    let mut resource_locations: Option<crate::ValueList<String>> = None;
+                    let mut resource_types: Option<crate::ValueList<String>> = None;
+                    let mut schedules: Option<crate::ValueList<Schedule>> = None;
+                    let mut target_tags: Option<crate::ValueList<crate::Tag>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1386,20 +1386,20 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub count: Option<::Value<u32>>,
+        pub count: Option<crate::Value<u32>>,
         /// Property [`Interval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-interval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval: Option<::Value<u32>>,
+        pub interval: Option<crate::Value<u32>>,
         /// Property [`IntervalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-intervalunit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_unit: Option<::Value<String>>,
+        pub interval_unit: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for RetainRule {
+    impl crate::codec::SerializeValue for RetainRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref count) = self.count {
@@ -1419,7 +1419,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for RetainRule {
+    impl crate::codec::DeserializeValue for RetainRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RetainRule, D::Error> {
             struct Visitor;
 
@@ -1434,9 +1434,9 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut count: Option<::Value<u32>> = None;
-                    let mut interval: Option<::Value<u32>> = None;
-                    let mut interval_unit: Option<::Value<String>> = None;
+                    let mut count: Option<crate::Value<u32>> = None;
+                    let mut interval: Option<crate::Value<u32>> = None;
+                    let mut interval_unit: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1474,55 +1474,55 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copy_tags: Option<::Value<bool>>,
+        pub copy_tags: Option<crate::Value<bool>>,
         /// Property [`CreateRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-createrule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub create_rule: Option<::Value<CreateRule>>,
+        pub create_rule: Option<crate::Value<CreateRule>>,
         /// Property [`CrossRegionCopyRules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-crossregioncopyrules).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cross_region_copy_rules: Option<::ValueList<CrossRegionCopyRule>>,
+        pub cross_region_copy_rules: Option<crate::ValueList<CrossRegionCopyRule>>,
         /// Property [`DeprecateRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-deprecaterule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub deprecate_rule: Option<::Value<DeprecateRule>>,
+        pub deprecate_rule: Option<crate::Value<DeprecateRule>>,
         /// Property [`FastRestoreRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-fastrestorerule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fast_restore_rule: Option<::Value<FastRestoreRule>>,
+        pub fast_restore_rule: Option<crate::Value<FastRestoreRule>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<::Value<String>>,
+        pub name: Option<crate::Value<String>>,
         /// Property [`RetainRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-retainrule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retain_rule: Option<::Value<RetainRule>>,
+        pub retain_rule: Option<crate::Value<RetainRule>>,
         /// Property [`ShareRules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-sharerules).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub share_rules: Option<::ValueList<ShareRule>>,
+        pub share_rules: Option<crate::ValueList<ShareRule>>,
         /// Property [`TagsToAdd`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-tagstoadd).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tags_to_add: Option<::ValueList<::Tag>>,
+        pub tags_to_add: Option<crate::ValueList<crate::Tag>>,
         /// Property [`VariableTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-variabletags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variable_tags: Option<::ValueList<::Tag>>,
+        pub variable_tags: Option<crate::ValueList<crate::Tag>>,
     }
 
-    impl ::codec::SerializeValue for Schedule {
+    impl crate::codec::SerializeValue for Schedule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref copy_tags) = self.copy_tags {
@@ -1575,7 +1575,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for Schedule {
+    impl crate::codec::DeserializeValue for Schedule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Schedule, D::Error> {
             struct Visitor;
 
@@ -1590,17 +1590,17 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut copy_tags: Option<::Value<bool>> = None;
-                    let mut create_rule: Option<::Value<CreateRule>> = None;
-                    let mut cross_region_copy_rules: Option<::ValueList<CrossRegionCopyRule>> =
+                    let mut copy_tags: Option<crate::Value<bool>> = None;
+                    let mut create_rule: Option<crate::Value<CreateRule>> = None;
+                    let mut cross_region_copy_rules: Option<crate::ValueList<CrossRegionCopyRule>> =
                         None;
-                    let mut deprecate_rule: Option<::Value<DeprecateRule>> = None;
-                    let mut fast_restore_rule: Option<::Value<FastRestoreRule>> = None;
-                    let mut name: Option<::Value<String>> = None;
-                    let mut retain_rule: Option<::Value<RetainRule>> = None;
-                    let mut share_rules: Option<::ValueList<ShareRule>> = None;
-                    let mut tags_to_add: Option<::ValueList<::Tag>> = None;
-                    let mut variable_tags: Option<::ValueList<::Tag>> = None;
+                    let mut deprecate_rule: Option<crate::Value<DeprecateRule>> = None;
+                    let mut fast_restore_rule: Option<crate::Value<FastRestoreRule>> = None;
+                    let mut name: Option<crate::Value<String>> = None;
+                    let mut retain_rule: Option<crate::Value<RetainRule>> = None;
+                    let mut share_rules: Option<crate::ValueList<ShareRule>> = None;
+                    let mut tags_to_add: Option<crate::ValueList<crate::Tag>> = None;
+                    let mut variable_tags: Option<crate::ValueList<crate::Tag>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1667,20 +1667,20 @@ pub mod lifecycle_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_accounts: Option<::ValueList<String>>,
+        pub target_accounts: Option<crate::ValueList<String>>,
         /// Property [`UnshareInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-sharerule.html#cfn-dlm-lifecyclepolicy-sharerule-unshareinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unshare_interval: Option<::Value<u32>>,
+        pub unshare_interval: Option<crate::Value<u32>>,
         /// Property [`UnshareIntervalUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-sharerule.html#cfn-dlm-lifecyclepolicy-sharerule-unshareintervalunit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unshare_interval_unit: Option<::Value<String>>,
+        pub unshare_interval_unit: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ShareRule {
+    impl crate::codec::SerializeValue for ShareRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref target_accounts) = self.target_accounts {
@@ -1708,7 +1708,7 @@ pub mod lifecycle_policy {
         }
     }
 
-    impl ::codec::DeserializeValue for ShareRule {
+    impl crate::codec::DeserializeValue for ShareRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ShareRule, D::Error> {
             struct Visitor;
 
@@ -1723,9 +1723,9 @@ pub mod lifecycle_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut target_accounts: Option<::ValueList<String>> = None;
-                    let mut unshare_interval: Option<::Value<u32>> = None;
-                    let mut unshare_interval_unit: Option<::Value<String>> = None;
+                    let mut target_accounts: Option<crate::ValueList<String>> = None;
+                    let mut unshare_interval: Option<crate::Value<u32>> = None;
+                    let mut unshare_interval_unit: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

@@ -13,27 +13,27 @@ pub struct ConnectorProfileProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub connection_mode: ::Value<String>,
+    pub connection_mode: crate::Value<String>,
     /// Property [`ConnectorProfileConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectorprofileconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub connector_profile_config: Option<::Value<self::connector_profile::ConnectorProfileConfig>>,
+    pub connector_profile_config: Option<crate::Value<self::connector_profile::ConnectorProfileConfig>>,
     /// Property [`ConnectorProfileName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectorprofilename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub connector_profile_name: ::Value<String>,
+    pub connector_profile_name: crate::Value<String>,
     /// Property [`ConnectorType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectortype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub connector_type: ::Value<String>,
+    pub connector_type: crate::Value<String>,
     /// Property [`KMSArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-kmsarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_arn: Option<::Value<String>>,
+    pub kms_arn: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for ConnectorProfileProperties {
@@ -85,13 +85,13 @@ impl<'de> ::serde::Deserialize<'de> for ConnectorProfileProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut connection_mode: Option<::Value<String>> = None;
+                let mut connection_mode: Option<crate::Value<String>> = None;
                 let mut connector_profile_config: Option<
-                    ::Value<self::connector_profile::ConnectorProfileConfig>,
+                    crate::Value<self::connector_profile::ConnectorProfileConfig>,
                 > = None;
-                let mut connector_profile_name: Option<::Value<String>> = None;
-                let mut connector_type: Option<::Value<String>> = None;
-                let mut kms_arn: Option<::Value<String>> = None;
+                let mut connector_profile_name: Option<crate::Value<String>> = None;
+                let mut connector_type: Option<crate::Value<String>> = None;
+                let mut kms_arn: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -132,7 +132,7 @@ impl<'de> ::serde::Deserialize<'de> for ConnectorProfileProperties {
     }
 }
 
-impl ::Resource for ConnectorProfile {
+impl crate::Resource for ConnectorProfile {
     type Properties = ConnectorProfileProperties;
     const TYPE: &'static str = "AWS::AppFlow::ConnectorProfile";
     fn properties(&self) -> &ConnectorProfileProperties {
@@ -143,7 +143,7 @@ impl ::Resource for ConnectorProfile {
     }
 }
 
-impl ::private::Sealed for ConnectorProfile {}
+impl crate::private::Sealed for ConnectorProfile {}
 
 impl From<ConnectorProfileProperties> for ConnectorProfile {
     fn from(properties: ConnectorProfileProperties) -> ConnectorProfile {
@@ -164,42 +164,42 @@ pub struct FlowProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`DestinationFlowConfigList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-destinationflowconfiglist).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub destination_flow_config_list: ::ValueList<self::flow::DestinationFlowConfig>,
+    pub destination_flow_config_list: crate::ValueList<self::flow::DestinationFlowConfig>,
     /// Property [`FlowName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-flowname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub flow_name: ::Value<String>,
+    pub flow_name: crate::Value<String>,
     /// Property [`KMSArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-kmsarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_arn: Option<::Value<String>>,
+    pub kms_arn: Option<crate::Value<String>>,
     /// Property [`SourceFlowConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-sourceflowconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_flow_config: ::Value<self::flow::SourceFlowConfig>,
+    pub source_flow_config: crate::Value<self::flow::SourceFlowConfig>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::ValueList<::Tag>>,
+    pub tags: Option<crate::ValueList<crate::Tag>>,
     /// Property [`Tasks`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-tasks).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tasks: ::ValueList<self::flow::Task>,
+    pub tasks: crate::ValueList<self::flow::Task>,
     /// Property [`TriggerConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-triggerconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub trigger_config: ::Value<self::flow::TriggerConfig>,
+    pub trigger_config: crate::Value<self::flow::TriggerConfig>,
 }
 
 impl ::serde::Serialize for FlowProperties {
@@ -250,16 +250,16 @@ impl<'de> ::serde::Deserialize<'de> for FlowProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
                 let mut destination_flow_config_list: Option<
-                    ::ValueList<self::flow::DestinationFlowConfig>,
+                    crate::ValueList<self::flow::DestinationFlowConfig>,
                 > = None;
-                let mut flow_name: Option<::Value<String>> = None;
-                let mut kms_arn: Option<::Value<String>> = None;
-                let mut source_flow_config: Option<::Value<self::flow::SourceFlowConfig>> = None;
-                let mut tags: Option<::ValueList<::Tag>> = None;
-                let mut tasks: Option<::ValueList<self::flow::Task>> = None;
-                let mut trigger_config: Option<::Value<self::flow::TriggerConfig>> = None;
+                let mut flow_name: Option<crate::Value<String>> = None;
+                let mut kms_arn: Option<crate::Value<String>> = None;
+                let mut source_flow_config: Option<crate::Value<self::flow::SourceFlowConfig>> = None;
+                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tasks: Option<crate::ValueList<self::flow::Task>> = None;
+                let mut trigger_config: Option<crate::Value<self::flow::TriggerConfig>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -313,7 +313,7 @@ impl<'de> ::serde::Deserialize<'de> for FlowProperties {
     }
 }
 
-impl ::Resource for Flow {
+impl crate::Resource for Flow {
     type Properties = FlowProperties;
     const TYPE: &'static str = "AWS::AppFlow::Flow";
     fn properties(&self) -> &FlowProperties {
@@ -324,7 +324,7 @@ impl ::Resource for Flow {
     }
 }
 
-impl ::private::Sealed for Flow {}
+impl crate::private::Sealed for Flow {}
 
 impl From<FlowProperties> for Flow {
     fn from(properties: FlowProperties) -> Flow {
@@ -342,15 +342,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub api_key: ::Value<String>,
+        pub api_key: crate::Value<String>,
         /// Property [`SecretKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-amplitudeconnectorprofilecredentials.html#cfn-appflow-connectorprofile-amplitudeconnectorprofilecredentials-secretkey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_key: ::Value<String>,
+        pub secret_key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for AmplitudeConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for AmplitudeConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApiKey", &self.api_key)?;
@@ -359,7 +359,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for AmplitudeConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for AmplitudeConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AmplitudeConnectorProfileCredentials, D::Error> {
@@ -376,8 +376,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut api_key: Option<::Value<String>> = None;
-                    let mut secret_key: Option<::Value<String>> = None;
+                    let mut api_key: Option<crate::Value<String>> = None;
+                    let mut secret_key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -412,15 +412,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auth_code: Option<::Value<String>>,
+        pub auth_code: Option<crate::Value<String>>,
         /// Property [`RedirectUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectoroauthrequest.html#cfn-appflow-connectorprofile-connectoroauthrequest-redirecturi).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub redirect_uri: Option<::Value<String>>,
+        pub redirect_uri: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ConnectorOAuthRequest {
+    impl crate::codec::SerializeValue for ConnectorOAuthRequest {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref auth_code) = self.auth_code {
@@ -433,7 +433,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for ConnectorOAuthRequest {
+    impl crate::codec::DeserializeValue for ConnectorOAuthRequest {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConnectorOAuthRequest, D::Error> {
@@ -450,8 +450,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut auth_code: Option<::Value<String>> = None;
-                    let mut redirect_uri: Option<::Value<String>> = None;
+                    let mut auth_code: Option<crate::Value<String>> = None;
+                    let mut redirect_uri: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -485,15 +485,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_profile_credentials: ::Value<ConnectorProfileCredentials>,
+        pub connector_profile_credentials: crate::Value<ConnectorProfileCredentials>,
         /// Property [`ConnectorProfileProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileconfig.html#cfn-appflow-connectorprofile-connectorprofileconfig-connectorprofileproperties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_profile_properties: Option<::Value<ConnectorProfileProperties>>,
+        pub connector_profile_properties: Option<crate::Value<ConnectorProfileProperties>>,
     }
 
-    impl ::codec::SerializeValue for ConnectorProfileConfig {
+    impl crate::codec::SerializeValue for ConnectorProfileConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -512,7 +512,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for ConnectorProfileConfig {
+    impl crate::codec::DeserializeValue for ConnectorProfileConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConnectorProfileConfig, D::Error> {
@@ -530,10 +530,10 @@ pub mod connector_profile {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut connector_profile_credentials: Option<
-                        ::Value<ConnectorProfileCredentials>,
+                        crate::Value<ConnectorProfileCredentials>,
                     > = None;
                     let mut connector_profile_properties: Option<
-                        ::Value<ConnectorProfileProperties>,
+                        crate::Value<ConnectorProfileProperties>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -572,85 +572,85 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub amplitude: Option<::Value<AmplitudeConnectorProfileCredentials>>,
+        pub amplitude: Option<crate::Value<AmplitudeConnectorProfileCredentials>>,
         /// Property [`Datadog`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-datadog).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub datadog: Option<::Value<DatadogConnectorProfileCredentials>>,
+        pub datadog: Option<crate::Value<DatadogConnectorProfileCredentials>>,
         /// Property [`Dynatrace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-dynatrace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dynatrace: Option<::Value<DynatraceConnectorProfileCredentials>>,
+        pub dynatrace: Option<crate::Value<DynatraceConnectorProfileCredentials>>,
         /// Property [`GoogleAnalytics`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-googleanalytics).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub google_analytics: Option<::Value<GoogleAnalyticsConnectorProfileCredentials>>,
+        pub google_analytics: Option<crate::Value<GoogleAnalyticsConnectorProfileCredentials>>,
         /// Property [`InforNexus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-infornexus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub infor_nexus: Option<::Value<InforNexusConnectorProfileCredentials>>,
+        pub infor_nexus: Option<crate::Value<InforNexusConnectorProfileCredentials>>,
         /// Property [`Marketo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-marketo).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub marketo: Option<::Value<MarketoConnectorProfileCredentials>>,
+        pub marketo: Option<crate::Value<MarketoConnectorProfileCredentials>>,
         /// Property [`Redshift`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-redshift).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub redshift: Option<::Value<RedshiftConnectorProfileCredentials>>,
+        pub redshift: Option<crate::Value<RedshiftConnectorProfileCredentials>>,
         /// Property [`SAPOData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-sapodata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sapo_data: Option<::Value<SAPODataConnectorProfileCredentials>>,
+        pub sapo_data: Option<crate::Value<SAPODataConnectorProfileCredentials>>,
         /// Property [`Salesforce`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-salesforce).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub salesforce: Option<::Value<SalesforceConnectorProfileCredentials>>,
+        pub salesforce: Option<crate::Value<SalesforceConnectorProfileCredentials>>,
         /// Property [`ServiceNow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-servicenow).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_now: Option<::Value<ServiceNowConnectorProfileCredentials>>,
+        pub service_now: Option<crate::Value<ServiceNowConnectorProfileCredentials>>,
         /// Property [`Singular`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-singular).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub singular: Option<::Value<SingularConnectorProfileCredentials>>,
+        pub singular: Option<crate::Value<SingularConnectorProfileCredentials>>,
         /// Property [`Slack`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-slack).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slack: Option<::Value<SlackConnectorProfileCredentials>>,
+        pub slack: Option<crate::Value<SlackConnectorProfileCredentials>>,
         /// Property [`Snowflake`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-snowflake).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub snowflake: Option<::Value<SnowflakeConnectorProfileCredentials>>,
+        pub snowflake: Option<crate::Value<SnowflakeConnectorProfileCredentials>>,
         /// Property [`Trendmicro`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-trendmicro).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub trendmicro: Option<::Value<TrendmicroConnectorProfileCredentials>>,
+        pub trendmicro: Option<crate::Value<TrendmicroConnectorProfileCredentials>>,
         /// Property [`Veeva`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-veeva).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub veeva: Option<::Value<VeevaConnectorProfileCredentials>>,
+        pub veeva: Option<crate::Value<VeevaConnectorProfileCredentials>>,
         /// Property [`Zendesk`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-zendesk).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub zendesk: Option<::Value<ZendeskConnectorProfileCredentials>>,
+        pub zendesk: Option<crate::Value<ZendeskConnectorProfileCredentials>>,
     }
 
-    impl ::codec::SerializeValue for ConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for ConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref amplitude) = self.amplitude {
@@ -709,7 +709,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for ConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for ConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConnectorProfileCredentials, D::Error> {
@@ -726,28 +726,28 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut amplitude: Option<::Value<AmplitudeConnectorProfileCredentials>> = None;
-                    let mut datadog: Option<::Value<DatadogConnectorProfileCredentials>> = None;
-                    let mut dynatrace: Option<::Value<DynatraceConnectorProfileCredentials>> = None;
+                    let mut amplitude: Option<crate::Value<AmplitudeConnectorProfileCredentials>> = None;
+                    let mut datadog: Option<crate::Value<DatadogConnectorProfileCredentials>> = None;
+                    let mut dynatrace: Option<crate::Value<DynatraceConnectorProfileCredentials>> = None;
                     let mut google_analytics: Option<
-                        ::Value<GoogleAnalyticsConnectorProfileCredentials>,
+                        crate::Value<GoogleAnalyticsConnectorProfileCredentials>,
                     > = None;
-                    let mut infor_nexus: Option<::Value<InforNexusConnectorProfileCredentials>> =
+                    let mut infor_nexus: Option<crate::Value<InforNexusConnectorProfileCredentials>> =
                         None;
-                    let mut marketo: Option<::Value<MarketoConnectorProfileCredentials>> = None;
-                    let mut redshift: Option<::Value<RedshiftConnectorProfileCredentials>> = None;
-                    let mut sapo_data: Option<::Value<SAPODataConnectorProfileCredentials>> = None;
-                    let mut salesforce: Option<::Value<SalesforceConnectorProfileCredentials>> =
+                    let mut marketo: Option<crate::Value<MarketoConnectorProfileCredentials>> = None;
+                    let mut redshift: Option<crate::Value<RedshiftConnectorProfileCredentials>> = None;
+                    let mut sapo_data: Option<crate::Value<SAPODataConnectorProfileCredentials>> = None;
+                    let mut salesforce: Option<crate::Value<SalesforceConnectorProfileCredentials>> =
                         None;
-                    let mut service_now: Option<::Value<ServiceNowConnectorProfileCredentials>> =
+                    let mut service_now: Option<crate::Value<ServiceNowConnectorProfileCredentials>> =
                         None;
-                    let mut singular: Option<::Value<SingularConnectorProfileCredentials>> = None;
-                    let mut slack: Option<::Value<SlackConnectorProfileCredentials>> = None;
-                    let mut snowflake: Option<::Value<SnowflakeConnectorProfileCredentials>> = None;
-                    let mut trendmicro: Option<::Value<TrendmicroConnectorProfileCredentials>> =
+                    let mut singular: Option<crate::Value<SingularConnectorProfileCredentials>> = None;
+                    let mut slack: Option<crate::Value<SlackConnectorProfileCredentials>> = None;
+                    let mut snowflake: Option<crate::Value<SnowflakeConnectorProfileCredentials>> = None;
+                    let mut trendmicro: Option<crate::Value<TrendmicroConnectorProfileCredentials>> =
                         None;
-                    let mut veeva: Option<::Value<VeevaConnectorProfileCredentials>> = None;
-                    let mut zendesk: Option<::Value<ZendeskConnectorProfileCredentials>> = None;
+                    let mut veeva: Option<crate::Value<VeevaConnectorProfileCredentials>> = None;
+                    let mut zendesk: Option<crate::Value<ZendeskConnectorProfileCredentials>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -837,65 +837,65 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub datadog: Option<::Value<DatadogConnectorProfileProperties>>,
+        pub datadog: Option<crate::Value<DatadogConnectorProfileProperties>>,
         /// Property [`Dynatrace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-dynatrace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dynatrace: Option<::Value<DynatraceConnectorProfileProperties>>,
+        pub dynatrace: Option<crate::Value<DynatraceConnectorProfileProperties>>,
         /// Property [`InforNexus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-infornexus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub infor_nexus: Option<::Value<InforNexusConnectorProfileProperties>>,
+        pub infor_nexus: Option<crate::Value<InforNexusConnectorProfileProperties>>,
         /// Property [`Marketo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-marketo).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub marketo: Option<::Value<MarketoConnectorProfileProperties>>,
+        pub marketo: Option<crate::Value<MarketoConnectorProfileProperties>>,
         /// Property [`Redshift`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-redshift).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub redshift: Option<::Value<RedshiftConnectorProfileProperties>>,
+        pub redshift: Option<crate::Value<RedshiftConnectorProfileProperties>>,
         /// Property [`SAPOData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-sapodata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sapo_data: Option<::Value<SAPODataConnectorProfileProperties>>,
+        pub sapo_data: Option<crate::Value<SAPODataConnectorProfileProperties>>,
         /// Property [`Salesforce`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-salesforce).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub salesforce: Option<::Value<SalesforceConnectorProfileProperties>>,
+        pub salesforce: Option<crate::Value<SalesforceConnectorProfileProperties>>,
         /// Property [`ServiceNow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-servicenow).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_now: Option<::Value<ServiceNowConnectorProfileProperties>>,
+        pub service_now: Option<crate::Value<ServiceNowConnectorProfileProperties>>,
         /// Property [`Slack`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-slack).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slack: Option<::Value<SlackConnectorProfileProperties>>,
+        pub slack: Option<crate::Value<SlackConnectorProfileProperties>>,
         /// Property [`Snowflake`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-snowflake).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub snowflake: Option<::Value<SnowflakeConnectorProfileProperties>>,
+        pub snowflake: Option<crate::Value<SnowflakeConnectorProfileProperties>>,
         /// Property [`Veeva`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-veeva).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub veeva: Option<::Value<VeevaConnectorProfileProperties>>,
+        pub veeva: Option<crate::Value<VeevaConnectorProfileProperties>>,
         /// Property [`Zendesk`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-zendesk).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub zendesk: Option<::Value<ZendeskConnectorProfileProperties>>,
+        pub zendesk: Option<crate::Value<ZendeskConnectorProfileProperties>>,
     }
 
-    impl ::codec::SerializeValue for ConnectorProfileProperties {
+    impl crate::codec::SerializeValue for ConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref datadog) = self.datadog {
@@ -938,7 +938,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for ConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for ConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConnectorProfileProperties, D::Error> {
@@ -955,21 +955,21 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut datadog: Option<::Value<DatadogConnectorProfileProperties>> = None;
-                    let mut dynatrace: Option<::Value<DynatraceConnectorProfileProperties>> = None;
-                    let mut infor_nexus: Option<::Value<InforNexusConnectorProfileProperties>> =
+                    let mut datadog: Option<crate::Value<DatadogConnectorProfileProperties>> = None;
+                    let mut dynatrace: Option<crate::Value<DynatraceConnectorProfileProperties>> = None;
+                    let mut infor_nexus: Option<crate::Value<InforNexusConnectorProfileProperties>> =
                         None;
-                    let mut marketo: Option<::Value<MarketoConnectorProfileProperties>> = None;
-                    let mut redshift: Option<::Value<RedshiftConnectorProfileProperties>> = None;
-                    let mut sapo_data: Option<::Value<SAPODataConnectorProfileProperties>> = None;
-                    let mut salesforce: Option<::Value<SalesforceConnectorProfileProperties>> =
+                    let mut marketo: Option<crate::Value<MarketoConnectorProfileProperties>> = None;
+                    let mut redshift: Option<crate::Value<RedshiftConnectorProfileProperties>> = None;
+                    let mut sapo_data: Option<crate::Value<SAPODataConnectorProfileProperties>> = None;
+                    let mut salesforce: Option<crate::Value<SalesforceConnectorProfileProperties>> =
                         None;
-                    let mut service_now: Option<::Value<ServiceNowConnectorProfileProperties>> =
+                    let mut service_now: Option<crate::Value<ServiceNowConnectorProfileProperties>> =
                         None;
-                    let mut slack: Option<::Value<SlackConnectorProfileProperties>> = None;
-                    let mut snowflake: Option<::Value<SnowflakeConnectorProfileProperties>> = None;
-                    let mut veeva: Option<::Value<VeevaConnectorProfileProperties>> = None;
-                    let mut zendesk: Option<::Value<ZendeskConnectorProfileProperties>> = None;
+                    let mut slack: Option<crate::Value<SlackConnectorProfileProperties>> = None;
+                    let mut snowflake: Option<crate::Value<SnowflakeConnectorProfileProperties>> = None;
+                    let mut veeva: Option<crate::Value<VeevaConnectorProfileProperties>> = None;
+                    let mut zendesk: Option<crate::Value<ZendeskConnectorProfileProperties>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1043,15 +1043,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub api_key: ::Value<String>,
+        pub api_key: crate::Value<String>,
         /// Property [`ApplicationKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-datadogconnectorprofilecredentials.html#cfn-appflow-connectorprofile-datadogconnectorprofilecredentials-applicationkey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub application_key: ::Value<String>,
+        pub application_key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DatadogConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for DatadogConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApiKey", &self.api_key)?;
@@ -1064,7 +1064,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for DatadogConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for DatadogConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatadogConnectorProfileCredentials, D::Error> {
@@ -1081,8 +1081,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut api_key: Option<::Value<String>> = None;
-                    let mut application_key: Option<::Value<String>> = None;
+                    let mut api_key: Option<crate::Value<String>> = None;
+                    let mut application_key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1117,10 +1117,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: ::Value<String>,
+        pub instance_url: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DatadogConnectorProfileProperties {
+    impl crate::codec::SerializeValue for DatadogConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1132,7 +1132,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for DatadogConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for DatadogConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatadogConnectorProfileProperties, D::Error> {
@@ -1149,7 +1149,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1180,10 +1180,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub api_token: ::Value<String>,
+        pub api_token: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DynatraceConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for DynatraceConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApiToken", &self.api_token)?;
@@ -1191,7 +1191,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for DynatraceConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for DynatraceConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DynatraceConnectorProfileCredentials, D::Error> {
@@ -1208,7 +1208,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut api_token: Option<::Value<String>> = None;
+                    let mut api_token: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1239,10 +1239,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: ::Value<String>,
+        pub instance_url: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DynatraceConnectorProfileProperties {
+    impl crate::codec::SerializeValue for DynatraceConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1254,7 +1254,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for DynatraceConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for DynatraceConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DynatraceConnectorProfileProperties, D::Error> {
@@ -1271,7 +1271,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1302,30 +1302,30 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_token: Option<::Value<String>>,
+        pub access_token: Option<crate::Value<String>>,
         /// Property [`ClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html#cfn-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials-clientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_id: ::Value<String>,
+        pub client_id: crate::Value<String>,
         /// Property [`ClientSecret`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html#cfn-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials-clientsecret).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_secret: ::Value<String>,
+        pub client_secret: crate::Value<String>,
         /// Property [`ConnectorOAuthRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html#cfn-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials-connectoroauthrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>>,
+        pub connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>>,
         /// Property [`RefreshToken`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html#cfn-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials-refreshtoken).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub refresh_token: Option<::Value<String>>,
+        pub refresh_token: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for GoogleAnalyticsConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for GoogleAnalyticsConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_token) = self.access_token {
@@ -1355,7 +1355,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for GoogleAnalyticsConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for GoogleAnalyticsConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GoogleAnalyticsConnectorProfileCredentials, D::Error> {
@@ -1375,11 +1375,11 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_token: Option<::Value<String>> = None;
-                    let mut client_id: Option<::Value<String>> = None;
-                    let mut client_secret: Option<::Value<String>> = None;
-                    let mut connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>> = None;
-                    let mut refresh_token: Option<::Value<String>> = None;
+                    let mut access_token: Option<crate::Value<String>> = None;
+                    let mut client_id: Option<crate::Value<String>> = None;
+                    let mut client_secret: Option<crate::Value<String>> = None;
+                    let mut connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>> = None;
+                    let mut refresh_token: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1428,25 +1428,25 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_key_id: ::Value<String>,
+        pub access_key_id: crate::Value<String>,
         /// Property [`Datakey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-infornexusconnectorprofilecredentials.html#cfn-appflow-connectorprofile-infornexusconnectorprofilecredentials-datakey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub datakey: ::Value<String>,
+        pub datakey: crate::Value<String>,
         /// Property [`SecretAccessKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-infornexusconnectorprofilecredentials.html#cfn-appflow-connectorprofile-infornexusconnectorprofilecredentials-secretaccesskey).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_access_key: ::Value<String>,
+        pub secret_access_key: crate::Value<String>,
         /// Property [`UserId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-infornexusconnectorprofilecredentials.html#cfn-appflow-connectorprofile-infornexusconnectorprofilecredentials-userid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_id: ::Value<String>,
+        pub user_id: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for InforNexusConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for InforNexusConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1465,7 +1465,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for InforNexusConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for InforNexusConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InforNexusConnectorProfileCredentials, D::Error> {
@@ -1482,10 +1482,10 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_key_id: Option<::Value<String>> = None;
-                    let mut datakey: Option<::Value<String>> = None;
-                    let mut secret_access_key: Option<::Value<String>> = None;
-                    let mut user_id: Option<::Value<String>> = None;
+                    let mut access_key_id: Option<crate::Value<String>> = None;
+                    let mut datakey: Option<crate::Value<String>> = None;
+                    let mut secret_access_key: Option<crate::Value<String>> = None;
+                    let mut user_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1529,10 +1529,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: ::Value<String>,
+        pub instance_url: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for InforNexusConnectorProfileProperties {
+    impl crate::codec::SerializeValue for InforNexusConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1544,7 +1544,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for InforNexusConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for InforNexusConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InforNexusConnectorProfileProperties, D::Error> {
@@ -1561,7 +1561,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1592,25 +1592,25 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_token: Option<::Value<String>>,
+        pub access_token: Option<crate::Value<String>>,
         /// Property [`ClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofilecredentials.html#cfn-appflow-connectorprofile-marketoconnectorprofilecredentials-clientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_id: ::Value<String>,
+        pub client_id: crate::Value<String>,
         /// Property [`ClientSecret`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofilecredentials.html#cfn-appflow-connectorprofile-marketoconnectorprofilecredentials-clientsecret).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_secret: ::Value<String>,
+        pub client_secret: crate::Value<String>,
         /// Property [`ConnectorOAuthRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofilecredentials.html#cfn-appflow-connectorprofile-marketoconnectorprofilecredentials-connectoroauthrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>>,
+        pub connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>>,
     }
 
-    impl ::codec::SerializeValue for MarketoConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for MarketoConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_token) = self.access_token {
@@ -1633,7 +1633,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for MarketoConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for MarketoConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MarketoConnectorProfileCredentials, D::Error> {
@@ -1650,10 +1650,10 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_token: Option<::Value<String>> = None;
-                    let mut client_id: Option<::Value<String>> = None;
-                    let mut client_secret: Option<::Value<String>> = None;
-                    let mut connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>> = None;
+                    let mut access_token: Option<crate::Value<String>> = None;
+                    let mut client_id: Option<crate::Value<String>> = None;
+                    let mut client_secret: Option<crate::Value<String>> = None;
+                    let mut connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1698,10 +1698,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: ::Value<String>,
+        pub instance_url: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for MarketoConnectorProfileProperties {
+    impl crate::codec::SerializeValue for MarketoConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1713,7 +1713,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for MarketoConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for MarketoConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MarketoConnectorProfileProperties, D::Error> {
@@ -1730,7 +1730,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1761,20 +1761,20 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auth_code_url: Option<::Value<String>>,
+        pub auth_code_url: Option<crate::Value<String>>,
         /// Property [`OAuthScopes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthproperties.html#cfn-appflow-connectorprofile-oauthproperties-oauthscopes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub o_auth_scopes: Option<::ValueList<String>>,
+        pub o_auth_scopes: Option<crate::ValueList<String>>,
         /// Property [`TokenUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthproperties.html#cfn-appflow-connectorprofile-oauthproperties-tokenurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub token_url: Option<::Value<String>>,
+        pub token_url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for OAuthProperties {
+    impl crate::codec::SerializeValue for OAuthProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref auth_code_url) = self.auth_code_url {
@@ -1798,7 +1798,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for OAuthProperties {
+    impl crate::codec::DeserializeValue for OAuthProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OAuthProperties, D::Error> {
@@ -1815,9 +1815,9 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut auth_code_url: Option<::Value<String>> = None;
-                    let mut o_auth_scopes: Option<::ValueList<String>> = None;
-                    let mut token_url: Option<::Value<String>> = None;
+                    let mut auth_code_url: Option<crate::Value<String>> = None;
+                    let mut o_auth_scopes: Option<crate::ValueList<String>> = None;
+                    let mut token_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1855,15 +1855,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password: ::Value<String>,
+        pub password: crate::Value<String>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofilecredentials.html#cfn-appflow-connectorprofile-redshiftconnectorprofilecredentials-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: ::Value<String>,
+        pub username: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for RedshiftConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for RedshiftConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", &self.password)?;
@@ -1872,7 +1872,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for RedshiftConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for RedshiftConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RedshiftConnectorProfileCredentials, D::Error> {
@@ -1889,8 +1889,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut password: Option<::Value<String>> = None;
-                    let mut username: Option<::Value<String>> = None;
+                    let mut password: Option<crate::Value<String>> = None;
+                    let mut username: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1924,25 +1924,25 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: ::Value<String>,
+        pub bucket_name: crate::Value<String>,
         /// Property [`BucketPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofileproperties.html#cfn-appflow-connectorprofile-redshiftconnectorprofileproperties-bucketprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: Option<::Value<String>>,
+        pub bucket_prefix: Option<crate::Value<String>>,
         /// Property [`DatabaseUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofileproperties.html#cfn-appflow-connectorprofile-redshiftconnectorprofileproperties-databaseurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_url: ::Value<String>,
+        pub database_url: crate::Value<String>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofileproperties.html#cfn-appflow-connectorprofile-redshiftconnectorprofileproperties-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: ::Value<String>,
+        pub role_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for RedshiftConnectorProfileProperties {
+    impl crate::codec::SerializeValue for RedshiftConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
@@ -1963,7 +1963,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for RedshiftConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for RedshiftConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RedshiftConnectorProfileProperties, D::Error> {
@@ -1980,10 +1980,10 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<::Value<String>> = None;
-                    let mut bucket_prefix: Option<::Value<String>> = None;
-                    let mut database_url: Option<::Value<String>> = None;
-                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
+                    let mut database_url: Option<crate::Value<String>> = None;
+                    let mut role_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2027,15 +2027,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub basic_auth_credentials: Option<::Value<::json::Value>>,
+        pub basic_auth_credentials: Option<crate::Value<crate::json::Value>>,
         /// Property [`OAuthCredentials`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofilecredentials.html#cfn-appflow-connectorprofile-sapodataconnectorprofilecredentials-oauthcredentials).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub o_auth_credentials: Option<::Value<::json::Value>>,
+        pub o_auth_credentials: Option<crate::Value<crate::json::Value>>,
     }
 
-    impl ::codec::SerializeValue for SAPODataConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for SAPODataConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref basic_auth_credentials) = self.basic_auth_credentials {
@@ -2056,7 +2056,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SAPODataConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for SAPODataConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SAPODataConnectorProfileCredentials, D::Error> {
@@ -2073,8 +2073,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut basic_auth_credentials: Option<::Value<::json::Value>> = None;
-                    let mut o_auth_credentials: Option<::Value<::json::Value>> = None;
+                    let mut basic_auth_credentials: Option<crate::Value<crate::json::Value>> = None;
+                    let mut o_auth_credentials: Option<crate::Value<crate::json::Value>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2109,40 +2109,40 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub application_host_url: Option<::Value<String>>,
+        pub application_host_url: Option<crate::Value<String>>,
         /// Property [`ApplicationServicePath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-applicationservicepath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub application_service_path: Option<::Value<String>>,
+        pub application_service_path: Option<crate::Value<String>>,
         /// Property [`ClientNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-clientnumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_number: Option<::Value<String>>,
+        pub client_number: Option<crate::Value<String>>,
         /// Property [`LogonLanguage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-logonlanguage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub logon_language: Option<::Value<String>>,
+        pub logon_language: Option<crate::Value<String>>,
         /// Property [`OAuthProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-oauthproperties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub o_auth_properties: Option<::Value<OAuthProperties>>,
+        pub o_auth_properties: Option<crate::Value<OAuthProperties>>,
         /// Property [`PortNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-portnumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port_number: Option<::Value<u32>>,
+        pub port_number: Option<crate::Value<u32>>,
         /// Property [`PrivateLinkServiceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-privatelinkservicename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub private_link_service_name: Option<::Value<String>>,
+        pub private_link_service_name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SAPODataConnectorProfileProperties {
+    impl crate::codec::SerializeValue for SAPODataConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref application_host_url) = self.application_host_url {
@@ -2194,7 +2194,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SAPODataConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for SAPODataConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SAPODataConnectorProfileProperties, D::Error> {
@@ -2211,13 +2211,13 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut application_host_url: Option<::Value<String>> = None;
-                    let mut application_service_path: Option<::Value<String>> = None;
-                    let mut client_number: Option<::Value<String>> = None;
-                    let mut logon_language: Option<::Value<String>> = None;
-                    let mut o_auth_properties: Option<::Value<OAuthProperties>> = None;
-                    let mut port_number: Option<::Value<u32>> = None;
-                    let mut private_link_service_name: Option<::Value<String>> = None;
+                    let mut application_host_url: Option<crate::Value<String>> = None;
+                    let mut application_service_path: Option<crate::Value<String>> = None;
+                    let mut client_number: Option<crate::Value<String>> = None;
+                    let mut logon_language: Option<crate::Value<String>> = None;
+                    let mut o_auth_properties: Option<crate::Value<OAuthProperties>> = None;
+                    let mut port_number: Option<crate::Value<u32>> = None;
+                    let mut private_link_service_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2274,25 +2274,25 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_token: Option<::Value<String>>,
+        pub access_token: Option<crate::Value<String>>,
         /// Property [`ClientCredentialsArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-clientcredentialsarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_credentials_arn: Option<::Value<String>>,
+        pub client_credentials_arn: Option<crate::Value<String>>,
         /// Property [`ConnectorOAuthRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-connectoroauthrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>>,
+        pub connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>>,
         /// Property [`RefreshToken`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-refreshtoken).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub refresh_token: Option<::Value<String>>,
+        pub refresh_token: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SalesforceConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for SalesforceConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_token) = self.access_token {
@@ -2323,7 +2323,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for SalesforceConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceConnectorProfileCredentials, D::Error> {
@@ -2340,10 +2340,10 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_token: Option<::Value<String>> = None;
-                    let mut client_credentials_arn: Option<::Value<String>> = None;
-                    let mut connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>> = None;
-                    let mut refresh_token: Option<::Value<String>> = None;
+                    let mut access_token: Option<crate::Value<String>> = None;
+                    let mut client_credentials_arn: Option<crate::Value<String>> = None;
+                    let mut connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>> = None;
+                    let mut refresh_token: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2387,15 +2387,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: Option<::Value<String>>,
+        pub instance_url: Option<crate::Value<String>>,
         /// Property [`isSandboxEnvironment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofileproperties.html#cfn-appflow-connectorprofile-salesforceconnectorprofileproperties-issandboxenvironment).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_sandbox_environment: Option<::Value<bool>>,
+        pub is_sandbox_environment: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for SalesforceConnectorProfileProperties {
+    impl crate::codec::SerializeValue for SalesforceConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref instance_url) = self.instance_url {
@@ -2412,7 +2412,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for SalesforceConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceConnectorProfileProperties, D::Error> {
@@ -2429,8 +2429,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
-                    let mut is_sandbox_environment: Option<::Value<bool>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
+                    let mut is_sandbox_environment: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2465,15 +2465,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password: ::Value<String>,
+        pub password: crate::Value<String>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-servicenowconnectorprofilecredentials.html#cfn-appflow-connectorprofile-servicenowconnectorprofilecredentials-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: ::Value<String>,
+        pub username: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ServiceNowConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for ServiceNowConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", &self.password)?;
@@ -2482,7 +2482,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for ServiceNowConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for ServiceNowConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServiceNowConnectorProfileCredentials, D::Error> {
@@ -2499,8 +2499,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut password: Option<::Value<String>> = None;
-                    let mut username: Option<::Value<String>> = None;
+                    let mut password: Option<crate::Value<String>> = None;
+                    let mut username: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2534,10 +2534,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: ::Value<String>,
+        pub instance_url: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ServiceNowConnectorProfileProperties {
+    impl crate::codec::SerializeValue for ServiceNowConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2549,7 +2549,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for ServiceNowConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for ServiceNowConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServiceNowConnectorProfileProperties, D::Error> {
@@ -2566,7 +2566,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2597,10 +2597,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub api_key: ::Value<String>,
+        pub api_key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SingularConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for SingularConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApiKey", &self.api_key)?;
@@ -2608,7 +2608,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SingularConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for SingularConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SingularConnectorProfileCredentials, D::Error> {
@@ -2625,7 +2625,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut api_key: Option<::Value<String>> = None;
+                    let mut api_key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2655,25 +2655,25 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_token: Option<::Value<String>>,
+        pub access_token: Option<crate::Value<String>>,
         /// Property [`ClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofilecredentials.html#cfn-appflow-connectorprofile-slackconnectorprofilecredentials-clientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_id: ::Value<String>,
+        pub client_id: crate::Value<String>,
         /// Property [`ClientSecret`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofilecredentials.html#cfn-appflow-connectorprofile-slackconnectorprofilecredentials-clientsecret).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_secret: ::Value<String>,
+        pub client_secret: crate::Value<String>,
         /// Property [`ConnectorOAuthRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofilecredentials.html#cfn-appflow-connectorprofile-slackconnectorprofilecredentials-connectoroauthrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>>,
+        pub connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>>,
     }
 
-    impl ::codec::SerializeValue for SlackConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for SlackConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_token) = self.access_token {
@@ -2696,7 +2696,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SlackConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for SlackConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlackConnectorProfileCredentials, D::Error> {
@@ -2713,10 +2713,10 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_token: Option<::Value<String>> = None;
-                    let mut client_id: Option<::Value<String>> = None;
-                    let mut client_secret: Option<::Value<String>> = None;
-                    let mut connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>> = None;
+                    let mut access_token: Option<crate::Value<String>> = None;
+                    let mut client_id: Option<crate::Value<String>> = None;
+                    let mut client_secret: Option<crate::Value<String>> = None;
+                    let mut connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2761,10 +2761,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: ::Value<String>,
+        pub instance_url: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SlackConnectorProfileProperties {
+    impl crate::codec::SerializeValue for SlackConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2776,7 +2776,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SlackConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for SlackConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlackConnectorProfileProperties, D::Error> {
@@ -2793,7 +2793,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2824,15 +2824,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password: ::Value<String>,
+        pub password: crate::Value<String>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofilecredentials.html#cfn-appflow-connectorprofile-snowflakeconnectorprofilecredentials-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: ::Value<String>,
+        pub username: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SnowflakeConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for SnowflakeConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", &self.password)?;
@@ -2841,7 +2841,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SnowflakeConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for SnowflakeConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SnowflakeConnectorProfileCredentials, D::Error> {
@@ -2858,8 +2858,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut password: Option<::Value<String>> = None;
-                    let mut username: Option<::Value<String>> = None;
+                    let mut password: Option<crate::Value<String>> = None;
+                    let mut username: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2893,40 +2893,40 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub account_name: Option<::Value<String>>,
+        pub account_name: Option<crate::Value<String>>,
         /// Property [`BucketName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofileproperties.html#cfn-appflow-connectorprofile-snowflakeconnectorprofileproperties-bucketname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: ::Value<String>,
+        pub bucket_name: crate::Value<String>,
         /// Property [`BucketPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofileproperties.html#cfn-appflow-connectorprofile-snowflakeconnectorprofileproperties-bucketprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: Option<::Value<String>>,
+        pub bucket_prefix: Option<crate::Value<String>>,
         /// Property [`PrivateLinkServiceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofileproperties.html#cfn-appflow-connectorprofile-snowflakeconnectorprofileproperties-privatelinkservicename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub private_link_service_name: Option<::Value<String>>,
+        pub private_link_service_name: Option<crate::Value<String>>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofileproperties.html#cfn-appflow-connectorprofile-snowflakeconnectorprofileproperties-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: Option<::Value<String>>,
+        pub region: Option<crate::Value<String>>,
         /// Property [`Stage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofileproperties.html#cfn-appflow-connectorprofile-snowflakeconnectorprofileproperties-stage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stage: ::Value<String>,
+        pub stage: crate::Value<String>,
         /// Property [`Warehouse`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofileproperties.html#cfn-appflow-connectorprofile-snowflakeconnectorprofileproperties-warehouse).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub warehouse: ::Value<String>,
+        pub warehouse: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SnowflakeConnectorProfileProperties {
+    impl crate::codec::SerializeValue for SnowflakeConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref account_name) = self.account_name {
@@ -2956,7 +2956,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for SnowflakeConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for SnowflakeConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SnowflakeConnectorProfileProperties, D::Error> {
@@ -2973,13 +2973,13 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut account_name: Option<::Value<String>> = None;
-                    let mut bucket_name: Option<::Value<String>> = None;
-                    let mut bucket_prefix: Option<::Value<String>> = None;
-                    let mut private_link_service_name: Option<::Value<String>> = None;
-                    let mut region: Option<::Value<String>> = None;
-                    let mut stage: Option<::Value<String>> = None;
-                    let mut warehouse: Option<::Value<String>> = None;
+                    let mut account_name: Option<crate::Value<String>> = None;
+                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
+                    let mut private_link_service_name: Option<crate::Value<String>> = None;
+                    let mut region: Option<crate::Value<String>> = None;
+                    let mut stage: Option<crate::Value<String>> = None;
+                    let mut warehouse: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3036,10 +3036,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub api_secret_key: ::Value<String>,
+        pub api_secret_key: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TrendmicroConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for TrendmicroConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3051,7 +3051,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for TrendmicroConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for TrendmicroConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TrendmicroConnectorProfileCredentials, D::Error> {
@@ -3068,7 +3068,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut api_secret_key: Option<::Value<String>> = None;
+                    let mut api_secret_key: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3099,15 +3099,15 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password: ::Value<String>,
+        pub password: crate::Value<String>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-veevaconnectorprofilecredentials.html#cfn-appflow-connectorprofile-veevaconnectorprofilecredentials-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: ::Value<String>,
+        pub username: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for VeevaConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for VeevaConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", &self.password)?;
@@ -3116,7 +3116,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for VeevaConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for VeevaConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VeevaConnectorProfileCredentials, D::Error> {
@@ -3133,8 +3133,8 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut password: Option<::Value<String>> = None;
-                    let mut username: Option<::Value<String>> = None;
+                    let mut password: Option<crate::Value<String>> = None;
+                    let mut username: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3168,10 +3168,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: ::Value<String>,
+        pub instance_url: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for VeevaConnectorProfileProperties {
+    impl crate::codec::SerializeValue for VeevaConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3183,7 +3183,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for VeevaConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for VeevaConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VeevaConnectorProfileProperties, D::Error> {
@@ -3200,7 +3200,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3231,25 +3231,25 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_token: Option<::Value<String>>,
+        pub access_token: Option<crate::Value<String>>,
         /// Property [`ClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofilecredentials.html#cfn-appflow-connectorprofile-zendeskconnectorprofilecredentials-clientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_id: ::Value<String>,
+        pub client_id: crate::Value<String>,
         /// Property [`ClientSecret`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofilecredentials.html#cfn-appflow-connectorprofile-zendeskconnectorprofilecredentials-clientsecret).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_secret: ::Value<String>,
+        pub client_secret: crate::Value<String>,
         /// Property [`ConnectorOAuthRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofilecredentials.html#cfn-appflow-connectorprofile-zendeskconnectorprofilecredentials-connectoroauthrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>>,
+        pub connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>>,
     }
 
-    impl ::codec::SerializeValue for ZendeskConnectorProfileCredentials {
+    impl crate::codec::SerializeValue for ZendeskConnectorProfileCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_token) = self.access_token {
@@ -3272,7 +3272,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for ZendeskConnectorProfileCredentials {
+    impl crate::codec::DeserializeValue for ZendeskConnectorProfileCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ZendeskConnectorProfileCredentials, D::Error> {
@@ -3289,10 +3289,10 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_token: Option<::Value<String>> = None;
-                    let mut client_id: Option<::Value<String>> = None;
-                    let mut client_secret: Option<::Value<String>> = None;
-                    let mut connector_o_auth_request: Option<::Value<ConnectorOAuthRequest>> = None;
+                    let mut access_token: Option<crate::Value<String>> = None;
+                    let mut client_id: Option<crate::Value<String>> = None;
+                    let mut client_secret: Option<crate::Value<String>> = None;
+                    let mut connector_o_auth_request: Option<crate::Value<ConnectorOAuthRequest>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3337,10 +3337,10 @@ pub mod connector_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_url: ::Value<String>,
+        pub instance_url: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ZendeskConnectorProfileProperties {
+    impl crate::codec::SerializeValue for ZendeskConnectorProfileProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3352,7 +3352,7 @@ pub mod connector_profile {
         }
     }
 
-    impl ::codec::DeserializeValue for ZendeskConnectorProfileProperties {
+    impl crate::codec::DeserializeValue for ZendeskConnectorProfileProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ZendeskConnectorProfileProperties, D::Error> {
@@ -3369,7 +3369,7 @@ pub mod connector_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_url: Option<::Value<String>> = None;
+                    let mut instance_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3404,10 +3404,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aggregation_type: Option<::Value<String>>,
+        pub aggregation_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AggregationConfig {
+    impl crate::codec::SerializeValue for AggregationConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aggregation_type) = self.aggregation_type {
@@ -3421,7 +3421,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for AggregationConfig {
+    impl crate::codec::DeserializeValue for AggregationConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AggregationConfig, D::Error> {
@@ -3438,7 +3438,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut aggregation_type: Option<::Value<String>> = None;
+                    let mut aggregation_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3468,10 +3468,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for AmplitudeSourceProperties {
+    impl crate::codec::SerializeValue for AmplitudeSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -3479,7 +3479,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for AmplitudeSourceProperties {
+    impl crate::codec::DeserializeValue for AmplitudeSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AmplitudeSourceProperties, D::Error> {
@@ -3496,7 +3496,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3526,80 +3526,80 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub amplitude: Option<::Value<String>>,
+        pub amplitude: Option<crate::Value<String>>,
         /// Property [`Datadog`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-datadog).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub datadog: Option<::Value<String>>,
+        pub datadog: Option<crate::Value<String>>,
         /// Property [`Dynatrace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-dynatrace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dynatrace: Option<::Value<String>>,
+        pub dynatrace: Option<crate::Value<String>>,
         /// Property [`GoogleAnalytics`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-googleanalytics).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub google_analytics: Option<::Value<String>>,
+        pub google_analytics: Option<crate::Value<String>>,
         /// Property [`InforNexus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-infornexus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub infor_nexus: Option<::Value<String>>,
+        pub infor_nexus: Option<crate::Value<String>>,
         /// Property [`Marketo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-marketo).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub marketo: Option<::Value<String>>,
+        pub marketo: Option<crate::Value<String>>,
         /// Property [`S3`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-s3).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3: Option<::Value<String>>,
+        pub s3: Option<crate::Value<String>>,
         /// Property [`SAPOData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-sapodata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sapo_data: Option<::Value<String>>,
+        pub sapo_data: Option<crate::Value<String>>,
         /// Property [`Salesforce`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-salesforce).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub salesforce: Option<::Value<String>>,
+        pub salesforce: Option<crate::Value<String>>,
         /// Property [`ServiceNow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-servicenow).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_now: Option<::Value<String>>,
+        pub service_now: Option<crate::Value<String>>,
         /// Property [`Singular`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-singular).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub singular: Option<::Value<String>>,
+        pub singular: Option<crate::Value<String>>,
         /// Property [`Slack`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-slack).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slack: Option<::Value<String>>,
+        pub slack: Option<crate::Value<String>>,
         /// Property [`Trendmicro`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-trendmicro).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub trendmicro: Option<::Value<String>>,
+        pub trendmicro: Option<crate::Value<String>>,
         /// Property [`Veeva`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-veeva).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub veeva: Option<::Value<String>>,
+        pub veeva: Option<crate::Value<String>>,
         /// Property [`Zendesk`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-zendesk).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub zendesk: Option<::Value<String>>,
+        pub zendesk: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ConnectorOperator {
+    impl crate::codec::SerializeValue for ConnectorOperator {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref amplitude) = self.amplitude {
@@ -3655,7 +3655,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for ConnectorOperator {
+    impl crate::codec::DeserializeValue for ConnectorOperator {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConnectorOperator, D::Error> {
@@ -3672,21 +3672,21 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut amplitude: Option<::Value<String>> = None;
-                    let mut datadog: Option<::Value<String>> = None;
-                    let mut dynatrace: Option<::Value<String>> = None;
-                    let mut google_analytics: Option<::Value<String>> = None;
-                    let mut infor_nexus: Option<::Value<String>> = None;
-                    let mut marketo: Option<::Value<String>> = None;
-                    let mut s3: Option<::Value<String>> = None;
-                    let mut sapo_data: Option<::Value<String>> = None;
-                    let mut salesforce: Option<::Value<String>> = None;
-                    let mut service_now: Option<::Value<String>> = None;
-                    let mut singular: Option<::Value<String>> = None;
-                    let mut slack: Option<::Value<String>> = None;
-                    let mut trendmicro: Option<::Value<String>> = None;
-                    let mut veeva: Option<::Value<String>> = None;
-                    let mut zendesk: Option<::Value<String>> = None;
+                    let mut amplitude: Option<crate::Value<String>> = None;
+                    let mut datadog: Option<crate::Value<String>> = None;
+                    let mut dynatrace: Option<crate::Value<String>> = None;
+                    let mut google_analytics: Option<crate::Value<String>> = None;
+                    let mut infor_nexus: Option<crate::Value<String>> = None;
+                    let mut marketo: Option<crate::Value<String>> = None;
+                    let mut s3: Option<crate::Value<String>> = None;
+                    let mut sapo_data: Option<crate::Value<String>> = None;
+                    let mut salesforce: Option<crate::Value<String>> = None;
+                    let mut service_now: Option<crate::Value<String>> = None;
+                    let mut singular: Option<crate::Value<String>> = None;
+                    let mut slack: Option<crate::Value<String>> = None;
+                    let mut trendmicro: Option<crate::Value<String>> = None;
+                    let mut veeva: Option<crate::Value<String>> = None;
+                    let mut zendesk: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3772,10 +3772,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DatadogSourceProperties {
+    impl crate::codec::SerializeValue for DatadogSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -3783,7 +3783,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for DatadogSourceProperties {
+    impl crate::codec::DeserializeValue for DatadogSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatadogSourceProperties, D::Error> {
@@ -3800,7 +3800,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3830,55 +3830,55 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_bridge: Option<::Value<EventBridgeDestinationProperties>>,
+        pub event_bridge: Option<crate::Value<EventBridgeDestinationProperties>>,
         /// Property [`LookoutMetrics`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-lookoutmetrics).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lookout_metrics: Option<::Value<LookoutMetricsDestinationProperties>>,
+        pub lookout_metrics: Option<crate::Value<LookoutMetricsDestinationProperties>>,
         /// Property [`Marketo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-marketo).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub marketo: Option<::Value<MarketoDestinationProperties>>,
+        pub marketo: Option<crate::Value<MarketoDestinationProperties>>,
         /// Property [`Redshift`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-redshift).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub redshift: Option<::Value<RedshiftDestinationProperties>>,
+        pub redshift: Option<crate::Value<RedshiftDestinationProperties>>,
         /// Property [`S3`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-s3).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3: Option<::Value<S3DestinationProperties>>,
+        pub s3: Option<crate::Value<S3DestinationProperties>>,
         /// Property [`SAPOData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-sapodata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sapo_data: Option<::Value<SAPODataDestinationProperties>>,
+        pub sapo_data: Option<crate::Value<SAPODataDestinationProperties>>,
         /// Property [`Salesforce`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-salesforce).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub salesforce: Option<::Value<SalesforceDestinationProperties>>,
+        pub salesforce: Option<crate::Value<SalesforceDestinationProperties>>,
         /// Property [`Snowflake`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-snowflake).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub snowflake: Option<::Value<SnowflakeDestinationProperties>>,
+        pub snowflake: Option<crate::Value<SnowflakeDestinationProperties>>,
         /// Property [`Upsolver`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-upsolver).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub upsolver: Option<::Value<UpsolverDestinationProperties>>,
+        pub upsolver: Option<crate::Value<UpsolverDestinationProperties>>,
         /// Property [`Zendesk`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-zendesk).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub zendesk: Option<::Value<ZendeskDestinationProperties>>,
+        pub zendesk: Option<crate::Value<ZendeskDestinationProperties>>,
     }
 
-    impl ::codec::SerializeValue for DestinationConnectorProperties {
+    impl crate::codec::SerializeValue for DestinationConnectorProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref event_bridge) = self.event_bridge {
@@ -3919,7 +3919,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for DestinationConnectorProperties {
+    impl crate::codec::DeserializeValue for DestinationConnectorProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DestinationConnectorProperties, D::Error> {
@@ -3936,17 +3936,17 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut event_bridge: Option<::Value<EventBridgeDestinationProperties>> = None;
-                    let mut lookout_metrics: Option<::Value<LookoutMetricsDestinationProperties>> =
+                    let mut event_bridge: Option<crate::Value<EventBridgeDestinationProperties>> = None;
+                    let mut lookout_metrics: Option<crate::Value<LookoutMetricsDestinationProperties>> =
                         None;
-                    let mut marketo: Option<::Value<MarketoDestinationProperties>> = None;
-                    let mut redshift: Option<::Value<RedshiftDestinationProperties>> = None;
-                    let mut s3: Option<::Value<S3DestinationProperties>> = None;
-                    let mut sapo_data: Option<::Value<SAPODataDestinationProperties>> = None;
-                    let mut salesforce: Option<::Value<SalesforceDestinationProperties>> = None;
-                    let mut snowflake: Option<::Value<SnowflakeDestinationProperties>> = None;
-                    let mut upsolver: Option<::Value<UpsolverDestinationProperties>> = None;
-                    let mut zendesk: Option<::Value<ZendeskDestinationProperties>> = None;
+                    let mut marketo: Option<crate::Value<MarketoDestinationProperties>> = None;
+                    let mut redshift: Option<crate::Value<RedshiftDestinationProperties>> = None;
+                    let mut s3: Option<crate::Value<S3DestinationProperties>> = None;
+                    let mut sapo_data: Option<crate::Value<SAPODataDestinationProperties>> = None;
+                    let mut salesforce: Option<crate::Value<SalesforceDestinationProperties>> = None;
+                    let mut snowflake: Option<crate::Value<SnowflakeDestinationProperties>> = None;
+                    let mut upsolver: Option<crate::Value<UpsolverDestinationProperties>> = None;
+                    let mut zendesk: Option<crate::Value<ZendeskDestinationProperties>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4012,20 +4012,20 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_profile_name: Option<::Value<String>>,
+        pub connector_profile_name: Option<crate::Value<String>>,
         /// Property [`ConnectorType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html#cfn-appflow-flow-destinationflowconfig-connectortype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_type: ::Value<String>,
+        pub connector_type: crate::Value<String>,
         /// Property [`DestinationConnectorProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html#cfn-appflow-flow-destinationflowconfig-destinationconnectorproperties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_connector_properties: ::Value<DestinationConnectorProperties>,
+        pub destination_connector_properties: crate::Value<DestinationConnectorProperties>,
     }
 
-    impl ::codec::SerializeValue for DestinationFlowConfig {
+    impl crate::codec::SerializeValue for DestinationFlowConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connector_profile_name) = self.connector_profile_name {
@@ -4049,7 +4049,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for DestinationFlowConfig {
+    impl crate::codec::DeserializeValue for DestinationFlowConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DestinationFlowConfig, D::Error> {
@@ -4066,10 +4066,10 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut connector_profile_name: Option<::Value<String>> = None;
-                    let mut connector_type: Option<::Value<String>> = None;
+                    let mut connector_profile_name: Option<crate::Value<String>> = None;
+                    let mut connector_type: Option<crate::Value<String>> = None;
                     let mut destination_connector_properties: Option<
-                        ::Value<DestinationConnectorProperties>,
+                        crate::Value<DestinationConnectorProperties>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -4113,10 +4113,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for DynatraceSourceProperties {
+    impl crate::codec::SerializeValue for DynatraceSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -4124,7 +4124,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for DynatraceSourceProperties {
+    impl crate::codec::DeserializeValue for DynatraceSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DynatraceSourceProperties, D::Error> {
@@ -4141,7 +4141,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4171,20 +4171,20 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: Option<::Value<String>>,
+        pub bucket_name: Option<crate::Value<String>>,
         /// Property [`BucketPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-bucketprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: Option<::Value<String>>,
+        pub bucket_prefix: Option<crate::Value<String>>,
         /// Property [`FailOnFirstError`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-failonfirsterror).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fail_on_first_error: Option<::Value<bool>>,
+        pub fail_on_first_error: Option<crate::Value<bool>>,
     }
 
-    impl ::codec::SerializeValue for ErrorHandlingConfig {
+    impl crate::codec::SerializeValue for ErrorHandlingConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bucket_name) = self.bucket_name {
@@ -4208,7 +4208,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for ErrorHandlingConfig {
+    impl crate::codec::DeserializeValue for ErrorHandlingConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ErrorHandlingConfig, D::Error> {
@@ -4225,9 +4225,9 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<::Value<String>> = None;
-                    let mut bucket_prefix: Option<::Value<String>> = None;
-                    let mut fail_on_first_error: Option<::Value<bool>> = None;
+                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
+                    let mut fail_on_first_error: Option<crate::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4265,15 +4265,15 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_handling_config: Option<::Value<ErrorHandlingConfig>>,
+        pub error_handling_config: Option<crate::Value<ErrorHandlingConfig>>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-eventbridgedestinationproperties.html#cfn-appflow-flow-eventbridgedestinationproperties-object).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for EventBridgeDestinationProperties {
+    impl crate::codec::SerializeValue for EventBridgeDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref error_handling_config) = self.error_handling_config {
@@ -4288,7 +4288,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for EventBridgeDestinationProperties {
+    impl crate::codec::DeserializeValue for EventBridgeDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EventBridgeDestinationProperties, D::Error> {
@@ -4305,8 +4305,8 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut error_handling_config: Option<::Value<ErrorHandlingConfig>> = None;
-                    let mut object: Option<::Value<String>> = None;
+                    let mut error_handling_config: Option<crate::Value<ErrorHandlingConfig>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4341,10 +4341,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for GoogleAnalyticsSourceProperties {
+    impl crate::codec::SerializeValue for GoogleAnalyticsSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -4352,7 +4352,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for GoogleAnalyticsSourceProperties {
+    impl crate::codec::DeserializeValue for GoogleAnalyticsSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GoogleAnalyticsSourceProperties, D::Error> {
@@ -4369,7 +4369,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4399,10 +4399,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub datetime_type_field_name: Option<::Value<String>>,
+        pub datetime_type_field_name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for IncrementalPullConfig {
+    impl crate::codec::SerializeValue for IncrementalPullConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref datetime_type_field_name) = self.datetime_type_field_name {
@@ -4416,7 +4416,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for IncrementalPullConfig {
+    impl crate::codec::DeserializeValue for IncrementalPullConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IncrementalPullConfig, D::Error> {
@@ -4433,7 +4433,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut datetime_type_field_name: Option<::Value<String>> = None;
+                    let mut datetime_type_field_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4464,10 +4464,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for InforNexusSourceProperties {
+    impl crate::codec::SerializeValue for InforNexusSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -4475,7 +4475,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for InforNexusSourceProperties {
+    impl crate::codec::DeserializeValue for InforNexusSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InforNexusSourceProperties, D::Error> {
@@ -4492,7 +4492,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4522,10 +4522,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: Option<::Value<String>>,
+        pub object: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for LookoutMetricsDestinationProperties {
+    impl crate::codec::SerializeValue for LookoutMetricsDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref object) = self.object {
@@ -4535,7 +4535,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for LookoutMetricsDestinationProperties {
+    impl crate::codec::DeserializeValue for LookoutMetricsDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LookoutMetricsDestinationProperties, D::Error> {
@@ -4552,7 +4552,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4580,15 +4580,15 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_handling_config: Option<::Value<ErrorHandlingConfig>>,
+        pub error_handling_config: Option<crate::Value<ErrorHandlingConfig>>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-marketodestinationproperties.html#cfn-appflow-flow-marketodestinationproperties-object).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for MarketoDestinationProperties {
+    impl crate::codec::SerializeValue for MarketoDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref error_handling_config) = self.error_handling_config {
@@ -4603,7 +4603,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for MarketoDestinationProperties {
+    impl crate::codec::DeserializeValue for MarketoDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MarketoDestinationProperties, D::Error> {
@@ -4620,8 +4620,8 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut error_handling_config: Option<::Value<ErrorHandlingConfig>> = None;
-                    let mut object: Option<::Value<String>> = None;
+                    let mut error_handling_config: Option<crate::Value<ErrorHandlingConfig>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4656,10 +4656,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for MarketoSourceProperties {
+    impl crate::codec::SerializeValue for MarketoSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -4667,7 +4667,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for MarketoSourceProperties {
+    impl crate::codec::DeserializeValue for MarketoSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MarketoSourceProperties, D::Error> {
@@ -4684,7 +4684,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4714,15 +4714,15 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prefix_format: Option<::Value<String>>,
+        pub prefix_format: Option<crate::Value<String>>,
         /// Property [`PrefixType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html#cfn-appflow-flow-prefixconfig-prefixtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prefix_type: Option<::Value<String>>,
+        pub prefix_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for PrefixConfig {
+    impl crate::codec::SerializeValue for PrefixConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref prefix_format) = self.prefix_format {
@@ -4739,7 +4739,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for PrefixConfig {
+    impl crate::codec::DeserializeValue for PrefixConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PrefixConfig, D::Error> {
             struct Visitor;
 
@@ -4754,8 +4754,8 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut prefix_format: Option<::Value<String>> = None;
-                    let mut prefix_type: Option<::Value<String>> = None;
+                    let mut prefix_format: Option<crate::Value<String>> = None;
+                    let mut prefix_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4789,25 +4789,25 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: Option<::Value<String>>,
+        pub bucket_prefix: Option<crate::Value<String>>,
         /// Property [`ErrorHandlingConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-errorhandlingconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_handling_config: Option<::Value<ErrorHandlingConfig>>,
+        pub error_handling_config: Option<crate::Value<ErrorHandlingConfig>>,
         /// Property [`IntermediateBucketName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-intermediatebucketname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub intermediate_bucket_name: ::Value<String>,
+        pub intermediate_bucket_name: crate::Value<String>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-object).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for RedshiftDestinationProperties {
+    impl crate::codec::SerializeValue for RedshiftDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bucket_prefix) = self.bucket_prefix {
@@ -4834,7 +4834,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for RedshiftDestinationProperties {
+    impl crate::codec::DeserializeValue for RedshiftDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RedshiftDestinationProperties, D::Error> {
@@ -4851,10 +4851,10 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_prefix: Option<::Value<String>> = None;
-                    let mut error_handling_config: Option<::Value<ErrorHandlingConfig>> = None;
-                    let mut intermediate_bucket_name: Option<::Value<String>> = None;
-                    let mut object: Option<::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
+                    let mut error_handling_config: Option<crate::Value<ErrorHandlingConfig>> = None;
+                    let mut intermediate_bucket_name: Option<crate::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4899,20 +4899,20 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: ::Value<String>,
+        pub bucket_name: crate::Value<String>,
         /// Property [`BucketPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3destinationproperties.html#cfn-appflow-flow-s3destinationproperties-bucketprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: Option<::Value<String>>,
+        pub bucket_prefix: Option<crate::Value<String>>,
         /// Property [`S3OutputFormatConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3destinationproperties.html#cfn-appflow-flow-s3destinationproperties-s3outputformatconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_output_format_config: Option<::Value<S3OutputFormatConfig>>,
+        pub s3_output_format_config: Option<crate::Value<S3OutputFormatConfig>>,
     }
 
-    impl ::codec::SerializeValue for S3DestinationProperties {
+    impl crate::codec::SerializeValue for S3DestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
@@ -4934,7 +4934,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for S3DestinationProperties {
+    impl crate::codec::DeserializeValue for S3DestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3DestinationProperties, D::Error> {
@@ -4951,9 +4951,9 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<::Value<String>> = None;
-                    let mut bucket_prefix: Option<::Value<String>> = None;
-                    let mut s3_output_format_config: Option<::Value<S3OutputFormatConfig>> = None;
+                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
+                    let mut s3_output_format_config: Option<crate::Value<S3OutputFormatConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4993,10 +4993,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_input_file_type: Option<::Value<String>>,
+        pub s3_input_file_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for S3InputFormatConfig {
+    impl crate::codec::SerializeValue for S3InputFormatConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_input_file_type) = self.s3_input_file_type {
@@ -5010,7 +5010,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for S3InputFormatConfig {
+    impl crate::codec::DeserializeValue for S3InputFormatConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3InputFormatConfig, D::Error> {
@@ -5027,7 +5027,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_input_file_type: Option<::Value<String>> = None;
+                    let mut s3_input_file_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5057,20 +5057,20 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aggregation_config: Option<::Value<AggregationConfig>>,
+        pub aggregation_config: Option<crate::Value<AggregationConfig>>,
         /// Property [`FileType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-filetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub file_type: Option<::Value<String>>,
+        pub file_type: Option<crate::Value<String>>,
         /// Property [`PrefixConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-prefixconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prefix_config: Option<::Value<PrefixConfig>>,
+        pub prefix_config: Option<crate::Value<PrefixConfig>>,
     }
 
-    impl ::codec::SerializeValue for S3OutputFormatConfig {
+    impl crate::codec::SerializeValue for S3OutputFormatConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aggregation_config) = self.aggregation_config {
@@ -5094,7 +5094,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for S3OutputFormatConfig {
+    impl crate::codec::DeserializeValue for S3OutputFormatConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3OutputFormatConfig, D::Error> {
@@ -5111,9 +5111,9 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut aggregation_config: Option<::Value<AggregationConfig>> = None;
-                    let mut file_type: Option<::Value<String>> = None;
-                    let mut prefix_config: Option<::Value<PrefixConfig>> = None;
+                    let mut aggregation_config: Option<crate::Value<AggregationConfig>> = None;
+                    let mut file_type: Option<crate::Value<String>> = None;
+                    let mut prefix_config: Option<crate::Value<PrefixConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5151,20 +5151,20 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: ::Value<String>,
+        pub bucket_name: crate::Value<String>,
         /// Property [`BucketPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3sourceproperties.html#cfn-appflow-flow-s3sourceproperties-bucketprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: ::Value<String>,
+        pub bucket_prefix: crate::Value<String>,
         /// Property [`S3InputFormatConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3sourceproperties.html#cfn-appflow-flow-s3sourceproperties-s3inputformatconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_input_format_config: Option<::Value<S3InputFormatConfig>>,
+        pub s3_input_format_config: Option<crate::Value<S3InputFormatConfig>>,
     }
 
-    impl ::codec::SerializeValue for S3SourceProperties {
+    impl crate::codec::SerializeValue for S3SourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
@@ -5184,7 +5184,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for S3SourceProperties {
+    impl crate::codec::DeserializeValue for S3SourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3SourceProperties, D::Error> {
@@ -5201,9 +5201,9 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<::Value<String>> = None;
-                    let mut bucket_prefix: Option<::Value<String>> = None;
-                    let mut s3_input_format_config: Option<::Value<S3InputFormatConfig>> = None;
+                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
+                    let mut s3_input_format_config: Option<crate::Value<S3InputFormatConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5244,30 +5244,30 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_handling_config: Option<::Value<ErrorHandlingConfig>>,
+        pub error_handling_config: Option<crate::Value<ErrorHandlingConfig>>,
         /// Property [`IdFieldNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatadestinationproperties.html#cfn-appflow-flow-sapodatadestinationproperties-idfieldnames).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id_field_names: Option<::ValueList<String>>,
+        pub id_field_names: Option<crate::ValueList<String>>,
         /// Property [`ObjectPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatadestinationproperties.html#cfn-appflow-flow-sapodatadestinationproperties-objectpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object_path: ::Value<String>,
+        pub object_path: crate::Value<String>,
         /// Property [`SuccessResponseHandlingConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatadestinationproperties.html#cfn-appflow-flow-sapodatadestinationproperties-successresponsehandlingconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub success_response_handling_config: Option<::Value<SuccessResponseHandlingConfig>>,
+        pub success_response_handling_config: Option<crate::Value<SuccessResponseHandlingConfig>>,
         /// Property [`WriteOperationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatadestinationproperties.html#cfn-appflow-flow-sapodatadestinationproperties-writeoperationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub write_operation_type: Option<::Value<String>>,
+        pub write_operation_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SAPODataDestinationProperties {
+    impl crate::codec::SerializeValue for SAPODataDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref error_handling_config) = self.error_handling_config {
@@ -5305,7 +5305,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SAPODataDestinationProperties {
+    impl crate::codec::DeserializeValue for SAPODataDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SAPODataDestinationProperties, D::Error> {
@@ -5322,13 +5322,13 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut error_handling_config: Option<::Value<ErrorHandlingConfig>> = None;
-                    let mut id_field_names: Option<::ValueList<String>> = None;
-                    let mut object_path: Option<::Value<String>> = None;
+                    let mut error_handling_config: Option<crate::Value<ErrorHandlingConfig>> = None;
+                    let mut id_field_names: Option<crate::ValueList<String>> = None;
+                    let mut object_path: Option<crate::Value<String>> = None;
                     let mut success_response_handling_config: Option<
-                        ::Value<SuccessResponseHandlingConfig>,
+                        crate::Value<SuccessResponseHandlingConfig>,
                     > = None;
-                    let mut write_operation_type: Option<::Value<String>> = None;
+                    let mut write_operation_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5378,10 +5378,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object_path: ::Value<String>,
+        pub object_path: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SAPODataSourceProperties {
+    impl crate::codec::SerializeValue for SAPODataSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectPath", &self.object_path)?;
@@ -5389,7 +5389,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SAPODataSourceProperties {
+    impl crate::codec::DeserializeValue for SAPODataSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SAPODataSourceProperties, D::Error> {
@@ -5406,7 +5406,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object_path: Option<::Value<String>> = None;
+                    let mut object_path: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5437,25 +5437,25 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_handling_config: Option<::Value<ErrorHandlingConfig>>,
+        pub error_handling_config: Option<crate::Value<ErrorHandlingConfig>>,
         /// Property [`IdFieldNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-idfieldnames).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id_field_names: Option<::ValueList<String>>,
+        pub id_field_names: Option<crate::ValueList<String>>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-object).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
         /// Property [`WriteOperationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-writeoperationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub write_operation_type: Option<::Value<String>>,
+        pub write_operation_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SalesforceDestinationProperties {
+    impl crate::codec::SerializeValue for SalesforceDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref error_handling_config) = self.error_handling_config {
@@ -5484,7 +5484,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceDestinationProperties {
+    impl crate::codec::DeserializeValue for SalesforceDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceDestinationProperties, D::Error> {
@@ -5501,10 +5501,10 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut error_handling_config: Option<::Value<ErrorHandlingConfig>> = None;
-                    let mut id_field_names: Option<::ValueList<String>> = None;
-                    let mut object: Option<::Value<String>> = None;
-                    let mut write_operation_type: Option<::Value<String>> = None;
+                    let mut error_handling_config: Option<crate::Value<ErrorHandlingConfig>> = None;
+                    let mut id_field_names: Option<crate::ValueList<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
+                    let mut write_operation_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5548,20 +5548,20 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enable_dynamic_field_update: Option<::Value<bool>>,
+        pub enable_dynamic_field_update: Option<crate::Value<bool>>,
         /// Property [`IncludeDeletedRecords`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcesourceproperties.html#cfn-appflow-flow-salesforcesourceproperties-includedeletedrecords).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_deleted_records: Option<::Value<bool>>,
+        pub include_deleted_records: Option<crate::Value<bool>>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcesourceproperties.html#cfn-appflow-flow-salesforcesourceproperties-object).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SalesforceSourceProperties {
+    impl crate::codec::SerializeValue for SalesforceSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enable_dynamic_field_update) = self.enable_dynamic_field_update {
@@ -5583,7 +5583,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SalesforceSourceProperties {
+    impl crate::codec::DeserializeValue for SalesforceSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SalesforceSourceProperties, D::Error> {
@@ -5600,9 +5600,9 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enable_dynamic_field_update: Option<::Value<bool>> = None;
-                    let mut include_deleted_records: Option<::Value<bool>> = None;
-                    let mut object: Option<::Value<String>> = None;
+                    let mut enable_dynamic_field_update: Option<crate::Value<bool>> = None;
+                    let mut include_deleted_records: Option<crate::Value<bool>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5642,35 +5642,35 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_pull_mode: Option<::Value<String>>,
+        pub data_pull_mode: Option<crate::Value<String>>,
         /// Property [`ScheduleEndTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-scheduleendtime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule_end_time: Option<::Value<f64>>,
+        pub schedule_end_time: Option<crate::Value<f64>>,
         /// Property [`ScheduleExpression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-scheduleexpression).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule_expression: ::Value<String>,
+        pub schedule_expression: crate::Value<String>,
         /// Property [`ScheduleOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-scheduleoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule_offset: Option<::Value<f64>>,
+        pub schedule_offset: Option<crate::Value<f64>>,
         /// Property [`ScheduleStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-schedulestarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule_start_time: Option<::Value<f64>>,
+        pub schedule_start_time: Option<crate::Value<f64>>,
         /// Property [`TimeZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-timezone).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_zone: Option<::Value<String>>,
+        pub time_zone: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ScheduledTriggerProperties {
+    impl crate::codec::SerializeValue for ScheduledTriggerProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_pull_mode) = self.data_pull_mode {
@@ -5713,7 +5713,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for ScheduledTriggerProperties {
+    impl crate::codec::DeserializeValue for ScheduledTriggerProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScheduledTriggerProperties, D::Error> {
@@ -5730,12 +5730,12 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_pull_mode: Option<::Value<String>> = None;
-                    let mut schedule_end_time: Option<::Value<f64>> = None;
-                    let mut schedule_expression: Option<::Value<String>> = None;
-                    let mut schedule_offset: Option<::Value<f64>> = None;
-                    let mut schedule_start_time: Option<::Value<f64>> = None;
-                    let mut time_zone: Option<::Value<String>> = None;
+                    let mut data_pull_mode: Option<crate::Value<String>> = None;
+                    let mut schedule_end_time: Option<crate::Value<f64>> = None;
+                    let mut schedule_expression: Option<crate::Value<String>> = None;
+                    let mut schedule_offset: Option<crate::Value<f64>> = None;
+                    let mut schedule_start_time: Option<crate::Value<f64>> = None;
+                    let mut time_zone: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5786,10 +5786,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ServiceNowSourceProperties {
+    impl crate::codec::SerializeValue for ServiceNowSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -5797,7 +5797,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for ServiceNowSourceProperties {
+    impl crate::codec::DeserializeValue for ServiceNowSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServiceNowSourceProperties, D::Error> {
@@ -5814,7 +5814,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5844,10 +5844,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SingularSourceProperties {
+    impl crate::codec::SerializeValue for SingularSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -5855,7 +5855,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SingularSourceProperties {
+    impl crate::codec::DeserializeValue for SingularSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SingularSourceProperties, D::Error> {
@@ -5872,7 +5872,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5902,10 +5902,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SlackSourceProperties {
+    impl crate::codec::SerializeValue for SlackSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -5913,7 +5913,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SlackSourceProperties {
+    impl crate::codec::DeserializeValue for SlackSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SlackSourceProperties, D::Error> {
@@ -5930,7 +5930,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5960,25 +5960,25 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: Option<::Value<String>>,
+        pub bucket_prefix: Option<crate::Value<String>>,
         /// Property [`ErrorHandlingConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-snowflakedestinationproperties.html#cfn-appflow-flow-snowflakedestinationproperties-errorhandlingconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_handling_config: Option<::Value<ErrorHandlingConfig>>,
+        pub error_handling_config: Option<crate::Value<ErrorHandlingConfig>>,
         /// Property [`IntermediateBucketName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-snowflakedestinationproperties.html#cfn-appflow-flow-snowflakedestinationproperties-intermediatebucketname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub intermediate_bucket_name: ::Value<String>,
+        pub intermediate_bucket_name: crate::Value<String>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-snowflakedestinationproperties.html#cfn-appflow-flow-snowflakedestinationproperties-object).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for SnowflakeDestinationProperties {
+    impl crate::codec::SerializeValue for SnowflakeDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bucket_prefix) = self.bucket_prefix {
@@ -6005,7 +6005,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SnowflakeDestinationProperties {
+    impl crate::codec::DeserializeValue for SnowflakeDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SnowflakeDestinationProperties, D::Error> {
@@ -6022,10 +6022,10 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_prefix: Option<::Value<String>> = None;
-                    let mut error_handling_config: Option<::Value<ErrorHandlingConfig>> = None;
-                    let mut intermediate_bucket_name: Option<::Value<String>> = None;
-                    let mut object: Option<::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
+                    let mut error_handling_config: Option<crate::Value<ErrorHandlingConfig>> = None;
+                    let mut intermediate_bucket_name: Option<crate::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6070,80 +6070,80 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub amplitude: Option<::Value<AmplitudeSourceProperties>>,
+        pub amplitude: Option<crate::Value<AmplitudeSourceProperties>>,
         /// Property [`Datadog`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-datadog).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub datadog: Option<::Value<DatadogSourceProperties>>,
+        pub datadog: Option<crate::Value<DatadogSourceProperties>>,
         /// Property [`Dynatrace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-dynatrace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dynatrace: Option<::Value<DynatraceSourceProperties>>,
+        pub dynatrace: Option<crate::Value<DynatraceSourceProperties>>,
         /// Property [`GoogleAnalytics`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-googleanalytics).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub google_analytics: Option<::Value<GoogleAnalyticsSourceProperties>>,
+        pub google_analytics: Option<crate::Value<GoogleAnalyticsSourceProperties>>,
         /// Property [`InforNexus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-infornexus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub infor_nexus: Option<::Value<InforNexusSourceProperties>>,
+        pub infor_nexus: Option<crate::Value<InforNexusSourceProperties>>,
         /// Property [`Marketo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-marketo).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub marketo: Option<::Value<MarketoSourceProperties>>,
+        pub marketo: Option<crate::Value<MarketoSourceProperties>>,
         /// Property [`S3`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-s3).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3: Option<::Value<S3SourceProperties>>,
+        pub s3: Option<crate::Value<S3SourceProperties>>,
         /// Property [`SAPOData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-sapodata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sapo_data: Option<::Value<SAPODataSourceProperties>>,
+        pub sapo_data: Option<crate::Value<SAPODataSourceProperties>>,
         /// Property [`Salesforce`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-salesforce).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub salesforce: Option<::Value<SalesforceSourceProperties>>,
+        pub salesforce: Option<crate::Value<SalesforceSourceProperties>>,
         /// Property [`ServiceNow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-servicenow).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_now: Option<::Value<ServiceNowSourceProperties>>,
+        pub service_now: Option<crate::Value<ServiceNowSourceProperties>>,
         /// Property [`Singular`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-singular).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub singular: Option<::Value<SingularSourceProperties>>,
+        pub singular: Option<crate::Value<SingularSourceProperties>>,
         /// Property [`Slack`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-slack).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slack: Option<::Value<SlackSourceProperties>>,
+        pub slack: Option<crate::Value<SlackSourceProperties>>,
         /// Property [`Trendmicro`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-trendmicro).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub trendmicro: Option<::Value<TrendmicroSourceProperties>>,
+        pub trendmicro: Option<crate::Value<TrendmicroSourceProperties>>,
         /// Property [`Veeva`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-veeva).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub veeva: Option<::Value<VeevaSourceProperties>>,
+        pub veeva: Option<crate::Value<VeevaSourceProperties>>,
         /// Property [`Zendesk`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-zendesk).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub zendesk: Option<::Value<ZendeskSourceProperties>>,
+        pub zendesk: Option<crate::Value<ZendeskSourceProperties>>,
     }
 
-    impl ::codec::SerializeValue for SourceConnectorProperties {
+    impl crate::codec::SerializeValue for SourceConnectorProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref amplitude) = self.amplitude {
@@ -6199,7 +6199,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SourceConnectorProperties {
+    impl crate::codec::DeserializeValue for SourceConnectorProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SourceConnectorProperties, D::Error> {
@@ -6216,22 +6216,22 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut amplitude: Option<::Value<AmplitudeSourceProperties>> = None;
-                    let mut datadog: Option<::Value<DatadogSourceProperties>> = None;
-                    let mut dynatrace: Option<::Value<DynatraceSourceProperties>> = None;
-                    let mut google_analytics: Option<::Value<GoogleAnalyticsSourceProperties>> =
+                    let mut amplitude: Option<crate::Value<AmplitudeSourceProperties>> = None;
+                    let mut datadog: Option<crate::Value<DatadogSourceProperties>> = None;
+                    let mut dynatrace: Option<crate::Value<DynatraceSourceProperties>> = None;
+                    let mut google_analytics: Option<crate::Value<GoogleAnalyticsSourceProperties>> =
                         None;
-                    let mut infor_nexus: Option<::Value<InforNexusSourceProperties>> = None;
-                    let mut marketo: Option<::Value<MarketoSourceProperties>> = None;
-                    let mut s3: Option<::Value<S3SourceProperties>> = None;
-                    let mut sapo_data: Option<::Value<SAPODataSourceProperties>> = None;
-                    let mut salesforce: Option<::Value<SalesforceSourceProperties>> = None;
-                    let mut service_now: Option<::Value<ServiceNowSourceProperties>> = None;
-                    let mut singular: Option<::Value<SingularSourceProperties>> = None;
-                    let mut slack: Option<::Value<SlackSourceProperties>> = None;
-                    let mut trendmicro: Option<::Value<TrendmicroSourceProperties>> = None;
-                    let mut veeva: Option<::Value<VeevaSourceProperties>> = None;
-                    let mut zendesk: Option<::Value<ZendeskSourceProperties>> = None;
+                    let mut infor_nexus: Option<crate::Value<InforNexusSourceProperties>> = None;
+                    let mut marketo: Option<crate::Value<MarketoSourceProperties>> = None;
+                    let mut s3: Option<crate::Value<S3SourceProperties>> = None;
+                    let mut sapo_data: Option<crate::Value<SAPODataSourceProperties>> = None;
+                    let mut salesforce: Option<crate::Value<SalesforceSourceProperties>> = None;
+                    let mut service_now: Option<crate::Value<ServiceNowSourceProperties>> = None;
+                    let mut singular: Option<crate::Value<SingularSourceProperties>> = None;
+                    let mut slack: Option<crate::Value<SlackSourceProperties>> = None;
+                    let mut trendmicro: Option<crate::Value<TrendmicroSourceProperties>> = None;
+                    let mut veeva: Option<crate::Value<VeevaSourceProperties>> = None;
+                    let mut zendesk: Option<crate::Value<ZendeskSourceProperties>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6317,25 +6317,25 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_profile_name: Option<::Value<String>>,
+        pub connector_profile_name: Option<crate::Value<String>>,
         /// Property [`ConnectorType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-connectortype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_type: ::Value<String>,
+        pub connector_type: crate::Value<String>,
         /// Property [`IncrementalPullConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-incrementalpullconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub incremental_pull_config: Option<::Value<IncrementalPullConfig>>,
+        pub incremental_pull_config: Option<crate::Value<IncrementalPullConfig>>,
         /// Property [`SourceConnectorProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-sourceconnectorproperties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_connector_properties: ::Value<SourceConnectorProperties>,
+        pub source_connector_properties: crate::Value<SourceConnectorProperties>,
     }
 
-    impl ::codec::SerializeValue for SourceFlowConfig {
+    impl crate::codec::SerializeValue for SourceFlowConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connector_profile_name) = self.connector_profile_name {
@@ -6366,7 +6366,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SourceFlowConfig {
+    impl crate::codec::DeserializeValue for SourceFlowConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SourceFlowConfig, D::Error> {
@@ -6383,11 +6383,11 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut connector_profile_name: Option<::Value<String>> = None;
-                    let mut connector_type: Option<::Value<String>> = None;
-                    let mut incremental_pull_config: Option<::Value<IncrementalPullConfig>> = None;
+                    let mut connector_profile_name: Option<crate::Value<String>> = None;
+                    let mut connector_type: Option<crate::Value<String>> = None;
+                    let mut incremental_pull_config: Option<crate::Value<IncrementalPullConfig>> = None;
                     let mut source_connector_properties: Option<
-                        ::Value<SourceConnectorProperties>,
+                        crate::Value<SourceConnectorProperties>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -6436,15 +6436,15 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: Option<::Value<String>>,
+        pub bucket_name: Option<crate::Value<String>>,
         /// Property [`BucketPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-successresponsehandlingconfig.html#cfn-appflow-flow-successresponsehandlingconfig-bucketprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: Option<::Value<String>>,
+        pub bucket_prefix: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SuccessResponseHandlingConfig {
+    impl crate::codec::SerializeValue for SuccessResponseHandlingConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bucket_name) = self.bucket_name {
@@ -6461,7 +6461,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for SuccessResponseHandlingConfig {
+    impl crate::codec::DeserializeValue for SuccessResponseHandlingConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SuccessResponseHandlingConfig, D::Error> {
@@ -6478,8 +6478,8 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<::Value<String>> = None;
-                    let mut bucket_prefix: Option<::Value<String>> = None;
+                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6513,30 +6513,30 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connector_operator: Option<::Value<ConnectorOperator>>,
+        pub connector_operator: Option<crate::Value<ConnectorOperator>>,
         /// Property [`DestinationField`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-destinationfield).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_field: Option<::Value<String>>,
+        pub destination_field: Option<crate::Value<String>>,
         /// Property [`SourceFields`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-sourcefields).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_fields: ::ValueList<String>,
+        pub source_fields: crate::ValueList<String>,
         /// Property [`TaskProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-taskproperties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub task_properties: Option<::ValueList<TaskPropertiesObject>>,
+        pub task_properties: Option<crate::ValueList<TaskPropertiesObject>>,
         /// Property [`TaskType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-tasktype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub task_type: ::Value<String>,
+        pub task_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Task {
+    impl crate::codec::SerializeValue for Task {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connector_operator) = self.connector_operator {
@@ -6570,7 +6570,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for Task {
+    impl crate::codec::DeserializeValue for Task {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Task, D::Error> {
             struct Visitor;
 
@@ -6585,11 +6585,11 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut connector_operator: Option<::Value<ConnectorOperator>> = None;
-                    let mut destination_field: Option<::Value<String>> = None;
-                    let mut source_fields: Option<::ValueList<String>> = None;
-                    let mut task_properties: Option<::ValueList<TaskPropertiesObject>> = None;
-                    let mut task_type: Option<::Value<String>> = None;
+                    let mut connector_operator: Option<crate::Value<ConnectorOperator>> = None;
+                    let mut destination_field: Option<crate::Value<String>> = None;
+                    let mut source_fields: Option<crate::ValueList<String>> = None;
+                    let mut task_properties: Option<crate::ValueList<TaskPropertiesObject>> = None;
+                    let mut task_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6637,15 +6637,15 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: ::Value<String>,
+        pub key: crate::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-taskpropertiesobject.html#cfn-appflow-flow-taskpropertiesobject-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: ::Value<String>,
+        pub value: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TaskPropertiesObject {
+    impl crate::codec::SerializeValue for TaskPropertiesObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -6654,7 +6654,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for TaskPropertiesObject {
+    impl crate::codec::DeserializeValue for TaskPropertiesObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TaskPropertiesObject, D::Error> {
@@ -6671,8 +6671,8 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<String>> = None;
+                    let mut key: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6706,10 +6706,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TrendmicroSourceProperties {
+    impl crate::codec::SerializeValue for TrendmicroSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -6717,7 +6717,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for TrendmicroSourceProperties {
+    impl crate::codec::DeserializeValue for TrendmicroSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TrendmicroSourceProperties, D::Error> {
@@ -6734,7 +6734,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6764,15 +6764,15 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub trigger_properties: Option<::Value<ScheduledTriggerProperties>>,
+        pub trigger_properties: Option<crate::Value<ScheduledTriggerProperties>>,
         /// Property [`TriggerType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-triggerconfig.html#cfn-appflow-flow-triggerconfig-triggertype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub trigger_type: ::Value<String>,
+        pub trigger_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for TriggerConfig {
+    impl crate::codec::SerializeValue for TriggerConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref trigger_properties) = self.trigger_properties {
@@ -6791,7 +6791,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for TriggerConfig {
+    impl crate::codec::DeserializeValue for TriggerConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TriggerConfig, D::Error> {
@@ -6808,8 +6808,8 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut trigger_properties: Option<::Value<ScheduledTriggerProperties>> = None;
-                    let mut trigger_type: Option<::Value<String>> = None;
+                    let mut trigger_properties: Option<crate::Value<ScheduledTriggerProperties>> = None;
+                    let mut trigger_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6844,20 +6844,20 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: ::Value<String>,
+        pub bucket_name: crate::Value<String>,
         /// Property [`BucketPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-bucketprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_prefix: Option<::Value<String>>,
+        pub bucket_prefix: Option<crate::Value<String>>,
         /// Property [`S3OutputFormatConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-s3outputformatconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_output_format_config: ::Value<UpsolverS3OutputFormatConfig>,
+        pub s3_output_format_config: crate::Value<UpsolverS3OutputFormatConfig>,
     }
 
-    impl ::codec::SerializeValue for UpsolverDestinationProperties {
+    impl crate::codec::SerializeValue for UpsolverDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
@@ -6877,7 +6877,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for UpsolverDestinationProperties {
+    impl crate::codec::DeserializeValue for UpsolverDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UpsolverDestinationProperties, D::Error> {
@@ -6894,9 +6894,9 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<::Value<String>> = None;
-                    let mut bucket_prefix: Option<::Value<String>> = None;
-                    let mut s3_output_format_config: Option<::Value<UpsolverS3OutputFormatConfig>> =
+                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut bucket_prefix: Option<crate::Value<String>> = None;
+                    let mut s3_output_format_config: Option<crate::Value<UpsolverS3OutputFormatConfig>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -6938,20 +6938,20 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aggregation_config: Option<::Value<AggregationConfig>>,
+        pub aggregation_config: Option<crate::Value<AggregationConfig>>,
         /// Property [`FileType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-filetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub file_type: Option<::Value<String>>,
+        pub file_type: Option<crate::Value<String>>,
         /// Property [`PrefixConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-prefixconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prefix_config: ::Value<PrefixConfig>,
+        pub prefix_config: crate::Value<PrefixConfig>,
     }
 
-    impl ::codec::SerializeValue for UpsolverS3OutputFormatConfig {
+    impl crate::codec::SerializeValue for UpsolverS3OutputFormatConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aggregation_config) = self.aggregation_config {
@@ -6973,7 +6973,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for UpsolverS3OutputFormatConfig {
+    impl crate::codec::DeserializeValue for UpsolverS3OutputFormatConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UpsolverS3OutputFormatConfig, D::Error> {
@@ -6990,9 +6990,9 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut aggregation_config: Option<::Value<AggregationConfig>> = None;
-                    let mut file_type: Option<::Value<String>> = None;
-                    let mut prefix_config: Option<::Value<PrefixConfig>> = None;
+                    let mut aggregation_config: Option<crate::Value<AggregationConfig>> = None;
+                    let mut file_type: Option<crate::Value<String>> = None;
+                    let mut prefix_config: Option<crate::Value<PrefixConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7031,30 +7031,30 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub document_type: Option<::Value<String>>,
+        pub document_type: Option<crate::Value<String>>,
         /// Property [`IncludeAllVersions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includeallversions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_all_versions: Option<::Value<bool>>,
+        pub include_all_versions: Option<crate::Value<bool>>,
         /// Property [`IncludeRenditions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includerenditions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_renditions: Option<::Value<bool>>,
+        pub include_renditions: Option<crate::Value<bool>>,
         /// Property [`IncludeSourceFiles`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includesourcefiles).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_source_files: Option<::Value<bool>>,
+        pub include_source_files: Option<crate::Value<bool>>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-object).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for VeevaSourceProperties {
+    impl crate::codec::SerializeValue for VeevaSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref document_type) = self.document_type {
@@ -7090,7 +7090,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for VeevaSourceProperties {
+    impl crate::codec::DeserializeValue for VeevaSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VeevaSourceProperties, D::Error> {
@@ -7107,11 +7107,11 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut document_type: Option<::Value<String>> = None;
-                    let mut include_all_versions: Option<::Value<bool>> = None;
-                    let mut include_renditions: Option<::Value<bool>> = None;
-                    let mut include_source_files: Option<::Value<bool>> = None;
-                    let mut object: Option<::Value<String>> = None;
+                    let mut document_type: Option<crate::Value<String>> = None;
+                    let mut include_all_versions: Option<crate::Value<bool>> = None;
+                    let mut include_renditions: Option<crate::Value<bool>> = None;
+                    let mut include_source_files: Option<crate::Value<bool>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7159,25 +7159,25 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_handling_config: Option<::Value<ErrorHandlingConfig>>,
+        pub error_handling_config: Option<crate::Value<ErrorHandlingConfig>>,
         /// Property [`IdFieldNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-idfieldnames).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id_field_names: Option<::ValueList<String>>,
+        pub id_field_names: Option<crate::ValueList<String>>,
         /// Property [`Object`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-object).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
         /// Property [`WriteOperationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-writeoperationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub write_operation_type: Option<::Value<String>>,
+        pub write_operation_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for ZendeskDestinationProperties {
+    impl crate::codec::SerializeValue for ZendeskDestinationProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref error_handling_config) = self.error_handling_config {
@@ -7206,7 +7206,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for ZendeskDestinationProperties {
+    impl crate::codec::DeserializeValue for ZendeskDestinationProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ZendeskDestinationProperties, D::Error> {
@@ -7223,10 +7223,10 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut error_handling_config: Option<::Value<ErrorHandlingConfig>> = None;
-                    let mut id_field_names: Option<::ValueList<String>> = None;
-                    let mut object: Option<::Value<String>> = None;
-                    let mut write_operation_type: Option<::Value<String>> = None;
+                    let mut error_handling_config: Option<crate::Value<ErrorHandlingConfig>> = None;
+                    let mut id_field_names: Option<crate::ValueList<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
+                    let mut write_operation_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7270,10 +7270,10 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object: ::Value<String>,
+        pub object: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ZendeskSourceProperties {
+    impl crate::codec::SerializeValue for ZendeskSourceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Object", &self.object)?;
@@ -7281,7 +7281,7 @@ pub mod flow {
         }
     }
 
-    impl ::codec::DeserializeValue for ZendeskSourceProperties {
+    impl crate::codec::DeserializeValue for ZendeskSourceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ZendeskSourceProperties, D::Error> {
@@ -7298,7 +7298,7 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut object: Option<::Value<String>> = None;
+                    let mut object: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

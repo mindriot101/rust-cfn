@@ -13,27 +13,27 @@ pub struct GeofenceCollectionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub collection_name: ::Value<String>,
+    pub collection_name: crate::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-description).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-kmskeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kms_key_id: Option<::Value<String>>,
+    pub kms_key_id: Option<crate::Value<String>>,
     /// Property [`PricingPlan`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-pricingplan).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pricing_plan: Option<::Value<String>>,
+    pub pricing_plan: Option<crate::Value<String>>,
     /// Property [`PricingPlanDataSource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-pricingplandatasource).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pricing_plan_data_source: Option<::Value<String>>,
+    pub pricing_plan_data_source: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for GeofenceCollectionProperties {
@@ -81,11 +81,11 @@ impl<'de> ::serde::Deserialize<'de> for GeofenceCollectionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut collection_name: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut kms_key_id: Option<::Value<String>> = None;
-                let mut pricing_plan: Option<::Value<String>> = None;
-                let mut pricing_plan_data_source: Option<::Value<String>> = None;
+                let mut collection_name: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut pricing_plan: Option<crate::Value<String>> = None;
+                let mut pricing_plan_data_source: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -124,7 +124,7 @@ impl<'de> ::serde::Deserialize<'de> for GeofenceCollectionProperties {
     }
 }
 
-impl ::Resource for GeofenceCollection {
+impl crate::Resource for GeofenceCollection {
     type Properties = GeofenceCollectionProperties;
     const TYPE: &'static str = "AWS::Location::GeofenceCollection";
     fn properties(&self) -> &GeofenceCollectionProperties {
@@ -135,7 +135,7 @@ impl ::Resource for GeofenceCollection {
     }
 }
 
-impl ::private::Sealed for GeofenceCollection {}
+impl crate::private::Sealed for GeofenceCollection {}
 
 impl From<GeofenceCollectionProperties> for GeofenceCollection {
     fn from(properties: GeofenceCollectionProperties) -> GeofenceCollection {
@@ -156,22 +156,22 @@ pub struct MapProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub configuration: ::Value<self::map::MapConfiguration>,
+    pub configuration: crate::Value<self::map::MapConfiguration>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#cfn-location-map-description).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`MapName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#cfn-location-map-mapname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub map_name: ::Value<String>,
+    pub map_name: crate::Value<String>,
     /// Property [`PricingPlan`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#cfn-location-map-pricingplan).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pricing_plan: Option<::Value<String>>,
+    pub pricing_plan: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for MapProperties {
@@ -208,10 +208,10 @@ impl<'de> ::serde::Deserialize<'de> for MapProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut configuration: Option<::Value<self::map::MapConfiguration>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut map_name: Option<::Value<String>> = None;
-                let mut pricing_plan: Option<::Value<String>> = None;
+                let mut configuration: Option<crate::Value<self::map::MapConfiguration>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut map_name: Option<crate::Value<String>> = None;
+                let mut pricing_plan: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -245,7 +245,7 @@ impl<'de> ::serde::Deserialize<'de> for MapProperties {
     }
 }
 
-impl ::Resource for Map {
+impl crate::Resource for Map {
     type Properties = MapProperties;
     const TYPE: &'static str = "AWS::Location::Map";
     fn properties(&self) -> &MapProperties {
@@ -256,7 +256,7 @@ impl ::Resource for Map {
     }
 }
 
-impl ::private::Sealed for Map {}
+impl crate::private::Sealed for Map {}
 
 impl From<MapProperties> for Map {
     fn from(properties: MapProperties) -> Map {
@@ -277,27 +277,27 @@ pub struct PlaceIndexProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_source: ::Value<String>,
+    pub data_source: crate::Value<String>,
     /// Property [`DataSourceConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#cfn-location-placeindex-datasourceconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_source_configuration: Option<::Value<self::place_index::DataSourceConfiguration>>,
+    pub data_source_configuration: Option<crate::Value<self::place_index::DataSourceConfiguration>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#cfn-location-placeindex-description).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`IndexName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#cfn-location-placeindex-indexname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub index_name: ::Value<String>,
+    pub index_name: crate::Value<String>,
     /// Property [`PricingPlan`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#cfn-location-placeindex-pricingplan).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pricing_plan: Option<::Value<String>>,
+    pub pricing_plan: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for PlaceIndexProperties {
@@ -337,13 +337,13 @@ impl<'de> ::serde::Deserialize<'de> for PlaceIndexProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_source: Option<::Value<String>> = None;
+                let mut data_source: Option<crate::Value<String>> = None;
                 let mut data_source_configuration: Option<
-                    ::Value<self::place_index::DataSourceConfiguration>,
+                    crate::Value<self::place_index::DataSourceConfiguration>,
                 > = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut index_name: Option<::Value<String>> = None;
-                let mut pricing_plan: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut index_name: Option<crate::Value<String>> = None;
+                let mut pricing_plan: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -382,7 +382,7 @@ impl<'de> ::serde::Deserialize<'de> for PlaceIndexProperties {
     }
 }
 
-impl ::Resource for PlaceIndex {
+impl crate::Resource for PlaceIndex {
     type Properties = PlaceIndexProperties;
     const TYPE: &'static str = "AWS::Location::PlaceIndex";
     fn properties(&self) -> &PlaceIndexProperties {
@@ -393,7 +393,7 @@ impl ::Resource for PlaceIndex {
     }
 }
 
-impl ::private::Sealed for PlaceIndex {}
+impl crate::private::Sealed for PlaceIndex {}
 
 impl From<PlaceIndexProperties> for PlaceIndex {
     fn from(properties: PlaceIndexProperties) -> PlaceIndex {
@@ -414,22 +414,22 @@ pub struct RouteCalculatorProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub calculator_name: ::Value<String>,
+    pub calculator_name: crate::Value<String>,
     /// Property [`DataSource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#cfn-location-routecalculator-datasource).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_source: ::Value<String>,
+    pub data_source: crate::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#cfn-location-routecalculator-description).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`PricingPlan`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#cfn-location-routecalculator-pricingplan).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pricing_plan: Option<::Value<String>>,
+    pub pricing_plan: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for RouteCalculatorProperties {
@@ -468,10 +468,10 @@ impl<'de> ::serde::Deserialize<'de> for RouteCalculatorProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut calculator_name: Option<::Value<String>> = None;
-                let mut data_source: Option<::Value<String>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut pricing_plan: Option<::Value<String>> = None;
+                let mut calculator_name: Option<crate::Value<String>> = None;
+                let mut data_source: Option<crate::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut pricing_plan: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -506,7 +506,7 @@ impl<'de> ::serde::Deserialize<'de> for RouteCalculatorProperties {
     }
 }
 
-impl ::Resource for RouteCalculator {
+impl crate::Resource for RouteCalculator {
     type Properties = RouteCalculatorProperties;
     const TYPE: &'static str = "AWS::Location::RouteCalculator";
     fn properties(&self) -> &RouteCalculatorProperties {
@@ -517,7 +517,7 @@ impl ::Resource for RouteCalculator {
     }
 }
 
-impl ::private::Sealed for RouteCalculator {}
+impl crate::private::Sealed for RouteCalculator {}
 
 impl From<RouteCalculatorProperties> for RouteCalculator {
     fn from(properties: RouteCalculatorProperties) -> RouteCalculator {
@@ -538,32 +538,32 @@ pub struct TrackerProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html#cfn-location-tracker-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<::Value<String>>,
+    pub kms_key_id: Option<crate::Value<String>>,
     /// Property [`PositionFiltering`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html#cfn-location-tracker-positionfiltering).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub position_filtering: Option<::Value<String>>,
+    pub position_filtering: Option<crate::Value<String>>,
     /// Property [`PricingPlan`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html#cfn-location-tracker-pricingplan).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pricing_plan: Option<::Value<String>>,
+    pub pricing_plan: Option<crate::Value<String>>,
     /// Property [`PricingPlanDataSource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html#cfn-location-tracker-pricingplandatasource).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pricing_plan_data_source: Option<::Value<String>>,
+    pub pricing_plan_data_source: Option<crate::Value<String>>,
     /// Property [`TrackerName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html#cfn-location-tracker-trackername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tracker_name: ::Value<String>,
+    pub tracker_name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for TrackerProperties {
@@ -612,12 +612,12 @@ impl<'de> ::serde::Deserialize<'de> for TrackerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut kms_key_id: Option<::Value<String>> = None;
-                let mut position_filtering: Option<::Value<String>> = None;
-                let mut pricing_plan: Option<::Value<String>> = None;
-                let mut pricing_plan_data_source: Option<::Value<String>> = None;
-                let mut tracker_name: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut position_filtering: Option<crate::Value<String>> = None;
+                let mut pricing_plan: Option<crate::Value<String>> = None;
+                let mut pricing_plan_data_source: Option<crate::Value<String>> = None;
+                let mut tracker_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -660,7 +660,7 @@ impl<'de> ::serde::Deserialize<'de> for TrackerProperties {
     }
 }
 
-impl ::Resource for Tracker {
+impl crate::Resource for Tracker {
     type Properties = TrackerProperties;
     const TYPE: &'static str = "AWS::Location::Tracker";
     fn properties(&self) -> &TrackerProperties {
@@ -671,7 +671,7 @@ impl ::Resource for Tracker {
     }
 }
 
-impl ::private::Sealed for Tracker {}
+impl crate::private::Sealed for Tracker {}
 
 impl From<TrackerProperties> for Tracker {
     fn from(properties: TrackerProperties) -> Tracker {
@@ -692,12 +692,12 @@ pub struct TrackerConsumerProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub consumer_arn: ::Value<String>,
+    pub consumer_arn: crate::Value<String>,
     /// Property [`TrackerName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-trackerconsumer.html#cfn-location-trackerconsumer-trackername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tracker_name: ::Value<String>,
+    pub tracker_name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for TrackerConsumerProperties {
@@ -726,8 +726,8 @@ impl<'de> ::serde::Deserialize<'de> for TrackerConsumerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut consumer_arn: Option<::Value<String>> = None;
-                let mut tracker_name: Option<::Value<String>> = None;
+                let mut consumer_arn: Option<crate::Value<String>> = None;
+                let mut tracker_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -754,7 +754,7 @@ impl<'de> ::serde::Deserialize<'de> for TrackerConsumerProperties {
     }
 }
 
-impl ::Resource for TrackerConsumer {
+impl crate::Resource for TrackerConsumer {
     type Properties = TrackerConsumerProperties;
     const TYPE: &'static str = "AWS::Location::TrackerConsumer";
     fn properties(&self) -> &TrackerConsumerProperties {
@@ -765,7 +765,7 @@ impl ::Resource for TrackerConsumer {
     }
 }
 
-impl ::private::Sealed for TrackerConsumer {}
+impl crate::private::Sealed for TrackerConsumer {}
 
 impl From<TrackerConsumerProperties> for TrackerConsumer {
     fn from(properties: TrackerConsumerProperties) -> TrackerConsumer {
@@ -783,10 +783,10 @@ pub mod map {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub style: ::Value<String>,
+        pub style: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for MapConfiguration {
+    impl crate::codec::SerializeValue for MapConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Style", &self.style)?;
@@ -794,7 +794,7 @@ pub mod map {
         }
     }
 
-    impl ::codec::DeserializeValue for MapConfiguration {
+    impl crate::codec::DeserializeValue for MapConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MapConfiguration, D::Error> {
@@ -811,7 +811,7 @@ pub mod map {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut style: Option<::Value<String>> = None;
+                    let mut style: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -845,10 +845,10 @@ pub mod place_index {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub intended_use: Option<::Value<String>>,
+        pub intended_use: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DataSourceConfiguration {
+    impl crate::codec::SerializeValue for DataSourceConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref intended_use) = self.intended_use {
@@ -858,7 +858,7 @@ pub mod place_index {
         }
     }
 
-    impl ::codec::DeserializeValue for DataSourceConfiguration {
+    impl crate::codec::DeserializeValue for DataSourceConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSourceConfiguration, D::Error> {
@@ -875,7 +875,7 @@ pub mod place_index {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut intended_use: Option<::Value<String>> = None;
+                    let mut intended_use: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

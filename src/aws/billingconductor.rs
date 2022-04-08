@@ -13,27 +13,27 @@ pub struct BillingGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub account_grouping: ::Value<self::billing_group::AccountGrouping>,
+    pub account_grouping: crate::Value<self::billing_group::AccountGrouping>,
     /// Property [`ComputationPreference`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-computationpreference).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub computation_preference: ::Value<self::billing_group::ComputationPreference>,
+    pub computation_preference: crate::Value<self::billing_group::ComputationPreference>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`PrimaryAccountId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-primaryaccountid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub primary_account_id: ::Value<String>,
+    pub primary_account_id: crate::Value<String>,
 }
 
 impl ::serde::Serialize for BillingGroupProperties {
@@ -79,14 +79,14 @@ impl<'de> ::serde::Deserialize<'de> for BillingGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut account_grouping: Option<::Value<self::billing_group::AccountGrouping>> =
+                let mut account_grouping: Option<crate::Value<self::billing_group::AccountGrouping>> =
                     None;
                 let mut computation_preference: Option<
-                    ::Value<self::billing_group::ComputationPreference>,
+                    crate::Value<self::billing_group::ComputationPreference>,
                 > = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut primary_account_id: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut primary_account_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -126,7 +126,7 @@ impl<'de> ::serde::Deserialize<'de> for BillingGroupProperties {
     }
 }
 
-impl ::Resource for BillingGroup {
+impl crate::Resource for BillingGroup {
     type Properties = BillingGroupProperties;
     const TYPE: &'static str = "AWS::BillingConductor::BillingGroup";
     fn properties(&self) -> &BillingGroupProperties {
@@ -137,7 +137,7 @@ impl ::Resource for BillingGroup {
     }
 }
 
-impl ::private::Sealed for BillingGroup {}
+impl crate::private::Sealed for BillingGroup {}
 
 impl From<BillingGroupProperties> for BillingGroup {
     fn from(properties: BillingGroupProperties) -> BillingGroup {
@@ -158,28 +158,28 @@ pub struct CustomLineItemProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub billing_group_arn: ::Value<String>,
+    pub billing_group_arn: crate::Value<String>,
     /// Property [`BillingPeriodRange`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-billingperiodrange).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub billing_period_range: Option<::Value<self::custom_line_item::BillingPeriodRange>>,
+    pub billing_period_range: Option<crate::Value<self::custom_line_item::BillingPeriodRange>>,
     /// Property [`CustomLineItemChargeDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-customlineitemchargedetails).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub custom_line_item_charge_details:
-        Option<::Value<self::custom_line_item::CustomLineItemChargeDetails>>,
+        Option<crate::Value<self::custom_line_item::CustomLineItemChargeDetails>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for CustomLineItemProperties {
@@ -229,15 +229,15 @@ impl<'de> ::serde::Deserialize<'de> for CustomLineItemProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut billing_group_arn: Option<::Value<String>> = None;
+                let mut billing_group_arn: Option<crate::Value<String>> = None;
                 let mut billing_period_range: Option<
-                    ::Value<self::custom_line_item::BillingPeriodRange>,
+                    crate::Value<self::custom_line_item::BillingPeriodRange>,
                 > = None;
                 let mut custom_line_item_charge_details: Option<
-                    ::Value<self::custom_line_item::CustomLineItemChargeDetails>,
+                    crate::Value<self::custom_line_item::CustomLineItemChargeDetails>,
                 > = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -276,7 +276,7 @@ impl<'de> ::serde::Deserialize<'de> for CustomLineItemProperties {
     }
 }
 
-impl ::Resource for CustomLineItem {
+impl crate::Resource for CustomLineItem {
     type Properties = CustomLineItemProperties;
     const TYPE: &'static str = "AWS::BillingConductor::CustomLineItem";
     fn properties(&self) -> &CustomLineItemProperties {
@@ -287,7 +287,7 @@ impl ::Resource for CustomLineItem {
     }
 }
 
-impl ::private::Sealed for CustomLineItem {}
+impl crate::private::Sealed for CustomLineItem {}
 
 impl From<CustomLineItemProperties> for CustomLineItem {
     fn from(properties: CustomLineItemProperties) -> CustomLineItem {
@@ -308,17 +308,17 @@ pub struct PricingPlanProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html#cfn-billingconductor-pricingplan-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`PricingRuleArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html#cfn-billingconductor-pricingplan-pricingrulearns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub pricing_rule_arns: Option<::ValueList<String>>,
+    pub pricing_rule_arns: Option<crate::ValueList<String>>,
 }
 
 impl ::serde::Serialize for PricingPlanProperties {
@@ -354,9 +354,9 @@ impl<'de> ::serde::Deserialize<'de> for PricingPlanProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut pricing_rule_arns: Option<::ValueList<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut pricing_rule_arns: Option<crate::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -385,7 +385,7 @@ impl<'de> ::serde::Deserialize<'de> for PricingPlanProperties {
     }
 }
 
-impl ::Resource for PricingPlan {
+impl crate::Resource for PricingPlan {
     type Properties = PricingPlanProperties;
     const TYPE: &'static str = "AWS::BillingConductor::PricingPlan";
     fn properties(&self) -> &PricingPlanProperties {
@@ -396,7 +396,7 @@ impl ::Resource for PricingPlan {
     }
 }
 
-impl ::private::Sealed for PricingPlan {}
+impl crate::private::Sealed for PricingPlan {}
 
 impl From<PricingPlanProperties> for PricingPlan {
     fn from(properties: PricingPlanProperties) -> PricingPlan {
@@ -417,32 +417,32 @@ pub struct PricingRuleProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`ModifierPercentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-modifierpercentage).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub modifier_percentage: ::Value<f64>,
+    pub modifier_percentage: crate::Value<f64>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Scope`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-scope).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub scope: ::Value<String>,
+    pub scope: crate::Value<String>,
     /// Property [`Service`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-service).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service: Option<::Value<String>>,
+    pub service: Option<crate::Value<String>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-type).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub r#type: ::Value<String>,
+    pub r#type: crate::Value<String>,
 }
 
 impl ::serde::Serialize for PricingRuleProperties {
@@ -481,12 +481,12 @@ impl<'de> ::serde::Deserialize<'de> for PricingRuleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<::Value<String>> = None;
-                let mut modifier_percentage: Option<::Value<f64>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut scope: Option<::Value<String>> = None;
-                let mut service: Option<::Value<String>> = None;
-                let mut r#type: Option<::Value<String>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut modifier_percentage: Option<crate::Value<f64>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut scope: Option<crate::Value<String>> = None;
+                let mut service: Option<crate::Value<String>> = None;
+                let mut r#type: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -528,7 +528,7 @@ impl<'de> ::serde::Deserialize<'de> for PricingRuleProperties {
     }
 }
 
-impl ::Resource for PricingRule {
+impl crate::Resource for PricingRule {
     type Properties = PricingRuleProperties;
     const TYPE: &'static str = "AWS::BillingConductor::PricingRule";
     fn properties(&self) -> &PricingRuleProperties {
@@ -539,7 +539,7 @@ impl ::Resource for PricingRule {
     }
 }
 
-impl ::private::Sealed for PricingRule {}
+impl crate::private::Sealed for PricingRule {}
 
 impl From<PricingRuleProperties> for PricingRule {
     fn from(properties: PricingRuleProperties) -> PricingRule {
@@ -557,10 +557,10 @@ pub mod billing_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub linked_account_ids: ::ValueList<String>,
+        pub linked_account_ids: crate::ValueList<String>,
     }
 
-    impl ::codec::SerializeValue for AccountGrouping {
+    impl crate::codec::SerializeValue for AccountGrouping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -572,7 +572,7 @@ pub mod billing_group {
         }
     }
 
-    impl ::codec::DeserializeValue for AccountGrouping {
+    impl crate::codec::DeserializeValue for AccountGrouping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AccountGrouping, D::Error> {
@@ -589,7 +589,7 @@ pub mod billing_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut linked_account_ids: Option<::ValueList<String>> = None;
+                    let mut linked_account_ids: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -620,10 +620,10 @@ pub mod billing_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pricing_plan_arn: ::Value<String>,
+        pub pricing_plan_arn: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for ComputationPreference {
+    impl crate::codec::SerializeValue for ComputationPreference {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -635,7 +635,7 @@ pub mod billing_group {
         }
     }
 
-    impl ::codec::DeserializeValue for ComputationPreference {
+    impl crate::codec::DeserializeValue for ComputationPreference {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComputationPreference, D::Error> {
@@ -652,7 +652,7 @@ pub mod billing_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut pricing_plan_arn: Option<::Value<String>> = None;
+                    let mut pricing_plan_arn: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -687,15 +687,15 @@ pub mod custom_line_item {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub exclusive_end_billing_period: Option<::Value<String>>,
+        pub exclusive_end_billing_period: Option<crate::Value<String>>,
         /// Property [`InclusiveStartBillingPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-billingperiodrange.html#cfn-billingconductor-customlineitem-billingperiodrange-inclusivestartbillingperiod).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub inclusive_start_billing_period: Option<::Value<String>>,
+        pub inclusive_start_billing_period: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for BillingPeriodRange {
+    impl crate::codec::SerializeValue for BillingPeriodRange {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref exclusive_end_billing_period) = self.exclusive_end_billing_period {
@@ -716,7 +716,7 @@ pub mod custom_line_item {
         }
     }
 
-    impl ::codec::DeserializeValue for BillingPeriodRange {
+    impl crate::codec::DeserializeValue for BillingPeriodRange {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BillingPeriodRange, D::Error> {
@@ -733,8 +733,8 @@ pub mod custom_line_item {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut exclusive_end_billing_period: Option<::Value<String>> = None;
-                    let mut inclusive_start_billing_period: Option<::Value<String>> = None;
+                    let mut exclusive_end_billing_period: Option<crate::Value<String>> = None;
+                    let mut inclusive_start_billing_period: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -770,20 +770,20 @@ pub mod custom_line_item {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub flat: Option<::Value<CustomLineItemFlatChargeDetails>>,
+        pub flat: Option<crate::Value<CustomLineItemFlatChargeDetails>>,
         /// Property [`Percentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitemchargedetails.html#cfn-billingconductor-customlineitem-customlineitemchargedetails-percentage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub percentage: Option<::Value<CustomLineItemPercentageChargeDetails>>,
+        pub percentage: Option<crate::Value<CustomLineItemPercentageChargeDetails>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitemchargedetails.html#cfn-billingconductor-customlineitem-customlineitemchargedetails-type).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: ::Value<String>,
+        pub r#type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for CustomLineItemChargeDetails {
+    impl crate::codec::SerializeValue for CustomLineItemChargeDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref flat) = self.flat {
@@ -797,7 +797,7 @@ pub mod custom_line_item {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomLineItemChargeDetails {
+    impl crate::codec::DeserializeValue for CustomLineItemChargeDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomLineItemChargeDetails, D::Error> {
@@ -814,10 +814,10 @@ pub mod custom_line_item {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut flat: Option<::Value<CustomLineItemFlatChargeDetails>> = None;
-                    let mut percentage: Option<::Value<CustomLineItemPercentageChargeDetails>> =
+                    let mut flat: Option<crate::Value<CustomLineItemFlatChargeDetails>> = None;
+                    let mut percentage: Option<crate::Value<CustomLineItemPercentageChargeDetails>> =
                         None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -855,10 +855,10 @@ pub mod custom_line_item {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub charge_value: ::Value<f64>,
+        pub charge_value: crate::Value<f64>,
     }
 
-    impl ::codec::SerializeValue for CustomLineItemFlatChargeDetails {
+    impl crate::codec::SerializeValue for CustomLineItemFlatChargeDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -870,7 +870,7 @@ pub mod custom_line_item {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomLineItemFlatChargeDetails {
+    impl crate::codec::DeserializeValue for CustomLineItemFlatChargeDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomLineItemFlatChargeDetails, D::Error> {
@@ -887,7 +887,7 @@ pub mod custom_line_item {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut charge_value: Option<::Value<f64>> = None;
+                    let mut charge_value: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -918,15 +918,15 @@ pub mod custom_line_item {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub child_associated_resources: Option<::ValueList<String>>,
+        pub child_associated_resources: Option<crate::ValueList<String>>,
         /// Property [`PercentageValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitempercentagechargedetails.html#cfn-billingconductor-customlineitem-customlineitempercentagechargedetails-percentagevalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub percentage_value: ::Value<f64>,
+        pub percentage_value: crate::Value<f64>,
     }
 
-    impl ::codec::SerializeValue for CustomLineItemPercentageChargeDetails {
+    impl crate::codec::SerializeValue for CustomLineItemPercentageChargeDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref child_associated_resources) = self.child_associated_resources {
@@ -945,7 +945,7 @@ pub mod custom_line_item {
         }
     }
 
-    impl ::codec::DeserializeValue for CustomLineItemPercentageChargeDetails {
+    impl crate::codec::DeserializeValue for CustomLineItemPercentageChargeDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomLineItemPercentageChargeDetails, D::Error> {
@@ -962,8 +962,8 @@ pub mod custom_line_item {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut child_associated_resources: Option<::ValueList<String>> = None;
-                    let mut percentage_value: Option<::Value<f64>> = None;
+                    let mut child_associated_resources: Option<crate::ValueList<String>> = None;
+                    let mut percentage_value: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

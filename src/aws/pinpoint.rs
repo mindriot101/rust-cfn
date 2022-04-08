@@ -13,22 +13,22 @@ pub struct ADMChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`ClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html#cfn-pinpoint-admchannel-clientid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub client_id: ::Value<String>,
+    pub client_id: crate::Value<String>,
     /// Property [`ClientSecret`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html#cfn-pinpoint-admchannel-clientsecret).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub client_secret: ::Value<String>,
+    pub client_secret: crate::Value<String>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html#cfn-pinpoint-admchannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
 }
 
 impl ::serde::Serialize for ADMChannelProperties {
@@ -63,10 +63,10 @@ impl<'de> ::serde::Deserialize<'de> for ADMChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut client_id: Option<::Value<String>> = None;
-                let mut client_secret: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut client_id: Option<crate::Value<String>> = None;
+                let mut client_secret: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -101,7 +101,7 @@ impl<'de> ::serde::Deserialize<'de> for ADMChannelProperties {
     }
 }
 
-impl ::Resource for ADMChannel {
+impl crate::Resource for ADMChannel {
     type Properties = ADMChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::ADMChannel";
     fn properties(&self) -> &ADMChannelProperties {
@@ -112,7 +112,7 @@ impl ::Resource for ADMChannel {
     }
 }
 
-impl ::private::Sealed for ADMChannel {}
+impl crate::private::Sealed for ADMChannel {}
 
 impl From<ADMChannelProperties> for ADMChannel {
     fn from(properties: ADMChannelProperties) -> ADMChannel {
@@ -133,47 +133,47 @@ pub struct APNSChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`BundleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-bundleid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bundle_id: Option<::Value<String>>,
+    pub bundle_id: Option<crate::Value<String>>,
     /// Property [`Certificate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-certificate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate: Option<::Value<String>>,
+    pub certificate: Option<crate::Value<String>>,
     /// Property [`DefaultAuthenticationMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-defaultauthenticationmethod).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_authentication_method: Option<::Value<String>>,
+    pub default_authentication_method: Option<crate::Value<String>>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
     /// Property [`PrivateKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-privatekey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub private_key: Option<::Value<String>>,
+    pub private_key: Option<crate::Value<String>>,
     /// Property [`TeamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-teamid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub team_id: Option<::Value<String>>,
+    pub team_id: Option<crate::Value<String>>,
     /// Property [`TokenKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-tokenkey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token_key: Option<::Value<String>>,
+    pub token_key: Option<crate::Value<String>>,
     /// Property [`TokenKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-tokenkeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token_key_id: Option<::Value<String>>,
+    pub token_key_id: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for APNSChannelProperties {
@@ -231,15 +231,15 @@ impl<'de> ::serde::Deserialize<'de> for APNSChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut bundle_id: Option<::Value<String>> = None;
-                let mut certificate: Option<::Value<String>> = None;
-                let mut default_authentication_method: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
-                let mut private_key: Option<::Value<String>> = None;
-                let mut team_id: Option<::Value<String>> = None;
-                let mut token_key: Option<::Value<String>> = None;
-                let mut token_key_id: Option<::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut bundle_id: Option<crate::Value<String>> = None;
+                let mut certificate: Option<crate::Value<String>> = None;
+                let mut default_authentication_method: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut private_key: Option<crate::Value<String>> = None;
+                let mut team_id: Option<crate::Value<String>> = None;
+                let mut token_key: Option<crate::Value<String>> = None;
+                let mut token_key_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -294,7 +294,7 @@ impl<'de> ::serde::Deserialize<'de> for APNSChannelProperties {
     }
 }
 
-impl ::Resource for APNSChannel {
+impl crate::Resource for APNSChannel {
     type Properties = APNSChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::APNSChannel";
     fn properties(&self) -> &APNSChannelProperties {
@@ -305,7 +305,7 @@ impl ::Resource for APNSChannel {
     }
 }
 
-impl ::private::Sealed for APNSChannel {}
+impl crate::private::Sealed for APNSChannel {}
 
 impl From<APNSChannelProperties> for APNSChannel {
     fn from(properties: APNSChannelProperties) -> APNSChannel {
@@ -326,47 +326,47 @@ pub struct APNSSandboxChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`BundleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnssandboxchannel.html#cfn-pinpoint-apnssandboxchannel-bundleid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bundle_id: Option<::Value<String>>,
+    pub bundle_id: Option<crate::Value<String>>,
     /// Property [`Certificate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnssandboxchannel.html#cfn-pinpoint-apnssandboxchannel-certificate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate: Option<::Value<String>>,
+    pub certificate: Option<crate::Value<String>>,
     /// Property [`DefaultAuthenticationMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnssandboxchannel.html#cfn-pinpoint-apnssandboxchannel-defaultauthenticationmethod).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_authentication_method: Option<::Value<String>>,
+    pub default_authentication_method: Option<crate::Value<String>>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnssandboxchannel.html#cfn-pinpoint-apnssandboxchannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
     /// Property [`PrivateKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnssandboxchannel.html#cfn-pinpoint-apnssandboxchannel-privatekey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub private_key: Option<::Value<String>>,
+    pub private_key: Option<crate::Value<String>>,
     /// Property [`TeamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnssandboxchannel.html#cfn-pinpoint-apnssandboxchannel-teamid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub team_id: Option<::Value<String>>,
+    pub team_id: Option<crate::Value<String>>,
     /// Property [`TokenKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnssandboxchannel.html#cfn-pinpoint-apnssandboxchannel-tokenkey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token_key: Option<::Value<String>>,
+    pub token_key: Option<crate::Value<String>>,
     /// Property [`TokenKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnssandboxchannel.html#cfn-pinpoint-apnssandboxchannel-tokenkeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token_key_id: Option<::Value<String>>,
+    pub token_key_id: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for APNSSandboxChannelProperties {
@@ -426,15 +426,15 @@ impl<'de> ::serde::Deserialize<'de> for APNSSandboxChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut bundle_id: Option<::Value<String>> = None;
-                let mut certificate: Option<::Value<String>> = None;
-                let mut default_authentication_method: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
-                let mut private_key: Option<::Value<String>> = None;
-                let mut team_id: Option<::Value<String>> = None;
-                let mut token_key: Option<::Value<String>> = None;
-                let mut token_key_id: Option<::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut bundle_id: Option<crate::Value<String>> = None;
+                let mut certificate: Option<crate::Value<String>> = None;
+                let mut default_authentication_method: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut private_key: Option<crate::Value<String>> = None;
+                let mut team_id: Option<crate::Value<String>> = None;
+                let mut token_key: Option<crate::Value<String>> = None;
+                let mut token_key_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -489,7 +489,7 @@ impl<'de> ::serde::Deserialize<'de> for APNSSandboxChannelProperties {
     }
 }
 
-impl ::Resource for APNSSandboxChannel {
+impl crate::Resource for APNSSandboxChannel {
     type Properties = APNSSandboxChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::APNSSandboxChannel";
     fn properties(&self) -> &APNSSandboxChannelProperties {
@@ -500,7 +500,7 @@ impl ::Resource for APNSSandboxChannel {
     }
 }
 
-impl ::private::Sealed for APNSSandboxChannel {}
+impl crate::private::Sealed for APNSSandboxChannel {}
 
 impl From<APNSSandboxChannelProperties> for APNSSandboxChannel {
     fn from(properties: APNSSandboxChannelProperties) -> APNSSandboxChannel {
@@ -521,47 +521,47 @@ pub struct APNSVoipChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`BundleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-bundleid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bundle_id: Option<::Value<String>>,
+    pub bundle_id: Option<crate::Value<String>>,
     /// Property [`Certificate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-certificate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate: Option<::Value<String>>,
+    pub certificate: Option<crate::Value<String>>,
     /// Property [`DefaultAuthenticationMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-defaultauthenticationmethod).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_authentication_method: Option<::Value<String>>,
+    pub default_authentication_method: Option<crate::Value<String>>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
     /// Property [`PrivateKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-privatekey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub private_key: Option<::Value<String>>,
+    pub private_key: Option<crate::Value<String>>,
     /// Property [`TeamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-teamid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub team_id: Option<::Value<String>>,
+    pub team_id: Option<crate::Value<String>>,
     /// Property [`TokenKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-tokenkey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token_key: Option<::Value<String>>,
+    pub token_key: Option<crate::Value<String>>,
     /// Property [`TokenKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-tokenkeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token_key_id: Option<::Value<String>>,
+    pub token_key_id: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for APNSVoipChannelProperties {
@@ -621,15 +621,15 @@ impl<'de> ::serde::Deserialize<'de> for APNSVoipChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut bundle_id: Option<::Value<String>> = None;
-                let mut certificate: Option<::Value<String>> = None;
-                let mut default_authentication_method: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
-                let mut private_key: Option<::Value<String>> = None;
-                let mut team_id: Option<::Value<String>> = None;
-                let mut token_key: Option<::Value<String>> = None;
-                let mut token_key_id: Option<::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut bundle_id: Option<crate::Value<String>> = None;
+                let mut certificate: Option<crate::Value<String>> = None;
+                let mut default_authentication_method: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut private_key: Option<crate::Value<String>> = None;
+                let mut team_id: Option<crate::Value<String>> = None;
+                let mut token_key: Option<crate::Value<String>> = None;
+                let mut token_key_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -684,7 +684,7 @@ impl<'de> ::serde::Deserialize<'de> for APNSVoipChannelProperties {
     }
 }
 
-impl ::Resource for APNSVoipChannel {
+impl crate::Resource for APNSVoipChannel {
     type Properties = APNSVoipChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::APNSVoipChannel";
     fn properties(&self) -> &APNSVoipChannelProperties {
@@ -695,7 +695,7 @@ impl ::Resource for APNSVoipChannel {
     }
 }
 
-impl ::private::Sealed for APNSVoipChannel {}
+impl crate::private::Sealed for APNSVoipChannel {}
 
 impl From<APNSVoipChannelProperties> for APNSVoipChannel {
     fn from(properties: APNSVoipChannelProperties) -> APNSVoipChannel {
@@ -716,47 +716,47 @@ pub struct APNSVoipSandboxChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`BundleId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-bundleid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bundle_id: Option<::Value<String>>,
+    pub bundle_id: Option<crate::Value<String>>,
     /// Property [`Certificate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-certificate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate: Option<::Value<String>>,
+    pub certificate: Option<crate::Value<String>>,
     /// Property [`DefaultAuthenticationMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-defaultauthenticationmethod).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_authentication_method: Option<::Value<String>>,
+    pub default_authentication_method: Option<crate::Value<String>>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
     /// Property [`PrivateKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-privatekey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub private_key: Option<::Value<String>>,
+    pub private_key: Option<crate::Value<String>>,
     /// Property [`TeamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-teamid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub team_id: Option<::Value<String>>,
+    pub team_id: Option<crate::Value<String>>,
     /// Property [`TokenKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token_key: Option<::Value<String>>,
+    pub token_key: Option<crate::Value<String>>,
     /// Property [`TokenKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub token_key_id: Option<::Value<String>>,
+    pub token_key_id: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for APNSVoipSandboxChannelProperties {
@@ -816,15 +816,15 @@ impl<'de> ::serde::Deserialize<'de> for APNSVoipSandboxChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut bundle_id: Option<::Value<String>> = None;
-                let mut certificate: Option<::Value<String>> = None;
-                let mut default_authentication_method: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
-                let mut private_key: Option<::Value<String>> = None;
-                let mut team_id: Option<::Value<String>> = None;
-                let mut token_key: Option<::Value<String>> = None;
-                let mut token_key_id: Option<::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut bundle_id: Option<crate::Value<String>> = None;
+                let mut certificate: Option<crate::Value<String>> = None;
+                let mut default_authentication_method: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut private_key: Option<crate::Value<String>> = None;
+                let mut team_id: Option<crate::Value<String>> = None;
+                let mut token_key: Option<crate::Value<String>> = None;
+                let mut token_key_id: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -879,7 +879,7 @@ impl<'de> ::serde::Deserialize<'de> for APNSVoipSandboxChannelProperties {
     }
 }
 
-impl ::Resource for APNSVoipSandboxChannel {
+impl crate::Resource for APNSVoipSandboxChannel {
     type Properties = APNSVoipSandboxChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::APNSVoipSandboxChannel";
     fn properties(&self) -> &APNSVoipSandboxChannelProperties {
@@ -890,7 +890,7 @@ impl ::Resource for APNSVoipSandboxChannel {
     }
 }
 
-impl ::private::Sealed for APNSVoipSandboxChannel {}
+impl crate::private::Sealed for APNSVoipSandboxChannel {}
 
 impl From<APNSVoipSandboxChannelProperties> for APNSVoipSandboxChannel {
     fn from(properties: APNSVoipSandboxChannelProperties) -> APNSVoipSandboxChannel {
@@ -911,12 +911,12 @@ pub struct AppProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html#cfn-pinpoint-app-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
 }
 
 impl ::serde::Serialize for AppProperties {
@@ -945,8 +945,8 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<::Value<String>> = None;
-                let mut tags: Option<::Value<::json::Value>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -971,7 +971,7 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
     }
 }
 
-impl ::Resource for App {
+impl crate::Resource for App {
     type Properties = AppProperties;
     const TYPE: &'static str = "AWS::Pinpoint::App";
     fn properties(&self) -> &AppProperties {
@@ -982,7 +982,7 @@ impl ::Resource for App {
     }
 }
 
-impl ::private::Sealed for App {}
+impl crate::private::Sealed for App {}
 
 impl From<AppProperties> for App {
     fn from(properties: AppProperties) -> App {
@@ -1003,27 +1003,27 @@ pub struct ApplicationSettingsProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`CampaignHook`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-campaignhook).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub campaign_hook: Option<::Value<self::application_settings::CampaignHook>>,
+    pub campaign_hook: Option<crate::Value<self::application_settings::CampaignHook>>,
     /// Property [`CloudWatchMetricsEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-cloudwatchmetricsenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cloud_watch_metrics_enabled: Option<::Value<bool>>,
+    pub cloud_watch_metrics_enabled: Option<crate::Value<bool>>,
     /// Property [`Limits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-limits).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub limits: Option<::Value<self::application_settings::Limits>>,
+    pub limits: Option<crate::Value<self::application_settings::Limits>>,
     /// Property [`QuietTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-quiettime).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub quiet_time: Option<::Value<self::application_settings::QuietTime>>,
+    pub quiet_time: Option<crate::Value<self::application_settings::QuietTime>>,
 }
 
 impl ::serde::Serialize for ApplicationSettingsProperties {
@@ -1071,12 +1071,12 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationSettingsProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut campaign_hook: Option<::Value<self::application_settings::CampaignHook>> =
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut campaign_hook: Option<crate::Value<self::application_settings::CampaignHook>> =
                     None;
-                let mut cloud_watch_metrics_enabled: Option<::Value<bool>> = None;
-                let mut limits: Option<::Value<self::application_settings::Limits>> = None;
-                let mut quiet_time: Option<::Value<self::application_settings::QuietTime>> = None;
+                let mut cloud_watch_metrics_enabled: Option<crate::Value<bool>> = None;
+                let mut limits: Option<crate::Value<self::application_settings::Limits>> = None;
+                let mut quiet_time: Option<crate::Value<self::application_settings::QuietTime>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1115,7 +1115,7 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationSettingsProperties {
     }
 }
 
-impl ::Resource for ApplicationSettings {
+impl crate::Resource for ApplicationSettings {
     type Properties = ApplicationSettingsProperties;
     const TYPE: &'static str = "AWS::Pinpoint::ApplicationSettings";
     fn properties(&self) -> &ApplicationSettingsProperties {
@@ -1126,7 +1126,7 @@ impl ::Resource for ApplicationSettings {
     }
 }
 
-impl ::private::Sealed for ApplicationSettings {}
+impl crate::private::Sealed for ApplicationSettings {}
 
 impl From<ApplicationSettingsProperties> for ApplicationSettings {
     fn from(properties: ApplicationSettingsProperties) -> ApplicationSettings {
@@ -1147,22 +1147,22 @@ pub struct BaiduChannelProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub api_key: ::Value<String>,
+    pub api_key: crate::Value<String>,
     /// Property [`ApplicationId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-applicationid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
     /// Property [`SecretKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-secretkey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub secret_key: ::Value<String>,
+    pub secret_key: crate::Value<String>,
 }
 
 impl ::serde::Serialize for BaiduChannelProperties {
@@ -1199,10 +1199,10 @@ impl<'de> ::serde::Deserialize<'de> for BaiduChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut api_key: Option<::Value<String>> = None;
-                let mut application_id: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
-                let mut secret_key: Option<::Value<String>> = None;
+                let mut api_key: Option<crate::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut secret_key: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1236,7 +1236,7 @@ impl<'de> ::serde::Deserialize<'de> for BaiduChannelProperties {
     }
 }
 
-impl ::Resource for BaiduChannel {
+impl crate::Resource for BaiduChannel {
     type Properties = BaiduChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::BaiduChannel";
     fn properties(&self) -> &BaiduChannelProperties {
@@ -1247,7 +1247,7 @@ impl ::Resource for BaiduChannel {
     }
 }
 
-impl ::private::Sealed for BaiduChannel {}
+impl crate::private::Sealed for BaiduChannel {}
 
 impl From<BaiduChannelProperties> for BaiduChannel {
     fn from(properties: BaiduChannelProperties) -> BaiduChannel {
@@ -1268,82 +1268,82 @@ pub struct CampaignProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub additional_treatments: Option<::ValueList<self::campaign::WriteTreatmentResource>>,
+    pub additional_treatments: Option<crate::ValueList<self::campaign::WriteTreatmentResource>>,
     /// Property [`ApplicationId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-applicationid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`CampaignHook`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-campaignhook).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub campaign_hook: Option<::Value<self::campaign::CampaignHook>>,
+    pub campaign_hook: Option<crate::Value<self::campaign::CampaignHook>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<::Value<String>>,
+    pub description: Option<crate::Value<String>>,
     /// Property [`HoldoutPercent`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-holdoutpercent).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub holdout_percent: Option<::Value<u32>>,
+    pub holdout_percent: Option<crate::Value<u32>>,
     /// Property [`IsPaused`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub is_paused: Option<::Value<bool>>,
+    pub is_paused: Option<crate::Value<bool>>,
     /// Property [`Limits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-limits).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub limits: Option<::Value<self::campaign::Limits>>,
+    pub limits: Option<crate::Value<self::campaign::Limits>>,
     /// Property [`MessageConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-messageconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub message_configuration: ::Value<self::campaign::MessageConfiguration>,
+    pub message_configuration: crate::Value<self::campaign::MessageConfiguration>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`Priority`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-priority).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub priority: Option<::Value<u32>>,
+    pub priority: Option<crate::Value<u32>>,
     /// Property [`Schedule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-schedule).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub schedule: ::Value<self::campaign::Schedule>,
+    pub schedule: crate::Value<self::campaign::Schedule>,
     /// Property [`SegmentId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub segment_id: ::Value<String>,
+    pub segment_id: crate::Value<String>,
     /// Property [`SegmentVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub segment_version: Option<::Value<u32>>,
+    pub segment_version: Option<crate::Value<u32>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
     /// Property [`TreatmentDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentdescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub treatment_description: Option<::Value<String>>,
+    pub treatment_description: Option<crate::Value<String>>,
     /// Property [`TreatmentName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub treatment_name: Option<::Value<String>>,
+    pub treatment_name: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for CampaignProperties {
@@ -1431,25 +1431,25 @@ impl<'de> ::serde::Deserialize<'de> for CampaignProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut additional_treatments: Option<
-                    ::ValueList<self::campaign::WriteTreatmentResource>,
+                    crate::ValueList<self::campaign::WriteTreatmentResource>,
                 > = None;
-                let mut application_id: Option<::Value<String>> = None;
-                let mut campaign_hook: Option<::Value<self::campaign::CampaignHook>> = None;
-                let mut description: Option<::Value<String>> = None;
-                let mut holdout_percent: Option<::Value<u32>> = None;
-                let mut is_paused: Option<::Value<bool>> = None;
-                let mut limits: Option<::Value<self::campaign::Limits>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut campaign_hook: Option<crate::Value<self::campaign::CampaignHook>> = None;
+                let mut description: Option<crate::Value<String>> = None;
+                let mut holdout_percent: Option<crate::Value<u32>> = None;
+                let mut is_paused: Option<crate::Value<bool>> = None;
+                let mut limits: Option<crate::Value<self::campaign::Limits>> = None;
                 let mut message_configuration: Option<
-                    ::Value<self::campaign::MessageConfiguration>,
+                    crate::Value<self::campaign::MessageConfiguration>,
                 > = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut priority: Option<::Value<u32>> = None;
-                let mut schedule: Option<::Value<self::campaign::Schedule>> = None;
-                let mut segment_id: Option<::Value<String>> = None;
-                let mut segment_version: Option<::Value<u32>> = None;
-                let mut tags: Option<::Value<::json::Value>> = None;
-                let mut treatment_description: Option<::Value<String>> = None;
-                let mut treatment_name: Option<::Value<String>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut priority: Option<crate::Value<u32>> = None;
+                let mut schedule: Option<crate::Value<self::campaign::Schedule>> = None;
+                let mut segment_id: Option<crate::Value<String>> = None;
+                let mut segment_version: Option<crate::Value<u32>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
+                let mut treatment_description: Option<crate::Value<String>> = None;
+                let mut treatment_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1532,7 +1532,7 @@ impl<'de> ::serde::Deserialize<'de> for CampaignProperties {
     }
 }
 
-impl ::Resource for Campaign {
+impl crate::Resource for Campaign {
     type Properties = CampaignProperties;
     const TYPE: &'static str = "AWS::Pinpoint::Campaign";
     fn properties(&self) -> &CampaignProperties {
@@ -1543,7 +1543,7 @@ impl ::Resource for Campaign {
     }
 }
 
-impl ::private::Sealed for Campaign {}
+impl crate::private::Sealed for Campaign {}
 
 impl From<CampaignProperties> for Campaign {
     fn from(properties: CampaignProperties) -> Campaign {
@@ -1564,32 +1564,32 @@ pub struct EmailChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`ConfigurationSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-configurationset).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub configuration_set: Option<::Value<String>>,
+    pub configuration_set: Option<crate::Value<String>>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
     /// Property [`FromAddress`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-fromaddress).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub from_address: ::Value<String>,
+    pub from_address: crate::Value<String>,
     /// Property [`Identity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-identity).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub identity: ::Value<String>,
+    pub identity: crate::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: Option<::Value<String>>,
+    pub role_arn: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for EmailChannelProperties {
@@ -1636,12 +1636,12 @@ impl<'de> ::serde::Deserialize<'de> for EmailChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut configuration_set: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
-                let mut from_address: Option<::Value<String>> = None;
-                let mut identity: Option<::Value<String>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut configuration_set: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut from_address: Option<crate::Value<String>> = None;
+                let mut identity: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1684,7 +1684,7 @@ impl<'de> ::serde::Deserialize<'de> for EmailChannelProperties {
     }
 }
 
-impl ::Resource for EmailChannel {
+impl crate::Resource for EmailChannel {
     type Properties = EmailChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::EmailChannel";
     fn properties(&self) -> &EmailChannelProperties {
@@ -1695,7 +1695,7 @@ impl ::Resource for EmailChannel {
     }
 }
 
-impl ::private::Sealed for EmailChannel {}
+impl crate::private::Sealed for EmailChannel {}
 
 impl From<EmailChannelProperties> for EmailChannel {
     fn from(properties: EmailChannelProperties) -> EmailChannel {
@@ -1716,37 +1716,37 @@ pub struct EmailTemplateProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_substitutions: Option<::Value<String>>,
+    pub default_substitutions: Option<crate::Value<String>>,
     /// Property [`HtmlPart`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-htmlpart).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub html_part: Option<::Value<String>>,
+    pub html_part: Option<crate::Value<String>>,
     /// Property [`Subject`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-subject).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subject: ::Value<String>,
+    pub subject: crate::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
     /// Property [`TemplateDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-templatedescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub template_description: Option<::Value<String>>,
+    pub template_description: Option<crate::Value<String>>,
     /// Property [`TemplateName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-templatename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub template_name: ::Value<String>,
+    pub template_name: crate::Value<String>,
     /// Property [`TextPart`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-textpart).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub text_part: Option<::Value<String>>,
+    pub text_part: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for EmailTemplateProperties {
@@ -1798,13 +1798,13 @@ impl<'de> ::serde::Deserialize<'de> for EmailTemplateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut default_substitutions: Option<::Value<String>> = None;
-                let mut html_part: Option<::Value<String>> = None;
-                let mut subject: Option<::Value<String>> = None;
-                let mut tags: Option<::Value<::json::Value>> = None;
-                let mut template_description: Option<::Value<String>> = None;
-                let mut template_name: Option<::Value<String>> = None;
-                let mut text_part: Option<::Value<String>> = None;
+                let mut default_substitutions: Option<crate::Value<String>> = None;
+                let mut html_part: Option<crate::Value<String>> = None;
+                let mut subject: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
+                let mut template_description: Option<crate::Value<String>> = None;
+                let mut template_name: Option<crate::Value<String>> = None;
+                let mut text_part: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1850,7 +1850,7 @@ impl<'de> ::serde::Deserialize<'de> for EmailTemplateProperties {
     }
 }
 
-impl ::Resource for EmailTemplate {
+impl crate::Resource for EmailTemplate {
     type Properties = EmailTemplateProperties;
     const TYPE: &'static str = "AWS::Pinpoint::EmailTemplate";
     fn properties(&self) -> &EmailTemplateProperties {
@@ -1861,7 +1861,7 @@ impl ::Resource for EmailTemplate {
     }
 }
 
-impl ::private::Sealed for EmailTemplate {}
+impl crate::private::Sealed for EmailTemplate {}
 
 impl From<EmailTemplateProperties> for EmailTemplate {
     fn from(properties: EmailTemplateProperties) -> EmailTemplate {
@@ -1882,17 +1882,17 @@ pub struct EventStreamProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`DestinationStreamArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-eventstream.html#cfn-pinpoint-eventstream-destinationstreamarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub destination_stream_arn: ::Value<String>,
+    pub destination_stream_arn: crate::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-eventstream.html#cfn-pinpoint-eventstream-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: ::Value<String>,
+    pub role_arn: crate::Value<String>,
 }
 
 impl ::serde::Serialize for EventStreamProperties {
@@ -1928,9 +1928,9 @@ impl<'de> ::serde::Deserialize<'de> for EventStreamProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut destination_stream_arn: Option<::Value<String>> = None;
-                let mut role_arn: Option<::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut destination_stream_arn: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1961,7 +1961,7 @@ impl<'de> ::serde::Deserialize<'de> for EventStreamProperties {
     }
 }
 
-impl ::Resource for EventStream {
+impl crate::Resource for EventStream {
     type Properties = EventStreamProperties;
     const TYPE: &'static str = "AWS::Pinpoint::EventStream";
     fn properties(&self) -> &EventStreamProperties {
@@ -1972,7 +1972,7 @@ impl ::Resource for EventStream {
     }
 }
 
-impl ::private::Sealed for EventStream {}
+impl crate::private::Sealed for EventStream {}
 
 impl From<EventStreamProperties> for EventStream {
     fn from(properties: EventStreamProperties) -> EventStream {
@@ -1993,17 +1993,17 @@ pub struct GCMChannelProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub api_key: ::Value<String>,
+    pub api_key: crate::Value<String>,
     /// Property [`ApplicationId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html#cfn-pinpoint-gcmchannel-applicationid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html#cfn-pinpoint-gcmchannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
 }
 
 impl ::serde::Serialize for GCMChannelProperties {
@@ -2037,9 +2037,9 @@ impl<'de> ::serde::Deserialize<'de> for GCMChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut api_key: Option<::Value<String>> = None;
-                let mut application_id: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
+                let mut api_key: Option<crate::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2069,7 +2069,7 @@ impl<'de> ::serde::Deserialize<'de> for GCMChannelProperties {
     }
 }
 
-impl ::Resource for GCMChannel {
+impl crate::Resource for GCMChannel {
     type Properties = GCMChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::GCMChannel";
     fn properties(&self) -> &GCMChannelProperties {
@@ -2080,7 +2080,7 @@ impl ::Resource for GCMChannel {
     }
 }
 
-impl ::private::Sealed for GCMChannel {}
+impl crate::private::Sealed for GCMChannel {}
 
 impl From<GCMChannelProperties> for GCMChannel {
     fn from(properties: GCMChannelProperties) -> GCMChannel {
@@ -2101,32 +2101,32 @@ pub struct InAppTemplateProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub content: Option<::ValueList<self::in_app_template::InAppMessageContent>>,
+    pub content: Option<crate::ValueList<self::in_app_template::InAppMessageContent>>,
     /// Property [`CustomConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-customconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub custom_config: Option<::Value<::json::Value>>,
+    pub custom_config: Option<crate::Value<crate::json::Value>>,
     /// Property [`Layout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-layout).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub layout: Option<::Value<String>>,
+    pub layout: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
     /// Property [`TemplateDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-templatedescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub template_description: Option<::Value<String>>,
+    pub template_description: Option<crate::Value<String>>,
     /// Property [`TemplateName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-templatename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub template_name: ::Value<String>,
+    pub template_name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for InAppTemplateProperties {
@@ -2173,13 +2173,13 @@ impl<'de> ::serde::Deserialize<'de> for InAppTemplateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut content: Option<::ValueList<self::in_app_template::InAppMessageContent>> =
+                let mut content: Option<crate::ValueList<self::in_app_template::InAppMessageContent>> =
                     None;
-                let mut custom_config: Option<::Value<::json::Value>> = None;
-                let mut layout: Option<::Value<String>> = None;
-                let mut tags: Option<::Value<::json::Value>> = None;
-                let mut template_description: Option<::Value<String>> = None;
-                let mut template_name: Option<::Value<String>> = None;
+                let mut custom_config: Option<crate::Value<crate::json::Value>> = None;
+                let mut layout: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
+                let mut template_description: Option<crate::Value<String>> = None;
+                let mut template_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2221,7 +2221,7 @@ impl<'de> ::serde::Deserialize<'de> for InAppTemplateProperties {
     }
 }
 
-impl ::Resource for InAppTemplate {
+impl crate::Resource for InAppTemplate {
     type Properties = InAppTemplateProperties;
     const TYPE: &'static str = "AWS::Pinpoint::InAppTemplate";
     fn properties(&self) -> &InAppTemplateProperties {
@@ -2232,7 +2232,7 @@ impl ::Resource for InAppTemplate {
     }
 }
 
-impl ::private::Sealed for InAppTemplate {}
+impl crate::private::Sealed for InAppTemplate {}
 
 impl From<InAppTemplateProperties> for InAppTemplate {
     fn from(properties: InAppTemplateProperties) -> InAppTemplate {
@@ -2253,47 +2253,47 @@ pub struct PushTemplateProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub adm: Option<::Value<self::push_template::AndroidPushNotificationTemplate>>,
+    pub adm: Option<crate::Value<self::push_template::AndroidPushNotificationTemplate>>,
     /// Property [`APNS`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-apns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub apns: Option<::Value<self::push_template::APNSPushNotificationTemplate>>,
+    pub apns: Option<crate::Value<self::push_template::APNSPushNotificationTemplate>>,
     /// Property [`Baidu`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-baidu).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub baidu: Option<::Value<self::push_template::AndroidPushNotificationTemplate>>,
+    pub baidu: Option<crate::Value<self::push_template::AndroidPushNotificationTemplate>>,
     /// Property [`Default`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-default).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default: Option<::Value<self::push_template::DefaultPushNotificationTemplate>>,
+    pub default: Option<crate::Value<self::push_template::DefaultPushNotificationTemplate>>,
     /// Property [`DefaultSubstitutions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-defaultsubstitutions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_substitutions: Option<::Value<String>>,
+    pub default_substitutions: Option<crate::Value<String>>,
     /// Property [`GCM`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-gcm).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub gcm: Option<::Value<self::push_template::AndroidPushNotificationTemplate>>,
+    pub gcm: Option<crate::Value<self::push_template::AndroidPushNotificationTemplate>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
     /// Property [`TemplateDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-templatedescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub template_description: Option<::Value<String>>,
+    pub template_description: Option<crate::Value<String>>,
     /// Property [`TemplateName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-templatename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub template_name: ::Value<String>,
+    pub template_name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for PushTemplateProperties {
@@ -2353,22 +2353,22 @@ impl<'de> ::serde::Deserialize<'de> for PushTemplateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut adm: Option<::Value<self::push_template::AndroidPushNotificationTemplate>> =
+                let mut adm: Option<crate::Value<self::push_template::AndroidPushNotificationTemplate>> =
                     None;
-                let mut apns: Option<::Value<self::push_template::APNSPushNotificationTemplate>> =
+                let mut apns: Option<crate::Value<self::push_template::APNSPushNotificationTemplate>> =
                     None;
                 let mut baidu: Option<
-                    ::Value<self::push_template::AndroidPushNotificationTemplate>,
+                    crate::Value<self::push_template::AndroidPushNotificationTemplate>,
                 > = None;
                 let mut default: Option<
-                    ::Value<self::push_template::DefaultPushNotificationTemplate>,
+                    crate::Value<self::push_template::DefaultPushNotificationTemplate>,
                 > = None;
-                let mut default_substitutions: Option<::Value<String>> = None;
-                let mut gcm: Option<::Value<self::push_template::AndroidPushNotificationTemplate>> =
+                let mut default_substitutions: Option<crate::Value<String>> = None;
+                let mut gcm: Option<crate::Value<self::push_template::AndroidPushNotificationTemplate>> =
                     None;
-                let mut tags: Option<::Value<::json::Value>> = None;
-                let mut template_description: Option<::Value<String>> = None;
-                let mut template_name: Option<::Value<String>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
+                let mut template_description: Option<crate::Value<String>> = None;
+                let mut template_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2422,7 +2422,7 @@ impl<'de> ::serde::Deserialize<'de> for PushTemplateProperties {
     }
 }
 
-impl ::Resource for PushTemplate {
+impl crate::Resource for PushTemplate {
     type Properties = PushTemplateProperties;
     const TYPE: &'static str = "AWS::Pinpoint::PushTemplate";
     fn properties(&self) -> &PushTemplateProperties {
@@ -2433,7 +2433,7 @@ impl ::Resource for PushTemplate {
     }
 }
 
-impl ::private::Sealed for PushTemplate {}
+impl crate::private::Sealed for PushTemplate {}
 
 impl From<PushTemplateProperties> for PushTemplate {
     fn from(properties: PushTemplateProperties) -> PushTemplate {
@@ -2454,22 +2454,22 @@ pub struct SMSChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
     /// Property [`SenderId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-senderid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sender_id: Option<::Value<String>>,
+    pub sender_id: Option<crate::Value<String>>,
     /// Property [`ShortCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-shortcode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub short_code: Option<::Value<String>>,
+    pub short_code: Option<crate::Value<String>>,
 }
 
 impl ::serde::Serialize for SMSChannelProperties {
@@ -2508,10 +2508,10 @@ impl<'de> ::serde::Deserialize<'de> for SMSChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
-                let mut sender_id: Option<::Value<String>> = None;
-                let mut short_code: Option<::Value<String>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut sender_id: Option<crate::Value<String>> = None;
+                let mut short_code: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2545,7 +2545,7 @@ impl<'de> ::serde::Deserialize<'de> for SMSChannelProperties {
     }
 }
 
-impl ::Resource for SMSChannel {
+impl crate::Resource for SMSChannel {
     type Properties = SMSChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::SMSChannel";
     fn properties(&self) -> &SMSChannelProperties {
@@ -2556,7 +2556,7 @@ impl ::Resource for SMSChannel {
     }
 }
 
-impl ::private::Sealed for SMSChannel {}
+impl crate::private::Sealed for SMSChannel {}
 
 impl From<SMSChannelProperties> for SMSChannel {
     fn from(properties: SMSChannelProperties) -> SMSChannel {
@@ -2577,27 +2577,27 @@ pub struct SegmentProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`Dimensions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-dimensions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dimensions: Option<::Value<self::segment::SegmentDimensions>>,
+    pub dimensions: Option<crate::Value<self::segment::SegmentDimensions>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: ::Value<String>,
+    pub name: crate::Value<String>,
     /// Property [`SegmentGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-segmentgroups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub segment_groups: Option<::Value<self::segment::SegmentGroups>>,
+    pub segment_groups: Option<crate::Value<self::segment::SegmentGroups>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
 }
 
 impl ::serde::Serialize for SegmentProperties {
@@ -2637,11 +2637,11 @@ impl<'de> ::serde::Deserialize<'de> for SegmentProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut dimensions: Option<::Value<self::segment::SegmentDimensions>> = None;
-                let mut name: Option<::Value<String>> = None;
-                let mut segment_groups: Option<::Value<self::segment::SegmentGroups>> = None;
-                let mut tags: Option<::Value<::json::Value>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut dimensions: Option<crate::Value<self::segment::SegmentDimensions>> = None;
+                let mut name: Option<crate::Value<String>> = None;
+                let mut segment_groups: Option<crate::Value<self::segment::SegmentGroups>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2679,7 +2679,7 @@ impl<'de> ::serde::Deserialize<'de> for SegmentProperties {
     }
 }
 
-impl ::Resource for Segment {
+impl crate::Resource for Segment {
     type Properties = SegmentProperties;
     const TYPE: &'static str = "AWS::Pinpoint::Segment";
     fn properties(&self) -> &SegmentProperties {
@@ -2690,7 +2690,7 @@ impl ::Resource for Segment {
     }
 }
 
-impl ::private::Sealed for Segment {}
+impl crate::private::Sealed for Segment {}
 
 impl From<SegmentProperties> for Segment {
     fn from(properties: SegmentProperties) -> Segment {
@@ -2711,27 +2711,27 @@ pub struct SmsTemplateProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub body: ::Value<String>,
+    pub body: crate::Value<String>,
     /// Property [`DefaultSubstitutions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-defaultsubstitutions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_substitutions: Option<::Value<String>>,
+    pub default_substitutions: Option<crate::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<::Value<::json::Value>>,
+    pub tags: Option<crate::Value<crate::json::Value>>,
     /// Property [`TemplateDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-templatedescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub template_description: Option<::Value<String>>,
+    pub template_description: Option<crate::Value<String>>,
     /// Property [`TemplateName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-templatename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub template_name: ::Value<String>,
+    pub template_name: crate::Value<String>,
 }
 
 impl ::serde::Serialize for SmsTemplateProperties {
@@ -2775,11 +2775,11 @@ impl<'de> ::serde::Deserialize<'de> for SmsTemplateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut body: Option<::Value<String>> = None;
-                let mut default_substitutions: Option<::Value<String>> = None;
-                let mut tags: Option<::Value<::json::Value>> = None;
-                let mut template_description: Option<::Value<String>> = None;
-                let mut template_name: Option<::Value<String>> = None;
+                let mut body: Option<crate::Value<String>> = None;
+                let mut default_substitutions: Option<crate::Value<String>> = None;
+                let mut tags: Option<crate::Value<crate::json::Value>> = None;
+                let mut template_description: Option<crate::Value<String>> = None;
+                let mut template_name: Option<crate::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2817,7 +2817,7 @@ impl<'de> ::serde::Deserialize<'de> for SmsTemplateProperties {
     }
 }
 
-impl ::Resource for SmsTemplate {
+impl crate::Resource for SmsTemplate {
     type Properties = SmsTemplateProperties;
     const TYPE: &'static str = "AWS::Pinpoint::SmsTemplate";
     fn properties(&self) -> &SmsTemplateProperties {
@@ -2828,7 +2828,7 @@ impl ::Resource for SmsTemplate {
     }
 }
 
-impl ::private::Sealed for SmsTemplate {}
+impl crate::private::Sealed for SmsTemplate {}
 
 impl From<SmsTemplateProperties> for SmsTemplate {
     fn from(properties: SmsTemplateProperties) -> SmsTemplate {
@@ -2849,12 +2849,12 @@ pub struct VoiceChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_id: ::Value<String>,
+    pub application_id: crate::Value<String>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-voicechannel.html#cfn-pinpoint-voicechannel-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<::Value<bool>>,
+    pub enabled: Option<crate::Value<bool>>,
 }
 
 impl ::serde::Serialize for VoiceChannelProperties {
@@ -2889,8 +2889,8 @@ impl<'de> ::serde::Deserialize<'de> for VoiceChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_id: Option<::Value<String>> = None;
-                let mut enabled: Option<::Value<bool>> = None;
+                let mut application_id: Option<crate::Value<String>> = None;
+                let mut enabled: Option<crate::Value<bool>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2916,7 +2916,7 @@ impl<'de> ::serde::Deserialize<'de> for VoiceChannelProperties {
     }
 }
 
-impl ::Resource for VoiceChannel {
+impl crate::Resource for VoiceChannel {
     type Properties = VoiceChannelProperties;
     const TYPE: &'static str = "AWS::Pinpoint::VoiceChannel";
     fn properties(&self) -> &VoiceChannelProperties {
@@ -2927,7 +2927,7 @@ impl ::Resource for VoiceChannel {
     }
 }
 
-impl ::private::Sealed for VoiceChannel {}
+impl crate::private::Sealed for VoiceChannel {}
 
 impl From<VoiceChannelProperties> for VoiceChannel {
     fn from(properties: VoiceChannelProperties) -> VoiceChannel {
@@ -2945,20 +2945,20 @@ pub mod application_settings {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lambda_function_name: Option<::Value<String>>,
+        pub lambda_function_name: Option<crate::Value<String>>,
         /// Property [`Mode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-campaignhook.html#cfn-pinpoint-applicationsettings-campaignhook-mode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mode: Option<::Value<String>>,
+        pub mode: Option<crate::Value<String>>,
         /// Property [`WebUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-campaignhook.html#cfn-pinpoint-applicationsettings-campaignhook-weburl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub web_url: Option<::Value<String>>,
+        pub web_url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CampaignHook {
+    impl crate::codec::SerializeValue for CampaignHook {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref lambda_function_name) = self.lambda_function_name {
@@ -2978,7 +2978,7 @@ pub mod application_settings {
         }
     }
 
-    impl ::codec::DeserializeValue for CampaignHook {
+    impl crate::codec::DeserializeValue for CampaignHook {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CampaignHook, D::Error> {
             struct Visitor;
 
@@ -2993,9 +2993,9 @@ pub mod application_settings {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut lambda_function_name: Option<::Value<String>> = None;
-                    let mut mode: Option<::Value<String>> = None;
-                    let mut web_url: Option<::Value<String>> = None;
+                    let mut lambda_function_name: Option<crate::Value<String>> = None;
+                    let mut mode: Option<crate::Value<String>> = None;
+                    let mut web_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3034,25 +3034,25 @@ pub mod application_settings {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub daily: Option<::Value<u32>>,
+        pub daily: Option<crate::Value<u32>>,
         /// Property [`MaximumDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-limits.html#cfn-pinpoint-applicationsettings-limits-maximumduration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maximum_duration: Option<::Value<u32>>,
+        pub maximum_duration: Option<crate::Value<u32>>,
         /// Property [`MessagesPerSecond`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-limits.html#cfn-pinpoint-applicationsettings-limits-messagespersecond).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub messages_per_second: Option<::Value<u32>>,
+        pub messages_per_second: Option<crate::Value<u32>>,
         /// Property [`Total`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-limits.html#cfn-pinpoint-applicationsettings-limits-total).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub total: Option<::Value<u32>>,
+        pub total: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for Limits {
+    impl crate::codec::SerializeValue for Limits {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref daily) = self.daily {
@@ -3079,7 +3079,7 @@ pub mod application_settings {
         }
     }
 
-    impl ::codec::DeserializeValue for Limits {
+    impl crate::codec::DeserializeValue for Limits {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Limits, D::Error> {
             struct Visitor;
 
@@ -3094,10 +3094,10 @@ pub mod application_settings {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut daily: Option<::Value<u32>> = None;
-                    let mut maximum_duration: Option<::Value<u32>> = None;
-                    let mut messages_per_second: Option<::Value<u32>> = None;
-                    let mut total: Option<::Value<u32>> = None;
+                    let mut daily: Option<crate::Value<u32>> = None;
+                    let mut maximum_duration: Option<crate::Value<u32>> = None;
+                    let mut messages_per_second: Option<crate::Value<u32>> = None;
+                    let mut total: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3139,15 +3139,15 @@ pub mod application_settings {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end: ::Value<String>,
+        pub end: crate::Value<String>,
         /// Property [`Start`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-quiettime.html#cfn-pinpoint-applicationsettings-quiettime-start).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start: ::Value<String>,
+        pub start: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for QuietTime {
+    impl crate::codec::SerializeValue for QuietTime {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "End", &self.end)?;
@@ -3156,7 +3156,7 @@ pub mod application_settings {
         }
     }
 
-    impl ::codec::DeserializeValue for QuietTime {
+    impl crate::codec::DeserializeValue for QuietTime {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<QuietTime, D::Error> {
             struct Visitor;
 
@@ -3171,8 +3171,8 @@ pub mod application_settings {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end: Option<::Value<String>> = None;
-                    let mut start: Option<::Value<String>> = None;
+                    let mut end: Option<crate::Value<String>> = None;
+                    let mut start: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3210,15 +3210,15 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_type: Option<::Value<String>>,
+        pub attribute_type: Option<crate::Value<String>>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-attributedimension.html#cfn-pinpoint-campaign-attributedimension-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<::ValueList<String>>,
+        pub values: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for AttributeDimension {
+    impl crate::codec::SerializeValue for AttributeDimension {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attribute_type) = self.attribute_type {
@@ -3235,7 +3235,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for AttributeDimension {
+    impl crate::codec::DeserializeValue for AttributeDimension {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AttributeDimension, D::Error> {
@@ -3252,8 +3252,8 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_type: Option<::Value<String>> = None;
-                    let mut values: Option<::ValueList<String>> = None;
+                    let mut attribute_type: Option<crate::Value<String>> = None;
+                    let mut values: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3287,25 +3287,25 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body: Option<::Value<String>>,
+        pub body: Option<crate::Value<String>>,
         /// Property [`FromAddress`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-fromaddress).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub from_address: Option<::Value<String>>,
+        pub from_address: Option<crate::Value<String>>,
         /// Property [`HtmlBody`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-htmlbody).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub html_body: Option<::Value<String>>,
+        pub html_body: Option<crate::Value<String>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-title).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub title: Option<::Value<String>>,
+        pub title: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CampaignEmailMessage {
+    impl crate::codec::SerializeValue for CampaignEmailMessage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref body) = self.body {
@@ -3324,7 +3324,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for CampaignEmailMessage {
+    impl crate::codec::DeserializeValue for CampaignEmailMessage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CampaignEmailMessage, D::Error> {
@@ -3341,10 +3341,10 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut body: Option<::Value<String>> = None;
-                    let mut from_address: Option<::Value<String>> = None;
-                    let mut html_body: Option<::Value<String>> = None;
-                    let mut title: Option<::Value<String>> = None;
+                    let mut body: Option<crate::Value<String>> = None;
+                    let mut from_address: Option<crate::Value<String>> = None;
+                    let mut html_body: Option<crate::Value<String>> = None;
+                    let mut title: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3386,15 +3386,15 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dimensions: Option<::Value<EventDimensions>>,
+        pub dimensions: Option<crate::Value<EventDimensions>>,
         /// Property [`FilterType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigneventfilter.html#cfn-pinpoint-campaign-campaigneventfilter-filtertype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_type: Option<::Value<String>>,
+        pub filter_type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CampaignEventFilter {
+    impl crate::codec::SerializeValue for CampaignEventFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dimensions) = self.dimensions {
@@ -3407,7 +3407,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for CampaignEventFilter {
+    impl crate::codec::DeserializeValue for CampaignEventFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CampaignEventFilter, D::Error> {
@@ -3424,8 +3424,8 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dimensions: Option<::Value<EventDimensions>> = None;
-                    let mut filter_type: Option<::Value<String>> = None;
+                    let mut dimensions: Option<crate::Value<EventDimensions>> = None;
+                    let mut filter_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3459,20 +3459,20 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lambda_function_name: Option<::Value<String>>,
+        pub lambda_function_name: Option<crate::Value<String>>,
         /// Property [`Mode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-mode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mode: Option<::Value<String>>,
+        pub mode: Option<crate::Value<String>>,
         /// Property [`WebUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-weburl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub web_url: Option<::Value<String>>,
+        pub web_url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CampaignHook {
+    impl crate::codec::SerializeValue for CampaignHook {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref lambda_function_name) = self.lambda_function_name {
@@ -3492,7 +3492,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for CampaignHook {
+    impl crate::codec::DeserializeValue for CampaignHook {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CampaignHook, D::Error> {
             struct Visitor;
 
@@ -3507,9 +3507,9 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut lambda_function_name: Option<::Value<String>> = None;
-                    let mut mode: Option<::Value<String>> = None;
-                    let mut web_url: Option<::Value<String>> = None;
+                    let mut lambda_function_name: Option<crate::Value<String>> = None;
+                    let mut mode: Option<crate::Value<String>> = None;
+                    let mut web_url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3548,20 +3548,20 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub content: Option<::ValueList<InAppMessageContent>>,
+        pub content: Option<crate::ValueList<InAppMessageContent>>,
         /// Property [`CustomConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigninappmessage.html#cfn-pinpoint-campaign-campaigninappmessage-customconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_config: Option<::Value<::json::Value>>,
+        pub custom_config: Option<crate::Value<crate::json::Value>>,
         /// Property [`Layout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigninappmessage.html#cfn-pinpoint-campaign-campaigninappmessage-layout).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub layout: Option<::Value<String>>,
+        pub layout: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CampaignInAppMessage {
+    impl crate::codec::SerializeValue for CampaignInAppMessage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref content) = self.content {
@@ -3581,7 +3581,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for CampaignInAppMessage {
+    impl crate::codec::DeserializeValue for CampaignInAppMessage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CampaignInAppMessage, D::Error> {
@@ -3598,9 +3598,9 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut content: Option<::ValueList<InAppMessageContent>> = None;
-                    let mut custom_config: Option<::Value<::json::Value>> = None;
-                    let mut layout: Option<::Value<String>> = None;
+                    let mut content: Option<crate::ValueList<InAppMessageContent>> = None;
+                    let mut custom_config: Option<crate::Value<crate::json::Value>> = None;
+                    let mut layout: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3638,35 +3638,35 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body: Option<::Value<String>>,
+        pub body: Option<crate::Value<String>>,
         /// Property [`EntityId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-entityid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entity_id: Option<::Value<String>>,
+        pub entity_id: Option<crate::Value<String>>,
         /// Property [`MessageType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-messagetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_type: Option<::Value<String>>,
+        pub message_type: Option<crate::Value<String>>,
         /// Property [`OriginationNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-originationnumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub origination_number: Option<::Value<String>>,
+        pub origination_number: Option<crate::Value<String>>,
         /// Property [`SenderId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-senderid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sender_id: Option<::Value<String>>,
+        pub sender_id: Option<crate::Value<String>>,
         /// Property [`TemplateId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-templateid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub template_id: Option<::Value<String>>,
+        pub template_id: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for CampaignSmsMessage {
+    impl crate::codec::SerializeValue for CampaignSmsMessage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref body) = self.body {
@@ -3695,7 +3695,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for CampaignSmsMessage {
+    impl crate::codec::DeserializeValue for CampaignSmsMessage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CampaignSmsMessage, D::Error> {
@@ -3712,12 +3712,12 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut body: Option<::Value<String>> = None;
-                    let mut entity_id: Option<::Value<String>> = None;
-                    let mut message_type: Option<::Value<String>> = None;
-                    let mut origination_number: Option<::Value<String>> = None;
-                    let mut sender_id: Option<::Value<String>> = None;
-                    let mut template_id: Option<::Value<String>> = None;
+                    let mut body: Option<crate::Value<String>> = None;
+                    let mut entity_id: Option<crate::Value<String>> = None;
+                    let mut message_type: Option<crate::Value<String>> = None;
+                    let mut origination_number: Option<crate::Value<String>> = None;
+                    let mut sender_id: Option<crate::Value<String>> = None;
+                    let mut template_id: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3767,35 +3767,35 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub background_color: Option<::Value<String>>,
+        pub background_color: Option<crate::Value<String>>,
         /// Property [`BorderRadius`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-defaultbuttonconfiguration.html#cfn-pinpoint-campaign-defaultbuttonconfiguration-borderradius).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub border_radius: Option<::Value<u32>>,
+        pub border_radius: Option<crate::Value<u32>>,
         /// Property [`ButtonAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-defaultbuttonconfiguration.html#cfn-pinpoint-campaign-defaultbuttonconfiguration-buttonaction).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub button_action: Option<::Value<String>>,
+        pub button_action: Option<crate::Value<String>>,
         /// Property [`Link`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-defaultbuttonconfiguration.html#cfn-pinpoint-campaign-defaultbuttonconfiguration-link).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub link: Option<::Value<String>>,
+        pub link: Option<crate::Value<String>>,
         /// Property [`Text`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-defaultbuttonconfiguration.html#cfn-pinpoint-campaign-defaultbuttonconfiguration-text).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text: Option<::Value<String>>,
+        pub text: Option<crate::Value<String>>,
         /// Property [`TextColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-defaultbuttonconfiguration.html#cfn-pinpoint-campaign-defaultbuttonconfiguration-textcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_color: Option<::Value<String>>,
+        pub text_color: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DefaultButtonConfiguration {
+    impl crate::codec::SerializeValue for DefaultButtonConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref background_color) = self.background_color {
@@ -3832,7 +3832,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for DefaultButtonConfiguration {
+    impl crate::codec::DeserializeValue for DefaultButtonConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DefaultButtonConfiguration, D::Error> {
@@ -3849,12 +3849,12 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut background_color: Option<::Value<String>> = None;
-                    let mut border_radius: Option<::Value<u32>> = None;
-                    let mut button_action: Option<::Value<String>> = None;
-                    let mut link: Option<::Value<String>> = None;
-                    let mut text: Option<::Value<String>> = None;
-                    let mut text_color: Option<::Value<String>> = None;
+                    let mut background_color: Option<crate::Value<String>> = None;
+                    let mut border_radius: Option<crate::Value<u32>> = None;
+                    let mut button_action: Option<crate::Value<String>> = None;
+                    let mut link: Option<crate::Value<String>> = None;
+                    let mut text: Option<crate::Value<String>> = None;
+                    let mut text_color: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3904,20 +3904,20 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attributes: Option<::Value<::json::Value>>,
+        pub attributes: Option<crate::Value<crate::json::Value>>,
         /// Property [`EventType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-eventtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_type: Option<::Value<SetDimension>>,
+        pub event_type: Option<crate::Value<SetDimension>>,
         /// Property [`Metrics`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-metrics).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metrics: Option<::Value<::json::Value>>,
+        pub metrics: Option<crate::Value<crate::json::Value>>,
     }
 
-    impl ::codec::SerializeValue for EventDimensions {
+    impl crate::codec::SerializeValue for EventDimensions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attributes) = self.attributes {
@@ -3933,7 +3933,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for EventDimensions {
+    impl crate::codec::DeserializeValue for EventDimensions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EventDimensions, D::Error> {
@@ -3950,9 +3950,9 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attributes: Option<::Value<::json::Value>> = None;
-                    let mut event_type: Option<::Value<SetDimension>> = None;
-                    let mut metrics: Option<::Value<::json::Value>> = None;
+                    let mut attributes: Option<crate::Value<crate::json::Value>> = None;
+                    let mut event_type: Option<crate::Value<SetDimension>> = None;
+                    let mut metrics: Option<crate::Value<crate::json::Value>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3990,20 +3990,20 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alignment: Option<::Value<String>>,
+        pub alignment: Option<crate::Value<String>>,
         /// Property [`Body`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebodyconfig.html#cfn-pinpoint-campaign-inappmessagebodyconfig-body).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body: Option<::Value<String>>,
+        pub body: Option<crate::Value<String>>,
         /// Property [`TextColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebodyconfig.html#cfn-pinpoint-campaign-inappmessagebodyconfig-textcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_color: Option<::Value<String>>,
+        pub text_color: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for InAppMessageBodyConfig {
+    impl crate::codec::SerializeValue for InAppMessageBodyConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref alignment) = self.alignment {
@@ -4019,7 +4019,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for InAppMessageBodyConfig {
+    impl crate::codec::DeserializeValue for InAppMessageBodyConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InAppMessageBodyConfig, D::Error> {
@@ -4036,9 +4036,9 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alignment: Option<::Value<String>> = None;
-                    let mut body: Option<::Value<String>> = None;
-                    let mut text_color: Option<::Value<String>> = None;
+                    let mut alignment: Option<crate::Value<String>> = None;
+                    let mut body: Option<crate::Value<String>> = None;
+                    let mut text_color: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4076,25 +4076,25 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub android: Option<::Value<OverrideButtonConfiguration>>,
+        pub android: Option<crate::Value<OverrideButtonConfiguration>>,
         /// Property [`DefaultConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebutton.html#cfn-pinpoint-campaign-inappmessagebutton-defaultconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_config: Option<::Value<DefaultButtonConfiguration>>,
+        pub default_config: Option<crate::Value<DefaultButtonConfiguration>>,
         /// Property [`IOS`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebutton.html#cfn-pinpoint-campaign-inappmessagebutton-ios).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ios: Option<::Value<OverrideButtonConfiguration>>,
+        pub ios: Option<crate::Value<OverrideButtonConfiguration>>,
         /// Property [`Web`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebutton.html#cfn-pinpoint-campaign-inappmessagebutton-web).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub web: Option<::Value<OverrideButtonConfiguration>>,
+        pub web: Option<crate::Value<OverrideButtonConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for InAppMessageButton {
+    impl crate::codec::SerializeValue for InAppMessageButton {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref android) = self.android {
@@ -4117,7 +4117,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for InAppMessageButton {
+    impl crate::codec::DeserializeValue for InAppMessageButton {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InAppMessageButton, D::Error> {
@@ -4134,10 +4134,10 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut android: Option<::Value<OverrideButtonConfiguration>> = None;
-                    let mut default_config: Option<::Value<DefaultButtonConfiguration>> = None;
-                    let mut ios: Option<::Value<OverrideButtonConfiguration>> = None;
-                    let mut web: Option<::Value<OverrideButtonConfiguration>> = None;
+                    let mut android: Option<crate::Value<OverrideButtonConfiguration>> = None;
+                    let mut default_config: Option<crate::Value<DefaultButtonConfiguration>> = None;
+                    let mut ios: Option<crate::Value<OverrideButtonConfiguration>> = None;
+                    let mut web: Option<crate::Value<OverrideButtonConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4179,35 +4179,35 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub background_color: Option<::Value<String>>,
+        pub background_color: Option<crate::Value<String>>,
         /// Property [`BodyConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-bodyconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body_config: Option<::Value<InAppMessageBodyConfig>>,
+        pub body_config: Option<crate::Value<InAppMessageBodyConfig>>,
         /// Property [`HeaderConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-headerconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub header_config: Option<::Value<InAppMessageHeaderConfig>>,
+        pub header_config: Option<crate::Value<InAppMessageHeaderConfig>>,
         /// Property [`ImageUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-imageurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_url: Option<::Value<String>>,
+        pub image_url: Option<crate::Value<String>>,
         /// Property [`PrimaryBtn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-primarybtn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub primary_btn: Option<::Value<InAppMessageButton>>,
+        pub primary_btn: Option<crate::Value<InAppMessageButton>>,
         /// Property [`SecondaryBtn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-secondarybtn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secondary_btn: Option<::Value<InAppMessageButton>>,
+        pub secondary_btn: Option<crate::Value<InAppMessageButton>>,
     }
 
-    impl ::codec::SerializeValue for InAppMessageContent {
+    impl crate::codec::SerializeValue for InAppMessageContent {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref background_color) = self.background_color {
@@ -4244,7 +4244,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for InAppMessageContent {
+    impl crate::codec::DeserializeValue for InAppMessageContent {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InAppMessageContent, D::Error> {
@@ -4261,12 +4261,12 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut background_color: Option<::Value<String>> = None;
-                    let mut body_config: Option<::Value<InAppMessageBodyConfig>> = None;
-                    let mut header_config: Option<::Value<InAppMessageHeaderConfig>> = None;
-                    let mut image_url: Option<::Value<String>> = None;
-                    let mut primary_btn: Option<::Value<InAppMessageButton>> = None;
-                    let mut secondary_btn: Option<::Value<InAppMessageButton>> = None;
+                    let mut background_color: Option<crate::Value<String>> = None;
+                    let mut body_config: Option<crate::Value<InAppMessageBodyConfig>> = None;
+                    let mut header_config: Option<crate::Value<InAppMessageHeaderConfig>> = None;
+                    let mut image_url: Option<crate::Value<String>> = None;
+                    let mut primary_btn: Option<crate::Value<InAppMessageButton>> = None;
+                    let mut secondary_btn: Option<crate::Value<InAppMessageButton>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4316,20 +4316,20 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alignment: Option<::Value<String>>,
+        pub alignment: Option<crate::Value<String>>,
         /// Property [`Header`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessageheaderconfig.html#cfn-pinpoint-campaign-inappmessageheaderconfig-header).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub header: Option<::Value<String>>,
+        pub header: Option<crate::Value<String>>,
         /// Property [`TextColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessageheaderconfig.html#cfn-pinpoint-campaign-inappmessageheaderconfig-textcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_color: Option<::Value<String>>,
+        pub text_color: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for InAppMessageHeaderConfig {
+    impl crate::codec::SerializeValue for InAppMessageHeaderConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref alignment) = self.alignment {
@@ -4345,7 +4345,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for InAppMessageHeaderConfig {
+    impl crate::codec::DeserializeValue for InAppMessageHeaderConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InAppMessageHeaderConfig, D::Error> {
@@ -4362,9 +4362,9 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alignment: Option<::Value<String>> = None;
-                    let mut header: Option<::Value<String>> = None;
-                    let mut text_color: Option<::Value<String>> = None;
+                    let mut alignment: Option<crate::Value<String>> = None;
+                    let mut header: Option<crate::Value<String>> = None;
+                    let mut text_color: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4402,30 +4402,30 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub daily: Option<::Value<u32>>,
+        pub daily: Option<crate::Value<u32>>,
         /// Property [`MaximumDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-maximumduration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maximum_duration: Option<::Value<u32>>,
+        pub maximum_duration: Option<crate::Value<u32>>,
         /// Property [`MessagesPerSecond`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-messagespersecond).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub messages_per_second: Option<::Value<u32>>,
+        pub messages_per_second: Option<crate::Value<u32>>,
         /// Property [`Session`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-session).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session: Option<::Value<u32>>,
+        pub session: Option<crate::Value<u32>>,
         /// Property [`Total`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-total).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub total: Option<::Value<u32>>,
+        pub total: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for Limits {
+    impl crate::codec::SerializeValue for Limits {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref daily) = self.daily {
@@ -4455,7 +4455,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for Limits {
+    impl crate::codec::DeserializeValue for Limits {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Limits, D::Error> {
             struct Visitor;
 
@@ -4470,11 +4470,11 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut daily: Option<::Value<u32>> = None;
-                    let mut maximum_duration: Option<::Value<u32>> = None;
-                    let mut messages_per_second: Option<::Value<u32>> = None;
-                    let mut session: Option<::Value<u32>> = None;
-                    let mut total: Option<::Value<u32>> = None;
+                    let mut daily: Option<crate::Value<u32>> = None;
+                    let mut maximum_duration: Option<crate::Value<u32>> = None;
+                    let mut messages_per_second: Option<crate::Value<u32>> = None;
+                    let mut session: Option<crate::Value<u32>> = None;
+                    let mut total: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4520,65 +4520,65 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: Option<::Value<String>>,
+        pub action: Option<crate::Value<String>>,
         /// Property [`Body`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-body).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body: Option<::Value<String>>,
+        pub body: Option<crate::Value<String>>,
         /// Property [`ImageIconUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-imageiconurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_icon_url: Option<::Value<String>>,
+        pub image_icon_url: Option<crate::Value<String>>,
         /// Property [`ImageSmallIconUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-imagesmalliconurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_small_icon_url: Option<::Value<String>>,
+        pub image_small_icon_url: Option<crate::Value<String>>,
         /// Property [`ImageUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-imageurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_url: Option<::Value<String>>,
+        pub image_url: Option<crate::Value<String>>,
         /// Property [`JsonBody`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-jsonbody).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub json_body: Option<::Value<String>>,
+        pub json_body: Option<crate::Value<String>>,
         /// Property [`MediaUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-mediaurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub media_url: Option<::Value<String>>,
+        pub media_url: Option<crate::Value<String>>,
         /// Property [`RawContent`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-rawcontent).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub raw_content: Option<::Value<String>>,
+        pub raw_content: Option<crate::Value<String>>,
         /// Property [`SilentPush`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-silentpush).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub silent_push: Option<::Value<bool>>,
+        pub silent_push: Option<crate::Value<bool>>,
         /// Property [`TimeToLive`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-timetolive).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_to_live: Option<::Value<u32>>,
+        pub time_to_live: Option<crate::Value<u32>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-title).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub title: Option<::Value<String>>,
+        pub title: Option<crate::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<::Value<String>>,
+        pub url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Message {
+    impl crate::codec::SerializeValue for Message {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action) = self.action {
@@ -4629,7 +4629,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for Message {
+    impl crate::codec::DeserializeValue for Message {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Message, D::Error> {
             struct Visitor;
 
@@ -4644,18 +4644,18 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<String>> = None;
-                    let mut body: Option<::Value<String>> = None;
-                    let mut image_icon_url: Option<::Value<String>> = None;
-                    let mut image_small_icon_url: Option<::Value<String>> = None;
-                    let mut image_url: Option<::Value<String>> = None;
-                    let mut json_body: Option<::Value<String>> = None;
-                    let mut media_url: Option<::Value<String>> = None;
-                    let mut raw_content: Option<::Value<String>> = None;
-                    let mut silent_push: Option<::Value<bool>> = None;
-                    let mut time_to_live: Option<::Value<u32>> = None;
-                    let mut title: Option<::Value<String>> = None;
-                    let mut url: Option<::Value<String>> = None;
+                    let mut action: Option<crate::Value<String>> = None;
+                    let mut body: Option<crate::Value<String>> = None;
+                    let mut image_icon_url: Option<crate::Value<String>> = None;
+                    let mut image_small_icon_url: Option<crate::Value<String>> = None;
+                    let mut image_url: Option<crate::Value<String>> = None;
+                    let mut json_body: Option<crate::Value<String>> = None;
+                    let mut media_url: Option<crate::Value<String>> = None;
+                    let mut raw_content: Option<crate::Value<String>> = None;
+                    let mut silent_push: Option<crate::Value<bool>> = None;
+                    let mut time_to_live: Option<crate::Value<u32>> = None;
+                    let mut title: Option<crate::Value<String>> = None;
+                    let mut url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4730,45 +4730,45 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub adm_message: Option<::Value<Message>>,
+        pub adm_message: Option<crate::Value<Message>>,
         /// Property [`APNSMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-apnsmessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub apns_message: Option<::Value<Message>>,
+        pub apns_message: Option<crate::Value<Message>>,
         /// Property [`BaiduMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-baidumessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub baidu_message: Option<::Value<Message>>,
+        pub baidu_message: Option<crate::Value<Message>>,
         /// Property [`DefaultMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-defaultmessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_message: Option<::Value<Message>>,
+        pub default_message: Option<crate::Value<Message>>,
         /// Property [`EmailMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-emailmessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub email_message: Option<::Value<CampaignEmailMessage>>,
+        pub email_message: Option<crate::Value<CampaignEmailMessage>>,
         /// Property [`GCMMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-gcmmessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gcm_message: Option<::Value<Message>>,
+        pub gcm_message: Option<crate::Value<Message>>,
         /// Property [`InAppMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-inappmessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub in_app_message: Option<::Value<CampaignInAppMessage>>,
+        pub in_app_message: Option<crate::Value<CampaignInAppMessage>>,
         /// Property [`SMSMessage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-smsmessage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sms_message: Option<::Value<CampaignSmsMessage>>,
+        pub sms_message: Option<crate::Value<CampaignSmsMessage>>,
     }
 
-    impl ::codec::SerializeValue for MessageConfiguration {
+    impl crate::codec::SerializeValue for MessageConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref adm_message) = self.adm_message {
@@ -4815,7 +4815,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for MessageConfiguration {
+    impl crate::codec::DeserializeValue for MessageConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MessageConfiguration, D::Error> {
@@ -4832,14 +4832,14 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut adm_message: Option<::Value<Message>> = None;
-                    let mut apns_message: Option<::Value<Message>> = None;
-                    let mut baidu_message: Option<::Value<Message>> = None;
-                    let mut default_message: Option<::Value<Message>> = None;
-                    let mut email_message: Option<::Value<CampaignEmailMessage>> = None;
-                    let mut gcm_message: Option<::Value<Message>> = None;
-                    let mut in_app_message: Option<::Value<CampaignInAppMessage>> = None;
-                    let mut sms_message: Option<::Value<CampaignSmsMessage>> = None;
+                    let mut adm_message: Option<crate::Value<Message>> = None;
+                    let mut apns_message: Option<crate::Value<Message>> = None;
+                    let mut baidu_message: Option<crate::Value<Message>> = None;
+                    let mut default_message: Option<crate::Value<Message>> = None;
+                    let mut email_message: Option<crate::Value<CampaignEmailMessage>> = None;
+                    let mut gcm_message: Option<crate::Value<Message>> = None;
+                    let mut in_app_message: Option<crate::Value<CampaignInAppMessage>> = None;
+                    let mut sms_message: Option<crate::Value<CampaignSmsMessage>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4897,15 +4897,15 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub comparison_operator: Option<::Value<String>>,
+        pub comparison_operator: Option<crate::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-metricdimension.html#cfn-pinpoint-campaign-metricdimension-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<::Value<f64>>,
+        pub value: Option<crate::Value<f64>>,
     }
 
-    impl ::codec::SerializeValue for MetricDimension {
+    impl crate::codec::SerializeValue for MetricDimension {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref comparison_operator) = self.comparison_operator {
@@ -4922,7 +4922,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for MetricDimension {
+    impl crate::codec::DeserializeValue for MetricDimension {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MetricDimension, D::Error> {
@@ -4939,8 +4939,8 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut comparison_operator: Option<::Value<String>> = None;
-                    let mut value: Option<::Value<f64>> = None;
+                    let mut comparison_operator: Option<crate::Value<String>> = None;
+                    let mut value: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4974,15 +4974,15 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub button_action: Option<::Value<String>>,
+        pub button_action: Option<crate::Value<String>>,
         /// Property [`Link`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-overridebuttonconfiguration.html#cfn-pinpoint-campaign-overridebuttonconfiguration-link).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub link: Option<::Value<String>>,
+        pub link: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for OverrideButtonConfiguration {
+    impl crate::codec::SerializeValue for OverrideButtonConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref button_action) = self.button_action {
@@ -4999,7 +4999,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for OverrideButtonConfiguration {
+    impl crate::codec::DeserializeValue for OverrideButtonConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OverrideButtonConfiguration, D::Error> {
@@ -5016,8 +5016,8 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut button_action: Option<::Value<String>> = None;
-                    let mut link: Option<::Value<String>> = None;
+                    let mut button_action: Option<crate::Value<String>> = None;
+                    let mut link: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5051,15 +5051,15 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end: ::Value<String>,
+        pub end: crate::Value<String>,
         /// Property [`Start`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule-quiettime.html#cfn-pinpoint-campaign-schedule-quiettime-start).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start: ::Value<String>,
+        pub start: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for QuietTime {
+    impl crate::codec::SerializeValue for QuietTime {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "End", &self.end)?;
@@ -5068,7 +5068,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for QuietTime {
+    impl crate::codec::DeserializeValue for QuietTime {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<QuietTime, D::Error> {
             struct Visitor;
 
@@ -5083,8 +5083,8 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end: Option<::Value<String>> = None;
-                    let mut start: Option<::Value<String>> = None;
+                    let mut end: Option<crate::Value<String>> = None;
+                    let mut start: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5118,40 +5118,40 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_time: Option<::Value<String>>,
+        pub end_time: Option<crate::Value<String>>,
         /// Property [`EventFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-eventfilter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_filter: Option<::Value<CampaignEventFilter>>,
+        pub event_filter: Option<crate::Value<CampaignEventFilter>>,
         /// Property [`Frequency`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-frequency).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frequency: Option<::Value<String>>,
+        pub frequency: Option<crate::Value<String>>,
         /// Property [`IsLocalTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-islocaltime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub is_local_time: Option<::Value<bool>>,
+        pub is_local_time: Option<crate::Value<bool>>,
         /// Property [`QuietTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-quiettime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub quiet_time: Option<::Value<QuietTime>>,
+        pub quiet_time: Option<crate::Value<QuietTime>>,
         /// Property [`StartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-starttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_time: Option<::Value<String>>,
+        pub start_time: Option<crate::Value<String>>,
         /// Property [`TimeZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-timezone).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_zone: Option<::Value<String>>,
+        pub time_zone: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Schedule {
+    impl crate::codec::SerializeValue for Schedule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref end_time) = self.end_time {
@@ -5183,7 +5183,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for Schedule {
+    impl crate::codec::DeserializeValue for Schedule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Schedule, D::Error> {
             struct Visitor;
 
@@ -5198,13 +5198,13 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end_time: Option<::Value<String>> = None;
-                    let mut event_filter: Option<::Value<CampaignEventFilter>> = None;
-                    let mut frequency: Option<::Value<String>> = None;
-                    let mut is_local_time: Option<::Value<bool>> = None;
-                    let mut quiet_time: Option<::Value<QuietTime>> = None;
-                    let mut start_time: Option<::Value<String>> = None;
-                    let mut time_zone: Option<::Value<String>> = None;
+                    let mut end_time: Option<crate::Value<String>> = None;
+                    let mut event_filter: Option<crate::Value<CampaignEventFilter>> = None;
+                    let mut frequency: Option<crate::Value<String>> = None;
+                    let mut is_local_time: Option<crate::Value<bool>> = None;
+                    let mut quiet_time: Option<crate::Value<QuietTime>> = None;
+                    let mut start_time: Option<crate::Value<String>> = None;
+                    let mut time_zone: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5258,15 +5258,15 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dimension_type: Option<::Value<String>>,
+        pub dimension_type: Option<crate::Value<String>>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-setdimension.html#cfn-pinpoint-campaign-setdimension-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<::ValueList<String>>,
+        pub values: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for SetDimension {
+    impl crate::codec::SerializeValue for SetDimension {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dimension_type) = self.dimension_type {
@@ -5283,7 +5283,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for SetDimension {
+    impl crate::codec::DeserializeValue for SetDimension {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SetDimension, D::Error> {
             struct Visitor;
 
@@ -5298,8 +5298,8 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dimension_type: Option<::Value<String>> = None;
-                    let mut values: Option<::ValueList<String>> = None;
+                    let mut dimension_type: Option<crate::Value<String>> = None;
+                    let mut values: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5333,30 +5333,30 @@ pub mod campaign {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_configuration: Option<::Value<MessageConfiguration>>,
+        pub message_configuration: Option<crate::Value<MessageConfiguration>>,
         /// Property [`Schedule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-schedule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule: Option<::Value<Schedule>>,
+        pub schedule: Option<crate::Value<Schedule>>,
         /// Property [`SizePercent`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-sizepercent).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size_percent: Option<::Value<u32>>,
+        pub size_percent: Option<crate::Value<u32>>,
         /// Property [`TreatmentDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentdescription).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub treatment_description: Option<::Value<String>>,
+        pub treatment_description: Option<crate::Value<String>>,
         /// Property [`TreatmentName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub treatment_name: Option<::Value<String>>,
+        pub treatment_name: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for WriteTreatmentResource {
+    impl crate::codec::SerializeValue for WriteTreatmentResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref message_configuration) = self.message_configuration {
@@ -5390,7 +5390,7 @@ pub mod campaign {
         }
     }
 
-    impl ::codec::DeserializeValue for WriteTreatmentResource {
+    impl crate::codec::DeserializeValue for WriteTreatmentResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WriteTreatmentResource, D::Error> {
@@ -5407,11 +5407,11 @@ pub mod campaign {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut message_configuration: Option<::Value<MessageConfiguration>> = None;
-                    let mut schedule: Option<::Value<Schedule>> = None;
-                    let mut size_percent: Option<::Value<u32>> = None;
-                    let mut treatment_description: Option<::Value<String>> = None;
-                    let mut treatment_name: Option<::Value<String>> = None;
+                    let mut message_configuration: Option<crate::Value<MessageConfiguration>> = None;
+                    let mut schedule: Option<crate::Value<Schedule>> = None;
+                    let mut size_percent: Option<crate::Value<u32>> = None;
+                    let mut treatment_description: Option<crate::Value<String>> = None;
+                    let mut treatment_name: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5463,20 +5463,20 @@ pub mod in_app_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alignment: Option<::Value<String>>,
+        pub alignment: Option<crate::Value<String>>,
         /// Property [`Body`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-bodyconfig.html#cfn-pinpoint-inapptemplate-bodyconfig-body).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body: Option<::Value<String>>,
+        pub body: Option<crate::Value<String>>,
         /// Property [`TextColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-bodyconfig.html#cfn-pinpoint-inapptemplate-bodyconfig-textcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_color: Option<::Value<String>>,
+        pub text_color: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for BodyConfig {
+    impl crate::codec::SerializeValue for BodyConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref alignment) = self.alignment {
@@ -5492,7 +5492,7 @@ pub mod in_app_template {
         }
     }
 
-    impl ::codec::DeserializeValue for BodyConfig {
+    impl crate::codec::DeserializeValue for BodyConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BodyConfig, D::Error> {
             struct Visitor;
 
@@ -5507,9 +5507,9 @@ pub mod in_app_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alignment: Option<::Value<String>> = None;
-                    let mut body: Option<::Value<String>> = None;
-                    let mut text_color: Option<::Value<String>> = None;
+                    let mut alignment: Option<crate::Value<String>> = None;
+                    let mut body: Option<crate::Value<String>> = None;
+                    let mut text_color: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5547,25 +5547,25 @@ pub mod in_app_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub android: Option<::Value<OverrideButtonConfiguration>>,
+        pub android: Option<crate::Value<OverrideButtonConfiguration>>,
         /// Property [`DefaultConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-defaultconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_config: Option<::Value<DefaultButtonConfiguration>>,
+        pub default_config: Option<crate::Value<DefaultButtonConfiguration>>,
         /// Property [`IOS`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-ios).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ios: Option<::Value<OverrideButtonConfiguration>>,
+        pub ios: Option<crate::Value<OverrideButtonConfiguration>>,
         /// Property [`Web`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-web).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub web: Option<::Value<OverrideButtonConfiguration>>,
+        pub web: Option<crate::Value<OverrideButtonConfiguration>>,
     }
 
-    impl ::codec::SerializeValue for ButtonConfig {
+    impl crate::codec::SerializeValue for ButtonConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref android) = self.android {
@@ -5588,7 +5588,7 @@ pub mod in_app_template {
         }
     }
 
-    impl ::codec::DeserializeValue for ButtonConfig {
+    impl crate::codec::DeserializeValue for ButtonConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ButtonConfig, D::Error> {
             struct Visitor;
 
@@ -5603,10 +5603,10 @@ pub mod in_app_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut android: Option<::Value<OverrideButtonConfiguration>> = None;
-                    let mut default_config: Option<::Value<DefaultButtonConfiguration>> = None;
-                    let mut ios: Option<::Value<OverrideButtonConfiguration>> = None;
-                    let mut web: Option<::Value<OverrideButtonConfiguration>> = None;
+                    let mut android: Option<crate::Value<OverrideButtonConfiguration>> = None;
+                    let mut default_config: Option<crate::Value<DefaultButtonConfiguration>> = None;
+                    let mut ios: Option<crate::Value<OverrideButtonConfiguration>> = None;
+                    let mut web: Option<crate::Value<OverrideButtonConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5648,35 +5648,35 @@ pub mod in_app_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub background_color: Option<::Value<String>>,
+        pub background_color: Option<crate::Value<String>>,
         /// Property [`BorderRadius`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-defaultbuttonconfiguration.html#cfn-pinpoint-inapptemplate-defaultbuttonconfiguration-borderradius).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub border_radius: Option<::Value<u32>>,
+        pub border_radius: Option<crate::Value<u32>>,
         /// Property [`ButtonAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-defaultbuttonconfiguration.html#cfn-pinpoint-inapptemplate-defaultbuttonconfiguration-buttonaction).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub button_action: Option<::Value<String>>,
+        pub button_action: Option<crate::Value<String>>,
         /// Property [`Link`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-defaultbuttonconfiguration.html#cfn-pinpoint-inapptemplate-defaultbuttonconfiguration-link).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub link: Option<::Value<String>>,
+        pub link: Option<crate::Value<String>>,
         /// Property [`Text`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-defaultbuttonconfiguration.html#cfn-pinpoint-inapptemplate-defaultbuttonconfiguration-text).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text: Option<::Value<String>>,
+        pub text: Option<crate::Value<String>>,
         /// Property [`TextColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-defaultbuttonconfiguration.html#cfn-pinpoint-inapptemplate-defaultbuttonconfiguration-textcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_color: Option<::Value<String>>,
+        pub text_color: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DefaultButtonConfiguration {
+    impl crate::codec::SerializeValue for DefaultButtonConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref background_color) = self.background_color {
@@ -5713,7 +5713,7 @@ pub mod in_app_template {
         }
     }
 
-    impl ::codec::DeserializeValue for DefaultButtonConfiguration {
+    impl crate::codec::DeserializeValue for DefaultButtonConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DefaultButtonConfiguration, D::Error> {
@@ -5730,12 +5730,12 @@ pub mod in_app_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut background_color: Option<::Value<String>> = None;
-                    let mut border_radius: Option<::Value<u32>> = None;
-                    let mut button_action: Option<::Value<String>> = None;
-                    let mut link: Option<::Value<String>> = None;
-                    let mut text: Option<::Value<String>> = None;
-                    let mut text_color: Option<::Value<String>> = None;
+                    let mut background_color: Option<crate::Value<String>> = None;
+                    let mut border_radius: Option<crate::Value<u32>> = None;
+                    let mut button_action: Option<crate::Value<String>> = None;
+                    let mut link: Option<crate::Value<String>> = None;
+                    let mut text: Option<crate::Value<String>> = None;
+                    let mut text_color: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5785,20 +5785,20 @@ pub mod in_app_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alignment: Option<::Value<String>>,
+        pub alignment: Option<crate::Value<String>>,
         /// Property [`Header`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-headerconfig.html#cfn-pinpoint-inapptemplate-headerconfig-header).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub header: Option<::Value<String>>,
+        pub header: Option<crate::Value<String>>,
         /// Property [`TextColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-headerconfig.html#cfn-pinpoint-inapptemplate-headerconfig-textcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_color: Option<::Value<String>>,
+        pub text_color: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for HeaderConfig {
+    impl crate::codec::SerializeValue for HeaderConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref alignment) = self.alignment {
@@ -5814,7 +5814,7 @@ pub mod in_app_template {
         }
     }
 
-    impl ::codec::DeserializeValue for HeaderConfig {
+    impl crate::codec::DeserializeValue for HeaderConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HeaderConfig, D::Error> {
             struct Visitor;
 
@@ -5829,9 +5829,9 @@ pub mod in_app_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alignment: Option<::Value<String>> = None;
-                    let mut header: Option<::Value<String>> = None;
-                    let mut text_color: Option<::Value<String>> = None;
+                    let mut alignment: Option<crate::Value<String>> = None;
+                    let mut header: Option<crate::Value<String>> = None;
+                    let mut text_color: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5869,35 +5869,35 @@ pub mod in_app_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub background_color: Option<::Value<String>>,
+        pub background_color: Option<crate::Value<String>>,
         /// Property [`BodyConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-inappmessagecontent.html#cfn-pinpoint-inapptemplate-inappmessagecontent-bodyconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body_config: Option<::Value<BodyConfig>>,
+        pub body_config: Option<crate::Value<BodyConfig>>,
         /// Property [`HeaderConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-inappmessagecontent.html#cfn-pinpoint-inapptemplate-inappmessagecontent-headerconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub header_config: Option<::Value<HeaderConfig>>,
+        pub header_config: Option<crate::Value<HeaderConfig>>,
         /// Property [`ImageUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-inappmessagecontent.html#cfn-pinpoint-inapptemplate-inappmessagecontent-imageurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_url: Option<::Value<String>>,
+        pub image_url: Option<crate::Value<String>>,
         /// Property [`PrimaryBtn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-inappmessagecontent.html#cfn-pinpoint-inapptemplate-inappmessagecontent-primarybtn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub primary_btn: Option<::Value<ButtonConfig>>,
+        pub primary_btn: Option<crate::Value<ButtonConfig>>,
         /// Property [`SecondaryBtn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-inappmessagecontent.html#cfn-pinpoint-inapptemplate-inappmessagecontent-secondarybtn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secondary_btn: Option<::Value<ButtonConfig>>,
+        pub secondary_btn: Option<crate::Value<ButtonConfig>>,
     }
 
-    impl ::codec::SerializeValue for InAppMessageContent {
+    impl crate::codec::SerializeValue for InAppMessageContent {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref background_color) = self.background_color {
@@ -5934,7 +5934,7 @@ pub mod in_app_template {
         }
     }
 
-    impl ::codec::DeserializeValue for InAppMessageContent {
+    impl crate::codec::DeserializeValue for InAppMessageContent {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InAppMessageContent, D::Error> {
@@ -5951,12 +5951,12 @@ pub mod in_app_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut background_color: Option<::Value<String>> = None;
-                    let mut body_config: Option<::Value<BodyConfig>> = None;
-                    let mut header_config: Option<::Value<HeaderConfig>> = None;
-                    let mut image_url: Option<::Value<String>> = None;
-                    let mut primary_btn: Option<::Value<ButtonConfig>> = None;
-                    let mut secondary_btn: Option<::Value<ButtonConfig>> = None;
+                    let mut background_color: Option<crate::Value<String>> = None;
+                    let mut body_config: Option<crate::Value<BodyConfig>> = None;
+                    let mut header_config: Option<crate::Value<HeaderConfig>> = None;
+                    let mut image_url: Option<crate::Value<String>> = None;
+                    let mut primary_btn: Option<crate::Value<ButtonConfig>> = None;
+                    let mut secondary_btn: Option<crate::Value<ButtonConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6006,15 +6006,15 @@ pub mod in_app_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub button_action: Option<::Value<String>>,
+        pub button_action: Option<crate::Value<String>>,
         /// Property [`Link`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-overridebuttonconfiguration.html#cfn-pinpoint-inapptemplate-overridebuttonconfiguration-link).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub link: Option<::Value<String>>,
+        pub link: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for OverrideButtonConfiguration {
+    impl crate::codec::SerializeValue for OverrideButtonConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref button_action) = self.button_action {
@@ -6031,7 +6031,7 @@ pub mod in_app_template {
         }
     }
 
-    impl ::codec::DeserializeValue for OverrideButtonConfiguration {
+    impl crate::codec::DeserializeValue for OverrideButtonConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OverrideButtonConfiguration, D::Error> {
@@ -6048,8 +6048,8 @@ pub mod in_app_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut button_action: Option<::Value<String>> = None;
-                    let mut link: Option<::Value<String>> = None;
+                    let mut button_action: Option<crate::Value<String>> = None;
+                    let mut link: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6087,35 +6087,35 @@ pub mod push_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: Option<::Value<String>>,
+        pub action: Option<crate::Value<String>>,
         /// Property [`Body`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-apnspushnotificationtemplate.html#cfn-pinpoint-pushtemplate-apnspushnotificationtemplate-body).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body: Option<::Value<String>>,
+        pub body: Option<crate::Value<String>>,
         /// Property [`MediaUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-apnspushnotificationtemplate.html#cfn-pinpoint-pushtemplate-apnspushnotificationtemplate-mediaurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub media_url: Option<::Value<String>>,
+        pub media_url: Option<crate::Value<String>>,
         /// Property [`Sound`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-apnspushnotificationtemplate.html#cfn-pinpoint-pushtemplate-apnspushnotificationtemplate-sound).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sound: Option<::Value<String>>,
+        pub sound: Option<crate::Value<String>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-apnspushnotificationtemplate.html#cfn-pinpoint-pushtemplate-apnspushnotificationtemplate-title).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub title: Option<::Value<String>>,
+        pub title: Option<crate::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-apnspushnotificationtemplate.html#cfn-pinpoint-pushtemplate-apnspushnotificationtemplate-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<::Value<String>>,
+        pub url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for APNSPushNotificationTemplate {
+    impl crate::codec::SerializeValue for APNSPushNotificationTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action) = self.action {
@@ -6140,7 +6140,7 @@ pub mod push_template {
         }
     }
 
-    impl ::codec::DeserializeValue for APNSPushNotificationTemplate {
+    impl crate::codec::DeserializeValue for APNSPushNotificationTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<APNSPushNotificationTemplate, D::Error> {
@@ -6157,12 +6157,12 @@ pub mod push_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<String>> = None;
-                    let mut body: Option<::Value<String>> = None;
-                    let mut media_url: Option<::Value<String>> = None;
-                    let mut sound: Option<::Value<String>> = None;
-                    let mut title: Option<::Value<String>> = None;
-                    let mut url: Option<::Value<String>> = None;
+                    let mut action: Option<crate::Value<String>> = None;
+                    let mut body: Option<crate::Value<String>> = None;
+                    let mut media_url: Option<crate::Value<String>> = None;
+                    let mut sound: Option<crate::Value<String>> = None;
+                    let mut title: Option<crate::Value<String>> = None;
+                    let mut url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6212,45 +6212,45 @@ pub mod push_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: Option<::Value<String>>,
+        pub action: Option<crate::Value<String>>,
         /// Property [`Body`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-body).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body: Option<::Value<String>>,
+        pub body: Option<crate::Value<String>>,
         /// Property [`ImageIconUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-imageiconurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_icon_url: Option<::Value<String>>,
+        pub image_icon_url: Option<crate::Value<String>>,
         /// Property [`ImageUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-imageurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_url: Option<::Value<String>>,
+        pub image_url: Option<crate::Value<String>>,
         /// Property [`SmallImageIconUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-smallimageiconurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub small_image_icon_url: Option<::Value<String>>,
+        pub small_image_icon_url: Option<crate::Value<String>>,
         /// Property [`Sound`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-sound).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sound: Option<::Value<String>>,
+        pub sound: Option<crate::Value<String>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-title).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub title: Option<::Value<String>>,
+        pub title: Option<crate::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<::Value<String>>,
+        pub url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for AndroidPushNotificationTemplate {
+    impl crate::codec::SerializeValue for AndroidPushNotificationTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action) = self.action {
@@ -6289,7 +6289,7 @@ pub mod push_template {
         }
     }
 
-    impl ::codec::DeserializeValue for AndroidPushNotificationTemplate {
+    impl crate::codec::DeserializeValue for AndroidPushNotificationTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AndroidPushNotificationTemplate, D::Error> {
@@ -6306,14 +6306,14 @@ pub mod push_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<String>> = None;
-                    let mut body: Option<::Value<String>> = None;
-                    let mut image_icon_url: Option<::Value<String>> = None;
-                    let mut image_url: Option<::Value<String>> = None;
-                    let mut small_image_icon_url: Option<::Value<String>> = None;
-                    let mut sound: Option<::Value<String>> = None;
-                    let mut title: Option<::Value<String>> = None;
-                    let mut url: Option<::Value<String>> = None;
+                    let mut action: Option<crate::Value<String>> = None;
+                    let mut body: Option<crate::Value<String>> = None;
+                    let mut image_icon_url: Option<crate::Value<String>> = None;
+                    let mut image_url: Option<crate::Value<String>> = None;
+                    let mut small_image_icon_url: Option<crate::Value<String>> = None;
+                    let mut sound: Option<crate::Value<String>> = None;
+                    let mut title: Option<crate::Value<String>> = None;
+                    let mut url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6372,30 +6372,30 @@ pub mod push_template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: Option<::Value<String>>,
+        pub action: Option<crate::Value<String>>,
         /// Property [`Body`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-defaultpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-defaultpushnotificationtemplate-body).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub body: Option<::Value<String>>,
+        pub body: Option<crate::Value<String>>,
         /// Property [`Sound`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-defaultpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-defaultpushnotificationtemplate-sound).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sound: Option<::Value<String>>,
+        pub sound: Option<crate::Value<String>>,
         /// Property [`Title`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-defaultpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-defaultpushnotificationtemplate-title).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub title: Option<::Value<String>>,
+        pub title: Option<crate::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-defaultpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-defaultpushnotificationtemplate-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<::Value<String>>,
+        pub url: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for DefaultPushNotificationTemplate {
+    impl crate::codec::SerializeValue for DefaultPushNotificationTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action) = self.action {
@@ -6417,7 +6417,7 @@ pub mod push_template {
         }
     }
 
-    impl ::codec::DeserializeValue for DefaultPushNotificationTemplate {
+    impl crate::codec::DeserializeValue for DefaultPushNotificationTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DefaultPushNotificationTemplate, D::Error> {
@@ -6434,11 +6434,11 @@ pub mod push_template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<::Value<String>> = None;
-                    let mut body: Option<::Value<String>> = None;
-                    let mut sound: Option<::Value<String>> = None;
-                    let mut title: Option<::Value<String>> = None;
-                    let mut url: Option<::Value<String>> = None;
+                    let mut action: Option<crate::Value<String>> = None;
+                    let mut body: Option<crate::Value<String>> = None;
+                    let mut sound: Option<crate::Value<String>> = None;
+                    let mut title: Option<crate::Value<String>> = None;
+                    let mut url: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6488,15 +6488,15 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_type: Option<::Value<String>>,
+        pub attribute_type: Option<crate::Value<String>>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-attributedimension.html#cfn-pinpoint-segment-attributedimension-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<::ValueList<String>>,
+        pub values: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for AttributeDimension {
+    impl crate::codec::SerializeValue for AttributeDimension {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attribute_type) = self.attribute_type {
@@ -6513,7 +6513,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for AttributeDimension {
+    impl crate::codec::DeserializeValue for AttributeDimension {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AttributeDimension, D::Error> {
@@ -6530,8 +6530,8 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_type: Option<::Value<String>> = None;
-                    let mut values: Option<::ValueList<String>> = None;
+                    let mut attribute_type: Option<crate::Value<String>> = None;
+                    let mut values: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6565,10 +6565,10 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub recency: Option<::Value<Recency>>,
+        pub recency: Option<crate::Value<Recency>>,
     }
 
-    impl ::codec::SerializeValue for Behavior {
+    impl crate::codec::SerializeValue for Behavior {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref recency) = self.recency {
@@ -6578,7 +6578,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for Behavior {
+    impl crate::codec::DeserializeValue for Behavior {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Behavior, D::Error> {
             struct Visitor;
 
@@ -6593,7 +6593,7 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut recency: Option<::Value<Recency>> = None;
+                    let mut recency: Option<crate::Value<Recency>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6621,15 +6621,15 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub latitude: ::Value<f64>,
+        pub latitude: crate::Value<f64>,
         /// Property [`Longitude`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates-longitude).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub longitude: ::Value<f64>,
+        pub longitude: crate::Value<f64>,
     }
 
-    impl ::codec::SerializeValue for Coordinates {
+    impl crate::codec::SerializeValue for Coordinates {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Latitude", &self.latitude)?;
@@ -6638,7 +6638,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for Coordinates {
+    impl crate::codec::DeserializeValue for Coordinates {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Coordinates, D::Error> {
             struct Visitor;
 
@@ -6653,8 +6653,8 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut latitude: Option<::Value<f64>> = None;
-                    let mut longitude: Option<::Value<f64>> = None;
+                    let mut latitude: Option<crate::Value<f64>> = None;
+                    let mut longitude: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6689,35 +6689,35 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub app_version: Option<::Value<SetDimension>>,
+        pub app_version: Option<crate::Value<SetDimension>>,
         /// Property [`Channel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-channel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub channel: Option<::Value<SetDimension>>,
+        pub channel: Option<crate::Value<SetDimension>>,
         /// Property [`DeviceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-devicetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub device_type: Option<::Value<SetDimension>>,
+        pub device_type: Option<crate::Value<SetDimension>>,
         /// Property [`Make`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-make).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub make: Option<::Value<SetDimension>>,
+        pub make: Option<crate::Value<SetDimension>>,
         /// Property [`Model`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-model).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub model: Option<::Value<SetDimension>>,
+        pub model: Option<crate::Value<SetDimension>>,
         /// Property [`Platform`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-platform).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub platform: Option<::Value<SetDimension>>,
+        pub platform: Option<crate::Value<SetDimension>>,
     }
 
-    impl ::codec::SerializeValue for Demographic {
+    impl crate::codec::SerializeValue for Demographic {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref app_version) = self.app_version {
@@ -6742,7 +6742,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for Demographic {
+    impl crate::codec::DeserializeValue for Demographic {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Demographic, D::Error> {
             struct Visitor;
 
@@ -6757,12 +6757,12 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut app_version: Option<::Value<SetDimension>> = None;
-                    let mut channel: Option<::Value<SetDimension>> = None;
-                    let mut device_type: Option<::Value<SetDimension>> = None;
-                    let mut make: Option<::Value<SetDimension>> = None;
-                    let mut model: Option<::Value<SetDimension>> = None;
-                    let mut platform: Option<::Value<SetDimension>> = None;
+                    let mut app_version: Option<crate::Value<SetDimension>> = None;
+                    let mut channel: Option<crate::Value<SetDimension>> = None;
+                    let mut device_type: Option<crate::Value<SetDimension>> = None;
+                    let mut make: Option<crate::Value<SetDimension>> = None;
+                    let mut model: Option<crate::Value<SetDimension>> = None;
+                    let mut platform: Option<crate::Value<SetDimension>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6812,15 +6812,15 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub coordinates: ::Value<Coordinates>,
+        pub coordinates: crate::Value<Coordinates>,
         /// Property [`RangeInKilometers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-rangeinkilometers).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub range_in_kilometers: ::Value<f64>,
+        pub range_in_kilometers: crate::Value<f64>,
     }
 
-    impl ::codec::SerializeValue for GPSPoint {
+    impl crate::codec::SerializeValue for GPSPoint {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -6837,7 +6837,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for GPSPoint {
+    impl crate::codec::DeserializeValue for GPSPoint {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GPSPoint, D::Error> {
             struct Visitor;
 
@@ -6852,8 +6852,8 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut coordinates: Option<::Value<Coordinates>> = None;
-                    let mut range_in_kilometers: Option<::Value<f64>> = None;
+                    let mut coordinates: Option<crate::Value<Coordinates>> = None;
+                    let mut range_in_kilometers: Option<crate::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6889,25 +6889,25 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dimensions: Option<::ValueList<SegmentDimensions>>,
+        pub dimensions: Option<crate::ValueList<SegmentDimensions>>,
         /// Property [`SourceSegments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_segments: Option<::ValueList<SourceSegments>>,
+        pub source_segments: Option<crate::ValueList<SourceSegments>>,
         /// Property [`SourceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html#cfn-pinpoint-segment-segmentgroups-groups-sourcetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_type: Option<::Value<String>>,
+        pub source_type: Option<crate::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html#cfn-pinpoint-segment-segmentgroups-groups-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<::Value<String>>,
+        pub r#type: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for Groups {
+    impl crate::codec::SerializeValue for Groups {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dimensions) = self.dimensions {
@@ -6930,7 +6930,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for Groups {
+    impl crate::codec::DeserializeValue for Groups {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Groups, D::Error> {
             struct Visitor;
 
@@ -6945,10 +6945,10 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dimensions: Option<::ValueList<SegmentDimensions>> = None;
-                    let mut source_segments: Option<::ValueList<SourceSegments>> = None;
-                    let mut source_type: Option<::Value<String>> = None;
-                    let mut r#type: Option<::Value<String>> = None;
+                    let mut dimensions: Option<crate::ValueList<SegmentDimensions>> = None;
+                    let mut source_segments: Option<crate::ValueList<SourceSegments>> = None;
+                    let mut source_type: Option<crate::Value<String>> = None;
+                    let mut r#type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6990,15 +6990,15 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub country: Option<::Value<SetDimension>>,
+        pub country: Option<crate::Value<SetDimension>>,
         /// Property [`GPSPoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gps_point: Option<::Value<GPSPoint>>,
+        pub gps_point: Option<crate::Value<GPSPoint>>,
     }
 
-    impl ::codec::SerializeValue for Location {
+    impl crate::codec::SerializeValue for Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref country) = self.country {
@@ -7011,7 +7011,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for Location {
+    impl crate::codec::DeserializeValue for Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Location, D::Error> {
             struct Visitor;
 
@@ -7026,8 +7026,8 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut country: Option<::Value<SetDimension>> = None;
-                    let mut gps_point: Option<::Value<GPSPoint>> = None;
+                    let mut country: Option<crate::Value<SetDimension>> = None;
+                    let mut gps_point: Option<crate::Value<GPSPoint>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7061,15 +7061,15 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration: ::Value<String>,
+        pub duration: crate::Value<String>,
         /// Property [`RecencyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior-recency.html#cfn-pinpoint-segment-segmentdimensions-behavior-recency-recencytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub recency_type: ::Value<String>,
+        pub recency_type: crate::Value<String>,
     }
 
-    impl ::codec::SerializeValue for Recency {
+    impl crate::codec::SerializeValue for Recency {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Duration", &self.duration)?;
@@ -7082,7 +7082,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for Recency {
+    impl crate::codec::DeserializeValue for Recency {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Recency, D::Error> {
             struct Visitor;
 
@@ -7097,8 +7097,8 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration: Option<::Value<String>> = None;
-                    let mut recency_type: Option<::Value<String>> = None;
+                    let mut duration: Option<crate::Value<String>> = None;
+                    let mut recency_type: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7133,35 +7133,35 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attributes: Option<::Value<::json::Value>>,
+        pub attributes: Option<crate::Value<crate::json::Value>>,
         /// Property [`Behavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-behavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub behavior: Option<::Value<Behavior>>,
+        pub behavior: Option<crate::Value<Behavior>>,
         /// Property [`Demographic`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-demographic).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub demographic: Option<::Value<Demographic>>,
+        pub demographic: Option<crate::Value<Demographic>>,
         /// Property [`Location`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-location).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: Option<::Value<Location>>,
+        pub location: Option<crate::Value<Location>>,
         /// Property [`Metrics`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-metrics).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metrics: Option<::Value<::json::Value>>,
+        pub metrics: Option<crate::Value<crate::json::Value>>,
         /// Property [`UserAttributes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-userattributes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_attributes: Option<::Value<::json::Value>>,
+        pub user_attributes: Option<crate::Value<crate::json::Value>>,
     }
 
-    impl ::codec::SerializeValue for SegmentDimensions {
+    impl crate::codec::SerializeValue for SegmentDimensions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attributes) = self.attributes {
@@ -7190,7 +7190,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for SegmentDimensions {
+    impl crate::codec::DeserializeValue for SegmentDimensions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SegmentDimensions, D::Error> {
@@ -7207,12 +7207,12 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attributes: Option<::Value<::json::Value>> = None;
-                    let mut behavior: Option<::Value<Behavior>> = None;
-                    let mut demographic: Option<::Value<Demographic>> = None;
-                    let mut location: Option<::Value<Location>> = None;
-                    let mut metrics: Option<::Value<::json::Value>> = None;
-                    let mut user_attributes: Option<::Value<::json::Value>> = None;
+                    let mut attributes: Option<crate::Value<crate::json::Value>> = None;
+                    let mut behavior: Option<crate::Value<Behavior>> = None;
+                    let mut demographic: Option<crate::Value<Demographic>> = None;
+                    let mut location: Option<crate::Value<Location>> = None;
+                    let mut metrics: Option<crate::Value<crate::json::Value>> = None;
+                    let mut user_attributes: Option<crate::Value<crate::json::Value>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7262,15 +7262,15 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub groups: Option<::ValueList<Groups>>,
+        pub groups: Option<crate::ValueList<Groups>>,
         /// Property [`Include`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups.html#cfn-pinpoint-segment-segmentgroups-include).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include: Option<::Value<String>>,
+        pub include: Option<crate::Value<String>>,
     }
 
-    impl ::codec::SerializeValue for SegmentGroups {
+    impl crate::codec::SerializeValue for SegmentGroups {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref groups) = self.groups {
@@ -7283,7 +7283,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for SegmentGroups {
+    impl crate::codec::DeserializeValue for SegmentGroups {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SegmentGroups, D::Error> {
@@ -7300,8 +7300,8 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut groups: Option<::ValueList<Groups>> = None;
-                    let mut include: Option<::Value<String>> = None;
+                    let mut groups: Option<crate::ValueList<Groups>> = None;
+                    let mut include: Option<crate::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7335,15 +7335,15 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dimension_type: Option<::Value<String>>,
+        pub dimension_type: Option<crate::Value<String>>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-setdimension.html#cfn-pinpoint-segment-setdimension-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<::ValueList<String>>,
+        pub values: Option<crate::ValueList<String>>,
     }
 
-    impl ::codec::SerializeValue for SetDimension {
+    impl crate::codec::SerializeValue for SetDimension {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dimension_type) = self.dimension_type {
@@ -7360,7 +7360,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for SetDimension {
+    impl crate::codec::DeserializeValue for SetDimension {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SetDimension, D::Error> {
             struct Visitor;
 
@@ -7375,8 +7375,8 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dimension_type: Option<::Value<String>> = None;
-                    let mut values: Option<::ValueList<String>> = None;
+                    let mut dimension_type: Option<crate::Value<String>> = None;
+                    let mut values: Option<crate::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7410,15 +7410,15 @@ pub mod segment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: ::Value<String>,
+        pub id: crate::Value<String>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<::Value<u32>>,
+        pub version: Option<crate::Value<u32>>,
     }
 
-    impl ::codec::SerializeValue for SourceSegments {
+    impl crate::codec::SerializeValue for SourceSegments {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Id", &self.id)?;
@@ -7429,7 +7429,7 @@ pub mod segment {
         }
     }
 
-    impl ::codec::DeserializeValue for SourceSegments {
+    impl crate::codec::DeserializeValue for SourceSegments {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SourceSegments, D::Error> {
@@ -7446,8 +7446,8 @@ pub mod segment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<::Value<String>> = None;
-                    let mut version: Option<::Value<u32>> = None;
+                    let mut id: Option<crate::Value<String>> = None;
+                    let mut version: Option<crate::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
