@@ -3,7 +3,7 @@
 /// The [`AWS::MediaTailor::PlaybackConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html) resource type.
 #[derive(Debug, Default)]
 pub struct PlaybackConfiguration {
-    properties: PlaybackConfigurationProperties
+    properties: PlaybackConfigurationProperties,
 }
 
 /// Properties for the `PlaybackConfiguration` resource.
@@ -43,12 +43,14 @@ pub struct PlaybackConfigurationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub live_pre_roll_configuration: Option<::Value<self::playback_configuration::LivePreRollConfiguration>>,
+    pub live_pre_roll_configuration:
+        Option<::Value<self::playback_configuration::LivePreRollConfiguration>>,
     /// Property [`ManifestProcessingRules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-manifestprocessingrules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub manifest_processing_rules: Option<::Value<self::playback_configuration::ManifestProcessingRules>>,
+    pub manifest_processing_rules:
+        Option<::Value<self::playback_configuration::ManifestProcessingRules>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-name).
     ///
     /// Update type: _Immutable_.
@@ -89,34 +91,73 @@ pub struct PlaybackConfigurationProperties {
 impl ::serde::Serialize for PlaybackConfigurationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdDecisionServerUrl", &self.ad_decision_server_url)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AdDecisionServerUrl",
+            &self.ad_decision_server_url,
+        )?;
         if let Some(ref avail_suppression) = self.avail_suppression {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailSuppression", avail_suppression)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AvailSuppression",
+                avail_suppression,
+            )?;
         }
         if let Some(ref bumper) = self.bumper {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bumper", bumper)?;
         }
         if let Some(ref cdn_configuration) = self.cdn_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CdnConfiguration", cdn_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CdnConfiguration",
+                cdn_configuration,
+            )?;
         }
         if let Some(ref configuration_aliases) = self.configuration_aliases {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConfigurationAliases", configuration_aliases)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ConfigurationAliases",
+                configuration_aliases,
+            )?;
         }
         if let Some(ref dash_configuration) = self.dash_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DashConfiguration", dash_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DashConfiguration",
+                dash_configuration,
+            )?;
         }
         if let Some(ref live_pre_roll_configuration) = self.live_pre_roll_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LivePreRollConfiguration", live_pre_roll_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LivePreRollConfiguration",
+                live_pre_roll_configuration,
+            )?;
         }
         if let Some(ref manifest_processing_rules) = self.manifest_processing_rules {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManifestProcessingRules", manifest_processing_rules)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ManifestProcessingRules",
+                manifest_processing_rules,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
-        if let Some(ref personalization_threshold_seconds) = self.personalization_threshold_seconds {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PersonalizationThresholdSeconds", personalization_threshold_seconds)?;
+        if let Some(ref personalization_threshold_seconds) = self.personalization_threshold_seconds
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PersonalizationThresholdSeconds",
+                personalization_threshold_seconds,
+            )?;
         }
-        if let Some(ref session_initialization_endpoint_prefix) = self.session_initialization_endpoint_prefix {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SessionInitializationEndpointPrefix", session_initialization_endpoint_prefix)?;
+        if let Some(ref session_initialization_endpoint_prefix) =
+            self.session_initialization_endpoint_prefix
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SessionInitializationEndpointPrefix",
+                session_initialization_endpoint_prefix,
+            )?;
         }
         if let Some(ref slate_ad_url) = self.slate_ad_url {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SlateAdUrl", slate_ad_url)?;
@@ -125,15 +166,25 @@ impl ::serde::Serialize for PlaybackConfigurationProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref transcode_profile_name) = self.transcode_profile_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TranscodeProfileName", transcode_profile_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TranscodeProfileName",
+                transcode_profile_name,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "VideoContentSourceUrl", &self.video_content_source_url)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "VideoContentSourceUrl",
+            &self.video_content_source_url,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for PlaybackConfigurationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PlaybackConfigurationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PlaybackConfigurationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -143,15 +194,28 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackConfigurationProperties {
                 write!(f, "a struct of type PlaybackConfigurationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut ad_decision_server_url: Option<::Value<String>> = None;
-                let mut avail_suppression: Option<::Value<self::playback_configuration::AvailSuppression>> = None;
+                let mut avail_suppression: Option<
+                    ::Value<self::playback_configuration::AvailSuppression>,
+                > = None;
                 let mut bumper: Option<::Value<self::playback_configuration::Bumper>> = None;
-                let mut cdn_configuration: Option<::Value<self::playback_configuration::CdnConfiguration>> = None;
+                let mut cdn_configuration: Option<
+                    ::Value<self::playback_configuration::CdnConfiguration>,
+                > = None;
                 let mut configuration_aliases: Option<::ValueMap<::json::Value>> = None;
-                let mut dash_configuration: Option<::Value<self::playback_configuration::DashConfigurationForPut>> = None;
-                let mut live_pre_roll_configuration: Option<::Value<self::playback_configuration::LivePreRollConfiguration>> = None;
-                let mut manifest_processing_rules: Option<::Value<self::playback_configuration::ManifestProcessingRules>> = None;
+                let mut dash_configuration: Option<
+                    ::Value<self::playback_configuration::DashConfigurationForPut>,
+                > = None;
+                let mut live_pre_roll_configuration: Option<
+                    ::Value<self::playback_configuration::LivePreRollConfiguration>,
+                > = None;
+                let mut manifest_processing_rules: Option<
+                    ::Value<self::playback_configuration::ManifestProcessingRules>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut personalization_threshold_seconds: Option<::Value<u32>> = None;
                 let mut session_initialization_endpoint_prefix: Option<::Value<String>> = None;
@@ -181,19 +245,23 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackConfigurationProperties {
                             dash_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "LivePreRollConfiguration" => {
-                            live_pre_roll_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            live_pre_roll_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ManifestProcessingRules" => {
-                            manifest_processing_rules = ::serde::de::MapAccess::next_value(&mut map)?;
+                            manifest_processing_rules =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Name" => {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PersonalizationThresholdSeconds" => {
-                            personalization_threshold_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                            personalization_threshold_seconds =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SessionInitializationEndpointPrefix" => {
-                            session_initialization_endpoint_prefix = ::serde::de::MapAccess::next_value(&mut map)?;
+                            session_initialization_endpoint_prefix =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SlateAdUrl" => {
                             slate_ad_url = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -205,14 +273,16 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackConfigurationProperties {
                             transcode_profile_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "VideoContentSourceUrl" => {
-                            video_content_source_url = ::serde::de::MapAccess::next_value(&mut map)?;
+                            video_content_source_url =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
                 }
 
                 Ok(PlaybackConfigurationProperties {
-                    ad_decision_server_url: ad_decision_server_url.ok_or(::serde::de::Error::missing_field("AdDecisionServerUrl"))?,
+                    ad_decision_server_url: ad_decision_server_url
+                        .ok_or(::serde::de::Error::missing_field("AdDecisionServerUrl"))?,
                     avail_suppression: avail_suppression,
                     bumper: bumper,
                     cdn_configuration: cdn_configuration,
@@ -226,7 +296,8 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackConfigurationProperties {
                     slate_ad_url: slate_ad_url,
                     tags: tags,
                     transcode_profile_name: transcode_profile_name,
-                    video_content_source_url: video_content_source_url.ok_or(::serde::de::Error::missing_field("VideoContentSourceUrl"))?,
+                    video_content_source_url: video_content_source_url
+                        .ok_or(::serde::de::Error::missing_field("VideoContentSourceUrl"))?,
                 })
             }
         }
@@ -278,7 +349,9 @@ pub mod playback_configuration {
     }
 
     impl ::codec::DeserializeValue for AdMarkerPassthrough {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AdMarkerPassthrough, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AdMarkerPassthrough, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -288,10 +361,15 @@ pub mod playback_configuration {
                     write!(f, "a struct of type AdMarkerPassthrough")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut enabled: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Enabled" => {
                                 enabled = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -300,9 +378,7 @@ pub mod playback_configuration {
                         }
                     }
 
-                    Ok(AdMarkerPassthrough {
-                        enabled: enabled,
-                    })
+                    Ok(AdMarkerPassthrough { enabled: enabled })
                 }
             }
 
@@ -339,7 +415,9 @@ pub mod playback_configuration {
     }
 
     impl ::codec::DeserializeValue for AvailSuppression {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AvailSuppression, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AvailSuppression, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -349,11 +427,16 @@ pub mod playback_configuration {
                     write!(f, "a struct of type AvailSuppression")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut mode: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Mode" => {
                                 mode = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -415,11 +498,16 @@ pub mod playback_configuration {
                     write!(f, "a struct of type Bumper")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut end_url: Option<::Value<String>> = None;
                     let mut start_url: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EndUrl" => {
                                 end_url = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -461,17 +549,27 @@ pub mod playback_configuration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_segment_url_prefix) = self.ad_segment_url_prefix {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdSegmentUrlPrefix", ad_segment_url_prefix)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AdSegmentUrlPrefix",
+                    ad_segment_url_prefix,
+                )?;
             }
             if let Some(ref content_segment_url_prefix) = self.content_segment_url_prefix {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContentSegmentUrlPrefix", content_segment_url_prefix)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContentSegmentUrlPrefix",
+                    content_segment_url_prefix,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CdnConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CdnConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CdnConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -481,17 +579,24 @@ pub mod playback_configuration {
                     write!(f, "a struct of type CdnConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ad_segment_url_prefix: Option<::Value<String>> = None;
                     let mut content_segment_url_prefix: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdSegmentUrlPrefix" => {
-                                ad_segment_url_prefix = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ad_segment_url_prefix =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ContentSegmentUrlPrefix" => {
-                                content_segment_url_prefix = ::serde::de::MapAccess::next_value(&mut map)?;
+                                content_segment_url_prefix =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -530,14 +635,20 @@ pub mod playback_configuration {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MpdLocation", mpd_location)?;
             }
             if let Some(ref origin_manifest_type) = self.origin_manifest_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "OriginManifestType", origin_manifest_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "OriginManifestType",
+                    origin_manifest_type,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DashConfigurationForPut {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DashConfigurationForPut, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DashConfigurationForPut, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -547,17 +658,23 @@ pub mod playback_configuration {
                     write!(f, "a struct of type DashConfigurationForPut")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut mpd_location: Option<::Value<String>> = None;
                     let mut origin_manifest_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MpdLocation" => {
                                 mpd_location = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "OriginManifestType" => {
-                                origin_manifest_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                                origin_manifest_type =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -593,17 +710,27 @@ pub mod playback_configuration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_decision_server_url) = self.ad_decision_server_url {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdDecisionServerUrl", ad_decision_server_url)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AdDecisionServerUrl",
+                    ad_decision_server_url,
+                )?;
             }
             if let Some(ref max_duration_seconds) = self.max_duration_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxDurationSeconds", max_duration_seconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaxDurationSeconds",
+                    max_duration_seconds,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for LivePreRollConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LivePreRollConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LivePreRollConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -613,17 +740,24 @@ pub mod playback_configuration {
                     write!(f, "a struct of type LivePreRollConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ad_decision_server_url: Option<::Value<String>> = None;
                     let mut max_duration_seconds: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdDecisionServerUrl" => {
-                                ad_decision_server_url = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ad_decision_server_url =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxDurationSeconds" => {
-                                max_duration_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
+                                max_duration_seconds =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -654,14 +788,20 @@ pub mod playback_configuration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_marker_passthrough) = self.ad_marker_passthrough {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdMarkerPassthrough", ad_marker_passthrough)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AdMarkerPassthrough",
+                    ad_marker_passthrough,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ManifestProcessingRules {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ManifestProcessingRules, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ManifestProcessingRules, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -671,13 +811,19 @@ pub mod playback_configuration {
                     write!(f, "a struct of type ManifestProcessingRules")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ad_marker_passthrough: Option<::Value<AdMarkerPassthrough>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AdMarkerPassthrough" => {
-                                ad_marker_passthrough = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ad_marker_passthrough =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }

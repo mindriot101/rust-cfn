@@ -3,7 +3,7 @@
 /// The [`AWS::IoTThingsGraph::FlowTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html) resource type.
 #[derive(Debug, Default)]
 pub struct FlowTemplate {
-    properties: FlowTemplateProperties
+    properties: FlowTemplateProperties,
 }
 
 /// Properties for the `FlowTemplate` resource.
@@ -25,7 +25,11 @@ impl ::serde::Serialize for FlowTemplateProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref compatible_namespace_version) = self.compatible_namespace_version {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CompatibleNamespaceVersion", compatible_namespace_version)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CompatibleNamespaceVersion",
+                compatible_namespace_version,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Definition", &self.definition)?;
         ::serde::ser::SerializeMap::end(map)
@@ -33,7 +37,9 @@ impl ::serde::Serialize for FlowTemplateProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for FlowTemplateProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<FlowTemplateProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<FlowTemplateProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -43,14 +49,18 @@ impl<'de> ::serde::Deserialize<'de> for FlowTemplateProperties {
                 write!(f, "a struct of type FlowTemplateProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut compatible_namespace_version: Option<::Value<f64>> = None;
                 let mut definition: Option<::Value<self::flow_template::DefinitionDocument>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "CompatibleNamespaceVersion" => {
-                            compatible_namespace_version = ::serde::de::MapAccess::next_value(&mut map)?;
+                            compatible_namespace_version =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Definition" => {
                             definition = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -61,7 +71,8 @@ impl<'de> ::serde::Deserialize<'de> for FlowTemplateProperties {
 
                 Ok(FlowTemplateProperties {
                     compatible_namespace_version: compatible_namespace_version,
-                    definition: definition.ok_or(::serde::de::Error::missing_field("Definition"))?,
+                    definition: definition
+                        .ok_or(::serde::de::Error::missing_field("Definition"))?,
                 })
             }
         }
@@ -117,7 +128,9 @@ pub mod flow_template {
     }
 
     impl ::codec::DeserializeValue for DefinitionDocument {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DefinitionDocument, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DefinitionDocument, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -127,11 +140,16 @@ pub mod flow_template {
                     write!(f, "a struct of type DefinitionDocument")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut language: Option<::Value<String>> = None;
                     let mut text: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Language" => {
                                 language = ::serde::de::MapAccess::next_value(&mut map)?;

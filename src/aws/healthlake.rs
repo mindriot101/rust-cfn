@@ -3,7 +3,7 @@
 /// The [`AWS::HealthLake::FHIRDatastore`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html) resource type.
 #[derive(Debug, Default)]
 pub struct FHIRDatastore {
-    properties: FHIRDatastoreProperties
+    properties: FHIRDatastoreProperties,
 }
 
 /// Properties for the `FHIRDatastore` resource.
@@ -42,12 +42,24 @@ impl ::serde::Serialize for FHIRDatastoreProperties {
         if let Some(ref datastore_name) = self.datastore_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatastoreName", datastore_name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatastoreTypeVersion", &self.datastore_type_version)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DatastoreTypeVersion",
+            &self.datastore_type_version,
+        )?;
         if let Some(ref preload_data_config) = self.preload_data_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreloadDataConfig", preload_data_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PreloadDataConfig",
+                preload_data_config,
+            )?;
         }
         if let Some(ref sse_configuration) = self.sse_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SseConfiguration", sse_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SseConfiguration",
+                sse_configuration,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -57,7 +69,9 @@ impl ::serde::Serialize for FHIRDatastoreProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for FHIRDatastoreProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<FHIRDatastoreProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<FHIRDatastoreProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -67,11 +81,17 @@ impl<'de> ::serde::Deserialize<'de> for FHIRDatastoreProperties {
                 write!(f, "a struct of type FHIRDatastoreProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut datastore_name: Option<::Value<String>> = None;
                 let mut datastore_type_version: Option<::Value<String>> = None;
-                let mut preload_data_config: Option<::Value<self::fhir_datastore::PreloadDataConfig>> = None;
-                let mut sse_configuration: Option<::Value<self::fhir_datastore::SseConfiguration>> = None;
+                let mut preload_data_config: Option<
+                    ::Value<self::fhir_datastore::PreloadDataConfig>,
+                > = None;
+                let mut sse_configuration: Option<::Value<self::fhir_datastore::SseConfiguration>> =
+                    None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -97,7 +117,8 @@ impl<'de> ::serde::Deserialize<'de> for FHIRDatastoreProperties {
 
                 Ok(FHIRDatastoreProperties {
                     datastore_name: datastore_name,
-                    datastore_type_version: datastore_type_version.ok_or(::serde::de::Error::missing_field("DatastoreTypeVersion"))?,
+                    datastore_type_version: datastore_type_version
+                        .ok_or(::serde::de::Error::missing_field("DatastoreTypeVersion"))?,
                     preload_data_config: preload_data_config,
                     sse_configuration: sse_configuration,
                     tags: tags,
@@ -158,7 +179,9 @@ pub mod fhir_datastore {
     }
 
     impl ::codec::DeserializeValue for KmsEncryptionConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KmsEncryptionConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<KmsEncryptionConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -168,11 +191,16 @@ pub mod fhir_datastore {
                     write!(f, "a struct of type KmsEncryptionConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cmk_type: Option<::Value<String>> = None;
                     let mut kms_key_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CmkType" => {
                                 cmk_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -208,13 +236,19 @@ pub mod fhir_datastore {
     impl ::codec::SerializeValue for PreloadDataConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PreloadDataType", &self.preload_data_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PreloadDataType",
+                &self.preload_data_type,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for PreloadDataConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PreloadDataConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PreloadDataConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -224,10 +258,15 @@ pub mod fhir_datastore {
                     write!(f, "a struct of type PreloadDataConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut preload_data_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PreloadDataType" => {
                                 preload_data_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -237,7 +276,8 @@ pub mod fhir_datastore {
                     }
 
                     Ok(PreloadDataConfig {
-                        preload_data_type: preload_data_type.ok_or(::serde::de::Error::missing_field("PreloadDataType"))?,
+                        preload_data_type: preload_data_type
+                            .ok_or(::serde::de::Error::missing_field("PreloadDataType"))?,
                     })
                 }
             }
@@ -259,13 +299,19 @@ pub mod fhir_datastore {
     impl ::codec::SerializeValue for SseConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsEncryptionConfig", &self.kms_encryption_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KmsEncryptionConfig",
+                &self.kms_encryption_config,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SseConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SseConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SseConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -275,20 +321,27 @@ pub mod fhir_datastore {
                     write!(f, "a struct of type SseConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut kms_encryption_config: Option<::Value<KmsEncryptionConfig>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "KmsEncryptionConfig" => {
-                                kms_encryption_config = ::serde::de::MapAccess::next_value(&mut map)?;
+                                kms_encryption_config =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(SseConfiguration {
-                        kms_encryption_config: kms_encryption_config.ok_or(::serde::de::Error::missing_field("KmsEncryptionConfig"))?,
+                        kms_encryption_config: kms_encryption_config
+                            .ok_or(::serde::de::Error::missing_field("KmsEncryptionConfig"))?,
                     })
                 }
             }

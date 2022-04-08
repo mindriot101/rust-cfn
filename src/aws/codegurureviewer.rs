@@ -3,7 +3,7 @@
 /// The [`AWS::CodeGuruReviewer::RepositoryAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codegurureviewer-repositoryassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct RepositoryAssociation {
-    properties: RepositoryAssociationProperties
+    properties: RepositoryAssociationProperties,
 }
 
 /// Properties for the `RepositoryAssociation` resource.
@@ -63,7 +63,9 @@ impl ::serde::Serialize for RepositoryAssociationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RepositoryAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RepositoryAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RepositoryAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -73,7 +75,10 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryAssociationProperties {
                 write!(f, "a struct of type RepositoryAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut bucket_name: Option<::Value<String>> = None;
                 let mut connection_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;

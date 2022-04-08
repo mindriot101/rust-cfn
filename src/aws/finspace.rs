@@ -3,7 +3,7 @@
 /// The [`AWS::FinSpace::Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html) resource type.
 #[derive(Debug, Default)]
 pub struct Environment {
-    properties: EnvironmentProperties
+    properties: EnvironmentProperties,
 }
 
 /// Properties for the `Environment` resource.
@@ -56,17 +56,29 @@ impl ::serde::Serialize for EnvironmentProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref federation_mode) = self.federation_mode {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FederationMode", federation_mode)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FederationMode",
+                federation_mode,
+            )?;
         }
         if let Some(ref federation_parameters) = self.federation_parameters {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FederationParameters", federation_parameters)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FederationParameters",
+                federation_parameters,
+            )?;
         }
         if let Some(ref kms_key_id) = self.kms_key_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyId", kms_key_id)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref superuser_parameters) = self.superuser_parameters {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SuperuserParameters", superuser_parameters)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SuperuserParameters",
+                superuser_parameters,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -83,14 +95,21 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 write!(f, "a struct of type EnvironmentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data_bundles: Option<::ValueList<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut federation_mode: Option<::Value<String>> = None;
-                let mut federation_parameters: Option<::Value<self::environment::FederationParameters>> = None;
+                let mut federation_parameters: Option<
+                    ::Value<self::environment::FederationParameters>,
+                > = None;
                 let mut kms_key_id: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut superuser_parameters: Option<::Value<self::environment::SuperuserParameters>> = None;
+                let mut superuser_parameters: Option<
+                    ::Value<self::environment::SuperuserParameters>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -196,29 +215,55 @@ pub mod environment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref application_call_back_url) = self.application_call_back_url {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationCallBackURL", application_call_back_url)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ApplicationCallBackURL",
+                    application_call_back_url,
+                )?;
             }
             if let Some(ref attribute_map) = self.attribute_map {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AttributeMap", attribute_map)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AttributeMap",
+                    attribute_map,
+                )?;
             }
             if let Some(ref federation_provider_name) = self.federation_provider_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FederationProviderName", federation_provider_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FederationProviderName",
+                    federation_provider_name,
+                )?;
             }
             if let Some(ref federation_urn) = self.federation_urn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FederationURN", federation_urn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FederationURN",
+                    federation_urn,
+                )?;
             }
             if let Some(ref saml_metadata_document) = self.saml_metadata_document {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SamlMetadataDocument", saml_metadata_document)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SamlMetadataDocument",
+                    saml_metadata_document,
+                )?;
             }
             if let Some(ref saml_metadata_url) = self.saml_metadata_url {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SamlMetadataURL", saml_metadata_url)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SamlMetadataURL",
+                    saml_metadata_url,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FederationParameters {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FederationParameters, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FederationParameters, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -228,7 +273,10 @@ pub mod environment {
                     write!(f, "a struct of type FederationParameters")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut application_call_back_url: Option<::Value<String>> = None;
                     let mut attribute_map: Option<::Value<::json::Value>> = None;
                     let mut federation_provider_name: Option<::Value<String>> = None;
@@ -236,22 +284,27 @@ pub mod environment {
                     let mut saml_metadata_document: Option<::Value<String>> = None;
                     let mut saml_metadata_url: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ApplicationCallBackURL" => {
-                                application_call_back_url = ::serde::de::MapAccess::next_value(&mut map)?;
+                                application_call_back_url =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AttributeMap" => {
                                 attribute_map = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FederationProviderName" => {
-                                federation_provider_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                federation_provider_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FederationURN" => {
                                 federation_urn = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SamlMetadataDocument" => {
-                                saml_metadata_document = ::serde::de::MapAccess::next_value(&mut map)?;
+                                saml_metadata_document =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SamlMetadataURL" => {
                                 saml_metadata_url = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -299,7 +352,11 @@ pub mod environment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref email_address) = self.email_address {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EmailAddress", email_address)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EmailAddress",
+                    email_address,
+                )?;
             }
             if let Some(ref first_name) = self.first_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FirstName", first_name)?;
@@ -312,7 +369,9 @@ pub mod environment {
     }
 
     impl ::codec::DeserializeValue for SuperuserParameters {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SuperuserParameters, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SuperuserParameters, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -322,12 +381,17 @@ pub mod environment {
                     write!(f, "a struct of type SuperuserParameters")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut email_address: Option<::Value<String>> = None;
                     let mut first_name: Option<::Value<String>> = None;
                     let mut last_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EmailAddress" => {
                                 email_address = ::serde::de::MapAccess::next_value(&mut map)?;

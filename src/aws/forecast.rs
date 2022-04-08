@@ -3,7 +3,7 @@
 /// The [`AWS::Forecast::Dataset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html) resource type.
 #[derive(Debug, Default)]
 pub struct Dataset {
-    properties: DatasetProperties
+    properties: DatasetProperties,
 }
 
 /// Properties for the `Dataset` resource.
@@ -56,7 +56,11 @@ impl ::serde::Serialize for DatasetProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetType", &self.dataset_type)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Domain", &self.domain)?;
         if let Some(ref encryption_config) = self.encryption_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionConfig", encryption_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionConfig",
+                encryption_config,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Schema", &self.schema)?;
         if let Some(ref tags) = self.tags {
@@ -77,7 +81,10 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
                 write!(f, "a struct of type DatasetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data_frequency: Option<::Value<String>> = None;
                 let mut dataset_name: Option<::Value<String>> = None;
                 let mut dataset_type: Option<::Value<String>> = None;
@@ -115,8 +122,10 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
 
                 Ok(DatasetProperties {
                     data_frequency: data_frequency,
-                    dataset_name: dataset_name.ok_or(::serde::de::Error::missing_field("DatasetName"))?,
-                    dataset_type: dataset_type.ok_or(::serde::de::Error::missing_field("DatasetType"))?,
+                    dataset_name: dataset_name
+                        .ok_or(::serde::de::Error::missing_field("DatasetName"))?,
+                    dataset_type: dataset_type
+                        .ok_or(::serde::de::Error::missing_field("DatasetType"))?,
                     domain: domain.ok_or(::serde::de::Error::missing_field("Domain"))?,
                     encryption_config: encryption_config,
                     schema: schema.ok_or(::serde::de::Error::missing_field("Schema"))?,
@@ -151,7 +160,7 @@ impl From<DatasetProperties> for Dataset {
 /// The [`AWS::Forecast::DatasetGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct DatasetGroup {
-    properties: DatasetGroupProperties
+    properties: DatasetGroupProperties,
 }
 
 /// Properties for the `DatasetGroup` resource.
@@ -185,7 +194,11 @@ impl ::serde::Serialize for DatasetGroupProperties {
         if let Some(ref dataset_arns) = self.dataset_arns {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetArns", dataset_arns)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatasetGroupName", &self.dataset_group_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DatasetGroupName",
+            &self.dataset_group_name,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Domain", &self.domain)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -195,7 +208,9 @@ impl ::serde::Serialize for DatasetGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<DatasetGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<DatasetGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -205,7 +220,10 @@ impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
                 write!(f, "a struct of type DatasetGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut dataset_arns: Option<::ValueList<String>> = None;
                 let mut dataset_group_name: Option<::Value<String>> = None;
                 let mut domain: Option<::Value<String>> = None;
@@ -231,7 +249,8 @@ impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
 
                 Ok(DatasetGroupProperties {
                     dataset_arns: dataset_arns,
-                    dataset_group_name: dataset_group_name.ok_or(::serde::de::Error::missing_field("DatasetGroupName"))?,
+                    dataset_group_name: dataset_group_name
+                        .ok_or(::serde::de::Error::missing_field("DatasetGroupName"))?,
                     domain: domain.ok_or(::serde::de::Error::missing_field("Domain"))?,
                     tags: tags,
                 })

@@ -1,13 +1,13 @@
-use serde::{Serializer, Deserializer, Deserialize};
 use serde::de::Unexpected;
+use serde::{Deserialize, Deserializer, Serializer};
 
-use super::{SerializeValue, DeserializeValue};
+use super::{DeserializeValue, SerializeValue};
 
 impl SerializeValue for bool {
     fn serialize<S: Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         match *self {
             true => s.serialize_str("true"),
-            false => s.serialize_str("false")
+            false => s.serialize_str("false"),
         }
     }
 }
@@ -17,10 +17,10 @@ impl DeserializeValue for bool {
         match Deserialize::deserialize(d)? {
             "True" | "true" => Ok(true),
             "False" | "false" => Ok(true),
-            string => {
-                Err(::serde::de::Error::invalid_value(Unexpected::Str(string),
-                    &"a boolean identifier"))
-            }
+            string => Err(::serde::de::Error::invalid_value(
+                Unexpected::Str(string),
+                &"a boolean identifier",
+            )),
         }
     }
 }

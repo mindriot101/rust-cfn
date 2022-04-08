@@ -3,7 +3,7 @@
 /// The [`AWS::DirectoryService::MicrosoftAD`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html) resource type.
 #[derive(Debug, Default)]
 pub struct MicrosoftAD {
-    properties: MicrosoftADProperties
+    properties: MicrosoftADProperties,
 }
 
 /// Properties for the `MicrosoftAD` resource.
@@ -79,7 +79,10 @@ impl<'de> ::serde::Deserialize<'de> for MicrosoftADProperties {
                 write!(f, "a struct of type MicrosoftADProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut create_alias: Option<::Value<bool>> = None;
                 let mut edition: Option<::Value<String>> = None;
                 let mut enable_sso: Option<::Value<bool>> = None;
@@ -122,7 +125,8 @@ impl<'de> ::serde::Deserialize<'de> for MicrosoftADProperties {
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     password: password.ok_or(::serde::de::Error::missing_field("Password"))?,
                     short_name: short_name,
-                    vpc_settings: vpc_settings.ok_or(::serde::de::Error::missing_field("VpcSettings"))?,
+                    vpc_settings: vpc_settings
+                        .ok_or(::serde::de::Error::missing_field("VpcSettings"))?,
                 })
             }
         }
@@ -153,7 +157,7 @@ impl From<MicrosoftADProperties> for MicrosoftAD {
 /// The [`AWS::DirectoryService::SimpleAD`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html) resource type.
 #[derive(Debug, Default)]
 pub struct SimpleAD {
-    properties: SimpleADProperties
+    properties: SimpleADProperties,
 }
 
 /// Properties for the `SimpleAD` resource.
@@ -235,7 +239,10 @@ impl<'de> ::serde::Deserialize<'de> for SimpleADProperties {
                 write!(f, "a struct of type SimpleADProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut create_alias: Option<::Value<bool>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut enable_sso: Option<::Value<bool>> = None;
@@ -283,7 +290,8 @@ impl<'de> ::serde::Deserialize<'de> for SimpleADProperties {
                     password: password.ok_or(::serde::de::Error::missing_field("Password"))?,
                     short_name: short_name,
                     size: size.ok_or(::serde::de::Error::missing_field("Size"))?,
-                    vpc_settings: vpc_settings.ok_or(::serde::de::Error::missing_field("VpcSettings"))?,
+                    vpc_settings: vpc_settings
+                        .ok_or(::serde::de::Error::missing_field("VpcSettings"))?,
                 })
             }
         }
@@ -349,11 +357,16 @@ pub mod microsoft_ad {
                     write!(f, "a struct of type VpcSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut subnet_ids: Option<::ValueList<String>> = None;
                     let mut vpc_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SubnetIds" => {
                                 subnet_ids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -366,7 +379,8 @@ pub mod microsoft_ad {
                     }
 
                     Ok(VpcSettings {
-                        subnet_ids: subnet_ids.ok_or(::serde::de::Error::missing_field("SubnetIds"))?,
+                        subnet_ids: subnet_ids
+                            .ok_or(::serde::de::Error::missing_field("SubnetIds"))?,
                         vpc_id: vpc_id.ok_or(::serde::de::Error::missing_field("VpcId"))?,
                     })
                 }
@@ -415,11 +429,16 @@ pub mod simple_ad {
                     write!(f, "a struct of type VpcSettings")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut subnet_ids: Option<::ValueList<String>> = None;
                     let mut vpc_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SubnetIds" => {
                                 subnet_ids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -432,7 +451,8 @@ pub mod simple_ad {
                     }
 
                     Ok(VpcSettings {
-                        subnet_ids: subnet_ids.ok_or(::serde::de::Error::missing_field("SubnetIds"))?,
+                        subnet_ids: subnet_ids
+                            .ok_or(::serde::de::Error::missing_field("SubnetIds"))?,
                         vpc_id: vpc_id.ok_or(::serde::de::Error::missing_field("VpcId"))?,
                     })
                 }

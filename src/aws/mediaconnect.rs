@@ -3,7 +3,7 @@
 /// The [`AWS::MediaConnect::Flow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html) resource type.
 #[derive(Debug, Default)]
 pub struct Flow {
-    properties: FlowProperties
+    properties: FlowProperties,
 }
 
 /// Properties for the `Flow` resource.
@@ -35,12 +35,20 @@ impl ::serde::Serialize for FlowProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref availability_zone) = self.availability_zone {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AvailabilityZone", availability_zone)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AvailabilityZone",
+                availability_zone,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Source", &self.source)?;
         if let Some(ref source_failover_config) = self.source_failover_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceFailoverConfig", source_failover_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SourceFailoverConfig",
+                source_failover_config,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -57,7 +65,10 @@ impl<'de> ::serde::Deserialize<'de> for FlowProperties {
                 write!(f, "a struct of type FlowProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut availability_zone: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut source: Option<::Value<self::flow::Source>> = None;
@@ -116,7 +127,7 @@ impl From<FlowProperties> for Flow {
 /// The [`AWS::MediaConnect::FlowEntitlement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html) resource type.
 #[derive(Debug, Default)]
 pub struct FlowEntitlement {
-    properties: FlowEntitlementProperties
+    properties: FlowEntitlementProperties,
 }
 
 /// Properties for the `FlowEntitlement` resource.
@@ -162,15 +173,25 @@ pub struct FlowEntitlementProperties {
 impl ::serde::Serialize for FlowEntitlementProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        if let Some(ref data_transfer_subscriber_fee_percent) = self.data_transfer_subscriber_fee_percent {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataTransferSubscriberFeePercent", data_transfer_subscriber_fee_percent)?;
+        if let Some(ref data_transfer_subscriber_fee_percent) =
+            self.data_transfer_subscriber_fee_percent
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DataTransferSubscriberFeePercent",
+                data_transfer_subscriber_fee_percent,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", &self.description)?;
         if let Some(ref encryption) = self.encryption {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Encryption", encryption)?;
         }
         if let Some(ref entitlement_status) = self.entitlement_status {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EntitlementStatus", entitlement_status)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EntitlementStatus",
+                entitlement_status,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "FlowArn", &self.flow_arn)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -180,7 +201,9 @@ impl ::serde::Serialize for FlowEntitlementProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for FlowEntitlementProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<FlowEntitlementProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<FlowEntitlementProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -190,7 +213,10 @@ impl<'de> ::serde::Deserialize<'de> for FlowEntitlementProperties {
                 write!(f, "a struct of type FlowEntitlementProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data_transfer_subscriber_fee_percent: Option<::Value<u32>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut encryption: Option<::Value<self::flow_entitlement::Encryption>> = None;
@@ -202,7 +228,8 @@ impl<'de> ::serde::Deserialize<'de> for FlowEntitlementProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "DataTransferSubscriberFeePercent" => {
-                            data_transfer_subscriber_fee_percent = ::serde::de::MapAccess::next_value(&mut map)?;
+                            data_transfer_subscriber_fee_percent =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -228,12 +255,14 @@ impl<'de> ::serde::Deserialize<'de> for FlowEntitlementProperties {
 
                 Ok(FlowEntitlementProperties {
                     data_transfer_subscriber_fee_percent: data_transfer_subscriber_fee_percent,
-                    description: description.ok_or(::serde::de::Error::missing_field("Description"))?,
+                    description: description
+                        .ok_or(::serde::de::Error::missing_field("Description"))?,
                     encryption: encryption,
                     entitlement_status: entitlement_status,
                     flow_arn: flow_arn.ok_or(::serde::de::Error::missing_field("FlowArn"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    subscribers: subscribers.ok_or(::serde::de::Error::missing_field("Subscribers"))?,
+                    subscribers: subscribers
+                        .ok_or(::serde::de::Error::missing_field("Subscribers"))?,
                 })
             }
         }
@@ -264,7 +293,7 @@ impl From<FlowEntitlementProperties> for FlowEntitlement {
 /// The [`AWS::MediaConnect::FlowOutput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html) resource type.
 #[derive(Debug, Default)]
 pub struct FlowOutput {
-    properties: FlowOutputProperties
+    properties: FlowOutputProperties,
 }
 
 /// Properties for the `FlowOutput` resource.
@@ -346,7 +375,11 @@ impl ::serde::Serialize for FlowOutputProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref cidr_allow_list) = self.cidr_allow_list {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CidrAllowList", cidr_allow_list)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CidrAllowList",
+                cidr_allow_list,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -375,13 +408,21 @@ impl ::serde::Serialize for FlowOutputProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RemoteId", remote_id)?;
         }
         if let Some(ref smoothing_latency) = self.smoothing_latency {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SmoothingLatency", smoothing_latency)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SmoothingLatency",
+                smoothing_latency,
+            )?;
         }
         if let Some(ref stream_id) = self.stream_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamId", stream_id)?;
         }
         if let Some(ref vpc_interface_attachment) = self.vpc_interface_attachment {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcInterfaceAttachment", vpc_interface_attachment)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VpcInterfaceAttachment",
+                vpc_interface_attachment,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -398,7 +439,10 @@ impl<'de> ::serde::Deserialize<'de> for FlowOutputProperties {
                 write!(f, "a struct of type FlowOutputProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut cidr_allow_list: Option<::ValueList<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut destination: Option<::Value<String>> = None;
@@ -412,7 +456,9 @@ impl<'de> ::serde::Deserialize<'de> for FlowOutputProperties {
                 let mut remote_id: Option<::Value<String>> = None;
                 let mut smoothing_latency: Option<::Value<u32>> = None;
                 let mut stream_id: Option<::Value<String>> = None;
-                let mut vpc_interface_attachment: Option<::Value<self::flow_output::VpcInterfaceAttachment>> = None;
+                let mut vpc_interface_attachment: Option<
+                    ::Value<self::flow_output::VpcInterfaceAttachment>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -456,7 +502,8 @@ impl<'de> ::serde::Deserialize<'de> for FlowOutputProperties {
                             stream_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "VpcInterfaceAttachment" => {
-                            vpc_interface_attachment = ::serde::de::MapAccess::next_value(&mut map)?;
+                            vpc_interface_attachment =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
@@ -507,7 +554,7 @@ impl From<FlowOutputProperties> for FlowOutput {
 /// The [`AWS::MediaConnect::FlowSource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html) resource type.
 #[derive(Debug, Default)]
 pub struct FlowSource {
-    properties: FlowSourceProperties
+    properties: FlowSourceProperties,
 }
 
 /// Properties for the `FlowSource` resource.
@@ -583,7 +630,11 @@ impl ::serde::Serialize for FlowSourceProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", &self.description)?;
         if let Some(ref entitlement_arn) = self.entitlement_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EntitlementArn", entitlement_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EntitlementArn",
+                entitlement_arn,
+            )?;
         }
         if let Some(ref flow_arn) = self.flow_arn {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "FlowArn", flow_arn)?;
@@ -605,7 +656,11 @@ impl ::serde::Serialize for FlowSourceProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamId", stream_id)?;
         }
         if let Some(ref vpc_interface_name) = self.vpc_interface_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcInterfaceName", vpc_interface_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VpcInterfaceName",
+                vpc_interface_name,
+            )?;
         }
         if let Some(ref whitelist_cidr) = self.whitelist_cidr {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "WhitelistCidr", whitelist_cidr)?;
@@ -625,7 +680,10 @@ impl<'de> ::serde::Deserialize<'de> for FlowSourceProperties {
                 write!(f, "a struct of type FlowSourceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut decryption: Option<::Value<self::flow_source::Encryption>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut entitlement_arn: Option<::Value<String>> = None;
@@ -683,7 +741,8 @@ impl<'de> ::serde::Deserialize<'de> for FlowSourceProperties {
 
                 Ok(FlowSourceProperties {
                     decryption: decryption,
-                    description: description.ok_or(::serde::de::Error::missing_field("Description"))?,
+                    description: description
+                        .ok_or(::serde::de::Error::missing_field("Description"))?,
                     entitlement_arn: entitlement_arn,
                     flow_arn: flow_arn,
                     ingest_port: ingest_port,
@@ -724,7 +783,7 @@ impl From<FlowSourceProperties> for FlowSource {
 /// The [`AWS::MediaConnect::FlowVpcInterface`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowvpcinterface.html) resource type.
 #[derive(Debug, Default)]
 pub struct FlowVpcInterface {
-    properties: FlowVpcInterfaceProperties
+    properties: FlowVpcInterfaceProperties,
 }
 
 /// Properties for the `FlowVpcInterface` resource.
@@ -763,14 +822,20 @@ impl ::serde::Serialize for FlowVpcInterfaceProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "FlowArn", &self.flow_arn)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", &self.security_group_ids)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SecurityGroupIds",
+            &self.security_group_ids,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetId", &self.subnet_id)?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for FlowVpcInterfaceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<FlowVpcInterfaceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<FlowVpcInterfaceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -780,7 +845,10 @@ impl<'de> ::serde::Deserialize<'de> for FlowVpcInterfaceProperties {
                 write!(f, "a struct of type FlowVpcInterfaceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut flow_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut role_arn: Option<::Value<String>> = None;
@@ -812,7 +880,8 @@ impl<'de> ::serde::Deserialize<'de> for FlowVpcInterfaceProperties {
                     flow_arn: flow_arn.ok_or(::serde::de::Error::missing_field("FlowArn"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
-                    security_group_ids: security_group_ids.ok_or(::serde::de::Error::missing_field("SecurityGroupIds"))?,
+                    security_group_ids: security_group_ids
+                        .ok_or(::serde::de::Error::missing_field("SecurityGroupIds"))?,
                     subnet_id: subnet_id.ok_or(::serde::de::Error::missing_field("SubnetId"))?,
                 })
             }
@@ -901,7 +970,11 @@ pub mod flow {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Algorithm", algorithm)?;
             }
             if let Some(ref constant_initialization_vector) = self.constant_initialization_vector {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConstantInitializationVector", constant_initialization_vector)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConstantInitializationVector",
+                    constant_initialization_vector,
+                )?;
             }
             if let Some(ref device_id) = self.device_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceId", device_id)?;
@@ -937,7 +1010,10 @@ pub mod flow {
                     write!(f, "a struct of type Encryption")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut algorithm: Option<::Value<String>> = None;
                     let mut constant_initialization_vector: Option<::Value<String>> = None;
                     let mut device_id: Option<::Value<String>> = None;
@@ -948,13 +1024,16 @@ pub mod flow {
                     let mut secret_arn: Option<::Value<String>> = None;
                     let mut url: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Algorithm" => {
                                 algorithm = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ConstantInitializationVector" => {
-                                constant_initialization_vector = ::serde::de::MapAccess::next_value(&mut map)?;
+                                constant_initialization_vector =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DeviceId" => {
                                 device_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1018,7 +1097,11 @@ pub mod flow {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref recovery_window) = self.recovery_window {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecoveryWindow", recovery_window)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RecoveryWindow",
+                    recovery_window,
+                )?;
             }
             if let Some(ref state) = self.state {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "State", state)?;
@@ -1028,7 +1111,9 @@ pub mod flow {
     }
 
     impl ::codec::DeserializeValue for FailoverConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FailoverConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FailoverConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1038,11 +1123,16 @@ pub mod flow {
                     write!(f, "a struct of type FailoverConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut recovery_window: Option<::Value<u32>> = None;
                     let mut state: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "RecoveryWindow" => {
                                 recovery_window = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1155,7 +1245,11 @@ pub mod flow {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
             }
             if let Some(ref entitlement_arn) = self.entitlement_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EntitlementArn", entitlement_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EntitlementArn",
+                    entitlement_arn,
+                )?;
             }
             if let Some(ref ingest_ip) = self.ingest_ip {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "IngestIp", ingest_ip)?;
@@ -1182,16 +1276,28 @@ pub mod flow {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceArn", source_arn)?;
             }
             if let Some(ref source_ingest_port) = self.source_ingest_port {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceIngestPort", source_ingest_port)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SourceIngestPort",
+                    source_ingest_port,
+                )?;
             }
             if let Some(ref stream_id) = self.stream_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamId", stream_id)?;
             }
             if let Some(ref vpc_interface_name) = self.vpc_interface_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcInterfaceName", vpc_interface_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VpcInterfaceName",
+                    vpc_interface_name,
+                )?;
             }
             if let Some(ref whitelist_cidr) = self.whitelist_cidr {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "WhitelistCidr", whitelist_cidr)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "WhitelistCidr",
+                    whitelist_cidr,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1208,7 +1314,10 @@ pub mod flow {
                     write!(f, "a struct of type Source")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut decryption: Option<::Value<Encryption>> = None;
                     let mut description: Option<::Value<String>> = None;
                     let mut entitlement_arn: Option<::Value<String>> = None;
@@ -1225,7 +1334,9 @@ pub mod flow {
                     let mut vpc_interface_name: Option<::Value<String>> = None;
                     let mut whitelist_cidr: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Decryption" => {
                                 decryption = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1359,7 +1470,11 @@ pub mod flow_entitlement {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Algorithm", &self.algorithm)?;
             if let Some(ref constant_initialization_vector) = self.constant_initialization_vector {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConstantInitializationVector", constant_initialization_vector)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConstantInitializationVector",
+                    constant_initialization_vector,
+                )?;
             }
             if let Some(ref device_id) = self.device_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceId", device_id)?;
@@ -1395,7 +1510,10 @@ pub mod flow_entitlement {
                     write!(f, "a struct of type Encryption")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut algorithm: Option<::Value<String>> = None;
                     let mut constant_initialization_vector: Option<::Value<String>> = None;
                     let mut device_id: Option<::Value<String>> = None;
@@ -1406,13 +1524,16 @@ pub mod flow_entitlement {
                     let mut secret_arn: Option<::Value<String>> = None;
                     let mut url: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Algorithm" => {
                                 algorithm = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ConstantInitializationVector" => {
-                                constant_initialization_vector = ::serde::de::MapAccess::next_value(&mut map)?;
+                                constant_initialization_vector =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DeviceId" => {
                                 device_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1440,7 +1561,8 @@ pub mod flow_entitlement {
                     }
 
                     Ok(Encryption {
-                        algorithm: algorithm.ok_or(::serde::de::Error::missing_field("Algorithm"))?,
+                        algorithm: algorithm
+                            .ok_or(::serde::de::Error::missing_field("Algorithm"))?,
                         constant_initialization_vector: constant_initialization_vector,
                         device_id: device_id,
                         key_type: key_type,
@@ -1512,13 +1634,18 @@ pub mod flow_output {
                     write!(f, "a struct of type Encryption")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut algorithm: Option<::Value<String>> = None;
                     let mut key_type: Option<::Value<String>> = None;
                     let mut role_arn: Option<::Value<String>> = None;
                     let mut secret_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Algorithm" => {
                                 algorithm = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1540,7 +1667,8 @@ pub mod flow_output {
                         algorithm: algorithm,
                         key_type: key_type,
                         role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
-                        secret_arn: secret_arn.ok_or(::serde::de::Error::missing_field("SecretArn"))?,
+                        secret_arn: secret_arn
+                            .ok_or(::serde::de::Error::missing_field("SecretArn"))?,
                     })
                 }
             }
@@ -1563,14 +1691,20 @@ pub mod flow_output {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref vpc_interface_name) = self.vpc_interface_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcInterfaceName", vpc_interface_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VpcInterfaceName",
+                    vpc_interface_name,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VpcInterfaceAttachment {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcInterfaceAttachment, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VpcInterfaceAttachment, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1580,10 +1714,15 @@ pub mod flow_output {
                     write!(f, "a struct of type VpcInterfaceAttachment")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut vpc_interface_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "VpcInterfaceName" => {
                                 vpc_interface_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1661,7 +1800,11 @@ pub mod flow_source {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Algorithm", &self.algorithm)?;
             if let Some(ref constant_initialization_vector) = self.constant_initialization_vector {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConstantInitializationVector", constant_initialization_vector)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConstantInitializationVector",
+                    constant_initialization_vector,
+                )?;
             }
             if let Some(ref device_id) = self.device_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeviceId", device_id)?;
@@ -1697,7 +1840,10 @@ pub mod flow_source {
                     write!(f, "a struct of type Encryption")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut algorithm: Option<::Value<String>> = None;
                     let mut constant_initialization_vector: Option<::Value<String>> = None;
                     let mut device_id: Option<::Value<String>> = None;
@@ -1708,13 +1854,16 @@ pub mod flow_source {
                     let mut secret_arn: Option<::Value<String>> = None;
                     let mut url: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Algorithm" => {
                                 algorithm = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ConstantInitializationVector" => {
-                                constant_initialization_vector = ::serde::de::MapAccess::next_value(&mut map)?;
+                                constant_initialization_vector =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DeviceId" => {
                                 device_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1742,7 +1891,8 @@ pub mod flow_source {
                     }
 
                     Ok(Encryption {
-                        algorithm: algorithm.ok_or(::serde::de::Error::missing_field("Algorithm"))?,
+                        algorithm: algorithm
+                            .ok_or(::serde::de::Error::missing_field("Algorithm"))?,
                         constant_initialization_vector: constant_initialization_vector,
                         device_id: device_id,
                         key_type: key_type,

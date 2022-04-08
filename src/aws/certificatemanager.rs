@@ -3,7 +3,7 @@
 /// The [`AWS::CertificateManager::Account`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html) resource type.
 #[derive(Debug, Default)]
 pub struct Account {
-    properties: AccountProperties
+    properties: AccountProperties,
 }
 
 /// Properties for the `Account` resource.
@@ -19,7 +19,11 @@ pub struct AccountProperties {
 impl ::serde::Serialize for AccountProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExpiryEventsConfiguration", &self.expiry_events_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ExpiryEventsConfiguration",
+            &self.expiry_events_configuration,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -35,20 +39,28 @@ impl<'de> ::serde::Deserialize<'de> for AccountProperties {
                 write!(f, "a struct of type AccountProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut expiry_events_configuration: Option<::Value<self::account::ExpiryEventsConfiguration>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut expiry_events_configuration: Option<
+                    ::Value<self::account::ExpiryEventsConfiguration>,
+                > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ExpiryEventsConfiguration" => {
-                            expiry_events_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            expiry_events_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
                 }
 
                 Ok(AccountProperties {
-                    expiry_events_configuration: expiry_events_configuration.ok_or(::serde::de::Error::missing_field("ExpiryEventsConfiguration"))?,
+                    expiry_events_configuration: expiry_events_configuration.ok_or(
+                        ::serde::de::Error::missing_field("ExpiryEventsConfiguration"),
+                    )?,
                 })
             }
         }
@@ -79,7 +91,7 @@ impl From<AccountProperties> for Account {
 /// The [`AWS::CertificateManager::Certificate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html) resource type.
 #[derive(Debug, Default)]
 pub struct Certificate {
-    properties: CertificateProperties
+    properties: CertificateProperties,
 }
 
 /// Properties for the `Certificate` resource.
@@ -126,23 +138,45 @@ impl ::serde::Serialize for CertificateProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref certificate_authority_arn) = self.certificate_authority_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateAuthorityArn", certificate_authority_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CertificateAuthorityArn",
+                certificate_authority_arn,
+            )?;
         }
-        if let Some(ref certificate_transparency_logging_preference) = self.certificate_transparency_logging_preference {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateTransparencyLoggingPreference", certificate_transparency_logging_preference)?;
+        if let Some(ref certificate_transparency_logging_preference) =
+            self.certificate_transparency_logging_preference
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CertificateTransparencyLoggingPreference",
+                certificate_transparency_logging_preference,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainName", &self.domain_name)?;
         if let Some(ref domain_validation_options) = self.domain_validation_options {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainValidationOptions", domain_validation_options)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DomainValidationOptions",
+                domain_validation_options,
+            )?;
         }
         if let Some(ref subject_alternative_names) = self.subject_alternative_names {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubjectAlternativeNames", subject_alternative_names)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SubjectAlternativeNames",
+                subject_alternative_names,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref validation_method) = self.validation_method {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ValidationMethod", validation_method)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ValidationMethod",
+                validation_method,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -159,11 +193,16 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
                 write!(f, "a struct of type CertificateProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut certificate_authority_arn: Option<::Value<String>> = None;
                 let mut certificate_transparency_logging_preference: Option<::Value<String>> = None;
                 let mut domain_name: Option<::Value<String>> = None;
-                let mut domain_validation_options: Option<::ValueList<self::certificate::DomainValidationOption>> = None;
+                let mut domain_validation_options: Option<
+                    ::ValueList<self::certificate::DomainValidationOption>,
+                > = None;
                 let mut subject_alternative_names: Option<::ValueList<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut validation_method: Option<::Value<String>> = None;
@@ -171,19 +210,23 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "CertificateAuthorityArn" => {
-                            certificate_authority_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            certificate_authority_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "CertificateTransparencyLoggingPreference" => {
-                            certificate_transparency_logging_preference = ::serde::de::MapAccess::next_value(&mut map)?;
+                            certificate_transparency_logging_preference =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DomainName" => {
                             domain_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DomainValidationOptions" => {
-                            domain_validation_options = ::serde::de::MapAccess::next_value(&mut map)?;
+                            domain_validation_options =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SubjectAlternativeNames" => {
-                            subject_alternative_names = ::serde::de::MapAccess::next_value(&mut map)?;
+                            subject_alternative_names =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -197,8 +240,10 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
 
                 Ok(CertificateProperties {
                     certificate_authority_arn: certificate_authority_arn,
-                    certificate_transparency_logging_preference: certificate_transparency_logging_preference,
-                    domain_name: domain_name.ok_or(::serde::de::Error::missing_field("DomainName"))?,
+                    certificate_transparency_logging_preference:
+                        certificate_transparency_logging_preference,
+                    domain_name: domain_name
+                        .ok_or(::serde::de::Error::missing_field("DomainName"))?,
                     domain_validation_options: domain_validation_options,
                     subject_alternative_names: subject_alternative_names,
                     tags: tags,
@@ -247,14 +292,20 @@ pub mod account {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref days_before_expiry) = self.days_before_expiry {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DaysBeforeExpiry", days_before_expiry)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DaysBeforeExpiry",
+                    days_before_expiry,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ExpiryEventsConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ExpiryEventsConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ExpiryEventsConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -264,10 +315,15 @@ pub mod account {
                     write!(f, "a struct of type ExpiryEventsConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut days_before_expiry: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DaysBeforeExpiry" => {
                                 days_before_expiry = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -315,17 +371,27 @@ pub mod certificate {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainName", &self.domain_name)?;
             if let Some(ref hosted_zone_id) = self.hosted_zone_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneId", hosted_zone_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HostedZoneId",
+                    hosted_zone_id,
+                )?;
             }
             if let Some(ref validation_domain) = self.validation_domain {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ValidationDomain", validation_domain)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ValidationDomain",
+                    validation_domain,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DomainValidationOption {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DomainValidationOption, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DomainValidationOption, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -335,12 +401,17 @@ pub mod certificate {
                     write!(f, "a struct of type DomainValidationOption")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut domain_name: Option<::Value<String>> = None;
                     let mut hosted_zone_id: Option<::Value<String>> = None;
                     let mut validation_domain: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DomainName" => {
                                 domain_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -356,7 +427,8 @@ pub mod certificate {
                     }
 
                     Ok(DomainValidationOption {
-                        domain_name: domain_name.ok_or(::serde::de::Error::missing_field("DomainName"))?,
+                        domain_name: domain_name
+                            .ok_or(::serde::de::Error::missing_field("DomainName"))?,
                         hosted_zone_id: hosted_zone_id,
                         validation_domain: validation_domain,
                     })

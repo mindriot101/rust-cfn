@@ -3,7 +3,7 @@
 /// The [`AWS::SSO::Assignment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-assignment.html) resource type.
 #[derive(Debug, Default)]
 pub struct Assignment {
-    properties: AssignmentProperties
+    properties: AssignmentProperties,
 }
 
 /// Properties for the `Assignment` resource.
@@ -45,9 +45,17 @@ impl ::serde::Serialize for AssignmentProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceArn", &self.instance_arn)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionSetArn", &self.permission_set_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PermissionSetArn",
+            &self.permission_set_arn,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PrincipalId", &self.principal_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PrincipalType", &self.principal_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PrincipalType",
+            &self.principal_type,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetId", &self.target_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetType", &self.target_type)?;
         ::serde::ser::SerializeMap::end(map)
@@ -65,7 +73,10 @@ impl<'de> ::serde::Deserialize<'de> for AssignmentProperties {
                 write!(f, "a struct of type AssignmentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut instance_arn: Option<::Value<String>> = None;
                 let mut permission_set_arn: Option<::Value<String>> = None;
                 let mut principal_id: Option<::Value<String>> = None;
@@ -98,12 +109,17 @@ impl<'de> ::serde::Deserialize<'de> for AssignmentProperties {
                 }
 
                 Ok(AssignmentProperties {
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
-                    permission_set_arn: permission_set_arn.ok_or(::serde::de::Error::missing_field("PermissionSetArn"))?,
-                    principal_id: principal_id.ok_or(::serde::de::Error::missing_field("PrincipalId"))?,
-                    principal_type: principal_type.ok_or(::serde::de::Error::missing_field("PrincipalType"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    permission_set_arn: permission_set_arn
+                        .ok_or(::serde::de::Error::missing_field("PermissionSetArn"))?,
+                    principal_id: principal_id
+                        .ok_or(::serde::de::Error::missing_field("PrincipalId"))?,
+                    principal_type: principal_type
+                        .ok_or(::serde::de::Error::missing_field("PrincipalType"))?,
                     target_id: target_id.ok_or(::serde::de::Error::missing_field("TargetId"))?,
-                    target_type: target_type.ok_or(::serde::de::Error::missing_field("TargetType"))?,
+                    target_type: target_type
+                        .ok_or(::serde::de::Error::missing_field("TargetType"))?,
                 })
             }
         }
@@ -134,7 +150,7 @@ impl From<AssignmentProperties> for Assignment {
 /// The [`AWS::SSO::InstanceAccessControlAttributeConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html) resource type.
 #[derive(Debug, Default)]
 pub struct InstanceAccessControlAttributeConfiguration {
-    properties: InstanceAccessControlAttributeConfigurationProperties
+    properties: InstanceAccessControlAttributeConfigurationProperties,
 }
 
 /// Properties for the `InstanceAccessControlAttributeConfiguration` resource.
@@ -144,7 +160,9 @@ pub struct InstanceAccessControlAttributeConfigurationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub access_control_attributes: Option<::ValueList<self::instance_access_control_attribute_configuration::AccessControlAttribute>>,
+    pub access_control_attributes: Option<
+        ::ValueList<self::instance_access_control_attribute_configuration::AccessControlAttribute>,
+    >,
     /// Property [`InstanceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instancearn).
     ///
     /// Update type: _Immutable_.
@@ -156,7 +174,11 @@ impl ::serde::Serialize for InstanceAccessControlAttributeConfigurationPropertie
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref access_control_attributes) = self.access_control_attributes {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccessControlAttributes", access_control_attributes)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AccessControlAttributes",
+                access_control_attributes,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceArn", &self.instance_arn)?;
         ::serde::ser::SerializeMap::end(map)
@@ -164,24 +186,33 @@ impl ::serde::Serialize for InstanceAccessControlAttributeConfigurationPropertie
 }
 
 impl<'de> ::serde::Deserialize<'de> for InstanceAccessControlAttributeConfigurationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<InstanceAccessControlAttributeConfigurationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<InstanceAccessControlAttributeConfigurationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
             type Value = InstanceAccessControlAttributeConfigurationProperties;
 
             fn expecting(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-                write!(f, "a struct of type InstanceAccessControlAttributeConfigurationProperties")
+                write!(
+                    f,
+                    "a struct of type InstanceAccessControlAttributeConfigurationProperties"
+                )
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut access_control_attributes: Option<::ValueList<self::instance_access_control_attribute_configuration::AccessControlAttribute>> = None;
                 let mut instance_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AccessControlAttributes" => {
-                            access_control_attributes = ::serde::de::MapAccess::next_value(&mut map)?;
+                            access_control_attributes =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "InstanceArn" => {
                             instance_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -192,7 +223,8 @@ impl<'de> ::serde::Deserialize<'de> for InstanceAccessControlAttributeConfigurat
 
                 Ok(InstanceAccessControlAttributeConfigurationProperties {
                     access_control_attributes: access_control_attributes,
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
                 })
             }
         }
@@ -214,8 +246,12 @@ impl ::Resource for InstanceAccessControlAttributeConfiguration {
 
 impl ::private::Sealed for InstanceAccessControlAttributeConfiguration {}
 
-impl From<InstanceAccessControlAttributeConfigurationProperties> for InstanceAccessControlAttributeConfiguration {
-    fn from(properties: InstanceAccessControlAttributeConfigurationProperties) -> InstanceAccessControlAttributeConfiguration {
+impl From<InstanceAccessControlAttributeConfigurationProperties>
+    for InstanceAccessControlAttributeConfiguration
+{
+    fn from(
+        properties: InstanceAccessControlAttributeConfigurationProperties,
+    ) -> InstanceAccessControlAttributeConfiguration {
         InstanceAccessControlAttributeConfiguration { properties }
     }
 }
@@ -223,7 +259,7 @@ impl From<InstanceAccessControlAttributeConfigurationProperties> for InstanceAcc
 /// The [`AWS::SSO::PermissionSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html) resource type.
 #[derive(Debug, Default)]
 pub struct PermissionSet {
-    properties: PermissionSetProperties
+    properties: PermissionSetProperties,
 }
 
 /// Properties for the `PermissionSet` resource.
@@ -282,14 +318,26 @@ impl ::serde::Serialize for PermissionSetProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceArn", &self.instance_arn)?;
         if let Some(ref managed_policies) = self.managed_policies {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManagedPolicies", managed_policies)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ManagedPolicies",
+                managed_policies,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref relay_state_type) = self.relay_state_type {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RelayStateType", relay_state_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RelayStateType",
+                relay_state_type,
+            )?;
         }
         if let Some(ref session_duration) = self.session_duration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SessionDuration", session_duration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SessionDuration",
+                session_duration,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -299,7 +347,9 @@ impl ::serde::Serialize for PermissionSetProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for PermissionSetProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<PermissionSetProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<PermissionSetProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -309,7 +359,10 @@ impl<'de> ::serde::Deserialize<'de> for PermissionSetProperties {
                 write!(f, "a struct of type PermissionSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut inline_policy: Option<::Value<::json::Value>> = None;
                 let mut instance_arn: Option<::Value<String>> = None;
@@ -352,7 +405,8 @@ impl<'de> ::serde::Deserialize<'de> for PermissionSetProperties {
                 Ok(PermissionSetProperties {
                     description: description,
                     inline_policy: inline_policy,
-                    instance_arn: instance_arn.ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
+                    instance_arn: instance_arn
+                        .ok_or(::serde::de::Error::missing_field("InstanceArn"))?,
                     managed_policies: managed_policies,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     relay_state_type: relay_state_type,
@@ -413,7 +467,9 @@ pub mod instance_access_control_attribute_configuration {
     }
 
     impl ::codec::DeserializeValue for AccessControlAttribute {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AccessControlAttribute, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AccessControlAttribute, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -423,11 +479,16 @@ pub mod instance_access_control_attribute_configuration {
                     write!(f, "a struct of type AccessControlAttribute")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<AccessControlAttributeValue>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -469,7 +530,9 @@ pub mod instance_access_control_attribute_configuration {
     }
 
     impl ::codec::DeserializeValue for AccessControlAttributeValue {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AccessControlAttributeValue, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AccessControlAttributeValue, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -479,10 +542,15 @@ pub mod instance_access_control_attribute_configuration {
                     write!(f, "a struct of type AccessControlAttributeValue")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut source: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Source" => {
                                 source = ::serde::de::MapAccess::next_value(&mut map)?;

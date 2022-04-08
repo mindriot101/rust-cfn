@@ -3,7 +3,7 @@
 /// The [`AWS::GuardDuty::Detector`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html) resource type.
 #[derive(Debug, Default)]
 pub struct Detector {
-    properties: DetectorProperties
+    properties: DetectorProperties,
 }
 
 /// Properties for the `Detector` resource.
@@ -34,7 +34,11 @@ impl ::serde::Serialize for DetectorProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Enable", &self.enable)?;
         if let Some(ref finding_publishing_frequency) = self.finding_publishing_frequency {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FindingPublishingFrequency", finding_publishing_frequency)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FindingPublishingFrequency",
+                finding_publishing_frequency,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -51,8 +55,12 @@ impl<'de> ::serde::Deserialize<'de> for DetectorProperties {
                 write!(f, "a struct of type DetectorProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut data_sources: Option<::Value<self::detector::CFNDataSourceConfigurations>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut data_sources: Option<::Value<self::detector::CFNDataSourceConfigurations>> =
+                    None;
                 let mut enable: Option<::Value<bool>> = None;
                 let mut finding_publishing_frequency: Option<::Value<String>> = None;
 
@@ -65,7 +73,8 @@ impl<'de> ::serde::Deserialize<'de> for DetectorProperties {
                             enable = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "FindingPublishingFrequency" => {
-                            finding_publishing_frequency = ::serde::de::MapAccess::next_value(&mut map)?;
+                            finding_publishing_frequency =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
@@ -105,7 +114,7 @@ impl From<DetectorProperties> for Detector {
 /// The [`AWS::GuardDuty::Filter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html) resource type.
 #[derive(Debug, Default)]
 pub struct Filter {
-    properties: FilterProperties
+    properties: FilterProperties,
 }
 
 /// Properties for the `Filter` resource.
@@ -149,7 +158,11 @@ impl ::serde::Serialize for FilterProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Action", &self.action)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", &self.description)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DetectorId", &self.detector_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FindingCriteria", &self.finding_criteria)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FindingCriteria",
+            &self.finding_criteria,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rank", &self.rank)?;
         ::serde::ser::SerializeMap::end(map)
@@ -167,7 +180,10 @@ impl<'de> ::serde::Deserialize<'de> for FilterProperties {
                 write!(f, "a struct of type FilterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut action: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut detector_id: Option<::Value<String>> = None;
@@ -201,9 +217,12 @@ impl<'de> ::serde::Deserialize<'de> for FilterProperties {
 
                 Ok(FilterProperties {
                     action: action.ok_or(::serde::de::Error::missing_field("Action"))?,
-                    description: description.ok_or(::serde::de::Error::missing_field("Description"))?,
-                    detector_id: detector_id.ok_or(::serde::de::Error::missing_field("DetectorId"))?,
-                    finding_criteria: finding_criteria.ok_or(::serde::de::Error::missing_field("FindingCriteria"))?,
+                    description: description
+                        .ok_or(::serde::de::Error::missing_field("Description"))?,
+                    detector_id: detector_id
+                        .ok_or(::serde::de::Error::missing_field("DetectorId"))?,
+                    finding_criteria: finding_criteria
+                        .ok_or(::serde::de::Error::missing_field("FindingCriteria"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     rank: rank.ok_or(::serde::de::Error::missing_field("Rank"))?,
                 })
@@ -236,7 +255,7 @@ impl From<FilterProperties> for Filter {
 /// The [`AWS::GuardDuty::IPSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html) resource type.
 #[derive(Debug, Default)]
 pub struct IPSet {
-    properties: IPSetProperties
+    properties: IPSetProperties,
 }
 
 /// Properties for the `IPSet` resource.
@@ -294,7 +313,10 @@ impl<'de> ::serde::Deserialize<'de> for IPSetProperties {
                 write!(f, "a struct of type IPSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut activate: Option<::Value<bool>> = None;
                 let mut detector_id: Option<::Value<String>> = None;
                 let mut format: Option<::Value<String>> = None;
@@ -324,7 +346,8 @@ impl<'de> ::serde::Deserialize<'de> for IPSetProperties {
 
                 Ok(IPSetProperties {
                     activate: activate.ok_or(::serde::de::Error::missing_field("Activate"))?,
-                    detector_id: detector_id.ok_or(::serde::de::Error::missing_field("DetectorId"))?,
+                    detector_id: detector_id
+                        .ok_or(::serde::de::Error::missing_field("DetectorId"))?,
                     format: format.ok_or(::serde::de::Error::missing_field("Format"))?,
                     location: location.ok_or(::serde::de::Error::missing_field("Location"))?,
                     name: name,
@@ -358,7 +381,7 @@ impl From<IPSetProperties> for IPSet {
 /// The [`AWS::GuardDuty::Master`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html) resource type.
 #[derive(Debug, Default)]
 pub struct Master {
-    properties: MasterProperties
+    properties: MasterProperties,
 }
 
 /// Properties for the `Master` resource.
@@ -404,7 +427,10 @@ impl<'de> ::serde::Deserialize<'de> for MasterProperties {
                 write!(f, "a struct of type MasterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut detector_id: Option<::Value<String>> = None;
                 let mut invitation_id: Option<::Value<String>> = None;
                 let mut master_id: Option<::Value<String>> = None;
@@ -425,7 +451,8 @@ impl<'de> ::serde::Deserialize<'de> for MasterProperties {
                 }
 
                 Ok(MasterProperties {
-                    detector_id: detector_id.ok_or(::serde::de::Error::missing_field("DetectorId"))?,
+                    detector_id: detector_id
+                        .ok_or(::serde::de::Error::missing_field("DetectorId"))?,
                     invitation_id: invitation_id,
                     master_id: master_id.ok_or(::serde::de::Error::missing_field("MasterId"))?,
                 })
@@ -458,7 +485,7 @@ impl From<MasterProperties> for Master {
 /// The [`AWS::GuardDuty::Member`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html) resource type.
 #[derive(Debug, Default)]
 pub struct Member {
-    properties: MemberProperties
+    properties: MemberProperties,
 }
 
 /// Properties for the `Member` resource.
@@ -501,7 +528,11 @@ impl ::serde::Serialize for MemberProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DetectorId", &self.detector_id)?;
         if let Some(ref disable_email_notification) = self.disable_email_notification {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DisableEmailNotification", disable_email_notification)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DisableEmailNotification",
+                disable_email_notification,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Email", &self.email)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "MemberId", &self.member_id)?;
@@ -526,7 +557,10 @@ impl<'de> ::serde::Deserialize<'de> for MemberProperties {
                 write!(f, "a struct of type MemberProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut detector_id: Option<::Value<String>> = None;
                 let mut disable_email_notification: Option<::Value<bool>> = None;
                 let mut email: Option<::Value<String>> = None;
@@ -540,7 +574,8 @@ impl<'de> ::serde::Deserialize<'de> for MemberProperties {
                             detector_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DisableEmailNotification" => {
-                            disable_email_notification = ::serde::de::MapAccess::next_value(&mut map)?;
+                            disable_email_notification =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Email" => {
                             email = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -559,7 +594,8 @@ impl<'de> ::serde::Deserialize<'de> for MemberProperties {
                 }
 
                 Ok(MemberProperties {
-                    detector_id: detector_id.ok_or(::serde::de::Error::missing_field("DetectorId"))?,
+                    detector_id: detector_id
+                        .ok_or(::serde::de::Error::missing_field("DetectorId"))?,
                     disable_email_notification: disable_email_notification,
                     email: email.ok_or(::serde::de::Error::missing_field("Email"))?,
                     member_id: member_id.ok_or(::serde::de::Error::missing_field("MemberId"))?,
@@ -595,7 +631,7 @@ impl From<MemberProperties> for Member {
 /// The [`AWS::GuardDuty::ThreatIntelSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html) resource type.
 #[derive(Debug, Default)]
 pub struct ThreatIntelSet {
-    properties: ThreatIntelSetProperties
+    properties: ThreatIntelSetProperties,
 }
 
 /// Properties for the `ThreatIntelSet` resource.
@@ -643,7 +679,9 @@ impl ::serde::Serialize for ThreatIntelSetProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ThreatIntelSetProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ThreatIntelSetProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ThreatIntelSetProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -653,7 +691,10 @@ impl<'de> ::serde::Deserialize<'de> for ThreatIntelSetProperties {
                 write!(f, "a struct of type ThreatIntelSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut activate: Option<::Value<bool>> = None;
                 let mut detector_id: Option<::Value<String>> = None;
                 let mut format: Option<::Value<String>> = None;
@@ -683,7 +724,8 @@ impl<'de> ::serde::Deserialize<'de> for ThreatIntelSetProperties {
 
                 Ok(ThreatIntelSetProperties {
                     activate: activate.ok_or(::serde::de::Error::missing_field("Activate"))?,
-                    detector_id: detector_id.ok_or(::serde::de::Error::missing_field("DetectorId"))?,
+                    detector_id: detector_id
+                        .ok_or(::serde::de::Error::missing_field("DetectorId"))?,
                     format: format.ok_or(::serde::de::Error::missing_field("Format"))?,
                     location: location.ok_or(::serde::de::Error::missing_field("Location"))?,
                     name: name,
@@ -746,7 +788,9 @@ pub mod detector {
     }
 
     impl ::codec::DeserializeValue for CFNDataSourceConfigurations {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CFNDataSourceConfigurations, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CFNDataSourceConfigurations, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -756,11 +800,16 @@ pub mod detector {
                     write!(f, "a struct of type CFNDataSourceConfigurations")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut kubernetes: Option<::Value<CFNKubernetesConfiguration>> = None;
                     let mut s3_logs: Option<::Value<CFNS3LogsConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Kubernetes" => {
                                 kubernetes = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -804,7 +853,9 @@ pub mod detector {
     }
 
     impl ::codec::DeserializeValue for CFNKubernetesAuditLogsConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CFNKubernetesAuditLogsConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CFNKubernetesAuditLogsConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -814,10 +865,15 @@ pub mod detector {
                     write!(f, "a struct of type CFNKubernetesAuditLogsConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut enable: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Enable" => {
                                 enable = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -826,9 +882,7 @@ pub mod detector {
                         }
                     }
 
-                    Ok(CFNKubernetesAuditLogsConfiguration {
-                        enable: enable,
-                    })
+                    Ok(CFNKubernetesAuditLogsConfiguration { enable: enable })
                 }
             }
 
@@ -857,7 +911,9 @@ pub mod detector {
     }
 
     impl ::codec::DeserializeValue for CFNKubernetesConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CFNKubernetesConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CFNKubernetesConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -867,10 +923,15 @@ pub mod detector {
                     write!(f, "a struct of type CFNKubernetesConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut audit_logs: Option<::Value<CFNKubernetesAuditLogsConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AuditLogs" => {
                                 audit_logs = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -910,7 +971,9 @@ pub mod detector {
     }
 
     impl ::codec::DeserializeValue for CFNS3LogsConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CFNS3LogsConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CFNS3LogsConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -920,10 +983,15 @@ pub mod detector {
                     write!(f, "a struct of type CFNS3LogsConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut enable: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Enable" => {
                                 enable = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -932,9 +1000,7 @@ pub mod detector {
                         }
                     }
 
-                    Ok(CFNS3LogsConfiguration {
-                        enable: enable,
-                    })
+                    Ok(CFNS3LogsConfiguration { enable: enable })
                 }
             }
 
@@ -1009,14 +1075,19 @@ pub mod filter {
                     write!(f, "a struct of type Condition")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut eq: Option<::ValueList<String>> = None;
                     let mut gte: Option<::Value<u32>> = None;
                     let mut lt: Option<::Value<u32>> = None;
                     let mut lte: Option<::Value<u32>> = None;
                     let mut neq: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Eq" => {
                                 eq = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1080,7 +1151,9 @@ pub mod filter {
     }
 
     impl ::codec::DeserializeValue for FindingCriteria {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FindingCriteria, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FindingCriteria, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1090,11 +1163,16 @@ pub mod filter {
                     write!(f, "a struct of type FindingCriteria")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut criterion: Option<::Value<::json::Value>> = None;
                     let mut item_type: Option<::Value<Condition>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Criterion" => {
                                 criterion = ::serde::de::MapAccess::next_value(&mut map)?;

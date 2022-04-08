@@ -3,7 +3,7 @@
 /// The [`AWS::CodeStarNotifications::NotificationRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html) resource type.
 #[derive(Debug, Default)]
 pub struct NotificationRule {
-    properties: NotificationRuleProperties
+    properties: NotificationRuleProperties,
 }
 
 /// Properties for the `NotificationRule` resource.
@@ -71,7 +71,11 @@ impl ::serde::Serialize for NotificationRuleProperties {
         if let Some(ref event_type_id) = self.event_type_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventTypeId", event_type_id)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EventTypeIds", &self.event_type_ids)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EventTypeIds",
+            &self.event_type_ids,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Resource", &self.resource)?;
         if let Some(ref status) = self.status {
@@ -89,7 +93,9 @@ impl ::serde::Serialize for NotificationRuleProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for NotificationRuleProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<NotificationRuleProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<NotificationRuleProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -99,7 +105,10 @@ impl<'de> ::serde::Deserialize<'de> for NotificationRuleProperties {
                 write!(f, "a struct of type NotificationRuleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut created_by: Option<::Value<String>> = None;
                 let mut detail_type: Option<::Value<String>> = None;
                 let mut event_type_id: Option<::Value<String>> = None;
@@ -149,9 +158,11 @@ impl<'de> ::serde::Deserialize<'de> for NotificationRuleProperties {
 
                 Ok(NotificationRuleProperties {
                     created_by: created_by,
-                    detail_type: detail_type.ok_or(::serde::de::Error::missing_field("DetailType"))?,
+                    detail_type: detail_type
+                        .ok_or(::serde::de::Error::missing_field("DetailType"))?,
                     event_type_id: event_type_id,
-                    event_type_ids: event_type_ids.ok_or(::serde::de::Error::missing_field("EventTypeIds"))?,
+                    event_type_ids: event_type_ids
+                        .ok_or(::serde::de::Error::missing_field("EventTypeIds"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     resource: resource.ok_or(::serde::de::Error::missing_field("Resource"))?,
                     status: status,
@@ -206,7 +217,11 @@ pub mod notification_rule {
     impl ::codec::SerializeValue for Target {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetAddress", &self.target_address)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TargetAddress",
+                &self.target_address,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetType", &self.target_type)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -223,11 +238,16 @@ pub mod notification_rule {
                     write!(f, "a struct of type Target")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut target_address: Option<::Value<String>> = None;
                     let mut target_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TargetAddress" => {
                                 target_address = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -240,8 +260,10 @@ pub mod notification_rule {
                     }
 
                     Ok(Target {
-                        target_address: target_address.ok_or(::serde::de::Error::missing_field("TargetAddress"))?,
-                        target_type: target_type.ok_or(::serde::de::Error::missing_field("TargetType"))?,
+                        target_address: target_address
+                            .ok_or(::serde::de::Error::missing_field("TargetAddress"))?,
+                        target_type: target_type
+                            .ok_or(::serde::de::Error::missing_field("TargetType"))?,
                     })
                 }
             }

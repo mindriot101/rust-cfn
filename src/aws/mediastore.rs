@@ -3,7 +3,7 @@
 /// The [`AWS::MediaStore::Container`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html) resource type.
 #[derive(Debug, Default)]
 pub struct Container {
-    properties: ContainerProperties
+    properties: ContainerProperties,
 }
 
 /// Properties for the `Container` resource.
@@ -50,14 +50,26 @@ impl ::serde::Serialize for ContainerProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref access_logging_enabled) = self.access_logging_enabled {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccessLoggingEnabled", access_logging_enabled)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AccessLoggingEnabled",
+                access_logging_enabled,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerName", &self.container_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ContainerName",
+            &self.container_name,
+        )?;
         if let Some(ref cors_policy) = self.cors_policy {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CorsPolicy", cors_policy)?;
         }
         if let Some(ref lifecycle_policy) = self.lifecycle_policy {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LifecyclePolicy", lifecycle_policy)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LifecyclePolicy",
+                lifecycle_policy,
+            )?;
         }
         if let Some(ref metric_policy) = self.metric_policy {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricPolicy", metric_policy)?;
@@ -83,7 +95,10 @@ impl<'de> ::serde::Deserialize<'de> for ContainerProperties {
                 write!(f, "a struct of type ContainerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut access_logging_enabled: Option<::Value<bool>> = None;
                 let mut container_name: Option<::Value<String>> = None;
                 let mut cors_policy: Option<::ValueList<self::container::CorsRule>> = None;
@@ -121,7 +136,8 @@ impl<'de> ::serde::Deserialize<'de> for ContainerProperties {
 
                 Ok(ContainerProperties {
                     access_logging_enabled: access_logging_enabled,
-                    container_name: container_name.ok_or(::serde::de::Error::missing_field("ContainerName"))?,
+                    container_name: container_name
+                        .ok_or(::serde::de::Error::missing_field("ContainerName"))?,
                     cors_policy: cors_policy,
                     lifecycle_policy: lifecycle_policy,
                     metric_policy: metric_policy,
@@ -191,19 +207,39 @@ pub mod container {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_headers) = self.allowed_headers {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowedHeaders", allowed_headers)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowedHeaders",
+                    allowed_headers,
+                )?;
             }
             if let Some(ref allowed_methods) = self.allowed_methods {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowedMethods", allowed_methods)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowedMethods",
+                    allowed_methods,
+                )?;
             }
             if let Some(ref allowed_origins) = self.allowed_origins {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowedOrigins", allowed_origins)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowedOrigins",
+                    allowed_origins,
+                )?;
             }
             if let Some(ref expose_headers) = self.expose_headers {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExposeHeaders", expose_headers)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ExposeHeaders",
+                    expose_headers,
+                )?;
             }
             if let Some(ref max_age_seconds) = self.max_age_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxAgeSeconds", max_age_seconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MaxAgeSeconds",
+                    max_age_seconds,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -220,14 +256,19 @@ pub mod container {
                     write!(f, "a struct of type CorsRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allowed_headers: Option<::ValueList<String>> = None;
                     let mut allowed_methods: Option<::ValueList<String>> = None;
                     let mut allowed_origins: Option<::ValueList<String>> = None;
                     let mut expose_headers: Option<::ValueList<String>> = None;
                     let mut max_age_seconds: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllowedHeaders" => {
                                 allowed_headers = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -280,9 +321,17 @@ pub mod container {
     impl ::codec::SerializeValue for MetricPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainerLevelMetrics", &self.container_level_metrics)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ContainerLevelMetrics",
+                &self.container_level_metrics,
+            )?;
             if let Some(ref metric_policy_rules) = self.metric_policy_rules {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricPolicyRules", metric_policy_rules)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MetricPolicyRules",
+                    metric_policy_rules,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -299,14 +348,20 @@ pub mod container {
                     write!(f, "a struct of type MetricPolicy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut container_level_metrics: Option<::Value<String>> = None;
                     let mut metric_policy_rules: Option<::ValueList<MetricPolicyRule>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ContainerLevelMetrics" => {
-                                container_level_metrics = ::serde::de::MapAccess::next_value(&mut map)?;
+                                container_level_metrics =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MetricPolicyRules" => {
                                 metric_policy_rules = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -316,7 +371,8 @@ pub mod container {
                     }
 
                     Ok(MetricPolicy {
-                        container_level_metrics: container_level_metrics.ok_or(::serde::de::Error::missing_field("ContainerLevelMetrics"))?,
+                        container_level_metrics: container_level_metrics
+                            .ok_or(::serde::de::Error::missing_field("ContainerLevelMetrics"))?,
                         metric_policy_rules: metric_policy_rules,
                     })
                 }
@@ -344,14 +400,24 @@ pub mod container {
     impl ::codec::SerializeValue for MetricPolicyRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectGroup", &self.object_group)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectGroupName", &self.object_group_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ObjectGroup",
+                &self.object_group,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ObjectGroupName",
+                &self.object_group_name,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for MetricPolicyRule {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MetricPolicyRule, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MetricPolicyRule, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -361,11 +427,16 @@ pub mod container {
                     write!(f, "a struct of type MetricPolicyRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut object_group: Option<::Value<String>> = None;
                     let mut object_group_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ObjectGroup" => {
                                 object_group = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -378,8 +449,10 @@ pub mod container {
                     }
 
                     Ok(MetricPolicyRule {
-                        object_group: object_group.ok_or(::serde::de::Error::missing_field("ObjectGroup"))?,
-                        object_group_name: object_group_name.ok_or(::serde::de::Error::missing_field("ObjectGroupName"))?,
+                        object_group: object_group
+                            .ok_or(::serde::de::Error::missing_field("ObjectGroup"))?,
+                        object_group_name: object_group_name
+                            .ok_or(::serde::de::Error::missing_field("ObjectGroupName"))?,
                     })
                 }
             }

@@ -3,7 +3,7 @@
 /// The [`AWS::CUR::ReportDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html) resource type.
 #[derive(Debug, Default)]
 pub struct ReportDefinition {
-    properties: ReportDefinitionProperties
+    properties: ReportDefinitionProperties,
 }
 
 /// Properties for the `ReportDefinition` resource.
@@ -75,19 +75,39 @@ impl ::serde::Serialize for ReportDefinitionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref additional_artifacts) = self.additional_artifacts {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdditionalArtifacts", additional_artifacts)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AdditionalArtifacts",
+                additional_artifacts,
+            )?;
         }
         if let Some(ref additional_schema_elements) = self.additional_schema_elements {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AdditionalSchemaElements", additional_schema_elements)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AdditionalSchemaElements",
+                additional_schema_elements,
+            )?;
         }
         if let Some(ref billing_view_arn) = self.billing_view_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BillingViewArn", billing_view_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BillingViewArn",
+                billing_view_arn,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Compression", &self.compression)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Format", &self.format)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RefreshClosedReports", &self.refresh_closed_reports)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RefreshClosedReports",
+            &self.refresh_closed_reports,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReportName", &self.report_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReportVersioning", &self.report_versioning)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ReportVersioning",
+            &self.report_versioning,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Bucket", &self.s3_bucket)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Prefix", &self.s3_prefix)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Region", &self.s3_region)?;
@@ -97,7 +117,9 @@ impl ::serde::Serialize for ReportDefinitionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ReportDefinitionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ReportDefinitionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ReportDefinitionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -107,7 +129,10 @@ impl<'de> ::serde::Deserialize<'de> for ReportDefinitionProperties {
                 write!(f, "a struct of type ReportDefinitionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut additional_artifacts: Option<::ValueList<String>> = None;
                 let mut additional_schema_elements: Option<::ValueList<String>> = None;
                 let mut billing_view_arn: Option<::Value<String>> = None;
@@ -127,7 +152,8 @@ impl<'de> ::serde::Deserialize<'de> for ReportDefinitionProperties {
                             additional_artifacts = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AdditionalSchemaElements" => {
-                            additional_schema_elements = ::serde::de::MapAccess::next_value(&mut map)?;
+                            additional_schema_elements =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "BillingViewArn" => {
                             billing_view_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -167,11 +193,15 @@ impl<'de> ::serde::Deserialize<'de> for ReportDefinitionProperties {
                     additional_artifacts: additional_artifacts,
                     additional_schema_elements: additional_schema_elements,
                     billing_view_arn: billing_view_arn,
-                    compression: compression.ok_or(::serde::de::Error::missing_field("Compression"))?,
+                    compression: compression
+                        .ok_or(::serde::de::Error::missing_field("Compression"))?,
                     format: format.ok_or(::serde::de::Error::missing_field("Format"))?,
-                    refresh_closed_reports: refresh_closed_reports.ok_or(::serde::de::Error::missing_field("RefreshClosedReports"))?,
-                    report_name: report_name.ok_or(::serde::de::Error::missing_field("ReportName"))?,
-                    report_versioning: report_versioning.ok_or(::serde::de::Error::missing_field("ReportVersioning"))?,
+                    refresh_closed_reports: refresh_closed_reports
+                        .ok_or(::serde::de::Error::missing_field("RefreshClosedReports"))?,
+                    report_name: report_name
+                        .ok_or(::serde::de::Error::missing_field("ReportName"))?,
+                    report_versioning: report_versioning
+                        .ok_or(::serde::de::Error::missing_field("ReportVersioning"))?,
                     s3_bucket: s3_bucket.ok_or(::serde::de::Error::missing_field("S3Bucket"))?,
                     s3_prefix: s3_prefix.ok_or(::serde::de::Error::missing_field("S3Prefix"))?,
                     s3_region: s3_region.ok_or(::serde::de::Error::missing_field("S3Region"))?,

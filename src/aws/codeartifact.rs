@@ -3,7 +3,7 @@
 /// The [`AWS::CodeArtifact::Domain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html) resource type.
 #[derive(Debug, Default)]
 pub struct Domain {
-    properties: DomainProperties
+    properties: DomainProperties,
 }
 
 /// Properties for the `Domain` resource.
@@ -39,7 +39,11 @@ impl ::serde::Serialize for DomainProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionKey", encryption_key)?;
         }
         if let Some(ref permissions_policy_document) = self.permissions_policy_document {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionsPolicyDocument", permissions_policy_document)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PermissionsPolicyDocument",
+                permissions_policy_document,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -59,7 +63,10 @@ impl<'de> ::serde::Deserialize<'de> for DomainProperties {
                 write!(f, "a struct of type DomainProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut domain_name: Option<::Value<String>> = None;
                 let mut encryption_key: Option<::Value<String>> = None;
                 let mut permissions_policy_document: Option<::Value<::json::Value>> = None;
@@ -74,7 +81,8 @@ impl<'de> ::serde::Deserialize<'de> for DomainProperties {
                             encryption_key = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PermissionsPolicyDocument" => {
-                            permissions_policy_document = ::serde::de::MapAccess::next_value(&mut map)?;
+                            permissions_policy_document =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -84,7 +92,8 @@ impl<'de> ::serde::Deserialize<'de> for DomainProperties {
                 }
 
                 Ok(DomainProperties {
-                    domain_name: domain_name.ok_or(::serde::de::Error::missing_field("DomainName"))?,
+                    domain_name: domain_name
+                        .ok_or(::serde::de::Error::missing_field("DomainName"))?,
                     encryption_key: encryption_key,
                     permissions_policy_document: permissions_policy_document,
                     tags: tags,
@@ -118,7 +127,7 @@ impl From<DomainProperties> for Domain {
 /// The [`AWS::CodeArtifact::Repository`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html) resource type.
 #[derive(Debug, Default)]
 pub struct Repository {
-    properties: RepositoryProperties
+    properties: RepositoryProperties,
 }
 
 /// Properties for the `Repository` resource.
@@ -177,12 +186,24 @@ impl ::serde::Serialize for RepositoryProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainOwner", domain_owner)?;
         }
         if let Some(ref external_connections) = self.external_connections {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExternalConnections", external_connections)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ExternalConnections",
+                external_connections,
+            )?;
         }
         if let Some(ref permissions_policy_document) = self.permissions_policy_document {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionsPolicyDocument", permissions_policy_document)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PermissionsPolicyDocument",
+                permissions_policy_document,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryName", &self.repository_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RepositoryName",
+            &self.repository_name,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -204,7 +225,10 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
                 write!(f, "a struct of type RepositoryProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut domain_name: Option<::Value<String>> = None;
                 let mut domain_owner: Option<::Value<String>> = None;
@@ -229,7 +253,8 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
                             external_connections = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PermissionsPolicyDocument" => {
-                            permissions_policy_document = ::serde::de::MapAccess::next_value(&mut map)?;
+                            permissions_policy_document =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "RepositoryName" => {
                             repository_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -246,11 +271,13 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
 
                 Ok(RepositoryProperties {
                     description: description,
-                    domain_name: domain_name.ok_or(::serde::de::Error::missing_field("DomainName"))?,
+                    domain_name: domain_name
+                        .ok_or(::serde::de::Error::missing_field("DomainName"))?,
                     domain_owner: domain_owner,
                     external_connections: external_connections,
                     permissions_policy_document: permissions_policy_document,
-                    repository_name: repository_name.ok_or(::serde::de::Error::missing_field("RepositoryName"))?,
+                    repository_name: repository_name
+                        .ok_or(::serde::de::Error::missing_field("RepositoryName"))?,
                     tags: tags,
                     upstreams: upstreams,
                 })

@@ -3,7 +3,7 @@
 /// The [`AWS::IAM::AccessKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html) resource type.
 #[derive(Debug, Default)]
 pub struct AccessKey {
-    properties: AccessKeyProperties
+    properties: AccessKeyProperties,
 }
 
 /// Properties for the `AccessKey` resource.
@@ -51,7 +51,10 @@ impl<'de> ::serde::Deserialize<'de> for AccessKeyProperties {
                 write!(f, "a struct of type AccessKeyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut serial: Option<::Value<u32>> = None;
                 let mut status: Option<::Value<String>> = None;
                 let mut user_name: Option<::Value<String>> = None;
@@ -105,7 +108,7 @@ impl From<AccessKeyProperties> for AccessKey {
 /// The [`AWS::IAM::Group`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html) resource type.
 #[derive(Debug, Default)]
 pub struct Group {
-    properties: GroupProperties
+    properties: GroupProperties,
 }
 
 /// Properties for the `Group` resource.
@@ -140,7 +143,11 @@ impl ::serde::Serialize for GroupProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "GroupName", group_name)?;
         }
         if let Some(ref managed_policy_arns) = self.managed_policy_arns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManagedPolicyArns", managed_policy_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ManagedPolicyArns",
+                managed_policy_arns,
+            )?;
         }
         if let Some(ref path) = self.path {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", path)?;
@@ -163,7 +170,10 @@ impl<'de> ::serde::Deserialize<'de> for GroupProperties {
                 write!(f, "a struct of type GroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut group_name: Option<::Value<String>> = None;
                 let mut managed_policy_arns: Option<::ValueList<String>> = None;
                 let mut path: Option<::Value<String>> = None;
@@ -222,7 +232,7 @@ impl From<GroupProperties> for Group {
 /// The [`AWS::IAM::InstanceProfile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html) resource type.
 #[derive(Debug, Default)]
 pub struct InstanceProfile {
-    properties: InstanceProfileProperties
+    properties: InstanceProfileProperties,
 }
 
 /// Properties for the `InstanceProfile` resource.
@@ -249,7 +259,11 @@ impl ::serde::Serialize for InstanceProfileProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref instance_profile_name) = self.instance_profile_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceProfileName", instance_profile_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InstanceProfileName",
+                instance_profile_name,
+            )?;
         }
         if let Some(ref path) = self.path {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", path)?;
@@ -260,7 +274,9 @@ impl ::serde::Serialize for InstanceProfileProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for InstanceProfileProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<InstanceProfileProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<InstanceProfileProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -270,7 +286,10 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProfileProperties {
                 write!(f, "a struct of type InstanceProfileProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut instance_profile_name: Option<::Value<String>> = None;
                 let mut path: Option<::Value<String>> = None;
                 let mut roles: Option<::ValueList<String>> = None;
@@ -324,7 +343,7 @@ impl From<InstanceProfileProperties> for InstanceProfile {
 /// The [`AWS::IAM::ManagedPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html) resource type.
 #[derive(Debug, Default)]
 pub struct ManagedPolicy {
-    properties: ManagedPolicyProperties
+    properties: ManagedPolicyProperties,
 }
 
 /// Properties for the `ManagedPolicy` resource.
@@ -377,12 +396,20 @@ impl ::serde::Serialize for ManagedPolicyProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Groups", groups)?;
         }
         if let Some(ref managed_policy_name) = self.managed_policy_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManagedPolicyName", managed_policy_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ManagedPolicyName",
+                managed_policy_name,
+            )?;
         }
         if let Some(ref path) = self.path {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", path)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PolicyDocument",
+            &self.policy_document,
+        )?;
         if let Some(ref roles) = self.roles {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Roles", roles)?;
         }
@@ -394,7 +421,9 @@ impl ::serde::Serialize for ManagedPolicyProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ManagedPolicyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ManagedPolicyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ManagedPolicyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -404,7 +433,10 @@ impl<'de> ::serde::Deserialize<'de> for ManagedPolicyProperties {
                 write!(f, "a struct of type ManagedPolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut groups: Option<::ValueList<String>> = None;
                 let mut managed_policy_name: Option<::Value<String>> = None;
@@ -445,7 +477,8 @@ impl<'de> ::serde::Deserialize<'de> for ManagedPolicyProperties {
                     groups: groups,
                     managed_policy_name: managed_policy_name,
                     path: path,
-                    policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                    policy_document: policy_document
+                        .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
                     roles: roles,
                     users: users,
                 })
@@ -478,7 +511,7 @@ impl From<ManagedPolicyProperties> for ManagedPolicy {
 /// The [`AWS::IAM::OIDCProvider`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-oidcprovider.html) resource type.
 #[derive(Debug, Default)]
 pub struct OIDCProvider {
-    properties: OIDCProviderProperties
+    properties: OIDCProviderProperties,
 }
 
 /// Properties for the `OIDCProvider` resource.
@@ -515,7 +548,11 @@ impl ::serde::Serialize for OIDCProviderProperties {
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ThumbprintList", &self.thumbprint_list)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ThumbprintList",
+            &self.thumbprint_list,
+        )?;
         if let Some(ref url) = self.url {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Url", url)?;
         }
@@ -524,7 +561,9 @@ impl ::serde::Serialize for OIDCProviderProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for OIDCProviderProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<OIDCProviderProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<OIDCProviderProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -534,7 +573,10 @@ impl<'de> ::serde::Deserialize<'de> for OIDCProviderProperties {
                 write!(f, "a struct of type OIDCProviderProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut client_id_list: Option<::ValueList<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut thumbprint_list: Option<::ValueList<String>> = None;
@@ -561,7 +603,8 @@ impl<'de> ::serde::Deserialize<'de> for OIDCProviderProperties {
                 Ok(OIDCProviderProperties {
                     client_id_list: client_id_list,
                     tags: tags,
-                    thumbprint_list: thumbprint_list.ok_or(::serde::de::Error::missing_field("ThumbprintList"))?,
+                    thumbprint_list: thumbprint_list
+                        .ok_or(::serde::de::Error::missing_field("ThumbprintList"))?,
                     url: url,
                 })
             }
@@ -593,7 +636,7 @@ impl From<OIDCProviderProperties> for OIDCProvider {
 /// The [`AWS::IAM::Policy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html) resource type.
 #[derive(Debug, Default)]
 pub struct Policy {
-    properties: PolicyProperties
+    properties: PolicyProperties,
 }
 
 /// Properties for the `Policy` resource.
@@ -632,7 +675,11 @@ impl ::serde::Serialize for PolicyProperties {
         if let Some(ref groups) = self.groups {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Groups", groups)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PolicyDocument",
+            &self.policy_document,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyName", &self.policy_name)?;
         if let Some(ref roles) = self.roles {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Roles", roles)?;
@@ -655,7 +702,10 @@ impl<'de> ::serde::Deserialize<'de> for PolicyProperties {
                 write!(f, "a struct of type PolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut groups: Option<::ValueList<String>> = None;
                 let mut policy_document: Option<::Value<::json::Value>> = None;
                 let mut policy_name: Option<::Value<String>> = None;
@@ -685,8 +735,10 @@ impl<'de> ::serde::Deserialize<'de> for PolicyProperties {
 
                 Ok(PolicyProperties {
                     groups: groups,
-                    policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
-                    policy_name: policy_name.ok_or(::serde::de::Error::missing_field("PolicyName"))?,
+                    policy_document: policy_document
+                        .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                    policy_name: policy_name
+                        .ok_or(::serde::de::Error::missing_field("PolicyName"))?,
                     roles: roles,
                     users: users,
                 })
@@ -719,7 +771,7 @@ impl From<PolicyProperties> for Policy {
 /// The [`AWS::IAM::Role`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html) resource type.
 #[derive(Debug, Default)]
 pub struct Role {
-    properties: RoleProperties
+    properties: RoleProperties,
 }
 
 /// Properties for the `Role` resource.
@@ -775,21 +827,37 @@ pub struct RoleProperties {
 impl ::serde::Serialize for RoleProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssumeRolePolicyDocument", &self.assume_role_policy_document)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AssumeRolePolicyDocument",
+            &self.assume_role_policy_document,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref managed_policy_arns) = self.managed_policy_arns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManagedPolicyArns", managed_policy_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ManagedPolicyArns",
+                managed_policy_arns,
+            )?;
         }
         if let Some(ref max_session_duration) = self.max_session_duration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxSessionDuration", max_session_duration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MaxSessionDuration",
+                max_session_duration,
+            )?;
         }
         if let Some(ref path) = self.path {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", path)?;
         }
         if let Some(ref permissions_boundary) = self.permissions_boundary {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionsBoundary", permissions_boundary)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PermissionsBoundary",
+                permissions_boundary,
+            )?;
         }
         if let Some(ref policies) = self.policies {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Policies", policies)?;
@@ -815,7 +883,10 @@ impl<'de> ::serde::Deserialize<'de> for RoleProperties {
                 write!(f, "a struct of type RoleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut assume_role_policy_document: Option<::Value<::json::Value>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut managed_policy_arns: Option<::ValueList<String>> = None;
@@ -829,7 +900,8 @@ impl<'de> ::serde::Deserialize<'de> for RoleProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AssumeRolePolicyDocument" => {
-                            assume_role_policy_document = ::serde::de::MapAccess::next_value(&mut map)?;
+                            assume_role_policy_document =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -860,7 +932,9 @@ impl<'de> ::serde::Deserialize<'de> for RoleProperties {
                 }
 
                 Ok(RoleProperties {
-                    assume_role_policy_document: assume_role_policy_document.ok_or(::serde::de::Error::missing_field("AssumeRolePolicyDocument"))?,
+                    assume_role_policy_document: assume_role_policy_document.ok_or(
+                        ::serde::de::Error::missing_field("AssumeRolePolicyDocument"),
+                    )?,
                     description: description,
                     managed_policy_arns: managed_policy_arns,
                     max_session_duration: max_session_duration,
@@ -899,7 +973,7 @@ impl From<RoleProperties> for Role {
 /// The [`AWS::IAM::SAMLProvider`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-samlprovider.html) resource type.
 #[derive(Debug, Default)]
 pub struct SAMLProvider {
-    properties: SAMLProviderProperties
+    properties: SAMLProviderProperties,
 }
 
 /// Properties for the `SAMLProvider` resource.
@@ -928,7 +1002,11 @@ impl ::serde::Serialize for SAMLProviderProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SamlMetadataDocument", &self.saml_metadata_document)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SamlMetadataDocument",
+            &self.saml_metadata_document,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -937,7 +1015,9 @@ impl ::serde::Serialize for SAMLProviderProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for SAMLProviderProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SAMLProviderProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SAMLProviderProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -947,7 +1027,10 @@ impl<'de> ::serde::Deserialize<'de> for SAMLProviderProperties {
                 write!(f, "a struct of type SAMLProviderProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut saml_metadata_document: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -969,7 +1052,8 @@ impl<'de> ::serde::Deserialize<'de> for SAMLProviderProperties {
 
                 Ok(SAMLProviderProperties {
                     name: name,
-                    saml_metadata_document: saml_metadata_document.ok_or(::serde::de::Error::missing_field("SamlMetadataDocument"))?,
+                    saml_metadata_document: saml_metadata_document
+                        .ok_or(::serde::de::Error::missing_field("SamlMetadataDocument"))?,
                     tags: tags,
                 })
             }
@@ -1001,7 +1085,7 @@ impl From<SAMLProviderProperties> for SAMLProvider {
 /// The [`AWS::IAM::ServerCertificate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servercertificate.html) resource type.
 #[derive(Debug, Default)]
 pub struct ServerCertificate {
-    properties: ServerCertificateProperties
+    properties: ServerCertificateProperties,
 }
 
 /// Properties for the `ServerCertificate` resource.
@@ -1043,10 +1127,18 @@ impl ::serde::Serialize for ServerCertificateProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref certificate_body) = self.certificate_body {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateBody", certificate_body)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CertificateBody",
+                certificate_body,
+            )?;
         }
         if let Some(ref certificate_chain) = self.certificate_chain {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CertificateChain", certificate_chain)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CertificateChain",
+                certificate_chain,
+            )?;
         }
         if let Some(ref path) = self.path {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", path)?;
@@ -1055,7 +1147,11 @@ impl ::serde::Serialize for ServerCertificateProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PrivateKey", private_key)?;
         }
         if let Some(ref server_certificate_name) = self.server_certificate_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerCertificateName", server_certificate_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ServerCertificateName",
+                server_certificate_name,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -1065,7 +1161,9 @@ impl ::serde::Serialize for ServerCertificateProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ServerCertificateProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ServerCertificateProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ServerCertificateProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1075,7 +1173,10 @@ impl<'de> ::serde::Deserialize<'de> for ServerCertificateProperties {
                 write!(f, "a struct of type ServerCertificateProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut certificate_body: Option<::Value<String>> = None;
                 let mut certificate_chain: Option<::Value<String>> = None;
                 let mut path: Option<::Value<String>> = None;
@@ -1144,7 +1245,7 @@ impl From<ServerCertificateProperties> for ServerCertificate {
 /// The [`AWS::IAM::ServiceLinkedRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html) resource type.
 #[derive(Debug, Default)]
 pub struct ServiceLinkedRole {
-    properties: ServiceLinkedRoleProperties
+    properties: ServiceLinkedRoleProperties,
 }
 
 /// Properties for the `ServiceLinkedRole` resource.
@@ -1170,7 +1271,11 @@ pub struct ServiceLinkedRoleProperties {
 impl ::serde::Serialize for ServiceLinkedRoleProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AWSServiceName", &self.aws_service_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AWSServiceName",
+            &self.aws_service_name,
+        )?;
         if let Some(ref custom_suffix) = self.custom_suffix {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomSuffix", custom_suffix)?;
         }
@@ -1182,7 +1287,9 @@ impl ::serde::Serialize for ServiceLinkedRoleProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ServiceLinkedRoleProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ServiceLinkedRoleProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ServiceLinkedRoleProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1192,7 +1299,10 @@ impl<'de> ::serde::Deserialize<'de> for ServiceLinkedRoleProperties {
                 write!(f, "a struct of type ServiceLinkedRoleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut aws_service_name: Option<::Value<String>> = None;
                 let mut custom_suffix: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
@@ -1213,7 +1323,8 @@ impl<'de> ::serde::Deserialize<'de> for ServiceLinkedRoleProperties {
                 }
 
                 Ok(ServiceLinkedRoleProperties {
-                    aws_service_name: aws_service_name.ok_or(::serde::de::Error::missing_field("AWSServiceName"))?,
+                    aws_service_name: aws_service_name
+                        .ok_or(::serde::de::Error::missing_field("AWSServiceName"))?,
                     custom_suffix: custom_suffix,
                     description: description,
                 })
@@ -1246,7 +1357,7 @@ impl From<ServiceLinkedRoleProperties> for ServiceLinkedRole {
 /// The [`AWS::IAM::User`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html) resource type.
 #[derive(Debug, Default)]
 pub struct User {
-    properties: UserProperties
+    properties: UserProperties,
 }
 
 /// Properties for the `User` resource.
@@ -1304,13 +1415,21 @@ impl ::serde::Serialize for UserProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LoginProfile", login_profile)?;
         }
         if let Some(ref managed_policy_arns) = self.managed_policy_arns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ManagedPolicyArns", managed_policy_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ManagedPolicyArns",
+                managed_policy_arns,
+            )?;
         }
         if let Some(ref path) = self.path {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Path", path)?;
         }
         if let Some(ref permissions_boundary) = self.permissions_boundary {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionsBoundary", permissions_boundary)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PermissionsBoundary",
+                permissions_boundary,
+            )?;
         }
         if let Some(ref policies) = self.policies {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Policies", policies)?;
@@ -1336,7 +1455,10 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                 write!(f, "a struct of type UserProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut groups: Option<::ValueList<String>> = None;
                 let mut login_profile: Option<::Value<self::user::LoginProfile>> = None;
                 let mut managed_policy_arns: Option<::ValueList<String>> = None;
@@ -1415,7 +1537,7 @@ impl From<UserProperties> for User {
 /// The [`AWS::IAM::UserToGroupAddition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct UserToGroupAddition {
-    properties: UserToGroupAdditionProperties
+    properties: UserToGroupAdditionProperties,
 }
 
 /// Properties for the `UserToGroupAddition` resource.
@@ -1443,7 +1565,9 @@ impl ::serde::Serialize for UserToGroupAdditionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for UserToGroupAdditionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<UserToGroupAdditionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<UserToGroupAdditionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1453,7 +1577,10 @@ impl<'de> ::serde::Deserialize<'de> for UserToGroupAdditionProperties {
                 write!(f, "a struct of type UserToGroupAdditionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut group_name: Option<::Value<String>> = None;
                 let mut users: Option<::ValueList<String>> = None;
 
@@ -1502,7 +1629,7 @@ impl From<UserToGroupAdditionProperties> for UserToGroupAddition {
 /// The [`AWS::IAM::VirtualMFADevice`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-virtualmfadevice.html) resource type.
 #[derive(Debug, Default)]
 pub struct VirtualMFADevice {
-    properties: VirtualMFADeviceProperties
+    properties: VirtualMFADeviceProperties,
 }
 
 /// Properties for the `VirtualMFADevice` resource.
@@ -1541,14 +1668,20 @@ impl ::serde::Serialize for VirtualMFADeviceProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Users", &self.users)?;
         if let Some(ref virtual_mfa_device_name) = self.virtual_mfa_device_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VirtualMfaDeviceName", virtual_mfa_device_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VirtualMfaDeviceName",
+                virtual_mfa_device_name,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for VirtualMFADeviceProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<VirtualMFADeviceProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<VirtualMFADeviceProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1558,7 +1691,10 @@ impl<'de> ::serde::Deserialize<'de> for VirtualMFADeviceProperties {
                 write!(f, "a struct of type VirtualMFADeviceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut path: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut users: Option<::ValueList<String>> = None;
@@ -1635,7 +1771,11 @@ pub mod group {
     impl ::codec::SerializeValue for Policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PolicyDocument",
+                &self.policy_document,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyName", &self.policy_name)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1652,11 +1792,16 @@ pub mod group {
                     write!(f, "a struct of type Policy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut policy_document: Option<::Value<::json::Value>> = None;
                     let mut policy_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PolicyDocument" => {
                                 policy_document = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1669,8 +1814,10 @@ pub mod group {
                     }
 
                     Ok(Policy {
-                        policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
-                        policy_name: policy_name.ok_or(::serde::de::Error::missing_field("PolicyName"))?,
+                        policy_document: policy_document
+                            .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                        policy_name: policy_name
+                            .ok_or(::serde::de::Error::missing_field("PolicyName"))?,
                     })
                 }
             }
@@ -1701,7 +1848,11 @@ pub mod role {
     impl ::codec::SerializeValue for Policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PolicyDocument",
+                &self.policy_document,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyName", &self.policy_name)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1718,11 +1869,16 @@ pub mod role {
                     write!(f, "a struct of type Policy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut policy_document: Option<::Value<::json::Value>> = None;
                     let mut policy_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PolicyDocument" => {
                                 policy_document = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1735,8 +1891,10 @@ pub mod role {
                     }
 
                     Ok(Policy {
-                        policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
-                        policy_name: policy_name.ok_or(::serde::de::Error::missing_field("PolicyName"))?,
+                        policy_document: policy_document
+                            .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                        policy_name: policy_name
+                            .ok_or(::serde::de::Error::missing_field("PolicyName"))?,
                     })
                 }
             }
@@ -1769,7 +1927,11 @@ pub mod user {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Password", &self.password)?;
             if let Some(ref password_reset_required) = self.password_reset_required {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "PasswordResetRequired", password_reset_required)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "PasswordResetRequired",
+                    password_reset_required,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1786,17 +1948,23 @@ pub mod user {
                     write!(f, "a struct of type LoginProfile")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut password: Option<::Value<String>> = None;
                     let mut password_reset_required: Option<::Value<bool>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Password" => {
                                 password = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PasswordResetRequired" => {
-                                password_reset_required = ::serde::de::MapAccess::next_value(&mut map)?;
+                                password_reset_required =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -1831,7 +1999,11 @@ pub mod user {
     impl ::codec::SerializeValue for Policy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDocument", &self.policy_document)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PolicyDocument",
+                &self.policy_document,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyName", &self.policy_name)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1848,11 +2020,16 @@ pub mod user {
                     write!(f, "a struct of type Policy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut policy_document: Option<::Value<::json::Value>> = None;
                     let mut policy_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PolicyDocument" => {
                                 policy_document = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1865,8 +2042,10 @@ pub mod user {
                     }
 
                     Ok(Policy {
-                        policy_document: policy_document.ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
-                        policy_name: policy_name.ok_or(::serde::de::Error::missing_field("PolicyName"))?,
+                        policy_document: policy_document
+                            .ok_or(::serde::de::Error::missing_field("PolicyDocument"))?,
+                        policy_name: policy_name
+                            .ok_or(::serde::de::Error::missing_field("PolicyName"))?,
                     })
                 }
             }

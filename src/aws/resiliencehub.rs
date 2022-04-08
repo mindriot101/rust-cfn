@@ -3,7 +3,7 @@
 /// The [`AWS::ResilienceHub::App`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html) resource type.
 #[derive(Debug, Default)]
 pub struct App {
-    properties: AppProperties
+    properties: AppProperties,
 }
 
 /// Properties for the `App` resource.
@@ -44,15 +44,27 @@ pub struct AppProperties {
 impl ::serde::Serialize for AppProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppTemplateBody", &self.app_template_body)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AppTemplateBody",
+            &self.app_template_body,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref resiliency_policy_arn) = self.resiliency_policy_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResiliencyPolicyArn", resiliency_policy_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResiliencyPolicyArn",
+                resiliency_policy_arn,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceMappings", &self.resource_mappings)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ResourceMappings",
+            &self.resource_mappings,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -71,7 +83,10 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
                 write!(f, "a struct of type AppProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut app_template_body: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -104,11 +119,13 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
                 }
 
                 Ok(AppProperties {
-                    app_template_body: app_template_body.ok_or(::serde::de::Error::missing_field("AppTemplateBody"))?,
+                    app_template_body: app_template_body
+                        .ok_or(::serde::de::Error::missing_field("AppTemplateBody"))?,
                     description: description,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     resiliency_policy_arn: resiliency_policy_arn,
-                    resource_mappings: resource_mappings.ok_or(::serde::de::Error::missing_field("ResourceMappings"))?,
+                    resource_mappings: resource_mappings
+                        .ok_or(::serde::de::Error::missing_field("ResourceMappings"))?,
                     tags: tags,
                 })
             }
@@ -140,7 +157,7 @@ impl From<AppProperties> for App {
 /// The [`AWS::ResilienceHub::ResiliencyPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-resiliencypolicy.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResiliencyPolicy {
-    properties: ResiliencyPolicyProperties
+    properties: ResiliencyPolicyProperties,
 }
 
 /// Properties for the `ResiliencyPolicy` resource.
@@ -182,11 +199,19 @@ impl ::serde::Serialize for ResiliencyPolicyProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref data_location_constraint) = self.data_location_constraint {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataLocationConstraint", data_location_constraint)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DataLocationConstraint",
+                data_location_constraint,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Policy", &self.policy)?;
         if let Some(ref policy_description) = self.policy_description {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyDescription", policy_description)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PolicyDescription",
+                policy_description,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyName", &self.policy_name)?;
         if let Some(ref tags) = self.tags {
@@ -198,7 +223,9 @@ impl ::serde::Serialize for ResiliencyPolicyProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResiliencyPolicyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResiliencyPolicyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResiliencyPolicyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -208,7 +235,10 @@ impl<'de> ::serde::Deserialize<'de> for ResiliencyPolicyProperties {
                 write!(f, "a struct of type ResiliencyPolicyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data_location_constraint: Option<::Value<String>> = None;
                 let mut policy: Option<::ValueMap<self::resiliency_policy::FailurePolicy>> = None;
                 let mut policy_description: Option<::Value<String>> = None;
@@ -219,7 +249,8 @@ impl<'de> ::serde::Deserialize<'de> for ResiliencyPolicyProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "DataLocationConstraint" => {
-                            data_location_constraint = ::serde::de::MapAccess::next_value(&mut map)?;
+                            data_location_constraint =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Policy" => {
                             policy = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -244,7 +275,8 @@ impl<'de> ::serde::Deserialize<'de> for ResiliencyPolicyProperties {
                     data_location_constraint: data_location_constraint,
                     policy: policy.ok_or(::serde::de::Error::missing_field("Policy"))?,
                     policy_description: policy_description,
-                    policy_name: policy_name.ok_or(::serde::de::Error::missing_field("PolicyName"))?,
+                    policy_name: policy_name
+                        .ok_or(::serde::de::Error::missing_field("PolicyName"))?,
                     tags: tags,
                     tier: tier.ok_or(::serde::de::Error::missing_field("Tier"))?,
                 })
@@ -306,7 +338,11 @@ pub mod app {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aws_account_id) = self.aws_account_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AwsAccountId", aws_account_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AwsAccountId",
+                    aws_account_id,
+                )?;
             }
             if let Some(ref aws_region) = self.aws_region {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AwsRegion", aws_region)?;
@@ -318,7 +354,9 @@ pub mod app {
     }
 
     impl ::codec::DeserializeValue for PhysicalResourceId {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PhysicalResourceId, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PhysicalResourceId, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -328,13 +366,18 @@ pub mod app {
                     write!(f, "a struct of type PhysicalResourceId")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut aws_account_id: Option<::Value<String>> = None;
                     let mut aws_region: Option<::Value<String>> = None;
                     let mut identifier: Option<::Value<String>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AwsAccountId" => {
                                 aws_account_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -355,7 +398,8 @@ pub mod app {
                     Ok(PhysicalResourceId {
                         aws_account_id: aws_account_id,
                         aws_region: aws_region,
-                        identifier: identifier.ok_or(::serde::de::Error::missing_field("Identifier"))?,
+                        identifier: identifier
+                            .ok_or(::serde::de::Error::missing_field("Identifier"))?,
                         r#type: r#type.ok_or(::serde::de::Error::missing_field("Type"))?,
                     })
                 }
@@ -394,19 +438,37 @@ pub mod app {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref logical_stack_name) = self.logical_stack_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogicalStackName", logical_stack_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LogicalStackName",
+                    logical_stack_name,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MappingType", &self.mapping_type)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PhysicalResourceId", &self.physical_resource_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MappingType",
+                &self.mapping_type,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PhysicalResourceId",
+                &self.physical_resource_id,
+            )?;
             if let Some(ref resource_name) = self.resource_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceName", resource_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ResourceName",
+                    resource_name,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ResourceMapping {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceMapping, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ResourceMapping, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -416,13 +478,18 @@ pub mod app {
                     write!(f, "a struct of type ResourceMapping")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut logical_stack_name: Option<::Value<String>> = None;
                     let mut mapping_type: Option<::Value<String>> = None;
                     let mut physical_resource_id: Option<::Value<PhysicalResourceId>> = None;
                     let mut resource_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LogicalStackName" => {
                                 logical_stack_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -431,7 +498,8 @@ pub mod app {
                                 mapping_type = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PhysicalResourceId" => {
-                                physical_resource_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                                physical_resource_id =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ResourceName" => {
                                 resource_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -442,8 +510,10 @@ pub mod app {
 
                     Ok(ResourceMapping {
                         logical_stack_name: logical_stack_name,
-                        mapping_type: mapping_type.ok_or(::serde::de::Error::missing_field("MappingType"))?,
-                        physical_resource_id: physical_resource_id.ok_or(::serde::de::Error::missing_field("PhysicalResourceId"))?,
+                        mapping_type: mapping_type
+                            .ok_or(::serde::de::Error::missing_field("MappingType"))?,
+                        physical_resource_id: physical_resource_id
+                            .ok_or(::serde::de::Error::missing_field("PhysicalResourceId"))?,
                         resource_name: resource_name,
                     })
                 }
@@ -482,7 +552,9 @@ pub mod resiliency_policy {
     }
 
     impl ::codec::DeserializeValue for FailurePolicy {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FailurePolicy, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FailurePolicy, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -492,11 +564,16 @@ pub mod resiliency_policy {
                     write!(f, "a struct of type FailurePolicy")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut rpo_in_secs: Option<::Value<u32>> = None;
                     let mut rto_in_secs: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "RpoInSecs" => {
                                 rpo_in_secs = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -509,8 +586,10 @@ pub mod resiliency_policy {
                     }
 
                     Ok(FailurePolicy {
-                        rpo_in_secs: rpo_in_secs.ok_or(::serde::de::Error::missing_field("RpoInSecs"))?,
-                        rto_in_secs: rto_in_secs.ok_or(::serde::de::Error::missing_field("RtoInSecs"))?,
+                        rpo_in_secs: rpo_in_secs
+                            .ok_or(::serde::de::Error::missing_field("RpoInSecs"))?,
+                        rto_in_secs: rto_in_secs
+                            .ok_or(::serde::de::Error::missing_field("RtoInSecs"))?,
                     })
                 }
             }

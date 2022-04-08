@@ -3,7 +3,7 @@
 /// The [`AWS::Signer::ProfilePermission`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html) resource type.
 #[derive(Debug, Default)]
 pub struct ProfilePermission {
-    properties: ProfilePermissionProperties
+    properties: ProfilePermissionProperties,
 }
 
 /// Properties for the `ProfilePermission` resource.
@@ -43,7 +43,11 @@ impl ::serde::Serialize for ProfilePermissionProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Principal", &self.principal)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProfileName", &self.profile_name)?;
         if let Some(ref profile_version) = self.profile_version {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProfileVersion", profile_version)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ProfileVersion",
+                profile_version,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "StatementId", &self.statement_id)?;
         ::serde::ser::SerializeMap::end(map)
@@ -51,7 +55,9 @@ impl ::serde::Serialize for ProfilePermissionProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ProfilePermissionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ProfilePermissionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ProfilePermissionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -61,7 +67,10 @@ impl<'de> ::serde::Deserialize<'de> for ProfilePermissionProperties {
                 write!(f, "a struct of type ProfilePermissionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut action: Option<::Value<String>> = None;
                 let mut principal: Option<::Value<String>> = None;
                 let mut profile_name: Option<::Value<String>> = None;
@@ -92,9 +101,11 @@ impl<'de> ::serde::Deserialize<'de> for ProfilePermissionProperties {
                 Ok(ProfilePermissionProperties {
                     action: action.ok_or(::serde::de::Error::missing_field("Action"))?,
                     principal: principal.ok_or(::serde::de::Error::missing_field("Principal"))?,
-                    profile_name: profile_name.ok_or(::serde::de::Error::missing_field("ProfileName"))?,
+                    profile_name: profile_name
+                        .ok_or(::serde::de::Error::missing_field("ProfileName"))?,
                     profile_version: profile_version,
-                    statement_id: statement_id.ok_or(::serde::de::Error::missing_field("StatementId"))?,
+                    statement_id: statement_id
+                        .ok_or(::serde::de::Error::missing_field("StatementId"))?,
                 })
             }
         }
@@ -125,7 +136,7 @@ impl From<ProfilePermissionProperties> for ProfilePermission {
 /// The [`AWS::Signer::SigningProfile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html) resource type.
 #[derive(Debug, Default)]
 pub struct SigningProfile {
-    properties: SigningProfileProperties
+    properties: SigningProfileProperties,
 }
 
 /// Properties for the `SigningProfile` resource.
@@ -153,7 +164,11 @@ impl ::serde::Serialize for SigningProfileProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "PlatformId", &self.platform_id)?;
         if let Some(ref signature_validity_period) = self.signature_validity_period {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SignatureValidityPeriod", signature_validity_period)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SignatureValidityPeriod",
+                signature_validity_period,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -163,7 +178,9 @@ impl ::serde::Serialize for SigningProfileProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for SigningProfileProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<SigningProfileProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<SigningProfileProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -173,9 +190,14 @@ impl<'de> ::serde::Deserialize<'de> for SigningProfileProperties {
                 write!(f, "a struct of type SigningProfileProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut platform_id: Option<::Value<String>> = None;
-                let mut signature_validity_period: Option<::Value<self::signing_profile::SignatureValidityPeriod>> = None;
+                let mut signature_validity_period: Option<
+                    ::Value<self::signing_profile::SignatureValidityPeriod>,
+                > = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -184,7 +206,8 @@ impl<'de> ::serde::Deserialize<'de> for SigningProfileProperties {
                             platform_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SignatureValidityPeriod" => {
-                            signature_validity_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                            signature_validity_period =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -194,7 +217,8 @@ impl<'de> ::serde::Deserialize<'de> for SigningProfileProperties {
                 }
 
                 Ok(SigningProfileProperties {
-                    platform_id: platform_id.ok_or(::serde::de::Error::missing_field("PlatformId"))?,
+                    platform_id: platform_id
+                        .ok_or(::serde::de::Error::missing_field("PlatformId"))?,
                     signature_validity_period: signature_validity_period,
                     tags: tags,
                 })
@@ -256,7 +280,9 @@ pub mod signing_profile {
     }
 
     impl ::codec::DeserializeValue for SignatureValidityPeriod {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SignatureValidityPeriod, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SignatureValidityPeriod, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -266,11 +292,16 @@ pub mod signing_profile {
                     write!(f, "a struct of type SignatureValidityPeriod")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut r#type: Option<::Value<String>> = None;
                     let mut value: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Type" => {
                                 r#type = ::serde::de::MapAccess::next_value(&mut map)?;

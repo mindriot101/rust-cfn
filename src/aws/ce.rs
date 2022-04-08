@@ -3,7 +3,7 @@
 /// The [`AWS::CE::AnomalyMonitor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html) resource type.
 #[derive(Debug, Default)]
 pub struct AnomalyMonitor {
-    properties: AnomalyMonitorProperties
+    properties: AnomalyMonitorProperties,
 }
 
 /// Properties for the `AnomalyMonitor` resource.
@@ -35,11 +35,19 @@ impl ::serde::Serialize for AnomalyMonitorProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref monitor_dimension) = self.monitor_dimension {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MonitorDimension", monitor_dimension)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MonitorDimension",
+                monitor_dimension,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "MonitorName", &self.monitor_name)?;
         if let Some(ref monitor_specification) = self.monitor_specification {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MonitorSpecification", monitor_specification)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MonitorSpecification",
+                monitor_specification,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "MonitorType", &self.monitor_type)?;
         ::serde::ser::SerializeMap::end(map)
@@ -47,7 +55,9 @@ impl ::serde::Serialize for AnomalyMonitorProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for AnomalyMonitorProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AnomalyMonitorProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AnomalyMonitorProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -57,7 +67,10 @@ impl<'de> ::serde::Deserialize<'de> for AnomalyMonitorProperties {
                 write!(f, "a struct of type AnomalyMonitorProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut monitor_dimension: Option<::Value<String>> = None;
                 let mut monitor_name: Option<::Value<String>> = None;
                 let mut monitor_specification: Option<::Value<String>> = None;
@@ -83,9 +96,11 @@ impl<'de> ::serde::Deserialize<'de> for AnomalyMonitorProperties {
 
                 Ok(AnomalyMonitorProperties {
                     monitor_dimension: monitor_dimension,
-                    monitor_name: monitor_name.ok_or(::serde::de::Error::missing_field("MonitorName"))?,
+                    monitor_name: monitor_name
+                        .ok_or(::serde::de::Error::missing_field("MonitorName"))?,
                     monitor_specification: monitor_specification,
-                    monitor_type: monitor_type.ok_or(::serde::de::Error::missing_field("MonitorType"))?,
+                    monitor_type: monitor_type
+                        .ok_or(::serde::de::Error::missing_field("MonitorType"))?,
                 })
             }
         }
@@ -116,7 +131,7 @@ impl From<AnomalyMonitorProperties> for AnomalyMonitor {
 /// The [`AWS::CE::AnomalySubscription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html) resource type.
 #[derive(Debug, Default)]
 pub struct AnomalySubscription {
-    properties: AnomalySubscriptionProperties
+    properties: AnomalySubscriptionProperties,
 }
 
 /// Properties for the `AnomalySubscription` resource.
@@ -153,16 +168,26 @@ impl ::serde::Serialize for AnomalySubscriptionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Frequency", &self.frequency)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "MonitorArnList", &self.monitor_arn_list)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "MonitorArnList",
+            &self.monitor_arn_list,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subscribers", &self.subscribers)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubscriptionName", &self.subscription_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SubscriptionName",
+            &self.subscription_name,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Threshold", &self.threshold)?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for AnomalySubscriptionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AnomalySubscriptionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AnomalySubscriptionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -172,10 +197,14 @@ impl<'de> ::serde::Deserialize<'de> for AnomalySubscriptionProperties {
                 write!(f, "a struct of type AnomalySubscriptionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut frequency: Option<::Value<String>> = None;
                 let mut monitor_arn_list: Option<::ValueList<String>> = None;
-                let mut subscribers: Option<::ValueList<self::anomaly_subscription::Subscriber>> = None;
+                let mut subscribers: Option<::ValueList<self::anomaly_subscription::Subscriber>> =
+                    None;
                 let mut subscription_name: Option<::Value<String>> = None;
                 let mut threshold: Option<::Value<f64>> = None;
 
@@ -202,9 +231,12 @@ impl<'de> ::serde::Deserialize<'de> for AnomalySubscriptionProperties {
 
                 Ok(AnomalySubscriptionProperties {
                     frequency: frequency.ok_or(::serde::de::Error::missing_field("Frequency"))?,
-                    monitor_arn_list: monitor_arn_list.ok_or(::serde::de::Error::missing_field("MonitorArnList"))?,
-                    subscribers: subscribers.ok_or(::serde::de::Error::missing_field("Subscribers"))?,
-                    subscription_name: subscription_name.ok_or(::serde::de::Error::missing_field("SubscriptionName"))?,
+                    monitor_arn_list: monitor_arn_list
+                        .ok_or(::serde::de::Error::missing_field("MonitorArnList"))?,
+                    subscribers: subscribers
+                        .ok_or(::serde::de::Error::missing_field("Subscribers"))?,
+                    subscription_name: subscription_name
+                        .ok_or(::serde::de::Error::missing_field("SubscriptionName"))?,
                     threshold: threshold.ok_or(::serde::de::Error::missing_field("Threshold"))?,
                 })
             }
@@ -236,7 +268,7 @@ impl From<AnomalySubscriptionProperties> for AnomalySubscription {
 /// The [`AWS::CE::CostCategory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html) resource type.
 #[derive(Debug, Default)]
 pub struct CostCategory {
-    properties: CostCategoryProperties
+    properties: CostCategoryProperties,
 }
 
 /// Properties for the `CostCategory` resource.
@@ -279,14 +311,20 @@ impl ::serde::Serialize for CostCategoryProperties {
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuleVersion", &self.rule_version)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Rules", &self.rules)?;
         if let Some(ref split_charge_rules) = self.split_charge_rules {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SplitChargeRules", split_charge_rules)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SplitChargeRules",
+                split_charge_rules,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for CostCategoryProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<CostCategoryProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<CostCategoryProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -296,7 +334,10 @@ impl<'de> ::serde::Deserialize<'de> for CostCategoryProperties {
                 write!(f, "a struct of type CostCategoryProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut default_value: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut rule_version: Option<::Value<String>> = None;
@@ -327,7 +368,8 @@ impl<'de> ::serde::Deserialize<'de> for CostCategoryProperties {
                 Ok(CostCategoryProperties {
                     default_value: default_value,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    rule_version: rule_version.ok_or(::serde::de::Error::missing_field("RuleVersion"))?,
+                    rule_version: rule_version
+                        .ok_or(::serde::de::Error::missing_field("RuleVersion"))?,
                     rules: rules.ok_or(::serde::de::Error::missing_field("Rules"))?,
                     split_charge_rules: split_charge_rules,
                 })
@@ -403,12 +445,17 @@ pub mod anomaly_subscription {
                     write!(f, "a struct of type Subscriber")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut address: Option<::Value<String>> = None;
                     let mut status: Option<::Value<String>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Address" => {
                                 address = ::serde::de::MapAccess::next_value(&mut map)?;

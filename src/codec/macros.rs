@@ -7,7 +7,7 @@ macro_rules! cfn_internal__inherit_serialize_impl {
                 ::serde::Serialize::serialize(self, s)
             }
         }
-    }
+    };
 }
 
 #[macro_export]
@@ -19,7 +19,7 @@ macro_rules! cfn_internal__inherit_deserialize_impl {
                 ::serde::Deserialize::deserialize(d)
             }
         }
-    }
+    };
 }
 
 #[macro_export]
@@ -28,7 +28,7 @@ macro_rules! cfn_internal__inherit_codec_impls {
     ( $t:ty ) => {
         cfn_internal__inherit_serialize_impl!($t);
         cfn_internal__inherit_deserialize_impl!($t);
-    }
+    };
 }
 
 #[macro_export]
@@ -40,7 +40,7 @@ macro_rules! cfn_internal__num_serialize_impl {
                 ::serde::Serializer::collect_str(s, self)
             }
         }
-    }
+    };
 }
 
 #[macro_export]
@@ -53,20 +53,20 @@ macro_rules! cfn_internal__num_deserialize_impl {
                 #[serde(untagged)]
                 enum Value<'a> {
                     Number($t),
-                    String(&'a str)
+                    String(&'a str),
                 }
                 match ::serde::Deserialize::deserialize(d)? {
                     Value::Number(number) => Ok(number),
-                    Value::String(string) => {
-                        string.parse().map_err(|_err| {
-                            ::serde::de::Error::invalid_value(::serde::de::Unexpected::Str(string),
-                                &stringify!($t))
-                        })
-                    }
+                    Value::String(string) => string.parse().map_err(|_err| {
+                        ::serde::de::Error::invalid_value(
+                            ::serde::de::Unexpected::Str(string),
+                            &stringify!($t),
+                        )
+                    }),
                 }
             }
         }
-    }
+    };
 }
 
 #[macro_export]
@@ -75,5 +75,5 @@ macro_rules! cfn_internal__num_codec_impls {
     ( $t:ty ) => {
         cfn_internal__num_serialize_impl!($t);
         cfn_internal__num_deserialize_impl!($t);
-    }
+    };
 }

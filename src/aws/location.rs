@@ -3,7 +3,7 @@
 /// The [`AWS::Location::GeofenceCollection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html) resource type.
 #[derive(Debug, Default)]
 pub struct GeofenceCollection {
-    properties: GeofenceCollectionProperties
+    properties: GeofenceCollectionProperties,
 }
 
 /// Properties for the `GeofenceCollection` resource.
@@ -39,7 +39,11 @@ pub struct GeofenceCollectionProperties {
 impl ::serde::Serialize for GeofenceCollectionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "CollectionName", &self.collection_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "CollectionName",
+            &self.collection_name,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
@@ -50,14 +54,20 @@ impl ::serde::Serialize for GeofenceCollectionProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PricingPlan", pricing_plan)?;
         }
         if let Some(ref pricing_plan_data_source) = self.pricing_plan_data_source {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PricingPlanDataSource", pricing_plan_data_source)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PricingPlanDataSource",
+                pricing_plan_data_source,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for GeofenceCollectionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<GeofenceCollectionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<GeofenceCollectionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -67,7 +77,10 @@ impl<'de> ::serde::Deserialize<'de> for GeofenceCollectionProperties {
                 write!(f, "a struct of type GeofenceCollectionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut collection_name: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut kms_key_id: Option<::Value<String>> = None;
@@ -89,14 +102,16 @@ impl<'de> ::serde::Deserialize<'de> for GeofenceCollectionProperties {
                             pricing_plan = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PricingPlanDataSource" => {
-                            pricing_plan_data_source = ::serde::de::MapAccess::next_value(&mut map)?;
+                            pricing_plan_data_source =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         _ => {}
                     }
                 }
 
                 Ok(GeofenceCollectionProperties {
-                    collection_name: collection_name.ok_or(::serde::de::Error::missing_field("CollectionName"))?,
+                    collection_name: collection_name
+                        .ok_or(::serde::de::Error::missing_field("CollectionName"))?,
                     description: description,
                     kms_key_id: kms_key_id,
                     pricing_plan: pricing_plan,
@@ -131,7 +146,7 @@ impl From<GeofenceCollectionProperties> for GeofenceCollection {
 /// The [`AWS::Location::Map`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html) resource type.
 #[derive(Debug, Default)]
 pub struct Map {
-    properties: MapProperties
+    properties: MapProperties,
 }
 
 /// Properties for the `Map` resource.
@@ -162,7 +177,11 @@ pub struct MapProperties {
 impl ::serde::Serialize for MapProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "Configuration", &self.configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "Configuration",
+            &self.configuration,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
@@ -185,7 +204,10 @@ impl<'de> ::serde::Deserialize<'de> for MapProperties {
                 write!(f, "a struct of type MapProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut configuration: Option<::Value<self::map::MapConfiguration>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut map_name: Option<::Value<String>> = None;
@@ -210,7 +232,8 @@ impl<'de> ::serde::Deserialize<'de> for MapProperties {
                 }
 
                 Ok(MapProperties {
-                    configuration: configuration.ok_or(::serde::de::Error::missing_field("Configuration"))?,
+                    configuration: configuration
+                        .ok_or(::serde::de::Error::missing_field("Configuration"))?,
                     description: description,
                     map_name: map_name.ok_or(::serde::de::Error::missing_field("MapName"))?,
                     pricing_plan: pricing_plan,
@@ -244,7 +267,7 @@ impl From<MapProperties> for Map {
 /// The [`AWS::Location::PlaceIndex`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html) resource type.
 #[derive(Debug, Default)]
 pub struct PlaceIndex {
-    properties: PlaceIndexProperties
+    properties: PlaceIndexProperties,
 }
 
 /// Properties for the `PlaceIndex` resource.
@@ -282,7 +305,11 @@ impl ::serde::Serialize for PlaceIndexProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataSource", &self.data_source)?;
         if let Some(ref data_source_configuration) = self.data_source_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataSourceConfiguration", data_source_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DataSourceConfiguration",
+                data_source_configuration,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -306,9 +333,14 @@ impl<'de> ::serde::Deserialize<'de> for PlaceIndexProperties {
                 write!(f, "a struct of type PlaceIndexProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut data_source: Option<::Value<String>> = None;
-                let mut data_source_configuration: Option<::Value<self::place_index::DataSourceConfiguration>> = None;
+                let mut data_source_configuration: Option<
+                    ::Value<self::place_index::DataSourceConfiguration>,
+                > = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut index_name: Option<::Value<String>> = None;
                 let mut pricing_plan: Option<::Value<String>> = None;
@@ -319,7 +351,8 @@ impl<'de> ::serde::Deserialize<'de> for PlaceIndexProperties {
                             data_source = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "DataSourceConfiguration" => {
-                            data_source_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            data_source_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -335,7 +368,8 @@ impl<'de> ::serde::Deserialize<'de> for PlaceIndexProperties {
                 }
 
                 Ok(PlaceIndexProperties {
-                    data_source: data_source.ok_or(::serde::de::Error::missing_field("DataSource"))?,
+                    data_source: data_source
+                        .ok_or(::serde::de::Error::missing_field("DataSource"))?,
                     data_source_configuration: data_source_configuration,
                     description: description,
                     index_name: index_name.ok_or(::serde::de::Error::missing_field("IndexName"))?,
@@ -370,7 +404,7 @@ impl From<PlaceIndexProperties> for PlaceIndex {
 /// The [`AWS::Location::RouteCalculator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html) resource type.
 #[derive(Debug, Default)]
 pub struct RouteCalculator {
-    properties: RouteCalculatorProperties
+    properties: RouteCalculatorProperties,
 }
 
 /// Properties for the `RouteCalculator` resource.
@@ -401,7 +435,11 @@ pub struct RouteCalculatorProperties {
 impl ::serde::Serialize for RouteCalculatorProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "CalculatorName", &self.calculator_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "CalculatorName",
+            &self.calculator_name,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "DataSource", &self.data_source)?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -414,7 +452,9 @@ impl ::serde::Serialize for RouteCalculatorProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RouteCalculatorProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RouteCalculatorProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RouteCalculatorProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -424,7 +464,10 @@ impl<'de> ::serde::Deserialize<'de> for RouteCalculatorProperties {
                 write!(f, "a struct of type RouteCalculatorProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut calculator_name: Option<::Value<String>> = None;
                 let mut data_source: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
@@ -449,8 +492,10 @@ impl<'de> ::serde::Deserialize<'de> for RouteCalculatorProperties {
                 }
 
                 Ok(RouteCalculatorProperties {
-                    calculator_name: calculator_name.ok_or(::serde::de::Error::missing_field("CalculatorName"))?,
-                    data_source: data_source.ok_or(::serde::de::Error::missing_field("DataSource"))?,
+                    calculator_name: calculator_name
+                        .ok_or(::serde::de::Error::missing_field("CalculatorName"))?,
+                    data_source: data_source
+                        .ok_or(::serde::de::Error::missing_field("DataSource"))?,
                     description: description,
                     pricing_plan: pricing_plan,
                 })
@@ -483,7 +528,7 @@ impl From<RouteCalculatorProperties> for RouteCalculator {
 /// The [`AWS::Location::Tracker`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html) resource type.
 #[derive(Debug, Default)]
 pub struct Tracker {
-    properties: TrackerProperties
+    properties: TrackerProperties,
 }
 
 /// Properties for the `Tracker` resource.
@@ -531,13 +576,21 @@ impl ::serde::Serialize for TrackerProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyId", kms_key_id)?;
         }
         if let Some(ref position_filtering) = self.position_filtering {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PositionFiltering", position_filtering)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PositionFiltering",
+                position_filtering,
+            )?;
         }
         if let Some(ref pricing_plan) = self.pricing_plan {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PricingPlan", pricing_plan)?;
         }
         if let Some(ref pricing_plan_data_source) = self.pricing_plan_data_source {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PricingPlanDataSource", pricing_plan_data_source)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PricingPlanDataSource",
+                pricing_plan_data_source,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "TrackerName", &self.tracker_name)?;
         ::serde::ser::SerializeMap::end(map)
@@ -555,7 +608,10 @@ impl<'de> ::serde::Deserialize<'de> for TrackerProperties {
                 write!(f, "a struct of type TrackerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut kms_key_id: Option<::Value<String>> = None;
                 let mut position_filtering: Option<::Value<String>> = None;
@@ -578,7 +634,8 @@ impl<'de> ::serde::Deserialize<'de> for TrackerProperties {
                             pricing_plan = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "PricingPlanDataSource" => {
-                            pricing_plan_data_source = ::serde::de::MapAccess::next_value(&mut map)?;
+                            pricing_plan_data_source =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "TrackerName" => {
                             tracker_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -593,7 +650,8 @@ impl<'de> ::serde::Deserialize<'de> for TrackerProperties {
                     position_filtering: position_filtering,
                     pricing_plan: pricing_plan,
                     pricing_plan_data_source: pricing_plan_data_source,
-                    tracker_name: tracker_name.ok_or(::serde::de::Error::missing_field("TrackerName"))?,
+                    tracker_name: tracker_name
+                        .ok_or(::serde::de::Error::missing_field("TrackerName"))?,
                 })
             }
         }
@@ -624,7 +682,7 @@ impl From<TrackerProperties> for Tracker {
 /// The [`AWS::Location::TrackerConsumer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-trackerconsumer.html) resource type.
 #[derive(Debug, Default)]
 pub struct TrackerConsumer {
-    properties: TrackerConsumerProperties
+    properties: TrackerConsumerProperties,
 }
 
 /// Properties for the `TrackerConsumer` resource.
@@ -652,7 +710,9 @@ impl ::serde::Serialize for TrackerConsumerProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for TrackerConsumerProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<TrackerConsumerProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<TrackerConsumerProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -662,7 +722,10 @@ impl<'de> ::serde::Deserialize<'de> for TrackerConsumerProperties {
                 write!(f, "a struct of type TrackerConsumerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut consumer_arn: Option<::Value<String>> = None;
                 let mut tracker_name: Option<::Value<String>> = None;
 
@@ -679,8 +742,10 @@ impl<'de> ::serde::Deserialize<'de> for TrackerConsumerProperties {
                 }
 
                 Ok(TrackerConsumerProperties {
-                    consumer_arn: consumer_arn.ok_or(::serde::de::Error::missing_field("ConsumerArn"))?,
-                    tracker_name: tracker_name.ok_or(::serde::de::Error::missing_field("TrackerName"))?,
+                    consumer_arn: consumer_arn
+                        .ok_or(::serde::de::Error::missing_field("ConsumerArn"))?,
+                    tracker_name: tracker_name
+                        .ok_or(::serde::de::Error::missing_field("TrackerName"))?,
                 })
             }
         }
@@ -730,7 +795,9 @@ pub mod map {
     }
 
     impl ::codec::DeserializeValue for MapConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MapConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<MapConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -740,10 +807,15 @@ pub mod map {
                     write!(f, "a struct of type MapConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut style: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Style" => {
                                 style = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -787,7 +859,9 @@ pub mod place_index {
     }
 
     impl ::codec::DeserializeValue for DataSourceConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DataSourceConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DataSourceConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -797,10 +871,15 @@ pub mod place_index {
                     write!(f, "a struct of type DataSourceConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut intended_use: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "IntendedUse" => {
                                 intended_use = ::serde::de::MapAccess::next_value(&mut map)?;

@@ -3,7 +3,7 @@
 /// The [`AWS::Kinesis::Stream`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html) resource type.
 #[derive(Debug, Default)]
 pub struct Stream {
-    properties: StreamProperties
+    properties: StreamProperties,
 }
 
 /// Properties for the `Stream` resource.
@@ -48,16 +48,28 @@ impl ::serde::Serialize for StreamProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
         if let Some(ref retention_period_hours) = self.retention_period_hours {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RetentionPeriodHours", retention_period_hours)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RetentionPeriodHours",
+                retention_period_hours,
+            )?;
         }
         if let Some(ref shard_count) = self.shard_count {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ShardCount", shard_count)?;
         }
         if let Some(ref stream_encryption) = self.stream_encryption {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamEncryption", stream_encryption)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StreamEncryption",
+                stream_encryption,
+            )?;
         }
         if let Some(ref stream_mode_details) = self.stream_mode_details {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamModeDetails", stream_mode_details)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "StreamModeDetails",
+                stream_mode_details,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -77,12 +89,16 @@ impl<'de> ::serde::Deserialize<'de> for StreamProperties {
                 write!(f, "a struct of type StreamProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut retention_period_hours: Option<::Value<u32>> = None;
                 let mut shard_count: Option<::Value<u32>> = None;
                 let mut stream_encryption: Option<::Value<self::stream::StreamEncryption>> = None;
-                let mut stream_mode_details: Option<::Value<self::stream::StreamModeDetails>> = None;
+                let mut stream_mode_details: Option<::Value<self::stream::StreamModeDetails>> =
+                    None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -146,7 +162,7 @@ impl From<StreamProperties> for Stream {
 /// The [`AWS::Kinesis::StreamConsumer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html) resource type.
 #[derive(Debug, Default)]
 pub struct StreamConsumer {
-    properties: StreamConsumerProperties
+    properties: StreamConsumerProperties,
 }
 
 /// Properties for the `StreamConsumer` resource.
@@ -174,7 +190,9 @@ impl ::serde::Serialize for StreamConsumerProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for StreamConsumerProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<StreamConsumerProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<StreamConsumerProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -184,7 +202,10 @@ impl<'de> ::serde::Deserialize<'de> for StreamConsumerProperties {
                 write!(f, "a struct of type StreamConsumerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut consumer_name: Option<::Value<String>> = None;
                 let mut stream_arn: Option<::Value<String>> = None;
 
@@ -201,7 +222,8 @@ impl<'de> ::serde::Deserialize<'de> for StreamConsumerProperties {
                 }
 
                 Ok(StreamConsumerProperties {
-                    consumer_name: consumer_name.ok_or(::serde::de::Error::missing_field("ConsumerName"))?,
+                    consumer_name: consumer_name
+                        .ok_or(::serde::de::Error::missing_field("ConsumerName"))?,
                     stream_arn: stream_arn.ok_or(::serde::de::Error::missing_field("StreamARN"))?,
                 })
             }
@@ -251,14 +273,20 @@ pub mod stream {
     impl ::codec::SerializeValue for StreamEncryption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionType", &self.encryption_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionType",
+                &self.encryption_type,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KeyId", &self.key_id)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for StreamEncryption {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StreamEncryption, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StreamEncryption, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -268,11 +296,16 @@ pub mod stream {
                     write!(f, "a struct of type StreamEncryption")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut encryption_type: Option<::Value<String>> = None;
                     let mut key_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EncryptionType" => {
                                 encryption_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -285,7 +318,8 @@ pub mod stream {
                     }
 
                     Ok(StreamEncryption {
-                        encryption_type: encryption_type.ok_or(::serde::de::Error::missing_field("EncryptionType"))?,
+                        encryption_type: encryption_type
+                            .ok_or(::serde::de::Error::missing_field("EncryptionType"))?,
                         key_id: key_id.ok_or(::serde::de::Error::missing_field("KeyId"))?,
                     })
                 }
@@ -314,7 +348,9 @@ pub mod stream {
     }
 
     impl ::codec::DeserializeValue for StreamModeDetails {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<StreamModeDetails, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<StreamModeDetails, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -324,10 +360,15 @@ pub mod stream {
                     write!(f, "a struct of type StreamModeDetails")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut stream_mode: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "StreamMode" => {
                                 stream_mode = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -337,7 +378,8 @@ pub mod stream {
                     }
 
                     Ok(StreamModeDetails {
-                        stream_mode: stream_mode.ok_or(::serde::de::Error::missing_field("StreamMode"))?,
+                        stream_mode: stream_mode
+                            .ok_or(::serde::de::Error::missing_field("StreamMode"))?,
                     })
                 }
             }

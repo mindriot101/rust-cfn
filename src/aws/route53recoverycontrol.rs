@@ -3,7 +3,7 @@
 /// The [`AWS::Route53RecoveryControl::Cluster`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-cluster.html) resource type.
 #[derive(Debug, Default)]
 pub struct Cluster {
-    properties: ClusterProperties
+    properties: ClusterProperties,
 }
 
 /// Properties for the `Cluster` resource.
@@ -45,7 +45,10 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                 write!(f, "a struct of type ClusterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -94,7 +97,7 @@ impl From<ClusterProperties> for Cluster {
 /// The [`AWS::Route53RecoveryControl::ControlPanel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-controlpanel.html) resource type.
 #[derive(Debug, Default)]
 pub struct ControlPanel {
-    properties: ControlPanelProperties
+    properties: ControlPanelProperties,
 }
 
 /// Properties for the `ControlPanel` resource.
@@ -132,7 +135,9 @@ impl ::serde::Serialize for ControlPanelProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ControlPanelProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ControlPanelProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ControlPanelProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -142,7 +147,10 @@ impl<'de> ::serde::Deserialize<'de> for ControlPanelProperties {
                 write!(f, "a struct of type ControlPanelProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut cluster_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -196,7 +204,7 @@ impl From<ControlPanelProperties> for ControlPanel {
 /// The [`AWS::Route53RecoveryControl::RoutingControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-routingcontrol.html) resource type.
 #[derive(Debug, Default)]
 pub struct RoutingControl {
-    properties: RoutingControlProperties
+    properties: RoutingControlProperties,
 }
 
 /// Properties for the `RoutingControl` resource.
@@ -226,7 +234,11 @@ impl ::serde::Serialize for RoutingControlProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClusterArn", cluster_arn)?;
         }
         if let Some(ref control_panel_arn) = self.control_panel_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ControlPanelArn", control_panel_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ControlPanelArn",
+                control_panel_arn,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::end(map)
@@ -234,7 +246,9 @@ impl ::serde::Serialize for RoutingControlProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RoutingControlProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RoutingControlProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RoutingControlProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -244,7 +258,10 @@ impl<'de> ::serde::Deserialize<'de> for RoutingControlProperties {
                 write!(f, "a struct of type RoutingControlProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut cluster_arn: Option<::Value<String>> = None;
                 let mut control_panel_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -298,7 +315,7 @@ impl From<RoutingControlProperties> for RoutingControl {
 /// The [`AWS::Route53RecoveryControl::SafetyRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html) resource type.
 #[derive(Debug, Default)]
 pub struct SafetyRule {
-    properties: SafetyRuleProperties
+    properties: SafetyRuleProperties,
 }
 
 /// Properties for the `SafetyRule` resource.
@@ -342,7 +359,11 @@ impl ::serde::Serialize for SafetyRuleProperties {
         if let Some(ref assertion_rule) = self.assertion_rule {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssertionRule", assertion_rule)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ControlPanelArn", &self.control_panel_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ControlPanelArn",
+            &self.control_panel_arn,
+        )?;
         if let Some(ref gating_rule) = self.gating_rule {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "GatingRule", gating_rule)?;
         }
@@ -366,7 +387,10 @@ impl<'de> ::serde::Deserialize<'de> for SafetyRuleProperties {
                 write!(f, "a struct of type SafetyRuleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut assertion_rule: Option<::Value<self::safety_rule::AssertionRule>> = None;
                 let mut control_panel_arn: Option<::Value<String>> = None;
                 let mut gating_rule: Option<::Value<self::safety_rule::GatingRule>> = None;
@@ -400,10 +424,12 @@ impl<'de> ::serde::Deserialize<'de> for SafetyRuleProperties {
 
                 Ok(SafetyRuleProperties {
                     assertion_rule: assertion_rule,
-                    control_panel_arn: control_panel_arn.ok_or(::serde::de::Error::missing_field("ControlPanelArn"))?,
+                    control_panel_arn: control_panel_arn
+                        .ok_or(::serde::de::Error::missing_field("ControlPanelArn"))?,
                     gating_rule: gating_rule,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    rule_config: rule_config.ok_or(::serde::de::Error::missing_field("RuleConfig"))?,
+                    rule_config: rule_config
+                        .ok_or(::serde::de::Error::missing_field("RuleConfig"))?,
                     tags: tags,
                 })
             }
@@ -464,7 +490,9 @@ pub mod cluster {
     }
 
     impl ::codec::DeserializeValue for ClusterEndpoint {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ClusterEndpoint, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ClusterEndpoint, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -474,11 +502,16 @@ pub mod cluster {
                     write!(f, "a struct of type ClusterEndpoint")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut endpoint: Option<::Value<String>> = None;
                     let mut region: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Endpoint" => {
                                 endpoint = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -523,14 +556,24 @@ pub mod safety_rule {
     impl ::codec::SerializeValue for AssertionRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssertedControls", &self.asserted_controls)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "WaitPeriodMs", &self.wait_period_ms)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AssertedControls",
+                &self.asserted_controls,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "WaitPeriodMs",
+                &self.wait_period_ms,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AssertionRule {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AssertionRule, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AssertionRule, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -540,11 +583,16 @@ pub mod safety_rule {
                     write!(f, "a struct of type AssertionRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut asserted_controls: Option<::ValueList<String>> = None;
                     let mut wait_period_ms: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AssertedControls" => {
                                 asserted_controls = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -557,8 +605,10 @@ pub mod safety_rule {
                     }
 
                     Ok(AssertionRule {
-                        asserted_controls: asserted_controls.ok_or(::serde::de::Error::missing_field("AssertedControls"))?,
-                        wait_period_ms: wait_period_ms.ok_or(::serde::de::Error::missing_field("WaitPeriodMs"))?,
+                        asserted_controls: asserted_controls
+                            .ok_or(::serde::de::Error::missing_field("AssertedControls"))?,
+                        wait_period_ms: wait_period_ms
+                            .ok_or(::serde::de::Error::missing_field("WaitPeriodMs"))?,
                     })
                 }
             }
@@ -590,9 +640,21 @@ pub mod safety_rule {
     impl ::codec::SerializeValue for GatingRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "GatingControls", &self.gating_controls)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetControls", &self.target_controls)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "WaitPeriodMs", &self.wait_period_ms)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "GatingControls",
+                &self.gating_controls,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "TargetControls",
+                &self.target_controls,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "WaitPeriodMs",
+                &self.wait_period_ms,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
@@ -608,12 +670,17 @@ pub mod safety_rule {
                     write!(f, "a struct of type GatingRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut gating_controls: Option<::ValueList<String>> = None;
                     let mut target_controls: Option<::ValueList<String>> = None;
                     let mut wait_period_ms: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "GatingControls" => {
                                 gating_controls = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -629,9 +696,12 @@ pub mod safety_rule {
                     }
 
                     Ok(GatingRule {
-                        gating_controls: gating_controls.ok_or(::serde::de::Error::missing_field("GatingControls"))?,
-                        target_controls: target_controls.ok_or(::serde::de::Error::missing_field("TargetControls"))?,
-                        wait_period_ms: wait_period_ms.ok_or(::serde::de::Error::missing_field("WaitPeriodMs"))?,
+                        gating_controls: gating_controls
+                            .ok_or(::serde::de::Error::missing_field("GatingControls"))?,
+                        target_controls: target_controls
+                            .ok_or(::serde::de::Error::missing_field("TargetControls"))?,
+                        wait_period_ms: wait_period_ms
+                            .ok_or(::serde::de::Error::missing_field("WaitPeriodMs"))?,
                     })
                 }
             }
@@ -681,12 +751,17 @@ pub mod safety_rule {
                     write!(f, "a struct of type RuleConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut inverted: Option<::Value<bool>> = None;
                     let mut threshold: Option<::Value<u32>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Inverted" => {
                                 inverted = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -703,7 +778,8 @@ pub mod safety_rule {
 
                     Ok(RuleConfig {
                         inverted: inverted.ok_or(::serde::de::Error::missing_field("Inverted"))?,
-                        threshold: threshold.ok_or(::serde::de::Error::missing_field("Threshold"))?,
+                        threshold: threshold
+                            .ok_or(::serde::de::Error::missing_field("Threshold"))?,
                         r#type: r#type.ok_or(::serde::de::Error::missing_field("Type"))?,
                     })
                 }

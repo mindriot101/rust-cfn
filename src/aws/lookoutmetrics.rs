@@ -3,7 +3,7 @@
 /// The [`AWS::LookoutMetrics::Alert`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html) resource type.
 #[derive(Debug, Default)]
 pub struct Alert {
-    properties: AlertProperties
+    properties: AlertProperties,
 }
 
 /// Properties for the `Alert` resource.
@@ -41,13 +41,25 @@ impl ::serde::Serialize for AlertProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Action", &self.action)?;
         if let Some(ref alert_description) = self.alert_description {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlertDescription", alert_description)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AlertDescription",
+                alert_description,
+            )?;
         }
         if let Some(ref alert_name) = self.alert_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlertName", alert_name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlertSensitivityThreshold", &self.alert_sensitivity_threshold)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AnomalyDetectorArn", &self.anomaly_detector_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AlertSensitivityThreshold",
+            &self.alert_sensitivity_threshold,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AnomalyDetectorArn",
+            &self.anomaly_detector_arn,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
@@ -63,7 +75,10 @@ impl<'de> ::serde::Deserialize<'de> for AlertProperties {
                 write!(f, "a struct of type AlertProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut action: Option<::Value<self::alert::Action>> = None;
                 let mut alert_description: Option<::Value<String>> = None;
                 let mut alert_name: Option<::Value<String>> = None;
@@ -82,7 +97,8 @@ impl<'de> ::serde::Deserialize<'de> for AlertProperties {
                             alert_name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AlertSensitivityThreshold" => {
-                            alert_sensitivity_threshold = ::serde::de::MapAccess::next_value(&mut map)?;
+                            alert_sensitivity_threshold =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AnomalyDetectorArn" => {
                             anomaly_detector_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -95,8 +111,11 @@ impl<'de> ::serde::Deserialize<'de> for AlertProperties {
                     action: action.ok_or(::serde::de::Error::missing_field("Action"))?,
                     alert_description: alert_description,
                     alert_name: alert_name,
-                    alert_sensitivity_threshold: alert_sensitivity_threshold.ok_or(::serde::de::Error::missing_field("AlertSensitivityThreshold"))?,
-                    anomaly_detector_arn: anomaly_detector_arn.ok_or(::serde::de::Error::missing_field("AnomalyDetectorArn"))?,
+                    alert_sensitivity_threshold: alert_sensitivity_threshold.ok_or(
+                        ::serde::de::Error::missing_field("AlertSensitivityThreshold"),
+                    )?,
+                    anomaly_detector_arn: anomaly_detector_arn
+                        .ok_or(::serde::de::Error::missing_field("AnomalyDetectorArn"))?,
                 })
             }
         }
@@ -127,7 +146,7 @@ impl From<AlertProperties> for Alert {
 /// The [`AWS::LookoutMetrics::AnomalyDetector`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html) resource type.
 #[derive(Debug, Default)]
 pub struct AnomalyDetector {
-    properties: AnomalyDetectorProperties
+    properties: AnomalyDetectorProperties,
 }
 
 /// Properties for the `AnomalyDetector` resource.
@@ -163,23 +182,41 @@ pub struct AnomalyDetectorProperties {
 impl ::serde::Serialize for AnomalyDetectorProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AnomalyDetectorConfig", &self.anomaly_detector_config)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AnomalyDetectorConfig",
+            &self.anomaly_detector_config,
+        )?;
         if let Some(ref anomaly_detector_description) = self.anomaly_detector_description {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AnomalyDetectorDescription", anomaly_detector_description)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AnomalyDetectorDescription",
+                anomaly_detector_description,
+            )?;
         }
         if let Some(ref anomaly_detector_name) = self.anomaly_detector_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AnomalyDetectorName", anomaly_detector_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AnomalyDetectorName",
+                anomaly_detector_name,
+            )?;
         }
         if let Some(ref kms_key_arn) = self.kms_key_arn {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyArn", kms_key_arn)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricSetList", &self.metric_set_list)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "MetricSetList",
+            &self.metric_set_list,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for AnomalyDetectorProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AnomalyDetectorProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AnomalyDetectorProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -189,12 +226,18 @@ impl<'de> ::serde::Deserialize<'de> for AnomalyDetectorProperties {
                 write!(f, "a struct of type AnomalyDetectorProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut anomaly_detector_config: Option<::Value<self::anomaly_detector::AnomalyDetectorConfig>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut anomaly_detector_config: Option<
+                    ::Value<self::anomaly_detector::AnomalyDetectorConfig>,
+                > = None;
                 let mut anomaly_detector_description: Option<::Value<String>> = None;
                 let mut anomaly_detector_name: Option<::Value<String>> = None;
                 let mut kms_key_arn: Option<::Value<String>> = None;
-                let mut metric_set_list: Option<::ValueList<self::anomaly_detector::MetricSet>> = None;
+                let mut metric_set_list: Option<::ValueList<self::anomaly_detector::MetricSet>> =
+                    None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -202,7 +245,8 @@ impl<'de> ::serde::Deserialize<'de> for AnomalyDetectorProperties {
                             anomaly_detector_config = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AnomalyDetectorDescription" => {
-                            anomaly_detector_description = ::serde::de::MapAccess::next_value(&mut map)?;
+                            anomaly_detector_description =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "AnomalyDetectorName" => {
                             anomaly_detector_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -218,11 +262,13 @@ impl<'de> ::serde::Deserialize<'de> for AnomalyDetectorProperties {
                 }
 
                 Ok(AnomalyDetectorProperties {
-                    anomaly_detector_config: anomaly_detector_config.ok_or(::serde::de::Error::missing_field("AnomalyDetectorConfig"))?,
+                    anomaly_detector_config: anomaly_detector_config
+                        .ok_or(::serde::de::Error::missing_field("AnomalyDetectorConfig"))?,
                     anomaly_detector_description: anomaly_detector_description,
                     anomaly_detector_name: anomaly_detector_name,
                     kms_key_arn: kms_key_arn,
-                    metric_set_list: metric_set_list.ok_or(::serde::de::Error::missing_field("MetricSetList"))?,
+                    metric_set_list: metric_set_list
+                        .ok_or(::serde::de::Error::missing_field("MetricSetList"))?,
                 })
             }
         }
@@ -272,10 +318,18 @@ pub mod alert {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref lambda_configuration) = self.lambda_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LambdaConfiguration", lambda_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LambdaConfiguration",
+                    lambda_configuration,
+                )?;
             }
             if let Some(ref sns_configuration) = self.sns_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SNSConfiguration", sns_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SNSConfiguration",
+                    sns_configuration,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -292,14 +346,20 @@ pub mod alert {
                     write!(f, "a struct of type Action")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut lambda_configuration: Option<::Value<LambdaConfiguration>> = None;
                     let mut sns_configuration: Option<::Value<SNSConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LambdaConfiguration" => {
-                                lambda_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                lambda_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SNSConfiguration" => {
                                 sns_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -344,7 +404,9 @@ pub mod alert {
     }
 
     impl ::codec::DeserializeValue for LambdaConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LambdaConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<LambdaConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -354,11 +416,16 @@ pub mod alert {
                     write!(f, "a struct of type LambdaConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut lambda_arn: Option<::Value<String>> = None;
                     let mut role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LambdaArn" => {
                                 lambda_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -371,7 +438,8 @@ pub mod alert {
                     }
 
                     Ok(LambdaConfiguration {
-                        lambda_arn: lambda_arn.ok_or(::serde::de::Error::missing_field("LambdaArn"))?,
+                        lambda_arn: lambda_arn
+                            .ok_or(::serde::de::Error::missing_field("LambdaArn"))?,
                         role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
                     })
                 }
@@ -400,13 +468,19 @@ pub mod alert {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SnsTopicArn", &self.sns_topic_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SnsTopicArn",
+                &self.sns_topic_arn,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SNSConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SNSConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SNSConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -416,11 +490,16 @@ pub mod alert {
                     write!(f, "a struct of type SNSConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut role_arn: Option<::Value<String>> = None;
                     let mut sns_topic_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "RoleArn" => {
                                 role_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -434,7 +513,8 @@ pub mod alert {
 
                     Ok(SNSConfiguration {
                         role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
-                        sns_topic_arn: sns_topic_arn.ok_or(::serde::de::Error::missing_field("SnsTopicArn"))?,
+                        sns_topic_arn: sns_topic_arn
+                            .ok_or(::serde::de::Error::missing_field("SnsTopicArn"))?,
                     })
                 }
             }
@@ -460,13 +540,19 @@ pub mod anomaly_detector {
     impl ::codec::SerializeValue for AnomalyDetectorConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AnomalyDetectorFrequency", &self.anomaly_detector_frequency)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AnomalyDetectorFrequency",
+                &self.anomaly_detector_frequency,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AnomalyDetectorConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AnomalyDetectorConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AnomalyDetectorConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -476,20 +562,28 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type AnomalyDetectorConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut anomaly_detector_frequency: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AnomalyDetectorFrequency" => {
-                                anomaly_detector_frequency = ::serde::de::MapAccess::next_value(&mut map)?;
+                                anomaly_detector_frequency =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(AnomalyDetectorConfig {
-                        anomaly_detector_frequency: anomaly_detector_frequency.ok_or(::serde::de::Error::missing_field("AnomalyDetectorFrequency"))?,
+                        anomaly_detector_frequency: anomaly_detector_frequency.ok_or(
+                            ::serde::de::Error::missing_field("AnomalyDetectorFrequency"),
+                        )?,
                     })
                 }
             }
@@ -523,7 +617,9 @@ pub mod anomaly_detector {
     }
 
     impl ::codec::DeserializeValue for AppFlowConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AppFlowConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AppFlowConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -533,11 +629,16 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type AppFlowConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut flow_name: Option<::Value<String>> = None;
                     let mut role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FlowName" => {
                                 flow_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -550,7 +651,8 @@ pub mod anomaly_detector {
                     }
 
                     Ok(AppFlowConfig {
-                        flow_name: flow_name.ok_or(::serde::de::Error::missing_field("FlowName"))?,
+                        flow_name: flow_name
+                            .ok_or(::serde::de::Error::missing_field("FlowName"))?,
                         role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
                     })
                 }
@@ -579,7 +681,9 @@ pub mod anomaly_detector {
     }
 
     impl ::codec::DeserializeValue for CloudwatchConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CloudwatchConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CloudwatchConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -589,10 +693,15 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type CloudwatchConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "RoleArn" => {
                                 role_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -653,13 +762,21 @@ pub mod anomaly_detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Charset", charset)?;
             }
             if let Some(ref contains_header) = self.contains_header {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContainsHeader", contains_header)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ContainsHeader",
+                    contains_header,
+                )?;
             }
             if let Some(ref delimiter) = self.delimiter {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Delimiter", delimiter)?;
             }
             if let Some(ref file_compression) = self.file_compression {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FileCompression", file_compression)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FileCompression",
+                    file_compression,
+                )?;
             }
             if let Some(ref header_list) = self.header_list {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "HeaderList", header_list)?;
@@ -672,7 +789,9 @@ pub mod anomaly_detector {
     }
 
     impl ::codec::DeserializeValue for CsvFormatDescriptor {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CsvFormatDescriptor, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CsvFormatDescriptor, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -682,7 +801,10 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type CsvFormatDescriptor")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut charset: Option<::Value<String>> = None;
                     let mut contains_header: Option<::Value<bool>> = None;
                     let mut delimiter: Option<::Value<String>> = None;
@@ -690,7 +812,9 @@ pub mod anomaly_detector {
                     let mut header_list: Option<::ValueList<String>> = None;
                     let mut quote_symbol: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Charset" => {
                                 charset = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -748,17 +872,27 @@ pub mod anomaly_detector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref csv_format_descriptor) = self.csv_format_descriptor {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CsvFormatDescriptor", csv_format_descriptor)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CsvFormatDescriptor",
+                    csv_format_descriptor,
+                )?;
             }
             if let Some(ref json_format_descriptor) = self.json_format_descriptor {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "JsonFormatDescriptor", json_format_descriptor)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "JsonFormatDescriptor",
+                    json_format_descriptor,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FileFormatDescriptor {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FileFormatDescriptor, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FileFormatDescriptor, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -768,17 +902,24 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type FileFormatDescriptor")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut csv_format_descriptor: Option<::Value<CsvFormatDescriptor>> = None;
                     let mut json_format_descriptor: Option<::Value<JsonFormatDescriptor>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CsvFormatDescriptor" => {
-                                csv_format_descriptor = ::serde::de::MapAccess::next_value(&mut map)?;
+                                csv_format_descriptor =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "JsonFormatDescriptor" => {
-                                json_format_descriptor = ::serde::de::MapAccess::next_value(&mut map)?;
+                                json_format_descriptor =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -817,14 +958,20 @@ pub mod anomaly_detector {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Charset", charset)?;
             }
             if let Some(ref file_compression) = self.file_compression {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FileCompression", file_compression)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FileCompression",
+                    file_compression,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for JsonFormatDescriptor {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<JsonFormatDescriptor, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<JsonFormatDescriptor, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -834,11 +981,16 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type JsonFormatDescriptor")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut charset: Option<::Value<String>> = None;
                     let mut file_compression: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Charset" => {
                                 charset = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -884,7 +1036,11 @@ pub mod anomaly_detector {
     impl ::codec::SerializeValue for Metric {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AggregationFunction", &self.aggregation_function)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AggregationFunction",
+                &self.aggregation_function,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricName", &self.metric_name)?;
             if let Some(ref namespace) = self.namespace {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Namespace", namespace)?;
@@ -904,15 +1060,21 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type Metric")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut aggregation_function: Option<::Value<String>> = None;
                     let mut metric_name: Option<::Value<String>> = None;
                     let mut namespace: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AggregationFunction" => {
-                                aggregation_function = ::serde::de::MapAccess::next_value(&mut map)?;
+                                aggregation_function =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MetricName" => {
                                 metric_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -925,8 +1087,10 @@ pub mod anomaly_detector {
                     }
 
                     Ok(Metric {
-                        aggregation_function: aggregation_function.ok_or(::serde::de::Error::missing_field("AggregationFunction"))?,
-                        metric_name: metric_name.ok_or(::serde::de::Error::missing_field("MetricName"))?,
+                        aggregation_function: aggregation_function
+                            .ok_or(::serde::de::Error::missing_field("AggregationFunction"))?,
+                        metric_name: metric_name
+                            .ok_or(::serde::de::Error::missing_field("MetricName"))?,
                         namespace: namespace,
                     })
                 }
@@ -990,22 +1154,46 @@ pub mod anomaly_detector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dimension_list) = self.dimension_list {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DimensionList", dimension_list)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DimensionList",
+                    dimension_list,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricList", &self.metric_list)?;
             if let Some(ref metric_set_description) = self.metric_set_description {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricSetDescription", metric_set_description)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MetricSetDescription",
+                    metric_set_description,
+                )?;
             }
             if let Some(ref metric_set_frequency) = self.metric_set_frequency {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricSetFrequency", metric_set_frequency)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "MetricSetFrequency",
+                    metric_set_frequency,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricSetName", &self.metric_set_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MetricSource", &self.metric_source)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MetricSetName",
+                &self.metric_set_name,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MetricSource",
+                &self.metric_source,
+            )?;
             if let Some(ref offset) = self.offset {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Offset", offset)?;
             }
             if let Some(ref timestamp_column) = self.timestamp_column {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimestampColumn", timestamp_column)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimestampColumn",
+                    timestamp_column,
+                )?;
             }
             if let Some(ref timezone) = self.timezone {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Timezone", timezone)?;
@@ -1025,7 +1213,10 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type MetricSet")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut dimension_list: Option<::ValueList<String>> = None;
                     let mut metric_list: Option<::ValueList<Metric>> = None;
                     let mut metric_set_description: Option<::Value<String>> = None;
@@ -1036,7 +1227,9 @@ pub mod anomaly_detector {
                     let mut timestamp_column: Option<::Value<TimestampColumn>> = None;
                     let mut timezone: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DimensionList" => {
                                 dimension_list = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1045,10 +1238,12 @@ pub mod anomaly_detector {
                                 metric_list = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MetricSetDescription" => {
-                                metric_set_description = ::serde::de::MapAccess::next_value(&mut map)?;
+                                metric_set_description =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MetricSetFrequency" => {
-                                metric_set_frequency = ::serde::de::MapAccess::next_value(&mut map)?;
+                                metric_set_frequency =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MetricSetName" => {
                                 metric_set_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1071,11 +1266,14 @@ pub mod anomaly_detector {
 
                     Ok(MetricSet {
                         dimension_list: dimension_list,
-                        metric_list: metric_list.ok_or(::serde::de::Error::missing_field("MetricList"))?,
+                        metric_list: metric_list
+                            .ok_or(::serde::de::Error::missing_field("MetricList"))?,
                         metric_set_description: metric_set_description,
                         metric_set_frequency: metric_set_frequency,
-                        metric_set_name: metric_set_name.ok_or(::serde::de::Error::missing_field("MetricSetName"))?,
-                        metric_source: metric_source.ok_or(::serde::de::Error::missing_field("MetricSource"))?,
+                        metric_set_name: metric_set_name
+                            .ok_or(::serde::de::Error::missing_field("MetricSetName"))?,
+                        metric_source: metric_source
+                            .ok_or(::serde::de::Error::missing_field("MetricSource"))?,
                         offset: offset,
                         timestamp_column: timestamp_column,
                         timezone: timezone,
@@ -1121,19 +1319,39 @@ pub mod anomaly_detector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref app_flow_config) = self.app_flow_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppFlowConfig", app_flow_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AppFlowConfig",
+                    app_flow_config,
+                )?;
             }
             if let Some(ref cloudwatch_config) = self.cloudwatch_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CloudwatchConfig", cloudwatch_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CloudwatchConfig",
+                    cloudwatch_config,
+                )?;
             }
             if let Some(ref rds_source_config) = self.rds_source_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RDSSourceConfig", rds_source_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RDSSourceConfig",
+                    rds_source_config,
+                )?;
             }
             if let Some(ref redshift_source_config) = self.redshift_source_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RedshiftSourceConfig", redshift_source_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RedshiftSourceConfig",
+                    redshift_source_config,
+                )?;
             }
             if let Some(ref s3_source_config) = self.s3_source_config {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3SourceConfig", s3_source_config)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "S3SourceConfig",
+                    s3_source_config,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1150,14 +1368,19 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type MetricSource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_flow_config: Option<::Value<AppFlowConfig>> = None;
                     let mut cloudwatch_config: Option<::Value<CloudwatchConfig>> = None;
                     let mut rds_source_config: Option<::Value<RDSSourceConfig>> = None;
                     let mut redshift_source_config: Option<::Value<RedshiftSourceConfig>> = None;
                     let mut s3_source_config: Option<::Value<S3SourceConfig>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppFlowConfig" => {
                                 app_flow_config = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1169,7 +1392,8 @@ pub mod anomaly_detector {
                                 rds_source_config = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RedshiftSourceConfig" => {
-                                redshift_source_config = ::serde::de::MapAccess::next_value(&mut map)?;
+                                redshift_source_config =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "S3SourceConfig" => {
                                 s3_source_config = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1240,20 +1464,46 @@ pub mod anomaly_detector {
     impl ::codec::SerializeValue for RDSSourceConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DBInstanceIdentifier", &self.db_instance_identifier)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseHost", &self.database_host)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseName", &self.database_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabasePort", &self.database_port)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DBInstanceIdentifier",
+                &self.db_instance_identifier,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatabaseHost",
+                &self.database_host,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatabaseName",
+                &self.database_name,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatabasePort",
+                &self.database_port,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecretManagerArn", &self.secret_manager_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecretManagerArn",
+                &self.secret_manager_arn,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableName", &self.table_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcConfiguration", &self.vpc_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VpcConfiguration",
+                &self.vpc_configuration,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RDSSourceConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RDSSourceConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RDSSourceConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1263,7 +1513,10 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type RDSSourceConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut db_instance_identifier: Option<::Value<String>> = None;
                     let mut database_host: Option<::Value<String>> = None;
                     let mut database_name: Option<::Value<String>> = None;
@@ -1273,10 +1526,13 @@ pub mod anomaly_detector {
                     let mut table_name: Option<::Value<String>> = None;
                     let mut vpc_configuration: Option<::Value<VpcConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DBInstanceIdentifier" => {
-                                db_instance_identifier = ::serde::de::MapAccess::next_value(&mut map)?;
+                                db_instance_identifier =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "DatabaseHost" => {
                                 database_host = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1304,14 +1560,21 @@ pub mod anomaly_detector {
                     }
 
                     Ok(RDSSourceConfig {
-                        db_instance_identifier: db_instance_identifier.ok_or(::serde::de::Error::missing_field("DBInstanceIdentifier"))?,
-                        database_host: database_host.ok_or(::serde::de::Error::missing_field("DatabaseHost"))?,
-                        database_name: database_name.ok_or(::serde::de::Error::missing_field("DatabaseName"))?,
-                        database_port: database_port.ok_or(::serde::de::Error::missing_field("DatabasePort"))?,
+                        db_instance_identifier: db_instance_identifier
+                            .ok_or(::serde::de::Error::missing_field("DBInstanceIdentifier"))?,
+                        database_host: database_host
+                            .ok_or(::serde::de::Error::missing_field("DatabaseHost"))?,
+                        database_name: database_name
+                            .ok_or(::serde::de::Error::missing_field("DatabaseName"))?,
+                        database_port: database_port
+                            .ok_or(::serde::de::Error::missing_field("DatabasePort"))?,
                         role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
-                        secret_manager_arn: secret_manager_arn.ok_or(::serde::de::Error::missing_field("SecretManagerArn"))?,
-                        table_name: table_name.ok_or(::serde::de::Error::missing_field("TableName"))?,
-                        vpc_configuration: vpc_configuration.ok_or(::serde::de::Error::missing_field("VpcConfiguration"))?,
+                        secret_manager_arn: secret_manager_arn
+                            .ok_or(::serde::de::Error::missing_field("SecretManagerArn"))?,
+                        table_name: table_name
+                            .ok_or(::serde::de::Error::missing_field("TableName"))?,
+                        vpc_configuration: vpc_configuration
+                            .ok_or(::serde::de::Error::missing_field("VpcConfiguration"))?,
                     })
                 }
             }
@@ -1368,20 +1631,46 @@ pub mod anomaly_detector {
     impl ::codec::SerializeValue for RedshiftSourceConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ClusterIdentifier", &self.cluster_identifier)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseHost", &self.database_host)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabaseName", &self.database_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DatabasePort", &self.database_port)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ClusterIdentifier",
+                &self.cluster_identifier,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatabaseHost",
+                &self.database_host,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatabaseName",
+                &self.database_name,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DatabasePort",
+                &self.database_port,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecretManagerArn", &self.secret_manager_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecretManagerArn",
+                &self.secret_manager_arn,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TableName", &self.table_name)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcConfiguration", &self.vpc_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VpcConfiguration",
+                &self.vpc_configuration,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for RedshiftSourceConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RedshiftSourceConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RedshiftSourceConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1391,7 +1680,10 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type RedshiftSourceConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cluster_identifier: Option<::Value<String>> = None;
                     let mut database_host: Option<::Value<String>> = None;
                     let mut database_name: Option<::Value<String>> = None;
@@ -1401,7 +1693,9 @@ pub mod anomaly_detector {
                     let mut table_name: Option<::Value<String>> = None;
                     let mut vpc_configuration: Option<::Value<VpcConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ClusterIdentifier" => {
                                 cluster_identifier = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1432,14 +1726,21 @@ pub mod anomaly_detector {
                     }
 
                     Ok(RedshiftSourceConfig {
-                        cluster_identifier: cluster_identifier.ok_or(::serde::de::Error::missing_field("ClusterIdentifier"))?,
-                        database_host: database_host.ok_or(::serde::de::Error::missing_field("DatabaseHost"))?,
-                        database_name: database_name.ok_or(::serde::de::Error::missing_field("DatabaseName"))?,
-                        database_port: database_port.ok_or(::serde::de::Error::missing_field("DatabasePort"))?,
+                        cluster_identifier: cluster_identifier
+                            .ok_or(::serde::de::Error::missing_field("ClusterIdentifier"))?,
+                        database_host: database_host
+                            .ok_or(::serde::de::Error::missing_field("DatabaseHost"))?,
+                        database_name: database_name
+                            .ok_or(::serde::de::Error::missing_field("DatabaseName"))?,
+                        database_port: database_port
+                            .ok_or(::serde::de::Error::missing_field("DatabasePort"))?,
                         role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
-                        secret_manager_arn: secret_manager_arn.ok_or(::serde::de::Error::missing_field("SecretManagerArn"))?,
-                        table_name: table_name.ok_or(::serde::de::Error::missing_field("TableName"))?,
-                        vpc_configuration: vpc_configuration.ok_or(::serde::de::Error::missing_field("VpcConfiguration"))?,
+                        secret_manager_arn: secret_manager_arn
+                            .ok_or(::serde::de::Error::missing_field("SecretManagerArn"))?,
+                        table_name: table_name
+                            .ok_or(::serde::de::Error::missing_field("TableName"))?,
+                        vpc_configuration: vpc_configuration
+                            .ok_or(::serde::de::Error::missing_field("VpcConfiguration"))?,
                     })
                 }
             }
@@ -1476,20 +1777,34 @@ pub mod anomaly_detector {
     impl ::codec::SerializeValue for S3SourceConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FileFormatDescriptor", &self.file_format_descriptor)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FileFormatDescriptor",
+                &self.file_format_descriptor,
+            )?;
             if let Some(ref historical_data_path_list) = self.historical_data_path_list {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HistoricalDataPathList", historical_data_path_list)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HistoricalDataPathList",
+                    historical_data_path_list,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
             if let Some(ref templated_path_list) = self.templated_path_list {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TemplatedPathList", templated_path_list)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TemplatedPathList",
+                    templated_path_list,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for S3SourceConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3SourceConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<S3SourceConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1499,19 +1814,26 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type S3SourceConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut file_format_descriptor: Option<::Value<FileFormatDescriptor>> = None;
                     let mut historical_data_path_list: Option<::ValueList<String>> = None;
                     let mut role_arn: Option<::Value<String>> = None;
                     let mut templated_path_list: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "FileFormatDescriptor" => {
-                                file_format_descriptor = ::serde::de::MapAccess::next_value(&mut map)?;
+                                file_format_descriptor =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "HistoricalDataPathList" => {
-                                historical_data_path_list = ::serde::de::MapAccess::next_value(&mut map)?;
+                                historical_data_path_list =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RoleArn" => {
                                 role_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1524,7 +1846,8 @@ pub mod anomaly_detector {
                     }
 
                     Ok(S3SourceConfig {
-                        file_format_descriptor: file_format_descriptor.ok_or(::serde::de::Error::missing_field("FileFormatDescriptor"))?,
+                        file_format_descriptor: file_format_descriptor
+                            .ok_or(::serde::de::Error::missing_field("FileFormatDescriptor"))?,
                         historical_data_path_list: historical_data_path_list,
                         role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
                         templated_path_list: templated_path_list,
@@ -1555,7 +1878,11 @@ pub mod anomaly_detector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref column_format) = self.column_format {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnFormat", column_format)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ColumnFormat",
+                    column_format,
+                )?;
             }
             if let Some(ref column_name) = self.column_name {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnName", column_name)?;
@@ -1565,7 +1892,9 @@ pub mod anomaly_detector {
     }
 
     impl ::codec::DeserializeValue for TimestampColumn {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TimestampColumn, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TimestampColumn, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1575,11 +1904,16 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type TimestampColumn")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut column_format: Option<::Value<String>> = None;
                     let mut column_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ColumnFormat" => {
                                 column_format = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1620,14 +1954,24 @@ pub mod anomaly_detector {
     impl ::codec::SerializeValue for VpcConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIdList", &self.security_group_id_list)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetIdList", &self.subnet_id_list)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroupIdList",
+                &self.security_group_id_list,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SubnetIdList",
+                &self.subnet_id_list,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VpcConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VpcConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1637,14 +1981,20 @@ pub mod anomaly_detector {
                     write!(f, "a struct of type VpcConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut security_group_id_list: Option<::ValueList<String>> = None;
                     let mut subnet_id_list: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SecurityGroupIdList" => {
-                                security_group_id_list = ::serde::de::MapAccess::next_value(&mut map)?;
+                                security_group_id_list =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "SubnetIdList" => {
                                 subnet_id_list = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1654,8 +2004,10 @@ pub mod anomaly_detector {
                     }
 
                     Ok(VpcConfiguration {
-                        security_group_id_list: security_group_id_list.ok_or(::serde::de::Error::missing_field("SecurityGroupIdList"))?,
-                        subnet_id_list: subnet_id_list.ok_or(::serde::de::Error::missing_field("SubnetIdList"))?,
+                        security_group_id_list: security_group_id_list
+                            .ok_or(::serde::de::Error::missing_field("SecurityGroupIdList"))?,
+                        subnet_id_list: subnet_id_list
+                            .ok_or(::serde::de::Error::missing_field("SubnetIdList"))?,
                     })
                 }
             }

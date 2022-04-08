@@ -3,7 +3,7 @@
 /// The [`AWS::SecurityHub::Hub`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html) resource type.
 #[derive(Debug, Default)]
 pub struct Hub {
-    properties: HubProperties
+    properties: HubProperties,
 }
 
 /// Properties for the `Hub` resource.
@@ -37,7 +37,10 @@ impl<'de> ::serde::Deserialize<'de> for HubProperties {
                 write!(f, "a struct of type HubProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut tags: Option<::Value<::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -49,9 +52,7 @@ impl<'de> ::serde::Deserialize<'de> for HubProperties {
                     }
                 }
 
-                Ok(HubProperties {
-                    tags: tags,
-                })
+                Ok(HubProperties { tags: tags })
             }
         }
 

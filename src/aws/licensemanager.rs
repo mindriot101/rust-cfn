@@ -3,7 +3,7 @@
 /// The [`AWS::LicenseManager::Grant`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html) resource type.
 #[derive(Debug, Default)]
 pub struct Grant {
-    properties: GrantProperties
+    properties: GrantProperties,
 }
 
 /// Properties for the `Grant` resource.
@@ -45,7 +45,11 @@ impl ::serde::Serialize for GrantProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref allowed_operations) = self.allowed_operations {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowedOperations", allowed_operations)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AllowedOperations",
+                allowed_operations,
+            )?;
         }
         if let Some(ref grant_name) = self.grant_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "GrantName", grant_name)?;
@@ -77,7 +81,10 @@ impl<'de> ::serde::Deserialize<'de> for GrantProperties {
                 write!(f, "a struct of type GrantProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut allowed_operations: Option<::ValueList<String>> = None;
                 let mut grant_name: Option<::Value<String>> = None;
                 let mut home_region: Option<::Value<String>> = None;
@@ -146,7 +153,7 @@ impl From<GrantProperties> for Grant {
 /// The [`AWS::LicenseManager::License`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html) resource type.
 #[derive(Debug, Default)]
 pub struct License {
-    properties: LicenseProperties
+    properties: LicenseProperties,
 }
 
 /// Properties for the `License` resource.
@@ -215,12 +222,20 @@ impl ::serde::Serialize for LicenseProperties {
         if let Some(ref beneficiary) = self.beneficiary {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Beneficiary", beneficiary)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConsumptionConfiguration", &self.consumption_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ConsumptionConfiguration",
+            &self.consumption_configuration,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Entitlements", &self.entitlements)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "HomeRegion", &self.home_region)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Issuer", &self.issuer)?;
         if let Some(ref license_metadata) = self.license_metadata {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LicenseMetadata", license_metadata)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LicenseMetadata",
+                license_metadata,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "LicenseName", &self.license_name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProductName", &self.product_name)?;
@@ -246,9 +261,14 @@ impl<'de> ::serde::Deserialize<'de> for LicenseProperties {
                 write!(f, "a struct of type LicenseProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut beneficiary: Option<::Value<String>> = None;
-                let mut consumption_configuration: Option<::Value<self::license::ConsumptionConfiguration>> = None;
+                let mut consumption_configuration: Option<
+                    ::Value<self::license::ConsumptionConfiguration>,
+                > = None;
                 let mut entitlements: Option<::ValueList<self::license::Entitlement>> = None;
                 let mut home_region: Option<::Value<String>> = None;
                 let mut issuer: Option<::Value<self::license::IssuerData>> = None;
@@ -265,7 +285,8 @@ impl<'de> ::serde::Deserialize<'de> for LicenseProperties {
                             beneficiary = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ConsumptionConfiguration" => {
-                            consumption_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            consumption_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Entitlements" => {
                             entitlements = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -300,13 +321,19 @@ impl<'de> ::serde::Deserialize<'de> for LicenseProperties {
 
                 Ok(LicenseProperties {
                     beneficiary: beneficiary,
-                    consumption_configuration: consumption_configuration.ok_or(::serde::de::Error::missing_field("ConsumptionConfiguration"))?,
-                    entitlements: entitlements.ok_or(::serde::de::Error::missing_field("Entitlements"))?,
-                    home_region: home_region.ok_or(::serde::de::Error::missing_field("HomeRegion"))?,
+                    consumption_configuration: consumption_configuration.ok_or(
+                        ::serde::de::Error::missing_field("ConsumptionConfiguration"),
+                    )?,
+                    entitlements: entitlements
+                        .ok_or(::serde::de::Error::missing_field("Entitlements"))?,
+                    home_region: home_region
+                        .ok_or(::serde::de::Error::missing_field("HomeRegion"))?,
                     issuer: issuer.ok_or(::serde::de::Error::missing_field("Issuer"))?,
                     license_metadata: license_metadata,
-                    license_name: license_name.ok_or(::serde::de::Error::missing_field("LicenseName"))?,
-                    product_name: product_name.ok_or(::serde::de::Error::missing_field("ProductName"))?,
+                    license_name: license_name
+                        .ok_or(::serde::de::Error::missing_field("LicenseName"))?,
+                    product_name: product_name
+                        .ok_or(::serde::de::Error::missing_field("ProductName"))?,
                     product_sku: product_sku,
                     status: status,
                     validity: validity.ok_or(::serde::de::Error::missing_field("Validity"))?,
@@ -358,14 +385,24 @@ pub mod license {
     impl ::codec::SerializeValue for BorrowConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowEarlyCheckIn", &self.allow_early_check_in)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxTimeToLiveInMinutes", &self.max_time_to_live_in_minutes)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AllowEarlyCheckIn",
+                &self.allow_early_check_in,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MaxTimeToLiveInMinutes",
+                &self.max_time_to_live_in_minutes,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for BorrowConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BorrowConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<BorrowConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -375,25 +412,34 @@ pub mod license {
                     write!(f, "a struct of type BorrowConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allow_early_check_in: Option<::Value<bool>> = None;
                     let mut max_time_to_live_in_minutes: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllowEarlyCheckIn" => {
-                                allow_early_check_in = ::serde::de::MapAccess::next_value(&mut map)?;
+                                allow_early_check_in =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MaxTimeToLiveInMinutes" => {
-                                max_time_to_live_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                                max_time_to_live_in_minutes =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(BorrowConfiguration {
-                        allow_early_check_in: allow_early_check_in.ok_or(::serde::de::Error::missing_field("AllowEarlyCheckIn"))?,
-                        max_time_to_live_in_minutes: max_time_to_live_in_minutes.ok_or(::serde::de::Error::missing_field("MaxTimeToLiveInMinutes"))?,
+                        allow_early_check_in: allow_early_check_in
+                            .ok_or(::serde::de::Error::missing_field("AllowEarlyCheckIn"))?,
+                        max_time_to_live_in_minutes: max_time_to_live_in_minutes
+                            .ok_or(::serde::de::Error::missing_field("MaxTimeToLiveInMinutes"))?,
                     })
                 }
             }
@@ -426,10 +472,18 @@ pub mod license {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref borrow_configuration) = self.borrow_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BorrowConfiguration", borrow_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BorrowConfiguration",
+                    borrow_configuration,
+                )?;
             }
             if let Some(ref provisional_configuration) = self.provisional_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ProvisionalConfiguration", provisional_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ProvisionalConfiguration",
+                    provisional_configuration,
+                )?;
             }
             if let Some(ref renew_type) = self.renew_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RenewType", renew_type)?;
@@ -439,7 +493,9 @@ pub mod license {
     }
 
     impl ::codec::DeserializeValue for ConsumptionConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ConsumptionConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ConsumptionConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -449,18 +505,26 @@ pub mod license {
                     write!(f, "a struct of type ConsumptionConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut borrow_configuration: Option<::Value<BorrowConfiguration>> = None;
-                    let mut provisional_configuration: Option<::Value<ProvisionalConfiguration>> = None;
+                    let mut provisional_configuration: Option<::Value<ProvisionalConfiguration>> =
+                        None;
                     let mut renew_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BorrowConfiguration" => {
-                                borrow_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                borrow_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ProvisionalConfiguration" => {
-                                provisional_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                provisional_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RenewType" => {
                                 renew_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -520,7 +584,11 @@ pub mod license {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allow_check_in) = self.allow_check_in {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AllowCheckIn", allow_check_in)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AllowCheckIn",
+                    allow_check_in,
+                )?;
             }
             if let Some(ref max_count) = self.max_count {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxCount", max_count)?;
@@ -548,7 +616,10 @@ pub mod license {
                     write!(f, "a struct of type Entitlement")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut allow_check_in: Option<::Value<bool>> = None;
                     let mut max_count: Option<::Value<u32>> = None;
                     let mut name: Option<::Value<String>> = None;
@@ -556,7 +627,9 @@ pub mod license {
                     let mut unit: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AllowCheckIn" => {
                                 allow_check_in = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -632,11 +705,16 @@ pub mod license {
                     write!(f, "a struct of type IssuerData")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut sign_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -694,11 +772,16 @@ pub mod license {
                     write!(f, "a struct of type Metadata")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -734,13 +817,19 @@ pub mod license {
     impl ::codec::SerializeValue for ProvisionalConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MaxTimeToLiveInMinutes", &self.max_time_to_live_in_minutes)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MaxTimeToLiveInMinutes",
+                &self.max_time_to_live_in_minutes,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ProvisionalConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ProvisionalConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ProvisionalConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -750,20 +839,27 @@ pub mod license {
                     write!(f, "a struct of type ProvisionalConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut max_time_to_live_in_minutes: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "MaxTimeToLiveInMinutes" => {
-                                max_time_to_live_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                                max_time_to_live_in_minutes =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(ProvisionalConfiguration {
-                        max_time_to_live_in_minutes: max_time_to_live_in_minutes.ok_or(::serde::de::Error::missing_field("MaxTimeToLiveInMinutes"))?,
+                        max_time_to_live_in_minutes: max_time_to_live_in_minutes
+                            .ok_or(::serde::de::Error::missing_field("MaxTimeToLiveInMinutes"))?,
                     })
                 }
             }
@@ -797,7 +893,9 @@ pub mod license {
     }
 
     impl ::codec::DeserializeValue for ValidityDateFormat {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ValidityDateFormat, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ValidityDateFormat, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -807,11 +905,16 @@ pub mod license {
                     write!(f, "a struct of type ValidityDateFormat")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut begin: Option<::Value<String>> = None;
                     let mut end: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Begin" => {
                                 begin = ::serde::de::MapAccess::next_value(&mut map)?;

@@ -1,6 +1,7 @@
-use serde::{Serializer, Deserializer};
+use serde::{Deserializer, Serializer};
 
-#[macro_use] mod macros;
+#[macro_use]
+mod macros;
 mod primitives;
 
 pub trait SerializeValue {
@@ -13,8 +14,9 @@ pub trait SerializeValue {
 
 pub trait DeserializeValue {
     fn deserialize<'de, D>(d: D) -> Result<Self, D::Error>
-        where Self: Sized,
-              D: Deserializer<'de>;
+    where
+        Self: Sized,
+        D: Deserializer<'de>;
 }
 
 cfn_internal__num_codec_impls!(u32);

@@ -3,7 +3,7 @@
 /// The [`AWS::AppRunner::Service`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html) resource type.
 #[derive(Debug, Default)]
 pub struct Service {
-    properties: ServiceProperties
+    properties: ServiceProperties,
 }
 
 /// Properties for the `Service` resource.
@@ -55,24 +55,48 @@ impl ::serde::Serialize for ServiceProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref auto_scaling_configuration_arn) = self.auto_scaling_configuration_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoScalingConfigurationArn", auto_scaling_configuration_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AutoScalingConfigurationArn",
+                auto_scaling_configuration_arn,
+            )?;
         }
         if let Some(ref encryption_configuration) = self.encryption_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionConfiguration", encryption_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EncryptionConfiguration",
+                encryption_configuration,
+            )?;
         }
         if let Some(ref health_check_configuration) = self.health_check_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthCheckConfiguration", health_check_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "HealthCheckConfiguration",
+                health_check_configuration,
+            )?;
         }
         if let Some(ref instance_configuration) = self.instance_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceConfiguration", instance_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "InstanceConfiguration",
+                instance_configuration,
+            )?;
         }
         if let Some(ref network_configuration) = self.network_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "NetworkConfiguration", network_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "NetworkConfiguration",
+                network_configuration,
+            )?;
         }
         if let Some(ref service_name) = self.service_name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServiceName", service_name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceConfiguration", &self.source_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SourceConfiguration",
+            &self.source_configuration,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -91,26 +115,41 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
                 write!(f, "a struct of type ServiceProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut auto_scaling_configuration_arn: Option<::Value<String>> = None;
-                let mut encryption_configuration: Option<::Value<self::service::EncryptionConfiguration>> = None;
-                let mut health_check_configuration: Option<::Value<self::service::HealthCheckConfiguration>> = None;
-                let mut instance_configuration: Option<::Value<self::service::InstanceConfiguration>> = None;
-                let mut network_configuration: Option<::Value<self::service::NetworkConfiguration>> = None;
+                let mut encryption_configuration: Option<
+                    ::Value<self::service::EncryptionConfiguration>,
+                > = None;
+                let mut health_check_configuration: Option<
+                    ::Value<self::service::HealthCheckConfiguration>,
+                > = None;
+                let mut instance_configuration: Option<
+                    ::Value<self::service::InstanceConfiguration>,
+                > = None;
+                let mut network_configuration: Option<
+                    ::Value<self::service::NetworkConfiguration>,
+                > = None;
                 let mut service_name: Option<::Value<String>> = None;
-                let mut source_configuration: Option<::Value<self::service::SourceConfiguration>> = None;
+                let mut source_configuration: Option<::Value<self::service::SourceConfiguration>> =
+                    None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AutoScalingConfigurationArn" => {
-                            auto_scaling_configuration_arn = ::serde::de::MapAccess::next_value(&mut map)?;
+                            auto_scaling_configuration_arn =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "EncryptionConfiguration" => {
-                            encryption_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            encryption_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "HealthCheckConfiguration" => {
-                            health_check_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            health_check_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "InstanceConfiguration" => {
                             instance_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -138,7 +177,8 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
                     instance_configuration: instance_configuration,
                     network_configuration: network_configuration,
                     service_name: service_name,
-                    source_configuration: source_configuration.ok_or(::serde::de::Error::missing_field("SourceConfiguration"))?,
+                    source_configuration: source_configuration
+                        .ok_or(::serde::de::Error::missing_field("SourceConfiguration"))?,
                     tags: tags,
                 })
             }
@@ -170,7 +210,7 @@ impl From<ServiceProperties> for Service {
 /// The [`AWS::AppRunner::VpcConnector`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcconnector.html) resource type.
 #[derive(Debug, Default)]
 pub struct VpcConnector {
-    properties: VpcConnectorProperties
+    properties: VpcConnectorProperties,
 }
 
 /// Properties for the `VpcConnector` resource.
@@ -202,21 +242,31 @@ impl ::serde::Serialize for VpcConnectorProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref security_groups) = self.security_groups {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroups", security_groups)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroups",
+                security_groups,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Subnets", &self.subnets)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
         if let Some(ref vpc_connector_name) = self.vpc_connector_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcConnectorName", vpc_connector_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VpcConnectorName",
+                vpc_connector_name,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for VpcConnectorProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConnectorProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<VpcConnectorProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -226,7 +276,10 @@ impl<'de> ::serde::Deserialize<'de> for VpcConnectorProperties {
                 write!(f, "a struct of type VpcConnectorProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut security_groups: Option<::ValueList<String>> = None;
                 let mut subnets: Option<::ValueList<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -304,17 +357,27 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_role_arn) = self.access_role_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccessRoleArn", access_role_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AccessRoleArn",
+                    access_role_arn,
+                )?;
             }
             if let Some(ref connection_arn) = self.connection_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConnectionArn", connection_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ConnectionArn",
+                    connection_arn,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AuthenticationConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AuthenticationConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AuthenticationConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -324,11 +387,16 @@ pub mod service {
                     write!(f, "a struct of type AuthenticationConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut access_role_arn: Option<::Value<String>> = None;
                     let mut connection_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AccessRoleArn" => {
                                 access_role_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -370,15 +438,25 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref code_configuration_values) = self.code_configuration_values {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CodeConfigurationValues", code_configuration_values)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CodeConfigurationValues",
+                    code_configuration_values,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConfigurationSource", &self.configuration_source)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ConfigurationSource",
+                &self.configuration_source,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CodeConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CodeConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CodeConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -388,17 +466,25 @@ pub mod service {
                     write!(f, "a struct of type CodeConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut code_configuration_values: Option<::Value<CodeConfigurationValues>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut code_configuration_values: Option<::Value<CodeConfigurationValues>> =
+                        None;
                     let mut configuration_source: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CodeConfigurationValues" => {
-                                code_configuration_values = ::serde::de::MapAccess::next_value(&mut map)?;
+                                code_configuration_values =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ConfigurationSource" => {
-                                configuration_source = ::serde::de::MapAccess::next_value(&mut map)?;
+                                configuration_source =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -406,7 +492,8 @@ pub mod service {
 
                     Ok(CodeConfiguration {
                         code_configuration_values: code_configuration_values,
-                        configuration_source: configuration_source.ok_or(::serde::de::Error::missing_field("ConfigurationSource"))?,
+                        configuration_source: configuration_source
+                            .ok_or(::serde::de::Error::missing_field("ConfigurationSource"))?,
                     })
                 }
             }
@@ -449,24 +536,38 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref build_command) = self.build_command {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BuildCommand", build_command)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BuildCommand",
+                    build_command,
+                )?;
             }
             if let Some(ref port) = self.port {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Port", port)?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Runtime", &self.runtime)?;
             if let Some(ref runtime_environment_variables) = self.runtime_environment_variables {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuntimeEnvironmentVariables", runtime_environment_variables)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RuntimeEnvironmentVariables",
+                    runtime_environment_variables,
+                )?;
             }
             if let Some(ref start_command) = self.start_command {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StartCommand", start_command)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StartCommand",
+                    start_command,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CodeConfigurationValues {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CodeConfigurationValues, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CodeConfigurationValues, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -476,14 +577,19 @@ pub mod service {
                     write!(f, "a struct of type CodeConfigurationValues")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut build_command: Option<::Value<String>> = None;
                     let mut port: Option<::Value<String>> = None;
                     let mut runtime: Option<::Value<String>> = None;
                     let mut runtime_environment_variables: Option<::ValueList<KeyValuePair>> = None;
                     let mut start_command: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BuildCommand" => {
                                 build_command = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -495,7 +601,8 @@ pub mod service {
                                 runtime = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RuntimeEnvironmentVariables" => {
-                                runtime_environment_variables = ::serde::de::MapAccess::next_value(&mut map)?;
+                                runtime_environment_variables =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StartCommand" => {
                                 start_command = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -542,16 +649,30 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref code_configuration) = self.code_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CodeConfiguration", code_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CodeConfiguration",
+                    code_configuration,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RepositoryUrl", &self.repository_url)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceCodeVersion", &self.source_code_version)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RepositoryUrl",
+                &self.repository_url,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SourceCodeVersion",
+                &self.source_code_version,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CodeRepository {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CodeRepository, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CodeRepository, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -561,12 +682,17 @@ pub mod service {
                     write!(f, "a struct of type CodeRepository")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut code_configuration: Option<::Value<CodeConfiguration>> = None;
                     let mut repository_url: Option<::Value<String>> = None;
                     let mut source_code_version: Option<::Value<SourceCodeVersion>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "CodeConfiguration" => {
                                 code_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -583,8 +709,10 @@ pub mod service {
 
                     Ok(CodeRepository {
                         code_configuration: code_configuration,
-                        repository_url: repository_url.ok_or(::serde::de::Error::missing_field("RepositoryUrl"))?,
-                        source_code_version: source_code_version.ok_or(::serde::de::Error::missing_field("SourceCodeVersion"))?,
+                        repository_url: repository_url
+                            .ok_or(::serde::de::Error::missing_field("RepositoryUrl"))?,
+                        source_code_version: source_code_version
+                            .ok_or(::serde::de::Error::missing_field("SourceCodeVersion"))?,
                     })
                 }
             }
@@ -613,14 +741,20 @@ pub mod service {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EgressType", &self.egress_type)?;
             if let Some(ref vpc_connector_arn) = self.vpc_connector_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcConnectorArn", vpc_connector_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VpcConnectorArn",
+                    vpc_connector_arn,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for EgressConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EgressConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EgressConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -630,11 +764,16 @@ pub mod service {
                     write!(f, "a struct of type EgressConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut egress_type: Option<::Value<String>> = None;
                     let mut vpc_connector_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EgressType" => {
                                 egress_type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -647,7 +786,8 @@ pub mod service {
                     }
 
                     Ok(EgressConfiguration {
-                        egress_type: egress_type.ok_or(::serde::de::Error::missing_field("EgressType"))?,
+                        egress_type: egress_type
+                            .ok_or(::serde::de::Error::missing_field("EgressType"))?,
                         vpc_connector_arn: vpc_connector_arn,
                     })
                 }
@@ -676,7 +816,9 @@ pub mod service {
     }
 
     impl ::codec::DeserializeValue for EncryptionConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EncryptionConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<EncryptionConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -686,10 +828,15 @@ pub mod service {
                     write!(f, "a struct of type EncryptionConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut kms_key: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "KmsKey" => {
                                 kms_key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -747,7 +894,11 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref healthy_threshold) = self.healthy_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HealthyThreshold", healthy_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HealthyThreshold",
+                    healthy_threshold,
+                )?;
             }
             if let Some(ref interval) = self.interval {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Interval", interval)?;
@@ -762,14 +913,20 @@ pub mod service {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Timeout", timeout)?;
             }
             if let Some(ref unhealthy_threshold) = self.unhealthy_threshold {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UnhealthyThreshold", unhealthy_threshold)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UnhealthyThreshold",
+                    unhealthy_threshold,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for HealthCheckConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HealthCheckConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<HealthCheckConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -779,7 +936,10 @@ pub mod service {
                     write!(f, "a struct of type HealthCheckConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut healthy_threshold: Option<::Value<u32>> = None;
                     let mut interval: Option<::Value<u32>> = None;
                     let mut path: Option<::Value<String>> = None;
@@ -787,7 +947,9 @@ pub mod service {
                     let mut timeout: Option<::Value<u32>> = None;
                     let mut unhealthy_threshold: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "HealthyThreshold" => {
                                 healthy_threshold = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -853,17 +1015,27 @@ pub mod service {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Port", port)?;
             }
             if let Some(ref runtime_environment_variables) = self.runtime_environment_variables {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuntimeEnvironmentVariables", runtime_environment_variables)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RuntimeEnvironmentVariables",
+                    runtime_environment_variables,
+                )?;
             }
             if let Some(ref start_command) = self.start_command {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StartCommand", start_command)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StartCommand",
+                    start_command,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ImageConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ImageConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ImageConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -873,18 +1045,24 @@ pub mod service {
                     write!(f, "a struct of type ImageConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut port: Option<::Value<String>> = None;
                     let mut runtime_environment_variables: Option<::ValueList<KeyValuePair>> = None;
                     let mut start_command: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Port" => {
                                 port = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RuntimeEnvironmentVariables" => {
-                                runtime_environment_variables = ::serde::de::MapAccess::next_value(&mut map)?;
+                                runtime_environment_variables =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "StartCommand" => {
                                 start_command = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -929,16 +1107,30 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref image_configuration) = self.image_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImageConfiguration", image_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ImageConfiguration",
+                    image_configuration,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImageIdentifier", &self.image_identifier)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImageRepositoryType", &self.image_repository_type)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ImageIdentifier",
+                &self.image_identifier,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ImageRepositoryType",
+                &self.image_repository_type,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ImageRepository {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ImageRepository, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ImageRepository, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -948,12 +1140,17 @@ pub mod service {
                     write!(f, "a struct of type ImageRepository")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut image_configuration: Option<::Value<ImageConfiguration>> = None;
                     let mut image_identifier: Option<::Value<String>> = None;
                     let mut image_repository_type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ImageConfiguration" => {
                                 image_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -962,7 +1159,8 @@ pub mod service {
                                 image_identifier = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ImageRepositoryType" => {
-                                image_repository_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                                image_repository_type =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -970,8 +1168,10 @@ pub mod service {
 
                     Ok(ImageRepository {
                         image_configuration: image_configuration,
-                        image_identifier: image_identifier.ok_or(::serde::de::Error::missing_field("ImageIdentifier"))?,
-                        image_repository_type: image_repository_type.ok_or(::serde::de::Error::missing_field("ImageRepositoryType"))?,
+                        image_identifier: image_identifier
+                            .ok_or(::serde::de::Error::missing_field("ImageIdentifier"))?,
+                        image_repository_type: image_repository_type
+                            .ok_or(::serde::de::Error::missing_field("ImageRepositoryType"))?,
                     })
                 }
             }
@@ -1007,7 +1207,11 @@ pub mod service {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Cpu", cpu)?;
             }
             if let Some(ref instance_role_arn) = self.instance_role_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InstanceRoleArn", instance_role_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InstanceRoleArn",
+                    instance_role_arn,
+                )?;
             }
             if let Some(ref memory) = self.memory {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Memory", memory)?;
@@ -1017,7 +1221,9 @@ pub mod service {
     }
 
     impl ::codec::DeserializeValue for InstanceConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InstanceConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<InstanceConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1027,12 +1233,17 @@ pub mod service {
                     write!(f, "a struct of type InstanceConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut cpu: Option<::Value<String>> = None;
                     let mut instance_role_arn: Option<::Value<String>> = None;
                     let mut memory: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Cpu" => {
                                 cpu = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1098,11 +1309,16 @@ pub mod service {
                     write!(f, "a struct of type KeyValuePair")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut name: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Name" => {
                                 name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1138,13 +1354,19 @@ pub mod service {
     impl ::codec::SerializeValue for NetworkConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "EgressConfiguration", &self.egress_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "EgressConfiguration",
+                &self.egress_configuration,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for NetworkConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NetworkConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<NetworkConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1154,20 +1376,27 @@ pub mod service {
                     write!(f, "a struct of type NetworkConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut egress_configuration: Option<::Value<EgressConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EgressConfiguration" => {
-                                egress_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                egress_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
                     }
 
                     Ok(NetworkConfiguration {
-                        egress_configuration: egress_configuration.ok_or(::serde::de::Error::missing_field("EgressConfiguration"))?,
+                        egress_configuration: egress_configuration
+                            .ok_or(::serde::de::Error::missing_field("EgressConfiguration"))?,
                     })
                 }
             }
@@ -1201,7 +1430,9 @@ pub mod service {
     }
 
     impl ::codec::DeserializeValue for SourceCodeVersion {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SourceCodeVersion, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SourceCodeVersion, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1211,11 +1442,16 @@ pub mod service {
                     write!(f, "a struct of type SourceCodeVersion")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut r#type: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Type" => {
                                 r#type = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1267,23 +1503,41 @@ pub mod service {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authentication_configuration) = self.authentication_configuration {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AuthenticationConfiguration", authentication_configuration)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AuthenticationConfiguration",
+                    authentication_configuration,
+                )?;
             }
             if let Some(ref auto_deployments_enabled) = self.auto_deployments_enabled {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutoDeploymentsEnabled", auto_deployments_enabled)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AutoDeploymentsEnabled",
+                    auto_deployments_enabled,
+                )?;
             }
             if let Some(ref code_repository) = self.code_repository {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "CodeRepository", code_repository)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "CodeRepository",
+                    code_repository,
+                )?;
             }
             if let Some(ref image_repository) = self.image_repository {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ImageRepository", image_repository)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ImageRepository",
+                    image_repository,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SourceConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SourceConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SourceConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1293,19 +1547,28 @@ pub mod service {
                     write!(f, "a struct of type SourceConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                    let mut authentication_configuration: Option<::Value<AuthenticationConfiguration>> = None;
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
+                    let mut authentication_configuration: Option<
+                        ::Value<AuthenticationConfiguration>,
+                    > = None;
                     let mut auto_deployments_enabled: Option<::Value<bool>> = None;
                     let mut code_repository: Option<::Value<CodeRepository>> = None;
                     let mut image_repository: Option<::Value<ImageRepository>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AuthenticationConfiguration" => {
-                                authentication_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                                authentication_configuration =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "AutoDeploymentsEnabled" => {
-                                auto_deployments_enabled = ::serde::de::MapAccess::next_value(&mut map)?;
+                                auto_deployments_enabled =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "CodeRepository" => {
                                 code_repository = ::serde::de::MapAccess::next_value(&mut map)?;

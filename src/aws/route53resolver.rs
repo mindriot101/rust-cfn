@@ -3,7 +3,7 @@
 /// The [`AWS::Route53Resolver::FirewallDomainList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html) resource type.
 #[derive(Debug, Default)]
 pub struct FirewallDomainList {
-    properties: FirewallDomainListProperties
+    properties: FirewallDomainListProperties,
 }
 
 /// Properties for the `FirewallDomainList` resource.
@@ -35,7 +35,11 @@ impl ::serde::Serialize for FirewallDomainListProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref domain_file_url) = self.domain_file_url {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainFileUrl", domain_file_url)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DomainFileUrl",
+                domain_file_url,
+            )?;
         }
         if let Some(ref domains) = self.domains {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Domains", domains)?;
@@ -51,7 +55,9 @@ impl ::serde::Serialize for FirewallDomainListProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for FirewallDomainListProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<FirewallDomainListProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<FirewallDomainListProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -61,7 +67,10 @@ impl<'de> ::serde::Deserialize<'de> for FirewallDomainListProperties {
                 write!(f, "a struct of type FirewallDomainListProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut domain_file_url: Option<::Value<String>> = None;
                 let mut domains: Option<::ValueList<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -120,7 +129,7 @@ impl From<FirewallDomainListProperties> for FirewallDomainList {
 /// The [`AWS::Route53Resolver::FirewallRuleGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct FirewallRuleGroup {
-    properties: FirewallRuleGroupProperties
+    properties: FirewallRuleGroupProperties,
 }
 
 /// Properties for the `FirewallRuleGroup` resource.
@@ -160,7 +169,9 @@ impl ::serde::Serialize for FirewallRuleGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for FirewallRuleGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<FirewallRuleGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<FirewallRuleGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -170,8 +181,13 @@ impl<'de> ::serde::Deserialize<'de> for FirewallRuleGroupProperties {
                 write!(f, "a struct of type FirewallRuleGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut firewall_rules: Option<::ValueList<self::firewall_rule_group::FirewallRule>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut firewall_rules: Option<
+                    ::ValueList<self::firewall_rule_group::FirewallRule>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -224,7 +240,7 @@ impl From<FirewallRuleGroupProperties> for FirewallRuleGroup {
 /// The [`AWS::Route53Resolver::FirewallRuleGroupAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct FirewallRuleGroupAssociation {
-    properties: FirewallRuleGroupAssociationProperties
+    properties: FirewallRuleGroupAssociationProperties,
 }
 
 /// Properties for the `FirewallRuleGroupAssociation` resource.
@@ -265,9 +281,17 @@ pub struct FirewallRuleGroupAssociationProperties {
 impl ::serde::Serialize for FirewallRuleGroupAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FirewallRuleGroupId", &self.firewall_rule_group_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FirewallRuleGroupId",
+            &self.firewall_rule_group_id,
+        )?;
         if let Some(ref mutation_protection) = self.mutation_protection {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "MutationProtection", mutation_protection)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "MutationProtection",
+                mutation_protection,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -282,7 +306,9 @@ impl ::serde::Serialize for FirewallRuleGroupAssociationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for FirewallRuleGroupAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<FirewallRuleGroupAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<FirewallRuleGroupAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -292,7 +318,10 @@ impl<'de> ::serde::Deserialize<'de> for FirewallRuleGroupAssociationProperties {
                 write!(f, "a struct of type FirewallRuleGroupAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut firewall_rule_group_id: Option<::Value<String>> = None;
                 let mut mutation_protection: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -325,7 +354,8 @@ impl<'de> ::serde::Deserialize<'de> for FirewallRuleGroupAssociationProperties {
                 }
 
                 Ok(FirewallRuleGroupAssociationProperties {
-                    firewall_rule_group_id: firewall_rule_group_id.ok_or(::serde::de::Error::missing_field("FirewallRuleGroupId"))?,
+                    firewall_rule_group_id: firewall_rule_group_id
+                        .ok_or(::serde::de::Error::missing_field("FirewallRuleGroupId"))?,
                     mutation_protection: mutation_protection,
                     name: name,
                     priority: priority.ok_or(::serde::de::Error::missing_field("Priority"))?,
@@ -361,7 +391,7 @@ impl From<FirewallRuleGroupAssociationProperties> for FirewallRuleGroupAssociati
 /// The [`AWS::Route53Resolver::ResolverConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResolverConfig {
-    properties: ResolverConfigProperties
+    properties: ResolverConfigProperties,
 }
 
 /// Properties for the `ResolverConfig` resource.
@@ -382,14 +412,20 @@ pub struct ResolverConfigProperties {
 impl ::serde::Serialize for ResolverConfigProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AutodefinedReverseFlag", &self.autodefined_reverse_flag)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AutodefinedReverseFlag",
+            &self.autodefined_reverse_flag,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceId", &self.resource_id)?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResolverConfigProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResolverConfigProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResolverConfigProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -399,14 +435,18 @@ impl<'de> ::serde::Deserialize<'de> for ResolverConfigProperties {
                 write!(f, "a struct of type ResolverConfigProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut autodefined_reverse_flag: Option<::Value<String>> = None;
                 let mut resource_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "AutodefinedReverseFlag" => {
-                            autodefined_reverse_flag = ::serde::de::MapAccess::next_value(&mut map)?;
+                            autodefined_reverse_flag =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ResourceId" => {
                             resource_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -416,8 +456,10 @@ impl<'de> ::serde::Deserialize<'de> for ResolverConfigProperties {
                 }
 
                 Ok(ResolverConfigProperties {
-                    autodefined_reverse_flag: autodefined_reverse_flag.ok_or(::serde::de::Error::missing_field("AutodefinedReverseFlag"))?,
-                    resource_id: resource_id.ok_or(::serde::de::Error::missing_field("ResourceId"))?,
+                    autodefined_reverse_flag: autodefined_reverse_flag
+                        .ok_or(::serde::de::Error::missing_field("AutodefinedReverseFlag"))?,
+                    resource_id: resource_id
+                        .ok_or(::serde::de::Error::missing_field("ResourceId"))?,
                 })
             }
         }
@@ -448,7 +490,7 @@ impl From<ResolverConfigProperties> for ResolverConfig {
 /// The [`AWS::Route53Resolver::ResolverDNSSECConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverdnssecconfig.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResolverDNSSECConfig {
-    properties: ResolverDNSSECConfigProperties
+    properties: ResolverDNSSECConfigProperties,
 }
 
 /// Properties for the `ResolverDNSSECConfig` resource.
@@ -472,7 +514,9 @@ impl ::serde::Serialize for ResolverDNSSECConfigProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResolverDNSSECConfigProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResolverDNSSECConfigProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResolverDNSSECConfigProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -482,7 +526,10 @@ impl<'de> ::serde::Deserialize<'de> for ResolverDNSSECConfigProperties {
                 write!(f, "a struct of type ResolverDNSSECConfigProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut resource_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -526,7 +573,7 @@ impl From<ResolverDNSSECConfigProperties> for ResolverDNSSECConfig {
 /// The [`AWS::Route53Resolver::ResolverEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResolverEndpoint {
-    properties: ResolverEndpointProperties
+    properties: ResolverEndpointProperties,
 }
 
 /// Properties for the `ResolverEndpoint` resource.
@@ -567,7 +614,11 @@ impl ::serde::Serialize for ResolverEndpointProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", &self.security_group_ids)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "SecurityGroupIds",
+            &self.security_group_ids,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -576,7 +627,9 @@ impl ::serde::Serialize for ResolverEndpointProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResolverEndpointProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResolverEndpointProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResolverEndpointProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -586,9 +639,14 @@ impl<'de> ::serde::Deserialize<'de> for ResolverEndpointProperties {
                 write!(f, "a struct of type ResolverEndpointProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut direction: Option<::Value<String>> = None;
-                let mut ip_addresses: Option<::ValueList<self::resolver_endpoint::IpAddressRequest>> = None;
+                let mut ip_addresses: Option<
+                    ::ValueList<self::resolver_endpoint::IpAddressRequest>,
+                > = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut security_group_ids: Option<::ValueList<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -616,9 +674,11 @@ impl<'de> ::serde::Deserialize<'de> for ResolverEndpointProperties {
 
                 Ok(ResolverEndpointProperties {
                     direction: direction.ok_or(::serde::de::Error::missing_field("Direction"))?,
-                    ip_addresses: ip_addresses.ok_or(::serde::de::Error::missing_field("IpAddresses"))?,
+                    ip_addresses: ip_addresses
+                        .ok_or(::serde::de::Error::missing_field("IpAddresses"))?,
                     name: name,
-                    security_group_ids: security_group_ids.ok_or(::serde::de::Error::missing_field("SecurityGroupIds"))?,
+                    security_group_ids: security_group_ids
+                        .ok_or(::serde::de::Error::missing_field("SecurityGroupIds"))?,
                     tags: tags,
                 })
             }
@@ -650,7 +710,7 @@ impl From<ResolverEndpointProperties> for ResolverEndpoint {
 /// The [`AWS::Route53Resolver::ResolverQueryLoggingConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResolverQueryLoggingConfig {
-    properties: ResolverQueryLoggingConfigProperties
+    properties: ResolverQueryLoggingConfigProperties,
 }
 
 /// Properties for the `ResolverQueryLoggingConfig` resource.
@@ -672,7 +732,11 @@ impl ::serde::Serialize for ResolverQueryLoggingConfigProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref destination_arn) = self.destination_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DestinationArn", destination_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DestinationArn",
+                destination_arn,
+            )?;
         }
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
@@ -682,7 +746,9 @@ impl ::serde::Serialize for ResolverQueryLoggingConfigProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResolverQueryLoggingConfigProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResolverQueryLoggingConfigProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResolverQueryLoggingConfigProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -692,7 +758,10 @@ impl<'de> ::serde::Deserialize<'de> for ResolverQueryLoggingConfigProperties {
                 write!(f, "a struct of type ResolverQueryLoggingConfigProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut destination_arn: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
 
@@ -741,7 +810,7 @@ impl From<ResolverQueryLoggingConfigProperties> for ResolverQueryLoggingConfig {
 /// The [`AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResolverQueryLoggingConfigAssociation {
-    properties: ResolverQueryLoggingConfigAssociationProperties
+    properties: ResolverQueryLoggingConfigAssociationProperties,
 }
 
 /// Properties for the `ResolverQueryLoggingConfigAssociation` resource.
@@ -763,7 +832,11 @@ impl ::serde::Serialize for ResolverQueryLoggingConfigAssociationProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref resolver_query_log_config_id) = self.resolver_query_log_config_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResolverQueryLogConfigId", resolver_query_log_config_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResolverQueryLogConfigId",
+                resolver_query_log_config_id,
+            )?;
         }
         if let Some(ref resource_id) = self.resource_id {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceId", resource_id)?;
@@ -773,24 +846,33 @@ impl ::serde::Serialize for ResolverQueryLoggingConfigAssociationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResolverQueryLoggingConfigAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResolverQueryLoggingConfigAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResolverQueryLoggingConfigAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
             type Value = ResolverQueryLoggingConfigAssociationProperties;
 
             fn expecting(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-                write!(f, "a struct of type ResolverQueryLoggingConfigAssociationProperties")
+                write!(
+                    f,
+                    "a struct of type ResolverQueryLoggingConfigAssociationProperties"
+                )
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut resolver_query_log_config_id: Option<::Value<String>> = None;
                 let mut resource_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "ResolverQueryLogConfigId" => {
-                            resolver_query_log_config_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                            resolver_query_log_config_id =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ResourceId" => {
                             resource_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -823,8 +905,12 @@ impl ::Resource for ResolverQueryLoggingConfigAssociation {
 
 impl ::private::Sealed for ResolverQueryLoggingConfigAssociation {}
 
-impl From<ResolverQueryLoggingConfigAssociationProperties> for ResolverQueryLoggingConfigAssociation {
-    fn from(properties: ResolverQueryLoggingConfigAssociationProperties) -> ResolverQueryLoggingConfigAssociation {
+impl From<ResolverQueryLoggingConfigAssociationProperties>
+    for ResolverQueryLoggingConfigAssociation
+{
+    fn from(
+        properties: ResolverQueryLoggingConfigAssociationProperties,
+    ) -> ResolverQueryLoggingConfigAssociation {
         ResolverQueryLoggingConfigAssociation { properties }
     }
 }
@@ -832,7 +918,7 @@ impl From<ResolverQueryLoggingConfigAssociationProperties> for ResolverQueryLogg
 /// The [`AWS::Route53Resolver::ResolverRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResolverRule {
-    properties: ResolverRuleProperties
+    properties: ResolverRuleProperties,
 }
 
 /// Properties for the `ResolverRule` resource.
@@ -878,7 +964,11 @@ impl ::serde::Serialize for ResolverRuleProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
         if let Some(ref resolver_endpoint_id) = self.resolver_endpoint_id {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResolverEndpointId", resolver_endpoint_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResolverEndpointId",
+                resolver_endpoint_id,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuleType", &self.rule_type)?;
         if let Some(ref tags) = self.tags {
@@ -892,7 +982,9 @@ impl ::serde::Serialize for ResolverRuleProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResolverRuleProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResolverRuleProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResolverRuleProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -902,7 +994,10 @@ impl<'de> ::serde::Deserialize<'de> for ResolverRuleProperties {
                 write!(f, "a struct of type ResolverRuleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut domain_name: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut resolver_endpoint_id: Option<::Value<String>> = None;
@@ -935,7 +1030,8 @@ impl<'de> ::serde::Deserialize<'de> for ResolverRuleProperties {
                 }
 
                 Ok(ResolverRuleProperties {
-                    domain_name: domain_name.ok_or(::serde::de::Error::missing_field("DomainName"))?,
+                    domain_name: domain_name
+                        .ok_or(::serde::de::Error::missing_field("DomainName"))?,
                     name: name,
                     resolver_endpoint_id: resolver_endpoint_id,
                     rule_type: rule_type.ok_or(::serde::de::Error::missing_field("RuleType"))?,
@@ -971,7 +1067,7 @@ impl From<ResolverRuleProperties> for ResolverRule {
 /// The [`AWS::Route53Resolver::ResolverRuleAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResolverRuleAssociation {
-    properties: ResolverRuleAssociationProperties
+    properties: ResolverRuleAssociationProperties,
 }
 
 /// Properties for the `ResolverRuleAssociation` resource.
@@ -1000,14 +1096,20 @@ impl ::serde::Serialize for ResolverRuleAssociationProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResolverRuleId", &self.resolver_rule_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ResolverRuleId",
+            &self.resolver_rule_id,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "VPCId", &self.vpc_id)?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for ResolverRuleAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ResolverRuleAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ResolverRuleAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1017,7 +1119,10 @@ impl<'de> ::serde::Deserialize<'de> for ResolverRuleAssociationProperties {
                 write!(f, "a struct of type ResolverRuleAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut name: Option<::Value<String>> = None;
                 let mut resolver_rule_id: Option<::Value<String>> = None;
                 let mut vpc_id: Option<::Value<String>> = None;
@@ -1039,7 +1144,8 @@ impl<'de> ::serde::Deserialize<'de> for ResolverRuleAssociationProperties {
 
                 Ok(ResolverRuleAssociationProperties {
                     name: name,
-                    resolver_rule_id: resolver_rule_id.ok_or(::serde::de::Error::missing_field("ResolverRuleId"))?,
+                    resolver_rule_id: resolver_rule_id
+                        .ok_or(::serde::de::Error::missing_field("ResolverRuleId"))?,
                     vpc_id: vpc_id.ok_or(::serde::de::Error::missing_field("VPCId"))?,
                 })
             }
@@ -1116,18 +1222,38 @@ pub mod firewall_rule_group {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Action", &self.action)?;
             if let Some(ref block_override_dns_type) = self.block_override_dns_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlockOverrideDnsType", block_override_dns_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BlockOverrideDnsType",
+                    block_override_dns_type,
+                )?;
             }
             if let Some(ref block_override_domain) = self.block_override_domain {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlockOverrideDomain", block_override_domain)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BlockOverrideDomain",
+                    block_override_domain,
+                )?;
             }
             if let Some(ref block_override_ttl) = self.block_override_ttl {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlockOverrideTtl", block_override_ttl)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BlockOverrideTtl",
+                    block_override_ttl,
+                )?;
             }
             if let Some(ref block_response) = self.block_response {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BlockResponse", block_response)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BlockResponse",
+                    block_response,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FirewallDomainListId", &self.firewall_domain_list_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FirewallDomainListId",
+                &self.firewall_domain_list_id,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Priority", &self.priority)?;
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1144,7 +1270,10 @@ pub mod firewall_rule_group {
                     write!(f, "a struct of type FirewallRule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut action: Option<::Value<String>> = None;
                     let mut block_override_dns_type: Option<::Value<String>> = None;
                     let mut block_override_domain: Option<::Value<String>> = None;
@@ -1153,16 +1282,20 @@ pub mod firewall_rule_group {
                     let mut firewall_domain_list_id: Option<::Value<String>> = None;
                     let mut priority: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Action" => {
                                 action = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "BlockOverrideDnsType" => {
-                                block_override_dns_type = ::serde::de::MapAccess::next_value(&mut map)?;
+                                block_override_dns_type =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "BlockOverrideDomain" => {
-                                block_override_domain = ::serde::de::MapAccess::next_value(&mut map)?;
+                                block_override_domain =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "BlockOverrideTtl" => {
                                 block_override_ttl = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1171,7 +1304,8 @@ pub mod firewall_rule_group {
                                 block_response = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "FirewallDomainListId" => {
-                                firewall_domain_list_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                                firewall_domain_list_id =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Priority" => {
                                 priority = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1186,7 +1320,8 @@ pub mod firewall_rule_group {
                         block_override_domain: block_override_domain,
                         block_override_ttl: block_override_ttl,
                         block_response: block_response,
-                        firewall_domain_list_id: firewall_domain_list_id.ok_or(::serde::de::Error::missing_field("FirewallDomainListId"))?,
+                        firewall_domain_list_id: firewall_domain_list_id
+                            .ok_or(::serde::de::Error::missing_field("FirewallDomainListId"))?,
                         priority: priority.ok_or(::serde::de::Error::missing_field("Priority"))?,
                     })
                 }
@@ -1227,7 +1362,9 @@ pub mod resolver_endpoint {
     }
 
     impl ::codec::DeserializeValue for IpAddressRequest {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<IpAddressRequest, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<IpAddressRequest, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1237,11 +1374,16 @@ pub mod resolver_endpoint {
                     write!(f, "a struct of type IpAddressRequest")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ip: Option<::Value<String>> = None;
                     let mut subnet_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Ip" => {
                                 ip = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1255,7 +1397,8 @@ pub mod resolver_endpoint {
 
                     Ok(IpAddressRequest {
                         ip: ip,
-                        subnet_id: subnet_id.ok_or(::serde::de::Error::missing_field("SubnetId"))?,
+                        subnet_id: subnet_id
+                            .ok_or(::serde::de::Error::missing_field("SubnetId"))?,
                     })
                 }
             }
@@ -1295,7 +1438,9 @@ pub mod resolver_rule {
     }
 
     impl ::codec::DeserializeValue for TargetAddress {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TargetAddress, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TargetAddress, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -1305,11 +1450,16 @@ pub mod resolver_rule {
                     write!(f, "a struct of type TargetAddress")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ip: Option<::Value<String>> = None;
                     let mut port: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Ip" => {
                                 ip = ::serde::de::MapAccess::next_value(&mut map)?;

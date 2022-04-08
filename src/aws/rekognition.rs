@@ -3,7 +3,7 @@
 /// The [`AWS::Rekognition::Collection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-collection.html) resource type.
 #[derive(Debug, Default)]
 pub struct Collection {
-    properties: CollectionProperties
+    properties: CollectionProperties,
 }
 
 /// Properties for the `Collection` resource.
@@ -43,7 +43,10 @@ impl<'de> ::serde::Deserialize<'de> for CollectionProperties {
                 write!(f, "a struct of type CollectionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut collection_id: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -60,7 +63,8 @@ impl<'de> ::serde::Deserialize<'de> for CollectionProperties {
                 }
 
                 Ok(CollectionProperties {
-                    collection_id: collection_id.ok_or(::serde::de::Error::missing_field("CollectionId"))?,
+                    collection_id: collection_id
+                        .ok_or(::serde::de::Error::missing_field("CollectionId"))?,
                     tags: tags,
                 })
             }
@@ -92,7 +96,7 @@ impl From<CollectionProperties> for Collection {
 /// The [`AWS::Rekognition::Project`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-project.html) resource type.
 #[derive(Debug, Default)]
 pub struct Project {
-    properties: ProjectProperties
+    properties: ProjectProperties,
 }
 
 /// Properties for the `Project` resource.
@@ -124,7 +128,10 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 write!(f, "a struct of type ProjectProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut project_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -137,7 +144,8 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 }
 
                 Ok(ProjectProperties {
-                    project_name: project_name.ok_or(::serde::de::Error::missing_field("ProjectName"))?,
+                    project_name: project_name
+                        .ok_or(::serde::de::Error::missing_field("ProjectName"))?,
                 })
             }
         }

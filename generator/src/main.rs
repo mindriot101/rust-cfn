@@ -2,13 +2,14 @@ extern crate flate2;
 extern crate heck;
 extern crate itertools;
 extern crate serde;
-#[macro_use] extern crate serde_derive;
+#[macro_use]
+extern crate serde_derive;
 extern crate serde_json;
 
 use std::io::Read;
 
-mod model;
 mod codegen;
+mod model;
 
 fn main() {
     let bytes = include_bytes!("../CloudFormationResourceSpecification.json.gz");
@@ -18,6 +19,5 @@ fn main() {
         .expect("failed to decompress specification file");
     let specification = serde_json::from_str::<model::Specification>(&data)
         .expect("failed to parse specification data");
-    codegen::generate(specification, "../src/aws")
-        .expect("failed to generate output files");
+    codegen::generate(specification, "../src/aws").expect("failed to generate output files");
 }

@@ -3,7 +3,7 @@
 /// The [`AWS::BillingConductor::BillingGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct BillingGroup {
-    properties: BillingGroupProperties
+    properties: BillingGroupProperties,
 }
 
 /// Properties for the `BillingGroup` resource.
@@ -39,19 +39,33 @@ pub struct BillingGroupProperties {
 impl ::serde::Serialize for BillingGroupProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AccountGrouping", &self.account_grouping)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComputationPreference", &self.computation_preference)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AccountGrouping",
+            &self.account_grouping,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ComputationPreference",
+            &self.computation_preference,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PrimaryAccountId", &self.primary_account_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PrimaryAccountId",
+            &self.primary_account_id,
+        )?;
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for BillingGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<BillingGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<BillingGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -61,9 +75,15 @@ impl<'de> ::serde::Deserialize<'de> for BillingGroupProperties {
                 write!(f, "a struct of type BillingGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
-                let mut account_grouping: Option<::Value<self::billing_group::AccountGrouping>> = None;
-                let mut computation_preference: Option<::Value<self::billing_group::ComputationPreference>> = None;
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
+                let mut account_grouping: Option<::Value<self::billing_group::AccountGrouping>> =
+                    None;
+                let mut computation_preference: Option<
+                    ::Value<self::billing_group::ComputationPreference>,
+                > = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut primary_account_id: Option<::Value<String>> = None;
@@ -90,11 +110,14 @@ impl<'de> ::serde::Deserialize<'de> for BillingGroupProperties {
                 }
 
                 Ok(BillingGroupProperties {
-                    account_grouping: account_grouping.ok_or(::serde::de::Error::missing_field("AccountGrouping"))?,
-                    computation_preference: computation_preference.ok_or(::serde::de::Error::missing_field("ComputationPreference"))?,
+                    account_grouping: account_grouping
+                        .ok_or(::serde::de::Error::missing_field("AccountGrouping"))?,
+                    computation_preference: computation_preference
+                        .ok_or(::serde::de::Error::missing_field("ComputationPreference"))?,
                     description: description,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    primary_account_id: primary_account_id.ok_or(::serde::de::Error::missing_field("PrimaryAccountId"))?,
+                    primary_account_id: primary_account_id
+                        .ok_or(::serde::de::Error::missing_field("PrimaryAccountId"))?,
                 })
             }
         }
@@ -125,7 +148,7 @@ impl From<BillingGroupProperties> for BillingGroup {
 /// The [`AWS::BillingConductor::CustomLineItem`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html) resource type.
 #[derive(Debug, Default)]
 pub struct CustomLineItem {
-    properties: CustomLineItemProperties
+    properties: CustomLineItemProperties,
 }
 
 /// Properties for the `CustomLineItem` resource.
@@ -145,7 +168,8 @@ pub struct CustomLineItemProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub custom_line_item_charge_details: Option<::Value<self::custom_line_item::CustomLineItemChargeDetails>>,
+    pub custom_line_item_charge_details:
+        Option<::Value<self::custom_line_item::CustomLineItemChargeDetails>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-description).
     ///
     /// Update type: _Mutable_.
@@ -161,12 +185,24 @@ pub struct CustomLineItemProperties {
 impl ::serde::Serialize for CustomLineItemProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "BillingGroupArn", &self.billing_group_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "BillingGroupArn",
+            &self.billing_group_arn,
+        )?;
         if let Some(ref billing_period_range) = self.billing_period_range {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BillingPeriodRange", billing_period_range)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BillingPeriodRange",
+                billing_period_range,
+            )?;
         }
         if let Some(ref custom_line_item_charge_details) = self.custom_line_item_charge_details {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "CustomLineItemChargeDetails", custom_line_item_charge_details)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "CustomLineItemChargeDetails",
+                custom_line_item_charge_details,
+            )?;
         }
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
@@ -177,7 +213,9 @@ impl ::serde::Serialize for CustomLineItemProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for CustomLineItemProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomLineItemProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<CustomLineItemProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -187,10 +225,17 @@ impl<'de> ::serde::Deserialize<'de> for CustomLineItemProperties {
                 write!(f, "a struct of type CustomLineItemProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut billing_group_arn: Option<::Value<String>> = None;
-                let mut billing_period_range: Option<::Value<self::custom_line_item::BillingPeriodRange>> = None;
-                let mut custom_line_item_charge_details: Option<::Value<self::custom_line_item::CustomLineItemChargeDetails>> = None;
+                let mut billing_period_range: Option<
+                    ::Value<self::custom_line_item::BillingPeriodRange>,
+                > = None;
+                let mut custom_line_item_charge_details: Option<
+                    ::Value<self::custom_line_item::CustomLineItemChargeDetails>,
+                > = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
 
@@ -203,7 +248,8 @@ impl<'de> ::serde::Deserialize<'de> for CustomLineItemProperties {
                             billing_period_range = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "CustomLineItemChargeDetails" => {
-                            custom_line_item_charge_details = ::serde::de::MapAccess::next_value(&mut map)?;
+                            custom_line_item_charge_details =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -216,7 +262,8 @@ impl<'de> ::serde::Deserialize<'de> for CustomLineItemProperties {
                 }
 
                 Ok(CustomLineItemProperties {
-                    billing_group_arn: billing_group_arn.ok_or(::serde::de::Error::missing_field("BillingGroupArn"))?,
+                    billing_group_arn: billing_group_arn
+                        .ok_or(::serde::de::Error::missing_field("BillingGroupArn"))?,
                     billing_period_range: billing_period_range,
                     custom_line_item_charge_details: custom_line_item_charge_details,
                     description: description,
@@ -251,7 +298,7 @@ impl From<CustomLineItemProperties> for CustomLineItem {
 /// The [`AWS::BillingConductor::PricingPlan`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html) resource type.
 #[derive(Debug, Default)]
 pub struct PricingPlan {
-    properties: PricingPlanProperties
+    properties: PricingPlanProperties,
 }
 
 /// Properties for the `PricingPlan` resource.
@@ -282,7 +329,11 @@ impl ::serde::Serialize for PricingPlanProperties {
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref pricing_rule_arns) = self.pricing_rule_arns {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PricingRuleArns", pricing_rule_arns)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PricingRuleArns",
+                pricing_rule_arns,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -299,7 +350,10 @@ impl<'de> ::serde::Deserialize<'de> for PricingPlanProperties {
                 write!(f, "a struct of type PricingPlanProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut pricing_rule_arns: Option<::ValueList<String>> = None;
@@ -353,7 +407,7 @@ impl From<PricingPlanProperties> for PricingPlan {
 /// The [`AWS::BillingConductor::PricingRule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html) resource type.
 #[derive(Debug, Default)]
 pub struct PricingRule {
-    properties: PricingRuleProperties
+    properties: PricingRuleProperties,
 }
 
 /// Properties for the `PricingRule` resource.
@@ -397,7 +451,11 @@ impl ::serde::Serialize for PricingRuleProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ModifierPercentage", &self.modifier_percentage)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ModifierPercentage",
+            &self.modifier_percentage,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Scope", &self.scope)?;
         if let Some(ref service) = self.service {
@@ -419,7 +477,10 @@ impl<'de> ::serde::Deserialize<'de> for PricingRuleProperties {
                 write!(f, "a struct of type PricingRuleProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut modifier_percentage: Option<::Value<f64>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -453,7 +514,8 @@ impl<'de> ::serde::Deserialize<'de> for PricingRuleProperties {
 
                 Ok(PricingRuleProperties {
                     description: description,
-                    modifier_percentage: modifier_percentage.ok_or(::serde::de::Error::missing_field("ModifierPercentage"))?,
+                    modifier_percentage: modifier_percentage
+                        .ok_or(::serde::de::Error::missing_field("ModifierPercentage"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     scope: scope.ok_or(::serde::de::Error::missing_field("Scope"))?,
                     service: service,
@@ -501,13 +563,19 @@ pub mod billing_group {
     impl ::codec::SerializeValue for AccountGrouping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LinkedAccountIds", &self.linked_account_ids)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LinkedAccountIds",
+                &self.linked_account_ids,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AccountGrouping {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AccountGrouping, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AccountGrouping, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -517,10 +585,15 @@ pub mod billing_group {
                     write!(f, "a struct of type AccountGrouping")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut linked_account_ids: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LinkedAccountIds" => {
                                 linked_account_ids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -530,7 +603,8 @@ pub mod billing_group {
                     }
 
                     Ok(AccountGrouping {
-                        linked_account_ids: linked_account_ids.ok_or(::serde::de::Error::missing_field("LinkedAccountIds"))?,
+                        linked_account_ids: linked_account_ids
+                            .ok_or(::serde::de::Error::missing_field("LinkedAccountIds"))?,
                     })
                 }
             }
@@ -552,13 +626,19 @@ pub mod billing_group {
     impl ::codec::SerializeValue for ComputationPreference {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PricingPlanArn", &self.pricing_plan_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PricingPlanArn",
+                &self.pricing_plan_arn,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ComputationPreference {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ComputationPreference, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ComputationPreference, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -568,10 +648,15 @@ pub mod billing_group {
                     write!(f, "a struct of type ComputationPreference")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut pricing_plan_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "PricingPlanArn" => {
                                 pricing_plan_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -581,7 +666,8 @@ pub mod billing_group {
                     }
 
                     Ok(ComputationPreference {
-                        pricing_plan_arn: pricing_plan_arn.ok_or(::serde::de::Error::missing_field("PricingPlanArn"))?,
+                        pricing_plan_arn: pricing_plan_arn
+                            .ok_or(::serde::de::Error::missing_field("PricingPlanArn"))?,
                     })
                 }
             }
@@ -613,17 +699,27 @@ pub mod custom_line_item {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref exclusive_end_billing_period) = self.exclusive_end_billing_period {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExclusiveEndBillingPeriod", exclusive_end_billing_period)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ExclusiveEndBillingPeriod",
+                    exclusive_end_billing_period,
+                )?;
             }
             if let Some(ref inclusive_start_billing_period) = self.inclusive_start_billing_period {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InclusiveStartBillingPeriod", inclusive_start_billing_period)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InclusiveStartBillingPeriod",
+                    inclusive_start_billing_period,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for BillingPeriodRange {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BillingPeriodRange, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<BillingPeriodRange, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -633,17 +729,24 @@ pub mod custom_line_item {
                     write!(f, "a struct of type BillingPeriodRange")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut exclusive_end_billing_period: Option<::Value<String>> = None;
                     let mut inclusive_start_billing_period: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ExclusiveEndBillingPeriod" => {
-                                exclusive_end_billing_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                                exclusive_end_billing_period =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "InclusiveStartBillingPeriod" => {
-                                inclusive_start_billing_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                                inclusive_start_billing_period =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             _ => {}
                         }
@@ -695,7 +798,9 @@ pub mod custom_line_item {
     }
 
     impl ::codec::DeserializeValue for CustomLineItemChargeDetails {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomLineItemChargeDetails, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CustomLineItemChargeDetails, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -705,12 +810,18 @@ pub mod custom_line_item {
                     write!(f, "a struct of type CustomLineItemChargeDetails")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut flat: Option<::Value<CustomLineItemFlatChargeDetails>> = None;
-                    let mut percentage: Option<::Value<CustomLineItemPercentageChargeDetails>> = None;
+                    let mut percentage: Option<::Value<CustomLineItemPercentageChargeDetails>> =
+                        None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Flat" => {
                                 flat = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -750,13 +861,19 @@ pub mod custom_line_item {
     impl ::codec::SerializeValue for CustomLineItemFlatChargeDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ChargeValue", &self.charge_value)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ChargeValue",
+                &self.charge_value,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CustomLineItemFlatChargeDetails {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomLineItemFlatChargeDetails, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CustomLineItemFlatChargeDetails, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -766,10 +883,15 @@ pub mod custom_line_item {
                     write!(f, "a struct of type CustomLineItemFlatChargeDetails")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut charge_value: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ChargeValue" => {
                                 charge_value = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -779,7 +901,8 @@ pub mod custom_line_item {
                     }
 
                     Ok(CustomLineItemFlatChargeDetails {
-                        charge_value: charge_value.ok_or(::serde::de::Error::missing_field("ChargeValue"))?,
+                        charge_value: charge_value
+                            .ok_or(::serde::de::Error::missing_field("ChargeValue"))?,
                     })
                 }
             }
@@ -807,15 +930,25 @@ pub mod custom_line_item {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref child_associated_resources) = self.child_associated_resources {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ChildAssociatedResources", child_associated_resources)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ChildAssociatedResources",
+                    child_associated_resources,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "PercentageValue", &self.percentage_value)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "PercentageValue",
+                &self.percentage_value,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for CustomLineItemPercentageChargeDetails {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomLineItemPercentageChargeDetails, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<CustomLineItemPercentageChargeDetails, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -825,14 +958,20 @@ pub mod custom_line_item {
                     write!(f, "a struct of type CustomLineItemPercentageChargeDetails")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut child_associated_resources: Option<::ValueList<String>> = None;
                     let mut percentage_value: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ChildAssociatedResources" => {
-                                child_associated_resources = ::serde::de::MapAccess::next_value(&mut map)?;
+                                child_associated_resources =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "PercentageValue" => {
                                 percentage_value = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -843,7 +982,8 @@ pub mod custom_line_item {
 
                     Ok(CustomLineItemPercentageChargeDetails {
                         child_associated_resources: child_associated_resources,
-                        percentage_value: percentage_value.ok_or(::serde::de::Error::missing_field("PercentageValue"))?,
+                        percentage_value: percentage_value
+                            .ok_or(::serde::de::Error::missing_field("PercentageValue"))?,
                     })
                 }
             }

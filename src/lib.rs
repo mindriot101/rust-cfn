@@ -7,33 +7,39 @@
 
 extern crate indexmap;
 extern crate serde;
-#[macro_use] extern crate serde_derive;
+#[macro_use]
+extern crate serde_derive;
 extern crate serde_json;
 
 mod error;
-#[macro_use] mod codec;
-mod types;
-mod parts;
+#[macro_use]
+mod codec;
 pub mod aws;
+mod parts;
+mod types;
 
 pub use error::{Error, ErrorKind};
-pub use types::*;
 pub use parts::*;
+pub use types::*;
 
 pub mod json {
     //! Types for raw JSON values.
-    pub use serde_json::{Value, Number};
+    pub use serde_json::{Number, Value};
 }
 
 /// Represents an AWS CloudFormation template.
 #[derive(Debug, Default, Serialize, Deserialize)]
 pub struct Template {
-    #[serde(rename = "Description", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "Description",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     description: Option<String>,
     #[serde(rename = "Resources", default)]
     resources: Resources,
     #[serde(rename = "Outputs", default)]
-    outputs: Outputs
+    outputs: Outputs,
 }
 
 impl Template {
@@ -77,14 +83,13 @@ impl Template {
 
     /// Serialize the template into an AWS CloudFormation template in JSON format.
     pub fn to_json(&self) -> Result<String, ::Error> {
-        serde_json::to_string(self)
-            .map_err(|err| ::Error::new(::ErrorKind::Serialization, err))
+        serde_json::to_string(self).map_err(|err| ::Error::new(::ErrorKind::Serialization, err))
     }
 }
 
 /// Trait for stack resources, such as an Amazon Elastic Compute Cloud instance or an Amazon Simple Storage Service bucket.
 pub trait Resource: Sized + private::Sealed {
-    /// Uniquely identifies the resource type. 
+    /// Uniquely identifies the resource type.
     const TYPE: &'static str;
     /// Type that represents the set of properties the resource can be configured with.
     type Properties: private::Properties<Self>;
@@ -104,8 +109,8 @@ mod private {
 
 #[cfg(test)]
 mod tests {
-    use serde_json::to_value;
     use super::Template;
+    use serde_json::to_value;
 
     #[test]
     fn deserialize_empty_template() {

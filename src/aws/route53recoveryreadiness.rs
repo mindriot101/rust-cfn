@@ -3,7 +3,7 @@
 /// The [`AWS::Route53RecoveryReadiness::Cell`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-cell.html) resource type.
 #[derive(Debug, Default)]
 pub struct Cell {
-    properties: CellProperties
+    properties: CellProperties,
 }
 
 /// Properties for the `Cell` resource.
@@ -51,7 +51,10 @@ impl<'de> ::serde::Deserialize<'de> for CellProperties {
                 write!(f, "a struct of type CellProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut cell_name: Option<::Value<String>> = None;
                 let mut cells: Option<::ValueList<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -105,7 +108,7 @@ impl From<CellProperties> for Cell {
 /// The [`AWS::Route53RecoveryReadiness::ReadinessCheck`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-readinesscheck.html) resource type.
 #[derive(Debug, Default)]
 pub struct ReadinessCheck {
-    properties: ReadinessCheckProperties
+    properties: ReadinessCheckProperties,
 }
 
 /// Properties for the `ReadinessCheck` resource.
@@ -131,9 +134,17 @@ pub struct ReadinessCheckProperties {
 impl ::serde::Serialize for ReadinessCheckProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReadinessCheckName", &self.readiness_check_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ReadinessCheckName",
+            &self.readiness_check_name,
+        )?;
         if let Some(ref resource_set_name) = self.resource_set_name {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceSetName", resource_set_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ResourceSetName",
+                resource_set_name,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -143,7 +154,9 @@ impl ::serde::Serialize for ReadinessCheckProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ReadinessCheckProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ReadinessCheckProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ReadinessCheckProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -153,7 +166,10 @@ impl<'de> ::serde::Deserialize<'de> for ReadinessCheckProperties {
                 write!(f, "a struct of type ReadinessCheckProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut readiness_check_name: Option<::Value<String>> = None;
                 let mut resource_set_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -174,7 +190,8 @@ impl<'de> ::serde::Deserialize<'de> for ReadinessCheckProperties {
                 }
 
                 Ok(ReadinessCheckProperties {
-                    readiness_check_name: readiness_check_name.ok_or(::serde::de::Error::missing_field("ReadinessCheckName"))?,
+                    readiness_check_name: readiness_check_name
+                        .ok_or(::serde::de::Error::missing_field("ReadinessCheckName"))?,
                     resource_set_name: resource_set_name,
                     tags: tags,
                 })
@@ -207,7 +224,7 @@ impl From<ReadinessCheckProperties> for ReadinessCheck {
 /// The [`AWS::Route53RecoveryReadiness::RecoveryGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-recoverygroup.html) resource type.
 #[derive(Debug, Default)]
 pub struct RecoveryGroup {
-    properties: RecoveryGroupProperties
+    properties: RecoveryGroupProperties,
 }
 
 /// Properties for the `RecoveryGroup` resource.
@@ -236,7 +253,11 @@ impl ::serde::Serialize for RecoveryGroupProperties {
         if let Some(ref cells) = self.cells {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Cells", cells)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecoveryGroupName", &self.recovery_group_name)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RecoveryGroupName",
+            &self.recovery_group_name,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -245,7 +266,9 @@ impl ::serde::Serialize for RecoveryGroupProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for RecoveryGroupProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<RecoveryGroupProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<RecoveryGroupProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -255,7 +278,10 @@ impl<'de> ::serde::Deserialize<'de> for RecoveryGroupProperties {
                 write!(f, "a struct of type RecoveryGroupProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut cells: Option<::ValueList<String>> = None;
                 let mut recovery_group_name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
@@ -277,7 +303,8 @@ impl<'de> ::serde::Deserialize<'de> for RecoveryGroupProperties {
 
                 Ok(RecoveryGroupProperties {
                     cells: cells,
-                    recovery_group_name: recovery_group_name.ok_or(::serde::de::Error::missing_field("RecoveryGroupName"))?,
+                    recovery_group_name: recovery_group_name
+                        .ok_or(::serde::de::Error::missing_field("RecoveryGroupName"))?,
                     tags: tags,
                 })
             }
@@ -309,7 +336,7 @@ impl From<RecoveryGroupProperties> for RecoveryGroup {
 /// The [`AWS::Route53RecoveryReadiness::ResourceSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html) resource type.
 #[derive(Debug, Default)]
 pub struct ResourceSet {
-    properties: ResourceSetProperties
+    properties: ResourceSetProperties,
 }
 
 /// Properties for the `ResourceSet` resource.
@@ -340,8 +367,16 @@ pub struct ResourceSetProperties {
 impl ::serde::Serialize for ResourceSetProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceSetName", &self.resource_set_name)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceSetType", &self.resource_set_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ResourceSetName",
+            &self.resource_set_name,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ResourceSetType",
+            &self.resource_set_type,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Resources", &self.resources)?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -361,7 +396,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceSetProperties {
                 write!(f, "a struct of type ResourceSetProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut resource_set_name: Option<::Value<String>> = None;
                 let mut resource_set_type: Option<::Value<String>> = None;
                 let mut resources: Option<::ValueList<self::resource_set::Resource>> = None;
@@ -386,8 +424,10 @@ impl<'de> ::serde::Deserialize<'de> for ResourceSetProperties {
                 }
 
                 Ok(ResourceSetProperties {
-                    resource_set_name: resource_set_name.ok_or(::serde::de::Error::missing_field("ResourceSetName"))?,
-                    resource_set_type: resource_set_type.ok_or(::serde::de::Error::missing_field("ResourceSetType"))?,
+                    resource_set_name: resource_set_name
+                        .ok_or(::serde::de::Error::missing_field("ResourceSetName"))?,
+                    resource_set_type: resource_set_type
+                        .ok_or(::serde::de::Error::missing_field("ResourceSetType"))?,
                     resources: resources.ok_or(::serde::de::Error::missing_field("Resources"))?,
                     tags: tags,
                 })
@@ -457,23 +497,37 @@ pub mod resource_set {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainName", domain_name)?;
             }
             if let Some(ref hosted_zone_arn) = self.hosted_zone_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "HostedZoneArn", hosted_zone_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "HostedZoneArn",
+                    hosted_zone_arn,
+                )?;
             }
             if let Some(ref record_set_id) = self.record_set_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecordSetId", record_set_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RecordSetId",
+                    record_set_id,
+                )?;
             }
             if let Some(ref record_type) = self.record_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecordType", record_type)?;
             }
             if let Some(ref target_resource) = self.target_resource {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TargetResource", target_resource)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TargetResource",
+                    target_resource,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for DNSTargetResource {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DNSTargetResource, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<DNSTargetResource, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -483,14 +537,19 @@ pub mod resource_set {
                     write!(f, "a struct of type DNSTargetResource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut domain_name: Option<::Value<String>> = None;
                     let mut hosted_zone_arn: Option<::Value<String>> = None;
                     let mut record_set_id: Option<::Value<String>> = None;
                     let mut record_type: Option<::Value<String>> = None;
                     let mut target_resource: Option<::Value<TargetResource>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DomainName" => {
                                 domain_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -556,10 +615,15 @@ pub mod resource_set {
                     write!(f, "a struct of type NLBResource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Arn" => {
                                 arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -568,9 +632,7 @@ pub mod resource_set {
                         }
                     }
 
-                    Ok(NLBResource {
-                        arn: arn,
-                    })
+                    Ok(NLBResource { arn: arn })
                 }
             }
 
@@ -600,14 +662,20 @@ pub mod resource_set {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainName", domain_name)?;
             }
             if let Some(ref record_set_id) = self.record_set_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RecordSetId", record_set_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RecordSetId",
+                    record_set_id,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for R53ResourceRecord {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<R53ResourceRecord, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<R53ResourceRecord, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -617,11 +685,16 @@ pub mod resource_set {
                     write!(f, "a struct of type R53ResourceRecord")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut domain_name: Option<::Value<String>> = None;
                     let mut record_set_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DomainName" => {
                                 domain_name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -676,10 +749,18 @@ pub mod resource_set {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComponentId", component_id)?;
             }
             if let Some(ref dns_target_resource) = self.dns_target_resource {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DnsTargetResource", dns_target_resource)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DnsTargetResource",
+                    dns_target_resource,
+                )?;
             }
             if let Some(ref readiness_scopes) = self.readiness_scopes {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ReadinessScopes", readiness_scopes)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ReadinessScopes",
+                    readiness_scopes,
+                )?;
             }
             if let Some(ref resource_arn) = self.resource_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceArn", resource_arn)?;
@@ -699,13 +780,18 @@ pub mod resource_set {
                     write!(f, "a struct of type Resource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut component_id: Option<::Value<String>> = None;
                     let mut dns_target_resource: Option<::Value<DNSTargetResource>> = None;
                     let mut readiness_scopes: Option<::ValueList<String>> = None;
                     let mut resource_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ComponentId" => {
                                 component_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -765,7 +851,9 @@ pub mod resource_set {
     }
 
     impl ::codec::DeserializeValue for TargetResource {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TargetResource, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<TargetResource, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -775,11 +863,16 @@ pub mod resource_set {
                     write!(f, "a struct of type TargetResource")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut nlb_resource: Option<::Value<NLBResource>> = None;
                     let mut r53_resource: Option<::Value<R53ResourceRecord>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "NLBResource" => {
                                 nlb_resource = ::serde::de::MapAccess::next_value(&mut map)?;

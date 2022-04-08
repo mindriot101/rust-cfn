@@ -3,7 +3,7 @@
 /// The [`AWS::Synthetics::Canary`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html) resource type.
 #[derive(Debug, Default)]
 pub struct Canary {
-    properties: CanaryProperties
+    properties: CanaryProperties,
 }
 
 /// Properties for the `Canary` resource.
@@ -85,23 +85,51 @@ impl ::serde::Serialize for CanaryProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref artifact_config) = self.artifact_config {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ArtifactConfig", artifact_config)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ArtifactConfig",
+                artifact_config,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ArtifactS3Location", &self.artifact_s3_location)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ArtifactS3Location",
+            &self.artifact_s3_location,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Code", &self.code)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExecutionRoleArn", &self.execution_role_arn)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ExecutionRoleArn",
+            &self.execution_role_arn,
+        )?;
         if let Some(ref failure_retention_period) = self.failure_retention_period {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FailureRetentionPeriod", failure_retention_period)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FailureRetentionPeriod",
+                failure_retention_period,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref run_config) = self.run_config {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RunConfig", run_config)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "RuntimeVersion", &self.runtime_version)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "RuntimeVersion",
+            &self.runtime_version,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Schedule", &self.schedule)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "StartCanaryAfterCreation", &self.start_canary_after_creation)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "StartCanaryAfterCreation",
+            &self.start_canary_after_creation,
+        )?;
         if let Some(ref success_retention_period) = self.success_retention_period {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SuccessRetentionPeriod", success_retention_period)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SuccessRetentionPeriod",
+                success_retention_period,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -110,7 +138,11 @@ impl ::serde::Serialize for CanaryProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "VPCConfig", vpc_config)?;
         }
         if let Some(ref visual_reference) = self.visual_reference {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "VisualReference", visual_reference)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "VisualReference",
+                visual_reference,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
@@ -127,7 +159,10 @@ impl<'de> ::serde::Deserialize<'de> for CanaryProperties {
                 write!(f, "a struct of type CanaryProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut artifact_config: Option<::Value<self::canary::ArtifactConfig>> = None;
                 let mut artifact_s3_location: Option<::Value<String>> = None;
                 let mut code: Option<::Value<self::canary::Code>> = None;
@@ -158,7 +193,8 @@ impl<'de> ::serde::Deserialize<'de> for CanaryProperties {
                             execution_role_arn = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "FailureRetentionPeriod" => {
-                            failure_retention_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                            failure_retention_period =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Name" => {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -173,10 +209,12 @@ impl<'de> ::serde::Deserialize<'de> for CanaryProperties {
                             schedule = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "StartCanaryAfterCreation" => {
-                            start_canary_after_creation = ::serde::de::MapAccess::next_value(&mut map)?;
+                            start_canary_after_creation =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SuccessRetentionPeriod" => {
-                            success_retention_period = ::serde::de::MapAccess::next_value(&mut map)?;
+                            success_retention_period =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -193,15 +231,20 @@ impl<'de> ::serde::Deserialize<'de> for CanaryProperties {
 
                 Ok(CanaryProperties {
                     artifact_config: artifact_config,
-                    artifact_s3_location: artifact_s3_location.ok_or(::serde::de::Error::missing_field("ArtifactS3Location"))?,
+                    artifact_s3_location: artifact_s3_location
+                        .ok_or(::serde::de::Error::missing_field("ArtifactS3Location"))?,
                     code: code.ok_or(::serde::de::Error::missing_field("Code"))?,
-                    execution_role_arn: execution_role_arn.ok_or(::serde::de::Error::missing_field("ExecutionRoleArn"))?,
+                    execution_role_arn: execution_role_arn
+                        .ok_or(::serde::de::Error::missing_field("ExecutionRoleArn"))?,
                     failure_retention_period: failure_retention_period,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     run_config: run_config,
-                    runtime_version: runtime_version.ok_or(::serde::de::Error::missing_field("RuntimeVersion"))?,
+                    runtime_version: runtime_version
+                        .ok_or(::serde::de::Error::missing_field("RuntimeVersion"))?,
                     schedule: schedule.ok_or(::serde::de::Error::missing_field("Schedule"))?,
-                    start_canary_after_creation: start_canary_after_creation.ok_or(::serde::de::Error::missing_field("StartCanaryAfterCreation"))?,
+                    start_canary_after_creation: start_canary_after_creation.ok_or(
+                        ::serde::de::Error::missing_field("StartCanaryAfterCreation"),
+                    )?,
                     success_retention_period: success_retention_period,
                     tags: tags,
                     vpc_config: vpc_config,
@@ -250,14 +293,20 @@ pub mod canary {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_encryption) = self.s3_encryption {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Encryption", s3_encryption)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "S3Encryption",
+                    s3_encryption,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for ArtifactConfig {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ArtifactConfig, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ArtifactConfig, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -267,10 +316,15 @@ pub mod canary {
                     write!(f, "a struct of type ArtifactConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut s3_encryption: Option<::Value<S3Encryption>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "S3Encryption" => {
                                 s3_encryption = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -308,15 +362,25 @@ pub mod canary {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ignore_coordinates) = self.ignore_coordinates {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "IgnoreCoordinates", ignore_coordinates)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "IgnoreCoordinates",
+                    ignore_coordinates,
+                )?;
             }
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ScreenshotName", &self.screenshot_name)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ScreenshotName",
+                &self.screenshot_name,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for BaseScreenshot {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BaseScreenshot, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<BaseScreenshot, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -326,11 +390,16 @@ pub mod canary {
                     write!(f, "a struct of type BaseScreenshot")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut ignore_coordinates: Option<::ValueList<String>> = None;
                     let mut screenshot_name: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "IgnoreCoordinates" => {
                                 ignore_coordinates = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -344,7 +413,8 @@ pub mod canary {
 
                     Ok(BaseScreenshot {
                         ignore_coordinates: ignore_coordinates,
-                        screenshot_name: screenshot_name.ok_or(::serde::de::Error::missing_field("ScreenshotName"))?,
+                        screenshot_name: screenshot_name
+                            .ok_or(::serde::de::Error::missing_field("ScreenshotName"))?,
                     })
                 }
             }
@@ -394,7 +464,11 @@ pub mod canary {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Key", s3_key)?;
             }
             if let Some(ref s3_object_version) = self.s3_object_version {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3ObjectVersion", s3_object_version)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "S3ObjectVersion",
+                    s3_object_version,
+                )?;
             }
             if let Some(ref script) = self.script {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Script", script)?;
@@ -414,14 +488,19 @@ pub mod canary {
                     write!(f, "a struct of type Code")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut handler: Option<::Value<String>> = None;
                     let mut s3_bucket: Option<::Value<String>> = None;
                     let mut s3_key: Option<::Value<String>> = None;
                     let mut s3_object_version: Option<::Value<String>> = None;
                     let mut script: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Handler" => {
                                 handler = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -485,16 +564,28 @@ pub mod canary {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref active_tracing) = self.active_tracing {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ActiveTracing", active_tracing)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ActiveTracing",
+                    active_tracing,
+                )?;
             }
             if let Some(ref environment_variables) = self.environment_variables {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentVariables", environment_variables)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EnvironmentVariables",
+                    environment_variables,
+                )?;
             }
             if let Some(ref memory_in_mb) = self.memory_in_mb {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "MemoryInMB", memory_in_mb)?;
             }
             if let Some(ref timeout_in_seconds) = self.timeout_in_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "TimeoutInSeconds", timeout_in_seconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "TimeoutInSeconds",
+                    timeout_in_seconds,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -511,19 +602,25 @@ pub mod canary {
                     write!(f, "a struct of type RunConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut active_tracing: Option<::Value<bool>> = None;
                     let mut environment_variables: Option<::ValueMap<String>> = None;
                     let mut memory_in_mb: Option<::Value<u32>> = None;
                     let mut timeout_in_seconds: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "ActiveTracing" => {
                                 active_tracing = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EnvironmentVariables" => {
-                                environment_variables = ::serde::de::MapAccess::next_value(&mut map)?;
+                                environment_variables =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "MemoryInMB" => {
                                 memory_in_mb = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -567,7 +664,11 @@ pub mod canary {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref encryption_mode) = self.encryption_mode {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EncryptionMode", encryption_mode)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EncryptionMode",
+                    encryption_mode,
+                )?;
             }
             if let Some(ref kms_key_arn) = self.kms_key_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKeyArn", kms_key_arn)?;
@@ -587,11 +688,16 @@ pub mod canary {
                     write!(f, "a struct of type S3Encryption")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut encryption_mode: Option<::Value<String>> = None;
                     let mut kms_key_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EncryptionMode" => {
                                 encryption_mode = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -633,7 +739,11 @@ pub mod canary {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration_in_seconds) = self.duration_in_seconds {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "DurationInSeconds", duration_in_seconds)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "DurationInSeconds",
+                    duration_in_seconds,
+                )?;
             }
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Expression", &self.expression)?;
             ::serde::ser::SerializeMap::end(map)
@@ -651,11 +761,16 @@ pub mod canary {
                     write!(f, "a struct of type Schedule")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut duration_in_seconds: Option<::Value<String>> = None;
                     let mut expression: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "DurationInSeconds" => {
                                 duration_in_seconds = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -669,7 +784,8 @@ pub mod canary {
 
                     Ok(Schedule {
                         duration_in_seconds: duration_in_seconds,
-                        expression: expression.ok_or(::serde::de::Error::missing_field("Expression"))?,
+                        expression: expression
+                            .ok_or(::serde::de::Error::missing_field("Expression"))?,
                     })
                 }
             }
@@ -701,7 +817,11 @@ pub mod canary {
     impl ::codec::SerializeValue for VPCConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SecurityGroupIds", &self.security_group_ids)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SecurityGroupIds",
+                &self.security_group_ids,
+            )?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "SubnetIds", &self.subnet_ids)?;
             if let Some(ref vpc_id) = self.vpc_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "VpcId", vpc_id)?;
@@ -721,12 +841,17 @@ pub mod canary {
                     write!(f, "a struct of type VPCConfig")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut security_group_ids: Option<::ValueList<String>> = None;
                     let mut subnet_ids: Option<::ValueList<String>> = None;
                     let mut vpc_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "SecurityGroupIds" => {
                                 security_group_ids = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -742,8 +867,10 @@ pub mod canary {
                     }
 
                     Ok(VPCConfig {
-                        security_group_ids: security_group_ids.ok_or(::serde::de::Error::missing_field("SecurityGroupIds"))?,
-                        subnet_ids: subnet_ids.ok_or(::serde::de::Error::missing_field("SubnetIds"))?,
+                        security_group_ids: security_group_ids
+                            .ok_or(::serde::de::Error::missing_field("SecurityGroupIds"))?,
+                        subnet_ids: subnet_ids
+                            .ok_or(::serde::de::Error::missing_field("SubnetIds"))?,
                         vpc_id: vpc_id,
                     })
                 }
@@ -771,16 +898,26 @@ pub mod canary {
     impl ::codec::SerializeValue for VisualReference {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "BaseCanaryRunId", &self.base_canary_run_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "BaseCanaryRunId",
+                &self.base_canary_run_id,
+            )?;
             if let Some(ref base_screenshots) = self.base_screenshots {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BaseScreenshots", base_screenshots)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BaseScreenshots",
+                    base_screenshots,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for VisualReference {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VisualReference, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<VisualReference, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -790,11 +927,16 @@ pub mod canary {
                     write!(f, "a struct of type VisualReference")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut base_canary_run_id: Option<::Value<String>> = None;
                     let mut base_screenshots: Option<::ValueList<BaseScreenshot>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BaseCanaryRunId" => {
                                 base_canary_run_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -807,7 +949,8 @@ pub mod canary {
                     }
 
                     Ok(VisualReference {
-                        base_canary_run_id: base_canary_run_id.ok_or(::serde::de::Error::missing_field("BaseCanaryRunId"))?,
+                        base_canary_run_id: base_canary_run_id
+                            .ok_or(::serde::de::Error::missing_field("BaseCanaryRunId"))?,
                         base_screenshots: base_screenshots,
                     })
                 }

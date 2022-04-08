@@ -3,7 +3,7 @@
 /// The [`AWS::QLDB::Ledger`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html) resource type.
 #[derive(Debug, Default)]
 pub struct Ledger {
-    properties: LedgerProperties
+    properties: LedgerProperties,
 }
 
 /// Properties for the `Ledger` resource.
@@ -40,7 +40,11 @@ impl ::serde::Serialize for LedgerProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref deletion_protection) = self.deletion_protection {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeletionProtection", deletion_protection)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "DeletionProtection",
+                deletion_protection,
+            )?;
         }
         if let Some(ref kms_key) = self.kms_key {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "KmsKey", kms_key)?;
@@ -48,7 +52,11 @@ impl ::serde::Serialize for LedgerProperties {
         if let Some(ref name) = self.name {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", name)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "PermissionsMode", &self.permissions_mode)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "PermissionsMode",
+            &self.permissions_mode,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -67,7 +75,10 @@ impl<'de> ::serde::Deserialize<'de> for LedgerProperties {
                 write!(f, "a struct of type LedgerProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut deletion_protection: Option<::Value<bool>> = None;
                 let mut kms_key: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
@@ -99,7 +110,8 @@ impl<'de> ::serde::Deserialize<'de> for LedgerProperties {
                     deletion_protection: deletion_protection,
                     kms_key: kms_key,
                     name: name,
-                    permissions_mode: permissions_mode.ok_or(::serde::de::Error::missing_field("PermissionsMode"))?,
+                    permissions_mode: permissions_mode
+                        .ok_or(::serde::de::Error::missing_field("PermissionsMode"))?,
                     tags: tags,
                 })
             }
@@ -131,7 +143,7 @@ impl From<LedgerProperties> for Ledger {
 /// The [`AWS::QLDB::Stream`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html) resource type.
 #[derive(Debug, Default)]
 pub struct Stream {
-    properties: StreamProperties
+    properties: StreamProperties,
 }
 
 /// Properties for the `Stream` resource.
@@ -178,10 +190,22 @@ impl ::serde::Serialize for StreamProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         if let Some(ref exclusive_end_time) = self.exclusive_end_time {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ExclusiveEndTime", exclusive_end_time)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ExclusiveEndTime",
+                exclusive_end_time,
+            )?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "InclusiveStartTime", &self.inclusive_start_time)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "KinesisConfiguration", &self.kinesis_configuration)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "InclusiveStartTime",
+            &self.inclusive_start_time,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "KinesisConfiguration",
+            &self.kinesis_configuration,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "LedgerName", &self.ledger_name)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleArn", &self.role_arn)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamName", &self.stream_name)?;
@@ -203,10 +227,14 @@ impl<'de> ::serde::Deserialize<'de> for StreamProperties {
                 write!(f, "a struct of type StreamProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut exclusive_end_time: Option<::Value<String>> = None;
                 let mut inclusive_start_time: Option<::Value<String>> = None;
-                let mut kinesis_configuration: Option<::Value<self::stream::KinesisConfiguration>> = None;
+                let mut kinesis_configuration: Option<::Value<self::stream::KinesisConfiguration>> =
+                    None;
                 let mut ledger_name: Option<::Value<String>> = None;
                 let mut role_arn: Option<::Value<String>> = None;
                 let mut stream_name: Option<::Value<String>> = None;
@@ -241,11 +269,15 @@ impl<'de> ::serde::Deserialize<'de> for StreamProperties {
 
                 Ok(StreamProperties {
                     exclusive_end_time: exclusive_end_time,
-                    inclusive_start_time: inclusive_start_time.ok_or(::serde::de::Error::missing_field("InclusiveStartTime"))?,
-                    kinesis_configuration: kinesis_configuration.ok_or(::serde::de::Error::missing_field("KinesisConfiguration"))?,
-                    ledger_name: ledger_name.ok_or(::serde::de::Error::missing_field("LedgerName"))?,
+                    inclusive_start_time: inclusive_start_time
+                        .ok_or(::serde::de::Error::missing_field("InclusiveStartTime"))?,
+                    kinesis_configuration: kinesis_configuration
+                        .ok_or(::serde::de::Error::missing_field("KinesisConfiguration"))?,
+                    ledger_name: ledger_name
+                        .ok_or(::serde::de::Error::missing_field("LedgerName"))?,
                     role_arn: role_arn.ok_or(::serde::de::Error::missing_field("RoleArn"))?,
-                    stream_name: stream_name.ok_or(::serde::de::Error::missing_field("StreamName"))?,
+                    stream_name: stream_name
+                        .ok_or(::serde::de::Error::missing_field("StreamName"))?,
                     tags: tags,
                 })
             }
@@ -296,7 +328,11 @@ pub mod stream {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aggregation_enabled) = self.aggregation_enabled {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AggregationEnabled", aggregation_enabled)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AggregationEnabled",
+                    aggregation_enabled,
+                )?;
             }
             if let Some(ref stream_arn) = self.stream_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamArn", stream_arn)?;
@@ -306,7 +342,9 @@ pub mod stream {
     }
 
     impl ::codec::DeserializeValue for KinesisConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KinesisConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<KinesisConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -316,11 +354,16 @@ pub mod stream {
                     write!(f, "a struct of type KinesisConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut aggregation_enabled: Option<::Value<bool>> = None;
                     let mut stream_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AggregationEnabled" => {
                                 aggregation_enabled = ::serde::de::MapAccess::next_value(&mut map)?;

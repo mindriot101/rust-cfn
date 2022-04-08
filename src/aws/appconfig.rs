@@ -3,7 +3,7 @@
 /// The [`AWS::AppConfig::Application`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-application.html) resource type.
 #[derive(Debug, Default)]
 pub struct Application {
-    properties: ApplicationProperties
+    properties: ApplicationProperties,
 }
 
 /// Properties for the `Application` resource.
@@ -51,7 +51,10 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
                 write!(f, "a struct of type ApplicationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<self::application::Tags>> = None;
@@ -105,7 +108,7 @@ impl From<ApplicationProperties> for Application {
 /// The [`AWS::AppConfig::ConfigurationProfile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html) resource type.
 #[derive(Debug, Default)]
 pub struct ConfigurationProfile {
-    properties: ConfigurationProfileProperties
+    properties: ConfigurationProfileProperties,
 }
 
 /// Properties for the `ConfigurationProfile` resource.
@@ -156,14 +159,22 @@ pub struct ConfigurationProfileProperties {
 impl ::serde::Serialize for ConfigurationProfileProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationId", &self.application_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ApplicationId",
+            &self.application_id,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocationUri", &self.location_uri)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref retrieval_role_arn) = self.retrieval_role_arn {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RetrievalRoleArn", retrieval_role_arn)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RetrievalRoleArn",
+                retrieval_role_arn,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -179,7 +190,9 @@ impl ::serde::Serialize for ConfigurationProfileProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for ConfigurationProfileProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<ConfigurationProfileProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<ConfigurationProfileProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -189,7 +202,10 @@ impl<'de> ::serde::Deserialize<'de> for ConfigurationProfileProperties {
                 write!(f, "a struct of type ConfigurationProfileProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application_id: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut location_uri: Option<::Value<String>> = None;
@@ -197,7 +213,8 @@ impl<'de> ::serde::Deserialize<'de> for ConfigurationProfileProperties {
                 let mut retrieval_role_arn: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<self::configuration_profile::Tags>> = None;
                 let mut r#type: Option<::Value<String>> = None;
-                let mut validators: Option<::ValueList<self::configuration_profile::Validators>> = None;
+                let mut validators: Option<::ValueList<self::configuration_profile::Validators>> =
+                    None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -230,9 +247,11 @@ impl<'de> ::serde::Deserialize<'de> for ConfigurationProfileProperties {
                 }
 
                 Ok(ConfigurationProfileProperties {
-                    application_id: application_id.ok_or(::serde::de::Error::missing_field("ApplicationId"))?,
+                    application_id: application_id
+                        .ok_or(::serde::de::Error::missing_field("ApplicationId"))?,
                     description: description,
-                    location_uri: location_uri.ok_or(::serde::de::Error::missing_field("LocationUri"))?,
+                    location_uri: location_uri
+                        .ok_or(::serde::de::Error::missing_field("LocationUri"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     retrieval_role_arn: retrieval_role_arn,
                     tags: tags,
@@ -268,7 +287,7 @@ impl From<ConfigurationProfileProperties> for ConfigurationProfile {
 /// The [`AWS::AppConfig::Deployment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html) resource type.
 #[derive(Debug, Default)]
 pub struct Deployment {
-    properties: DeploymentProperties
+    properties: DeploymentProperties,
 }
 
 /// Properties for the `Deployment` resource.
@@ -314,14 +333,34 @@ pub struct DeploymentProperties {
 impl ::serde::Serialize for DeploymentProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationId", &self.application_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConfigurationProfileId", &self.configuration_profile_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConfigurationVersion", &self.configuration_version)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeploymentStrategyId", &self.deployment_strategy_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ApplicationId",
+            &self.application_id,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ConfigurationProfileId",
+            &self.configuration_profile_id,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ConfigurationVersion",
+            &self.configuration_version,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DeploymentStrategyId",
+            &self.deployment_strategy_id,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "EnvironmentId", &self.environment_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "EnvironmentId",
+            &self.environment_id,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -340,7 +379,10 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentProperties {
                 write!(f, "a struct of type DeploymentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application_id: Option<::Value<String>> = None;
                 let mut configuration_profile_id: Option<::Value<String>> = None;
                 let mut configuration_version: Option<::Value<String>> = None;
@@ -355,7 +397,8 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentProperties {
                             application_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ConfigurationProfileId" => {
-                            configuration_profile_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                            configuration_profile_id =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ConfigurationVersion" => {
                             configuration_version = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -377,12 +420,17 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentProperties {
                 }
 
                 Ok(DeploymentProperties {
-                    application_id: application_id.ok_or(::serde::de::Error::missing_field("ApplicationId"))?,
-                    configuration_profile_id: configuration_profile_id.ok_or(::serde::de::Error::missing_field("ConfigurationProfileId"))?,
-                    configuration_version: configuration_version.ok_or(::serde::de::Error::missing_field("ConfigurationVersion"))?,
-                    deployment_strategy_id: deployment_strategy_id.ok_or(::serde::de::Error::missing_field("DeploymentStrategyId"))?,
+                    application_id: application_id
+                        .ok_or(::serde::de::Error::missing_field("ApplicationId"))?,
+                    configuration_profile_id: configuration_profile_id
+                        .ok_or(::serde::de::Error::missing_field("ConfigurationProfileId"))?,
+                    configuration_version: configuration_version
+                        .ok_or(::serde::de::Error::missing_field("ConfigurationVersion"))?,
+                    deployment_strategy_id: deployment_strategy_id
+                        .ok_or(::serde::de::Error::missing_field("DeploymentStrategyId"))?,
                     description: description,
-                    environment_id: environment_id.ok_or(::serde::de::Error::missing_field("EnvironmentId"))?,
+                    environment_id: environment_id
+                        .ok_or(::serde::de::Error::missing_field("EnvironmentId"))?,
                     tags: tags,
                 })
             }
@@ -414,7 +462,7 @@ impl From<DeploymentProperties> for Deployment {
 /// The [`AWS::AppConfig::DeploymentStrategy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html) resource type.
 #[derive(Debug, Default)]
 pub struct DeploymentStrategy {
-    properties: DeploymentStrategyProperties
+    properties: DeploymentStrategyProperties,
 }
 
 /// Properties for the `DeploymentStrategy` resource.
@@ -465,12 +513,20 @@ pub struct DeploymentStrategyProperties {
 impl ::serde::Serialize for DeploymentStrategyProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "DeploymentDurationInMinutes", &self.deployment_duration_in_minutes)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "DeploymentDurationInMinutes",
+            &self.deployment_duration_in_minutes,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref final_bake_time_in_minutes) = self.final_bake_time_in_minutes {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "FinalBakeTimeInMinutes", final_bake_time_in_minutes)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "FinalBakeTimeInMinutes",
+                final_bake_time_in_minutes,
+            )?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "GrowthFactor", &self.growth_factor)?;
         if let Some(ref growth_type) = self.growth_type {
@@ -486,7 +542,9 @@ impl ::serde::Serialize for DeploymentStrategyProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for DeploymentStrategyProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<DeploymentStrategyProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<DeploymentStrategyProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -496,7 +554,10 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentStrategyProperties {
                 write!(f, "a struct of type DeploymentStrategyProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut deployment_duration_in_minutes: Option<::Value<f64>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut final_bake_time_in_minutes: Option<::Value<f64>> = None;
@@ -509,13 +570,15 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentStrategyProperties {
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
                         "DeploymentDurationInMinutes" => {
-                            deployment_duration_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                            deployment_duration_in_minutes =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Description" => {
                             description = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "FinalBakeTimeInMinutes" => {
-                            final_bake_time_in_minutes = ::serde::de::MapAccess::next_value(&mut map)?;
+                            final_bake_time_in_minutes =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "GrowthFactor" => {
                             growth_factor = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -537,13 +600,17 @@ impl<'de> ::serde::Deserialize<'de> for DeploymentStrategyProperties {
                 }
 
                 Ok(DeploymentStrategyProperties {
-                    deployment_duration_in_minutes: deployment_duration_in_minutes.ok_or(::serde::de::Error::missing_field("DeploymentDurationInMinutes"))?,
+                    deployment_duration_in_minutes: deployment_duration_in_minutes.ok_or(
+                        ::serde::de::Error::missing_field("DeploymentDurationInMinutes"),
+                    )?,
                     description: description,
                     final_bake_time_in_minutes: final_bake_time_in_minutes,
-                    growth_factor: growth_factor.ok_or(::serde::de::Error::missing_field("GrowthFactor"))?,
+                    growth_factor: growth_factor
+                        .ok_or(::serde::de::Error::missing_field("GrowthFactor"))?,
                     growth_type: growth_type,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
-                    replicate_to: replicate_to.ok_or(::serde::de::Error::missing_field("ReplicateTo"))?,
+                    replicate_to: replicate_to
+                        .ok_or(::serde::de::Error::missing_field("ReplicateTo"))?,
                     tags: tags,
                 })
             }
@@ -575,7 +642,7 @@ impl From<DeploymentStrategyProperties> for DeploymentStrategy {
 /// The [`AWS::AppConfig::Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html) resource type.
 #[derive(Debug, Default)]
 pub struct Environment {
-    properties: EnvironmentProperties
+    properties: EnvironmentProperties,
 }
 
 /// Properties for the `Environment` resource.
@@ -611,7 +678,11 @@ pub struct EnvironmentProperties {
 impl ::serde::Serialize for EnvironmentProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationId", &self.application_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ApplicationId",
+            &self.application_id,
+        )?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
@@ -637,7 +708,10 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 write!(f, "a struct of type EnvironmentProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application_id: Option<::Value<String>> = None;
                 let mut description: Option<::Value<String>> = None;
                 let mut monitors: Option<::ValueList<self::environment::Monitors>> = None;
@@ -666,7 +740,8 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 }
 
                 Ok(EnvironmentProperties {
-                    application_id: application_id.ok_or(::serde::de::Error::missing_field("ApplicationId"))?,
+                    application_id: application_id
+                        .ok_or(::serde::de::Error::missing_field("ApplicationId"))?,
                     description: description,
                     monitors: monitors,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
@@ -701,7 +776,7 @@ impl From<EnvironmentProperties> for Environment {
 /// The [`AWS::AppConfig::HostedConfigurationVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html) resource type.
 #[derive(Debug, Default)]
 pub struct HostedConfigurationVersion {
-    properties: HostedConfigurationVersionProperties
+    properties: HostedConfigurationVersionProperties,
 }
 
 /// Properties for the `HostedConfigurationVersion` resource.
@@ -742,22 +817,36 @@ pub struct HostedConfigurationVersionProperties {
 impl ::serde::Serialize for HostedConfigurationVersionProperties {
     fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ApplicationId", &self.application_id)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConfigurationProfileId", &self.configuration_profile_id)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ApplicationId",
+            &self.application_id,
+        )?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "ConfigurationProfileId",
+            &self.configuration_profile_id,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Content", &self.content)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "ContentType", &self.content_type)?;
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         if let Some(ref latest_version_number) = self.latest_version_number {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "LatestVersionNumber", latest_version_number)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "LatestVersionNumber",
+                latest_version_number,
+            )?;
         }
         ::serde::ser::SerializeMap::end(map)
     }
 }
 
 impl<'de> ::serde::Deserialize<'de> for HostedConfigurationVersionProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<HostedConfigurationVersionProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<HostedConfigurationVersionProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -767,7 +856,10 @@ impl<'de> ::serde::Deserialize<'de> for HostedConfigurationVersionProperties {
                 write!(f, "a struct of type HostedConfigurationVersionProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut application_id: Option<::Value<String>> = None;
                 let mut configuration_profile_id: Option<::Value<String>> = None;
                 let mut content: Option<::Value<String>> = None;
@@ -781,7 +873,8 @@ impl<'de> ::serde::Deserialize<'de> for HostedConfigurationVersionProperties {
                             application_id = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ConfigurationProfileId" => {
-                            configuration_profile_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                            configuration_profile_id =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Content" => {
                             content = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -800,10 +893,13 @@ impl<'de> ::serde::Deserialize<'de> for HostedConfigurationVersionProperties {
                 }
 
                 Ok(HostedConfigurationVersionProperties {
-                    application_id: application_id.ok_or(::serde::de::Error::missing_field("ApplicationId"))?,
-                    configuration_profile_id: configuration_profile_id.ok_or(::serde::de::Error::missing_field("ConfigurationProfileId"))?,
+                    application_id: application_id
+                        .ok_or(::serde::de::Error::missing_field("ApplicationId"))?,
+                    configuration_profile_id: configuration_profile_id
+                        .ok_or(::serde::de::Error::missing_field("ConfigurationProfileId"))?,
                     content: content.ok_or(::serde::de::Error::missing_field("Content"))?,
-                    content_type: content_type.ok_or(::serde::de::Error::missing_field("ContentType"))?,
+                    content_type: content_type
+                        .ok_or(::serde::de::Error::missing_field("ContentType"))?,
                     description: description,
                     latest_version_number: latest_version_number,
                 })
@@ -875,11 +971,16 @@ pub mod application {
                     write!(f, "a struct of type Tags")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -945,11 +1046,16 @@ pub mod configuration_profile {
                     write!(f, "a struct of type Tags")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1011,11 +1117,16 @@ pub mod configuration_profile {
                     write!(f, "a struct of type Validators")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut content: Option<::Value<String>> = None;
                     let mut r#type: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Content" => {
                                 content = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1081,11 +1192,16 @@ pub mod deployment {
                     write!(f, "a struct of type Tags")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1151,11 +1267,16 @@ pub mod deployment_strategy {
                     write!(f, "a struct of type Tags")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1204,7 +1325,11 @@ pub mod environment {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlarmArn", alarm_arn)?;
             }
             if let Some(ref alarm_role_arn) = self.alarm_role_arn {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlarmRoleArn", alarm_role_arn)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AlarmRoleArn",
+                    alarm_role_arn,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -1221,11 +1346,16 @@ pub mod environment {
                     write!(f, "a struct of type Monitors")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut alarm_arn: Option<::Value<String>> = None;
                     let mut alarm_role_arn: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AlarmArn" => {
                                 alarm_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1287,11 +1417,16 @@ pub mod environment {
                     write!(f, "a struct of type Tags")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Key" => {
                                 key = ::serde::de::MapAccess::next_value(&mut map)?;

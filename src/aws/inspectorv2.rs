@@ -3,7 +3,7 @@
 /// The [`AWS::InspectorV2::Filter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html) resource type.
 #[derive(Debug, Default)]
 pub struct Filter {
-    properties: FilterProperties
+    properties: FilterProperties,
 }
 
 /// Properties for the `Filter` resource.
@@ -38,7 +38,11 @@ impl ::serde::Serialize for FilterProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterAction", &self.filter_action)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "FilterCriteria", &self.filter_criteria)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "FilterCriteria",
+            &self.filter_criteria,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         ::serde::ser::SerializeMap::end(map)
     }
@@ -55,7 +59,10 @@ impl<'de> ::serde::Deserialize<'de> for FilterProperties {
                 write!(f, "a struct of type FilterProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut filter_action: Option<::Value<String>> = None;
                 let mut filter_criteria: Option<::Value<self::filter::FilterCriteria>> = None;
@@ -81,8 +88,10 @@ impl<'de> ::serde::Deserialize<'de> for FilterProperties {
 
                 Ok(FilterProperties {
                     description: description,
-                    filter_action: filter_action.ok_or(::serde::de::Error::missing_field("FilterAction"))?,
-                    filter_criteria: filter_criteria.ok_or(::serde::de::Error::missing_field("FilterCriteria"))?,
+                    filter_action: filter_action
+                        .ok_or(::serde::de::Error::missing_field("FilterAction"))?,
+                    filter_criteria: filter_criteria
+                        .ok_or(::serde::de::Error::missing_field("FilterCriteria"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                 })
             }
@@ -133,10 +142,18 @@ pub mod filter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref end_inclusive) = self.end_inclusive {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EndInclusive", end_inclusive)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EndInclusive",
+                    end_inclusive,
+                )?;
             }
             if let Some(ref start_inclusive) = self.start_inclusive {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "StartInclusive", start_inclusive)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "StartInclusive",
+                    start_inclusive,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -153,11 +170,16 @@ pub mod filter {
                     write!(f, "a struct of type DateFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut end_inclusive: Option<::Value<u32>> = None;
                     let mut start_inclusive: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "EndInclusive" => {
                                 end_inclusive = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -344,76 +366,152 @@ pub mod filter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aws_account_id) = self.aws_account_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AwsAccountId", aws_account_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AwsAccountId",
+                    aws_account_id,
+                )?;
             }
             if let Some(ref component_id) = self.component_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComponentId", component_id)?;
             }
             if let Some(ref component_type) = self.component_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ComponentType", component_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ComponentType",
+                    component_type,
+                )?;
             }
             if let Some(ref ec2_instance_image_id) = self.ec2_instance_image_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ec2InstanceImageId", ec2_instance_image_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Ec2InstanceImageId",
+                    ec2_instance_image_id,
+                )?;
             }
             if let Some(ref ec2_instance_subnet_id) = self.ec2_instance_subnet_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ec2InstanceSubnetId", ec2_instance_subnet_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Ec2InstanceSubnetId",
+                    ec2_instance_subnet_id,
+                )?;
             }
             if let Some(ref ec2_instance_vpc_id) = self.ec2_instance_vpc_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Ec2InstanceVpcId", ec2_instance_vpc_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Ec2InstanceVpcId",
+                    ec2_instance_vpc_id,
+                )?;
             }
             if let Some(ref ecr_image_architecture) = self.ecr_image_architecture {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcrImageArchitecture", ecr_image_architecture)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EcrImageArchitecture",
+                    ecr_image_architecture,
+                )?;
             }
             if let Some(ref ecr_image_hash) = self.ecr_image_hash {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcrImageHash", ecr_image_hash)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EcrImageHash",
+                    ecr_image_hash,
+                )?;
             }
             if let Some(ref ecr_image_pushed_at) = self.ecr_image_pushed_at {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcrImagePushedAt", ecr_image_pushed_at)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EcrImagePushedAt",
+                    ecr_image_pushed_at,
+                )?;
             }
             if let Some(ref ecr_image_registry) = self.ecr_image_registry {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcrImageRegistry", ecr_image_registry)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EcrImageRegistry",
+                    ecr_image_registry,
+                )?;
             }
             if let Some(ref ecr_image_repository_name) = self.ecr_image_repository_name {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcrImageRepositoryName", ecr_image_repository_name)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EcrImageRepositoryName",
+                    ecr_image_repository_name,
+                )?;
             }
             if let Some(ref ecr_image_tags) = self.ecr_image_tags {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EcrImageTags", ecr_image_tags)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EcrImageTags",
+                    ecr_image_tags,
+                )?;
             }
             if let Some(ref finding_arn) = self.finding_arn {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FindingArn", finding_arn)?;
             }
             if let Some(ref finding_status) = self.finding_status {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FindingStatus", finding_status)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FindingStatus",
+                    finding_status,
+                )?;
             }
             if let Some(ref finding_type) = self.finding_type {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "FindingType", finding_type)?;
             }
             if let Some(ref first_observed_at) = self.first_observed_at {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "FirstObservedAt", first_observed_at)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "FirstObservedAt",
+                    first_observed_at,
+                )?;
             }
             if let Some(ref inspector_score) = self.inspector_score {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "InspectorScore", inspector_score)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "InspectorScore",
+                    inspector_score,
+                )?;
             }
             if let Some(ref last_observed_at) = self.last_observed_at {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LastObservedAt", last_observed_at)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LastObservedAt",
+                    last_observed_at,
+                )?;
             }
             if let Some(ref network_protocol) = self.network_protocol {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "NetworkProtocol", network_protocol)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "NetworkProtocol",
+                    network_protocol,
+                )?;
             }
             if let Some(ref port_range) = self.port_range {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "PortRange", port_range)?;
             }
             if let Some(ref related_vulnerabilities) = self.related_vulnerabilities {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "RelatedVulnerabilities", related_vulnerabilities)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "RelatedVulnerabilities",
+                    related_vulnerabilities,
+                )?;
             }
             if let Some(ref resource_id) = self.resource_id {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceId", resource_id)?;
             }
             if let Some(ref resource_tags) = self.resource_tags {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceTags", resource_tags)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ResourceTags",
+                    resource_tags,
+                )?;
             }
             if let Some(ref resource_type) = self.resource_type {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "ResourceType", resource_type)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "ResourceType",
+                    resource_type,
+                )?;
             }
             if let Some(ref severity) = self.severity {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Severity", severity)?;
@@ -425,23 +523,41 @@ pub mod filter {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpdatedAt", updated_at)?;
             }
             if let Some(ref vendor_severity) = self.vendor_severity {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VendorSeverity", vendor_severity)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VendorSeverity",
+                    vendor_severity,
+                )?;
             }
             if let Some(ref vulnerability_id) = self.vulnerability_id {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VulnerabilityId", vulnerability_id)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VulnerabilityId",
+                    vulnerability_id,
+                )?;
             }
             if let Some(ref vulnerability_source) = self.vulnerability_source {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VulnerabilitySource", vulnerability_source)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VulnerabilitySource",
+                    vulnerability_source,
+                )?;
             }
             if let Some(ref vulnerable_packages) = self.vulnerable_packages {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "VulnerablePackages", vulnerable_packages)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "VulnerablePackages",
+                    vulnerable_packages,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for FilterCriteria {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FilterCriteria, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<FilterCriteria, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -451,7 +567,10 @@ pub mod filter {
                     write!(f, "a struct of type FilterCriteria")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut aws_account_id: Option<::ValueList<StringFilter>> = None;
                     let mut component_id: Option<::ValueList<StringFilter>> = None;
                     let mut component_type: Option<::ValueList<StringFilter>> = None;
@@ -484,7 +603,9 @@ pub mod filter {
                     let mut vulnerability_source: Option<::ValueList<StringFilter>> = None;
                     let mut vulnerable_packages: Option<::ValueList<PackageFilter>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AwsAccountId" => {
                                 aws_account_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -496,16 +617,19 @@ pub mod filter {
                                 component_type = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Ec2InstanceImageId" => {
-                                ec2_instance_image_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ec2_instance_image_id =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Ec2InstanceSubnetId" => {
-                                ec2_instance_subnet_id = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ec2_instance_subnet_id =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "Ec2InstanceVpcId" => {
                                 ec2_instance_vpc_id = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EcrImageArchitecture" => {
-                                ecr_image_architecture = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ecr_image_architecture =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EcrImageHash" => {
                                 ecr_image_hash = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -517,7 +641,8 @@ pub mod filter {
                                 ecr_image_registry = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EcrImageRepositoryName" => {
-                                ecr_image_repository_name = ::serde::de::MapAccess::next_value(&mut map)?;
+                                ecr_image_repository_name =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "EcrImageTags" => {
                                 ecr_image_tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -547,7 +672,8 @@ pub mod filter {
                                 port_range = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "RelatedVulnerabilities" => {
-                                related_vulnerabilities = ::serde::de::MapAccess::next_value(&mut map)?;
+                                related_vulnerabilities =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "ResourceId" => {
                                 resource_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -574,7 +700,8 @@ pub mod filter {
                                 vulnerability_id = ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "VulnerabilitySource" => {
-                                vulnerability_source = ::serde::de::MapAccess::next_value(&mut map)?;
+                                vulnerability_source =
+                                    ::serde::de::MapAccess::next_value(&mut map)?;
                             }
                             "VulnerablePackages" => {
                                 vulnerable_packages = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -668,12 +795,17 @@ pub mod filter {
                     write!(f, "a struct of type MapFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut comparison: Option<::Value<String>> = None;
                     let mut key: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Comparison" => {
                                 comparison = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -689,7 +821,8 @@ pub mod filter {
                     }
 
                     Ok(MapFilter {
-                        comparison: comparison.ok_or(::serde::de::Error::missing_field("Comparison"))?,
+                        comparison: comparison
+                            .ok_or(::serde::de::Error::missing_field("Comparison"))?,
                         key: key,
                         value: value,
                     })
@@ -719,10 +852,18 @@ pub mod filter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref lower_inclusive) = self.lower_inclusive {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "LowerInclusive", lower_inclusive)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "LowerInclusive",
+                    lower_inclusive,
+                )?;
             }
             if let Some(ref upper_inclusive) = self.upper_inclusive {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "UpperInclusive", upper_inclusive)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "UpperInclusive",
+                    upper_inclusive,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
@@ -739,11 +880,16 @@ pub mod filter {
                     write!(f, "a struct of type NumberFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut lower_inclusive: Option<::Value<f64>> = None;
                     let mut upper_inclusive: Option<::Value<f64>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "LowerInclusive" => {
                                 lower_inclusive = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -805,7 +951,11 @@ pub mod filter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref architecture) = self.architecture {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "Architecture", architecture)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "Architecture",
+                    architecture,
+                )?;
             }
             if let Some(ref epoch) = self.epoch {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Epoch", epoch)?;
@@ -817,7 +967,11 @@ pub mod filter {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Release", release)?;
             }
             if let Some(ref source_layer_hash) = self.source_layer_hash {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceLayerHash", source_layer_hash)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "SourceLayerHash",
+                    source_layer_hash,
+                )?;
             }
             if let Some(ref version) = self.version {
                 ::serde::ser::SerializeMap::serialize_entry(&mut map, "Version", version)?;
@@ -827,7 +981,9 @@ pub mod filter {
     }
 
     impl ::codec::DeserializeValue for PackageFilter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PackageFilter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PackageFilter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -837,7 +993,10 @@ pub mod filter {
                     write!(f, "a struct of type PackageFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut architecture: Option<::Value<StringFilter>> = None;
                     let mut epoch: Option<::Value<NumberFilter>> = None;
                     let mut name: Option<::Value<StringFilter>> = None;
@@ -845,7 +1004,9 @@ pub mod filter {
                     let mut source_layer_hash: Option<::Value<StringFilter>> = None;
                     let mut version: Option<::Value<StringFilter>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Architecture" => {
                                 architecture = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -903,17 +1064,27 @@ pub mod filter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref begin_inclusive) = self.begin_inclusive {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "BeginInclusive", begin_inclusive)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "BeginInclusive",
+                    begin_inclusive,
+                )?;
             }
             if let Some(ref end_inclusive) = self.end_inclusive {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "EndInclusive", end_inclusive)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "EndInclusive",
+                    end_inclusive,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for PortRangeFilter {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PortRangeFilter, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<PortRangeFilter, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -923,11 +1094,16 @@ pub mod filter {
                     write!(f, "a struct of type PortRangeFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut begin_inclusive: Option<::Value<u32>> = None;
                     let mut end_inclusive: Option<::Value<u32>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "BeginInclusive" => {
                                 begin_inclusive = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -985,11 +1161,16 @@ pub mod filter {
                     write!(f, "a struct of type StringFilter")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut comparison: Option<::Value<String>> = None;
                     let mut value: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "Comparison" => {
                                 comparison = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -1002,7 +1183,8 @@ pub mod filter {
                     }
 
                     Ok(StringFilter {
-                        comparison: comparison.ok_or(::serde::de::Error::missing_field("Comparison"))?,
+                        comparison: comparison
+                            .ok_or(::serde::de::Error::missing_field("Comparison"))?,
                         value: value.ok_or(::serde::de::Error::missing_field("Value"))?,
                     })
                 }

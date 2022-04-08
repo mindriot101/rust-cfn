@@ -3,7 +3,7 @@
 /// The [`AWS::Wisdom::Assistant`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistant.html) resource type.
 #[derive(Debug, Default)]
 pub struct Assistant {
-    properties: AssistantProperties
+    properties: AssistantProperties,
 }
 
 /// Properties for the `Assistant` resource.
@@ -23,7 +23,8 @@ pub struct AssistantProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub server_side_encryption_configuration: Option<::Value<self::assistant::ServerSideEncryptionConfiguration>>,
+    pub server_side_encryption_configuration:
+        Option<::Value<self::assistant::ServerSideEncryptionConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistant.html#cfn-wisdom-assistant-tags).
     ///
     /// Update type: _Immutable_.
@@ -43,8 +44,14 @@ impl ::serde::Serialize for AssistantProperties {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
-        if let Some(ref server_side_encryption_configuration) = self.server_side_encryption_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerSideEncryptionConfiguration", server_side_encryption_configuration)?;
+        if let Some(ref server_side_encryption_configuration) =
+            self.server_side_encryption_configuration
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ServerSideEncryptionConfiguration",
+                server_side_encryption_configuration,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -65,10 +72,15 @@ impl<'de> ::serde::Deserialize<'de> for AssistantProperties {
                 write!(f, "a struct of type AssistantProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut server_side_encryption_configuration: Option<::Value<self::assistant::ServerSideEncryptionConfiguration>> = None;
+                let mut server_side_encryption_configuration: Option<
+                    ::Value<self::assistant::ServerSideEncryptionConfiguration>,
+                > = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut r#type: Option<::Value<String>> = None;
 
@@ -81,7 +93,8 @@ impl<'de> ::serde::Deserialize<'de> for AssistantProperties {
                             name = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ServerSideEncryptionConfiguration" => {
-                            server_side_encryption_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            server_side_encryption_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "Tags" => {
                             tags = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -129,7 +142,7 @@ impl From<AssistantProperties> for Assistant {
 /// The [`AWS::Wisdom::AssistantAssociation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html) resource type.
 #[derive(Debug, Default)]
 pub struct AssistantAssociation {
-    properties: AssistantAssociationProperties
+    properties: AssistantAssociationProperties,
 }
 
 /// Properties for the `AssistantAssociation` resource.
@@ -162,7 +175,11 @@ impl ::serde::Serialize for AssistantAssociationProperties {
         let mut map = ::serde::Serializer::serialize_map(s, None)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssistantId", &self.assistant_id)?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Association", &self.association)?;
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "AssociationType", &self.association_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "AssociationType",
+            &self.association_type,
+        )?;
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
         }
@@ -171,7 +188,9 @@ impl ::serde::Serialize for AssistantAssociationProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for AssistantAssociationProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<AssistantAssociationProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<AssistantAssociationProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -181,9 +200,13 @@ impl<'de> ::serde::Deserialize<'de> for AssistantAssociationProperties {
                 write!(f, "a struct of type AssistantAssociationProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut assistant_id: Option<::Value<String>> = None;
-                let mut association: Option<::Value<self::assistant_association::AssociationData>> = None;
+                let mut association: Option<::Value<self::assistant_association::AssociationData>> =
+                    None;
                 let mut association_type: Option<::Value<String>> = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
@@ -206,9 +229,12 @@ impl<'de> ::serde::Deserialize<'de> for AssistantAssociationProperties {
                 }
 
                 Ok(AssistantAssociationProperties {
-                    assistant_id: assistant_id.ok_or(::serde::de::Error::missing_field("AssistantId"))?,
-                    association: association.ok_or(::serde::de::Error::missing_field("Association"))?,
-                    association_type: association_type.ok_or(::serde::de::Error::missing_field("AssociationType"))?,
+                    assistant_id: assistant_id
+                        .ok_or(::serde::de::Error::missing_field("AssistantId"))?,
+                    association: association
+                        .ok_or(::serde::de::Error::missing_field("Association"))?,
+                    association_type: association_type
+                        .ok_or(::serde::de::Error::missing_field("AssociationType"))?,
                     tags: tags,
                 })
             }
@@ -240,7 +266,7 @@ impl From<AssistantAssociationProperties> for AssistantAssociation {
 /// The [`AWS::Wisdom::KnowledgeBase`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html) resource type.
 #[derive(Debug, Default)]
 pub struct KnowledgeBase {
-    properties: KnowledgeBaseProperties
+    properties: KnowledgeBaseProperties,
 }
 
 /// Properties for the `KnowledgeBase` resource.
@@ -270,7 +296,8 @@ pub struct KnowledgeBaseProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub server_side_encryption_configuration: Option<::Value<self::knowledge_base::ServerSideEncryptionConfiguration>>,
+    pub server_side_encryption_configuration:
+        Option<::Value<self::knowledge_base::ServerSideEncryptionConfiguration>>,
     /// Property [`SourceConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-sourceconfiguration).
     ///
     /// Update type: _Immutable_.
@@ -289,16 +316,34 @@ impl ::serde::Serialize for KnowledgeBaseProperties {
         if let Some(ref description) = self.description {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Description", description)?;
         }
-        ::serde::ser::SerializeMap::serialize_entry(&mut map, "KnowledgeBaseType", &self.knowledge_base_type)?;
+        ::serde::ser::SerializeMap::serialize_entry(
+            &mut map,
+            "KnowledgeBaseType",
+            &self.knowledge_base_type,
+        )?;
         ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
         if let Some(ref rendering_configuration) = self.rendering_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "RenderingConfiguration", rendering_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "RenderingConfiguration",
+                rendering_configuration,
+            )?;
         }
-        if let Some(ref server_side_encryption_configuration) = self.server_side_encryption_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ServerSideEncryptionConfiguration", server_side_encryption_configuration)?;
+        if let Some(ref server_side_encryption_configuration) =
+            self.server_side_encryption_configuration
+        {
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ServerSideEncryptionConfiguration",
+                server_side_encryption_configuration,
+            )?;
         }
         if let Some(ref source_configuration) = self.source_configuration {
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "SourceConfiguration", source_configuration)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "SourceConfiguration",
+                source_configuration,
+            )?;
         }
         if let Some(ref tags) = self.tags {
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Tags", tags)?;
@@ -308,7 +353,9 @@ impl ::serde::Serialize for KnowledgeBaseProperties {
 }
 
 impl<'de> ::serde::Deserialize<'de> for KnowledgeBaseProperties {
-    fn deserialize<D: ::serde::Deserializer<'de>>(d: D) -> Result<KnowledgeBaseProperties, D::Error> {
+    fn deserialize<D: ::serde::Deserializer<'de>>(
+        d: D,
+    ) -> Result<KnowledgeBaseProperties, D::Error> {
         struct Visitor;
 
         impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -318,13 +365,22 @@ impl<'de> ::serde::Deserialize<'de> for KnowledgeBaseProperties {
                 write!(f, "a struct of type KnowledgeBaseProperties")
             }
 
-            fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+            fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                self,
+                mut map: A,
+            ) -> Result<Self::Value, A::Error> {
                 let mut description: Option<::Value<String>> = None;
                 let mut knowledge_base_type: Option<::Value<String>> = None;
                 let mut name: Option<::Value<String>> = None;
-                let mut rendering_configuration: Option<::Value<self::knowledge_base::RenderingConfiguration>> = None;
-                let mut server_side_encryption_configuration: Option<::Value<self::knowledge_base::ServerSideEncryptionConfiguration>> = None;
-                let mut source_configuration: Option<::Value<self::knowledge_base::SourceConfiguration>> = None;
+                let mut rendering_configuration: Option<
+                    ::Value<self::knowledge_base::RenderingConfiguration>,
+                > = None;
+                let mut server_side_encryption_configuration: Option<
+                    ::Value<self::knowledge_base::ServerSideEncryptionConfiguration>,
+                > = None;
+                let mut source_configuration: Option<
+                    ::Value<self::knowledge_base::SourceConfiguration>,
+                > = None;
                 let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -342,7 +398,8 @@ impl<'de> ::serde::Deserialize<'de> for KnowledgeBaseProperties {
                             rendering_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "ServerSideEncryptionConfiguration" => {
-                            server_side_encryption_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
+                            server_side_encryption_configuration =
+                                ::serde::de::MapAccess::next_value(&mut map)?;
                         }
                         "SourceConfiguration" => {
                             source_configuration = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -356,7 +413,8 @@ impl<'de> ::serde::Deserialize<'de> for KnowledgeBaseProperties {
 
                 Ok(KnowledgeBaseProperties {
                     description: description,
-                    knowledge_base_type: knowledge_base_type.ok_or(::serde::de::Error::missing_field("KnowledgeBaseType"))?,
+                    knowledge_base_type: knowledge_base_type
+                        .ok_or(::serde::de::Error::missing_field("KnowledgeBaseType"))?,
                     name: name.ok_or(::serde::de::Error::missing_field("Name"))?,
                     rendering_configuration: rendering_configuration,
                     server_side_encryption_configuration: server_side_encryption_configuration,
@@ -413,7 +471,9 @@ pub mod assistant {
     }
 
     impl ::codec::DeserializeValue for ServerSideEncryptionConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ServerSideEncryptionConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ServerSideEncryptionConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -423,10 +483,15 @@ pub mod assistant {
                     write!(f, "a struct of type ServerSideEncryptionConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut kms_key_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "KmsKeyId" => {
                                 kms_key_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -462,13 +527,19 @@ pub mod assistant_association {
     impl ::codec::SerializeValue for AssociationData {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "KnowledgeBaseId", &self.knowledge_base_id)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "KnowledgeBaseId",
+                &self.knowledge_base_id,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AssociationData {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AssociationData, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AssociationData, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -478,10 +549,15 @@ pub mod assistant_association {
                     write!(f, "a struct of type AssociationData")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut knowledge_base_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "KnowledgeBaseId" => {
                                 knowledge_base_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -491,7 +567,8 @@ pub mod assistant_association {
                     }
 
                     Ok(AssociationData {
-                        knowledge_base_id: knowledge_base_id.ok_or(::serde::de::Error::missing_field("KnowledgeBaseId"))?,
+                        knowledge_base_id: knowledge_base_id
+                            .ok_or(::serde::de::Error::missing_field("KnowledgeBaseId"))?,
                     })
                 }
             }
@@ -522,14 +599,24 @@ pub mod knowledge_base {
     impl ::codec::SerializeValue for AppIntegrationsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppIntegrationArn", &self.app_integration_arn)?;
-            ::serde::ser::SerializeMap::serialize_entry(&mut map, "ObjectFields", &self.object_fields)?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "AppIntegrationArn",
+                &self.app_integration_arn,
+            )?;
+            ::serde::ser::SerializeMap::serialize_entry(
+                &mut map,
+                "ObjectFields",
+                &self.object_fields,
+            )?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for AppIntegrationsConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AppIntegrationsConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<AppIntegrationsConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -539,11 +626,16 @@ pub mod knowledge_base {
                     write!(f, "a struct of type AppIntegrationsConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_integration_arn: Option<::Value<String>> = None;
                     let mut object_fields: Option<::ValueList<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppIntegrationArn" => {
                                 app_integration_arn = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -556,8 +648,10 @@ pub mod knowledge_base {
                     }
 
                     Ok(AppIntegrationsConfiguration {
-                        app_integration_arn: app_integration_arn.ok_or(::serde::de::Error::missing_field("AppIntegrationArn"))?,
-                        object_fields: object_fields.ok_or(::serde::de::Error::missing_field("ObjectFields"))?,
+                        app_integration_arn: app_integration_arn
+                            .ok_or(::serde::de::Error::missing_field("AppIntegrationArn"))?,
+                        object_fields: object_fields
+                            .ok_or(::serde::de::Error::missing_field("ObjectFields"))?,
                     })
                 }
             }
@@ -587,7 +681,9 @@ pub mod knowledge_base {
     }
 
     impl ::codec::DeserializeValue for RenderingConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RenderingConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<RenderingConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -597,10 +693,15 @@ pub mod knowledge_base {
                     write!(f, "a struct of type RenderingConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut template_uri: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "TemplateUri" => {
                                 template_uri = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -640,7 +741,9 @@ pub mod knowledge_base {
     }
 
     impl ::codec::DeserializeValue for ServerSideEncryptionConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ServerSideEncryptionConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<ServerSideEncryptionConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -650,10 +753,15 @@ pub mod knowledge_base {
                     write!(f, "a struct of type ServerSideEncryptionConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut kms_key_id: Option<::Value<String>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "KmsKeyId" => {
                                 kms_key_id = ::serde::de::MapAccess::next_value(&mut map)?;
@@ -686,14 +794,20 @@ pub mod knowledge_base {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref app_integrations) = self.app_integrations {
-                ::serde::ser::SerializeMap::serialize_entry(&mut map, "AppIntegrations", app_integrations)?;
+                ::serde::ser::SerializeMap::serialize_entry(
+                    &mut map,
+                    "AppIntegrations",
+                    app_integrations,
+                )?;
             }
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
     impl ::codec::DeserializeValue for SourceConfiguration {
-        fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SourceConfiguration, D::Error> {
+        fn deserialize<'de, D: ::serde::Deserializer<'de>>(
+            d: D,
+        ) -> Result<SourceConfiguration, D::Error> {
             struct Visitor;
 
             impl<'de> ::serde::de::Visitor<'de> for Visitor {
@@ -703,10 +817,15 @@ pub mod knowledge_base {
                     write!(f, "a struct of type SourceConfiguration")
                 }
 
-                fn visit_map<A: ::serde::de::MapAccess<'de>>(self, mut map: A) -> Result<Self::Value, A::Error> {
+                fn visit_map<A: ::serde::de::MapAccess<'de>>(
+                    self,
+                    mut map: A,
+                ) -> Result<Self::Value, A::Error> {
                     let mut app_integrations: Option<::Value<AppIntegrationsConfiguration>> = None;
 
-                    while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
+                    while let Some(__cfn_key) =
+                        ::serde::de::MapAccess::next_key::<String>(&mut map)?
+                    {
                         match __cfn_key.as_ref() {
                             "AppIntegrations" => {
                                 app_integrations = ::serde::de::MapAccess::next_value(&mut map)?;
