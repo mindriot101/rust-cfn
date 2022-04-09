@@ -48,6 +48,11 @@ impl Resources {
         };
         self.0.insert(id.to_owned(), inner);
     }
+
+    /// Iterate over items contained.
+    pub fn iter(&self) -> impl Iterator<Item = (&str, &ResourceInner)> + '_ {
+        self.0.iter().map(|(id, inner)| (id.as_str(), inner))
+    }
 }
 
 fn empty_object() -> ::serde_json::Value {
@@ -55,9 +60,9 @@ fn empty_object() -> ::serde_json::Value {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-struct ResourceInner {
+pub struct ResourceInner {
     #[serde(rename = "Type")]
-    tag: String,
+    pub tag: String,
     #[serde(rename = "Properties", default = "empty_object")]
-    properties: ::serde_json::Value,
+    pub properties: ::serde_json::Value,
 }
