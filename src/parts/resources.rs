@@ -53,6 +53,11 @@ impl Resources {
     pub fn iter(&self) -> impl Iterator<Item = (&str, &ResourceInner)> + '_ {
         self.0.iter().map(|(id, inner)| (id.as_str(), inner))
     }
+
+    /// Get the inner representation of a resource.
+    pub fn get_inner(&self, id: &str) -> Option<&ResourceInner> {
+        self.0.get(id)
+    }
 }
 
 fn empty_object() -> ::serde_json::Value {
