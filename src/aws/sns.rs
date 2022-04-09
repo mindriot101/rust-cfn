@@ -13,47 +13,47 @@ pub struct SubscriptionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub delivery_policy: Option<crate::Value<crate::json::Value>>,
+    pub delivery_policy: Option<::Value<::json::Value>>,
     /// Property [`Endpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub endpoint: Option<crate::Value<String>>,
+    pub endpoint: Option<::Value<String>>,
     /// Property [`FilterPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub filter_policy: Option<crate::Value<crate::json::Value>>,
+    pub filter_policy: Option<::Value<::json::Value>>,
     /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub protocol: crate::Value<String>,
+    pub protocol: ::Value<String>,
     /// Property [`RawMessageDelivery`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-rawmessagedelivery).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub raw_message_delivery: Option<crate::Value<bool>>,
+    pub raw_message_delivery: Option<::Value<bool>>,
     /// Property [`RedrivePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-redrivepolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub redrive_policy: Option<crate::Value<crate::json::Value>>,
+    pub redrive_policy: Option<::Value<::json::Value>>,
     /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-region).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub region: Option<crate::Value<String>>,
+    pub region: Option<::Value<String>>,
     /// Property [`SubscriptionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-subscriptionrolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subscription_role_arn: Option<crate::Value<String>>,
+    pub subscription_role_arn: Option<::Value<String>>,
     /// Property [`TopicArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub topic_arn: crate::Value<String>,
+    pub topic_arn: ::Value<String>,
 }
 
 impl ::serde::Serialize for SubscriptionProperties {
@@ -115,15 +115,15 @@ impl<'de> ::serde::Deserialize<'de> for SubscriptionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut delivery_policy: Option<crate::Value<crate::json::Value>> = None;
-                let mut endpoint: Option<crate::Value<String>> = None;
-                let mut filter_policy: Option<crate::Value<crate::json::Value>> = None;
-                let mut protocol: Option<crate::Value<String>> = None;
-                let mut raw_message_delivery: Option<crate::Value<bool>> = None;
-                let mut redrive_policy: Option<crate::Value<crate::json::Value>> = None;
-                let mut region: Option<crate::Value<String>> = None;
-                let mut subscription_role_arn: Option<crate::Value<String>> = None;
-                let mut topic_arn: Option<crate::Value<String>> = None;
+                let mut delivery_policy: Option<::Value<::json::Value>> = None;
+                let mut endpoint: Option<::Value<String>> = None;
+                let mut filter_policy: Option<::Value<::json::Value>> = None;
+                let mut protocol: Option<::Value<String>> = None;
+                let mut raw_message_delivery: Option<::Value<bool>> = None;
+                let mut redrive_policy: Option<::Value<::json::Value>> = None;
+                let mut region: Option<::Value<String>> = None;
+                let mut subscription_role_arn: Option<::Value<String>> = None;
+                let mut topic_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -176,7 +176,7 @@ impl<'de> ::serde::Deserialize<'de> for SubscriptionProperties {
     }
 }
 
-impl crate::Resource for Subscription {
+impl ::Resource for Subscription {
     type Properties = SubscriptionProperties;
     const TYPE: &'static str = "AWS::SNS::Subscription";
     fn properties(&self) -> &SubscriptionProperties {
@@ -187,7 +187,7 @@ impl crate::Resource for Subscription {
     }
 }
 
-impl crate::private::Sealed for Subscription {}
+impl ::private::Sealed for Subscription {}
 
 impl From<SubscriptionProperties> for Subscription {
     fn from(properties: SubscriptionProperties) -> Subscription {
@@ -208,37 +208,37 @@ pub struct TopicProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub content_based_deduplication: Option<crate::Value<bool>>,
+    pub content_based_deduplication: Option<::Value<bool>>,
     /// Property [`DisplayName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-displayname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub display_name: Option<crate::Value<String>>,
+    pub display_name: Option<::Value<String>>,
     /// Property [`FifoTopic`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-fifotopic).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub fifo_topic: Option<crate::Value<bool>>,
+    pub fifo_topic: Option<::Value<bool>>,
     /// Property [`KmsMasterKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-kmsmasterkeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kms_master_key_id: Option<crate::Value<String>>,
+    pub kms_master_key_id: Option<::Value<String>>,
     /// Property [`Subscription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-subscription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subscription: Option<crate::ValueList<self::topic::Subscription>>,
+    pub subscription: Option<::ValueList<self::topic::Subscription>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`TopicName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-topicname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub topic_name: Option<crate::Value<String>>,
+    pub topic_name: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for TopicProperties {
@@ -292,13 +292,13 @@ impl<'de> ::serde::Deserialize<'de> for TopicProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut content_based_deduplication: Option<crate::Value<bool>> = None;
-                let mut display_name: Option<crate::Value<String>> = None;
-                let mut fifo_topic: Option<crate::Value<bool>> = None;
-                let mut kms_master_key_id: Option<crate::Value<String>> = None;
-                let mut subscription: Option<crate::ValueList<self::topic::Subscription>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut topic_name: Option<crate::Value<String>> = None;
+                let mut content_based_deduplication: Option<::Value<bool>> = None;
+                let mut display_name: Option<::Value<String>> = None;
+                let mut fifo_topic: Option<::Value<bool>> = None;
+                let mut kms_master_key_id: Option<::Value<String>> = None;
+                let mut subscription: Option<::ValueList<self::topic::Subscription>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut topic_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -344,7 +344,7 @@ impl<'de> ::serde::Deserialize<'de> for TopicProperties {
     }
 }
 
-impl crate::Resource for Topic {
+impl ::Resource for Topic {
     type Properties = TopicProperties;
     const TYPE: &'static str = "AWS::SNS::Topic";
     fn properties(&self) -> &TopicProperties {
@@ -355,7 +355,7 @@ impl crate::Resource for Topic {
     }
 }
 
-impl crate::private::Sealed for Topic {}
+impl ::private::Sealed for Topic {}
 
 impl From<TopicProperties> for Topic {
     fn from(properties: TopicProperties) -> Topic {
@@ -376,12 +376,12 @@ pub struct TopicPolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy_document: crate::Value<crate::json::Value>,
+    pub policy_document: ::Value<::json::Value>,
     /// Property [`Topics`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-topics).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub topics: crate::ValueList<String>,
+    pub topics: ::ValueList<String>,
 }
 
 impl ::serde::Serialize for TopicPolicyProperties {
@@ -412,8 +412,8 @@ impl<'de> ::serde::Deserialize<'de> for TopicPolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut policy_document: Option<crate::Value<crate::json::Value>> = None;
-                let mut topics: Option<crate::ValueList<String>> = None;
+                let mut policy_document: Option<::Value<::json::Value>> = None;
+                let mut topics: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -439,7 +439,7 @@ impl<'de> ::serde::Deserialize<'de> for TopicPolicyProperties {
     }
 }
 
-impl crate::Resource for TopicPolicy {
+impl ::Resource for TopicPolicy {
     type Properties = TopicPolicyProperties;
     const TYPE: &'static str = "AWS::SNS::TopicPolicy";
     fn properties(&self) -> &TopicPolicyProperties {
@@ -450,7 +450,7 @@ impl crate::Resource for TopicPolicy {
     }
 }
 
-impl crate::private::Sealed for TopicPolicy {}
+impl ::private::Sealed for TopicPolicy {}
 
 impl From<TopicPolicyProperties> for TopicPolicy {
     fn from(properties: TopicPolicyProperties) -> TopicPolicy {
@@ -468,15 +468,15 @@ pub mod topic {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint: crate::Value<String>,
+        pub endpoint: ::Value<String>,
         /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-protocol).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub protocol: crate::Value<String>,
+        pub protocol: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Subscription {
+    impl ::codec::SerializeValue for Subscription {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Endpoint", &self.endpoint)?;
@@ -485,7 +485,7 @@ pub mod topic {
         }
     }
 
-    impl crate::codec::DeserializeValue for Subscription {
+    impl ::codec::DeserializeValue for Subscription {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Subscription, D::Error> {
             struct Visitor;
 
@@ -500,8 +500,8 @@ pub mod topic {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint: Option<crate::Value<String>> = None;
-                    let mut protocol: Option<crate::Value<String>> = None;
+                    let mut endpoint: Option<::Value<String>> = None;
+                    let mut protocol: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

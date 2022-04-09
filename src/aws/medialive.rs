@@ -13,57 +13,57 @@ pub struct ChannelProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cdi_input_specification: Option<crate::Value<self::channel::CdiInputSpecification>>,
+    pub cdi_input_specification: Option<::Value<self::channel::CdiInputSpecification>>,
     /// Property [`ChannelClass`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-channelclass).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub channel_class: Option<crate::Value<String>>,
+    pub channel_class: Option<::Value<String>>,
     /// Property [`Destinations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-destinations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub destinations: Option<crate::ValueList<self::channel::OutputDestination>>,
+    pub destinations: Option<::ValueList<self::channel::OutputDestination>>,
     /// Property [`EncoderSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-encodersettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encoder_settings: Option<crate::Value<self::channel::EncoderSettings>>,
+    pub encoder_settings: Option<::Value<self::channel::EncoderSettings>>,
     /// Property [`InputAttachments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputattachments).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub input_attachments: Option<crate::ValueList<self::channel::InputAttachment>>,
+    pub input_attachments: Option<::ValueList<self::channel::InputAttachment>>,
     /// Property [`InputSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputspecification).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub input_specification: Option<crate::Value<self::channel::InputSpecification>>,
+    pub input_specification: Option<::Value<self::channel::InputSpecification>>,
     /// Property [`LogLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-loglevel).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub log_level: Option<crate::Value<String>>,
+    pub log_level: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: Option<crate::Value<String>>,
+    pub role_arn: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::Value<crate::json::Value>>,
+    pub tags: Option<::Value<::json::Value>>,
     /// Property [`Vpc`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-vpc).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc: Option<crate::Value<self::channel::VpcOutputSettings>>,
+    pub vpc: Option<::Value<self::channel::VpcOutputSettings>>,
 }
 
 impl ::serde::Serialize for ChannelProperties {
@@ -138,20 +138,20 @@ impl<'de> ::serde::Deserialize<'de> for ChannelProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut cdi_input_specification: Option<
-                    crate::Value<self::channel::CdiInputSpecification>,
+                    ::Value<self::channel::CdiInputSpecification>,
                 > = None;
-                let mut channel_class: Option<crate::Value<String>> = None;
-                let mut destinations: Option<crate::ValueList<self::channel::OutputDestination>> = None;
-                let mut encoder_settings: Option<crate::Value<self::channel::EncoderSettings>> = None;
-                let mut input_attachments: Option<crate::ValueList<self::channel::InputAttachment>> =
+                let mut channel_class: Option<::Value<String>> = None;
+                let mut destinations: Option<::ValueList<self::channel::OutputDestination>> = None;
+                let mut encoder_settings: Option<::Value<self::channel::EncoderSettings>> = None;
+                let mut input_attachments: Option<::ValueList<self::channel::InputAttachment>> =
                     None;
-                let mut input_specification: Option<crate::Value<self::channel::InputSpecification>> =
+                let mut input_specification: Option<::Value<self::channel::InputSpecification>> =
                     None;
-                let mut log_level: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::Value<crate::json::Value>> = None;
-                let mut vpc: Option<crate::Value<self::channel::VpcOutputSettings>> = None;
+                let mut log_level: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::Value<::json::Value>> = None;
+                let mut vpc: Option<::Value<self::channel::VpcOutputSettings>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -212,7 +212,7 @@ impl<'de> ::serde::Deserialize<'de> for ChannelProperties {
     }
 }
 
-impl crate::Resource for Channel {
+impl ::Resource for Channel {
     type Properties = ChannelProperties;
     const TYPE: &'static str = "AWS::MediaLive::Channel";
     fn properties(&self) -> &ChannelProperties {
@@ -223,7 +223,7 @@ impl crate::Resource for Channel {
     }
 }
 
-impl crate::private::Sealed for Channel {}
+impl ::private::Sealed for Channel {}
 
 impl From<ChannelProperties> for Channel {
     fn from(properties: ChannelProperties) -> Channel {
@@ -244,52 +244,52 @@ pub struct InputProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub destinations: Option<crate::ValueList<self::input::InputDestinationRequest>>,
+    pub destinations: Option<::ValueList<self::input::InputDestinationRequest>>,
     /// Property [`InputDevices`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputdevices).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub input_devices: Option<crate::ValueList<self::input::InputDeviceSettings>>,
+    pub input_devices: Option<::ValueList<self::input::InputDeviceSettings>>,
     /// Property [`InputSecurityGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputsecuritygroups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub input_security_groups: Option<crate::ValueList<String>>,
+    pub input_security_groups: Option<::ValueList<String>>,
     /// Property [`MediaConnectFlows`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-mediaconnectflows).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub media_connect_flows: Option<crate::ValueList<self::input::MediaConnectFlowRequest>>,
+    pub media_connect_flows: Option<::ValueList<self::input::MediaConnectFlowRequest>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: Option<crate::Value<String>>,
+    pub role_arn: Option<::Value<String>>,
     /// Property [`Sources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-sources).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sources: Option<crate::ValueList<self::input::InputSourceRequest>>,
+    pub sources: Option<::ValueList<self::input::InputSourceRequest>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::Value<crate::json::Value>>,
+    pub tags: Option<::Value<::json::Value>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: Option<crate::Value<String>>,
+    pub r#type: Option<::Value<String>>,
     /// Property [`Vpc`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-vpc).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc: Option<crate::Value<self::input::InputVpcRequest>>,
+    pub vpc: Option<::Value<self::input::InputVpcRequest>>,
 }
 
 impl ::serde::Serialize for InputProperties {
@@ -352,19 +352,19 @@ impl<'de> ::serde::Deserialize<'de> for InputProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut destinations: Option<crate::ValueList<self::input::InputDestinationRequest>> =
+                let mut destinations: Option<::ValueList<self::input::InputDestinationRequest>> =
                     None;
-                let mut input_devices: Option<crate::ValueList<self::input::InputDeviceSettings>> = None;
-                let mut input_security_groups: Option<crate::ValueList<String>> = None;
+                let mut input_devices: Option<::ValueList<self::input::InputDeviceSettings>> = None;
+                let mut input_security_groups: Option<::ValueList<String>> = None;
                 let mut media_connect_flows: Option<
-                    crate::ValueList<self::input::MediaConnectFlowRequest>,
+                    ::ValueList<self::input::MediaConnectFlowRequest>,
                 > = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut sources: Option<crate::ValueList<self::input::InputSourceRequest>> = None;
-                let mut tags: Option<crate::Value<crate::json::Value>> = None;
-                let mut r#type: Option<crate::Value<String>> = None;
-                let mut vpc: Option<crate::Value<self::input::InputVpcRequest>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut sources: Option<::ValueList<self::input::InputSourceRequest>> = None;
+                let mut tags: Option<::Value<::json::Value>> = None;
+                let mut r#type: Option<::Value<String>> = None;
+                let mut vpc: Option<::Value<self::input::InputVpcRequest>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -421,7 +421,7 @@ impl<'de> ::serde::Deserialize<'de> for InputProperties {
     }
 }
 
-impl crate::Resource for Input {
+impl ::Resource for Input {
     type Properties = InputProperties;
     const TYPE: &'static str = "AWS::MediaLive::Input";
     fn properties(&self) -> &InputProperties {
@@ -432,7 +432,7 @@ impl crate::Resource for Input {
     }
 }
 
-impl crate::private::Sealed for Input {}
+impl ::private::Sealed for Input {}
 
 impl From<InputProperties> for Input {
     fn from(properties: InputProperties) -> Input {
@@ -453,12 +453,12 @@ pub struct InputSecurityGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::Value<crate::json::Value>>,
+    pub tags: Option<::Value<::json::Value>>,
     /// Property [`WhitelistRules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub whitelist_rules: Option<crate::ValueList<self::input_security_group::InputWhitelistRuleCidr>>,
+    pub whitelist_rules: Option<::ValueList<self::input_security_group::InputWhitelistRuleCidr>>,
 }
 
 impl ::serde::Serialize for InputSecurityGroupProperties {
@@ -495,9 +495,9 @@ impl<'de> ::serde::Deserialize<'de> for InputSecurityGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut tags: Option<crate::Value<crate::json::Value>> = None;
+                let mut tags: Option<::Value<::json::Value>> = None;
                 let mut whitelist_rules: Option<
-                    crate::ValueList<self::input_security_group::InputWhitelistRuleCidr>,
+                    ::ValueList<self::input_security_group::InputWhitelistRuleCidr>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -523,7 +523,7 @@ impl<'de> ::serde::Deserialize<'de> for InputSecurityGroupProperties {
     }
 }
 
-impl crate::Resource for InputSecurityGroup {
+impl ::Resource for InputSecurityGroup {
     type Properties = InputSecurityGroupProperties;
     const TYPE: &'static str = "AWS::MediaLive::InputSecurityGroup";
     fn properties(&self) -> &InputSecurityGroupProperties {
@@ -534,7 +534,7 @@ impl crate::Resource for InputSecurityGroup {
     }
 }
 
-impl crate::private::Sealed for InputSecurityGroup {}
+impl ::private::Sealed for InputSecurityGroup {}
 
 impl From<InputSecurityGroupProperties> for InputSecurityGroup {
     fn from(properties: InputSecurityGroupProperties) -> InputSecurityGroup {
@@ -552,50 +552,50 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitrate: Option<crate::Value<f64>>,
+        pub bitrate: Option<::Value<f64>>,
         /// Property [`CodingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-codingmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub coding_mode: Option<crate::Value<String>>,
+        pub coding_mode: Option<::Value<String>>,
         /// Property [`InputType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-inputtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_type: Option<crate::Value<String>>,
+        pub input_type: Option<::Value<String>>,
         /// Property [`Profile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-profile).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub profile: Option<crate::Value<String>>,
+        pub profile: Option<::Value<String>>,
         /// Property [`RateControlMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-ratecontrolmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rate_control_mode: Option<crate::Value<String>>,
+        pub rate_control_mode: Option<::Value<String>>,
         /// Property [`RawFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-rawformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub raw_format: Option<crate::Value<String>>,
+        pub raw_format: Option<::Value<String>>,
         /// Property [`SampleRate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-samplerate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sample_rate: Option<crate::Value<f64>>,
+        pub sample_rate: Option<::Value<f64>>,
         /// Property [`Spec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-spec).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub spec: Option<crate::Value<String>>,
+        pub spec: Option<::Value<String>>,
         /// Property [`VbrQuality`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-vbrquality).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vbr_quality: Option<crate::Value<String>>,
+        pub vbr_quality: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AacSettings {
+    impl ::codec::SerializeValue for AacSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bitrate) = self.bitrate {
@@ -633,7 +633,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AacSettings {
+    impl ::codec::DeserializeValue for AacSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AacSettings, D::Error> {
             struct Visitor;
 
@@ -648,15 +648,15 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bitrate: Option<crate::Value<f64>> = None;
-                    let mut coding_mode: Option<crate::Value<String>> = None;
-                    let mut input_type: Option<crate::Value<String>> = None;
-                    let mut profile: Option<crate::Value<String>> = None;
-                    let mut rate_control_mode: Option<crate::Value<String>> = None;
-                    let mut raw_format: Option<crate::Value<String>> = None;
-                    let mut sample_rate: Option<crate::Value<f64>> = None;
-                    let mut spec: Option<crate::Value<String>> = None;
-                    let mut vbr_quality: Option<crate::Value<String>> = None;
+                    let mut bitrate: Option<::Value<f64>> = None;
+                    let mut coding_mode: Option<::Value<String>> = None;
+                    let mut input_type: Option<::Value<String>> = None;
+                    let mut profile: Option<::Value<String>> = None;
+                    let mut rate_control_mode: Option<::Value<String>> = None;
+                    let mut raw_format: Option<::Value<String>> = None;
+                    let mut sample_rate: Option<::Value<f64>> = None;
+                    let mut spec: Option<::Value<String>> = None;
+                    let mut vbr_quality: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -718,40 +718,40 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitrate: Option<crate::Value<f64>>,
+        pub bitrate: Option<::Value<f64>>,
         /// Property [`BitstreamMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-bitstreammode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitstream_mode: Option<crate::Value<String>>,
+        pub bitstream_mode: Option<::Value<String>>,
         /// Property [`CodingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-codingmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub coding_mode: Option<crate::Value<String>>,
+        pub coding_mode: Option<::Value<String>>,
         /// Property [`Dialnorm`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-dialnorm).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dialnorm: Option<crate::Value<u32>>,
+        pub dialnorm: Option<::Value<u32>>,
         /// Property [`DrcProfile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-drcprofile).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub drc_profile: Option<crate::Value<String>>,
+        pub drc_profile: Option<::Value<String>>,
         /// Property [`LfeFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-lfefilter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lfe_filter: Option<crate::Value<String>>,
+        pub lfe_filter: Option<::Value<String>>,
         /// Property [`MetadataControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-metadatacontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metadata_control: Option<crate::Value<String>>,
+        pub metadata_control: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Ac3Settings {
+    impl ::codec::SerializeValue for Ac3Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bitrate) = self.bitrate {
@@ -787,7 +787,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Ac3Settings {
+    impl ::codec::DeserializeValue for Ac3Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Ac3Settings, D::Error> {
             struct Visitor;
 
@@ -802,13 +802,13 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bitrate: Option<crate::Value<f64>> = None;
-                    let mut bitstream_mode: Option<crate::Value<String>> = None;
-                    let mut coding_mode: Option<crate::Value<String>> = None;
-                    let mut dialnorm: Option<crate::Value<u32>> = None;
-                    let mut drc_profile: Option<crate::Value<String>> = None;
-                    let mut lfe_filter: Option<crate::Value<String>> = None;
-                    let mut metadata_control: Option<crate::Value<String>> = None;
+                    let mut bitrate: Option<::Value<f64>> = None;
+                    let mut bitstream_mode: Option<::Value<String>> = None;
+                    let mut coding_mode: Option<::Value<String>> = None;
+                    let mut dialnorm: Option<::Value<u32>> = None;
+                    let mut drc_profile: Option<::Value<String>> = None;
+                    let mut lfe_filter: Option<::Value<String>> = None;
+                    let mut metadata_control: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -862,10 +862,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_ancillary_channel_number: Option<crate::Value<u32>>,
+        pub source_ancillary_channel_number: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for AncillarySourceSettings {
+    impl ::codec::SerializeValue for AncillarySourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref source_ancillary_channel_number) = self.source_ancillary_channel_number
@@ -880,7 +880,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AncillarySourceSettings {
+    impl ::codec::DeserializeValue for AncillarySourceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AncillarySourceSettings, D::Error> {
@@ -897,7 +897,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source_ancillary_channel_number: Option<crate::Value<u32>> = None;
+                    let mut source_ancillary_channel_number: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -928,10 +928,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub archive_s3_settings: Option<crate::Value<ArchiveS3Settings>>,
+        pub archive_s3_settings: Option<::Value<ArchiveS3Settings>>,
     }
 
-    impl crate::codec::SerializeValue for ArchiveCdnSettings {
+    impl ::codec::SerializeValue for ArchiveCdnSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref archive_s3_settings) = self.archive_s3_settings {
@@ -945,7 +945,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for ArchiveCdnSettings {
+    impl ::codec::DeserializeValue for ArchiveCdnSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ArchiveCdnSettings, D::Error> {
@@ -962,7 +962,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut archive_s3_settings: Option<crate::Value<ArchiveS3Settings>> = None;
+                    let mut archive_s3_settings: Option<::Value<ArchiveS3Settings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -992,15 +992,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub m2ts_settings: Option<crate::Value<M2tsSettings>>,
+        pub m2ts_settings: Option<::Value<M2tsSettings>>,
         /// Property [`RawSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecontainersettings.html#cfn-medialive-channel-archivecontainersettings-rawsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub raw_settings: Option<crate::Value<RawSettings>>,
+        pub raw_settings: Option<::Value<RawSettings>>,
     }
 
-    impl crate::codec::SerializeValue for ArchiveContainerSettings {
+    impl ::codec::SerializeValue for ArchiveContainerSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref m2ts_settings) = self.m2ts_settings {
@@ -1017,7 +1017,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for ArchiveContainerSettings {
+    impl ::codec::DeserializeValue for ArchiveContainerSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ArchiveContainerSettings, D::Error> {
@@ -1034,8 +1034,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut m2ts_settings: Option<crate::Value<M2tsSettings>> = None;
-                    let mut raw_settings: Option<crate::Value<RawSettings>> = None;
+                    let mut m2ts_settings: Option<::Value<M2tsSettings>> = None;
+                    let mut raw_settings: Option<::Value<RawSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1069,20 +1069,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub archive_cdn_settings: Option<crate::Value<ArchiveCdnSettings>>,
+        pub archive_cdn_settings: Option<::Value<ArchiveCdnSettings>>,
         /// Property [`Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-destination).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: Option<crate::Value<OutputLocationRef>>,
+        pub destination: Option<::Value<OutputLocationRef>>,
         /// Property [`RolloverInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-rolloverinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rollover_interval: Option<crate::Value<u32>>,
+        pub rollover_interval: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for ArchiveGroupSettings {
+    impl ::codec::SerializeValue for ArchiveGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref archive_cdn_settings) = self.archive_cdn_settings {
@@ -1106,7 +1106,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for ArchiveGroupSettings {
+    impl ::codec::DeserializeValue for ArchiveGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ArchiveGroupSettings, D::Error> {
@@ -1123,9 +1123,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut archive_cdn_settings: Option<crate::Value<ArchiveCdnSettings>> = None;
-                    let mut destination: Option<crate::Value<OutputLocationRef>> = None;
-                    let mut rollover_interval: Option<crate::Value<u32>> = None;
+                    let mut archive_cdn_settings: Option<::Value<ArchiveCdnSettings>> = None;
+                    let mut destination: Option<::Value<OutputLocationRef>> = None;
+                    let mut rollover_interval: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1164,20 +1164,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_settings: Option<crate::Value<ArchiveContainerSettings>>,
+        pub container_settings: Option<::Value<ArchiveContainerSettings>>,
         /// Property [`Extension`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archiveoutputsettings.html#cfn-medialive-channel-archiveoutputsettings-extension).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub extension: Option<crate::Value<String>>,
+        pub extension: Option<::Value<String>>,
         /// Property [`NameModifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archiveoutputsettings.html#cfn-medialive-channel-archiveoutputsettings-namemodifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name_modifier: Option<crate::Value<String>>,
+        pub name_modifier: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ArchiveOutputSettings {
+    impl ::codec::SerializeValue for ArchiveOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_settings) = self.container_settings {
@@ -1201,7 +1201,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for ArchiveOutputSettings {
+    impl ::codec::DeserializeValue for ArchiveOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ArchiveOutputSettings, D::Error> {
@@ -1218,9 +1218,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_settings: Option<crate::Value<ArchiveContainerSettings>> = None;
-                    let mut extension: Option<crate::Value<String>> = None;
-                    let mut name_modifier: Option<crate::Value<String>> = None;
+                    let mut container_settings: Option<::Value<ArchiveContainerSettings>> = None;
+                    let mut extension: Option<::Value<String>> = None;
+                    let mut name_modifier: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1258,10 +1258,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub canned_acl: Option<crate::Value<String>>,
+        pub canned_acl: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ArchiveS3Settings {
+    impl ::codec::SerializeValue for ArchiveS3Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref canned_acl) = self.canned_acl {
@@ -1271,7 +1271,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for ArchiveS3Settings {
+    impl ::codec::DeserializeValue for ArchiveS3Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ArchiveS3Settings, D::Error> {
@@ -1288,7 +1288,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut canned_acl: Option<crate::Value<String>> = None;
+                    let mut canned_acl: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1315,14 +1315,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct AribDestinationSettings {}
 
-    impl crate::codec::SerializeValue for AribDestinationSettings {
+    impl ::codec::SerializeValue for AribDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for AribDestinationSettings {
+    impl ::codec::DeserializeValue for AribDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AribDestinationSettings, D::Error> {
@@ -1351,14 +1351,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct AribSourceSettings {}
 
-    impl crate::codec::SerializeValue for AribSourceSettings {
+    impl ::codec::SerializeValue for AribSourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for AribSourceSettings {
+    impl ::codec::DeserializeValue for AribSourceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AribSourceSettings, D::Error> {
@@ -1390,15 +1390,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_channel_levels: Option<crate::ValueList<InputChannelLevel>>,
+        pub input_channel_levels: Option<::ValueList<InputChannelLevel>>,
         /// Property [`OutputChannel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiochannelmapping.html#cfn-medialive-channel-audiochannelmapping-outputchannel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_channel: Option<crate::Value<u32>>,
+        pub output_channel: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for AudioChannelMapping {
+    impl ::codec::SerializeValue for AudioChannelMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref input_channel_levels) = self.input_channel_levels {
@@ -1419,7 +1419,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioChannelMapping {
+    impl ::codec::DeserializeValue for AudioChannelMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioChannelMapping, D::Error> {
@@ -1436,8 +1436,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut input_channel_levels: Option<crate::ValueList<InputChannelLevel>> = None;
-                    let mut output_channel: Option<crate::Value<u32>> = None;
+                    let mut input_channel_levels: Option<::ValueList<InputChannelLevel>> = None;
+                    let mut output_channel: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1472,35 +1472,35 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aac_settings: Option<crate::Value<AacSettings>>,
+        pub aac_settings: Option<::Value<AacSettings>>,
         /// Property [`Ac3Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-ac3settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ac3_settings: Option<crate::Value<Ac3Settings>>,
+        pub ac3_settings: Option<::Value<Ac3Settings>>,
         /// Property [`Eac3Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-eac3settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub eac3_settings: Option<crate::Value<Eac3Settings>>,
+        pub eac3_settings: Option<::Value<Eac3Settings>>,
         /// Property [`Mp2Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-mp2settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mp2_settings: Option<crate::Value<Mp2Settings>>,
+        pub mp2_settings: Option<::Value<Mp2Settings>>,
         /// Property [`PassThroughSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-passthroughsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pass_through_settings: Option<crate::Value<PassThroughSettings>>,
+        pub pass_through_settings: Option<::Value<PassThroughSettings>>,
         /// Property [`WavSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-wavsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub wav_settings: Option<crate::Value<WavSettings>>,
+        pub wav_settings: Option<::Value<WavSettings>>,
     }
 
-    impl crate::codec::SerializeValue for AudioCodecSettings {
+    impl ::codec::SerializeValue for AudioCodecSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aac_settings) = self.aac_settings {
@@ -1533,7 +1533,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioCodecSettings {
+    impl ::codec::DeserializeValue for AudioCodecSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioCodecSettings, D::Error> {
@@ -1550,12 +1550,12 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut aac_settings: Option<crate::Value<AacSettings>> = None;
-                    let mut ac3_settings: Option<crate::Value<Ac3Settings>> = None;
-                    let mut eac3_settings: Option<crate::Value<Eac3Settings>> = None;
-                    let mut mp2_settings: Option<crate::Value<Mp2Settings>> = None;
-                    let mut pass_through_settings: Option<crate::Value<PassThroughSettings>> = None;
-                    let mut wav_settings: Option<crate::Value<WavSettings>> = None;
+                    let mut aac_settings: Option<::Value<AacSettings>> = None;
+                    let mut ac3_settings: Option<::Value<Ac3Settings>> = None;
+                    let mut eac3_settings: Option<::Value<Eac3Settings>> = None;
+                    let mut mp2_settings: Option<::Value<Mp2Settings>> = None;
+                    let mut pass_through_settings: Option<::Value<PassThroughSettings>> = None;
+                    let mut wav_settings: Option<::Value<WavSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1606,60 +1606,60 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_normalization_settings: Option<crate::Value<AudioNormalizationSettings>>,
+        pub audio_normalization_settings: Option<::Value<AudioNormalizationSettings>>,
         /// Property [`AudioSelectorName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audioselectorname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_selector_name: Option<crate::Value<String>>,
+        pub audio_selector_name: Option<::Value<String>>,
         /// Property [`AudioType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiotype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_type: Option<crate::Value<String>>,
+        pub audio_type: Option<::Value<String>>,
         /// Property [`AudioTypeControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiotypecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_type_control: Option<crate::Value<String>>,
+        pub audio_type_control: Option<::Value<String>>,
         /// Property [`AudioWatermarkingSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiowatermarkingsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_watermarking_settings: Option<crate::Value<AudioWatermarkSettings>>,
+        pub audio_watermarking_settings: Option<::Value<AudioWatermarkSettings>>,
         /// Property [`CodecSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-codecsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub codec_settings: Option<crate::Value<AudioCodecSettings>>,
+        pub codec_settings: Option<::Value<AudioCodecSettings>>,
         /// Property [`LanguageCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-languagecode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_code: Option<crate::Value<String>>,
+        pub language_code: Option<::Value<String>>,
         /// Property [`LanguageCodeControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-languagecodecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_code_control: Option<crate::Value<String>>,
+        pub language_code_control: Option<::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`RemixSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-remixsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub remix_settings: Option<crate::Value<RemixSettings>>,
+        pub remix_settings: Option<::Value<RemixSettings>>,
         /// Property [`StreamName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-streamname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_name: Option<crate::Value<String>>,
+        pub stream_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AudioDescription {
+    impl ::codec::SerializeValue for AudioDescription {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_normalization_settings) = self.audio_normalization_settings {
@@ -1731,7 +1731,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioDescription {
+    impl ::codec::DeserializeValue for AudioDescription {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioDescription, D::Error> {
@@ -1749,19 +1749,19 @@ pub mod channel {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut audio_normalization_settings: Option<
-                        crate::Value<AudioNormalizationSettings>,
+                        ::Value<AudioNormalizationSettings>,
                     > = None;
-                    let mut audio_selector_name: Option<crate::Value<String>> = None;
-                    let mut audio_type: Option<crate::Value<String>> = None;
-                    let mut audio_type_control: Option<crate::Value<String>> = None;
-                    let mut audio_watermarking_settings: Option<crate::Value<AudioWatermarkSettings>> =
+                    let mut audio_selector_name: Option<::Value<String>> = None;
+                    let mut audio_type: Option<::Value<String>> = None;
+                    let mut audio_type_control: Option<::Value<String>> = None;
+                    let mut audio_watermarking_settings: Option<::Value<AudioWatermarkSettings>> =
                         None;
-                    let mut codec_settings: Option<crate::Value<AudioCodecSettings>> = None;
-                    let mut language_code: Option<crate::Value<String>> = None;
-                    let mut language_code_control: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut remix_settings: Option<crate::Value<RemixSettings>> = None;
-                    let mut stream_name: Option<crate::Value<String>> = None;
+                    let mut codec_settings: Option<::Value<AudioCodecSettings>> = None;
+                    let mut language_code: Option<::Value<String>> = None;
+                    let mut language_code_control: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut remix_settings: Option<::Value<RemixSettings>> = None;
+                    let mut stream_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1834,15 +1834,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub group_id: Option<crate::Value<String>>,
+        pub group_id: Option<::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiohlsrenditionselection.html#cfn-medialive-channel-audiohlsrenditionselection-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AudioHlsRenditionSelection {
+    impl ::codec::SerializeValue for AudioHlsRenditionSelection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref group_id) = self.group_id {
@@ -1855,7 +1855,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioHlsRenditionSelection {
+    impl ::codec::DeserializeValue for AudioHlsRenditionSelection {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioHlsRenditionSelection, D::Error> {
@@ -1872,8 +1872,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut group_id: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut group_id: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1907,15 +1907,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_code: Option<crate::Value<String>>,
+        pub language_code: Option<::Value<String>>,
         /// Property [`LanguageSelectionPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiolanguageselection.html#cfn-medialive-channel-audiolanguageselection-languageselectionpolicy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_selection_policy: Option<crate::Value<String>>,
+        pub language_selection_policy: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AudioLanguageSelection {
+    impl ::codec::SerializeValue for AudioLanguageSelection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref language_code) = self.language_code {
@@ -1936,7 +1936,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioLanguageSelection {
+    impl ::codec::DeserializeValue for AudioLanguageSelection {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioLanguageSelection, D::Error> {
@@ -1953,8 +1953,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut language_code: Option<crate::Value<String>> = None;
-                    let mut language_selection_policy: Option<crate::Value<String>> = None;
+                    let mut language_code: Option<::Value<String>> = None;
+                    let mut language_selection_policy: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1989,20 +1989,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub algorithm: Option<crate::Value<String>>,
+        pub algorithm: Option<::Value<String>>,
         /// Property [`AlgorithmControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audionormalizationsettings.html#cfn-medialive-channel-audionormalizationsettings-algorithmcontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub algorithm_control: Option<crate::Value<String>>,
+        pub algorithm_control: Option<::Value<String>>,
         /// Property [`TargetLkfs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audionormalizationsettings.html#cfn-medialive-channel-audionormalizationsettings-targetlkfs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_lkfs: Option<crate::Value<f64>>,
+        pub target_lkfs: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for AudioNormalizationSettings {
+    impl ::codec::SerializeValue for AudioNormalizationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref algorithm) = self.algorithm {
@@ -2022,7 +2022,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioNormalizationSettings {
+    impl ::codec::DeserializeValue for AudioNormalizationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioNormalizationSettings, D::Error> {
@@ -2039,9 +2039,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut algorithm: Option<crate::Value<String>> = None;
-                    let mut algorithm_control: Option<crate::Value<String>> = None;
-                    let mut target_lkfs: Option<crate::Value<f64>> = None;
+                    let mut algorithm: Option<::Value<String>> = None;
+                    let mut algorithm_control: Option<::Value<String>> = None;
+                    let mut target_lkfs: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2079,25 +2079,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_group_id: Option<crate::Value<String>>,
+        pub audio_group_id: Option<::Value<String>>,
         /// Property [`AudioOnlyImage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-audioonlyimage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_only_image: Option<crate::Value<InputLocation>>,
+        pub audio_only_image: Option<::Value<InputLocation>>,
         /// Property [`AudioTrackType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-audiotracktype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_track_type: Option<crate::Value<String>>,
+        pub audio_track_type: Option<::Value<String>>,
         /// Property [`SegmentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-segmenttype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segment_type: Option<crate::Value<String>>,
+        pub segment_type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AudioOnlyHlsSettings {
+    impl ::codec::SerializeValue for AudioOnlyHlsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_group_id) = self.audio_group_id {
@@ -2128,7 +2128,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioOnlyHlsSettings {
+    impl ::codec::DeserializeValue for AudioOnlyHlsSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioOnlyHlsSettings, D::Error> {
@@ -2145,10 +2145,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_group_id: Option<crate::Value<String>> = None;
-                    let mut audio_only_image: Option<crate::Value<InputLocation>> = None;
-                    let mut audio_track_type: Option<crate::Value<String>> = None;
-                    let mut segment_type: Option<crate::Value<String>> = None;
+                    let mut audio_group_id: Option<::Value<String>> = None;
+                    let mut audio_only_image: Option<::Value<InputLocation>> = None;
+                    let mut audio_track_type: Option<::Value<String>> = None;
+                    let mut segment_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2190,10 +2190,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pid: Option<crate::Value<u32>>,
+        pub pid: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for AudioPidSelection {
+    impl ::codec::SerializeValue for AudioPidSelection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref pid) = self.pid {
@@ -2203,7 +2203,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioPidSelection {
+    impl ::codec::DeserializeValue for AudioPidSelection {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioPidSelection, D::Error> {
@@ -2220,7 +2220,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut pid: Option<crate::Value<u32>> = None;
+                    let mut pid: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2248,15 +2248,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`SelectorSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html#cfn-medialive-channel-audioselector-selectorsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub selector_settings: Option<crate::Value<AudioSelectorSettings>>,
+        pub selector_settings: Option<::Value<AudioSelectorSettings>>,
     }
 
-    impl crate::codec::SerializeValue for AudioSelector {
+    impl ::codec::SerializeValue for AudioSelector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -2273,7 +2273,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioSelector {
+    impl ::codec::DeserializeValue for AudioSelector {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioSelector, D::Error> {
@@ -2290,8 +2290,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut selector_settings: Option<crate::Value<AudioSelectorSettings>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut selector_settings: Option<::Value<AudioSelectorSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2325,25 +2325,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_hls_rendition_selection: Option<crate::Value<AudioHlsRenditionSelection>>,
+        pub audio_hls_rendition_selection: Option<::Value<AudioHlsRenditionSelection>>,
         /// Property [`AudioLanguageSelection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiolanguageselection).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_language_selection: Option<crate::Value<AudioLanguageSelection>>,
+        pub audio_language_selection: Option<::Value<AudioLanguageSelection>>,
         /// Property [`AudioPidSelection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiopidselection).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_pid_selection: Option<crate::Value<AudioPidSelection>>,
+        pub audio_pid_selection: Option<::Value<AudioPidSelection>>,
         /// Property [`AudioTrackSelection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiotrackselection).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_track_selection: Option<crate::Value<AudioTrackSelection>>,
+        pub audio_track_selection: Option<::Value<AudioTrackSelection>>,
     }
 
-    impl crate::codec::SerializeValue for AudioSelectorSettings {
+    impl ::codec::SerializeValue for AudioSelectorSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_hls_rendition_selection) = self.audio_hls_rendition_selection {
@@ -2378,7 +2378,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioSelectorSettings {
+    impl ::codec::DeserializeValue for AudioSelectorSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioSelectorSettings, D::Error> {
@@ -2396,12 +2396,12 @@ pub mod channel {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut audio_hls_rendition_selection: Option<
-                        crate::Value<AudioHlsRenditionSelection>,
+                        ::Value<AudioHlsRenditionSelection>,
                     > = None;
-                    let mut audio_language_selection: Option<crate::Value<AudioLanguageSelection>> =
+                    let mut audio_language_selection: Option<::Value<AudioLanguageSelection>> =
                         None;
-                    let mut audio_pid_selection: Option<crate::Value<AudioPidSelection>> = None;
-                    let mut audio_track_selection: Option<crate::Value<AudioTrackSelection>> = None;
+                    let mut audio_pid_selection: Option<::Value<AudioPidSelection>> = None;
+                    let mut audio_track_selection: Option<::Value<AudioTrackSelection>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2446,15 +2446,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_selector_name: Option<crate::Value<String>>,
+        pub audio_selector_name: Option<::Value<String>>,
         /// Property [`AudioSilenceThresholdMsec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiosilencefailoversettings.html#cfn-medialive-channel-audiosilencefailoversettings-audiosilencethresholdmsec).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_silence_threshold_msec: Option<crate::Value<u32>>,
+        pub audio_silence_threshold_msec: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for AudioSilenceFailoverSettings {
+    impl ::codec::SerializeValue for AudioSilenceFailoverSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_selector_name) = self.audio_selector_name {
@@ -2475,7 +2475,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioSilenceFailoverSettings {
+    impl ::codec::DeserializeValue for AudioSilenceFailoverSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioSilenceFailoverSettings, D::Error> {
@@ -2492,8 +2492,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_selector_name: Option<crate::Value<String>> = None;
-                    let mut audio_silence_threshold_msec: Option<crate::Value<u32>> = None;
+                    let mut audio_selector_name: Option<::Value<String>> = None;
+                    let mut audio_silence_threshold_msec: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2528,10 +2528,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub track: Option<crate::Value<u32>>,
+        pub track: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for AudioTrack {
+    impl ::codec::SerializeValue for AudioTrack {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref track) = self.track {
@@ -2541,7 +2541,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioTrack {
+    impl ::codec::DeserializeValue for AudioTrack {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<AudioTrack, D::Error> {
             struct Visitor;
 
@@ -2556,7 +2556,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut track: Option<crate::Value<u32>> = None;
+                    let mut track: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2584,10 +2584,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tracks: Option<crate::ValueList<AudioTrack>>,
+        pub tracks: Option<::ValueList<AudioTrack>>,
     }
 
-    impl crate::codec::SerializeValue for AudioTrackSelection {
+    impl ::codec::SerializeValue for AudioTrackSelection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref tracks) = self.tracks {
@@ -2597,7 +2597,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioTrackSelection {
+    impl ::codec::DeserializeValue for AudioTrackSelection {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioTrackSelection, D::Error> {
@@ -2614,7 +2614,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut tracks: Option<crate::ValueList<AudioTrack>> = None;
+                    let mut tracks: Option<::ValueList<AudioTrack>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2642,10 +2642,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_watermarks_settings: Option<crate::Value<NielsenWatermarksSettings>>,
+        pub nielsen_watermarks_settings: Option<::Value<NielsenWatermarksSettings>>,
     }
 
-    impl crate::codec::SerializeValue for AudioWatermarkSettings {
+    impl ::codec::SerializeValue for AudioWatermarkSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref nielsen_watermarks_settings) = self.nielsen_watermarks_settings {
@@ -2659,7 +2659,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AudioWatermarkSettings {
+    impl ::codec::DeserializeValue for AudioWatermarkSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AudioWatermarkSettings, D::Error> {
@@ -2677,7 +2677,7 @@ pub mod channel {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut nielsen_watermarks_settings: Option<
-                        crate::Value<NielsenWatermarksSettings>,
+                        ::Value<NielsenWatermarksSettings>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2709,25 +2709,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_clear_time_msec: Option<crate::Value<u32>>,
+        pub error_clear_time_msec: Option<::Value<u32>>,
         /// Property [`FailoverConditions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-failoverconditions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub failover_conditions: Option<crate::ValueList<FailoverCondition>>,
+        pub failover_conditions: Option<::ValueList<FailoverCondition>>,
         /// Property [`InputPreference`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-inputpreference).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_preference: Option<crate::Value<String>>,
+        pub input_preference: Option<::Value<String>>,
         /// Property [`SecondaryInputId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-secondaryinputid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secondary_input_id: Option<crate::Value<String>>,
+        pub secondary_input_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AutomaticInputFailoverSettings {
+    impl ::codec::SerializeValue for AutomaticInputFailoverSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref error_clear_time_msec) = self.error_clear_time_msec {
@@ -2762,7 +2762,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AutomaticInputFailoverSettings {
+    impl ::codec::DeserializeValue for AutomaticInputFailoverSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AutomaticInputFailoverSettings, D::Error> {
@@ -2779,10 +2779,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut error_clear_time_msec: Option<crate::Value<u32>> = None;
-                    let mut failover_conditions: Option<crate::ValueList<FailoverCondition>> = None;
-                    let mut input_preference: Option<crate::Value<String>> = None;
-                    let mut secondary_input_id: Option<crate::Value<String>> = None;
+                    let mut error_clear_time_msec: Option<::Value<u32>> = None;
+                    let mut failover_conditions: Option<::ValueList<FailoverCondition>> = None;
+                    let mut input_preference: Option<::Value<String>> = None;
+                    let mut secondary_input_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2825,15 +2825,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub avail_blanking_image: Option<crate::Value<InputLocation>>,
+        pub avail_blanking_image: Option<::Value<InputLocation>>,
         /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availblanking.html#cfn-medialive-channel-availblanking-state).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub state: Option<crate::Value<String>>,
+        pub state: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AvailBlanking {
+    impl ::codec::SerializeValue for AvailBlanking {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref avail_blanking_image) = self.avail_blanking_image {
@@ -2850,7 +2850,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AvailBlanking {
+    impl ::codec::DeserializeValue for AvailBlanking {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AvailBlanking, D::Error> {
@@ -2867,8 +2867,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut avail_blanking_image: Option<crate::Value<InputLocation>> = None;
-                    let mut state: Option<crate::Value<String>> = None;
+                    let mut avail_blanking_image: Option<::Value<InputLocation>> = None;
+                    let mut state: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2903,10 +2903,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub avail_settings: Option<crate::Value<AvailSettings>>,
+        pub avail_settings: Option<::Value<AvailSettings>>,
     }
 
-    impl crate::codec::SerializeValue for AvailConfiguration {
+    impl ::codec::SerializeValue for AvailConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref avail_settings) = self.avail_settings {
@@ -2920,7 +2920,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AvailConfiguration {
+    impl ::codec::DeserializeValue for AvailConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AvailConfiguration, D::Error> {
@@ -2937,7 +2937,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut avail_settings: Option<crate::Value<AvailSettings>> = None;
+                    let mut avail_settings: Option<::Value<AvailSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2967,15 +2967,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte35_splice_insert: Option<crate::Value<Scte35SpliceInsert>>,
+        pub scte35_splice_insert: Option<::Value<Scte35SpliceInsert>>,
         /// Property [`Scte35TimeSignalApos`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availsettings.html#cfn-medialive-channel-availsettings-scte35timesignalapos).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte35_time_signal_apos: Option<crate::Value<Scte35TimeSignalApos>>,
+        pub scte35_time_signal_apos: Option<::Value<Scte35TimeSignalApos>>,
     }
 
-    impl crate::codec::SerializeValue for AvailSettings {
+    impl ::codec::SerializeValue for AvailSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref scte35_splice_insert) = self.scte35_splice_insert {
@@ -2996,7 +2996,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for AvailSettings {
+    impl ::codec::DeserializeValue for AvailSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AvailSettings, D::Error> {
@@ -3013,8 +3013,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut scte35_splice_insert: Option<crate::Value<Scte35SpliceInsert>> = None;
-                    let mut scte35_time_signal_apos: Option<crate::Value<Scte35TimeSignalApos>> = None;
+                    let mut scte35_splice_insert: Option<::Value<Scte35SpliceInsert>> = None;
+                    let mut scte35_time_signal_apos: Option<::Value<Scte35TimeSignalApos>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3050,30 +3050,30 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub blackout_slate_image: Option<crate::Value<InputLocation>>,
+        pub blackout_slate_image: Option<::Value<InputLocation>>,
         /// Property [`NetworkEndBlackout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-networkendblackout).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_end_blackout: Option<crate::Value<String>>,
+        pub network_end_blackout: Option<::Value<String>>,
         /// Property [`NetworkEndBlackoutImage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-networkendblackoutimage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_end_blackout_image: Option<crate::Value<InputLocation>>,
+        pub network_end_blackout_image: Option<::Value<InputLocation>>,
         /// Property [`NetworkId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-networkid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_id: Option<crate::Value<String>>,
+        pub network_id: Option<::Value<String>>,
         /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-state).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub state: Option<crate::Value<String>>,
+        pub state: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for BlackoutSlate {
+    impl ::codec::SerializeValue for BlackoutSlate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref blackout_slate_image) = self.blackout_slate_image {
@@ -3107,7 +3107,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for BlackoutSlate {
+    impl ::codec::DeserializeValue for BlackoutSlate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BlackoutSlate, D::Error> {
@@ -3124,11 +3124,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut blackout_slate_image: Option<crate::Value<InputLocation>> = None;
-                    let mut network_end_blackout: Option<crate::Value<String>> = None;
-                    let mut network_end_blackout_image: Option<crate::Value<InputLocation>> = None;
-                    let mut network_id: Option<crate::Value<String>> = None;
-                    let mut state: Option<crate::Value<String>> = None;
+                    let mut blackout_slate_image: Option<::Value<InputLocation>> = None;
+                    let mut network_end_blackout: Option<::Value<String>> = None;
+                    let mut network_end_blackout_image: Option<::Value<InputLocation>> = None;
+                    let mut network_id: Option<::Value<String>> = None;
+                    let mut state: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3177,90 +3177,90 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alignment: Option<crate::Value<String>>,
+        pub alignment: Option<::Value<String>>,
         /// Property [`BackgroundColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-backgroundcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub background_color: Option<crate::Value<String>>,
+        pub background_color: Option<::Value<String>>,
         /// Property [`BackgroundOpacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-backgroundopacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub background_opacity: Option<crate::Value<u32>>,
+        pub background_opacity: Option<::Value<u32>>,
         /// Property [`Font`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-font).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font: Option<crate::Value<InputLocation>>,
+        pub font: Option<::Value<InputLocation>>,
         /// Property [`FontColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-fontcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_color: Option<crate::Value<String>>,
+        pub font_color: Option<::Value<String>>,
         /// Property [`FontOpacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-fontopacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_opacity: Option<crate::Value<u32>>,
+        pub font_opacity: Option<::Value<u32>>,
         /// Property [`FontResolution`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-fontresolution).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_resolution: Option<crate::Value<u32>>,
+        pub font_resolution: Option<::Value<u32>>,
         /// Property [`FontSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-fontsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_size: Option<crate::Value<String>>,
+        pub font_size: Option<::Value<String>>,
         /// Property [`OutlineColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-outlinecolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub outline_color: Option<crate::Value<String>>,
+        pub outline_color: Option<::Value<String>>,
         /// Property [`OutlineSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-outlinesize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub outline_size: Option<crate::Value<u32>>,
+        pub outline_size: Option<::Value<u32>>,
         /// Property [`ShadowColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-shadowcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shadow_color: Option<crate::Value<String>>,
+        pub shadow_color: Option<::Value<String>>,
         /// Property [`ShadowOpacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-shadowopacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shadow_opacity: Option<crate::Value<u32>>,
+        pub shadow_opacity: Option<::Value<u32>>,
         /// Property [`ShadowXOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-shadowxoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shadow_x_offset: Option<crate::Value<u32>>,
+        pub shadow_x_offset: Option<::Value<u32>>,
         /// Property [`ShadowYOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-shadowyoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shadow_y_offset: Option<crate::Value<u32>>,
+        pub shadow_y_offset: Option<::Value<u32>>,
         /// Property [`TeletextGridControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-teletextgridcontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub teletext_grid_control: Option<crate::Value<String>>,
+        pub teletext_grid_control: Option<::Value<String>>,
         /// Property [`XPosition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-xposition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub x_position: Option<crate::Value<u32>>,
+        pub x_position: Option<::Value<u32>>,
         /// Property [`YPosition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-yposition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub y_position: Option<crate::Value<u32>>,
+        pub y_position: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for BurnInDestinationSettings {
+    impl ::codec::SerializeValue for BurnInDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref alignment) = self.alignment {
@@ -3350,7 +3350,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for BurnInDestinationSettings {
+    impl ::codec::DeserializeValue for BurnInDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BurnInDestinationSettings, D::Error> {
@@ -3367,23 +3367,23 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alignment: Option<crate::Value<String>> = None;
-                    let mut background_color: Option<crate::Value<String>> = None;
-                    let mut background_opacity: Option<crate::Value<u32>> = None;
-                    let mut font: Option<crate::Value<InputLocation>> = None;
-                    let mut font_color: Option<crate::Value<String>> = None;
-                    let mut font_opacity: Option<crate::Value<u32>> = None;
-                    let mut font_resolution: Option<crate::Value<u32>> = None;
-                    let mut font_size: Option<crate::Value<String>> = None;
-                    let mut outline_color: Option<crate::Value<String>> = None;
-                    let mut outline_size: Option<crate::Value<u32>> = None;
-                    let mut shadow_color: Option<crate::Value<String>> = None;
-                    let mut shadow_opacity: Option<crate::Value<u32>> = None;
-                    let mut shadow_x_offset: Option<crate::Value<u32>> = None;
-                    let mut shadow_y_offset: Option<crate::Value<u32>> = None;
-                    let mut teletext_grid_control: Option<crate::Value<String>> = None;
-                    let mut x_position: Option<crate::Value<u32>> = None;
-                    let mut y_position: Option<crate::Value<u32>> = None;
+                    let mut alignment: Option<::Value<String>> = None;
+                    let mut background_color: Option<::Value<String>> = None;
+                    let mut background_opacity: Option<::Value<u32>> = None;
+                    let mut font: Option<::Value<InputLocation>> = None;
+                    let mut font_color: Option<::Value<String>> = None;
+                    let mut font_opacity: Option<::Value<u32>> = None;
+                    let mut font_resolution: Option<::Value<u32>> = None;
+                    let mut font_size: Option<::Value<String>> = None;
+                    let mut outline_color: Option<::Value<String>> = None;
+                    let mut outline_size: Option<::Value<u32>> = None;
+                    let mut shadow_color: Option<::Value<String>> = None;
+                    let mut shadow_opacity: Option<::Value<u32>> = None;
+                    let mut shadow_x_offset: Option<::Value<u32>> = None;
+                    let mut shadow_y_offset: Option<::Value<u32>> = None;
+                    let mut teletext_grid_control: Option<::Value<String>> = None;
+                    let mut x_position: Option<::Value<u32>> = None;
+                    let mut y_position: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3478,30 +3478,30 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caption_selector_name: Option<crate::Value<String>>,
+        pub caption_selector_name: Option<::Value<String>>,
         /// Property [`DestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html#cfn-medialive-channel-captiondescription-destinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_settings: Option<crate::Value<CaptionDestinationSettings>>,
+        pub destination_settings: Option<::Value<CaptionDestinationSettings>>,
         /// Property [`LanguageCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html#cfn-medialive-channel-captiondescription-languagecode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_code: Option<crate::Value<String>>,
+        pub language_code: Option<::Value<String>>,
         /// Property [`LanguageDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html#cfn-medialive-channel-captiondescription-languagedescription).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_description: Option<crate::Value<String>>,
+        pub language_description: Option<::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html#cfn-medialive-channel-captiondescription-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for CaptionDescription {
+    impl ::codec::SerializeValue for CaptionDescription {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref caption_selector_name) = self.caption_selector_name {
@@ -3539,7 +3539,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for CaptionDescription {
+    impl ::codec::DeserializeValue for CaptionDescription {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CaptionDescription, D::Error> {
@@ -3556,12 +3556,12 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut caption_selector_name: Option<crate::Value<String>> = None;
-                    let mut destination_settings: Option<crate::Value<CaptionDestinationSettings>> =
+                    let mut caption_selector_name: Option<::Value<String>> = None;
+                    let mut destination_settings: Option<::Value<CaptionDestinationSettings>> =
                         None;
-                    let mut language_code: Option<crate::Value<String>> = None;
-                    let mut language_description: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut language_code: Option<::Value<String>> = None;
+                    let mut language_description: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3610,73 +3610,73 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arib_destination_settings: Option<crate::Value<AribDestinationSettings>>,
+        pub arib_destination_settings: Option<::Value<AribDestinationSettings>>,
         /// Property [`BurnInDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-burnindestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub burn_in_destination_settings: Option<crate::Value<BurnInDestinationSettings>>,
+        pub burn_in_destination_settings: Option<::Value<BurnInDestinationSettings>>,
         /// Property [`DvbSubDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-dvbsubdestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dvb_sub_destination_settings: Option<crate::Value<DvbSubDestinationSettings>>,
+        pub dvb_sub_destination_settings: Option<::Value<DvbSubDestinationSettings>>,
         /// Property [`EbuTtDDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-ebuttddestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ebu_tt_d_destination_settings: Option<crate::Value<EbuTtDDestinationSettings>>,
+        pub ebu_tt_d_destination_settings: Option<::Value<EbuTtDDestinationSettings>>,
         /// Property [`EmbeddedDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-embeddeddestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub embedded_destination_settings: Option<crate::Value<EmbeddedDestinationSettings>>,
+        pub embedded_destination_settings: Option<::Value<EmbeddedDestinationSettings>>,
         /// Property [`EmbeddedPlusScte20DestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-embeddedplusscte20destinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub embedded_plus_scte20_destination_settings:
-            Option<crate::Value<EmbeddedPlusScte20DestinationSettings>>,
+            Option<::Value<EmbeddedPlusScte20DestinationSettings>>,
         /// Property [`RtmpCaptionInfoDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-rtmpcaptioninfodestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub rtmp_caption_info_destination_settings:
-            Option<crate::Value<RtmpCaptionInfoDestinationSettings>>,
+            Option<::Value<RtmpCaptionInfoDestinationSettings>>,
         /// Property [`Scte20PlusEmbeddedDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-scte20plusembeddeddestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub scte20_plus_embedded_destination_settings:
-            Option<crate::Value<Scte20PlusEmbeddedDestinationSettings>>,
+            Option<::Value<Scte20PlusEmbeddedDestinationSettings>>,
         /// Property [`Scte27DestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-scte27destinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte27_destination_settings: Option<crate::Value<Scte27DestinationSettings>>,
+        pub scte27_destination_settings: Option<::Value<Scte27DestinationSettings>>,
         /// Property [`SmpteTtDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-smptettdestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub smpte_tt_destination_settings: Option<crate::Value<SmpteTtDestinationSettings>>,
+        pub smpte_tt_destination_settings: Option<::Value<SmpteTtDestinationSettings>>,
         /// Property [`TeletextDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-teletextdestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub teletext_destination_settings: Option<crate::Value<TeletextDestinationSettings>>,
+        pub teletext_destination_settings: Option<::Value<TeletextDestinationSettings>>,
         /// Property [`TtmlDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-ttmldestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ttml_destination_settings: Option<crate::Value<TtmlDestinationSettings>>,
+        pub ttml_destination_settings: Option<::Value<TtmlDestinationSettings>>,
         /// Property [`WebvttDestinationSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-webvttdestinationsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub webvtt_destination_settings: Option<crate::Value<WebvttDestinationSettings>>,
+        pub webvtt_destination_settings: Option<::Value<WebvttDestinationSettings>>,
     }
 
-    impl crate::codec::SerializeValue for CaptionDestinationSettings {
+    impl ::codec::SerializeValue for CaptionDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref arib_destination_settings) = self.arib_destination_settings {
@@ -3780,7 +3780,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for CaptionDestinationSettings {
+    impl ::codec::DeserializeValue for CaptionDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CaptionDestinationSettings, D::Error> {
@@ -3797,42 +3797,42 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut arib_destination_settings: Option<crate::Value<AribDestinationSettings>> =
+                    let mut arib_destination_settings: Option<::Value<AribDestinationSettings>> =
                         None;
                     let mut burn_in_destination_settings: Option<
-                        crate::Value<BurnInDestinationSettings>,
+                        ::Value<BurnInDestinationSettings>,
                     > = None;
                     let mut dvb_sub_destination_settings: Option<
-                        crate::Value<DvbSubDestinationSettings>,
+                        ::Value<DvbSubDestinationSettings>,
                     > = None;
                     let mut ebu_tt_d_destination_settings: Option<
-                        crate::Value<EbuTtDDestinationSettings>,
+                        ::Value<EbuTtDDestinationSettings>,
                     > = None;
                     let mut embedded_destination_settings: Option<
-                        crate::Value<EmbeddedDestinationSettings>,
+                        ::Value<EmbeddedDestinationSettings>,
                     > = None;
                     let mut embedded_plus_scte20_destination_settings: Option<
-                        crate::Value<EmbeddedPlusScte20DestinationSettings>,
+                        ::Value<EmbeddedPlusScte20DestinationSettings>,
                     > = None;
                     let mut rtmp_caption_info_destination_settings: Option<
-                        crate::Value<RtmpCaptionInfoDestinationSettings>,
+                        ::Value<RtmpCaptionInfoDestinationSettings>,
                     > = None;
                     let mut scte20_plus_embedded_destination_settings: Option<
-                        crate::Value<Scte20PlusEmbeddedDestinationSettings>,
+                        ::Value<Scte20PlusEmbeddedDestinationSettings>,
                     > = None;
                     let mut scte27_destination_settings: Option<
-                        crate::Value<Scte27DestinationSettings>,
+                        ::Value<Scte27DestinationSettings>,
                     > = None;
                     let mut smpte_tt_destination_settings: Option<
-                        crate::Value<SmpteTtDestinationSettings>,
+                        ::Value<SmpteTtDestinationSettings>,
                     > = None;
                     let mut teletext_destination_settings: Option<
-                        crate::Value<TeletextDestinationSettings>,
+                        ::Value<TeletextDestinationSettings>,
                     > = None;
-                    let mut ttml_destination_settings: Option<crate::Value<TtmlDestinationSettings>> =
+                    let mut ttml_destination_settings: Option<::Value<TtmlDestinationSettings>> =
                         None;
                     let mut webvtt_destination_settings: Option<
-                        crate::Value<WebvttDestinationSettings>,
+                        ::Value<WebvttDestinationSettings>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -3927,20 +3927,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caption_channel: Option<crate::Value<u32>>,
+        pub caption_channel: Option<::Value<u32>>,
         /// Property [`LanguageCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionlanguagemapping.html#cfn-medialive-channel-captionlanguagemapping-languagecode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_code: Option<crate::Value<String>>,
+        pub language_code: Option<::Value<String>>,
         /// Property [`LanguageDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionlanguagemapping.html#cfn-medialive-channel-captionlanguagemapping-languagedescription).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_description: Option<crate::Value<String>>,
+        pub language_description: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for CaptionLanguageMapping {
+    impl ::codec::SerializeValue for CaptionLanguageMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref caption_channel) = self.caption_channel {
@@ -3968,7 +3968,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for CaptionLanguageMapping {
+    impl ::codec::DeserializeValue for CaptionLanguageMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CaptionLanguageMapping, D::Error> {
@@ -3985,9 +3985,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut caption_channel: Option<crate::Value<u32>> = None;
-                    let mut language_code: Option<crate::Value<String>> = None;
-                    let mut language_description: Option<crate::Value<String>> = None;
+                    let mut caption_channel: Option<::Value<u32>> = None;
+                    let mut language_code: Option<::Value<String>> = None;
+                    let mut language_description: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4026,25 +4026,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub height: Option<crate::Value<f64>>,
+        pub height: Option<::Value<f64>>,
         /// Property [`LeftOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html#cfn-medialive-channel-captionrectangle-leftoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub left_offset: Option<crate::Value<f64>>,
+        pub left_offset: Option<::Value<f64>>,
         /// Property [`TopOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html#cfn-medialive-channel-captionrectangle-topoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub top_offset: Option<crate::Value<f64>>,
+        pub top_offset: Option<::Value<f64>>,
         /// Property [`Width`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html#cfn-medialive-channel-captionrectangle-width).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub width: Option<crate::Value<f64>>,
+        pub width: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for CaptionRectangle {
+    impl ::codec::SerializeValue for CaptionRectangle {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref height) = self.height {
@@ -4063,7 +4063,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for CaptionRectangle {
+    impl ::codec::DeserializeValue for CaptionRectangle {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CaptionRectangle, D::Error> {
@@ -4080,10 +4080,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut height: Option<crate::Value<f64>> = None;
-                    let mut left_offset: Option<crate::Value<f64>> = None;
-                    let mut top_offset: Option<crate::Value<f64>> = None;
-                    let mut width: Option<crate::Value<f64>> = None;
+                    let mut height: Option<::Value<f64>> = None;
+                    let mut left_offset: Option<::Value<f64>> = None;
+                    let mut top_offset: Option<::Value<f64>> = None;
+                    let mut width: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4125,20 +4125,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub language_code: Option<crate::Value<String>>,
+        pub language_code: Option<::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`SelectorSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-selectorsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub selector_settings: Option<crate::Value<CaptionSelectorSettings>>,
+        pub selector_settings: Option<::Value<CaptionSelectorSettings>>,
     }
 
-    impl crate::codec::SerializeValue for CaptionSelector {
+    impl ::codec::SerializeValue for CaptionSelector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref language_code) = self.language_code {
@@ -4162,7 +4162,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for CaptionSelector {
+    impl ::codec::DeserializeValue for CaptionSelector {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CaptionSelector, D::Error> {
@@ -4179,9 +4179,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut language_code: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut selector_settings: Option<crate::Value<CaptionSelectorSettings>> = None;
+                    let mut language_code: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut selector_settings: Option<::Value<CaptionSelectorSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4219,40 +4219,40 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ancillary_source_settings: Option<crate::Value<AncillarySourceSettings>>,
+        pub ancillary_source_settings: Option<::Value<AncillarySourceSettings>>,
         /// Property [`AribSourceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-aribsourcesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arib_source_settings: Option<crate::Value<AribSourceSettings>>,
+        pub arib_source_settings: Option<::Value<AribSourceSettings>>,
         /// Property [`DvbSubSourceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-dvbsubsourcesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dvb_sub_source_settings: Option<crate::Value<DvbSubSourceSettings>>,
+        pub dvb_sub_source_settings: Option<::Value<DvbSubSourceSettings>>,
         /// Property [`EmbeddedSourceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-embeddedsourcesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub embedded_source_settings: Option<crate::Value<EmbeddedSourceSettings>>,
+        pub embedded_source_settings: Option<::Value<EmbeddedSourceSettings>>,
         /// Property [`Scte20SourceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte20sourcesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte20_source_settings: Option<crate::Value<Scte20SourceSettings>>,
+        pub scte20_source_settings: Option<::Value<Scte20SourceSettings>>,
         /// Property [`Scte27SourceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte27sourcesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte27_source_settings: Option<crate::Value<Scte27SourceSettings>>,
+        pub scte27_source_settings: Option<::Value<Scte27SourceSettings>>,
         /// Property [`TeletextSourceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-teletextsourcesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub teletext_source_settings: Option<crate::Value<TeletextSourceSettings>>,
+        pub teletext_source_settings: Option<::Value<TeletextSourceSettings>>,
     }
 
-    impl crate::codec::SerializeValue for CaptionSelectorSettings {
+    impl ::codec::SerializeValue for CaptionSelectorSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ancillary_source_settings) = self.ancillary_source_settings {
@@ -4308,7 +4308,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for CaptionSelectorSettings {
+    impl ::codec::DeserializeValue for CaptionSelectorSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CaptionSelectorSettings, D::Error> {
@@ -4325,15 +4325,15 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ancillary_source_settings: Option<crate::Value<AncillarySourceSettings>> =
+                    let mut ancillary_source_settings: Option<::Value<AncillarySourceSettings>> =
                         None;
-                    let mut arib_source_settings: Option<crate::Value<AribSourceSettings>> = None;
-                    let mut dvb_sub_source_settings: Option<crate::Value<DvbSubSourceSettings>> = None;
-                    let mut embedded_source_settings: Option<crate::Value<EmbeddedSourceSettings>> =
+                    let mut arib_source_settings: Option<::Value<AribSourceSettings>> = None;
+                    let mut dvb_sub_source_settings: Option<::Value<DvbSubSourceSettings>> = None;
+                    let mut embedded_source_settings: Option<::Value<EmbeddedSourceSettings>> =
                         None;
-                    let mut scte20_source_settings: Option<crate::Value<Scte20SourceSettings>> = None;
-                    let mut scte27_source_settings: Option<crate::Value<Scte27SourceSettings>> = None;
-                    let mut teletext_source_settings: Option<crate::Value<TeletextSourceSettings>> =
+                    let mut scte20_source_settings: Option<::Value<Scte20SourceSettings>> = None;
+                    let mut scte27_source_settings: Option<::Value<Scte27SourceSettings>> = None;
+                    let mut teletext_source_settings: Option<::Value<TeletextSourceSettings>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -4395,10 +4395,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resolution: Option<crate::Value<String>>,
+        pub resolution: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for CdiInputSpecification {
+    impl ::codec::SerializeValue for CdiInputSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref resolution) = self.resolution {
@@ -4408,7 +4408,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for CdiInputSpecification {
+    impl ::codec::DeserializeValue for CdiInputSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CdiInputSpecification, D::Error> {
@@ -4425,7 +4425,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut resolution: Option<crate::Value<String>> = None;
+                    let mut resolution: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4452,14 +4452,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct ColorSpacePassthroughSettings {}
 
-    impl crate::codec::SerializeValue for ColorSpacePassthroughSettings {
+    impl ::codec::SerializeValue for ColorSpacePassthroughSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for ColorSpacePassthroughSettings {
+    impl ::codec::DeserializeValue for ColorSpacePassthroughSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ColorSpacePassthroughSettings, D::Error> {
@@ -4491,20 +4491,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_id: Option<crate::Value<u32>>,
+        pub network_id: Option<::Value<u32>>,
         /// Property [`NetworkName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html#cfn-medialive-channel-dvbnitsettings-networkname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_name: Option<crate::Value<String>>,
+        pub network_name: Option<::Value<String>>,
         /// Property [`RepInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html#cfn-medialive-channel-dvbnitsettings-repinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rep_interval: Option<crate::Value<u32>>,
+        pub rep_interval: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for DvbNitSettings {
+    impl ::codec::SerializeValue for DvbNitSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref network_id) = self.network_id {
@@ -4520,7 +4520,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for DvbNitSettings {
+    impl ::codec::DeserializeValue for DvbNitSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DvbNitSettings, D::Error> {
@@ -4537,9 +4537,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut network_id: Option<crate::Value<u32>> = None;
-                    let mut network_name: Option<crate::Value<String>> = None;
-                    let mut rep_interval: Option<crate::Value<u32>> = None;
+                    let mut network_id: Option<::Value<u32>> = None;
+                    let mut network_name: Option<::Value<String>> = None;
+                    let mut rep_interval: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4577,25 +4577,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_sdt: Option<crate::Value<String>>,
+        pub output_sdt: Option<::Value<String>>,
         /// Property [`RepInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html#cfn-medialive-channel-dvbsdtsettings-repinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rep_interval: Option<crate::Value<u32>>,
+        pub rep_interval: Option<::Value<u32>>,
         /// Property [`ServiceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html#cfn-medialive-channel-dvbsdtsettings-servicename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_name: Option<crate::Value<String>>,
+        pub service_name: Option<::Value<String>>,
         /// Property [`ServiceProviderName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html#cfn-medialive-channel-dvbsdtsettings-serviceprovidername).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub service_provider_name: Option<crate::Value<String>>,
+        pub service_provider_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DvbSdtSettings {
+    impl ::codec::SerializeValue for DvbSdtSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref output_sdt) = self.output_sdt {
@@ -4618,7 +4618,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for DvbSdtSettings {
+    impl ::codec::DeserializeValue for DvbSdtSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DvbSdtSettings, D::Error> {
@@ -4635,10 +4635,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut output_sdt: Option<crate::Value<String>> = None;
-                    let mut rep_interval: Option<crate::Value<u32>> = None;
-                    let mut service_name: Option<crate::Value<String>> = None;
-                    let mut service_provider_name: Option<crate::Value<String>> = None;
+                    let mut output_sdt: Option<::Value<String>> = None;
+                    let mut rep_interval: Option<::Value<u32>> = None;
+                    let mut service_name: Option<::Value<String>> = None;
+                    let mut service_provider_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4681,90 +4681,90 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alignment: Option<crate::Value<String>>,
+        pub alignment: Option<::Value<String>>,
         /// Property [`BackgroundColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-backgroundcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub background_color: Option<crate::Value<String>>,
+        pub background_color: Option<::Value<String>>,
         /// Property [`BackgroundOpacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-backgroundopacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub background_opacity: Option<crate::Value<u32>>,
+        pub background_opacity: Option<::Value<u32>>,
         /// Property [`Font`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-font).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font: Option<crate::Value<InputLocation>>,
+        pub font: Option<::Value<InputLocation>>,
         /// Property [`FontColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-fontcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_color: Option<crate::Value<String>>,
+        pub font_color: Option<::Value<String>>,
         /// Property [`FontOpacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-fontopacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_opacity: Option<crate::Value<u32>>,
+        pub font_opacity: Option<::Value<u32>>,
         /// Property [`FontResolution`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-fontresolution).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_resolution: Option<crate::Value<u32>>,
+        pub font_resolution: Option<::Value<u32>>,
         /// Property [`FontSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-fontsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_size: Option<crate::Value<String>>,
+        pub font_size: Option<::Value<String>>,
         /// Property [`OutlineColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-outlinecolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub outline_color: Option<crate::Value<String>>,
+        pub outline_color: Option<::Value<String>>,
         /// Property [`OutlineSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-outlinesize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub outline_size: Option<crate::Value<u32>>,
+        pub outline_size: Option<::Value<u32>>,
         /// Property [`ShadowColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-shadowcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shadow_color: Option<crate::Value<String>>,
+        pub shadow_color: Option<::Value<String>>,
         /// Property [`ShadowOpacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-shadowopacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shadow_opacity: Option<crate::Value<u32>>,
+        pub shadow_opacity: Option<::Value<u32>>,
         /// Property [`ShadowXOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-shadowxoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shadow_x_offset: Option<crate::Value<u32>>,
+        pub shadow_x_offset: Option<::Value<u32>>,
         /// Property [`ShadowYOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-shadowyoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub shadow_y_offset: Option<crate::Value<u32>>,
+        pub shadow_y_offset: Option<::Value<u32>>,
         /// Property [`TeletextGridControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-teletextgridcontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub teletext_grid_control: Option<crate::Value<String>>,
+        pub teletext_grid_control: Option<::Value<String>>,
         /// Property [`XPosition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-xposition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub x_position: Option<crate::Value<u32>>,
+        pub x_position: Option<::Value<u32>>,
         /// Property [`YPosition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-yposition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub y_position: Option<crate::Value<u32>>,
+        pub y_position: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for DvbSubDestinationSettings {
+    impl ::codec::SerializeValue for DvbSubDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref alignment) = self.alignment {
@@ -4854,7 +4854,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for DvbSubDestinationSettings {
+    impl ::codec::DeserializeValue for DvbSubDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DvbSubDestinationSettings, D::Error> {
@@ -4871,23 +4871,23 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alignment: Option<crate::Value<String>> = None;
-                    let mut background_color: Option<crate::Value<String>> = None;
-                    let mut background_opacity: Option<crate::Value<u32>> = None;
-                    let mut font: Option<crate::Value<InputLocation>> = None;
-                    let mut font_color: Option<crate::Value<String>> = None;
-                    let mut font_opacity: Option<crate::Value<u32>> = None;
-                    let mut font_resolution: Option<crate::Value<u32>> = None;
-                    let mut font_size: Option<crate::Value<String>> = None;
-                    let mut outline_color: Option<crate::Value<String>> = None;
-                    let mut outline_size: Option<crate::Value<u32>> = None;
-                    let mut shadow_color: Option<crate::Value<String>> = None;
-                    let mut shadow_opacity: Option<crate::Value<u32>> = None;
-                    let mut shadow_x_offset: Option<crate::Value<u32>> = None;
-                    let mut shadow_y_offset: Option<crate::Value<u32>> = None;
-                    let mut teletext_grid_control: Option<crate::Value<String>> = None;
-                    let mut x_position: Option<crate::Value<u32>> = None;
-                    let mut y_position: Option<crate::Value<u32>> = None;
+                    let mut alignment: Option<::Value<String>> = None;
+                    let mut background_color: Option<::Value<String>> = None;
+                    let mut background_opacity: Option<::Value<u32>> = None;
+                    let mut font: Option<::Value<InputLocation>> = None;
+                    let mut font_color: Option<::Value<String>> = None;
+                    let mut font_opacity: Option<::Value<u32>> = None;
+                    let mut font_resolution: Option<::Value<u32>> = None;
+                    let mut font_size: Option<::Value<String>> = None;
+                    let mut outline_color: Option<::Value<String>> = None;
+                    let mut outline_size: Option<::Value<u32>> = None;
+                    let mut shadow_color: Option<::Value<String>> = None;
+                    let mut shadow_opacity: Option<::Value<u32>> = None;
+                    let mut shadow_x_offset: Option<::Value<u32>> = None;
+                    let mut shadow_y_offset: Option<::Value<u32>> = None;
+                    let mut teletext_grid_control: Option<::Value<String>> = None;
+                    let mut x_position: Option<::Value<u32>> = None;
+                    let mut y_position: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4982,15 +4982,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ocr_language: Option<crate::Value<String>>,
+        pub ocr_language: Option<::Value<String>>,
         /// Property [`Pid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubsourcesettings.html#cfn-medialive-channel-dvbsubsourcesettings-pid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pid: Option<crate::Value<u32>>,
+        pub pid: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for DvbSubSourceSettings {
+    impl ::codec::SerializeValue for DvbSubSourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ocr_language) = self.ocr_language {
@@ -5003,7 +5003,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for DvbSubSourceSettings {
+    impl ::codec::DeserializeValue for DvbSubSourceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DvbSubSourceSettings, D::Error> {
@@ -5020,8 +5020,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ocr_language: Option<crate::Value<String>> = None;
-                    let mut pid: Option<crate::Value<u32>> = None;
+                    let mut ocr_language: Option<::Value<String>> = None;
+                    let mut pid: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5055,10 +5055,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rep_interval: Option<crate::Value<u32>>,
+        pub rep_interval: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for DvbTdtSettings {
+    impl ::codec::SerializeValue for DvbTdtSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref rep_interval) = self.rep_interval {
@@ -5068,7 +5068,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for DvbTdtSettings {
+    impl ::codec::DeserializeValue for DvbTdtSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DvbTdtSettings, D::Error> {
@@ -5085,7 +5085,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut rep_interval: Option<crate::Value<u32>> = None;
+                    let mut rep_interval: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5115,105 +5115,105 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attenuation_control: Option<crate::Value<String>>,
+        pub attenuation_control: Option<::Value<String>>,
         /// Property [`Bitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-bitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitrate: Option<crate::Value<f64>>,
+        pub bitrate: Option<::Value<f64>>,
         /// Property [`BitstreamMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-bitstreammode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitstream_mode: Option<crate::Value<String>>,
+        pub bitstream_mode: Option<::Value<String>>,
         /// Property [`CodingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-codingmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub coding_mode: Option<crate::Value<String>>,
+        pub coding_mode: Option<::Value<String>>,
         /// Property [`DcFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-dcfilter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dc_filter: Option<crate::Value<String>>,
+        pub dc_filter: Option<::Value<String>>,
         /// Property [`Dialnorm`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-dialnorm).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dialnorm: Option<crate::Value<u32>>,
+        pub dialnorm: Option<::Value<u32>>,
         /// Property [`DrcLine`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-drcline).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub drc_line: Option<crate::Value<String>>,
+        pub drc_line: Option<::Value<String>>,
         /// Property [`DrcRf`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-drcrf).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub drc_rf: Option<crate::Value<String>>,
+        pub drc_rf: Option<::Value<String>>,
         /// Property [`LfeControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-lfecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lfe_control: Option<crate::Value<String>>,
+        pub lfe_control: Option<::Value<String>>,
         /// Property [`LfeFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-lfefilter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lfe_filter: Option<crate::Value<String>>,
+        pub lfe_filter: Option<::Value<String>>,
         /// Property [`LoRoCenterMixLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-lorocentermixlevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lo_ro_center_mix_level: Option<crate::Value<f64>>,
+        pub lo_ro_center_mix_level: Option<::Value<f64>>,
         /// Property [`LoRoSurroundMixLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-lorosurroundmixlevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lo_ro_surround_mix_level: Option<crate::Value<f64>>,
+        pub lo_ro_surround_mix_level: Option<::Value<f64>>,
         /// Property [`LtRtCenterMixLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-ltrtcentermixlevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lt_rt_center_mix_level: Option<crate::Value<f64>>,
+        pub lt_rt_center_mix_level: Option<::Value<f64>>,
         /// Property [`LtRtSurroundMixLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-ltrtsurroundmixlevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub lt_rt_surround_mix_level: Option<crate::Value<f64>>,
+        pub lt_rt_surround_mix_level: Option<::Value<f64>>,
         /// Property [`MetadataControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-metadatacontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metadata_control: Option<crate::Value<String>>,
+        pub metadata_control: Option<::Value<String>>,
         /// Property [`PassthroughControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-passthroughcontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub passthrough_control: Option<crate::Value<String>>,
+        pub passthrough_control: Option<::Value<String>>,
         /// Property [`PhaseControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-phasecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub phase_control: Option<crate::Value<String>>,
+        pub phase_control: Option<::Value<String>>,
         /// Property [`StereoDownmix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-stereodownmix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stereo_downmix: Option<crate::Value<String>>,
+        pub stereo_downmix: Option<::Value<String>>,
         /// Property [`SurroundExMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-surroundexmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub surround_ex_mode: Option<crate::Value<String>>,
+        pub surround_ex_mode: Option<::Value<String>>,
         /// Property [`SurroundMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-surroundmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub surround_mode: Option<crate::Value<String>>,
+        pub surround_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Eac3Settings {
+    impl ::codec::SerializeValue for Eac3Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attenuation_control) = self.attenuation_control {
@@ -5328,7 +5328,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Eac3Settings {
+    impl ::codec::DeserializeValue for Eac3Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Eac3Settings, D::Error> {
             struct Visitor;
 
@@ -5343,26 +5343,26 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attenuation_control: Option<crate::Value<String>> = None;
-                    let mut bitrate: Option<crate::Value<f64>> = None;
-                    let mut bitstream_mode: Option<crate::Value<String>> = None;
-                    let mut coding_mode: Option<crate::Value<String>> = None;
-                    let mut dc_filter: Option<crate::Value<String>> = None;
-                    let mut dialnorm: Option<crate::Value<u32>> = None;
-                    let mut drc_line: Option<crate::Value<String>> = None;
-                    let mut drc_rf: Option<crate::Value<String>> = None;
-                    let mut lfe_control: Option<crate::Value<String>> = None;
-                    let mut lfe_filter: Option<crate::Value<String>> = None;
-                    let mut lo_ro_center_mix_level: Option<crate::Value<f64>> = None;
-                    let mut lo_ro_surround_mix_level: Option<crate::Value<f64>> = None;
-                    let mut lt_rt_center_mix_level: Option<crate::Value<f64>> = None;
-                    let mut lt_rt_surround_mix_level: Option<crate::Value<f64>> = None;
-                    let mut metadata_control: Option<crate::Value<String>> = None;
-                    let mut passthrough_control: Option<crate::Value<String>> = None;
-                    let mut phase_control: Option<crate::Value<String>> = None;
-                    let mut stereo_downmix: Option<crate::Value<String>> = None;
-                    let mut surround_ex_mode: Option<crate::Value<String>> = None;
-                    let mut surround_mode: Option<crate::Value<String>> = None;
+                    let mut attenuation_control: Option<::Value<String>> = None;
+                    let mut bitrate: Option<::Value<f64>> = None;
+                    let mut bitstream_mode: Option<::Value<String>> = None;
+                    let mut coding_mode: Option<::Value<String>> = None;
+                    let mut dc_filter: Option<::Value<String>> = None;
+                    let mut dialnorm: Option<::Value<u32>> = None;
+                    let mut drc_line: Option<::Value<String>> = None;
+                    let mut drc_rf: Option<::Value<String>> = None;
+                    let mut lfe_control: Option<::Value<String>> = None;
+                    let mut lfe_filter: Option<::Value<String>> = None;
+                    let mut lo_ro_center_mix_level: Option<::Value<f64>> = None;
+                    let mut lo_ro_surround_mix_level: Option<::Value<f64>> = None;
+                    let mut lt_rt_center_mix_level: Option<::Value<f64>> = None;
+                    let mut lt_rt_surround_mix_level: Option<::Value<f64>> = None;
+                    let mut metadata_control: Option<::Value<String>> = None;
+                    let mut passthrough_control: Option<::Value<String>> = None;
+                    let mut phase_control: Option<::Value<String>> = None;
+                    let mut stereo_downmix: Option<::Value<String>> = None;
+                    let mut surround_ex_mode: Option<::Value<String>> = None;
+                    let mut surround_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5472,25 +5472,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copyright_holder: Option<crate::Value<String>>,
+        pub copyright_holder: Option<::Value<String>>,
         /// Property [`FillLineGap`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ebuttddestinationsettings.html#cfn-medialive-channel-ebuttddestinationsettings-filllinegap).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fill_line_gap: Option<crate::Value<String>>,
+        pub fill_line_gap: Option<::Value<String>>,
         /// Property [`FontFamily`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ebuttddestinationsettings.html#cfn-medialive-channel-ebuttddestinationsettings-fontfamily).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_family: Option<crate::Value<String>>,
+        pub font_family: Option<::Value<String>>,
         /// Property [`StyleControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ebuttddestinationsettings.html#cfn-medialive-channel-ebuttddestinationsettings-stylecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub style_control: Option<crate::Value<String>>,
+        pub style_control: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EbuTtDDestinationSettings {
+    impl ::codec::SerializeValue for EbuTtDDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref copyright_holder) = self.copyright_holder {
@@ -5521,7 +5521,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for EbuTtDDestinationSettings {
+    impl ::codec::DeserializeValue for EbuTtDDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EbuTtDDestinationSettings, D::Error> {
@@ -5538,10 +5538,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut copyright_holder: Option<crate::Value<String>> = None;
-                    let mut fill_line_gap: Option<crate::Value<String>> = None;
-                    let mut font_family: Option<crate::Value<String>> = None;
-                    let mut style_control: Option<crate::Value<String>> = None;
+                    let mut copyright_holder: Option<::Value<String>> = None;
+                    let mut fill_line_gap: Option<::Value<String>> = None;
+                    let mut font_family: Option<::Value<String>> = None;
+                    let mut style_control: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5580,14 +5580,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct EmbeddedDestinationSettings {}
 
-    impl crate::codec::SerializeValue for EmbeddedDestinationSettings {
+    impl ::codec::SerializeValue for EmbeddedDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for EmbeddedDestinationSettings {
+    impl ::codec::DeserializeValue for EmbeddedDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EmbeddedDestinationSettings, D::Error> {
@@ -5616,14 +5616,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct EmbeddedPlusScte20DestinationSettings {}
 
-    impl crate::codec::SerializeValue for EmbeddedPlusScte20DestinationSettings {
+    impl ::codec::SerializeValue for EmbeddedPlusScte20DestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for EmbeddedPlusScte20DestinationSettings {
+    impl ::codec::DeserializeValue for EmbeddedPlusScte20DestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EmbeddedPlusScte20DestinationSettings, D::Error> {
@@ -5655,25 +5655,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub convert608_to708: Option<crate::Value<String>>,
+        pub convert608_to708: Option<::Value<String>>,
         /// Property [`Scte20Detection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-scte20detection).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte20_detection: Option<crate::Value<String>>,
+        pub scte20_detection: Option<::Value<String>>,
         /// Property [`Source608ChannelNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-source608channelnumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source608_channel_number: Option<crate::Value<u32>>,
+        pub source608_channel_number: Option<::Value<u32>>,
         /// Property [`Source608TrackNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-source608tracknumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source608_track_number: Option<crate::Value<u32>>,
+        pub source608_track_number: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for EmbeddedSourceSettings {
+    impl ::codec::SerializeValue for EmbeddedSourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref convert608_to708) = self.convert608_to708 {
@@ -5708,7 +5708,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for EmbeddedSourceSettings {
+    impl ::codec::DeserializeValue for EmbeddedSourceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EmbeddedSourceSettings, D::Error> {
@@ -5725,10 +5725,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut convert608_to708: Option<crate::Value<String>> = None;
-                    let mut scte20_detection: Option<crate::Value<String>> = None;
-                    let mut source608_channel_number: Option<crate::Value<u32>> = None;
-                    let mut source608_track_number: Option<crate::Value<u32>> = None;
+                    let mut convert608_to708: Option<::Value<String>> = None;
+                    let mut scte20_detection: Option<::Value<String>> = None;
+                    let mut source608_channel_number: Option<::Value<u32>> = None;
+                    let mut source608_track_number: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5772,65 +5772,65 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_descriptions: Option<crate::ValueList<AudioDescription>>,
+        pub audio_descriptions: Option<::ValueList<AudioDescription>>,
         /// Property [`AvailBlanking`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-availblanking).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub avail_blanking: Option<crate::Value<AvailBlanking>>,
+        pub avail_blanking: Option<::Value<AvailBlanking>>,
         /// Property [`AvailConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-availconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub avail_configuration: Option<crate::Value<AvailConfiguration>>,
+        pub avail_configuration: Option<::Value<AvailConfiguration>>,
         /// Property [`BlackoutSlate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-blackoutslate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub blackout_slate: Option<crate::Value<BlackoutSlate>>,
+        pub blackout_slate: Option<::Value<BlackoutSlate>>,
         /// Property [`CaptionDescriptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-captiondescriptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caption_descriptions: Option<crate::ValueList<CaptionDescription>>,
+        pub caption_descriptions: Option<::ValueList<CaptionDescription>>,
         /// Property [`FeatureActivations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-featureactivations).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub feature_activations: Option<crate::Value<FeatureActivations>>,
+        pub feature_activations: Option<::Value<FeatureActivations>>,
         /// Property [`GlobalConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-globalconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub global_configuration: Option<crate::Value<GlobalConfiguration>>,
+        pub global_configuration: Option<::Value<GlobalConfiguration>>,
         /// Property [`MotionGraphicsConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-motiongraphicsconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub motion_graphics_configuration: Option<crate::Value<MotionGraphicsConfiguration>>,
+        pub motion_graphics_configuration: Option<::Value<MotionGraphicsConfiguration>>,
         /// Property [`NielsenConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-nielsenconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_configuration: Option<crate::Value<NielsenConfiguration>>,
+        pub nielsen_configuration: Option<::Value<NielsenConfiguration>>,
         /// Property [`OutputGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-outputgroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_groups: Option<crate::ValueList<OutputGroup>>,
+        pub output_groups: Option<::ValueList<OutputGroup>>,
         /// Property [`TimecodeConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-timecodeconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timecode_config: Option<crate::Value<TimecodeConfig>>,
+        pub timecode_config: Option<::Value<TimecodeConfig>>,
         /// Property [`VideoDescriptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-videodescriptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_descriptions: Option<crate::ValueList<VideoDescription>>,
+        pub video_descriptions: Option<::ValueList<VideoDescription>>,
     }
 
-    impl crate::codec::SerializeValue for EncoderSettings {
+    impl ::codec::SerializeValue for EncoderSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_descriptions) = self.audio_descriptions {
@@ -5921,7 +5921,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for EncoderSettings {
+    impl ::codec::DeserializeValue for EncoderSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EncoderSettings, D::Error> {
@@ -5938,20 +5938,20 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_descriptions: Option<crate::ValueList<AudioDescription>> = None;
-                    let mut avail_blanking: Option<crate::Value<AvailBlanking>> = None;
-                    let mut avail_configuration: Option<crate::Value<AvailConfiguration>> = None;
-                    let mut blackout_slate: Option<crate::Value<BlackoutSlate>> = None;
-                    let mut caption_descriptions: Option<crate::ValueList<CaptionDescription>> = None;
-                    let mut feature_activations: Option<crate::Value<FeatureActivations>> = None;
-                    let mut global_configuration: Option<crate::Value<GlobalConfiguration>> = None;
+                    let mut audio_descriptions: Option<::ValueList<AudioDescription>> = None;
+                    let mut avail_blanking: Option<::Value<AvailBlanking>> = None;
+                    let mut avail_configuration: Option<::Value<AvailConfiguration>> = None;
+                    let mut blackout_slate: Option<::Value<BlackoutSlate>> = None;
+                    let mut caption_descriptions: Option<::ValueList<CaptionDescription>> = None;
+                    let mut feature_activations: Option<::Value<FeatureActivations>> = None;
+                    let mut global_configuration: Option<::Value<GlobalConfiguration>> = None;
                     let mut motion_graphics_configuration: Option<
-                        crate::Value<MotionGraphicsConfiguration>,
+                        ::Value<MotionGraphicsConfiguration>,
                     > = None;
-                    let mut nielsen_configuration: Option<crate::Value<NielsenConfiguration>> = None;
-                    let mut output_groups: Option<crate::ValueList<OutputGroup>> = None;
-                    let mut timecode_config: Option<crate::Value<TimecodeConfig>> = None;
-                    let mut video_descriptions: Option<crate::ValueList<VideoDescription>> = None;
+                    let mut nielsen_configuration: Option<::Value<NielsenConfiguration>> = None;
+                    let mut output_groups: Option<::ValueList<OutputGroup>> = None;
+                    let mut timecode_config: Option<::Value<TimecodeConfig>> = None;
+                    let mut video_descriptions: Option<::ValueList<VideoDescription>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6029,10 +6029,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub failover_condition_settings: Option<crate::Value<FailoverConditionSettings>>,
+        pub failover_condition_settings: Option<::Value<FailoverConditionSettings>>,
     }
 
-    impl crate::codec::SerializeValue for FailoverCondition {
+    impl ::codec::SerializeValue for FailoverCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref failover_condition_settings) = self.failover_condition_settings {
@@ -6046,7 +6046,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FailoverCondition {
+    impl ::codec::DeserializeValue for FailoverCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FailoverCondition, D::Error> {
@@ -6064,7 +6064,7 @@ pub mod channel {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut failover_condition_settings: Option<
-                        crate::Value<FailoverConditionSettings>,
+                        ::Value<FailoverConditionSettings>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -6096,20 +6096,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_silence_settings: Option<crate::Value<AudioSilenceFailoverSettings>>,
+        pub audio_silence_settings: Option<::Value<AudioSilenceFailoverSettings>>,
         /// Property [`InputLossSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html#cfn-medialive-channel-failoverconditionsettings-inputlosssettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_settings: Option<crate::Value<InputLossFailoverSettings>>,
+        pub input_loss_settings: Option<::Value<InputLossFailoverSettings>>,
         /// Property [`VideoBlackSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html#cfn-medialive-channel-failoverconditionsettings-videoblacksettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_black_settings: Option<crate::Value<VideoBlackFailoverSettings>>,
+        pub video_black_settings: Option<::Value<VideoBlackFailoverSettings>>,
     }
 
-    impl crate::codec::SerializeValue for FailoverConditionSettings {
+    impl ::codec::SerializeValue for FailoverConditionSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_silence_settings) = self.audio_silence_settings {
@@ -6137,7 +6137,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FailoverConditionSettings {
+    impl ::codec::DeserializeValue for FailoverConditionSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FailoverConditionSettings, D::Error> {
@@ -6154,10 +6154,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_silence_settings: Option<crate::Value<AudioSilenceFailoverSettings>> =
+                    let mut audio_silence_settings: Option<::Value<AudioSilenceFailoverSettings>> =
                         None;
-                    let mut input_loss_settings: Option<crate::Value<InputLossFailoverSettings>> = None;
-                    let mut video_black_settings: Option<crate::Value<VideoBlackFailoverSettings>> =
+                    let mut input_loss_settings: Option<::Value<InputLossFailoverSettings>> = None;
+                    let mut video_black_settings: Option<::Value<VideoBlackFailoverSettings>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -6198,10 +6198,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_prepare_schedule_actions: Option<crate::Value<String>>,
+        pub input_prepare_schedule_actions: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for FeatureActivations {
+    impl ::codec::SerializeValue for FeatureActivations {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref input_prepare_schedule_actions) = self.input_prepare_schedule_actions {
@@ -6215,7 +6215,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FeatureActivations {
+    impl ::codec::DeserializeValue for FeatureActivations {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FeatureActivations, D::Error> {
@@ -6232,7 +6232,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut input_prepare_schedule_actions: Option<crate::Value<String>> = None;
+                    let mut input_prepare_schedule_actions: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6263,20 +6263,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_depth: Option<crate::Value<u32>>,
+        pub column_depth: Option<::Value<u32>>,
         /// Property [`IncludeFec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html#cfn-medialive-channel-fecoutputsettings-includefec).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_fec: Option<crate::Value<String>>,
+        pub include_fec: Option<::Value<String>>,
         /// Property [`RowLength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html#cfn-medialive-channel-fecoutputsettings-rowlength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub row_length: Option<crate::Value<u32>>,
+        pub row_length: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for FecOutputSettings {
+    impl ::codec::SerializeValue for FecOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref column_depth) = self.column_depth {
@@ -6292,7 +6292,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FecOutputSettings {
+    impl ::codec::DeserializeValue for FecOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FecOutputSettings, D::Error> {
@@ -6309,9 +6309,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column_depth: Option<crate::Value<u32>> = None;
-                    let mut include_fec: Option<crate::Value<String>> = None;
-                    let mut row_length: Option<crate::Value<u32>> = None;
+                    let mut column_depth: Option<::Value<u32>> = None;
+                    let mut include_fec: Option<::Value<String>> = None;
+                    let mut row_length: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6349,20 +6349,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_rendition_sets: Option<crate::Value<String>>,
+        pub audio_rendition_sets: Option<::Value<String>>,
         /// Property [`NielsenId3Behavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fmp4hlssettings.html#cfn-medialive-channel-fmp4hlssettings-nielsenid3behavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_id3_behavior: Option<crate::Value<String>>,
+        pub nielsen_id3_behavior: Option<::Value<String>>,
         /// Property [`TimedMetadataBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fmp4hlssettings.html#cfn-medialive-channel-fmp4hlssettings-timedmetadatabehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_behavior: Option<crate::Value<String>>,
+        pub timed_metadata_behavior: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Fmp4HlsSettings {
+    impl ::codec::SerializeValue for Fmp4HlsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_rendition_sets) = self.audio_rendition_sets {
@@ -6390,7 +6390,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Fmp4HlsSettings {
+    impl ::codec::DeserializeValue for Fmp4HlsSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Fmp4HlsSettings, D::Error> {
@@ -6407,9 +6407,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_rendition_sets: Option<crate::Value<String>> = None;
-                    let mut nielsen_id3_behavior: Option<crate::Value<String>> = None;
-                    let mut timed_metadata_behavior: Option<crate::Value<String>> = None;
+                    let mut audio_rendition_sets: Option<::Value<String>> = None;
+                    let mut nielsen_id3_behavior: Option<::Value<String>> = None;
+                    let mut timed_metadata_behavior: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6450,10 +6450,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frame_capture_s3_settings: Option<crate::Value<FrameCaptureS3Settings>>,
+        pub frame_capture_s3_settings: Option<::Value<FrameCaptureS3Settings>>,
     }
 
-    impl crate::codec::SerializeValue for FrameCaptureCdnSettings {
+    impl ::codec::SerializeValue for FrameCaptureCdnSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref frame_capture_s3_settings) = self.frame_capture_s3_settings {
@@ -6467,7 +6467,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FrameCaptureCdnSettings {
+    impl ::codec::DeserializeValue for FrameCaptureCdnSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FrameCaptureCdnSettings, D::Error> {
@@ -6484,7 +6484,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut frame_capture_s3_settings: Option<crate::Value<FrameCaptureS3Settings>> =
+                    let mut frame_capture_s3_settings: Option<::Value<FrameCaptureS3Settings>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -6516,15 +6516,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: Option<crate::Value<OutputLocationRef>>,
+        pub destination: Option<::Value<OutputLocationRef>>,
         /// Property [`FrameCaptureCdnSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturegroupsettings.html#cfn-medialive-channel-framecapturegroupsettings-framecapturecdnsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frame_capture_cdn_settings: Option<crate::Value<FrameCaptureCdnSettings>>,
+        pub frame_capture_cdn_settings: Option<::Value<FrameCaptureCdnSettings>>,
     }
 
-    impl crate::codec::SerializeValue for FrameCaptureGroupSettings {
+    impl ::codec::SerializeValue for FrameCaptureGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination) = self.destination {
@@ -6541,7 +6541,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FrameCaptureGroupSettings {
+    impl ::codec::DeserializeValue for FrameCaptureGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FrameCaptureGroupSettings, D::Error> {
@@ -6558,8 +6558,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination: Option<crate::Value<OutputLocationRef>> = None;
-                    let mut frame_capture_cdn_settings: Option<crate::Value<FrameCaptureCdnSettings>> =
+                    let mut destination: Option<::Value<OutputLocationRef>> = None;
+                    let mut frame_capture_cdn_settings: Option<::Value<FrameCaptureCdnSettings>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -6592,14 +6592,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct FrameCaptureHlsSettings {}
 
-    impl crate::codec::SerializeValue for FrameCaptureHlsSettings {
+    impl ::codec::SerializeValue for FrameCaptureHlsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for FrameCaptureHlsSettings {
+    impl ::codec::DeserializeValue for FrameCaptureHlsSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FrameCaptureHlsSettings, D::Error> {
@@ -6631,10 +6631,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name_modifier: Option<crate::Value<String>>,
+        pub name_modifier: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for FrameCaptureOutputSettings {
+    impl ::codec::SerializeValue for FrameCaptureOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name_modifier) = self.name_modifier {
@@ -6648,7 +6648,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FrameCaptureOutputSettings {
+    impl ::codec::DeserializeValue for FrameCaptureOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FrameCaptureOutputSettings, D::Error> {
@@ -6665,7 +6665,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name_modifier: Option<crate::Value<String>> = None;
+                    let mut name_modifier: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6695,10 +6695,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub canned_acl: Option<crate::Value<String>>,
+        pub canned_acl: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for FrameCaptureS3Settings {
+    impl ::codec::SerializeValue for FrameCaptureS3Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref canned_acl) = self.canned_acl {
@@ -6708,7 +6708,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FrameCaptureS3Settings {
+    impl ::codec::DeserializeValue for FrameCaptureS3Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FrameCaptureS3Settings, D::Error> {
@@ -6725,7 +6725,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut canned_acl: Option<crate::Value<String>> = None;
+                    let mut canned_acl: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6755,15 +6755,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub capture_interval: Option<crate::Value<u32>>,
+        pub capture_interval: Option<::Value<u32>>,
         /// Property [`CaptureIntervalUnits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html#cfn-medialive-channel-framecapturesettings-captureintervalunits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub capture_interval_units: Option<crate::Value<String>>,
+        pub capture_interval_units: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for FrameCaptureSettings {
+    impl ::codec::SerializeValue for FrameCaptureSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref capture_interval) = self.capture_interval {
@@ -6784,7 +6784,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for FrameCaptureSettings {
+    impl ::codec::DeserializeValue for FrameCaptureSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FrameCaptureSettings, D::Error> {
@@ -6801,8 +6801,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut capture_interval: Option<crate::Value<u32>> = None;
-                    let mut capture_interval_units: Option<crate::Value<String>> = None;
+                    let mut capture_interval: Option<::Value<u32>> = None;
+                    let mut capture_interval_units: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6837,35 +6837,35 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub initial_audio_gain: Option<crate::Value<u32>>,
+        pub initial_audio_gain: Option<::Value<u32>>,
         /// Property [`InputEndAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-inputendaction).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_end_action: Option<crate::Value<String>>,
+        pub input_end_action: Option<::Value<String>>,
         /// Property [`InputLossBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-inputlossbehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_behavior: Option<crate::Value<InputLossBehavior>>,
+        pub input_loss_behavior: Option<::Value<InputLossBehavior>>,
         /// Property [`OutputLockingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-outputlockingmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_locking_mode: Option<crate::Value<String>>,
+        pub output_locking_mode: Option<::Value<String>>,
         /// Property [`OutputTimingSource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-outputtimingsource).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_timing_source: Option<crate::Value<String>>,
+        pub output_timing_source: Option<::Value<String>>,
         /// Property [`SupportLowFramerateInputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-supportlowframerateinputs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub support_low_framerate_inputs: Option<crate::Value<String>>,
+        pub support_low_framerate_inputs: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for GlobalConfiguration {
+    impl ::codec::SerializeValue for GlobalConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref initial_audio_gain) = self.initial_audio_gain {
@@ -6914,7 +6914,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for GlobalConfiguration {
+    impl ::codec::DeserializeValue for GlobalConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GlobalConfiguration, D::Error> {
@@ -6931,12 +6931,12 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut initial_audio_gain: Option<crate::Value<u32>> = None;
-                    let mut input_end_action: Option<crate::Value<String>> = None;
-                    let mut input_loss_behavior: Option<crate::Value<InputLossBehavior>> = None;
-                    let mut output_locking_mode: Option<crate::Value<String>> = None;
-                    let mut output_timing_source: Option<crate::Value<String>> = None;
-                    let mut support_low_framerate_inputs: Option<crate::Value<String>> = None;
+                    let mut initial_audio_gain: Option<::Value<u32>> = None;
+                    let mut input_end_action: Option<::Value<String>> = None;
+                    let mut input_loss_behavior: Option<::Value<InputLossBehavior>> = None;
+                    let mut output_locking_mode: Option<::Value<String>> = None;
+                    let mut output_timing_source: Option<::Value<String>> = None;
+                    let mut support_low_framerate_inputs: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6988,20 +6988,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_space_passthrough_settings: Option<crate::Value<ColorSpacePassthroughSettings>>,
+        pub color_space_passthrough_settings: Option<::Value<ColorSpacePassthroughSettings>>,
         /// Property [`Rec601Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html#cfn-medialive-channel-h264colorspacesettings-rec601settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rec601_settings: Option<crate::Value<Rec601Settings>>,
+        pub rec601_settings: Option<::Value<Rec601Settings>>,
         /// Property [`Rec709Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html#cfn-medialive-channel-h264colorspacesettings-rec709settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rec709_settings: Option<crate::Value<Rec709Settings>>,
+        pub rec709_settings: Option<::Value<Rec709Settings>>,
     }
 
-    impl crate::codec::SerializeValue for H264ColorSpaceSettings {
+    impl ::codec::SerializeValue for H264ColorSpaceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref color_space_passthrough_settings) =
@@ -7031,7 +7031,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for H264ColorSpaceSettings {
+    impl ::codec::DeserializeValue for H264ColorSpaceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<H264ColorSpaceSettings, D::Error> {
@@ -7049,10 +7049,10 @@ pub mod channel {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut color_space_passthrough_settings: Option<
-                        crate::Value<ColorSpacePassthroughSettings>,
+                        ::Value<ColorSpacePassthroughSettings>,
                     > = None;
-                    let mut rec601_settings: Option<crate::Value<Rec601Settings>> = None;
-                    let mut rec709_settings: Option<crate::Value<Rec709Settings>> = None;
+                    let mut rec601_settings: Option<::Value<Rec601Settings>> = None;
+                    let mut rec709_settings: Option<::Value<Rec709Settings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7091,10 +7091,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub temporal_filter_settings: Option<crate::Value<TemporalFilterSettings>>,
+        pub temporal_filter_settings: Option<::Value<TemporalFilterSettings>>,
     }
 
-    impl crate::codec::SerializeValue for H264FilterSettings {
+    impl ::codec::SerializeValue for H264FilterSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref temporal_filter_settings) = self.temporal_filter_settings {
@@ -7108,7 +7108,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for H264FilterSettings {
+    impl ::codec::DeserializeValue for H264FilterSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<H264FilterSettings, D::Error> {
@@ -7125,7 +7125,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut temporal_filter_settings: Option<crate::Value<TemporalFilterSettings>> =
+                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -7157,210 +7157,210 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub adaptive_quantization: Option<crate::Value<String>>,
+        pub adaptive_quantization: Option<::Value<String>>,
         /// Property [`AfdSignaling`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-afdsignaling).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub afd_signaling: Option<crate::Value<String>>,
+        pub afd_signaling: Option<::Value<String>>,
         /// Property [`Bitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-bitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitrate: Option<crate::Value<u32>>,
+        pub bitrate: Option<::Value<u32>>,
         /// Property [`BufFillPct`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-buffillpct).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buf_fill_pct: Option<crate::Value<u32>>,
+        pub buf_fill_pct: Option<::Value<u32>>,
         /// Property [`BufSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-bufsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buf_size: Option<crate::Value<u32>>,
+        pub buf_size: Option<::Value<u32>>,
         /// Property [`ColorMetadata`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-colormetadata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_metadata: Option<crate::Value<String>>,
+        pub color_metadata: Option<::Value<String>>,
         /// Property [`ColorSpaceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-colorspacesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_space_settings: Option<crate::Value<H264ColorSpaceSettings>>,
+        pub color_space_settings: Option<::Value<H264ColorSpaceSettings>>,
         /// Property [`EntropyEncoding`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-entropyencoding).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entropy_encoding: Option<crate::Value<String>>,
+        pub entropy_encoding: Option<::Value<String>>,
         /// Property [`FilterSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-filtersettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_settings: Option<crate::Value<H264FilterSettings>>,
+        pub filter_settings: Option<::Value<H264FilterSettings>>,
         /// Property [`FixedAfd`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-fixedafd).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fixed_afd: Option<crate::Value<String>>,
+        pub fixed_afd: Option<::Value<String>>,
         /// Property [`FlickerAq`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-flickeraq).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub flicker_aq: Option<crate::Value<String>>,
+        pub flicker_aq: Option<::Value<String>>,
         /// Property [`ForceFieldPictures`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-forcefieldpictures).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub force_field_pictures: Option<crate::Value<String>>,
+        pub force_field_pictures: Option<::Value<String>>,
         /// Property [`FramerateControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-frameratecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub framerate_control: Option<crate::Value<String>>,
+        pub framerate_control: Option<::Value<String>>,
         /// Property [`FramerateDenominator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-frameratedenominator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub framerate_denominator: Option<crate::Value<u32>>,
+        pub framerate_denominator: Option<::Value<u32>>,
         /// Property [`FramerateNumerator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-frameratenumerator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub framerate_numerator: Option<crate::Value<u32>>,
+        pub framerate_numerator: Option<::Value<u32>>,
         /// Property [`GopBReference`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-gopbreference).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_b_reference: Option<crate::Value<String>>,
+        pub gop_b_reference: Option<::Value<String>>,
         /// Property [`GopClosedCadence`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-gopclosedcadence).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_closed_cadence: Option<crate::Value<u32>>,
+        pub gop_closed_cadence: Option<::Value<u32>>,
         /// Property [`GopNumBFrames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-gopnumbframes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_num_b_frames: Option<crate::Value<u32>>,
+        pub gop_num_b_frames: Option<::Value<u32>>,
         /// Property [`GopSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-gopsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_size: Option<crate::Value<f64>>,
+        pub gop_size: Option<::Value<f64>>,
         /// Property [`GopSizeUnits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-gopsizeunits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_size_units: Option<crate::Value<String>>,
+        pub gop_size_units: Option<::Value<String>>,
         /// Property [`Level`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-level).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub level: Option<crate::Value<String>>,
+        pub level: Option<::Value<String>>,
         /// Property [`LookAheadRateControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-lookaheadratecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub look_ahead_rate_control: Option<crate::Value<String>>,
+        pub look_ahead_rate_control: Option<::Value<String>>,
         /// Property [`MaxBitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-maxbitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_bitrate: Option<crate::Value<u32>>,
+        pub max_bitrate: Option<::Value<u32>>,
         /// Property [`MinIInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-miniinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_i_interval: Option<crate::Value<u32>>,
+        pub min_i_interval: Option<::Value<u32>>,
         /// Property [`NumRefFrames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-numrefframes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_ref_frames: Option<crate::Value<u32>>,
+        pub num_ref_frames: Option<::Value<u32>>,
         /// Property [`ParControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-parcontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub par_control: Option<crate::Value<String>>,
+        pub par_control: Option<::Value<String>>,
         /// Property [`ParDenominator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-pardenominator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub par_denominator: Option<crate::Value<u32>>,
+        pub par_denominator: Option<::Value<u32>>,
         /// Property [`ParNumerator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-parnumerator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub par_numerator: Option<crate::Value<u32>>,
+        pub par_numerator: Option<::Value<u32>>,
         /// Property [`Profile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-profile).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub profile: Option<crate::Value<String>>,
+        pub profile: Option<::Value<String>>,
         /// Property [`QualityLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-qualitylevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub quality_level: Option<crate::Value<String>>,
+        pub quality_level: Option<::Value<String>>,
         /// Property [`QvbrQualityLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-qvbrqualitylevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub qvbr_quality_level: Option<crate::Value<u32>>,
+        pub qvbr_quality_level: Option<::Value<u32>>,
         /// Property [`RateControlMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-ratecontrolmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rate_control_mode: Option<crate::Value<String>>,
+        pub rate_control_mode: Option<::Value<String>>,
         /// Property [`ScanType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-scantype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scan_type: Option<crate::Value<String>>,
+        pub scan_type: Option<::Value<String>>,
         /// Property [`SceneChangeDetect`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-scenechangedetect).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scene_change_detect: Option<crate::Value<String>>,
+        pub scene_change_detect: Option<::Value<String>>,
         /// Property [`Slices`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-slices).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slices: Option<crate::Value<u32>>,
+        pub slices: Option<::Value<u32>>,
         /// Property [`Softness`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-softness).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub softness: Option<crate::Value<u32>>,
+        pub softness: Option<::Value<u32>>,
         /// Property [`SpatialAq`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-spatialaq).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub spatial_aq: Option<crate::Value<String>>,
+        pub spatial_aq: Option<::Value<String>>,
         /// Property [`SubgopLength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-subgoplength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subgop_length: Option<crate::Value<String>>,
+        pub subgop_length: Option<::Value<String>>,
         /// Property [`Syntax`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-syntax).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub syntax: Option<crate::Value<String>>,
+        pub syntax: Option<::Value<String>>,
         /// Property [`TemporalAq`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-temporalaq).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub temporal_aq: Option<crate::Value<String>>,
+        pub temporal_aq: Option<::Value<String>>,
         /// Property [`TimecodeInsertion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-timecodeinsertion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timecode_insertion: Option<crate::Value<String>>,
+        pub timecode_insertion: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for H264Settings {
+    impl ::codec::SerializeValue for H264Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref adaptive_quantization) = self.adaptive_quantization {
@@ -7590,7 +7590,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for H264Settings {
+    impl ::codec::DeserializeValue for H264Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<H264Settings, D::Error> {
             struct Visitor;
 
@@ -7605,47 +7605,47 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut adaptive_quantization: Option<crate::Value<String>> = None;
-                    let mut afd_signaling: Option<crate::Value<String>> = None;
-                    let mut bitrate: Option<crate::Value<u32>> = None;
-                    let mut buf_fill_pct: Option<crate::Value<u32>> = None;
-                    let mut buf_size: Option<crate::Value<u32>> = None;
-                    let mut color_metadata: Option<crate::Value<String>> = None;
-                    let mut color_space_settings: Option<crate::Value<H264ColorSpaceSettings>> = None;
-                    let mut entropy_encoding: Option<crate::Value<String>> = None;
-                    let mut filter_settings: Option<crate::Value<H264FilterSettings>> = None;
-                    let mut fixed_afd: Option<crate::Value<String>> = None;
-                    let mut flicker_aq: Option<crate::Value<String>> = None;
-                    let mut force_field_pictures: Option<crate::Value<String>> = None;
-                    let mut framerate_control: Option<crate::Value<String>> = None;
-                    let mut framerate_denominator: Option<crate::Value<u32>> = None;
-                    let mut framerate_numerator: Option<crate::Value<u32>> = None;
-                    let mut gop_b_reference: Option<crate::Value<String>> = None;
-                    let mut gop_closed_cadence: Option<crate::Value<u32>> = None;
-                    let mut gop_num_b_frames: Option<crate::Value<u32>> = None;
-                    let mut gop_size: Option<crate::Value<f64>> = None;
-                    let mut gop_size_units: Option<crate::Value<String>> = None;
-                    let mut level: Option<crate::Value<String>> = None;
-                    let mut look_ahead_rate_control: Option<crate::Value<String>> = None;
-                    let mut max_bitrate: Option<crate::Value<u32>> = None;
-                    let mut min_i_interval: Option<crate::Value<u32>> = None;
-                    let mut num_ref_frames: Option<crate::Value<u32>> = None;
-                    let mut par_control: Option<crate::Value<String>> = None;
-                    let mut par_denominator: Option<crate::Value<u32>> = None;
-                    let mut par_numerator: Option<crate::Value<u32>> = None;
-                    let mut profile: Option<crate::Value<String>> = None;
-                    let mut quality_level: Option<crate::Value<String>> = None;
-                    let mut qvbr_quality_level: Option<crate::Value<u32>> = None;
-                    let mut rate_control_mode: Option<crate::Value<String>> = None;
-                    let mut scan_type: Option<crate::Value<String>> = None;
-                    let mut scene_change_detect: Option<crate::Value<String>> = None;
-                    let mut slices: Option<crate::Value<u32>> = None;
-                    let mut softness: Option<crate::Value<u32>> = None;
-                    let mut spatial_aq: Option<crate::Value<String>> = None;
-                    let mut subgop_length: Option<crate::Value<String>> = None;
-                    let mut syntax: Option<crate::Value<String>> = None;
-                    let mut temporal_aq: Option<crate::Value<String>> = None;
-                    let mut timecode_insertion: Option<crate::Value<String>> = None;
+                    let mut adaptive_quantization: Option<::Value<String>> = None;
+                    let mut afd_signaling: Option<::Value<String>> = None;
+                    let mut bitrate: Option<::Value<u32>> = None;
+                    let mut buf_fill_pct: Option<::Value<u32>> = None;
+                    let mut buf_size: Option<::Value<u32>> = None;
+                    let mut color_metadata: Option<::Value<String>> = None;
+                    let mut color_space_settings: Option<::Value<H264ColorSpaceSettings>> = None;
+                    let mut entropy_encoding: Option<::Value<String>> = None;
+                    let mut filter_settings: Option<::Value<H264FilterSettings>> = None;
+                    let mut fixed_afd: Option<::Value<String>> = None;
+                    let mut flicker_aq: Option<::Value<String>> = None;
+                    let mut force_field_pictures: Option<::Value<String>> = None;
+                    let mut framerate_control: Option<::Value<String>> = None;
+                    let mut framerate_denominator: Option<::Value<u32>> = None;
+                    let mut framerate_numerator: Option<::Value<u32>> = None;
+                    let mut gop_b_reference: Option<::Value<String>> = None;
+                    let mut gop_closed_cadence: Option<::Value<u32>> = None;
+                    let mut gop_num_b_frames: Option<::Value<u32>> = None;
+                    let mut gop_size: Option<::Value<f64>> = None;
+                    let mut gop_size_units: Option<::Value<String>> = None;
+                    let mut level: Option<::Value<String>> = None;
+                    let mut look_ahead_rate_control: Option<::Value<String>> = None;
+                    let mut max_bitrate: Option<::Value<u32>> = None;
+                    let mut min_i_interval: Option<::Value<u32>> = None;
+                    let mut num_ref_frames: Option<::Value<u32>> = None;
+                    let mut par_control: Option<::Value<String>> = None;
+                    let mut par_denominator: Option<::Value<u32>> = None;
+                    let mut par_numerator: Option<::Value<u32>> = None;
+                    let mut profile: Option<::Value<String>> = None;
+                    let mut quality_level: Option<::Value<String>> = None;
+                    let mut qvbr_quality_level: Option<::Value<u32>> = None;
+                    let mut rate_control_mode: Option<::Value<String>> = None;
+                    let mut scan_type: Option<::Value<String>> = None;
+                    let mut scene_change_detect: Option<::Value<String>> = None;
+                    let mut slices: Option<::Value<u32>> = None;
+                    let mut softness: Option<::Value<u32>> = None;
+                    let mut spatial_aq: Option<::Value<String>> = None;
+                    let mut subgop_length: Option<::Value<String>> = None;
+                    let mut syntax: Option<::Value<String>> = None;
+                    let mut temporal_aq: Option<::Value<String>> = None;
+                    let mut timecode_insertion: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7840,25 +7840,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_space_passthrough_settings: Option<crate::Value<ColorSpacePassthroughSettings>>,
+        pub color_space_passthrough_settings: Option<::Value<ColorSpacePassthroughSettings>>,
         /// Property [`Hdr10Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265colorspacesettings.html#cfn-medialive-channel-h265colorspacesettings-hdr10settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hdr10_settings: Option<crate::Value<Hdr10Settings>>,
+        pub hdr10_settings: Option<::Value<Hdr10Settings>>,
         /// Property [`Rec601Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265colorspacesettings.html#cfn-medialive-channel-h265colorspacesettings-rec601settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rec601_settings: Option<crate::Value<Rec601Settings>>,
+        pub rec601_settings: Option<::Value<Rec601Settings>>,
         /// Property [`Rec709Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265colorspacesettings.html#cfn-medialive-channel-h265colorspacesettings-rec709settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rec709_settings: Option<crate::Value<Rec709Settings>>,
+        pub rec709_settings: Option<::Value<Rec709Settings>>,
     }
 
-    impl crate::codec::SerializeValue for H265ColorSpaceSettings {
+    impl ::codec::SerializeValue for H265ColorSpaceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref color_space_passthrough_settings) =
@@ -7895,7 +7895,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for H265ColorSpaceSettings {
+    impl ::codec::DeserializeValue for H265ColorSpaceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<H265ColorSpaceSettings, D::Error> {
@@ -7913,11 +7913,11 @@ pub mod channel {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut color_space_passthrough_settings: Option<
-                        crate::Value<ColorSpacePassthroughSettings>,
+                        ::Value<ColorSpacePassthroughSettings>,
                     > = None;
-                    let mut hdr10_settings: Option<crate::Value<Hdr10Settings>> = None;
-                    let mut rec601_settings: Option<crate::Value<Rec601Settings>> = None;
-                    let mut rec709_settings: Option<crate::Value<Rec709Settings>> = None;
+                    let mut hdr10_settings: Option<::Value<Hdr10Settings>> = None;
+                    let mut rec601_settings: Option<::Value<Rec601Settings>> = None;
+                    let mut rec709_settings: Option<::Value<Rec709Settings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7960,10 +7960,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub temporal_filter_settings: Option<crate::Value<TemporalFilterSettings>>,
+        pub temporal_filter_settings: Option<::Value<TemporalFilterSettings>>,
     }
 
-    impl crate::codec::SerializeValue for H265FilterSettings {
+    impl ::codec::SerializeValue for H265FilterSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref temporal_filter_settings) = self.temporal_filter_settings {
@@ -7977,7 +7977,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for H265FilterSettings {
+    impl ::codec::DeserializeValue for H265FilterSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<H265FilterSettings, D::Error> {
@@ -7994,7 +7994,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut temporal_filter_settings: Option<crate::Value<TemporalFilterSettings>> =
+                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -8026,150 +8026,150 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub adaptive_quantization: Option<crate::Value<String>>,
+        pub adaptive_quantization: Option<::Value<String>>,
         /// Property [`AfdSignaling`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-afdsignaling).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub afd_signaling: Option<crate::Value<String>>,
+        pub afd_signaling: Option<::Value<String>>,
         /// Property [`AlternativeTransferFunction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-alternativetransferfunction).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alternative_transfer_function: Option<crate::Value<String>>,
+        pub alternative_transfer_function: Option<::Value<String>>,
         /// Property [`Bitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-bitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitrate: Option<crate::Value<u32>>,
+        pub bitrate: Option<::Value<u32>>,
         /// Property [`BufSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-bufsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buf_size: Option<crate::Value<u32>>,
+        pub buf_size: Option<::Value<u32>>,
         /// Property [`ColorMetadata`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-colormetadata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_metadata: Option<crate::Value<String>>,
+        pub color_metadata: Option<::Value<String>>,
         /// Property [`ColorSpaceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-colorspacesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_space_settings: Option<crate::Value<H265ColorSpaceSettings>>,
+        pub color_space_settings: Option<::Value<H265ColorSpaceSettings>>,
         /// Property [`FilterSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-filtersettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_settings: Option<crate::Value<H265FilterSettings>>,
+        pub filter_settings: Option<::Value<H265FilterSettings>>,
         /// Property [`FixedAfd`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-fixedafd).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fixed_afd: Option<crate::Value<String>>,
+        pub fixed_afd: Option<::Value<String>>,
         /// Property [`FlickerAq`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-flickeraq).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub flicker_aq: Option<crate::Value<String>>,
+        pub flicker_aq: Option<::Value<String>>,
         /// Property [`FramerateDenominator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-frameratedenominator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub framerate_denominator: Option<crate::Value<u32>>,
+        pub framerate_denominator: Option<::Value<u32>>,
         /// Property [`FramerateNumerator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-frameratenumerator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub framerate_numerator: Option<crate::Value<u32>>,
+        pub framerate_numerator: Option<::Value<u32>>,
         /// Property [`GopClosedCadence`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-gopclosedcadence).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_closed_cadence: Option<crate::Value<u32>>,
+        pub gop_closed_cadence: Option<::Value<u32>>,
         /// Property [`GopSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-gopsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_size: Option<crate::Value<f64>>,
+        pub gop_size: Option<::Value<f64>>,
         /// Property [`GopSizeUnits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-gopsizeunits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_size_units: Option<crate::Value<String>>,
+        pub gop_size_units: Option<::Value<String>>,
         /// Property [`Level`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-level).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub level: Option<crate::Value<String>>,
+        pub level: Option<::Value<String>>,
         /// Property [`LookAheadRateControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-lookaheadratecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub look_ahead_rate_control: Option<crate::Value<String>>,
+        pub look_ahead_rate_control: Option<::Value<String>>,
         /// Property [`MaxBitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-maxbitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_bitrate: Option<crate::Value<u32>>,
+        pub max_bitrate: Option<::Value<u32>>,
         /// Property [`MinIInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-miniinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_i_interval: Option<crate::Value<u32>>,
+        pub min_i_interval: Option<::Value<u32>>,
         /// Property [`ParDenominator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-pardenominator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub par_denominator: Option<crate::Value<u32>>,
+        pub par_denominator: Option<::Value<u32>>,
         /// Property [`ParNumerator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-parnumerator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub par_numerator: Option<crate::Value<u32>>,
+        pub par_numerator: Option<::Value<u32>>,
         /// Property [`Profile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-profile).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub profile: Option<crate::Value<String>>,
+        pub profile: Option<::Value<String>>,
         /// Property [`QvbrQualityLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-qvbrqualitylevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub qvbr_quality_level: Option<crate::Value<u32>>,
+        pub qvbr_quality_level: Option<::Value<u32>>,
         /// Property [`RateControlMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-ratecontrolmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rate_control_mode: Option<crate::Value<String>>,
+        pub rate_control_mode: Option<::Value<String>>,
         /// Property [`ScanType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-scantype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scan_type: Option<crate::Value<String>>,
+        pub scan_type: Option<::Value<String>>,
         /// Property [`SceneChangeDetect`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-scenechangedetect).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scene_change_detect: Option<crate::Value<String>>,
+        pub scene_change_detect: Option<::Value<String>>,
         /// Property [`Slices`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-slices).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub slices: Option<crate::Value<u32>>,
+        pub slices: Option<::Value<u32>>,
         /// Property [`Tier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-tier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tier: Option<crate::Value<String>>,
+        pub tier: Option<::Value<String>>,
         /// Property [`TimecodeInsertion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-timecodeinsertion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timecode_insertion: Option<crate::Value<String>>,
+        pub timecode_insertion: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for H265Settings {
+    impl ::codec::SerializeValue for H265Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref adaptive_quantization) = self.adaptive_quantization {
@@ -8335,7 +8335,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for H265Settings {
+    impl ::codec::DeserializeValue for H265Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<H265Settings, D::Error> {
             struct Visitor;
 
@@ -8350,35 +8350,35 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut adaptive_quantization: Option<crate::Value<String>> = None;
-                    let mut afd_signaling: Option<crate::Value<String>> = None;
-                    let mut alternative_transfer_function: Option<crate::Value<String>> = None;
-                    let mut bitrate: Option<crate::Value<u32>> = None;
-                    let mut buf_size: Option<crate::Value<u32>> = None;
-                    let mut color_metadata: Option<crate::Value<String>> = None;
-                    let mut color_space_settings: Option<crate::Value<H265ColorSpaceSettings>> = None;
-                    let mut filter_settings: Option<crate::Value<H265FilterSettings>> = None;
-                    let mut fixed_afd: Option<crate::Value<String>> = None;
-                    let mut flicker_aq: Option<crate::Value<String>> = None;
-                    let mut framerate_denominator: Option<crate::Value<u32>> = None;
-                    let mut framerate_numerator: Option<crate::Value<u32>> = None;
-                    let mut gop_closed_cadence: Option<crate::Value<u32>> = None;
-                    let mut gop_size: Option<crate::Value<f64>> = None;
-                    let mut gop_size_units: Option<crate::Value<String>> = None;
-                    let mut level: Option<crate::Value<String>> = None;
-                    let mut look_ahead_rate_control: Option<crate::Value<String>> = None;
-                    let mut max_bitrate: Option<crate::Value<u32>> = None;
-                    let mut min_i_interval: Option<crate::Value<u32>> = None;
-                    let mut par_denominator: Option<crate::Value<u32>> = None;
-                    let mut par_numerator: Option<crate::Value<u32>> = None;
-                    let mut profile: Option<crate::Value<String>> = None;
-                    let mut qvbr_quality_level: Option<crate::Value<u32>> = None;
-                    let mut rate_control_mode: Option<crate::Value<String>> = None;
-                    let mut scan_type: Option<crate::Value<String>> = None;
-                    let mut scene_change_detect: Option<crate::Value<String>> = None;
-                    let mut slices: Option<crate::Value<u32>> = None;
-                    let mut tier: Option<crate::Value<String>> = None;
-                    let mut timecode_insertion: Option<crate::Value<String>> = None;
+                    let mut adaptive_quantization: Option<::Value<String>> = None;
+                    let mut afd_signaling: Option<::Value<String>> = None;
+                    let mut alternative_transfer_function: Option<::Value<String>> = None;
+                    let mut bitrate: Option<::Value<u32>> = None;
+                    let mut buf_size: Option<::Value<u32>> = None;
+                    let mut color_metadata: Option<::Value<String>> = None;
+                    let mut color_space_settings: Option<::Value<H265ColorSpaceSettings>> = None;
+                    let mut filter_settings: Option<::Value<H265FilterSettings>> = None;
+                    let mut fixed_afd: Option<::Value<String>> = None;
+                    let mut flicker_aq: Option<::Value<String>> = None;
+                    let mut framerate_denominator: Option<::Value<u32>> = None;
+                    let mut framerate_numerator: Option<::Value<u32>> = None;
+                    let mut gop_closed_cadence: Option<::Value<u32>> = None;
+                    let mut gop_size: Option<::Value<f64>> = None;
+                    let mut gop_size_units: Option<::Value<String>> = None;
+                    let mut level: Option<::Value<String>> = None;
+                    let mut look_ahead_rate_control: Option<::Value<String>> = None;
+                    let mut max_bitrate: Option<::Value<u32>> = None;
+                    let mut min_i_interval: Option<::Value<u32>> = None;
+                    let mut par_denominator: Option<::Value<u32>> = None;
+                    let mut par_numerator: Option<::Value<u32>> = None;
+                    let mut profile: Option<::Value<String>> = None;
+                    let mut qvbr_quality_level: Option<::Value<u32>> = None;
+                    let mut rate_control_mode: Option<::Value<String>> = None;
+                    let mut scan_type: Option<::Value<String>> = None;
+                    let mut scene_change_detect: Option<::Value<String>> = None;
+                    let mut slices: Option<::Value<u32>> = None;
+                    let mut tier: Option<::Value<String>> = None;
+                    let mut timecode_insertion: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8525,15 +8525,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_cll: Option<crate::Value<u32>>,
+        pub max_cll: Option<::Value<u32>>,
         /// Property [`MaxFall`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hdr10settings.html#cfn-medialive-channel-hdr10settings-maxfall).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_fall: Option<crate::Value<u32>>,
+        pub max_fall: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for Hdr10Settings {
+    impl ::codec::SerializeValue for Hdr10Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref max_cll) = self.max_cll {
@@ -8546,7 +8546,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Hdr10Settings {
+    impl ::codec::DeserializeValue for Hdr10Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Hdr10Settings, D::Error> {
@@ -8563,8 +8563,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_cll: Option<crate::Value<u32>> = None;
-                    let mut max_fall: Option<crate::Value<u32>> = None;
+                    let mut max_cll: Option<::Value<u32>> = None;
+                    let mut max_fall: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8598,40 +8598,40 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_retry_interval: Option<crate::Value<u32>>,
+        pub connection_retry_interval: Option<::Value<u32>>,
         /// Property [`FilecacheDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-filecacheduration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filecache_duration: Option<crate::Value<u32>>,
+        pub filecache_duration: Option<::Value<u32>>,
         /// Property [`HttpTransferMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-httptransfermode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_transfer_mode: Option<crate::Value<String>>,
+        pub http_transfer_mode: Option<::Value<String>>,
         /// Property [`NumRetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-numretries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_retries: Option<crate::Value<u32>>,
+        pub num_retries: Option<::Value<u32>>,
         /// Property [`RestartDelay`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-restartdelay).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub restart_delay: Option<crate::Value<u32>>,
+        pub restart_delay: Option<::Value<u32>>,
         /// Property [`Salt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-salt).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub salt: Option<crate::Value<String>>,
+        pub salt: Option<::Value<String>>,
         /// Property [`Token`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-token).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub token: Option<crate::Value<String>>,
+        pub token: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for HlsAkamaiSettings {
+    impl ::codec::SerializeValue for HlsAkamaiSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
@@ -8675,7 +8675,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsAkamaiSettings {
+    impl ::codec::DeserializeValue for HlsAkamaiSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsAkamaiSettings, D::Error> {
@@ -8692,13 +8692,13 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut connection_retry_interval: Option<crate::Value<u32>> = None;
-                    let mut filecache_duration: Option<crate::Value<u32>> = None;
-                    let mut http_transfer_mode: Option<crate::Value<String>> = None;
-                    let mut num_retries: Option<crate::Value<u32>> = None;
-                    let mut restart_delay: Option<crate::Value<u32>> = None;
-                    let mut salt: Option<crate::Value<String>> = None;
-                    let mut token: Option<crate::Value<String>> = None;
+                    let mut connection_retry_interval: Option<::Value<u32>> = None;
+                    let mut filecache_duration: Option<::Value<u32>> = None;
+                    let mut http_transfer_mode: Option<::Value<String>> = None;
+                    let mut num_retries: Option<::Value<u32>> = None;
+                    let mut restart_delay: Option<::Value<u32>> = None;
+                    let mut salt: Option<::Value<String>> = None;
+                    let mut token: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8753,25 +8753,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_retry_interval: Option<crate::Value<u32>>,
+        pub connection_retry_interval: Option<::Value<u32>>,
         /// Property [`FilecacheDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html#cfn-medialive-channel-hlsbasicputsettings-filecacheduration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filecache_duration: Option<crate::Value<u32>>,
+        pub filecache_duration: Option<::Value<u32>>,
         /// Property [`NumRetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html#cfn-medialive-channel-hlsbasicputsettings-numretries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_retries: Option<crate::Value<u32>>,
+        pub num_retries: Option<::Value<u32>>,
         /// Property [`RestartDelay`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html#cfn-medialive-channel-hlsbasicputsettings-restartdelay).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub restart_delay: Option<crate::Value<u32>>,
+        pub restart_delay: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for HlsBasicPutSettings {
+    impl ::codec::SerializeValue for HlsBasicPutSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
@@ -8802,7 +8802,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsBasicPutSettings {
+    impl ::codec::DeserializeValue for HlsBasicPutSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsBasicPutSettings, D::Error> {
@@ -8819,10 +8819,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut connection_retry_interval: Option<crate::Value<u32>> = None;
-                    let mut filecache_duration: Option<crate::Value<u32>> = None;
-                    let mut num_retries: Option<crate::Value<u32>> = None;
-                    let mut restart_delay: Option<crate::Value<u32>> = None;
+                    let mut connection_retry_interval: Option<::Value<u32>> = None;
+                    let mut filecache_duration: Option<::Value<u32>> = None;
+                    let mut num_retries: Option<::Value<u32>> = None;
+                    let mut restart_delay: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8865,30 +8865,30 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_akamai_settings: Option<crate::Value<HlsAkamaiSettings>>,
+        pub hls_akamai_settings: Option<::Value<HlsAkamaiSettings>>,
         /// Property [`HlsBasicPutSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlsbasicputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_basic_put_settings: Option<crate::Value<HlsBasicPutSettings>>,
+        pub hls_basic_put_settings: Option<::Value<HlsBasicPutSettings>>,
         /// Property [`HlsMediaStoreSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlsmediastoresettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_media_store_settings: Option<crate::Value<HlsMediaStoreSettings>>,
+        pub hls_media_store_settings: Option<::Value<HlsMediaStoreSettings>>,
         /// Property [`HlsS3Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlss3settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_s3_settings: Option<crate::Value<HlsS3Settings>>,
+        pub hls_s3_settings: Option<::Value<HlsS3Settings>>,
         /// Property [`HlsWebdavSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlswebdavsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_webdav_settings: Option<crate::Value<HlsWebdavSettings>>,
+        pub hls_webdav_settings: Option<::Value<HlsWebdavSettings>>,
     }
 
-    impl crate::codec::SerializeValue for HlsCdnSettings {
+    impl ::codec::SerializeValue for HlsCdnSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref hls_akamai_settings) = self.hls_akamai_settings {
@@ -8930,7 +8930,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsCdnSettings {
+    impl ::codec::DeserializeValue for HlsCdnSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsCdnSettings, D::Error> {
@@ -8947,11 +8947,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut hls_akamai_settings: Option<crate::Value<HlsAkamaiSettings>> = None;
-                    let mut hls_basic_put_settings: Option<crate::Value<HlsBasicPutSettings>> = None;
-                    let mut hls_media_store_settings: Option<crate::Value<HlsMediaStoreSettings>> = None;
-                    let mut hls_s3_settings: Option<crate::Value<HlsS3Settings>> = None;
-                    let mut hls_webdav_settings: Option<crate::Value<HlsWebdavSettings>> = None;
+                    let mut hls_akamai_settings: Option<::Value<HlsAkamaiSettings>> = None;
+                    let mut hls_basic_put_settings: Option<::Value<HlsBasicPutSettings>> = None;
+                    let mut hls_media_store_settings: Option<::Value<HlsMediaStoreSettings>> = None;
+                    let mut hls_s3_settings: Option<::Value<HlsS3Settings>> = None;
+                    let mut hls_webdav_settings: Option<::Value<HlsWebdavSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8999,220 +8999,220 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ad_markers: Option<crate::ValueList<String>>,
+        pub ad_markers: Option<::ValueList<String>>,
         /// Property [`BaseUrlContent`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlcontent).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub base_url_content: Option<crate::Value<String>>,
+        pub base_url_content: Option<::Value<String>>,
         /// Property [`BaseUrlContent1`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlcontent1).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub base_url_content1: Option<crate::Value<String>>,
+        pub base_url_content1: Option<::Value<String>>,
         /// Property [`BaseUrlManifest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlmanifest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub base_url_manifest: Option<crate::Value<String>>,
+        pub base_url_manifest: Option<::Value<String>>,
         /// Property [`BaseUrlManifest1`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlmanifest1).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub base_url_manifest1: Option<crate::Value<String>>,
+        pub base_url_manifest1: Option<::Value<String>>,
         /// Property [`CaptionLanguageMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-captionlanguagemappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caption_language_mappings: Option<crate::ValueList<CaptionLanguageMapping>>,
+        pub caption_language_mappings: Option<::ValueList<CaptionLanguageMapping>>,
         /// Property [`CaptionLanguageSetting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-captionlanguagesetting).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caption_language_setting: Option<crate::Value<String>>,
+        pub caption_language_setting: Option<::Value<String>>,
         /// Property [`ClientCache`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-clientcache).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_cache: Option<crate::Value<String>>,
+        pub client_cache: Option<::Value<String>>,
         /// Property [`CodecSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-codecspecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub codec_specification: Option<crate::Value<String>>,
+        pub codec_specification: Option<::Value<String>>,
         /// Property [`ConstantIv`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-constantiv).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub constant_iv: Option<crate::Value<String>>,
+        pub constant_iv: Option<::Value<String>>,
         /// Property [`Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-destination).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: Option<crate::Value<OutputLocationRef>>,
+        pub destination: Option<::Value<OutputLocationRef>>,
         /// Property [`DirectoryStructure`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-directorystructure).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub directory_structure: Option<crate::Value<String>>,
+        pub directory_structure: Option<::Value<String>>,
         /// Property [`DiscontinuityTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-discontinuitytags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub discontinuity_tags: Option<crate::Value<String>>,
+        pub discontinuity_tags: Option<::Value<String>>,
         /// Property [`EncryptionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-encryptiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_type: Option<crate::Value<String>>,
+        pub encryption_type: Option<::Value<String>>,
         /// Property [`HlsCdnSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-hlscdnsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_cdn_settings: Option<crate::Value<HlsCdnSettings>>,
+        pub hls_cdn_settings: Option<::Value<HlsCdnSettings>>,
         /// Property [`HlsId3SegmentTagging`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-hlsid3segmenttagging).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_id3_segment_tagging: Option<crate::Value<String>>,
+        pub hls_id3_segment_tagging: Option<::Value<String>>,
         /// Property [`IFrameOnlyPlaylists`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-iframeonlyplaylists).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub i_frame_only_playlists: Option<crate::Value<String>>,
+        pub i_frame_only_playlists: Option<::Value<String>>,
         /// Property [`IncompleteSegmentBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-incompletesegmentbehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub incomplete_segment_behavior: Option<crate::Value<String>>,
+        pub incomplete_segment_behavior: Option<::Value<String>>,
         /// Property [`IndexNSegments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-indexnsegments).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_n_segments: Option<crate::Value<u32>>,
+        pub index_n_segments: Option<::Value<u32>>,
         /// Property [`InputLossAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-inputlossaction).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_action: Option<crate::Value<String>>,
+        pub input_loss_action: Option<::Value<String>>,
         /// Property [`IvInManifest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-ivinmanifest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub iv_in_manifest: Option<crate::Value<String>>,
+        pub iv_in_manifest: Option<::Value<String>>,
         /// Property [`IvSource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-ivsource).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub iv_source: Option<crate::Value<String>>,
+        pub iv_source: Option<::Value<String>>,
         /// Property [`KeepSegments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-keepsegments).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub keep_segments: Option<crate::Value<u32>>,
+        pub keep_segments: Option<::Value<u32>>,
         /// Property [`KeyFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-keyformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_format: Option<crate::Value<String>>,
+        pub key_format: Option<::Value<String>>,
         /// Property [`KeyFormatVersions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-keyformatversions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_format_versions: Option<crate::Value<String>>,
+        pub key_format_versions: Option<::Value<String>>,
         /// Property [`KeyProviderSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-keyprovidersettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_provider_settings: Option<crate::Value<KeyProviderSettings>>,
+        pub key_provider_settings: Option<::Value<KeyProviderSettings>>,
         /// Property [`ManifestCompression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-manifestcompression).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub manifest_compression: Option<crate::Value<String>>,
+        pub manifest_compression: Option<::Value<String>>,
         /// Property [`ManifestDurationFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-manifestdurationformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub manifest_duration_format: Option<crate::Value<String>>,
+        pub manifest_duration_format: Option<::Value<String>>,
         /// Property [`MinSegmentLength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-minsegmentlength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_segment_length: Option<crate::Value<u32>>,
+        pub min_segment_length: Option<::Value<u32>>,
         /// Property [`Mode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-mode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mode: Option<crate::Value<String>>,
+        pub mode: Option<::Value<String>>,
         /// Property [`OutputSelection`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-outputselection).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_selection: Option<crate::Value<String>>,
+        pub output_selection: Option<::Value<String>>,
         /// Property [`ProgramDateTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub program_date_time: Option<crate::Value<String>>,
+        pub program_date_time: Option<::Value<String>>,
         /// Property [`ProgramDateTimeClock`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetimeclock).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub program_date_time_clock: Option<crate::Value<String>>,
+        pub program_date_time_clock: Option<::Value<String>>,
         /// Property [`ProgramDateTimePeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetimeperiod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub program_date_time_period: Option<crate::Value<u32>>,
+        pub program_date_time_period: Option<::Value<u32>>,
         /// Property [`RedundantManifest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-redundantmanifest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub redundant_manifest: Option<crate::Value<String>>,
+        pub redundant_manifest: Option<::Value<String>>,
         /// Property [`SegmentLength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-segmentlength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segment_length: Option<crate::Value<u32>>,
+        pub segment_length: Option<::Value<u32>>,
         /// Property [`SegmentationMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-segmentationmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segmentation_mode: Option<crate::Value<String>>,
+        pub segmentation_mode: Option<::Value<String>>,
         /// Property [`SegmentsPerSubdirectory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-segmentspersubdirectory).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segments_per_subdirectory: Option<crate::Value<u32>>,
+        pub segments_per_subdirectory: Option<::Value<u32>>,
         /// Property [`StreamInfResolution`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-streaminfresolution).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_inf_resolution: Option<crate::Value<String>>,
+        pub stream_inf_resolution: Option<::Value<String>>,
         /// Property [`TimedMetadataId3Frame`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-timedmetadataid3frame).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_id3_frame: Option<crate::Value<String>>,
+        pub timed_metadata_id3_frame: Option<::Value<String>>,
         /// Property [`TimedMetadataId3Period`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-timedmetadataid3period).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_id3_period: Option<crate::Value<u32>>,
+        pub timed_metadata_id3_period: Option<::Value<u32>>,
         /// Property [`TimestampDeltaMilliseconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-timestampdeltamilliseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timestamp_delta_milliseconds: Option<crate::Value<u32>>,
+        pub timestamp_delta_milliseconds: Option<::Value<u32>>,
         /// Property [`TsFileMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-tsfilemode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ts_file_mode: Option<crate::Value<String>>,
+        pub ts_file_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for HlsGroupSettings {
+    impl ::codec::SerializeValue for HlsGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_markers) = self.ad_markers {
@@ -9488,7 +9488,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsGroupSettings {
+    impl ::codec::DeserializeValue for HlsGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsGroupSettings, D::Error> {
@@ -9505,50 +9505,50 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ad_markers: Option<crate::ValueList<String>> = None;
-                    let mut base_url_content: Option<crate::Value<String>> = None;
-                    let mut base_url_content1: Option<crate::Value<String>> = None;
-                    let mut base_url_manifest: Option<crate::Value<String>> = None;
-                    let mut base_url_manifest1: Option<crate::Value<String>> = None;
-                    let mut caption_language_mappings: Option<crate::ValueList<CaptionLanguageMapping>> =
+                    let mut ad_markers: Option<::ValueList<String>> = None;
+                    let mut base_url_content: Option<::Value<String>> = None;
+                    let mut base_url_content1: Option<::Value<String>> = None;
+                    let mut base_url_manifest: Option<::Value<String>> = None;
+                    let mut base_url_manifest1: Option<::Value<String>> = None;
+                    let mut caption_language_mappings: Option<::ValueList<CaptionLanguageMapping>> =
                         None;
-                    let mut caption_language_setting: Option<crate::Value<String>> = None;
-                    let mut client_cache: Option<crate::Value<String>> = None;
-                    let mut codec_specification: Option<crate::Value<String>> = None;
-                    let mut constant_iv: Option<crate::Value<String>> = None;
-                    let mut destination: Option<crate::Value<OutputLocationRef>> = None;
-                    let mut directory_structure: Option<crate::Value<String>> = None;
-                    let mut discontinuity_tags: Option<crate::Value<String>> = None;
-                    let mut encryption_type: Option<crate::Value<String>> = None;
-                    let mut hls_cdn_settings: Option<crate::Value<HlsCdnSettings>> = None;
-                    let mut hls_id3_segment_tagging: Option<crate::Value<String>> = None;
-                    let mut i_frame_only_playlists: Option<crate::Value<String>> = None;
-                    let mut incomplete_segment_behavior: Option<crate::Value<String>> = None;
-                    let mut index_n_segments: Option<crate::Value<u32>> = None;
-                    let mut input_loss_action: Option<crate::Value<String>> = None;
-                    let mut iv_in_manifest: Option<crate::Value<String>> = None;
-                    let mut iv_source: Option<crate::Value<String>> = None;
-                    let mut keep_segments: Option<crate::Value<u32>> = None;
-                    let mut key_format: Option<crate::Value<String>> = None;
-                    let mut key_format_versions: Option<crate::Value<String>> = None;
-                    let mut key_provider_settings: Option<crate::Value<KeyProviderSettings>> = None;
-                    let mut manifest_compression: Option<crate::Value<String>> = None;
-                    let mut manifest_duration_format: Option<crate::Value<String>> = None;
-                    let mut min_segment_length: Option<crate::Value<u32>> = None;
-                    let mut mode: Option<crate::Value<String>> = None;
-                    let mut output_selection: Option<crate::Value<String>> = None;
-                    let mut program_date_time: Option<crate::Value<String>> = None;
-                    let mut program_date_time_clock: Option<crate::Value<String>> = None;
-                    let mut program_date_time_period: Option<crate::Value<u32>> = None;
-                    let mut redundant_manifest: Option<crate::Value<String>> = None;
-                    let mut segment_length: Option<crate::Value<u32>> = None;
-                    let mut segmentation_mode: Option<crate::Value<String>> = None;
-                    let mut segments_per_subdirectory: Option<crate::Value<u32>> = None;
-                    let mut stream_inf_resolution: Option<crate::Value<String>> = None;
-                    let mut timed_metadata_id3_frame: Option<crate::Value<String>> = None;
-                    let mut timed_metadata_id3_period: Option<crate::Value<u32>> = None;
-                    let mut timestamp_delta_milliseconds: Option<crate::Value<u32>> = None;
-                    let mut ts_file_mode: Option<crate::Value<String>> = None;
+                    let mut caption_language_setting: Option<::Value<String>> = None;
+                    let mut client_cache: Option<::Value<String>> = None;
+                    let mut codec_specification: Option<::Value<String>> = None;
+                    let mut constant_iv: Option<::Value<String>> = None;
+                    let mut destination: Option<::Value<OutputLocationRef>> = None;
+                    let mut directory_structure: Option<::Value<String>> = None;
+                    let mut discontinuity_tags: Option<::Value<String>> = None;
+                    let mut encryption_type: Option<::Value<String>> = None;
+                    let mut hls_cdn_settings: Option<::Value<HlsCdnSettings>> = None;
+                    let mut hls_id3_segment_tagging: Option<::Value<String>> = None;
+                    let mut i_frame_only_playlists: Option<::Value<String>> = None;
+                    let mut incomplete_segment_behavior: Option<::Value<String>> = None;
+                    let mut index_n_segments: Option<::Value<u32>> = None;
+                    let mut input_loss_action: Option<::Value<String>> = None;
+                    let mut iv_in_manifest: Option<::Value<String>> = None;
+                    let mut iv_source: Option<::Value<String>> = None;
+                    let mut keep_segments: Option<::Value<u32>> = None;
+                    let mut key_format: Option<::Value<String>> = None;
+                    let mut key_format_versions: Option<::Value<String>> = None;
+                    let mut key_provider_settings: Option<::Value<KeyProviderSettings>> = None;
+                    let mut manifest_compression: Option<::Value<String>> = None;
+                    let mut manifest_duration_format: Option<::Value<String>> = None;
+                    let mut min_segment_length: Option<::Value<u32>> = None;
+                    let mut mode: Option<::Value<String>> = None;
+                    let mut output_selection: Option<::Value<String>> = None;
+                    let mut program_date_time: Option<::Value<String>> = None;
+                    let mut program_date_time_clock: Option<::Value<String>> = None;
+                    let mut program_date_time_period: Option<::Value<u32>> = None;
+                    let mut redundant_manifest: Option<::Value<String>> = None;
+                    let mut segment_length: Option<::Value<u32>> = None;
+                    let mut segmentation_mode: Option<::Value<String>> = None;
+                    let mut segments_per_subdirectory: Option<::Value<u32>> = None;
+                    let mut stream_inf_resolution: Option<::Value<String>> = None;
+                    let mut timed_metadata_id3_frame: Option<::Value<String>> = None;
+                    let mut timed_metadata_id3_period: Option<::Value<u32>> = None;
+                    let mut timestamp_delta_milliseconds: Option<::Value<u32>> = None;
+                    let mut ts_file_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9761,30 +9761,30 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bandwidth: Option<crate::Value<u32>>,
+        pub bandwidth: Option<::Value<u32>>,
         /// Property [`BufferSegments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-buffersegments).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buffer_segments: Option<crate::Value<u32>>,
+        pub buffer_segments: Option<::Value<u32>>,
         /// Property [`Retries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retries: Option<crate::Value<u32>>,
+        pub retries: Option<::Value<u32>>,
         /// Property [`RetryInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retryinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retry_interval: Option<crate::Value<u32>>,
+        pub retry_interval: Option<::Value<u32>>,
         /// Property [`Scte35Source`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-scte35source).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte35_source: Option<crate::Value<String>>,
+        pub scte35_source: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for HlsInputSettings {
+    impl ::codec::SerializeValue for HlsInputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bandwidth) = self.bandwidth {
@@ -9818,7 +9818,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsInputSettings {
+    impl ::codec::DeserializeValue for HlsInputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsInputSettings, D::Error> {
@@ -9835,11 +9835,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bandwidth: Option<crate::Value<u32>> = None;
-                    let mut buffer_segments: Option<crate::Value<u32>> = None;
-                    let mut retries: Option<crate::Value<u32>> = None;
-                    let mut retry_interval: Option<crate::Value<u32>> = None;
-                    let mut scte35_source: Option<crate::Value<String>> = None;
+                    let mut bandwidth: Option<::Value<u32>> = None;
+                    let mut buffer_segments: Option<::Value<u32>> = None;
+                    let mut retries: Option<::Value<u32>> = None;
+                    let mut retry_interval: Option<::Value<u32>> = None;
+                    let mut scte35_source: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9885,30 +9885,30 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_retry_interval: Option<crate::Value<u32>>,
+        pub connection_retry_interval: Option<::Value<u32>>,
         /// Property [`FilecacheDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-filecacheduration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filecache_duration: Option<crate::Value<u32>>,
+        pub filecache_duration: Option<::Value<u32>>,
         /// Property [`MediaStoreStorageClass`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-mediastorestorageclass).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub media_store_storage_class: Option<crate::Value<String>>,
+        pub media_store_storage_class: Option<::Value<String>>,
         /// Property [`NumRetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-numretries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_retries: Option<crate::Value<u32>>,
+        pub num_retries: Option<::Value<u32>>,
         /// Property [`RestartDelay`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-restartdelay).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub restart_delay: Option<crate::Value<u32>>,
+        pub restart_delay: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for HlsMediaStoreSettings {
+    impl ::codec::SerializeValue for HlsMediaStoreSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
@@ -9946,7 +9946,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsMediaStoreSettings {
+    impl ::codec::DeserializeValue for HlsMediaStoreSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsMediaStoreSettings, D::Error> {
@@ -9963,11 +9963,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut connection_retry_interval: Option<crate::Value<u32>> = None;
-                    let mut filecache_duration: Option<crate::Value<u32>> = None;
-                    let mut media_store_storage_class: Option<crate::Value<String>> = None;
-                    let mut num_retries: Option<crate::Value<u32>> = None;
-                    let mut restart_delay: Option<crate::Value<u32>> = None;
+                    let mut connection_retry_interval: Option<::Value<u32>> = None;
+                    let mut filecache_duration: Option<::Value<u32>> = None;
+                    let mut media_store_storage_class: Option<::Value<String>> = None;
+                    let mut num_retries: Option<::Value<u32>> = None;
+                    let mut restart_delay: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10015,25 +10015,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub h265_packaging_type: Option<crate::Value<String>>,
+        pub h265_packaging_type: Option<::Value<String>>,
         /// Property [`HlsSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsoutputsettings.html#cfn-medialive-channel-hlsoutputsettings-hlssettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_settings: Option<crate::Value<HlsSettings>>,
+        pub hls_settings: Option<::Value<HlsSettings>>,
         /// Property [`NameModifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsoutputsettings.html#cfn-medialive-channel-hlsoutputsettings-namemodifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name_modifier: Option<crate::Value<String>>,
+        pub name_modifier: Option<::Value<String>>,
         /// Property [`SegmentModifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsoutputsettings.html#cfn-medialive-channel-hlsoutputsettings-segmentmodifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segment_modifier: Option<crate::Value<String>>,
+        pub segment_modifier: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for HlsOutputSettings {
+    impl ::codec::SerializeValue for HlsOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref h265_packaging_type) = self.h265_packaging_type {
@@ -10064,7 +10064,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsOutputSettings {
+    impl ::codec::DeserializeValue for HlsOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsOutputSettings, D::Error> {
@@ -10081,10 +10081,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut h265_packaging_type: Option<crate::Value<String>> = None;
-                    let mut hls_settings: Option<crate::Value<HlsSettings>> = None;
-                    let mut name_modifier: Option<crate::Value<String>> = None;
-                    let mut segment_modifier: Option<crate::Value<String>> = None;
+                    let mut h265_packaging_type: Option<::Value<String>> = None;
+                    let mut hls_settings: Option<::Value<HlsSettings>> = None;
+                    let mut name_modifier: Option<::Value<String>> = None;
+                    let mut segment_modifier: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10126,10 +10126,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub canned_acl: Option<crate::Value<String>>,
+        pub canned_acl: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for HlsS3Settings {
+    impl ::codec::SerializeValue for HlsS3Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref canned_acl) = self.canned_acl {
@@ -10139,7 +10139,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsS3Settings {
+    impl ::codec::DeserializeValue for HlsS3Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsS3Settings, D::Error> {
@@ -10156,7 +10156,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut canned_acl: Option<crate::Value<String>> = None;
+                    let mut canned_acl: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10186,25 +10186,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_only_hls_settings: Option<crate::Value<AudioOnlyHlsSettings>>,
+        pub audio_only_hls_settings: Option<::Value<AudioOnlyHlsSettings>>,
         /// Property [`Fmp4HlsSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlssettings.html#cfn-medialive-channel-hlssettings-fmp4hlssettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fmp4_hls_settings: Option<crate::Value<Fmp4HlsSettings>>,
+        pub fmp4_hls_settings: Option<::Value<Fmp4HlsSettings>>,
         /// Property [`FrameCaptureHlsSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlssettings.html#cfn-medialive-channel-hlssettings-framecapturehlssettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frame_capture_hls_settings: Option<crate::Value<FrameCaptureHlsSettings>>,
+        pub frame_capture_hls_settings: Option<::Value<FrameCaptureHlsSettings>>,
         /// Property [`StandardHlsSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlssettings.html#cfn-medialive-channel-hlssettings-standardhlssettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub standard_hls_settings: Option<crate::Value<StandardHlsSettings>>,
+        pub standard_hls_settings: Option<::Value<StandardHlsSettings>>,
     }
 
-    impl crate::codec::SerializeValue for HlsSettings {
+    impl ::codec::SerializeValue for HlsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_only_hls_settings) = self.audio_only_hls_settings {
@@ -10239,7 +10239,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsSettings {
+    impl ::codec::DeserializeValue for HlsSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<HlsSettings, D::Error> {
             struct Visitor;
 
@@ -10254,11 +10254,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_only_hls_settings: Option<crate::Value<AudioOnlyHlsSettings>> = None;
-                    let mut fmp4_hls_settings: Option<crate::Value<Fmp4HlsSettings>> = None;
-                    let mut frame_capture_hls_settings: Option<crate::Value<FrameCaptureHlsSettings>> =
+                    let mut audio_only_hls_settings: Option<::Value<AudioOnlyHlsSettings>> = None;
+                    let mut fmp4_hls_settings: Option<::Value<Fmp4HlsSettings>> = None;
+                    let mut frame_capture_hls_settings: Option<::Value<FrameCaptureHlsSettings>> =
                         None;
-                    let mut standard_hls_settings: Option<crate::Value<StandardHlsSettings>> = None;
+                    let mut standard_hls_settings: Option<::Value<StandardHlsSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10303,30 +10303,30 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_retry_interval: Option<crate::Value<u32>>,
+        pub connection_retry_interval: Option<::Value<u32>>,
         /// Property [`FilecacheDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-filecacheduration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filecache_duration: Option<crate::Value<u32>>,
+        pub filecache_duration: Option<::Value<u32>>,
         /// Property [`HttpTransferMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-httptransfermode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_transfer_mode: Option<crate::Value<String>>,
+        pub http_transfer_mode: Option<::Value<String>>,
         /// Property [`NumRetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-numretries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_retries: Option<crate::Value<u32>>,
+        pub num_retries: Option<::Value<u32>>,
         /// Property [`RestartDelay`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-restartdelay).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub restart_delay: Option<crate::Value<u32>>,
+        pub restart_delay: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for HlsWebdavSettings {
+    impl ::codec::SerializeValue for HlsWebdavSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref connection_retry_interval) = self.connection_retry_interval {
@@ -10364,7 +10364,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for HlsWebdavSettings {
+    impl ::codec::DeserializeValue for HlsWebdavSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HlsWebdavSettings, D::Error> {
@@ -10381,11 +10381,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut connection_retry_interval: Option<crate::Value<u32>> = None;
-                    let mut filecache_duration: Option<crate::Value<u32>> = None;
-                    let mut http_transfer_mode: Option<crate::Value<String>> = None;
-                    let mut num_retries: Option<crate::Value<u32>> = None;
-                    let mut restart_delay: Option<crate::Value<u32>> = None;
+                    let mut connection_retry_interval: Option<::Value<u32>> = None;
+                    let mut filecache_duration: Option<::Value<u32>> = None;
+                    let mut http_transfer_mode: Option<::Value<String>> = None;
+                    let mut num_retries: Option<::Value<u32>> = None;
+                    let mut restart_delay: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10429,14 +10429,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct HtmlMotionGraphicsSettings {}
 
-    impl crate::codec::SerializeValue for HtmlMotionGraphicsSettings {
+    impl ::codec::SerializeValue for HtmlMotionGraphicsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for HtmlMotionGraphicsSettings {
+    impl ::codec::DeserializeValue for HtmlMotionGraphicsSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HtmlMotionGraphicsSettings, D::Error> {
@@ -10468,25 +10468,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub automatic_input_failover_settings: Option<crate::Value<AutomaticInputFailoverSettings>>,
+        pub automatic_input_failover_settings: Option<::Value<AutomaticInputFailoverSettings>>,
         /// Property [`InputAttachmentName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputattachmentname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_attachment_name: Option<crate::Value<String>>,
+        pub input_attachment_name: Option<::Value<String>>,
         /// Property [`InputId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub input_id: Option<crate::Value<String>>,
+        pub input_id: Option<::Value<String>>,
         /// Property [`InputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_settings: Option<crate::Value<InputSettings>>,
+        pub input_settings: Option<::Value<InputSettings>>,
     }
 
-    impl crate::codec::SerializeValue for InputAttachment {
+    impl ::codec::SerializeValue for InputAttachment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref automatic_input_failover_settings) =
@@ -10519,7 +10519,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputAttachment {
+    impl ::codec::DeserializeValue for InputAttachment {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputAttachment, D::Error> {
@@ -10537,11 +10537,11 @@ pub mod channel {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut automatic_input_failover_settings: Option<
-                        crate::Value<AutomaticInputFailoverSettings>,
+                        ::Value<AutomaticInputFailoverSettings>,
                     > = None;
-                    let mut input_attachment_name: Option<crate::Value<String>> = None;
-                    let mut input_id: Option<crate::Value<String>> = None;
-                    let mut input_settings: Option<crate::Value<InputSettings>> = None;
+                    let mut input_attachment_name: Option<::Value<String>> = None;
+                    let mut input_id: Option<::Value<String>> = None;
+                    let mut input_settings: Option<::Value<InputSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10585,15 +10585,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gain: Option<crate::Value<u32>>,
+        pub gain: Option<::Value<u32>>,
         /// Property [`InputChannel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputchannellevel.html#cfn-medialive-channel-inputchannellevel-inputchannel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_channel: Option<crate::Value<u32>>,
+        pub input_channel: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for InputChannelLevel {
+    impl ::codec::SerializeValue for InputChannelLevel {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref gain) = self.gain {
@@ -10610,7 +10610,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputChannelLevel {
+    impl ::codec::DeserializeValue for InputChannelLevel {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputChannelLevel, D::Error> {
@@ -10627,8 +10627,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut gain: Option<crate::Value<u32>> = None;
-                    let mut input_channel: Option<crate::Value<u32>> = None;
+                    let mut gain: Option<::Value<u32>> = None;
+                    let mut input_channel: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10662,20 +10662,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password_param: Option<crate::Value<String>>,
+        pub password_param: Option<::Value<String>>,
         /// Property [`Uri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlocation.html#cfn-medialive-channel-inputlocation-uri).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub uri: Option<crate::Value<String>>,
+        pub uri: Option<::Value<String>>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlocation.html#cfn-medialive-channel-inputlocation-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: Option<crate::Value<String>>,
+        pub username: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InputLocation {
+    impl ::codec::SerializeValue for InputLocation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref password_param) = self.password_param {
@@ -10695,7 +10695,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputLocation {
+    impl ::codec::DeserializeValue for InputLocation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputLocation, D::Error> {
@@ -10712,9 +10712,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut password_param: Option<crate::Value<String>> = None;
-                    let mut uri: Option<crate::Value<String>> = None;
-                    let mut username: Option<crate::Value<String>> = None;
+                    let mut password_param: Option<::Value<String>> = None;
+                    let mut uri: Option<::Value<String>> = None;
+                    let mut username: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10752,30 +10752,30 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub black_frame_msec: Option<crate::Value<u32>>,
+        pub black_frame_msec: Option<::Value<u32>>,
         /// Property [`InputLossImageColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-inputlossimagecolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_image_color: Option<crate::Value<String>>,
+        pub input_loss_image_color: Option<::Value<String>>,
         /// Property [`InputLossImageSlate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-inputlossimageslate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_image_slate: Option<crate::Value<InputLocation>>,
+        pub input_loss_image_slate: Option<::Value<InputLocation>>,
         /// Property [`InputLossImageType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-inputlossimagetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_image_type: Option<crate::Value<String>>,
+        pub input_loss_image_type: Option<::Value<String>>,
         /// Property [`RepeatFrameMsec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-repeatframemsec).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub repeat_frame_msec: Option<crate::Value<u32>>,
+        pub repeat_frame_msec: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for InputLossBehavior {
+    impl ::codec::SerializeValue for InputLossBehavior {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref black_frame_msec) = self.black_frame_msec {
@@ -10817,7 +10817,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputLossBehavior {
+    impl ::codec::DeserializeValue for InputLossBehavior {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputLossBehavior, D::Error> {
@@ -10834,11 +10834,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut black_frame_msec: Option<crate::Value<u32>> = None;
-                    let mut input_loss_image_color: Option<crate::Value<String>> = None;
-                    let mut input_loss_image_slate: Option<crate::Value<InputLocation>> = None;
-                    let mut input_loss_image_type: Option<crate::Value<String>> = None;
-                    let mut repeat_frame_msec: Option<crate::Value<u32>> = None;
+                    let mut black_frame_msec: Option<::Value<u32>> = None;
+                    let mut input_loss_image_color: Option<::Value<String>> = None;
+                    let mut input_loss_image_slate: Option<::Value<InputLocation>> = None;
+                    let mut input_loss_image_type: Option<::Value<String>> = None;
+                    let mut repeat_frame_msec: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10887,10 +10887,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_threshold_msec: Option<crate::Value<u32>>,
+        pub input_loss_threshold_msec: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for InputLossFailoverSettings {
+    impl ::codec::SerializeValue for InputLossFailoverSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref input_loss_threshold_msec) = self.input_loss_threshold_msec {
@@ -10904,7 +10904,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputLossFailoverSettings {
+    impl ::codec::DeserializeValue for InputLossFailoverSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputLossFailoverSettings, D::Error> {
@@ -10921,7 +10921,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut input_loss_threshold_msec: Option<crate::Value<u32>> = None;
+                    let mut input_loss_threshold_msec: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10952,60 +10952,60 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_selectors: Option<crate::ValueList<AudioSelector>>,
+        pub audio_selectors: Option<::ValueList<AudioSelector>>,
         /// Property [`CaptionSelectors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-captionselectors).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caption_selectors: Option<crate::ValueList<CaptionSelector>>,
+        pub caption_selectors: Option<::ValueList<CaptionSelector>>,
         /// Property [`DeblockFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-deblockfilter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub deblock_filter: Option<crate::Value<String>>,
+        pub deblock_filter: Option<::Value<String>>,
         /// Property [`DenoiseFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-denoisefilter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub denoise_filter: Option<crate::Value<String>>,
+        pub denoise_filter: Option<::Value<String>>,
         /// Property [`FilterStrength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-filterstrength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_strength: Option<crate::Value<u32>>,
+        pub filter_strength: Option<::Value<u32>>,
         /// Property [`InputFilter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-inputfilter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_filter: Option<crate::Value<String>>,
+        pub input_filter: Option<::Value<String>>,
         /// Property [`NetworkInputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-networkinputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_input_settings: Option<crate::Value<NetworkInputSettings>>,
+        pub network_input_settings: Option<::Value<NetworkInputSettings>>,
         /// Property [`Scte35Pid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-scte35pid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte35_pid: Option<crate::Value<u32>>,
+        pub scte35_pid: Option<::Value<u32>>,
         /// Property [`Smpte2038DataPreference`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-smpte2038datapreference).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub smpte2038_data_preference: Option<crate::Value<String>>,
+        pub smpte2038_data_preference: Option<::Value<String>>,
         /// Property [`SourceEndBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-sourceendbehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_end_behavior: Option<crate::Value<String>>,
+        pub source_end_behavior: Option<::Value<String>>,
         /// Property [`VideoSelector`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-videoselector).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_selector: Option<crate::Value<VideoSelector>>,
+        pub video_selector: Option<::Value<VideoSelector>>,
     }
 
-    impl crate::codec::SerializeValue for InputSettings {
+    impl ::codec::SerializeValue for InputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_selectors) = self.audio_selectors {
@@ -11081,7 +11081,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputSettings {
+    impl ::codec::DeserializeValue for InputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputSettings, D::Error> {
@@ -11098,17 +11098,17 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_selectors: Option<crate::ValueList<AudioSelector>> = None;
-                    let mut caption_selectors: Option<crate::ValueList<CaptionSelector>> = None;
-                    let mut deblock_filter: Option<crate::Value<String>> = None;
-                    let mut denoise_filter: Option<crate::Value<String>> = None;
-                    let mut filter_strength: Option<crate::Value<u32>> = None;
-                    let mut input_filter: Option<crate::Value<String>> = None;
-                    let mut network_input_settings: Option<crate::Value<NetworkInputSettings>> = None;
-                    let mut scte35_pid: Option<crate::Value<u32>> = None;
-                    let mut smpte2038_data_preference: Option<crate::Value<String>> = None;
-                    let mut source_end_behavior: Option<crate::Value<String>> = None;
-                    let mut video_selector: Option<crate::Value<VideoSelector>> = None;
+                    let mut audio_selectors: Option<::ValueList<AudioSelector>> = None;
+                    let mut caption_selectors: Option<::ValueList<CaptionSelector>> = None;
+                    let mut deblock_filter: Option<::Value<String>> = None;
+                    let mut denoise_filter: Option<::Value<String>> = None;
+                    let mut filter_strength: Option<::Value<u32>> = None;
+                    let mut input_filter: Option<::Value<String>> = None;
+                    let mut network_input_settings: Option<::Value<NetworkInputSettings>> = None;
+                    let mut scte35_pid: Option<::Value<u32>> = None;
+                    let mut smpte2038_data_preference: Option<::Value<String>> = None;
+                    let mut source_end_behavior: Option<::Value<String>> = None;
+                    let mut video_selector: Option<::Value<VideoSelector>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11180,20 +11180,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub codec: Option<crate::Value<String>>,
+        pub codec: Option<::Value<String>>,
         /// Property [`MaximumBitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-maximumbitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maximum_bitrate: Option<crate::Value<String>>,
+        pub maximum_bitrate: Option<::Value<String>>,
         /// Property [`Resolution`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-resolution).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resolution: Option<crate::Value<String>>,
+        pub resolution: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InputSpecification {
+    impl ::codec::SerializeValue for InputSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref codec) = self.codec {
@@ -11213,7 +11213,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputSpecification {
+    impl ::codec::DeserializeValue for InputSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputSpecification, D::Error> {
@@ -11230,9 +11230,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut codec: Option<crate::Value<String>> = None;
-                    let mut maximum_bitrate: Option<crate::Value<String>> = None;
-                    let mut resolution: Option<crate::Value<String>> = None;
+                    let mut codec: Option<::Value<String>> = None;
+                    let mut maximum_bitrate: Option<::Value<String>> = None;
+                    let mut resolution: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11270,10 +11270,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub static_key_settings: Option<crate::Value<StaticKeySettings>>,
+        pub static_key_settings: Option<::Value<StaticKeySettings>>,
     }
 
-    impl crate::codec::SerializeValue for KeyProviderSettings {
+    impl ::codec::SerializeValue for KeyProviderSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref static_key_settings) = self.static_key_settings {
@@ -11287,7 +11287,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for KeyProviderSettings {
+    impl ::codec::DeserializeValue for KeyProviderSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KeyProviderSettings, D::Error> {
@@ -11304,7 +11304,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut static_key_settings: Option<crate::Value<StaticKeySettings>> = None;
+                    let mut static_key_settings: Option<::Value<StaticKeySettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11334,240 +11334,240 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub absent_input_audio_behavior: Option<crate::Value<String>>,
+        pub absent_input_audio_behavior: Option<::Value<String>>,
         /// Property [`Arib`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-arib).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arib: Option<crate::Value<String>>,
+        pub arib: Option<::Value<String>>,
         /// Property [`AribCaptionsPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-aribcaptionspid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arib_captions_pid: Option<crate::Value<String>>,
+        pub arib_captions_pid: Option<::Value<String>>,
         /// Property [`AribCaptionsPidControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-aribcaptionspidcontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arib_captions_pid_control: Option<crate::Value<String>>,
+        pub arib_captions_pid_control: Option<::Value<String>>,
         /// Property [`AudioBufferModel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-audiobuffermodel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_buffer_model: Option<crate::Value<String>>,
+        pub audio_buffer_model: Option<::Value<String>>,
         /// Property [`AudioFramesPerPes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-audioframesperpes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_frames_per_pes: Option<crate::Value<u32>>,
+        pub audio_frames_per_pes: Option<::Value<u32>>,
         /// Property [`AudioPids`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-audiopids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_pids: Option<crate::Value<String>>,
+        pub audio_pids: Option<::Value<String>>,
         /// Property [`AudioStreamType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-audiostreamtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_stream_type: Option<crate::Value<String>>,
+        pub audio_stream_type: Option<::Value<String>>,
         /// Property [`Bitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-bitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitrate: Option<crate::Value<u32>>,
+        pub bitrate: Option<::Value<u32>>,
         /// Property [`BufferModel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-buffermodel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buffer_model: Option<crate::Value<String>>,
+        pub buffer_model: Option<::Value<String>>,
         /// Property [`CcDescriptor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ccdescriptor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cc_descriptor: Option<crate::Value<String>>,
+        pub cc_descriptor: Option<::Value<String>>,
         /// Property [`DvbNitSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbnitsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dvb_nit_settings: Option<crate::Value<DvbNitSettings>>,
+        pub dvb_nit_settings: Option<::Value<DvbNitSettings>>,
         /// Property [`DvbSdtSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbsdtsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dvb_sdt_settings: Option<crate::Value<DvbSdtSettings>>,
+        pub dvb_sdt_settings: Option<::Value<DvbSdtSettings>>,
         /// Property [`DvbSubPids`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbsubpids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dvb_sub_pids: Option<crate::Value<String>>,
+        pub dvb_sub_pids: Option<::Value<String>>,
         /// Property [`DvbTdtSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbtdtsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dvb_tdt_settings: Option<crate::Value<DvbTdtSettings>>,
+        pub dvb_tdt_settings: Option<::Value<DvbTdtSettings>>,
         /// Property [`DvbTeletextPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbteletextpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dvb_teletext_pid: Option<crate::Value<String>>,
+        pub dvb_teletext_pid: Option<::Value<String>>,
         /// Property [`Ebif`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ebif).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ebif: Option<crate::Value<String>>,
+        pub ebif: Option<::Value<String>>,
         /// Property [`EbpAudioInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ebpaudiointerval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ebp_audio_interval: Option<crate::Value<String>>,
+        pub ebp_audio_interval: Option<::Value<String>>,
         /// Property [`EbpLookaheadMs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ebplookaheadms).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ebp_lookahead_ms: Option<crate::Value<u32>>,
+        pub ebp_lookahead_ms: Option<::Value<u32>>,
         /// Property [`EbpPlacement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ebpplacement).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ebp_placement: Option<crate::Value<String>>,
+        pub ebp_placement: Option<::Value<String>>,
         /// Property [`EcmPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ecmpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ecm_pid: Option<crate::Value<String>>,
+        pub ecm_pid: Option<::Value<String>>,
         /// Property [`EsRateInPes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-esrateinpes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub es_rate_in_pes: Option<crate::Value<String>>,
+        pub es_rate_in_pes: Option<::Value<String>>,
         /// Property [`EtvPlatformPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-etvplatformpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub etv_platform_pid: Option<crate::Value<String>>,
+        pub etv_platform_pid: Option<::Value<String>>,
         /// Property [`EtvSignalPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-etvsignalpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub etv_signal_pid: Option<crate::Value<String>>,
+        pub etv_signal_pid: Option<::Value<String>>,
         /// Property [`FragmentTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-fragmenttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fragment_time: Option<crate::Value<f64>>,
+        pub fragment_time: Option<::Value<f64>>,
         /// Property [`Klv`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-klv).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub klv: Option<crate::Value<String>>,
+        pub klv: Option<::Value<String>>,
         /// Property [`KlvDataPids`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-klvdatapids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub klv_data_pids: Option<crate::Value<String>>,
+        pub klv_data_pids: Option<::Value<String>>,
         /// Property [`NielsenId3Behavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-nielsenid3behavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_id3_behavior: Option<crate::Value<String>>,
+        pub nielsen_id3_behavior: Option<::Value<String>>,
         /// Property [`NullPacketBitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-nullpacketbitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub null_packet_bitrate: Option<crate::Value<f64>>,
+        pub null_packet_bitrate: Option<::Value<f64>>,
         /// Property [`PatInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-patinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pat_interval: Option<crate::Value<u32>>,
+        pub pat_interval: Option<::Value<u32>>,
         /// Property [`PcrControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pcrcontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pcr_control: Option<crate::Value<String>>,
+        pub pcr_control: Option<::Value<String>>,
         /// Property [`PcrPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pcrperiod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pcr_period: Option<crate::Value<u32>>,
+        pub pcr_period: Option<::Value<u32>>,
         /// Property [`PcrPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pcrpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pcr_pid: Option<crate::Value<String>>,
+        pub pcr_pid: Option<::Value<String>>,
         /// Property [`PmtInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pmtinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pmt_interval: Option<crate::Value<u32>>,
+        pub pmt_interval: Option<::Value<u32>>,
         /// Property [`PmtPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pmtpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pmt_pid: Option<crate::Value<String>>,
+        pub pmt_pid: Option<::Value<String>>,
         /// Property [`ProgramNum`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-programnum).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub program_num: Option<crate::Value<u32>>,
+        pub program_num: Option<::Value<u32>>,
         /// Property [`RateMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ratemode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rate_mode: Option<crate::Value<String>>,
+        pub rate_mode: Option<::Value<String>>,
         /// Property [`Scte27Pids`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-scte27pids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte27_pids: Option<crate::Value<String>>,
+        pub scte27_pids: Option<::Value<String>>,
         /// Property [`Scte35Control`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-scte35control).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte35_control: Option<crate::Value<String>>,
+        pub scte35_control: Option<::Value<String>>,
         /// Property [`Scte35Pid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-scte35pid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte35_pid: Option<crate::Value<String>>,
+        pub scte35_pid: Option<::Value<String>>,
         /// Property [`SegmentationMarkers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-segmentationmarkers).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segmentation_markers: Option<crate::Value<String>>,
+        pub segmentation_markers: Option<::Value<String>>,
         /// Property [`SegmentationStyle`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-segmentationstyle).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segmentation_style: Option<crate::Value<String>>,
+        pub segmentation_style: Option<::Value<String>>,
         /// Property [`SegmentationTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-segmentationtime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segmentation_time: Option<crate::Value<f64>>,
+        pub segmentation_time: Option<::Value<f64>>,
         /// Property [`TimedMetadataBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-timedmetadatabehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_behavior: Option<crate::Value<String>>,
+        pub timed_metadata_behavior: Option<::Value<String>>,
         /// Property [`TimedMetadataPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-timedmetadatapid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_pid: Option<crate::Value<String>>,
+        pub timed_metadata_pid: Option<::Value<String>>,
         /// Property [`TransportStreamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-transportstreamid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub transport_stream_id: Option<crate::Value<u32>>,
+        pub transport_stream_id: Option<::Value<u32>>,
         /// Property [`VideoPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-videopid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_pid: Option<crate::Value<String>>,
+        pub video_pid: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for M2tsSettings {
+    impl ::codec::SerializeValue for M2tsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref absent_input_audio_behavior) = self.absent_input_audio_behavior {
@@ -11827,7 +11827,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for M2tsSettings {
+    impl ::codec::DeserializeValue for M2tsSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<M2tsSettings, D::Error> {
             struct Visitor;
 
@@ -11842,53 +11842,53 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut absent_input_audio_behavior: Option<crate::Value<String>> = None;
-                    let mut arib: Option<crate::Value<String>> = None;
-                    let mut arib_captions_pid: Option<crate::Value<String>> = None;
-                    let mut arib_captions_pid_control: Option<crate::Value<String>> = None;
-                    let mut audio_buffer_model: Option<crate::Value<String>> = None;
-                    let mut audio_frames_per_pes: Option<crate::Value<u32>> = None;
-                    let mut audio_pids: Option<crate::Value<String>> = None;
-                    let mut audio_stream_type: Option<crate::Value<String>> = None;
-                    let mut bitrate: Option<crate::Value<u32>> = None;
-                    let mut buffer_model: Option<crate::Value<String>> = None;
-                    let mut cc_descriptor: Option<crate::Value<String>> = None;
-                    let mut dvb_nit_settings: Option<crate::Value<DvbNitSettings>> = None;
-                    let mut dvb_sdt_settings: Option<crate::Value<DvbSdtSettings>> = None;
-                    let mut dvb_sub_pids: Option<crate::Value<String>> = None;
-                    let mut dvb_tdt_settings: Option<crate::Value<DvbTdtSettings>> = None;
-                    let mut dvb_teletext_pid: Option<crate::Value<String>> = None;
-                    let mut ebif: Option<crate::Value<String>> = None;
-                    let mut ebp_audio_interval: Option<crate::Value<String>> = None;
-                    let mut ebp_lookahead_ms: Option<crate::Value<u32>> = None;
-                    let mut ebp_placement: Option<crate::Value<String>> = None;
-                    let mut ecm_pid: Option<crate::Value<String>> = None;
-                    let mut es_rate_in_pes: Option<crate::Value<String>> = None;
-                    let mut etv_platform_pid: Option<crate::Value<String>> = None;
-                    let mut etv_signal_pid: Option<crate::Value<String>> = None;
-                    let mut fragment_time: Option<crate::Value<f64>> = None;
-                    let mut klv: Option<crate::Value<String>> = None;
-                    let mut klv_data_pids: Option<crate::Value<String>> = None;
-                    let mut nielsen_id3_behavior: Option<crate::Value<String>> = None;
-                    let mut null_packet_bitrate: Option<crate::Value<f64>> = None;
-                    let mut pat_interval: Option<crate::Value<u32>> = None;
-                    let mut pcr_control: Option<crate::Value<String>> = None;
-                    let mut pcr_period: Option<crate::Value<u32>> = None;
-                    let mut pcr_pid: Option<crate::Value<String>> = None;
-                    let mut pmt_interval: Option<crate::Value<u32>> = None;
-                    let mut pmt_pid: Option<crate::Value<String>> = None;
-                    let mut program_num: Option<crate::Value<u32>> = None;
-                    let mut rate_mode: Option<crate::Value<String>> = None;
-                    let mut scte27_pids: Option<crate::Value<String>> = None;
-                    let mut scte35_control: Option<crate::Value<String>> = None;
-                    let mut scte35_pid: Option<crate::Value<String>> = None;
-                    let mut segmentation_markers: Option<crate::Value<String>> = None;
-                    let mut segmentation_style: Option<crate::Value<String>> = None;
-                    let mut segmentation_time: Option<crate::Value<f64>> = None;
-                    let mut timed_metadata_behavior: Option<crate::Value<String>> = None;
-                    let mut timed_metadata_pid: Option<crate::Value<String>> = None;
-                    let mut transport_stream_id: Option<crate::Value<u32>> = None;
-                    let mut video_pid: Option<crate::Value<String>> = None;
+                    let mut absent_input_audio_behavior: Option<::Value<String>> = None;
+                    let mut arib: Option<::Value<String>> = None;
+                    let mut arib_captions_pid: Option<::Value<String>> = None;
+                    let mut arib_captions_pid_control: Option<::Value<String>> = None;
+                    let mut audio_buffer_model: Option<::Value<String>> = None;
+                    let mut audio_frames_per_pes: Option<::Value<u32>> = None;
+                    let mut audio_pids: Option<::Value<String>> = None;
+                    let mut audio_stream_type: Option<::Value<String>> = None;
+                    let mut bitrate: Option<::Value<u32>> = None;
+                    let mut buffer_model: Option<::Value<String>> = None;
+                    let mut cc_descriptor: Option<::Value<String>> = None;
+                    let mut dvb_nit_settings: Option<::Value<DvbNitSettings>> = None;
+                    let mut dvb_sdt_settings: Option<::Value<DvbSdtSettings>> = None;
+                    let mut dvb_sub_pids: Option<::Value<String>> = None;
+                    let mut dvb_tdt_settings: Option<::Value<DvbTdtSettings>> = None;
+                    let mut dvb_teletext_pid: Option<::Value<String>> = None;
+                    let mut ebif: Option<::Value<String>> = None;
+                    let mut ebp_audio_interval: Option<::Value<String>> = None;
+                    let mut ebp_lookahead_ms: Option<::Value<u32>> = None;
+                    let mut ebp_placement: Option<::Value<String>> = None;
+                    let mut ecm_pid: Option<::Value<String>> = None;
+                    let mut es_rate_in_pes: Option<::Value<String>> = None;
+                    let mut etv_platform_pid: Option<::Value<String>> = None;
+                    let mut etv_signal_pid: Option<::Value<String>> = None;
+                    let mut fragment_time: Option<::Value<f64>> = None;
+                    let mut klv: Option<::Value<String>> = None;
+                    let mut klv_data_pids: Option<::Value<String>> = None;
+                    let mut nielsen_id3_behavior: Option<::Value<String>> = None;
+                    let mut null_packet_bitrate: Option<::Value<f64>> = None;
+                    let mut pat_interval: Option<::Value<u32>> = None;
+                    let mut pcr_control: Option<::Value<String>> = None;
+                    let mut pcr_period: Option<::Value<u32>> = None;
+                    let mut pcr_pid: Option<::Value<String>> = None;
+                    let mut pmt_interval: Option<::Value<u32>> = None;
+                    let mut pmt_pid: Option<::Value<String>> = None;
+                    let mut program_num: Option<::Value<u32>> = None;
+                    let mut rate_mode: Option<::Value<String>> = None;
+                    let mut scte27_pids: Option<::Value<String>> = None;
+                    let mut scte35_control: Option<::Value<String>> = None;
+                    let mut scte35_pid: Option<::Value<String>> = None;
+                    let mut segmentation_markers: Option<::Value<String>> = None;
+                    let mut segmentation_style: Option<::Value<String>> = None;
+                    let mut segmentation_time: Option<::Value<f64>> = None;
+                    let mut timed_metadata_behavior: Option<::Value<String>> = None;
+                    let mut timed_metadata_pid: Option<::Value<String>> = None;
+                    let mut transport_stream_id: Option<::Value<u32>> = None;
+                    let mut video_pid: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12108,90 +12108,90 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_frames_per_pes: Option<crate::Value<u32>>,
+        pub audio_frames_per_pes: Option<::Value<u32>>,
         /// Property [`AudioPids`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-audiopids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_pids: Option<crate::Value<String>>,
+        pub audio_pids: Option<::Value<String>>,
         /// Property [`EcmPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-ecmpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ecm_pid: Option<crate::Value<String>>,
+        pub ecm_pid: Option<::Value<String>>,
         /// Property [`NielsenId3Behavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-nielsenid3behavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_id3_behavior: Option<crate::Value<String>>,
+        pub nielsen_id3_behavior: Option<::Value<String>>,
         /// Property [`PatInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-patinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pat_interval: Option<crate::Value<u32>>,
+        pub pat_interval: Option<::Value<u32>>,
         /// Property [`PcrControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pcrcontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pcr_control: Option<crate::Value<String>>,
+        pub pcr_control: Option<::Value<String>>,
         /// Property [`PcrPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pcrperiod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pcr_period: Option<crate::Value<u32>>,
+        pub pcr_period: Option<::Value<u32>>,
         /// Property [`PcrPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pcrpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pcr_pid: Option<crate::Value<String>>,
+        pub pcr_pid: Option<::Value<String>>,
         /// Property [`PmtInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pmtinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pmt_interval: Option<crate::Value<u32>>,
+        pub pmt_interval: Option<::Value<u32>>,
         /// Property [`PmtPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pmtpid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pmt_pid: Option<crate::Value<String>>,
+        pub pmt_pid: Option<::Value<String>>,
         /// Property [`ProgramNum`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-programnum).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub program_num: Option<crate::Value<u32>>,
+        pub program_num: Option<::Value<u32>>,
         /// Property [`Scte35Behavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-scte35behavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte35_behavior: Option<crate::Value<String>>,
+        pub scte35_behavior: Option<::Value<String>>,
         /// Property [`Scte35Pid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-scte35pid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scte35_pid: Option<crate::Value<String>>,
+        pub scte35_pid: Option<::Value<String>>,
         /// Property [`TimedMetadataBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-timedmetadatabehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_behavior: Option<crate::Value<String>>,
+        pub timed_metadata_behavior: Option<::Value<String>>,
         /// Property [`TimedMetadataPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-timedmetadatapid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_pid: Option<crate::Value<String>>,
+        pub timed_metadata_pid: Option<::Value<String>>,
         /// Property [`TransportStreamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-transportstreamid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub transport_stream_id: Option<crate::Value<u32>>,
+        pub transport_stream_id: Option<::Value<u32>>,
         /// Property [`VideoPid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-videopid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_pid: Option<crate::Value<String>>,
+        pub video_pid: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for M3u8Settings {
+    impl ::codec::SerializeValue for M3u8Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_frames_per_pes) = self.audio_frames_per_pes {
@@ -12273,7 +12273,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for M3u8Settings {
+    impl ::codec::DeserializeValue for M3u8Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<M3u8Settings, D::Error> {
             struct Visitor;
 
@@ -12288,23 +12288,23 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_frames_per_pes: Option<crate::Value<u32>> = None;
-                    let mut audio_pids: Option<crate::Value<String>> = None;
-                    let mut ecm_pid: Option<crate::Value<String>> = None;
-                    let mut nielsen_id3_behavior: Option<crate::Value<String>> = None;
-                    let mut pat_interval: Option<crate::Value<u32>> = None;
-                    let mut pcr_control: Option<crate::Value<String>> = None;
-                    let mut pcr_period: Option<crate::Value<u32>> = None;
-                    let mut pcr_pid: Option<crate::Value<String>> = None;
-                    let mut pmt_interval: Option<crate::Value<u32>> = None;
-                    let mut pmt_pid: Option<crate::Value<String>> = None;
-                    let mut program_num: Option<crate::Value<u32>> = None;
-                    let mut scte35_behavior: Option<crate::Value<String>> = None;
-                    let mut scte35_pid: Option<crate::Value<String>> = None;
-                    let mut timed_metadata_behavior: Option<crate::Value<String>> = None;
-                    let mut timed_metadata_pid: Option<crate::Value<String>> = None;
-                    let mut transport_stream_id: Option<crate::Value<u32>> = None;
-                    let mut video_pid: Option<crate::Value<String>> = None;
+                    let mut audio_frames_per_pes: Option<::Value<u32>> = None;
+                    let mut audio_pids: Option<::Value<String>> = None;
+                    let mut ecm_pid: Option<::Value<String>> = None;
+                    let mut nielsen_id3_behavior: Option<::Value<String>> = None;
+                    let mut pat_interval: Option<::Value<u32>> = None;
+                    let mut pcr_control: Option<::Value<String>> = None;
+                    let mut pcr_period: Option<::Value<u32>> = None;
+                    let mut pcr_pid: Option<::Value<String>> = None;
+                    let mut pmt_interval: Option<::Value<u32>> = None;
+                    let mut pmt_pid: Option<::Value<String>> = None;
+                    let mut program_num: Option<::Value<u32>> = None;
+                    let mut scte35_behavior: Option<::Value<String>> = None;
+                    let mut scte35_pid: Option<::Value<String>> = None;
+                    let mut timed_metadata_behavior: Option<::Value<String>> = None;
+                    let mut timed_metadata_pid: Option<::Value<String>> = None;
+                    let mut transport_stream_id: Option<::Value<u32>> = None;
+                    let mut video_pid: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12401,10 +12401,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: Option<crate::Value<OutputLocationRef>>,
+        pub destination: Option<::Value<OutputLocationRef>>,
     }
 
-    impl crate::codec::SerializeValue for MediaPackageGroupSettings {
+    impl ::codec::SerializeValue for MediaPackageGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination) = self.destination {
@@ -12414,7 +12414,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for MediaPackageGroupSettings {
+    impl ::codec::DeserializeValue for MediaPackageGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MediaPackageGroupSettings, D::Error> {
@@ -12431,7 +12431,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination: Option<crate::Value<OutputLocationRef>> = None;
+                    let mut destination: Option<::Value<OutputLocationRef>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12461,10 +12461,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub channel_id: Option<crate::Value<String>>,
+        pub channel_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MediaPackageOutputDestinationSettings {
+    impl ::codec::SerializeValue for MediaPackageOutputDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref channel_id) = self.channel_id {
@@ -12474,7 +12474,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for MediaPackageOutputDestinationSettings {
+    impl ::codec::DeserializeValue for MediaPackageOutputDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MediaPackageOutputDestinationSettings, D::Error> {
@@ -12491,7 +12491,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut channel_id: Option<crate::Value<String>> = None;
+                    let mut channel_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12518,14 +12518,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct MediaPackageOutputSettings {}
 
-    impl crate::codec::SerializeValue for MediaPackageOutputSettings {
+    impl ::codec::SerializeValue for MediaPackageOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for MediaPackageOutputSettings {
+    impl ::codec::DeserializeValue for MediaPackageOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MediaPackageOutputSettings, D::Error> {
@@ -12557,15 +12557,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub motion_graphics_insertion: Option<crate::Value<String>>,
+        pub motion_graphics_insertion: Option<::Value<String>>,
         /// Property [`MotionGraphicsSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-motiongraphicsconfiguration.html#cfn-medialive-channel-motiongraphicsconfiguration-motiongraphicssettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub motion_graphics_settings: Option<crate::Value<MotionGraphicsSettings>>,
+        pub motion_graphics_settings: Option<::Value<MotionGraphicsSettings>>,
     }
 
-    impl crate::codec::SerializeValue for MotionGraphicsConfiguration {
+    impl ::codec::SerializeValue for MotionGraphicsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref motion_graphics_insertion) = self.motion_graphics_insertion {
@@ -12586,7 +12586,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for MotionGraphicsConfiguration {
+    impl ::codec::DeserializeValue for MotionGraphicsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MotionGraphicsConfiguration, D::Error> {
@@ -12603,8 +12603,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut motion_graphics_insertion: Option<crate::Value<String>> = None;
-                    let mut motion_graphics_settings: Option<crate::Value<MotionGraphicsSettings>> =
+                    let mut motion_graphics_insertion: Option<::Value<String>> = None;
+                    let mut motion_graphics_settings: Option<::Value<MotionGraphicsSettings>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -12641,10 +12641,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub html_motion_graphics_settings: Option<crate::Value<HtmlMotionGraphicsSettings>>,
+        pub html_motion_graphics_settings: Option<::Value<HtmlMotionGraphicsSettings>>,
     }
 
-    impl crate::codec::SerializeValue for MotionGraphicsSettings {
+    impl ::codec::SerializeValue for MotionGraphicsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref html_motion_graphics_settings) = self.html_motion_graphics_settings {
@@ -12658,7 +12658,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for MotionGraphicsSettings {
+    impl ::codec::DeserializeValue for MotionGraphicsSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MotionGraphicsSettings, D::Error> {
@@ -12676,7 +12676,7 @@ pub mod channel {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut html_motion_graphics_settings: Option<
-                        crate::Value<HtmlMotionGraphicsSettings>,
+                        ::Value<HtmlMotionGraphicsSettings>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -12708,20 +12708,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bitrate: Option<crate::Value<f64>>,
+        pub bitrate: Option<::Value<f64>>,
         /// Property [`CodingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mp2settings.html#cfn-medialive-channel-mp2settings-codingmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub coding_mode: Option<crate::Value<String>>,
+        pub coding_mode: Option<::Value<String>>,
         /// Property [`SampleRate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mp2settings.html#cfn-medialive-channel-mp2settings-samplerate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sample_rate: Option<crate::Value<f64>>,
+        pub sample_rate: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for Mp2Settings {
+    impl ::codec::SerializeValue for Mp2Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bitrate) = self.bitrate {
@@ -12737,7 +12737,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Mp2Settings {
+    impl ::codec::DeserializeValue for Mp2Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Mp2Settings, D::Error> {
             struct Visitor;
 
@@ -12752,9 +12752,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bitrate: Option<crate::Value<f64>> = None;
-                    let mut coding_mode: Option<crate::Value<String>> = None;
-                    let mut sample_rate: Option<crate::Value<f64>> = None;
+                    let mut bitrate: Option<::Value<f64>> = None;
+                    let mut coding_mode: Option<::Value<String>> = None;
+                    let mut sample_rate: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12792,10 +12792,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub temporal_filter_settings: Option<crate::Value<TemporalFilterSettings>>,
+        pub temporal_filter_settings: Option<::Value<TemporalFilterSettings>>,
     }
 
-    impl crate::codec::SerializeValue for Mpeg2FilterSettings {
+    impl ::codec::SerializeValue for Mpeg2FilterSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref temporal_filter_settings) = self.temporal_filter_settings {
@@ -12809,7 +12809,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Mpeg2FilterSettings {
+    impl ::codec::DeserializeValue for Mpeg2FilterSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Mpeg2FilterSettings, D::Error> {
@@ -12826,7 +12826,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut temporal_filter_settings: Option<crate::Value<TemporalFilterSettings>> =
+                    let mut temporal_filter_settings: Option<::Value<TemporalFilterSettings>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -12858,85 +12858,85 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub adaptive_quantization: Option<crate::Value<String>>,
+        pub adaptive_quantization: Option<::Value<String>>,
         /// Property [`AfdSignaling`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-afdsignaling).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub afd_signaling: Option<crate::Value<String>>,
+        pub afd_signaling: Option<::Value<String>>,
         /// Property [`ColorMetadata`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-colormetadata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_metadata: Option<crate::Value<String>>,
+        pub color_metadata: Option<::Value<String>>,
         /// Property [`ColorSpace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-colorspace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_space: Option<crate::Value<String>>,
+        pub color_space: Option<::Value<String>>,
         /// Property [`DisplayAspectRatio`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-displayaspectratio).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub display_aspect_ratio: Option<crate::Value<String>>,
+        pub display_aspect_ratio: Option<::Value<String>>,
         /// Property [`FilterSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-filtersettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_settings: Option<crate::Value<Mpeg2FilterSettings>>,
+        pub filter_settings: Option<::Value<Mpeg2FilterSettings>>,
         /// Property [`FixedAfd`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-fixedafd).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fixed_afd: Option<crate::Value<String>>,
+        pub fixed_afd: Option<::Value<String>>,
         /// Property [`FramerateDenominator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-frameratedenominator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub framerate_denominator: Option<crate::Value<u32>>,
+        pub framerate_denominator: Option<::Value<u32>>,
         /// Property [`FramerateNumerator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-frameratenumerator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub framerate_numerator: Option<crate::Value<u32>>,
+        pub framerate_numerator: Option<::Value<u32>>,
         /// Property [`GopClosedCadence`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopclosedcadence).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_closed_cadence: Option<crate::Value<u32>>,
+        pub gop_closed_cadence: Option<::Value<u32>>,
         /// Property [`GopNumBFrames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopnumbframes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_num_b_frames: Option<crate::Value<u32>>,
+        pub gop_num_b_frames: Option<::Value<u32>>,
         /// Property [`GopSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_size: Option<crate::Value<f64>>,
+        pub gop_size: Option<::Value<f64>>,
         /// Property [`GopSizeUnits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopsizeunits).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gop_size_units: Option<crate::Value<String>>,
+        pub gop_size_units: Option<::Value<String>>,
         /// Property [`ScanType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-scantype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scan_type: Option<crate::Value<String>>,
+        pub scan_type: Option<::Value<String>>,
         /// Property [`SubgopLength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-subgoplength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subgop_length: Option<crate::Value<String>>,
+        pub subgop_length: Option<::Value<String>>,
         /// Property [`TimecodeInsertion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-timecodeinsertion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timecode_insertion: Option<crate::Value<String>>,
+        pub timecode_insertion: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Mpeg2Settings {
+    impl ::codec::SerializeValue for Mpeg2Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref adaptive_quantization) = self.adaptive_quantization {
@@ -13039,7 +13039,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Mpeg2Settings {
+    impl ::codec::DeserializeValue for Mpeg2Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Mpeg2Settings, D::Error> {
@@ -13056,22 +13056,22 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut adaptive_quantization: Option<crate::Value<String>> = None;
-                    let mut afd_signaling: Option<crate::Value<String>> = None;
-                    let mut color_metadata: Option<crate::Value<String>> = None;
-                    let mut color_space: Option<crate::Value<String>> = None;
-                    let mut display_aspect_ratio: Option<crate::Value<String>> = None;
-                    let mut filter_settings: Option<crate::Value<Mpeg2FilterSettings>> = None;
-                    let mut fixed_afd: Option<crate::Value<String>> = None;
-                    let mut framerate_denominator: Option<crate::Value<u32>> = None;
-                    let mut framerate_numerator: Option<crate::Value<u32>> = None;
-                    let mut gop_closed_cadence: Option<crate::Value<u32>> = None;
-                    let mut gop_num_b_frames: Option<crate::Value<u32>> = None;
-                    let mut gop_size: Option<crate::Value<f64>> = None;
-                    let mut gop_size_units: Option<crate::Value<String>> = None;
-                    let mut scan_type: Option<crate::Value<String>> = None;
-                    let mut subgop_length: Option<crate::Value<String>> = None;
-                    let mut timecode_insertion: Option<crate::Value<String>> = None;
+                    let mut adaptive_quantization: Option<::Value<String>> = None;
+                    let mut afd_signaling: Option<::Value<String>> = None;
+                    let mut color_metadata: Option<::Value<String>> = None;
+                    let mut color_space: Option<::Value<String>> = None;
+                    let mut display_aspect_ratio: Option<::Value<String>> = None;
+                    let mut filter_settings: Option<::Value<Mpeg2FilterSettings>> = None;
+                    let mut fixed_afd: Option<::Value<String>> = None;
+                    let mut framerate_denominator: Option<::Value<u32>> = None;
+                    let mut framerate_numerator: Option<::Value<u32>> = None;
+                    let mut gop_closed_cadence: Option<::Value<u32>> = None;
+                    let mut gop_num_b_frames: Option<::Value<u32>> = None;
+                    let mut gop_size: Option<::Value<f64>> = None;
+                    let mut gop_size_units: Option<::Value<String>> = None;
+                    let mut scan_type: Option<::Value<String>> = None;
+                    let mut subgop_length: Option<::Value<String>> = None;
+                    let mut timecode_insertion: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13164,100 +13164,100 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub acquisition_point_id: Option<crate::Value<String>>,
+        pub acquisition_point_id: Option<::Value<String>>,
         /// Property [`AudioOnlyTimecodeControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-audioonlytimecodecontrol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_only_timecode_control: Option<crate::Value<String>>,
+        pub audio_only_timecode_control: Option<::Value<String>>,
         /// Property [`CertificateMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-certificatemode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub certificate_mode: Option<crate::Value<String>>,
+        pub certificate_mode: Option<::Value<String>>,
         /// Property [`ConnectionRetryInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-connectionretryinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_retry_interval: Option<crate::Value<u32>>,
+        pub connection_retry_interval: Option<::Value<u32>>,
         /// Property [`Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-destination).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: Option<crate::Value<OutputLocationRef>>,
+        pub destination: Option<::Value<OutputLocationRef>>,
         /// Property [`EventId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-eventid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_id: Option<crate::Value<String>>,
+        pub event_id: Option<::Value<String>>,
         /// Property [`EventIdMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-eventidmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_id_mode: Option<crate::Value<String>>,
+        pub event_id_mode: Option<::Value<String>>,
         /// Property [`EventStopBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-eventstopbehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event_stop_behavior: Option<crate::Value<String>>,
+        pub event_stop_behavior: Option<::Value<String>>,
         /// Property [`FilecacheDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-filecacheduration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filecache_duration: Option<crate::Value<u32>>,
+        pub filecache_duration: Option<::Value<u32>>,
         /// Property [`FragmentLength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-fragmentlength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fragment_length: Option<crate::Value<u32>>,
+        pub fragment_length: Option<::Value<u32>>,
         /// Property [`InputLossAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-inputlossaction).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_action: Option<crate::Value<String>>,
+        pub input_loss_action: Option<::Value<String>>,
         /// Property [`NumRetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-numretries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_retries: Option<crate::Value<u32>>,
+        pub num_retries: Option<::Value<u32>>,
         /// Property [`RestartDelay`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-restartdelay).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub restart_delay: Option<crate::Value<u32>>,
+        pub restart_delay: Option<::Value<u32>>,
         /// Property [`SegmentationMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-segmentationmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub segmentation_mode: Option<crate::Value<String>>,
+        pub segmentation_mode: Option<::Value<String>>,
         /// Property [`SendDelayMs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-senddelayms).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub send_delay_ms: Option<crate::Value<u32>>,
+        pub send_delay_ms: Option<::Value<u32>>,
         /// Property [`SparseTrackType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-sparsetracktype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sparse_track_type: Option<crate::Value<String>>,
+        pub sparse_track_type: Option<::Value<String>>,
         /// Property [`StreamManifestBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-streammanifestbehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_manifest_behavior: Option<crate::Value<String>>,
+        pub stream_manifest_behavior: Option<::Value<String>>,
         /// Property [`TimestampOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-timestampoffset).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timestamp_offset: Option<crate::Value<String>>,
+        pub timestamp_offset: Option<::Value<String>>,
         /// Property [`TimestampOffsetMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-timestampoffsetmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timestamp_offset_mode: Option<crate::Value<String>>,
+        pub timestamp_offset_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MsSmoothGroupSettings {
+    impl ::codec::SerializeValue for MsSmoothGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref acquisition_point_id) = self.acquisition_point_id {
@@ -13385,7 +13385,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for MsSmoothGroupSettings {
+    impl ::codec::DeserializeValue for MsSmoothGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MsSmoothGroupSettings, D::Error> {
@@ -13402,25 +13402,25 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut acquisition_point_id: Option<crate::Value<String>> = None;
-                    let mut audio_only_timecode_control: Option<crate::Value<String>> = None;
-                    let mut certificate_mode: Option<crate::Value<String>> = None;
-                    let mut connection_retry_interval: Option<crate::Value<u32>> = None;
-                    let mut destination: Option<crate::Value<OutputLocationRef>> = None;
-                    let mut event_id: Option<crate::Value<String>> = None;
-                    let mut event_id_mode: Option<crate::Value<String>> = None;
-                    let mut event_stop_behavior: Option<crate::Value<String>> = None;
-                    let mut filecache_duration: Option<crate::Value<u32>> = None;
-                    let mut fragment_length: Option<crate::Value<u32>> = None;
-                    let mut input_loss_action: Option<crate::Value<String>> = None;
-                    let mut num_retries: Option<crate::Value<u32>> = None;
-                    let mut restart_delay: Option<crate::Value<u32>> = None;
-                    let mut segmentation_mode: Option<crate::Value<String>> = None;
-                    let mut send_delay_ms: Option<crate::Value<u32>> = None;
-                    let mut sparse_track_type: Option<crate::Value<String>> = None;
-                    let mut stream_manifest_behavior: Option<crate::Value<String>> = None;
-                    let mut timestamp_offset: Option<crate::Value<String>> = None;
-                    let mut timestamp_offset_mode: Option<crate::Value<String>> = None;
+                    let mut acquisition_point_id: Option<::Value<String>> = None;
+                    let mut audio_only_timecode_control: Option<::Value<String>> = None;
+                    let mut certificate_mode: Option<::Value<String>> = None;
+                    let mut connection_retry_interval: Option<::Value<u32>> = None;
+                    let mut destination: Option<::Value<OutputLocationRef>> = None;
+                    let mut event_id: Option<::Value<String>> = None;
+                    let mut event_id_mode: Option<::Value<String>> = None;
+                    let mut event_stop_behavior: Option<::Value<String>> = None;
+                    let mut filecache_duration: Option<::Value<u32>> = None;
+                    let mut fragment_length: Option<::Value<u32>> = None;
+                    let mut input_loss_action: Option<::Value<String>> = None;
+                    let mut num_retries: Option<::Value<u32>> = None;
+                    let mut restart_delay: Option<::Value<u32>> = None;
+                    let mut segmentation_mode: Option<::Value<String>> = None;
+                    let mut send_delay_ms: Option<::Value<u32>> = None;
+                    let mut sparse_track_type: Option<::Value<String>> = None;
+                    let mut stream_manifest_behavior: Option<::Value<String>> = None;
+                    let mut timestamp_offset: Option<::Value<String>> = None;
+                    let mut timestamp_offset_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13527,15 +13527,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub h265_packaging_type: Option<crate::Value<String>>,
+        pub h265_packaging_type: Option<::Value<String>>,
         /// Property [`NameModifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothoutputsettings.html#cfn-medialive-channel-mssmoothoutputsettings-namemodifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name_modifier: Option<crate::Value<String>>,
+        pub name_modifier: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MsSmoothOutputSettings {
+    impl ::codec::SerializeValue for MsSmoothOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref h265_packaging_type) = self.h265_packaging_type {
@@ -13556,7 +13556,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for MsSmoothOutputSettings {
+    impl ::codec::DeserializeValue for MsSmoothOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MsSmoothOutputSettings, D::Error> {
@@ -13573,8 +13573,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut h265_packaging_type: Option<crate::Value<String>> = None;
-                    let mut name_modifier: Option<crate::Value<String>> = None;
+                    let mut h265_packaging_type: Option<::Value<String>> = None;
+                    let mut name_modifier: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13605,14 +13605,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct MultiplexGroupSettings {}
 
-    impl crate::codec::SerializeValue for MultiplexGroupSettings {
+    impl ::codec::SerializeValue for MultiplexGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for MultiplexGroupSettings {
+    impl ::codec::DeserializeValue for MultiplexGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MultiplexGroupSettings, D::Error> {
@@ -13644,10 +13644,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: Option<crate::Value<OutputLocationRef>>,
+        pub destination: Option<::Value<OutputLocationRef>>,
     }
 
-    impl crate::codec::SerializeValue for MultiplexOutputSettings {
+    impl ::codec::SerializeValue for MultiplexOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination) = self.destination {
@@ -13657,7 +13657,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for MultiplexOutputSettings {
+    impl ::codec::DeserializeValue for MultiplexOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MultiplexOutputSettings, D::Error> {
@@ -13674,7 +13674,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination: Option<crate::Value<OutputLocationRef>> = None;
+                    let mut destination: Option<::Value<OutputLocationRef>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13704,15 +13704,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub multiplex_id: Option<crate::Value<String>>,
+        pub multiplex_id: Option<::Value<String>>,
         /// Property [`ProgramName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexprogramchanneldestinationsettings.html#cfn-medialive-channel-multiplexprogramchanneldestinationsettings-programname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub program_name: Option<crate::Value<String>>,
+        pub program_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MultiplexProgramChannelDestinationSettings {
+    impl ::codec::SerializeValue for MultiplexProgramChannelDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref multiplex_id) = self.multiplex_id {
@@ -13725,7 +13725,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for MultiplexProgramChannelDestinationSettings {
+    impl ::codec::DeserializeValue for MultiplexProgramChannelDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MultiplexProgramChannelDestinationSettings, D::Error> {
@@ -13745,8 +13745,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut multiplex_id: Option<crate::Value<String>> = None;
-                    let mut program_name: Option<crate::Value<String>> = None;
+                    let mut multiplex_id: Option<::Value<String>> = None;
+                    let mut program_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13780,15 +13780,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_input_settings: Option<crate::Value<HlsInputSettings>>,
+        pub hls_input_settings: Option<::Value<HlsInputSettings>>,
         /// Property [`ServerValidation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-servervalidation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub server_validation: Option<crate::Value<String>>,
+        pub server_validation: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for NetworkInputSettings {
+    impl ::codec::SerializeValue for NetworkInputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref hls_input_settings) = self.hls_input_settings {
@@ -13809,7 +13809,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for NetworkInputSettings {
+    impl ::codec::DeserializeValue for NetworkInputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkInputSettings, D::Error> {
@@ -13826,8 +13826,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut hls_input_settings: Option<crate::Value<HlsInputSettings>> = None;
-                    let mut server_validation: Option<crate::Value<String>> = None;
+                    let mut hls_input_settings: Option<::Value<HlsInputSettings>> = None;
+                    let mut server_validation: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13861,20 +13861,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cbet_check_digit_string: Option<crate::Value<String>>,
+        pub cbet_check_digit_string: Option<::Value<String>>,
         /// Property [`CbetStepaside`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-cbetstepaside).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cbet_stepaside: Option<crate::Value<String>>,
+        pub cbet_stepaside: Option<::Value<String>>,
         /// Property [`Csid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-csid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub csid: Option<crate::Value<String>>,
+        pub csid: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for NielsenCBET {
+    impl ::codec::SerializeValue for NielsenCBET {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cbet_check_digit_string) = self.cbet_check_digit_string {
@@ -13898,7 +13898,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for NielsenCBET {
+    impl ::codec::DeserializeValue for NielsenCBET {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NielsenCBET, D::Error> {
             struct Visitor;
 
@@ -13913,9 +13913,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cbet_check_digit_string: Option<crate::Value<String>> = None;
-                    let mut cbet_stepaside: Option<crate::Value<String>> = None;
-                    let mut csid: Option<crate::Value<String>> = None;
+                    let mut cbet_check_digit_string: Option<::Value<String>> = None;
+                    let mut cbet_stepaside: Option<::Value<String>> = None;
+                    let mut csid: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13954,15 +13954,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub distributor_id: Option<crate::Value<String>>,
+        pub distributor_id: Option<::Value<String>>,
         /// Property [`NielsenPcmToId3Tagging`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenconfiguration.html#cfn-medialive-channel-nielsenconfiguration-nielsenpcmtoid3tagging).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_pcm_to_id3_tagging: Option<crate::Value<String>>,
+        pub nielsen_pcm_to_id3_tagging: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for NielsenConfiguration {
+    impl ::codec::SerializeValue for NielsenConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref distributor_id) = self.distributor_id {
@@ -13983,7 +13983,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for NielsenConfiguration {
+    impl ::codec::DeserializeValue for NielsenConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NielsenConfiguration, D::Error> {
@@ -14000,8 +14000,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut distributor_id: Option<crate::Value<String>> = None;
-                    let mut nielsen_pcm_to_id3_tagging: Option<crate::Value<String>> = None;
+                    let mut distributor_id: Option<::Value<String>> = None;
+                    let mut nielsen_pcm_to_id3_tagging: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14036,15 +14036,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub check_digit_string: Option<crate::Value<String>>,
+        pub check_digit_string: Option<::Value<String>>,
         /// Property [`Sid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html#cfn-medialive-channel-nielsennaesiinw-sid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sid: Option<crate::Value<f64>>,
+        pub sid: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for NielsenNaesIiNw {
+    impl ::codec::SerializeValue for NielsenNaesIiNw {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref check_digit_string) = self.check_digit_string {
@@ -14061,7 +14061,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for NielsenNaesIiNw {
+    impl ::codec::DeserializeValue for NielsenNaesIiNw {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NielsenNaesIiNw, D::Error> {
@@ -14078,8 +14078,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut check_digit_string: Option<crate::Value<String>> = None;
-                    let mut sid: Option<crate::Value<f64>> = None;
+                    let mut check_digit_string: Option<::Value<String>> = None;
+                    let mut sid: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14113,20 +14113,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_cbet_settings: Option<crate::Value<NielsenCBET>>,
+        pub nielsen_cbet_settings: Option<::Value<NielsenCBET>>,
         /// Property [`NielsenDistributionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsendistributiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_distribution_type: Option<crate::Value<String>>,
+        pub nielsen_distribution_type: Option<::Value<String>>,
         /// Property [`NielsenNaesIiNwSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsennaesiinwsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nielsen_naes_ii_nw_settings: Option<crate::Value<NielsenNaesIiNw>>,
+        pub nielsen_naes_ii_nw_settings: Option<::Value<NielsenNaesIiNw>>,
     }
 
-    impl crate::codec::SerializeValue for NielsenWatermarksSettings {
+    impl ::codec::SerializeValue for NielsenWatermarksSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref nielsen_cbet_settings) = self.nielsen_cbet_settings {
@@ -14154,7 +14154,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for NielsenWatermarksSettings {
+    impl ::codec::DeserializeValue for NielsenWatermarksSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NielsenWatermarksSettings, D::Error> {
@@ -14171,9 +14171,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut nielsen_cbet_settings: Option<crate::Value<NielsenCBET>> = None;
-                    let mut nielsen_distribution_type: Option<crate::Value<String>> = None;
-                    let mut nielsen_naes_ii_nw_settings: Option<crate::Value<NielsenNaesIiNw>> = None;
+                    let mut nielsen_cbet_settings: Option<::Value<NielsenCBET>> = None;
+                    let mut nielsen_distribution_type: Option<::Value<String>> = None;
+                    let mut nielsen_naes_ii_nw_settings: Option<::Value<NielsenNaesIiNw>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14214,30 +14214,30 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_description_names: Option<crate::ValueList<String>>,
+        pub audio_description_names: Option<::ValueList<String>>,
         /// Property [`CaptionDescriptionNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html#cfn-medialive-channel-output-captiondescriptionnames).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caption_description_names: Option<crate::ValueList<String>>,
+        pub caption_description_names: Option<::ValueList<String>>,
         /// Property [`OutputName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html#cfn-medialive-channel-output-outputname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_name: Option<crate::Value<String>>,
+        pub output_name: Option<::Value<String>>,
         /// Property [`OutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html#cfn-medialive-channel-output-outputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_settings: Option<crate::Value<OutputSettings>>,
+        pub output_settings: Option<::Value<OutputSettings>>,
         /// Property [`VideoDescriptionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html#cfn-medialive-channel-output-videodescriptionname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_description_name: Option<crate::Value<String>>,
+        pub video_description_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Output {
+    impl ::codec::SerializeValue for Output {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_description_names) = self.audio_description_names {
@@ -14275,7 +14275,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Output {
+    impl ::codec::DeserializeValue for Output {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Output, D::Error> {
             struct Visitor;
 
@@ -14290,11 +14290,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_description_names: Option<crate::ValueList<String>> = None;
-                    let mut caption_description_names: Option<crate::ValueList<String>> = None;
-                    let mut output_name: Option<crate::Value<String>> = None;
-                    let mut output_settings: Option<crate::Value<OutputSettings>> = None;
-                    let mut video_description_name: Option<crate::Value<String>> = None;
+                    let mut audio_description_names: Option<::ValueList<String>> = None;
+                    let mut caption_description_names: Option<::ValueList<String>> = None;
+                    let mut output_name: Option<::Value<String>> = None;
+                    let mut output_settings: Option<::Value<OutputSettings>> = None;
+                    let mut video_description_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14343,25 +14343,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: Option<crate::Value<String>>,
+        pub id: Option<::Value<String>>,
         /// Property [`MediaPackageSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-mediapackagesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub media_package_settings: Option<crate::ValueList<MediaPackageOutputDestinationSettings>>,
+        pub media_package_settings: Option<::ValueList<MediaPackageOutputDestinationSettings>>,
         /// Property [`MultiplexSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-multiplexsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub multiplex_settings: Option<crate::Value<MultiplexProgramChannelDestinationSettings>>,
+        pub multiplex_settings: Option<::Value<MultiplexProgramChannelDestinationSettings>>,
         /// Property [`Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub settings: Option<crate::ValueList<OutputDestinationSettings>>,
+        pub settings: Option<::ValueList<OutputDestinationSettings>>,
     }
 
-    impl crate::codec::SerializeValue for OutputDestination {
+    impl ::codec::SerializeValue for OutputDestination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref id) = self.id {
@@ -14388,7 +14388,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for OutputDestination {
+    impl ::codec::DeserializeValue for OutputDestination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputDestination, D::Error> {
@@ -14405,14 +14405,14 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<crate::Value<String>> = None;
+                    let mut id: Option<::Value<String>> = None;
                     let mut media_package_settings: Option<
-                        crate::ValueList<MediaPackageOutputDestinationSettings>,
+                        ::ValueList<MediaPackageOutputDestinationSettings>,
                     > = None;
                     let mut multiplex_settings: Option<
-                        crate::Value<MultiplexProgramChannelDestinationSettings>,
+                        ::Value<MultiplexProgramChannelDestinationSettings>,
                     > = None;
-                    let mut settings: Option<crate::ValueList<OutputDestinationSettings>> = None;
+                    let mut settings: Option<::ValueList<OutputDestinationSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14455,25 +14455,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password_param: Option<crate::Value<String>>,
+        pub password_param: Option<::Value<String>>,
         /// Property [`StreamName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-streamname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_name: Option<crate::Value<String>>,
+        pub stream_name: Option<::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<crate::Value<String>>,
+        pub url: Option<::Value<String>>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: Option<crate::Value<String>>,
+        pub username: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for OutputDestinationSettings {
+    impl ::codec::SerializeValue for OutputDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref password_param) = self.password_param {
@@ -14496,7 +14496,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for OutputDestinationSettings {
+    impl ::codec::DeserializeValue for OutputDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputDestinationSettings, D::Error> {
@@ -14513,10 +14513,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut password_param: Option<crate::Value<String>> = None;
-                    let mut stream_name: Option<crate::Value<String>> = None;
-                    let mut url: Option<crate::Value<String>> = None;
-                    let mut username: Option<crate::Value<String>> = None;
+                    let mut password_param: Option<::Value<String>> = None;
+                    let mut stream_name: Option<::Value<String>> = None;
+                    let mut url: Option<::Value<String>> = None;
+                    let mut username: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14558,20 +14558,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`OutputGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroup.html#cfn-medialive-channel-outputgroup-outputgroupsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_group_settings: Option<crate::Value<OutputGroupSettings>>,
+        pub output_group_settings: Option<::Value<OutputGroupSettings>>,
         /// Property [`Outputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroup.html#cfn-medialive-channel-outputgroup-outputs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub outputs: Option<crate::ValueList<Output>>,
+        pub outputs: Option<::ValueList<Output>>,
     }
 
-    impl crate::codec::SerializeValue for OutputGroup {
+    impl ::codec::SerializeValue for OutputGroup {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -14591,7 +14591,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for OutputGroup {
+    impl ::codec::DeserializeValue for OutputGroup {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OutputGroup, D::Error> {
             struct Visitor;
 
@@ -14606,9 +14606,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut output_group_settings: Option<crate::Value<OutputGroupSettings>> = None;
-                    let mut outputs: Option<crate::ValueList<Output>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut output_group_settings: Option<::Value<OutputGroupSettings>> = None;
+                    let mut outputs: Option<::ValueList<Output>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14647,45 +14647,45 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub archive_group_settings: Option<crate::Value<ArchiveGroupSettings>>,
+        pub archive_group_settings: Option<::Value<ArchiveGroupSettings>>,
         /// Property [`FrameCaptureGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-framecapturegroupsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frame_capture_group_settings: Option<crate::Value<FrameCaptureGroupSettings>>,
+        pub frame_capture_group_settings: Option<::Value<FrameCaptureGroupSettings>>,
         /// Property [`HlsGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-hlsgroupsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_group_settings: Option<crate::Value<HlsGroupSettings>>,
+        pub hls_group_settings: Option<::Value<HlsGroupSettings>>,
         /// Property [`MediaPackageGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-mediapackagegroupsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub media_package_group_settings: Option<crate::Value<MediaPackageGroupSettings>>,
+        pub media_package_group_settings: Option<::Value<MediaPackageGroupSettings>>,
         /// Property [`MsSmoothGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-mssmoothgroupsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ms_smooth_group_settings: Option<crate::Value<MsSmoothGroupSettings>>,
+        pub ms_smooth_group_settings: Option<::Value<MsSmoothGroupSettings>>,
         /// Property [`MultiplexGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-multiplexgroupsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub multiplex_group_settings: Option<crate::Value<MultiplexGroupSettings>>,
+        pub multiplex_group_settings: Option<::Value<MultiplexGroupSettings>>,
         /// Property [`RtmpGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-rtmpgroupsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rtmp_group_settings: Option<crate::Value<RtmpGroupSettings>>,
+        pub rtmp_group_settings: Option<::Value<RtmpGroupSettings>>,
         /// Property [`UdpGroupSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-udpgroupsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub udp_group_settings: Option<crate::Value<UdpGroupSettings>>,
+        pub udp_group_settings: Option<::Value<UdpGroupSettings>>,
     }
 
-    impl crate::codec::SerializeValue for OutputGroupSettings {
+    impl ::codec::SerializeValue for OutputGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref archive_group_settings) = self.archive_group_settings {
@@ -14748,7 +14748,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for OutputGroupSettings {
+    impl ::codec::DeserializeValue for OutputGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputGroupSettings, D::Error> {
@@ -14765,19 +14765,19 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut archive_group_settings: Option<crate::Value<ArchiveGroupSettings>> = None;
+                    let mut archive_group_settings: Option<::Value<ArchiveGroupSettings>> = None;
                     let mut frame_capture_group_settings: Option<
-                        crate::Value<FrameCaptureGroupSettings>,
+                        ::Value<FrameCaptureGroupSettings>,
                     > = None;
-                    let mut hls_group_settings: Option<crate::Value<HlsGroupSettings>> = None;
+                    let mut hls_group_settings: Option<::Value<HlsGroupSettings>> = None;
                     let mut media_package_group_settings: Option<
-                        crate::Value<MediaPackageGroupSettings>,
+                        ::Value<MediaPackageGroupSettings>,
                     > = None;
-                    let mut ms_smooth_group_settings: Option<crate::Value<MsSmoothGroupSettings>> = None;
-                    let mut multiplex_group_settings: Option<crate::Value<MultiplexGroupSettings>> =
+                    let mut ms_smooth_group_settings: Option<::Value<MsSmoothGroupSettings>> = None;
+                    let mut multiplex_group_settings: Option<::Value<MultiplexGroupSettings>> =
                         None;
-                    let mut rtmp_group_settings: Option<crate::Value<RtmpGroupSettings>> = None;
-                    let mut udp_group_settings: Option<crate::Value<UdpGroupSettings>> = None;
+                    let mut rtmp_group_settings: Option<::Value<RtmpGroupSettings>> = None;
+                    let mut udp_group_settings: Option<::Value<UdpGroupSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14840,10 +14840,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_ref_id: Option<crate::Value<String>>,
+        pub destination_ref_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for OutputLocationRef {
+    impl ::codec::SerializeValue for OutputLocationRef {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination_ref_id) = self.destination_ref_id {
@@ -14857,7 +14857,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for OutputLocationRef {
+    impl ::codec::DeserializeValue for OutputLocationRef {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputLocationRef, D::Error> {
@@ -14874,7 +14874,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination_ref_id: Option<crate::Value<String>> = None;
+                    let mut destination_ref_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14904,45 +14904,45 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub archive_output_settings: Option<crate::Value<ArchiveOutputSettings>>,
+        pub archive_output_settings: Option<::Value<ArchiveOutputSettings>>,
         /// Property [`FrameCaptureOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-framecaptureoutputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frame_capture_output_settings: Option<crate::Value<FrameCaptureOutputSettings>>,
+        pub frame_capture_output_settings: Option<::Value<FrameCaptureOutputSettings>>,
         /// Property [`HlsOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-hlsoutputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hls_output_settings: Option<crate::Value<HlsOutputSettings>>,
+        pub hls_output_settings: Option<::Value<HlsOutputSettings>>,
         /// Property [`MediaPackageOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-mediapackageoutputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub media_package_output_settings: Option<crate::Value<MediaPackageOutputSettings>>,
+        pub media_package_output_settings: Option<::Value<MediaPackageOutputSettings>>,
         /// Property [`MsSmoothOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-mssmoothoutputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ms_smooth_output_settings: Option<crate::Value<MsSmoothOutputSettings>>,
+        pub ms_smooth_output_settings: Option<::Value<MsSmoothOutputSettings>>,
         /// Property [`MultiplexOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-multiplexoutputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub multiplex_output_settings: Option<crate::Value<MultiplexOutputSettings>>,
+        pub multiplex_output_settings: Option<::Value<MultiplexOutputSettings>>,
         /// Property [`RtmpOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-rtmpoutputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rtmp_output_settings: Option<crate::Value<RtmpOutputSettings>>,
+        pub rtmp_output_settings: Option<::Value<RtmpOutputSettings>>,
         /// Property [`UdpOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-udpoutputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub udp_output_settings: Option<crate::Value<UdpOutputSettings>>,
+        pub udp_output_settings: Option<::Value<UdpOutputSettings>>,
     }
 
-    impl crate::codec::SerializeValue for OutputSettings {
+    impl ::codec::SerializeValue for OutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref archive_output_settings) = self.archive_output_settings {
@@ -15005,7 +15005,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for OutputSettings {
+    impl ::codec::DeserializeValue for OutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputSettings, D::Error> {
@@ -15022,20 +15022,20 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut archive_output_settings: Option<crate::Value<ArchiveOutputSettings>> = None;
+                    let mut archive_output_settings: Option<::Value<ArchiveOutputSettings>> = None;
                     let mut frame_capture_output_settings: Option<
-                        crate::Value<FrameCaptureOutputSettings>,
+                        ::Value<FrameCaptureOutputSettings>,
                     > = None;
-                    let mut hls_output_settings: Option<crate::Value<HlsOutputSettings>> = None;
+                    let mut hls_output_settings: Option<::Value<HlsOutputSettings>> = None;
                     let mut media_package_output_settings: Option<
-                        crate::Value<MediaPackageOutputSettings>,
+                        ::Value<MediaPackageOutputSettings>,
                     > = None;
-                    let mut ms_smooth_output_settings: Option<crate::Value<MsSmoothOutputSettings>> =
+                    let mut ms_smooth_output_settings: Option<::Value<MsSmoothOutputSettings>> =
                         None;
-                    let mut multiplex_output_settings: Option<crate::Value<MultiplexOutputSettings>> =
+                    let mut multiplex_output_settings: Option<::Value<MultiplexOutputSettings>> =
                         None;
-                    let mut rtmp_output_settings: Option<crate::Value<RtmpOutputSettings>> = None;
-                    let mut udp_output_settings: Option<crate::Value<UdpOutputSettings>> = None;
+                    let mut rtmp_output_settings: Option<::Value<RtmpOutputSettings>> = None;
+                    let mut udp_output_settings: Option<::Value<UdpOutputSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -15096,14 +15096,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct PassThroughSettings {}
 
-    impl crate::codec::SerializeValue for PassThroughSettings {
+    impl ::codec::SerializeValue for PassThroughSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for PassThroughSettings {
+    impl ::codec::DeserializeValue for PassThroughSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PassThroughSettings, D::Error> {
@@ -15132,14 +15132,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct RawSettings {}
 
-    impl crate::codec::SerializeValue for RawSettings {
+    impl ::codec::SerializeValue for RawSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for RawSettings {
+    impl ::codec::DeserializeValue for RawSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RawSettings, D::Error> {
             struct Visitor;
 
@@ -15166,14 +15166,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct Rec601Settings {}
 
-    impl crate::codec::SerializeValue for Rec601Settings {
+    impl ::codec::SerializeValue for Rec601Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for Rec601Settings {
+    impl ::codec::DeserializeValue for Rec601Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Rec601Settings, D::Error> {
@@ -15202,14 +15202,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct Rec709Settings {}
 
-    impl crate::codec::SerializeValue for Rec709Settings {
+    impl ::codec::SerializeValue for Rec709Settings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for Rec709Settings {
+    impl ::codec::DeserializeValue for Rec709Settings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Rec709Settings, D::Error> {
@@ -15241,20 +15241,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub channel_mappings: Option<crate::ValueList<AudioChannelMapping>>,
+        pub channel_mappings: Option<::ValueList<AudioChannelMapping>>,
         /// Property [`ChannelsIn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-remixsettings.html#cfn-medialive-channel-remixsettings-channelsin).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub channels_in: Option<crate::Value<u32>>,
+        pub channels_in: Option<::Value<u32>>,
         /// Property [`ChannelsOut`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-remixsettings.html#cfn-medialive-channel-remixsettings-channelsout).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub channels_out: Option<crate::Value<u32>>,
+        pub channels_out: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for RemixSettings {
+    impl ::codec::SerializeValue for RemixSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref channel_mappings) = self.channel_mappings {
@@ -15274,7 +15274,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for RemixSettings {
+    impl ::codec::DeserializeValue for RemixSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RemixSettings, D::Error> {
@@ -15291,9 +15291,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut channel_mappings: Option<crate::ValueList<AudioChannelMapping>> = None;
-                    let mut channels_in: Option<crate::Value<u32>> = None;
-                    let mut channels_out: Option<crate::Value<u32>> = None;
+                    let mut channel_mappings: Option<::ValueList<AudioChannelMapping>> = None;
+                    let mut channels_in: Option<::Value<u32>> = None;
+                    let mut channels_out: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -15328,14 +15328,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct RtmpCaptionInfoDestinationSettings {}
 
-    impl crate::codec::SerializeValue for RtmpCaptionInfoDestinationSettings {
+    impl ::codec::SerializeValue for RtmpCaptionInfoDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for RtmpCaptionInfoDestinationSettings {
+    impl ::codec::DeserializeValue for RtmpCaptionInfoDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RtmpCaptionInfoDestinationSettings, D::Error> {
@@ -15367,40 +15367,40 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ad_markers: Option<crate::ValueList<String>>,
+        pub ad_markers: Option<::ValueList<String>>,
         /// Property [`AuthenticationScheme`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-authenticationscheme).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authentication_scheme: Option<crate::Value<String>>,
+        pub authentication_scheme: Option<::Value<String>>,
         /// Property [`CacheFullBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-cachefullbehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_full_behavior: Option<crate::Value<String>>,
+        pub cache_full_behavior: Option<::Value<String>>,
         /// Property [`CacheLength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-cachelength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cache_length: Option<crate::Value<u32>>,
+        pub cache_length: Option<::Value<u32>>,
         /// Property [`CaptionData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-captiondata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub caption_data: Option<crate::Value<String>>,
+        pub caption_data: Option<::Value<String>>,
         /// Property [`InputLossAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-inputlossaction).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_action: Option<crate::Value<String>>,
+        pub input_loss_action: Option<::Value<String>>,
         /// Property [`RestartDelay`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-restartdelay).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub restart_delay: Option<crate::Value<u32>>,
+        pub restart_delay: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for RtmpGroupSettings {
+    impl ::codec::SerializeValue for RtmpGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_markers) = self.ad_markers {
@@ -15444,7 +15444,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for RtmpGroupSettings {
+    impl ::codec::DeserializeValue for RtmpGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RtmpGroupSettings, D::Error> {
@@ -15461,13 +15461,13 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ad_markers: Option<crate::ValueList<String>> = None;
-                    let mut authentication_scheme: Option<crate::Value<String>> = None;
-                    let mut cache_full_behavior: Option<crate::Value<String>> = None;
-                    let mut cache_length: Option<crate::Value<u32>> = None;
-                    let mut caption_data: Option<crate::Value<String>> = None;
-                    let mut input_loss_action: Option<crate::Value<String>> = None;
-                    let mut restart_delay: Option<crate::Value<u32>> = None;
+                    let mut ad_markers: Option<::ValueList<String>> = None;
+                    let mut authentication_scheme: Option<::Value<String>> = None;
+                    let mut cache_full_behavior: Option<::Value<String>> = None;
+                    let mut cache_length: Option<::Value<u32>> = None;
+                    let mut caption_data: Option<::Value<String>> = None;
+                    let mut input_loss_action: Option<::Value<String>> = None;
+                    let mut restart_delay: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -15522,25 +15522,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub certificate_mode: Option<crate::Value<String>>,
+        pub certificate_mode: Option<::Value<String>>,
         /// Property [`ConnectionRetryInterval`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpoutputsettings.html#cfn-medialive-channel-rtmpoutputsettings-connectionretryinterval).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_retry_interval: Option<crate::Value<u32>>,
+        pub connection_retry_interval: Option<::Value<u32>>,
         /// Property [`Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpoutputsettings.html#cfn-medialive-channel-rtmpoutputsettings-destination).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: Option<crate::Value<OutputLocationRef>>,
+        pub destination: Option<::Value<OutputLocationRef>>,
         /// Property [`NumRetries`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpoutputsettings.html#cfn-medialive-channel-rtmpoutputsettings-numretries).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub num_retries: Option<crate::Value<u32>>,
+        pub num_retries: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for RtmpOutputSettings {
+    impl ::codec::SerializeValue for RtmpOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref certificate_mode) = self.certificate_mode {
@@ -15567,7 +15567,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for RtmpOutputSettings {
+    impl ::codec::DeserializeValue for RtmpOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RtmpOutputSettings, D::Error> {
@@ -15584,10 +15584,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut certificate_mode: Option<crate::Value<String>> = None;
-                    let mut connection_retry_interval: Option<crate::Value<u32>> = None;
-                    let mut destination: Option<crate::Value<OutputLocationRef>> = None;
-                    let mut num_retries: Option<crate::Value<u32>> = None;
+                    let mut certificate_mode: Option<::Value<String>> = None;
+                    let mut connection_retry_interval: Option<::Value<u32>> = None;
+                    let mut destination: Option<::Value<OutputLocationRef>> = None;
+                    let mut num_retries: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -15627,14 +15627,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct Scte20PlusEmbeddedDestinationSettings {}
 
-    impl crate::codec::SerializeValue for Scte20PlusEmbeddedDestinationSettings {
+    impl ::codec::SerializeValue for Scte20PlusEmbeddedDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for Scte20PlusEmbeddedDestinationSettings {
+    impl ::codec::DeserializeValue for Scte20PlusEmbeddedDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Scte20PlusEmbeddedDestinationSettings, D::Error> {
@@ -15666,15 +15666,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub convert608_to708: Option<crate::Value<String>>,
+        pub convert608_to708: Option<::Value<String>>,
         /// Property [`Source608ChannelNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html#cfn-medialive-channel-scte20sourcesettings-source608channelnumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source608_channel_number: Option<crate::Value<u32>>,
+        pub source608_channel_number: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for Scte20SourceSettings {
+    impl ::codec::SerializeValue for Scte20SourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref convert608_to708) = self.convert608_to708 {
@@ -15695,7 +15695,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Scte20SourceSettings {
+    impl ::codec::DeserializeValue for Scte20SourceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Scte20SourceSettings, D::Error> {
@@ -15712,8 +15712,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut convert608_to708: Option<crate::Value<String>> = None;
-                    let mut source608_channel_number: Option<crate::Value<u32>> = None;
+                    let mut convert608_to708: Option<::Value<String>> = None;
+                    let mut source608_channel_number: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -15745,14 +15745,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct Scte27DestinationSettings {}
 
-    impl crate::codec::SerializeValue for Scte27DestinationSettings {
+    impl ::codec::SerializeValue for Scte27DestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for Scte27DestinationSettings {
+    impl ::codec::DeserializeValue for Scte27DestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Scte27DestinationSettings, D::Error> {
@@ -15784,15 +15784,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ocr_language: Option<crate::Value<String>>,
+        pub ocr_language: Option<::Value<String>>,
         /// Property [`Pid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html#cfn-medialive-channel-scte27sourcesettings-pid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pid: Option<crate::Value<u32>>,
+        pub pid: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for Scte27SourceSettings {
+    impl ::codec::SerializeValue for Scte27SourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ocr_language) = self.ocr_language {
@@ -15805,7 +15805,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Scte27SourceSettings {
+    impl ::codec::DeserializeValue for Scte27SourceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Scte27SourceSettings, D::Error> {
@@ -15822,8 +15822,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ocr_language: Option<crate::Value<String>> = None;
-                    let mut pid: Option<crate::Value<u32>> = None;
+                    let mut ocr_language: Option<::Value<String>> = None;
+                    let mut pid: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -15857,20 +15857,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ad_avail_offset: Option<crate::Value<u32>>,
+        pub ad_avail_offset: Option<::Value<u32>>,
         /// Property [`NoRegionalBlackoutFlag`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35spliceinsert.html#cfn-medialive-channel-scte35spliceinsert-noregionalblackoutflag).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub no_regional_blackout_flag: Option<crate::Value<String>>,
+        pub no_regional_blackout_flag: Option<::Value<String>>,
         /// Property [`WebDeliveryAllowedFlag`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35spliceinsert.html#cfn-medialive-channel-scte35spliceinsert-webdeliveryallowedflag).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub web_delivery_allowed_flag: Option<crate::Value<String>>,
+        pub web_delivery_allowed_flag: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Scte35SpliceInsert {
+    impl ::codec::SerializeValue for Scte35SpliceInsert {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_avail_offset) = self.ad_avail_offset {
@@ -15898,7 +15898,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Scte35SpliceInsert {
+    impl ::codec::DeserializeValue for Scte35SpliceInsert {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Scte35SpliceInsert, D::Error> {
@@ -15915,9 +15915,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ad_avail_offset: Option<crate::Value<u32>> = None;
-                    let mut no_regional_blackout_flag: Option<crate::Value<String>> = None;
-                    let mut web_delivery_allowed_flag: Option<crate::Value<String>> = None;
+                    let mut ad_avail_offset: Option<::Value<u32>> = None;
+                    let mut no_regional_blackout_flag: Option<::Value<String>> = None;
+                    let mut web_delivery_allowed_flag: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -15957,20 +15957,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ad_avail_offset: Option<crate::Value<u32>>,
+        pub ad_avail_offset: Option<::Value<u32>>,
         /// Property [`NoRegionalBlackoutFlag`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html#cfn-medialive-channel-scte35timesignalapos-noregionalblackoutflag).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub no_regional_blackout_flag: Option<crate::Value<String>>,
+        pub no_regional_blackout_flag: Option<::Value<String>>,
         /// Property [`WebDeliveryAllowedFlag`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html#cfn-medialive-channel-scte35timesignalapos-webdeliveryallowedflag).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub web_delivery_allowed_flag: Option<crate::Value<String>>,
+        pub web_delivery_allowed_flag: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Scte35TimeSignalApos {
+    impl ::codec::SerializeValue for Scte35TimeSignalApos {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_avail_offset) = self.ad_avail_offset {
@@ -15998,7 +15998,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for Scte35TimeSignalApos {
+    impl ::codec::DeserializeValue for Scte35TimeSignalApos {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<Scte35TimeSignalApos, D::Error> {
@@ -16015,9 +16015,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ad_avail_offset: Option<crate::Value<u32>> = None;
-                    let mut no_regional_blackout_flag: Option<crate::Value<String>> = None;
-                    let mut web_delivery_allowed_flag: Option<crate::Value<String>> = None;
+                    let mut ad_avail_offset: Option<::Value<u32>> = None;
+                    let mut no_regional_blackout_flag: Option<::Value<String>> = None;
+                    let mut web_delivery_allowed_flag: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16054,14 +16054,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct SmpteTtDestinationSettings {}
 
-    impl crate::codec::SerializeValue for SmpteTtDestinationSettings {
+    impl ::codec::SerializeValue for SmpteTtDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for SmpteTtDestinationSettings {
+    impl ::codec::DeserializeValue for SmpteTtDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SmpteTtDestinationSettings, D::Error> {
@@ -16093,15 +16093,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audio_rendition_sets: Option<crate::Value<String>>,
+        pub audio_rendition_sets: Option<::Value<String>>,
         /// Property [`M3u8Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-standardhlssettings.html#cfn-medialive-channel-standardhlssettings-m3u8settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub m3u8_settings: Option<crate::Value<M3u8Settings>>,
+        pub m3u8_settings: Option<::Value<M3u8Settings>>,
     }
 
-    impl crate::codec::SerializeValue for StandardHlsSettings {
+    impl ::codec::SerializeValue for StandardHlsSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audio_rendition_sets) = self.audio_rendition_sets {
@@ -16122,7 +16122,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for StandardHlsSettings {
+    impl ::codec::DeserializeValue for StandardHlsSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StandardHlsSettings, D::Error> {
@@ -16139,8 +16139,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audio_rendition_sets: Option<crate::Value<String>> = None;
-                    let mut m3u8_settings: Option<crate::Value<M3u8Settings>> = None;
+                    let mut audio_rendition_sets: Option<::Value<String>> = None;
+                    let mut m3u8_settings: Option<::Value<M3u8Settings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16175,15 +16175,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_provider_server: Option<crate::Value<InputLocation>>,
+        pub key_provider_server: Option<::Value<InputLocation>>,
         /// Property [`StaticKeyValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-statickeysettings.html#cfn-medialive-channel-statickeysettings-statickeyvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub static_key_value: Option<crate::Value<String>>,
+        pub static_key_value: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for StaticKeySettings {
+    impl ::codec::SerializeValue for StaticKeySettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key_provider_server) = self.key_provider_server {
@@ -16204,7 +16204,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for StaticKeySettings {
+    impl ::codec::DeserializeValue for StaticKeySettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StaticKeySettings, D::Error> {
@@ -16221,8 +16221,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key_provider_server: Option<crate::Value<InputLocation>> = None;
-                    let mut static_key_value: Option<crate::Value<String>> = None;
+                    let mut key_provider_server: Option<::Value<InputLocation>> = None;
+                    let mut static_key_value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16253,14 +16253,14 @@ pub mod channel {
     #[derive(Debug, Default)]
     pub struct TeletextDestinationSettings {}
 
-    impl crate::codec::SerializeValue for TeletextDestinationSettings {
+    impl ::codec::SerializeValue for TeletextDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for TeletextDestinationSettings {
+    impl ::codec::DeserializeValue for TeletextDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TeletextDestinationSettings, D::Error> {
@@ -16292,15 +16292,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_rectangle: Option<crate::Value<CaptionRectangle>>,
+        pub output_rectangle: Option<::Value<CaptionRectangle>>,
         /// Property [`PageNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextsourcesettings.html#cfn-medialive-channel-teletextsourcesettings-pagenumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub page_number: Option<crate::Value<String>>,
+        pub page_number: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for TeletextSourceSettings {
+    impl ::codec::SerializeValue for TeletextSourceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref output_rectangle) = self.output_rectangle {
@@ -16317,7 +16317,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for TeletextSourceSettings {
+    impl ::codec::DeserializeValue for TeletextSourceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TeletextSourceSettings, D::Error> {
@@ -16334,8 +16334,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut output_rectangle: Option<crate::Value<CaptionRectangle>> = None;
-                    let mut page_number: Option<crate::Value<String>> = None;
+                    let mut output_rectangle: Option<::Value<CaptionRectangle>> = None;
+                    let mut page_number: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16369,15 +16369,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub post_filter_sharpening: Option<crate::Value<String>>,
+        pub post_filter_sharpening: Option<::Value<String>>,
         /// Property [`Strength`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-temporalfiltersettings.html#cfn-medialive-channel-temporalfiltersettings-strength).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub strength: Option<crate::Value<String>>,
+        pub strength: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for TemporalFilterSettings {
+    impl ::codec::SerializeValue for TemporalFilterSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref post_filter_sharpening) = self.post_filter_sharpening {
@@ -16394,7 +16394,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for TemporalFilterSettings {
+    impl ::codec::DeserializeValue for TemporalFilterSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TemporalFilterSettings, D::Error> {
@@ -16411,8 +16411,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut post_filter_sharpening: Option<crate::Value<String>> = None;
-                    let mut strength: Option<crate::Value<String>> = None;
+                    let mut post_filter_sharpening: Option<::Value<String>> = None;
+                    let mut strength: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16447,15 +16447,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source: Option<crate::Value<String>>,
+        pub source: Option<::Value<String>>,
         /// Property [`SyncThreshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-timecodeconfig.html#cfn-medialive-channel-timecodeconfig-syncthreshold).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sync_threshold: Option<crate::Value<u32>>,
+        pub sync_threshold: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for TimecodeConfig {
+    impl ::codec::SerializeValue for TimecodeConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref source) = self.source {
@@ -16472,7 +16472,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for TimecodeConfig {
+    impl ::codec::DeserializeValue for TimecodeConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TimecodeConfig, D::Error> {
@@ -16489,8 +16489,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source: Option<crate::Value<String>> = None;
-                    let mut sync_threshold: Option<crate::Value<u32>> = None;
+                    let mut source: Option<::Value<String>> = None;
+                    let mut sync_threshold: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16524,10 +16524,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub style_control: Option<crate::Value<String>>,
+        pub style_control: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for TtmlDestinationSettings {
+    impl ::codec::SerializeValue for TtmlDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref style_control) = self.style_control {
@@ -16541,7 +16541,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for TtmlDestinationSettings {
+    impl ::codec::DeserializeValue for TtmlDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TtmlDestinationSettings, D::Error> {
@@ -16558,7 +16558,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut style_control: Option<crate::Value<String>> = None;
+                    let mut style_control: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16588,10 +16588,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub m2ts_settings: Option<crate::Value<M2tsSettings>>,
+        pub m2ts_settings: Option<::Value<M2tsSettings>>,
     }
 
-    impl crate::codec::SerializeValue for UdpContainerSettings {
+    impl ::codec::SerializeValue for UdpContainerSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref m2ts_settings) = self.m2ts_settings {
@@ -16605,7 +16605,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for UdpContainerSettings {
+    impl ::codec::DeserializeValue for UdpContainerSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UdpContainerSettings, D::Error> {
@@ -16622,7 +16622,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut m2ts_settings: Option<crate::Value<M2tsSettings>> = None;
+                    let mut m2ts_settings: Option<::Value<M2tsSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16652,20 +16652,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_loss_action: Option<crate::Value<String>>,
+        pub input_loss_action: Option<::Value<String>>,
         /// Property [`TimedMetadataId3Frame`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpgroupsettings.html#cfn-medialive-channel-udpgroupsettings-timedmetadataid3frame).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_id3_frame: Option<crate::Value<String>>,
+        pub timed_metadata_id3_frame: Option<::Value<String>>,
         /// Property [`TimedMetadataId3Period`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpgroupsettings.html#cfn-medialive-channel-udpgroupsettings-timedmetadataid3period).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timed_metadata_id3_period: Option<crate::Value<u32>>,
+        pub timed_metadata_id3_period: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for UdpGroupSettings {
+    impl ::codec::SerializeValue for UdpGroupSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref input_loss_action) = self.input_loss_action {
@@ -16693,7 +16693,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for UdpGroupSettings {
+    impl ::codec::DeserializeValue for UdpGroupSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UdpGroupSettings, D::Error> {
@@ -16710,9 +16710,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut input_loss_action: Option<crate::Value<String>> = None;
-                    let mut timed_metadata_id3_frame: Option<crate::Value<String>> = None;
-                    let mut timed_metadata_id3_period: Option<crate::Value<u32>> = None;
+                    let mut input_loss_action: Option<::Value<String>> = None;
+                    let mut timed_metadata_id3_frame: Option<::Value<String>> = None;
+                    let mut timed_metadata_id3_period: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16752,25 +16752,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buffer_msec: Option<crate::Value<u32>>,
+        pub buffer_msec: Option<::Value<u32>>,
         /// Property [`ContainerSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-containersettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_settings: Option<crate::Value<UdpContainerSettings>>,
+        pub container_settings: Option<::Value<UdpContainerSettings>>,
         /// Property [`Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-destination).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination: Option<crate::Value<OutputLocationRef>>,
+        pub destination: Option<::Value<OutputLocationRef>>,
         /// Property [`FecOutputSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-fecoutputsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fec_output_settings: Option<crate::Value<FecOutputSettings>>,
+        pub fec_output_settings: Option<::Value<FecOutputSettings>>,
     }
 
-    impl crate::codec::SerializeValue for UdpOutputSettings {
+    impl ::codec::SerializeValue for UdpOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref buffer_msec) = self.buffer_msec {
@@ -16797,7 +16797,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for UdpOutputSettings {
+    impl ::codec::DeserializeValue for UdpOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UdpOutputSettings, D::Error> {
@@ -16814,10 +16814,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut buffer_msec: Option<crate::Value<u32>> = None;
-                    let mut container_settings: Option<crate::Value<UdpContainerSettings>> = None;
-                    let mut destination: Option<crate::Value<OutputLocationRef>> = None;
-                    let mut fec_output_settings: Option<crate::Value<FecOutputSettings>> = None;
+                    let mut buffer_msec: Option<::Value<u32>> = None;
+                    let mut container_settings: Option<::Value<UdpContainerSettings>> = None;
+                    let mut destination: Option<::Value<OutputLocationRef>> = None;
+                    let mut fec_output_settings: Option<::Value<FecOutputSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16859,15 +16859,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub black_detect_threshold: Option<crate::Value<f64>>,
+        pub black_detect_threshold: Option<::Value<f64>>,
         /// Property [`VideoBlackThresholdMsec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoblackfailoversettings.html#cfn-medialive-channel-videoblackfailoversettings-videoblackthresholdmsec).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_black_threshold_msec: Option<crate::Value<u32>>,
+        pub video_black_threshold_msec: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for VideoBlackFailoverSettings {
+    impl ::codec::SerializeValue for VideoBlackFailoverSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref black_detect_threshold) = self.black_detect_threshold {
@@ -16888,7 +16888,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VideoBlackFailoverSettings {
+    impl ::codec::DeserializeValue for VideoBlackFailoverSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VideoBlackFailoverSettings, D::Error> {
@@ -16905,8 +16905,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut black_detect_threshold: Option<crate::Value<f64>> = None;
-                    let mut video_black_threshold_msec: Option<crate::Value<u32>> = None;
+                    let mut black_detect_threshold: Option<::Value<f64>> = None;
+                    let mut video_black_threshold_msec: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -16942,25 +16942,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub frame_capture_settings: Option<crate::Value<FrameCaptureSettings>>,
+        pub frame_capture_settings: Option<::Value<FrameCaptureSettings>>,
         /// Property [`H264Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-h264settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub h264_settings: Option<crate::Value<H264Settings>>,
+        pub h264_settings: Option<::Value<H264Settings>>,
         /// Property [`H265Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-h265settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub h265_settings: Option<crate::Value<H265Settings>>,
+        pub h265_settings: Option<::Value<H265Settings>>,
         /// Property [`Mpeg2Settings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-mpeg2settings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mpeg2_settings: Option<crate::Value<Mpeg2Settings>>,
+        pub mpeg2_settings: Option<::Value<Mpeg2Settings>>,
     }
 
-    impl crate::codec::SerializeValue for VideoCodecSettings {
+    impl ::codec::SerializeValue for VideoCodecSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref frame_capture_settings) = self.frame_capture_settings {
@@ -16995,7 +16995,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VideoCodecSettings {
+    impl ::codec::DeserializeValue for VideoCodecSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VideoCodecSettings, D::Error> {
@@ -17012,10 +17012,10 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut frame_capture_settings: Option<crate::Value<FrameCaptureSettings>> = None;
-                    let mut h264_settings: Option<crate::Value<H264Settings>> = None;
-                    let mut h265_settings: Option<crate::Value<H265Settings>> = None;
-                    let mut mpeg2_settings: Option<crate::Value<Mpeg2Settings>> = None;
+                    let mut frame_capture_settings: Option<::Value<FrameCaptureSettings>> = None;
+                    let mut h264_settings: Option<::Value<H264Settings>> = None;
+                    let mut h265_settings: Option<::Value<H265Settings>> = None;
+                    let mut mpeg2_settings: Option<::Value<Mpeg2Settings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17058,40 +17058,40 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub codec_settings: Option<crate::Value<VideoCodecSettings>>,
+        pub codec_settings: Option<::Value<VideoCodecSettings>>,
         /// Property [`Height`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-height).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub height: Option<crate::Value<u32>>,
+        pub height: Option<::Value<u32>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`RespondToAfd`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-respondtoafd).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub respond_to_afd: Option<crate::Value<String>>,
+        pub respond_to_afd: Option<::Value<String>>,
         /// Property [`ScalingBehavior`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-scalingbehavior).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scaling_behavior: Option<crate::Value<String>>,
+        pub scaling_behavior: Option<::Value<String>>,
         /// Property [`Sharpness`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-sharpness).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sharpness: Option<crate::Value<u32>>,
+        pub sharpness: Option<::Value<u32>>,
         /// Property [`Width`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-width).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub width: Option<crate::Value<u32>>,
+        pub width: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for VideoDescription {
+    impl ::codec::SerializeValue for VideoDescription {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref codec_settings) = self.codec_settings {
@@ -17131,7 +17131,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VideoDescription {
+    impl ::codec::DeserializeValue for VideoDescription {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VideoDescription, D::Error> {
@@ -17148,13 +17148,13 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut codec_settings: Option<crate::Value<VideoCodecSettings>> = None;
-                    let mut height: Option<crate::Value<u32>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut respond_to_afd: Option<crate::Value<String>> = None;
-                    let mut scaling_behavior: Option<crate::Value<String>> = None;
-                    let mut sharpness: Option<crate::Value<u32>> = None;
-                    let mut width: Option<crate::Value<u32>> = None;
+                    let mut codec_settings: Option<::Value<VideoCodecSettings>> = None;
+                    let mut height: Option<::Value<u32>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut respond_to_afd: Option<::Value<String>> = None;
+                    let mut scaling_behavior: Option<::Value<String>> = None;
+                    let mut sharpness: Option<::Value<u32>> = None;
+                    let mut width: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17208,25 +17208,25 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_space: Option<crate::Value<String>>,
+        pub color_space: Option<::Value<String>>,
         /// Property [`ColorSpaceSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspacesettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_space_settings: Option<crate::Value<VideoSelectorColorSpaceSettings>>,
+        pub color_space_settings: Option<::Value<VideoSelectorColorSpaceSettings>>,
         /// Property [`ColorSpaceUsage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspaceusage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub color_space_usage: Option<crate::Value<String>>,
+        pub color_space_usage: Option<::Value<String>>,
         /// Property [`SelectorSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-selectorsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub selector_settings: Option<crate::Value<VideoSelectorSettings>>,
+        pub selector_settings: Option<::Value<VideoSelectorSettings>>,
     }
 
-    impl crate::codec::SerializeValue for VideoSelector {
+    impl ::codec::SerializeValue for VideoSelector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref color_space) = self.color_space {
@@ -17257,7 +17257,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VideoSelector {
+    impl ::codec::DeserializeValue for VideoSelector {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VideoSelector, D::Error> {
@@ -17274,11 +17274,11 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut color_space: Option<crate::Value<String>> = None;
-                    let mut color_space_settings: Option<crate::Value<VideoSelectorColorSpaceSettings>> =
+                    let mut color_space: Option<::Value<String>> = None;
+                    let mut color_space_settings: Option<::Value<VideoSelectorColorSpaceSettings>> =
                         None;
-                    let mut color_space_usage: Option<crate::Value<String>> = None;
-                    let mut selector_settings: Option<crate::Value<VideoSelectorSettings>> = None;
+                    let mut color_space_usage: Option<::Value<String>> = None;
+                    let mut selector_settings: Option<::Value<VideoSelectorSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17321,10 +17321,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hdr10_settings: Option<crate::Value<Hdr10Settings>>,
+        pub hdr10_settings: Option<::Value<Hdr10Settings>>,
     }
 
-    impl crate::codec::SerializeValue for VideoSelectorColorSpaceSettings {
+    impl ::codec::SerializeValue for VideoSelectorColorSpaceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref hdr10_settings) = self.hdr10_settings {
@@ -17338,7 +17338,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VideoSelectorColorSpaceSettings {
+    impl ::codec::DeserializeValue for VideoSelectorColorSpaceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VideoSelectorColorSpaceSettings, D::Error> {
@@ -17355,7 +17355,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut hdr10_settings: Option<crate::Value<Hdr10Settings>> = None;
+                    let mut hdr10_settings: Option<::Value<Hdr10Settings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17385,10 +17385,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pid: Option<crate::Value<u32>>,
+        pub pid: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for VideoSelectorPid {
+    impl ::codec::SerializeValue for VideoSelectorPid {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref pid) = self.pid {
@@ -17398,7 +17398,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VideoSelectorPid {
+    impl ::codec::DeserializeValue for VideoSelectorPid {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VideoSelectorPid, D::Error> {
@@ -17415,7 +17415,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut pid: Option<crate::Value<u32>> = None;
+                    let mut pid: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17443,10 +17443,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub program_id: Option<crate::Value<u32>>,
+        pub program_id: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for VideoSelectorProgramId {
+    impl ::codec::SerializeValue for VideoSelectorProgramId {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref program_id) = self.program_id {
@@ -17456,7 +17456,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VideoSelectorProgramId {
+    impl ::codec::DeserializeValue for VideoSelectorProgramId {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VideoSelectorProgramId, D::Error> {
@@ -17473,7 +17473,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut program_id: Option<crate::Value<u32>> = None;
+                    let mut program_id: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17503,15 +17503,15 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_selector_pid: Option<crate::Value<VideoSelectorPid>>,
+        pub video_selector_pid: Option<::Value<VideoSelectorPid>>,
         /// Property [`VideoSelectorProgramId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorprogramid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub video_selector_program_id: Option<crate::Value<VideoSelectorProgramId>>,
+        pub video_selector_program_id: Option<::Value<VideoSelectorProgramId>>,
     }
 
-    impl crate::codec::SerializeValue for VideoSelectorSettings {
+    impl ::codec::SerializeValue for VideoSelectorSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref video_selector_pid) = self.video_selector_pid {
@@ -17532,7 +17532,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VideoSelectorSettings {
+    impl ::codec::DeserializeValue for VideoSelectorSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VideoSelectorSettings, D::Error> {
@@ -17549,8 +17549,8 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut video_selector_pid: Option<crate::Value<VideoSelectorPid>> = None;
-                    let mut video_selector_program_id: Option<crate::Value<VideoSelectorProgramId>> =
+                    let mut video_selector_pid: Option<::Value<VideoSelectorPid>> = None;
+                    let mut video_selector_program_id: Option<::Value<VideoSelectorProgramId>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -17586,20 +17586,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub public_address_allocation_ids: Option<crate::ValueList<String>>,
+        pub public_address_allocation_ids: Option<::ValueList<String>>,
         /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-vpcoutputsettings.html#cfn-medialive-channel-vpcoutputsettings-securitygroupids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_group_ids: Option<crate::ValueList<String>>,
+        pub security_group_ids: Option<::ValueList<String>>,
         /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-vpcoutputsettings.html#cfn-medialive-channel-vpcoutputsettings-subnetids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subnet_ids: Option<crate::ValueList<String>>,
+        pub subnet_ids: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for VpcOutputSettings {
+    impl ::codec::SerializeValue for VpcOutputSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref public_address_allocation_ids) = self.public_address_allocation_ids {
@@ -17623,7 +17623,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcOutputSettings {
+    impl ::codec::DeserializeValue for VpcOutputSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VpcOutputSettings, D::Error> {
@@ -17640,9 +17640,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut public_address_allocation_ids: Option<crate::ValueList<String>> = None;
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnet_ids: Option<crate::ValueList<String>> = None;
+                    let mut public_address_allocation_ids: Option<::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnet_ids: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17681,20 +17681,20 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bit_depth: Option<crate::Value<f64>>,
+        pub bit_depth: Option<::Value<f64>>,
         /// Property [`CodingMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html#cfn-medialive-channel-wavsettings-codingmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub coding_mode: Option<crate::Value<String>>,
+        pub coding_mode: Option<::Value<String>>,
         /// Property [`SampleRate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html#cfn-medialive-channel-wavsettings-samplerate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sample_rate: Option<crate::Value<f64>>,
+        pub sample_rate: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for WavSettings {
+    impl ::codec::SerializeValue for WavSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bit_depth) = self.bit_depth {
@@ -17710,7 +17710,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for WavSettings {
+    impl ::codec::DeserializeValue for WavSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<WavSettings, D::Error> {
             struct Visitor;
 
@@ -17725,9 +17725,9 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bit_depth: Option<crate::Value<f64>> = None;
-                    let mut coding_mode: Option<crate::Value<String>> = None;
-                    let mut sample_rate: Option<crate::Value<f64>> = None;
+                    let mut bit_depth: Option<::Value<f64>> = None;
+                    let mut coding_mode: Option<::Value<String>> = None;
+                    let mut sample_rate: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17765,10 +17765,10 @@ pub mod channel {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub style_control: Option<crate::Value<String>>,
+        pub style_control: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for WebvttDestinationSettings {
+    impl ::codec::SerializeValue for WebvttDestinationSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref style_control) = self.style_control {
@@ -17782,7 +17782,7 @@ pub mod channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for WebvttDestinationSettings {
+    impl ::codec::DeserializeValue for WebvttDestinationSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WebvttDestinationSettings, D::Error> {
@@ -17799,7 +17799,7 @@ pub mod channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut style_control: Option<crate::Value<String>> = None;
+                    let mut style_control: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17833,10 +17833,10 @@ pub mod input {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_name: Option<crate::Value<String>>,
+        pub stream_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InputDestinationRequest {
+    impl ::codec::SerializeValue for InputDestinationRequest {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref stream_name) = self.stream_name {
@@ -17846,7 +17846,7 @@ pub mod input {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputDestinationRequest {
+    impl ::codec::DeserializeValue for InputDestinationRequest {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputDestinationRequest, D::Error> {
@@ -17863,7 +17863,7 @@ pub mod input {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut stream_name: Option<crate::Value<String>> = None;
+                    let mut stream_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17893,10 +17893,10 @@ pub mod input {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: Option<crate::Value<String>>,
+        pub id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InputDeviceRequest {
+    impl ::codec::SerializeValue for InputDeviceRequest {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref id) = self.id {
@@ -17906,7 +17906,7 @@ pub mod input {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputDeviceRequest {
+    impl ::codec::DeserializeValue for InputDeviceRequest {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputDeviceRequest, D::Error> {
@@ -17923,7 +17923,7 @@ pub mod input {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<crate::Value<String>> = None;
+                    let mut id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -17951,10 +17951,10 @@ pub mod input {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: Option<crate::Value<String>>,
+        pub id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InputDeviceSettings {
+    impl ::codec::SerializeValue for InputDeviceSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref id) = self.id {
@@ -17964,7 +17964,7 @@ pub mod input {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputDeviceSettings {
+    impl ::codec::DeserializeValue for InputDeviceSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputDeviceSettings, D::Error> {
@@ -17981,7 +17981,7 @@ pub mod input {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<crate::Value<String>> = None;
+                    let mut id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -18009,20 +18009,20 @@ pub mod input {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password_param: Option<crate::Value<String>>,
+        pub password_param: Option<::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<crate::Value<String>>,
+        pub url: Option<::Value<String>>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: Option<crate::Value<String>>,
+        pub username: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InputSourceRequest {
+    impl ::codec::SerializeValue for InputSourceRequest {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref password_param) = self.password_param {
@@ -18042,7 +18042,7 @@ pub mod input {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputSourceRequest {
+    impl ::codec::DeserializeValue for InputSourceRequest {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputSourceRequest, D::Error> {
@@ -18059,9 +18059,9 @@ pub mod input {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut password_param: Option<crate::Value<String>> = None;
-                    let mut url: Option<crate::Value<String>> = None;
-                    let mut username: Option<crate::Value<String>> = None;
+                    let mut password_param: Option<::Value<String>> = None;
+                    let mut url: Option<::Value<String>> = None;
+                    let mut username: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -18099,15 +18099,15 @@ pub mod input {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_group_ids: Option<crate::ValueList<String>>,
+        pub security_group_ids: Option<::ValueList<String>>,
         /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-subnetids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subnet_ids: Option<crate::ValueList<String>>,
+        pub subnet_ids: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for InputVpcRequest {
+    impl ::codec::SerializeValue for InputVpcRequest {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref security_group_ids) = self.security_group_ids {
@@ -18124,7 +18124,7 @@ pub mod input {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputVpcRequest {
+    impl ::codec::DeserializeValue for InputVpcRequest {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputVpcRequest, D::Error> {
@@ -18141,8 +18141,8 @@ pub mod input {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnet_ids: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnet_ids: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -18176,10 +18176,10 @@ pub mod input {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub flow_arn: Option<crate::Value<String>>,
+        pub flow_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MediaConnectFlowRequest {
+    impl ::codec::SerializeValue for MediaConnectFlowRequest {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref flow_arn) = self.flow_arn {
@@ -18189,7 +18189,7 @@ pub mod input {
         }
     }
 
-    impl crate::codec::DeserializeValue for MediaConnectFlowRequest {
+    impl ::codec::DeserializeValue for MediaConnectFlowRequest {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MediaConnectFlowRequest, D::Error> {
@@ -18206,7 +18206,7 @@ pub mod input {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut flow_arn: Option<crate::Value<String>> = None;
+                    let mut flow_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -18238,10 +18238,10 @@ pub mod input_security_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cidr: Option<crate::Value<String>>,
+        pub cidr: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InputWhitelistRuleCidr {
+    impl ::codec::SerializeValue for InputWhitelistRuleCidr {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cidr) = self.cidr {
@@ -18251,7 +18251,7 @@ pub mod input_security_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputWhitelistRuleCidr {
+    impl ::codec::DeserializeValue for InputWhitelistRuleCidr {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputWhitelistRuleCidr, D::Error> {
@@ -18268,7 +18268,7 @@ pub mod input_security_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cidr: Option<crate::Value<String>> = None;
+                    let mut cidr: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

@@ -13,67 +13,67 @@ pub struct FileSystemProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub backup_id: Option<crate::Value<String>>,
+    pub backup_id: Option<::Value<String>>,
     /// Property [`FileSystemType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-filesystemtype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub file_system_type: crate::Value<String>,
+    pub file_system_type: ::Value<String>,
     /// Property [`FileSystemTypeVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-filesystemtypeversion).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub file_system_type_version: Option<crate::Value<String>>,
+    pub file_system_type_version: Option<::Value<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`LustreConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-lustreconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub lustre_configuration: Option<crate::Value<self::file_system::LustreConfiguration>>,
+    pub lustre_configuration: Option<::Value<self::file_system::LustreConfiguration>>,
     /// Property [`OntapConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-ontapconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ontap_configuration: Option<crate::Value<self::file_system::OntapConfiguration>>,
+    pub ontap_configuration: Option<::Value<self::file_system::OntapConfiguration>>,
     /// Property [`OpenZFSConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-openzfsconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub open_zfs_configuration: Option<crate::Value<self::file_system::OpenZFSConfiguration>>,
+    pub open_zfs_configuration: Option<::Value<self::file_system::OpenZFSConfiguration>>,
     /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-securitygroupids).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub security_group_ids: Option<crate::ValueList<String>>,
+    pub security_group_ids: Option<::ValueList<String>>,
     /// Property [`StorageCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagecapacity).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub storage_capacity: Option<crate::Value<u32>>,
+    pub storage_capacity: Option<::Value<u32>>,
     /// Property [`StorageType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagetype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub storage_type: Option<crate::Value<String>>,
+    pub storage_type: Option<::Value<String>>,
     /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-subnetids).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnet_ids: crate::ValueList<String>,
+    pub subnet_ids: ::ValueList<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`WindowsConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-windowsconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub windows_configuration: Option<crate::Value<self::file_system::WindowsConfiguration>>,
+    pub windows_configuration: Option<::Value<self::file_system::WindowsConfiguration>>,
 }
 
 impl ::serde::Serialize for FileSystemProperties {
@@ -165,26 +165,26 @@ impl<'de> ::serde::Deserialize<'de> for FileSystemProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut backup_id: Option<crate::Value<String>> = None;
-                let mut file_system_type: Option<crate::Value<String>> = None;
-                let mut file_system_type_version: Option<crate::Value<String>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut backup_id: Option<::Value<String>> = None;
+                let mut file_system_type: Option<::Value<String>> = None;
+                let mut file_system_type_version: Option<::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
                 let mut lustre_configuration: Option<
-                    crate::Value<self::file_system::LustreConfiguration>,
+                    ::Value<self::file_system::LustreConfiguration>,
                 > = None;
                 let mut ontap_configuration: Option<
-                    crate::Value<self::file_system::OntapConfiguration>,
+                    ::Value<self::file_system::OntapConfiguration>,
                 > = None;
                 let mut open_zfs_configuration: Option<
-                    crate::Value<self::file_system::OpenZFSConfiguration>,
+                    ::Value<self::file_system::OpenZFSConfiguration>,
                 > = None;
-                let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                let mut storage_capacity: Option<crate::Value<u32>> = None;
-                let mut storage_type: Option<crate::Value<String>> = None;
-                let mut subnet_ids: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut security_group_ids: Option<::ValueList<String>> = None;
+                let mut storage_capacity: Option<::Value<u32>> = None;
+                let mut storage_type: Option<::Value<String>> = None;
+                let mut subnet_ids: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut windows_configuration: Option<
-                    crate::Value<self::file_system::WindowsConfiguration>,
+                    ::Value<self::file_system::WindowsConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -256,7 +256,7 @@ impl<'de> ::serde::Deserialize<'de> for FileSystemProperties {
     }
 }
 
-impl crate::Resource for FileSystem {
+impl ::Resource for FileSystem {
     type Properties = FileSystemProperties;
     const TYPE: &'static str = "AWS::FSx::FileSystem";
     fn properties(&self) -> &FileSystemProperties {
@@ -267,7 +267,7 @@ impl crate::Resource for FileSystem {
     }
 }
 
-impl crate::private::Sealed for FileSystem {}
+impl ::private::Sealed for FileSystem {}
 
 impl From<FileSystemProperties> for FileSystem {
     fn from(properties: FileSystemProperties) -> FileSystem {
@@ -288,17 +288,17 @@ pub struct SnapshotProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-snapshot.html#cfn-fsx-snapshot-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VolumeId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-snapshot.html#cfn-fsx-snapshot-volumeid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub volume_id: crate::Value<String>,
+    pub volume_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for SnapshotProperties {
@@ -328,9 +328,9 @@ impl<'de> ::serde::Deserialize<'de> for SnapshotProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut volume_id: Option<crate::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut volume_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -359,7 +359,7 @@ impl<'de> ::serde::Deserialize<'de> for SnapshotProperties {
     }
 }
 
-impl crate::Resource for Snapshot {
+impl ::Resource for Snapshot {
     type Properties = SnapshotProperties;
     const TYPE: &'static str = "AWS::FSx::Snapshot";
     fn properties(&self) -> &SnapshotProperties {
@@ -370,7 +370,7 @@ impl crate::Resource for Snapshot {
     }
 }
 
-impl crate::private::Sealed for Snapshot {}
+impl ::private::Sealed for Snapshot {}
 
 impl From<SnapshotProperties> for Snapshot {
     fn from(properties: SnapshotProperties) -> Snapshot {
@@ -392,32 +392,32 @@ pub struct StorageVirtualMachineProperties {
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub active_directory_configuration:
-        Option<crate::Value<self::storage_virtual_machine::ActiveDirectoryConfiguration>>,
+        Option<::Value<self::storage_virtual_machine::ActiveDirectoryConfiguration>>,
     /// Property [`FileSystemId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-filesystemid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub file_system_id: crate::Value<String>,
+    pub file_system_id: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`RootVolumeSecurityStyle`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-rootvolumesecuritystyle).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub root_volume_security_style: Option<crate::Value<String>>,
+    pub root_volume_security_style: Option<::Value<String>>,
     /// Property [`SvmAdminPassword`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-svmadminpassword).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub svm_admin_password: Option<crate::Value<String>>,
+    pub svm_admin_password: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for StorageVirtualMachineProperties {
@@ -475,13 +475,13 @@ impl<'de> ::serde::Deserialize<'de> for StorageVirtualMachineProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut active_directory_configuration: Option<
-                    crate::Value<self::storage_virtual_machine::ActiveDirectoryConfiguration>,
+                    ::Value<self::storage_virtual_machine::ActiveDirectoryConfiguration>,
                 > = None;
-                let mut file_system_id: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut root_volume_security_style: Option<crate::Value<String>> = None;
-                let mut svm_admin_password: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut file_system_id: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut root_volume_security_style: Option<::Value<String>> = None;
+                let mut svm_admin_password: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -525,7 +525,7 @@ impl<'de> ::serde::Deserialize<'de> for StorageVirtualMachineProperties {
     }
 }
 
-impl crate::Resource for StorageVirtualMachine {
+impl ::Resource for StorageVirtualMachine {
     type Properties = StorageVirtualMachineProperties;
     const TYPE: &'static str = "AWS::FSx::StorageVirtualMachine";
     fn properties(&self) -> &StorageVirtualMachineProperties {
@@ -536,7 +536,7 @@ impl crate::Resource for StorageVirtualMachine {
     }
 }
 
-impl crate::private::Sealed for StorageVirtualMachine {}
+impl ::private::Sealed for StorageVirtualMachine {}
 
 impl From<StorageVirtualMachineProperties> for StorageVirtualMachine {
     fn from(properties: StorageVirtualMachineProperties) -> StorageVirtualMachine {
@@ -557,32 +557,32 @@ pub struct VolumeProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub backup_id: Option<crate::Value<String>>,
+    pub backup_id: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html#cfn-fsx-volume-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`OntapConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html#cfn-fsx-volume-ontapconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ontap_configuration: Option<crate::Value<self::volume::OntapConfiguration>>,
+    pub ontap_configuration: Option<::Value<self::volume::OntapConfiguration>>,
     /// Property [`OpenZFSConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html#cfn-fsx-volume-openzfsconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub open_zfs_configuration: Option<crate::Value<self::volume::OpenZFSConfiguration>>,
+    pub open_zfs_configuration: Option<::Value<self::volume::OpenZFSConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html#cfn-fsx-volume-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VolumeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html#cfn-fsx-volume-volumetype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub volume_type: Option<crate::Value<String>>,
+    pub volume_type: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for VolumeProperties {
@@ -631,15 +631,15 @@ impl<'de> ::serde::Deserialize<'de> for VolumeProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut backup_id: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut ontap_configuration: Option<crate::Value<self::volume::OntapConfiguration>> =
+                let mut backup_id: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut ontap_configuration: Option<::Value<self::volume::OntapConfiguration>> =
                     None;
                 let mut open_zfs_configuration: Option<
-                    crate::Value<self::volume::OpenZFSConfiguration>,
+                    ::Value<self::volume::OpenZFSConfiguration>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut volume_type: Option<crate::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut volume_type: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -680,7 +680,7 @@ impl<'de> ::serde::Deserialize<'de> for VolumeProperties {
     }
 }
 
-impl crate::Resource for Volume {
+impl ::Resource for Volume {
     type Properties = VolumeProperties;
     const TYPE: &'static str = "AWS::FSx::Volume";
     fn properties(&self) -> &VolumeProperties {
@@ -691,7 +691,7 @@ impl crate::Resource for Volume {
     }
 }
 
-impl crate::private::Sealed for Volume {}
+impl ::private::Sealed for Volume {}
 
 impl From<VolumeProperties> for Volume {
     fn from(properties: VolumeProperties) -> Volume {
@@ -709,20 +709,20 @@ pub mod file_system {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audit_log_destination: Option<crate::Value<String>>,
+        pub audit_log_destination: Option<::Value<String>>,
         /// Property [`FileAccessAuditLogLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-auditlogconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-auditlogconfiguration-fileaccessauditloglevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub file_access_audit_log_level: crate::Value<String>,
+        pub file_access_audit_log_level: ::Value<String>,
         /// Property [`FileShareAccessAuditLogLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-auditlogconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-auditlogconfiguration-fileshareaccessauditloglevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub file_share_access_audit_log_level: crate::Value<String>,
+        pub file_share_access_audit_log_level: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for AuditLogConfiguration {
+    impl ::codec::SerializeValue for AuditLogConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref audit_log_destination) = self.audit_log_destination {
@@ -746,7 +746,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for AuditLogConfiguration {
+    impl ::codec::DeserializeValue for AuditLogConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AuditLogConfiguration, D::Error> {
@@ -763,9 +763,9 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut audit_log_destination: Option<crate::Value<String>> = None;
-                    let mut file_access_audit_log_level: Option<crate::Value<String>> = None;
-                    let mut file_share_access_audit_log_level: Option<crate::Value<String>> = None;
+                    let mut audit_log_destination: Option<::Value<String>> = None;
+                    let mut file_access_audit_log_level: Option<::Value<String>> = None;
+                    let mut file_share_access_audit_log_level: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -810,15 +810,15 @@ pub mod file_system {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub clients: Option<crate::Value<String>>,
+        pub clients: Option<::Value<String>>,
         /// Property [`Options`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-nfsexports-clientconfigurations.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-nfsexports-clientconfigurations-options).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub options: Option<crate::ValueList<String>>,
+        pub options: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for ClientConfigurations {
+    impl ::codec::SerializeValue for ClientConfigurations {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref clients) = self.clients {
@@ -831,7 +831,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for ClientConfigurations {
+    impl ::codec::DeserializeValue for ClientConfigurations {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClientConfigurations, D::Error> {
@@ -848,8 +848,8 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut clients: Option<crate::Value<String>> = None;
-                    let mut options: Option<crate::ValueList<String>> = None;
+                    let mut clients: Option<::Value<String>> = None;
+                    let mut options: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -883,15 +883,15 @@ pub mod file_system {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub iops: Option<crate::Value<u32>>,
+        pub iops: Option<::Value<u32>>,
         /// Property [`Mode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration-mode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub mode: Option<crate::Value<String>>,
+        pub mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DiskIopsConfiguration {
+    impl ::codec::SerializeValue for DiskIopsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref iops) = self.iops {
@@ -904,7 +904,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for DiskIopsConfiguration {
+    impl ::codec::DeserializeValue for DiskIopsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DiskIopsConfiguration, D::Error> {
@@ -921,8 +921,8 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut iops: Option<crate::Value<u32>> = None;
-                    let mut mode: Option<crate::Value<String>> = None;
+                    let mut iops: Option<::Value<u32>> = None;
+                    let mut mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -956,65 +956,65 @@ pub mod file_system {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auto_import_policy: Option<crate::Value<String>>,
+        pub auto_import_policy: Option<::Value<String>>,
         /// Property [`AutomaticBackupRetentionDays`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-automaticbackupretentiondays).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub automatic_backup_retention_days: Option<crate::Value<u32>>,
+        pub automatic_backup_retention_days: Option<::Value<u32>>,
         /// Property [`CopyTagsToBackups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-copytagstobackups).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub copy_tags_to_backups: Option<crate::Value<bool>>,
+        pub copy_tags_to_backups: Option<::Value<bool>>,
         /// Property [`DailyAutomaticBackupStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-dailyautomaticbackupstarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub daily_automatic_backup_start_time: Option<crate::Value<String>>,
+        pub daily_automatic_backup_start_time: Option<::Value<String>>,
         /// Property [`DataCompressionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-datacompressiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_compression_type: Option<crate::Value<String>>,
+        pub data_compression_type: Option<::Value<String>>,
         /// Property [`DeploymentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-deploymenttype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub deployment_type: Option<crate::Value<String>>,
+        pub deployment_type: Option<::Value<String>>,
         /// Property [`DriveCacheType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-drivecachetype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub drive_cache_type: Option<crate::Value<String>>,
+        pub drive_cache_type: Option<::Value<String>>,
         /// Property [`ExportPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-exportpath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub export_path: Option<crate::Value<String>>,
+        pub export_path: Option<::Value<String>>,
         /// Property [`ImportPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-importpath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub import_path: Option<crate::Value<String>>,
+        pub import_path: Option<::Value<String>>,
         /// Property [`ImportedFileChunkSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-importedfilechunksize).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub imported_file_chunk_size: Option<crate::Value<u32>>,
+        pub imported_file_chunk_size: Option<::Value<u32>>,
         /// Property [`PerUnitStorageThroughput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-perunitstoragethroughput).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub per_unit_storage_throughput: Option<crate::Value<u32>>,
+        pub per_unit_storage_throughput: Option<::Value<u32>>,
         /// Property [`WeeklyMaintenanceStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-weeklymaintenancestarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weekly_maintenance_start_time: Option<crate::Value<String>>,
+        pub weekly_maintenance_start_time: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LustreConfiguration {
+    impl ::codec::SerializeValue for LustreConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref auto_import_policy) = self.auto_import_policy {
@@ -1100,7 +1100,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for LustreConfiguration {
+    impl ::codec::DeserializeValue for LustreConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LustreConfiguration, D::Error> {
@@ -1117,18 +1117,18 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut auto_import_policy: Option<crate::Value<String>> = None;
-                    let mut automatic_backup_retention_days: Option<crate::Value<u32>> = None;
-                    let mut copy_tags_to_backups: Option<crate::Value<bool>> = None;
-                    let mut daily_automatic_backup_start_time: Option<crate::Value<String>> = None;
-                    let mut data_compression_type: Option<crate::Value<String>> = None;
-                    let mut deployment_type: Option<crate::Value<String>> = None;
-                    let mut drive_cache_type: Option<crate::Value<String>> = None;
-                    let mut export_path: Option<crate::Value<String>> = None;
-                    let mut import_path: Option<crate::Value<String>> = None;
-                    let mut imported_file_chunk_size: Option<crate::Value<u32>> = None;
-                    let mut per_unit_storage_throughput: Option<crate::Value<u32>> = None;
-                    let mut weekly_maintenance_start_time: Option<crate::Value<String>> = None;
+                    let mut auto_import_policy: Option<::Value<String>> = None;
+                    let mut automatic_backup_retention_days: Option<::Value<u32>> = None;
+                    let mut copy_tags_to_backups: Option<::Value<bool>> = None;
+                    let mut daily_automatic_backup_start_time: Option<::Value<String>> = None;
+                    let mut data_compression_type: Option<::Value<String>> = None;
+                    let mut deployment_type: Option<::Value<String>> = None;
+                    let mut drive_cache_type: Option<::Value<String>> = None;
+                    let mut export_path: Option<::Value<String>> = None;
+                    let mut import_path: Option<::Value<String>> = None;
+                    let mut imported_file_chunk_size: Option<::Value<u32>> = None;
+                    let mut per_unit_storage_throughput: Option<::Value<u32>> = None;
+                    let mut weekly_maintenance_start_time: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1209,10 +1209,10 @@ pub mod file_system {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub client_configurations: Option<crate::ValueList<ClientConfigurations>>,
+        pub client_configurations: Option<::ValueList<ClientConfigurations>>,
     }
 
-    impl crate::codec::SerializeValue for NfsExports {
+    impl ::codec::SerializeValue for NfsExports {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref client_configurations) = self.client_configurations {
@@ -1226,7 +1226,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for NfsExports {
+    impl ::codec::DeserializeValue for NfsExports {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NfsExports, D::Error> {
             struct Visitor;
 
@@ -1241,7 +1241,7 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut client_configurations: Option<crate::ValueList<ClientConfigurations>> = None;
+                    let mut client_configurations: Option<::ValueList<ClientConfigurations>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1272,55 +1272,55 @@ pub mod file_system {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub automatic_backup_retention_days: Option<crate::Value<u32>>,
+        pub automatic_backup_retention_days: Option<::Value<u32>>,
         /// Property [`DailyAutomaticBackupStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-dailyautomaticbackupstarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub daily_automatic_backup_start_time: Option<crate::Value<String>>,
+        pub daily_automatic_backup_start_time: Option<::Value<String>>,
         /// Property [`DeploymentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-deploymenttype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub deployment_type: crate::Value<String>,
+        pub deployment_type: ::Value<String>,
         /// Property [`DiskIopsConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-diskiopsconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disk_iops_configuration: Option<crate::Value<DiskIopsConfiguration>>,
+        pub disk_iops_configuration: Option<::Value<DiskIopsConfiguration>>,
         /// Property [`EndpointIpAddressRange`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-endpointipaddressrange).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_ip_address_range: Option<crate::Value<String>>,
+        pub endpoint_ip_address_range: Option<::Value<String>>,
         /// Property [`FsxAdminPassword`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-fsxadminpassword).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fsx_admin_password: Option<crate::Value<String>>,
+        pub fsx_admin_password: Option<::Value<String>>,
         /// Property [`PreferredSubnetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-preferredsubnetid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub preferred_subnet_id: Option<crate::Value<String>>,
+        pub preferred_subnet_id: Option<::Value<String>>,
         /// Property [`RouteTableIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-routetableids).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub route_table_ids: Option<crate::ValueList<String>>,
+        pub route_table_ids: Option<::ValueList<String>>,
         /// Property [`ThroughputCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-throughputcapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throughput_capacity: Option<crate::Value<u32>>,
+        pub throughput_capacity: Option<::Value<u32>>,
         /// Property [`WeeklyMaintenanceStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-weeklymaintenancestarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weekly_maintenance_start_time: Option<crate::Value<String>>,
+        pub weekly_maintenance_start_time: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for OntapConfiguration {
+    impl ::codec::SerializeValue for OntapConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref automatic_backup_retention_days) = self.automatic_backup_retention_days
@@ -1398,7 +1398,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for OntapConfiguration {
+    impl ::codec::DeserializeValue for OntapConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OntapConfiguration, D::Error> {
@@ -1415,16 +1415,16 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut automatic_backup_retention_days: Option<crate::Value<u32>> = None;
-                    let mut daily_automatic_backup_start_time: Option<crate::Value<String>> = None;
-                    let mut deployment_type: Option<crate::Value<String>> = None;
-                    let mut disk_iops_configuration: Option<crate::Value<DiskIopsConfiguration>> = None;
-                    let mut endpoint_ip_address_range: Option<crate::Value<String>> = None;
-                    let mut fsx_admin_password: Option<crate::Value<String>> = None;
-                    let mut preferred_subnet_id: Option<crate::Value<String>> = None;
-                    let mut route_table_ids: Option<crate::ValueList<String>> = None;
-                    let mut throughput_capacity: Option<crate::Value<u32>> = None;
-                    let mut weekly_maintenance_start_time: Option<crate::Value<String>> = None;
+                    let mut automatic_backup_retention_days: Option<::Value<u32>> = None;
+                    let mut daily_automatic_backup_start_time: Option<::Value<String>> = None;
+                    let mut deployment_type: Option<::Value<String>> = None;
+                    let mut disk_iops_configuration: Option<::Value<DiskIopsConfiguration>> = None;
+                    let mut endpoint_ip_address_range: Option<::Value<String>> = None;
+                    let mut fsx_admin_password: Option<::Value<String>> = None;
+                    let mut preferred_subnet_id: Option<::Value<String>> = None;
+                    let mut route_table_ids: Option<::ValueList<String>> = None;
+                    let mut throughput_capacity: Option<::Value<u32>> = None;
+                    let mut weekly_maintenance_start_time: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1496,55 +1496,55 @@ pub mod file_system {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub automatic_backup_retention_days: Option<crate::Value<u32>>,
+        pub automatic_backup_retention_days: Option<::Value<u32>>,
         /// Property [`CopyTagsToBackups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-copytagstobackups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copy_tags_to_backups: Option<crate::Value<bool>>,
+        pub copy_tags_to_backups: Option<::Value<bool>>,
         /// Property [`CopyTagsToVolumes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-copytagstovolumes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copy_tags_to_volumes: Option<crate::Value<bool>>,
+        pub copy_tags_to_volumes: Option<::Value<bool>>,
         /// Property [`DailyAutomaticBackupStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-dailyautomaticbackupstarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub daily_automatic_backup_start_time: Option<crate::Value<String>>,
+        pub daily_automatic_backup_start_time: Option<::Value<String>>,
         /// Property [`DeploymentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-deploymenttype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub deployment_type: crate::Value<String>,
+        pub deployment_type: ::Value<String>,
         /// Property [`DiskIopsConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub disk_iops_configuration: Option<crate::Value<DiskIopsConfiguration>>,
+        pub disk_iops_configuration: Option<::Value<DiskIopsConfiguration>>,
         /// Property [`Options`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-options).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub options: Option<crate::ValueList<String>>,
+        pub options: Option<::ValueList<String>>,
         /// Property [`RootVolumeConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub root_volume_configuration: Option<crate::Value<RootVolumeConfiguration>>,
+        pub root_volume_configuration: Option<::Value<RootVolumeConfiguration>>,
         /// Property [`ThroughputCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-throughputcapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throughput_capacity: Option<crate::Value<u32>>,
+        pub throughput_capacity: Option<::Value<u32>>,
         /// Property [`WeeklyMaintenanceStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-weeklymaintenancestarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weekly_maintenance_start_time: Option<crate::Value<String>>,
+        pub weekly_maintenance_start_time: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for OpenZFSConfiguration {
+    impl ::codec::SerializeValue for OpenZFSConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref automatic_backup_retention_days) = self.automatic_backup_retention_days
@@ -1618,7 +1618,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for OpenZFSConfiguration {
+    impl ::codec::DeserializeValue for OpenZFSConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OpenZFSConfiguration, D::Error> {
@@ -1635,17 +1635,17 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut automatic_backup_retention_days: Option<crate::Value<u32>> = None;
-                    let mut copy_tags_to_backups: Option<crate::Value<bool>> = None;
-                    let mut copy_tags_to_volumes: Option<crate::Value<bool>> = None;
-                    let mut daily_automatic_backup_start_time: Option<crate::Value<String>> = None;
-                    let mut deployment_type: Option<crate::Value<String>> = None;
-                    let mut disk_iops_configuration: Option<crate::Value<DiskIopsConfiguration>> = None;
-                    let mut options: Option<crate::ValueList<String>> = None;
-                    let mut root_volume_configuration: Option<crate::Value<RootVolumeConfiguration>> =
+                    let mut automatic_backup_retention_days: Option<::Value<u32>> = None;
+                    let mut copy_tags_to_backups: Option<::Value<bool>> = None;
+                    let mut copy_tags_to_volumes: Option<::Value<bool>> = None;
+                    let mut daily_automatic_backup_start_time: Option<::Value<String>> = None;
+                    let mut deployment_type: Option<::Value<String>> = None;
+                    let mut disk_iops_configuration: Option<::Value<DiskIopsConfiguration>> = None;
+                    let mut options: Option<::ValueList<String>> = None;
+                    let mut root_volume_configuration: Option<::Value<RootVolumeConfiguration>> =
                         None;
-                    let mut throughput_capacity: Option<crate::Value<u32>> = None;
-                    let mut weekly_maintenance_start_time: Option<crate::Value<String>> = None;
+                    let mut throughput_capacity: Option<::Value<u32>> = None;
+                    let mut weekly_maintenance_start_time: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1719,35 +1719,35 @@ pub mod file_system {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub copy_tags_to_snapshots: Option<crate::Value<bool>>,
+        pub copy_tags_to_snapshots: Option<::Value<bool>>,
         /// Property [`DataCompressionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-datacompressiontype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub data_compression_type: Option<crate::Value<String>>,
+        pub data_compression_type: Option<::Value<String>>,
         /// Property [`NfsExports`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-nfsexports).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub nfs_exports: Option<crate::ValueList<NfsExports>>,
+        pub nfs_exports: Option<::ValueList<NfsExports>>,
         /// Property [`ReadOnly`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-readonly).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub read_only: Option<crate::Value<bool>>,
+        pub read_only: Option<::Value<bool>>,
         /// Property [`RecordSizeKiB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-recordsizekib).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub record_size_ki_b: Option<crate::Value<u32>>,
+        pub record_size_ki_b: Option<::Value<u32>>,
         /// Property [`UserAndGroupQuotas`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub user_and_group_quotas: Option<crate::ValueList<UserAndGroupQuotas>>,
+        pub user_and_group_quotas: Option<::ValueList<UserAndGroupQuotas>>,
     }
 
-    impl crate::codec::SerializeValue for RootVolumeConfiguration {
+    impl ::codec::SerializeValue for RootVolumeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref copy_tags_to_snapshots) = self.copy_tags_to_snapshots {
@@ -1788,7 +1788,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for RootVolumeConfiguration {
+    impl ::codec::DeserializeValue for RootVolumeConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RootVolumeConfiguration, D::Error> {
@@ -1805,12 +1805,12 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut copy_tags_to_snapshots: Option<crate::Value<bool>> = None;
-                    let mut data_compression_type: Option<crate::Value<String>> = None;
-                    let mut nfs_exports: Option<crate::ValueList<NfsExports>> = None;
-                    let mut read_only: Option<crate::Value<bool>> = None;
-                    let mut record_size_ki_b: Option<crate::Value<u32>> = None;
-                    let mut user_and_group_quotas: Option<crate::ValueList<UserAndGroupQuotas>> = None;
+                    let mut copy_tags_to_snapshots: Option<::Value<bool>> = None;
+                    let mut data_compression_type: Option<::Value<String>> = None;
+                    let mut nfs_exports: Option<::ValueList<NfsExports>> = None;
+                    let mut read_only: Option<::Value<bool>> = None;
+                    let mut record_size_ki_b: Option<::Value<u32>> = None;
+                    let mut user_and_group_quotas: Option<::ValueList<UserAndGroupQuotas>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1863,35 +1863,35 @@ pub mod file_system {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dns_ips: Option<crate::ValueList<String>>,
+        pub dns_ips: Option<::ValueList<String>>,
         /// Property [`DomainName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-domainname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub domain_name: Option<crate::Value<String>>,
+        pub domain_name: Option<::Value<String>>,
         /// Property [`FileSystemAdministratorsGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-filesystemadministratorsgroup).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub file_system_administrators_group: Option<crate::Value<String>>,
+        pub file_system_administrators_group: Option<::Value<String>>,
         /// Property [`OrganizationalUnitDistinguishedName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-organizationalunitdistinguishedname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub organizational_unit_distinguished_name: Option<crate::Value<String>>,
+        pub organizational_unit_distinguished_name: Option<::Value<String>>,
         /// Property [`Password`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-password).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password: Option<crate::Value<String>>,
+        pub password: Option<::Value<String>>,
         /// Property [`UserName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_name: Option<crate::Value<String>>,
+        pub user_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for SelfManagedActiveDirectoryConfiguration {
+    impl ::codec::SerializeValue for SelfManagedActiveDirectoryConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dns_ips) = self.dns_ips {
@@ -1928,7 +1928,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for SelfManagedActiveDirectoryConfiguration {
+    impl ::codec::DeserializeValue for SelfManagedActiveDirectoryConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SelfManagedActiveDirectoryConfiguration, D::Error> {
@@ -1948,12 +1948,12 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dns_ips: Option<crate::ValueList<String>> = None;
-                    let mut domain_name: Option<crate::Value<String>> = None;
-                    let mut file_system_administrators_group: Option<crate::Value<String>> = None;
-                    let mut organizational_unit_distinguished_name: Option<crate::Value<String>> = None;
-                    let mut password: Option<crate::Value<String>> = None;
-                    let mut user_name: Option<crate::Value<String>> = None;
+                    let mut dns_ips: Option<::ValueList<String>> = None;
+                    let mut domain_name: Option<::Value<String>> = None;
+                    let mut file_system_administrators_group: Option<::Value<String>> = None;
+                    let mut organizational_unit_distinguished_name: Option<::Value<String>> = None;
+                    let mut password: Option<::Value<String>> = None;
+                    let mut user_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2006,20 +2006,20 @@ pub mod file_system {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub id: Option<crate::Value<u32>>,
+        pub id: Option<::Value<u32>>,
         /// Property [`StorageCapacityQuotaGiB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas-storagecapacityquotagib).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub storage_capacity_quota_gi_b: Option<crate::Value<u32>>,
+        pub storage_capacity_quota_gi_b: Option<::Value<u32>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas-type).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: Option<crate::Value<String>>,
+        pub r#type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for UserAndGroupQuotas {
+    impl ::codec::SerializeValue for UserAndGroupQuotas {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref id) = self.id {
@@ -2039,7 +2039,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for UserAndGroupQuotas {
+    impl ::codec::DeserializeValue for UserAndGroupQuotas {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UserAndGroupQuotas, D::Error> {
@@ -2056,9 +2056,9 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<crate::Value<u32>> = None;
-                    let mut storage_capacity_quota_gi_b: Option<crate::Value<u32>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut id: Option<::Value<u32>> = None;
+                    let mut storage_capacity_quota_gi_b: Option<::Value<u32>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2097,61 +2097,61 @@ pub mod file_system {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub active_directory_id: Option<crate::Value<String>>,
+        pub active_directory_id: Option<::Value<String>>,
         /// Property [`Aliases`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-aliases).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aliases: Option<crate::ValueList<String>>,
+        pub aliases: Option<::ValueList<String>>,
         /// Property [`AuditLogConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-auditlogconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub audit_log_configuration: Option<crate::Value<AuditLogConfiguration>>,
+        pub audit_log_configuration: Option<::Value<AuditLogConfiguration>>,
         /// Property [`AutomaticBackupRetentionDays`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-automaticbackupretentiondays).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub automatic_backup_retention_days: Option<crate::Value<u32>>,
+        pub automatic_backup_retention_days: Option<::Value<u32>>,
         /// Property [`CopyTagsToBackups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-copytagstobackups).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub copy_tags_to_backups: Option<crate::Value<bool>>,
+        pub copy_tags_to_backups: Option<::Value<bool>>,
         /// Property [`DailyAutomaticBackupStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-dailyautomaticbackupstarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub daily_automatic_backup_start_time: Option<crate::Value<String>>,
+        pub daily_automatic_backup_start_time: Option<::Value<String>>,
         /// Property [`DeploymentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-deploymenttype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub deployment_type: Option<crate::Value<String>>,
+        pub deployment_type: Option<::Value<String>>,
         /// Property [`PreferredSubnetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-preferredsubnetid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub preferred_subnet_id: Option<crate::Value<String>>,
+        pub preferred_subnet_id: Option<::Value<String>>,
         /// Property [`SelfManagedActiveDirectoryConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub self_managed_active_directory_configuration:
-            Option<crate::Value<SelfManagedActiveDirectoryConfiguration>>,
+            Option<::Value<SelfManagedActiveDirectoryConfiguration>>,
         /// Property [`ThroughputCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-throughputcapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub throughput_capacity: crate::Value<u32>,
+        pub throughput_capacity: ::Value<u32>,
         /// Property [`WeeklyMaintenanceStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-weeklymaintenancestarttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weekly_maintenance_start_time: Option<crate::Value<String>>,
+        pub weekly_maintenance_start_time: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for WindowsConfiguration {
+    impl ::codec::SerializeValue for WindowsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref active_directory_id) = self.active_directory_id {
@@ -2234,7 +2234,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for WindowsConfiguration {
+    impl ::codec::DeserializeValue for WindowsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WindowsConfiguration, D::Error> {
@@ -2251,19 +2251,19 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut active_directory_id: Option<crate::Value<String>> = None;
-                    let mut aliases: Option<crate::ValueList<String>> = None;
-                    let mut audit_log_configuration: Option<crate::Value<AuditLogConfiguration>> = None;
-                    let mut automatic_backup_retention_days: Option<crate::Value<u32>> = None;
-                    let mut copy_tags_to_backups: Option<crate::Value<bool>> = None;
-                    let mut daily_automatic_backup_start_time: Option<crate::Value<String>> = None;
-                    let mut deployment_type: Option<crate::Value<String>> = None;
-                    let mut preferred_subnet_id: Option<crate::Value<String>> = None;
+                    let mut active_directory_id: Option<::Value<String>> = None;
+                    let mut aliases: Option<::ValueList<String>> = None;
+                    let mut audit_log_configuration: Option<::Value<AuditLogConfiguration>> = None;
+                    let mut automatic_backup_retention_days: Option<::Value<u32>> = None;
+                    let mut copy_tags_to_backups: Option<::Value<bool>> = None;
+                    let mut daily_automatic_backup_start_time: Option<::Value<String>> = None;
+                    let mut deployment_type: Option<::Value<String>> = None;
+                    let mut preferred_subnet_id: Option<::Value<String>> = None;
                     let mut self_managed_active_directory_configuration: Option<
-                        crate::Value<SelfManagedActiveDirectoryConfiguration>,
+                        ::Value<SelfManagedActiveDirectoryConfiguration>,
                     > = None;
-                    let mut throughput_capacity: Option<crate::Value<u32>> = None;
-                    let mut weekly_maintenance_start_time: Option<crate::Value<String>> = None;
+                    let mut throughput_capacity: Option<::Value<u32>> = None;
+                    let mut weekly_maintenance_start_time: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2345,16 +2345,16 @@ pub mod storage_virtual_machine {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub net_bios_name: Option<crate::Value<String>>,
+        pub net_bios_name: Option<::Value<String>>,
         /// Property [`SelfManagedActiveDirectoryConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub self_managed_active_directory_configuration:
-            Option<crate::Value<SelfManagedActiveDirectoryConfiguration>>,
+            Option<::Value<SelfManagedActiveDirectoryConfiguration>>,
     }
 
-    impl crate::codec::SerializeValue for ActiveDirectoryConfiguration {
+    impl ::codec::SerializeValue for ActiveDirectoryConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref net_bios_name) = self.net_bios_name {
@@ -2377,7 +2377,7 @@ pub mod storage_virtual_machine {
         }
     }
 
-    impl crate::codec::DeserializeValue for ActiveDirectoryConfiguration {
+    impl ::codec::DeserializeValue for ActiveDirectoryConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ActiveDirectoryConfiguration, D::Error> {
@@ -2394,9 +2394,9 @@ pub mod storage_virtual_machine {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut net_bios_name: Option<crate::Value<String>> = None;
+                    let mut net_bios_name: Option<::Value<String>> = None;
                     let mut self_managed_active_directory_configuration: Option<
-                        crate::Value<SelfManagedActiveDirectoryConfiguration>,
+                        ::Value<SelfManagedActiveDirectoryConfiguration>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2433,35 +2433,35 @@ pub mod storage_virtual_machine {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dns_ips: Option<crate::ValueList<String>>,
+        pub dns_ips: Option<::ValueList<String>>,
         /// Property [`DomainName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-domainname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub domain_name: Option<crate::Value<String>>,
+        pub domain_name: Option<::Value<String>>,
         /// Property [`FileSystemAdministratorsGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-filesystemadministratorsgroup).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub file_system_administrators_group: Option<crate::Value<String>>,
+        pub file_system_administrators_group: Option<::Value<String>>,
         /// Property [`OrganizationalUnitDistinguishedName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-organizationalunitdistinguishedname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub organizational_unit_distinguished_name: Option<crate::Value<String>>,
+        pub organizational_unit_distinguished_name: Option<::Value<String>>,
         /// Property [`Password`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-password).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password: Option<crate::Value<String>>,
+        pub password: Option<::Value<String>>,
         /// Property [`UserName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_name: Option<crate::Value<String>>,
+        pub user_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for SelfManagedActiveDirectoryConfiguration {
+    impl ::codec::SerializeValue for SelfManagedActiveDirectoryConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dns_ips) = self.dns_ips {
@@ -2498,7 +2498,7 @@ pub mod storage_virtual_machine {
         }
     }
 
-    impl crate::codec::DeserializeValue for SelfManagedActiveDirectoryConfiguration {
+    impl ::codec::DeserializeValue for SelfManagedActiveDirectoryConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SelfManagedActiveDirectoryConfiguration, D::Error> {
@@ -2518,12 +2518,12 @@ pub mod storage_virtual_machine {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dns_ips: Option<crate::ValueList<String>> = None;
-                    let mut domain_name: Option<crate::Value<String>> = None;
-                    let mut file_system_administrators_group: Option<crate::Value<String>> = None;
-                    let mut organizational_unit_distinguished_name: Option<crate::Value<String>> = None;
-                    let mut password: Option<crate::Value<String>> = None;
-                    let mut user_name: Option<crate::Value<String>> = None;
+                    let mut dns_ips: Option<::ValueList<String>> = None;
+                    let mut domain_name: Option<::Value<String>> = None;
+                    let mut file_system_administrators_group: Option<::Value<String>> = None;
+                    let mut organizational_unit_distinguished_name: Option<::Value<String>> = None;
+                    let mut password: Option<::Value<String>> = None;
+                    let mut user_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2580,15 +2580,15 @@ pub mod volume {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub clients: crate::Value<String>,
+        pub clients: ::Value<String>,
         /// Property [`Options`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations.html#cfn-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations-options).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub options: crate::ValueList<String>,
+        pub options: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for ClientConfigurations {
+    impl ::codec::SerializeValue for ClientConfigurations {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Clients", &self.clients)?;
@@ -2597,7 +2597,7 @@ pub mod volume {
         }
     }
 
-    impl crate::codec::DeserializeValue for ClientConfigurations {
+    impl ::codec::DeserializeValue for ClientConfigurations {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClientConfigurations, D::Error> {
@@ -2614,8 +2614,8 @@ pub mod volume {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut clients: Option<crate::Value<String>> = None;
-                    let mut options: Option<crate::ValueList<String>> = None;
+                    let mut clients: Option<::Value<String>> = None;
+                    let mut options: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2649,10 +2649,10 @@ pub mod volume {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_configurations: crate::ValueList<ClientConfigurations>,
+        pub client_configurations: ::ValueList<ClientConfigurations>,
     }
 
-    impl crate::codec::SerializeValue for NfsExports {
+    impl ::codec::SerializeValue for NfsExports {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2664,7 +2664,7 @@ pub mod volume {
         }
     }
 
-    impl crate::codec::DeserializeValue for NfsExports {
+    impl ::codec::DeserializeValue for NfsExports {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<NfsExports, D::Error> {
             struct Visitor;
 
@@ -2679,7 +2679,7 @@ pub mod volume {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut client_configurations: Option<crate::ValueList<ClientConfigurations>> = None;
+                    let mut client_configurations: Option<::ValueList<ClientConfigurations>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2711,35 +2711,35 @@ pub mod volume {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub junction_path: crate::Value<String>,
+        pub junction_path: ::Value<String>,
         /// Property [`SecurityStyle`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-securitystyle).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_style: Option<crate::Value<String>>,
+        pub security_style: Option<::Value<String>>,
         /// Property [`SizeInMegabytes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-sizeinmegabytes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size_in_megabytes: crate::Value<String>,
+        pub size_in_megabytes: ::Value<String>,
         /// Property [`StorageEfficiencyEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-storageefficiencyenabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub storage_efficiency_enabled: crate::Value<String>,
+        pub storage_efficiency_enabled: ::Value<String>,
         /// Property [`StorageVirtualMachineId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-storagevirtualmachineid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub storage_virtual_machine_id: crate::Value<String>,
+        pub storage_virtual_machine_id: ::Value<String>,
         /// Property [`TieringPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-tieringpolicy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tiering_policy: Option<crate::Value<TieringPolicy>>,
+        pub tiering_policy: Option<::Value<TieringPolicy>>,
     }
 
-    impl crate::codec::SerializeValue for OntapConfiguration {
+    impl ::codec::SerializeValue for OntapConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2780,7 +2780,7 @@ pub mod volume {
         }
     }
 
-    impl crate::codec::DeserializeValue for OntapConfiguration {
+    impl ::codec::DeserializeValue for OntapConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OntapConfiguration, D::Error> {
@@ -2797,12 +2797,12 @@ pub mod volume {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut junction_path: Option<crate::Value<String>> = None;
-                    let mut security_style: Option<crate::Value<String>> = None;
-                    let mut size_in_megabytes: Option<crate::Value<String>> = None;
-                    let mut storage_efficiency_enabled: Option<crate::Value<String>> = None;
-                    let mut storage_virtual_machine_id: Option<crate::Value<String>> = None;
-                    let mut tiering_policy: Option<crate::Value<TieringPolicy>> = None;
+                    let mut junction_path: Option<::Value<String>> = None;
+                    let mut security_style: Option<::Value<String>> = None;
+                    let mut size_in_megabytes: Option<::Value<String>> = None;
+                    let mut storage_efficiency_enabled: Option<::Value<String>> = None;
+                    let mut storage_virtual_machine_id: Option<::Value<String>> = None;
+                    let mut tiering_policy: Option<::Value<TieringPolicy>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2859,60 +2859,60 @@ pub mod volume {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copy_tags_to_snapshots: Option<crate::Value<bool>>,
+        pub copy_tags_to_snapshots: Option<::Value<bool>>,
         /// Property [`DataCompressionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-datacompressiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_compression_type: Option<crate::Value<String>>,
+        pub data_compression_type: Option<::Value<String>>,
         /// Property [`NfsExports`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-nfsexports).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub nfs_exports: Option<crate::ValueList<NfsExports>>,
+        pub nfs_exports: Option<::ValueList<NfsExports>>,
         /// Property [`Options`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-options).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub options: Option<crate::ValueList<String>>,
+        pub options: Option<::ValueList<String>>,
         /// Property [`OriginSnapshot`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-originsnapshot).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub origin_snapshot: Option<crate::Value<OriginSnapshot>>,
+        pub origin_snapshot: Option<::Value<OriginSnapshot>>,
         /// Property [`ParentVolumeId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-parentvolumeid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub parent_volume_id: crate::Value<String>,
+        pub parent_volume_id: ::Value<String>,
         /// Property [`ReadOnly`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-readonly).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub read_only: Option<crate::Value<bool>>,
+        pub read_only: Option<::Value<bool>>,
         /// Property [`RecordSizeKiB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-recordsizekib).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub record_size_ki_b: Option<crate::Value<u32>>,
+        pub record_size_ki_b: Option<::Value<u32>>,
         /// Property [`StorageCapacityQuotaGiB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-storagecapacityquotagib).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub storage_capacity_quota_gi_b: Option<crate::Value<u32>>,
+        pub storage_capacity_quota_gi_b: Option<::Value<u32>>,
         /// Property [`StorageCapacityReservationGiB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-storagecapacityreservationgib).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub storage_capacity_reservation_gi_b: Option<crate::Value<u32>>,
+        pub storage_capacity_reservation_gi_b: Option<::Value<u32>>,
         /// Property [`UserAndGroupQuotas`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_and_group_quotas: Option<crate::ValueList<UserAndGroupQuotas>>,
+        pub user_and_group_quotas: Option<::ValueList<UserAndGroupQuotas>>,
     }
 
-    impl crate::codec::SerializeValue for OpenZFSConfiguration {
+    impl ::codec::SerializeValue for OpenZFSConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref copy_tags_to_snapshots) = self.copy_tags_to_snapshots {
@@ -2984,7 +2984,7 @@ pub mod volume {
         }
     }
 
-    impl crate::codec::DeserializeValue for OpenZFSConfiguration {
+    impl ::codec::DeserializeValue for OpenZFSConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OpenZFSConfiguration, D::Error> {
@@ -3001,17 +3001,17 @@ pub mod volume {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut copy_tags_to_snapshots: Option<crate::Value<bool>> = None;
-                    let mut data_compression_type: Option<crate::Value<String>> = None;
-                    let mut nfs_exports: Option<crate::ValueList<NfsExports>> = None;
-                    let mut options: Option<crate::ValueList<String>> = None;
-                    let mut origin_snapshot: Option<crate::Value<OriginSnapshot>> = None;
-                    let mut parent_volume_id: Option<crate::Value<String>> = None;
-                    let mut read_only: Option<crate::Value<bool>> = None;
-                    let mut record_size_ki_b: Option<crate::Value<u32>> = None;
-                    let mut storage_capacity_quota_gi_b: Option<crate::Value<u32>> = None;
-                    let mut storage_capacity_reservation_gi_b: Option<crate::Value<u32>> = None;
-                    let mut user_and_group_quotas: Option<crate::ValueList<UserAndGroupQuotas>> = None;
+                    let mut copy_tags_to_snapshots: Option<::Value<bool>> = None;
+                    let mut data_compression_type: Option<::Value<String>> = None;
+                    let mut nfs_exports: Option<::ValueList<NfsExports>> = None;
+                    let mut options: Option<::ValueList<String>> = None;
+                    let mut origin_snapshot: Option<::Value<OriginSnapshot>> = None;
+                    let mut parent_volume_id: Option<::Value<String>> = None;
+                    let mut read_only: Option<::Value<bool>> = None;
+                    let mut record_size_ki_b: Option<::Value<u32>> = None;
+                    let mut storage_capacity_quota_gi_b: Option<::Value<u32>> = None;
+                    let mut storage_capacity_reservation_gi_b: Option<::Value<u32>> = None;
+                    let mut user_and_group_quotas: Option<::ValueList<UserAndGroupQuotas>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3087,15 +3087,15 @@ pub mod volume {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub copy_strategy: crate::Value<String>,
+        pub copy_strategy: ::Value<String>,
         /// Property [`SnapshotARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-originsnapshot.html#cfn-fsx-volume-openzfsconfiguration-originsnapshot-snapshotarn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub snapshot_arn: crate::Value<String>,
+        pub snapshot_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for OriginSnapshot {
+    impl ::codec::SerializeValue for OriginSnapshot {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3112,7 +3112,7 @@ pub mod volume {
         }
     }
 
-    impl crate::codec::DeserializeValue for OriginSnapshot {
+    impl ::codec::DeserializeValue for OriginSnapshot {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OriginSnapshot, D::Error> {
@@ -3129,8 +3129,8 @@ pub mod volume {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut copy_strategy: Option<crate::Value<String>> = None;
-                    let mut snapshot_arn: Option<crate::Value<String>> = None;
+                    let mut copy_strategy: Option<::Value<String>> = None;
+                    let mut snapshot_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3166,15 +3166,15 @@ pub mod volume {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cooling_period: Option<crate::Value<u32>>,
+        pub cooling_period: Option<::Value<u32>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-tieringpolicy.html#cfn-fsx-volume-ontapconfiguration-tieringpolicy-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for TieringPolicy {
+    impl ::codec::SerializeValue for TieringPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cooling_period) = self.cooling_period {
@@ -3191,7 +3191,7 @@ pub mod volume {
         }
     }
 
-    impl crate::codec::DeserializeValue for TieringPolicy {
+    impl ::codec::DeserializeValue for TieringPolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TieringPolicy, D::Error> {
@@ -3208,8 +3208,8 @@ pub mod volume {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cooling_period: Option<crate::Value<u32>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut cooling_period: Option<::Value<u32>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3243,20 +3243,20 @@ pub mod volume {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: crate::Value<u32>,
+        pub id: ::Value<u32>,
         /// Property [`StorageCapacityQuotaGiB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-userandgroupquotas.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas-storagecapacityquotagib).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub storage_capacity_quota_gi_b: crate::Value<u32>,
+        pub storage_capacity_quota_gi_b: ::Value<u32>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-userandgroupquotas.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for UserAndGroupQuotas {
+    impl ::codec::SerializeValue for UserAndGroupQuotas {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Id", &self.id)?;
@@ -3270,7 +3270,7 @@ pub mod volume {
         }
     }
 
-    impl crate::codec::DeserializeValue for UserAndGroupQuotas {
+    impl ::codec::DeserializeValue for UserAndGroupQuotas {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UserAndGroupQuotas, D::Error> {
@@ -3287,9 +3287,9 @@ pub mod volume {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<crate::Value<u32>> = None;
-                    let mut storage_capacity_quota_gi_b: Option<crate::Value<u32>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut id: Option<::Value<u32>> = None;
+                    let mut storage_capacity_quota_gi_b: Option<::Value<u32>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

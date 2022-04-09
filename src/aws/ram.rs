@@ -13,32 +13,32 @@ pub struct ResourceShareProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub allow_external_principals: Option<crate::Value<bool>>,
+    pub allow_external_principals: Option<::Value<bool>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`PermissionArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-permissionarns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub permission_arns: Option<crate::ValueList<String>>,
+    pub permission_arns: Option<::ValueList<String>>,
     /// Property [`Principals`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-principals).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub principals: Option<crate::ValueList<String>>,
+    pub principals: Option<::ValueList<String>>,
     /// Property [`ResourceArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-resourcearns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_arns: Option<crate::ValueList<String>>,
+    pub resource_arns: Option<::ValueList<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ResourceShareProperties {
@@ -89,12 +89,12 @@ impl<'de> ::serde::Deserialize<'de> for ResourceShareProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut allow_external_principals: Option<crate::Value<bool>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut permission_arns: Option<crate::ValueList<String>> = None;
-                let mut principals: Option<crate::ValueList<String>> = None;
-                let mut resource_arns: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut allow_external_principals: Option<::Value<bool>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut permission_arns: Option<::ValueList<String>> = None;
+                let mut principals: Option<::ValueList<String>> = None;
+                let mut resource_arns: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -136,7 +136,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourceShareProperties {
     }
 }
 
-impl crate::Resource for ResourceShare {
+impl ::Resource for ResourceShare {
     type Properties = ResourceShareProperties;
     const TYPE: &'static str = "AWS::RAM::ResourceShare";
     fn properties(&self) -> &ResourceShareProperties {
@@ -147,7 +147,7 @@ impl crate::Resource for ResourceShare {
     }
 }
 
-impl crate::private::Sealed for ResourceShare {}
+impl ::private::Sealed for ResourceShare {}
 
 impl From<ResourceShareProperties> for ResourceShare {
     fn from(properties: ResourceShareProperties) -> ResourceShare {

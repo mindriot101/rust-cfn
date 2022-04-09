@@ -18,9 +18,9 @@ pub mod aws;
 mod parts;
 mod types;
 
-pub use crate::error::{Error, ErrorKind};
-pub use crate::parts::*;
-pub use crate::types::*;
+pub use error::{Error, ErrorKind};
+pub use parts::*;
+pub use types::*;
 
 pub mod json {
     //! Types for raw JSON values.
@@ -76,14 +76,14 @@ impl Template {
 
 impl Template {
     /// Deserialize a AWS CloudFormation template in JSON format.
-    pub fn from_json<T: AsRef<str>>(input: T) -> Result<Template, crate::Error> {
+    pub fn from_json<T: AsRef<str>>(input: T) -> Result<Template, ::Error> {
         serde_json::from_str(input.as_ref())
-            .map_err(|err| crate::Error::new(crate::ErrorKind::Serialization, err))
+            .map_err(|err| ::Error::new(::ErrorKind::Serialization, err))
     }
 
     /// Serialize the template into an AWS CloudFormation template in JSON format.
-    pub fn to_json(&self) -> Result<String, crate::Error> {
-        serde_json::to_string(self).map_err(|err| crate::Error::new(crate::ErrorKind::Serialization, err))
+    pub fn to_json(&self) -> Result<String, ::Error> {
+        serde_json::to_string(self).map_err(|err| ::Error::new(::ErrorKind::Serialization, err))
     }
 }
 

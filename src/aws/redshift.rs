@@ -13,237 +13,237 @@ pub struct ClusterProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub allow_version_upgrade: Option<crate::Value<bool>>,
+    pub allow_version_upgrade: Option<::Value<bool>>,
     /// Property [`AquaConfigurationStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-aquaconfigurationstatus).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub aqua_configuration_status: Option<crate::Value<String>>,
+    pub aqua_configuration_status: Option<::Value<String>>,
     /// Property [`AutomatedSnapshotRetentionPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-automatedsnapshotretentionperiod).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub automated_snapshot_retention_period: Option<crate::Value<u32>>,
+    pub automated_snapshot_retention_period: Option<::Value<u32>>,
     /// Property [`AvailabilityZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzone).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub availability_zone: Option<crate::Value<String>>,
+    pub availability_zone: Option<::Value<String>>,
     /// Property [`AvailabilityZoneRelocation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzonerelocation).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub availability_zone_relocation: Option<crate::Value<bool>>,
+    pub availability_zone_relocation: Option<::Value<bool>>,
     /// Property [`AvailabilityZoneRelocationStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzonerelocationstatus).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub availability_zone_relocation_status: Option<crate::Value<String>>,
+    pub availability_zone_relocation_status: Option<::Value<String>>,
     /// Property [`Classic`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-classic).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub classic: Option<crate::Value<bool>>,
+    pub classic: Option<::Value<bool>>,
     /// Property [`ClusterIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusteridentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_identifier: Option<crate::Value<String>>,
+    pub cluster_identifier: Option<::Value<String>>,
     /// Property [`ClusterParameterGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusterparametergroupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cluster_parameter_group_name: Option<crate::Value<String>>,
+    pub cluster_parameter_group_name: Option<::Value<String>>,
     /// Property [`ClusterSecurityGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersecuritygroups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cluster_security_groups: Option<crate::ValueList<String>>,
+    pub cluster_security_groups: Option<::ValueList<String>>,
     /// Property [`ClusterSubnetGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersubnetgroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_subnet_group_name: Option<crate::Value<String>>,
+    pub cluster_subnet_group_name: Option<::Value<String>>,
     /// Property [`ClusterType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustertype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cluster_type: crate::Value<String>,
+    pub cluster_type: ::Value<String>,
     /// Property [`ClusterVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusterversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cluster_version: Option<crate::Value<String>>,
+    pub cluster_version: Option<::Value<String>>,
     /// Property [`DBName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-dbname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub db_name: crate::Value<String>,
+    pub db_name: ::Value<String>,
     /// Property [`DeferMaintenance`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-defermaintenance).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub defer_maintenance: Option<crate::Value<bool>>,
+    pub defer_maintenance: Option<::Value<bool>>,
     /// Property [`DeferMaintenanceDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-defermaintenanceduration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub defer_maintenance_duration: Option<crate::Value<u32>>,
+    pub defer_maintenance_duration: Option<::Value<u32>>,
     /// Property [`DeferMaintenanceEndTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-defermaintenanceendtime).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub defer_maintenance_end_time: Option<crate::Value<String>>,
+    pub defer_maintenance_end_time: Option<::Value<String>>,
     /// Property [`DeferMaintenanceStartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-defermaintenancestarttime).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub defer_maintenance_start_time: Option<crate::Value<String>>,
+    pub defer_maintenance_start_time: Option<::Value<String>>,
     /// Property [`DestinationRegion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-destinationregion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub destination_region: Option<crate::Value<String>>,
+    pub destination_region: Option<::Value<String>>,
     /// Property [`ElasticIp`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-elasticip).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub elastic_ip: Option<crate::Value<String>>,
+    pub elastic_ip: Option<::Value<String>>,
     /// Property [`Encrypted`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-encrypted).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encrypted: Option<crate::Value<bool>>,
+    pub encrypted: Option<::Value<bool>>,
     /// Property [`EnhancedVpcRouting`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-enhancedvpcrouting).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enhanced_vpc_routing: Option<crate::Value<bool>>,
+    pub enhanced_vpc_routing: Option<::Value<bool>>,
     /// Property [`HsmClientCertificateIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmclientcertificateidentifier).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub hsm_client_certificate_identifier: Option<crate::Value<String>>,
+    pub hsm_client_certificate_identifier: Option<::Value<String>>,
     /// Property [`HsmConfigurationIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmconfigurationidentifier).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub hsm_configuration_identifier: Option<crate::Value<String>>,
+    pub hsm_configuration_identifier: Option<::Value<String>>,
     /// Property [`IamRoles`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-iamroles).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub iam_roles: Option<crate::ValueList<String>>,
+    pub iam_roles: Option<::ValueList<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-kmskeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`LoggingProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-loggingproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub logging_properties: Option<crate::Value<self::cluster::LoggingProperties>>,
+    pub logging_properties: Option<::Value<self::cluster::LoggingProperties>>,
     /// Property [`MaintenanceTrackName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-maintenancetrackname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub maintenance_track_name: Option<crate::Value<String>>,
+    pub maintenance_track_name: Option<::Value<String>>,
     /// Property [`ManualSnapshotRetentionPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-manualsnapshotretentionperiod).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub manual_snapshot_retention_period: Option<crate::Value<u32>>,
+    pub manual_snapshot_retention_period: Option<::Value<u32>>,
     /// Property [`MasterUserPassword`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masteruserpassword).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub master_user_password: crate::Value<String>,
+    pub master_user_password: ::Value<String>,
     /// Property [`MasterUsername`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masterusername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub master_username: crate::Value<String>,
+    pub master_username: ::Value<String>,
     /// Property [`NodeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub node_type: crate::Value<String>,
+    pub node_type: ::Value<String>,
     /// Property [`NumberOfNodes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-numberofnodes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub number_of_nodes: Option<crate::Value<u32>>,
+    pub number_of_nodes: Option<::Value<u32>>,
     /// Property [`OwnerAccount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-owneraccount).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub owner_account: Option<crate::Value<String>>,
+    pub owner_account: Option<::Value<String>>,
     /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-port).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub port: Option<crate::Value<u32>>,
+    pub port: Option<::Value<u32>>,
     /// Property [`PreferredMaintenanceWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-preferredmaintenancewindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub preferred_maintenance_window: Option<crate::Value<String>>,
+    pub preferred_maintenance_window: Option<::Value<String>>,
     /// Property [`PubliclyAccessible`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-publiclyaccessible).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub publicly_accessible: Option<crate::Value<bool>>,
+    pub publicly_accessible: Option<::Value<bool>>,
     /// Property [`ResourceAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-resourceaction).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_action: Option<crate::Value<String>>,
+    pub resource_action: Option<::Value<String>>,
     /// Property [`RevisionTarget`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-revisiontarget).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub revision_target: Option<crate::Value<String>>,
+    pub revision_target: Option<::Value<String>>,
     /// Property [`RotateEncryptionKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-rotateencryptionkey).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rotate_encryption_key: Option<crate::Value<bool>>,
+    pub rotate_encryption_key: Option<::Value<bool>>,
     /// Property [`SnapshotClusterIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotclusteridentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub snapshot_cluster_identifier: Option<crate::Value<String>>,
+    pub snapshot_cluster_identifier: Option<::Value<String>>,
     /// Property [`SnapshotCopyGrantName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotcopygrantname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_copy_grant_name: Option<crate::Value<String>>,
+    pub snapshot_copy_grant_name: Option<::Value<String>>,
     /// Property [`SnapshotCopyManual`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotcopymanual).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_copy_manual: Option<crate::Value<bool>>,
+    pub snapshot_copy_manual: Option<::Value<bool>>,
     /// Property [`SnapshotCopyRetentionPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotcopyretentionperiod).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_copy_retention_period: Option<crate::Value<u32>>,
+    pub snapshot_copy_retention_period: Option<::Value<u32>>,
     /// Property [`SnapshotIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotidentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub snapshot_identifier: Option<crate::Value<String>>,
+    pub snapshot_identifier: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VpcSecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-vpcsecuritygroupids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_security_group_ids: Option<crate::ValueList<String>>,
+    pub vpc_security_group_ids: Option<::ValueList<String>>,
 }
 
 impl ::serde::Serialize for ClusterProperties {
@@ -548,54 +548,54 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut allow_version_upgrade: Option<crate::Value<bool>> = None;
-                let mut aqua_configuration_status: Option<crate::Value<String>> = None;
-                let mut automated_snapshot_retention_period: Option<crate::Value<u32>> = None;
-                let mut availability_zone: Option<crate::Value<String>> = None;
-                let mut availability_zone_relocation: Option<crate::Value<bool>> = None;
-                let mut availability_zone_relocation_status: Option<crate::Value<String>> = None;
-                let mut classic: Option<crate::Value<bool>> = None;
-                let mut cluster_identifier: Option<crate::Value<String>> = None;
-                let mut cluster_parameter_group_name: Option<crate::Value<String>> = None;
-                let mut cluster_security_groups: Option<crate::ValueList<String>> = None;
-                let mut cluster_subnet_group_name: Option<crate::Value<String>> = None;
-                let mut cluster_type: Option<crate::Value<String>> = None;
-                let mut cluster_version: Option<crate::Value<String>> = None;
-                let mut db_name: Option<crate::Value<String>> = None;
-                let mut defer_maintenance: Option<crate::Value<bool>> = None;
-                let mut defer_maintenance_duration: Option<crate::Value<u32>> = None;
-                let mut defer_maintenance_end_time: Option<crate::Value<String>> = None;
-                let mut defer_maintenance_start_time: Option<crate::Value<String>> = None;
-                let mut destination_region: Option<crate::Value<String>> = None;
-                let mut elastic_ip: Option<crate::Value<String>> = None;
-                let mut encrypted: Option<crate::Value<bool>> = None;
-                let mut enhanced_vpc_routing: Option<crate::Value<bool>> = None;
-                let mut hsm_client_certificate_identifier: Option<crate::Value<String>> = None;
-                let mut hsm_configuration_identifier: Option<crate::Value<String>> = None;
-                let mut iam_roles: Option<crate::ValueList<String>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
-                let mut logging_properties: Option<crate::Value<self::cluster::LoggingProperties>> =
+                let mut allow_version_upgrade: Option<::Value<bool>> = None;
+                let mut aqua_configuration_status: Option<::Value<String>> = None;
+                let mut automated_snapshot_retention_period: Option<::Value<u32>> = None;
+                let mut availability_zone: Option<::Value<String>> = None;
+                let mut availability_zone_relocation: Option<::Value<bool>> = None;
+                let mut availability_zone_relocation_status: Option<::Value<String>> = None;
+                let mut classic: Option<::Value<bool>> = None;
+                let mut cluster_identifier: Option<::Value<String>> = None;
+                let mut cluster_parameter_group_name: Option<::Value<String>> = None;
+                let mut cluster_security_groups: Option<::ValueList<String>> = None;
+                let mut cluster_subnet_group_name: Option<::Value<String>> = None;
+                let mut cluster_type: Option<::Value<String>> = None;
+                let mut cluster_version: Option<::Value<String>> = None;
+                let mut db_name: Option<::Value<String>> = None;
+                let mut defer_maintenance: Option<::Value<bool>> = None;
+                let mut defer_maintenance_duration: Option<::Value<u32>> = None;
+                let mut defer_maintenance_end_time: Option<::Value<String>> = None;
+                let mut defer_maintenance_start_time: Option<::Value<String>> = None;
+                let mut destination_region: Option<::Value<String>> = None;
+                let mut elastic_ip: Option<::Value<String>> = None;
+                let mut encrypted: Option<::Value<bool>> = None;
+                let mut enhanced_vpc_routing: Option<::Value<bool>> = None;
+                let mut hsm_client_certificate_identifier: Option<::Value<String>> = None;
+                let mut hsm_configuration_identifier: Option<::Value<String>> = None;
+                let mut iam_roles: Option<::ValueList<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
+                let mut logging_properties: Option<::Value<self::cluster::LoggingProperties>> =
                     None;
-                let mut maintenance_track_name: Option<crate::Value<String>> = None;
-                let mut manual_snapshot_retention_period: Option<crate::Value<u32>> = None;
-                let mut master_user_password: Option<crate::Value<String>> = None;
-                let mut master_username: Option<crate::Value<String>> = None;
-                let mut node_type: Option<crate::Value<String>> = None;
-                let mut number_of_nodes: Option<crate::Value<u32>> = None;
-                let mut owner_account: Option<crate::Value<String>> = None;
-                let mut port: Option<crate::Value<u32>> = None;
-                let mut preferred_maintenance_window: Option<crate::Value<String>> = None;
-                let mut publicly_accessible: Option<crate::Value<bool>> = None;
-                let mut resource_action: Option<crate::Value<String>> = None;
-                let mut revision_target: Option<crate::Value<String>> = None;
-                let mut rotate_encryption_key: Option<crate::Value<bool>> = None;
-                let mut snapshot_cluster_identifier: Option<crate::Value<String>> = None;
-                let mut snapshot_copy_grant_name: Option<crate::Value<String>> = None;
-                let mut snapshot_copy_manual: Option<crate::Value<bool>> = None;
-                let mut snapshot_copy_retention_period: Option<crate::Value<u32>> = None;
-                let mut snapshot_identifier: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut vpc_security_group_ids: Option<crate::ValueList<String>> = None;
+                let mut maintenance_track_name: Option<::Value<String>> = None;
+                let mut manual_snapshot_retention_period: Option<::Value<u32>> = None;
+                let mut master_user_password: Option<::Value<String>> = None;
+                let mut master_username: Option<::Value<String>> = None;
+                let mut node_type: Option<::Value<String>> = None;
+                let mut number_of_nodes: Option<::Value<u32>> = None;
+                let mut owner_account: Option<::Value<String>> = None;
+                let mut port: Option<::Value<u32>> = None;
+                let mut preferred_maintenance_window: Option<::Value<String>> = None;
+                let mut publicly_accessible: Option<::Value<bool>> = None;
+                let mut resource_action: Option<::Value<String>> = None;
+                let mut revision_target: Option<::Value<String>> = None;
+                let mut rotate_encryption_key: Option<::Value<bool>> = None;
+                let mut snapshot_cluster_identifier: Option<::Value<String>> = None;
+                let mut snapshot_copy_grant_name: Option<::Value<String>> = None;
+                let mut snapshot_copy_manual: Option<::Value<bool>> = None;
+                let mut snapshot_copy_retention_period: Option<::Value<u32>> = None;
+                let mut snapshot_identifier: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut vpc_security_group_ids: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -819,7 +819,7 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
     }
 }
 
-impl crate::Resource for Cluster {
+impl ::Resource for Cluster {
     type Properties = ClusterProperties;
     const TYPE: &'static str = "AWS::Redshift::Cluster";
     fn properties(&self) -> &ClusterProperties {
@@ -830,7 +830,7 @@ impl crate::Resource for Cluster {
     }
 }
 
-impl crate::private::Sealed for Cluster {}
+impl ::private::Sealed for Cluster {}
 
 impl From<ClusterProperties> for Cluster {
     fn from(properties: ClusterProperties) -> Cluster {
@@ -851,22 +851,22 @@ pub struct ClusterParameterGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`ParameterGroupFamily`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub parameter_group_family: crate::Value<String>,
+    pub parameter_group_family: ::Value<String>,
     /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameters: Option<crate::ValueList<self::cluster_parameter_group::Parameter>>,
+    pub parameters: Option<::ValueList<self::cluster_parameter_group::Parameter>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ClusterParameterGroupProperties {
@@ -905,11 +905,11 @@ impl<'de> ::serde::Deserialize<'de> for ClusterParameterGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut parameter_group_family: Option<crate::Value<String>> = None;
-                let mut parameters: Option<crate::ValueList<self::cluster_parameter_group::Parameter>> =
+                let mut description: Option<::Value<String>> = None;
+                let mut parameter_group_family: Option<::Value<String>> = None;
+                let mut parameters: Option<::ValueList<self::cluster_parameter_group::Parameter>> =
                     None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -944,7 +944,7 @@ impl<'de> ::serde::Deserialize<'de> for ClusterParameterGroupProperties {
     }
 }
 
-impl crate::Resource for ClusterParameterGroup {
+impl ::Resource for ClusterParameterGroup {
     type Properties = ClusterParameterGroupProperties;
     const TYPE: &'static str = "AWS::Redshift::ClusterParameterGroup";
     fn properties(&self) -> &ClusterParameterGroupProperties {
@@ -955,7 +955,7 @@ impl crate::Resource for ClusterParameterGroup {
     }
 }
 
-impl crate::private::Sealed for ClusterParameterGroup {}
+impl ::private::Sealed for ClusterParameterGroup {}
 
 impl From<ClusterParameterGroupProperties> for ClusterParameterGroup {
     fn from(properties: ClusterParameterGroupProperties) -> ClusterParameterGroup {
@@ -976,12 +976,12 @@ pub struct ClusterSecurityGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ClusterSecurityGroupProperties {
@@ -1012,8 +1012,8 @@ impl<'de> ::serde::Deserialize<'de> for ClusterSecurityGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1039,7 +1039,7 @@ impl<'de> ::serde::Deserialize<'de> for ClusterSecurityGroupProperties {
     }
 }
 
-impl crate::Resource for ClusterSecurityGroup {
+impl ::Resource for ClusterSecurityGroup {
     type Properties = ClusterSecurityGroupProperties;
     const TYPE: &'static str = "AWS::Redshift::ClusterSecurityGroup";
     fn properties(&self) -> &ClusterSecurityGroupProperties {
@@ -1050,7 +1050,7 @@ impl crate::Resource for ClusterSecurityGroup {
     }
 }
 
-impl crate::private::Sealed for ClusterSecurityGroup {}
+impl ::private::Sealed for ClusterSecurityGroup {}
 
 impl From<ClusterSecurityGroupProperties> for ClusterSecurityGroup {
     fn from(properties: ClusterSecurityGroupProperties) -> ClusterSecurityGroup {
@@ -1071,22 +1071,22 @@ pub struct ClusterSecurityGroupIngressProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cidrip: Option<crate::Value<String>>,
+    pub cidrip: Option<::Value<String>>,
     /// Property [`ClusterSecurityGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_security_group_name: crate::Value<String>,
+    pub cluster_security_group_name: ::Value<String>,
     /// Property [`EC2SecurityGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ec2_security_group_name: Option<crate::Value<String>>,
+    pub ec2_security_group_name: Option<::Value<String>>,
     /// Property [`EC2SecurityGroupOwnerId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ec2_security_group_owner_id: Option<crate::Value<String>>,
+    pub ec2_security_group_owner_id: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ClusterSecurityGroupIngressProperties {
@@ -1135,10 +1135,10 @@ impl<'de> ::serde::Deserialize<'de> for ClusterSecurityGroupIngressProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cidrip: Option<crate::Value<String>> = None;
-                let mut cluster_security_group_name: Option<crate::Value<String>> = None;
-                let mut ec2_security_group_name: Option<crate::Value<String>> = None;
-                let mut ec2_security_group_owner_id: Option<crate::Value<String>> = None;
+                let mut cidrip: Option<::Value<String>> = None;
+                let mut cluster_security_group_name: Option<::Value<String>> = None;
+                let mut ec2_security_group_name: Option<::Value<String>> = None;
+                let mut ec2_security_group_owner_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1175,7 +1175,7 @@ impl<'de> ::serde::Deserialize<'de> for ClusterSecurityGroupIngressProperties {
     }
 }
 
-impl crate::Resource for ClusterSecurityGroupIngress {
+impl ::Resource for ClusterSecurityGroupIngress {
     type Properties = ClusterSecurityGroupIngressProperties;
     const TYPE: &'static str = "AWS::Redshift::ClusterSecurityGroupIngress";
     fn properties(&self) -> &ClusterSecurityGroupIngressProperties {
@@ -1186,7 +1186,7 @@ impl crate::Resource for ClusterSecurityGroupIngress {
     }
 }
 
-impl crate::private::Sealed for ClusterSecurityGroupIngress {}
+impl ::private::Sealed for ClusterSecurityGroupIngress {}
 
 impl From<ClusterSecurityGroupIngressProperties> for ClusterSecurityGroupIngress {
     fn from(properties: ClusterSecurityGroupIngressProperties) -> ClusterSecurityGroupIngress {
@@ -1207,17 +1207,17 @@ pub struct ClusterSubnetGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subnet_ids: crate::ValueList<String>,
+    pub subnet_ids: ::ValueList<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ClusterSubnetGroupProperties {
@@ -1249,9 +1249,9 @@ impl<'de> ::serde::Deserialize<'de> for ClusterSubnetGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut subnet_ids: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut subnet_ids: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1281,7 +1281,7 @@ impl<'de> ::serde::Deserialize<'de> for ClusterSubnetGroupProperties {
     }
 }
 
-impl crate::Resource for ClusterSubnetGroup {
+impl ::Resource for ClusterSubnetGroup {
     type Properties = ClusterSubnetGroupProperties;
     const TYPE: &'static str = "AWS::Redshift::ClusterSubnetGroup";
     fn properties(&self) -> &ClusterSubnetGroupProperties {
@@ -1292,7 +1292,7 @@ impl crate::Resource for ClusterSubnetGroup {
     }
 }
 
-impl crate::private::Sealed for ClusterSubnetGroup {}
+impl ::private::Sealed for ClusterSubnetGroup {}
 
 impl From<ClusterSubnetGroupProperties> for ClusterSubnetGroup {
     fn from(properties: ClusterSubnetGroupProperties) -> ClusterSubnetGroup {
@@ -1313,27 +1313,27 @@ pub struct EndpointAccessProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_identifier: Option<crate::Value<String>>,
+    pub cluster_identifier: Option<::Value<String>>,
     /// Property [`EndpointName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-endpointname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub endpoint_name: crate::Value<String>,
+    pub endpoint_name: ::Value<String>,
     /// Property [`ResourceOwner`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-resourceowner).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub resource_owner: Option<crate::Value<String>>,
+    pub resource_owner: Option<::Value<String>>,
     /// Property [`SubnetGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-subnetgroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnet_group_name: Option<crate::Value<String>>,
+    pub subnet_group_name: Option<::Value<String>>,
     /// Property [`VpcSecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-vpcsecuritygroupids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_security_group_ids: crate::ValueList<String>,
+    pub vpc_security_group_ids: ::ValueList<String>,
 }
 
 impl ::serde::Serialize for EndpointAccessProperties {
@@ -1383,11 +1383,11 @@ impl<'de> ::serde::Deserialize<'de> for EndpointAccessProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cluster_identifier: Option<crate::Value<String>> = None;
-                let mut endpoint_name: Option<crate::Value<String>> = None;
-                let mut resource_owner: Option<crate::Value<String>> = None;
-                let mut subnet_group_name: Option<crate::Value<String>> = None;
-                let mut vpc_security_group_ids: Option<crate::ValueList<String>> = None;
+                let mut cluster_identifier: Option<::Value<String>> = None;
+                let mut endpoint_name: Option<::Value<String>> = None;
+                let mut resource_owner: Option<::Value<String>> = None;
+                let mut subnet_group_name: Option<::Value<String>> = None;
+                let mut vpc_security_group_ids: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1426,7 +1426,7 @@ impl<'de> ::serde::Deserialize<'de> for EndpointAccessProperties {
     }
 }
 
-impl crate::Resource for EndpointAccess {
+impl ::Resource for EndpointAccess {
     type Properties = EndpointAccessProperties;
     const TYPE: &'static str = "AWS::Redshift::EndpointAccess";
     fn properties(&self) -> &EndpointAccessProperties {
@@ -1437,7 +1437,7 @@ impl crate::Resource for EndpointAccess {
     }
 }
 
-impl crate::private::Sealed for EndpointAccess {}
+impl ::private::Sealed for EndpointAccess {}
 
 impl From<EndpointAccessProperties> for EndpointAccess {
     fn from(properties: EndpointAccessProperties) -> EndpointAccess {
@@ -1458,22 +1458,22 @@ pub struct EndpointAuthorizationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub account: crate::Value<String>,
+    pub account: ::Value<String>,
     /// Property [`ClusterIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-clusteridentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_identifier: crate::Value<String>,
+    pub cluster_identifier: ::Value<String>,
     /// Property [`Force`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-force).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub force: Option<crate::Value<bool>>,
+    pub force: Option<::Value<bool>>,
     /// Property [`VpcIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-vpcids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_ids: Option<crate::ValueList<String>>,
+    pub vpc_ids: Option<::ValueList<String>>,
 }
 
 impl ::serde::Serialize for EndpointAuthorizationProperties {
@@ -1512,10 +1512,10 @@ impl<'de> ::serde::Deserialize<'de> for EndpointAuthorizationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut account: Option<crate::Value<String>> = None;
-                let mut cluster_identifier: Option<crate::Value<String>> = None;
-                let mut force: Option<crate::Value<bool>> = None;
-                let mut vpc_ids: Option<crate::ValueList<String>> = None;
+                let mut account: Option<::Value<String>> = None;
+                let mut cluster_identifier: Option<::Value<String>> = None;
+                let mut force: Option<::Value<bool>> = None;
+                let mut vpc_ids: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1549,7 +1549,7 @@ impl<'de> ::serde::Deserialize<'de> for EndpointAuthorizationProperties {
     }
 }
 
-impl crate::Resource for EndpointAuthorization {
+impl ::Resource for EndpointAuthorization {
     type Properties = EndpointAuthorizationProperties;
     const TYPE: &'static str = "AWS::Redshift::EndpointAuthorization";
     fn properties(&self) -> &EndpointAuthorizationProperties {
@@ -1560,7 +1560,7 @@ impl crate::Resource for EndpointAuthorization {
     }
 }
 
-impl crate::private::Sealed for EndpointAuthorization {}
+impl ::private::Sealed for EndpointAuthorization {}
 
 impl From<EndpointAuthorizationProperties> for EndpointAuthorization {
     fn from(properties: EndpointAuthorizationProperties) -> EndpointAuthorization {
@@ -1581,42 +1581,42 @@ pub struct EventSubscriptionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: Option<crate::Value<bool>>,
+    pub enabled: Option<::Value<bool>>,
     /// Property [`EventCategories`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-eventcategories).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub event_categories: Option<crate::ValueList<String>>,
+    pub event_categories: Option<::ValueList<String>>,
     /// Property [`Severity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-severity).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub severity: Option<crate::Value<String>>,
+    pub severity: Option<::Value<String>>,
     /// Property [`SnsTopicArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-snstopicarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sns_topic_arn: Option<crate::Value<String>>,
+    pub sns_topic_arn: Option<::Value<String>>,
     /// Property [`SourceIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-sourceids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_ids: Option<crate::ValueList<String>>,
+    pub source_ids: Option<::ValueList<String>>,
     /// Property [`SourceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-sourcetype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_type: Option<crate::Value<String>>,
+    pub source_type: Option<::Value<String>>,
     /// Property [`SubscriptionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-subscriptionname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subscription_name: crate::Value<String>,
+    pub subscription_name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for EventSubscriptionProperties {
@@ -1673,14 +1673,14 @@ impl<'de> ::serde::Deserialize<'de> for EventSubscriptionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut enabled: Option<crate::Value<bool>> = None;
-                let mut event_categories: Option<crate::ValueList<String>> = None;
-                let mut severity: Option<crate::Value<String>> = None;
-                let mut sns_topic_arn: Option<crate::Value<String>> = None;
-                let mut source_ids: Option<crate::ValueList<String>> = None;
-                let mut source_type: Option<crate::Value<String>> = None;
-                let mut subscription_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut enabled: Option<::Value<bool>> = None;
+                let mut event_categories: Option<::ValueList<String>> = None;
+                let mut severity: Option<::Value<String>> = None;
+                let mut sns_topic_arn: Option<::Value<String>> = None;
+                let mut source_ids: Option<::ValueList<String>> = None;
+                let mut source_type: Option<::Value<String>> = None;
+                let mut subscription_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1730,7 +1730,7 @@ impl<'de> ::serde::Deserialize<'de> for EventSubscriptionProperties {
     }
 }
 
-impl crate::Resource for EventSubscription {
+impl ::Resource for EventSubscription {
     type Properties = EventSubscriptionProperties;
     const TYPE: &'static str = "AWS::Redshift::EventSubscription";
     fn properties(&self) -> &EventSubscriptionProperties {
@@ -1741,7 +1741,7 @@ impl crate::Resource for EventSubscription {
     }
 }
 
-impl crate::private::Sealed for EventSubscription {}
+impl ::private::Sealed for EventSubscription {}
 
 impl From<EventSubscriptionProperties> for EventSubscription {
     fn from(properties: EventSubscriptionProperties) -> EventSubscription {
@@ -1762,42 +1762,42 @@ pub struct ScheduledActionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enable: Option<crate::Value<bool>>,
+    pub enable: Option<::Value<bool>>,
     /// Property [`EndTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-endtime).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub end_time: Option<crate::Value<String>>,
+    pub end_time: Option<::Value<String>>,
     /// Property [`IamRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-iamrole).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub iam_role: Option<crate::Value<String>>,
+    pub iam_role: Option<::Value<String>>,
     /// Property [`Schedule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-schedule).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub schedule: Option<crate::Value<String>>,
+    pub schedule: Option<::Value<String>>,
     /// Property [`ScheduledActionDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactiondescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub scheduled_action_description: Option<crate::Value<String>>,
+    pub scheduled_action_description: Option<::Value<String>>,
     /// Property [`ScheduledActionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactionname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub scheduled_action_name: crate::Value<String>,
+    pub scheduled_action_name: ::Value<String>,
     /// Property [`StartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-starttime).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub start_time: Option<crate::Value<String>>,
+    pub start_time: Option<::Value<String>>,
     /// Property [`TargetAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-targetaction).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub target_action: Option<crate::Value<self::scheduled_action::ScheduledActionType>>,
+    pub target_action: Option<::Value<self::scheduled_action::ScheduledActionType>>,
 }
 
 impl ::serde::Serialize for ScheduledActionProperties {
@@ -1854,15 +1854,15 @@ impl<'de> ::serde::Deserialize<'de> for ScheduledActionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut enable: Option<crate::Value<bool>> = None;
-                let mut end_time: Option<crate::Value<String>> = None;
-                let mut iam_role: Option<crate::Value<String>> = None;
-                let mut schedule: Option<crate::Value<String>> = None;
-                let mut scheduled_action_description: Option<crate::Value<String>> = None;
-                let mut scheduled_action_name: Option<crate::Value<String>> = None;
-                let mut start_time: Option<crate::Value<String>> = None;
+                let mut enable: Option<::Value<bool>> = None;
+                let mut end_time: Option<::Value<String>> = None;
+                let mut iam_role: Option<::Value<String>> = None;
+                let mut schedule: Option<::Value<String>> = None;
+                let mut scheduled_action_description: Option<::Value<String>> = None;
+                let mut scheduled_action_name: Option<::Value<String>> = None;
+                let mut start_time: Option<::Value<String>> = None;
                 let mut target_action: Option<
-                    crate::Value<self::scheduled_action::ScheduledActionType>,
+                    ::Value<self::scheduled_action::ScheduledActionType>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -1914,7 +1914,7 @@ impl<'de> ::serde::Deserialize<'de> for ScheduledActionProperties {
     }
 }
 
-impl crate::Resource for ScheduledAction {
+impl ::Resource for ScheduledAction {
     type Properties = ScheduledActionProperties;
     const TYPE: &'static str = "AWS::Redshift::ScheduledAction";
     fn properties(&self) -> &ScheduledActionProperties {
@@ -1925,7 +1925,7 @@ impl crate::Resource for ScheduledAction {
     }
 }
 
-impl crate::private::Sealed for ScheduledAction {}
+impl ::private::Sealed for ScheduledAction {}
 
 impl From<ScheduledActionProperties> for ScheduledAction {
     fn from(properties: ScheduledActionProperties) -> ScheduledAction {
@@ -1943,15 +1943,15 @@ pub mod cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub address: Option<crate::Value<String>>,
+        pub address: Option<::Value<String>>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-endpoint.html#cfn-redshift-cluster-endpoint-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: Option<crate::Value<String>>,
+        pub port: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Endpoint {
+    impl ::codec::SerializeValue for Endpoint {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref address) = self.address {
@@ -1964,7 +1964,7 @@ pub mod cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for Endpoint {
+    impl ::codec::DeserializeValue for Endpoint {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Endpoint, D::Error> {
             struct Visitor;
 
@@ -1979,8 +1979,8 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut address: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<String>> = None;
+                    let mut address: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2014,15 +2014,15 @@ pub mod cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_name: crate::Value<String>,
+        pub bucket_name: ::Value<String>,
         /// Property [`S3KeyPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html#cfn-redshift-cluster-loggingproperties-s3keyprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_key_prefix: Option<crate::Value<String>>,
+        pub s3_key_prefix: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LoggingProperties {
+    impl ::codec::SerializeValue for LoggingProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
@@ -2037,7 +2037,7 @@ pub mod cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for LoggingProperties {
+    impl ::codec::DeserializeValue for LoggingProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LoggingProperties, D::Error> {
@@ -2054,8 +2054,8 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<crate::Value<String>> = None;
-                    let mut s3_key_prefix: Option<crate::Value<String>> = None;
+                    let mut bucket_name: Option<::Value<String>> = None;
+                    let mut s3_key_prefix: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2094,15 +2094,15 @@ pub mod cluster_parameter_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameter_name: crate::Value<String>,
+        pub parameter_name: ::Value<String>,
         /// Property [`ParameterValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-property-redshift-clusterparametergroup-parameter.html#cfn-redshift-clusterparametergroup-parameter-parametervalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameter_value: crate::Value<String>,
+        pub parameter_value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Parameter {
+    impl ::codec::SerializeValue for Parameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2119,7 +2119,7 @@ pub mod cluster_parameter_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for Parameter {
+    impl ::codec::DeserializeValue for Parameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Parameter, D::Error> {
             struct Visitor;
 
@@ -2134,8 +2134,8 @@ pub mod cluster_parameter_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut parameter_name: Option<crate::Value<String>> = None;
-                    let mut parameter_value: Option<crate::Value<String>> = None;
+                    let mut parameter_name: Option<::Value<String>> = None;
+                    let mut parameter_value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2175,15 +2175,15 @@ pub mod endpoint_access {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status: Option<crate::Value<String>>,
+        pub status: Option<::Value<String>>,
         /// Property [`VpcSecurityGroupId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcsecuritygroup.html#cfn-redshift-endpointaccess-vpcsecuritygroup-vpcsecuritygroupid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_security_group_id: Option<crate::Value<String>>,
+        pub vpc_security_group_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for VpcSecurityGroup {
+    impl ::codec::SerializeValue for VpcSecurityGroup {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref status) = self.status {
@@ -2200,7 +2200,7 @@ pub mod endpoint_access {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcSecurityGroup {
+    impl ::codec::DeserializeValue for VpcSecurityGroup {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VpcSecurityGroup, D::Error> {
@@ -2217,8 +2217,8 @@ pub mod endpoint_access {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut status: Option<crate::Value<String>> = None;
-                    let mut vpc_security_group_id: Option<crate::Value<String>> = None;
+                    let mut status: Option<::Value<String>> = None;
+                    let mut vpc_security_group_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2257,10 +2257,10 @@ pub mod scheduled_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_identifier: crate::Value<String>,
+        pub cluster_identifier: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for PauseClusterMessage {
+    impl ::codec::SerializeValue for PauseClusterMessage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2272,7 +2272,7 @@ pub mod scheduled_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for PauseClusterMessage {
+    impl ::codec::DeserializeValue for PauseClusterMessage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PauseClusterMessage, D::Error> {
@@ -2289,7 +2289,7 @@ pub mod scheduled_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_identifier: Option<crate::Value<String>> = None;
+                    let mut cluster_identifier: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2320,30 +2320,30 @@ pub mod scheduled_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub classic: Option<crate::Value<bool>>,
+        pub classic: Option<::Value<bool>>,
         /// Property [`ClusterIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-clusteridentifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_identifier: crate::Value<String>,
+        pub cluster_identifier: ::Value<String>,
         /// Property [`ClusterType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-clustertype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_type: Option<crate::Value<String>>,
+        pub cluster_type: Option<::Value<String>>,
         /// Property [`NodeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-nodetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub node_type: Option<crate::Value<String>>,
+        pub node_type: Option<::Value<String>>,
         /// Property [`NumberOfNodes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-numberofnodes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub number_of_nodes: Option<crate::Value<u32>>,
+        pub number_of_nodes: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for ResizeClusterMessage {
+    impl ::codec::SerializeValue for ResizeClusterMessage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref classic) = self.classic {
@@ -2371,7 +2371,7 @@ pub mod scheduled_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResizeClusterMessage {
+    impl ::codec::DeserializeValue for ResizeClusterMessage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResizeClusterMessage, D::Error> {
@@ -2388,11 +2388,11 @@ pub mod scheduled_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut classic: Option<crate::Value<bool>> = None;
-                    let mut cluster_identifier: Option<crate::Value<String>> = None;
-                    let mut cluster_type: Option<crate::Value<String>> = None;
-                    let mut node_type: Option<crate::Value<String>> = None;
-                    let mut number_of_nodes: Option<crate::Value<u32>> = None;
+                    let mut classic: Option<::Value<bool>> = None;
+                    let mut cluster_identifier: Option<::Value<String>> = None;
+                    let mut cluster_type: Option<::Value<String>> = None;
+                    let mut node_type: Option<::Value<String>> = None;
+                    let mut number_of_nodes: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2439,10 +2439,10 @@ pub mod scheduled_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_identifier: crate::Value<String>,
+        pub cluster_identifier: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ResumeClusterMessage {
+    impl ::codec::SerializeValue for ResumeClusterMessage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2454,7 +2454,7 @@ pub mod scheduled_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResumeClusterMessage {
+    impl ::codec::DeserializeValue for ResumeClusterMessage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResumeClusterMessage, D::Error> {
@@ -2471,7 +2471,7 @@ pub mod scheduled_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_identifier: Option<crate::Value<String>> = None;
+                    let mut cluster_identifier: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2502,20 +2502,20 @@ pub mod scheduled_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub pause_cluster: Option<crate::Value<PauseClusterMessage>>,
+        pub pause_cluster: Option<::Value<PauseClusterMessage>>,
         /// Property [`ResizeCluster`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-scheduledactiontype.html#cfn-redshift-scheduledaction-scheduledactiontype-resizecluster).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resize_cluster: Option<crate::Value<ResizeClusterMessage>>,
+        pub resize_cluster: Option<::Value<ResizeClusterMessage>>,
         /// Property [`ResumeCluster`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-scheduledactiontype.html#cfn-redshift-scheduledaction-scheduledactiontype-resumecluster).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resume_cluster: Option<crate::Value<ResumeClusterMessage>>,
+        pub resume_cluster: Option<::Value<ResumeClusterMessage>>,
     }
 
-    impl crate::codec::SerializeValue for ScheduledActionType {
+    impl ::codec::SerializeValue for ScheduledActionType {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref pause_cluster) = self.pause_cluster {
@@ -2543,7 +2543,7 @@ pub mod scheduled_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for ScheduledActionType {
+    impl ::codec::DeserializeValue for ScheduledActionType {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScheduledActionType, D::Error> {
@@ -2560,9 +2560,9 @@ pub mod scheduled_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut pause_cluster: Option<crate::Value<PauseClusterMessage>> = None;
-                    let mut resize_cluster: Option<crate::Value<ResizeClusterMessage>> = None;
-                    let mut resume_cluster: Option<crate::Value<ResumeClusterMessage>> = None;
+                    let mut pause_cluster: Option<::Value<PauseClusterMessage>> = None;
+                    let mut resize_cluster: Option<::Value<ResizeClusterMessage>> = None;
+                    let mut resume_cluster: Option<::Value<ResumeClusterMessage>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

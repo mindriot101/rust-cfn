@@ -13,32 +13,32 @@ pub struct AssignmentProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
     /// Property [`PermissionSetArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-assignment.html#cfn-sso-assignment-permissionsetarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub permission_set_arn: crate::Value<String>,
+    pub permission_set_arn: ::Value<String>,
     /// Property [`PrincipalId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-assignment.html#cfn-sso-assignment-principalid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub principal_id: crate::Value<String>,
+    pub principal_id: ::Value<String>,
     /// Property [`PrincipalType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-assignment.html#cfn-sso-assignment-principaltype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub principal_type: crate::Value<String>,
+    pub principal_type: ::Value<String>,
     /// Property [`TargetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-assignment.html#cfn-sso-assignment-targetid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub target_id: crate::Value<String>,
+    pub target_id: ::Value<String>,
     /// Property [`TargetType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-assignment.html#cfn-sso-assignment-targettype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub target_type: crate::Value<String>,
+    pub target_type: ::Value<String>,
 }
 
 impl ::serde::Serialize for AssignmentProperties {
@@ -77,12 +77,12 @@ impl<'de> ::serde::Deserialize<'de> for AssignmentProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut instance_arn: Option<crate::Value<String>> = None;
-                let mut permission_set_arn: Option<crate::Value<String>> = None;
-                let mut principal_id: Option<crate::Value<String>> = None;
-                let mut principal_type: Option<crate::Value<String>> = None;
-                let mut target_id: Option<crate::Value<String>> = None;
-                let mut target_type: Option<crate::Value<String>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
+                let mut permission_set_arn: Option<::Value<String>> = None;
+                let mut principal_id: Option<::Value<String>> = None;
+                let mut principal_type: Option<::Value<String>> = None;
+                let mut target_id: Option<::Value<String>> = None;
+                let mut target_type: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -128,7 +128,7 @@ impl<'de> ::serde::Deserialize<'de> for AssignmentProperties {
     }
 }
 
-impl crate::Resource for Assignment {
+impl ::Resource for Assignment {
     type Properties = AssignmentProperties;
     const TYPE: &'static str = "AWS::SSO::Assignment";
     fn properties(&self) -> &AssignmentProperties {
@@ -139,7 +139,7 @@ impl crate::Resource for Assignment {
     }
 }
 
-impl crate::private::Sealed for Assignment {}
+impl ::private::Sealed for Assignment {}
 
 impl From<AssignmentProperties> for Assignment {
     fn from(properties: AssignmentProperties) -> Assignment {
@@ -161,13 +161,13 @@ pub struct InstanceAccessControlAttributeConfigurationProperties {
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub access_control_attributes: Option<
-        crate::ValueList<self::instance_access_control_attribute_configuration::AccessControlAttribute>,
+        ::ValueList<self::instance_access_control_attribute_configuration::AccessControlAttribute>,
     >,
     /// Property [`InstanceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instancearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
 }
 
 impl ::serde::Serialize for InstanceAccessControlAttributeConfigurationProperties {
@@ -205,8 +205,8 @@ impl<'de> ::serde::Deserialize<'de> for InstanceAccessControlAttributeConfigurat
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut access_control_attributes: Option<crate::ValueList<self::instance_access_control_attribute_configuration::AccessControlAttribute>> = None;
-                let mut instance_arn: Option<crate::Value<String>> = None;
+                let mut access_control_attributes: Option<::ValueList<self::instance_access_control_attribute_configuration::AccessControlAttribute>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -233,7 +233,7 @@ impl<'de> ::serde::Deserialize<'de> for InstanceAccessControlAttributeConfigurat
     }
 }
 
-impl crate::Resource for InstanceAccessControlAttributeConfiguration {
+impl ::Resource for InstanceAccessControlAttributeConfiguration {
     type Properties = InstanceAccessControlAttributeConfigurationProperties;
     const TYPE: &'static str = "AWS::SSO::InstanceAccessControlAttributeConfiguration";
     fn properties(&self) -> &InstanceAccessControlAttributeConfigurationProperties {
@@ -244,7 +244,7 @@ impl crate::Resource for InstanceAccessControlAttributeConfiguration {
     }
 }
 
-impl crate::private::Sealed for InstanceAccessControlAttributeConfiguration {}
+impl ::private::Sealed for InstanceAccessControlAttributeConfiguration {}
 
 impl From<InstanceAccessControlAttributeConfigurationProperties>
     for InstanceAccessControlAttributeConfiguration
@@ -269,42 +269,42 @@ pub struct PermissionSetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`InlinePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-inlinepolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub inline_policy: Option<crate::Value<crate::json::Value>>,
+    pub inline_policy: Option<::Value<::json::Value>>,
     /// Property [`InstanceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-instancearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
     /// Property [`ManagedPolicies`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-managedpolicies).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub managed_policies: Option<crate::ValueList<String>>,
+    pub managed_policies: Option<::ValueList<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`RelayStateType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-relaystatetype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub relay_state_type: Option<crate::Value<String>>,
+    pub relay_state_type: Option<::Value<String>>,
     /// Property [`SessionDuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-sessionduration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub session_duration: Option<crate::Value<String>>,
+    pub session_duration: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for PermissionSetProperties {
@@ -363,14 +363,14 @@ impl<'de> ::serde::Deserialize<'de> for PermissionSetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut inline_policy: Option<crate::Value<crate::json::Value>> = None;
-                let mut instance_arn: Option<crate::Value<String>> = None;
-                let mut managed_policies: Option<crate::ValueList<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut relay_state_type: Option<crate::Value<String>> = None;
-                let mut session_duration: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut inline_policy: Option<::Value<::json::Value>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
+                let mut managed_policies: Option<::ValueList<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut relay_state_type: Option<::Value<String>> = None;
+                let mut session_duration: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -420,7 +420,7 @@ impl<'de> ::serde::Deserialize<'de> for PermissionSetProperties {
     }
 }
 
-impl crate::Resource for PermissionSet {
+impl ::Resource for PermissionSet {
     type Properties = PermissionSetProperties;
     const TYPE: &'static str = "AWS::SSO::PermissionSet";
     fn properties(&self) -> &PermissionSetProperties {
@@ -431,7 +431,7 @@ impl crate::Resource for PermissionSet {
     }
 }
 
-impl crate::private::Sealed for PermissionSet {}
+impl ::private::Sealed for PermissionSet {}
 
 impl From<PermissionSetProperties> for PermissionSet {
     fn from(properties: PermissionSetProperties) -> PermissionSet {
@@ -449,15 +449,15 @@ pub mod instance_access_control_attribute_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<AccessControlAttributeValue>,
+        pub value: ::Value<AccessControlAttributeValue>,
     }
 
-    impl crate::codec::SerializeValue for AccessControlAttribute {
+    impl ::codec::SerializeValue for AccessControlAttribute {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -466,7 +466,7 @@ pub mod instance_access_control_attribute_configuration {
         }
     }
 
-    impl crate::codec::DeserializeValue for AccessControlAttribute {
+    impl ::codec::DeserializeValue for AccessControlAttribute {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AccessControlAttribute, D::Error> {
@@ -483,8 +483,8 @@ pub mod instance_access_control_attribute_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<AccessControlAttributeValue>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<AccessControlAttributeValue>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -518,10 +518,10 @@ pub mod instance_access_control_attribute_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source: crate::ValueList<String>,
+        pub source: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for AccessControlAttributeValue {
+    impl ::codec::SerializeValue for AccessControlAttributeValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Source", &self.source)?;
@@ -529,7 +529,7 @@ pub mod instance_access_control_attribute_configuration {
         }
     }
 
-    impl crate::codec::DeserializeValue for AccessControlAttributeValue {
+    impl ::codec::DeserializeValue for AccessControlAttributeValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AccessControlAttributeValue, D::Error> {
@@ -546,7 +546,7 @@ pub mod instance_access_control_attribute_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source: Option<crate::ValueList<String>> = None;
+                    let mut source: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

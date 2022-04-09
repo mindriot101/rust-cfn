@@ -13,62 +13,62 @@ pub struct ComponentProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub binding_properties: crate::ValueMap<self::component::ComponentBindingPropertiesValue>,
+    pub binding_properties: ::ValueMap<self::component::ComponentBindingPropertiesValue>,
     /// Property [`Children`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-children).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub children: Option<crate::ValueList<self::component::ComponentChild>>,
+    pub children: Option<::ValueList<self::component::ComponentChild>>,
     /// Property [`CollectionProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-collectionproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub collection_properties: Option<crate::ValueMap<self::component::ComponentDataConfiguration>>,
+    pub collection_properties: Option<::ValueMap<self::component::ComponentDataConfiguration>>,
     /// Property [`ComponentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-componenttype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub component_type: crate::Value<String>,
+    pub component_type: ::Value<String>,
     /// Property [`Events`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-events).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub events: Option<crate::ValueMap<self::component::ComponentEvent>>,
+    pub events: Option<::ValueMap<self::component::ComponentEvent>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Overrides`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-overrides).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub overrides: crate::ValueMap<self::component::ComponentOverridesValue>,
+    pub overrides: ::ValueMap<self::component::ComponentOverridesValue>,
     /// Property [`Properties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-properties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub properties: crate::ValueMap<self::component::ComponentProperty>,
+    pub properties: ::ValueMap<self::component::ComponentProperty>,
     /// Property [`SchemaVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-schemaversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub schema_version: Option<crate::Value<String>>,
+    pub schema_version: Option<::Value<String>>,
     /// Property [`SourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-sourceid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_id: Option<crate::Value<String>>,
+    pub source_id: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueMap<String>>,
+    pub tags: Option<::ValueMap<String>>,
     /// Property [`Variants`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-variants).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub variants: crate::ValueList<self::component::ComponentVariant>,
+    pub variants: ::ValueList<self::component::ComponentVariant>,
 }
 
 impl ::serde::Serialize for ComponentProperties {
@@ -130,22 +130,22 @@ impl<'de> ::serde::Deserialize<'de> for ComponentProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut binding_properties: Option<
-                    crate::ValueMap<self::component::ComponentBindingPropertiesValue>,
+                    ::ValueMap<self::component::ComponentBindingPropertiesValue>,
                 > = None;
-                let mut children: Option<crate::ValueList<self::component::ComponentChild>> = None;
+                let mut children: Option<::ValueList<self::component::ComponentChild>> = None;
                 let mut collection_properties: Option<
-                    crate::ValueMap<self::component::ComponentDataConfiguration>,
+                    ::ValueMap<self::component::ComponentDataConfiguration>,
                 > = None;
-                let mut component_type: Option<crate::Value<String>> = None;
-                let mut events: Option<crate::ValueMap<self::component::ComponentEvent>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut overrides: Option<crate::ValueMap<self::component::ComponentOverridesValue>> =
+                let mut component_type: Option<::Value<String>> = None;
+                let mut events: Option<::ValueMap<self::component::ComponentEvent>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut overrides: Option<::ValueMap<self::component::ComponentOverridesValue>> =
                     None;
-                let mut properties: Option<crate::ValueMap<self::component::ComponentProperty>> = None;
-                let mut schema_version: Option<crate::Value<String>> = None;
-                let mut source_id: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueMap<String>> = None;
-                let mut variants: Option<crate::ValueList<self::component::ComponentVariant>> = None;
+                let mut properties: Option<::ValueMap<self::component::ComponentProperty>> = None;
+                let mut schema_version: Option<::Value<String>> = None;
+                let mut source_id: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueMap<String>> = None;
+                let mut variants: Option<::ValueList<self::component::ComponentVariant>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -213,7 +213,7 @@ impl<'de> ::serde::Deserialize<'de> for ComponentProperties {
     }
 }
 
-impl crate::Resource for Component {
+impl ::Resource for Component {
     type Properties = ComponentProperties;
     const TYPE: &'static str = "AWS::AmplifyUIBuilder::Component";
     fn properties(&self) -> &ComponentProperties {
@@ -224,7 +224,7 @@ impl crate::Resource for Component {
     }
 }
 
-impl crate::private::Sealed for Component {}
+impl ::private::Sealed for Component {}
 
 impl From<ComponentProperties> for Component {
     fn from(properties: ComponentProperties) -> Component {
@@ -245,22 +245,22 @@ pub struct ThemeProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Overrides`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-overrides).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub overrides: Option<crate::ValueList<self::theme::ThemeValues>>,
+    pub overrides: Option<::ValueList<self::theme::ThemeValues>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueMap<String>>,
+    pub tags: Option<::ValueMap<String>>,
     /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-values).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub values: crate::ValueList<self::theme::ThemeValues>,
+    pub values: ::ValueList<self::theme::ThemeValues>,
 }
 
 impl ::serde::Serialize for ThemeProperties {
@@ -293,10 +293,10 @@ impl<'de> ::serde::Deserialize<'de> for ThemeProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<crate::Value<String>> = None;
-                let mut overrides: Option<crate::ValueList<self::theme::ThemeValues>> = None;
-                let mut tags: Option<crate::ValueMap<String>> = None;
-                let mut values: Option<crate::ValueList<self::theme::ThemeValues>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut overrides: Option<::ValueList<self::theme::ThemeValues>> = None;
+                let mut tags: Option<::ValueMap<String>> = None;
+                let mut values: Option<::ValueList<self::theme::ThemeValues>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -329,7 +329,7 @@ impl<'de> ::serde::Deserialize<'de> for ThemeProperties {
     }
 }
 
-impl crate::Resource for Theme {
+impl ::Resource for Theme {
     type Properties = ThemeProperties;
     const TYPE: &'static str = "AWS::AmplifyUIBuilder::Theme";
     fn properties(&self) -> &ThemeProperties {
@@ -340,7 +340,7 @@ impl crate::Resource for Theme {
     }
 }
 
-impl crate::private::Sealed for Theme {}
+impl ::private::Sealed for Theme {}
 
 impl From<ThemeProperties> for Theme {
     fn from(properties: ThemeProperties) -> Theme {
@@ -358,50 +358,50 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub anchor: Option<crate::Value<ComponentProperty>>,
+        pub anchor: Option<::Value<ComponentProperty>>,
         /// Property [`Fields`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-fields).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fields: Option<crate::Value<ComponentProperties>>,
+        pub fields: Option<::Value<ComponentProperties>>,
         /// Property [`Global`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-global).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub global: Option<crate::Value<ComponentProperty>>,
+        pub global: Option<::Value<ComponentProperty>>,
         /// Property [`Id`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-id).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: Option<crate::Value<ComponentProperty>>,
+        pub id: Option<::Value<ComponentProperty>>,
         /// Property [`Model`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-model).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub model: Option<crate::Value<String>>,
+        pub model: Option<::Value<String>>,
         /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-state).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub state: Option<crate::Value<MutationActionSetStateParameter>>,
+        pub state: Option<::Value<MutationActionSetStateParameter>>,
         /// Property [`Target`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-target).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target: Option<crate::Value<ComponentProperty>>,
+        pub target: Option<::Value<ComponentProperty>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<crate::Value<ComponentProperty>>,
+        pub r#type: Option<::Value<ComponentProperty>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<crate::Value<ComponentProperty>>,
+        pub url: Option<::Value<ComponentProperty>>,
     }
 
-    impl crate::codec::SerializeValue for ActionParameters {
+    impl ::codec::SerializeValue for ActionParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref anchor) = self.anchor {
@@ -435,7 +435,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ActionParameters {
+    impl ::codec::DeserializeValue for ActionParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ActionParameters, D::Error> {
@@ -452,15 +452,15 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut anchor: Option<crate::Value<ComponentProperty>> = None;
-                    let mut fields: Option<crate::Value<ComponentProperties>> = None;
-                    let mut global: Option<crate::Value<ComponentProperty>> = None;
-                    let mut id: Option<crate::Value<ComponentProperty>> = None;
-                    let mut model: Option<crate::Value<String>> = None;
-                    let mut state: Option<crate::Value<MutationActionSetStateParameter>> = None;
-                    let mut target: Option<crate::Value<ComponentProperty>> = None;
-                    let mut r#type: Option<crate::Value<ComponentProperty>> = None;
-                    let mut url: Option<crate::Value<ComponentProperty>> = None;
+                    let mut anchor: Option<::Value<ComponentProperty>> = None;
+                    let mut fields: Option<::Value<ComponentProperties>> = None;
+                    let mut global: Option<::Value<ComponentProperty>> = None;
+                    let mut id: Option<::Value<ComponentProperty>> = None;
+                    let mut model: Option<::Value<String>> = None;
+                    let mut state: Option<::Value<MutationActionSetStateParameter>> = None;
+                    let mut target: Option<::Value<ComponentProperty>> = None;
+                    let mut r#type: Option<::Value<ComponentProperty>> = None;
+                    let mut url: Option<::Value<ComponentProperty>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -522,20 +522,20 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub binding_properties: Option<crate::Value<ComponentBindingPropertiesValueProperties>>,
+        pub binding_properties: Option<::Value<ComponentBindingPropertiesValueProperties>>,
         /// Property [`DefaultValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalue.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalue-defaultvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_value: Option<crate::Value<String>>,
+        pub default_value: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalue.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalue-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<crate::Value<String>>,
+        pub r#type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentBindingPropertiesValue {
+    impl ::codec::SerializeValue for ComponentBindingPropertiesValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref binding_properties) = self.binding_properties {
@@ -559,7 +559,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentBindingPropertiesValue {
+    impl ::codec::DeserializeValue for ComponentBindingPropertiesValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentBindingPropertiesValue, D::Error> {
@@ -577,10 +577,10 @@ pub mod component {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut binding_properties: Option<
-                        crate::Value<ComponentBindingPropertiesValueProperties>,
+                        ::Value<ComponentBindingPropertiesValueProperties>,
                     > = None;
-                    let mut default_value: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut default_value: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -618,40 +618,40 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: Option<crate::Value<String>>,
+        pub bucket: Option<::Value<String>>,
         /// Property [`DefaultValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalueproperties.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalueproperties-defaultvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_value: Option<crate::Value<String>>,
+        pub default_value: Option<::Value<String>>,
         /// Property [`Field`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalueproperties.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalueproperties-field).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field: Option<crate::Value<String>>,
+        pub field: Option<::Value<String>>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalueproperties.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalueproperties-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<crate::Value<String>>,
+        pub key: Option<::Value<String>>,
         /// Property [`Model`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalueproperties.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalueproperties-model).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub model: Option<crate::Value<String>>,
+        pub model: Option<::Value<String>>,
         /// Property [`Predicates`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalueproperties.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalueproperties-predicates).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub predicates: Option<crate::ValueList<Predicate>>,
+        pub predicates: Option<::ValueList<Predicate>>,
         /// Property [`UserAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalueproperties.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalueproperties-userattribute).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_attribute: Option<crate::Value<String>>,
+        pub user_attribute: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentBindingPropertiesValueProperties {
+    impl ::codec::SerializeValue for ComponentBindingPropertiesValueProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref bucket) = self.bucket {
@@ -687,7 +687,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentBindingPropertiesValueProperties {
+    impl ::codec::DeserializeValue for ComponentBindingPropertiesValueProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentBindingPropertiesValueProperties, D::Error> {
@@ -707,13 +707,13 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<crate::Value<String>> = None;
-                    let mut default_value: Option<crate::Value<String>> = None;
-                    let mut field: Option<crate::Value<String>> = None;
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut model: Option<crate::Value<String>> = None;
-                    let mut predicates: Option<crate::ValueList<Predicate>> = None;
-                    let mut user_attribute: Option<crate::Value<String>> = None;
+                    let mut bucket: Option<::Value<String>> = None;
+                    let mut default_value: Option<::Value<String>> = None;
+                    let mut field: Option<::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut model: Option<::Value<String>> = None;
+                    let mut predicates: Option<::ValueList<Predicate>> = None;
+                    let mut user_attribute: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -767,30 +767,30 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub children: Option<crate::ValueList<ComponentChild>>,
+        pub children: Option<::ValueList<ComponentChild>>,
         /// Property [`ComponentType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-componenttype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub component_type: crate::Value<String>,
+        pub component_type: ::Value<String>,
         /// Property [`Events`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-events).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub events: Option<crate::Value<ComponentEvents>>,
+        pub events: Option<::Value<ComponentEvents>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Properties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-properties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub properties: crate::Value<ComponentProperties>,
+        pub properties: ::Value<ComponentProperties>,
     }
 
-    impl crate::codec::SerializeValue for ComponentChild {
+    impl ::codec::SerializeValue for ComponentChild {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref children) = self.children {
@@ -810,7 +810,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentChild {
+    impl ::codec::DeserializeValue for ComponentChild {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentChild, D::Error> {
@@ -827,11 +827,11 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut children: Option<crate::ValueList<ComponentChild>> = None;
-                    let mut component_type: Option<crate::Value<String>> = None;
-                    let mut events: Option<crate::Value<ComponentEvents>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut properties: Option<crate::Value<ComponentProperties>> = None;
+                    let mut children: Option<::ValueList<ComponentChild>> = None;
+                    let mut component_type: Option<::Value<String>> = None;
+                    let mut events: Option<::Value<ComponentEvents>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut properties: Option<::Value<ComponentProperties>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -879,40 +879,40 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#else: Option<crate::Value<ComponentProperty>>,
+        pub r#else: Option<::Value<ComponentProperty>>,
         /// Property [`Field`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html#cfn-amplifyuibuilder-component-componentconditionproperty-field).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field: Option<crate::Value<String>>,
+        pub field: Option<::Value<String>>,
         /// Property [`Operand`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html#cfn-amplifyuibuilder-component-componentconditionproperty-operand).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub operand: Option<crate::Value<String>>,
+        pub operand: Option<::Value<String>>,
         /// Property [`OperandType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html#cfn-amplifyuibuilder-component-componentconditionproperty-operandtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub operand_type: Option<crate::Value<String>>,
+        pub operand_type: Option<::Value<String>>,
         /// Property [`Operator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html#cfn-amplifyuibuilder-component-componentconditionproperty-operator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub operator: Option<crate::Value<String>>,
+        pub operator: Option<::Value<String>>,
         /// Property [`Property`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html#cfn-amplifyuibuilder-component-componentconditionproperty-property).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub property: Option<crate::Value<String>>,
+        pub property: Option<::Value<String>>,
         /// Property [`Then`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html#cfn-amplifyuibuilder-component-componentconditionproperty-then).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub then: Option<crate::Value<ComponentProperty>>,
+        pub then: Option<::Value<ComponentProperty>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentConditionProperty {
+    impl ::codec::SerializeValue for ComponentConditionProperty {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref r#else) = self.r#else {
@@ -940,7 +940,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentConditionProperty {
+    impl ::codec::DeserializeValue for ComponentConditionProperty {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentConditionProperty, D::Error> {
@@ -957,13 +957,13 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#else: Option<crate::Value<ComponentProperty>> = None;
-                    let mut field: Option<crate::Value<String>> = None;
-                    let mut operand: Option<crate::Value<String>> = None;
-                    let mut operand_type: Option<crate::Value<String>> = None;
-                    let mut operator: Option<crate::Value<String>> = None;
-                    let mut property: Option<crate::Value<String>> = None;
-                    let mut then: Option<crate::Value<ComponentProperty>> = None;
+                    let mut r#else: Option<::Value<ComponentProperty>> = None;
+                    let mut field: Option<::Value<String>> = None;
+                    let mut operand: Option<::Value<String>> = None;
+                    let mut operand_type: Option<::Value<String>> = None;
+                    let mut operator: Option<::Value<String>> = None;
+                    let mut property: Option<::Value<String>> = None;
+                    let mut then: Option<::Value<ComponentProperty>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1017,25 +1017,25 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub identifiers: Option<crate::ValueList<String>>,
+        pub identifiers: Option<::ValueList<String>>,
         /// Property [`Model`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentdataconfiguration.html#cfn-amplifyuibuilder-component-componentdataconfiguration-model).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub model: crate::Value<String>,
+        pub model: ::Value<String>,
         /// Property [`Predicate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentdataconfiguration.html#cfn-amplifyuibuilder-component-componentdataconfiguration-predicate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub predicate: Option<crate::Value<Predicate>>,
+        pub predicate: Option<::Value<Predicate>>,
         /// Property [`Sort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentdataconfiguration.html#cfn-amplifyuibuilder-component-componentdataconfiguration-sort).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sort: Option<crate::ValueList<SortProperty>>,
+        pub sort: Option<::ValueList<SortProperty>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentDataConfiguration {
+    impl ::codec::SerializeValue for ComponentDataConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref identifiers) = self.identifiers {
@@ -1052,7 +1052,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentDataConfiguration {
+    impl ::codec::DeserializeValue for ComponentDataConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentDataConfiguration, D::Error> {
@@ -1069,10 +1069,10 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut identifiers: Option<crate::ValueList<String>> = None;
-                    let mut model: Option<crate::Value<String>> = None;
-                    let mut predicate: Option<crate::Value<Predicate>> = None;
-                    let mut sort: Option<crate::ValueList<SortProperty>> = None;
+                    let mut identifiers: Option<::ValueList<String>> = None;
+                    let mut model: Option<::Value<String>> = None;
+                    let mut predicate: Option<::Value<Predicate>> = None;
+                    let mut sort: Option<::ValueList<SortProperty>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1114,15 +1114,15 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub action: Option<crate::Value<String>>,
+        pub action: Option<::Value<String>>,
         /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentevent.html#cfn-amplifyuibuilder-component-componentevent-parameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<crate::Value<ActionParameters>>,
+        pub parameters: Option<::Value<ActionParameters>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentEvent {
+    impl ::codec::SerializeValue for ComponentEvent {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref action) = self.action {
@@ -1135,7 +1135,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentEvent {
+    impl ::codec::DeserializeValue for ComponentEvent {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentEvent, D::Error> {
@@ -1152,8 +1152,8 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut action: Option<crate::Value<String>> = None;
-                    let mut parameters: Option<crate::Value<ActionParameters>> = None;
+                    let mut action: Option<::Value<String>> = None;
+                    let mut parameters: Option<::Value<ActionParameters>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1184,14 +1184,14 @@ pub mod component {
     #[derive(Debug, Default)]
     pub struct ComponentEvents {}
 
-    impl crate::codec::SerializeValue for ComponentEvents {
+    impl ::codec::SerializeValue for ComponentEvents {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentEvents {
+    impl ::codec::DeserializeValue for ComponentEvents {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentEvents, D::Error> {
@@ -1220,14 +1220,14 @@ pub mod component {
     #[derive(Debug, Default)]
     pub struct ComponentOverrides {}
 
-    impl crate::codec::SerializeValue for ComponentOverrides {
+    impl ::codec::SerializeValue for ComponentOverrides {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentOverrides {
+    impl ::codec::DeserializeValue for ComponentOverrides {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentOverrides, D::Error> {
@@ -1256,14 +1256,14 @@ pub mod component {
     #[derive(Debug, Default)]
     pub struct ComponentOverridesValue {}
 
-    impl crate::codec::SerializeValue for ComponentOverridesValue {
+    impl ::codec::SerializeValue for ComponentOverridesValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentOverridesValue {
+    impl ::codec::DeserializeValue for ComponentOverridesValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentOverridesValue, D::Error> {
@@ -1292,14 +1292,14 @@ pub mod component {
     #[derive(Debug, Default)]
     pub struct ComponentProperties {}
 
-    impl crate::codec::SerializeValue for ComponentProperties {
+    impl ::codec::SerializeValue for ComponentProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentProperties {
+    impl ::codec::DeserializeValue for ComponentProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentProperties, D::Error> {
@@ -1331,80 +1331,80 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub binding_properties: Option<crate::Value<ComponentPropertyBindingProperties>>,
+        pub binding_properties: Option<::Value<ComponentPropertyBindingProperties>>,
         /// Property [`Bindings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-bindings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bindings: Option<crate::Value<FormBindings>>,
+        pub bindings: Option<::Value<FormBindings>>,
         /// Property [`CollectionBindingProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-collectionbindingproperties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub collection_binding_properties: Option<crate::Value<ComponentPropertyBindingProperties>>,
+        pub collection_binding_properties: Option<::Value<ComponentPropertyBindingProperties>>,
         /// Property [`ComponentName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-componentname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub component_name: Option<crate::Value<String>>,
+        pub component_name: Option<::Value<String>>,
         /// Property [`Concat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-concat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub concat: Option<crate::ValueList<ComponentProperty>>,
+        pub concat: Option<::ValueList<ComponentProperty>>,
         /// Property [`Condition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-condition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub condition: Option<crate::Value<ComponentConditionProperty>>,
+        pub condition: Option<::Value<ComponentConditionProperty>>,
         /// Property [`Configured`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-configured).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub configured: Option<crate::Value<bool>>,
+        pub configured: Option<::Value<bool>>,
         /// Property [`DefaultValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-defaultvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_value: Option<crate::Value<String>>,
+        pub default_value: Option<::Value<String>>,
         /// Property [`Event`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-event).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub event: Option<crate::Value<String>>,
+        pub event: Option<::Value<String>>,
         /// Property [`ImportedValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-importedvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub imported_value: Option<crate::Value<String>>,
+        pub imported_value: Option<::Value<String>>,
         /// Property [`Model`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-model).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub model: Option<crate::Value<String>>,
+        pub model: Option<::Value<String>>,
         /// Property [`Property`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-property).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub property: Option<crate::Value<String>>,
+        pub property: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<crate::Value<String>>,
+        pub r#type: Option<::Value<String>>,
         /// Property [`UserAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-userattribute).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_attribute: Option<crate::Value<String>>,
+        pub user_attribute: Option<::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<crate::Value<String>>,
+        pub value: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentProperty {
+    impl ::codec::SerializeValue for ComponentProperty {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref binding_properties) = self.binding_properties {
@@ -1480,7 +1480,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentProperty {
+    impl ::codec::DeserializeValue for ComponentProperty {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentProperty, D::Error> {
@@ -1498,24 +1498,24 @@ pub mod component {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut binding_properties: Option<
-                        crate::Value<ComponentPropertyBindingProperties>,
+                        ::Value<ComponentPropertyBindingProperties>,
                     > = None;
-                    let mut bindings: Option<crate::Value<FormBindings>> = None;
+                    let mut bindings: Option<::Value<FormBindings>> = None;
                     let mut collection_binding_properties: Option<
-                        crate::Value<ComponentPropertyBindingProperties>,
+                        ::Value<ComponentPropertyBindingProperties>,
                     > = None;
-                    let mut component_name: Option<crate::Value<String>> = None;
-                    let mut concat: Option<crate::ValueList<ComponentProperty>> = None;
-                    let mut condition: Option<crate::Value<ComponentConditionProperty>> = None;
-                    let mut configured: Option<crate::Value<bool>> = None;
-                    let mut default_value: Option<crate::Value<String>> = None;
-                    let mut event: Option<crate::Value<String>> = None;
-                    let mut imported_value: Option<crate::Value<String>> = None;
-                    let mut model: Option<crate::Value<String>> = None;
-                    let mut property: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
-                    let mut user_attribute: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut component_name: Option<::Value<String>> = None;
+                    let mut concat: Option<::ValueList<ComponentProperty>> = None;
+                    let mut condition: Option<::Value<ComponentConditionProperty>> = None;
+                    let mut configured: Option<::Value<bool>> = None;
+                    let mut default_value: Option<::Value<String>> = None;
+                    let mut event: Option<::Value<String>> = None;
+                    let mut imported_value: Option<::Value<String>> = None;
+                    let mut model: Option<::Value<String>> = None;
+                    let mut property: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
+                    let mut user_attribute: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1602,15 +1602,15 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field: Option<crate::Value<String>>,
+        pub field: Option<::Value<String>>,
         /// Property [`Property`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentpropertybindingproperties.html#cfn-amplifyuibuilder-component-componentpropertybindingproperties-property).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub property: crate::Value<String>,
+        pub property: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ComponentPropertyBindingProperties {
+    impl ::codec::SerializeValue for ComponentPropertyBindingProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref field) = self.field {
@@ -1621,7 +1621,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentPropertyBindingProperties {
+    impl ::codec::DeserializeValue for ComponentPropertyBindingProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentPropertyBindingProperties, D::Error> {
@@ -1638,8 +1638,8 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut field: Option<crate::Value<String>> = None;
-                    let mut property: Option<crate::Value<String>> = None;
+                    let mut field: Option<::Value<String>> = None;
+                    let mut property: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1673,15 +1673,15 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub overrides: Option<crate::Value<ComponentOverrides>>,
+        pub overrides: Option<::Value<ComponentOverrides>>,
         /// Property [`VariantValues`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentvariant.html#cfn-amplifyuibuilder-component-componentvariant-variantvalues).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variant_values: Option<crate::Value<ComponentVariantValues>>,
+        pub variant_values: Option<::Value<ComponentVariantValues>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentVariant {
+    impl ::codec::SerializeValue for ComponentVariant {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref overrides) = self.overrides {
@@ -1698,7 +1698,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentVariant {
+    impl ::codec::DeserializeValue for ComponentVariant {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentVariant, D::Error> {
@@ -1715,8 +1715,8 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut overrides: Option<crate::Value<ComponentOverrides>> = None;
-                    let mut variant_values: Option<crate::Value<ComponentVariantValues>> = None;
+                    let mut overrides: Option<::Value<ComponentOverrides>> = None;
+                    let mut variant_values: Option<::Value<ComponentVariantValues>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1747,14 +1747,14 @@ pub mod component {
     #[derive(Debug, Default)]
     pub struct ComponentVariantValues {}
 
-    impl crate::codec::SerializeValue for ComponentVariantValues {
+    impl ::codec::SerializeValue for ComponentVariantValues {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentVariantValues {
+    impl ::codec::DeserializeValue for ComponentVariantValues {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentVariantValues, D::Error> {
@@ -1783,14 +1783,14 @@ pub mod component {
     #[derive(Debug, Default)]
     pub struct FormBindings {}
 
-    impl crate::codec::SerializeValue for FormBindings {
+    impl ::codec::SerializeValue for FormBindings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for FormBindings {
+    impl ::codec::DeserializeValue for FormBindings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FormBindings, D::Error> {
             struct Visitor;
 
@@ -1820,20 +1820,20 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub component_name: crate::Value<String>,
+        pub component_name: ::Value<String>,
         /// Property [`Property`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-mutationactionsetstateparameter.html#cfn-amplifyuibuilder-component-mutationactionsetstateparameter-property).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub property: crate::Value<String>,
+        pub property: ::Value<String>,
         /// Property [`Set`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-mutationactionsetstateparameter.html#cfn-amplifyuibuilder-component-mutationactionsetstateparameter-set).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub set: crate::Value<ComponentProperty>,
+        pub set: ::Value<ComponentProperty>,
     }
 
-    impl crate::codec::SerializeValue for MutationActionSetStateParameter {
+    impl ::codec::SerializeValue for MutationActionSetStateParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1847,7 +1847,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for MutationActionSetStateParameter {
+    impl ::codec::DeserializeValue for MutationActionSetStateParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MutationActionSetStateParameter, D::Error> {
@@ -1864,9 +1864,9 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut component_name: Option<crate::Value<String>> = None;
-                    let mut property: Option<crate::Value<String>> = None;
-                    let mut set: Option<crate::Value<ComponentProperty>> = None;
+                    let mut component_name: Option<::Value<String>> = None;
+                    let mut property: Option<::Value<String>> = None;
+                    let mut set: Option<::Value<ComponentProperty>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1905,30 +1905,30 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub and: Option<crate::ValueList<Predicate>>,
+        pub and: Option<::ValueList<Predicate>>,
         /// Property [`Field`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-predicate.html#cfn-amplifyuibuilder-component-predicate-field).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field: Option<crate::Value<String>>,
+        pub field: Option<::Value<String>>,
         /// Property [`Operand`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-predicate.html#cfn-amplifyuibuilder-component-predicate-operand).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub operand: Option<crate::Value<String>>,
+        pub operand: Option<::Value<String>>,
         /// Property [`Operator`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-predicate.html#cfn-amplifyuibuilder-component-predicate-operator).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub operator: Option<crate::Value<String>>,
+        pub operator: Option<::Value<String>>,
         /// Property [`Or`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-predicate.html#cfn-amplifyuibuilder-component-predicate-or).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub or: Option<crate::ValueList<Predicate>>,
+        pub or: Option<::ValueList<Predicate>>,
     }
 
-    impl crate::codec::SerializeValue for Predicate {
+    impl ::codec::SerializeValue for Predicate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref and) = self.and {
@@ -1950,7 +1950,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for Predicate {
+    impl ::codec::DeserializeValue for Predicate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Predicate, D::Error> {
             struct Visitor;
 
@@ -1965,11 +1965,11 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut and: Option<crate::ValueList<Predicate>> = None;
-                    let mut field: Option<crate::Value<String>> = None;
-                    let mut operand: Option<crate::Value<String>> = None;
-                    let mut operator: Option<crate::Value<String>> = None;
-                    let mut or: Option<crate::ValueList<Predicate>> = None;
+                    let mut and: Option<::ValueList<Predicate>> = None;
+                    let mut field: Option<::Value<String>> = None;
+                    let mut operand: Option<::Value<String>> = None;
+                    let mut operator: Option<::Value<String>> = None;
+                    let mut or: Option<::ValueList<Predicate>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2015,15 +2015,15 @@ pub mod component {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub direction: crate::Value<String>,
+        pub direction: ::Value<String>,
         /// Property [`Field`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-sortproperty.html#cfn-amplifyuibuilder-component-sortproperty-field).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field: crate::Value<String>,
+        pub field: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for SortProperty {
+    impl ::codec::SerializeValue for SortProperty {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Direction", &self.direction)?;
@@ -2032,7 +2032,7 @@ pub mod component {
         }
     }
 
-    impl crate::codec::DeserializeValue for SortProperty {
+    impl ::codec::DeserializeValue for SortProperty {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SortProperty, D::Error> {
             struct Visitor;
 
@@ -2047,8 +2047,8 @@ pub mod component {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut direction: Option<crate::Value<String>> = None;
-                    let mut field: Option<crate::Value<String>> = None;
+                    let mut direction: Option<::Value<String>> = None;
+                    let mut field: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2087,15 +2087,15 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub children: Option<crate::ValueList<ThemeValues>>,
+        pub children: Option<::ValueList<ThemeValues>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-theme-themevalue.html#cfn-amplifyuibuilder-theme-themevalue-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<crate::Value<String>>,
+        pub value: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ThemeValue {
+    impl ::codec::SerializeValue for ThemeValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref children) = self.children {
@@ -2108,7 +2108,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for ThemeValue {
+    impl ::codec::DeserializeValue for ThemeValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ThemeValue, D::Error> {
             struct Visitor;
 
@@ -2123,8 +2123,8 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut children: Option<crate::ValueList<ThemeValues>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut children: Option<::ValueList<ThemeValues>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2158,15 +2158,15 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<crate::Value<String>>,
+        pub key: Option<::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-theme-themevalues.html#cfn-amplifyuibuilder-theme-themevalues-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<crate::Value<ThemeValue>>,
+        pub value: Option<::Value<ThemeValue>>,
     }
 
-    impl crate::codec::SerializeValue for ThemeValues {
+    impl ::codec::SerializeValue for ThemeValues {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key) = self.key {
@@ -2179,7 +2179,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for ThemeValues {
+    impl ::codec::DeserializeValue for ThemeValues {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ThemeValues, D::Error> {
             struct Visitor;
 
@@ -2194,8 +2194,8 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<ThemeValue>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<ThemeValue>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

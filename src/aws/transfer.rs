@@ -13,72 +13,72 @@ pub struct ServerProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate: Option<crate::Value<String>>,
+    pub certificate: Option<::Value<String>>,
     /// Property [`Domain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-domain).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain: Option<crate::Value<String>>,
+    pub domain: Option<::Value<String>>,
     /// Property [`EndpointDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointdetails).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub endpoint_details: Option<crate::Value<self::server::EndpointDetails>>,
+    pub endpoint_details: Option<::Value<self::server::EndpointDetails>>,
     /// Property [`EndpointType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointtype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub endpoint_type: Option<crate::Value<String>>,
+    pub endpoint_type: Option<::Value<String>>,
     /// Property [`IdentityProviderDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityproviderdetails).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub identity_provider_details: Option<crate::Value<self::server::IdentityProviderDetails>>,
+    pub identity_provider_details: Option<::Value<self::server::IdentityProviderDetails>>,
     /// Property [`IdentityProviderType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityprovidertype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub identity_provider_type: Option<crate::Value<String>>,
+    pub identity_provider_type: Option<::Value<String>>,
     /// Property [`LoggingRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-loggingrole).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub logging_role: Option<crate::Value<String>>,
+    pub logging_role: Option<::Value<String>>,
     /// Property [`PostAuthenticationLoginBanner`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-postauthenticationloginbanner).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub post_authentication_login_banner: Option<crate::Value<String>>,
+    pub post_authentication_login_banner: Option<::Value<String>>,
     /// Property [`PreAuthenticationLoginBanner`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-preauthenticationloginbanner).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub pre_authentication_login_banner: Option<crate::Value<String>>,
+    pub pre_authentication_login_banner: Option<::Value<String>>,
     /// Property [`ProtocolDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocoldetails).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub protocol_details: Option<crate::Value<self::server::ProtocolDetails>>,
+    pub protocol_details: Option<::Value<self::server::ProtocolDetails>>,
     /// Property [`Protocols`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocols).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub protocols: Option<crate::ValueList<self::server::Protocol>>,
+    pub protocols: Option<::ValueList<self::server::Protocol>>,
     /// Property [`SecurityPolicyName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-securitypolicyname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub security_policy_name: Option<crate::Value<String>>,
+    pub security_policy_name: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`WorkflowDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-workflowdetails).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub workflow_details: Option<crate::Value<self::server::WorkflowDetails>>,
+    pub workflow_details: Option<::Value<self::server::WorkflowDetails>>,
 }
 
 impl ::serde::Serialize for ServerProperties {
@@ -177,22 +177,22 @@ impl<'de> ::serde::Deserialize<'de> for ServerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut certificate: Option<crate::Value<String>> = None;
-                let mut domain: Option<crate::Value<String>> = None;
-                let mut endpoint_details: Option<crate::Value<self::server::EndpointDetails>> = None;
-                let mut endpoint_type: Option<crate::Value<String>> = None;
+                let mut certificate: Option<::Value<String>> = None;
+                let mut domain: Option<::Value<String>> = None;
+                let mut endpoint_details: Option<::Value<self::server::EndpointDetails>> = None;
+                let mut endpoint_type: Option<::Value<String>> = None;
                 let mut identity_provider_details: Option<
-                    crate::Value<self::server::IdentityProviderDetails>,
+                    ::Value<self::server::IdentityProviderDetails>,
                 > = None;
-                let mut identity_provider_type: Option<crate::Value<String>> = None;
-                let mut logging_role: Option<crate::Value<String>> = None;
-                let mut post_authentication_login_banner: Option<crate::Value<String>> = None;
-                let mut pre_authentication_login_banner: Option<crate::Value<String>> = None;
-                let mut protocol_details: Option<crate::Value<self::server::ProtocolDetails>> = None;
-                let mut protocols: Option<crate::ValueList<self::server::Protocol>> = None;
-                let mut security_policy_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut workflow_details: Option<crate::Value<self::server::WorkflowDetails>> = None;
+                let mut identity_provider_type: Option<::Value<String>> = None;
+                let mut logging_role: Option<::Value<String>> = None;
+                let mut post_authentication_login_banner: Option<::Value<String>> = None;
+                let mut pre_authentication_login_banner: Option<::Value<String>> = None;
+                let mut protocol_details: Option<::Value<self::server::ProtocolDetails>> = None;
+                let mut protocols: Option<::ValueList<self::server::Protocol>> = None;
+                let mut security_policy_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut workflow_details: Option<::Value<self::server::WorkflowDetails>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -268,7 +268,7 @@ impl<'de> ::serde::Deserialize<'de> for ServerProperties {
     }
 }
 
-impl crate::Resource for Server {
+impl ::Resource for Server {
     type Properties = ServerProperties;
     const TYPE: &'static str = "AWS::Transfer::Server";
     fn properties(&self) -> &ServerProperties {
@@ -279,7 +279,7 @@ impl crate::Resource for Server {
     }
 }
 
-impl crate::private::Sealed for Server {}
+impl ::private::Sealed for Server {}
 
 impl From<ServerProperties> for Server {
     fn from(properties: ServerProperties) -> Server {
@@ -300,52 +300,52 @@ pub struct UserProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub home_directory: Option<crate::Value<String>>,
+    pub home_directory: Option<::Value<String>>,
     /// Property [`HomeDirectoryMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorymappings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub home_directory_mappings: Option<crate::ValueList<self::user::HomeDirectoryMapEntry>>,
+    pub home_directory_mappings: Option<::ValueList<self::user::HomeDirectoryMapEntry>>,
     /// Property [`HomeDirectoryType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorytype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub home_directory_type: Option<crate::Value<String>>,
+    pub home_directory_type: Option<::Value<String>>,
     /// Property [`Policy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-policy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy: Option<crate::Value<String>>,
+    pub policy: Option<::Value<String>>,
     /// Property [`PosixProfile`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-posixprofile).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub posix_profile: Option<crate::Value<self::user::PosixProfile>>,
+    pub posix_profile: Option<::Value<self::user::PosixProfile>>,
     /// Property [`Role`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-role).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role: crate::Value<String>,
+    pub role: ::Value<String>,
     /// Property [`ServerId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-serverid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub server_id: crate::Value<String>,
+    pub server_id: ::Value<String>,
     /// Property [`SshPublicKeys`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-sshpublickeys).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ssh_public_keys: Option<crate::ValueList<self::user::SshPublicKey>>,
+    pub ssh_public_keys: Option<::ValueList<self::user::SshPublicKey>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`UserName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-username).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub user_name: crate::Value<String>,
+    pub user_name: ::Value<String>,
 }
 
 impl ::serde::Serialize for UserProperties {
@@ -406,18 +406,18 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut home_directory: Option<crate::Value<String>> = None;
+                let mut home_directory: Option<::Value<String>> = None;
                 let mut home_directory_mappings: Option<
-                    crate::ValueList<self::user::HomeDirectoryMapEntry>,
+                    ::ValueList<self::user::HomeDirectoryMapEntry>,
                 > = None;
-                let mut home_directory_type: Option<crate::Value<String>> = None;
-                let mut policy: Option<crate::Value<String>> = None;
-                let mut posix_profile: Option<crate::Value<self::user::PosixProfile>> = None;
-                let mut role: Option<crate::Value<String>> = None;
-                let mut server_id: Option<crate::Value<String>> = None;
-                let mut ssh_public_keys: Option<crate::ValueList<self::user::SshPublicKey>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut user_name: Option<crate::Value<String>> = None;
+                let mut home_directory_type: Option<::Value<String>> = None;
+                let mut policy: Option<::Value<String>> = None;
+                let mut posix_profile: Option<::Value<self::user::PosixProfile>> = None;
+                let mut role: Option<::Value<String>> = None;
+                let mut server_id: Option<::Value<String>> = None;
+                let mut ssh_public_keys: Option<::ValueList<self::user::SshPublicKey>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut user_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -474,7 +474,7 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
     }
 }
 
-impl crate::Resource for User {
+impl ::Resource for User {
     type Properties = UserProperties;
     const TYPE: &'static str = "AWS::Transfer::User";
     fn properties(&self) -> &UserProperties {
@@ -485,7 +485,7 @@ impl crate::Resource for User {
     }
 }
 
-impl crate::private::Sealed for User {}
+impl ::private::Sealed for User {}
 
 impl From<UserProperties> for User {
     fn from(properties: UserProperties) -> User {
@@ -506,22 +506,22 @@ pub struct WorkflowProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`OnExceptionSteps`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-workflow.html#cfn-transfer-workflow-onexceptionsteps).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub on_exception_steps: Option<crate::ValueList<self::workflow::WorkflowStep>>,
+    pub on_exception_steps: Option<::ValueList<self::workflow::WorkflowStep>>,
     /// Property [`Steps`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-workflow.html#cfn-transfer-workflow-steps).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub steps: crate::ValueList<self::workflow::WorkflowStep>,
+    pub steps: ::ValueList<self::workflow::WorkflowStep>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-workflow.html#cfn-transfer-workflow-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for WorkflowProperties {
@@ -560,11 +560,11 @@ impl<'de> ::serde::Deserialize<'de> for WorkflowProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut on_exception_steps: Option<crate::ValueList<self::workflow::WorkflowStep>> =
+                let mut description: Option<::Value<String>> = None;
+                let mut on_exception_steps: Option<::ValueList<self::workflow::WorkflowStep>> =
                     None;
-                let mut steps: Option<crate::ValueList<self::workflow::WorkflowStep>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut steps: Option<::ValueList<self::workflow::WorkflowStep>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -597,7 +597,7 @@ impl<'de> ::serde::Deserialize<'de> for WorkflowProperties {
     }
 }
 
-impl crate::Resource for Workflow {
+impl ::Resource for Workflow {
     type Properties = WorkflowProperties;
     const TYPE: &'static str = "AWS::Transfer::Workflow";
     fn properties(&self) -> &WorkflowProperties {
@@ -608,7 +608,7 @@ impl crate::Resource for Workflow {
     }
 }
 
-impl crate::private::Sealed for Workflow {}
+impl ::private::Sealed for Workflow {}
 
 impl From<WorkflowProperties> for Workflow {
     fn from(properties: WorkflowProperties) -> Workflow {
@@ -627,30 +627,30 @@ pub mod server {
         /// Update type: _Conditional_.
         /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
         /// For more information, see the relevant resource type documentation.
-        pub address_allocation_ids: Option<crate::ValueList<String>>,
+        pub address_allocation_ids: Option<::ValueList<String>>,
         /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-securitygroupids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_group_ids: Option<crate::ValueList<String>>,
+        pub security_group_ids: Option<::ValueList<String>>,
         /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-subnetids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subnet_ids: Option<crate::ValueList<String>>,
+        pub subnet_ids: Option<::ValueList<String>>,
         /// Property [`VpcEndpointId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-vpcendpointid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_endpoint_id: Option<crate::Value<String>>,
+        pub vpc_endpoint_id: Option<::Value<String>>,
         /// Property [`VpcId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-vpcid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_id: Option<crate::Value<String>>,
+        pub vpc_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EndpointDetails {
+    impl ::codec::SerializeValue for EndpointDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref address_allocation_ids) = self.address_allocation_ids {
@@ -684,7 +684,7 @@ pub mod server {
         }
     }
 
-    impl crate::codec::DeserializeValue for EndpointDetails {
+    impl ::codec::DeserializeValue for EndpointDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EndpointDetails, D::Error> {
@@ -701,11 +701,11 @@ pub mod server {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut address_allocation_ids: Option<crate::ValueList<String>> = None;
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnet_ids: Option<crate::ValueList<String>> = None;
-                    let mut vpc_endpoint_id: Option<crate::Value<String>> = None;
-                    let mut vpc_id: Option<crate::Value<String>> = None;
+                    let mut address_allocation_ids: Option<::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnet_ids: Option<::ValueList<String>> = None;
+                    let mut vpc_endpoint_id: Option<::Value<String>> = None;
+                    let mut vpc_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -752,25 +752,25 @@ pub mod server {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub directory_id: Option<crate::Value<String>>,
+        pub directory_id: Option<::Value<String>>,
         /// Property [`Function`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-function).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub function: Option<crate::Value<String>>,
+        pub function: Option<::Value<String>>,
         /// Property [`InvocationRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-invocationrole).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub invocation_role: Option<crate::Value<String>>,
+        pub invocation_role: Option<::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<crate::Value<String>>,
+        pub url: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for IdentityProviderDetails {
+    impl ::codec::SerializeValue for IdentityProviderDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref directory_id) = self.directory_id {
@@ -793,7 +793,7 @@ pub mod server {
         }
     }
 
-    impl crate::codec::DeserializeValue for IdentityProviderDetails {
+    impl ::codec::DeserializeValue for IdentityProviderDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IdentityProviderDetails, D::Error> {
@@ -810,10 +810,10 @@ pub mod server {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut directory_id: Option<crate::Value<String>> = None;
-                    let mut function: Option<crate::Value<String>> = None;
-                    let mut invocation_role: Option<crate::Value<String>> = None;
-                    let mut url: Option<crate::Value<String>> = None;
+                    let mut directory_id: Option<::Value<String>> = None;
+                    let mut function: Option<::Value<String>> = None;
+                    let mut invocation_role: Option<::Value<String>> = None;
+                    let mut url: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -852,14 +852,14 @@ pub mod server {
     #[derive(Debug, Default)]
     pub struct Protocol {}
 
-    impl crate::codec::SerializeValue for Protocol {
+    impl ::codec::SerializeValue for Protocol {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for Protocol {
+    impl ::codec::DeserializeValue for Protocol {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Protocol, D::Error> {
             struct Visitor;
 
@@ -889,15 +889,15 @@ pub mod server {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub passive_ip: Option<crate::Value<String>>,
+        pub passive_ip: Option<::Value<String>>,
         /// Property [`TlsSessionResumptionMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-tlssessionresumptionmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tls_session_resumption_mode: Option<crate::Value<String>>,
+        pub tls_session_resumption_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ProtocolDetails {
+    impl ::codec::SerializeValue for ProtocolDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref passive_ip) = self.passive_ip {
@@ -914,7 +914,7 @@ pub mod server {
         }
     }
 
-    impl crate::codec::DeserializeValue for ProtocolDetails {
+    impl ::codec::DeserializeValue for ProtocolDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProtocolDetails, D::Error> {
@@ -931,8 +931,8 @@ pub mod server {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut passive_ip: Option<crate::Value<String>> = None;
-                    let mut tls_session_resumption_mode: Option<crate::Value<String>> = None;
+                    let mut passive_ip: Option<::Value<String>> = None;
+                    let mut tls_session_resumption_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -967,15 +967,15 @@ pub mod server {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub execution_role: crate::Value<String>,
+        pub execution_role: ::Value<String>,
         /// Property [`WorkflowId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html#cfn-transfer-server-workflowdetail-workflowid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub workflow_id: crate::Value<String>,
+        pub workflow_id: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for WorkflowDetail {
+    impl ::codec::SerializeValue for WorkflowDetail {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -988,7 +988,7 @@ pub mod server {
         }
     }
 
-    impl crate::codec::DeserializeValue for WorkflowDetail {
+    impl ::codec::DeserializeValue for WorkflowDetail {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WorkflowDetail, D::Error> {
@@ -1005,8 +1005,8 @@ pub mod server {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut execution_role: Option<crate::Value<String>> = None;
-                    let mut workflow_id: Option<crate::Value<String>> = None;
+                    let mut execution_role: Option<::Value<String>> = None;
+                    let mut workflow_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1042,10 +1042,10 @@ pub mod server {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_upload: crate::ValueList<WorkflowDetail>,
+        pub on_upload: ::ValueList<WorkflowDetail>,
     }
 
-    impl crate::codec::SerializeValue for WorkflowDetails {
+    impl ::codec::SerializeValue for WorkflowDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "OnUpload", &self.on_upload)?;
@@ -1053,7 +1053,7 @@ pub mod server {
         }
     }
 
-    impl crate::codec::DeserializeValue for WorkflowDetails {
+    impl ::codec::DeserializeValue for WorkflowDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WorkflowDetails, D::Error> {
@@ -1070,7 +1070,7 @@ pub mod server {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut on_upload: Option<crate::ValueList<WorkflowDetail>> = None;
+                    let mut on_upload: Option<::ValueList<WorkflowDetail>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1105,15 +1105,15 @@ pub mod user {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entry: crate::Value<String>,
+        pub entry: ::Value<String>,
         /// Property [`Target`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html#cfn-transfer-user-homedirectorymapentry-target).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target: crate::Value<String>,
+        pub target: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for HomeDirectoryMapEntry {
+    impl ::codec::SerializeValue for HomeDirectoryMapEntry {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Entry", &self.entry)?;
@@ -1122,7 +1122,7 @@ pub mod user {
         }
     }
 
-    impl crate::codec::DeserializeValue for HomeDirectoryMapEntry {
+    impl ::codec::DeserializeValue for HomeDirectoryMapEntry {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HomeDirectoryMapEntry, D::Error> {
@@ -1139,8 +1139,8 @@ pub mod user {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut entry: Option<crate::Value<String>> = None;
-                    let mut target: Option<crate::Value<String>> = None;
+                    let mut entry: Option<::Value<String>> = None;
+                    let mut target: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1174,20 +1174,20 @@ pub mod user {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gid: crate::Value<f64>,
+        pub gid: ::Value<f64>,
         /// Property [`SecondaryGids`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-secondarygids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secondary_gids: Option<crate::ValueList<f64>>,
+        pub secondary_gids: Option<::ValueList<f64>>,
         /// Property [`Uid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-uid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub uid: crate::Value<f64>,
+        pub uid: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for PosixProfile {
+    impl ::codec::SerializeValue for PosixProfile {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Gid", &self.gid)?;
@@ -1203,7 +1203,7 @@ pub mod user {
         }
     }
 
-    impl crate::codec::DeserializeValue for PosixProfile {
+    impl ::codec::DeserializeValue for PosixProfile {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PosixProfile, D::Error> {
             struct Visitor;
 
@@ -1218,9 +1218,9 @@ pub mod user {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut gid: Option<crate::Value<f64>> = None;
-                    let mut secondary_gids: Option<crate::ValueList<f64>> = None;
-                    let mut uid: Option<crate::Value<f64>> = None;
+                    let mut gid: Option<::Value<f64>> = None;
+                    let mut secondary_gids: Option<::ValueList<f64>> = None;
+                    let mut uid: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1255,14 +1255,14 @@ pub mod user {
     #[derive(Debug, Default)]
     pub struct SshPublicKey {}
 
-    impl crate::codec::SerializeValue for SshPublicKey {
+    impl ::codec::SerializeValue for SshPublicKey {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::end(map)
         }
     }
 
-    impl crate::codec::DeserializeValue for SshPublicKey {
+    impl ::codec::DeserializeValue for SshPublicKey {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SshPublicKey, D::Error> {
             struct Visitor;
 
@@ -1296,30 +1296,30 @@ pub mod workflow {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub copy_step_details: Option<crate::Value<crate::json::Value>>,
+        pub copy_step_details: Option<::Value<::json::Value>>,
         /// Property [`CustomStepDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-customstepdetails).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub custom_step_details: Option<crate::Value<crate::json::Value>>,
+        pub custom_step_details: Option<::Value<::json::Value>>,
         /// Property [`DeleteStepDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-deletestepdetails).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub delete_step_details: Option<crate::Value<crate::json::Value>>,
+        pub delete_step_details: Option<::Value<::json::Value>>,
         /// Property [`TagStepDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-tagstepdetails).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub tag_step_details: Option<crate::Value<crate::json::Value>>,
+        pub tag_step_details: Option<::Value<::json::Value>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-type).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: Option<crate::Value<String>>,
+        pub r#type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for WorkflowStep {
+    impl ::codec::SerializeValue for WorkflowStep {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref copy_step_details) = self.copy_step_details {
@@ -1357,7 +1357,7 @@ pub mod workflow {
         }
     }
 
-    impl crate::codec::DeserializeValue for WorkflowStep {
+    impl ::codec::DeserializeValue for WorkflowStep {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<WorkflowStep, D::Error> {
             struct Visitor;
 
@@ -1372,11 +1372,11 @@ pub mod workflow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut copy_step_details: Option<crate::Value<crate::json::Value>> = None;
-                    let mut custom_step_details: Option<crate::Value<crate::json::Value>> = None;
-                    let mut delete_step_details: Option<crate::Value<crate::json::Value>> = None;
-                    let mut tag_step_details: Option<crate::Value<crate::json::Value>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut copy_step_details: Option<::Value<::json::Value>> = None;
+                    let mut custom_step_details: Option<::Value<::json::Value>> = None;
+                    let mut delete_step_details: Option<::Value<::json::Value>> = None;
+                    let mut tag_step_details: Option<::Value<::json::Value>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

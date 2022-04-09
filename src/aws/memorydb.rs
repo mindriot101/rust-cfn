@@ -13,17 +13,17 @@ pub struct ACLProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub acl_name: crate::Value<String>,
+    pub acl_name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-acl.html#cfn-memorydb-acl-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`UserNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-acl.html#cfn-memorydb-acl-usernames).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub user_names: Option<crate::ValueList<String>>,
+    pub user_names: Option<::ValueList<String>>,
 }
 
 impl ::serde::Serialize for ACLProperties {
@@ -55,9 +55,9 @@ impl<'de> ::serde::Deserialize<'de> for ACLProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut acl_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut user_names: Option<crate::ValueList<String>> = None;
+                let mut acl_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut user_names: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -86,7 +86,7 @@ impl<'de> ::serde::Deserialize<'de> for ACLProperties {
     }
 }
 
-impl crate::Resource for ACL {
+impl ::Resource for ACL {
     type Properties = ACLProperties;
     const TYPE: &'static str = "AWS::MemoryDB::ACL";
     fn properties(&self) -> &ACLProperties {
@@ -97,7 +97,7 @@ impl crate::Resource for ACL {
     }
 }
 
-impl crate::private::Sealed for ACL {}
+impl ::private::Sealed for ACL {}
 
 impl From<ACLProperties> for ACL {
     fn from(properties: ACLProperties) -> ACL {
@@ -118,117 +118,117 @@ pub struct ClusterProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub acl_name: crate::Value<String>,
+    pub acl_name: ::Value<String>,
     /// Property [`AutoMinorVersionUpgrade`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-autominorversionupgrade).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub auto_minor_version_upgrade: Option<crate::Value<bool>>,
+    pub auto_minor_version_upgrade: Option<::Value<bool>>,
     /// Property [`ClusterName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-clustername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_name: crate::Value<String>,
+    pub cluster_name: ::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`EngineVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-engineversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub engine_version: Option<crate::Value<String>>,
+    pub engine_version: Option<::Value<String>>,
     /// Property [`FinalSnapshotName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-finalsnapshotname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub final_snapshot_name: Option<crate::Value<String>>,
+    pub final_snapshot_name: Option<::Value<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`MaintenanceWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-maintenancewindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub maintenance_window: Option<crate::Value<String>>,
+    pub maintenance_window: Option<::Value<String>>,
     /// Property [`NodeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-nodetype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub node_type: crate::Value<String>,
+    pub node_type: ::Value<String>,
     /// Property [`NumReplicasPerShard`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-numreplicaspershard).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub num_replicas_per_shard: Option<crate::Value<u32>>,
+    pub num_replicas_per_shard: Option<::Value<u32>>,
     /// Property [`NumShards`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-numshards).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub num_shards: Option<crate::Value<u32>>,
+    pub num_shards: Option<::Value<u32>>,
     /// Property [`ParameterGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-parametergroupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameter_group_name: Option<crate::Value<String>>,
+    pub parameter_group_name: Option<::Value<String>>,
     /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-port).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub port: Option<crate::Value<u32>>,
+    pub port: Option<::Value<u32>>,
     /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-securitygroupids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub security_group_ids: Option<crate::ValueList<String>>,
+    pub security_group_ids: Option<::ValueList<String>>,
     /// Property [`SnapshotArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-snapshotarns).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub snapshot_arns: Option<crate::ValueList<String>>,
+    pub snapshot_arns: Option<::ValueList<String>>,
     /// Property [`SnapshotName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-snapshotname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub snapshot_name: Option<crate::Value<String>>,
+    pub snapshot_name: Option<::Value<String>>,
     /// Property [`SnapshotRetentionLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-snapshotretentionlimit).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_retention_limit: Option<crate::Value<u32>>,
+    pub snapshot_retention_limit: Option<::Value<u32>>,
     /// Property [`SnapshotWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-snapshotwindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_window: Option<crate::Value<String>>,
+    pub snapshot_window: Option<::Value<String>>,
     /// Property [`SnsTopicArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-snstopicarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sns_topic_arn: Option<crate::Value<String>>,
+    pub sns_topic_arn: Option<::Value<String>>,
     /// Property [`SnsTopicStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-snstopicstatus).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sns_topic_status: Option<crate::Value<String>>,
+    pub sns_topic_status: Option<::Value<String>>,
     /// Property [`SubnetGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-subnetgroupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subnet_group_name: Option<crate::Value<String>>,
+    pub subnet_group_name: Option<::Value<String>>,
     /// Property [`TLSEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-tlsenabled).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tls_enabled: Option<crate::Value<bool>>,
+    pub tls_enabled: Option<::Value<bool>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ClusterProperties {
@@ -356,29 +356,29 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut acl_name: Option<crate::Value<String>> = None;
-                let mut auto_minor_version_upgrade: Option<crate::Value<bool>> = None;
-                let mut cluster_name: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut engine_version: Option<crate::Value<String>> = None;
-                let mut final_snapshot_name: Option<crate::Value<String>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
-                let mut maintenance_window: Option<crate::Value<String>> = None;
-                let mut node_type: Option<crate::Value<String>> = None;
-                let mut num_replicas_per_shard: Option<crate::Value<u32>> = None;
-                let mut num_shards: Option<crate::Value<u32>> = None;
-                let mut parameter_group_name: Option<crate::Value<String>> = None;
-                let mut port: Option<crate::Value<u32>> = None;
-                let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                let mut snapshot_arns: Option<crate::ValueList<String>> = None;
-                let mut snapshot_name: Option<crate::Value<String>> = None;
-                let mut snapshot_retention_limit: Option<crate::Value<u32>> = None;
-                let mut snapshot_window: Option<crate::Value<String>> = None;
-                let mut sns_topic_arn: Option<crate::Value<String>> = None;
-                let mut sns_topic_status: Option<crate::Value<String>> = None;
-                let mut subnet_group_name: Option<crate::Value<String>> = None;
-                let mut tls_enabled: Option<crate::Value<bool>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut acl_name: Option<::Value<String>> = None;
+                let mut auto_minor_version_upgrade: Option<::Value<bool>> = None;
+                let mut cluster_name: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut engine_version: Option<::Value<String>> = None;
+                let mut final_snapshot_name: Option<::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
+                let mut maintenance_window: Option<::Value<String>> = None;
+                let mut node_type: Option<::Value<String>> = None;
+                let mut num_replicas_per_shard: Option<::Value<u32>> = None;
+                let mut num_shards: Option<::Value<u32>> = None;
+                let mut parameter_group_name: Option<::Value<String>> = None;
+                let mut port: Option<::Value<u32>> = None;
+                let mut security_group_ids: Option<::ValueList<String>> = None;
+                let mut snapshot_arns: Option<::ValueList<String>> = None;
+                let mut snapshot_name: Option<::Value<String>> = None;
+                let mut snapshot_retention_limit: Option<::Value<u32>> = None;
+                let mut snapshot_window: Option<::Value<String>> = None;
+                let mut sns_topic_arn: Option<::Value<String>> = None;
+                let mut sns_topic_status: Option<::Value<String>> = None;
+                let mut subnet_group_name: Option<::Value<String>> = None;
+                let mut tls_enabled: Option<::Value<bool>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -490,7 +490,7 @@ impl<'de> ::serde::Deserialize<'de> for ClusterProperties {
     }
 }
 
-impl crate::Resource for Cluster {
+impl ::Resource for Cluster {
     type Properties = ClusterProperties;
     const TYPE: &'static str = "AWS::MemoryDB::Cluster";
     fn properties(&self) -> &ClusterProperties {
@@ -501,7 +501,7 @@ impl crate::Resource for Cluster {
     }
 }
 
-impl crate::private::Sealed for Cluster {}
+impl ::private::Sealed for Cluster {}
 
 impl From<ClusterProperties> for Cluster {
     fn from(properties: ClusterProperties) -> Cluster {
@@ -522,27 +522,27 @@ pub struct ParameterGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Family`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-parametergroup.html#cfn-memorydb-parametergroup-family).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub family: crate::Value<String>,
+    pub family: ::Value<String>,
     /// Property [`ParameterGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-parametergroup.html#cfn-memorydb-parametergroup-parametergroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub parameter_group_name: crate::Value<String>,
+    pub parameter_group_name: ::Value<String>,
     /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-parametergroup.html#cfn-memorydb-parametergroup-parameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameters: Option<crate::Value<crate::json::Value>>,
+    pub parameters: Option<::Value<::json::Value>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-parametergroup.html#cfn-memorydb-parametergroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ParameterGroupProperties {
@@ -584,11 +584,11 @@ impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut family: Option<crate::Value<String>> = None;
-                let mut parameter_group_name: Option<crate::Value<String>> = None;
-                let mut parameters: Option<crate::Value<crate::json::Value>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut family: Option<::Value<String>> = None;
+                let mut parameter_group_name: Option<::Value<String>> = None;
+                let mut parameters: Option<::Value<::json::Value>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -626,7 +626,7 @@ impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
     }
 }
 
-impl crate::Resource for ParameterGroup {
+impl ::Resource for ParameterGroup {
     type Properties = ParameterGroupProperties;
     const TYPE: &'static str = "AWS::MemoryDB::ParameterGroup";
     fn properties(&self) -> &ParameterGroupProperties {
@@ -637,7 +637,7 @@ impl crate::Resource for ParameterGroup {
     }
 }
 
-impl crate::private::Sealed for ParameterGroup {}
+impl ::private::Sealed for ParameterGroup {}
 
 impl From<ParameterGroupProperties> for ParameterGroup {
     fn from(properties: ParameterGroupProperties) -> ParameterGroup {
@@ -658,22 +658,22 @@ pub struct SubnetGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`SubnetGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-subnetgroup.html#cfn-memorydb-subnetgroup-subnetgroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnet_group_name: crate::Value<String>,
+    pub subnet_group_name: ::Value<String>,
     /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-subnetgroup.html#cfn-memorydb-subnetgroup-subnetids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subnet_ids: crate::ValueList<String>,
+    pub subnet_ids: ::ValueList<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-subnetgroup.html#cfn-memorydb-subnetgroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for SubnetGroupProperties {
@@ -710,10 +710,10 @@ impl<'de> ::serde::Deserialize<'de> for SubnetGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut subnet_group_name: Option<crate::Value<String>> = None;
-                let mut subnet_ids: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut subnet_group_name: Option<::Value<String>> = None;
+                let mut subnet_ids: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -747,7 +747,7 @@ impl<'de> ::serde::Deserialize<'de> for SubnetGroupProperties {
     }
 }
 
-impl crate::Resource for SubnetGroup {
+impl ::Resource for SubnetGroup {
     type Properties = SubnetGroupProperties;
     const TYPE: &'static str = "AWS::MemoryDB::SubnetGroup";
     fn properties(&self) -> &SubnetGroupProperties {
@@ -758,7 +758,7 @@ impl crate::Resource for SubnetGroup {
     }
 }
 
-impl crate::private::Sealed for SubnetGroup {}
+impl ::private::Sealed for SubnetGroup {}
 
 impl From<SubnetGroupProperties> for SubnetGroup {
     fn from(properties: SubnetGroupProperties) -> SubnetGroup {
@@ -779,22 +779,22 @@ pub struct UserProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub access_string: crate::Value<String>,
+    pub access_string: ::Value<String>,
     /// Property [`AuthenticationMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-user.html#cfn-memorydb-user-authenticationmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub authentication_mode: crate::Value<crate::json::Value>,
+    pub authentication_mode: ::Value<::json::Value>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-user.html#cfn-memorydb-user-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`UserName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-user.html#cfn-memorydb-user-username).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub user_name: crate::Value<String>,
+    pub user_name: ::Value<String>,
 }
 
 impl ::serde::Serialize for UserProperties {
@@ -829,10 +829,10 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut access_string: Option<crate::Value<String>> = None;
-                let mut authentication_mode: Option<crate::Value<crate::json::Value>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut user_name: Option<crate::Value<String>> = None;
+                let mut access_string: Option<::Value<String>> = None;
+                let mut authentication_mode: Option<::Value<::json::Value>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut user_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -867,7 +867,7 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
     }
 }
 
-impl crate::Resource for User {
+impl ::Resource for User {
     type Properties = UserProperties;
     const TYPE: &'static str = "AWS::MemoryDB::User";
     fn properties(&self) -> &UserProperties {
@@ -878,7 +878,7 @@ impl crate::Resource for User {
     }
 }
 
-impl crate::private::Sealed for User {}
+impl ::private::Sealed for User {}
 
 impl From<UserProperties> for User {
     fn from(properties: UserProperties) -> User {
@@ -896,15 +896,15 @@ pub mod cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub address: Option<crate::Value<String>>,
+        pub address: Option<::Value<String>>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-cluster-endpoint.html#cfn-memorydb-cluster-endpoint-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: Option<crate::Value<u32>>,
+        pub port: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for Endpoint {
+    impl ::codec::SerializeValue for Endpoint {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref address) = self.address {
@@ -917,7 +917,7 @@ pub mod cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for Endpoint {
+    impl ::codec::DeserializeValue for Endpoint {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Endpoint, D::Error> {
             struct Visitor;
 
@@ -932,8 +932,8 @@ pub mod cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut address: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<u32>> = None;
+                    let mut address: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

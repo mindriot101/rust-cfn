@@ -13,13 +13,13 @@ pub struct BudgetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub budget: crate::Value<self::budget::BudgetData>,
+    pub budget: ::Value<self::budget::BudgetData>,
     /// Property [`NotificationsWithSubscribers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-notificationswithsubscribers).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub notifications_with_subscribers:
-        Option<crate::ValueList<self::budget::NotificationWithSubscribers>>,
+        Option<::ValueList<self::budget::NotificationWithSubscribers>>,
 }
 
 impl ::serde::Serialize for BudgetProperties {
@@ -52,9 +52,9 @@ impl<'de> ::serde::Deserialize<'de> for BudgetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut budget: Option<crate::Value<self::budget::BudgetData>> = None;
+                let mut budget: Option<::Value<self::budget::BudgetData>> = None;
                 let mut notifications_with_subscribers: Option<
-                    crate::ValueList<self::budget::NotificationWithSubscribers>,
+                    ::ValueList<self::budget::NotificationWithSubscribers>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -81,7 +81,7 @@ impl<'de> ::serde::Deserialize<'de> for BudgetProperties {
     }
 }
 
-impl crate::Resource for Budget {
+impl ::Resource for Budget {
     type Properties = BudgetProperties;
     const TYPE: &'static str = "AWS::Budgets::Budget";
     fn properties(&self) -> &BudgetProperties {
@@ -92,7 +92,7 @@ impl crate::Resource for Budget {
     }
 }
 
-impl crate::private::Sealed for Budget {}
+impl ::private::Sealed for Budget {}
 
 impl From<BudgetProperties> for Budget {
     fn from(properties: BudgetProperties) -> Budget {
@@ -113,42 +113,42 @@ pub struct BudgetsActionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub action_threshold: crate::Value<self::budgets_action::ActionThreshold>,
+    pub action_threshold: ::Value<self::budgets_action::ActionThreshold>,
     /// Property [`ActionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-actiontype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub action_type: crate::Value<String>,
+    pub action_type: ::Value<String>,
     /// Property [`ApprovalModel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-approvalmodel).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub approval_model: Option<crate::Value<String>>,
+    pub approval_model: Option<::Value<String>>,
     /// Property [`BudgetName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-budgetname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub budget_name: crate::Value<String>,
+    pub budget_name: ::Value<String>,
     /// Property [`Definition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-definition).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub definition: crate::Value<self::budgets_action::Definition>,
+    pub definition: ::Value<self::budgets_action::Definition>,
     /// Property [`ExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-executionrolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub execution_role_arn: crate::Value<String>,
+    pub execution_role_arn: ::Value<String>,
     /// Property [`NotificationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-notificationtype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_type: crate::Value<String>,
+    pub notification_type: ::Value<String>,
     /// Property [`Subscribers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-subscribers).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subscribers: crate::ValueList<self::budgets_action::Subscriber>,
+    pub subscribers: ::ValueList<self::budgets_action::Subscriber>,
 }
 
 impl ::serde::Serialize for BudgetsActionProperties {
@@ -197,15 +197,15 @@ impl<'de> ::serde::Deserialize<'de> for BudgetsActionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut action_threshold: Option<crate::Value<self::budgets_action::ActionThreshold>> =
+                let mut action_threshold: Option<::Value<self::budgets_action::ActionThreshold>> =
                     None;
-                let mut action_type: Option<crate::Value<String>> = None;
-                let mut approval_model: Option<crate::Value<String>> = None;
-                let mut budget_name: Option<crate::Value<String>> = None;
-                let mut definition: Option<crate::Value<self::budgets_action::Definition>> = None;
-                let mut execution_role_arn: Option<crate::Value<String>> = None;
-                let mut notification_type: Option<crate::Value<String>> = None;
-                let mut subscribers: Option<crate::ValueList<self::budgets_action::Subscriber>> = None;
+                let mut action_type: Option<::Value<String>> = None;
+                let mut approval_model: Option<::Value<String>> = None;
+                let mut budget_name: Option<::Value<String>> = None;
+                let mut definition: Option<::Value<self::budgets_action::Definition>> = None;
+                let mut execution_role_arn: Option<::Value<String>> = None;
+                let mut notification_type: Option<::Value<String>> = None;
+                let mut subscribers: Option<::ValueList<self::budgets_action::Subscriber>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -261,7 +261,7 @@ impl<'de> ::serde::Deserialize<'de> for BudgetsActionProperties {
     }
 }
 
-impl crate::Resource for BudgetsAction {
+impl ::Resource for BudgetsAction {
     type Properties = BudgetsActionProperties;
     const TYPE: &'static str = "AWS::Budgets::BudgetsAction";
     fn properties(&self) -> &BudgetsActionProperties {
@@ -272,7 +272,7 @@ impl crate::Resource for BudgetsAction {
     }
 }
 
-impl crate::private::Sealed for BudgetsAction {}
+impl ::private::Sealed for BudgetsAction {}
 
 impl From<BudgetsActionProperties> for BudgetsAction {
     fn from(properties: BudgetsActionProperties) -> BudgetsAction {
@@ -290,45 +290,45 @@ pub mod budget {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub budget_limit: Option<crate::Value<Spend>>,
+        pub budget_limit: Option<::Value<Spend>>,
         /// Property [`BudgetName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgetname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub budget_name: Option<crate::Value<String>>,
+        pub budget_name: Option<::Value<String>>,
         /// Property [`BudgetType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgettype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub budget_type: crate::Value<String>,
+        pub budget_type: ::Value<String>,
         /// Property [`CostFilters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-costfilters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cost_filters: Option<crate::Value<crate::json::Value>>,
+        pub cost_filters: Option<::Value<::json::Value>>,
         /// Property [`CostTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-costtypes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cost_types: Option<crate::Value<CostTypes>>,
+        pub cost_types: Option<::Value<CostTypes>>,
         /// Property [`PlannedBudgetLimits`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-plannedbudgetlimits).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub planned_budget_limits: Option<crate::Value<crate::json::Value>>,
+        pub planned_budget_limits: Option<::Value<::json::Value>>,
         /// Property [`TimePeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-timeperiod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_period: Option<crate::Value<TimePeriod>>,
+        pub time_period: Option<::Value<TimePeriod>>,
         /// Property [`TimeUnit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-timeunit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub time_unit: crate::Value<String>,
+        pub time_unit: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for BudgetData {
+    impl ::codec::SerializeValue for BudgetData {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref budget_limit) = self.budget_limit {
@@ -359,7 +359,7 @@ pub mod budget {
         }
     }
 
-    impl crate::codec::DeserializeValue for BudgetData {
+    impl ::codec::DeserializeValue for BudgetData {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BudgetData, D::Error> {
             struct Visitor;
 
@@ -374,14 +374,14 @@ pub mod budget {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut budget_limit: Option<crate::Value<Spend>> = None;
-                    let mut budget_name: Option<crate::Value<String>> = None;
-                    let mut budget_type: Option<crate::Value<String>> = None;
-                    let mut cost_filters: Option<crate::Value<crate::json::Value>> = None;
-                    let mut cost_types: Option<crate::Value<CostTypes>> = None;
-                    let mut planned_budget_limits: Option<crate::Value<crate::json::Value>> = None;
-                    let mut time_period: Option<crate::Value<TimePeriod>> = None;
-                    let mut time_unit: Option<crate::Value<String>> = None;
+                    let mut budget_limit: Option<::Value<Spend>> = None;
+                    let mut budget_name: Option<::Value<String>> = None;
+                    let mut budget_type: Option<::Value<String>> = None;
+                    let mut cost_filters: Option<::Value<::json::Value>> = None;
+                    let mut cost_types: Option<::Value<CostTypes>> = None;
+                    let mut planned_budget_limits: Option<::Value<::json::Value>> = None;
+                    let mut time_period: Option<::Value<TimePeriod>> = None;
+                    let mut time_unit: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -442,60 +442,60 @@ pub mod budget {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_credit: Option<crate::Value<bool>>,
+        pub include_credit: Option<::Value<bool>>,
         /// Property [`IncludeDiscount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includediscount).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_discount: Option<crate::Value<bool>>,
+        pub include_discount: Option<::Value<bool>>,
         /// Property [`IncludeOtherSubscription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeothersubscription).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_other_subscription: Option<crate::Value<bool>>,
+        pub include_other_subscription: Option<::Value<bool>>,
         /// Property [`IncludeRecurring`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerecurring).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_recurring: Option<crate::Value<bool>>,
+        pub include_recurring: Option<::Value<bool>>,
         /// Property [`IncludeRefund`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerefund).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_refund: Option<crate::Value<bool>>,
+        pub include_refund: Option<::Value<bool>>,
         /// Property [`IncludeSubscription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesubscription).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_subscription: Option<crate::Value<bool>>,
+        pub include_subscription: Option<::Value<bool>>,
         /// Property [`IncludeSupport`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesupport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_support: Option<crate::Value<bool>>,
+        pub include_support: Option<::Value<bool>>,
         /// Property [`IncludeTax`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includetax).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_tax: Option<crate::Value<bool>>,
+        pub include_tax: Option<::Value<bool>>,
         /// Property [`IncludeUpfront`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeupfront).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_upfront: Option<crate::Value<bool>>,
+        pub include_upfront: Option<::Value<bool>>,
         /// Property [`UseAmortized`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useamortized).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub use_amortized: Option<crate::Value<bool>>,
+        pub use_amortized: Option<::Value<bool>>,
         /// Property [`UseBlended`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useblended).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub use_blended: Option<crate::Value<bool>>,
+        pub use_blended: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for CostTypes {
+    impl ::codec::SerializeValue for CostTypes {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref include_credit) = self.include_credit {
@@ -571,7 +571,7 @@ pub mod budget {
         }
     }
 
-    impl crate::codec::DeserializeValue for CostTypes {
+    impl ::codec::DeserializeValue for CostTypes {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CostTypes, D::Error> {
             struct Visitor;
 
@@ -586,17 +586,17 @@ pub mod budget {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut include_credit: Option<crate::Value<bool>> = None;
-                    let mut include_discount: Option<crate::Value<bool>> = None;
-                    let mut include_other_subscription: Option<crate::Value<bool>> = None;
-                    let mut include_recurring: Option<crate::Value<bool>> = None;
-                    let mut include_refund: Option<crate::Value<bool>> = None;
-                    let mut include_subscription: Option<crate::Value<bool>> = None;
-                    let mut include_support: Option<crate::Value<bool>> = None;
-                    let mut include_tax: Option<crate::Value<bool>> = None;
-                    let mut include_upfront: Option<crate::Value<bool>> = None;
-                    let mut use_amortized: Option<crate::Value<bool>> = None;
-                    let mut use_blended: Option<crate::Value<bool>> = None;
+                    let mut include_credit: Option<::Value<bool>> = None;
+                    let mut include_discount: Option<::Value<bool>> = None;
+                    let mut include_other_subscription: Option<::Value<bool>> = None;
+                    let mut include_recurring: Option<::Value<bool>> = None;
+                    let mut include_refund: Option<::Value<bool>> = None;
+                    let mut include_subscription: Option<::Value<bool>> = None;
+                    let mut include_support: Option<::Value<bool>> = None;
+                    let mut include_tax: Option<::Value<bool>> = None;
+                    let mut include_upfront: Option<::Value<bool>> = None;
+                    let mut use_amortized: Option<::Value<bool>> = None;
+                    let mut use_blended: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -668,25 +668,25 @@ pub mod budget {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub comparison_operator: crate::Value<String>,
+        pub comparison_operator: ::Value<String>,
         /// Property [`NotificationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-notificationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub notification_type: crate::Value<String>,
+        pub notification_type: ::Value<String>,
         /// Property [`Threshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-threshold).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub threshold: crate::Value<f64>,
+        pub threshold: ::Value<f64>,
         /// Property [`ThresholdType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-thresholdtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub threshold_type: Option<crate::Value<String>>,
+        pub threshold_type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Notification {
+    impl ::codec::SerializeValue for Notification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -711,7 +711,7 @@ pub mod budget {
         }
     }
 
-    impl crate::codec::DeserializeValue for Notification {
+    impl ::codec::DeserializeValue for Notification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Notification, D::Error> {
             struct Visitor;
 
@@ -726,10 +726,10 @@ pub mod budget {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut comparison_operator: Option<crate::Value<String>> = None;
-                    let mut notification_type: Option<crate::Value<String>> = None;
-                    let mut threshold: Option<crate::Value<f64>> = None;
-                    let mut threshold_type: Option<crate::Value<String>> = None;
+                    let mut comparison_operator: Option<::Value<String>> = None;
+                    let mut notification_type: Option<::Value<String>> = None;
+                    let mut threshold: Option<::Value<f64>> = None;
+                    let mut threshold_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -774,15 +774,15 @@ pub mod budget {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub notification: crate::Value<Notification>,
+        pub notification: ::Value<Notification>,
         /// Property [`Subscribers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-subscribers).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subscribers: crate::ValueList<Subscriber>,
+        pub subscribers: ::ValueList<Subscriber>,
     }
 
-    impl crate::codec::SerializeValue for NotificationWithSubscribers {
+    impl ::codec::SerializeValue for NotificationWithSubscribers {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -799,7 +799,7 @@ pub mod budget {
         }
     }
 
-    impl crate::codec::DeserializeValue for NotificationWithSubscribers {
+    impl ::codec::DeserializeValue for NotificationWithSubscribers {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NotificationWithSubscribers, D::Error> {
@@ -816,8 +816,8 @@ pub mod budget {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut notification: Option<crate::Value<Notification>> = None;
-                    let mut subscribers: Option<crate::ValueList<Subscriber>> = None;
+                    let mut notification: Option<::Value<Notification>> = None;
+                    let mut subscribers: Option<::ValueList<Subscriber>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -853,15 +853,15 @@ pub mod budget {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub amount: crate::Value<f64>,
+        pub amount: ::Value<f64>,
         /// Property [`Unit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-unit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unit: crate::Value<String>,
+        pub unit: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Spend {
+    impl ::codec::SerializeValue for Spend {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Amount", &self.amount)?;
@@ -870,7 +870,7 @@ pub mod budget {
         }
     }
 
-    impl crate::codec::DeserializeValue for Spend {
+    impl ::codec::DeserializeValue for Spend {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Spend, D::Error> {
             struct Visitor;
 
@@ -885,8 +885,8 @@ pub mod budget {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut amount: Option<crate::Value<f64>> = None;
-                    let mut unit: Option<crate::Value<String>> = None;
+                    let mut amount: Option<::Value<f64>> = None;
+                    let mut unit: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -920,15 +920,15 @@ pub mod budget {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub address: crate::Value<String>,
+        pub address: ::Value<String>,
         /// Property [`SubscriptionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-subscriptiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subscription_type: crate::Value<String>,
+        pub subscription_type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Subscriber {
+    impl ::codec::SerializeValue for Subscriber {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Address", &self.address)?;
@@ -941,7 +941,7 @@ pub mod budget {
         }
     }
 
-    impl crate::codec::DeserializeValue for Subscriber {
+    impl ::codec::DeserializeValue for Subscriber {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Subscriber, D::Error> {
             struct Visitor;
 
@@ -956,8 +956,8 @@ pub mod budget {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut address: Option<crate::Value<String>> = None;
-                    let mut subscription_type: Option<crate::Value<String>> = None;
+                    let mut address: Option<::Value<String>> = None;
+                    let mut subscription_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -992,15 +992,15 @@ pub mod budget {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end: Option<crate::Value<String>>,
+        pub end: Option<::Value<String>>,
         /// Property [`Start`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-timeperiod.html#cfn-budgets-budget-timeperiod-start).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start: Option<crate::Value<String>>,
+        pub start: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for TimePeriod {
+    impl ::codec::SerializeValue for TimePeriod {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref end) = self.end {
@@ -1013,7 +1013,7 @@ pub mod budget {
         }
     }
 
-    impl crate::codec::DeserializeValue for TimePeriod {
+    impl ::codec::DeserializeValue for TimePeriod {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TimePeriod, D::Error> {
             struct Visitor;
 
@@ -1028,8 +1028,8 @@ pub mod budget {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end: Option<crate::Value<String>> = None;
-                    let mut start: Option<crate::Value<String>> = None;
+                    let mut end: Option<::Value<String>> = None;
+                    let mut start: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1067,15 +1067,15 @@ pub mod budgets_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-actionthreshold.html#cfn-budgets-budgetsaction-actionthreshold-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<f64>,
+        pub value: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for ActionThreshold {
+    impl ::codec::SerializeValue for ActionThreshold {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", &self.r#type)?;
@@ -1084,7 +1084,7 @@ pub mod budgets_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for ActionThreshold {
+    impl ::codec::DeserializeValue for ActionThreshold {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ActionThreshold, D::Error> {
@@ -1101,8 +1101,8 @@ pub mod budgets_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<f64>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1136,20 +1136,20 @@ pub mod budgets_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub iam_action_definition: Option<crate::Value<IamActionDefinition>>,
+        pub iam_action_definition: Option<::Value<IamActionDefinition>>,
         /// Property [`ScpActionDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html#cfn-budgets-budgetsaction-definition-scpactiondefinition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scp_action_definition: Option<crate::Value<ScpActionDefinition>>,
+        pub scp_action_definition: Option<::Value<ScpActionDefinition>>,
         /// Property [`SsmActionDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html#cfn-budgets-budgetsaction-definition-ssmactiondefinition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ssm_action_definition: Option<crate::Value<SsmActionDefinition>>,
+        pub ssm_action_definition: Option<::Value<SsmActionDefinition>>,
     }
 
-    impl crate::codec::SerializeValue for Definition {
+    impl ::codec::SerializeValue for Definition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref iam_action_definition) = self.iam_action_definition {
@@ -1177,7 +1177,7 @@ pub mod budgets_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for Definition {
+    impl ::codec::DeserializeValue for Definition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Definition, D::Error> {
             struct Visitor;
 
@@ -1192,9 +1192,9 @@ pub mod budgets_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut iam_action_definition: Option<crate::Value<IamActionDefinition>> = None;
-                    let mut scp_action_definition: Option<crate::Value<ScpActionDefinition>> = None;
-                    let mut ssm_action_definition: Option<crate::Value<SsmActionDefinition>> = None;
+                    let mut iam_action_definition: Option<::Value<IamActionDefinition>> = None;
+                    let mut scp_action_definition: Option<::Value<ScpActionDefinition>> = None;
+                    let mut ssm_action_definition: Option<::Value<SsmActionDefinition>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1235,25 +1235,25 @@ pub mod budgets_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub groups: Option<crate::ValueList<String>>,
+        pub groups: Option<::ValueList<String>>,
         /// Property [`PolicyArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-iamactiondefinition.html#cfn-budgets-budgetsaction-iamactiondefinition-policyarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub policy_arn: crate::Value<String>,
+        pub policy_arn: ::Value<String>,
         /// Property [`Roles`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-iamactiondefinition.html#cfn-budgets-budgetsaction-iamactiondefinition-roles).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub roles: Option<crate::ValueList<String>>,
+        pub roles: Option<::ValueList<String>>,
         /// Property [`Users`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-iamactiondefinition.html#cfn-budgets-budgetsaction-iamactiondefinition-users).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub users: Option<crate::ValueList<String>>,
+        pub users: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for IamActionDefinition {
+    impl ::codec::SerializeValue for IamActionDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref groups) = self.groups {
@@ -1270,7 +1270,7 @@ pub mod budgets_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for IamActionDefinition {
+    impl ::codec::DeserializeValue for IamActionDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IamActionDefinition, D::Error> {
@@ -1287,10 +1287,10 @@ pub mod budgets_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut groups: Option<crate::ValueList<String>> = None;
-                    let mut policy_arn: Option<crate::Value<String>> = None;
-                    let mut roles: Option<crate::ValueList<String>> = None;
-                    let mut users: Option<crate::ValueList<String>> = None;
+                    let mut groups: Option<::ValueList<String>> = None;
+                    let mut policy_arn: Option<::Value<String>> = None;
+                    let mut roles: Option<::ValueList<String>> = None;
+                    let mut users: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1333,15 +1333,15 @@ pub mod budgets_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub policy_id: crate::Value<String>,
+        pub policy_id: ::Value<String>,
         /// Property [`TargetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-scpactiondefinition.html#cfn-budgets-budgetsaction-scpactiondefinition-targetids).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_ids: crate::ValueList<String>,
+        pub target_ids: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for ScpActionDefinition {
+    impl ::codec::SerializeValue for ScpActionDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "PolicyId", &self.policy_id)?;
@@ -1350,7 +1350,7 @@ pub mod budgets_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for ScpActionDefinition {
+    impl ::codec::DeserializeValue for ScpActionDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScpActionDefinition, D::Error> {
@@ -1367,8 +1367,8 @@ pub mod budgets_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut policy_id: Option<crate::Value<String>> = None;
-                    let mut target_ids: Option<crate::ValueList<String>> = None;
+                    let mut policy_id: Option<::Value<String>> = None;
+                    let mut target_ids: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1404,20 +1404,20 @@ pub mod budgets_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_ids: crate::ValueList<String>,
+        pub instance_ids: ::ValueList<String>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-ssmactiondefinition.html#cfn-budgets-budgetsaction-ssmactiondefinition-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: crate::Value<String>,
+        pub region: ::Value<String>,
         /// Property [`Subtype`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-ssmactiondefinition.html#cfn-budgets-budgetsaction-ssmactiondefinition-subtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subtype: crate::Value<String>,
+        pub subtype: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for SsmActionDefinition {
+    impl ::codec::SerializeValue for SsmActionDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1431,7 +1431,7 @@ pub mod budgets_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for SsmActionDefinition {
+    impl ::codec::DeserializeValue for SsmActionDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SsmActionDefinition, D::Error> {
@@ -1448,9 +1448,9 @@ pub mod budgets_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_ids: Option<crate::ValueList<String>> = None;
-                    let mut region: Option<crate::Value<String>> = None;
-                    let mut subtype: Option<crate::Value<String>> = None;
+                    let mut instance_ids: Option<::ValueList<String>> = None;
+                    let mut region: Option<::Value<String>> = None;
+                    let mut subtype: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1489,15 +1489,15 @@ pub mod budgets_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub address: crate::Value<String>,
+        pub address: ::Value<String>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-subscriber.html#cfn-budgets-budgetsaction-subscriber-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Subscriber {
+    impl ::codec::SerializeValue for Subscriber {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Address", &self.address)?;
@@ -1506,7 +1506,7 @@ pub mod budgets_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for Subscriber {
+    impl ::codec::DeserializeValue for Subscriber {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Subscriber, D::Error> {
             struct Visitor;
 
@@ -1521,8 +1521,8 @@ pub mod budgets_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut address: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut address: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

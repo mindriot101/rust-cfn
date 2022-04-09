@@ -13,28 +13,28 @@ pub struct RepositoryProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub code: Option<crate::Value<self::repository::Code>>,
+    pub code: Option<::Value<self::repository::Code>>,
     /// Property [`RepositoryDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositorydescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub repository_description: Option<crate::Value<String>>,
+    pub repository_description: Option<::Value<String>>,
     /// Property [`RepositoryName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositoryname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub repository_name: crate::Value<String>,
+    pub repository_name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Triggers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-triggers).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub triggers: Option<crate::ValueList<self::repository::RepositoryTrigger>>,
+    pub triggers: Option<::ValueList<self::repository::RepositoryTrigger>>,
 }
 
 impl ::serde::Serialize for RepositoryProperties {
@@ -80,11 +80,11 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut code: Option<crate::Value<self::repository::Code>> = None;
-                let mut repository_description: Option<crate::Value<String>> = None;
-                let mut repository_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut triggers: Option<crate::ValueList<self::repository::RepositoryTrigger>> = None;
+                let mut code: Option<::Value<self::repository::Code>> = None;
+                let mut repository_description: Option<::Value<String>> = None;
+                let mut repository_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut triggers: Option<::ValueList<self::repository::RepositoryTrigger>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -122,7 +122,7 @@ impl<'de> ::serde::Deserialize<'de> for RepositoryProperties {
     }
 }
 
-impl crate::Resource for Repository {
+impl ::Resource for Repository {
     type Properties = RepositoryProperties;
     const TYPE: &'static str = "AWS::CodeCommit::Repository";
     fn properties(&self) -> &RepositoryProperties {
@@ -133,7 +133,7 @@ impl crate::Resource for Repository {
     }
 }
 
-impl crate::private::Sealed for Repository {}
+impl ::private::Sealed for Repository {}
 
 impl From<RepositoryProperties> for Repository {
     fn from(properties: RepositoryProperties) -> Repository {
@@ -151,15 +151,15 @@ pub mod repository {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub branch_name: Option<crate::Value<String>>,
+        pub branch_name: Option<::Value<String>>,
         /// Property [`S3`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-code.html#cfn-codecommit-repository-code-s3).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3: crate::Value<S3>,
+        pub s3: ::Value<S3>,
     }
 
-    impl crate::codec::SerializeValue for Code {
+    impl ::codec::SerializeValue for Code {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref branch_name) = self.branch_name {
@@ -170,7 +170,7 @@ pub mod repository {
         }
     }
 
-    impl crate::codec::DeserializeValue for Code {
+    impl ::codec::DeserializeValue for Code {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Code, D::Error> {
             struct Visitor;
 
@@ -185,8 +185,8 @@ pub mod repository {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut branch_name: Option<crate::Value<String>> = None;
-                    let mut s3: Option<crate::Value<S3>> = None;
+                    let mut branch_name: Option<::Value<String>> = None;
+                    let mut s3: Option<::Value<S3>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -220,30 +220,30 @@ pub mod repository {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub branches: Option<crate::ValueList<String>>,
+        pub branches: Option<::ValueList<String>>,
         /// Property [`CustomData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-customdata).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_data: Option<crate::Value<String>>,
+        pub custom_data: Option<::Value<String>>,
         /// Property [`DestinationArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-destinationarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_arn: crate::Value<String>,
+        pub destination_arn: ::Value<String>,
         /// Property [`Events`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-events).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub events: crate::ValueList<String>,
+        pub events: ::ValueList<String>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RepositoryTrigger {
+    impl ::codec::SerializeValue for RepositoryTrigger {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref branches) = self.branches {
@@ -263,7 +263,7 @@ pub mod repository {
         }
     }
 
-    impl crate::codec::DeserializeValue for RepositoryTrigger {
+    impl ::codec::DeserializeValue for RepositoryTrigger {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RepositoryTrigger, D::Error> {
@@ -280,11 +280,11 @@ pub mod repository {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut branches: Option<crate::ValueList<String>> = None;
-                    let mut custom_data: Option<crate::Value<String>> = None;
-                    let mut destination_arn: Option<crate::Value<String>> = None;
-                    let mut events: Option<crate::ValueList<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut branches: Option<::ValueList<String>> = None;
+                    let mut custom_data: Option<::Value<String>> = None;
+                    let mut destination_arn: Option<::Value<String>> = None;
+                    let mut events: Option<::ValueList<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -331,20 +331,20 @@ pub mod repository {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: crate::Value<String>,
+        pub bucket: ::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`ObjectVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-objectversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object_version: Option<crate::Value<String>>,
+        pub object_version: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for S3 {
+    impl ::codec::SerializeValue for S3 {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -360,7 +360,7 @@ pub mod repository {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3 {
+    impl ::codec::DeserializeValue for S3 {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3, D::Error> {
             struct Visitor;
 
@@ -375,9 +375,9 @@ pub mod repository {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<crate::Value<String>> = None;
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut object_version: Option<crate::Value<String>> = None;
+                    let mut bucket: Option<::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut object_version: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

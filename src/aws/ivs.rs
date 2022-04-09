@@ -13,32 +13,32 @@ pub struct ChannelProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub authorized: Option<crate::Value<bool>>,
+    pub authorized: Option<::Value<bool>>,
     /// Property [`LatencyMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-latencymode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub latency_mode: Option<crate::Value<String>>,
+    pub latency_mode: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`RecordingConfigurationArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-recordingconfigurationarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub recording_configuration_arn: Option<crate::Value<String>>,
+    pub recording_configuration_arn: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-type).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub r#type: Option<crate::Value<String>>,
+    pub r#type: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ChannelProperties {
@@ -85,12 +85,12 @@ impl<'de> ::serde::Deserialize<'de> for ChannelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut authorized: Option<crate::Value<bool>> = None;
-                let mut latency_mode: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut recording_configuration_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut r#type: Option<crate::Value<String>> = None;
+                let mut authorized: Option<::Value<bool>> = None;
+                let mut latency_mode: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut recording_configuration_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut r#type: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -132,7 +132,7 @@ impl<'de> ::serde::Deserialize<'de> for ChannelProperties {
     }
 }
 
-impl crate::Resource for Channel {
+impl ::Resource for Channel {
     type Properties = ChannelProperties;
     const TYPE: &'static str = "AWS::IVS::Channel";
     fn properties(&self) -> &ChannelProperties {
@@ -143,7 +143,7 @@ impl crate::Resource for Channel {
     }
 }
 
-impl crate::private::Sealed for Channel {}
+impl ::private::Sealed for Channel {}
 
 impl From<ChannelProperties> for Channel {
     fn from(properties: ChannelProperties) -> Channel {
@@ -164,17 +164,17 @@ pub struct PlaybackKeyPairProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`PublicKeyMaterial`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-publickeymaterial).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub public_key_material: crate::Value<String>,
+    pub public_key_material: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for PlaybackKeyPairProperties {
@@ -212,9 +212,9 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackKeyPairProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<crate::Value<String>> = None;
-                let mut public_key_material: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut public_key_material: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -244,7 +244,7 @@ impl<'de> ::serde::Deserialize<'de> for PlaybackKeyPairProperties {
     }
 }
 
-impl crate::Resource for PlaybackKeyPair {
+impl ::Resource for PlaybackKeyPair {
     type Properties = PlaybackKeyPairProperties;
     const TYPE: &'static str = "AWS::IVS::PlaybackKeyPair";
     fn properties(&self) -> &PlaybackKeyPairProperties {
@@ -255,7 +255,7 @@ impl crate::Resource for PlaybackKeyPair {
     }
 }
 
-impl crate::private::Sealed for PlaybackKeyPair {}
+impl ::private::Sealed for PlaybackKeyPair {}
 
 impl From<PlaybackKeyPairProperties> for PlaybackKeyPair {
     fn from(properties: PlaybackKeyPairProperties) -> PlaybackKeyPair {
@@ -276,23 +276,23 @@ pub struct RecordingConfigurationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub destination_configuration: crate::Value<self::recording_configuration::DestinationConfiguration>,
+    pub destination_configuration: ::Value<self::recording_configuration::DestinationConfiguration>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#cfn-ivs-recordingconfiguration-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#cfn-ivs-recordingconfiguration-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`ThumbnailConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#cfn-ivs-recordingconfiguration-thumbnailconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub thumbnail_configuration:
-        Option<crate::Value<self::recording_configuration::ThumbnailConfiguration>>,
+        Option<::Value<self::recording_configuration::ThumbnailConfiguration>>,
 }
 
 impl ::serde::Serialize for RecordingConfigurationProperties {
@@ -338,12 +338,12 @@ impl<'de> ::serde::Deserialize<'de> for RecordingConfigurationProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut destination_configuration: Option<
-                    crate::Value<self::recording_configuration::DestinationConfiguration>,
+                    ::Value<self::recording_configuration::DestinationConfiguration>,
                 > = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut thumbnail_configuration: Option<
-                    crate::Value<self::recording_configuration::ThumbnailConfiguration>,
+                    ::Value<self::recording_configuration::ThumbnailConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -380,7 +380,7 @@ impl<'de> ::serde::Deserialize<'de> for RecordingConfigurationProperties {
     }
 }
 
-impl crate::Resource for RecordingConfiguration {
+impl ::Resource for RecordingConfiguration {
     type Properties = RecordingConfigurationProperties;
     const TYPE: &'static str = "AWS::IVS::RecordingConfiguration";
     fn properties(&self) -> &RecordingConfigurationProperties {
@@ -391,7 +391,7 @@ impl crate::Resource for RecordingConfiguration {
     }
 }
 
-impl crate::private::Sealed for RecordingConfiguration {}
+impl ::private::Sealed for RecordingConfiguration {}
 
 impl From<RecordingConfigurationProperties> for RecordingConfiguration {
     fn from(properties: RecordingConfigurationProperties) -> RecordingConfiguration {
@@ -412,12 +412,12 @@ pub struct StreamKeyProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub channel_arn: crate::Value<String>,
+    pub channel_arn: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-streamkey.html#cfn-ivs-streamkey-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for StreamKeyProperties {
@@ -446,8 +446,8 @@ impl<'de> ::serde::Deserialize<'de> for StreamKeyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut channel_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut channel_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -473,7 +473,7 @@ impl<'de> ::serde::Deserialize<'de> for StreamKeyProperties {
     }
 }
 
-impl crate::Resource for StreamKey {
+impl ::Resource for StreamKey {
     type Properties = StreamKeyProperties;
     const TYPE: &'static str = "AWS::IVS::StreamKey";
     fn properties(&self) -> &StreamKeyProperties {
@@ -484,7 +484,7 @@ impl crate::Resource for StreamKey {
     }
 }
 
-impl crate::private::Sealed for StreamKey {}
+impl ::private::Sealed for StreamKey {}
 
 impl From<StreamKeyProperties> for StreamKey {
     fn from(properties: StreamKeyProperties) -> StreamKey {
@@ -502,10 +502,10 @@ pub mod recording_configuration {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3: crate::Value<S3DestinationConfiguration>,
+        pub s3: ::Value<S3DestinationConfiguration>,
     }
 
-    impl crate::codec::SerializeValue for DestinationConfiguration {
+    impl ::codec::SerializeValue for DestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3", &self.s3)?;
@@ -513,7 +513,7 @@ pub mod recording_configuration {
         }
     }
 
-    impl crate::codec::DeserializeValue for DestinationConfiguration {
+    impl ::codec::DeserializeValue for DestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DestinationConfiguration, D::Error> {
@@ -530,7 +530,7 @@ pub mod recording_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3: Option<crate::Value<S3DestinationConfiguration>> = None;
+                    let mut s3: Option<::Value<S3DestinationConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -560,10 +560,10 @@ pub mod recording_configuration {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub bucket_name: crate::Value<String>,
+        pub bucket_name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3DestinationConfiguration {
+    impl ::codec::SerializeValue for S3DestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
@@ -571,7 +571,7 @@ pub mod recording_configuration {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3DestinationConfiguration {
+    impl ::codec::DeserializeValue for S3DestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3DestinationConfiguration, D::Error> {
@@ -588,7 +588,7 @@ pub mod recording_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<crate::Value<String>> = None;
+                    let mut bucket_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -619,15 +619,15 @@ pub mod recording_configuration {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub recording_mode: crate::Value<String>,
+        pub recording_mode: ::Value<String>,
         /// Property [`TargetIntervalSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-thumbnailconfiguration.html#cfn-ivs-recordingconfiguration-thumbnailconfiguration-targetintervalseconds).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub target_interval_seconds: Option<crate::Value<u32>>,
+        pub target_interval_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for ThumbnailConfiguration {
+    impl ::codec::SerializeValue for ThumbnailConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -646,7 +646,7 @@ pub mod recording_configuration {
         }
     }
 
-    impl crate::codec::DeserializeValue for ThumbnailConfiguration {
+    impl ::codec::DeserializeValue for ThumbnailConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ThumbnailConfiguration, D::Error> {
@@ -663,8 +663,8 @@ pub mod recording_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut recording_mode: Option<crate::Value<String>> = None;
-                    let mut target_interval_seconds: Option<crate::Value<u32>> = None;
+                    let mut recording_mode: Option<::Value<String>> = None;
+                    let mut target_interval_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

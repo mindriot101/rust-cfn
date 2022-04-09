@@ -13,22 +13,22 @@ pub struct FlowProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub availability_zone: Option<crate::Value<String>>,
+    pub availability_zone: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Source`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-source).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source: crate::Value<self::flow::Source>,
+    pub source: ::Value<self::flow::Source>,
     /// Property [`SourceFailoverConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-sourcefailoverconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_failover_config: Option<crate::Value<self::flow::FailoverConfig>>,
+    pub source_failover_config: Option<::Value<self::flow::FailoverConfig>>,
 }
 
 impl ::serde::Serialize for FlowProperties {
@@ -69,10 +69,10 @@ impl<'de> ::serde::Deserialize<'de> for FlowProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut availability_zone: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut source: Option<crate::Value<self::flow::Source>> = None;
-                let mut source_failover_config: Option<crate::Value<self::flow::FailoverConfig>> = None;
+                let mut availability_zone: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut source: Option<::Value<self::flow::Source>> = None;
+                let mut source_failover_config: Option<::Value<self::flow::FailoverConfig>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -105,7 +105,7 @@ impl<'de> ::serde::Deserialize<'de> for FlowProperties {
     }
 }
 
-impl crate::Resource for Flow {
+impl ::Resource for Flow {
     type Properties = FlowProperties;
     const TYPE: &'static str = "AWS::MediaConnect::Flow";
     fn properties(&self) -> &FlowProperties {
@@ -116,7 +116,7 @@ impl crate::Resource for Flow {
     }
 }
 
-impl crate::private::Sealed for Flow {}
+impl ::private::Sealed for Flow {}
 
 impl From<FlowProperties> for Flow {
     fn from(properties: FlowProperties) -> Flow {
@@ -137,37 +137,37 @@ pub struct FlowEntitlementProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_transfer_subscriber_fee_percent: Option<crate::Value<u32>>,
+    pub data_transfer_subscriber_fee_percent: Option<::Value<u32>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`Encryption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-encryption).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encryption: Option<crate::Value<self::flow_entitlement::Encryption>>,
+    pub encryption: Option<::Value<self::flow_entitlement::Encryption>>,
     /// Property [`EntitlementStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-entitlementstatus).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub entitlement_status: Option<crate::Value<String>>,
+    pub entitlement_status: Option<::Value<String>>,
     /// Property [`FlowArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-flowarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub flow_arn: crate::Value<String>,
+    pub flow_arn: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Subscribers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-subscribers).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subscribers: crate::ValueList<String>,
+    pub subscribers: ::ValueList<String>,
 }
 
 impl ::serde::Serialize for FlowEntitlementProperties {
@@ -217,13 +217,13 @@ impl<'de> ::serde::Deserialize<'de> for FlowEntitlementProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_transfer_subscriber_fee_percent: Option<crate::Value<u32>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut encryption: Option<crate::Value<self::flow_entitlement::Encryption>> = None;
-                let mut entitlement_status: Option<crate::Value<String>> = None;
-                let mut flow_arn: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut subscribers: Option<crate::ValueList<String>> = None;
+                let mut data_transfer_subscriber_fee_percent: Option<::Value<u32>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut encryption: Option<::Value<self::flow_entitlement::Encryption>> = None;
+                let mut entitlement_status: Option<::Value<String>> = None;
+                let mut flow_arn: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut subscribers: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -271,7 +271,7 @@ impl<'de> ::serde::Deserialize<'de> for FlowEntitlementProperties {
     }
 }
 
-impl crate::Resource for FlowEntitlement {
+impl ::Resource for FlowEntitlement {
     type Properties = FlowEntitlementProperties;
     const TYPE: &'static str = "AWS::MediaConnect::FlowEntitlement";
     fn properties(&self) -> &FlowEntitlementProperties {
@@ -282,7 +282,7 @@ impl crate::Resource for FlowEntitlement {
     }
 }
 
-impl crate::private::Sealed for FlowEntitlement {}
+impl ::private::Sealed for FlowEntitlement {}
 
 impl From<FlowEntitlementProperties> for FlowEntitlement {
     fn from(properties: FlowEntitlementProperties) -> FlowEntitlement {
@@ -303,72 +303,72 @@ pub struct FlowOutputProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cidr_allow_list: Option<crate::ValueList<String>>,
+    pub cidr_allow_list: Option<::ValueList<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Destination`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-destination).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub destination: Option<crate::Value<String>>,
+    pub destination: Option<::Value<String>>,
     /// Property [`Encryption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-encryption).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encryption: Option<crate::Value<self::flow_output::Encryption>>,
+    pub encryption: Option<::Value<self::flow_output::Encryption>>,
     /// Property [`FlowArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-flowarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub flow_arn: crate::Value<String>,
+    pub flow_arn: ::Value<String>,
     /// Property [`MaxLatency`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-maxlatency).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_latency: Option<crate::Value<u32>>,
+    pub max_latency: Option<::Value<u32>>,
     /// Property [`MinLatency`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-minlatency).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub min_latency: Option<crate::Value<u32>>,
+    pub min_latency: Option<::Value<u32>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-port).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub port: Option<crate::Value<u32>>,
+    pub port: Option<::Value<u32>>,
     /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-protocol).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub protocol: crate::Value<String>,
+    pub protocol: ::Value<String>,
     /// Property [`RemoteId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-remoteid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub remote_id: Option<crate::Value<String>>,
+    pub remote_id: Option<::Value<String>>,
     /// Property [`SmoothingLatency`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-smoothinglatency).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub smoothing_latency: Option<crate::Value<u32>>,
+    pub smoothing_latency: Option<::Value<u32>>,
     /// Property [`StreamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-streamid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stream_id: Option<crate::Value<String>>,
+    pub stream_id: Option<::Value<String>>,
     /// Property [`VpcInterfaceAttachment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-vpcinterfaceattachment).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_interface_attachment: Option<crate::Value<self::flow_output::VpcInterfaceAttachment>>,
+    pub vpc_interface_attachment: Option<::Value<self::flow_output::VpcInterfaceAttachment>>,
 }
 
 impl ::serde::Serialize for FlowOutputProperties {
@@ -443,21 +443,21 @@ impl<'de> ::serde::Deserialize<'de> for FlowOutputProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cidr_allow_list: Option<crate::ValueList<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut destination: Option<crate::Value<String>> = None;
-                let mut encryption: Option<crate::Value<self::flow_output::Encryption>> = None;
-                let mut flow_arn: Option<crate::Value<String>> = None;
-                let mut max_latency: Option<crate::Value<u32>> = None;
-                let mut min_latency: Option<crate::Value<u32>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut port: Option<crate::Value<u32>> = None;
-                let mut protocol: Option<crate::Value<String>> = None;
-                let mut remote_id: Option<crate::Value<String>> = None;
-                let mut smoothing_latency: Option<crate::Value<u32>> = None;
-                let mut stream_id: Option<crate::Value<String>> = None;
+                let mut cidr_allow_list: Option<::ValueList<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut destination: Option<::Value<String>> = None;
+                let mut encryption: Option<::Value<self::flow_output::Encryption>> = None;
+                let mut flow_arn: Option<::Value<String>> = None;
+                let mut max_latency: Option<::Value<u32>> = None;
+                let mut min_latency: Option<::Value<u32>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut port: Option<::Value<u32>> = None;
+                let mut protocol: Option<::Value<String>> = None;
+                let mut remote_id: Option<::Value<String>> = None;
+                let mut smoothing_latency: Option<::Value<u32>> = None;
+                let mut stream_id: Option<::Value<String>> = None;
                 let mut vpc_interface_attachment: Option<
-                    crate::Value<self::flow_output::VpcInterfaceAttachment>,
+                    ::Value<self::flow_output::VpcInterfaceAttachment>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -532,7 +532,7 @@ impl<'de> ::serde::Deserialize<'de> for FlowOutputProperties {
     }
 }
 
-impl crate::Resource for FlowOutput {
+impl ::Resource for FlowOutput {
     type Properties = FlowOutputProperties;
     const TYPE: &'static str = "AWS::MediaConnect::FlowOutput";
     fn properties(&self) -> &FlowOutputProperties {
@@ -543,7 +543,7 @@ impl crate::Resource for FlowOutput {
     }
 }
 
-impl crate::private::Sealed for FlowOutput {}
+impl ::private::Sealed for FlowOutput {}
 
 impl From<FlowOutputProperties> for FlowOutput {
     fn from(properties: FlowOutputProperties) -> FlowOutput {
@@ -564,62 +564,62 @@ pub struct FlowSourceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub decryption: Option<crate::Value<self::flow_source::Encryption>>,
+    pub decryption: Option<::Value<self::flow_source::Encryption>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`EntitlementArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-entitlementarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub entitlement_arn: Option<crate::Value<String>>,
+    pub entitlement_arn: Option<::Value<String>>,
     /// Property [`FlowArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-flowarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub flow_arn: Option<crate::Value<String>>,
+    pub flow_arn: Option<::Value<String>>,
     /// Property [`IngestPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-ingestport).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ingest_port: Option<crate::Value<u32>>,
+    pub ingest_port: Option<::Value<u32>>,
     /// Property [`MaxBitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-maxbitrate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_bitrate: Option<crate::Value<u32>>,
+    pub max_bitrate: Option<::Value<u32>>,
     /// Property [`MaxLatency`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-maxlatency).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_latency: Option<crate::Value<u32>>,
+    pub max_latency: Option<::Value<u32>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-protocol).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub protocol: Option<crate::Value<String>>,
+    pub protocol: Option<::Value<String>>,
     /// Property [`StreamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-streamid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stream_id: Option<crate::Value<String>>,
+    pub stream_id: Option<::Value<String>>,
     /// Property [`VpcInterfaceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-vpcinterfacename).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_interface_name: Option<crate::Value<String>>,
+    pub vpc_interface_name: Option<::Value<String>>,
     /// Property [`WhitelistCidr`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-whitelistcidr).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub whitelist_cidr: Option<crate::Value<String>>,
+    pub whitelist_cidr: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for FlowSourceProperties {
@@ -684,18 +684,18 @@ impl<'de> ::serde::Deserialize<'de> for FlowSourceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut decryption: Option<crate::Value<self::flow_source::Encryption>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut entitlement_arn: Option<crate::Value<String>> = None;
-                let mut flow_arn: Option<crate::Value<String>> = None;
-                let mut ingest_port: Option<crate::Value<u32>> = None;
-                let mut max_bitrate: Option<crate::Value<u32>> = None;
-                let mut max_latency: Option<crate::Value<u32>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut protocol: Option<crate::Value<String>> = None;
-                let mut stream_id: Option<crate::Value<String>> = None;
-                let mut vpc_interface_name: Option<crate::Value<String>> = None;
-                let mut whitelist_cidr: Option<crate::Value<String>> = None;
+                let mut decryption: Option<::Value<self::flow_source::Encryption>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut entitlement_arn: Option<::Value<String>> = None;
+                let mut flow_arn: Option<::Value<String>> = None;
+                let mut ingest_port: Option<::Value<u32>> = None;
+                let mut max_bitrate: Option<::Value<u32>> = None;
+                let mut max_latency: Option<::Value<u32>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut protocol: Option<::Value<String>> = None;
+                let mut stream_id: Option<::Value<String>> = None;
+                let mut vpc_interface_name: Option<::Value<String>> = None;
+                let mut whitelist_cidr: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -761,7 +761,7 @@ impl<'de> ::serde::Deserialize<'de> for FlowSourceProperties {
     }
 }
 
-impl crate::Resource for FlowSource {
+impl ::Resource for FlowSource {
     type Properties = FlowSourceProperties;
     const TYPE: &'static str = "AWS::MediaConnect::FlowSource";
     fn properties(&self) -> &FlowSourceProperties {
@@ -772,7 +772,7 @@ impl crate::Resource for FlowSource {
     }
 }
 
-impl crate::private::Sealed for FlowSource {}
+impl ::private::Sealed for FlowSource {}
 
 impl From<FlowSourceProperties> for FlowSource {
     fn from(properties: FlowSourceProperties) -> FlowSource {
@@ -793,27 +793,27 @@ pub struct FlowVpcInterfaceProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub flow_arn: crate::Value<String>,
+    pub flow_arn: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowvpcinterface.html#cfn-mediaconnect-flowvpcinterface-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowvpcinterface.html#cfn-mediaconnect-flowvpcinterface-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowvpcinterface.html#cfn-mediaconnect-flowvpcinterface-securitygroupids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub security_group_ids: crate::ValueList<String>,
+    pub security_group_ids: ::ValueList<String>,
     /// Property [`SubnetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowvpcinterface.html#cfn-mediaconnect-flowvpcinterface-subnetid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subnet_id: crate::Value<String>,
+    pub subnet_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for FlowVpcInterfaceProperties {
@@ -849,11 +849,11 @@ impl<'de> ::serde::Deserialize<'de> for FlowVpcInterfaceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut flow_arn: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                let mut subnet_id: Option<crate::Value<String>> = None;
+                let mut flow_arn: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut security_group_ids: Option<::ValueList<String>> = None;
+                let mut subnet_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -891,7 +891,7 @@ impl<'de> ::serde::Deserialize<'de> for FlowVpcInterfaceProperties {
     }
 }
 
-impl crate::Resource for FlowVpcInterface {
+impl ::Resource for FlowVpcInterface {
     type Properties = FlowVpcInterfaceProperties;
     const TYPE: &'static str = "AWS::MediaConnect::FlowVpcInterface";
     fn properties(&self) -> &FlowVpcInterfaceProperties {
@@ -902,7 +902,7 @@ impl crate::Resource for FlowVpcInterface {
     }
 }
 
-impl crate::private::Sealed for FlowVpcInterface {}
+impl ::private::Sealed for FlowVpcInterface {}
 
 impl From<FlowVpcInterfaceProperties> for FlowVpcInterface {
     fn from(properties: FlowVpcInterfaceProperties) -> FlowVpcInterface {
@@ -920,50 +920,50 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub algorithm: Option<crate::Value<String>>,
+        pub algorithm: Option<::Value<String>>,
         /// Property [`ConstantInitializationVector`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-constantinitializationvector).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub constant_initialization_vector: Option<crate::Value<String>>,
+        pub constant_initialization_vector: Option<::Value<String>>,
         /// Property [`DeviceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-deviceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub device_id: Option<crate::Value<String>>,
+        pub device_id: Option<::Value<String>>,
         /// Property [`KeyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-keytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_type: Option<crate::Value<String>>,
+        pub key_type: Option<::Value<String>>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: Option<crate::Value<String>>,
+        pub region: Option<::Value<String>>,
         /// Property [`ResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-resourceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_id: Option<crate::Value<String>>,
+        pub resource_id: Option<::Value<String>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: Option<crate::Value<String>>,
+        pub secret_arn: Option<::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<crate::Value<String>>,
+        pub url: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Encryption {
+    impl ::codec::SerializeValue for Encryption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref algorithm) = self.algorithm {
@@ -999,7 +999,7 @@ pub mod flow {
         }
     }
 
-    impl crate::codec::DeserializeValue for Encryption {
+    impl ::codec::DeserializeValue for Encryption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Encryption, D::Error> {
             struct Visitor;
 
@@ -1014,15 +1014,15 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut algorithm: Option<crate::Value<String>> = None;
-                    let mut constant_initialization_vector: Option<crate::Value<String>> = None;
-                    let mut device_id: Option<crate::Value<String>> = None;
-                    let mut key_type: Option<crate::Value<String>> = None;
-                    let mut region: Option<crate::Value<String>> = None;
-                    let mut resource_id: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut secret_arn: Option<crate::Value<String>> = None;
-                    let mut url: Option<crate::Value<String>> = None;
+                    let mut algorithm: Option<::Value<String>> = None;
+                    let mut constant_initialization_vector: Option<::Value<String>> = None;
+                    let mut device_id: Option<::Value<String>> = None;
+                    let mut key_type: Option<::Value<String>> = None;
+                    let mut region: Option<::Value<String>> = None;
+                    let mut resource_id: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut secret_arn: Option<::Value<String>> = None;
+                    let mut url: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1085,15 +1085,15 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub recovery_window: Option<crate::Value<u32>>,
+        pub recovery_window: Option<::Value<u32>>,
         /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-state).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub state: Option<crate::Value<String>>,
+        pub state: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for FailoverConfig {
+    impl ::codec::SerializeValue for FailoverConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref recovery_window) = self.recovery_window {
@@ -1110,7 +1110,7 @@ pub mod flow {
         }
     }
 
-    impl crate::codec::DeserializeValue for FailoverConfig {
+    impl ::codec::DeserializeValue for FailoverConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FailoverConfig, D::Error> {
@@ -1127,8 +1127,8 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut recovery_window: Option<crate::Value<u32>> = None;
-                    let mut state: Option<crate::Value<String>> = None;
+                    let mut recovery_window: Option<::Value<u32>> = None;
+                    let mut state: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1162,80 +1162,80 @@ pub mod flow {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub decryption: Option<crate::Value<Encryption>>,
+        pub decryption: Option<::Value<Encryption>>,
         /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-description).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<crate::Value<String>>,
+        pub description: Option<::Value<String>>,
         /// Property [`EntitlementArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-entitlementarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub entitlement_arn: Option<crate::Value<String>>,
+        pub entitlement_arn: Option<::Value<String>>,
         /// Property [`IngestIp`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ingestip).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ingest_ip: Option<crate::Value<String>>,
+        pub ingest_ip: Option<::Value<String>>,
         /// Property [`IngestPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ingestport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ingest_port: Option<crate::Value<u32>>,
+        pub ingest_port: Option<::Value<u32>>,
         /// Property [`MaxBitrate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-maxbitrate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_bitrate: Option<crate::Value<u32>>,
+        pub max_bitrate: Option<::Value<u32>>,
         /// Property [`MaxLatency`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-maxlatency).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_latency: Option<crate::Value<u32>>,
+        pub max_latency: Option<::Value<u32>>,
         /// Property [`MinLatency`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-minlatency).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_latency: Option<crate::Value<u32>>,
+        pub min_latency: Option<::Value<u32>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-name).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-protocol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub protocol: Option<crate::Value<String>>,
+        pub protocol: Option<::Value<String>>,
         /// Property [`SourceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_arn: Option<crate::Value<String>>,
+        pub source_arn: Option<::Value<String>>,
         /// Property [`SourceIngestPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourceingestport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_ingest_port: Option<crate::Value<String>>,
+        pub source_ingest_port: Option<::Value<String>>,
         /// Property [`StreamId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-streamid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_id: Option<crate::Value<String>>,
+        pub stream_id: Option<::Value<String>>,
         /// Property [`VpcInterfaceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-vpcinterfacename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_interface_name: Option<crate::Value<String>>,
+        pub vpc_interface_name: Option<::Value<String>>,
         /// Property [`WhitelistCidr`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-whitelistcidr).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub whitelist_cidr: Option<crate::Value<String>>,
+        pub whitelist_cidr: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Source {
+    impl ::codec::SerializeValue for Source {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref decryption) = self.decryption {
@@ -1303,7 +1303,7 @@ pub mod flow {
         }
     }
 
-    impl crate::codec::DeserializeValue for Source {
+    impl ::codec::DeserializeValue for Source {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Source, D::Error> {
             struct Visitor;
 
@@ -1318,21 +1318,21 @@ pub mod flow {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut decryption: Option<crate::Value<Encryption>> = None;
-                    let mut description: Option<crate::Value<String>> = None;
-                    let mut entitlement_arn: Option<crate::Value<String>> = None;
-                    let mut ingest_ip: Option<crate::Value<String>> = None;
-                    let mut ingest_port: Option<crate::Value<u32>> = None;
-                    let mut max_bitrate: Option<crate::Value<u32>> = None;
-                    let mut max_latency: Option<crate::Value<u32>> = None;
-                    let mut min_latency: Option<crate::Value<u32>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut protocol: Option<crate::Value<String>> = None;
-                    let mut source_arn: Option<crate::Value<String>> = None;
-                    let mut source_ingest_port: Option<crate::Value<String>> = None;
-                    let mut stream_id: Option<crate::Value<String>> = None;
-                    let mut vpc_interface_name: Option<crate::Value<String>> = None;
-                    let mut whitelist_cidr: Option<crate::Value<String>> = None;
+                    let mut decryption: Option<::Value<Encryption>> = None;
+                    let mut description: Option<::Value<String>> = None;
+                    let mut entitlement_arn: Option<::Value<String>> = None;
+                    let mut ingest_ip: Option<::Value<String>> = None;
+                    let mut ingest_port: Option<::Value<u32>> = None;
+                    let mut max_bitrate: Option<::Value<u32>> = None;
+                    let mut max_latency: Option<::Value<u32>> = None;
+                    let mut min_latency: Option<::Value<u32>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut protocol: Option<::Value<String>> = None;
+                    let mut source_arn: Option<::Value<String>> = None;
+                    let mut source_ingest_port: Option<::Value<String>> = None;
+                    let mut stream_id: Option<::Value<String>> = None;
+                    let mut vpc_interface_name: Option<::Value<String>> = None;
+                    let mut whitelist_cidr: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1422,50 +1422,50 @@ pub mod flow_entitlement {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub algorithm: crate::Value<String>,
+        pub algorithm: ::Value<String>,
         /// Property [`ConstantInitializationVector`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-constantinitializationvector).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub constant_initialization_vector: Option<crate::Value<String>>,
+        pub constant_initialization_vector: Option<::Value<String>>,
         /// Property [`DeviceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-deviceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub device_id: Option<crate::Value<String>>,
+        pub device_id: Option<::Value<String>>,
         /// Property [`KeyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-keytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_type: Option<crate::Value<String>>,
+        pub key_type: Option<::Value<String>>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: Option<crate::Value<String>>,
+        pub region: Option<::Value<String>>,
         /// Property [`ResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-resourceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_id: Option<crate::Value<String>>,
+        pub resource_id: Option<::Value<String>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: Option<crate::Value<String>>,
+        pub secret_arn: Option<::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<crate::Value<String>>,
+        pub url: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Encryption {
+    impl ::codec::SerializeValue for Encryption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Algorithm", &self.algorithm)?;
@@ -1499,7 +1499,7 @@ pub mod flow_entitlement {
         }
     }
 
-    impl crate::codec::DeserializeValue for Encryption {
+    impl ::codec::DeserializeValue for Encryption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Encryption, D::Error> {
             struct Visitor;
 
@@ -1514,15 +1514,15 @@ pub mod flow_entitlement {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut algorithm: Option<crate::Value<String>> = None;
-                    let mut constant_initialization_vector: Option<crate::Value<String>> = None;
-                    let mut device_id: Option<crate::Value<String>> = None;
-                    let mut key_type: Option<crate::Value<String>> = None;
-                    let mut region: Option<crate::Value<String>> = None;
-                    let mut resource_id: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut secret_arn: Option<crate::Value<String>> = None;
-                    let mut url: Option<crate::Value<String>> = None;
+                    let mut algorithm: Option<::Value<String>> = None;
+                    let mut constant_initialization_vector: Option<::Value<String>> = None;
+                    let mut device_id: Option<::Value<String>> = None;
+                    let mut key_type: Option<::Value<String>> = None;
+                    let mut region: Option<::Value<String>> = None;
+                    let mut resource_id: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut secret_arn: Option<::Value<String>> = None;
+                    let mut url: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1590,25 +1590,25 @@ pub mod flow_output {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub algorithm: Option<crate::Value<String>>,
+        pub algorithm: Option<::Value<String>>,
         /// Property [`KeyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-encryption.html#cfn-mediaconnect-flowoutput-encryption-keytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_type: Option<crate::Value<String>>,
+        pub key_type: Option<::Value<String>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-encryption.html#cfn-mediaconnect-flowoutput-encryption-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-encryption.html#cfn-mediaconnect-flowoutput-encryption-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: crate::Value<String>,
+        pub secret_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Encryption {
+    impl ::codec::SerializeValue for Encryption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref algorithm) = self.algorithm {
@@ -1623,7 +1623,7 @@ pub mod flow_output {
         }
     }
 
-    impl crate::codec::DeserializeValue for Encryption {
+    impl ::codec::DeserializeValue for Encryption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Encryption, D::Error> {
             struct Visitor;
 
@@ -1638,10 +1638,10 @@ pub mod flow_output {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut algorithm: Option<crate::Value<String>> = None;
-                    let mut key_type: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut secret_arn: Option<crate::Value<String>> = None;
+                    let mut algorithm: Option<::Value<String>> = None;
+                    let mut key_type: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut secret_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1684,10 +1684,10 @@ pub mod flow_output {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_interface_name: Option<crate::Value<String>>,
+        pub vpc_interface_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for VpcInterfaceAttachment {
+    impl ::codec::SerializeValue for VpcInterfaceAttachment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref vpc_interface_name) = self.vpc_interface_name {
@@ -1701,7 +1701,7 @@ pub mod flow_output {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcInterfaceAttachment {
+    impl ::codec::DeserializeValue for VpcInterfaceAttachment {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VpcInterfaceAttachment, D::Error> {
@@ -1718,7 +1718,7 @@ pub mod flow_output {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut vpc_interface_name: Option<crate::Value<String>> = None;
+                    let mut vpc_interface_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1752,50 +1752,50 @@ pub mod flow_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub algorithm: crate::Value<String>,
+        pub algorithm: ::Value<String>,
         /// Property [`ConstantInitializationVector`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-constantinitializationvector).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub constant_initialization_vector: Option<crate::Value<String>>,
+        pub constant_initialization_vector: Option<::Value<String>>,
         /// Property [`DeviceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-deviceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub device_id: Option<crate::Value<String>>,
+        pub device_id: Option<::Value<String>>,
         /// Property [`KeyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-keytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_type: Option<crate::Value<String>>,
+        pub key_type: Option<::Value<String>>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: Option<crate::Value<String>>,
+        pub region: Option<::Value<String>>,
         /// Property [`ResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-resourceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_id: Option<crate::Value<String>>,
+        pub resource_id: Option<::Value<String>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: Option<crate::Value<String>>,
+        pub secret_arn: Option<::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: Option<crate::Value<String>>,
+        pub url: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Encryption {
+    impl ::codec::SerializeValue for Encryption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Algorithm", &self.algorithm)?;
@@ -1829,7 +1829,7 @@ pub mod flow_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for Encryption {
+    impl ::codec::DeserializeValue for Encryption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Encryption, D::Error> {
             struct Visitor;
 
@@ -1844,15 +1844,15 @@ pub mod flow_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut algorithm: Option<crate::Value<String>> = None;
-                    let mut constant_initialization_vector: Option<crate::Value<String>> = None;
-                    let mut device_id: Option<crate::Value<String>> = None;
-                    let mut key_type: Option<crate::Value<String>> = None;
-                    let mut region: Option<crate::Value<String>> = None;
-                    let mut resource_id: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut secret_arn: Option<crate::Value<String>> = None;
-                    let mut url: Option<crate::Value<String>> = None;
+                    let mut algorithm: Option<::Value<String>> = None;
+                    let mut constant_initialization_vector: Option<::Value<String>> = None;
+                    let mut device_id: Option<::Value<String>> = None;
+                    let mut key_type: Option<::Value<String>> = None;
+                    let mut region: Option<::Value<String>> = None;
+                    let mut resource_id: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut secret_arn: Option<::Value<String>> = None;
+                    let mut url: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

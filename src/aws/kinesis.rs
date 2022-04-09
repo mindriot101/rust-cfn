@@ -13,32 +13,32 @@ pub struct StreamProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`RetentionPeriodHours`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub retention_period_hours: Option<crate::Value<u32>>,
+    pub retention_period_hours: Option<::Value<u32>>,
     /// Property [`ShardCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub shard_count: Option<crate::Value<u32>>,
+    pub shard_count: Option<::Value<u32>>,
     /// Property [`StreamEncryption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stream_encryption: Option<crate::Value<self::stream::StreamEncryption>>,
+    pub stream_encryption: Option<::Value<self::stream::StreamEncryption>>,
     /// Property [`StreamModeDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streammodedetails).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stream_mode_details: Option<crate::Value<self::stream::StreamModeDetails>>,
+    pub stream_mode_details: Option<::Value<self::stream::StreamModeDetails>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for StreamProperties {
@@ -93,13 +93,13 @@ impl<'de> ::serde::Deserialize<'de> for StreamProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<crate::Value<String>> = None;
-                let mut retention_period_hours: Option<crate::Value<u32>> = None;
-                let mut shard_count: Option<crate::Value<u32>> = None;
-                let mut stream_encryption: Option<crate::Value<self::stream::StreamEncryption>> = None;
-                let mut stream_mode_details: Option<crate::Value<self::stream::StreamModeDetails>> =
+                let mut name: Option<::Value<String>> = None;
+                let mut retention_period_hours: Option<::Value<u32>> = None;
+                let mut shard_count: Option<::Value<u32>> = None;
+                let mut stream_encryption: Option<::Value<self::stream::StreamEncryption>> = None;
+                let mut stream_mode_details: Option<::Value<self::stream::StreamModeDetails>> =
                     None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -140,7 +140,7 @@ impl<'de> ::serde::Deserialize<'de> for StreamProperties {
     }
 }
 
-impl crate::Resource for Stream {
+impl ::Resource for Stream {
     type Properties = StreamProperties;
     const TYPE: &'static str = "AWS::Kinesis::Stream";
     fn properties(&self) -> &StreamProperties {
@@ -151,7 +151,7 @@ impl crate::Resource for Stream {
     }
 }
 
-impl crate::private::Sealed for Stream {}
+impl ::private::Sealed for Stream {}
 
 impl From<StreamProperties> for Stream {
     fn from(properties: StreamProperties) -> Stream {
@@ -172,12 +172,12 @@ pub struct StreamConsumerProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub consumer_name: crate::Value<String>,
+    pub consumer_name: ::Value<String>,
     /// Property [`StreamARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html#cfn-kinesis-streamconsumer-streamarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub stream_arn: crate::Value<String>,
+    pub stream_arn: ::Value<String>,
 }
 
 impl ::serde::Serialize for StreamConsumerProperties {
@@ -206,8 +206,8 @@ impl<'de> ::serde::Deserialize<'de> for StreamConsumerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut consumer_name: Option<crate::Value<String>> = None;
-                let mut stream_arn: Option<crate::Value<String>> = None;
+                let mut consumer_name: Option<::Value<String>> = None;
+                let mut stream_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -233,7 +233,7 @@ impl<'de> ::serde::Deserialize<'de> for StreamConsumerProperties {
     }
 }
 
-impl crate::Resource for StreamConsumer {
+impl ::Resource for StreamConsumer {
     type Properties = StreamConsumerProperties;
     const TYPE: &'static str = "AWS::Kinesis::StreamConsumer";
     fn properties(&self) -> &StreamConsumerProperties {
@@ -244,7 +244,7 @@ impl crate::Resource for StreamConsumer {
     }
 }
 
-impl crate::private::Sealed for StreamConsumer {}
+impl ::private::Sealed for StreamConsumer {}
 
 impl From<StreamConsumerProperties> for StreamConsumer {
     fn from(properties: StreamConsumerProperties) -> StreamConsumer {
@@ -262,15 +262,15 @@ pub mod stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_type: crate::Value<String>,
+        pub encryption_type: ::Value<String>,
         /// Property [`KeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streamencryption.html#cfn-kinesis-stream-streamencryption-keyid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_id: crate::Value<String>,
+        pub key_id: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for StreamEncryption {
+    impl ::codec::SerializeValue for StreamEncryption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -283,7 +283,7 @@ pub mod stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for StreamEncryption {
+    impl ::codec::DeserializeValue for StreamEncryption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StreamEncryption, D::Error> {
@@ -300,8 +300,8 @@ pub mod stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut encryption_type: Option<crate::Value<String>> = None;
-                    let mut key_id: Option<crate::Value<String>> = None;
+                    let mut encryption_type: Option<::Value<String>> = None;
+                    let mut key_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -336,10 +336,10 @@ pub mod stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stream_mode: crate::Value<String>,
+        pub stream_mode: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for StreamModeDetails {
+    impl ::codec::SerializeValue for StreamModeDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "StreamMode", &self.stream_mode)?;
@@ -347,7 +347,7 @@ pub mod stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for StreamModeDetails {
+    impl ::codec::DeserializeValue for StreamModeDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StreamModeDetails, D::Error> {
@@ -364,7 +364,7 @@ pub mod stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut stream_mode: Option<crate::Value<String>> = None;
+                    let mut stream_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

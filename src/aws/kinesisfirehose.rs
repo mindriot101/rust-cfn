@@ -14,70 +14,70 @@ pub struct DeliveryStreamProperties {
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub amazonopensearchservice_destination_configuration:
-        Option<crate::Value<self::delivery_stream::AmazonopensearchserviceDestinationConfiguration>>,
+        Option<::Value<self::delivery_stream::AmazonopensearchserviceDestinationConfiguration>>,
     /// Property [`DeliveryStreamEncryptionConfigurationInput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub delivery_stream_encryption_configuration_input:
-        Option<crate::Value<self::delivery_stream::DeliveryStreamEncryptionConfigurationInput>>,
+        Option<::Value<self::delivery_stream::DeliveryStreamEncryptionConfigurationInput>>,
     /// Property [`DeliveryStreamName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub delivery_stream_name: Option<crate::Value<String>>,
+    pub delivery_stream_name: Option<::Value<String>>,
     /// Property [`DeliveryStreamType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub delivery_stream_type: Option<crate::Value<String>>,
+    pub delivery_stream_type: Option<::Value<String>>,
     /// Property [`ElasticsearchDestinationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub elasticsearch_destination_configuration:
-        Option<crate::Value<self::delivery_stream::ElasticsearchDestinationConfiguration>>,
+        Option<::Value<self::delivery_stream::ElasticsearchDestinationConfiguration>>,
     /// Property [`ExtendedS3DestinationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub extended_s3_destination_configuration:
-        Option<crate::Value<self::delivery_stream::ExtendedS3DestinationConfiguration>>,
+        Option<::Value<self::delivery_stream::ExtendedS3DestinationConfiguration>>,
     /// Property [`HttpEndpointDestinationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub http_endpoint_destination_configuration:
-        Option<crate::Value<self::delivery_stream::HttpEndpointDestinationConfiguration>>,
+        Option<::Value<self::delivery_stream::HttpEndpointDestinationConfiguration>>,
     /// Property [`KinesisStreamSourceConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub kinesis_stream_source_configuration:
-        Option<crate::Value<self::delivery_stream::KinesisStreamSourceConfiguration>>,
+        Option<::Value<self::delivery_stream::KinesisStreamSourceConfiguration>>,
     /// Property [`RedshiftDestinationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub redshift_destination_configuration:
-        Option<crate::Value<self::delivery_stream::RedshiftDestinationConfiguration>>,
+        Option<::Value<self::delivery_stream::RedshiftDestinationConfiguration>>,
     /// Property [`S3DestinationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub s3_destination_configuration:
-        Option<crate::Value<self::delivery_stream::S3DestinationConfiguration>>,
+        Option<::Value<self::delivery_stream::S3DestinationConfiguration>>,
     /// Property [`SplunkDestinationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub splunk_destination_configuration:
-        Option<crate::Value<self::delivery_stream::SplunkDestinationConfiguration>>,
+        Option<::Value<self::delivery_stream::SplunkDestinationConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for DeliveryStreamProperties {
@@ -199,35 +199,35 @@ impl<'de> ::serde::Deserialize<'de> for DeliveryStreamProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut amazonopensearchservice_destination_configuration: Option<
-                    crate::Value<self::delivery_stream::AmazonopensearchserviceDestinationConfiguration>,
+                    ::Value<self::delivery_stream::AmazonopensearchserviceDestinationConfiguration>,
                 > = None;
                 let mut delivery_stream_encryption_configuration_input: Option<
-                    crate::Value<self::delivery_stream::DeliveryStreamEncryptionConfigurationInput>,
+                    ::Value<self::delivery_stream::DeliveryStreamEncryptionConfigurationInput>,
                 > = None;
-                let mut delivery_stream_name: Option<crate::Value<String>> = None;
-                let mut delivery_stream_type: Option<crate::Value<String>> = None;
+                let mut delivery_stream_name: Option<::Value<String>> = None;
+                let mut delivery_stream_type: Option<::Value<String>> = None;
                 let mut elasticsearch_destination_configuration: Option<
-                    crate::Value<self::delivery_stream::ElasticsearchDestinationConfiguration>,
+                    ::Value<self::delivery_stream::ElasticsearchDestinationConfiguration>,
                 > = None;
                 let mut extended_s3_destination_configuration: Option<
-                    crate::Value<self::delivery_stream::ExtendedS3DestinationConfiguration>,
+                    ::Value<self::delivery_stream::ExtendedS3DestinationConfiguration>,
                 > = None;
                 let mut http_endpoint_destination_configuration: Option<
-                    crate::Value<self::delivery_stream::HttpEndpointDestinationConfiguration>,
+                    ::Value<self::delivery_stream::HttpEndpointDestinationConfiguration>,
                 > = None;
                 let mut kinesis_stream_source_configuration: Option<
-                    crate::Value<self::delivery_stream::KinesisStreamSourceConfiguration>,
+                    ::Value<self::delivery_stream::KinesisStreamSourceConfiguration>,
                 > = None;
                 let mut redshift_destination_configuration: Option<
-                    crate::Value<self::delivery_stream::RedshiftDestinationConfiguration>,
+                    ::Value<self::delivery_stream::RedshiftDestinationConfiguration>,
                 > = None;
                 let mut s3_destination_configuration: Option<
-                    crate::Value<self::delivery_stream::S3DestinationConfiguration>,
+                    ::Value<self::delivery_stream::S3DestinationConfiguration>,
                 > = None;
                 let mut splunk_destination_configuration: Option<
-                    crate::Value<self::delivery_stream::SplunkDestinationConfiguration>,
+                    ::Value<self::delivery_stream::SplunkDestinationConfiguration>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -305,7 +305,7 @@ impl<'de> ::serde::Deserialize<'de> for DeliveryStreamProperties {
     }
 }
 
-impl crate::Resource for DeliveryStream {
+impl ::Resource for DeliveryStream {
     type Properties = DeliveryStreamProperties;
     const TYPE: &'static str = "AWS::KinesisFirehose::DeliveryStream";
     fn properties(&self) -> &DeliveryStreamProperties {
@@ -316,7 +316,7 @@ impl crate::Resource for DeliveryStream {
     }
 }
 
-impl crate::private::Sealed for DeliveryStream {}
+impl ::private::Sealed for DeliveryStream {}
 
 impl From<DeliveryStreamProperties> for DeliveryStream {
     fn from(properties: DeliveryStreamProperties) -> DeliveryStream {
@@ -334,15 +334,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_in_seconds: Option<crate::Value<u32>>,
+        pub interval_in_seconds: Option<::Value<u32>>,
         /// Property [`SizeInMBs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints-sizeinmbs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size_in_m_bs: Option<crate::Value<u32>>,
+        pub size_in_m_bs: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for AmazonopensearchserviceBufferingHints {
+    impl ::codec::SerializeValue for AmazonopensearchserviceBufferingHints {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref interval_in_seconds) = self.interval_in_seconds {
@@ -359,7 +359,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for AmazonopensearchserviceBufferingHints {
+    impl ::codec::DeserializeValue for AmazonopensearchserviceBufferingHints {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AmazonopensearchserviceBufferingHints, D::Error> {
@@ -376,8 +376,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut interval_in_seconds: Option<crate::Value<u32>> = None;
-                    let mut size_in_m_bs: Option<crate::Value<u32>> = None;
+                    let mut interval_in_seconds: Option<::Value<u32>> = None;
+                    let mut size_in_m_bs: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -411,70 +411,70 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buffering_hints: Option<crate::Value<AmazonopensearchserviceBufferingHints>>,
+        pub buffering_hints: Option<::Value<AmazonopensearchserviceBufferingHints>>,
         /// Property [`CloudWatchLoggingOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-cloudwatchloggingoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>>,
+        pub cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>>,
         /// Property [`ClusterEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-clusterendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_endpoint: Option<crate::Value<String>>,
+        pub cluster_endpoint: Option<::Value<String>>,
         /// Property [`DomainARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-domainarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub domain_arn: Option<crate::Value<String>>,
+        pub domain_arn: Option<::Value<String>>,
         /// Property [`IndexName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-indexname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_name: crate::Value<String>,
+        pub index_name: ::Value<String>,
         /// Property [`IndexRotationPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-indexrotationperiod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_rotation_period: Option<crate::Value<String>>,
+        pub index_rotation_period: Option<::Value<String>>,
         /// Property [`ProcessingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-processingconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub processing_configuration: Option<crate::Value<ProcessingConfiguration>>,
+        pub processing_configuration: Option<::Value<ProcessingConfiguration>>,
         /// Property [`RetryOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-retryoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retry_options: Option<crate::Value<AmazonopensearchserviceRetryOptions>>,
+        pub retry_options: Option<::Value<AmazonopensearchserviceRetryOptions>>,
         /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`S3BackupMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-s3backupmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_backup_mode: Option<crate::Value<String>>,
+        pub s3_backup_mode: Option<::Value<String>>,
         /// Property [`S3Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-s3configuration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_configuration: crate::Value<S3DestinationConfiguration>,
+        pub s3_configuration: ::Value<S3DestinationConfiguration>,
         /// Property [`TypeName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-typename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub type_name: Option<crate::Value<String>>,
+        pub type_name: Option<::Value<String>>,
         /// Property [`VpcConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-vpcconfiguration).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub vpc_configuration: Option<crate::Value<VpcConfiguration>>,
+        pub vpc_configuration: Option<::Value<VpcConfiguration>>,
     }
 
-    impl crate::codec::SerializeValue for AmazonopensearchserviceDestinationConfiguration {
+    impl ::codec::SerializeValue for AmazonopensearchserviceDestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref buffering_hints) = self.buffering_hints {
@@ -550,7 +550,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for AmazonopensearchserviceDestinationConfiguration {
+    impl ::codec::DeserializeValue for AmazonopensearchserviceDestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AmazonopensearchserviceDestinationConfiguration, D::Error> {
@@ -571,23 +571,23 @@ pub mod delivery_stream {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut buffering_hints: Option<
-                        crate::Value<AmazonopensearchserviceBufferingHints>,
+                        ::Value<AmazonopensearchserviceBufferingHints>,
                     > = None;
-                    let mut cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>> =
+                    let mut cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>> =
                         None;
-                    let mut cluster_endpoint: Option<crate::Value<String>> = None;
-                    let mut domain_arn: Option<crate::Value<String>> = None;
-                    let mut index_name: Option<crate::Value<String>> = None;
-                    let mut index_rotation_period: Option<crate::Value<String>> = None;
-                    let mut processing_configuration: Option<crate::Value<ProcessingConfiguration>> =
+                    let mut cluster_endpoint: Option<::Value<String>> = None;
+                    let mut domain_arn: Option<::Value<String>> = None;
+                    let mut index_name: Option<::Value<String>> = None;
+                    let mut index_rotation_period: Option<::Value<String>> = None;
+                    let mut processing_configuration: Option<::Value<ProcessingConfiguration>> =
                         None;
-                    let mut retry_options: Option<crate::Value<AmazonopensearchserviceRetryOptions>> =
+                    let mut retry_options: Option<::Value<AmazonopensearchserviceRetryOptions>> =
                         None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut s3_backup_mode: Option<crate::Value<String>> = None;
-                    let mut s3_configuration: Option<crate::Value<S3DestinationConfiguration>> = None;
-                    let mut type_name: Option<crate::Value<String>> = None;
-                    let mut vpc_configuration: Option<crate::Value<VpcConfiguration>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut s3_backup_mode: Option<::Value<String>> = None;
+                    let mut s3_configuration: Option<::Value<S3DestinationConfiguration>> = None;
+                    let mut type_name: Option<::Value<String>> = None;
+                    let mut vpc_configuration: Option<::Value<VpcConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -670,10 +670,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration_in_seconds: Option<crate::Value<u32>>,
+        pub duration_in_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for AmazonopensearchserviceRetryOptions {
+    impl ::codec::SerializeValue for AmazonopensearchserviceRetryOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration_in_seconds) = self.duration_in_seconds {
@@ -687,7 +687,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for AmazonopensearchserviceRetryOptions {
+    impl ::codec::DeserializeValue for AmazonopensearchserviceRetryOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AmazonopensearchserviceRetryOptions, D::Error> {
@@ -704,7 +704,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut duration_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -734,15 +734,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_in_seconds: Option<crate::Value<u32>>,
+        pub interval_in_seconds: Option<::Value<u32>>,
         /// Property [`SizeInMBs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-sizeinmbs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size_in_m_bs: Option<crate::Value<u32>>,
+        pub size_in_m_bs: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for BufferingHints {
+    impl ::codec::SerializeValue for BufferingHints {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref interval_in_seconds) = self.interval_in_seconds {
@@ -759,7 +759,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for BufferingHints {
+    impl ::codec::DeserializeValue for BufferingHints {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BufferingHints, D::Error> {
@@ -776,8 +776,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut interval_in_seconds: Option<crate::Value<u32>> = None;
-                    let mut size_in_m_bs: Option<crate::Value<u32>> = None;
+                    let mut interval_in_seconds: Option<::Value<u32>> = None;
+                    let mut size_in_m_bs: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -811,20 +811,20 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<crate::Value<bool>>,
+        pub enabled: Option<::Value<bool>>,
         /// Property [`LogGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-loggroupname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_group_name: Option<crate::Value<String>>,
+        pub log_group_name: Option<::Value<String>>,
         /// Property [`LogStreamName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-logstreamname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_stream_name: Option<crate::Value<String>>,
+        pub log_stream_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for CloudWatchLoggingOptions {
+    impl ::codec::SerializeValue for CloudWatchLoggingOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enabled) = self.enabled {
@@ -848,7 +848,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for CloudWatchLoggingOptions {
+    impl ::codec::DeserializeValue for CloudWatchLoggingOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CloudWatchLoggingOptions, D::Error> {
@@ -865,9 +865,9 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<crate::Value<bool>> = None;
-                    let mut log_group_name: Option<crate::Value<String>> = None;
-                    let mut log_stream_name: Option<crate::Value<String>> = None;
+                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut log_group_name: Option<::Value<String>> = None;
+                    let mut log_stream_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -905,20 +905,20 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copy_options: Option<crate::Value<String>>,
+        pub copy_options: Option<::Value<String>>,
         /// Property [`DataTableColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablecolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_table_columns: Option<crate::Value<String>>,
+        pub data_table_columns: Option<::Value<String>>,
         /// Property [`DataTableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_table_name: crate::Value<String>,
+        pub data_table_name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CopyCommand {
+    impl ::codec::SerializeValue for CopyCommand {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref copy_options) = self.copy_options {
@@ -940,7 +940,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for CopyCommand {
+    impl ::codec::DeserializeValue for CopyCommand {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CopyCommand, D::Error> {
             struct Visitor;
 
@@ -955,9 +955,9 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut copy_options: Option<crate::Value<String>> = None;
-                    let mut data_table_columns: Option<crate::Value<String>> = None;
-                    let mut data_table_name: Option<crate::Value<String>> = None;
+                    let mut copy_options: Option<::Value<String>> = None;
+                    let mut data_table_columns: Option<::Value<String>> = None;
+                    let mut data_table_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -996,25 +996,25 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<crate::Value<bool>>,
+        pub enabled: Option<::Value<bool>>,
         /// Property [`InputFormatConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-inputformatconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_format_configuration: Option<crate::Value<InputFormatConfiguration>>,
+        pub input_format_configuration: Option<::Value<InputFormatConfiguration>>,
         /// Property [`OutputFormatConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-outputformatconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub output_format_configuration: Option<crate::Value<OutputFormatConfiguration>>,
+        pub output_format_configuration: Option<::Value<OutputFormatConfiguration>>,
         /// Property [`SchemaConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-schemaconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schema_configuration: Option<crate::Value<SchemaConfiguration>>,
+        pub schema_configuration: Option<::Value<SchemaConfiguration>>,
     }
 
-    impl crate::codec::SerializeValue for DataFormatConversionConfiguration {
+    impl ::codec::SerializeValue for DataFormatConversionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enabled) = self.enabled {
@@ -1045,7 +1045,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataFormatConversionConfiguration {
+    impl ::codec::DeserializeValue for DataFormatConversionConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataFormatConversionConfiguration, D::Error> {
@@ -1062,13 +1062,13 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<crate::Value<bool>> = None;
-                    let mut input_format_configuration: Option<crate::Value<InputFormatConfiguration>> =
+                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut input_format_configuration: Option<::Value<InputFormatConfiguration>> =
                         None;
                     let mut output_format_configuration: Option<
-                        crate::Value<OutputFormatConfiguration>,
+                        ::Value<OutputFormatConfiguration>,
                     > = None;
-                    let mut schema_configuration: Option<crate::Value<SchemaConfiguration>> = None;
+                    let mut schema_configuration: Option<::Value<SchemaConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1113,15 +1113,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_arn: Option<crate::Value<String>>,
+        pub key_arn: Option<::Value<String>>,
         /// Property [`KeyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput.html#cfn-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput-keytype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key_type: crate::Value<String>,
+        pub key_type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for DeliveryStreamEncryptionConfigurationInput {
+    impl ::codec::SerializeValue for DeliveryStreamEncryptionConfigurationInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key_arn) = self.key_arn {
@@ -1132,7 +1132,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for DeliveryStreamEncryptionConfigurationInput {
+    impl ::codec::DeserializeValue for DeliveryStreamEncryptionConfigurationInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DeliveryStreamEncryptionConfigurationInput, D::Error> {
@@ -1152,8 +1152,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key_arn: Option<crate::Value<String>> = None;
-                    let mut key_type: Option<crate::Value<String>> = None;
+                    let mut key_arn: Option<::Value<String>> = None;
+                    let mut key_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1187,15 +1187,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hive_json_ser_de: Option<crate::Value<HiveJsonSerDe>>,
+        pub hive_json_ser_de: Option<::Value<HiveJsonSerDe>>,
         /// Property [`OpenXJsonSerDe`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deserializer.html#cfn-kinesisfirehose-deliverystream-deserializer-openxjsonserde).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub open_x_json_ser_de: Option<crate::Value<OpenXJsonSerDe>>,
+        pub open_x_json_ser_de: Option<::Value<OpenXJsonSerDe>>,
     }
 
-    impl crate::codec::SerializeValue for Deserializer {
+    impl ::codec::SerializeValue for Deserializer {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref hive_json_ser_de) = self.hive_json_ser_de {
@@ -1216,7 +1216,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for Deserializer {
+    impl ::codec::DeserializeValue for Deserializer {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Deserializer, D::Error> {
             struct Visitor;
 
@@ -1231,8 +1231,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut hive_json_ser_de: Option<crate::Value<HiveJsonSerDe>> = None;
-                    let mut open_x_json_ser_de: Option<crate::Value<OpenXJsonSerDe>> = None;
+                    let mut hive_json_ser_de: Option<::Value<HiveJsonSerDe>> = None;
+                    let mut open_x_json_ser_de: Option<::Value<OpenXJsonSerDe>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1266,15 +1266,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<crate::Value<bool>>,
+        pub enabled: Option<::Value<bool>>,
         /// Property [`RetryOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html#cfn-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration-retryoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retry_options: Option<crate::Value<RetryOptions>>,
+        pub retry_options: Option<::Value<RetryOptions>>,
     }
 
-    impl crate::codec::SerializeValue for DynamicPartitioningConfiguration {
+    impl ::codec::SerializeValue for DynamicPartitioningConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enabled) = self.enabled {
@@ -1291,7 +1291,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for DynamicPartitioningConfiguration {
+    impl ::codec::DeserializeValue for DynamicPartitioningConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DynamicPartitioningConfiguration, D::Error> {
@@ -1308,8 +1308,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<crate::Value<bool>> = None;
-                    let mut retry_options: Option<crate::Value<RetryOptions>> = None;
+                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut retry_options: Option<::Value<RetryOptions>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1343,15 +1343,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub interval_in_seconds: Option<crate::Value<u32>>,
+        pub interval_in_seconds: Option<::Value<u32>>,
         /// Property [`SizeInMBs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html#cfn-kinesisfirehose-deliverystream-elasticsearchbufferinghints-sizeinmbs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub size_in_m_bs: Option<crate::Value<u32>>,
+        pub size_in_m_bs: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for ElasticsearchBufferingHints {
+    impl ::codec::SerializeValue for ElasticsearchBufferingHints {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref interval_in_seconds) = self.interval_in_seconds {
@@ -1368,7 +1368,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for ElasticsearchBufferingHints {
+    impl ::codec::DeserializeValue for ElasticsearchBufferingHints {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ElasticsearchBufferingHints, D::Error> {
@@ -1385,8 +1385,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut interval_in_seconds: Option<crate::Value<u32>> = None;
-                    let mut size_in_m_bs: Option<crate::Value<u32>> = None;
+                    let mut interval_in_seconds: Option<::Value<u32>> = None;
+                    let mut size_in_m_bs: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1420,70 +1420,70 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buffering_hints: Option<crate::Value<ElasticsearchBufferingHints>>,
+        pub buffering_hints: Option<::Value<ElasticsearchBufferingHints>>,
         /// Property [`CloudWatchLoggingOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-cloudwatchloggingoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>>,
+        pub cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>>,
         /// Property [`ClusterEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-clusterendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_endpoint: Option<crate::Value<String>>,
+        pub cluster_endpoint: Option<::Value<String>>,
         /// Property [`DomainARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-domainarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub domain_arn: Option<crate::Value<String>>,
+        pub domain_arn: Option<::Value<String>>,
         /// Property [`IndexName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_name: crate::Value<String>,
+        pub index_name: ::Value<String>,
         /// Property [`IndexRotationPeriod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexrotationperiod).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub index_rotation_period: Option<crate::Value<String>>,
+        pub index_rotation_period: Option<::Value<String>>,
         /// Property [`ProcessingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-processingconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub processing_configuration: Option<crate::Value<ProcessingConfiguration>>,
+        pub processing_configuration: Option<::Value<ProcessingConfiguration>>,
         /// Property [`RetryOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-retryoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retry_options: Option<crate::Value<ElasticsearchRetryOptions>>,
+        pub retry_options: Option<::Value<ElasticsearchRetryOptions>>,
         /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`S3BackupMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3backupmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_backup_mode: Option<crate::Value<String>>,
+        pub s3_backup_mode: Option<::Value<String>>,
         /// Property [`S3Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3configuration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_configuration: crate::Value<S3DestinationConfiguration>,
+        pub s3_configuration: ::Value<S3DestinationConfiguration>,
         /// Property [`TypeName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-typename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub type_name: Option<crate::Value<String>>,
+        pub type_name: Option<::Value<String>>,
         /// Property [`VpcConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-vpcconfiguration).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub vpc_configuration: Option<crate::Value<VpcConfiguration>>,
+        pub vpc_configuration: Option<::Value<VpcConfiguration>>,
     }
 
-    impl crate::codec::SerializeValue for ElasticsearchDestinationConfiguration {
+    impl ::codec::SerializeValue for ElasticsearchDestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref buffering_hints) = self.buffering_hints {
@@ -1559,7 +1559,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for ElasticsearchDestinationConfiguration {
+    impl ::codec::DeserializeValue for ElasticsearchDestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ElasticsearchDestinationConfiguration, D::Error> {
@@ -1576,21 +1576,21 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut buffering_hints: Option<crate::Value<ElasticsearchBufferingHints>> = None;
-                    let mut cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>> =
+                    let mut buffering_hints: Option<::Value<ElasticsearchBufferingHints>> = None;
+                    let mut cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>> =
                         None;
-                    let mut cluster_endpoint: Option<crate::Value<String>> = None;
-                    let mut domain_arn: Option<crate::Value<String>> = None;
-                    let mut index_name: Option<crate::Value<String>> = None;
-                    let mut index_rotation_period: Option<crate::Value<String>> = None;
-                    let mut processing_configuration: Option<crate::Value<ProcessingConfiguration>> =
+                    let mut cluster_endpoint: Option<::Value<String>> = None;
+                    let mut domain_arn: Option<::Value<String>> = None;
+                    let mut index_name: Option<::Value<String>> = None;
+                    let mut index_rotation_period: Option<::Value<String>> = None;
+                    let mut processing_configuration: Option<::Value<ProcessingConfiguration>> =
                         None;
-                    let mut retry_options: Option<crate::Value<ElasticsearchRetryOptions>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut s3_backup_mode: Option<crate::Value<String>> = None;
-                    let mut s3_configuration: Option<crate::Value<S3DestinationConfiguration>> = None;
-                    let mut type_name: Option<crate::Value<String>> = None;
-                    let mut vpc_configuration: Option<crate::Value<VpcConfiguration>> = None;
+                    let mut retry_options: Option<::Value<ElasticsearchRetryOptions>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut s3_backup_mode: Option<::Value<String>> = None;
+                    let mut s3_configuration: Option<::Value<S3DestinationConfiguration>> = None;
+                    let mut type_name: Option<::Value<String>> = None;
+                    let mut vpc_configuration: Option<::Value<VpcConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1673,10 +1673,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration_in_seconds: Option<crate::Value<u32>>,
+        pub duration_in_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for ElasticsearchRetryOptions {
+    impl ::codec::SerializeValue for ElasticsearchRetryOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration_in_seconds) = self.duration_in_seconds {
@@ -1690,7 +1690,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for ElasticsearchRetryOptions {
+    impl ::codec::DeserializeValue for ElasticsearchRetryOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ElasticsearchRetryOptions, D::Error> {
@@ -1707,7 +1707,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut duration_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1737,15 +1737,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_encryption_config: Option<crate::Value<KMSEncryptionConfig>>,
+        pub kms_encryption_config: Option<::Value<KMSEncryptionConfig>>,
         /// Property [`NoEncryptionConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-noencryptionconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub no_encryption_config: Option<crate::Value<String>>,
+        pub no_encryption_config: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EncryptionConfiguration {
+    impl ::codec::SerializeValue for EncryptionConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_encryption_config) = self.kms_encryption_config {
@@ -1766,7 +1766,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for EncryptionConfiguration {
+    impl ::codec::DeserializeValue for EncryptionConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EncryptionConfiguration, D::Error> {
@@ -1783,8 +1783,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_encryption_config: Option<crate::Value<KMSEncryptionConfig>> = None;
-                    let mut no_encryption_config: Option<crate::Value<String>> = None;
+                    let mut kms_encryption_config: Option<::Value<KMSEncryptionConfig>> = None;
+                    let mut no_encryption_config: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1820,71 +1820,71 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_arn: crate::Value<String>,
+        pub bucket_arn: ::Value<String>,
         /// Property [`BufferingHints`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bufferinghints).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buffering_hints: Option<crate::Value<BufferingHints>>,
+        pub buffering_hints: Option<::Value<BufferingHints>>,
         /// Property [`CloudWatchLoggingOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-cloudwatchloggingoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>>,
+        pub cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>>,
         /// Property [`CompressionFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-compressionformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compression_format: Option<crate::Value<String>>,
+        pub compression_format: Option<::Value<String>>,
         /// Property [`DataFormatConversionConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dataformatconversionconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
         pub data_format_conversion_configuration:
-            Option<crate::Value<DataFormatConversionConfiguration>>,
+            Option<::Value<DataFormatConversionConfiguration>>,
         /// Property [`DynamicPartitioningConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dynamicpartitioningconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dynamic_partitioning_configuration: Option<crate::Value<DynamicPartitioningConfiguration>>,
+        pub dynamic_partitioning_configuration: Option<::Value<DynamicPartitioningConfiguration>>,
         /// Property [`EncryptionConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-encryptionconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_configuration: Option<crate::Value<EncryptionConfiguration>>,
+        pub encryption_configuration: Option<::Value<EncryptionConfiguration>>,
         /// Property [`ErrorOutputPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-erroroutputprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_output_prefix: Option<crate::Value<String>>,
+        pub error_output_prefix: Option<::Value<String>>,
         /// Property [`Prefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-prefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prefix: Option<crate::Value<String>>,
+        pub prefix: Option<::Value<String>>,
         /// Property [`ProcessingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-processingconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub processing_configuration: Option<crate::Value<ProcessingConfiguration>>,
+        pub processing_configuration: Option<::Value<ProcessingConfiguration>>,
         /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`S3BackupConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_backup_configuration: Option<crate::Value<S3DestinationConfiguration>>,
+        pub s3_backup_configuration: Option<::Value<S3DestinationConfiguration>>,
         /// Property [`S3BackupMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_backup_mode: Option<crate::Value<String>>,
+        pub s3_backup_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ExtendedS3DestinationConfiguration {
+    impl ::codec::SerializeValue for ExtendedS3DestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketARN", &self.bucket_arn)?;
@@ -1970,7 +1970,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for ExtendedS3DestinationConfiguration {
+    impl ::codec::DeserializeValue for ExtendedS3DestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExtendedS3DestinationConfiguration, D::Error> {
@@ -1987,27 +1987,27 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_arn: Option<crate::Value<String>> = None;
-                    let mut buffering_hints: Option<crate::Value<BufferingHints>> = None;
-                    let mut cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>> =
+                    let mut bucket_arn: Option<::Value<String>> = None;
+                    let mut buffering_hints: Option<::Value<BufferingHints>> = None;
+                    let mut cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>> =
                         None;
-                    let mut compression_format: Option<crate::Value<String>> = None;
+                    let mut compression_format: Option<::Value<String>> = None;
                     let mut data_format_conversion_configuration: Option<
-                        crate::Value<DataFormatConversionConfiguration>,
+                        ::Value<DataFormatConversionConfiguration>,
                     > = None;
                     let mut dynamic_partitioning_configuration: Option<
-                        crate::Value<DynamicPartitioningConfiguration>,
+                        ::Value<DynamicPartitioningConfiguration>,
                     > = None;
-                    let mut encryption_configuration: Option<crate::Value<EncryptionConfiguration>> =
+                    let mut encryption_configuration: Option<::Value<EncryptionConfiguration>> =
                         None;
-                    let mut error_output_prefix: Option<crate::Value<String>> = None;
-                    let mut prefix: Option<crate::Value<String>> = None;
-                    let mut processing_configuration: Option<crate::Value<ProcessingConfiguration>> =
+                    let mut error_output_prefix: Option<::Value<String>> = None;
+                    let mut prefix: Option<::Value<String>> = None;
+                    let mut processing_configuration: Option<::Value<ProcessingConfiguration>> =
                         None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut s3_backup_configuration: Option<crate::Value<S3DestinationConfiguration>> =
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut s3_backup_configuration: Option<::Value<S3DestinationConfiguration>> =
                         None;
-                    let mut s3_backup_mode: Option<crate::Value<String>> = None;
+                    let mut s3_backup_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2092,10 +2092,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timestamp_formats: Option<crate::ValueList<String>>,
+        pub timestamp_formats: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for HiveJsonSerDe {
+    impl ::codec::SerializeValue for HiveJsonSerDe {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref timestamp_formats) = self.timestamp_formats {
@@ -2109,7 +2109,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for HiveJsonSerDe {
+    impl ::codec::DeserializeValue for HiveJsonSerDe {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HiveJsonSerDe, D::Error> {
@@ -2126,7 +2126,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut timestamp_formats: Option<crate::ValueList<String>> = None;
+                    let mut timestamp_formats: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2156,15 +2156,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_name: crate::Value<String>,
+        pub attribute_name: ::Value<String>,
         /// Property [`AttributeValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointcommonattribute.html#cfn-kinesisfirehose-deliverystream-httpendpointcommonattribute-attributevalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_value: crate::Value<String>,
+        pub attribute_value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for HttpEndpointCommonAttribute {
+    impl ::codec::SerializeValue for HttpEndpointCommonAttribute {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2181,7 +2181,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for HttpEndpointCommonAttribute {
+    impl ::codec::DeserializeValue for HttpEndpointCommonAttribute {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HttpEndpointCommonAttribute, D::Error> {
@@ -2198,8 +2198,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attribute_name: Option<crate::Value<String>> = None;
-                    let mut attribute_value: Option<crate::Value<String>> = None;
+                    let mut attribute_name: Option<::Value<String>> = None;
+                    let mut attribute_value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2235,20 +2235,20 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_key: Option<crate::Value<String>>,
+        pub access_key: Option<::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointconfiguration-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointconfiguration-url).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub url: crate::Value<String>,
+        pub url: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for HttpEndpointConfiguration {
+    impl ::codec::SerializeValue for HttpEndpointConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_key) = self.access_key {
@@ -2262,7 +2262,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for HttpEndpointConfiguration {
+    impl ::codec::DeserializeValue for HttpEndpointConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HttpEndpointConfiguration, D::Error> {
@@ -2279,9 +2279,9 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_key: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut url: Option<crate::Value<String>> = None;
+                    let mut access_key: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut url: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2319,50 +2319,50 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buffering_hints: Option<crate::Value<BufferingHints>>,
+        pub buffering_hints: Option<::Value<BufferingHints>>,
         /// Property [`CloudWatchLoggingOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-cloudwatchloggingoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>>,
+        pub cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>>,
         /// Property [`EndpointConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-endpointconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub endpoint_configuration: crate::Value<HttpEndpointConfiguration>,
+        pub endpoint_configuration: ::Value<HttpEndpointConfiguration>,
         /// Property [`ProcessingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-processingconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub processing_configuration: Option<crate::Value<ProcessingConfiguration>>,
+        pub processing_configuration: Option<::Value<ProcessingConfiguration>>,
         /// Property [`RequestConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-requestconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub request_configuration: Option<crate::Value<HttpEndpointRequestConfiguration>>,
+        pub request_configuration: Option<::Value<HttpEndpointRequestConfiguration>>,
         /// Property [`RetryOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-retryoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retry_options: Option<crate::Value<RetryOptions>>,
+        pub retry_options: Option<::Value<RetryOptions>>,
         /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: Option<crate::Value<String>>,
+        pub role_arn: Option<::Value<String>>,
         /// Property [`S3BackupMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-s3backupmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_backup_mode: Option<crate::Value<String>>,
+        pub s3_backup_mode: Option<::Value<String>>,
         /// Property [`S3Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-s3configuration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_configuration: crate::Value<S3DestinationConfiguration>,
+        pub s3_configuration: ::Value<S3DestinationConfiguration>,
     }
 
-    impl crate::codec::SerializeValue for HttpEndpointDestinationConfiguration {
+    impl ::codec::SerializeValue for HttpEndpointDestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref buffering_hints) = self.buffering_hints {
@@ -2424,7 +2424,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for HttpEndpointDestinationConfiguration {
+    impl ::codec::DeserializeValue for HttpEndpointDestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HttpEndpointDestinationConfiguration, D::Error> {
@@ -2441,20 +2441,20 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut buffering_hints: Option<crate::Value<BufferingHints>> = None;
-                    let mut cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>> =
+                    let mut buffering_hints: Option<::Value<BufferingHints>> = None;
+                    let mut cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>> =
                         None;
-                    let mut endpoint_configuration: Option<crate::Value<HttpEndpointConfiguration>> =
+                    let mut endpoint_configuration: Option<::Value<HttpEndpointConfiguration>> =
                         None;
-                    let mut processing_configuration: Option<crate::Value<ProcessingConfiguration>> =
+                    let mut processing_configuration: Option<::Value<ProcessingConfiguration>> =
                         None;
                     let mut request_configuration: Option<
-                        crate::Value<HttpEndpointRequestConfiguration>,
+                        ::Value<HttpEndpointRequestConfiguration>,
                     > = None;
-                    let mut retry_options: Option<crate::Value<RetryOptions>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut s3_backup_mode: Option<crate::Value<String>> = None;
-                    let mut s3_configuration: Option<crate::Value<S3DestinationConfiguration>> = None;
+                    let mut retry_options: Option<::Value<RetryOptions>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut s3_backup_mode: Option<::Value<String>> = None;
+                    let mut s3_configuration: Option<::Value<S3DestinationConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2522,15 +2522,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub common_attributes: Option<crate::ValueList<HttpEndpointCommonAttribute>>,
+        pub common_attributes: Option<::ValueList<HttpEndpointCommonAttribute>>,
         /// Property [`ContentEncoding`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointrequestconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointrequestconfiguration-contentencoding).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub content_encoding: Option<crate::Value<String>>,
+        pub content_encoding: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for HttpEndpointRequestConfiguration {
+    impl ::codec::SerializeValue for HttpEndpointRequestConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref common_attributes) = self.common_attributes {
@@ -2551,7 +2551,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for HttpEndpointRequestConfiguration {
+    impl ::codec::DeserializeValue for HttpEndpointRequestConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HttpEndpointRequestConfiguration, D::Error> {
@@ -2568,9 +2568,9 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut common_attributes: Option<crate::ValueList<HttpEndpointCommonAttribute>> =
+                    let mut common_attributes: Option<::ValueList<HttpEndpointCommonAttribute>> =
                         None;
-                    let mut content_encoding: Option<crate::Value<String>> = None;
+                    let mut content_encoding: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2604,10 +2604,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub deserializer: Option<crate::Value<Deserializer>>,
+        pub deserializer: Option<::Value<Deserializer>>,
     }
 
-    impl crate::codec::SerializeValue for InputFormatConfiguration {
+    impl ::codec::SerializeValue for InputFormatConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref deserializer) = self.deserializer {
@@ -2621,7 +2621,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputFormatConfiguration {
+    impl ::codec::DeserializeValue for InputFormatConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InputFormatConfiguration, D::Error> {
@@ -2638,7 +2638,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut deserializer: Option<crate::Value<Deserializer>> = None;
+                    let mut deserializer: Option<::Value<Deserializer>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2668,10 +2668,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub awskms_key_arn: crate::Value<String>,
+        pub awskms_key_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for KMSEncryptionConfig {
+    impl ::codec::SerializeValue for KMSEncryptionConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2683,7 +2683,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for KMSEncryptionConfig {
+    impl ::codec::DeserializeValue for KMSEncryptionConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KMSEncryptionConfig, D::Error> {
@@ -2700,7 +2700,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut awskms_key_arn: Option<crate::Value<String>> = None;
+                    let mut awskms_key_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2731,15 +2731,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kinesis_stream_arn: crate::Value<String>,
+        pub kinesis_stream_arn: ::Value<String>,
         /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration-rolearn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for KinesisStreamSourceConfiguration {
+    impl ::codec::SerializeValue for KinesisStreamSourceConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2752,7 +2752,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for KinesisStreamSourceConfiguration {
+    impl ::codec::DeserializeValue for KinesisStreamSourceConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KinesisStreamSourceConfiguration, D::Error> {
@@ -2769,8 +2769,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kinesis_stream_arn: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
+                    let mut kinesis_stream_arn: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2805,20 +2805,20 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub case_insensitive: Option<crate::Value<bool>>,
+        pub case_insensitive: Option<::Value<bool>>,
         /// Property [`ColumnToJsonKeyMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-openxjsonserde.html#cfn-kinesisfirehose-deliverystream-openxjsonserde-columntojsonkeymappings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_to_json_key_mappings: Option<crate::ValueMap<String>>,
+        pub column_to_json_key_mappings: Option<::ValueMap<String>>,
         /// Property [`ConvertDotsInJsonKeysToUnderscores`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-openxjsonserde.html#cfn-kinesisfirehose-deliverystream-openxjsonserde-convertdotsinjsonkeystounderscores).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub convert_dots_in_json_keys_to_underscores: Option<crate::Value<bool>>,
+        pub convert_dots_in_json_keys_to_underscores: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for OpenXJsonSerDe {
+    impl ::codec::SerializeValue for OpenXJsonSerDe {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref case_insensitive) = self.case_insensitive {
@@ -2848,7 +2848,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for OpenXJsonSerDe {
+    impl ::codec::DeserializeValue for OpenXJsonSerDe {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OpenXJsonSerDe, D::Error> {
@@ -2865,9 +2865,9 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut case_insensitive: Option<crate::Value<bool>> = None;
-                    let mut column_to_json_key_mappings: Option<crate::ValueMap<String>> = None;
-                    let mut convert_dots_in_json_keys_to_underscores: Option<crate::Value<bool>> = None;
+                    let mut case_insensitive: Option<::Value<bool>> = None;
+                    let mut column_to_json_key_mappings: Option<::ValueMap<String>> = None;
+                    let mut convert_dots_in_json_keys_to_underscores: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2908,55 +2908,55 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub block_size_bytes: Option<crate::Value<u32>>,
+        pub block_size_bytes: Option<::Value<u32>>,
         /// Property [`BloomFilterColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-bloomfiltercolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bloom_filter_columns: Option<crate::ValueList<String>>,
+        pub bloom_filter_columns: Option<::ValueList<String>>,
         /// Property [`BloomFilterFalsePositiveProbability`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-bloomfilterfalsepositiveprobability).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bloom_filter_false_positive_probability: Option<crate::Value<f64>>,
+        pub bloom_filter_false_positive_probability: Option<::Value<f64>>,
         /// Property [`Compression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-compression).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compression: Option<crate::Value<String>>,
+        pub compression: Option<::Value<String>>,
         /// Property [`DictionaryKeyThreshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-dictionarykeythreshold).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dictionary_key_threshold: Option<crate::Value<f64>>,
+        pub dictionary_key_threshold: Option<::Value<f64>>,
         /// Property [`EnablePadding`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-enablepadding).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enable_padding: Option<crate::Value<bool>>,
+        pub enable_padding: Option<::Value<bool>>,
         /// Property [`FormatVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-formatversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format_version: Option<crate::Value<String>>,
+        pub format_version: Option<::Value<String>>,
         /// Property [`PaddingTolerance`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-paddingtolerance).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub padding_tolerance: Option<crate::Value<f64>>,
+        pub padding_tolerance: Option<::Value<f64>>,
         /// Property [`RowIndexStride`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-rowindexstride).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub row_index_stride: Option<crate::Value<u32>>,
+        pub row_index_stride: Option<::Value<u32>>,
         /// Property [`StripeSizeBytes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-stripesizebytes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stripe_size_bytes: Option<crate::Value<u32>>,
+        pub stripe_size_bytes: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for OrcSerDe {
+    impl ::codec::SerializeValue for OrcSerDe {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref block_size_bytes) = self.block_size_bytes {
@@ -3031,7 +3031,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for OrcSerDe {
+    impl ::codec::DeserializeValue for OrcSerDe {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OrcSerDe, D::Error> {
             struct Visitor;
 
@@ -3046,16 +3046,16 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut block_size_bytes: Option<crate::Value<u32>> = None;
-                    let mut bloom_filter_columns: Option<crate::ValueList<String>> = None;
-                    let mut bloom_filter_false_positive_probability: Option<crate::Value<f64>> = None;
-                    let mut compression: Option<crate::Value<String>> = None;
-                    let mut dictionary_key_threshold: Option<crate::Value<f64>> = None;
-                    let mut enable_padding: Option<crate::Value<bool>> = None;
-                    let mut format_version: Option<crate::Value<String>> = None;
-                    let mut padding_tolerance: Option<crate::Value<f64>> = None;
-                    let mut row_index_stride: Option<crate::Value<u32>> = None;
-                    let mut stripe_size_bytes: Option<crate::Value<u32>> = None;
+                    let mut block_size_bytes: Option<::Value<u32>> = None;
+                    let mut bloom_filter_columns: Option<::ValueList<String>> = None;
+                    let mut bloom_filter_false_positive_probability: Option<::Value<f64>> = None;
+                    let mut compression: Option<::Value<String>> = None;
+                    let mut dictionary_key_threshold: Option<::Value<f64>> = None;
+                    let mut enable_padding: Option<::Value<bool>> = None;
+                    let mut format_version: Option<::Value<String>> = None;
+                    let mut padding_tolerance: Option<::Value<f64>> = None;
+                    let mut row_index_stride: Option<::Value<u32>> = None;
+                    let mut stripe_size_bytes: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3125,10 +3125,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub serializer: Option<crate::Value<Serializer>>,
+        pub serializer: Option<::Value<Serializer>>,
     }
 
-    impl crate::codec::SerializeValue for OutputFormatConfiguration {
+    impl ::codec::SerializeValue for OutputFormatConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref serializer) = self.serializer {
@@ -3138,7 +3138,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for OutputFormatConfiguration {
+    impl ::codec::DeserializeValue for OutputFormatConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OutputFormatConfiguration, D::Error> {
@@ -3155,7 +3155,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut serializer: Option<crate::Value<Serializer>> = None;
+                    let mut serializer: Option<::Value<Serializer>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3185,35 +3185,35 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub block_size_bytes: Option<crate::Value<u32>>,
+        pub block_size_bytes: Option<::Value<u32>>,
         /// Property [`Compression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-compression).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compression: Option<crate::Value<String>>,
+        pub compression: Option<::Value<String>>,
         /// Property [`EnableDictionaryCompression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-enabledictionarycompression).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enable_dictionary_compression: Option<crate::Value<bool>>,
+        pub enable_dictionary_compression: Option<::Value<bool>>,
         /// Property [`MaxPaddingBytes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-maxpaddingbytes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_padding_bytes: Option<crate::Value<u32>>,
+        pub max_padding_bytes: Option<::Value<u32>>,
         /// Property [`PageSizeBytes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-pagesizebytes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub page_size_bytes: Option<crate::Value<u32>>,
+        pub page_size_bytes: Option<::Value<u32>>,
         /// Property [`WriterVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-writerversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub writer_version: Option<crate::Value<String>>,
+        pub writer_version: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ParquetSerDe {
+    impl ::codec::SerializeValue for ParquetSerDe {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref block_size_bytes) = self.block_size_bytes {
@@ -3258,7 +3258,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for ParquetSerDe {
+    impl ::codec::DeserializeValue for ParquetSerDe {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ParquetSerDe, D::Error> {
             struct Visitor;
 
@@ -3273,12 +3273,12 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut block_size_bytes: Option<crate::Value<u32>> = None;
-                    let mut compression: Option<crate::Value<String>> = None;
-                    let mut enable_dictionary_compression: Option<crate::Value<bool>> = None;
-                    let mut max_padding_bytes: Option<crate::Value<u32>> = None;
-                    let mut page_size_bytes: Option<crate::Value<u32>> = None;
-                    let mut writer_version: Option<crate::Value<String>> = None;
+                    let mut block_size_bytes: Option<::Value<u32>> = None;
+                    let mut compression: Option<::Value<String>> = None;
+                    let mut enable_dictionary_compression: Option<::Value<bool>> = None;
+                    let mut max_padding_bytes: Option<::Value<u32>> = None;
+                    let mut page_size_bytes: Option<::Value<u32>> = None;
+                    let mut writer_version: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3329,15 +3329,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<crate::Value<bool>>,
+        pub enabled: Option<::Value<bool>>,
         /// Property [`Processors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-processors).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub processors: Option<crate::ValueList<Processor>>,
+        pub processors: Option<::ValueList<Processor>>,
     }
 
-    impl crate::codec::SerializeValue for ProcessingConfiguration {
+    impl ::codec::SerializeValue for ProcessingConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enabled) = self.enabled {
@@ -3350,7 +3350,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for ProcessingConfiguration {
+    impl ::codec::DeserializeValue for ProcessingConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProcessingConfiguration, D::Error> {
@@ -3367,8 +3367,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enabled: Option<crate::Value<bool>> = None;
-                    let mut processors: Option<crate::ValueList<Processor>> = None;
+                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut processors: Option<::ValueList<Processor>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3402,15 +3402,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<crate::ValueList<ProcessorParameter>>,
+        pub parameters: Option<::ValueList<ProcessorParameter>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Processor {
+    impl ::codec::SerializeValue for Processor {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref parameters) = self.parameters {
@@ -3421,7 +3421,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for Processor {
+    impl ::codec::DeserializeValue for Processor {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Processor, D::Error> {
             struct Visitor;
 
@@ -3436,8 +3436,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut parameters: Option<crate::ValueList<ProcessorParameter>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut parameters: Option<::ValueList<ProcessorParameter>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3471,15 +3471,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameter_name: crate::Value<String>,
+        pub parameter_name: ::Value<String>,
         /// Property [`ParameterValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html#cfn-kinesisfirehose-deliverystream-processorparameter-parametervalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameter_value: crate::Value<String>,
+        pub parameter_value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ProcessorParameter {
+    impl ::codec::SerializeValue for ProcessorParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3496,7 +3496,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for ProcessorParameter {
+    impl ::codec::DeserializeValue for ProcessorParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProcessorParameter, D::Error> {
@@ -3513,8 +3513,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut parameter_name: Option<crate::Value<String>> = None;
-                    let mut parameter_value: Option<crate::Value<String>> = None;
+                    let mut parameter_name: Option<::Value<String>> = None;
+                    let mut parameter_value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3550,60 +3550,60 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>>,
+        pub cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>>,
         /// Property [`ClusterJDBCURL`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-clusterjdbcurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_jdbcurl: crate::Value<String>,
+        pub cluster_jdbcurl: ::Value<String>,
         /// Property [`CopyCommand`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-copycommand).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copy_command: crate::Value<CopyCommand>,
+        pub copy_command: ::Value<CopyCommand>,
         /// Property [`Password`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-password).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password: crate::Value<String>,
+        pub password: ::Value<String>,
         /// Property [`ProcessingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-processingconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub processing_configuration: Option<crate::Value<ProcessingConfiguration>>,
+        pub processing_configuration: Option<::Value<ProcessingConfiguration>>,
         /// Property [`RetryOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-retryoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retry_options: Option<crate::Value<RedshiftRetryOptions>>,
+        pub retry_options: Option<::Value<RedshiftRetryOptions>>,
         /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`S3BackupConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3backupconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_backup_configuration: Option<crate::Value<S3DestinationConfiguration>>,
+        pub s3_backup_configuration: Option<::Value<S3DestinationConfiguration>>,
         /// Property [`S3BackupMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3backupmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_backup_mode: Option<crate::Value<String>>,
+        pub s3_backup_mode: Option<::Value<String>>,
         /// Property [`S3Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3configuration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_configuration: crate::Value<S3DestinationConfiguration>,
+        pub s3_configuration: ::Value<S3DestinationConfiguration>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: crate::Value<String>,
+        pub username: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RedshiftDestinationConfiguration {
+    impl ::codec::SerializeValue for RedshiftDestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_logging_options) = self.cloud_watch_logging_options {
@@ -3663,7 +3663,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for RedshiftDestinationConfiguration {
+    impl ::codec::DeserializeValue for RedshiftDestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RedshiftDestinationConfiguration, D::Error> {
@@ -3680,20 +3680,20 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>> =
+                    let mut cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>> =
                         None;
-                    let mut cluster_jdbcurl: Option<crate::Value<String>> = None;
-                    let mut copy_command: Option<crate::Value<CopyCommand>> = None;
-                    let mut password: Option<crate::Value<String>> = None;
-                    let mut processing_configuration: Option<crate::Value<ProcessingConfiguration>> =
+                    let mut cluster_jdbcurl: Option<::Value<String>> = None;
+                    let mut copy_command: Option<::Value<CopyCommand>> = None;
+                    let mut password: Option<::Value<String>> = None;
+                    let mut processing_configuration: Option<::Value<ProcessingConfiguration>> =
                         None;
-                    let mut retry_options: Option<crate::Value<RedshiftRetryOptions>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut s3_backup_configuration: Option<crate::Value<S3DestinationConfiguration>> =
+                    let mut retry_options: Option<::Value<RedshiftRetryOptions>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut s3_backup_configuration: Option<::Value<S3DestinationConfiguration>> =
                         None;
-                    let mut s3_backup_mode: Option<crate::Value<String>> = None;
-                    let mut s3_configuration: Option<crate::Value<S3DestinationConfiguration>> = None;
-                    let mut username: Option<crate::Value<String>> = None;
+                    let mut s3_backup_mode: Option<::Value<String>> = None;
+                    let mut s3_configuration: Option<::Value<S3DestinationConfiguration>> = None;
+                    let mut username: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3769,10 +3769,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration_in_seconds: Option<crate::Value<u32>>,
+        pub duration_in_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for RedshiftRetryOptions {
+    impl ::codec::SerializeValue for RedshiftRetryOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration_in_seconds) = self.duration_in_seconds {
@@ -3786,7 +3786,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for RedshiftRetryOptions {
+    impl ::codec::DeserializeValue for RedshiftRetryOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RedshiftRetryOptions, D::Error> {
@@ -3803,7 +3803,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut duration_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3833,10 +3833,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration_in_seconds: Option<crate::Value<u32>>,
+        pub duration_in_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for RetryOptions {
+    impl ::codec::SerializeValue for RetryOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration_in_seconds) = self.duration_in_seconds {
@@ -3850,7 +3850,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for RetryOptions {
+    impl ::codec::DeserializeValue for RetryOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<RetryOptions, D::Error> {
             struct Visitor;
 
@@ -3865,7 +3865,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut duration_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3895,45 +3895,45 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket_arn: crate::Value<String>,
+        pub bucket_arn: ::Value<String>,
         /// Property [`BufferingHints`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-bufferinghints).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub buffering_hints: Option<crate::Value<BufferingHints>>,
+        pub buffering_hints: Option<::Value<BufferingHints>>,
         /// Property [`CloudWatchLoggingOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-cloudwatchloggingoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>>,
+        pub cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>>,
         /// Property [`CompressionFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-compressionformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compression_format: Option<crate::Value<String>>,
+        pub compression_format: Option<::Value<String>>,
         /// Property [`EncryptionConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-encryptionconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub encryption_configuration: Option<crate::Value<EncryptionConfiguration>>,
+        pub encryption_configuration: Option<::Value<EncryptionConfiguration>>,
         /// Property [`ErrorOutputPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-erroroutputprefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub error_output_prefix: Option<crate::Value<String>>,
+        pub error_output_prefix: Option<::Value<String>>,
         /// Property [`Prefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-prefix).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub prefix: Option<crate::Value<String>>,
+        pub prefix: Option<::Value<String>>,
         /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3DestinationConfiguration {
+    impl ::codec::SerializeValue for S3DestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketARN", &self.bucket_arn)?;
@@ -3980,7 +3980,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3DestinationConfiguration {
+    impl ::codec::DeserializeValue for S3DestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3DestinationConfiguration, D::Error> {
@@ -3997,16 +3997,16 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_arn: Option<crate::Value<String>> = None;
-                    let mut buffering_hints: Option<crate::Value<BufferingHints>> = None;
-                    let mut cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>> =
+                    let mut bucket_arn: Option<::Value<String>> = None;
+                    let mut buffering_hints: Option<::Value<BufferingHints>> = None;
+                    let mut cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>> =
                         None;
-                    let mut compression_format: Option<crate::Value<String>> = None;
-                    let mut encryption_configuration: Option<crate::Value<EncryptionConfiguration>> =
+                    let mut compression_format: Option<::Value<String>> = None;
+                    let mut encryption_configuration: Option<::Value<EncryptionConfiguration>> =
                         None;
-                    let mut error_output_prefix: Option<crate::Value<String>> = None;
-                    let mut prefix: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
+                    let mut error_output_prefix: Option<::Value<String>> = None;
+                    let mut prefix: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4067,35 +4067,35 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub catalog_id: Option<crate::Value<String>>,
+        pub catalog_id: Option<::Value<String>>,
         /// Property [`DatabaseName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html#cfn-kinesisfirehose-deliverystream-schemaconfiguration-databasename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database_name: Option<crate::Value<String>>,
+        pub database_name: Option<::Value<String>>,
         /// Property [`Region`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html#cfn-kinesisfirehose-deliverystream-schemaconfiguration-region).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub region: Option<crate::Value<String>>,
+        pub region: Option<::Value<String>>,
         /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html#cfn-kinesisfirehose-deliverystream-schemaconfiguration-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: Option<crate::Value<String>>,
+        pub role_arn: Option<::Value<String>>,
         /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html#cfn-kinesisfirehose-deliverystream-schemaconfiguration-tablename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub table_name: Option<crate::Value<String>>,
+        pub table_name: Option<::Value<String>>,
         /// Property [`VersionId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html#cfn-kinesisfirehose-deliverystream-schemaconfiguration-versionid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version_id: Option<crate::Value<String>>,
+        pub version_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for SchemaConfiguration {
+    impl ::codec::SerializeValue for SchemaConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref catalog_id) = self.catalog_id {
@@ -4124,7 +4124,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for SchemaConfiguration {
+    impl ::codec::DeserializeValue for SchemaConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SchemaConfiguration, D::Error> {
@@ -4141,12 +4141,12 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut catalog_id: Option<crate::Value<String>> = None;
-                    let mut database_name: Option<crate::Value<String>> = None;
-                    let mut region: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut table_name: Option<crate::Value<String>> = None;
-                    let mut version_id: Option<crate::Value<String>> = None;
+                    let mut catalog_id: Option<::Value<String>> = None;
+                    let mut database_name: Option<::Value<String>> = None;
+                    let mut region: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut table_name: Option<::Value<String>> = None;
+                    let mut version_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4196,15 +4196,15 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub orc_ser_de: Option<crate::Value<OrcSerDe>>,
+        pub orc_ser_de: Option<::Value<OrcSerDe>>,
         /// Property [`ParquetSerDe`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html#cfn-kinesisfirehose-deliverystream-serializer-parquetserde).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parquet_ser_de: Option<crate::Value<ParquetSerDe>>,
+        pub parquet_ser_de: Option<::Value<ParquetSerDe>>,
     }
 
-    impl crate::codec::SerializeValue for Serializer {
+    impl ::codec::SerializeValue for Serializer {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref orc_ser_de) = self.orc_ser_de {
@@ -4221,7 +4221,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for Serializer {
+    impl ::codec::DeserializeValue for Serializer {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Serializer, D::Error> {
             struct Visitor;
 
@@ -4236,8 +4236,8 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut orc_ser_de: Option<crate::Value<OrcSerDe>> = None;
-                    let mut parquet_ser_de: Option<crate::Value<ParquetSerDe>> = None;
+                    let mut orc_ser_de: Option<::Value<OrcSerDe>> = None;
+                    let mut parquet_ser_de: Option<::Value<ParquetSerDe>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4271,50 +4271,50 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>>,
+        pub cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>>,
         /// Property [`HECAcknowledgmentTimeoutInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-hecacknowledgmenttimeoutinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hec_acknowledgment_timeout_in_seconds: Option<crate::Value<u32>>,
+        pub hec_acknowledgment_timeout_in_seconds: Option<::Value<u32>>,
         /// Property [`HECEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-hecendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hec_endpoint: crate::Value<String>,
+        pub hec_endpoint: ::Value<String>,
         /// Property [`HECEndpointType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-hecendpointtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hec_endpoint_type: crate::Value<String>,
+        pub hec_endpoint_type: ::Value<String>,
         /// Property [`HECToken`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-hectoken).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hec_token: crate::Value<String>,
+        pub hec_token: ::Value<String>,
         /// Property [`ProcessingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-processingconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub processing_configuration: Option<crate::Value<ProcessingConfiguration>>,
+        pub processing_configuration: Option<::Value<ProcessingConfiguration>>,
         /// Property [`RetryOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-retryoptions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub retry_options: Option<crate::Value<SplunkRetryOptions>>,
+        pub retry_options: Option<::Value<SplunkRetryOptions>>,
         /// Property [`S3BackupMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-s3backupmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_backup_mode: Option<crate::Value<String>>,
+        pub s3_backup_mode: Option<::Value<String>>,
         /// Property [`S3Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-s3configuration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_configuration: crate::Value<S3DestinationConfiguration>,
+        pub s3_configuration: ::Value<S3DestinationConfiguration>,
     }
 
-    impl crate::codec::SerializeValue for SplunkDestinationConfiguration {
+    impl ::codec::SerializeValue for SplunkDestinationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_logging_options) = self.cloud_watch_logging_options {
@@ -4374,7 +4374,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for SplunkDestinationConfiguration {
+    impl ::codec::DeserializeValue for SplunkDestinationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SplunkDestinationConfiguration, D::Error> {
@@ -4391,17 +4391,17 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_logging_options: Option<crate::Value<CloudWatchLoggingOptions>> =
+                    let mut cloud_watch_logging_options: Option<::Value<CloudWatchLoggingOptions>> =
                         None;
-                    let mut hec_acknowledgment_timeout_in_seconds: Option<crate::Value<u32>> = None;
-                    let mut hec_endpoint: Option<crate::Value<String>> = None;
-                    let mut hec_endpoint_type: Option<crate::Value<String>> = None;
-                    let mut hec_token: Option<crate::Value<String>> = None;
-                    let mut processing_configuration: Option<crate::Value<ProcessingConfiguration>> =
+                    let mut hec_acknowledgment_timeout_in_seconds: Option<::Value<u32>> = None;
+                    let mut hec_endpoint: Option<::Value<String>> = None;
+                    let mut hec_endpoint_type: Option<::Value<String>> = None;
+                    let mut hec_token: Option<::Value<String>> = None;
+                    let mut processing_configuration: Option<::Value<ProcessingConfiguration>> =
                         None;
-                    let mut retry_options: Option<crate::Value<SplunkRetryOptions>> = None;
-                    let mut s3_backup_mode: Option<crate::Value<String>> = None;
-                    let mut s3_configuration: Option<crate::Value<S3DestinationConfiguration>> = None;
+                    let mut retry_options: Option<::Value<SplunkRetryOptions>> = None;
+                    let mut s3_backup_mode: Option<::Value<String>> = None;
+                    let mut s3_configuration: Option<::Value<S3DestinationConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4471,10 +4471,10 @@ pub mod delivery_stream {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration_in_seconds: Option<crate::Value<u32>>,
+        pub duration_in_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for SplunkRetryOptions {
+    impl ::codec::SerializeValue for SplunkRetryOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration_in_seconds) = self.duration_in_seconds {
@@ -4488,7 +4488,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for SplunkRetryOptions {
+    impl ::codec::DeserializeValue for SplunkRetryOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SplunkRetryOptions, D::Error> {
@@ -4505,7 +4505,7 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut duration_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4535,20 +4535,20 @@ pub mod delivery_stream {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-vpcconfiguration.html#cfn-kinesisfirehose-deliverystream-vpcconfiguration-securitygroupids).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_group_ids: crate::ValueList<String>,
+        pub security_group_ids: ::ValueList<String>,
         /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-vpcconfiguration.html#cfn-kinesisfirehose-deliverystream-vpcconfiguration-subnetids).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnet_ids: crate::ValueList<String>,
+        pub subnet_ids: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for VpcConfiguration {
+    impl ::codec::SerializeValue for VpcConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RoleARN", &self.role_arn)?;
@@ -4562,7 +4562,7 @@ pub mod delivery_stream {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcConfiguration {
+    impl ::codec::DeserializeValue for VpcConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VpcConfiguration, D::Error> {
@@ -4579,9 +4579,9 @@ pub mod delivery_stream {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnet_ids: Option<crate::ValueList<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnet_ids: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

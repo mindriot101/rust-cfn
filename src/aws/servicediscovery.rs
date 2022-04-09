@@ -13,17 +13,17 @@ pub struct HttpNamespaceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for HttpNamespaceProperties {
@@ -57,9 +57,9 @@ impl<'de> ::serde::Deserialize<'de> for HttpNamespaceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -88,7 +88,7 @@ impl<'de> ::serde::Deserialize<'de> for HttpNamespaceProperties {
     }
 }
 
-impl crate::Resource for HttpNamespace {
+impl ::Resource for HttpNamespace {
     type Properties = HttpNamespaceProperties;
     const TYPE: &'static str = "AWS::ServiceDiscovery::HttpNamespace";
     fn properties(&self) -> &HttpNamespaceProperties {
@@ -99,7 +99,7 @@ impl crate::Resource for HttpNamespace {
     }
 }
 
-impl crate::private::Sealed for HttpNamespace {}
+impl ::private::Sealed for HttpNamespace {}
 
 impl From<HttpNamespaceProperties> for HttpNamespace {
     fn from(properties: HttpNamespaceProperties) -> HttpNamespace {
@@ -120,17 +120,17 @@ pub struct InstanceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_attributes: crate::Value<crate::json::Value>,
+    pub instance_attributes: ::Value<::json::Value>,
     /// Property [`InstanceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub instance_id: Option<crate::Value<String>>,
+    pub instance_id: Option<::Value<String>>,
     /// Property [`ServiceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-serviceid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service_id: crate::Value<String>,
+    pub service_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for InstanceProperties {
@@ -164,9 +164,9 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut instance_attributes: Option<crate::Value<crate::json::Value>> = None;
-                let mut instance_id: Option<crate::Value<String>> = None;
-                let mut service_id: Option<crate::Value<String>> = None;
+                let mut instance_attributes: Option<::Value<::json::Value>> = None;
+                let mut instance_id: Option<::Value<String>> = None;
+                let mut service_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -196,7 +196,7 @@ impl<'de> ::serde::Deserialize<'de> for InstanceProperties {
     }
 }
 
-impl crate::Resource for Instance {
+impl ::Resource for Instance {
     type Properties = InstanceProperties;
     const TYPE: &'static str = "AWS::ServiceDiscovery::Instance";
     fn properties(&self) -> &InstanceProperties {
@@ -207,7 +207,7 @@ impl crate::Resource for Instance {
     }
 }
 
-impl crate::private::Sealed for Instance {}
+impl ::private::Sealed for Instance {}
 
 impl From<InstanceProperties> for Instance {
     fn from(properties: InstanceProperties) -> Instance {
@@ -228,27 +228,27 @@ pub struct PrivateDnsNamespaceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Properties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-properties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub properties: Option<crate::Value<self::private_dns_namespace::Properties>>,
+    pub properties: Option<::Value<self::private_dns_namespace::Properties>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Vpc`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-vpc).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc: crate::Value<String>,
+    pub vpc: ::Value<String>,
 }
 
 impl ::serde::Serialize for PrivateDnsNamespaceProperties {
@@ -286,11 +286,11 @@ impl<'de> ::serde::Deserialize<'de> for PrivateDnsNamespaceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut properties: Option<crate::Value<self::private_dns_namespace::Properties>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut vpc: Option<crate::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut properties: Option<::Value<self::private_dns_namespace::Properties>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut vpc: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -327,7 +327,7 @@ impl<'de> ::serde::Deserialize<'de> for PrivateDnsNamespaceProperties {
     }
 }
 
-impl crate::Resource for PrivateDnsNamespace {
+impl ::Resource for PrivateDnsNamespace {
     type Properties = PrivateDnsNamespaceProperties;
     const TYPE: &'static str = "AWS::ServiceDiscovery::PrivateDnsNamespace";
     fn properties(&self) -> &PrivateDnsNamespaceProperties {
@@ -338,7 +338,7 @@ impl crate::Resource for PrivateDnsNamespace {
     }
 }
 
-impl crate::private::Sealed for PrivateDnsNamespace {}
+impl ::private::Sealed for PrivateDnsNamespace {}
 
 impl From<PrivateDnsNamespaceProperties> for PrivateDnsNamespace {
     fn from(properties: PrivateDnsNamespaceProperties) -> PrivateDnsNamespace {
@@ -359,22 +359,22 @@ pub struct PublicDnsNamespaceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Properties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-properties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub properties: Option<crate::Value<self::public_dns_namespace::Properties>>,
+    pub properties: Option<::Value<self::public_dns_namespace::Properties>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for PublicDnsNamespaceProperties {
@@ -411,10 +411,10 @@ impl<'de> ::serde::Deserialize<'de> for PublicDnsNamespaceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut properties: Option<crate::Value<self::public_dns_namespace::Properties>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut properties: Option<::Value<self::public_dns_namespace::Properties>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -447,7 +447,7 @@ impl<'de> ::serde::Deserialize<'de> for PublicDnsNamespaceProperties {
     }
 }
 
-impl crate::Resource for PublicDnsNamespace {
+impl ::Resource for PublicDnsNamespace {
     type Properties = PublicDnsNamespaceProperties;
     const TYPE: &'static str = "AWS::ServiceDiscovery::PublicDnsNamespace";
     fn properties(&self) -> &PublicDnsNamespaceProperties {
@@ -458,7 +458,7 @@ impl crate::Resource for PublicDnsNamespace {
     }
 }
 
-impl crate::private::Sealed for PublicDnsNamespace {}
+impl ::private::Sealed for PublicDnsNamespace {}
 
 impl From<PublicDnsNamespaceProperties> for PublicDnsNamespace {
     fn from(properties: PublicDnsNamespaceProperties) -> PublicDnsNamespace {
@@ -479,42 +479,42 @@ pub struct ServiceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`DnsConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dns_config: Option<crate::Value<self::service::DnsConfig>>,
+    pub dns_config: Option<::Value<self::service::DnsConfig>>,
     /// Property [`HealthCheckConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub health_check_config: Option<crate::Value<self::service::HealthCheckConfig>>,
+    pub health_check_config: Option<::Value<self::service::HealthCheckConfig>>,
     /// Property [`HealthCheckCustomConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub health_check_custom_config: Option<crate::Value<self::service::HealthCheckCustomConfig>>,
+    pub health_check_custom_config: Option<::Value<self::service::HealthCheckCustomConfig>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`NamespaceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-namespaceid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub namespace_id: Option<crate::Value<String>>,
+    pub namespace_id: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: Option<crate::Value<String>>,
+    pub r#type: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ServiceProperties {
@@ -571,17 +571,17 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut dns_config: Option<crate::Value<self::service::DnsConfig>> = None;
-                let mut health_check_config: Option<crate::Value<self::service::HealthCheckConfig>> =
+                let mut description: Option<::Value<String>> = None;
+                let mut dns_config: Option<::Value<self::service::DnsConfig>> = None;
+                let mut health_check_config: Option<::Value<self::service::HealthCheckConfig>> =
                     None;
                 let mut health_check_custom_config: Option<
-                    crate::Value<self::service::HealthCheckCustomConfig>,
+                    ::Value<self::service::HealthCheckCustomConfig>,
                 > = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut namespace_id: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut r#type: Option<crate::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut namespace_id: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut r#type: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -631,7 +631,7 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
     }
 }
 
-impl crate::Resource for Service {
+impl ::Resource for Service {
     type Properties = ServiceProperties;
     const TYPE: &'static str = "AWS::ServiceDiscovery::Service";
     fn properties(&self) -> &ServiceProperties {
@@ -642,7 +642,7 @@ impl crate::Resource for Service {
     }
 }
 
-impl crate::private::Sealed for Service {}
+impl ::private::Sealed for Service {}
 
 impl From<ServiceProperties> for Service {
     fn from(properties: ServiceProperties) -> Service {
@@ -660,10 +660,10 @@ pub mod private_dns_namespace {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub soa: Option<crate::Value<SOA>>,
+        pub soa: Option<::Value<SOA>>,
     }
 
-    impl crate::codec::SerializeValue for PrivateDnsPropertiesMutable {
+    impl ::codec::SerializeValue for PrivateDnsPropertiesMutable {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref soa) = self.soa {
@@ -673,7 +673,7 @@ pub mod private_dns_namespace {
         }
     }
 
-    impl crate::codec::DeserializeValue for PrivateDnsPropertiesMutable {
+    impl ::codec::DeserializeValue for PrivateDnsPropertiesMutable {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PrivateDnsPropertiesMutable, D::Error> {
@@ -690,7 +690,7 @@ pub mod private_dns_namespace {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut soa: Option<crate::Value<SOA>> = None;
+                    let mut soa: Option<::Value<SOA>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -718,10 +718,10 @@ pub mod private_dns_namespace {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dns_properties: Option<crate::Value<PrivateDnsPropertiesMutable>>,
+        pub dns_properties: Option<::Value<PrivateDnsPropertiesMutable>>,
     }
 
-    impl crate::codec::SerializeValue for Properties {
+    impl ::codec::SerializeValue for Properties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dns_properties) = self.dns_properties {
@@ -735,7 +735,7 @@ pub mod private_dns_namespace {
         }
     }
 
-    impl crate::codec::DeserializeValue for Properties {
+    impl ::codec::DeserializeValue for Properties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Properties, D::Error> {
             struct Visitor;
 
@@ -750,7 +750,7 @@ pub mod private_dns_namespace {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dns_properties: Option<crate::Value<PrivateDnsPropertiesMutable>> = None;
+                    let mut dns_properties: Option<::Value<PrivateDnsPropertiesMutable>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -780,10 +780,10 @@ pub mod private_dns_namespace {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ttl: Option<crate::Value<f64>>,
+        pub ttl: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for SOA {
+    impl ::codec::SerializeValue for SOA {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ttl) = self.ttl {
@@ -793,7 +793,7 @@ pub mod private_dns_namespace {
         }
     }
 
-    impl crate::codec::DeserializeValue for SOA {
+    impl ::codec::DeserializeValue for SOA {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SOA, D::Error> {
             struct Visitor;
 
@@ -808,7 +808,7 @@ pub mod private_dns_namespace {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ttl: Option<crate::Value<f64>> = None;
+                    let mut ttl: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -840,10 +840,10 @@ pub mod public_dns_namespace {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dns_properties: Option<crate::Value<PublicDnsPropertiesMutable>>,
+        pub dns_properties: Option<::Value<PublicDnsPropertiesMutable>>,
     }
 
-    impl crate::codec::SerializeValue for Properties {
+    impl ::codec::SerializeValue for Properties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dns_properties) = self.dns_properties {
@@ -857,7 +857,7 @@ pub mod public_dns_namespace {
         }
     }
 
-    impl crate::codec::DeserializeValue for Properties {
+    impl ::codec::DeserializeValue for Properties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Properties, D::Error> {
             struct Visitor;
 
@@ -872,7 +872,7 @@ pub mod public_dns_namespace {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dns_properties: Option<crate::Value<PublicDnsPropertiesMutable>> = None;
+                    let mut dns_properties: Option<::Value<PublicDnsPropertiesMutable>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -902,10 +902,10 @@ pub mod public_dns_namespace {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub soa: Option<crate::Value<SOA>>,
+        pub soa: Option<::Value<SOA>>,
     }
 
-    impl crate::codec::SerializeValue for PublicDnsPropertiesMutable {
+    impl ::codec::SerializeValue for PublicDnsPropertiesMutable {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref soa) = self.soa {
@@ -915,7 +915,7 @@ pub mod public_dns_namespace {
         }
     }
 
-    impl crate::codec::DeserializeValue for PublicDnsPropertiesMutable {
+    impl ::codec::DeserializeValue for PublicDnsPropertiesMutable {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PublicDnsPropertiesMutable, D::Error> {
@@ -932,7 +932,7 @@ pub mod public_dns_namespace {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut soa: Option<crate::Value<SOA>> = None;
+                    let mut soa: Option<::Value<SOA>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -960,10 +960,10 @@ pub mod public_dns_namespace {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ttl: Option<crate::Value<f64>>,
+        pub ttl: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for SOA {
+    impl ::codec::SerializeValue for SOA {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ttl) = self.ttl {
@@ -973,7 +973,7 @@ pub mod public_dns_namespace {
         }
     }
 
-    impl crate::codec::DeserializeValue for SOA {
+    impl ::codec::DeserializeValue for SOA {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SOA, D::Error> {
             struct Visitor;
 
@@ -988,7 +988,7 @@ pub mod public_dns_namespace {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ttl: Option<crate::Value<f64>> = None;
+                    let mut ttl: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1020,20 +1020,20 @@ pub mod service {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dns_records: crate::ValueList<DnsRecord>,
+        pub dns_records: ::ValueList<DnsRecord>,
         /// Property [`NamespaceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-namespaceid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub namespace_id: Option<crate::Value<String>>,
+        pub namespace_id: Option<::Value<String>>,
         /// Property [`RoutingPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-routingpolicy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub routing_policy: Option<crate::Value<String>>,
+        pub routing_policy: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DnsConfig {
+    impl ::codec::SerializeValue for DnsConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DnsRecords", &self.dns_records)?;
@@ -1051,7 +1051,7 @@ pub mod service {
         }
     }
 
-    impl crate::codec::DeserializeValue for DnsConfig {
+    impl ::codec::DeserializeValue for DnsConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DnsConfig, D::Error> {
             struct Visitor;
 
@@ -1066,9 +1066,9 @@ pub mod service {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dns_records: Option<crate::ValueList<DnsRecord>> = None;
-                    let mut namespace_id: Option<crate::Value<String>> = None;
-                    let mut routing_policy: Option<crate::Value<String>> = None;
+                    let mut dns_records: Option<::ValueList<DnsRecord>> = None;
+                    let mut namespace_id: Option<::Value<String>> = None;
+                    let mut routing_policy: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1107,15 +1107,15 @@ pub mod service {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ttl: crate::Value<f64>,
+        pub ttl: ::Value<f64>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsrecord.html#cfn-servicediscovery-service-dnsrecord-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for DnsRecord {
+    impl ::codec::SerializeValue for DnsRecord {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TTL", &self.ttl)?;
@@ -1124,7 +1124,7 @@ pub mod service {
         }
     }
 
-    impl crate::codec::DeserializeValue for DnsRecord {
+    impl ::codec::DeserializeValue for DnsRecord {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DnsRecord, D::Error> {
             struct Visitor;
 
@@ -1139,8 +1139,8 @@ pub mod service {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ttl: Option<crate::Value<f64>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut ttl: Option<::Value<f64>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1174,20 +1174,20 @@ pub mod service {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub failure_threshold: Option<crate::Value<f64>>,
+        pub failure_threshold: Option<::Value<f64>>,
         /// Property [`ResourcePath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-resourcepath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_path: Option<crate::Value<String>>,
+        pub resource_path: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for HealthCheckConfig {
+    impl ::codec::SerializeValue for HealthCheckConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref failure_threshold) = self.failure_threshold {
@@ -1209,7 +1209,7 @@ pub mod service {
         }
     }
 
-    impl crate::codec::DeserializeValue for HealthCheckConfig {
+    impl ::codec::DeserializeValue for HealthCheckConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HealthCheckConfig, D::Error> {
@@ -1226,9 +1226,9 @@ pub mod service {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut failure_threshold: Option<crate::Value<f64>> = None;
-                    let mut resource_path: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut failure_threshold: Option<::Value<f64>> = None;
+                    let mut resource_path: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1266,10 +1266,10 @@ pub mod service {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub failure_threshold: Option<crate::Value<f64>>,
+        pub failure_threshold: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for HealthCheckCustomConfig {
+    impl ::codec::SerializeValue for HealthCheckCustomConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref failure_threshold) = self.failure_threshold {
@@ -1283,7 +1283,7 @@ pub mod service {
         }
     }
 
-    impl crate::codec::DeserializeValue for HealthCheckCustomConfig {
+    impl ::codec::DeserializeValue for HealthCheckCustomConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HealthCheckCustomConfig, D::Error> {
@@ -1300,7 +1300,7 @@ pub mod service {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut failure_threshold: Option<crate::Value<f64>> = None;
+                    let mut failure_threshold: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

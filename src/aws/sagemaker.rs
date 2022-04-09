@@ -13,32 +13,32 @@ pub struct AppProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub app_name: crate::Value<String>,
+    pub app_name: ::Value<String>,
     /// Property [`AppType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-apptype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub app_type: crate::Value<String>,
+    pub app_type: ::Value<String>,
     /// Property [`DomainId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-domainid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain_id: crate::Value<String>,
+    pub domain_id: ::Value<String>,
     /// Property [`ResourceSpec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-resourcespec).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_spec: Option<crate::Value<self::app::ResourceSpec>>,
+    pub resource_spec: Option<::Value<self::app::ResourceSpec>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`UserProfileName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-userprofilename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub user_profile_name: crate::Value<String>,
+    pub user_profile_name: ::Value<String>,
 }
 
 impl ::serde::Serialize for AppProperties {
@@ -77,12 +77,12 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut app_name: Option<crate::Value<String>> = None;
-                let mut app_type: Option<crate::Value<String>> = None;
-                let mut domain_id: Option<crate::Value<String>> = None;
-                let mut resource_spec: Option<crate::Value<self::app::ResourceSpec>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut user_profile_name: Option<crate::Value<String>> = None;
+                let mut app_name: Option<::Value<String>> = None;
+                let mut app_type: Option<::Value<String>> = None;
+                let mut domain_id: Option<::Value<String>> = None;
+                let mut resource_spec: Option<::Value<self::app::ResourceSpec>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut user_profile_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -124,7 +124,7 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
     }
 }
 
-impl crate::Resource for App {
+impl ::Resource for App {
     type Properties = AppProperties;
     const TYPE: &'static str = "AWS::SageMaker::App";
     fn properties(&self) -> &AppProperties {
@@ -135,7 +135,7 @@ impl crate::Resource for App {
     }
 }
 
-impl crate::private::Sealed for App {}
+impl ::private::Sealed for App {}
 
 impl From<AppProperties> for App {
     fn from(properties: AppProperties) -> App {
@@ -156,18 +156,18 @@ pub struct AppImageConfigProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub app_image_config_name: crate::Value<String>,
+    pub app_image_config_name: ::Value<String>,
     /// Property [`KernelGatewayImageConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub kernel_gateway_image_config:
-        Option<crate::Value<self::app_image_config::KernelGatewayImageConfig>>,
+        Option<::Value<self::app_image_config::KernelGatewayImageConfig>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html#cfn-sagemaker-appimageconfig-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for AppImageConfigProperties {
@@ -209,11 +209,11 @@ impl<'de> ::serde::Deserialize<'de> for AppImageConfigProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut app_image_config_name: Option<crate::Value<String>> = None;
+                let mut app_image_config_name: Option<::Value<String>> = None;
                 let mut kernel_gateway_image_config: Option<
-                    crate::Value<self::app_image_config::KernelGatewayImageConfig>,
+                    ::Value<self::app_image_config::KernelGatewayImageConfig>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -244,7 +244,7 @@ impl<'de> ::serde::Deserialize<'de> for AppImageConfigProperties {
     }
 }
 
-impl crate::Resource for AppImageConfig {
+impl ::Resource for AppImageConfig {
     type Properties = AppImageConfigProperties;
     const TYPE: &'static str = "AWS::SageMaker::AppImageConfig";
     fn properties(&self) -> &AppImageConfigProperties {
@@ -255,7 +255,7 @@ impl crate::Resource for AppImageConfig {
     }
 }
 
-impl crate::private::Sealed for AppImageConfig {}
+impl ::private::Sealed for AppImageConfig {}
 
 impl From<AppImageConfigProperties> for AppImageConfig {
     fn from(properties: AppImageConfigProperties) -> AppImageConfig {
@@ -276,17 +276,17 @@ pub struct CodeRepositoryProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub code_repository_name: Option<crate::Value<String>>,
+    pub code_repository_name: Option<::Value<String>>,
     /// Property [`GitConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-gitconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub git_config: crate::Value<self::code_repository::GitConfig>,
+    pub git_config: ::Value<self::code_repository::GitConfig>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for CodeRepositoryProperties {
@@ -324,9 +324,9 @@ impl<'de> ::serde::Deserialize<'de> for CodeRepositoryProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut code_repository_name: Option<crate::Value<String>> = None;
-                let mut git_config: Option<crate::Value<self::code_repository::GitConfig>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut code_repository_name: Option<::Value<String>> = None;
+                let mut git_config: Option<::Value<self::code_repository::GitConfig>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -355,7 +355,7 @@ impl<'de> ::serde::Deserialize<'de> for CodeRepositoryProperties {
     }
 }
 
-impl crate::Resource for CodeRepository {
+impl ::Resource for CodeRepository {
     type Properties = CodeRepositoryProperties;
     const TYPE: &'static str = "AWS::SageMaker::CodeRepository";
     fn properties(&self) -> &CodeRepositoryProperties {
@@ -366,7 +366,7 @@ impl crate::Resource for CodeRepository {
     }
 }
 
-impl crate::private::Sealed for CodeRepository {}
+impl ::private::Sealed for CodeRepository {}
 
 impl From<CodeRepositoryProperties> for CodeRepository {
     fn from(properties: CodeRepositoryProperties) -> CodeRepository {
@@ -388,54 +388,54 @@ pub struct DataQualityJobDefinitionProperties {
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub data_quality_app_specification:
-        crate::Value<self::data_quality_job_definition::DataQualityAppSpecification>,
+        ::Value<self::data_quality_job_definition::DataQualityAppSpecification>,
     /// Property [`DataQualityBaselineConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub data_quality_baseline_config:
-        Option<crate::Value<self::data_quality_job_definition::DataQualityBaselineConfig>>,
+        Option<::Value<self::data_quality_job_definition::DataQualityBaselineConfig>>,
     /// Property [`DataQualityJobInput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjobinput).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_quality_job_input: crate::Value<self::data_quality_job_definition::DataQualityJobInput>,
+    pub data_quality_job_input: ::Value<self::data_quality_job_definition::DataQualityJobInput>,
     /// Property [`DataQualityJobOutputConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjoboutputconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub data_quality_job_output_config:
-        crate::Value<self::data_quality_job_definition::MonitoringOutputConfig>,
+        ::Value<self::data_quality_job_definition::MonitoringOutputConfig>,
     /// Property [`JobDefinitionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-jobdefinitionname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_definition_name: Option<crate::Value<String>>,
+    pub job_definition_name: Option<::Value<String>>,
     /// Property [`JobResources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-jobresources).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_resources: crate::Value<self::data_quality_job_definition::MonitoringResources>,
+    pub job_resources: ::Value<self::data_quality_job_definition::MonitoringResources>,
     /// Property [`NetworkConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub network_config: Option<crate::Value<self::data_quality_job_definition::NetworkConfig>>,
+    pub network_config: Option<::Value<self::data_quality_job_definition::NetworkConfig>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`StoppingCondition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-stoppingcondition).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub stopping_condition: Option<crate::Value<self::data_quality_job_definition::StoppingCondition>>,
+    pub stopping_condition: Option<::Value<self::data_quality_job_definition::StoppingCondition>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for DataQualityJobDefinitionProperties {
@@ -507,29 +507,29 @@ impl<'de> ::serde::Deserialize<'de> for DataQualityJobDefinitionProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut data_quality_app_specification: Option<
-                    crate::Value<self::data_quality_job_definition::DataQualityAppSpecification>,
+                    ::Value<self::data_quality_job_definition::DataQualityAppSpecification>,
                 > = None;
                 let mut data_quality_baseline_config: Option<
-                    crate::Value<self::data_quality_job_definition::DataQualityBaselineConfig>,
+                    ::Value<self::data_quality_job_definition::DataQualityBaselineConfig>,
                 > = None;
                 let mut data_quality_job_input: Option<
-                    crate::Value<self::data_quality_job_definition::DataQualityJobInput>,
+                    ::Value<self::data_quality_job_definition::DataQualityJobInput>,
                 > = None;
                 let mut data_quality_job_output_config: Option<
-                    crate::Value<self::data_quality_job_definition::MonitoringOutputConfig>,
+                    ::Value<self::data_quality_job_definition::MonitoringOutputConfig>,
                 > = None;
-                let mut job_definition_name: Option<crate::Value<String>> = None;
+                let mut job_definition_name: Option<::Value<String>> = None;
                 let mut job_resources: Option<
-                    crate::Value<self::data_quality_job_definition::MonitoringResources>,
+                    ::Value<self::data_quality_job_definition::MonitoringResources>,
                 > = None;
                 let mut network_config: Option<
-                    crate::Value<self::data_quality_job_definition::NetworkConfig>,
+                    ::Value<self::data_quality_job_definition::NetworkConfig>,
                 > = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
                 let mut stopping_condition: Option<
-                    crate::Value<self::data_quality_job_definition::StoppingCondition>,
+                    ::Value<self::data_quality_job_definition::StoppingCondition>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -595,7 +595,7 @@ impl<'de> ::serde::Deserialize<'de> for DataQualityJobDefinitionProperties {
     }
 }
 
-impl crate::Resource for DataQualityJobDefinition {
+impl ::Resource for DataQualityJobDefinition {
     type Properties = DataQualityJobDefinitionProperties;
     const TYPE: &'static str = "AWS::SageMaker::DataQualityJobDefinition";
     fn properties(&self) -> &DataQualityJobDefinitionProperties {
@@ -606,7 +606,7 @@ impl crate::Resource for DataQualityJobDefinition {
     }
 }
 
-impl crate::private::Sealed for DataQualityJobDefinition {}
+impl ::private::Sealed for DataQualityJobDefinition {}
 
 impl From<DataQualityJobDefinitionProperties> for DataQualityJobDefinition {
     fn from(properties: DataQualityJobDefinitionProperties) -> DataQualityJobDefinition {
@@ -627,17 +627,17 @@ pub struct DeviceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub device: Option<crate::Value<self::device::Device>>,
+    pub device: Option<::Value<self::device::Device>>,
     /// Property [`DeviceFleetName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-device.html#cfn-sagemaker-device-devicefleetname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub device_fleet_name: crate::Value<String>,
+    pub device_fleet_name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-device.html#cfn-sagemaker-device-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for DeviceProperties {
@@ -673,9 +673,9 @@ impl<'de> ::serde::Deserialize<'de> for DeviceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut device: Option<crate::Value<self::device::Device>> = None;
-                let mut device_fleet_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut device: Option<::Value<self::device::Device>> = None;
+                let mut device_fleet_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -705,7 +705,7 @@ impl<'de> ::serde::Deserialize<'de> for DeviceProperties {
     }
 }
 
-impl crate::Resource for Device {
+impl ::Resource for Device {
     type Properties = DeviceProperties;
     const TYPE: &'static str = "AWS::SageMaker::Device";
     fn properties(&self) -> &DeviceProperties {
@@ -716,7 +716,7 @@ impl crate::Resource for Device {
     }
 }
 
-impl crate::private::Sealed for Device {}
+impl ::private::Sealed for Device {}
 
 impl From<DeviceProperties> for Device {
     fn from(properties: DeviceProperties) -> Device {
@@ -737,27 +737,27 @@ pub struct DeviceFleetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`DeviceFleetName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-devicefleetname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub device_fleet_name: crate::Value<String>,
+    pub device_fleet_name: ::Value<String>,
     /// Property [`OutputConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-outputconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub output_config: crate::Value<self::device_fleet::EdgeOutputConfig>,
+    pub output_config: ::Value<self::device_fleet::EdgeOutputConfig>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for DeviceFleetProperties {
@@ -795,11 +795,11 @@ impl<'de> ::serde::Deserialize<'de> for DeviceFleetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut device_fleet_name: Option<crate::Value<String>> = None;
-                let mut output_config: Option<crate::Value<self::device_fleet::EdgeOutputConfig>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut device_fleet_name: Option<::Value<String>> = None;
+                let mut output_config: Option<::Value<self::device_fleet::EdgeOutputConfig>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -838,7 +838,7 @@ impl<'de> ::serde::Deserialize<'de> for DeviceFleetProperties {
     }
 }
 
-impl crate::Resource for DeviceFleet {
+impl ::Resource for DeviceFleet {
     type Properties = DeviceFleetProperties;
     const TYPE: &'static str = "AWS::SageMaker::DeviceFleet";
     fn properties(&self) -> &DeviceFleetProperties {
@@ -849,7 +849,7 @@ impl crate::Resource for DeviceFleet {
     }
 }
 
-impl crate::private::Sealed for DeviceFleet {}
+impl ::private::Sealed for DeviceFleet {}
 
 impl From<DeviceFleetProperties> for DeviceFleet {
     fn from(properties: DeviceFleetProperties) -> DeviceFleet {
@@ -870,52 +870,52 @@ pub struct DomainProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub app_network_access_type: Option<crate::Value<String>>,
+    pub app_network_access_type: Option<::Value<String>>,
     /// Property [`AppSecurityGroupManagement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-appsecuritygroupmanagement).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub app_security_group_management: Option<crate::Value<String>>,
+    pub app_security_group_management: Option<::Value<String>>,
     /// Property [`AuthMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-authmode).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub auth_mode: crate::Value<String>,
+    pub auth_mode: ::Value<String>,
     /// Property [`DefaultUserSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-defaultusersettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_user_settings: crate::Value<self::domain::UserSettings>,
+    pub default_user_settings: ::Value<self::domain::UserSettings>,
     /// Property [`DomainName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-domainname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain_name: crate::Value<String>,
+    pub domain_name: ::Value<String>,
     /// Property [`DomainSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-domainsettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub domain_settings: Option<crate::Value<self::domain::DomainSettings>>,
+    pub domain_settings: Option<::Value<self::domain::DomainSettings>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-subnetids).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnet_ids: crate::ValueList<String>,
+    pub subnet_ids: ::ValueList<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VpcId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-vpcid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc_id: crate::Value<String>,
+    pub vpc_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for DomainProperties {
@@ -976,16 +976,16 @@ impl<'de> ::serde::Deserialize<'de> for DomainProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut app_network_access_type: Option<crate::Value<String>> = None;
-                let mut app_security_group_management: Option<crate::Value<String>> = None;
-                let mut auth_mode: Option<crate::Value<String>> = None;
-                let mut default_user_settings: Option<crate::Value<self::domain::UserSettings>> = None;
-                let mut domain_name: Option<crate::Value<String>> = None;
-                let mut domain_settings: Option<crate::Value<self::domain::DomainSettings>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
-                let mut subnet_ids: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut vpc_id: Option<crate::Value<String>> = None;
+                let mut app_network_access_type: Option<::Value<String>> = None;
+                let mut app_security_group_management: Option<::Value<String>> = None;
+                let mut auth_mode: Option<::Value<String>> = None;
+                let mut default_user_settings: Option<::Value<self::domain::UserSettings>> = None;
+                let mut domain_name: Option<::Value<String>> = None;
+                let mut domain_settings: Option<::Value<self::domain::DomainSettings>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
+                let mut subnet_ids: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut vpc_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1045,7 +1045,7 @@ impl<'de> ::serde::Deserialize<'de> for DomainProperties {
     }
 }
 
-impl crate::Resource for Domain {
+impl ::Resource for Domain {
     type Properties = DomainProperties;
     const TYPE: &'static str = "AWS::SageMaker::Domain";
     fn properties(&self) -> &DomainProperties {
@@ -1056,7 +1056,7 @@ impl crate::Resource for Domain {
     }
 }
 
-impl crate::private::Sealed for Domain {}
+impl ::private::Sealed for Domain {}
 
 impl From<DomainProperties> for Domain {
     fn from(properties: DomainProperties) -> Domain {
@@ -1077,37 +1077,37 @@ pub struct EndpointProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub deployment_config: Option<crate::Value<self::endpoint::DeploymentConfig>>,
+    pub deployment_config: Option<::Value<self::endpoint::DeploymentConfig>>,
     /// Property [`EndpointConfigName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub endpoint_config_name: crate::Value<String>,
+    pub endpoint_config_name: ::Value<String>,
     /// Property [`EndpointName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub endpoint_name: Option<crate::Value<String>>,
+    pub endpoint_name: Option<::Value<String>>,
     /// Property [`ExcludeRetainedVariantProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-excluderetainedvariantproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub exclude_retained_variant_properties: Option<crate::ValueList<self::endpoint::VariantProperty>>,
+    pub exclude_retained_variant_properties: Option<::ValueList<self::endpoint::VariantProperty>>,
     /// Property [`RetainAllVariantProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retainallvariantproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub retain_all_variant_properties: Option<crate::Value<bool>>,
+    pub retain_all_variant_properties: Option<::Value<bool>>,
     /// Property [`RetainDeploymentConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retaindeploymentconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub retain_deployment_config: Option<crate::Value<bool>>,
+    pub retain_deployment_config: Option<::Value<bool>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for EndpointProperties {
@@ -1173,15 +1173,15 @@ impl<'de> ::serde::Deserialize<'de> for EndpointProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut deployment_config: Option<crate::Value<self::endpoint::DeploymentConfig>> = None;
-                let mut endpoint_config_name: Option<crate::Value<String>> = None;
-                let mut endpoint_name: Option<crate::Value<String>> = None;
+                let mut deployment_config: Option<::Value<self::endpoint::DeploymentConfig>> = None;
+                let mut endpoint_config_name: Option<::Value<String>> = None;
+                let mut endpoint_name: Option<::Value<String>> = None;
                 let mut exclude_retained_variant_properties: Option<
-                    crate::ValueList<self::endpoint::VariantProperty>,
+                    ::ValueList<self::endpoint::VariantProperty>,
                 > = None;
-                let mut retain_all_variant_properties: Option<crate::Value<bool>> = None;
-                let mut retain_deployment_config: Option<crate::Value<bool>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut retain_all_variant_properties: Option<::Value<bool>> = None;
+                let mut retain_deployment_config: Option<::Value<bool>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1230,7 +1230,7 @@ impl<'de> ::serde::Deserialize<'de> for EndpointProperties {
     }
 }
 
-impl crate::Resource for Endpoint {
+impl ::Resource for Endpoint {
     type Properties = EndpointProperties;
     const TYPE: &'static str = "AWS::SageMaker::Endpoint";
     fn properties(&self) -> &EndpointProperties {
@@ -1241,7 +1241,7 @@ impl crate::Resource for Endpoint {
     }
 }
 
-impl crate::private::Sealed for Endpoint {}
+impl ::private::Sealed for Endpoint {}
 
 impl From<EndpointProperties> for Endpoint {
     fn from(properties: EndpointProperties) -> Endpoint {
@@ -1262,32 +1262,32 @@ pub struct EndpointConfigProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub async_inference_config: Option<crate::Value<self::endpoint_config::AsyncInferenceConfig>>,
+    pub async_inference_config: Option<::Value<self::endpoint_config::AsyncInferenceConfig>>,
     /// Property [`DataCaptureConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_capture_config: Option<crate::Value<self::endpoint_config::DataCaptureConfig>>,
+    pub data_capture_config: Option<::Value<self::endpoint_config::DataCaptureConfig>>,
     /// Property [`EndpointConfigName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-endpointconfigname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub endpoint_config_name: Option<crate::Value<String>>,
+    pub endpoint_config_name: Option<::Value<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`ProductionVariants`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-productionvariants).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub production_variants: crate::ValueList<self::endpoint_config::ProductionVariant>,
+    pub production_variants: ::ValueList<self::endpoint_config::ProductionVariant>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for EndpointConfigProperties {
@@ -1347,17 +1347,17 @@ impl<'de> ::serde::Deserialize<'de> for EndpointConfigProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut async_inference_config: Option<
-                    crate::Value<self::endpoint_config::AsyncInferenceConfig>,
+                    ::Value<self::endpoint_config::AsyncInferenceConfig>,
                 > = None;
                 let mut data_capture_config: Option<
-                    crate::Value<self::endpoint_config::DataCaptureConfig>,
+                    ::Value<self::endpoint_config::DataCaptureConfig>,
                 > = None;
-                let mut endpoint_config_name: Option<crate::Value<String>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut endpoint_config_name: Option<::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
                 let mut production_variants: Option<
-                    crate::ValueList<self::endpoint_config::ProductionVariant>,
+                    ::ValueList<self::endpoint_config::ProductionVariant>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1399,7 +1399,7 @@ impl<'de> ::serde::Deserialize<'de> for EndpointConfigProperties {
     }
 }
 
-impl crate::Resource for EndpointConfig {
+impl ::Resource for EndpointConfig {
     type Properties = EndpointConfigProperties;
     const TYPE: &'static str = "AWS::SageMaker::EndpointConfig";
     fn properties(&self) -> &EndpointConfigProperties {
@@ -1410,7 +1410,7 @@ impl crate::Resource for EndpointConfig {
     }
 }
 
-impl crate::private::Sealed for EndpointConfig {}
+impl ::private::Sealed for EndpointConfig {}
 
 impl From<EndpointConfigProperties> for EndpointConfig {
     fn from(properties: EndpointConfigProperties) -> EndpointConfig {
@@ -1431,47 +1431,47 @@ pub struct FeatureGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`EventTimeFeatureName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-eventtimefeaturename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub event_time_feature_name: crate::Value<String>,
+    pub event_time_feature_name: ::Value<String>,
     /// Property [`FeatureDefinitions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-featuredefinitions).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub feature_definitions: crate::ValueList<self::feature_group::FeatureDefinition>,
+    pub feature_definitions: ::ValueList<self::feature_group::FeatureDefinition>,
     /// Property [`FeatureGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-featuregroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub feature_group_name: crate::Value<String>,
+    pub feature_group_name: ::Value<String>,
     /// Property [`OfflineStoreConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-offlinestoreconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub offline_store_config: Option<crate::Value<crate::json::Value>>,
+    pub offline_store_config: Option<::Value<::json::Value>>,
     /// Property [`OnlineStoreConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-onlinestoreconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub online_store_config: Option<crate::Value<crate::json::Value>>,
+    pub online_store_config: Option<::Value<::json::Value>>,
     /// Property [`RecordIdentifierFeatureName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-recordidentifierfeaturename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub record_identifier_feature_name: crate::Value<String>,
+    pub record_identifier_feature_name: ::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: Option<crate::Value<String>>,
+    pub role_arn: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for FeatureGroupProperties {
@@ -1541,17 +1541,17 @@ impl<'de> ::serde::Deserialize<'de> for FeatureGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut event_time_feature_name: Option<crate::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut event_time_feature_name: Option<::Value<String>> = None;
                 let mut feature_definitions: Option<
-                    crate::ValueList<self::feature_group::FeatureDefinition>,
+                    ::ValueList<self::feature_group::FeatureDefinition>,
                 > = None;
-                let mut feature_group_name: Option<crate::Value<String>> = None;
-                let mut offline_store_config: Option<crate::Value<crate::json::Value>> = None;
-                let mut online_store_config: Option<crate::Value<crate::json::Value>> = None;
-                let mut record_identifier_feature_name: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut feature_group_name: Option<::Value<String>> = None;
+                let mut offline_store_config: Option<::Value<::json::Value>> = None;
+                let mut online_store_config: Option<::Value<::json::Value>> = None;
+                let mut record_identifier_feature_name: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1610,7 +1610,7 @@ impl<'de> ::serde::Deserialize<'de> for FeatureGroupProperties {
     }
 }
 
-impl crate::Resource for FeatureGroup {
+impl ::Resource for FeatureGroup {
     type Properties = FeatureGroupProperties;
     const TYPE: &'static str = "AWS::SageMaker::FeatureGroup";
     fn properties(&self) -> &FeatureGroupProperties {
@@ -1621,7 +1621,7 @@ impl crate::Resource for FeatureGroup {
     }
 }
 
-impl crate::private::Sealed for FeatureGroup {}
+impl ::private::Sealed for FeatureGroup {}
 
 impl From<FeatureGroupProperties> for FeatureGroup {
     fn from(properties: FeatureGroupProperties) -> FeatureGroup {
@@ -1642,27 +1642,27 @@ pub struct ImageProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub image_description: Option<crate::Value<String>>,
+    pub image_description: Option<::Value<String>>,
     /// Property [`ImageDisplayName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-imagedisplayname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub image_display_name: Option<crate::Value<String>>,
+    pub image_display_name: Option<::Value<String>>,
     /// Property [`ImageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-imagename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub image_name: crate::Value<String>,
+    pub image_name: ::Value<String>,
     /// Property [`ImageRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-imagerolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub image_role_arn: crate::Value<String>,
+    pub image_role_arn: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ImageProperties {
@@ -1710,11 +1710,11 @@ impl<'de> ::serde::Deserialize<'de> for ImageProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut image_description: Option<crate::Value<String>> = None;
-                let mut image_display_name: Option<crate::Value<String>> = None;
-                let mut image_name: Option<crate::Value<String>> = None;
-                let mut image_role_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut image_description: Option<::Value<String>> = None;
+                let mut image_display_name: Option<::Value<String>> = None;
+                let mut image_name: Option<::Value<String>> = None;
+                let mut image_role_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1752,7 +1752,7 @@ impl<'de> ::serde::Deserialize<'de> for ImageProperties {
     }
 }
 
-impl crate::Resource for Image {
+impl ::Resource for Image {
     type Properties = ImageProperties;
     const TYPE: &'static str = "AWS::SageMaker::Image";
     fn properties(&self) -> &ImageProperties {
@@ -1763,7 +1763,7 @@ impl crate::Resource for Image {
     }
 }
 
-impl crate::private::Sealed for Image {}
+impl ::private::Sealed for Image {}
 
 impl From<ImageProperties> for Image {
     fn from(properties: ImageProperties) -> Image {
@@ -1784,12 +1784,12 @@ pub struct ImageVersionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub base_image: crate::Value<String>,
+    pub base_image: ::Value<String>,
     /// Property [`ImageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-imagename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub image_name: crate::Value<String>,
+    pub image_name: ::Value<String>,
 }
 
 impl ::serde::Serialize for ImageVersionProperties {
@@ -1818,8 +1818,8 @@ impl<'de> ::serde::Deserialize<'de> for ImageVersionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut base_image: Option<crate::Value<String>> = None;
-                let mut image_name: Option<crate::Value<String>> = None;
+                let mut base_image: Option<::Value<String>> = None;
+                let mut image_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1844,7 +1844,7 @@ impl<'de> ::serde::Deserialize<'de> for ImageVersionProperties {
     }
 }
 
-impl crate::Resource for ImageVersion {
+impl ::Resource for ImageVersion {
     type Properties = ImageVersionProperties;
     const TYPE: &'static str = "AWS::SageMaker::ImageVersion";
     fn properties(&self) -> &ImageVersionProperties {
@@ -1855,7 +1855,7 @@ impl crate::Resource for ImageVersion {
     }
 }
 
-impl crate::private::Sealed for ImageVersion {}
+impl ::private::Sealed for ImageVersion {}
 
 impl From<ImageVersionProperties> for ImageVersion {
     fn from(properties: ImageVersionProperties) -> ImageVersion {
@@ -1876,42 +1876,42 @@ pub struct ModelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub containers: Option<crate::ValueList<self::model::ContainerDefinition>>,
+    pub containers: Option<::ValueList<self::model::ContainerDefinition>>,
     /// Property [`EnableNetworkIsolation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-enablenetworkisolation).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub enable_network_isolation: Option<crate::Value<bool>>,
+    pub enable_network_isolation: Option<::Value<bool>>,
     /// Property [`ExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-executionrolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub execution_role_arn: crate::Value<String>,
+    pub execution_role_arn: ::Value<String>,
     /// Property [`InferenceExecutionConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-inferenceexecutionconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub inference_execution_config: Option<crate::Value<self::model::InferenceExecutionConfig>>,
+    pub inference_execution_config: Option<::Value<self::model::InferenceExecutionConfig>>,
     /// Property [`ModelName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-modelname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub model_name: Option<crate::Value<String>>,
+    pub model_name: Option<::Value<String>>,
     /// Property [`PrimaryContainer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-primarycontainer).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub primary_container: Option<crate::Value<self::model::ContainerDefinition>>,
+    pub primary_container: Option<::Value<self::model::ContainerDefinition>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VpcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-vpcconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc_config: Option<crate::Value<self::model::VpcConfig>>,
+    pub vpc_config: Option<::Value<self::model::VpcConfig>>,
 }
 
 impl ::serde::Serialize for ModelProperties {
@@ -1974,16 +1974,16 @@ impl<'de> ::serde::Deserialize<'de> for ModelProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut containers: Option<crate::ValueList<self::model::ContainerDefinition>> = None;
-                let mut enable_network_isolation: Option<crate::Value<bool>> = None;
-                let mut execution_role_arn: Option<crate::Value<String>> = None;
+                let mut containers: Option<::ValueList<self::model::ContainerDefinition>> = None;
+                let mut enable_network_isolation: Option<::Value<bool>> = None;
+                let mut execution_role_arn: Option<::Value<String>> = None;
                 let mut inference_execution_config: Option<
-                    crate::Value<self::model::InferenceExecutionConfig>,
+                    ::Value<self::model::InferenceExecutionConfig>,
                 > = None;
-                let mut model_name: Option<crate::Value<String>> = None;
-                let mut primary_container: Option<crate::Value<self::model::ContainerDefinition>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut vpc_config: Option<crate::Value<self::model::VpcConfig>> = None;
+                let mut model_name: Option<::Value<String>> = None;
+                let mut primary_container: Option<::Value<self::model::ContainerDefinition>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut vpc_config: Option<::Value<self::model::VpcConfig>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2035,7 +2035,7 @@ impl<'de> ::serde::Deserialize<'de> for ModelProperties {
     }
 }
 
-impl crate::Resource for Model {
+impl ::Resource for Model {
     type Properties = ModelProperties;
     const TYPE: &'static str = "AWS::SageMaker::Model";
     fn properties(&self) -> &ModelProperties {
@@ -2046,7 +2046,7 @@ impl crate::Resource for Model {
     }
 }
 
-impl crate::private::Sealed for Model {}
+impl ::private::Sealed for Model {}
 
 impl From<ModelProperties> for Model {
     fn from(properties: ModelProperties) -> Model {
@@ -2067,55 +2067,55 @@ pub struct ModelBiasJobDefinitionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_definition_name: Option<crate::Value<String>>,
+    pub job_definition_name: Option<::Value<String>>,
     /// Property [`JobResources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-jobresources).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_resources: crate::Value<self::model_bias_job_definition::MonitoringResources>,
+    pub job_resources: ::Value<self::model_bias_job_definition::MonitoringResources>,
     /// Property [`ModelBiasAppSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_bias_app_specification:
-        crate::Value<self::model_bias_job_definition::ModelBiasAppSpecification>,
+        ::Value<self::model_bias_job_definition::ModelBiasAppSpecification>,
     /// Property [`ModelBiasBaselineConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_bias_baseline_config:
-        Option<crate::Value<self::model_bias_job_definition::ModelBiasBaselineConfig>>,
+        Option<::Value<self::model_bias_job_definition::ModelBiasBaselineConfig>>,
     /// Property [`ModelBiasJobInput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub model_bias_job_input: crate::Value<self::model_bias_job_definition::ModelBiasJobInput>,
+    pub model_bias_job_input: ::Value<self::model_bias_job_definition::ModelBiasJobInput>,
     /// Property [`ModelBiasJobOutputConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjoboutputconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_bias_job_output_config:
-        crate::Value<self::model_bias_job_definition::MonitoringOutputConfig>,
+        ::Value<self::model_bias_job_definition::MonitoringOutputConfig>,
     /// Property [`NetworkConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub network_config: Option<crate::Value<self::model_bias_job_definition::NetworkConfig>>,
+    pub network_config: Option<::Value<self::model_bias_job_definition::NetworkConfig>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`StoppingCondition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-stoppingcondition).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub stopping_condition: Option<crate::Value<self::model_bias_job_definition::StoppingCondition>>,
+    pub stopping_condition: Option<::Value<self::model_bias_job_definition::StoppingCondition>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ModelBiasJobDefinitionProperties {
@@ -2186,30 +2186,30 @@ impl<'de> ::serde::Deserialize<'de> for ModelBiasJobDefinitionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut job_definition_name: Option<crate::Value<String>> = None;
+                let mut job_definition_name: Option<::Value<String>> = None;
                 let mut job_resources: Option<
-                    crate::Value<self::model_bias_job_definition::MonitoringResources>,
+                    ::Value<self::model_bias_job_definition::MonitoringResources>,
                 > = None;
                 let mut model_bias_app_specification: Option<
-                    crate::Value<self::model_bias_job_definition::ModelBiasAppSpecification>,
+                    ::Value<self::model_bias_job_definition::ModelBiasAppSpecification>,
                 > = None;
                 let mut model_bias_baseline_config: Option<
-                    crate::Value<self::model_bias_job_definition::ModelBiasBaselineConfig>,
+                    ::Value<self::model_bias_job_definition::ModelBiasBaselineConfig>,
                 > = None;
                 let mut model_bias_job_input: Option<
-                    crate::Value<self::model_bias_job_definition::ModelBiasJobInput>,
+                    ::Value<self::model_bias_job_definition::ModelBiasJobInput>,
                 > = None;
                 let mut model_bias_job_output_config: Option<
-                    crate::Value<self::model_bias_job_definition::MonitoringOutputConfig>,
+                    ::Value<self::model_bias_job_definition::MonitoringOutputConfig>,
                 > = None;
                 let mut network_config: Option<
-                    crate::Value<self::model_bias_job_definition::NetworkConfig>,
+                    ::Value<self::model_bias_job_definition::NetworkConfig>,
                 > = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
                 let mut stopping_condition: Option<
-                    crate::Value<self::model_bias_job_definition::StoppingCondition>,
+                    ::Value<self::model_bias_job_definition::StoppingCondition>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2275,7 +2275,7 @@ impl<'de> ::serde::Deserialize<'de> for ModelBiasJobDefinitionProperties {
     }
 }
 
-impl crate::Resource for ModelBiasJobDefinition {
+impl ::Resource for ModelBiasJobDefinition {
     type Properties = ModelBiasJobDefinitionProperties;
     const TYPE: &'static str = "AWS::SageMaker::ModelBiasJobDefinition";
     fn properties(&self) -> &ModelBiasJobDefinitionProperties {
@@ -2286,7 +2286,7 @@ impl crate::Resource for ModelBiasJobDefinition {
     }
 }
 
-impl crate::private::Sealed for ModelBiasJobDefinition {}
+impl ::private::Sealed for ModelBiasJobDefinition {}
 
 impl From<ModelBiasJobDefinitionProperties> for ModelBiasJobDefinition {
     fn from(properties: ModelBiasJobDefinitionProperties) -> ModelBiasJobDefinition {
@@ -2307,58 +2307,58 @@ pub struct ModelExplainabilityJobDefinitionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_definition_name: Option<crate::Value<String>>,
+    pub job_definition_name: Option<::Value<String>>,
     /// Property [`JobResources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-jobresources).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_resources: crate::Value<self::model_explainability_job_definition::MonitoringResources>,
+    pub job_resources: ::Value<self::model_explainability_job_definition::MonitoringResources>,
     /// Property [`ModelExplainabilityAppSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_explainability_app_specification:
-        crate::Value<self::model_explainability_job_definition::ModelExplainabilityAppSpecification>,
+        ::Value<self::model_explainability_job_definition::ModelExplainabilityAppSpecification>,
     /// Property [`ModelExplainabilityBaselineConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_explainability_baseline_config: Option<
-        crate::Value<self::model_explainability_job_definition::ModelExplainabilityBaselineConfig>,
+        ::Value<self::model_explainability_job_definition::ModelExplainabilityBaselineConfig>,
     >,
     /// Property [`ModelExplainabilityJobInput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_explainability_job_input:
-        crate::Value<self::model_explainability_job_definition::ModelExplainabilityJobInput>,
+        ::Value<self::model_explainability_job_definition::ModelExplainabilityJobInput>,
     /// Property [`ModelExplainabilityJobOutputConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjoboutputconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_explainability_job_output_config:
-        crate::Value<self::model_explainability_job_definition::MonitoringOutputConfig>,
+        ::Value<self::model_explainability_job_definition::MonitoringOutputConfig>,
     /// Property [`NetworkConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub network_config: Option<crate::Value<self::model_explainability_job_definition::NetworkConfig>>,
+    pub network_config: Option<::Value<self::model_explainability_job_definition::NetworkConfig>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`StoppingCondition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-stoppingcondition).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub stopping_condition:
-        Option<crate::Value<self::model_explainability_job_definition::StoppingCondition>>,
+        Option<::Value<self::model_explainability_job_definition::StoppingCondition>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ModelExplainabilityJobDefinitionProperties {
@@ -2434,26 +2434,26 @@ impl<'de> ::serde::Deserialize<'de> for ModelExplainabilityJobDefinitionProperti
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut job_definition_name: Option<crate::Value<String>> = None;
+                let mut job_definition_name: Option<::Value<String>> = None;
                 let mut job_resources: Option<
-                    crate::Value<self::model_explainability_job_definition::MonitoringResources>,
+                    ::Value<self::model_explainability_job_definition::MonitoringResources>,
                 > = None;
-                let mut model_explainability_app_specification: Option<crate::Value<self::model_explainability_job_definition::ModelExplainabilityAppSpecification>> = None;
-                let mut model_explainability_baseline_config: Option<crate::Value<self::model_explainability_job_definition::ModelExplainabilityBaselineConfig>> = None;
+                let mut model_explainability_app_specification: Option<::Value<self::model_explainability_job_definition::ModelExplainabilityAppSpecification>> = None;
+                let mut model_explainability_baseline_config: Option<::Value<self::model_explainability_job_definition::ModelExplainabilityBaselineConfig>> = None;
                 let mut model_explainability_job_input: Option<
-                    crate::Value<self::model_explainability_job_definition::ModelExplainabilityJobInput>,
+                    ::Value<self::model_explainability_job_definition::ModelExplainabilityJobInput>,
                 > = None;
                 let mut model_explainability_job_output_config: Option<
-                    crate::Value<self::model_explainability_job_definition::MonitoringOutputConfig>,
+                    ::Value<self::model_explainability_job_definition::MonitoringOutputConfig>,
                 > = None;
                 let mut network_config: Option<
-                    crate::Value<self::model_explainability_job_definition::NetworkConfig>,
+                    ::Value<self::model_explainability_job_definition::NetworkConfig>,
                 > = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
                 let mut stopping_condition: Option<
-                    crate::Value<self::model_explainability_job_definition::StoppingCondition>,
+                    ::Value<self::model_explainability_job_definition::StoppingCondition>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2523,7 +2523,7 @@ impl<'de> ::serde::Deserialize<'de> for ModelExplainabilityJobDefinitionProperti
     }
 }
 
-impl crate::Resource for ModelExplainabilityJobDefinition {
+impl ::Resource for ModelExplainabilityJobDefinition {
     type Properties = ModelExplainabilityJobDefinitionProperties;
     const TYPE: &'static str = "AWS::SageMaker::ModelExplainabilityJobDefinition";
     fn properties(&self) -> &ModelExplainabilityJobDefinitionProperties {
@@ -2534,7 +2534,7 @@ impl crate::Resource for ModelExplainabilityJobDefinition {
     }
 }
 
-impl crate::private::Sealed for ModelExplainabilityJobDefinition {}
+impl ::private::Sealed for ModelExplainabilityJobDefinition {}
 
 impl From<ModelExplainabilityJobDefinitionProperties> for ModelExplainabilityJobDefinition {
     fn from(
@@ -2557,22 +2557,22 @@ pub struct ModelPackageGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub model_package_group_description: Option<crate::Value<String>>,
+    pub model_package_group_description: Option<::Value<String>>,
     /// Property [`ModelPackageGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-modelpackagegroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub model_package_group_name: crate::Value<String>,
+    pub model_package_group_name: ::Value<String>,
     /// Property [`ModelPackageGroupPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-modelpackagegrouppolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub model_package_group_policy: Option<crate::Value<crate::json::Value>>,
+    pub model_package_group_policy: Option<::Value<::json::Value>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ModelPackageGroupProperties {
@@ -2621,10 +2621,10 @@ impl<'de> ::serde::Deserialize<'de> for ModelPackageGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut model_package_group_description: Option<crate::Value<String>> = None;
-                let mut model_package_group_name: Option<crate::Value<String>> = None;
-                let mut model_package_group_policy: Option<crate::Value<crate::json::Value>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut model_package_group_description: Option<::Value<String>> = None;
+                let mut model_package_group_name: Option<::Value<String>> = None;
+                let mut model_package_group_policy: Option<::Value<::json::Value>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2661,7 +2661,7 @@ impl<'de> ::serde::Deserialize<'de> for ModelPackageGroupProperties {
     }
 }
 
-impl crate::Resource for ModelPackageGroup {
+impl ::Resource for ModelPackageGroup {
     type Properties = ModelPackageGroupProperties;
     const TYPE: &'static str = "AWS::SageMaker::ModelPackageGroup";
     fn properties(&self) -> &ModelPackageGroupProperties {
@@ -2672,7 +2672,7 @@ impl crate::Resource for ModelPackageGroup {
     }
 }
 
-impl crate::private::Sealed for ModelPackageGroup {}
+impl ::private::Sealed for ModelPackageGroup {}
 
 impl From<ModelPackageGroupProperties> for ModelPackageGroup {
     fn from(properties: ModelPackageGroupProperties) -> ModelPackageGroup {
@@ -2693,55 +2693,55 @@ pub struct ModelQualityJobDefinitionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_definition_name: Option<crate::Value<String>>,
+    pub job_definition_name: Option<::Value<String>>,
     /// Property [`JobResources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-jobresources).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub job_resources: crate::Value<self::model_quality_job_definition::MonitoringResources>,
+    pub job_resources: ::Value<self::model_quality_job_definition::MonitoringResources>,
     /// Property [`ModelQualityAppSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_quality_app_specification:
-        crate::Value<self::model_quality_job_definition::ModelQualityAppSpecification>,
+        ::Value<self::model_quality_job_definition::ModelQualityAppSpecification>,
     /// Property [`ModelQualityBaselineConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_quality_baseline_config:
-        Option<crate::Value<self::model_quality_job_definition::ModelQualityBaselineConfig>>,
+        Option<::Value<self::model_quality_job_definition::ModelQualityBaselineConfig>>,
     /// Property [`ModelQualityJobInput`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub model_quality_job_input: crate::Value<self::model_quality_job_definition::ModelQualityJobInput>,
+    pub model_quality_job_input: ::Value<self::model_quality_job_definition::ModelQualityJobInput>,
     /// Property [`ModelQualityJobOutputConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjoboutputconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
     pub model_quality_job_output_config:
-        crate::Value<self::model_quality_job_definition::MonitoringOutputConfig>,
+        ::Value<self::model_quality_job_definition::MonitoringOutputConfig>,
     /// Property [`NetworkConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub network_config: Option<crate::Value<self::model_quality_job_definition::NetworkConfig>>,
+    pub network_config: Option<::Value<self::model_quality_job_definition::NetworkConfig>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`StoppingCondition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-stoppingcondition).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub stopping_condition: Option<crate::Value<self::model_quality_job_definition::StoppingCondition>>,
+    pub stopping_condition: Option<::Value<self::model_quality_job_definition::StoppingCondition>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ModelQualityJobDefinitionProperties {
@@ -2812,30 +2812,30 @@ impl<'de> ::serde::Deserialize<'de> for ModelQualityJobDefinitionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut job_definition_name: Option<crate::Value<String>> = None;
+                let mut job_definition_name: Option<::Value<String>> = None;
                 let mut job_resources: Option<
-                    crate::Value<self::model_quality_job_definition::MonitoringResources>,
+                    ::Value<self::model_quality_job_definition::MonitoringResources>,
                 > = None;
                 let mut model_quality_app_specification: Option<
-                    crate::Value<self::model_quality_job_definition::ModelQualityAppSpecification>,
+                    ::Value<self::model_quality_job_definition::ModelQualityAppSpecification>,
                 > = None;
                 let mut model_quality_baseline_config: Option<
-                    crate::Value<self::model_quality_job_definition::ModelQualityBaselineConfig>,
+                    ::Value<self::model_quality_job_definition::ModelQualityBaselineConfig>,
                 > = None;
                 let mut model_quality_job_input: Option<
-                    crate::Value<self::model_quality_job_definition::ModelQualityJobInput>,
+                    ::Value<self::model_quality_job_definition::ModelQualityJobInput>,
                 > = None;
                 let mut model_quality_job_output_config: Option<
-                    crate::Value<self::model_quality_job_definition::MonitoringOutputConfig>,
+                    ::Value<self::model_quality_job_definition::MonitoringOutputConfig>,
                 > = None;
                 let mut network_config: Option<
-                    crate::Value<self::model_quality_job_definition::NetworkConfig>,
+                    ::Value<self::model_quality_job_definition::NetworkConfig>,
                 > = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
                 let mut stopping_condition: Option<
-                    crate::Value<self::model_quality_job_definition::StoppingCondition>,
+                    ::Value<self::model_quality_job_definition::StoppingCondition>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2901,7 +2901,7 @@ impl<'de> ::serde::Deserialize<'de> for ModelQualityJobDefinitionProperties {
     }
 }
 
-impl crate::Resource for ModelQualityJobDefinition {
+impl ::Resource for ModelQualityJobDefinition {
     type Properties = ModelQualityJobDefinitionProperties;
     const TYPE: &'static str = "AWS::SageMaker::ModelQualityJobDefinition";
     fn properties(&self) -> &ModelQualityJobDefinitionProperties {
@@ -2912,7 +2912,7 @@ impl crate::Resource for ModelQualityJobDefinition {
     }
 }
 
-impl crate::private::Sealed for ModelQualityJobDefinition {}
+impl ::private::Sealed for ModelQualityJobDefinition {}
 
 impl From<ModelQualityJobDefinitionProperties> for ModelQualityJobDefinition {
     fn from(properties: ModelQualityJobDefinitionProperties) -> ModelQualityJobDefinition {
@@ -2933,38 +2933,38 @@ pub struct MonitoringScheduleProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub endpoint_name: Option<crate::Value<String>>,
+    pub endpoint_name: Option<::Value<String>>,
     /// Property [`FailureReason`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-failurereason).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub failure_reason: Option<crate::Value<String>>,
+    pub failure_reason: Option<::Value<String>>,
     /// Property [`LastMonitoringExecutionSummary`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-lastmonitoringexecutionsummary).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub last_monitoring_execution_summary:
-        Option<crate::Value<self::monitoring_schedule::MonitoringExecutionSummary>>,
+        Option<::Value<self::monitoring_schedule::MonitoringExecutionSummary>>,
     /// Property [`MonitoringScheduleConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub monitoring_schedule_config: crate::Value<self::monitoring_schedule::MonitoringScheduleConfig>,
+    pub monitoring_schedule_config: ::Value<self::monitoring_schedule::MonitoringScheduleConfig>,
     /// Property [`MonitoringScheduleName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringschedulename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub monitoring_schedule_name: crate::Value<String>,
+    pub monitoring_schedule_name: ::Value<String>,
     /// Property [`MonitoringScheduleStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringschedulestatus).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub monitoring_schedule_status: Option<crate::Value<String>>,
+    pub monitoring_schedule_status: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for MonitoringScheduleProperties {
@@ -3025,17 +3025,17 @@ impl<'de> ::serde::Deserialize<'de> for MonitoringScheduleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut endpoint_name: Option<crate::Value<String>> = None;
-                let mut failure_reason: Option<crate::Value<String>> = None;
+                let mut endpoint_name: Option<::Value<String>> = None;
+                let mut failure_reason: Option<::Value<String>> = None;
                 let mut last_monitoring_execution_summary: Option<
-                    crate::Value<self::monitoring_schedule::MonitoringExecutionSummary>,
+                    ::Value<self::monitoring_schedule::MonitoringExecutionSummary>,
                 > = None;
                 let mut monitoring_schedule_config: Option<
-                    crate::Value<self::monitoring_schedule::MonitoringScheduleConfig>,
+                    ::Value<self::monitoring_schedule::MonitoringScheduleConfig>,
                 > = None;
-                let mut monitoring_schedule_name: Option<crate::Value<String>> = None;
-                let mut monitoring_schedule_status: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut monitoring_schedule_name: Option<::Value<String>> = None;
+                let mut monitoring_schedule_status: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -3087,7 +3087,7 @@ impl<'de> ::serde::Deserialize<'de> for MonitoringScheduleProperties {
     }
 }
 
-impl crate::Resource for MonitoringSchedule {
+impl ::Resource for MonitoringSchedule {
     type Properties = MonitoringScheduleProperties;
     const TYPE: &'static str = "AWS::SageMaker::MonitoringSchedule";
     fn properties(&self) -> &MonitoringScheduleProperties {
@@ -3098,7 +3098,7 @@ impl crate::Resource for MonitoringSchedule {
     }
 }
 
-impl crate::private::Sealed for MonitoringSchedule {}
+impl ::private::Sealed for MonitoringSchedule {}
 
 impl From<MonitoringScheduleProperties> for MonitoringSchedule {
     fn from(properties: MonitoringScheduleProperties) -> MonitoringSchedule {
@@ -3119,77 +3119,77 @@ pub struct NotebookInstanceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accelerator_types: Option<crate::ValueList<String>>,
+    pub accelerator_types: Option<::ValueList<String>>,
     /// Property [`AdditionalCodeRepositories`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-additionalcoderepositories).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub additional_code_repositories: Option<crate::ValueList<String>>,
+    pub additional_code_repositories: Option<::ValueList<String>>,
     /// Property [`DefaultCodeRepository`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-defaultcoderepository).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_code_repository: Option<crate::Value<String>>,
+    pub default_code_repository: Option<::Value<String>>,
     /// Property [`DirectInternetAccess`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-directinternetaccess).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub direct_internet_access: Option<crate::Value<String>>,
+    pub direct_internet_access: Option<::Value<String>>,
     /// Property [`InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-instancetype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_type: crate::Value<String>,
+    pub instance_type: ::Value<String>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`LifecycleConfigName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-lifecycleconfigname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub lifecycle_config_name: Option<crate::Value<String>>,
+    pub lifecycle_config_name: Option<::Value<String>>,
     /// Property [`NotebookInstanceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-notebookinstancename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub notebook_instance_name: Option<crate::Value<String>>,
+    pub notebook_instance_name: Option<::Value<String>>,
     /// Property [`PlatformIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-platformidentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub platform_identifier: Option<crate::Value<String>>,
+    pub platform_identifier: Option<::Value<String>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`RootAccess`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rootaccess).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub root_access: Option<crate::Value<String>>,
+    pub root_access: Option<::Value<String>>,
     /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-securitygroupids).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub security_group_ids: Option<crate::ValueList<String>>,
+    pub security_group_ids: Option<::ValueList<String>>,
     /// Property [`SubnetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-subnetid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnet_id: Option<crate::Value<String>>,
+    pub subnet_id: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VolumeSizeInGB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-volumesizeingb).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub volume_size_in_gb: Option<crate::Value<u32>>,
+    pub volume_size_in_gb: Option<::Value<u32>>,
 }
 
 impl ::serde::Serialize for NotebookInstanceProperties {
@@ -3293,21 +3293,21 @@ impl<'de> ::serde::Deserialize<'de> for NotebookInstanceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accelerator_types: Option<crate::ValueList<String>> = None;
-                let mut additional_code_repositories: Option<crate::ValueList<String>> = None;
-                let mut default_code_repository: Option<crate::Value<String>> = None;
-                let mut direct_internet_access: Option<crate::Value<String>> = None;
-                let mut instance_type: Option<crate::Value<String>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
-                let mut lifecycle_config_name: Option<crate::Value<String>> = None;
-                let mut notebook_instance_name: Option<crate::Value<String>> = None;
-                let mut platform_identifier: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut root_access: Option<crate::Value<String>> = None;
-                let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                let mut subnet_id: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut volume_size_in_gb: Option<crate::Value<u32>> = None;
+                let mut accelerator_types: Option<::ValueList<String>> = None;
+                let mut additional_code_repositories: Option<::ValueList<String>> = None;
+                let mut default_code_repository: Option<::Value<String>> = None;
+                let mut direct_internet_access: Option<::Value<String>> = None;
+                let mut instance_type: Option<::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
+                let mut lifecycle_config_name: Option<::Value<String>> = None;
+                let mut notebook_instance_name: Option<::Value<String>> = None;
+                let mut platform_identifier: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut root_access: Option<::Value<String>> = None;
+                let mut security_group_ids: Option<::ValueList<String>> = None;
+                let mut subnet_id: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut volume_size_in_gb: Option<::Value<u32>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -3386,7 +3386,7 @@ impl<'de> ::serde::Deserialize<'de> for NotebookInstanceProperties {
     }
 }
 
-impl crate::Resource for NotebookInstance {
+impl ::Resource for NotebookInstance {
     type Properties = NotebookInstanceProperties;
     const TYPE: &'static str = "AWS::SageMaker::NotebookInstance";
     fn properties(&self) -> &NotebookInstanceProperties {
@@ -3397,7 +3397,7 @@ impl crate::Resource for NotebookInstance {
     }
 }
 
-impl crate::private::Sealed for NotebookInstance {}
+impl ::private::Sealed for NotebookInstance {}
 
 impl From<NotebookInstanceProperties> for NotebookInstance {
     fn from(properties: NotebookInstanceProperties) -> NotebookInstance {
@@ -3418,20 +3418,20 @@ pub struct NotebookInstanceLifecycleConfigProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub notebook_instance_lifecycle_config_name: Option<crate::Value<String>>,
+    pub notebook_instance_lifecycle_config_name: Option<::Value<String>>,
     /// Property [`OnCreate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-oncreate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub on_create: Option<
-        crate::ValueList<self::notebook_instance_lifecycle_config::NotebookInstanceLifecycleHook>,
+        ::ValueList<self::notebook_instance_lifecycle_config::NotebookInstanceLifecycleHook>,
     >,
     /// Property [`OnStart`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-onstart).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub on_start: Option<
-        crate::ValueList<self::notebook_instance_lifecycle_config::NotebookInstanceLifecycleHook>,
+        ::ValueList<self::notebook_instance_lifecycle_config::NotebookInstanceLifecycleHook>,
     >,
 }
 
@@ -3477,14 +3477,14 @@ impl<'de> ::serde::Deserialize<'de> for NotebookInstanceLifecycleConfigPropertie
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut notebook_instance_lifecycle_config_name: Option<crate::Value<String>> = None;
+                let mut notebook_instance_lifecycle_config_name: Option<::Value<String>> = None;
                 let mut on_create: Option<
-                    crate::ValueList<
+                    ::ValueList<
                         self::notebook_instance_lifecycle_config::NotebookInstanceLifecycleHook,
                     >,
                 > = None;
                 let mut on_start: Option<
-                    crate::ValueList<
+                    ::ValueList<
                         self::notebook_instance_lifecycle_config::NotebookInstanceLifecycleHook,
                     >,
                 > = None;
@@ -3518,7 +3518,7 @@ impl<'de> ::serde::Deserialize<'de> for NotebookInstanceLifecycleConfigPropertie
     }
 }
 
-impl crate::Resource for NotebookInstanceLifecycleConfig {
+impl ::Resource for NotebookInstanceLifecycleConfig {
     type Properties = NotebookInstanceLifecycleConfigProperties;
     const TYPE: &'static str = "AWS::SageMaker::NotebookInstanceLifecycleConfig";
     fn properties(&self) -> &NotebookInstanceLifecycleConfigProperties {
@@ -3529,7 +3529,7 @@ impl crate::Resource for NotebookInstanceLifecycleConfig {
     }
 }
 
-impl crate::private::Sealed for NotebookInstanceLifecycleConfig {}
+impl ::private::Sealed for NotebookInstanceLifecycleConfig {}
 
 impl From<NotebookInstanceLifecycleConfigProperties> for NotebookInstanceLifecycleConfig {
     fn from(
@@ -3552,37 +3552,37 @@ pub struct PipelineProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parallelism_configuration: Option<crate::Value<crate::json::Value>>,
+    pub parallelism_configuration: Option<::Value<::json::Value>>,
     /// Property [`PipelineDefinition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedefinition).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub pipeline_definition: crate::Value<crate::json::Value>,
+    pub pipeline_definition: ::Value<::json::Value>,
     /// Property [`PipelineDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub pipeline_description: Option<crate::Value<String>>,
+    pub pipeline_description: Option<::Value<String>>,
     /// Property [`PipelineDisplayName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedisplayname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub pipeline_display_name: Option<crate::Value<String>>,
+    pub pipeline_display_name: Option<::Value<String>>,
     /// Property [`PipelineName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub pipeline_name: crate::Value<String>,
+    pub pipeline_name: ::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for PipelineProperties {
@@ -3638,13 +3638,13 @@ impl<'de> ::serde::Deserialize<'de> for PipelineProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut parallelism_configuration: Option<crate::Value<crate::json::Value>> = None;
-                let mut pipeline_definition: Option<crate::Value<crate::json::Value>> = None;
-                let mut pipeline_description: Option<crate::Value<String>> = None;
-                let mut pipeline_display_name: Option<crate::Value<String>> = None;
-                let mut pipeline_name: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut parallelism_configuration: Option<::Value<::json::Value>> = None;
+                let mut pipeline_definition: Option<::Value<::json::Value>> = None;
+                let mut pipeline_description: Option<::Value<String>> = None;
+                let mut pipeline_display_name: Option<::Value<String>> = None;
+                let mut pipeline_name: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -3692,7 +3692,7 @@ impl<'de> ::serde::Deserialize<'de> for PipelineProperties {
     }
 }
 
-impl crate::Resource for Pipeline {
+impl ::Resource for Pipeline {
     type Properties = PipelineProperties;
     const TYPE: &'static str = "AWS::SageMaker::Pipeline";
     fn properties(&self) -> &PipelineProperties {
@@ -3703,7 +3703,7 @@ impl crate::Resource for Pipeline {
     }
 }
 
-impl crate::private::Sealed for Pipeline {}
+impl ::private::Sealed for Pipeline {}
 
 impl From<PipelineProperties> for Pipeline {
     fn from(properties: PipelineProperties) -> Pipeline {
@@ -3724,22 +3724,22 @@ pub struct ProjectProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub project_description: Option<crate::Value<String>>,
+    pub project_description: Option<::Value<String>>,
     /// Property [`ProjectName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-projectname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub project_name: crate::Value<String>,
+    pub project_name: ::Value<String>,
     /// Property [`ServiceCatalogProvisioningDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-servicecatalogprovisioningdetails).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service_catalog_provisioning_details: crate::Value<crate::json::Value>,
+    pub service_catalog_provisioning_details: ::Value<::json::Value>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ProjectProperties {
@@ -3780,10 +3780,10 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut project_description: Option<crate::Value<String>> = None;
-                let mut project_name: Option<crate::Value<String>> = None;
-                let mut service_catalog_provisioning_details: Option<crate::Value<crate::json::Value>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut project_description: Option<::Value<String>> = None;
+                let mut project_name: Option<::Value<String>> = None;
+                let mut service_catalog_provisioning_details: Option<::Value<::json::Value>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -3821,7 +3821,7 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
     }
 }
 
-impl crate::Resource for Project {
+impl ::Resource for Project {
     type Properties = ProjectProperties;
     const TYPE: &'static str = "AWS::SageMaker::Project";
     fn properties(&self) -> &ProjectProperties {
@@ -3832,7 +3832,7 @@ impl crate::Resource for Project {
     }
 }
 
-impl crate::private::Sealed for Project {}
+impl ::private::Sealed for Project {}
 
 impl From<ProjectProperties> for Project {
     fn from(properties: ProjectProperties) -> Project {
@@ -3853,32 +3853,32 @@ pub struct UserProfileProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain_id: crate::Value<String>,
+    pub domain_id: ::Value<String>,
     /// Property [`SingleSignOnUserIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-singlesignonuseridentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub single_sign_on_user_identifier: Option<crate::Value<String>>,
+    pub single_sign_on_user_identifier: Option<::Value<String>>,
     /// Property [`SingleSignOnUserValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-singlesignonuservalue).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub single_sign_on_user_value: Option<crate::Value<String>>,
+    pub single_sign_on_user_value: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`UserProfileName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-userprofilename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub user_profile_name: crate::Value<String>,
+    pub user_profile_name: ::Value<String>,
     /// Property [`UserSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-usersettings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub user_settings: Option<crate::Value<self::user_profile::UserSettings>>,
+    pub user_settings: Option<::Value<self::user_profile::UserSettings>>,
 }
 
 impl ::serde::Serialize for UserProfileProperties {
@@ -3929,12 +3929,12 @@ impl<'de> ::serde::Deserialize<'de> for UserProfileProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut domain_id: Option<crate::Value<String>> = None;
-                let mut single_sign_on_user_identifier: Option<crate::Value<String>> = None;
-                let mut single_sign_on_user_value: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut user_profile_name: Option<crate::Value<String>> = None;
-                let mut user_settings: Option<crate::Value<self::user_profile::UserSettings>> = None;
+                let mut domain_id: Option<::Value<String>> = None;
+                let mut single_sign_on_user_identifier: Option<::Value<String>> = None;
+                let mut single_sign_on_user_value: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut user_profile_name: Option<::Value<String>> = None;
+                let mut user_settings: Option<::Value<self::user_profile::UserSettings>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -3978,7 +3978,7 @@ impl<'de> ::serde::Deserialize<'de> for UserProfileProperties {
     }
 }
 
-impl crate::Resource for UserProfile {
+impl ::Resource for UserProfile {
     type Properties = UserProfileProperties;
     const TYPE: &'static str = "AWS::SageMaker::UserProfile";
     fn properties(&self) -> &UserProfileProperties {
@@ -3989,7 +3989,7 @@ impl crate::Resource for UserProfile {
     }
 }
 
-impl crate::private::Sealed for UserProfile {}
+impl ::private::Sealed for UserProfile {}
 
 impl From<UserProfileProperties> for UserProfile {
     fn from(properties: UserProfileProperties) -> UserProfile {
@@ -4010,27 +4010,27 @@ pub struct WorkteamProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`MemberDefinitions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-memberdefinitions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub member_definitions: Option<crate::ValueList<self::workteam::MemberDefinition>>,
+    pub member_definitions: Option<::ValueList<self::workteam::MemberDefinition>>,
     /// Property [`NotificationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-notificationconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_configuration: Option<crate::Value<self::workteam::NotificationConfiguration>>,
+    pub notification_configuration: Option<::Value<self::workteam::NotificationConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`WorkteamName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-workteamname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub workteam_name: Option<crate::Value<String>>,
+    pub workteam_name: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for WorkteamProperties {
@@ -4078,14 +4078,14 @@ impl<'de> ::serde::Deserialize<'de> for WorkteamProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut member_definitions: Option<crate::ValueList<self::workteam::MemberDefinition>> =
+                let mut description: Option<::Value<String>> = None;
+                let mut member_definitions: Option<::ValueList<self::workteam::MemberDefinition>> =
                     None;
                 let mut notification_configuration: Option<
-                    crate::Value<self::workteam::NotificationConfiguration>,
+                    ::Value<self::workteam::NotificationConfiguration>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut workteam_name: Option<crate::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut workteam_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -4123,7 +4123,7 @@ impl<'de> ::serde::Deserialize<'de> for WorkteamProperties {
     }
 }
 
-impl crate::Resource for Workteam {
+impl ::Resource for Workteam {
     type Properties = WorkteamProperties;
     const TYPE: &'static str = "AWS::SageMaker::Workteam";
     fn properties(&self) -> &WorkteamProperties {
@@ -4134,7 +4134,7 @@ impl crate::Resource for Workteam {
     }
 }
 
-impl crate::private::Sealed for Workteam {}
+impl ::private::Sealed for Workteam {}
 
 impl From<WorkteamProperties> for Workteam {
     fn from(properties: WorkteamProperties) -> Workteam {
@@ -4152,20 +4152,20 @@ pub mod app {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_type: Option<crate::Value<String>>,
+        pub instance_type: Option<::Value<String>>,
         /// Property [`SageMakerImageArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-app-resourcespec.html#cfn-sagemaker-app-resourcespec-sagemakerimagearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sage_maker_image_arn: Option<crate::Value<String>>,
+        pub sage_maker_image_arn: Option<::Value<String>>,
         /// Property [`SageMakerImageVersionArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-app-resourcespec.html#cfn-sagemaker-app-resourcespec-sagemakerimageversionarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sage_maker_image_version_arn: Option<crate::Value<String>>,
+        pub sage_maker_image_version_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ResourceSpec {
+    impl ::codec::SerializeValue for ResourceSpec {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref instance_type) = self.instance_type {
@@ -4193,7 +4193,7 @@ pub mod app {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourceSpec {
+    impl ::codec::DeserializeValue for ResourceSpec {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceSpec, D::Error> {
             struct Visitor;
 
@@ -4208,9 +4208,9 @@ pub mod app {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut sage_maker_image_arn: Option<crate::Value<String>> = None;
-                    let mut sage_maker_image_version_arn: Option<crate::Value<String>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut sage_maker_image_arn: Option<::Value<String>> = None;
+                    let mut sage_maker_image_version_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4254,20 +4254,20 @@ pub mod app_image_config {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_gid: Option<crate::Value<u32>>,
+        pub default_gid: Option<::Value<u32>>,
         /// Property [`DefaultUid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html#cfn-sagemaker-appimageconfig-filesystemconfig-defaultuid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_uid: Option<crate::Value<u32>>,
+        pub default_uid: Option<::Value<u32>>,
         /// Property [`MountPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html#cfn-sagemaker-appimageconfig-filesystemconfig-mountpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mount_path: Option<crate::Value<String>>,
+        pub mount_path: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for FileSystemConfig {
+    impl ::codec::SerializeValue for FileSystemConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_gid) = self.default_gid {
@@ -4283,7 +4283,7 @@ pub mod app_image_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for FileSystemConfig {
+    impl ::codec::DeserializeValue for FileSystemConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FileSystemConfig, D::Error> {
@@ -4300,9 +4300,9 @@ pub mod app_image_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut default_gid: Option<crate::Value<u32>> = None;
-                    let mut default_uid: Option<crate::Value<u32>> = None;
-                    let mut mount_path: Option<crate::Value<String>> = None;
+                    let mut default_gid: Option<::Value<u32>> = None;
+                    let mut default_uid: Option<::Value<u32>> = None;
+                    let mut mount_path: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4340,15 +4340,15 @@ pub mod app_image_config {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub file_system_config: Option<crate::Value<FileSystemConfig>>,
+        pub file_system_config: Option<::Value<FileSystemConfig>>,
         /// Property [`KernelSpecs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelgatewayimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig-kernelspecs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kernel_specs: crate::ValueList<KernelSpec>,
+        pub kernel_specs: ::ValueList<KernelSpec>,
     }
 
-    impl crate::codec::SerializeValue for KernelGatewayImageConfig {
+    impl ::codec::SerializeValue for KernelGatewayImageConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref file_system_config) = self.file_system_config {
@@ -4367,7 +4367,7 @@ pub mod app_image_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for KernelGatewayImageConfig {
+    impl ::codec::DeserializeValue for KernelGatewayImageConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KernelGatewayImageConfig, D::Error> {
@@ -4384,8 +4384,8 @@ pub mod app_image_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut file_system_config: Option<crate::Value<FileSystemConfig>> = None;
-                    let mut kernel_specs: Option<crate::ValueList<KernelSpec>> = None;
+                    let mut file_system_config: Option<::Value<FileSystemConfig>> = None;
+                    let mut kernel_specs: Option<::ValueList<KernelSpec>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4420,15 +4420,15 @@ pub mod app_image_config {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub display_name: Option<crate::Value<String>>,
+        pub display_name: Option<::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelspec.html#cfn-sagemaker-appimageconfig-kernelspec-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for KernelSpec {
+    impl ::codec::SerializeValue for KernelSpec {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref display_name) = self.display_name {
@@ -4439,7 +4439,7 @@ pub mod app_image_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for KernelSpec {
+    impl ::codec::DeserializeValue for KernelSpec {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<KernelSpec, D::Error> {
             struct Visitor;
 
@@ -4454,8 +4454,8 @@ pub mod app_image_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut display_name: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut display_name: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4493,20 +4493,20 @@ pub mod code_repository {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub branch: Option<crate::Value<String>>,
+        pub branch: Option<::Value<String>>,
         /// Property [`RepositoryUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html#cfn-sagemaker-coderepository-gitconfig-repositoryurl).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub repository_url: crate::Value<String>,
+        pub repository_url: ::Value<String>,
         /// Property [`SecretArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html#cfn-sagemaker-coderepository-gitconfig-secretarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secret_arn: Option<crate::Value<String>>,
+        pub secret_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for GitConfig {
+    impl ::codec::SerializeValue for GitConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref branch) = self.branch {
@@ -4524,7 +4524,7 @@ pub mod code_repository {
         }
     }
 
-    impl crate::codec::DeserializeValue for GitConfig {
+    impl ::codec::DeserializeValue for GitConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GitConfig, D::Error> {
             struct Visitor;
 
@@ -4539,9 +4539,9 @@ pub mod code_repository {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut branch: Option<crate::Value<String>> = None;
-                    let mut repository_url: Option<crate::Value<String>> = None;
-                    let mut secret_arn: Option<crate::Value<String>> = None;
+                    let mut branch: Option<::Value<String>> = None;
+                    let mut repository_url: Option<::Value<String>> = None;
+                    let mut secret_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4584,25 +4584,25 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_count: crate::Value<u32>,
+        pub instance_count: ::Value<u32>,
         /// Property [`InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html#cfn-sagemaker-dataqualityjobdefinition-clusterconfig-instancetype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_type: crate::Value<String>,
+        pub instance_type: ::Value<String>,
         /// Property [`VolumeKmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html#cfn-sagemaker-dataqualityjobdefinition-clusterconfig-volumekmskeyid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volume_kms_key_id: Option<crate::Value<String>>,
+        pub volume_kms_key_id: Option<::Value<String>>,
         /// Property [`VolumeSizeInGB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html#cfn-sagemaker-dataqualityjobdefinition-clusterconfig-volumesizeingb).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volume_size_in_gb: crate::Value<u32>,
+        pub volume_size_in_gb: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for ClusterConfig {
+    impl ::codec::SerializeValue for ClusterConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -4631,7 +4631,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ClusterConfig {
+    impl ::codec::DeserializeValue for ClusterConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClusterConfig, D::Error> {
@@ -4648,10 +4648,10 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_count: Option<crate::Value<u32>> = None;
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut volume_kms_key_id: Option<crate::Value<String>> = None;
-                    let mut volume_size_in_gb: Option<crate::Value<u32>> = None;
+                    let mut instance_count: Option<::Value<u32>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut volume_kms_key_id: Option<::Value<String>> = None;
+                    let mut volume_size_in_gb: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4696,10 +4696,10 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: Option<crate::Value<String>>,
+        pub s3_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ConstraintsResource {
+    impl ::codec::SerializeValue for ConstraintsResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_uri) = self.s3_uri {
@@ -4709,7 +4709,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ConstraintsResource {
+    impl ::codec::DeserializeValue for ConstraintsResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConstraintsResource, D::Error> {
@@ -4726,7 +4726,7 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4754,35 +4754,35 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub container_arguments: Option<crate::ValueList<String>>,
+        pub container_arguments: Option<::ValueList<String>>,
         /// Property [`ContainerEntrypoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-containerentrypoint).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub container_entrypoint: Option<crate::ValueList<String>>,
+        pub container_entrypoint: Option<::ValueList<String>>,
         /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-environment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub environment: Option<crate::ValueMap<String>>,
+        pub environment: Option<::ValueMap<String>>,
         /// Property [`ImageUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-imageuri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub image_uri: crate::Value<String>,
+        pub image_uri: ::Value<String>,
         /// Property [`PostAnalyticsProcessorSourceUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-postanalyticsprocessorsourceuri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub post_analytics_processor_source_uri: Option<crate::Value<String>>,
+        pub post_analytics_processor_source_uri: Option<::Value<String>>,
         /// Property [`RecordPreprocessorSourceUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-recordpreprocessorsourceuri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub record_preprocessor_source_uri: Option<crate::Value<String>>,
+        pub record_preprocessor_source_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DataQualityAppSpecification {
+    impl ::codec::SerializeValue for DataQualityAppSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_arguments) = self.container_arguments {
@@ -4823,7 +4823,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataQualityAppSpecification {
+    impl ::codec::DeserializeValue for DataQualityAppSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataQualityAppSpecification, D::Error> {
@@ -4840,12 +4840,12 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_arguments: Option<crate::ValueList<String>> = None;
-                    let mut container_entrypoint: Option<crate::ValueList<String>> = None;
-                    let mut environment: Option<crate::ValueMap<String>> = None;
-                    let mut image_uri: Option<crate::Value<String>> = None;
-                    let mut post_analytics_processor_source_uri: Option<crate::Value<String>> = None;
-                    let mut record_preprocessor_source_uri: Option<crate::Value<String>> = None;
+                    let mut container_arguments: Option<::ValueList<String>> = None;
+                    let mut container_entrypoint: Option<::ValueList<String>> = None;
+                    let mut environment: Option<::ValueMap<String>> = None;
+                    let mut image_uri: Option<::Value<String>> = None;
+                    let mut post_analytics_processor_source_uri: Option<::Value<String>> = None;
+                    let mut record_preprocessor_source_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4899,20 +4899,20 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub baselining_job_name: Option<crate::Value<String>>,
+        pub baselining_job_name: Option<::Value<String>>,
         /// Property [`ConstraintsResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-constraintsresource).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub constraints_resource: Option<crate::Value<ConstraintsResource>>,
+        pub constraints_resource: Option<::Value<ConstraintsResource>>,
         /// Property [`StatisticsResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-statisticsresource).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub statistics_resource: Option<crate::Value<StatisticsResource>>,
+        pub statistics_resource: Option<::Value<StatisticsResource>>,
     }
 
-    impl crate::codec::SerializeValue for DataQualityBaselineConfig {
+    impl ::codec::SerializeValue for DataQualityBaselineConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref baselining_job_name) = self.baselining_job_name {
@@ -4940,7 +4940,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataQualityBaselineConfig {
+    impl ::codec::DeserializeValue for DataQualityBaselineConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataQualityBaselineConfig, D::Error> {
@@ -4957,9 +4957,9 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut baselining_job_name: Option<crate::Value<String>> = None;
-                    let mut constraints_resource: Option<crate::Value<ConstraintsResource>> = None;
-                    let mut statistics_resource: Option<crate::Value<StatisticsResource>> = None;
+                    let mut baselining_job_name: Option<::Value<String>> = None;
+                    let mut constraints_resource: Option<::Value<ConstraintsResource>> = None;
+                    let mut statistics_resource: Option<::Value<StatisticsResource>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4998,10 +4998,10 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_input: crate::Value<EndpointInput>,
+        pub endpoint_input: ::Value<EndpointInput>,
     }
 
-    impl crate::codec::SerializeValue for DataQualityJobInput {
+    impl ::codec::SerializeValue for DataQualityJobInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5013,7 +5013,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataQualityJobInput {
+    impl ::codec::DeserializeValue for DataQualityJobInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataQualityJobInput, D::Error> {
@@ -5030,7 +5030,7 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_input: Option<crate::Value<EndpointInput>> = None;
+                    let mut endpoint_input: Option<::Value<EndpointInput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5061,25 +5061,25 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_name: crate::Value<String>,
+        pub endpoint_name: ::Value<String>,
         /// Property [`LocalPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-localpath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`S3DataDistributionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-s3datadistributiontype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_data_distribution_type: Option<crate::Value<String>>,
+        pub s3_data_distribution_type: Option<::Value<String>>,
         /// Property [`S3InputMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-s3inputmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_input_mode: Option<crate::Value<String>>,
+        pub s3_input_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EndpointInput {
+    impl ::codec::SerializeValue for EndpointInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5106,7 +5106,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for EndpointInput {
+    impl ::codec::DeserializeValue for EndpointInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EndpointInput, D::Error> {
@@ -5123,10 +5123,10 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_name: Option<crate::Value<String>> = None;
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut s3_data_distribution_type: Option<crate::Value<String>> = None;
-                    let mut s3_input_mode: Option<crate::Value<String>> = None;
+                    let mut endpoint_name: Option<::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut s3_data_distribution_type: Option<::Value<String>> = None;
+                    let mut s3_input_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5171,10 +5171,10 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_output: crate::Value<S3Output>,
+        pub s3_output: ::Value<S3Output>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutput {
+    impl ::codec::SerializeValue for MonitoringOutput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Output", &self.s3_output)?;
@@ -5182,7 +5182,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutput {
+    impl ::codec::DeserializeValue for MonitoringOutput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutput, D::Error> {
@@ -5199,7 +5199,7 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_output: Option<crate::Value<S3Output>> = None;
+                    let mut s3_output: Option<::Value<S3Output>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5230,15 +5230,15 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<crate::Value<String>>,
+        pub kms_key_id: Option<::Value<String>>,
         /// Property [`MonitoringOutputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-dataqualityjobdefinition-monitoringoutputconfig-monitoringoutputs).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub monitoring_outputs: crate::ValueList<MonitoringOutput>,
+        pub monitoring_outputs: ::ValueList<MonitoringOutput>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutputConfig {
+    impl ::codec::SerializeValue for MonitoringOutputConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -5253,7 +5253,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutputConfig {
+    impl ::codec::DeserializeValue for MonitoringOutputConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutputConfig, D::Error> {
@@ -5270,8 +5270,8 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<crate::Value<String>> = None;
-                    let mut monitoring_outputs: Option<crate::ValueList<MonitoringOutput>> = None;
+                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut monitoring_outputs: Option<::ValueList<MonitoringOutput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5306,10 +5306,10 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cluster_config: crate::Value<ClusterConfig>,
+        pub cluster_config: ::Value<ClusterConfig>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringResources {
+    impl ::codec::SerializeValue for MonitoringResources {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5321,7 +5321,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringResources {
+    impl ::codec::DeserializeValue for MonitoringResources {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringResources, D::Error> {
@@ -5338,7 +5338,7 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_config: Option<crate::Value<ClusterConfig>> = None;
+                    let mut cluster_config: Option<::Value<ClusterConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5369,20 +5369,20 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_inter_container_traffic_encryption: Option<crate::Value<bool>>,
+        pub enable_inter_container_traffic_encryption: Option<::Value<bool>>,
         /// Property [`EnableNetworkIsolation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-networkconfig.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig-enablenetworkisolation).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_network_isolation: Option<crate::Value<bool>>,
+        pub enable_network_isolation: Option<::Value<bool>>,
         /// Property [`VpcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-networkconfig.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig-vpcconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub vpc_config: Option<crate::Value<VpcConfig>>,
+        pub vpc_config: Option<::Value<VpcConfig>>,
     }
 
-    impl crate::codec::SerializeValue for NetworkConfig {
+    impl ::codec::SerializeValue for NetworkConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enable_inter_container_traffic_encryption) =
@@ -5408,7 +5408,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for NetworkConfig {
+    impl ::codec::DeserializeValue for NetworkConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkConfig, D::Error> {
@@ -5425,9 +5425,9 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enable_inter_container_traffic_encryption: Option<crate::Value<bool>> = None;
-                    let mut enable_network_isolation: Option<crate::Value<bool>> = None;
-                    let mut vpc_config: Option<crate::Value<VpcConfig>> = None;
+                    let mut enable_inter_container_traffic_encryption: Option<::Value<bool>> = None;
+                    let mut enable_network_isolation: Option<::Value<bool>> = None;
+                    let mut vpc_config: Option<::Value<VpcConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5468,20 +5468,20 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`S3UploadMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-s3output.html#cfn-sagemaker-dataqualityjobdefinition-s3output-s3uploadmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_upload_mode: Option<crate::Value<String>>,
+        pub s3_upload_mode: Option<::Value<String>>,
         /// Property [`S3Uri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-s3output.html#cfn-sagemaker-dataqualityjobdefinition-s3output-s3uri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: crate::Value<String>,
+        pub s3_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3Output {
+    impl ::codec::SerializeValue for S3Output {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocalPath", &self.local_path)?;
@@ -5497,7 +5497,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Output {
+    impl ::codec::DeserializeValue for S3Output {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Output, D::Error> {
             struct Visitor;
 
@@ -5512,9 +5512,9 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut s3_upload_mode: Option<crate::Value<String>> = None;
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut s3_upload_mode: Option<::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5553,10 +5553,10 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: Option<crate::Value<String>>,
+        pub s3_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for StatisticsResource {
+    impl ::codec::SerializeValue for StatisticsResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_uri) = self.s3_uri {
@@ -5566,7 +5566,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for StatisticsResource {
+    impl ::codec::DeserializeValue for StatisticsResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StatisticsResource, D::Error> {
@@ -5583,7 +5583,7 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5611,10 +5611,10 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_runtime_in_seconds: crate::Value<u32>,
+        pub max_runtime_in_seconds: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for StoppingCondition {
+    impl ::codec::SerializeValue for StoppingCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5626,7 +5626,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for StoppingCondition {
+    impl ::codec::DeserializeValue for StoppingCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StoppingCondition, D::Error> {
@@ -5643,7 +5643,7 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_runtime_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut max_runtime_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5675,15 +5675,15 @@ pub mod data_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_group_ids: crate::ValueList<String>,
+        pub security_group_ids: ::ValueList<String>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-vpcconfig.html#cfn-sagemaker-dataqualityjobdefinition-vpcconfig-subnets).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnets: crate::ValueList<String>,
+        pub subnets: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for VpcConfig {
+    impl ::codec::SerializeValue for VpcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5696,7 +5696,7 @@ pub mod data_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcConfig {
+    impl ::codec::DeserializeValue for VpcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConfig, D::Error> {
             struct Visitor;
 
@@ -5711,8 +5711,8 @@ pub mod data_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnets: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnets: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5751,20 +5751,20 @@ pub mod device {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<crate::Value<String>>,
+        pub description: Option<::Value<String>>,
         /// Property [`DeviceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html#cfn-sagemaker-device-device-devicename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub device_name: crate::Value<String>,
+        pub device_name: ::Value<String>,
         /// Property [`IotThingName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html#cfn-sagemaker-device-device-iotthingname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub iot_thing_name: Option<crate::Value<String>>,
+        pub iot_thing_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Device {
+    impl ::codec::SerializeValue for Device {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -5782,7 +5782,7 @@ pub mod device {
         }
     }
 
-    impl crate::codec::DeserializeValue for Device {
+    impl ::codec::DeserializeValue for Device {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Device, D::Error> {
             struct Visitor;
 
@@ -5797,9 +5797,9 @@ pub mod device {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<crate::Value<String>> = None;
-                    let mut device_name: Option<crate::Value<String>> = None;
-                    let mut iot_thing_name: Option<crate::Value<String>> = None;
+                    let mut description: Option<::Value<String>> = None;
+                    let mut device_name: Option<::Value<String>> = None;
+                    let mut iot_thing_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5842,15 +5842,15 @@ pub mod device_fleet {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_key_id: Option<crate::Value<String>>,
+        pub kms_key_id: Option<::Value<String>>,
         /// Property [`S3OutputLocation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-devicefleet-edgeoutputconfig.html#cfn-sagemaker-devicefleet-edgeoutputconfig-s3outputlocation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_output_location: crate::Value<String>,
+        pub s3_output_location: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for EdgeOutputConfig {
+    impl ::codec::SerializeValue for EdgeOutputConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -5865,7 +5865,7 @@ pub mod device_fleet {
         }
     }
 
-    impl crate::codec::DeserializeValue for EdgeOutputConfig {
+    impl ::codec::DeserializeValue for EdgeOutputConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EdgeOutputConfig, D::Error> {
@@ -5882,8 +5882,8 @@ pub mod device_fleet {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<crate::Value<String>> = None;
-                    let mut s3_output_location: Option<crate::Value<String>> = None;
+                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut s3_output_location: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5922,20 +5922,20 @@ pub mod domain {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub app_image_config_name: crate::Value<String>,
+        pub app_image_config_name: ::Value<String>,
         /// Property [`ImageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customimage.html#cfn-sagemaker-domain-customimage-imagename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_name: crate::Value<String>,
+        pub image_name: ::Value<String>,
         /// Property [`ImageVersionNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customimage.html#cfn-sagemaker-domain-customimage-imageversionnumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_version_number: Option<crate::Value<u32>>,
+        pub image_version_number: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for CustomImage {
+    impl ::codec::SerializeValue for CustomImage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5955,7 +5955,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for CustomImage {
+    impl ::codec::DeserializeValue for CustomImage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomImage, D::Error> {
             struct Visitor;
 
@@ -5970,9 +5970,9 @@ pub mod domain {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut app_image_config_name: Option<crate::Value<String>> = None;
-                    let mut image_name: Option<crate::Value<String>> = None;
-                    let mut image_version_number: Option<crate::Value<u32>> = None;
+                    let mut app_image_config_name: Option<::Value<String>> = None;
+                    let mut image_name: Option<::Value<String>> = None;
+                    let mut image_version_number: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6014,15 +6014,15 @@ pub mod domain {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r_studio_server_pro_domain_settings: Option<crate::Value<RStudioServerProDomainSettings>>,
+        pub r_studio_server_pro_domain_settings: Option<::Value<RStudioServerProDomainSettings>>,
         /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html#cfn-sagemaker-domain-domainsettings-securitygroupids).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_group_ids: Option<crate::ValueList<String>>,
+        pub security_group_ids: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for DomainSettings {
+    impl ::codec::SerializeValue for DomainSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref r_studio_server_pro_domain_settings) =
@@ -6045,7 +6045,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for DomainSettings {
+    impl ::codec::DeserializeValue for DomainSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DomainSettings, D::Error> {
@@ -6063,9 +6063,9 @@ pub mod domain {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut r_studio_server_pro_domain_settings: Option<
-                        crate::Value<RStudioServerProDomainSettings>,
+                        ::Value<RStudioServerProDomainSettings>,
                     > = None;
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6100,10 +6100,10 @@ pub mod domain {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_resource_spec: Option<crate::Value<ResourceSpec>>,
+        pub default_resource_spec: Option<::Value<ResourceSpec>>,
     }
 
-    impl crate::codec::SerializeValue for JupyterServerAppSettings {
+    impl ::codec::SerializeValue for JupyterServerAppSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_resource_spec) = self.default_resource_spec {
@@ -6117,7 +6117,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for JupyterServerAppSettings {
+    impl ::codec::DeserializeValue for JupyterServerAppSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<JupyterServerAppSettings, D::Error> {
@@ -6134,7 +6134,7 @@ pub mod domain {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut default_resource_spec: Option<crate::Value<ResourceSpec>> = None;
+                    let mut default_resource_spec: Option<::Value<ResourceSpec>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6165,15 +6165,15 @@ pub mod domain {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_images: Option<crate::ValueList<CustomImage>>,
+        pub custom_images: Option<::ValueList<CustomImage>>,
         /// Property [`DefaultResourceSpec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-kernelgatewayappsettings.html#cfn-sagemaker-domain-kernelgatewayappsettings-defaultresourcespec).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_resource_spec: Option<crate::Value<ResourceSpec>>,
+        pub default_resource_spec: Option<::Value<ResourceSpec>>,
     }
 
-    impl crate::codec::SerializeValue for KernelGatewayAppSettings {
+    impl ::codec::SerializeValue for KernelGatewayAppSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_images) = self.custom_images {
@@ -6194,7 +6194,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for KernelGatewayAppSettings {
+    impl ::codec::DeserializeValue for KernelGatewayAppSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KernelGatewayAppSettings, D::Error> {
@@ -6211,8 +6211,8 @@ pub mod domain {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_images: Option<crate::ValueList<CustomImage>> = None;
-                    let mut default_resource_spec: Option<crate::Value<ResourceSpec>> = None;
+                    let mut custom_images: Option<::ValueList<CustomImage>> = None;
+                    let mut default_resource_spec: Option<::Value<ResourceSpec>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6247,15 +6247,15 @@ pub mod domain {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub access_status: Option<crate::Value<String>>,
+        pub access_status: Option<::Value<String>>,
         /// Property [`UserGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverproappsettings.html#cfn-sagemaker-domain-rstudioserverproappsettings-usergroup).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_group: Option<crate::Value<String>>,
+        pub user_group: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for RStudioServerProAppSettings {
+    impl ::codec::SerializeValue for RStudioServerProAppSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_status) = self.access_status {
@@ -6272,7 +6272,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for RStudioServerProAppSettings {
+    impl ::codec::DeserializeValue for RStudioServerProAppSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RStudioServerProAppSettings, D::Error> {
@@ -6289,8 +6289,8 @@ pub mod domain {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_status: Option<crate::Value<String>> = None;
-                    let mut user_group: Option<crate::Value<String>> = None;
+                    let mut access_status: Option<::Value<String>> = None;
+                    let mut user_group: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6324,25 +6324,25 @@ pub mod domain {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub default_resource_spec: Option<crate::Value<ResourceSpec>>,
+        pub default_resource_spec: Option<::Value<ResourceSpec>>,
         /// Property [`DomainExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverprodomainsettings.html#cfn-sagemaker-domain-rstudioserverprodomainsettings-domainexecutionrolearn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub domain_execution_role_arn: crate::Value<String>,
+        pub domain_execution_role_arn: ::Value<String>,
         /// Property [`RStudioConnectUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverprodomainsettings.html#cfn-sagemaker-domain-rstudioserverprodomainsettings-rstudioconnecturl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r_studio_connect_url: Option<crate::Value<String>>,
+        pub r_studio_connect_url: Option<::Value<String>>,
         /// Property [`RStudioPackageManagerUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverprodomainsettings.html#cfn-sagemaker-domain-rstudioserverprodomainsettings-rstudiopackagemanagerurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r_studio_package_manager_url: Option<crate::Value<String>>,
+        pub r_studio_package_manager_url: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for RStudioServerProDomainSettings {
+    impl ::codec::SerializeValue for RStudioServerProDomainSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_resource_spec) = self.default_resource_spec {
@@ -6375,7 +6375,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for RStudioServerProDomainSettings {
+    impl ::codec::DeserializeValue for RStudioServerProDomainSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RStudioServerProDomainSettings, D::Error> {
@@ -6392,10 +6392,10 @@ pub mod domain {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut default_resource_spec: Option<crate::Value<ResourceSpec>> = None;
-                    let mut domain_execution_role_arn: Option<crate::Value<String>> = None;
-                    let mut r_studio_connect_url: Option<crate::Value<String>> = None;
-                    let mut r_studio_package_manager_url: Option<crate::Value<String>> = None;
+                    let mut default_resource_spec: Option<::Value<ResourceSpec>> = None;
+                    let mut domain_execution_role_arn: Option<::Value<String>> = None;
+                    let mut r_studio_connect_url: Option<::Value<String>> = None;
+                    let mut r_studio_package_manager_url: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6442,20 +6442,20 @@ pub mod domain {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_type: Option<crate::Value<String>>,
+        pub instance_type: Option<::Value<String>>,
         /// Property [`SageMakerImageArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-sagemakerimagearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sage_maker_image_arn: Option<crate::Value<String>>,
+        pub sage_maker_image_arn: Option<::Value<String>>,
         /// Property [`SageMakerImageVersionArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-sagemakerimageversionarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sage_maker_image_version_arn: Option<crate::Value<String>>,
+        pub sage_maker_image_version_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ResourceSpec {
+    impl ::codec::SerializeValue for ResourceSpec {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref instance_type) = self.instance_type {
@@ -6483,7 +6483,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourceSpec {
+    impl ::codec::DeserializeValue for ResourceSpec {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceSpec, D::Error> {
             struct Visitor;
 
@@ -6498,9 +6498,9 @@ pub mod domain {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut sage_maker_image_arn: Option<crate::Value<String>> = None;
-                    let mut sage_maker_image_version_arn: Option<crate::Value<String>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut sage_maker_image_arn: Option<::Value<String>> = None;
+                    let mut sage_maker_image_version_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6540,20 +6540,20 @@ pub mod domain {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub notebook_output_option: Option<crate::Value<String>>,
+        pub notebook_output_option: Option<::Value<String>>,
         /// Property [`S3KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-sharingsettings.html#cfn-sagemaker-domain-sharingsettings-s3kmskeyid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_kms_key_id: Option<crate::Value<String>>,
+        pub s3_kms_key_id: Option<::Value<String>>,
         /// Property [`S3OutputPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-sharingsettings.html#cfn-sagemaker-domain-sharingsettings-s3outputpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_output_path: Option<crate::Value<String>>,
+        pub s3_output_path: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for SharingSettings {
+    impl ::codec::SerializeValue for SharingSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref notebook_output_option) = self.notebook_output_option {
@@ -6577,7 +6577,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for SharingSettings {
+    impl ::codec::DeserializeValue for SharingSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SharingSettings, D::Error> {
@@ -6594,9 +6594,9 @@ pub mod domain {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut notebook_output_option: Option<crate::Value<String>> = None;
-                    let mut s3_kms_key_id: Option<crate::Value<String>> = None;
-                    let mut s3_output_path: Option<crate::Value<String>> = None;
+                    let mut notebook_output_option: Option<::Value<String>> = None;
+                    let mut s3_kms_key_id: Option<::Value<String>> = None;
+                    let mut s3_output_path: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6635,35 +6635,35 @@ pub mod domain {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub execution_role: Option<crate::Value<String>>,
+        pub execution_role: Option<::Value<String>>,
         /// Property [`JupyterServerAppSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-jupyterserverappsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub jupyter_server_app_settings: Option<crate::Value<JupyterServerAppSettings>>,
+        pub jupyter_server_app_settings: Option<::Value<JupyterServerAppSettings>>,
         /// Property [`KernelGatewayAppSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-kernelgatewayappsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kernel_gateway_app_settings: Option<crate::Value<KernelGatewayAppSettings>>,
+        pub kernel_gateway_app_settings: Option<::Value<KernelGatewayAppSettings>>,
         /// Property [`RStudioServerProAppSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-rstudioserverproappsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r_studio_server_pro_app_settings: Option<crate::Value<RStudioServerProAppSettings>>,
+        pub r_studio_server_pro_app_settings: Option<::Value<RStudioServerProAppSettings>>,
         /// Property [`SecurityGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-securitygroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_groups: Option<crate::ValueList<String>>,
+        pub security_groups: Option<::ValueList<String>>,
         /// Property [`SharingSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-sharingsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sharing_settings: Option<crate::Value<SharingSettings>>,
+        pub sharing_settings: Option<::Value<SharingSettings>>,
     }
 
-    impl crate::codec::SerializeValue for UserSettings {
+    impl ::codec::SerializeValue for UserSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref execution_role) = self.execution_role {
@@ -6714,7 +6714,7 @@ pub mod domain {
         }
     }
 
-    impl crate::codec::DeserializeValue for UserSettings {
+    impl ::codec::DeserializeValue for UserSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UserSettings, D::Error> {
             struct Visitor;
 
@@ -6729,16 +6729,16 @@ pub mod domain {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut execution_role: Option<crate::Value<String>> = None;
-                    let mut jupyter_server_app_settings: Option<crate::Value<JupyterServerAppSettings>> =
+                    let mut execution_role: Option<::Value<String>> = None;
+                    let mut jupyter_server_app_settings: Option<::Value<JupyterServerAppSettings>> =
                         None;
-                    let mut kernel_gateway_app_settings: Option<crate::Value<KernelGatewayAppSettings>> =
+                    let mut kernel_gateway_app_settings: Option<::Value<KernelGatewayAppSettings>> =
                         None;
                     let mut r_studio_server_pro_app_settings: Option<
-                        crate::Value<RStudioServerProAppSettings>,
+                        ::Value<RStudioServerProAppSettings>,
                     > = None;
-                    let mut security_groups: Option<crate::ValueList<String>> = None;
-                    let mut sharing_settings: Option<crate::Value<SharingSettings>> = None;
+                    let mut security_groups: Option<::ValueList<String>> = None;
+                    let mut sharing_settings: Option<::Value<SharingSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6795,10 +6795,10 @@ pub mod endpoint {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alarm_name: crate::Value<String>,
+        pub alarm_name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Alarm {
+    impl ::codec::SerializeValue for Alarm {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "AlarmName", &self.alarm_name)?;
@@ -6806,7 +6806,7 @@ pub mod endpoint {
         }
     }
 
-    impl crate::codec::DeserializeValue for Alarm {
+    impl ::codec::DeserializeValue for Alarm {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Alarm, D::Error> {
             struct Visitor;
 
@@ -6821,7 +6821,7 @@ pub mod endpoint {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alarm_name: Option<crate::Value<String>> = None;
+                    let mut alarm_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6852,10 +6852,10 @@ pub mod endpoint {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alarms: crate::ValueList<Alarm>,
+        pub alarms: ::ValueList<Alarm>,
     }
 
-    impl crate::codec::SerializeValue for AutoRollbackConfig {
+    impl ::codec::SerializeValue for AutoRollbackConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Alarms", &self.alarms)?;
@@ -6863,7 +6863,7 @@ pub mod endpoint {
         }
     }
 
-    impl crate::codec::DeserializeValue for AutoRollbackConfig {
+    impl ::codec::DeserializeValue for AutoRollbackConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AutoRollbackConfig, D::Error> {
@@ -6880,7 +6880,7 @@ pub mod endpoint {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alarms: Option<crate::ValueList<Alarm>> = None;
+                    let mut alarms: Option<::ValueList<Alarm>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6910,20 +6910,20 @@ pub mod endpoint {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maximum_execution_timeout_in_seconds: Option<crate::Value<u32>>,
+        pub maximum_execution_timeout_in_seconds: Option<::Value<u32>>,
         /// Property [`TerminationWaitInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-terminationwaitinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub termination_wait_in_seconds: Option<crate::Value<u32>>,
+        pub termination_wait_in_seconds: Option<::Value<u32>>,
         /// Property [`TrafficRoutingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-trafficroutingconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub traffic_routing_configuration: crate::Value<TrafficRoutingConfig>,
+        pub traffic_routing_configuration: ::Value<TrafficRoutingConfig>,
     }
 
-    impl crate::codec::SerializeValue for BlueGreenUpdatePolicy {
+    impl ::codec::SerializeValue for BlueGreenUpdatePolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref maximum_execution_timeout_in_seconds) =
@@ -6951,7 +6951,7 @@ pub mod endpoint {
         }
     }
 
-    impl crate::codec::DeserializeValue for BlueGreenUpdatePolicy {
+    impl ::codec::DeserializeValue for BlueGreenUpdatePolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BlueGreenUpdatePolicy, D::Error> {
@@ -6968,9 +6968,9 @@ pub mod endpoint {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut maximum_execution_timeout_in_seconds: Option<crate::Value<u32>> = None;
-                    let mut termination_wait_in_seconds: Option<crate::Value<u32>> = None;
-                    let mut traffic_routing_configuration: Option<crate::Value<TrafficRoutingConfig>> =
+                    let mut maximum_execution_timeout_in_seconds: Option<::Value<u32>> = None;
+                    let mut termination_wait_in_seconds: Option<::Value<u32>> = None;
+                    let mut traffic_routing_configuration: Option<::Value<TrafficRoutingConfig>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -7014,15 +7014,15 @@ pub mod endpoint {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<u32>,
+        pub value: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for CapacitySize {
+    impl ::codec::SerializeValue for CapacitySize {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", &self.r#type)?;
@@ -7031,7 +7031,7 @@ pub mod endpoint {
         }
     }
 
-    impl crate::codec::DeserializeValue for CapacitySize {
+    impl ::codec::DeserializeValue for CapacitySize {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CapacitySize, D::Error> {
             struct Visitor;
 
@@ -7046,8 +7046,8 @@ pub mod endpoint {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<u32>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7081,15 +7081,15 @@ pub mod endpoint {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auto_rollback_configuration: Option<crate::Value<AutoRollbackConfig>>,
+        pub auto_rollback_configuration: Option<::Value<AutoRollbackConfig>>,
         /// Property [`BlueGreenUpdatePolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-bluegreenupdatepolicy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub blue_green_update_policy: crate::Value<BlueGreenUpdatePolicy>,
+        pub blue_green_update_policy: ::Value<BlueGreenUpdatePolicy>,
     }
 
-    impl crate::codec::SerializeValue for DeploymentConfig {
+    impl ::codec::SerializeValue for DeploymentConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref auto_rollback_configuration) = self.auto_rollback_configuration {
@@ -7108,7 +7108,7 @@ pub mod endpoint {
         }
     }
 
-    impl crate::codec::DeserializeValue for DeploymentConfig {
+    impl ::codec::DeserializeValue for DeploymentConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DeploymentConfig, D::Error> {
@@ -7125,8 +7125,8 @@ pub mod endpoint {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut auto_rollback_configuration: Option<crate::Value<AutoRollbackConfig>> = None;
-                    let mut blue_green_update_policy: Option<crate::Value<BlueGreenUpdatePolicy>> = None;
+                    let mut auto_rollback_configuration: Option<::Value<AutoRollbackConfig>> = None;
+                    let mut blue_green_update_policy: Option<::Value<BlueGreenUpdatePolicy>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7163,25 +7163,25 @@ pub mod endpoint {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub canary_size: Option<crate::Value<CapacitySize>>,
+        pub canary_size: Option<::Value<CapacitySize>>,
         /// Property [`LinearStepSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-linearstepsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub linear_step_size: Option<crate::Value<CapacitySize>>,
+        pub linear_step_size: Option<::Value<CapacitySize>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
         /// Property [`WaitIntervalInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-waitintervalinseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub wait_interval_in_seconds: Option<crate::Value<u32>>,
+        pub wait_interval_in_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for TrafficRoutingConfig {
+    impl ::codec::SerializeValue for TrafficRoutingConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref canary_size) = self.canary_size {
@@ -7206,7 +7206,7 @@ pub mod endpoint {
         }
     }
 
-    impl crate::codec::DeserializeValue for TrafficRoutingConfig {
+    impl ::codec::DeserializeValue for TrafficRoutingConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TrafficRoutingConfig, D::Error> {
@@ -7223,10 +7223,10 @@ pub mod endpoint {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut canary_size: Option<crate::Value<CapacitySize>> = None;
-                    let mut linear_step_size: Option<crate::Value<CapacitySize>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
-                    let mut wait_interval_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut canary_size: Option<::Value<CapacitySize>> = None;
+                    let mut linear_step_size: Option<::Value<CapacitySize>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
+                    let mut wait_interval_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7269,10 +7269,10 @@ pub mod endpoint {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub variant_property_type: Option<crate::Value<String>>,
+        pub variant_property_type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for VariantProperty {
+    impl ::codec::SerializeValue for VariantProperty {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref variant_property_type) = self.variant_property_type {
@@ -7286,7 +7286,7 @@ pub mod endpoint {
         }
     }
 
-    impl crate::codec::DeserializeValue for VariantProperty {
+    impl ::codec::DeserializeValue for VariantProperty {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VariantProperty, D::Error> {
@@ -7303,7 +7303,7 @@ pub mod endpoint {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut variant_property_type: Option<crate::Value<String>> = None;
+                    let mut variant_property_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7338,10 +7338,10 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_concurrent_invocations_per_instance: Option<crate::Value<u32>>,
+        pub max_concurrent_invocations_per_instance: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for AsyncInferenceClientConfig {
+    impl ::codec::SerializeValue for AsyncInferenceClientConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref max_concurrent_invocations_per_instance) =
@@ -7357,7 +7357,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for AsyncInferenceClientConfig {
+    impl ::codec::DeserializeValue for AsyncInferenceClientConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AsyncInferenceClientConfig, D::Error> {
@@ -7374,7 +7374,7 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_concurrent_invocations_per_instance: Option<crate::Value<u32>> = None;
+                    let mut max_concurrent_invocations_per_instance: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7406,15 +7406,15 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub client_config: Option<crate::Value<AsyncInferenceClientConfig>>,
+        pub client_config: Option<::Value<AsyncInferenceClientConfig>>,
         /// Property [`OutputConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceconfig-outputconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub output_config: crate::Value<AsyncInferenceOutputConfig>,
+        pub output_config: ::Value<AsyncInferenceOutputConfig>,
     }
 
-    impl crate::codec::SerializeValue for AsyncInferenceConfig {
+    impl ::codec::SerializeValue for AsyncInferenceConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref client_config) = self.client_config {
@@ -7433,7 +7433,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for AsyncInferenceConfig {
+    impl ::codec::DeserializeValue for AsyncInferenceConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AsyncInferenceConfig, D::Error> {
@@ -7450,8 +7450,8 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut client_config: Option<crate::Value<AsyncInferenceClientConfig>> = None;
-                    let mut output_config: Option<crate::Value<AsyncInferenceOutputConfig>> = None;
+                    let mut client_config: Option<::Value<AsyncInferenceClientConfig>> = None;
+                    let mut output_config: Option<::Value<AsyncInferenceOutputConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7486,15 +7486,15 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub error_topic: Option<crate::Value<String>>,
+        pub error_topic: Option<::Value<String>>,
         /// Property [`SuccessTopic`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferencenotificationconfig.html#cfn-sagemaker-endpointconfig-asyncinferencenotificationconfig-successtopic).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub success_topic: Option<crate::Value<String>>,
+        pub success_topic: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AsyncInferenceNotificationConfig {
+    impl ::codec::SerializeValue for AsyncInferenceNotificationConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref error_topic) = self.error_topic {
@@ -7511,7 +7511,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for AsyncInferenceNotificationConfig {
+    impl ::codec::DeserializeValue for AsyncInferenceNotificationConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AsyncInferenceNotificationConfig, D::Error> {
@@ -7528,8 +7528,8 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut error_topic: Option<crate::Value<String>> = None;
-                    let mut success_topic: Option<crate::Value<String>> = None;
+                    let mut error_topic: Option<::Value<String>> = None;
+                    let mut success_topic: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7563,20 +7563,20 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<crate::Value<String>>,
+        pub kms_key_id: Option<::Value<String>>,
         /// Property [`NotificationConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceoutputconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceoutputconfig-notificationconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub notification_config: Option<crate::Value<AsyncInferenceNotificationConfig>>,
+        pub notification_config: Option<::Value<AsyncInferenceNotificationConfig>>,
         /// Property [`S3OutputPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceoutputconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceoutputconfig-s3outputpath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_output_path: crate::Value<String>,
+        pub s3_output_path: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for AsyncInferenceOutputConfig {
+    impl ::codec::SerializeValue for AsyncInferenceOutputConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -7598,7 +7598,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for AsyncInferenceOutputConfig {
+    impl ::codec::DeserializeValue for AsyncInferenceOutputConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AsyncInferenceOutputConfig, D::Error> {
@@ -7615,10 +7615,10 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<crate::Value<String>> = None;
-                    let mut notification_config: Option<crate::Value<AsyncInferenceNotificationConfig>> =
+                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut notification_config: Option<::Value<AsyncInferenceNotificationConfig>> =
                         None;
-                    let mut s3_output_path: Option<crate::Value<String>> = None;
+                    let mut s3_output_path: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7657,15 +7657,15 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub csv_content_types: Option<crate::ValueList<String>>,
+        pub csv_content_types: Option<::ValueList<String>>,
         /// Property [`JsonContentTypes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader.html#cfn-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader-jsoncontenttypes).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub json_content_types: Option<crate::ValueList<String>>,
+        pub json_content_types: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for CaptureContentTypeHeader {
+    impl ::codec::SerializeValue for CaptureContentTypeHeader {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref csv_content_types) = self.csv_content_types {
@@ -7686,7 +7686,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for CaptureContentTypeHeader {
+    impl ::codec::DeserializeValue for CaptureContentTypeHeader {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CaptureContentTypeHeader, D::Error> {
@@ -7703,8 +7703,8 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut csv_content_types: Option<crate::ValueList<String>> = None;
-                    let mut json_content_types: Option<crate::ValueList<String>> = None;
+                    let mut csv_content_types: Option<::ValueList<String>> = None;
+                    let mut json_content_types: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7738,10 +7738,10 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub capture_mode: crate::Value<String>,
+        pub capture_mode: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CaptureOption {
+    impl ::codec::SerializeValue for CaptureOption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -7753,7 +7753,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for CaptureOption {
+    impl ::codec::DeserializeValue for CaptureOption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CaptureOption, D::Error> {
@@ -7770,7 +7770,7 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut capture_mode: Option<crate::Value<String>> = None;
+                    let mut capture_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7801,35 +7801,35 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub capture_content_type_header: Option<crate::Value<CaptureContentTypeHeader>>,
+        pub capture_content_type_header: Option<::Value<CaptureContentTypeHeader>>,
         /// Property [`CaptureOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-captureoptions).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub capture_options: crate::ValueList<CaptureOption>,
+        pub capture_options: ::ValueList<CaptureOption>,
         /// Property [`DestinationS3Uri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-destinations3uri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub destination_s3_uri: crate::Value<String>,
+        pub destination_s3_uri: ::Value<String>,
         /// Property [`EnableCapture`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-enablecapture).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_capture: Option<crate::Value<bool>>,
+        pub enable_capture: Option<::Value<bool>>,
         /// Property [`InitialSamplingPercentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-initialsamplingpercentage).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub initial_sampling_percentage: crate::Value<u32>,
+        pub initial_sampling_percentage: ::Value<u32>,
         /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-kmskeyid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<crate::Value<String>>,
+        pub kms_key_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DataCaptureConfig {
+    impl ::codec::SerializeValue for DataCaptureConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref capture_content_type_header) = self.capture_content_type_header {
@@ -7868,7 +7868,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataCaptureConfig {
+    impl ::codec::DeserializeValue for DataCaptureConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataCaptureConfig, D::Error> {
@@ -7885,13 +7885,13 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut capture_content_type_header: Option<crate::Value<CaptureContentTypeHeader>> =
+                    let mut capture_content_type_header: Option<::Value<CaptureContentTypeHeader>> =
                         None;
-                    let mut capture_options: Option<crate::ValueList<CaptureOption>> = None;
-                    let mut destination_s3_uri: Option<crate::Value<String>> = None;
-                    let mut enable_capture: Option<crate::Value<bool>> = None;
-                    let mut initial_sampling_percentage: Option<crate::Value<u32>> = None;
-                    let mut kms_key_id: Option<crate::Value<String>> = None;
+                    let mut capture_options: Option<::ValueList<CaptureOption>> = None;
+                    let mut destination_s3_uri: Option<::Value<String>> = None;
+                    let mut enable_capture: Option<::Value<bool>> = None;
+                    let mut initial_sampling_percentage: Option<::Value<u32>> = None;
+                    let mut kms_key_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7947,40 +7947,40 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub accelerator_type: Option<crate::Value<String>>,
+        pub accelerator_type: Option<::Value<String>>,
         /// Property [`InitialInstanceCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialinstancecount).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub initial_instance_count: Option<crate::Value<u32>>,
+        pub initial_instance_count: Option<::Value<u32>>,
         /// Property [`InitialVariantWeight`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialvariantweight).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub initial_variant_weight: crate::Value<f64>,
+        pub initial_variant_weight: ::Value<f64>,
         /// Property [`InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-instancetype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_type: Option<crate::Value<String>>,
+        pub instance_type: Option<::Value<String>>,
         /// Property [`ModelName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-modelname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub model_name: crate::Value<String>,
+        pub model_name: ::Value<String>,
         /// Property [`ServerlessConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub serverless_config: Option<crate::Value<ServerlessConfig>>,
+        pub serverless_config: Option<::Value<ServerlessConfig>>,
         /// Property [`VariantName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-variantname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub variant_name: crate::Value<String>,
+        pub variant_name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ProductionVariant {
+    impl ::codec::SerializeValue for ProductionVariant {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref accelerator_type) = self.accelerator_type {
@@ -8026,7 +8026,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for ProductionVariant {
+    impl ::codec::DeserializeValue for ProductionVariant {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProductionVariant, D::Error> {
@@ -8043,13 +8043,13 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut accelerator_type: Option<crate::Value<String>> = None;
-                    let mut initial_instance_count: Option<crate::Value<u32>> = None;
-                    let mut initial_variant_weight: Option<crate::Value<f64>> = None;
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut model_name: Option<crate::Value<String>> = None;
-                    let mut serverless_config: Option<crate::Value<ServerlessConfig>> = None;
-                    let mut variant_name: Option<crate::Value<String>> = None;
+                    let mut accelerator_type: Option<::Value<String>> = None;
+                    let mut initial_instance_count: Option<::Value<u32>> = None;
+                    let mut initial_variant_weight: Option<::Value<f64>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut model_name: Option<::Value<String>> = None;
+                    let mut serverless_config: Option<::Value<ServerlessConfig>> = None;
+                    let mut variant_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8108,15 +8108,15 @@ pub mod endpoint_config {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_concurrency: crate::Value<u32>,
+        pub max_concurrency: ::Value<u32>,
         /// Property [`MemorySizeInMB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig-memorysizeinmb).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub memory_size_in_mb: crate::Value<u32>,
+        pub memory_size_in_mb: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for ServerlessConfig {
+    impl ::codec::SerializeValue for ServerlessConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -8133,7 +8133,7 @@ pub mod endpoint_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for ServerlessConfig {
+    impl ::codec::DeserializeValue for ServerlessConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServerlessConfig, D::Error> {
@@ -8150,8 +8150,8 @@ pub mod endpoint_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_concurrency: Option<crate::Value<u32>> = None;
-                    let mut memory_size_in_mb: Option<crate::Value<u32>> = None;
+                    let mut max_concurrency: Option<::Value<u32>> = None;
+                    let mut memory_size_in_mb: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8191,15 +8191,15 @@ pub mod feature_group {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub feature_name: crate::Value<String>,
+        pub feature_name: ::Value<String>,
         /// Property [`FeatureType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-featuredefinition.html#cfn-sagemaker-featuregroup-featuredefinition-featuretype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub feature_type: crate::Value<String>,
+        pub feature_type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for FeatureDefinition {
+    impl ::codec::SerializeValue for FeatureDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -8216,7 +8216,7 @@ pub mod feature_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for FeatureDefinition {
+    impl ::codec::DeserializeValue for FeatureDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FeatureDefinition, D::Error> {
@@ -8233,8 +8233,8 @@ pub mod feature_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut feature_name: Option<crate::Value<String>> = None;
-                    let mut feature_type: Option<crate::Value<String>> = None;
+                    let mut feature_name: Option<::Value<String>> = None;
+                    let mut feature_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8274,50 +8274,50 @@ pub mod model {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub container_hostname: Option<crate::Value<String>>,
+        pub container_hostname: Option<::Value<String>>,
         /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-environment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub environment: Option<crate::Value<crate::json::Value>>,
+        pub environment: Option<::Value<::json::Value>>,
         /// Property [`Image`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-image).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub image: Option<crate::Value<String>>,
+        pub image: Option<::Value<String>>,
         /// Property [`ImageConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-imageconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub image_config: Option<crate::Value<ImageConfig>>,
+        pub image_config: Option<::Value<ImageConfig>>,
         /// Property [`InferenceSpecificationName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-inferencespecificationname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub inference_specification_name: Option<crate::Value<String>>,
+        pub inference_specification_name: Option<::Value<String>>,
         /// Property [`Mode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-mode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub mode: Option<crate::Value<String>>,
+        pub mode: Option<::Value<String>>,
         /// Property [`ModelDataUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-modeldataurl).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub model_data_url: Option<crate::Value<String>>,
+        pub model_data_url: Option<::Value<String>>,
         /// Property [`ModelPackageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-modelpackagename).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub model_package_name: Option<crate::Value<String>>,
+        pub model_package_name: Option<::Value<String>>,
         /// Property [`MultiModelConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-multimodelconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub multi_model_config: Option<crate::Value<MultiModelConfig>>,
+        pub multi_model_config: Option<::Value<MultiModelConfig>>,
     }
 
-    impl crate::codec::SerializeValue for ContainerDefinition {
+    impl ::codec::SerializeValue for ContainerDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_hostname) = self.container_hostname {
@@ -8371,7 +8371,7 @@ pub mod model {
         }
     }
 
-    impl crate::codec::DeserializeValue for ContainerDefinition {
+    impl ::codec::DeserializeValue for ContainerDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ContainerDefinition, D::Error> {
@@ -8388,15 +8388,15 @@ pub mod model {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_hostname: Option<crate::Value<String>> = None;
-                    let mut environment: Option<crate::Value<crate::json::Value>> = None;
-                    let mut image: Option<crate::Value<String>> = None;
-                    let mut image_config: Option<crate::Value<ImageConfig>> = None;
-                    let mut inference_specification_name: Option<crate::Value<String>> = None;
-                    let mut mode: Option<crate::Value<String>> = None;
-                    let mut model_data_url: Option<crate::Value<String>> = None;
-                    let mut model_package_name: Option<crate::Value<String>> = None;
-                    let mut multi_model_config: Option<crate::Value<MultiModelConfig>> = None;
+                    let mut container_hostname: Option<::Value<String>> = None;
+                    let mut environment: Option<::Value<::json::Value>> = None;
+                    let mut image: Option<::Value<String>> = None;
+                    let mut image_config: Option<::Value<ImageConfig>> = None;
+                    let mut inference_specification_name: Option<::Value<String>> = None;
+                    let mut mode: Option<::Value<String>> = None;
+                    let mut model_data_url: Option<::Value<String>> = None;
+                    let mut model_package_name: Option<::Value<String>> = None;
+                    let mut multi_model_config: Option<::Value<MultiModelConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8459,15 +8459,15 @@ pub mod model {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub repository_access_mode: crate::Value<String>,
+        pub repository_access_mode: ::Value<String>,
         /// Property [`RepositoryAuthConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub repository_auth_config: Option<crate::Value<RepositoryAuthConfig>>,
+        pub repository_auth_config: Option<::Value<RepositoryAuthConfig>>,
     }
 
-    impl crate::codec::SerializeValue for ImageConfig {
+    impl ::codec::SerializeValue for ImageConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -8486,7 +8486,7 @@ pub mod model {
         }
     }
 
-    impl crate::codec::DeserializeValue for ImageConfig {
+    impl ::codec::DeserializeValue for ImageConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ImageConfig, D::Error> {
             struct Visitor;
 
@@ -8501,8 +8501,8 @@ pub mod model {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut repository_access_mode: Option<crate::Value<String>> = None;
-                    let mut repository_auth_config: Option<crate::Value<RepositoryAuthConfig>> = None;
+                    let mut repository_access_mode: Option<::Value<String>> = None;
+                    let mut repository_auth_config: Option<::Value<RepositoryAuthConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8539,10 +8539,10 @@ pub mod model {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub mode: crate::Value<String>,
+        pub mode: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for InferenceExecutionConfig {
+    impl ::codec::SerializeValue for InferenceExecutionConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Mode", &self.mode)?;
@@ -8550,7 +8550,7 @@ pub mod model {
         }
     }
 
-    impl crate::codec::DeserializeValue for InferenceExecutionConfig {
+    impl ::codec::DeserializeValue for InferenceExecutionConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InferenceExecutionConfig, D::Error> {
@@ -8567,7 +8567,7 @@ pub mod model {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut mode: Option<crate::Value<String>> = None;
+                    let mut mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8597,10 +8597,10 @@ pub mod model {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub model_cache_setting: Option<crate::Value<String>>,
+        pub model_cache_setting: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MultiModelConfig {
+    impl ::codec::SerializeValue for MultiModelConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref model_cache_setting) = self.model_cache_setting {
@@ -8614,7 +8614,7 @@ pub mod model {
         }
     }
 
-    impl crate::codec::DeserializeValue for MultiModelConfig {
+    impl ::codec::DeserializeValue for MultiModelConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MultiModelConfig, D::Error> {
@@ -8631,7 +8631,7 @@ pub mod model {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut model_cache_setting: Option<crate::Value<String>> = None;
+                    let mut model_cache_setting: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8661,10 +8661,10 @@ pub mod model {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub repository_credentials_provider_arn: crate::Value<String>,
+        pub repository_credentials_provider_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RepositoryAuthConfig {
+    impl ::codec::SerializeValue for RepositoryAuthConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -8676,7 +8676,7 @@ pub mod model {
         }
     }
 
-    impl crate::codec::DeserializeValue for RepositoryAuthConfig {
+    impl ::codec::DeserializeValue for RepositoryAuthConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RepositoryAuthConfig, D::Error> {
@@ -8693,7 +8693,7 @@ pub mod model {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut repository_credentials_provider_arn: Option<crate::Value<String>> = None;
+                    let mut repository_credentials_provider_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8727,15 +8727,15 @@ pub mod model {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_group_ids: crate::ValueList<String>,
+        pub security_group_ids: ::ValueList<String>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html#cfn-sagemaker-model-vpcconfig-subnets).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnets: crate::ValueList<String>,
+        pub subnets: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for VpcConfig {
+    impl ::codec::SerializeValue for VpcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -8748,7 +8748,7 @@ pub mod model {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcConfig {
+    impl ::codec::DeserializeValue for VpcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConfig, D::Error> {
             struct Visitor;
 
@@ -8763,8 +8763,8 @@ pub mod model {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnets: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnets: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8803,25 +8803,25 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_count: crate::Value<u32>,
+        pub instance_count: ::Value<u32>,
         /// Property [`InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-instancetype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_type: crate::Value<String>,
+        pub instance_type: ::Value<String>,
         /// Property [`VolumeKmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-volumekmskeyid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volume_kms_key_id: Option<crate::Value<String>>,
+        pub volume_kms_key_id: Option<::Value<String>>,
         /// Property [`VolumeSizeInGB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-volumesizeingb).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volume_size_in_gb: crate::Value<u32>,
+        pub volume_size_in_gb: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for ClusterConfig {
+    impl ::codec::SerializeValue for ClusterConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -8850,7 +8850,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ClusterConfig {
+    impl ::codec::DeserializeValue for ClusterConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClusterConfig, D::Error> {
@@ -8867,10 +8867,10 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_count: Option<crate::Value<u32>> = None;
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut volume_kms_key_id: Option<crate::Value<String>> = None;
-                    let mut volume_size_in_gb: Option<crate::Value<u32>> = None;
+                    let mut instance_count: Option<::Value<u32>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut volume_kms_key_id: Option<::Value<String>> = None;
+                    let mut volume_size_in_gb: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8915,10 +8915,10 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: Option<crate::Value<String>>,
+        pub s3_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ConstraintsResource {
+    impl ::codec::SerializeValue for ConstraintsResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_uri) = self.s3_uri {
@@ -8928,7 +8928,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ConstraintsResource {
+    impl ::codec::DeserializeValue for ConstraintsResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConstraintsResource, D::Error> {
@@ -8945,7 +8945,7 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8973,55 +8973,55 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub end_time_offset: Option<crate::Value<String>>,
+        pub end_time_offset: Option<::Value<String>>,
         /// Property [`EndpointName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-endpointname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_name: crate::Value<String>,
+        pub endpoint_name: ::Value<String>,
         /// Property [`FeaturesAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-featuresattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub features_attribute: Option<crate::Value<String>>,
+        pub features_attribute: Option<::Value<String>>,
         /// Property [`InferenceAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-inferenceattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub inference_attribute: Option<crate::Value<String>>,
+        pub inference_attribute: Option<::Value<String>>,
         /// Property [`LocalPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-localpath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`ProbabilityAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-probabilityattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub probability_attribute: Option<crate::Value<String>>,
+        pub probability_attribute: Option<::Value<String>>,
         /// Property [`ProbabilityThresholdAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-probabilitythresholdattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub probability_threshold_attribute: Option<crate::Value<f64>>,
+        pub probability_threshold_attribute: Option<::Value<f64>>,
         /// Property [`S3DataDistributionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-s3datadistributiontype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_data_distribution_type: Option<crate::Value<String>>,
+        pub s3_data_distribution_type: Option<::Value<String>>,
         /// Property [`S3InputMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-s3inputmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_input_mode: Option<crate::Value<String>>,
+        pub s3_input_mode: Option<::Value<String>>,
         /// Property [`StartTimeOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-starttimeoffset).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub start_time_offset: Option<crate::Value<String>>,
+        pub start_time_offset: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EndpointInput {
+    impl ::codec::SerializeValue for EndpointInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref end_time_offset) = self.end_time_offset {
@@ -9091,7 +9091,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for EndpointInput {
+    impl ::codec::DeserializeValue for EndpointInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EndpointInput, D::Error> {
@@ -9108,16 +9108,16 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end_time_offset: Option<crate::Value<String>> = None;
-                    let mut endpoint_name: Option<crate::Value<String>> = None;
-                    let mut features_attribute: Option<crate::Value<String>> = None;
-                    let mut inference_attribute: Option<crate::Value<String>> = None;
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut probability_attribute: Option<crate::Value<String>> = None;
-                    let mut probability_threshold_attribute: Option<crate::Value<f64>> = None;
-                    let mut s3_data_distribution_type: Option<crate::Value<String>> = None;
-                    let mut s3_input_mode: Option<crate::Value<String>> = None;
-                    let mut start_time_offset: Option<crate::Value<String>> = None;
+                    let mut end_time_offset: Option<::Value<String>> = None;
+                    let mut endpoint_name: Option<::Value<String>> = None;
+                    let mut features_attribute: Option<::Value<String>> = None;
+                    let mut inference_attribute: Option<::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut probability_attribute: Option<::Value<String>> = None;
+                    let mut probability_threshold_attribute: Option<::Value<f64>> = None;
+                    let mut s3_data_distribution_type: Option<::Value<String>> = None;
+                    let mut s3_input_mode: Option<::Value<String>> = None;
+                    let mut start_time_offset: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9188,20 +9188,20 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub config_uri: crate::Value<String>,
+        pub config_uri: ::Value<String>,
         /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-environment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub environment: Option<crate::ValueMap<String>>,
+        pub environment: Option<::ValueMap<String>>,
         /// Property [`ImageUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-imageuri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub image_uri: crate::Value<String>,
+        pub image_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ModelBiasAppSpecification {
+    impl ::codec::SerializeValue for ModelBiasAppSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConfigUri", &self.config_uri)?;
@@ -9213,7 +9213,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelBiasAppSpecification {
+    impl ::codec::DeserializeValue for ModelBiasAppSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelBiasAppSpecification, D::Error> {
@@ -9230,9 +9230,9 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut config_uri: Option<crate::Value<String>> = None;
-                    let mut environment: Option<crate::ValueMap<String>> = None;
-                    let mut image_uri: Option<crate::Value<String>> = None;
+                    let mut config_uri: Option<::Value<String>> = None;
+                    let mut environment: Option<::ValueMap<String>> = None;
+                    let mut image_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9272,15 +9272,15 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub baselining_job_name: Option<crate::Value<String>>,
+        pub baselining_job_name: Option<::Value<String>>,
         /// Property [`ConstraintsResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig-constraintsresource).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub constraints_resource: Option<crate::Value<ConstraintsResource>>,
+        pub constraints_resource: Option<::Value<ConstraintsResource>>,
     }
 
-    impl crate::codec::SerializeValue for ModelBiasBaselineConfig {
+    impl ::codec::SerializeValue for ModelBiasBaselineConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref baselining_job_name) = self.baselining_job_name {
@@ -9301,7 +9301,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelBiasBaselineConfig {
+    impl ::codec::DeserializeValue for ModelBiasBaselineConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelBiasBaselineConfig, D::Error> {
@@ -9318,8 +9318,8 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut baselining_job_name: Option<crate::Value<String>> = None;
-                    let mut constraints_resource: Option<crate::Value<ConstraintsResource>> = None;
+                    let mut baselining_job_name: Option<::Value<String>> = None;
+                    let mut constraints_resource: Option<::Value<ConstraintsResource>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9354,15 +9354,15 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_input: crate::Value<EndpointInput>,
+        pub endpoint_input: ::Value<EndpointInput>,
         /// Property [`GroundTruthS3Input`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput-groundtruths3input).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub ground_truth_s3_input: crate::Value<MonitoringGroundTruthS3Input>,
+        pub ground_truth_s3_input: ::Value<MonitoringGroundTruthS3Input>,
     }
 
-    impl crate::codec::SerializeValue for ModelBiasJobInput {
+    impl ::codec::SerializeValue for ModelBiasJobInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -9379,7 +9379,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelBiasJobInput {
+    impl ::codec::DeserializeValue for ModelBiasJobInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelBiasJobInput, D::Error> {
@@ -9396,8 +9396,8 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_input: Option<crate::Value<EndpointInput>> = None;
-                    let mut ground_truth_s3_input: Option<crate::Value<MonitoringGroundTruthS3Input>> =
+                    let mut endpoint_input: Option<::Value<EndpointInput>> = None;
+                    let mut ground_truth_s3_input: Option<::Value<MonitoringGroundTruthS3Input>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -9435,10 +9435,10 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: crate::Value<String>,
+        pub s3_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringGroundTruthS3Input {
+    impl ::codec::SerializeValue for MonitoringGroundTruthS3Input {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Uri", &self.s3_uri)?;
@@ -9446,7 +9446,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringGroundTruthS3Input {
+    impl ::codec::DeserializeValue for MonitoringGroundTruthS3Input {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringGroundTruthS3Input, D::Error> {
@@ -9463,7 +9463,7 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9493,10 +9493,10 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_output: crate::Value<S3Output>,
+        pub s3_output: ::Value<S3Output>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutput {
+    impl ::codec::SerializeValue for MonitoringOutput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Output", &self.s3_output)?;
@@ -9504,7 +9504,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutput {
+    impl ::codec::DeserializeValue for MonitoringOutput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutput, D::Error> {
@@ -9521,7 +9521,7 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_output: Option<crate::Value<S3Output>> = None;
+                    let mut s3_output: Option<::Value<S3Output>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9552,15 +9552,15 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<crate::Value<String>>,
+        pub kms_key_id: Option<::Value<String>>,
         /// Property [`MonitoringOutputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelbiasjobdefinition-monitoringoutputconfig-monitoringoutputs).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub monitoring_outputs: crate::ValueList<MonitoringOutput>,
+        pub monitoring_outputs: ::ValueList<MonitoringOutput>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutputConfig {
+    impl ::codec::SerializeValue for MonitoringOutputConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -9575,7 +9575,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutputConfig {
+    impl ::codec::DeserializeValue for MonitoringOutputConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutputConfig, D::Error> {
@@ -9592,8 +9592,8 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<crate::Value<String>> = None;
-                    let mut monitoring_outputs: Option<crate::ValueList<MonitoringOutput>> = None;
+                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut monitoring_outputs: Option<::ValueList<MonitoringOutput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9628,10 +9628,10 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cluster_config: crate::Value<ClusterConfig>,
+        pub cluster_config: ::Value<ClusterConfig>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringResources {
+    impl ::codec::SerializeValue for MonitoringResources {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -9643,7 +9643,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringResources {
+    impl ::codec::DeserializeValue for MonitoringResources {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringResources, D::Error> {
@@ -9660,7 +9660,7 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_config: Option<crate::Value<ClusterConfig>> = None;
+                    let mut cluster_config: Option<::Value<ClusterConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9691,20 +9691,20 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_inter_container_traffic_encryption: Option<crate::Value<bool>>,
+        pub enable_inter_container_traffic_encryption: Option<::Value<bool>>,
         /// Property [`EnableNetworkIsolation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-networkconfig.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig-enablenetworkisolation).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_network_isolation: Option<crate::Value<bool>>,
+        pub enable_network_isolation: Option<::Value<bool>>,
         /// Property [`VpcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-networkconfig.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig-vpcconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub vpc_config: Option<crate::Value<VpcConfig>>,
+        pub vpc_config: Option<::Value<VpcConfig>>,
     }
 
-    impl crate::codec::SerializeValue for NetworkConfig {
+    impl ::codec::SerializeValue for NetworkConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enable_inter_container_traffic_encryption) =
@@ -9730,7 +9730,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for NetworkConfig {
+    impl ::codec::DeserializeValue for NetworkConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkConfig, D::Error> {
@@ -9747,9 +9747,9 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enable_inter_container_traffic_encryption: Option<crate::Value<bool>> = None;
-                    let mut enable_network_isolation: Option<crate::Value<bool>> = None;
-                    let mut vpc_config: Option<crate::Value<VpcConfig>> = None;
+                    let mut enable_inter_container_traffic_encryption: Option<::Value<bool>> = None;
+                    let mut enable_network_isolation: Option<::Value<bool>> = None;
+                    let mut vpc_config: Option<::Value<VpcConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9790,20 +9790,20 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`S3UploadMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-s3output.html#cfn-sagemaker-modelbiasjobdefinition-s3output-s3uploadmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_upload_mode: Option<crate::Value<String>>,
+        pub s3_upload_mode: Option<::Value<String>>,
         /// Property [`S3Uri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-s3output.html#cfn-sagemaker-modelbiasjobdefinition-s3output-s3uri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: crate::Value<String>,
+        pub s3_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3Output {
+    impl ::codec::SerializeValue for S3Output {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocalPath", &self.local_path)?;
@@ -9819,7 +9819,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Output {
+    impl ::codec::DeserializeValue for S3Output {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Output, D::Error> {
             struct Visitor;
 
@@ -9834,9 +9834,9 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut s3_upload_mode: Option<crate::Value<String>> = None;
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut s3_upload_mode: Option<::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9875,10 +9875,10 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_runtime_in_seconds: crate::Value<u32>,
+        pub max_runtime_in_seconds: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for StoppingCondition {
+    impl ::codec::SerializeValue for StoppingCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -9890,7 +9890,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for StoppingCondition {
+    impl ::codec::DeserializeValue for StoppingCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StoppingCondition, D::Error> {
@@ -9907,7 +9907,7 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_runtime_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut max_runtime_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -9939,15 +9939,15 @@ pub mod model_bias_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_group_ids: crate::ValueList<String>,
+        pub security_group_ids: ::ValueList<String>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-vpcconfig.html#cfn-sagemaker-modelbiasjobdefinition-vpcconfig-subnets).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnets: crate::ValueList<String>,
+        pub subnets: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for VpcConfig {
+    impl ::codec::SerializeValue for VpcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -9960,7 +9960,7 @@ pub mod model_bias_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcConfig {
+    impl ::codec::DeserializeValue for VpcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConfig, D::Error> {
             struct Visitor;
 
@@ -9975,8 +9975,8 @@ pub mod model_bias_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnets: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnets: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10015,25 +10015,25 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_count: crate::Value<u32>,
+        pub instance_count: ::Value<u32>,
         /// Property [`InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-instancetype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_type: crate::Value<String>,
+        pub instance_type: ::Value<String>,
         /// Property [`VolumeKmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-volumekmskeyid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volume_kms_key_id: Option<crate::Value<String>>,
+        pub volume_kms_key_id: Option<::Value<String>>,
         /// Property [`VolumeSizeInGB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-volumesizeingb).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volume_size_in_gb: crate::Value<u32>,
+        pub volume_size_in_gb: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for ClusterConfig {
+    impl ::codec::SerializeValue for ClusterConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -10062,7 +10062,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ClusterConfig {
+    impl ::codec::DeserializeValue for ClusterConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClusterConfig, D::Error> {
@@ -10079,10 +10079,10 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_count: Option<crate::Value<u32>> = None;
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut volume_kms_key_id: Option<crate::Value<String>> = None;
-                    let mut volume_size_in_gb: Option<crate::Value<u32>> = None;
+                    let mut instance_count: Option<::Value<u32>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut volume_kms_key_id: Option<::Value<String>> = None;
+                    let mut volume_size_in_gb: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10127,10 +10127,10 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: Option<crate::Value<String>>,
+        pub s3_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ConstraintsResource {
+    impl ::codec::SerializeValue for ConstraintsResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_uri) = self.s3_uri {
@@ -10140,7 +10140,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ConstraintsResource {
+    impl ::codec::DeserializeValue for ConstraintsResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConstraintsResource, D::Error> {
@@ -10157,7 +10157,7 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10185,40 +10185,40 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_name: crate::Value<String>,
+        pub endpoint_name: ::Value<String>,
         /// Property [`FeaturesAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-featuresattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub features_attribute: Option<crate::Value<String>>,
+        pub features_attribute: Option<::Value<String>>,
         /// Property [`InferenceAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-inferenceattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub inference_attribute: Option<crate::Value<String>>,
+        pub inference_attribute: Option<::Value<String>>,
         /// Property [`LocalPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-localpath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`ProbabilityAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-probabilityattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub probability_attribute: Option<crate::Value<String>>,
+        pub probability_attribute: Option<::Value<String>>,
         /// Property [`S3DataDistributionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-s3datadistributiontype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_data_distribution_type: Option<crate::Value<String>>,
+        pub s3_data_distribution_type: Option<::Value<String>>,
         /// Property [`S3InputMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-s3inputmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_input_mode: Option<crate::Value<String>>,
+        pub s3_input_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EndpointInput {
+    impl ::codec::SerializeValue for EndpointInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -10266,7 +10266,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for EndpointInput {
+    impl ::codec::DeserializeValue for EndpointInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EndpointInput, D::Error> {
@@ -10283,13 +10283,13 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_name: Option<crate::Value<String>> = None;
-                    let mut features_attribute: Option<crate::Value<String>> = None;
-                    let mut inference_attribute: Option<crate::Value<String>> = None;
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut probability_attribute: Option<crate::Value<String>> = None;
-                    let mut s3_data_distribution_type: Option<crate::Value<String>> = None;
-                    let mut s3_input_mode: Option<crate::Value<String>> = None;
+                    let mut endpoint_name: Option<::Value<String>> = None;
+                    let mut features_attribute: Option<::Value<String>> = None;
+                    let mut inference_attribute: Option<::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut probability_attribute: Option<::Value<String>> = None;
+                    let mut s3_data_distribution_type: Option<::Value<String>> = None;
+                    let mut s3_input_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10347,20 +10347,20 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub config_uri: crate::Value<String>,
+        pub config_uri: ::Value<String>,
         /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification-environment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub environment: Option<crate::ValueMap<String>>,
+        pub environment: Option<::ValueMap<String>>,
         /// Property [`ImageUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification-imageuri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub image_uri: crate::Value<String>,
+        pub image_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ModelExplainabilityAppSpecification {
+    impl ::codec::SerializeValue for ModelExplainabilityAppSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ConfigUri", &self.config_uri)?;
@@ -10372,7 +10372,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelExplainabilityAppSpecification {
+    impl ::codec::DeserializeValue for ModelExplainabilityAppSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelExplainabilityAppSpecification, D::Error> {
@@ -10389,9 +10389,9 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut config_uri: Option<crate::Value<String>> = None;
-                    let mut environment: Option<crate::ValueMap<String>> = None;
-                    let mut image_uri: Option<crate::Value<String>> = None;
+                    let mut config_uri: Option<::Value<String>> = None;
+                    let mut environment: Option<::ValueMap<String>> = None;
+                    let mut image_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10431,15 +10431,15 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub baselining_job_name: Option<crate::Value<String>>,
+        pub baselining_job_name: Option<::Value<String>>,
         /// Property [`ConstraintsResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig-constraintsresource).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub constraints_resource: Option<crate::Value<ConstraintsResource>>,
+        pub constraints_resource: Option<::Value<ConstraintsResource>>,
     }
 
-    impl crate::codec::SerializeValue for ModelExplainabilityBaselineConfig {
+    impl ::codec::SerializeValue for ModelExplainabilityBaselineConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref baselining_job_name) = self.baselining_job_name {
@@ -10460,7 +10460,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelExplainabilityBaselineConfig {
+    impl ::codec::DeserializeValue for ModelExplainabilityBaselineConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelExplainabilityBaselineConfig, D::Error> {
@@ -10477,8 +10477,8 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut baselining_job_name: Option<crate::Value<String>> = None;
-                    let mut constraints_resource: Option<crate::Value<ConstraintsResource>> = None;
+                    let mut baselining_job_name: Option<::Value<String>> = None;
+                    let mut constraints_resource: Option<::Value<ConstraintsResource>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10513,10 +10513,10 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_input: crate::Value<EndpointInput>,
+        pub endpoint_input: ::Value<EndpointInput>,
     }
 
-    impl crate::codec::SerializeValue for ModelExplainabilityJobInput {
+    impl ::codec::SerializeValue for ModelExplainabilityJobInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -10528,7 +10528,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelExplainabilityJobInput {
+    impl ::codec::DeserializeValue for ModelExplainabilityJobInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelExplainabilityJobInput, D::Error> {
@@ -10545,7 +10545,7 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_input: Option<crate::Value<EndpointInput>> = None;
+                    let mut endpoint_input: Option<::Value<EndpointInput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10576,10 +10576,10 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_output: crate::Value<S3Output>,
+        pub s3_output: ::Value<S3Output>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutput {
+    impl ::codec::SerializeValue for MonitoringOutput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Output", &self.s3_output)?;
@@ -10587,7 +10587,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutput {
+    impl ::codec::DeserializeValue for MonitoringOutput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutput, D::Error> {
@@ -10604,7 +10604,7 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_output: Option<crate::Value<S3Output>> = None;
+                    let mut s3_output: Option<::Value<S3Output>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10635,15 +10635,15 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<crate::Value<String>>,
+        pub kms_key_id: Option<::Value<String>>,
         /// Property [`MonitoringOutputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig-monitoringoutputs).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub monitoring_outputs: crate::ValueList<MonitoringOutput>,
+        pub monitoring_outputs: ::ValueList<MonitoringOutput>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutputConfig {
+    impl ::codec::SerializeValue for MonitoringOutputConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -10658,7 +10658,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutputConfig {
+    impl ::codec::DeserializeValue for MonitoringOutputConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutputConfig, D::Error> {
@@ -10675,8 +10675,8 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<crate::Value<String>> = None;
-                    let mut monitoring_outputs: Option<crate::ValueList<MonitoringOutput>> = None;
+                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut monitoring_outputs: Option<::ValueList<MonitoringOutput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10711,10 +10711,10 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cluster_config: crate::Value<ClusterConfig>,
+        pub cluster_config: ::Value<ClusterConfig>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringResources {
+    impl ::codec::SerializeValue for MonitoringResources {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -10726,7 +10726,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringResources {
+    impl ::codec::DeserializeValue for MonitoringResources {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringResources, D::Error> {
@@ -10743,7 +10743,7 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_config: Option<crate::Value<ClusterConfig>> = None;
+                    let mut cluster_config: Option<::Value<ClusterConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10774,20 +10774,20 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_inter_container_traffic_encryption: Option<crate::Value<bool>>,
+        pub enable_inter_container_traffic_encryption: Option<::Value<bool>>,
         /// Property [`EnableNetworkIsolation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-enablenetworkisolation).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_network_isolation: Option<crate::Value<bool>>,
+        pub enable_network_isolation: Option<::Value<bool>>,
         /// Property [`VpcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-vpcconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub vpc_config: Option<crate::Value<VpcConfig>>,
+        pub vpc_config: Option<::Value<VpcConfig>>,
     }
 
-    impl crate::codec::SerializeValue for NetworkConfig {
+    impl ::codec::SerializeValue for NetworkConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enable_inter_container_traffic_encryption) =
@@ -10813,7 +10813,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for NetworkConfig {
+    impl ::codec::DeserializeValue for NetworkConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkConfig, D::Error> {
@@ -10830,9 +10830,9 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enable_inter_container_traffic_encryption: Option<crate::Value<bool>> = None;
-                    let mut enable_network_isolation: Option<crate::Value<bool>> = None;
-                    let mut vpc_config: Option<crate::Value<VpcConfig>> = None;
+                    let mut enable_inter_container_traffic_encryption: Option<::Value<bool>> = None;
+                    let mut enable_network_isolation: Option<::Value<bool>> = None;
+                    let mut vpc_config: Option<::Value<VpcConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10873,20 +10873,20 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`S3UploadMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-s3output.html#cfn-sagemaker-modelexplainabilityjobdefinition-s3output-s3uploadmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_upload_mode: Option<crate::Value<String>>,
+        pub s3_upload_mode: Option<::Value<String>>,
         /// Property [`S3Uri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-s3output.html#cfn-sagemaker-modelexplainabilityjobdefinition-s3output-s3uri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: crate::Value<String>,
+        pub s3_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3Output {
+    impl ::codec::SerializeValue for S3Output {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocalPath", &self.local_path)?;
@@ -10902,7 +10902,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Output {
+    impl ::codec::DeserializeValue for S3Output {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Output, D::Error> {
             struct Visitor;
 
@@ -10917,9 +10917,9 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut s3_upload_mode: Option<crate::Value<String>> = None;
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut s3_upload_mode: Option<::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -10958,10 +10958,10 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_runtime_in_seconds: crate::Value<u32>,
+        pub max_runtime_in_seconds: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for StoppingCondition {
+    impl ::codec::SerializeValue for StoppingCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -10973,7 +10973,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for StoppingCondition {
+    impl ::codec::DeserializeValue for StoppingCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StoppingCondition, D::Error> {
@@ -10990,7 +10990,7 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_runtime_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut max_runtime_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11022,15 +11022,15 @@ pub mod model_explainability_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_group_ids: crate::ValueList<String>,
+        pub security_group_ids: ::ValueList<String>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-vpcconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-vpcconfig-subnets).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnets: crate::ValueList<String>,
+        pub subnets: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for VpcConfig {
+    impl ::codec::SerializeValue for VpcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -11043,7 +11043,7 @@ pub mod model_explainability_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcConfig {
+    impl ::codec::DeserializeValue for VpcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConfig, D::Error> {
             struct Visitor;
 
@@ -11058,8 +11058,8 @@ pub mod model_explainability_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnets: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnets: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11098,25 +11098,25 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_count: crate::Value<u32>,
+        pub instance_count: ::Value<u32>,
         /// Property [`InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-instancetype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub instance_type: crate::Value<String>,
+        pub instance_type: ::Value<String>,
         /// Property [`VolumeKmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-volumekmskeyid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volume_kms_key_id: Option<crate::Value<String>>,
+        pub volume_kms_key_id: Option<::Value<String>>,
         /// Property [`VolumeSizeInGB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-volumesizeingb).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volume_size_in_gb: crate::Value<u32>,
+        pub volume_size_in_gb: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for ClusterConfig {
+    impl ::codec::SerializeValue for ClusterConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -11145,7 +11145,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ClusterConfig {
+    impl ::codec::DeserializeValue for ClusterConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClusterConfig, D::Error> {
@@ -11162,10 +11162,10 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_count: Option<crate::Value<u32>> = None;
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut volume_kms_key_id: Option<crate::Value<String>> = None;
-                    let mut volume_size_in_gb: Option<crate::Value<u32>> = None;
+                    let mut instance_count: Option<::Value<u32>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut volume_kms_key_id: Option<::Value<String>> = None;
+                    let mut volume_size_in_gb: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11210,10 +11210,10 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: Option<crate::Value<String>>,
+        pub s3_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ConstraintsResource {
+    impl ::codec::SerializeValue for ConstraintsResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_uri) = self.s3_uri {
@@ -11223,7 +11223,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ConstraintsResource {
+    impl ::codec::DeserializeValue for ConstraintsResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConstraintsResource, D::Error> {
@@ -11240,7 +11240,7 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11268,50 +11268,50 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub end_time_offset: Option<crate::Value<String>>,
+        pub end_time_offset: Option<::Value<String>>,
         /// Property [`EndpointName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-endpointname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_name: crate::Value<String>,
+        pub endpoint_name: ::Value<String>,
         /// Property [`InferenceAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-inferenceattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub inference_attribute: Option<crate::Value<String>>,
+        pub inference_attribute: Option<::Value<String>>,
         /// Property [`LocalPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-localpath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`ProbabilityAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-probabilityattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub probability_attribute: Option<crate::Value<String>>,
+        pub probability_attribute: Option<::Value<String>>,
         /// Property [`ProbabilityThresholdAttribute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-probabilitythresholdattribute).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub probability_threshold_attribute: Option<crate::Value<f64>>,
+        pub probability_threshold_attribute: Option<::Value<f64>>,
         /// Property [`S3DataDistributionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-s3datadistributiontype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_data_distribution_type: Option<crate::Value<String>>,
+        pub s3_data_distribution_type: Option<::Value<String>>,
         /// Property [`S3InputMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-s3inputmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_input_mode: Option<crate::Value<String>>,
+        pub s3_input_mode: Option<::Value<String>>,
         /// Property [`StartTimeOffset`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-starttimeoffset).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub start_time_offset: Option<crate::Value<String>>,
+        pub start_time_offset: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EndpointInput {
+    impl ::codec::SerializeValue for EndpointInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref end_time_offset) = self.end_time_offset {
@@ -11374,7 +11374,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for EndpointInput {
+    impl ::codec::DeserializeValue for EndpointInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EndpointInput, D::Error> {
@@ -11391,15 +11391,15 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end_time_offset: Option<crate::Value<String>> = None;
-                    let mut endpoint_name: Option<crate::Value<String>> = None;
-                    let mut inference_attribute: Option<crate::Value<String>> = None;
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut probability_attribute: Option<crate::Value<String>> = None;
-                    let mut probability_threshold_attribute: Option<crate::Value<f64>> = None;
-                    let mut s3_data_distribution_type: Option<crate::Value<String>> = None;
-                    let mut s3_input_mode: Option<crate::Value<String>> = None;
-                    let mut start_time_offset: Option<crate::Value<String>> = None;
+                    let mut end_time_offset: Option<::Value<String>> = None;
+                    let mut endpoint_name: Option<::Value<String>> = None;
+                    let mut inference_attribute: Option<::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut probability_attribute: Option<::Value<String>> = None;
+                    let mut probability_threshold_attribute: Option<::Value<f64>> = None;
+                    let mut s3_data_distribution_type: Option<::Value<String>> = None;
+                    let mut s3_input_mode: Option<::Value<String>> = None;
+                    let mut start_time_offset: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11466,40 +11466,40 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub container_arguments: Option<crate::ValueList<String>>,
+        pub container_arguments: Option<::ValueList<String>>,
         /// Property [`ContainerEntrypoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-containerentrypoint).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub container_entrypoint: Option<crate::ValueList<String>>,
+        pub container_entrypoint: Option<::ValueList<String>>,
         /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-environment).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub environment: Option<crate::ValueMap<String>>,
+        pub environment: Option<::ValueMap<String>>,
         /// Property [`ImageUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-imageuri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub image_uri: crate::Value<String>,
+        pub image_uri: ::Value<String>,
         /// Property [`PostAnalyticsProcessorSourceUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-postanalyticsprocessorsourceuri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub post_analytics_processor_source_uri: Option<crate::Value<String>>,
+        pub post_analytics_processor_source_uri: Option<::Value<String>>,
         /// Property [`ProblemType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-problemtype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub problem_type: crate::Value<String>,
+        pub problem_type: ::Value<String>,
         /// Property [`RecordPreprocessorSourceUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-recordpreprocessorsourceuri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub record_preprocessor_source_uri: Option<crate::Value<String>>,
+        pub record_preprocessor_source_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ModelQualityAppSpecification {
+    impl ::codec::SerializeValue for ModelQualityAppSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_arguments) = self.container_arguments {
@@ -11545,7 +11545,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelQualityAppSpecification {
+    impl ::codec::DeserializeValue for ModelQualityAppSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelQualityAppSpecification, D::Error> {
@@ -11562,13 +11562,13 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_arguments: Option<crate::ValueList<String>> = None;
-                    let mut container_entrypoint: Option<crate::ValueList<String>> = None;
-                    let mut environment: Option<crate::ValueMap<String>> = None;
-                    let mut image_uri: Option<crate::Value<String>> = None;
-                    let mut post_analytics_processor_source_uri: Option<crate::Value<String>> = None;
-                    let mut problem_type: Option<crate::Value<String>> = None;
-                    let mut record_preprocessor_source_uri: Option<crate::Value<String>> = None;
+                    let mut container_arguments: Option<::ValueList<String>> = None;
+                    let mut container_entrypoint: Option<::ValueList<String>> = None;
+                    let mut environment: Option<::ValueMap<String>> = None;
+                    let mut image_uri: Option<::Value<String>> = None;
+                    let mut post_analytics_processor_source_uri: Option<::Value<String>> = None;
+                    let mut problem_type: Option<::Value<String>> = None;
+                    let mut record_preprocessor_source_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11627,15 +11627,15 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub baselining_job_name: Option<crate::Value<String>>,
+        pub baselining_job_name: Option<::Value<String>>,
         /// Property [`ConstraintsResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig-constraintsresource).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub constraints_resource: Option<crate::Value<ConstraintsResource>>,
+        pub constraints_resource: Option<::Value<ConstraintsResource>>,
     }
 
-    impl crate::codec::SerializeValue for ModelQualityBaselineConfig {
+    impl ::codec::SerializeValue for ModelQualityBaselineConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref baselining_job_name) = self.baselining_job_name {
@@ -11656,7 +11656,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelQualityBaselineConfig {
+    impl ::codec::DeserializeValue for ModelQualityBaselineConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelQualityBaselineConfig, D::Error> {
@@ -11673,8 +11673,8 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut baselining_job_name: Option<crate::Value<String>> = None;
-                    let mut constraints_resource: Option<crate::Value<ConstraintsResource>> = None;
+                    let mut baselining_job_name: Option<::Value<String>> = None;
+                    let mut constraints_resource: Option<::Value<ConstraintsResource>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11709,15 +11709,15 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_input: crate::Value<EndpointInput>,
+        pub endpoint_input: ::Value<EndpointInput>,
         /// Property [`GroundTruthS3Input`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput-groundtruths3input).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub ground_truth_s3_input: crate::Value<MonitoringGroundTruthS3Input>,
+        pub ground_truth_s3_input: ::Value<MonitoringGroundTruthS3Input>,
     }
 
-    impl crate::codec::SerializeValue for ModelQualityJobInput {
+    impl ::codec::SerializeValue for ModelQualityJobInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -11734,7 +11734,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModelQualityJobInput {
+    impl ::codec::DeserializeValue for ModelQualityJobInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModelQualityJobInput, D::Error> {
@@ -11751,8 +11751,8 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_input: Option<crate::Value<EndpointInput>> = None;
-                    let mut ground_truth_s3_input: Option<crate::Value<MonitoringGroundTruthS3Input>> =
+                    let mut endpoint_input: Option<::Value<EndpointInput>> = None;
+                    let mut ground_truth_s3_input: Option<::Value<MonitoringGroundTruthS3Input>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -11790,10 +11790,10 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: crate::Value<String>,
+        pub s3_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringGroundTruthS3Input {
+    impl ::codec::SerializeValue for MonitoringGroundTruthS3Input {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Uri", &self.s3_uri)?;
@@ -11801,7 +11801,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringGroundTruthS3Input {
+    impl ::codec::DeserializeValue for MonitoringGroundTruthS3Input {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringGroundTruthS3Input, D::Error> {
@@ -11818,7 +11818,7 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11848,10 +11848,10 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_output: crate::Value<S3Output>,
+        pub s3_output: ::Value<S3Output>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutput {
+    impl ::codec::SerializeValue for MonitoringOutput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Output", &self.s3_output)?;
@@ -11859,7 +11859,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutput {
+    impl ::codec::DeserializeValue for MonitoringOutput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutput, D::Error> {
@@ -11876,7 +11876,7 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_output: Option<crate::Value<S3Output>> = None;
+                    let mut s3_output: Option<::Value<S3Output>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11907,15 +11907,15 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub kms_key_id: Option<crate::Value<String>>,
+        pub kms_key_id: Option<::Value<String>>,
         /// Property [`MonitoringOutputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutputconfig-monitoringoutputs).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub monitoring_outputs: crate::ValueList<MonitoringOutput>,
+        pub monitoring_outputs: ::ValueList<MonitoringOutput>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutputConfig {
+    impl ::codec::SerializeValue for MonitoringOutputConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -11930,7 +11930,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutputConfig {
+    impl ::codec::DeserializeValue for MonitoringOutputConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutputConfig, D::Error> {
@@ -11947,8 +11947,8 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<crate::Value<String>> = None;
-                    let mut monitoring_outputs: Option<crate::ValueList<MonitoringOutput>> = None;
+                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut monitoring_outputs: Option<::ValueList<MonitoringOutput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -11983,10 +11983,10 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cluster_config: crate::Value<ClusterConfig>,
+        pub cluster_config: ::Value<ClusterConfig>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringResources {
+    impl ::codec::SerializeValue for MonitoringResources {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -11998,7 +11998,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringResources {
+    impl ::codec::DeserializeValue for MonitoringResources {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringResources, D::Error> {
@@ -12015,7 +12015,7 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_config: Option<crate::Value<ClusterConfig>> = None;
+                    let mut cluster_config: Option<::Value<ClusterConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12046,20 +12046,20 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_inter_container_traffic_encryption: Option<crate::Value<bool>>,
+        pub enable_inter_container_traffic_encryption: Option<::Value<bool>>,
         /// Property [`EnableNetworkIsolation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-enablenetworkisolation).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub enable_network_isolation: Option<crate::Value<bool>>,
+        pub enable_network_isolation: Option<::Value<bool>>,
         /// Property [`VpcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-vpcconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub vpc_config: Option<crate::Value<VpcConfig>>,
+        pub vpc_config: Option<::Value<VpcConfig>>,
     }
 
-    impl crate::codec::SerializeValue for NetworkConfig {
+    impl ::codec::SerializeValue for NetworkConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enable_inter_container_traffic_encryption) =
@@ -12085,7 +12085,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for NetworkConfig {
+    impl ::codec::DeserializeValue for NetworkConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkConfig, D::Error> {
@@ -12102,9 +12102,9 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enable_inter_container_traffic_encryption: Option<crate::Value<bool>> = None;
-                    let mut enable_network_isolation: Option<crate::Value<bool>> = None;
-                    let mut vpc_config: Option<crate::Value<VpcConfig>> = None;
+                    let mut enable_inter_container_traffic_encryption: Option<::Value<bool>> = None;
+                    let mut enable_network_isolation: Option<::Value<bool>> = None;
+                    let mut vpc_config: Option<::Value<VpcConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12145,20 +12145,20 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`S3UploadMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-s3output.html#cfn-sagemaker-modelqualityjobdefinition-s3output-s3uploadmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_upload_mode: Option<crate::Value<String>>,
+        pub s3_upload_mode: Option<::Value<String>>,
         /// Property [`S3Uri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-s3output.html#cfn-sagemaker-modelqualityjobdefinition-s3output-s3uri).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_uri: crate::Value<String>,
+        pub s3_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3Output {
+    impl ::codec::SerializeValue for S3Output {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocalPath", &self.local_path)?;
@@ -12174,7 +12174,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Output {
+    impl ::codec::DeserializeValue for S3Output {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Output, D::Error> {
             struct Visitor;
 
@@ -12189,9 +12189,9 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut s3_upload_mode: Option<crate::Value<String>> = None;
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut s3_upload_mode: Option<::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12230,10 +12230,10 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_runtime_in_seconds: crate::Value<u32>,
+        pub max_runtime_in_seconds: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for StoppingCondition {
+    impl ::codec::SerializeValue for StoppingCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -12245,7 +12245,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for StoppingCondition {
+    impl ::codec::DeserializeValue for StoppingCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StoppingCondition, D::Error> {
@@ -12262,7 +12262,7 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_runtime_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut max_runtime_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12294,15 +12294,15 @@ pub mod model_quality_job_definition {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub security_group_ids: crate::ValueList<String>,
+        pub security_group_ids: ::ValueList<String>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-vpcconfig.html#cfn-sagemaker-modelqualityjobdefinition-vpcconfig-subnets).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnets: crate::ValueList<String>,
+        pub subnets: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for VpcConfig {
+    impl ::codec::SerializeValue for VpcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -12315,7 +12315,7 @@ pub mod model_quality_job_definition {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcConfig {
+    impl ::codec::DeserializeValue for VpcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConfig, D::Error> {
             struct Visitor;
 
@@ -12330,8 +12330,8 @@ pub mod model_quality_job_definition {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnets: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnets: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12370,15 +12370,15 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub constraints_resource: Option<crate::Value<ConstraintsResource>>,
+        pub constraints_resource: Option<::Value<ConstraintsResource>>,
         /// Property [`StatisticsResource`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-baselineconfig.html#cfn-sagemaker-monitoringschedule-baselineconfig-statisticsresource).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub statistics_resource: Option<crate::Value<StatisticsResource>>,
+        pub statistics_resource: Option<::Value<StatisticsResource>>,
     }
 
-    impl crate::codec::SerializeValue for BaselineConfig {
+    impl ::codec::SerializeValue for BaselineConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref constraints_resource) = self.constraints_resource {
@@ -12399,7 +12399,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for BaselineConfig {
+    impl ::codec::DeserializeValue for BaselineConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<BaselineConfig, D::Error> {
@@ -12416,8 +12416,8 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut constraints_resource: Option<crate::Value<ConstraintsResource>> = None;
-                    let mut statistics_resource: Option<crate::Value<StatisticsResource>> = None;
+                    let mut constraints_resource: Option<::Value<ConstraintsResource>> = None;
+                    let mut statistics_resource: Option<::Value<StatisticsResource>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12452,25 +12452,25 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_count: crate::Value<u32>,
+        pub instance_count: ::Value<u32>,
         /// Property [`InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-clusterconfig.html#cfn-sagemaker-monitoringschedule-clusterconfig-instancetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_type: crate::Value<String>,
+        pub instance_type: ::Value<String>,
         /// Property [`VolumeKmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-clusterconfig.html#cfn-sagemaker-monitoringschedule-clusterconfig-volumekmskeyid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub volume_kms_key_id: Option<crate::Value<String>>,
+        pub volume_kms_key_id: Option<::Value<String>>,
         /// Property [`VolumeSizeInGB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-clusterconfig.html#cfn-sagemaker-monitoringschedule-clusterconfig-volumesizeingb).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub volume_size_in_gb: crate::Value<u32>,
+        pub volume_size_in_gb: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for ClusterConfig {
+    impl ::codec::SerializeValue for ClusterConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -12499,7 +12499,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for ClusterConfig {
+    impl ::codec::DeserializeValue for ClusterConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ClusterConfig, D::Error> {
@@ -12516,10 +12516,10 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_count: Option<crate::Value<u32>> = None;
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut volume_kms_key_id: Option<crate::Value<String>> = None;
-                    let mut volume_size_in_gb: Option<crate::Value<u32>> = None;
+                    let mut instance_count: Option<::Value<u32>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut volume_kms_key_id: Option<::Value<String>> = None;
+                    let mut volume_size_in_gb: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12564,10 +12564,10 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_uri: Option<crate::Value<String>>,
+        pub s3_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ConstraintsResource {
+    impl ::codec::SerializeValue for ConstraintsResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_uri) = self.s3_uri {
@@ -12577,7 +12577,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for ConstraintsResource {
+    impl ::codec::DeserializeValue for ConstraintsResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConstraintsResource, D::Error> {
@@ -12594,7 +12594,7 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12622,25 +12622,25 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub endpoint_name: crate::Value<String>,
+        pub endpoint_name: ::Value<String>,
         /// Property [`LocalPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-endpointinput.html#cfn-sagemaker-monitoringschedule-endpointinput-localpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`S3DataDistributionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-endpointinput.html#cfn-sagemaker-monitoringschedule-endpointinput-s3datadistributiontype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_data_distribution_type: Option<crate::Value<String>>,
+        pub s3_data_distribution_type: Option<::Value<String>>,
         /// Property [`S3InputMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-endpointinput.html#cfn-sagemaker-monitoringschedule-endpointinput-s3inputmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_input_mode: Option<crate::Value<String>>,
+        pub s3_input_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EndpointInput {
+    impl ::codec::SerializeValue for EndpointInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -12667,7 +12667,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for EndpointInput {
+    impl ::codec::DeserializeValue for EndpointInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EndpointInput, D::Error> {
@@ -12684,10 +12684,10 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_name: Option<crate::Value<String>> = None;
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut s3_data_distribution_type: Option<crate::Value<String>> = None;
-                    let mut s3_input_mode: Option<crate::Value<String>> = None;
+                    let mut endpoint_name: Option<::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut s3_data_distribution_type: Option<::Value<String>> = None;
+                    let mut s3_input_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12732,30 +12732,30 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_arguments: Option<crate::ValueList<String>>,
+        pub container_arguments: Option<::ValueList<String>>,
         /// Property [`ContainerEntrypoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-containerentrypoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub container_entrypoint: Option<crate::ValueList<String>>,
+        pub container_entrypoint: Option<::ValueList<String>>,
         /// Property [`ImageUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-imageuri).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_uri: crate::Value<String>,
+        pub image_uri: ::Value<String>,
         /// Property [`PostAnalyticsProcessorSourceUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-postanalyticsprocessorsourceuri).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub post_analytics_processor_source_uri: Option<crate::Value<String>>,
+        pub post_analytics_processor_source_uri: Option<::Value<String>>,
         /// Property [`RecordPreprocessorSourceUri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-recordpreprocessorsourceuri).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub record_preprocessor_source_uri: Option<crate::Value<String>>,
+        pub record_preprocessor_source_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringAppSpecification {
+    impl ::codec::SerializeValue for MonitoringAppSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_arguments) = self.container_arguments {
@@ -12793,7 +12793,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringAppSpecification {
+    impl ::codec::DeserializeValue for MonitoringAppSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringAppSpecification, D::Error> {
@@ -12810,11 +12810,11 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_arguments: Option<crate::ValueList<String>> = None;
-                    let mut container_entrypoint: Option<crate::ValueList<String>> = None;
-                    let mut image_uri: Option<crate::Value<String>> = None;
-                    let mut post_analytics_processor_source_uri: Option<crate::Value<String>> = None;
-                    let mut record_preprocessor_source_uri: Option<crate::Value<String>> = None;
+                    let mut container_arguments: Option<::ValueList<String>> = None;
+                    let mut container_entrypoint: Option<::ValueList<String>> = None;
+                    let mut image_uri: Option<::Value<String>> = None;
+                    let mut post_analytics_processor_source_uri: Option<::Value<String>> = None;
+                    let mut record_preprocessor_source_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -12864,45 +12864,45 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub creation_time: crate::Value<String>,
+        pub creation_time: ::Value<String>,
         /// Property [`EndpointName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-endpointname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub endpoint_name: Option<crate::Value<String>>,
+        pub endpoint_name: Option<::Value<String>>,
         /// Property [`FailureReason`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-failurereason).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub failure_reason: Option<crate::Value<String>>,
+        pub failure_reason: Option<::Value<String>>,
         /// Property [`LastModifiedTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-lastmodifiedtime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub last_modified_time: crate::Value<String>,
+        pub last_modified_time: ::Value<String>,
         /// Property [`MonitoringExecutionStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-monitoringexecutionstatus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_execution_status: crate::Value<String>,
+        pub monitoring_execution_status: ::Value<String>,
         /// Property [`MonitoringScheduleName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-monitoringschedulename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_schedule_name: crate::Value<String>,
+        pub monitoring_schedule_name: ::Value<String>,
         /// Property [`ProcessingJobArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-processingjobarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub processing_job_arn: Option<crate::Value<String>>,
+        pub processing_job_arn: Option<::Value<String>>,
         /// Property [`ScheduledTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-scheduledtime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scheduled_time: crate::Value<String>,
+        pub scheduled_time: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringExecutionSummary {
+    impl ::codec::SerializeValue for MonitoringExecutionSummary {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -12955,7 +12955,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringExecutionSummary {
+    impl ::codec::DeserializeValue for MonitoringExecutionSummary {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringExecutionSummary, D::Error> {
@@ -12972,14 +12972,14 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut creation_time: Option<crate::Value<String>> = None;
-                    let mut endpoint_name: Option<crate::Value<String>> = None;
-                    let mut failure_reason: Option<crate::Value<String>> = None;
-                    let mut last_modified_time: Option<crate::Value<String>> = None;
-                    let mut monitoring_execution_status: Option<crate::Value<String>> = None;
-                    let mut monitoring_schedule_name: Option<crate::Value<String>> = None;
-                    let mut processing_job_arn: Option<crate::Value<String>> = None;
-                    let mut scheduled_time: Option<crate::Value<String>> = None;
+                    let mut creation_time: Option<::Value<String>> = None;
+                    let mut endpoint_name: Option<::Value<String>> = None;
+                    let mut failure_reason: Option<::Value<String>> = None;
+                    let mut last_modified_time: Option<::Value<String>> = None;
+                    let mut monitoring_execution_status: Option<::Value<String>> = None;
+                    let mut monitoring_schedule_name: Option<::Value<String>> = None;
+                    let mut processing_job_arn: Option<::Value<String>> = None;
+                    let mut scheduled_time: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13045,10 +13045,10 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub endpoint_input: crate::Value<EndpointInput>,
+        pub endpoint_input: ::Value<EndpointInput>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringInput {
+    impl ::codec::SerializeValue for MonitoringInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -13060,7 +13060,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringInput {
+    impl ::codec::DeserializeValue for MonitoringInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringInput, D::Error> {
@@ -13077,7 +13077,7 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_input: Option<crate::Value<EndpointInput>> = None;
+                    let mut endpoint_input: Option<::Value<EndpointInput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13108,50 +13108,50 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub baseline_config: Option<crate::Value<BaselineConfig>>,
+        pub baseline_config: Option<::Value<BaselineConfig>>,
         /// Property [`Environment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-environment).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub environment: Option<crate::ValueMap<String>>,
+        pub environment: Option<::ValueMap<String>>,
         /// Property [`MonitoringAppSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringappspecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_app_specification: crate::Value<MonitoringAppSpecification>,
+        pub monitoring_app_specification: ::Value<MonitoringAppSpecification>,
         /// Property [`MonitoringInputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringinputs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_inputs: crate::ValueList<MonitoringInput>,
+        pub monitoring_inputs: ::ValueList<MonitoringInput>,
         /// Property [`MonitoringOutputConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringoutputconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_output_config: crate::Value<MonitoringOutputConfig>,
+        pub monitoring_output_config: ::Value<MonitoringOutputConfig>,
         /// Property [`MonitoringResources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringresources).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_resources: crate::Value<MonitoringResources>,
+        pub monitoring_resources: ::Value<MonitoringResources>,
         /// Property [`NetworkConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-networkconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub network_config: Option<crate::Value<NetworkConfig>>,
+        pub network_config: Option<::Value<NetworkConfig>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
         /// Property [`StoppingCondition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-stoppingcondition).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stopping_condition: Option<crate::Value<StoppingCondition>>,
+        pub stopping_condition: Option<::Value<StoppingCondition>>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringJobDefinition {
+    impl ::codec::SerializeValue for MonitoringJobDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref baseline_config) = self.baseline_config {
@@ -13203,7 +13203,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringJobDefinition {
+    impl ::codec::DeserializeValue for MonitoringJobDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringJobDefinition, D::Error> {
@@ -13220,18 +13220,18 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut baseline_config: Option<crate::Value<BaselineConfig>> = None;
-                    let mut environment: Option<crate::ValueMap<String>> = None;
+                    let mut baseline_config: Option<::Value<BaselineConfig>> = None;
+                    let mut environment: Option<::ValueMap<String>> = None;
                     let mut monitoring_app_specification: Option<
-                        crate::Value<MonitoringAppSpecification>,
+                        ::Value<MonitoringAppSpecification>,
                     > = None;
-                    let mut monitoring_inputs: Option<crate::ValueList<MonitoringInput>> = None;
-                    let mut monitoring_output_config: Option<crate::Value<MonitoringOutputConfig>> =
+                    let mut monitoring_inputs: Option<::ValueList<MonitoringInput>> = None;
+                    let mut monitoring_output_config: Option<::Value<MonitoringOutputConfig>> =
                         None;
-                    let mut monitoring_resources: Option<crate::Value<MonitoringResources>> = None;
-                    let mut network_config: Option<crate::Value<NetworkConfig>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
-                    let mut stopping_condition: Option<crate::Value<StoppingCondition>> = None;
+                    let mut monitoring_resources: Option<::Value<MonitoringResources>> = None;
+                    let mut network_config: Option<::Value<NetworkConfig>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
+                    let mut stopping_condition: Option<::Value<StoppingCondition>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13301,10 +13301,10 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_output: crate::Value<S3Output>,
+        pub s3_output: ::Value<S3Output>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutput {
+    impl ::codec::SerializeValue for MonitoringOutput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "S3Output", &self.s3_output)?;
@@ -13312,7 +13312,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutput {
+    impl ::codec::DeserializeValue for MonitoringOutput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutput, D::Error> {
@@ -13329,7 +13329,7 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_output: Option<crate::Value<S3Output>> = None;
+                    let mut s3_output: Option<::Value<S3Output>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13360,15 +13360,15 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kms_key_id: Option<crate::Value<String>>,
+        pub kms_key_id: Option<::Value<String>>,
         /// Property [`MonitoringOutputs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringoutputconfig.html#cfn-sagemaker-monitoringschedule-monitoringoutputconfig-monitoringoutputs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_outputs: crate::ValueList<MonitoringOutput>,
+        pub monitoring_outputs: ::ValueList<MonitoringOutput>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringOutputConfig {
+    impl ::codec::SerializeValue for MonitoringOutputConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref kms_key_id) = self.kms_key_id {
@@ -13383,7 +13383,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringOutputConfig {
+    impl ::codec::DeserializeValue for MonitoringOutputConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringOutputConfig, D::Error> {
@@ -13400,8 +13400,8 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut kms_key_id: Option<crate::Value<String>> = None;
-                    let mut monitoring_outputs: Option<crate::ValueList<MonitoringOutput>> = None;
+                    let mut kms_key_id: Option<::Value<String>> = None;
+                    let mut monitoring_outputs: Option<::ValueList<MonitoringOutput>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13436,10 +13436,10 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_config: crate::Value<ClusterConfig>,
+        pub cluster_config: ::Value<ClusterConfig>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringResources {
+    impl ::codec::SerializeValue for MonitoringResources {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -13451,7 +13451,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringResources {
+    impl ::codec::DeserializeValue for MonitoringResources {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringResources, D::Error> {
@@ -13468,7 +13468,7 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_config: Option<crate::Value<ClusterConfig>> = None;
+                    let mut cluster_config: Option<::Value<ClusterConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13499,25 +13499,25 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_job_definition: Option<crate::Value<MonitoringJobDefinition>>,
+        pub monitoring_job_definition: Option<::Value<MonitoringJobDefinition>>,
         /// Property [`MonitoringJobDefinitionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-monitoringjobdefinitionname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_job_definition_name: Option<crate::Value<String>>,
+        pub monitoring_job_definition_name: Option<::Value<String>>,
         /// Property [`MonitoringType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-monitoringtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub monitoring_type: Option<crate::Value<String>>,
+        pub monitoring_type: Option<::Value<String>>,
         /// Property [`ScheduleConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-scheduleconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule_config: Option<crate::Value<ScheduleConfig>>,
+        pub schedule_config: Option<::Value<ScheduleConfig>>,
     }
 
-    impl crate::codec::SerializeValue for MonitoringScheduleConfig {
+    impl ::codec::SerializeValue for MonitoringScheduleConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref monitoring_job_definition) = self.monitoring_job_definition {
@@ -13552,7 +13552,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for MonitoringScheduleConfig {
+    impl ::codec::DeserializeValue for MonitoringScheduleConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MonitoringScheduleConfig, D::Error> {
@@ -13569,11 +13569,11 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut monitoring_job_definition: Option<crate::Value<MonitoringJobDefinition>> =
+                    let mut monitoring_job_definition: Option<::Value<MonitoringJobDefinition>> =
                         None;
-                    let mut monitoring_job_definition_name: Option<crate::Value<String>> = None;
-                    let mut monitoring_type: Option<crate::Value<String>> = None;
-                    let mut schedule_config: Option<crate::Value<ScheduleConfig>> = None;
+                    let mut monitoring_job_definition_name: Option<::Value<String>> = None;
+                    let mut monitoring_type: Option<::Value<String>> = None;
+                    let mut schedule_config: Option<::Value<ScheduleConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13617,20 +13617,20 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enable_inter_container_traffic_encryption: Option<crate::Value<bool>>,
+        pub enable_inter_container_traffic_encryption: Option<::Value<bool>>,
         /// Property [`EnableNetworkIsolation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-networkconfig.html#cfn-sagemaker-monitoringschedule-networkconfig-enablenetworkisolation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enable_network_isolation: Option<crate::Value<bool>>,
+        pub enable_network_isolation: Option<::Value<bool>>,
         /// Property [`VpcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-networkconfig.html#cfn-sagemaker-monitoringschedule-networkconfig-vpcconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_config: Option<crate::Value<VpcConfig>>,
+        pub vpc_config: Option<::Value<VpcConfig>>,
     }
 
-    impl crate::codec::SerializeValue for NetworkConfig {
+    impl ::codec::SerializeValue for NetworkConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref enable_inter_container_traffic_encryption) =
@@ -13656,7 +13656,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for NetworkConfig {
+    impl ::codec::DeserializeValue for NetworkConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkConfig, D::Error> {
@@ -13673,9 +13673,9 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut enable_inter_container_traffic_encryption: Option<crate::Value<bool>> = None;
-                    let mut enable_network_isolation: Option<crate::Value<bool>> = None;
-                    let mut vpc_config: Option<crate::Value<VpcConfig>> = None;
+                    let mut enable_inter_container_traffic_encryption: Option<::Value<bool>> = None;
+                    let mut enable_network_isolation: Option<::Value<bool>> = None;
+                    let mut vpc_config: Option<::Value<VpcConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13716,20 +13716,20 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub local_path: crate::Value<String>,
+        pub local_path: ::Value<String>,
         /// Property [`S3UploadMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-s3output.html#cfn-sagemaker-monitoringschedule-s3output-s3uploadmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_upload_mode: Option<crate::Value<String>>,
+        pub s3_upload_mode: Option<::Value<String>>,
         /// Property [`S3Uri`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-s3output.html#cfn-sagemaker-monitoringschedule-s3output-s3uri).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_uri: crate::Value<String>,
+        pub s3_uri: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3Output {
+    impl ::codec::SerializeValue for S3Output {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LocalPath", &self.local_path)?;
@@ -13745,7 +13745,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Output {
+    impl ::codec::DeserializeValue for S3Output {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Output, D::Error> {
             struct Visitor;
 
@@ -13760,9 +13760,9 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut local_path: Option<crate::Value<String>> = None;
-                    let mut s3_upload_mode: Option<crate::Value<String>> = None;
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut local_path: Option<::Value<String>> = None;
+                    let mut s3_upload_mode: Option<::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13801,10 +13801,10 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule_expression: crate::Value<String>,
+        pub schedule_expression: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ScheduleConfig {
+    impl ::codec::SerializeValue for ScheduleConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -13816,7 +13816,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for ScheduleConfig {
+    impl ::codec::DeserializeValue for ScheduleConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScheduleConfig, D::Error> {
@@ -13833,7 +13833,7 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut schedule_expression: Option<crate::Value<String>> = None;
+                    let mut schedule_expression: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13864,10 +13864,10 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_uri: Option<crate::Value<String>>,
+        pub s3_uri: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for StatisticsResource {
+    impl ::codec::SerializeValue for StatisticsResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref s3_uri) = self.s3_uri {
@@ -13877,7 +13877,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for StatisticsResource {
+    impl ::codec::DeserializeValue for StatisticsResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StatisticsResource, D::Error> {
@@ -13894,7 +13894,7 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_uri: Option<crate::Value<String>> = None;
+                    let mut s3_uri: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13922,10 +13922,10 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_runtime_in_seconds: crate::Value<u32>,
+        pub max_runtime_in_seconds: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for StoppingCondition {
+    impl ::codec::SerializeValue for StoppingCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -13937,7 +13937,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for StoppingCondition {
+    impl ::codec::DeserializeValue for StoppingCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StoppingCondition, D::Error> {
@@ -13954,7 +13954,7 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_runtime_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut max_runtime_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -13986,15 +13986,15 @@ pub mod monitoring_schedule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_group_ids: crate::ValueList<String>,
+        pub security_group_ids: ::ValueList<String>,
         /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-vpcconfig.html#cfn-sagemaker-monitoringschedule-vpcconfig-subnets).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subnets: crate::ValueList<String>,
+        pub subnets: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for VpcConfig {
+    impl ::codec::SerializeValue for VpcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -14007,7 +14007,7 @@ pub mod monitoring_schedule {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcConfig {
+    impl ::codec::DeserializeValue for VpcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<VpcConfig, D::Error> {
             struct Visitor;
 
@@ -14022,8 +14022,8 @@ pub mod monitoring_schedule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnets: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnets: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14062,10 +14062,10 @@ pub mod notebook_instance_lifecycle_config {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub content: Option<crate::Value<String>>,
+        pub content: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for NotebookInstanceLifecycleHook {
+    impl ::codec::SerializeValue for NotebookInstanceLifecycleHook {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref content) = self.content {
@@ -14075,7 +14075,7 @@ pub mod notebook_instance_lifecycle_config {
         }
     }
 
-    impl crate::codec::DeserializeValue for NotebookInstanceLifecycleHook {
+    impl ::codec::DeserializeValue for NotebookInstanceLifecycleHook {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NotebookInstanceLifecycleHook, D::Error> {
@@ -14092,7 +14092,7 @@ pub mod notebook_instance_lifecycle_config {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut content: Option<crate::Value<String>> = None;
+                    let mut content: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14124,20 +14124,20 @@ pub mod user_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub app_image_config_name: crate::Value<String>,
+        pub app_image_config_name: ::Value<String>,
         /// Property [`ImageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-customimage.html#cfn-sagemaker-userprofile-customimage-imagename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_name: crate::Value<String>,
+        pub image_name: ::Value<String>,
         /// Property [`ImageVersionNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-customimage.html#cfn-sagemaker-userprofile-customimage-imageversionnumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub image_version_number: Option<crate::Value<u32>>,
+        pub image_version_number: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for CustomImage {
+    impl ::codec::SerializeValue for CustomImage {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -14157,7 +14157,7 @@ pub mod user_profile {
         }
     }
 
-    impl crate::codec::DeserializeValue for CustomImage {
+    impl ::codec::DeserializeValue for CustomImage {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomImage, D::Error> {
             struct Visitor;
 
@@ -14172,9 +14172,9 @@ pub mod user_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut app_image_config_name: Option<crate::Value<String>> = None;
-                    let mut image_name: Option<crate::Value<String>> = None;
-                    let mut image_version_number: Option<crate::Value<u32>> = None;
+                    let mut app_image_config_name: Option<::Value<String>> = None;
+                    let mut image_name: Option<::Value<String>> = None;
+                    let mut image_version_number: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14216,10 +14216,10 @@ pub mod user_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_resource_spec: Option<crate::Value<ResourceSpec>>,
+        pub default_resource_spec: Option<::Value<ResourceSpec>>,
     }
 
-    impl crate::codec::SerializeValue for JupyterServerAppSettings {
+    impl ::codec::SerializeValue for JupyterServerAppSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_resource_spec) = self.default_resource_spec {
@@ -14233,7 +14233,7 @@ pub mod user_profile {
         }
     }
 
-    impl crate::codec::DeserializeValue for JupyterServerAppSettings {
+    impl ::codec::DeserializeValue for JupyterServerAppSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<JupyterServerAppSettings, D::Error> {
@@ -14250,7 +14250,7 @@ pub mod user_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut default_resource_spec: Option<crate::Value<ResourceSpec>> = None;
+                    let mut default_resource_spec: Option<::Value<ResourceSpec>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14281,15 +14281,15 @@ pub mod user_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_images: Option<crate::ValueList<CustomImage>>,
+        pub custom_images: Option<::ValueList<CustomImage>>,
         /// Property [`DefaultResourceSpec`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-kernelgatewayappsettings.html#cfn-sagemaker-userprofile-kernelgatewayappsettings-defaultresourcespec).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_resource_spec: Option<crate::Value<ResourceSpec>>,
+        pub default_resource_spec: Option<::Value<ResourceSpec>>,
     }
 
-    impl crate::codec::SerializeValue for KernelGatewayAppSettings {
+    impl ::codec::SerializeValue for KernelGatewayAppSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_images) = self.custom_images {
@@ -14310,7 +14310,7 @@ pub mod user_profile {
         }
     }
 
-    impl crate::codec::DeserializeValue for KernelGatewayAppSettings {
+    impl ::codec::DeserializeValue for KernelGatewayAppSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KernelGatewayAppSettings, D::Error> {
@@ -14327,8 +14327,8 @@ pub mod user_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_images: Option<crate::ValueList<CustomImage>> = None;
-                    let mut default_resource_spec: Option<crate::Value<ResourceSpec>> = None;
+                    let mut custom_images: Option<::ValueList<CustomImage>> = None;
+                    let mut default_resource_spec: Option<::Value<ResourceSpec>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14363,15 +14363,15 @@ pub mod user_profile {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub access_status: Option<crate::Value<String>>,
+        pub access_status: Option<::Value<String>>,
         /// Property [`UserGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-rstudioserverproappsettings.html#cfn-sagemaker-userprofile-rstudioserverproappsettings-usergroup).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub user_group: Option<crate::Value<String>>,
+        pub user_group: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for RStudioServerProAppSettings {
+    impl ::codec::SerializeValue for RStudioServerProAppSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref access_status) = self.access_status {
@@ -14388,7 +14388,7 @@ pub mod user_profile {
         }
     }
 
-    impl crate::codec::DeserializeValue for RStudioServerProAppSettings {
+    impl ::codec::DeserializeValue for RStudioServerProAppSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RStudioServerProAppSettings, D::Error> {
@@ -14405,8 +14405,8 @@ pub mod user_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut access_status: Option<crate::Value<String>> = None;
-                    let mut user_group: Option<crate::Value<String>> = None;
+                    let mut access_status: Option<::Value<String>> = None;
+                    let mut user_group: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14440,20 +14440,20 @@ pub mod user_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_type: Option<crate::Value<String>>,
+        pub instance_type: Option<::Value<String>>,
         /// Property [`SageMakerImageArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-resourcespec.html#cfn-sagemaker-userprofile-resourcespec-sagemakerimagearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sage_maker_image_arn: Option<crate::Value<String>>,
+        pub sage_maker_image_arn: Option<::Value<String>>,
         /// Property [`SageMakerImageVersionArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-resourcespec.html#cfn-sagemaker-userprofile-resourcespec-sagemakerimageversionarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sage_maker_image_version_arn: Option<crate::Value<String>>,
+        pub sage_maker_image_version_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ResourceSpec {
+    impl ::codec::SerializeValue for ResourceSpec {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref instance_type) = self.instance_type {
@@ -14481,7 +14481,7 @@ pub mod user_profile {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourceSpec {
+    impl ::codec::DeserializeValue for ResourceSpec {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ResourceSpec, D::Error> {
             struct Visitor;
 
@@ -14496,9 +14496,9 @@ pub mod user_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut sage_maker_image_arn: Option<crate::Value<String>> = None;
-                    let mut sage_maker_image_version_arn: Option<crate::Value<String>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut sage_maker_image_arn: Option<::Value<String>> = None;
+                    let mut sage_maker_image_version_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14538,20 +14538,20 @@ pub mod user_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub notebook_output_option: Option<crate::Value<String>>,
+        pub notebook_output_option: Option<::Value<String>>,
         /// Property [`S3KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-sharingsettings.html#cfn-sagemaker-userprofile-sharingsettings-s3kmskeyid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_kms_key_id: Option<crate::Value<String>>,
+        pub s3_kms_key_id: Option<::Value<String>>,
         /// Property [`S3OutputPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-sharingsettings.html#cfn-sagemaker-userprofile-sharingsettings-s3outputpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_output_path: Option<crate::Value<String>>,
+        pub s3_output_path: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for SharingSettings {
+    impl ::codec::SerializeValue for SharingSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref notebook_output_option) = self.notebook_output_option {
@@ -14575,7 +14575,7 @@ pub mod user_profile {
         }
     }
 
-    impl crate::codec::DeserializeValue for SharingSettings {
+    impl ::codec::DeserializeValue for SharingSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SharingSettings, D::Error> {
@@ -14592,9 +14592,9 @@ pub mod user_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut notebook_output_option: Option<crate::Value<String>> = None;
-                    let mut s3_kms_key_id: Option<crate::Value<String>> = None;
-                    let mut s3_output_path: Option<crate::Value<String>> = None;
+                    let mut notebook_output_option: Option<::Value<String>> = None;
+                    let mut s3_kms_key_id: Option<::Value<String>> = None;
+                    let mut s3_output_path: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14633,35 +14633,35 @@ pub mod user_profile {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub execution_role: Option<crate::Value<String>>,
+        pub execution_role: Option<::Value<String>>,
         /// Property [`JupyterServerAppSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-jupyterserverappsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub jupyter_server_app_settings: Option<crate::Value<JupyterServerAppSettings>>,
+        pub jupyter_server_app_settings: Option<::Value<JupyterServerAppSettings>>,
         /// Property [`KernelGatewayAppSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-kernelgatewayappsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kernel_gateway_app_settings: Option<crate::Value<KernelGatewayAppSettings>>,
+        pub kernel_gateway_app_settings: Option<::Value<KernelGatewayAppSettings>>,
         /// Property [`RStudioServerProAppSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-rstudioserverproappsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r_studio_server_pro_app_settings: Option<crate::Value<RStudioServerProAppSettings>>,
+        pub r_studio_server_pro_app_settings: Option<::Value<RStudioServerProAppSettings>>,
         /// Property [`SecurityGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-securitygroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_groups: Option<crate::ValueList<String>>,
+        pub security_groups: Option<::ValueList<String>>,
         /// Property [`SharingSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-sharingsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sharing_settings: Option<crate::Value<SharingSettings>>,
+        pub sharing_settings: Option<::Value<SharingSettings>>,
     }
 
-    impl crate::codec::SerializeValue for UserSettings {
+    impl ::codec::SerializeValue for UserSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref execution_role) = self.execution_role {
@@ -14712,7 +14712,7 @@ pub mod user_profile {
         }
     }
 
-    impl crate::codec::DeserializeValue for UserSettings {
+    impl ::codec::DeserializeValue for UserSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<UserSettings, D::Error> {
             struct Visitor;
 
@@ -14727,16 +14727,16 @@ pub mod user_profile {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut execution_role: Option<crate::Value<String>> = None;
-                    let mut jupyter_server_app_settings: Option<crate::Value<JupyterServerAppSettings>> =
+                    let mut execution_role: Option<::Value<String>> = None;
+                    let mut jupyter_server_app_settings: Option<::Value<JupyterServerAppSettings>> =
                         None;
-                    let mut kernel_gateway_app_settings: Option<crate::Value<KernelGatewayAppSettings>> =
+                    let mut kernel_gateway_app_settings: Option<::Value<KernelGatewayAppSettings>> =
                         None;
                     let mut r_studio_server_pro_app_settings: Option<
-                        crate::Value<RStudioServerProAppSettings>,
+                        ::Value<RStudioServerProAppSettings>,
                     > = None;
-                    let mut security_groups: Option<crate::ValueList<String>> = None;
-                    let mut sharing_settings: Option<crate::Value<SharingSettings>> = None;
+                    let mut security_groups: Option<::ValueList<String>> = None;
+                    let mut sharing_settings: Option<::Value<SharingSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14793,20 +14793,20 @@ pub mod workteam {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cognito_client_id: crate::Value<String>,
+        pub cognito_client_id: ::Value<String>,
         /// Property [`CognitoUserGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitousergroup).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cognito_user_group: crate::Value<String>,
+        pub cognito_user_group: ::Value<String>,
         /// Property [`CognitoUserPool`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitouserpool).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub cognito_user_pool: crate::Value<String>,
+        pub cognito_user_pool: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CognitoMemberDefinition {
+    impl ::codec::SerializeValue for CognitoMemberDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -14828,7 +14828,7 @@ pub mod workteam {
         }
     }
 
-    impl crate::codec::DeserializeValue for CognitoMemberDefinition {
+    impl ::codec::DeserializeValue for CognitoMemberDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CognitoMemberDefinition, D::Error> {
@@ -14845,9 +14845,9 @@ pub mod workteam {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cognito_client_id: Option<crate::Value<String>> = None;
-                    let mut cognito_user_group: Option<crate::Value<String>> = None;
-                    let mut cognito_user_pool: Option<crate::Value<String>> = None;
+                    let mut cognito_client_id: Option<::Value<String>> = None;
+                    let mut cognito_user_group: Option<::Value<String>> = None;
+                    let mut cognito_user_pool: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -14888,10 +14888,10 @@ pub mod workteam {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cognito_member_definition: crate::Value<CognitoMemberDefinition>,
+        pub cognito_member_definition: ::Value<CognitoMemberDefinition>,
     }
 
-    impl crate::codec::SerializeValue for MemberDefinition {
+    impl ::codec::SerializeValue for MemberDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -14903,7 +14903,7 @@ pub mod workteam {
         }
     }
 
-    impl crate::codec::DeserializeValue for MemberDefinition {
+    impl ::codec::DeserializeValue for MemberDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MemberDefinition, D::Error> {
@@ -14920,7 +14920,7 @@ pub mod workteam {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cognito_member_definition: Option<crate::Value<CognitoMemberDefinition>> =
+                    let mut cognito_member_definition: Option<::Value<CognitoMemberDefinition>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -14953,10 +14953,10 @@ pub mod workteam {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub notification_topic_arn: crate::Value<String>,
+        pub notification_topic_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for NotificationConfiguration {
+    impl ::codec::SerializeValue for NotificationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -14968,7 +14968,7 @@ pub mod workteam {
         }
     }
 
-    impl crate::codec::DeserializeValue for NotificationConfiguration {
+    impl ::codec::DeserializeValue for NotificationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NotificationConfiguration, D::Error> {
@@ -14985,7 +14985,7 @@ pub mod workteam {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut notification_topic_arn: Option<crate::Value<String>> = None;
+                    let mut notification_topic_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

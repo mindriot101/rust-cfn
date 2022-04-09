@@ -13,32 +13,32 @@ pub struct AppProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub app_template_body: crate::Value<String>,
+    pub app_template_body: ::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`ResiliencyPolicyArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-resiliencypolicyarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resiliency_policy_arn: Option<crate::Value<String>>,
+    pub resiliency_policy_arn: Option<::Value<String>>,
     /// Property [`ResourceMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-resourcemappings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_mappings: crate::ValueList<self::app::ResourceMapping>,
+    pub resource_mappings: ::ValueList<self::app::ResourceMapping>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueMap<String>>,
+    pub tags: Option<::ValueMap<String>>,
 }
 
 impl ::serde::Serialize for AppProperties {
@@ -87,12 +87,12 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut app_template_body: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut resiliency_policy_arn: Option<crate::Value<String>> = None;
-                let mut resource_mappings: Option<crate::ValueList<self::app::ResourceMapping>> = None;
-                let mut tags: Option<crate::ValueMap<String>> = None;
+                let mut app_template_body: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut resiliency_policy_arn: Option<::Value<String>> = None;
+                let mut resource_mappings: Option<::ValueList<self::app::ResourceMapping>> = None;
+                let mut tags: Option<::ValueMap<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -135,7 +135,7 @@ impl<'de> ::serde::Deserialize<'de> for AppProperties {
     }
 }
 
-impl crate::Resource for App {
+impl ::Resource for App {
     type Properties = AppProperties;
     const TYPE: &'static str = "AWS::ResilienceHub::App";
     fn properties(&self) -> &AppProperties {
@@ -146,7 +146,7 @@ impl crate::Resource for App {
     }
 }
 
-impl crate::private::Sealed for App {}
+impl ::private::Sealed for App {}
 
 impl From<AppProperties> for App {
     fn from(properties: AppProperties) -> App {
@@ -167,32 +167,32 @@ pub struct ResiliencyPolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_location_constraint: Option<crate::Value<String>>,
+    pub data_location_constraint: Option<::Value<String>>,
     /// Property [`Policy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-resiliencypolicy.html#cfn-resiliencehub-resiliencypolicy-policy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy: crate::ValueMap<self::resiliency_policy::FailurePolicy>,
+    pub policy: ::ValueMap<self::resiliency_policy::FailurePolicy>,
     /// Property [`PolicyDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-resiliencypolicy.html#cfn-resiliencehub-resiliencypolicy-policydescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy_description: Option<crate::Value<String>>,
+    pub policy_description: Option<::Value<String>>,
     /// Property [`PolicyName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-resiliencypolicy.html#cfn-resiliencehub-resiliencypolicy-policyname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy_name: crate::Value<String>,
+    pub policy_name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-resiliencypolicy.html#cfn-resiliencehub-resiliencypolicy-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueMap<String>>,
+    pub tags: Option<::ValueMap<String>>,
     /// Property [`Tier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-resiliencypolicy.html#cfn-resiliencehub-resiliencypolicy-tier).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tier: crate::Value<String>,
+    pub tier: ::Value<String>,
 }
 
 impl ::serde::Serialize for ResiliencyPolicyProperties {
@@ -239,12 +239,12 @@ impl<'de> ::serde::Deserialize<'de> for ResiliencyPolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_location_constraint: Option<crate::Value<String>> = None;
-                let mut policy: Option<crate::ValueMap<self::resiliency_policy::FailurePolicy>> = None;
-                let mut policy_description: Option<crate::Value<String>> = None;
-                let mut policy_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueMap<String>> = None;
-                let mut tier: Option<crate::Value<String>> = None;
+                let mut data_location_constraint: Option<::Value<String>> = None;
+                let mut policy: Option<::ValueMap<self::resiliency_policy::FailurePolicy>> = None;
+                let mut policy_description: Option<::Value<String>> = None;
+                let mut policy_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueMap<String>> = None;
+                let mut tier: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -287,7 +287,7 @@ impl<'de> ::serde::Deserialize<'de> for ResiliencyPolicyProperties {
     }
 }
 
-impl crate::Resource for ResiliencyPolicy {
+impl ::Resource for ResiliencyPolicy {
     type Properties = ResiliencyPolicyProperties;
     const TYPE: &'static str = "AWS::ResilienceHub::ResiliencyPolicy";
     fn properties(&self) -> &ResiliencyPolicyProperties {
@@ -298,7 +298,7 @@ impl crate::Resource for ResiliencyPolicy {
     }
 }
 
-impl crate::private::Sealed for ResiliencyPolicy {}
+impl ::private::Sealed for ResiliencyPolicy {}
 
 impl From<ResiliencyPolicyProperties> for ResiliencyPolicy {
     fn from(properties: ResiliencyPolicyProperties) -> ResiliencyPolicy {
@@ -316,25 +316,25 @@ pub mod app {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aws_account_id: Option<crate::Value<String>>,
+        pub aws_account_id: Option<::Value<String>>,
         /// Property [`AwsRegion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-physicalresourceid.html#cfn-resiliencehub-app-physicalresourceid-awsregion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aws_region: Option<crate::Value<String>>,
+        pub aws_region: Option<::Value<String>>,
         /// Property [`Identifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-physicalresourceid.html#cfn-resiliencehub-app-physicalresourceid-identifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub identifier: crate::Value<String>,
+        pub identifier: ::Value<String>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-physicalresourceid.html#cfn-resiliencehub-app-physicalresourceid-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for PhysicalResourceId {
+    impl ::codec::SerializeValue for PhysicalResourceId {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref aws_account_id) = self.aws_account_id {
@@ -353,7 +353,7 @@ pub mod app {
         }
     }
 
-    impl crate::codec::DeserializeValue for PhysicalResourceId {
+    impl ::codec::DeserializeValue for PhysicalResourceId {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PhysicalResourceId, D::Error> {
@@ -370,10 +370,10 @@ pub mod app {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut aws_account_id: Option<crate::Value<String>> = None;
-                    let mut aws_region: Option<crate::Value<String>> = None;
-                    let mut identifier: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut aws_account_id: Option<::Value<String>> = None;
+                    let mut aws_region: Option<::Value<String>> = None;
+                    let mut identifier: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -416,25 +416,25 @@ pub mod app {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub logical_stack_name: Option<crate::Value<String>>,
+        pub logical_stack_name: Option<::Value<String>>,
         /// Property [`MappingType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-mappingtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub mapping_type: crate::Value<String>,
+        pub mapping_type: ::Value<String>,
         /// Property [`PhysicalResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-physicalresourceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub physical_resource_id: crate::Value<PhysicalResourceId>,
+        pub physical_resource_id: ::Value<PhysicalResourceId>,
         /// Property [`ResourceName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-resourcename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_name: Option<crate::Value<String>>,
+        pub resource_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ResourceMapping {
+    impl ::codec::SerializeValue for ResourceMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref logical_stack_name) = self.logical_stack_name {
@@ -465,7 +465,7 @@ pub mod app {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourceMapping {
+    impl ::codec::DeserializeValue for ResourceMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourceMapping, D::Error> {
@@ -482,10 +482,10 @@ pub mod app {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut logical_stack_name: Option<crate::Value<String>> = None;
-                    let mut mapping_type: Option<crate::Value<String>> = None;
-                    let mut physical_resource_id: Option<crate::Value<PhysicalResourceId>> = None;
-                    let mut resource_name: Option<crate::Value<String>> = None;
+                    let mut logical_stack_name: Option<::Value<String>> = None;
+                    let mut mapping_type: Option<::Value<String>> = None;
+                    let mut physical_resource_id: Option<::Value<PhysicalResourceId>> = None;
+                    let mut resource_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -534,15 +534,15 @@ pub mod resiliency_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rpo_in_secs: crate::Value<u32>,
+        pub rpo_in_secs: ::Value<u32>,
         /// Property [`RtoInSecs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-resiliencypolicy-failurepolicy.html#cfn-resiliencehub-resiliencypolicy-failurepolicy-rtoinsecs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rto_in_secs: crate::Value<u32>,
+        pub rto_in_secs: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for FailurePolicy {
+    impl ::codec::SerializeValue for FailurePolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "RpoInSecs", &self.rpo_in_secs)?;
@@ -551,7 +551,7 @@ pub mod resiliency_policy {
         }
     }
 
-    impl crate::codec::DeserializeValue for FailurePolicy {
+    impl ::codec::DeserializeValue for FailurePolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FailurePolicy, D::Error> {
@@ -568,8 +568,8 @@ pub mod resiliency_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut rpo_in_secs: Option<crate::Value<u32>> = None;
-                    let mut rto_in_secs: Option<crate::Value<u32>> = None;
+                    let mut rpo_in_secs: Option<::Value<u32>> = None;
+                    let mut rto_in_secs: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

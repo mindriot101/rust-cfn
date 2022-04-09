@@ -13,17 +13,17 @@ pub struct DatabaseProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub database_name: Option<crate::Value<String>>,
+    pub database_name: Option<::Value<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-database.html#cfn-timestream-database-kmskeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-database.html#cfn-timestream-database-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for DatabaseProperties {
@@ -57,9 +57,9 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut database_name: Option<crate::Value<String>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut database_name: Option<::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -88,7 +88,7 @@ impl<'de> ::serde::Deserialize<'de> for DatabaseProperties {
     }
 }
 
-impl crate::Resource for Database {
+impl ::Resource for Database {
     type Properties = DatabaseProperties;
     const TYPE: &'static str = "AWS::Timestream::Database";
     fn properties(&self) -> &DatabaseProperties {
@@ -99,7 +99,7 @@ impl crate::Resource for Database {
     }
 }
 
-impl crate::private::Sealed for Database {}
+impl ::private::Sealed for Database {}
 
 impl From<DatabaseProperties> for Database {
     fn from(properties: DatabaseProperties) -> Database {
@@ -120,52 +120,52 @@ pub struct ScheduledQueryProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub client_token: Option<crate::Value<String>>,
+    pub client_token: Option<::Value<String>>,
     /// Property [`ErrorReportConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-errorreportconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub error_report_configuration: crate::Value<self::scheduled_query::ErrorReportConfiguration>,
+    pub error_report_configuration: ::Value<self::scheduled_query::ErrorReportConfiguration>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`NotificationConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-notificationconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub notification_configuration: crate::Value<self::scheduled_query::NotificationConfiguration>,
+    pub notification_configuration: ::Value<self::scheduled_query::NotificationConfiguration>,
     /// Property [`QueryString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-querystring).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub query_string: crate::Value<String>,
+    pub query_string: ::Value<String>,
     /// Property [`ScheduleConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduleconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub schedule_configuration: crate::Value<self::scheduled_query::ScheduleConfiguration>,
+    pub schedule_configuration: ::Value<self::scheduled_query::ScheduleConfiguration>,
     /// Property [`ScheduledQueryExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduledqueryexecutionrolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub scheduled_query_execution_role_arn: crate::Value<String>,
+    pub scheduled_query_execution_role_arn: ::Value<String>,
     /// Property [`ScheduledQueryName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduledqueryname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub scheduled_query_name: Option<crate::Value<String>>,
+    pub scheduled_query_name: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`TargetConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-targetconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub target_configuration: Option<crate::Value<self::scheduled_query::TargetConfiguration>>,
+    pub target_configuration: Option<::Value<self::scheduled_query::TargetConfiguration>>,
 }
 
 impl ::serde::Serialize for ScheduledQueryProperties {
@@ -236,23 +236,23 @@ impl<'de> ::serde::Deserialize<'de> for ScheduledQueryProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut client_token: Option<crate::Value<String>> = None;
+                let mut client_token: Option<::Value<String>> = None;
                 let mut error_report_configuration: Option<
-                    crate::Value<self::scheduled_query::ErrorReportConfiguration>,
+                    ::Value<self::scheduled_query::ErrorReportConfiguration>,
                 > = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
                 let mut notification_configuration: Option<
-                    crate::Value<self::scheduled_query::NotificationConfiguration>,
+                    ::Value<self::scheduled_query::NotificationConfiguration>,
                 > = None;
-                let mut query_string: Option<crate::Value<String>> = None;
+                let mut query_string: Option<::Value<String>> = None;
                 let mut schedule_configuration: Option<
-                    crate::Value<self::scheduled_query::ScheduleConfiguration>,
+                    ::Value<self::scheduled_query::ScheduleConfiguration>,
                 > = None;
-                let mut scheduled_query_execution_role_arn: Option<crate::Value<String>> = None;
-                let mut scheduled_query_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut scheduled_query_execution_role_arn: Option<::Value<String>> = None;
+                let mut scheduled_query_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut target_configuration: Option<
-                    crate::Value<self::scheduled_query::TargetConfiguration>,
+                    ::Value<self::scheduled_query::TargetConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -321,7 +321,7 @@ impl<'de> ::serde::Deserialize<'de> for ScheduledQueryProperties {
     }
 }
 
-impl crate::Resource for ScheduledQuery {
+impl ::Resource for ScheduledQuery {
     type Properties = ScheduledQueryProperties;
     const TYPE: &'static str = "AWS::Timestream::ScheduledQuery";
     fn properties(&self) -> &ScheduledQueryProperties {
@@ -332,7 +332,7 @@ impl crate::Resource for ScheduledQuery {
     }
 }
 
-impl crate::private::Sealed for ScheduledQuery {}
+impl ::private::Sealed for ScheduledQuery {}
 
 impl From<ScheduledQueryProperties> for ScheduledQuery {
     fn from(properties: ScheduledQueryProperties) -> ScheduledQuery {
@@ -353,27 +353,27 @@ pub struct TableProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub database_name: crate::Value<String>,
+    pub database_name: ::Value<String>,
     /// Property [`MagneticStoreWriteProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-magneticstorewriteproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub magnetic_store_write_properties: Option<crate::Value<crate::json::Value>>,
+    pub magnetic_store_write_properties: Option<::Value<::json::Value>>,
     /// Property [`RetentionProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-retentionproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub retention_properties: Option<crate::Value<crate::json::Value>>,
+    pub retention_properties: Option<::Value<::json::Value>>,
     /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-tablename).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub table_name: Option<crate::Value<String>>,
+    pub table_name: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for TableProperties {
@@ -419,11 +419,11 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut database_name: Option<crate::Value<String>> = None;
-                let mut magnetic_store_write_properties: Option<crate::Value<crate::json::Value>> = None;
-                let mut retention_properties: Option<crate::Value<crate::json::Value>> = None;
-                let mut table_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut database_name: Option<::Value<String>> = None;
+                let mut magnetic_store_write_properties: Option<::Value<::json::Value>> = None;
+                let mut retention_properties: Option<::Value<::json::Value>> = None;
+                let mut table_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -462,7 +462,7 @@ impl<'de> ::serde::Deserialize<'de> for TableProperties {
     }
 }
 
-impl crate::Resource for Table {
+impl ::Resource for Table {
     type Properties = TableProperties;
     const TYPE: &'static str = "AWS::Timestream::Table";
     fn properties(&self) -> &TableProperties {
@@ -473,7 +473,7 @@ impl crate::Resource for Table {
     }
 }
 
-impl crate::private::Sealed for Table {}
+impl ::private::Sealed for Table {}
 
 impl From<TableProperties> for Table {
     fn from(properties: TableProperties) -> Table {
@@ -491,15 +491,15 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub dimension_value_type: crate::Value<String>,
+        pub dimension_value_type: ::Value<String>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-dimensionmapping.html#cfn-timestream-scheduledquery-dimensionmapping-name).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for DimensionMapping {
+    impl ::codec::SerializeValue for DimensionMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -512,7 +512,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for DimensionMapping {
+    impl ::codec::DeserializeValue for DimensionMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DimensionMapping, D::Error> {
@@ -529,8 +529,8 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dimension_value_type: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut dimension_value_type: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -566,10 +566,10 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub s3_configuration: crate::Value<S3Configuration>,
+        pub s3_configuration: ::Value<S3Configuration>,
     }
 
-    impl crate::codec::SerializeValue for ErrorReportConfiguration {
+    impl ::codec::SerializeValue for ErrorReportConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -581,7 +581,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for ErrorReportConfiguration {
+    impl ::codec::DeserializeValue for ErrorReportConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ErrorReportConfiguration, D::Error> {
@@ -598,7 +598,7 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut s3_configuration: Option<crate::Value<S3Configuration>> = None;
+                    let mut s3_configuration: Option<::Value<S3Configuration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -629,30 +629,30 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub measure_name: Option<crate::Value<String>>,
+        pub measure_name: Option<::Value<String>>,
         /// Property [`MeasureValueType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-mixedmeasuremapping.html#cfn-timestream-scheduledquery-mixedmeasuremapping-measurevaluetype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub measure_value_type: crate::Value<String>,
+        pub measure_value_type: ::Value<String>,
         /// Property [`MultiMeasureAttributeMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-mixedmeasuremapping.html#cfn-timestream-scheduledquery-mixedmeasuremapping-multimeasureattributemappings).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub multi_measure_attribute_mappings: Option<crate::ValueList<MultiMeasureAttributeMapping>>,
+        pub multi_measure_attribute_mappings: Option<::ValueList<MultiMeasureAttributeMapping>>,
         /// Property [`SourceColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-mixedmeasuremapping.html#cfn-timestream-scheduledquery-mixedmeasuremapping-sourcecolumn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub source_column: Option<crate::Value<String>>,
+        pub source_column: Option<::Value<String>>,
         /// Property [`TargetMeasureName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-mixedmeasuremapping.html#cfn-timestream-scheduledquery-mixedmeasuremapping-targetmeasurename).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub target_measure_name: Option<crate::Value<String>>,
+        pub target_measure_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MixedMeasureMapping {
+    impl ::codec::SerializeValue for MixedMeasureMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref measure_name) = self.measure_name {
@@ -690,7 +690,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for MixedMeasureMapping {
+    impl ::codec::DeserializeValue for MixedMeasureMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MixedMeasureMapping, D::Error> {
@@ -707,13 +707,13 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut measure_name: Option<crate::Value<String>> = None;
-                    let mut measure_value_type: Option<crate::Value<String>> = None;
+                    let mut measure_name: Option<::Value<String>> = None;
+                    let mut measure_value_type: Option<::Value<String>> = None;
                     let mut multi_measure_attribute_mappings: Option<
-                        crate::ValueList<MultiMeasureAttributeMapping>,
+                        ::ValueList<MultiMeasureAttributeMapping>,
                     > = None;
-                    let mut source_column: Option<crate::Value<String>> = None;
-                    let mut target_measure_name: Option<crate::Value<String>> = None;
+                    let mut source_column: Option<::Value<String>> = None;
+                    let mut target_measure_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -761,20 +761,20 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub measure_value_type: crate::Value<String>,
+        pub measure_value_type: ::Value<String>,
         /// Property [`SourceColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-multimeasureattributemapping.html#cfn-timestream-scheduledquery-multimeasureattributemapping-sourcecolumn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub source_column: crate::Value<String>,
+        pub source_column: ::Value<String>,
         /// Property [`TargetMultiMeasureAttributeName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-multimeasureattributemapping.html#cfn-timestream-scheduledquery-multimeasureattributemapping-targetmultimeasureattributename).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub target_multi_measure_attribute_name: Option<crate::Value<String>>,
+        pub target_multi_measure_attribute_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MultiMeasureAttributeMapping {
+    impl ::codec::SerializeValue for MultiMeasureAttributeMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -800,7 +800,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for MultiMeasureAttributeMapping {
+    impl ::codec::DeserializeValue for MultiMeasureAttributeMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MultiMeasureAttributeMapping, D::Error> {
@@ -817,9 +817,9 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut measure_value_type: Option<crate::Value<String>> = None;
-                    let mut source_column: Option<crate::Value<String>> = None;
-                    let mut target_multi_measure_attribute_name: Option<crate::Value<String>> = None;
+                    let mut measure_value_type: Option<::Value<String>> = None;
+                    let mut source_column: Option<::Value<String>> = None;
+                    let mut target_multi_measure_attribute_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -860,15 +860,15 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub multi_measure_attribute_mappings: crate::ValueList<MultiMeasureAttributeMapping>,
+        pub multi_measure_attribute_mappings: ::ValueList<MultiMeasureAttributeMapping>,
         /// Property [`TargetMultiMeasureName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-multimeasuremappings.html#cfn-timestream-scheduledquery-multimeasuremappings-targetmultimeasurename).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub target_multi_measure_name: Option<crate::Value<String>>,
+        pub target_multi_measure_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for MultiMeasureMappings {
+    impl ::codec::SerializeValue for MultiMeasureMappings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -887,7 +887,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for MultiMeasureMappings {
+    impl ::codec::DeserializeValue for MultiMeasureMappings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MultiMeasureMappings, D::Error> {
@@ -905,9 +905,9 @@ pub mod scheduled_query {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut multi_measure_attribute_mappings: Option<
-                        crate::ValueList<MultiMeasureAttributeMapping>,
+                        ::ValueList<MultiMeasureAttributeMapping>,
                     > = None;
-                    let mut target_multi_measure_name: Option<crate::Value<String>> = None;
+                    let mut target_multi_measure_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -945,10 +945,10 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub sns_configuration: crate::Value<SnsConfiguration>,
+        pub sns_configuration: ::Value<SnsConfiguration>,
     }
 
-    impl crate::codec::SerializeValue for NotificationConfiguration {
+    impl ::codec::SerializeValue for NotificationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -960,7 +960,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for NotificationConfiguration {
+    impl ::codec::DeserializeValue for NotificationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NotificationConfiguration, D::Error> {
@@ -977,7 +977,7 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut sns_configuration: Option<crate::Value<SnsConfiguration>> = None;
+                    let mut sns_configuration: Option<::Value<SnsConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1008,20 +1008,20 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub bucket_name: crate::Value<String>,
+        pub bucket_name: ::Value<String>,
         /// Property [`EncryptionOption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-s3configuration.html#cfn-timestream-scheduledquery-s3configuration-encryptionoption).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub encryption_option: Option<crate::Value<String>>,
+        pub encryption_option: Option<::Value<String>>,
         /// Property [`ObjectKeyPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-s3configuration.html#cfn-timestream-scheduledquery-s3configuration-objectkeyprefix).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub object_key_prefix: Option<crate::Value<String>>,
+        pub object_key_prefix: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for S3Configuration {
+    impl ::codec::SerializeValue for S3Configuration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "BucketName", &self.bucket_name)?;
@@ -1043,7 +1043,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Configuration {
+    impl ::codec::DeserializeValue for S3Configuration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<S3Configuration, D::Error> {
@@ -1060,9 +1060,9 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket_name: Option<crate::Value<String>> = None;
-                    let mut encryption_option: Option<crate::Value<String>> = None;
-                    let mut object_key_prefix: Option<crate::Value<String>> = None;
+                    let mut bucket_name: Option<::Value<String>> = None;
+                    let mut encryption_option: Option<::Value<String>> = None;
+                    let mut object_key_prefix: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1101,10 +1101,10 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub schedule_expression: crate::Value<String>,
+        pub schedule_expression: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ScheduleConfiguration {
+    impl ::codec::SerializeValue for ScheduleConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1116,7 +1116,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for ScheduleConfiguration {
+    impl ::codec::DeserializeValue for ScheduleConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScheduleConfiguration, D::Error> {
@@ -1133,7 +1133,7 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut schedule_expression: Option<crate::Value<String>> = None;
+                    let mut schedule_expression: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1164,10 +1164,10 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub topic_arn: crate::Value<String>,
+        pub topic_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for SnsConfiguration {
+    impl ::codec::SerializeValue for SnsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "TopicArn", &self.topic_arn)?;
@@ -1175,7 +1175,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for SnsConfiguration {
+    impl ::codec::DeserializeValue for SnsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SnsConfiguration, D::Error> {
@@ -1192,7 +1192,7 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut topic_arn: Option<crate::Value<String>> = None;
+                    let mut topic_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1223,10 +1223,10 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub timestream_configuration: crate::Value<TimestreamConfiguration>,
+        pub timestream_configuration: ::Value<TimestreamConfiguration>,
     }
 
-    impl crate::codec::SerializeValue for TargetConfiguration {
+    impl ::codec::SerializeValue for TargetConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1238,7 +1238,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetConfiguration {
+    impl ::codec::DeserializeValue for TargetConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetConfiguration, D::Error> {
@@ -1255,7 +1255,7 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut timestream_configuration: Option<crate::Value<TimestreamConfiguration>> =
+                    let mut timestream_configuration: Option<::Value<TimestreamConfiguration>> =
                         None;
 
                     while let Some(__cfn_key) =
@@ -1288,40 +1288,40 @@ pub mod scheduled_query {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub database_name: crate::Value<String>,
+        pub database_name: ::Value<String>,
         /// Property [`DimensionMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-dimensionmappings).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub dimension_mappings: crate::ValueList<DimensionMapping>,
+        pub dimension_mappings: ::ValueList<DimensionMapping>,
         /// Property [`MeasureNameColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-measurenamecolumn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub measure_name_column: Option<crate::Value<String>>,
+        pub measure_name_column: Option<::Value<String>>,
         /// Property [`MixedMeasureMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-mixedmeasuremappings).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub mixed_measure_mappings: Option<crate::ValueList<MixedMeasureMapping>>,
+        pub mixed_measure_mappings: Option<::ValueList<MixedMeasureMapping>>,
         /// Property [`MultiMeasureMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-multimeasuremappings).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub multi_measure_mappings: Option<crate::Value<MultiMeasureMappings>>,
+        pub multi_measure_mappings: Option<::Value<MultiMeasureMappings>>,
         /// Property [`TableName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-tablename).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub table_name: crate::Value<String>,
+        pub table_name: ::Value<String>,
         /// Property [`TimeColumn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-timecolumn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub time_column: crate::Value<String>,
+        pub time_column: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for TimestreamConfiguration {
+    impl ::codec::SerializeValue for TimestreamConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1361,7 +1361,7 @@ pub mod scheduled_query {
         }
     }
 
-    impl crate::codec::DeserializeValue for TimestreamConfiguration {
+    impl ::codec::DeserializeValue for TimestreamConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TimestreamConfiguration, D::Error> {
@@ -1378,13 +1378,13 @@ pub mod scheduled_query {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database_name: Option<crate::Value<String>> = None;
-                    let mut dimension_mappings: Option<crate::ValueList<DimensionMapping>> = None;
-                    let mut measure_name_column: Option<crate::Value<String>> = None;
-                    let mut mixed_measure_mappings: Option<crate::ValueList<MixedMeasureMapping>> = None;
-                    let mut multi_measure_mappings: Option<crate::Value<MultiMeasureMappings>> = None;
-                    let mut table_name: Option<crate::Value<String>> = None;
-                    let mut time_column: Option<crate::Value<String>> = None;
+                    let mut database_name: Option<::Value<String>> = None;
+                    let mut dimension_mappings: Option<::ValueList<DimensionMapping>> = None;
+                    let mut measure_name_column: Option<::Value<String>> = None;
+                    let mut mixed_measure_mappings: Option<::ValueList<MixedMeasureMapping>> = None;
+                    let mut multi_measure_mappings: Option<::Value<MultiMeasureMappings>> = None;
+                    let mut table_name: Option<::Value<String>> = None;
+                    let mut time_column: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

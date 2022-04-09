@@ -13,77 +13,77 @@ pub struct TrailProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cloud_watch_logs_log_group_arn: Option<crate::Value<String>>,
+    pub cloud_watch_logs_log_group_arn: Option<::Value<String>>,
     /// Property [`CloudWatchLogsRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsrolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cloud_watch_logs_role_arn: Option<crate::Value<String>>,
+    pub cloud_watch_logs_role_arn: Option<::Value<String>>,
     /// Property [`EnableLogFileValidation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-enablelogfilevalidation).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enable_log_file_validation: Option<crate::Value<bool>>,
+    pub enable_log_file_validation: Option<::Value<bool>>,
     /// Property [`EventSelectors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-eventselectors).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub event_selectors: Option<crate::ValueList<self::trail::EventSelector>>,
+    pub event_selectors: Option<::ValueList<self::trail::EventSelector>>,
     /// Property [`IncludeGlobalServiceEvents`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-includeglobalserviceevents).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub include_global_service_events: Option<crate::Value<bool>>,
+    pub include_global_service_events: Option<::Value<bool>>,
     /// Property [`InsightSelectors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-insightselectors).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub insight_selectors: Option<crate::ValueList<self::trail::InsightSelector>>,
+    pub insight_selectors: Option<::ValueList<self::trail::InsightSelector>>,
     /// Property [`IsLogging`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-islogging).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub is_logging: crate::Value<bool>,
+    pub is_logging: ::Value<bool>,
     /// Property [`IsMultiRegionTrail`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-ismultiregiontrail).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub is_multi_region_trail: Option<crate::Value<bool>>,
+    pub is_multi_region_trail: Option<::Value<bool>>,
     /// Property [`IsOrganizationTrail`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-isorganizationtrail).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub is_organization_trail: Option<crate::Value<bool>>,
+    pub is_organization_trail: Option<::Value<bool>>,
     /// Property [`KMSKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-kmskeyid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`S3BucketName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3bucketname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub s3_bucket_name: crate::Value<String>,
+    pub s3_bucket_name: ::Value<String>,
     /// Property [`S3KeyPrefix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3keyprefix).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub s3_key_prefix: Option<crate::Value<String>>,
+    pub s3_key_prefix: Option<::Value<String>>,
     /// Property [`SnsTopicName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-snstopicname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sns_topic_name: Option<crate::Value<String>>,
+    pub sns_topic_name: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`TrailName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-trailname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub trail_name: Option<crate::Value<String>>,
+    pub trail_name: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for TrailProperties {
@@ -185,21 +185,21 @@ impl<'de> ::serde::Deserialize<'de> for TrailProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cloud_watch_logs_log_group_arn: Option<crate::Value<String>> = None;
-                let mut cloud_watch_logs_role_arn: Option<crate::Value<String>> = None;
-                let mut enable_log_file_validation: Option<crate::Value<bool>> = None;
-                let mut event_selectors: Option<crate::ValueList<self::trail::EventSelector>> = None;
-                let mut include_global_service_events: Option<crate::Value<bool>> = None;
-                let mut insight_selectors: Option<crate::ValueList<self::trail::InsightSelector>> = None;
-                let mut is_logging: Option<crate::Value<bool>> = None;
-                let mut is_multi_region_trail: Option<crate::Value<bool>> = None;
-                let mut is_organization_trail: Option<crate::Value<bool>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
-                let mut s3_bucket_name: Option<crate::Value<String>> = None;
-                let mut s3_key_prefix: Option<crate::Value<String>> = None;
-                let mut sns_topic_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut trail_name: Option<crate::Value<String>> = None;
+                let mut cloud_watch_logs_log_group_arn: Option<::Value<String>> = None;
+                let mut cloud_watch_logs_role_arn: Option<::Value<String>> = None;
+                let mut enable_log_file_validation: Option<::Value<bool>> = None;
+                let mut event_selectors: Option<::ValueList<self::trail::EventSelector>> = None;
+                let mut include_global_service_events: Option<::Value<bool>> = None;
+                let mut insight_selectors: Option<::ValueList<self::trail::InsightSelector>> = None;
+                let mut is_logging: Option<::Value<bool>> = None;
+                let mut is_multi_region_trail: Option<::Value<bool>> = None;
+                let mut is_organization_trail: Option<::Value<bool>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
+                let mut s3_bucket_name: Option<::Value<String>> = None;
+                let mut s3_key_prefix: Option<::Value<String>> = None;
+                let mut sns_topic_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut trail_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -281,7 +281,7 @@ impl<'de> ::serde::Deserialize<'de> for TrailProperties {
     }
 }
 
-impl crate::Resource for Trail {
+impl ::Resource for Trail {
     type Properties = TrailProperties;
     const TYPE: &'static str = "AWS::CloudTrail::Trail";
     fn properties(&self) -> &TrailProperties {
@@ -292,7 +292,7 @@ impl crate::Resource for Trail {
     }
 }
 
-impl crate::private::Sealed for Trail {}
+impl ::private::Sealed for Trail {}
 
 impl From<TrailProperties> for Trail {
     fn from(properties: TrailProperties) -> Trail {
@@ -310,15 +310,15 @@ pub mod trail {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-dataresource.html#cfn-cloudtrail-trail-dataresource-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<crate::ValueList<String>>,
+        pub values: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for DataResource {
+    impl ::codec::SerializeValue for DataResource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Type", &self.r#type)?;
@@ -329,7 +329,7 @@ pub mod trail {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataResource {
+    impl ::codec::DeserializeValue for DataResource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<DataResource, D::Error> {
             struct Visitor;
 
@@ -344,8 +344,8 @@ pub mod trail {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut r#type: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -379,25 +379,25 @@ pub mod trail {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_resources: Option<crate::ValueList<DataResource>>,
+        pub data_resources: Option<::ValueList<DataResource>>,
         /// Property [`ExcludeManagementEventSources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-excludemanagementeventsources).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub exclude_management_event_sources: Option<crate::ValueList<String>>,
+        pub exclude_management_event_sources: Option<::ValueList<String>>,
         /// Property [`IncludeManagementEvents`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-includemanagementevents).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub include_management_events: Option<crate::Value<bool>>,
+        pub include_management_events: Option<::Value<bool>>,
         /// Property [`ReadWriteType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-readwritetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub read_write_type: Option<crate::Value<String>>,
+        pub read_write_type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for EventSelector {
+    impl ::codec::SerializeValue for EventSelector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_resources) = self.data_resources {
@@ -434,7 +434,7 @@ pub mod trail {
         }
     }
 
-    impl crate::codec::DeserializeValue for EventSelector {
+    impl ::codec::DeserializeValue for EventSelector {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<EventSelector, D::Error> {
@@ -451,10 +451,10 @@ pub mod trail {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_resources: Option<crate::ValueList<DataResource>> = None;
-                    let mut exclude_management_event_sources: Option<crate::ValueList<String>> = None;
-                    let mut include_management_events: Option<crate::Value<bool>> = None;
-                    let mut read_write_type: Option<crate::Value<String>> = None;
+                    let mut data_resources: Option<::ValueList<DataResource>> = None;
+                    let mut exclude_management_event_sources: Option<::ValueList<String>> = None;
+                    let mut include_management_events: Option<::Value<bool>> = None;
+                    let mut read_write_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -498,10 +498,10 @@ pub mod trail {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub insight_type: Option<crate::Value<String>>,
+        pub insight_type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InsightSelector {
+    impl ::codec::SerializeValue for InsightSelector {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref insight_type) = self.insight_type {
@@ -511,7 +511,7 @@ pub mod trail {
         }
     }
 
-    impl crate::codec::DeserializeValue for InsightSelector {
+    impl ::codec::DeserializeValue for InsightSelector {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InsightSelector, D::Error> {
@@ -528,7 +528,7 @@ pub mod trail {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut insight_type: Option<crate::Value<String>> = None;
+                    let mut insight_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

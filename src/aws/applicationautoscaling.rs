@@ -13,42 +13,42 @@ pub struct ScalableTargetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_capacity: crate::Value<u32>,
+    pub max_capacity: ::Value<u32>,
     /// Property [`MinCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub min_capacity: crate::Value<u32>,
+    pub min_capacity: ::Value<u32>,
     /// Property [`ResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-resourceid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub resource_id: crate::Value<String>,
+    pub resource_id: ::Value<String>,
     /// Property [`RoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`ScalableDimension`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scalabledimension).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub scalable_dimension: crate::Value<String>,
+    pub scalable_dimension: ::Value<String>,
     /// Property [`ScheduledActions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub scheduled_actions: Option<crate::ValueList<self::scalable_target::ScheduledAction>>,
+    pub scheduled_actions: Option<::ValueList<self::scalable_target::ScheduledAction>>,
     /// Property [`ServiceNamespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-servicenamespace).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service_namespace: crate::Value<String>,
+    pub service_namespace: ::Value<String>,
     /// Property [`SuspendedState`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-suspendedstate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub suspended_state: Option<crate::Value<self::scalable_target::SuspendedState>>,
+    pub suspended_state: Option<::Value<self::scalable_target::SuspendedState>>,
 }
 
 impl ::serde::Serialize for ScalableTargetProperties {
@@ -103,16 +103,16 @@ impl<'de> ::serde::Deserialize<'de> for ScalableTargetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut max_capacity: Option<crate::Value<u32>> = None;
-                let mut min_capacity: Option<crate::Value<u32>> = None;
-                let mut resource_id: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut scalable_dimension: Option<crate::Value<String>> = None;
+                let mut max_capacity: Option<::Value<u32>> = None;
+                let mut min_capacity: Option<::Value<u32>> = None;
+                let mut resource_id: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut scalable_dimension: Option<::Value<String>> = None;
                 let mut scheduled_actions: Option<
-                    crate::ValueList<self::scalable_target::ScheduledAction>,
+                    ::ValueList<self::scalable_target::ScheduledAction>,
                 > = None;
-                let mut service_namespace: Option<crate::Value<String>> = None;
-                let mut suspended_state: Option<crate::Value<self::scalable_target::SuspendedState>> =
+                let mut service_namespace: Option<::Value<String>> = None;
+                let mut suspended_state: Option<::Value<self::scalable_target::SuspendedState>> =
                     None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -167,7 +167,7 @@ impl<'de> ::serde::Deserialize<'de> for ScalableTargetProperties {
     }
 }
 
-impl crate::Resource for ScalableTarget {
+impl ::Resource for ScalableTarget {
     type Properties = ScalableTargetProperties;
     const TYPE: &'static str = "AWS::ApplicationAutoScaling::ScalableTarget";
     fn properties(&self) -> &ScalableTargetProperties {
@@ -178,7 +178,7 @@ impl crate::Resource for ScalableTarget {
     }
 }
 
-impl crate::private::Sealed for ScalableTarget {}
+impl ::private::Sealed for ScalableTarget {}
 
 impl From<ScalableTargetProperties> for ScalableTarget {
     fn from(properties: ScalableTargetProperties) -> ScalableTarget {
@@ -199,44 +199,44 @@ pub struct ScalingPolicyProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub policy_name: crate::Value<String>,
+    pub policy_name: ::Value<String>,
     /// Property [`PolicyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policytype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy_type: crate::Value<String>,
+    pub policy_type: ::Value<String>,
     /// Property [`ResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-resourceid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub resource_id: Option<crate::Value<String>>,
+    pub resource_id: Option<::Value<String>>,
     /// Property [`ScalableDimension`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-scalabledimension).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub scalable_dimension: Option<crate::Value<String>>,
+    pub scalable_dimension: Option<::Value<String>>,
     /// Property [`ScalingTargetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-scalingtargetid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub scaling_target_id: Option<crate::Value<String>>,
+    pub scaling_target_id: Option<::Value<String>>,
     /// Property [`ServiceNamespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-servicenamespace).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service_namespace: Option<crate::Value<String>>,
+    pub service_namespace: Option<::Value<String>>,
     /// Property [`StepScalingPolicyConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub step_scaling_policy_configuration:
-        Option<crate::Value<self::scaling_policy::StepScalingPolicyConfiguration>>,
+        Option<::Value<self::scaling_policy::StepScalingPolicyConfiguration>>,
     /// Property [`TargetTrackingScalingPolicyConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub target_tracking_scaling_policy_configuration:
-        Option<crate::Value<self::scaling_policy::TargetTrackingScalingPolicyConfiguration>>,
+        Option<::Value<self::scaling_policy::TargetTrackingScalingPolicyConfiguration>>,
 }
 
 impl ::serde::Serialize for ScalingPolicyProperties {
@@ -306,17 +306,17 @@ impl<'de> ::serde::Deserialize<'de> for ScalingPolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut policy_name: Option<crate::Value<String>> = None;
-                let mut policy_type: Option<crate::Value<String>> = None;
-                let mut resource_id: Option<crate::Value<String>> = None;
-                let mut scalable_dimension: Option<crate::Value<String>> = None;
-                let mut scaling_target_id: Option<crate::Value<String>> = None;
-                let mut service_namespace: Option<crate::Value<String>> = None;
+                let mut policy_name: Option<::Value<String>> = None;
+                let mut policy_type: Option<::Value<String>> = None;
+                let mut resource_id: Option<::Value<String>> = None;
+                let mut scalable_dimension: Option<::Value<String>> = None;
+                let mut scaling_target_id: Option<::Value<String>> = None;
+                let mut service_namespace: Option<::Value<String>> = None;
                 let mut step_scaling_policy_configuration: Option<
-                    crate::Value<self::scaling_policy::StepScalingPolicyConfiguration>,
+                    ::Value<self::scaling_policy::StepScalingPolicyConfiguration>,
                 > = None;
                 let mut target_tracking_scaling_policy_configuration: Option<
-                    crate::Value<self::scaling_policy::TargetTrackingScalingPolicyConfiguration>,
+                    ::Value<self::scaling_policy::TargetTrackingScalingPolicyConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -371,7 +371,7 @@ impl<'de> ::serde::Deserialize<'de> for ScalingPolicyProperties {
     }
 }
 
-impl crate::Resource for ScalingPolicy {
+impl ::Resource for ScalingPolicy {
     type Properties = ScalingPolicyProperties;
     const TYPE: &'static str = "AWS::ApplicationAutoScaling::ScalingPolicy";
     fn properties(&self) -> &ScalingPolicyProperties {
@@ -382,7 +382,7 @@ impl crate::Resource for ScalingPolicy {
     }
 }
 
-impl crate::private::Sealed for ScalingPolicy {}
+impl ::private::Sealed for ScalingPolicy {}
 
 impl From<ScalingPolicyProperties> for ScalingPolicy {
     fn from(properties: ScalingPolicyProperties) -> ScalingPolicy {
@@ -400,15 +400,15 @@ pub mod scalable_target {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_capacity: Option<crate::Value<u32>>,
+        pub max_capacity: Option<::Value<u32>>,
         /// Property [`MinCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scalabletargetaction.html#cfn-applicationautoscaling-scalabletarget-scalabletargetaction-mincapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_capacity: Option<crate::Value<u32>>,
+        pub min_capacity: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for ScalableTargetAction {
+    impl ::codec::SerializeValue for ScalableTargetAction {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref max_capacity) = self.max_capacity {
@@ -421,7 +421,7 @@ pub mod scalable_target {
         }
     }
 
-    impl crate::codec::DeserializeValue for ScalableTargetAction {
+    impl ::codec::DeserializeValue for ScalableTargetAction {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScalableTargetAction, D::Error> {
@@ -438,8 +438,8 @@ pub mod scalable_target {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut max_capacity: Option<crate::Value<u32>> = None;
-                    let mut min_capacity: Option<crate::Value<u32>> = None;
+                    let mut max_capacity: Option<::Value<u32>> = None;
+                    let mut min_capacity: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -473,35 +473,35 @@ pub mod scalable_target {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_time: Option<crate::Value<String>>,
+        pub end_time: Option<::Value<String>>,
         /// Property [`ScalableTargetAction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scalabletargetaction).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scalable_target_action: Option<crate::Value<ScalableTargetAction>>,
+        pub scalable_target_action: Option<::Value<ScalableTargetAction>>,
         /// Property [`Schedule`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-schedule).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schedule: crate::Value<String>,
+        pub schedule: ::Value<String>,
         /// Property [`ScheduledActionName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scheduledactionname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scheduled_action_name: crate::Value<String>,
+        pub scheduled_action_name: ::Value<String>,
         /// Property [`StartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-starttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_time: Option<crate::Value<String>>,
+        pub start_time: Option<::Value<String>>,
         /// Property [`Timezone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-timezone).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub timezone: Option<crate::Value<String>>,
+        pub timezone: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ScheduledAction {
+    impl ::codec::SerializeValue for ScheduledAction {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref end_time) = self.end_time {
@@ -530,7 +530,7 @@ pub mod scalable_target {
         }
     }
 
-    impl crate::codec::DeserializeValue for ScheduledAction {
+    impl ::codec::DeserializeValue for ScheduledAction {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ScheduledAction, D::Error> {
@@ -547,12 +547,12 @@ pub mod scalable_target {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut end_time: Option<crate::Value<String>> = None;
-                    let mut scalable_target_action: Option<crate::Value<ScalableTargetAction>> = None;
-                    let mut schedule: Option<crate::Value<String>> = None;
-                    let mut scheduled_action_name: Option<crate::Value<String>> = None;
-                    let mut start_time: Option<crate::Value<String>> = None;
-                    let mut timezone: Option<crate::Value<String>> = None;
+                    let mut end_time: Option<::Value<String>> = None;
+                    let mut scalable_target_action: Option<::Value<ScalableTargetAction>> = None;
+                    let mut schedule: Option<::Value<String>> = None;
+                    let mut scheduled_action_name: Option<::Value<String>> = None;
+                    let mut start_time: Option<::Value<String>> = None;
+                    let mut timezone: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -605,20 +605,20 @@ pub mod scalable_target {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dynamic_scaling_in_suspended: Option<crate::Value<bool>>,
+        pub dynamic_scaling_in_suspended: Option<::Value<bool>>,
         /// Property [`DynamicScalingOutSuspended`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-dynamicscalingoutsuspended).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dynamic_scaling_out_suspended: Option<crate::Value<bool>>,
+        pub dynamic_scaling_out_suspended: Option<::Value<bool>>,
         /// Property [`ScheduledScalingSuspended`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-scheduledscalingsuspended).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scheduled_scaling_suspended: Option<crate::Value<bool>>,
+        pub scheduled_scaling_suspended: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for SuspendedState {
+    impl ::codec::SerializeValue for SuspendedState {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dynamic_scaling_in_suspended) = self.dynamic_scaling_in_suspended {
@@ -646,7 +646,7 @@ pub mod scalable_target {
         }
     }
 
-    impl crate::codec::DeserializeValue for SuspendedState {
+    impl ::codec::DeserializeValue for SuspendedState {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SuspendedState, D::Error> {
@@ -663,9 +663,9 @@ pub mod scalable_target {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dynamic_scaling_in_suspended: Option<crate::Value<bool>> = None;
-                    let mut dynamic_scaling_out_suspended: Option<crate::Value<bool>> = None;
-                    let mut scheduled_scaling_suspended: Option<crate::Value<bool>> = None;
+                    let mut dynamic_scaling_in_suspended: Option<::Value<bool>> = None;
+                    let mut dynamic_scaling_out_suspended: Option<::Value<bool>> = None;
+                    let mut scheduled_scaling_suspended: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -710,30 +710,30 @@ pub mod scaling_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dimensions: Option<crate::ValueList<MetricDimension>>,
+        pub dimensions: Option<::ValueList<MetricDimension>>,
         /// Property [`MetricName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-metricname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_name: crate::Value<String>,
+        pub metric_name: ::Value<String>,
         /// Property [`Namespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-namespace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub namespace: crate::Value<String>,
+        pub namespace: ::Value<String>,
         /// Property [`Statistic`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-statistic).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub statistic: crate::Value<String>,
+        pub statistic: ::Value<String>,
         /// Property [`Unit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-unit).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unit: Option<crate::Value<String>>,
+        pub unit: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for CustomizedMetricSpecification {
+    impl ::codec::SerializeValue for CustomizedMetricSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dimensions) = self.dimensions {
@@ -749,7 +749,7 @@ pub mod scaling_policy {
         }
     }
 
-    impl crate::codec::DeserializeValue for CustomizedMetricSpecification {
+    impl ::codec::DeserializeValue for CustomizedMetricSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CustomizedMetricSpecification, D::Error> {
@@ -766,11 +766,11 @@ pub mod scaling_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dimensions: Option<crate::ValueList<MetricDimension>> = None;
-                    let mut metric_name: Option<crate::Value<String>> = None;
-                    let mut namespace: Option<crate::Value<String>> = None;
-                    let mut statistic: Option<crate::Value<String>> = None;
-                    let mut unit: Option<crate::Value<String>> = None;
+                    let mut dimensions: Option<::ValueList<MetricDimension>> = None;
+                    let mut metric_name: Option<::Value<String>> = None;
+                    let mut namespace: Option<::Value<String>> = None;
+                    let mut statistic: Option<::Value<String>> = None;
+                    let mut unit: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -819,15 +819,15 @@ pub mod scaling_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-metricdimension.html#cfn-applicationautoscaling-scalingpolicy-metricdimension-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<String>,
+        pub value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for MetricDimension {
+    impl ::codec::SerializeValue for MetricDimension {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -836,7 +836,7 @@ pub mod scaling_policy {
         }
     }
 
-    impl crate::codec::DeserializeValue for MetricDimension {
+    impl ::codec::DeserializeValue for MetricDimension {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MetricDimension, D::Error> {
@@ -853,8 +853,8 @@ pub mod scaling_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -888,15 +888,15 @@ pub mod scaling_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub predefined_metric_type: crate::Value<String>,
+        pub predefined_metric_type: ::Value<String>,
         /// Property [`ResourceLabel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predefinedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predefinedmetricspecification-resourcelabel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_label: Option<crate::Value<String>>,
+        pub resource_label: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for PredefinedMetricSpecification {
+    impl ::codec::SerializeValue for PredefinedMetricSpecification {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -915,7 +915,7 @@ pub mod scaling_policy {
         }
     }
 
-    impl crate::codec::DeserializeValue for PredefinedMetricSpecification {
+    impl ::codec::DeserializeValue for PredefinedMetricSpecification {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PredefinedMetricSpecification, D::Error> {
@@ -932,8 +932,8 @@ pub mod scaling_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut predefined_metric_type: Option<crate::Value<String>> = None;
-                    let mut resource_label: Option<crate::Value<String>> = None;
+                    let mut predefined_metric_type: Option<::Value<String>> = None;
+                    let mut resource_label: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -969,20 +969,20 @@ pub mod scaling_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_interval_lower_bound: Option<crate::Value<f64>>,
+        pub metric_interval_lower_bound: Option<::Value<f64>>,
         /// Property [`MetricIntervalUpperBound`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-metricintervalupperbound).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_interval_upper_bound: Option<crate::Value<f64>>,
+        pub metric_interval_upper_bound: Option<::Value<f64>>,
         /// Property [`ScalingAdjustment`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-scalingadjustment).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scaling_adjustment: crate::Value<u32>,
+        pub scaling_adjustment: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for StepAdjustment {
+    impl ::codec::SerializeValue for StepAdjustment {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref metric_interval_lower_bound) = self.metric_interval_lower_bound {
@@ -1008,7 +1008,7 @@ pub mod scaling_policy {
         }
     }
 
-    impl crate::codec::DeserializeValue for StepAdjustment {
+    impl ::codec::DeserializeValue for StepAdjustment {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StepAdjustment, D::Error> {
@@ -1025,9 +1025,9 @@ pub mod scaling_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut metric_interval_lower_bound: Option<crate::Value<f64>> = None;
-                    let mut metric_interval_upper_bound: Option<crate::Value<f64>> = None;
-                    let mut scaling_adjustment: Option<crate::Value<u32>> = None;
+                    let mut metric_interval_lower_bound: Option<::Value<f64>> = None;
+                    let mut metric_interval_upper_bound: Option<::Value<f64>> = None;
+                    let mut scaling_adjustment: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1068,30 +1068,30 @@ pub mod scaling_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub adjustment_type: Option<crate::Value<String>>,
+        pub adjustment_type: Option<::Value<String>>,
         /// Property [`Cooldown`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-cooldown).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cooldown: Option<crate::Value<u32>>,
+        pub cooldown: Option<::Value<u32>>,
         /// Property [`MetricAggregationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-metricaggregationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_aggregation_type: Option<crate::Value<String>>,
+        pub metric_aggregation_type: Option<::Value<String>>,
         /// Property [`MinAdjustmentMagnitude`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-minadjustmentmagnitude).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_adjustment_magnitude: Option<crate::Value<u32>>,
+        pub min_adjustment_magnitude: Option<::Value<u32>>,
         /// Property [`StepAdjustments`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustments).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub step_adjustments: Option<crate::ValueList<StepAdjustment>>,
+        pub step_adjustments: Option<::ValueList<StepAdjustment>>,
     }
 
-    impl crate::codec::SerializeValue for StepScalingPolicyConfiguration {
+    impl ::codec::SerializeValue for StepScalingPolicyConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref adjustment_type) = self.adjustment_type {
@@ -1129,7 +1129,7 @@ pub mod scaling_policy {
         }
     }
 
-    impl crate::codec::DeserializeValue for StepScalingPolicyConfiguration {
+    impl ::codec::DeserializeValue for StepScalingPolicyConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StepScalingPolicyConfiguration, D::Error> {
@@ -1146,11 +1146,11 @@ pub mod scaling_policy {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut adjustment_type: Option<crate::Value<String>> = None;
-                    let mut cooldown: Option<crate::Value<u32>> = None;
-                    let mut metric_aggregation_type: Option<crate::Value<String>> = None;
-                    let mut min_adjustment_magnitude: Option<crate::Value<u32>> = None;
-                    let mut step_adjustments: Option<crate::ValueList<StepAdjustment>> = None;
+                    let mut adjustment_type: Option<::Value<String>> = None;
+                    let mut cooldown: Option<::Value<u32>> = None;
+                    let mut metric_aggregation_type: Option<::Value<String>> = None;
+                    let mut min_adjustment_magnitude: Option<::Value<u32>> = None;
+                    let mut step_adjustments: Option<::ValueList<StepAdjustment>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1198,35 +1198,35 @@ pub mod scaling_policy {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub customized_metric_specification: Option<crate::Value<CustomizedMetricSpecification>>,
+        pub customized_metric_specification: Option<::Value<CustomizedMetricSpecification>>,
         /// Property [`DisableScaleIn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-disablescalein).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disable_scale_in: Option<crate::Value<bool>>,
+        pub disable_scale_in: Option<::Value<bool>>,
         /// Property [`PredefinedMetricSpecification`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-predefinedmetricspecification).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub predefined_metric_specification: Option<crate::Value<PredefinedMetricSpecification>>,
+        pub predefined_metric_specification: Option<::Value<PredefinedMetricSpecification>>,
         /// Property [`ScaleInCooldown`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-scaleincooldown).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scale_in_cooldown: Option<crate::Value<u32>>,
+        pub scale_in_cooldown: Option<::Value<u32>>,
         /// Property [`ScaleOutCooldown`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-scaleoutcooldown).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scale_out_cooldown: Option<crate::Value<u32>>,
+        pub scale_out_cooldown: Option<::Value<u32>>,
         /// Property [`TargetValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-targetvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_value: crate::Value<f64>,
+        pub target_value: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for TargetTrackingScalingPolicyConfiguration {
+    impl ::codec::SerializeValue for TargetTrackingScalingPolicyConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref customized_metric_specification) = self.customized_metric_specification
@@ -1275,7 +1275,7 @@ pub mod scaling_policy {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetTrackingScalingPolicyConfiguration {
+    impl ::codec::DeserializeValue for TargetTrackingScalingPolicyConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetTrackingScalingPolicyConfiguration, D::Error> {
@@ -1296,15 +1296,15 @@ pub mod scaling_policy {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut customized_metric_specification: Option<
-                        crate::Value<CustomizedMetricSpecification>,
+                        ::Value<CustomizedMetricSpecification>,
                     > = None;
-                    let mut disable_scale_in: Option<crate::Value<bool>> = None;
+                    let mut disable_scale_in: Option<::Value<bool>> = None;
                     let mut predefined_metric_specification: Option<
-                        crate::Value<PredefinedMetricSpecification>,
+                        ::Value<PredefinedMetricSpecification>,
                     > = None;
-                    let mut scale_in_cooldown: Option<crate::Value<u32>> = None;
-                    let mut scale_out_cooldown: Option<crate::Value<u32>> = None;
-                    let mut target_value: Option<crate::Value<f64>> = None;
+                    let mut scale_in_cooldown: Option<::Value<u32>> = None;
+                    let mut scale_out_cooldown: Option<::Value<u32>> = None;
+                    let mut target_value: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

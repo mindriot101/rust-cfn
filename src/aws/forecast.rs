@@ -13,37 +13,37 @@ pub struct DatasetProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_frequency: Option<crate::Value<String>>,
+    pub data_frequency: Option<::Value<String>>,
     /// Property [`DatasetName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-datasetname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub dataset_name: crate::Value<String>,
+    pub dataset_name: ::Value<String>,
     /// Property [`DatasetType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-datasettype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dataset_type: crate::Value<String>,
+    pub dataset_type: ::Value<String>,
     /// Property [`Domain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-domain).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub domain: crate::Value<String>,
+    pub domain: ::Value<String>,
     /// Property [`EncryptionConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-encryptionconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub encryption_config: Option<crate::Value<crate::json::Value>>,
+    pub encryption_config: Option<::Value<::json::Value>>,
     /// Property [`Schema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-schema).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub schema: crate::Value<crate::json::Value>,
+    pub schema: ::Value<::json::Value>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::json::Value>>,
+    pub tags: Option<::ValueList<::json::Value>>,
 }
 
 impl ::serde::Serialize for DatasetProperties {
@@ -85,13 +85,13 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_frequency: Option<crate::Value<String>> = None;
-                let mut dataset_name: Option<crate::Value<String>> = None;
-                let mut dataset_type: Option<crate::Value<String>> = None;
-                let mut domain: Option<crate::Value<String>> = None;
-                let mut encryption_config: Option<crate::Value<crate::json::Value>> = None;
-                let mut schema: Option<crate::Value<crate::json::Value>> = None;
-                let mut tags: Option<crate::ValueList<crate::json::Value>> = None;
+                let mut data_frequency: Option<::Value<String>> = None;
+                let mut dataset_name: Option<::Value<String>> = None;
+                let mut dataset_type: Option<::Value<String>> = None;
+                let mut domain: Option<::Value<String>> = None;
+                let mut encryption_config: Option<::Value<::json::Value>> = None;
+                let mut schema: Option<::Value<::json::Value>> = None;
+                let mut tags: Option<::ValueList<::json::Value>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -138,7 +138,7 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
     }
 }
 
-impl crate::Resource for Dataset {
+impl ::Resource for Dataset {
     type Properties = DatasetProperties;
     const TYPE: &'static str = "AWS::Forecast::Dataset";
     fn properties(&self) -> &DatasetProperties {
@@ -149,7 +149,7 @@ impl crate::Resource for Dataset {
     }
 }
 
-impl crate::private::Sealed for Dataset {}
+impl ::private::Sealed for Dataset {}
 
 impl From<DatasetProperties> for Dataset {
     fn from(properties: DatasetProperties) -> Dataset {
@@ -170,22 +170,22 @@ pub struct DatasetGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dataset_arns: Option<crate::ValueList<String>>,
+    pub dataset_arns: Option<::ValueList<String>>,
     /// Property [`DatasetGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html#cfn-forecast-datasetgroup-datasetgroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub dataset_group_name: crate::Value<String>,
+    pub dataset_group_name: ::Value<String>,
     /// Property [`Domain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html#cfn-forecast-datasetgroup-domain).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub domain: crate::Value<String>,
+    pub domain: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html#cfn-forecast-datasetgroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for DatasetGroupProperties {
@@ -224,10 +224,10 @@ impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut dataset_arns: Option<crate::ValueList<String>> = None;
-                let mut dataset_group_name: Option<crate::Value<String>> = None;
-                let mut domain: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut dataset_arns: Option<::ValueList<String>> = None;
+                let mut dataset_group_name: Option<::Value<String>> = None;
+                let mut domain: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -261,7 +261,7 @@ impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
     }
 }
 
-impl crate::Resource for DatasetGroup {
+impl ::Resource for DatasetGroup {
     type Properties = DatasetGroupProperties;
     const TYPE: &'static str = "AWS::Forecast::DatasetGroup";
     fn properties(&self) -> &DatasetGroupProperties {
@@ -272,7 +272,7 @@ impl crate::Resource for DatasetGroup {
     }
 }
 
-impl crate::private::Sealed for DatasetGroup {}
+impl ::private::Sealed for DatasetGroup {}
 
 impl From<DatasetGroupProperties> for DatasetGroup {
     fn from(properties: DatasetGroupProperties) -> DatasetGroup {

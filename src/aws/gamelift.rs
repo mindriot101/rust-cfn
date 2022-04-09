@@ -13,17 +13,17 @@ pub struct AliasProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`RoutingStrategy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-routingstrategy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub routing_strategy: crate::Value<self::alias::RoutingStrategy>,
+    pub routing_strategy: ::Value<self::alias::RoutingStrategy>,
 }
 
 impl ::serde::Serialize for AliasProperties {
@@ -57,9 +57,9 @@ impl<'de> ::serde::Deserialize<'de> for AliasProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut routing_strategy: Option<crate::Value<self::alias::RoutingStrategy>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut routing_strategy: Option<::Value<self::alias::RoutingStrategy>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -89,7 +89,7 @@ impl<'de> ::serde::Deserialize<'de> for AliasProperties {
     }
 }
 
-impl crate::Resource for Alias {
+impl ::Resource for Alias {
     type Properties = AliasProperties;
     const TYPE: &'static str = "AWS::GameLift::Alias";
     fn properties(&self) -> &AliasProperties {
@@ -100,7 +100,7 @@ impl crate::Resource for Alias {
     }
 }
 
-impl crate::private::Sealed for Alias {}
+impl ::private::Sealed for Alias {}
 
 impl From<AliasProperties> for Alias {
     fn from(properties: AliasProperties) -> Alias {
@@ -121,22 +121,22 @@ pub struct BuildProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`OperatingSystem`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-operatingsystem).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub operating_system: Option<crate::Value<String>>,
+    pub operating_system: Option<::Value<String>>,
     /// Property [`StorageLocation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-storagelocation).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub storage_location: Option<crate::Value<self::build::S3Location>>,
+    pub storage_location: Option<::Value<self::build::S3Location>>,
     /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-version).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub version: Option<crate::Value<String>>,
+    pub version: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for BuildProperties {
@@ -181,10 +181,10 @@ impl<'de> ::serde::Deserialize<'de> for BuildProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<crate::Value<String>> = None;
-                let mut operating_system: Option<crate::Value<String>> = None;
-                let mut storage_location: Option<crate::Value<self::build::S3Location>> = None;
-                let mut version: Option<crate::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut operating_system: Option<::Value<String>> = None;
+                let mut storage_location: Option<::Value<self::build::S3Location>> = None;
+                let mut version: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -217,7 +217,7 @@ impl<'de> ::serde::Deserialize<'de> for BuildProperties {
     }
 }
 
-impl crate::Resource for Build {
+impl ::Resource for Build {
     type Properties = BuildProperties;
     const TYPE: &'static str = "AWS::GameLift::Build";
     fn properties(&self) -> &BuildProperties {
@@ -228,7 +228,7 @@ impl crate::Resource for Build {
     }
 }
 
-impl crate::private::Sealed for Build {}
+impl ::private::Sealed for Build {}
 
 impl From<BuildProperties> for Build {
     fn from(properties: BuildProperties) -> Build {
@@ -249,97 +249,97 @@ pub struct FleetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub build_id: Option<crate::Value<String>>,
+    pub build_id: Option<::Value<String>>,
     /// Property [`CertificateConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-certificateconfiguration).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_configuration: Option<crate::Value<self::fleet::CertificateConfiguration>>,
+    pub certificate_configuration: Option<::Value<self::fleet::CertificateConfiguration>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`DesiredEC2Instances`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub desired_ec2_instances: Option<crate::Value<u32>>,
+    pub desired_ec2_instances: Option<::Value<u32>>,
     /// Property [`EC2InboundPermissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2inboundpermissions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ec2_inbound_permissions: Option<crate::ValueList<self::fleet::IpPermission>>,
+    pub ec2_inbound_permissions: Option<::ValueList<self::fleet::IpPermission>>,
     /// Property [`EC2InstanceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2instancetype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ec2_instance_type: Option<crate::Value<String>>,
+    pub ec2_instance_type: Option<::Value<String>>,
     /// Property [`FleetType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-fleettype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub fleet_type: Option<crate::Value<String>>,
+    pub fleet_type: Option<::Value<String>>,
     /// Property [`InstanceRoleARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub instance_role_arn: Option<crate::Value<String>>,
+    pub instance_role_arn: Option<::Value<String>>,
     /// Property [`Locations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-locations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub locations: Option<crate::ValueList<self::fleet::LocationConfiguration>>,
+    pub locations: Option<::ValueList<self::fleet::LocationConfiguration>>,
     /// Property [`MaxSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_size: Option<crate::Value<u32>>,
+    pub max_size: Option<::Value<u32>>,
     /// Property [`MetricGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-metricgroups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub metric_groups: Option<crate::ValueList<String>>,
+    pub metric_groups: Option<::ValueList<String>>,
     /// Property [`MinSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub min_size: Option<crate::Value<u32>>,
+    pub min_size: Option<::Value<u32>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`NewGameSessionProtectionPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-newgamesessionprotectionpolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub new_game_session_protection_policy: Option<crate::Value<String>>,
+    pub new_game_session_protection_policy: Option<::Value<String>>,
     /// Property [`PeerVpcAwsAccountId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcawsaccountid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub peer_vpc_aws_account_id: Option<crate::Value<String>>,
+    pub peer_vpc_aws_account_id: Option<::Value<String>>,
     /// Property [`PeerVpcId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub peer_vpc_id: Option<crate::Value<String>>,
+    pub peer_vpc_id: Option<::Value<String>>,
     /// Property [`ResourceCreationLimitPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-resourcecreationlimitpolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_creation_limit_policy: Option<crate::Value<self::fleet::ResourceCreationLimitPolicy>>,
+    pub resource_creation_limit_policy: Option<::Value<self::fleet::ResourceCreationLimitPolicy>>,
     /// Property [`RuntimeConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-runtimeconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub runtime_configuration: Option<crate::Value<self::fleet::RuntimeConfiguration>>,
+    pub runtime_configuration: Option<::Value<self::fleet::RuntimeConfiguration>>,
     /// Property [`ScriptId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-scriptid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub script_id: Option<crate::Value<String>>,
+    pub script_id: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for FleetProperties {
@@ -459,31 +459,31 @@ impl<'de> ::serde::Deserialize<'de> for FleetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut build_id: Option<crate::Value<String>> = None;
+                let mut build_id: Option<::Value<String>> = None;
                 let mut certificate_configuration: Option<
-                    crate::Value<self::fleet::CertificateConfiguration>,
+                    ::Value<self::fleet::CertificateConfiguration>,
                 > = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut desired_ec2_instances: Option<crate::Value<u32>> = None;
-                let mut ec2_inbound_permissions: Option<crate::ValueList<self::fleet::IpPermission>> =
+                let mut description: Option<::Value<String>> = None;
+                let mut desired_ec2_instances: Option<::Value<u32>> = None;
+                let mut ec2_inbound_permissions: Option<::ValueList<self::fleet::IpPermission>> =
                     None;
-                let mut ec2_instance_type: Option<crate::Value<String>> = None;
-                let mut fleet_type: Option<crate::Value<String>> = None;
-                let mut instance_role_arn: Option<crate::Value<String>> = None;
-                let mut locations: Option<crate::ValueList<self::fleet::LocationConfiguration>> = None;
-                let mut max_size: Option<crate::Value<u32>> = None;
-                let mut metric_groups: Option<crate::ValueList<String>> = None;
-                let mut min_size: Option<crate::Value<u32>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut new_game_session_protection_policy: Option<crate::Value<String>> = None;
-                let mut peer_vpc_aws_account_id: Option<crate::Value<String>> = None;
-                let mut peer_vpc_id: Option<crate::Value<String>> = None;
+                let mut ec2_instance_type: Option<::Value<String>> = None;
+                let mut fleet_type: Option<::Value<String>> = None;
+                let mut instance_role_arn: Option<::Value<String>> = None;
+                let mut locations: Option<::ValueList<self::fleet::LocationConfiguration>> = None;
+                let mut max_size: Option<::Value<u32>> = None;
+                let mut metric_groups: Option<::ValueList<String>> = None;
+                let mut min_size: Option<::Value<u32>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut new_game_session_protection_policy: Option<::Value<String>> = None;
+                let mut peer_vpc_aws_account_id: Option<::Value<String>> = None;
+                let mut peer_vpc_id: Option<::Value<String>> = None;
                 let mut resource_creation_limit_policy: Option<
-                    crate::Value<self::fleet::ResourceCreationLimitPolicy>,
+                    ::Value<self::fleet::ResourceCreationLimitPolicy>,
                 > = None;
-                let mut runtime_configuration: Option<crate::Value<self::fleet::RuntimeConfiguration>> =
+                let mut runtime_configuration: Option<::Value<self::fleet::RuntimeConfiguration>> =
                     None;
-                let mut script_id: Option<crate::Value<String>> = None;
+                let mut script_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -579,7 +579,7 @@ impl<'de> ::serde::Deserialize<'de> for FleetProperties {
     }
 }
 
-impl crate::Resource for Fleet {
+impl ::Resource for Fleet {
     type Properties = FleetProperties;
     const TYPE: &'static str = "AWS::GameLift::Fleet";
     fn properties(&self) -> &FleetProperties {
@@ -590,7 +590,7 @@ impl crate::Resource for Fleet {
     }
 }
 
-impl crate::private::Sealed for Fleet {}
+impl ::private::Sealed for Fleet {}
 
 impl From<FleetProperties> for Fleet {
     fn from(properties: FleetProperties) -> Fleet {
@@ -611,62 +611,62 @@ pub struct GameServerGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub auto_scaling_policy: Option<crate::Value<self::game_server_group::AutoScalingPolicy>>,
+    pub auto_scaling_policy: Option<::Value<self::game_server_group::AutoScalingPolicy>>,
     /// Property [`BalancingStrategy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-balancingstrategy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub balancing_strategy: Option<crate::Value<String>>,
+    pub balancing_strategy: Option<::Value<String>>,
     /// Property [`DeleteOption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-deleteoption).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub delete_option: Option<crate::Value<String>>,
+    pub delete_option: Option<::Value<String>>,
     /// Property [`GameServerGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-gameservergroupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub game_server_group_name: crate::Value<String>,
+    pub game_server_group_name: ::Value<String>,
     /// Property [`GameServerProtectionPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-gameserverprotectionpolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub game_server_protection_policy: Option<crate::Value<String>>,
+    pub game_server_protection_policy: Option<::Value<String>>,
     /// Property [`InstanceDefinitions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-instancedefinitions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_definitions: crate::ValueList<self::game_server_group::InstanceDefinition>,
+    pub instance_definitions: ::ValueList<self::game_server_group::InstanceDefinition>,
     /// Property [`LaunchTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-launchtemplate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub launch_template: crate::Value<self::game_server_group::LaunchTemplate>,
+    pub launch_template: ::Value<self::game_server_group::LaunchTemplate>,
     /// Property [`MaxSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-maxsize).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_size: Option<crate::Value<f64>>,
+    pub max_size: Option<::Value<f64>>,
     /// Property [`MinSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-minsize).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub min_size: Option<crate::Value<f64>>,
+    pub min_size: Option<::Value<f64>>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VpcSubnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-vpcsubnets).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_subnets: Option<crate::ValueList<String>>,
+    pub vpc_subnets: Option<::ValueList<String>>,
 }
 
 impl ::serde::Serialize for GameServerGroupProperties {
@@ -746,22 +746,22 @@ impl<'de> ::serde::Deserialize<'de> for GameServerGroupProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut auto_scaling_policy: Option<
-                    crate::Value<self::game_server_group::AutoScalingPolicy>,
+                    ::Value<self::game_server_group::AutoScalingPolicy>,
                 > = None;
-                let mut balancing_strategy: Option<crate::Value<String>> = None;
-                let mut delete_option: Option<crate::Value<String>> = None;
-                let mut game_server_group_name: Option<crate::Value<String>> = None;
-                let mut game_server_protection_policy: Option<crate::Value<String>> = None;
+                let mut balancing_strategy: Option<::Value<String>> = None;
+                let mut delete_option: Option<::Value<String>> = None;
+                let mut game_server_group_name: Option<::Value<String>> = None;
+                let mut game_server_protection_policy: Option<::Value<String>> = None;
                 let mut instance_definitions: Option<
-                    crate::ValueList<self::game_server_group::InstanceDefinition>,
+                    ::ValueList<self::game_server_group::InstanceDefinition>,
                 > = None;
-                let mut launch_template: Option<crate::Value<self::game_server_group::LaunchTemplate>> =
+                let mut launch_template: Option<::Value<self::game_server_group::LaunchTemplate>> =
                     None;
-                let mut max_size: Option<crate::Value<f64>> = None;
-                let mut min_size: Option<crate::Value<f64>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut vpc_subnets: Option<crate::ValueList<String>> = None;
+                let mut max_size: Option<::Value<f64>> = None;
+                let mut min_size: Option<::Value<f64>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut vpc_subnets: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -830,7 +830,7 @@ impl<'de> ::serde::Deserialize<'de> for GameServerGroupProperties {
     }
 }
 
-impl crate::Resource for GameServerGroup {
+impl ::Resource for GameServerGroup {
     type Properties = GameServerGroupProperties;
     const TYPE: &'static str = "AWS::GameLift::GameServerGroup";
     fn properties(&self) -> &GameServerGroupProperties {
@@ -841,7 +841,7 @@ impl crate::Resource for GameServerGroup {
     }
 }
 
-impl crate::private::Sealed for GameServerGroup {}
+impl ::private::Sealed for GameServerGroup {}
 
 impl From<GameServerGroupProperties> for GameServerGroup {
     fn from(properties: GameServerGroupProperties) -> GameServerGroup {
@@ -862,47 +862,47 @@ pub struct GameSessionQueueProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub custom_event_data: Option<crate::Value<String>>,
+    pub custom_event_data: Option<::Value<String>>,
     /// Property [`Destinations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-destinations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub destinations: Option<crate::ValueList<self::game_session_queue::Destination>>,
+    pub destinations: Option<::ValueList<self::game_session_queue::Destination>>,
     /// Property [`FilterConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-filterconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub filter_configuration: Option<crate::Value<self::game_session_queue::FilterConfiguration>>,
+    pub filter_configuration: Option<::Value<self::game_session_queue::FilterConfiguration>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`NotificationTarget`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-notificationtarget).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_target: Option<crate::Value<String>>,
+    pub notification_target: Option<::Value<String>>,
     /// Property [`PlayerLatencyPolicies`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-playerlatencypolicies).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub player_latency_policies: Option<crate::ValueList<self::game_session_queue::PlayerLatencyPolicy>>,
+    pub player_latency_policies: Option<::ValueList<self::game_session_queue::PlayerLatencyPolicy>>,
     /// Property [`PriorityConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-priorityconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub priority_configuration: Option<crate::Value<self::game_session_queue::PriorityConfiguration>>,
+    pub priority_configuration: Option<::Value<self::game_session_queue::PriorityConfiguration>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`TimeoutInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-timeoutinseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub timeout_in_seconds: Option<crate::Value<u32>>,
+    pub timeout_in_seconds: Option<::Value<u32>>,
 }
 
 impl ::serde::Serialize for GameSessionQueueProperties {
@@ -978,22 +978,22 @@ impl<'de> ::serde::Deserialize<'de> for GameSessionQueueProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut custom_event_data: Option<crate::Value<String>> = None;
-                let mut destinations: Option<crate::ValueList<self::game_session_queue::Destination>> =
+                let mut custom_event_data: Option<::Value<String>> = None;
+                let mut destinations: Option<::ValueList<self::game_session_queue::Destination>> =
                     None;
                 let mut filter_configuration: Option<
-                    crate::Value<self::game_session_queue::FilterConfiguration>,
+                    ::Value<self::game_session_queue::FilterConfiguration>,
                 > = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut notification_target: Option<crate::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut notification_target: Option<::Value<String>> = None;
                 let mut player_latency_policies: Option<
-                    crate::ValueList<self::game_session_queue::PlayerLatencyPolicy>,
+                    ::ValueList<self::game_session_queue::PlayerLatencyPolicy>,
                 > = None;
                 let mut priority_configuration: Option<
-                    crate::Value<self::game_session_queue::PriorityConfiguration>,
+                    ::Value<self::game_session_queue::PriorityConfiguration>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut timeout_in_seconds: Option<crate::Value<u32>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut timeout_in_seconds: Option<::Value<u32>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1046,7 +1046,7 @@ impl<'de> ::serde::Deserialize<'de> for GameSessionQueueProperties {
     }
 }
 
-impl crate::Resource for GameSessionQueue {
+impl ::Resource for GameSessionQueue {
     type Properties = GameSessionQueueProperties;
     const TYPE: &'static str = "AWS::GameLift::GameSessionQueue";
     fn properties(&self) -> &GameSessionQueueProperties {
@@ -1057,7 +1057,7 @@ impl crate::Resource for GameSessionQueue {
     }
 }
 
-impl crate::private::Sealed for GameSessionQueue {}
+impl ::private::Sealed for GameSessionQueue {}
 
 impl From<GameSessionQueueProperties> for GameSessionQueue {
     fn from(properties: GameSessionQueueProperties) -> GameSessionQueue {
@@ -1078,77 +1078,77 @@ pub struct MatchmakingConfigurationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub acceptance_required: crate::Value<bool>,
+    pub acceptance_required: ::Value<bool>,
     /// Property [`AcceptanceTimeoutSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancetimeoutseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub acceptance_timeout_seconds: Option<crate::Value<u32>>,
+    pub acceptance_timeout_seconds: Option<::Value<u32>>,
     /// Property [`AdditionalPlayerCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-additionalplayercount).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub additional_player_count: Option<crate::Value<u32>>,
+    pub additional_player_count: Option<::Value<u32>>,
     /// Property [`BackfillMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-backfillmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub backfill_mode: Option<crate::Value<String>>,
+    pub backfill_mode: Option<::Value<String>>,
     /// Property [`CustomEventData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-customeventdata).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub custom_event_data: Option<crate::Value<String>>,
+    pub custom_event_data: Option<::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`FlexMatchMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-flexmatchmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub flex_match_mode: Option<crate::Value<String>>,
+    pub flex_match_mode: Option<::Value<String>>,
     /// Property [`GameProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gameproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub game_properties: Option<crate::ValueList<self::matchmaking_configuration::GameProperty>>,
+    pub game_properties: Option<::ValueList<self::matchmaking_configuration::GameProperty>>,
     /// Property [`GameSessionData`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gamesessiondata).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub game_session_data: Option<crate::Value<String>>,
+    pub game_session_data: Option<::Value<String>>,
     /// Property [`GameSessionQueueArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gamesessionqueuearns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub game_session_queue_arns: Option<crate::ValueList<String>>,
+    pub game_session_queue_arns: Option<::ValueList<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`NotificationTarget`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-notificationtarget).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_target: Option<crate::Value<String>>,
+    pub notification_target: Option<::Value<String>>,
     /// Property [`RequestTimeoutSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-requesttimeoutseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub request_timeout_seconds: crate::Value<u32>,
+    pub request_timeout_seconds: ::Value<u32>,
     /// Property [`RuleSetName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-rulesetname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rule_set_name: crate::Value<String>,
+    pub rule_set_name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for MatchmakingConfigurationProperties {
@@ -1252,23 +1252,23 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingConfigurationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut acceptance_required: Option<crate::Value<bool>> = None;
-                let mut acceptance_timeout_seconds: Option<crate::Value<u32>> = None;
-                let mut additional_player_count: Option<crate::Value<u32>> = None;
-                let mut backfill_mode: Option<crate::Value<String>> = None;
-                let mut custom_event_data: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut flex_match_mode: Option<crate::Value<String>> = None;
+                let mut acceptance_required: Option<::Value<bool>> = None;
+                let mut acceptance_timeout_seconds: Option<::Value<u32>> = None;
+                let mut additional_player_count: Option<::Value<u32>> = None;
+                let mut backfill_mode: Option<::Value<String>> = None;
+                let mut custom_event_data: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut flex_match_mode: Option<::Value<String>> = None;
                 let mut game_properties: Option<
-                    crate::ValueList<self::matchmaking_configuration::GameProperty>,
+                    ::ValueList<self::matchmaking_configuration::GameProperty>,
                 > = None;
-                let mut game_session_data: Option<crate::Value<String>> = None;
-                let mut game_session_queue_arns: Option<crate::ValueList<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut notification_target: Option<crate::Value<String>> = None;
-                let mut request_timeout_seconds: Option<crate::Value<u32>> = None;
-                let mut rule_set_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut game_session_data: Option<::Value<String>> = None;
+                let mut game_session_queue_arns: Option<::ValueList<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut notification_target: Option<::Value<String>> = None;
+                let mut request_timeout_seconds: Option<::Value<u32>> = None;
+                let mut rule_set_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1349,7 +1349,7 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingConfigurationProperties {
     }
 }
 
-impl crate::Resource for MatchmakingConfiguration {
+impl ::Resource for MatchmakingConfiguration {
     type Properties = MatchmakingConfigurationProperties;
     const TYPE: &'static str = "AWS::GameLift::MatchmakingConfiguration";
     fn properties(&self) -> &MatchmakingConfigurationProperties {
@@ -1360,7 +1360,7 @@ impl crate::Resource for MatchmakingConfiguration {
     }
 }
 
-impl crate::private::Sealed for MatchmakingConfiguration {}
+impl ::private::Sealed for MatchmakingConfiguration {}
 
 impl From<MatchmakingConfigurationProperties> for MatchmakingConfiguration {
     fn from(properties: MatchmakingConfigurationProperties) -> MatchmakingConfiguration {
@@ -1381,17 +1381,17 @@ pub struct MatchmakingRuleSetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`RuleSetBody`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html#cfn-gamelift-matchmakingruleset-rulesetbody).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub rule_set_body: crate::Value<String>,
+    pub rule_set_body: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html#cfn-gamelift-matchmakingruleset-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for MatchmakingRuleSetProperties {
@@ -1423,9 +1423,9 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingRuleSetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<crate::Value<String>> = None;
-                let mut rule_set_body: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut rule_set_body: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1455,7 +1455,7 @@ impl<'de> ::serde::Deserialize<'de> for MatchmakingRuleSetProperties {
     }
 }
 
-impl crate::Resource for MatchmakingRuleSet {
+impl ::Resource for MatchmakingRuleSet {
     type Properties = MatchmakingRuleSetProperties;
     const TYPE: &'static str = "AWS::GameLift::MatchmakingRuleSet";
     fn properties(&self) -> &MatchmakingRuleSetProperties {
@@ -1466,7 +1466,7 @@ impl crate::Resource for MatchmakingRuleSet {
     }
 }
 
-impl crate::private::Sealed for MatchmakingRuleSet {}
+impl ::private::Sealed for MatchmakingRuleSet {}
 
 impl From<MatchmakingRuleSetProperties> for MatchmakingRuleSet {
     fn from(properties: MatchmakingRuleSetProperties) -> MatchmakingRuleSet {
@@ -1487,22 +1487,22 @@ pub struct ScriptProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`StorageLocation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-storagelocation).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub storage_location: crate::Value<self::script::S3Location>,
+    pub storage_location: ::Value<self::script::S3Location>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-version).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub version: Option<crate::Value<String>>,
+    pub version: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ScriptProperties {
@@ -1541,10 +1541,10 @@ impl<'de> ::serde::Deserialize<'de> for ScriptProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut name: Option<crate::Value<String>> = None;
-                let mut storage_location: Option<crate::Value<self::script::S3Location>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut version: Option<crate::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut storage_location: Option<::Value<self::script::S3Location>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut version: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1578,7 +1578,7 @@ impl<'de> ::serde::Deserialize<'de> for ScriptProperties {
     }
 }
 
-impl crate::Resource for Script {
+impl ::Resource for Script {
     type Properties = ScriptProperties;
     const TYPE: &'static str = "AWS::GameLift::Script";
     fn properties(&self) -> &ScriptProperties {
@@ -1589,7 +1589,7 @@ impl crate::Resource for Script {
     }
 }
 
-impl crate::private::Sealed for Script {}
+impl ::private::Sealed for Script {}
 
 impl From<ScriptProperties> for Script {
     fn from(properties: ScriptProperties) -> Script {
@@ -1607,20 +1607,20 @@ pub mod alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fleet_id: Option<crate::Value<String>>,
+        pub fleet_id: Option<::Value<String>>,
         /// Property [`Message`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html#cfn-gamelift-alias-routingstrategy-message).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message: Option<crate::Value<String>>,
+        pub message: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html#cfn-gamelift-alias-routingstrategy-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RoutingStrategy {
+    impl ::codec::SerializeValue for RoutingStrategy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref fleet_id) = self.fleet_id {
@@ -1634,7 +1634,7 @@ pub mod alias {
         }
     }
 
-    impl crate::codec::DeserializeValue for RoutingStrategy {
+    impl ::codec::DeserializeValue for RoutingStrategy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RoutingStrategy, D::Error> {
@@ -1651,9 +1651,9 @@ pub mod alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut fleet_id: Option<crate::Value<String>> = None;
-                    let mut message: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut fleet_id: Option<::Value<String>> = None;
+                    let mut message: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1695,25 +1695,25 @@ pub mod build {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub bucket: crate::Value<String>,
+        pub bucket: ::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-key).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`ObjectVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-object-verison).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub object_version: Option<crate::Value<String>>,
+        pub object_version: Option<::Value<String>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-rolearn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3Location {
+    impl ::codec::SerializeValue for S3Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -1730,7 +1730,7 @@ pub mod build {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Location {
+    impl ::codec::DeserializeValue for S3Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Location, D::Error> {
             struct Visitor;
 
@@ -1745,10 +1745,10 @@ pub mod build {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<crate::Value<String>> = None;
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut object_version: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
+                    let mut bucket: Option<::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut object_version: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1794,10 +1794,10 @@ pub mod fleet {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub certificate_type: crate::Value<String>,
+        pub certificate_type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CertificateConfiguration {
+    impl ::codec::SerializeValue for CertificateConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1809,7 +1809,7 @@ pub mod fleet {
         }
     }
 
-    impl crate::codec::DeserializeValue for CertificateConfiguration {
+    impl ::codec::DeserializeValue for CertificateConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CertificateConfiguration, D::Error> {
@@ -1826,7 +1826,7 @@ pub mod fleet {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut certificate_type: Option<crate::Value<String>> = None;
+                    let mut certificate_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1857,25 +1857,25 @@ pub mod fleet {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub from_port: crate::Value<u32>,
+        pub from_port: ::Value<u32>,
         /// Property [`IpRange`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-iprange).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ip_range: crate::Value<String>,
+        pub ip_range: ::Value<String>,
         /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-protocol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub protocol: crate::Value<String>,
+        pub protocol: ::Value<String>,
         /// Property [`ToPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-toport).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub to_port: crate::Value<u32>,
+        pub to_port: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for IpPermission {
+    impl ::codec::SerializeValue for IpPermission {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "FromPort", &self.from_port)?;
@@ -1886,7 +1886,7 @@ pub mod fleet {
         }
     }
 
-    impl crate::codec::DeserializeValue for IpPermission {
+    impl ::codec::DeserializeValue for IpPermission {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<IpPermission, D::Error> {
             struct Visitor;
 
@@ -1901,10 +1901,10 @@ pub mod fleet {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut from_port: Option<crate::Value<u32>> = None;
-                    let mut ip_range: Option<crate::Value<String>> = None;
-                    let mut protocol: Option<crate::Value<String>> = None;
-                    let mut to_port: Option<crate::Value<u32>> = None;
+                    let mut from_port: Option<::Value<u32>> = None;
+                    let mut ip_range: Option<::Value<String>> = None;
+                    let mut protocol: Option<::Value<String>> = None;
+                    let mut to_port: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1947,20 +1947,20 @@ pub mod fleet {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub desired_ec2_instances: crate::Value<u32>,
+        pub desired_ec2_instances: ::Value<u32>,
         /// Property [`MaxSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-maxsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_size: crate::Value<u32>,
+        pub max_size: ::Value<u32>,
         /// Property [`MinSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-minsize).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_size: crate::Value<u32>,
+        pub min_size: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for LocationCapacity {
+    impl ::codec::SerializeValue for LocationCapacity {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1974,7 +1974,7 @@ pub mod fleet {
         }
     }
 
-    impl crate::codec::DeserializeValue for LocationCapacity {
+    impl ::codec::DeserializeValue for LocationCapacity {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LocationCapacity, D::Error> {
@@ -1991,9 +1991,9 @@ pub mod fleet {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut desired_ec2_instances: Option<crate::Value<u32>> = None;
-                    let mut max_size: Option<crate::Value<u32>> = None;
-                    let mut min_size: Option<crate::Value<u32>> = None;
+                    let mut desired_ec2_instances: Option<::Value<u32>> = None;
+                    let mut max_size: Option<::Value<u32>> = None;
+                    let mut min_size: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2033,15 +2033,15 @@ pub mod fleet {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location: crate::Value<String>,
+        pub location: ::Value<String>,
         /// Property [`LocationCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationconfiguration.html#cfn-gamelift-fleet-locationconfiguration-locationcapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location_capacity: Option<crate::Value<LocationCapacity>>,
+        pub location_capacity: Option<::Value<LocationCapacity>>,
     }
 
-    impl crate::codec::SerializeValue for LocationConfiguration {
+    impl ::codec::SerializeValue for LocationConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Location", &self.location)?;
@@ -2056,7 +2056,7 @@ pub mod fleet {
         }
     }
 
-    impl crate::codec::DeserializeValue for LocationConfiguration {
+    impl ::codec::DeserializeValue for LocationConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LocationConfiguration, D::Error> {
@@ -2073,8 +2073,8 @@ pub mod fleet {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut location: Option<crate::Value<String>> = None;
-                    let mut location_capacity: Option<crate::Value<LocationCapacity>> = None;
+                    let mut location: Option<::Value<String>> = None;
+                    let mut location_capacity: Option<::Value<LocationCapacity>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2108,15 +2108,15 @@ pub mod fleet {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub new_game_sessions_per_creator: Option<crate::Value<u32>>,
+        pub new_game_sessions_per_creator: Option<::Value<u32>>,
         /// Property [`PolicyPeriodInMinutes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-resourcecreationlimitpolicy.html#cfn-gamelift-fleet-resourcecreationlimitpolicy-policyperiodinminutes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub policy_period_in_minutes: Option<crate::Value<u32>>,
+        pub policy_period_in_minutes: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for ResourceCreationLimitPolicy {
+    impl ::codec::SerializeValue for ResourceCreationLimitPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref new_game_sessions_per_creator) = self.new_game_sessions_per_creator {
@@ -2137,7 +2137,7 @@ pub mod fleet {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourceCreationLimitPolicy {
+    impl ::codec::DeserializeValue for ResourceCreationLimitPolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourceCreationLimitPolicy, D::Error> {
@@ -2154,8 +2154,8 @@ pub mod fleet {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut new_game_sessions_per_creator: Option<crate::Value<u32>> = None;
-                    let mut policy_period_in_minutes: Option<crate::Value<u32>> = None;
+                    let mut new_game_sessions_per_creator: Option<::Value<u32>> = None;
+                    let mut policy_period_in_minutes: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2191,20 +2191,20 @@ pub mod fleet {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub game_session_activation_timeout_seconds: Option<crate::Value<u32>>,
+        pub game_session_activation_timeout_seconds: Option<::Value<u32>>,
         /// Property [`MaxConcurrentGameSessionActivations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-maxconcurrentgamesessionactivations).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub max_concurrent_game_session_activations: Option<crate::Value<u32>>,
+        pub max_concurrent_game_session_activations: Option<::Value<u32>>,
         /// Property [`ServerProcesses`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-serverprocesses).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub server_processes: Option<crate::ValueList<ServerProcess>>,
+        pub server_processes: Option<::ValueList<ServerProcess>>,
     }
 
-    impl crate::codec::SerializeValue for RuntimeConfiguration {
+    impl ::codec::SerializeValue for RuntimeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref game_session_activation_timeout_seconds) =
@@ -2236,7 +2236,7 @@ pub mod fleet {
         }
     }
 
-    impl crate::codec::DeserializeValue for RuntimeConfiguration {
+    impl ::codec::DeserializeValue for RuntimeConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RuntimeConfiguration, D::Error> {
@@ -2253,9 +2253,9 @@ pub mod fleet {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut game_session_activation_timeout_seconds: Option<crate::Value<u32>> = None;
-                    let mut max_concurrent_game_session_activations: Option<crate::Value<u32>> = None;
-                    let mut server_processes: Option<crate::ValueList<ServerProcess>> = None;
+                    let mut game_session_activation_timeout_seconds: Option<::Value<u32>> = None;
+                    let mut max_concurrent_game_session_activations: Option<::Value<u32>> = None;
+                    let mut server_processes: Option<::ValueList<ServerProcess>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2297,20 +2297,20 @@ pub mod fleet {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub concurrent_executions: crate::Value<u32>,
+        pub concurrent_executions: ::Value<u32>,
         /// Property [`LaunchPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html#cfn-gamelift-fleet-serverprocess-launchpath).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub launch_path: crate::Value<String>,
+        pub launch_path: ::Value<String>,
         /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html#cfn-gamelift-fleet-serverprocess-parameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub parameters: Option<crate::Value<String>>,
+        pub parameters: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ServerProcess {
+    impl ::codec::SerializeValue for ServerProcess {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2326,7 +2326,7 @@ pub mod fleet {
         }
     }
 
-    impl crate::codec::DeserializeValue for ServerProcess {
+    impl ::codec::DeserializeValue for ServerProcess {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ServerProcess, D::Error> {
@@ -2343,9 +2343,9 @@ pub mod fleet {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut concurrent_executions: Option<crate::Value<u32>> = None;
-                    let mut launch_path: Option<crate::Value<String>> = None;
-                    let mut parameters: Option<crate::Value<String>> = None;
+                    let mut concurrent_executions: Option<::Value<u32>> = None;
+                    let mut launch_path: Option<::Value<String>> = None;
+                    let mut parameters: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2390,15 +2390,15 @@ pub mod game_server_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub estimated_instance_warmup: Option<crate::Value<f64>>,
+        pub estimated_instance_warmup: Option<::Value<f64>>,
         /// Property [`TargetTrackingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-autoscalingpolicy.html#cfn-gamelift-gameservergroup-autoscalingpolicy-targettrackingconfiguration).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_tracking_configuration: crate::Value<TargetTrackingConfiguration>,
+        pub target_tracking_configuration: ::Value<TargetTrackingConfiguration>,
     }
 
-    impl crate::codec::SerializeValue for AutoScalingPolicy {
+    impl ::codec::SerializeValue for AutoScalingPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref estimated_instance_warmup) = self.estimated_instance_warmup {
@@ -2417,7 +2417,7 @@ pub mod game_server_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for AutoScalingPolicy {
+    impl ::codec::DeserializeValue for AutoScalingPolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AutoScalingPolicy, D::Error> {
@@ -2434,9 +2434,9 @@ pub mod game_server_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut estimated_instance_warmup: Option<crate::Value<f64>> = None;
+                    let mut estimated_instance_warmup: Option<::Value<f64>> = None;
                     let mut target_tracking_configuration: Option<
-                        crate::Value<TargetTrackingConfiguration>,
+                        ::Value<TargetTrackingConfiguration>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2475,15 +2475,15 @@ pub mod game_server_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_type: crate::Value<String>,
+        pub instance_type: ::Value<String>,
         /// Property [`WeightedCapacity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-instancedefinition.html#cfn-gamelift-gameservergroup-instancedefinition-weightedcapacity).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weighted_capacity: Option<crate::Value<String>>,
+        pub weighted_capacity: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for InstanceDefinition {
+    impl ::codec::SerializeValue for InstanceDefinition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2502,7 +2502,7 @@ pub mod game_server_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for InstanceDefinition {
+    impl ::codec::DeserializeValue for InstanceDefinition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<InstanceDefinition, D::Error> {
@@ -2519,8 +2519,8 @@ pub mod game_server_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut instance_type: Option<crate::Value<String>> = None;
-                    let mut weighted_capacity: Option<crate::Value<String>> = None;
+                    let mut instance_type: Option<::Value<String>> = None;
+                    let mut weighted_capacity: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2555,20 +2555,20 @@ pub mod game_server_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub launch_template_id: Option<crate::Value<String>>,
+        pub launch_template_id: Option<::Value<String>>,
         /// Property [`LaunchTemplateName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-launchtemplate.html#cfn-gamelift-gameservergroup-launchtemplate-launchtemplatename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub launch_template_name: Option<crate::Value<String>>,
+        pub launch_template_name: Option<::Value<String>>,
         /// Property [`Version`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-launchtemplate.html#cfn-gamelift-gameservergroup-launchtemplate-version).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version: Option<crate::Value<String>>,
+        pub version: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LaunchTemplate {
+    impl ::codec::SerializeValue for LaunchTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref launch_template_id) = self.launch_template_id {
@@ -2592,7 +2592,7 @@ pub mod game_server_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for LaunchTemplate {
+    impl ::codec::DeserializeValue for LaunchTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LaunchTemplate, D::Error> {
@@ -2609,9 +2609,9 @@ pub mod game_server_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut launch_template_id: Option<crate::Value<String>> = None;
-                    let mut launch_template_name: Option<crate::Value<String>> = None;
-                    let mut version: Option<crate::Value<String>> = None;
+                    let mut launch_template_id: Option<::Value<String>> = None;
+                    let mut launch_template_name: Option<::Value<String>> = None;
+                    let mut version: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2650,10 +2650,10 @@ pub mod game_server_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_value: crate::Value<f64>,
+        pub target_value: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for TargetTrackingConfiguration {
+    impl ::codec::SerializeValue for TargetTrackingConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2665,7 +2665,7 @@ pub mod game_server_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetTrackingConfiguration {
+    impl ::codec::DeserializeValue for TargetTrackingConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetTrackingConfiguration, D::Error> {
@@ -2682,7 +2682,7 @@ pub mod game_server_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut target_value: Option<crate::Value<f64>> = None;
+                    let mut target_value: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2717,10 +2717,10 @@ pub mod game_session_queue {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_arn: Option<crate::Value<String>>,
+        pub destination_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Destination {
+    impl ::codec::SerializeValue for Destination {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref destination_arn) = self.destination_arn {
@@ -2734,7 +2734,7 @@ pub mod game_session_queue {
         }
     }
 
-    impl crate::codec::DeserializeValue for Destination {
+    impl ::codec::DeserializeValue for Destination {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Destination, D::Error> {
             struct Visitor;
 
@@ -2749,7 +2749,7 @@ pub mod game_session_queue {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination_arn: Option<crate::Value<String>> = None;
+                    let mut destination_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2779,10 +2779,10 @@ pub mod game_session_queue {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allowed_locations: Option<crate::ValueList<String>>,
+        pub allowed_locations: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for FilterConfiguration {
+    impl ::codec::SerializeValue for FilterConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allowed_locations) = self.allowed_locations {
@@ -2796,7 +2796,7 @@ pub mod game_session_queue {
         }
     }
 
-    impl crate::codec::DeserializeValue for FilterConfiguration {
+    impl ::codec::DeserializeValue for FilterConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FilterConfiguration, D::Error> {
@@ -2813,7 +2813,7 @@ pub mod game_session_queue {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allowed_locations: Option<crate::ValueList<String>> = None;
+                    let mut allowed_locations: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2843,15 +2843,15 @@ pub mod game_session_queue {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maximum_individual_player_latency_milliseconds: Option<crate::Value<u32>>,
+        pub maximum_individual_player_latency_milliseconds: Option<::Value<u32>>,
         /// Property [`PolicyDurationSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html#cfn-gamelift-gamesessionqueue-playerlatencypolicy-policydurationseconds).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub policy_duration_seconds: Option<crate::Value<u32>>,
+        pub policy_duration_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for PlayerLatencyPolicy {
+    impl ::codec::SerializeValue for PlayerLatencyPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref maximum_individual_player_latency_milliseconds) =
@@ -2874,7 +2874,7 @@ pub mod game_session_queue {
         }
     }
 
-    impl crate::codec::DeserializeValue for PlayerLatencyPolicy {
+    impl ::codec::DeserializeValue for PlayerLatencyPolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PlayerLatencyPolicy, D::Error> {
@@ -2891,9 +2891,9 @@ pub mod game_session_queue {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut maximum_individual_player_latency_milliseconds: Option<crate::Value<u32>> =
+                    let mut maximum_individual_player_latency_milliseconds: Option<::Value<u32>> =
                         None;
-                    let mut policy_duration_seconds: Option<crate::Value<u32>> = None;
+                    let mut policy_duration_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2930,15 +2930,15 @@ pub mod game_session_queue {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub location_order: Option<crate::ValueList<String>>,
+        pub location_order: Option<::ValueList<String>>,
         /// Property [`PriorityOrder`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-priorityconfiguration.html#cfn-gamelift-gamesessionqueue-priorityconfiguration-priorityorder).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub priority_order: Option<crate::ValueList<String>>,
+        pub priority_order: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for PriorityConfiguration {
+    impl ::codec::SerializeValue for PriorityConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref location_order) = self.location_order {
@@ -2959,7 +2959,7 @@ pub mod game_session_queue {
         }
     }
 
-    impl crate::codec::DeserializeValue for PriorityConfiguration {
+    impl ::codec::DeserializeValue for PriorityConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PriorityConfiguration, D::Error> {
@@ -2976,8 +2976,8 @@ pub mod game_session_queue {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut location_order: Option<crate::ValueList<String>> = None;
-                    let mut priority_order: Option<crate::ValueList<String>> = None;
+                    let mut location_order: Option<::ValueList<String>> = None;
+                    let mut priority_order: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3015,15 +3015,15 @@ pub mod matchmaking_configuration {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-matchmakingconfiguration-gameproperty.html#cfn-gamelift-matchmakingconfiguration-gameproperty-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<String>,
+        pub value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for GameProperty {
+    impl ::codec::SerializeValue for GameProperty {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -3032,7 +3032,7 @@ pub mod matchmaking_configuration {
         }
     }
 
-    impl crate::codec::DeserializeValue for GameProperty {
+    impl ::codec::DeserializeValue for GameProperty {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GameProperty, D::Error> {
             struct Visitor;
 
@@ -3047,8 +3047,8 @@ pub mod matchmaking_configuration {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3086,25 +3086,25 @@ pub mod script {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: crate::Value<String>,
+        pub bucket: ::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-script-s3location.html#cfn-gamelift-script-s3location-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`ObjectVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-script-s3location.html#cfn-gamelift-script-s3location-objectversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub object_version: Option<crate::Value<String>>,
+        pub object_version: Option<::Value<String>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-script-s3location.html#cfn-gamelift-script-s3location-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: crate::Value<String>,
+        pub role_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for S3Location {
+    impl ::codec::SerializeValue for S3Location {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -3121,7 +3121,7 @@ pub mod script {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Location {
+    impl ::codec::DeserializeValue for S3Location {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Location, D::Error> {
             struct Visitor;
 
@@ -3136,10 +3136,10 @@ pub mod script {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<crate::Value<String>> = None;
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut object_version: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
+                    let mut bucket: Option<::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut object_version: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

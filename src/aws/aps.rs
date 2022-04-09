@@ -13,22 +13,22 @@ pub struct RuleGroupsNamespaceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data: crate::Value<String>,
+    pub data: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-rulegroupsnamespace.html#cfn-aps-rulegroupsnamespace-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-rulegroupsnamespace.html#cfn-aps-rulegroupsnamespace-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Workspace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-rulegroupsnamespace.html#cfn-aps-rulegroupsnamespace-workspace).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub workspace: crate::Value<String>,
+    pub workspace: ::Value<String>,
 }
 
 impl ::serde::Serialize for RuleGroupsNamespaceProperties {
@@ -61,10 +61,10 @@ impl<'de> ::serde::Deserialize<'de> for RuleGroupsNamespaceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut workspace: Option<crate::Value<String>> = None;
+                let mut data: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut workspace: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -97,7 +97,7 @@ impl<'de> ::serde::Deserialize<'de> for RuleGroupsNamespaceProperties {
     }
 }
 
-impl crate::Resource for RuleGroupsNamespace {
+impl ::Resource for RuleGroupsNamespace {
     type Properties = RuleGroupsNamespaceProperties;
     const TYPE: &'static str = "AWS::APS::RuleGroupsNamespace";
     fn properties(&self) -> &RuleGroupsNamespaceProperties {
@@ -108,7 +108,7 @@ impl crate::Resource for RuleGroupsNamespace {
     }
 }
 
-impl crate::private::Sealed for RuleGroupsNamespace {}
+impl ::private::Sealed for RuleGroupsNamespace {}
 
 impl From<RuleGroupsNamespaceProperties> for RuleGroupsNamespace {
     fn from(properties: RuleGroupsNamespaceProperties) -> RuleGroupsNamespace {
@@ -129,17 +129,17 @@ pub struct WorkspaceProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub alert_manager_definition: Option<crate::Value<String>>,
+    pub alert_manager_definition: Option<::Value<String>>,
     /// Property [`Alias`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#cfn-aps-workspace-alias).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub alias: Option<crate::Value<String>>,
+    pub alias: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#cfn-aps-workspace-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for WorkspaceProperties {
@@ -177,9 +177,9 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut alert_manager_definition: Option<crate::Value<String>> = None;
-                let mut alias: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut alert_manager_definition: Option<::Value<String>> = None;
+                let mut alias: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -209,7 +209,7 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
     }
 }
 
-impl crate::Resource for Workspace {
+impl ::Resource for Workspace {
     type Properties = WorkspaceProperties;
     const TYPE: &'static str = "AWS::APS::Workspace";
     fn properties(&self) -> &WorkspaceProperties {
@@ -220,7 +220,7 @@ impl crate::Resource for Workspace {
     }
 }
 
-impl crate::private::Sealed for Workspace {}
+impl ::private::Sealed for Workspace {}
 
 impl From<WorkspaceProperties> for Workspace {
     fn from(properties: WorkspaceProperties) -> Workspace {

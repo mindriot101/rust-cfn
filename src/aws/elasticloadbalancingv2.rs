@@ -13,37 +13,37 @@ pub struct ListenerProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub alpn_policy: Option<crate::ValueList<String>>,
+    pub alpn_policy: Option<::ValueList<String>>,
     /// Property [`Certificates`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificates: Option<crate::ValueList<self::listener::Certificate>>,
+    pub certificates: Option<::ValueList<self::listener::Certificate>>,
     /// Property [`DefaultActions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub default_actions: crate::ValueList<self::listener::Action>,
+    pub default_actions: ::ValueList<self::listener::Action>,
     /// Property [`LoadBalancerArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-loadbalancerarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub load_balancer_arn: crate::Value<String>,
+    pub load_balancer_arn: ::Value<String>,
     /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-port).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub port: Option<crate::Value<u32>>,
+    pub port: Option<::Value<u32>>,
     /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub protocol: Option<crate::Value<String>>,
+    pub protocol: Option<::Value<String>>,
     /// Property [`SslPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ssl_policy: Option<crate::Value<String>>,
+    pub ssl_policy: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ListenerProperties {
@@ -93,13 +93,13 @@ impl<'de> ::serde::Deserialize<'de> for ListenerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut alpn_policy: Option<crate::ValueList<String>> = None;
-                let mut certificates: Option<crate::ValueList<self::listener::Certificate>> = None;
-                let mut default_actions: Option<crate::ValueList<self::listener::Action>> = None;
-                let mut load_balancer_arn: Option<crate::Value<String>> = None;
-                let mut port: Option<crate::Value<u32>> = None;
-                let mut protocol: Option<crate::Value<String>> = None;
-                let mut ssl_policy: Option<crate::Value<String>> = None;
+                let mut alpn_policy: Option<::ValueList<String>> = None;
+                let mut certificates: Option<::ValueList<self::listener::Certificate>> = None;
+                let mut default_actions: Option<::ValueList<self::listener::Action>> = None;
+                let mut load_balancer_arn: Option<::Value<String>> = None;
+                let mut port: Option<::Value<u32>> = None;
+                let mut protocol: Option<::Value<String>> = None;
+                let mut ssl_policy: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -146,7 +146,7 @@ impl<'de> ::serde::Deserialize<'de> for ListenerProperties {
     }
 }
 
-impl crate::Resource for Listener {
+impl ::Resource for Listener {
     type Properties = ListenerProperties;
     const TYPE: &'static str = "AWS::ElasticLoadBalancingV2::Listener";
     fn properties(&self) -> &ListenerProperties {
@@ -157,7 +157,7 @@ impl crate::Resource for Listener {
     }
 }
 
-impl crate::private::Sealed for Listener {}
+impl ::private::Sealed for Listener {}
 
 impl From<ListenerProperties> for Listener {
     fn from(properties: ListenerProperties) -> Listener {
@@ -178,12 +178,12 @@ pub struct ListenerCertificateProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificates: crate::ValueList<self::listener_certificate::Certificate>,
+    pub certificates: ::ValueList<self::listener_certificate::Certificate>,
     /// Property [`ListenerArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-listenerarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub listener_arn: crate::Value<String>,
+    pub listener_arn: ::Value<String>,
 }
 
 impl ::serde::Serialize for ListenerCertificateProperties {
@@ -212,9 +212,9 @@ impl<'de> ::serde::Deserialize<'de> for ListenerCertificateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut certificates: Option<crate::ValueList<self::listener_certificate::Certificate>> =
+                let mut certificates: Option<::ValueList<self::listener_certificate::Certificate>> =
                     None;
-                let mut listener_arn: Option<crate::Value<String>> = None;
+                let mut listener_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -241,7 +241,7 @@ impl<'de> ::serde::Deserialize<'de> for ListenerCertificateProperties {
     }
 }
 
-impl crate::Resource for ListenerCertificate {
+impl ::Resource for ListenerCertificate {
     type Properties = ListenerCertificateProperties;
     const TYPE: &'static str = "AWS::ElasticLoadBalancingV2::ListenerCertificate";
     fn properties(&self) -> &ListenerCertificateProperties {
@@ -252,7 +252,7 @@ impl crate::Resource for ListenerCertificate {
     }
 }
 
-impl crate::private::Sealed for ListenerCertificate {}
+impl ::private::Sealed for ListenerCertificate {}
 
 impl From<ListenerCertificateProperties> for ListenerCertificate {
     fn from(properties: ListenerCertificateProperties) -> ListenerCertificate {
@@ -273,22 +273,22 @@ pub struct ListenerRuleProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub actions: crate::ValueList<self::listener_rule::Action>,
+    pub actions: ::ValueList<self::listener_rule::Action>,
     /// Property [`Conditions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub conditions: crate::ValueList<self::listener_rule::RuleCondition>,
+    pub conditions: ::ValueList<self::listener_rule::RuleCondition>,
     /// Property [`ListenerArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub listener_arn: crate::Value<String>,
+    pub listener_arn: ::Value<String>,
     /// Property [`Priority`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub priority: crate::Value<u32>,
+    pub priority: ::Value<u32>,
 }
 
 impl ::serde::Serialize for ListenerRuleProperties {
@@ -319,10 +319,10 @@ impl<'de> ::serde::Deserialize<'de> for ListenerRuleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut actions: Option<crate::ValueList<self::listener_rule::Action>> = None;
-                let mut conditions: Option<crate::ValueList<self::listener_rule::RuleCondition>> = None;
-                let mut listener_arn: Option<crate::Value<String>> = None;
-                let mut priority: Option<crate::Value<u32>> = None;
+                let mut actions: Option<::ValueList<self::listener_rule::Action>> = None;
+                let mut conditions: Option<::ValueList<self::listener_rule::RuleCondition>> = None;
+                let mut listener_arn: Option<::Value<String>> = None;
+                let mut priority: Option<::Value<u32>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -357,7 +357,7 @@ impl<'de> ::serde::Deserialize<'de> for ListenerRuleProperties {
     }
 }
 
-impl crate::Resource for ListenerRule {
+impl ::Resource for ListenerRule {
     type Properties = ListenerRuleProperties;
     const TYPE: &'static str = "AWS::ElasticLoadBalancingV2::ListenerRule";
     fn properties(&self) -> &ListenerRuleProperties {
@@ -368,7 +368,7 @@ impl crate::Resource for ListenerRule {
     }
 }
 
-impl crate::private::Sealed for ListenerRule {}
+impl ::private::Sealed for ListenerRule {}
 
 impl From<ListenerRuleProperties> for ListenerRule {
     fn from(properties: ListenerRuleProperties) -> ListenerRule {
@@ -389,47 +389,47 @@ pub struct LoadBalancerProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ip_address_type: Option<crate::Value<String>>,
+    pub ip_address_type: Option<::Value<String>>,
     /// Property [`LoadBalancerAttributes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub load_balancer_attributes: Option<crate::ValueList<self::load_balancer::LoadBalancerAttribute>>,
+    pub load_balancer_attributes: Option<::ValueList<self::load_balancer::LoadBalancerAttribute>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Scheme`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-scheme).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub scheme: Option<crate::Value<String>>,
+    pub scheme: Option<::Value<String>>,
     /// Property [`SecurityGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-securitygroups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub security_groups: Option<crate::ValueList<String>>,
+    pub security_groups: Option<::ValueList<String>>,
     /// Property [`SubnetMappings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subnet_mappings: Option<crate::ValueList<self::load_balancer::SubnetMapping>>,
+    pub subnet_mappings: Option<::ValueList<self::load_balancer::SubnetMapping>>,
     /// Property [`Subnets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnets).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subnets: Option<crate::ValueList<String>>,
+    pub subnets: Option<::ValueList<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: Option<crate::Value<String>>,
+    pub r#type: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for LoadBalancerProperties {
@@ -499,18 +499,18 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut ip_address_type: Option<crate::Value<String>> = None;
+                let mut ip_address_type: Option<::Value<String>> = None;
                 let mut load_balancer_attributes: Option<
-                    crate::ValueList<self::load_balancer::LoadBalancerAttribute>,
+                    ::ValueList<self::load_balancer::LoadBalancerAttribute>,
                 > = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut scheme: Option<crate::Value<String>> = None;
-                let mut security_groups: Option<crate::ValueList<String>> = None;
-                let mut subnet_mappings: Option<crate::ValueList<self::load_balancer::SubnetMapping>> =
+                let mut name: Option<::Value<String>> = None;
+                let mut scheme: Option<::Value<String>> = None;
+                let mut security_groups: Option<::ValueList<String>> = None;
+                let mut subnet_mappings: Option<::ValueList<self::load_balancer::SubnetMapping>> =
                     None;
-                let mut subnets: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut r#type: Option<crate::Value<String>> = None;
+                let mut subnets: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut r#type: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -564,7 +564,7 @@ impl<'de> ::serde::Deserialize<'de> for LoadBalancerProperties {
     }
 }
 
-impl crate::Resource for LoadBalancer {
+impl ::Resource for LoadBalancer {
     type Properties = LoadBalancerProperties;
     const TYPE: &'static str = "AWS::ElasticLoadBalancingV2::LoadBalancer";
     fn properties(&self) -> &LoadBalancerProperties {
@@ -575,7 +575,7 @@ impl crate::Resource for LoadBalancer {
     }
 }
 
-impl crate::private::Sealed for LoadBalancer {}
+impl ::private::Sealed for LoadBalancer {}
 
 impl From<LoadBalancerProperties> for LoadBalancer {
     fn from(properties: LoadBalancerProperties) -> LoadBalancer {
@@ -596,97 +596,97 @@ pub struct TargetGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub health_check_enabled: Option<crate::Value<bool>>,
+    pub health_check_enabled: Option<::Value<bool>>,
     /// Property [`HealthCheckIntervalSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckintervalseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub health_check_interval_seconds: Option<crate::Value<u32>>,
+    pub health_check_interval_seconds: Option<::Value<u32>>,
     /// Property [`HealthCheckPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckpath).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub health_check_path: Option<crate::Value<String>>,
+    pub health_check_path: Option<::Value<String>>,
     /// Property [`HealthCheckPort`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckport).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub health_check_port: Option<crate::Value<String>>,
+    pub health_check_port: Option<::Value<String>>,
     /// Property [`HealthCheckProtocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckprotocol).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub health_check_protocol: Option<crate::Value<String>>,
+    pub health_check_protocol: Option<::Value<String>>,
     /// Property [`HealthCheckTimeoutSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthchecktimeoutseconds).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub health_check_timeout_seconds: Option<crate::Value<u32>>,
+    pub health_check_timeout_seconds: Option<::Value<u32>>,
     /// Property [`HealthyThresholdCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthythresholdcount).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub healthy_threshold_count: Option<crate::Value<u32>>,
+    pub healthy_threshold_count: Option<::Value<u32>>,
     /// Property [`IpAddressType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-ipaddresstype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ip_address_type: Option<crate::Value<String>>,
+    pub ip_address_type: Option<::Value<String>>,
     /// Property [`Matcher`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-matcher).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub matcher: Option<crate::Value<self::target_group::Matcher>>,
+    pub matcher: Option<::Value<self::target_group::Matcher>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-port).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub port: Option<crate::Value<u32>>,
+    pub port: Option<::Value<u32>>,
     /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocol).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub protocol: Option<crate::Value<String>>,
+    pub protocol: Option<::Value<String>>,
     /// Property [`ProtocolVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocolversion).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub protocol_version: Option<crate::Value<String>>,
+    pub protocol_version: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`TargetGroupAttributes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattributes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub target_group_attributes: Option<crate::ValueList<self::target_group::TargetGroupAttribute>>,
+    pub target_group_attributes: Option<::ValueList<self::target_group::TargetGroupAttribute>>,
     /// Property [`TargetType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targettype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub target_type: Option<crate::Value<String>>,
+    pub target_type: Option<::Value<String>>,
     /// Property [`Targets`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targets).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub targets: Option<crate::ValueList<self::target_group::TargetDescription>>,
+    pub targets: Option<::ValueList<self::target_group::TargetDescription>>,
     /// Property [`UnhealthyThresholdCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-unhealthythresholdcount).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub unhealthy_threshold_count: Option<crate::Value<u32>>,
+    pub unhealthy_threshold_count: Option<::Value<u32>>,
     /// Property [`VpcId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-vpcid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc_id: Option<crate::Value<String>>,
+    pub vpc_id: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for TargetGroupProperties {
@@ -812,27 +812,27 @@ impl<'de> ::serde::Deserialize<'de> for TargetGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut health_check_enabled: Option<crate::Value<bool>> = None;
-                let mut health_check_interval_seconds: Option<crate::Value<u32>> = None;
-                let mut health_check_path: Option<crate::Value<String>> = None;
-                let mut health_check_port: Option<crate::Value<String>> = None;
-                let mut health_check_protocol: Option<crate::Value<String>> = None;
-                let mut health_check_timeout_seconds: Option<crate::Value<u32>> = None;
-                let mut healthy_threshold_count: Option<crate::Value<u32>> = None;
-                let mut ip_address_type: Option<crate::Value<String>> = None;
-                let mut matcher: Option<crate::Value<self::target_group::Matcher>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut port: Option<crate::Value<u32>> = None;
-                let mut protocol: Option<crate::Value<String>> = None;
-                let mut protocol_version: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut health_check_enabled: Option<::Value<bool>> = None;
+                let mut health_check_interval_seconds: Option<::Value<u32>> = None;
+                let mut health_check_path: Option<::Value<String>> = None;
+                let mut health_check_port: Option<::Value<String>> = None;
+                let mut health_check_protocol: Option<::Value<String>> = None;
+                let mut health_check_timeout_seconds: Option<::Value<u32>> = None;
+                let mut healthy_threshold_count: Option<::Value<u32>> = None;
+                let mut ip_address_type: Option<::Value<String>> = None;
+                let mut matcher: Option<::Value<self::target_group::Matcher>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut port: Option<::Value<u32>> = None;
+                let mut protocol: Option<::Value<String>> = None;
+                let mut protocol_version: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
                 let mut target_group_attributes: Option<
-                    crate::ValueList<self::target_group::TargetGroupAttribute>,
+                    ::ValueList<self::target_group::TargetGroupAttribute>,
                 > = None;
-                let mut target_type: Option<crate::Value<String>> = None;
-                let mut targets: Option<crate::ValueList<self::target_group::TargetDescription>> = None;
-                let mut unhealthy_threshold_count: Option<crate::Value<u32>> = None;
-                let mut vpc_id: Option<crate::Value<String>> = None;
+                let mut target_type: Option<::Value<String>> = None;
+                let mut targets: Option<::ValueList<self::target_group::TargetDescription>> = None;
+                let mut unhealthy_threshold_count: Option<::Value<u32>> = None;
+                let mut vpc_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -928,7 +928,7 @@ impl<'de> ::serde::Deserialize<'de> for TargetGroupProperties {
     }
 }
 
-impl crate::Resource for TargetGroup {
+impl ::Resource for TargetGroup {
     type Properties = TargetGroupProperties;
     const TYPE: &'static str = "AWS::ElasticLoadBalancingV2::TargetGroup";
     fn properties(&self) -> &TargetGroupProperties {
@@ -939,7 +939,7 @@ impl crate::Resource for TargetGroup {
     }
 }
 
-impl crate::private::Sealed for TargetGroup {}
+impl ::private::Sealed for TargetGroup {}
 
 impl From<TargetGroupProperties> for TargetGroup {
     fn from(properties: TargetGroupProperties) -> TargetGroup {
@@ -957,45 +957,45 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authenticate_cognito_config: Option<crate::Value<AuthenticateCognitoConfig>>,
+        pub authenticate_cognito_config: Option<::Value<AuthenticateCognitoConfig>>,
         /// Property [`AuthenticateOidcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-authenticateoidcconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authenticate_oidc_config: Option<crate::Value<AuthenticateOidcConfig>>,
+        pub authenticate_oidc_config: Option<::Value<AuthenticateOidcConfig>>,
         /// Property [`FixedResponseConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-fixedresponseconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fixed_response_config: Option<crate::Value<FixedResponseConfig>>,
+        pub fixed_response_config: Option<::Value<FixedResponseConfig>>,
         /// Property [`ForwardConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-forwardconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub forward_config: Option<crate::Value<ForwardConfig>>,
+        pub forward_config: Option<::Value<ForwardConfig>>,
         /// Property [`Order`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-order).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub order: Option<crate::Value<u32>>,
+        pub order: Option<::Value<u32>>,
         /// Property [`RedirectConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-redirectconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub redirect_config: Option<crate::Value<RedirectConfig>>,
+        pub redirect_config: Option<::Value<RedirectConfig>>,
         /// Property [`TargetGroupArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-targetgrouparn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_group_arn: Option<crate::Value<String>>,
+        pub target_group_arn: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Action {
+    impl ::codec::SerializeValue for Action {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authenticate_cognito_config) = self.authenticate_cognito_config {
@@ -1048,7 +1048,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for Action {
+    impl ::codec::DeserializeValue for Action {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Action, D::Error> {
             struct Visitor;
 
@@ -1064,16 +1064,16 @@ pub mod listener {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut authenticate_cognito_config: Option<
-                        crate::Value<AuthenticateCognitoConfig>,
+                        ::Value<AuthenticateCognitoConfig>,
                     > = None;
-                    let mut authenticate_oidc_config: Option<crate::Value<AuthenticateOidcConfig>> =
+                    let mut authenticate_oidc_config: Option<::Value<AuthenticateOidcConfig>> =
                         None;
-                    let mut fixed_response_config: Option<crate::Value<FixedResponseConfig>> = None;
-                    let mut forward_config: Option<crate::Value<ForwardConfig>> = None;
-                    let mut order: Option<crate::Value<u32>> = None;
-                    let mut redirect_config: Option<crate::Value<RedirectConfig>> = None;
-                    let mut target_group_arn: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut fixed_response_config: Option<::Value<FixedResponseConfig>> = None;
+                    let mut forward_config: Option<::Value<ForwardConfig>> = None;
+                    let mut order: Option<::Value<u32>> = None;
+                    let mut redirect_config: Option<::Value<RedirectConfig>> = None;
+                    let mut target_group_arn: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1134,45 +1134,45 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authentication_request_extra_params: Option<crate::ValueMap<String>>,
+        pub authentication_request_extra_params: Option<::ValueMap<String>>,
         /// Property [`OnUnauthenticatedRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-onunauthenticatedrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_unauthenticated_request: Option<crate::Value<String>>,
+        pub on_unauthenticated_request: Option<::Value<String>>,
         /// Property [`Scope`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-scope).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scope: Option<crate::Value<String>>,
+        pub scope: Option<::Value<String>>,
         /// Property [`SessionCookieName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-sessioncookiename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_cookie_name: Option<crate::Value<String>>,
+        pub session_cookie_name: Option<::Value<String>>,
         /// Property [`SessionTimeout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-sessiontimeout).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_timeout: Option<crate::Value<String>>,
+        pub session_timeout: Option<::Value<String>>,
         /// Property [`UserPoolArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-userpoolarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_pool_arn: crate::Value<String>,
+        pub user_pool_arn: ::Value<String>,
         /// Property [`UserPoolClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-userpoolclientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_pool_client_id: crate::Value<String>,
+        pub user_pool_client_id: ::Value<String>,
         /// Property [`UserPoolDomain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-userpooldomain).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_pool_domain: crate::Value<String>,
+        pub user_pool_domain: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for AuthenticateCognitoConfig {
+    impl ::codec::SerializeValue for AuthenticateCognitoConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authentication_request_extra_params) =
@@ -1227,7 +1227,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for AuthenticateCognitoConfig {
+    impl ::codec::DeserializeValue for AuthenticateCognitoConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AuthenticateCognitoConfig, D::Error> {
@@ -1244,14 +1244,14 @@ pub mod listener {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut authentication_request_extra_params: Option<crate::ValueMap<String>> = None;
-                    let mut on_unauthenticated_request: Option<crate::Value<String>> = None;
-                    let mut scope: Option<crate::Value<String>> = None;
-                    let mut session_cookie_name: Option<crate::Value<String>> = None;
-                    let mut session_timeout: Option<crate::Value<String>> = None;
-                    let mut user_pool_arn: Option<crate::Value<String>> = None;
-                    let mut user_pool_client_id: Option<crate::Value<String>> = None;
-                    let mut user_pool_domain: Option<crate::Value<String>> = None;
+                    let mut authentication_request_extra_params: Option<::ValueMap<String>> = None;
+                    let mut on_unauthenticated_request: Option<::Value<String>> = None;
+                    let mut scope: Option<::Value<String>> = None;
+                    let mut session_cookie_name: Option<::Value<String>> = None;
+                    let mut session_timeout: Option<::Value<String>> = None;
+                    let mut user_pool_arn: Option<::Value<String>> = None;
+                    let mut user_pool_client_id: Option<::Value<String>> = None;
+                    let mut user_pool_domain: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1314,60 +1314,60 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authentication_request_extra_params: Option<crate::ValueMap<String>>,
+        pub authentication_request_extra_params: Option<::ValueMap<String>>,
         /// Property [`AuthorizationEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-authorizationendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authorization_endpoint: crate::Value<String>,
+        pub authorization_endpoint: ::Value<String>,
         /// Property [`ClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-clientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_id: crate::Value<String>,
+        pub client_id: ::Value<String>,
         /// Property [`ClientSecret`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-clientsecret).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_secret: crate::Value<String>,
+        pub client_secret: ::Value<String>,
         /// Property [`Issuer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-issuer).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub issuer: crate::Value<String>,
+        pub issuer: ::Value<String>,
         /// Property [`OnUnauthenticatedRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-onunauthenticatedrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_unauthenticated_request: Option<crate::Value<String>>,
+        pub on_unauthenticated_request: Option<::Value<String>>,
         /// Property [`Scope`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-scope).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scope: Option<crate::Value<String>>,
+        pub scope: Option<::Value<String>>,
         /// Property [`SessionCookieName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-sessioncookiename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_cookie_name: Option<crate::Value<String>>,
+        pub session_cookie_name: Option<::Value<String>>,
         /// Property [`SessionTimeout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-sessiontimeout).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_timeout: Option<crate::Value<String>>,
+        pub session_timeout: Option<::Value<String>>,
         /// Property [`TokenEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-tokenendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub token_endpoint: crate::Value<String>,
+        pub token_endpoint: ::Value<String>,
         /// Property [`UserInfoEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-userinfoendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_info_endpoint: crate::Value<String>,
+        pub user_info_endpoint: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for AuthenticateOidcConfig {
+    impl ::codec::SerializeValue for AuthenticateOidcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authentication_request_extra_params) =
@@ -1429,7 +1429,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for AuthenticateOidcConfig {
+    impl ::codec::DeserializeValue for AuthenticateOidcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AuthenticateOidcConfig, D::Error> {
@@ -1446,17 +1446,17 @@ pub mod listener {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut authentication_request_extra_params: Option<crate::ValueMap<String>> = None;
-                    let mut authorization_endpoint: Option<crate::Value<String>> = None;
-                    let mut client_id: Option<crate::Value<String>> = None;
-                    let mut client_secret: Option<crate::Value<String>> = None;
-                    let mut issuer: Option<crate::Value<String>> = None;
-                    let mut on_unauthenticated_request: Option<crate::Value<String>> = None;
-                    let mut scope: Option<crate::Value<String>> = None;
-                    let mut session_cookie_name: Option<crate::Value<String>> = None;
-                    let mut session_timeout: Option<crate::Value<String>> = None;
-                    let mut token_endpoint: Option<crate::Value<String>> = None;
-                    let mut user_info_endpoint: Option<crate::Value<String>> = None;
+                    let mut authentication_request_extra_params: Option<::ValueMap<String>> = None;
+                    let mut authorization_endpoint: Option<::Value<String>> = None;
+                    let mut client_id: Option<::Value<String>> = None;
+                    let mut client_secret: Option<::Value<String>> = None;
+                    let mut issuer: Option<::Value<String>> = None;
+                    let mut on_unauthenticated_request: Option<::Value<String>> = None;
+                    let mut scope: Option<::Value<String>> = None;
+                    let mut session_cookie_name: Option<::Value<String>> = None;
+                    let mut session_timeout: Option<::Value<String>> = None;
+                    let mut token_endpoint: Option<::Value<String>> = None;
+                    let mut user_info_endpoint: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1534,10 +1534,10 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub certificate_arn: Option<crate::Value<String>>,
+        pub certificate_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Certificate {
+    impl ::codec::SerializeValue for Certificate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref certificate_arn) = self.certificate_arn {
@@ -1551,7 +1551,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for Certificate {
+    impl ::codec::DeserializeValue for Certificate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Certificate, D::Error> {
             struct Visitor;
 
@@ -1566,7 +1566,7 @@ pub mod listener {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut certificate_arn: Option<crate::Value<String>> = None;
+                    let mut certificate_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1596,20 +1596,20 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub content_type: Option<crate::Value<String>>,
+        pub content_type: Option<::Value<String>>,
         /// Property [`MessageBody`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listener-fixedresponseconfig-messagebody).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_body: Option<crate::Value<String>>,
+        pub message_body: Option<::Value<String>>,
         /// Property [`StatusCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listener-fixedresponseconfig-statuscode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status_code: crate::Value<String>,
+        pub status_code: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for FixedResponseConfig {
+    impl ::codec::SerializeValue for FixedResponseConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref content_type) = self.content_type {
@@ -1623,7 +1623,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for FixedResponseConfig {
+    impl ::codec::DeserializeValue for FixedResponseConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FixedResponseConfig, D::Error> {
@@ -1640,9 +1640,9 @@ pub mod listener {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut content_type: Option<crate::Value<String>> = None;
-                    let mut message_body: Option<crate::Value<String>> = None;
-                    let mut status_code: Option<crate::Value<String>> = None;
+                    let mut content_type: Option<::Value<String>> = None;
+                    let mut message_body: Option<::Value<String>> = None;
+                    let mut status_code: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1681,15 +1681,15 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_group_stickiness_config: Option<crate::Value<TargetGroupStickinessConfig>>,
+        pub target_group_stickiness_config: Option<::Value<TargetGroupStickinessConfig>>,
         /// Property [`TargetGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-forwardconfig.html#cfn-elasticloadbalancingv2-listener-forwardconfig-targetgroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_groups: Option<crate::ValueList<TargetGroupTuple>>,
+        pub target_groups: Option<::ValueList<TargetGroupTuple>>,
     }
 
-    impl crate::codec::SerializeValue for ForwardConfig {
+    impl ::codec::SerializeValue for ForwardConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref target_group_stickiness_config) = self.target_group_stickiness_config {
@@ -1710,7 +1710,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for ForwardConfig {
+    impl ::codec::DeserializeValue for ForwardConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ForwardConfig, D::Error> {
@@ -1728,9 +1728,9 @@ pub mod listener {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut target_group_stickiness_config: Option<
-                        crate::Value<TargetGroupStickinessConfig>,
+                        ::Value<TargetGroupStickinessConfig>,
                     > = None;
-                    let mut target_groups: Option<crate::ValueList<TargetGroupTuple>> = None;
+                    let mut target_groups: Option<::ValueList<TargetGroupTuple>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1765,35 +1765,35 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: Option<crate::Value<String>>,
+        pub host: Option<::Value<String>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html#cfn-elasticloadbalancingv2-listener-redirectconfig-path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path: Option<crate::Value<String>>,
+        pub path: Option<::Value<String>>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html#cfn-elasticloadbalancingv2-listener-redirectconfig-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: Option<crate::Value<String>>,
+        pub port: Option<::Value<String>>,
         /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html#cfn-elasticloadbalancingv2-listener-redirectconfig-protocol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub protocol: Option<crate::Value<String>>,
+        pub protocol: Option<::Value<String>>,
         /// Property [`Query`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html#cfn-elasticloadbalancingv2-listener-redirectconfig-query).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query: Option<crate::Value<String>>,
+        pub query: Option<::Value<String>>,
         /// Property [`StatusCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html#cfn-elasticloadbalancingv2-listener-redirectconfig-statuscode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status_code: crate::Value<String>,
+        pub status_code: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RedirectConfig {
+    impl ::codec::SerializeValue for RedirectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref host) = self.host {
@@ -1816,7 +1816,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for RedirectConfig {
+    impl ::codec::DeserializeValue for RedirectConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RedirectConfig, D::Error> {
@@ -1833,12 +1833,12 @@ pub mod listener {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut path: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<String>> = None;
-                    let mut protocol: Option<crate::Value<String>> = None;
-                    let mut query: Option<crate::Value<String>> = None;
-                    let mut status_code: Option<crate::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut path: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<String>> = None;
+                    let mut protocol: Option<::Value<String>> = None;
+                    let mut query: Option<::Value<String>> = None;
+                    let mut status_code: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1889,15 +1889,15 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration_seconds: Option<crate::Value<u32>>,
+        pub duration_seconds: Option<::Value<u32>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-targetgroupstickinessconfig.html#cfn-elasticloadbalancingv2-listener-targetgroupstickinessconfig-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<crate::Value<bool>>,
+        pub enabled: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for TargetGroupStickinessConfig {
+    impl ::codec::SerializeValue for TargetGroupStickinessConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration_seconds) = self.duration_seconds {
@@ -1914,7 +1914,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetGroupStickinessConfig {
+    impl ::codec::DeserializeValue for TargetGroupStickinessConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetGroupStickinessConfig, D::Error> {
@@ -1931,8 +1931,8 @@ pub mod listener {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration_seconds: Option<crate::Value<u32>> = None;
-                    let mut enabled: Option<crate::Value<bool>> = None;
+                    let mut duration_seconds: Option<::Value<u32>> = None;
+                    let mut enabled: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1966,15 +1966,15 @@ pub mod listener {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_group_arn: Option<crate::Value<String>>,
+        pub target_group_arn: Option<::Value<String>>,
         /// Property [`Weight`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-targetgrouptuple.html#cfn-elasticloadbalancingv2-listener-targetgrouptuple-weight).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weight: Option<crate::Value<u32>>,
+        pub weight: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for TargetGroupTuple {
+    impl ::codec::SerializeValue for TargetGroupTuple {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref target_group_arn) = self.target_group_arn {
@@ -1991,7 +1991,7 @@ pub mod listener {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetGroupTuple {
+    impl ::codec::DeserializeValue for TargetGroupTuple {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetGroupTuple, D::Error> {
@@ -2008,8 +2008,8 @@ pub mod listener {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut target_group_arn: Option<crate::Value<String>> = None;
-                    let mut weight: Option<crate::Value<u32>> = None;
+                    let mut target_group_arn: Option<::Value<String>> = None;
+                    let mut weight: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2047,10 +2047,10 @@ pub mod listener_certificate {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub certificate_arn: Option<crate::Value<String>>,
+        pub certificate_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Certificate {
+    impl ::codec::SerializeValue for Certificate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref certificate_arn) = self.certificate_arn {
@@ -2064,7 +2064,7 @@ pub mod listener_certificate {
         }
     }
 
-    impl crate::codec::DeserializeValue for Certificate {
+    impl ::codec::DeserializeValue for Certificate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Certificate, D::Error> {
             struct Visitor;
 
@@ -2079,7 +2079,7 @@ pub mod listener_certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut certificate_arn: Option<crate::Value<String>> = None;
+                    let mut certificate_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2113,45 +2113,45 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authenticate_cognito_config: Option<crate::Value<AuthenticateCognitoConfig>>,
+        pub authenticate_cognito_config: Option<::Value<AuthenticateCognitoConfig>>,
         /// Property [`AuthenticateOidcConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-authenticateoidcconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authenticate_oidc_config: Option<crate::Value<AuthenticateOidcConfig>>,
+        pub authenticate_oidc_config: Option<::Value<AuthenticateOidcConfig>>,
         /// Property [`FixedResponseConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-fixedresponseconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fixed_response_config: Option<crate::Value<FixedResponseConfig>>,
+        pub fixed_response_config: Option<::Value<FixedResponseConfig>>,
         /// Property [`ForwardConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-forwardconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub forward_config: Option<crate::Value<ForwardConfig>>,
+        pub forward_config: Option<::Value<ForwardConfig>>,
         /// Property [`Order`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-order).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub order: Option<crate::Value<u32>>,
+        pub order: Option<::Value<u32>>,
         /// Property [`RedirectConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-redirectconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub redirect_config: Option<crate::Value<RedirectConfig>>,
+        pub redirect_config: Option<::Value<RedirectConfig>>,
         /// Property [`TargetGroupArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-targetgrouparn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_group_arn: Option<crate::Value<String>>,
+        pub target_group_arn: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for Action {
+    impl ::codec::SerializeValue for Action {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authenticate_cognito_config) = self.authenticate_cognito_config {
@@ -2204,7 +2204,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for Action {
+    impl ::codec::DeserializeValue for Action {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Action, D::Error> {
             struct Visitor;
 
@@ -2220,16 +2220,16 @@ pub mod listener_rule {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut authenticate_cognito_config: Option<
-                        crate::Value<AuthenticateCognitoConfig>,
+                        ::Value<AuthenticateCognitoConfig>,
                     > = None;
-                    let mut authenticate_oidc_config: Option<crate::Value<AuthenticateOidcConfig>> =
+                    let mut authenticate_oidc_config: Option<::Value<AuthenticateOidcConfig>> =
                         None;
-                    let mut fixed_response_config: Option<crate::Value<FixedResponseConfig>> = None;
-                    let mut forward_config: Option<crate::Value<ForwardConfig>> = None;
-                    let mut order: Option<crate::Value<u32>> = None;
-                    let mut redirect_config: Option<crate::Value<RedirectConfig>> = None;
-                    let mut target_group_arn: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut fixed_response_config: Option<::Value<FixedResponseConfig>> = None;
+                    let mut forward_config: Option<::Value<ForwardConfig>> = None;
+                    let mut order: Option<::Value<u32>> = None;
+                    let mut redirect_config: Option<::Value<RedirectConfig>> = None;
+                    let mut target_group_arn: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2290,45 +2290,45 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authentication_request_extra_params: Option<crate::ValueMap<String>>,
+        pub authentication_request_extra_params: Option<::ValueMap<String>>,
         /// Property [`OnUnauthenticatedRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-onunauthenticatedrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_unauthenticated_request: Option<crate::Value<String>>,
+        pub on_unauthenticated_request: Option<::Value<String>>,
         /// Property [`Scope`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-scope).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scope: Option<crate::Value<String>>,
+        pub scope: Option<::Value<String>>,
         /// Property [`SessionCookieName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-sessioncookiename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_cookie_name: Option<crate::Value<String>>,
+        pub session_cookie_name: Option<::Value<String>>,
         /// Property [`SessionTimeout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-sessiontimeout).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_timeout: Option<crate::Value<u32>>,
+        pub session_timeout: Option<::Value<u32>>,
         /// Property [`UserPoolArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-userpoolarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_pool_arn: crate::Value<String>,
+        pub user_pool_arn: ::Value<String>,
         /// Property [`UserPoolClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-userpoolclientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_pool_client_id: crate::Value<String>,
+        pub user_pool_client_id: ::Value<String>,
         /// Property [`UserPoolDomain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-userpooldomain).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_pool_domain: crate::Value<String>,
+        pub user_pool_domain: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for AuthenticateCognitoConfig {
+    impl ::codec::SerializeValue for AuthenticateCognitoConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authentication_request_extra_params) =
@@ -2383,7 +2383,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for AuthenticateCognitoConfig {
+    impl ::codec::DeserializeValue for AuthenticateCognitoConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AuthenticateCognitoConfig, D::Error> {
@@ -2400,14 +2400,14 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut authentication_request_extra_params: Option<crate::ValueMap<String>> = None;
-                    let mut on_unauthenticated_request: Option<crate::Value<String>> = None;
-                    let mut scope: Option<crate::Value<String>> = None;
-                    let mut session_cookie_name: Option<crate::Value<String>> = None;
-                    let mut session_timeout: Option<crate::Value<u32>> = None;
-                    let mut user_pool_arn: Option<crate::Value<String>> = None;
-                    let mut user_pool_client_id: Option<crate::Value<String>> = None;
-                    let mut user_pool_domain: Option<crate::Value<String>> = None;
+                    let mut authentication_request_extra_params: Option<::ValueMap<String>> = None;
+                    let mut on_unauthenticated_request: Option<::Value<String>> = None;
+                    let mut scope: Option<::Value<String>> = None;
+                    let mut session_cookie_name: Option<::Value<String>> = None;
+                    let mut session_timeout: Option<::Value<u32>> = None;
+                    let mut user_pool_arn: Option<::Value<String>> = None;
+                    let mut user_pool_client_id: Option<::Value<String>> = None;
+                    let mut user_pool_domain: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2470,65 +2470,65 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authentication_request_extra_params: Option<crate::ValueMap<String>>,
+        pub authentication_request_extra_params: Option<::ValueMap<String>>,
         /// Property [`AuthorizationEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-authorizationendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub authorization_endpoint: crate::Value<String>,
+        pub authorization_endpoint: ::Value<String>,
         /// Property [`ClientId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-clientid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_id: crate::Value<String>,
+        pub client_id: ::Value<String>,
         /// Property [`ClientSecret`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-clientsecret).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub client_secret: crate::Value<String>,
+        pub client_secret: ::Value<String>,
         /// Property [`Issuer`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-issuer).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub issuer: crate::Value<String>,
+        pub issuer: ::Value<String>,
         /// Property [`OnUnauthenticatedRequest`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-onunauthenticatedrequest).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_unauthenticated_request: Option<crate::Value<String>>,
+        pub on_unauthenticated_request: Option<::Value<String>>,
         /// Property [`Scope`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-scope).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scope: Option<crate::Value<String>>,
+        pub scope: Option<::Value<String>>,
         /// Property [`SessionCookieName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-sessioncookiename).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_cookie_name: Option<crate::Value<String>>,
+        pub session_cookie_name: Option<::Value<String>>,
         /// Property [`SessionTimeout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-sessiontimeout).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub session_timeout: Option<crate::Value<u32>>,
+        pub session_timeout: Option<::Value<u32>>,
         /// Property [`TokenEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-tokenendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub token_endpoint: crate::Value<String>,
+        pub token_endpoint: ::Value<String>,
         /// Property [`UseExistingClientSecret`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-useexistingclientsecret).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub use_existing_client_secret: Option<crate::Value<bool>>,
+        pub use_existing_client_secret: Option<::Value<bool>>,
         /// Property [`UserInfoEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-userinfoendpoint).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_info_endpoint: crate::Value<String>,
+        pub user_info_endpoint: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for AuthenticateOidcConfig {
+    impl ::codec::SerializeValue for AuthenticateOidcConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref authentication_request_extra_params) =
@@ -2597,7 +2597,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for AuthenticateOidcConfig {
+    impl ::codec::DeserializeValue for AuthenticateOidcConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AuthenticateOidcConfig, D::Error> {
@@ -2614,18 +2614,18 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut authentication_request_extra_params: Option<crate::ValueMap<String>> = None;
-                    let mut authorization_endpoint: Option<crate::Value<String>> = None;
-                    let mut client_id: Option<crate::Value<String>> = None;
-                    let mut client_secret: Option<crate::Value<String>> = None;
-                    let mut issuer: Option<crate::Value<String>> = None;
-                    let mut on_unauthenticated_request: Option<crate::Value<String>> = None;
-                    let mut scope: Option<crate::Value<String>> = None;
-                    let mut session_cookie_name: Option<crate::Value<String>> = None;
-                    let mut session_timeout: Option<crate::Value<u32>> = None;
-                    let mut token_endpoint: Option<crate::Value<String>> = None;
-                    let mut use_existing_client_secret: Option<crate::Value<bool>> = None;
-                    let mut user_info_endpoint: Option<crate::Value<String>> = None;
+                    let mut authentication_request_extra_params: Option<::ValueMap<String>> = None;
+                    let mut authorization_endpoint: Option<::Value<String>> = None;
+                    let mut client_id: Option<::Value<String>> = None;
+                    let mut client_secret: Option<::Value<String>> = None;
+                    let mut issuer: Option<::Value<String>> = None;
+                    let mut on_unauthenticated_request: Option<::Value<String>> = None;
+                    let mut scope: Option<::Value<String>> = None;
+                    let mut session_cookie_name: Option<::Value<String>> = None;
+                    let mut session_timeout: Option<::Value<u32>> = None;
+                    let mut token_endpoint: Option<::Value<String>> = None;
+                    let mut use_existing_client_secret: Option<::Value<bool>> = None;
+                    let mut user_info_endpoint: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2708,20 +2708,20 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub content_type: Option<crate::Value<String>>,
+        pub content_type: Option<::Value<String>>,
         /// Property [`MessageBody`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listenerrule-fixedresponseconfig-messagebody).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message_body: Option<crate::Value<String>>,
+        pub message_body: Option<::Value<String>>,
         /// Property [`StatusCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listenerrule-fixedresponseconfig-statuscode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status_code: crate::Value<String>,
+        pub status_code: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for FixedResponseConfig {
+    impl ::codec::SerializeValue for FixedResponseConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref content_type) = self.content_type {
@@ -2735,7 +2735,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for FixedResponseConfig {
+    impl ::codec::DeserializeValue for FixedResponseConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FixedResponseConfig, D::Error> {
@@ -2752,9 +2752,9 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut content_type: Option<crate::Value<String>> = None;
-                    let mut message_body: Option<crate::Value<String>> = None;
-                    let mut status_code: Option<crate::Value<String>> = None;
+                    let mut content_type: Option<::Value<String>> = None;
+                    let mut message_body: Option<::Value<String>> = None;
+                    let mut status_code: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2793,15 +2793,15 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_group_stickiness_config: Option<crate::Value<TargetGroupStickinessConfig>>,
+        pub target_group_stickiness_config: Option<::Value<TargetGroupStickinessConfig>>,
         /// Property [`TargetGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-forwardconfig.html#cfn-elasticloadbalancingv2-listenerrule-forwardconfig-targetgroups).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_groups: Option<crate::ValueList<TargetGroupTuple>>,
+        pub target_groups: Option<::ValueList<TargetGroupTuple>>,
     }
 
-    impl crate::codec::SerializeValue for ForwardConfig {
+    impl ::codec::SerializeValue for ForwardConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref target_group_stickiness_config) = self.target_group_stickiness_config {
@@ -2822,7 +2822,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for ForwardConfig {
+    impl ::codec::DeserializeValue for ForwardConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ForwardConfig, D::Error> {
@@ -2840,9 +2840,9 @@ pub mod listener_rule {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut target_group_stickiness_config: Option<
-                        crate::Value<TargetGroupStickinessConfig>,
+                        ::Value<TargetGroupStickinessConfig>,
                     > = None;
-                    let mut target_groups: Option<crate::ValueList<TargetGroupTuple>> = None;
+                    let mut target_groups: Option<::ValueList<TargetGroupTuple>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2877,10 +2877,10 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<crate::ValueList<String>>,
+        pub values: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for HostHeaderConfig {
+    impl ::codec::SerializeValue for HostHeaderConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref values) = self.values {
@@ -2890,7 +2890,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for HostHeaderConfig {
+    impl ::codec::DeserializeValue for HostHeaderConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HostHeaderConfig, D::Error> {
@@ -2907,7 +2907,7 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2935,15 +2935,15 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_header_name: Option<crate::Value<String>>,
+        pub http_header_name: Option<::Value<String>>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httpheaderconfig.html#cfn-elasticloadbalancingv2-listenerrule-httpheaderconfig-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<crate::ValueList<String>>,
+        pub values: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for HttpHeaderConfig {
+    impl ::codec::SerializeValue for HttpHeaderConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref http_header_name) = self.http_header_name {
@@ -2960,7 +2960,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for HttpHeaderConfig {
+    impl ::codec::DeserializeValue for HttpHeaderConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HttpHeaderConfig, D::Error> {
@@ -2977,8 +2977,8 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut http_header_name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut http_header_name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3012,10 +3012,10 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<crate::ValueList<String>>,
+        pub values: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for HttpRequestMethodConfig {
+    impl ::codec::SerializeValue for HttpRequestMethodConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref values) = self.values {
@@ -3025,7 +3025,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for HttpRequestMethodConfig {
+    impl ::codec::DeserializeValue for HttpRequestMethodConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HttpRequestMethodConfig, D::Error> {
@@ -3042,7 +3042,7 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3070,10 +3070,10 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<crate::ValueList<String>>,
+        pub values: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for PathPatternConfig {
+    impl ::codec::SerializeValue for PathPatternConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref values) = self.values {
@@ -3083,7 +3083,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for PathPatternConfig {
+    impl ::codec::DeserializeValue for PathPatternConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PathPatternConfig, D::Error> {
@@ -3100,7 +3100,7 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3128,10 +3128,10 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<crate::ValueList<QueryStringKeyValue>>,
+        pub values: Option<::ValueList<QueryStringKeyValue>>,
     }
 
-    impl crate::codec::SerializeValue for QueryStringConfig {
+    impl ::codec::SerializeValue for QueryStringConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref values) = self.values {
@@ -3141,7 +3141,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for QueryStringConfig {
+    impl ::codec::DeserializeValue for QueryStringConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<QueryStringConfig, D::Error> {
@@ -3158,7 +3158,7 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut values: Option<crate::ValueList<QueryStringKeyValue>> = None;
+                    let mut values: Option<::ValueList<QueryStringKeyValue>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3186,15 +3186,15 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<crate::Value<String>>,
+        pub key: Option<::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringkeyvalue.html#cfn-elasticloadbalancingv2-listenerrule-querystringkeyvalue-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<crate::Value<String>>,
+        pub value: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for QueryStringKeyValue {
+    impl ::codec::SerializeValue for QueryStringKeyValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key) = self.key {
@@ -3207,7 +3207,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for QueryStringKeyValue {
+    impl ::codec::DeserializeValue for QueryStringKeyValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<QueryStringKeyValue, D::Error> {
@@ -3224,8 +3224,8 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3259,35 +3259,35 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: Option<crate::Value<String>>,
+        pub host: Option<::Value<String>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-redirectconfig.html#cfn-elasticloadbalancingv2-listenerrule-redirectconfig-path).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path: Option<crate::Value<String>>,
+        pub path: Option<::Value<String>>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-redirectconfig.html#cfn-elasticloadbalancingv2-listenerrule-redirectconfig-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: Option<crate::Value<String>>,
+        pub port: Option<::Value<String>>,
         /// Property [`Protocol`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-redirectconfig.html#cfn-elasticloadbalancingv2-listenerrule-redirectconfig-protocol).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub protocol: Option<crate::Value<String>>,
+        pub protocol: Option<::Value<String>>,
         /// Property [`Query`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-redirectconfig.html#cfn-elasticloadbalancingv2-listenerrule-redirectconfig-query).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query: Option<crate::Value<String>>,
+        pub query: Option<::Value<String>>,
         /// Property [`StatusCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-redirectconfig.html#cfn-elasticloadbalancingv2-listenerrule-redirectconfig-statuscode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status_code: crate::Value<String>,
+        pub status_code: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RedirectConfig {
+    impl ::codec::SerializeValue for RedirectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref host) = self.host {
@@ -3310,7 +3310,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for RedirectConfig {
+    impl ::codec::DeserializeValue for RedirectConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RedirectConfig, D::Error> {
@@ -3327,12 +3327,12 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut path: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<String>> = None;
-                    let mut protocol: Option<crate::Value<String>> = None;
-                    let mut query: Option<crate::Value<String>> = None;
-                    let mut status_code: Option<crate::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut path: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<String>> = None;
+                    let mut protocol: Option<::Value<String>> = None;
+                    let mut query: Option<::Value<String>> = None;
+                    let mut status_code: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3383,45 +3383,45 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub field: Option<crate::Value<String>>,
+        pub field: Option<::Value<String>>,
         /// Property [`HostHeaderConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-hostheaderconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host_header_config: Option<crate::Value<HostHeaderConfig>>,
+        pub host_header_config: Option<::Value<HostHeaderConfig>>,
         /// Property [`HttpHeaderConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-httpheaderconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_header_config: Option<crate::Value<HttpHeaderConfig>>,
+        pub http_header_config: Option<::Value<HttpHeaderConfig>>,
         /// Property [`HttpRequestMethodConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-httprequestmethodconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_request_method_config: Option<crate::Value<HttpRequestMethodConfig>>,
+        pub http_request_method_config: Option<::Value<HttpRequestMethodConfig>>,
         /// Property [`PathPatternConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-pathpatternconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub path_pattern_config: Option<crate::Value<PathPatternConfig>>,
+        pub path_pattern_config: Option<::Value<PathPatternConfig>>,
         /// Property [`QueryStringConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-querystringconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub query_string_config: Option<crate::Value<QueryStringConfig>>,
+        pub query_string_config: Option<::Value<QueryStringConfig>>,
         /// Property [`SourceIpConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-sourceipconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_ip_config: Option<crate::Value<SourceIpConfig>>,
+        pub source_ip_config: Option<::Value<SourceIpConfig>>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<crate::ValueList<String>>,
+        pub values: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for RuleCondition {
+    impl ::codec::SerializeValue for RuleCondition {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref field) = self.field {
@@ -3476,7 +3476,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for RuleCondition {
+    impl ::codec::DeserializeValue for RuleCondition {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RuleCondition, D::Error> {
@@ -3493,15 +3493,15 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut field: Option<crate::Value<String>> = None;
-                    let mut host_header_config: Option<crate::Value<HostHeaderConfig>> = None;
-                    let mut http_header_config: Option<crate::Value<HttpHeaderConfig>> = None;
-                    let mut http_request_method_config: Option<crate::Value<HttpRequestMethodConfig>> =
+                    let mut field: Option<::Value<String>> = None;
+                    let mut host_header_config: Option<::Value<HostHeaderConfig>> = None;
+                    let mut http_header_config: Option<::Value<HttpHeaderConfig>> = None;
+                    let mut http_request_method_config: Option<::Value<HttpRequestMethodConfig>> =
                         None;
-                    let mut path_pattern_config: Option<crate::Value<PathPatternConfig>> = None;
-                    let mut query_string_config: Option<crate::Value<QueryStringConfig>> = None;
-                    let mut source_ip_config: Option<crate::Value<SourceIpConfig>> = None;
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut path_pattern_config: Option<::Value<PathPatternConfig>> = None;
+                    let mut query_string_config: Option<::Value<QueryStringConfig>> = None;
+                    let mut source_ip_config: Option<::Value<SourceIpConfig>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3560,10 +3560,10 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: Option<crate::ValueList<String>>,
+        pub values: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for SourceIpConfig {
+    impl ::codec::SerializeValue for SourceIpConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref values) = self.values {
@@ -3573,7 +3573,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for SourceIpConfig {
+    impl ::codec::DeserializeValue for SourceIpConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SourceIpConfig, D::Error> {
@@ -3590,7 +3590,7 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3618,15 +3618,15 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub duration_seconds: Option<crate::Value<u32>>,
+        pub duration_seconds: Option<::Value<u32>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig.html#cfn-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<crate::Value<bool>>,
+        pub enabled: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for TargetGroupStickinessConfig {
+    impl ::codec::SerializeValue for TargetGroupStickinessConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref duration_seconds) = self.duration_seconds {
@@ -3643,7 +3643,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetGroupStickinessConfig {
+    impl ::codec::DeserializeValue for TargetGroupStickinessConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetGroupStickinessConfig, D::Error> {
@@ -3660,8 +3660,8 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut duration_seconds: Option<crate::Value<u32>> = None;
-                    let mut enabled: Option<crate::Value<bool>> = None;
+                    let mut duration_seconds: Option<::Value<u32>> = None;
+                    let mut enabled: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3695,15 +3695,15 @@ pub mod listener_rule {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub target_group_arn: Option<crate::Value<String>>,
+        pub target_group_arn: Option<::Value<String>>,
         /// Property [`Weight`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-targetgrouptuple.html#cfn-elasticloadbalancingv2-listenerrule-targetgrouptuple-weight).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub weight: Option<crate::Value<u32>>,
+        pub weight: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for TargetGroupTuple {
+    impl ::codec::SerializeValue for TargetGroupTuple {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref target_group_arn) = self.target_group_arn {
@@ -3720,7 +3720,7 @@ pub mod listener_rule {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetGroupTuple {
+    impl ::codec::DeserializeValue for TargetGroupTuple {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetGroupTuple, D::Error> {
@@ -3737,8 +3737,8 @@ pub mod listener_rule {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut target_group_arn: Option<crate::Value<String>> = None;
-                    let mut weight: Option<crate::Value<u32>> = None;
+                    let mut target_group_arn: Option<::Value<String>> = None;
+                    let mut weight: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3776,15 +3776,15 @@ pub mod load_balancer {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<crate::Value<String>>,
+        pub key: Option<::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<crate::Value<String>>,
+        pub value: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LoadBalancerAttribute {
+    impl ::codec::SerializeValue for LoadBalancerAttribute {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key) = self.key {
@@ -3797,7 +3797,7 @@ pub mod load_balancer {
         }
     }
 
-    impl crate::codec::DeserializeValue for LoadBalancerAttribute {
+    impl ::codec::DeserializeValue for LoadBalancerAttribute {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LoadBalancerAttribute, D::Error> {
@@ -3814,8 +3814,8 @@ pub mod load_balancer {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3849,25 +3849,25 @@ pub mod load_balancer {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub allocation_id: Option<crate::Value<String>>,
+        pub allocation_id: Option<::Value<String>>,
         /// Property [`IPv6Address`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-ipv6address).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub i_pv6_address: Option<crate::Value<String>>,
+        pub i_pv6_address: Option<::Value<String>>,
         /// Property [`PrivateIPv4Address`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-privateipv4address).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub private_i_pv4_address: Option<crate::Value<String>>,
+        pub private_i_pv4_address: Option<::Value<String>>,
         /// Property [`SubnetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-subnetid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub subnet_id: crate::Value<String>,
+        pub subnet_id: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for SubnetMapping {
+    impl ::codec::SerializeValue for SubnetMapping {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref allocation_id) = self.allocation_id {
@@ -3896,7 +3896,7 @@ pub mod load_balancer {
         }
     }
 
-    impl crate::codec::DeserializeValue for SubnetMapping {
+    impl ::codec::DeserializeValue for SubnetMapping {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SubnetMapping, D::Error> {
@@ -3913,10 +3913,10 @@ pub mod load_balancer {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut allocation_id: Option<crate::Value<String>> = None;
-                    let mut i_pv6_address: Option<crate::Value<String>> = None;
-                    let mut private_i_pv4_address: Option<crate::Value<String>> = None;
-                    let mut subnet_id: Option<crate::Value<String>> = None;
+                    let mut allocation_id: Option<::Value<String>> = None;
+                    let mut i_pv6_address: Option<::Value<String>> = None;
+                    let mut private_i_pv4_address: Option<::Value<String>> = None;
+                    let mut subnet_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3964,15 +3964,15 @@ pub mod target_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub grpc_code: Option<crate::Value<String>>,
+        pub grpc_code: Option<::Value<String>>,
         /// Property [`HttpCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-matcher.html#cfn-elasticloadbalancingv2-targetgroup-matcher-httpcode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub http_code: Option<crate::Value<String>>,
+        pub http_code: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Matcher {
+    impl ::codec::SerializeValue for Matcher {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref grpc_code) = self.grpc_code {
@@ -3985,7 +3985,7 @@ pub mod target_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for Matcher {
+    impl ::codec::DeserializeValue for Matcher {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Matcher, D::Error> {
             struct Visitor;
 
@@ -4000,8 +4000,8 @@ pub mod target_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut grpc_code: Option<crate::Value<String>> = None;
-                    let mut http_code: Option<crate::Value<String>> = None;
+                    let mut grpc_code: Option<::Value<String>> = None;
+                    let mut http_code: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4035,20 +4035,20 @@ pub mod target_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub availability_zone: Option<crate::Value<String>>,
+        pub availability_zone: Option<::Value<String>>,
         /// Property [`Id`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-id).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: crate::Value<String>,
+        pub id: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: Option<crate::Value<u32>>,
+        pub port: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for TargetDescription {
+    impl ::codec::SerializeValue for TargetDescription {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref availability_zone) = self.availability_zone {
@@ -4066,7 +4066,7 @@ pub mod target_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetDescription {
+    impl ::codec::DeserializeValue for TargetDescription {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetDescription, D::Error> {
@@ -4083,9 +4083,9 @@ pub mod target_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut availability_zone: Option<crate::Value<String>> = None;
-                    let mut id: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<u32>> = None;
+                    let mut availability_zone: Option<::Value<String>> = None;
+                    let mut id: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4123,15 +4123,15 @@ pub mod target_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<crate::Value<String>>,
+        pub key: Option<::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetgroupattribute.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattribute-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<crate::Value<String>>,
+        pub value: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for TargetGroupAttribute {
+    impl ::codec::SerializeValue for TargetGroupAttribute {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key) = self.key {
@@ -4144,7 +4144,7 @@ pub mod target_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for TargetGroupAttribute {
+    impl ::codec::DeserializeValue for TargetGroupAttribute {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TargetGroupAttribute, D::Error> {
@@ -4161,8 +4161,8 @@ pub mod target_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

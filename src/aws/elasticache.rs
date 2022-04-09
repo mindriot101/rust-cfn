@@ -14,116 +14,116 @@ pub struct CacheClusterProperties {
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub az_mode: Option<crate::Value<String>>,
+    pub az_mode: Option<::Value<String>>,
     /// Property [`AutoMinorVersionUpgrade`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-autominorversionupgrade).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub auto_minor_version_upgrade: Option<crate::Value<bool>>,
+    pub auto_minor_version_upgrade: Option<::Value<bool>>,
     /// Property [`CacheNodeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachenodetype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_node_type: crate::Value<String>,
+    pub cache_node_type: ::Value<String>,
     /// Property [`CacheParameterGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cacheparametergroupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_parameter_group_name: Option<crate::Value<String>>,
+    pub cache_parameter_group_name: Option<::Value<String>>,
     /// Property [`CacheSecurityGroupNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachesecuritygroupnames).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_security_group_names: Option<crate::ValueList<String>>,
+    pub cache_security_group_names: Option<::ValueList<String>>,
     /// Property [`CacheSubnetGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachesubnetgroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cache_subnet_group_name: Option<crate::Value<String>>,
+    pub cache_subnet_group_name: Option<::Value<String>>,
     /// Property [`ClusterName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-clustername).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cluster_name: Option<crate::Value<String>>,
+    pub cluster_name: Option<::Value<String>>,
     /// Property [`Engine`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engine).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub engine: crate::Value<String>,
+    pub engine: ::Value<String>,
     /// Property [`EngineVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engineversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub engine_version: Option<crate::Value<String>>,
+    pub engine_version: Option<::Value<String>>,
     /// Property [`LogDeliveryConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-logdeliveryconfigurations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub log_delivery_configurations:
-        Option<crate::ValueList<self::cache_cluster::LogDeliveryConfigurationRequest>>,
+        Option<::ValueList<self::cache_cluster::LogDeliveryConfigurationRequest>>,
     /// Property [`NotificationTopicArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-notificationtopicarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_topic_arn: Option<crate::Value<String>>,
+    pub notification_topic_arn: Option<::Value<String>>,
     /// Property [`NumCacheNodes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-numcachenodes).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub num_cache_nodes: crate::Value<u32>,
+    pub num_cache_nodes: ::Value<u32>,
     /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-port).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub port: Option<crate::Value<u32>>,
+    pub port: Option<::Value<u32>>,
     /// Property [`PreferredAvailabilityZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredavailabilityzone).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub preferred_availability_zone: Option<crate::Value<String>>,
+    pub preferred_availability_zone: Option<::Value<String>>,
     /// Property [`PreferredAvailabilityZones`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredavailabilityzones).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub preferred_availability_zones: Option<crate::ValueList<String>>,
+    pub preferred_availability_zones: Option<::ValueList<String>>,
     /// Property [`PreferredMaintenanceWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredmaintenancewindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub preferred_maintenance_window: Option<crate::Value<String>>,
+    pub preferred_maintenance_window: Option<::Value<String>>,
     /// Property [`SnapshotArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotarns).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub snapshot_arns: Option<crate::ValueList<String>>,
+    pub snapshot_arns: Option<::ValueList<String>>,
     /// Property [`SnapshotName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub snapshot_name: Option<crate::Value<String>>,
+    pub snapshot_name: Option<::Value<String>>,
     /// Property [`SnapshotRetentionLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotretentionlimit).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_retention_limit: Option<crate::Value<u32>>,
+    pub snapshot_retention_limit: Option<::Value<u32>>,
     /// Property [`SnapshotWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotwindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_window: Option<crate::Value<String>>,
+    pub snapshot_window: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VpcSecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-vpcsecuritygroupids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_security_group_ids: Option<crate::ValueList<String>>,
+    pub vpc_security_group_ids: Option<::ValueList<String>>,
 }
 
 impl ::serde::Serialize for CacheClusterProperties {
@@ -266,30 +266,30 @@ impl<'de> ::serde::Deserialize<'de> for CacheClusterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut az_mode: Option<crate::Value<String>> = None;
-                let mut auto_minor_version_upgrade: Option<crate::Value<bool>> = None;
-                let mut cache_node_type: Option<crate::Value<String>> = None;
-                let mut cache_parameter_group_name: Option<crate::Value<String>> = None;
-                let mut cache_security_group_names: Option<crate::ValueList<String>> = None;
-                let mut cache_subnet_group_name: Option<crate::Value<String>> = None;
-                let mut cluster_name: Option<crate::Value<String>> = None;
-                let mut engine: Option<crate::Value<String>> = None;
-                let mut engine_version: Option<crate::Value<String>> = None;
+                let mut az_mode: Option<::Value<String>> = None;
+                let mut auto_minor_version_upgrade: Option<::Value<bool>> = None;
+                let mut cache_node_type: Option<::Value<String>> = None;
+                let mut cache_parameter_group_name: Option<::Value<String>> = None;
+                let mut cache_security_group_names: Option<::ValueList<String>> = None;
+                let mut cache_subnet_group_name: Option<::Value<String>> = None;
+                let mut cluster_name: Option<::Value<String>> = None;
+                let mut engine: Option<::Value<String>> = None;
+                let mut engine_version: Option<::Value<String>> = None;
                 let mut log_delivery_configurations: Option<
-                    crate::ValueList<self::cache_cluster::LogDeliveryConfigurationRequest>,
+                    ::ValueList<self::cache_cluster::LogDeliveryConfigurationRequest>,
                 > = None;
-                let mut notification_topic_arn: Option<crate::Value<String>> = None;
-                let mut num_cache_nodes: Option<crate::Value<u32>> = None;
-                let mut port: Option<crate::Value<u32>> = None;
-                let mut preferred_availability_zone: Option<crate::Value<String>> = None;
-                let mut preferred_availability_zones: Option<crate::ValueList<String>> = None;
-                let mut preferred_maintenance_window: Option<crate::Value<String>> = None;
-                let mut snapshot_arns: Option<crate::ValueList<String>> = None;
-                let mut snapshot_name: Option<crate::Value<String>> = None;
-                let mut snapshot_retention_limit: Option<crate::Value<u32>> = None;
-                let mut snapshot_window: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut vpc_security_group_ids: Option<crate::ValueList<String>> = None;
+                let mut notification_topic_arn: Option<::Value<String>> = None;
+                let mut num_cache_nodes: Option<::Value<u32>> = None;
+                let mut port: Option<::Value<u32>> = None;
+                let mut preferred_availability_zone: Option<::Value<String>> = None;
+                let mut preferred_availability_zones: Option<::ValueList<String>> = None;
+                let mut preferred_maintenance_window: Option<::Value<String>> = None;
+                let mut snapshot_arns: Option<::ValueList<String>> = None;
+                let mut snapshot_name: Option<::Value<String>> = None;
+                let mut snapshot_retention_limit: Option<::Value<u32>> = None;
+                let mut snapshot_window: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut vpc_security_group_ids: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -404,7 +404,7 @@ impl<'de> ::serde::Deserialize<'de> for CacheClusterProperties {
     }
 }
 
-impl crate::Resource for CacheCluster {
+impl ::Resource for CacheCluster {
     type Properties = CacheClusterProperties;
     const TYPE: &'static str = "AWS::ElastiCache::CacheCluster";
     fn properties(&self) -> &CacheClusterProperties {
@@ -415,7 +415,7 @@ impl crate::Resource for CacheCluster {
     }
 }
 
-impl crate::private::Sealed for CacheCluster {}
+impl ::private::Sealed for CacheCluster {}
 
 impl From<CacheClusterProperties> for CacheCluster {
     fn from(properties: CacheClusterProperties) -> CacheCluster {
@@ -436,48 +436,48 @@ pub struct GlobalReplicationGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub automatic_failover_enabled: Option<crate::Value<bool>>,
+    pub automatic_failover_enabled: Option<::Value<bool>>,
     /// Property [`CacheNodeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-cachenodetype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_node_type: Option<crate::Value<String>>,
+    pub cache_node_type: Option<::Value<String>>,
     /// Property [`CacheParameterGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-cacheparametergroupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_parameter_group_name: Option<crate::Value<String>>,
+    pub cache_parameter_group_name: Option<::Value<String>>,
     /// Property [`EngineVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-engineversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub engine_version: Option<crate::Value<String>>,
+    pub engine_version: Option<::Value<String>>,
     /// Property [`GlobalNodeGroupCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalnodegroupcount).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub global_node_group_count: Option<crate::Value<u32>>,
+    pub global_node_group_count: Option<::Value<u32>>,
     /// Property [`GlobalReplicationGroupDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupdescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub global_replication_group_description: Option<crate::Value<String>>,
+    pub global_replication_group_description: Option<::Value<String>>,
     /// Property [`GlobalReplicationGroupIdSuffix`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupidsuffix).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub global_replication_group_id_suffix: Option<crate::Value<String>>,
+    pub global_replication_group_id_suffix: Option<::Value<String>>,
     /// Property [`Members`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-members).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub members: crate::ValueList<self::global_replication_group::GlobalReplicationGroupMember>,
+    pub members: ::ValueList<self::global_replication_group::GlobalReplicationGroupMember>,
     /// Property [`RegionalConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-regionalconfigurations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub regional_configurations:
-        Option<crate::ValueList<self::global_replication_group::RegionalConfiguration>>,
+        Option<::ValueList<self::global_replication_group::RegionalConfiguration>>,
 }
 
 impl ::serde::Serialize for GlobalReplicationGroupProperties {
@@ -561,18 +561,18 @@ impl<'de> ::serde::Deserialize<'de> for GlobalReplicationGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut automatic_failover_enabled: Option<crate::Value<bool>> = None;
-                let mut cache_node_type: Option<crate::Value<String>> = None;
-                let mut cache_parameter_group_name: Option<crate::Value<String>> = None;
-                let mut engine_version: Option<crate::Value<String>> = None;
-                let mut global_node_group_count: Option<crate::Value<u32>> = None;
-                let mut global_replication_group_description: Option<crate::Value<String>> = None;
-                let mut global_replication_group_id_suffix: Option<crate::Value<String>> = None;
+                let mut automatic_failover_enabled: Option<::Value<bool>> = None;
+                let mut cache_node_type: Option<::Value<String>> = None;
+                let mut cache_parameter_group_name: Option<::Value<String>> = None;
+                let mut engine_version: Option<::Value<String>> = None;
+                let mut global_node_group_count: Option<::Value<u32>> = None;
+                let mut global_replication_group_description: Option<::Value<String>> = None;
+                let mut global_replication_group_id_suffix: Option<::Value<String>> = None;
                 let mut members: Option<
-                    crate::ValueList<self::global_replication_group::GlobalReplicationGroupMember>,
+                    ::ValueList<self::global_replication_group::GlobalReplicationGroupMember>,
                 > = None;
                 let mut regional_configurations: Option<
-                    crate::ValueList<self::global_replication_group::RegionalConfiguration>,
+                    ::ValueList<self::global_replication_group::RegionalConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -630,7 +630,7 @@ impl<'de> ::serde::Deserialize<'de> for GlobalReplicationGroupProperties {
     }
 }
 
-impl crate::Resource for GlobalReplicationGroup {
+impl ::Resource for GlobalReplicationGroup {
     type Properties = GlobalReplicationGroupProperties;
     const TYPE: &'static str = "AWS::ElastiCache::GlobalReplicationGroup";
     fn properties(&self) -> &GlobalReplicationGroupProperties {
@@ -641,7 +641,7 @@ impl crate::Resource for GlobalReplicationGroup {
     }
 }
 
-impl crate::private::Sealed for GlobalReplicationGroup {}
+impl ::private::Sealed for GlobalReplicationGroup {}
 
 impl From<GlobalReplicationGroupProperties> for GlobalReplicationGroup {
     fn from(properties: GlobalReplicationGroupProperties) -> GlobalReplicationGroup {
@@ -662,22 +662,22 @@ pub struct ParameterGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cache_parameter_group_family: crate::Value<String>,
+    pub cache_parameter_group_family: ::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`Properties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-properties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub properties: Option<crate::ValueMap<String>>,
+    pub properties: Option<::ValueMap<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ParameterGroupProperties {
@@ -716,10 +716,10 @@ impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cache_parameter_group_family: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut properties: Option<crate::ValueMap<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut cache_parameter_group_family: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut properties: Option<::ValueMap<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -756,7 +756,7 @@ impl<'de> ::serde::Deserialize<'de> for ParameterGroupProperties {
     }
 }
 
-impl crate::Resource for ParameterGroup {
+impl ::Resource for ParameterGroup {
     type Properties = ParameterGroupProperties;
     const TYPE: &'static str = "AWS::ElastiCache::ParameterGroup";
     fn properties(&self) -> &ParameterGroupProperties {
@@ -767,7 +767,7 @@ impl crate::Resource for ParameterGroup {
     }
 }
 
-impl crate::private::Sealed for ParameterGroup {}
+impl ::private::Sealed for ParameterGroup {}
 
 impl From<ParameterGroupProperties> for ParameterGroup {
     fn from(properties: ParameterGroupProperties) -> ParameterGroup {
@@ -788,182 +788,182 @@ pub struct ReplicationGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub at_rest_encryption_enabled: Option<crate::Value<bool>>,
+    pub at_rest_encryption_enabled: Option<::Value<bool>>,
     /// Property [`AuthToken`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-authtoken).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub auth_token: Option<crate::Value<String>>,
+    pub auth_token: Option<::Value<String>>,
     /// Property [`AutoMinorVersionUpgrade`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-autominorversionupgrade).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub auto_minor_version_upgrade: Option<crate::Value<bool>>,
+    pub auto_minor_version_upgrade: Option<::Value<bool>>,
     /// Property [`AutomaticFailoverEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-automaticfailoverenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub automatic_failover_enabled: Option<crate::Value<bool>>,
+    pub automatic_failover_enabled: Option<::Value<bool>>,
     /// Property [`CacheNodeType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachenodetype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_node_type: Option<crate::Value<String>>,
+    pub cache_node_type: Option<::Value<String>>,
     /// Property [`CacheParameterGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cacheparametergroupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_parameter_group_name: Option<crate::Value<String>>,
+    pub cache_parameter_group_name: Option<::Value<String>>,
     /// Property [`CacheSecurityGroupNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachesecuritygroupnames).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_security_group_names: Option<crate::ValueList<String>>,
+    pub cache_security_group_names: Option<::ValueList<String>>,
     /// Property [`CacheSubnetGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachesubnetgroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cache_subnet_group_name: Option<crate::Value<String>>,
+    pub cache_subnet_group_name: Option<::Value<String>>,
     /// Property [`DataTieringEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-datatieringenabled).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_tiering_enabled: Option<crate::Value<bool>>,
+    pub data_tiering_enabled: Option<::Value<bool>>,
     /// Property [`Engine`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-engine).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub engine: Option<crate::Value<String>>,
+    pub engine: Option<::Value<String>>,
     /// Property [`EngineVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-engineversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub engine_version: Option<crate::Value<String>>,
+    pub engine_version: Option<::Value<String>>,
     /// Property [`GlobalReplicationGroupId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-globalreplicationgroupid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub global_replication_group_id: Option<crate::Value<String>>,
+    pub global_replication_group_id: Option<::Value<String>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`LogDeliveryConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-logdeliveryconfigurations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub log_delivery_configurations:
-        Option<crate::ValueList<self::replication_group::LogDeliveryConfigurationRequest>>,
+        Option<::ValueList<self::replication_group::LogDeliveryConfigurationRequest>>,
     /// Property [`MultiAZEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-multiazenabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub multi_az_enabled: Option<crate::Value<bool>>,
+    pub multi_az_enabled: Option<::Value<bool>>,
     /// Property [`NodeGroupConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-nodegroupconfiguration).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
     pub node_group_configuration:
-        Option<crate::ValueList<self::replication_group::NodeGroupConfiguration>>,
+        Option<::ValueList<self::replication_group::NodeGroupConfiguration>>,
     /// Property [`NotificationTopicArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-notificationtopicarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_topic_arn: Option<crate::Value<String>>,
+    pub notification_topic_arn: Option<::Value<String>>,
     /// Property [`NumCacheClusters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numcacheclusters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub num_cache_clusters: Option<crate::Value<u32>>,
+    pub num_cache_clusters: Option<::Value<u32>>,
     /// Property [`NumNodeGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numnodegroups).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub num_node_groups: Option<crate::Value<u32>>,
+    pub num_node_groups: Option<::Value<u32>>,
     /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-port).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub port: Option<crate::Value<u32>>,
+    pub port: Option<::Value<u32>>,
     /// Property [`PreferredCacheClusterAZs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-preferredcacheclusterazs).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub preferred_cache_cluster_a_zs: Option<crate::ValueList<String>>,
+    pub preferred_cache_cluster_a_zs: Option<::ValueList<String>>,
     /// Property [`PreferredMaintenanceWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-preferredmaintenancewindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub preferred_maintenance_window: Option<crate::Value<String>>,
+    pub preferred_maintenance_window: Option<::Value<String>>,
     /// Property [`PrimaryClusterId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-primaryclusterid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub primary_cluster_id: Option<crate::Value<String>>,
+    pub primary_cluster_id: Option<::Value<String>>,
     /// Property [`ReplicasPerNodeGroup`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicaspernodegroup).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub replicas_per_node_group: Option<crate::Value<u32>>,
+    pub replicas_per_node_group: Option<::Value<u32>>,
     /// Property [`ReplicationGroupDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupdescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub replication_group_description: crate::Value<String>,
+    pub replication_group_description: ::Value<String>,
     /// Property [`ReplicationGroupId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub replication_group_id: Option<crate::Value<String>>,
+    pub replication_group_id: Option<::Value<String>>,
     /// Property [`SecurityGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-securitygroupids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub security_group_ids: Option<crate::ValueList<String>>,
+    pub security_group_ids: Option<::ValueList<String>>,
     /// Property [`SnapshotArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotarns).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub snapshot_arns: Option<crate::ValueList<String>>,
+    pub snapshot_arns: Option<::ValueList<String>>,
     /// Property [`SnapshotName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub snapshot_name: Option<crate::Value<String>>,
+    pub snapshot_name: Option<::Value<String>>,
     /// Property [`SnapshotRetentionLimit`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotretentionlimit).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_retention_limit: Option<crate::Value<u32>>,
+    pub snapshot_retention_limit: Option<::Value<u32>>,
     /// Property [`SnapshotWindow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotwindow).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshot_window: Option<crate::Value<String>>,
+    pub snapshot_window: Option<::Value<String>>,
     /// Property [`SnapshottingClusterId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshottingclusterid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub snapshotting_cluster_id: Option<crate::Value<String>>,
+    pub snapshotting_cluster_id: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`TransitEncryptionEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-transitencryptionenabled).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub transit_encryption_enabled: Option<crate::Value<bool>>,
+    pub transit_encryption_enabled: Option<::Value<bool>>,
     /// Property [`UserGroupIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-usergroupids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub user_group_ids: Option<crate::ValueList<String>>,
+    pub user_group_ids: Option<::ValueList<String>>,
 }
 
 impl ::serde::Serialize for ReplicationGroupProperties {
@@ -1197,45 +1197,45 @@ impl<'de> ::serde::Deserialize<'de> for ReplicationGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut at_rest_encryption_enabled: Option<crate::Value<bool>> = None;
-                let mut auth_token: Option<crate::Value<String>> = None;
-                let mut auto_minor_version_upgrade: Option<crate::Value<bool>> = None;
-                let mut automatic_failover_enabled: Option<crate::Value<bool>> = None;
-                let mut cache_node_type: Option<crate::Value<String>> = None;
-                let mut cache_parameter_group_name: Option<crate::Value<String>> = None;
-                let mut cache_security_group_names: Option<crate::ValueList<String>> = None;
-                let mut cache_subnet_group_name: Option<crate::Value<String>> = None;
-                let mut data_tiering_enabled: Option<crate::Value<bool>> = None;
-                let mut engine: Option<crate::Value<String>> = None;
-                let mut engine_version: Option<crate::Value<String>> = None;
-                let mut global_replication_group_id: Option<crate::Value<String>> = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut at_rest_encryption_enabled: Option<::Value<bool>> = None;
+                let mut auth_token: Option<::Value<String>> = None;
+                let mut auto_minor_version_upgrade: Option<::Value<bool>> = None;
+                let mut automatic_failover_enabled: Option<::Value<bool>> = None;
+                let mut cache_node_type: Option<::Value<String>> = None;
+                let mut cache_parameter_group_name: Option<::Value<String>> = None;
+                let mut cache_security_group_names: Option<::ValueList<String>> = None;
+                let mut cache_subnet_group_name: Option<::Value<String>> = None;
+                let mut data_tiering_enabled: Option<::Value<bool>> = None;
+                let mut engine: Option<::Value<String>> = None;
+                let mut engine_version: Option<::Value<String>> = None;
+                let mut global_replication_group_id: Option<::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
                 let mut log_delivery_configurations: Option<
-                    crate::ValueList<self::replication_group::LogDeliveryConfigurationRequest>,
+                    ::ValueList<self::replication_group::LogDeliveryConfigurationRequest>,
                 > = None;
-                let mut multi_az_enabled: Option<crate::Value<bool>> = None;
+                let mut multi_az_enabled: Option<::Value<bool>> = None;
                 let mut node_group_configuration: Option<
-                    crate::ValueList<self::replication_group::NodeGroupConfiguration>,
+                    ::ValueList<self::replication_group::NodeGroupConfiguration>,
                 > = None;
-                let mut notification_topic_arn: Option<crate::Value<String>> = None;
-                let mut num_cache_clusters: Option<crate::Value<u32>> = None;
-                let mut num_node_groups: Option<crate::Value<u32>> = None;
-                let mut port: Option<crate::Value<u32>> = None;
-                let mut preferred_cache_cluster_a_zs: Option<crate::ValueList<String>> = None;
-                let mut preferred_maintenance_window: Option<crate::Value<String>> = None;
-                let mut primary_cluster_id: Option<crate::Value<String>> = None;
-                let mut replicas_per_node_group: Option<crate::Value<u32>> = None;
-                let mut replication_group_description: Option<crate::Value<String>> = None;
-                let mut replication_group_id: Option<crate::Value<String>> = None;
-                let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                let mut snapshot_arns: Option<crate::ValueList<String>> = None;
-                let mut snapshot_name: Option<crate::Value<String>> = None;
-                let mut snapshot_retention_limit: Option<crate::Value<u32>> = None;
-                let mut snapshot_window: Option<crate::Value<String>> = None;
-                let mut snapshotting_cluster_id: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut transit_encryption_enabled: Option<crate::Value<bool>> = None;
-                let mut user_group_ids: Option<crate::ValueList<String>> = None;
+                let mut notification_topic_arn: Option<::Value<String>> = None;
+                let mut num_cache_clusters: Option<::Value<u32>> = None;
+                let mut num_node_groups: Option<::Value<u32>> = None;
+                let mut port: Option<::Value<u32>> = None;
+                let mut preferred_cache_cluster_a_zs: Option<::ValueList<String>> = None;
+                let mut preferred_maintenance_window: Option<::Value<String>> = None;
+                let mut primary_cluster_id: Option<::Value<String>> = None;
+                let mut replicas_per_node_group: Option<::Value<u32>> = None;
+                let mut replication_group_description: Option<::Value<String>> = None;
+                let mut replication_group_id: Option<::Value<String>> = None;
+                let mut security_group_ids: Option<::ValueList<String>> = None;
+                let mut snapshot_arns: Option<::ValueList<String>> = None;
+                let mut snapshot_name: Option<::Value<String>> = None;
+                let mut snapshot_retention_limit: Option<::Value<u32>> = None;
+                let mut snapshot_window: Option<::Value<String>> = None;
+                let mut snapshotting_cluster_id: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut transit_encryption_enabled: Option<::Value<bool>> = None;
+                let mut user_group_ids: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1407,7 +1407,7 @@ impl<'de> ::serde::Deserialize<'de> for ReplicationGroupProperties {
     }
 }
 
-impl crate::Resource for ReplicationGroup {
+impl ::Resource for ReplicationGroup {
     type Properties = ReplicationGroupProperties;
     const TYPE: &'static str = "AWS::ElastiCache::ReplicationGroup";
     fn properties(&self) -> &ReplicationGroupProperties {
@@ -1418,7 +1418,7 @@ impl crate::Resource for ReplicationGroup {
     }
 }
 
-impl crate::private::Sealed for ReplicationGroup {}
+impl ::private::Sealed for ReplicationGroup {}
 
 impl From<ReplicationGroupProperties> for ReplicationGroup {
     fn from(properties: ReplicationGroupProperties) -> ReplicationGroup {
@@ -1439,12 +1439,12 @@ pub struct SecurityGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html#cfn-elasticache-securitygroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for SecurityGroupProperties {
@@ -1475,8 +1475,8 @@ impl<'de> ::serde::Deserialize<'de> for SecurityGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1502,7 +1502,7 @@ impl<'de> ::serde::Deserialize<'de> for SecurityGroupProperties {
     }
 }
 
-impl crate::Resource for SecurityGroup {
+impl ::Resource for SecurityGroup {
     type Properties = SecurityGroupProperties;
     const TYPE: &'static str = "AWS::ElastiCache::SecurityGroup";
     fn properties(&self) -> &SecurityGroupProperties {
@@ -1513,7 +1513,7 @@ impl crate::Resource for SecurityGroup {
     }
 }
 
-impl crate::private::Sealed for SecurityGroup {}
+impl ::private::Sealed for SecurityGroup {}
 
 impl From<SecurityGroupProperties> for SecurityGroup {
     fn from(properties: SecurityGroupProperties) -> SecurityGroup {
@@ -1534,17 +1534,17 @@ pub struct SecurityGroupIngressProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub cache_security_group_name: crate::Value<String>,
+    pub cache_security_group_name: ::Value<String>,
     /// Property [`EC2SecurityGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ec2_security_group_name: crate::Value<String>,
+    pub ec2_security_group_name: ::Value<String>,
     /// Property [`EC2SecurityGroupOwnerId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupownerid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ec2_security_group_owner_id: Option<crate::Value<String>>,
+    pub ec2_security_group_owner_id: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for SecurityGroupIngressProperties {
@@ -1588,9 +1588,9 @@ impl<'de> ::serde::Deserialize<'de> for SecurityGroupIngressProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cache_security_group_name: Option<crate::Value<String>> = None;
-                let mut ec2_security_group_name: Option<crate::Value<String>> = None;
-                let mut ec2_security_group_owner_id: Option<crate::Value<String>> = None;
+                let mut cache_security_group_name: Option<::Value<String>> = None;
+                let mut ec2_security_group_name: Option<::Value<String>> = None;
+                let mut ec2_security_group_owner_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1623,7 +1623,7 @@ impl<'de> ::serde::Deserialize<'de> for SecurityGroupIngressProperties {
     }
 }
 
-impl crate::Resource for SecurityGroupIngress {
+impl ::Resource for SecurityGroupIngress {
     type Properties = SecurityGroupIngressProperties;
     const TYPE: &'static str = "AWS::ElastiCache::SecurityGroupIngress";
     fn properties(&self) -> &SecurityGroupIngressProperties {
@@ -1634,7 +1634,7 @@ impl crate::Resource for SecurityGroupIngress {
     }
 }
 
-impl crate::private::Sealed for SecurityGroupIngress {}
+impl ::private::Sealed for SecurityGroupIngress {}
 
 impl From<SecurityGroupIngressProperties> for SecurityGroupIngress {
     fn from(properties: SecurityGroupIngressProperties) -> SecurityGroupIngress {
@@ -1655,22 +1655,22 @@ pub struct SubnetGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub cache_subnet_group_name: Option<crate::Value<String>>,
+    pub cache_subnet_group_name: Option<::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub subnet_ids: crate::ValueList<String>,
+    pub subnet_ids: ::ValueList<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for SubnetGroupProperties {
@@ -1707,10 +1707,10 @@ impl<'de> ::serde::Deserialize<'de> for SubnetGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut cache_subnet_group_name: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut subnet_ids: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut cache_subnet_group_name: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut subnet_ids: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1744,7 +1744,7 @@ impl<'de> ::serde::Deserialize<'de> for SubnetGroupProperties {
     }
 }
 
-impl crate::Resource for SubnetGroup {
+impl ::Resource for SubnetGroup {
     type Properties = SubnetGroupProperties;
     const TYPE: &'static str = "AWS::ElastiCache::SubnetGroup";
     fn properties(&self) -> &SubnetGroupProperties {
@@ -1755,7 +1755,7 @@ impl crate::Resource for SubnetGroup {
     }
 }
 
-impl crate::private::Sealed for SubnetGroup {}
+impl ::private::Sealed for SubnetGroup {}
 
 impl From<SubnetGroupProperties> for SubnetGroup {
     fn from(properties: SubnetGroupProperties) -> SubnetGroup {
@@ -1776,32 +1776,32 @@ pub struct UserProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub access_string: Option<crate::Value<String>>,
+    pub access_string: Option<::Value<String>>,
     /// Property [`Engine`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-engine).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub engine: crate::Value<String>,
+    pub engine: ::Value<String>,
     /// Property [`NoPasswordRequired`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-nopasswordrequired).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub no_password_required: Option<crate::Value<bool>>,
+    pub no_password_required: Option<::Value<bool>>,
     /// Property [`Passwords`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-passwords).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub passwords: Option<crate::ValueList<String>>,
+    pub passwords: Option<::ValueList<String>>,
     /// Property [`UserId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-userid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub user_id: crate::Value<String>,
+    pub user_id: ::Value<String>,
     /// Property [`UserName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-username).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub user_name: crate::Value<String>,
+    pub user_name: ::Value<String>,
 }
 
 impl ::serde::Serialize for UserProperties {
@@ -1842,12 +1842,12 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut access_string: Option<crate::Value<String>> = None;
-                let mut engine: Option<crate::Value<String>> = None;
-                let mut no_password_required: Option<crate::Value<bool>> = None;
-                let mut passwords: Option<crate::ValueList<String>> = None;
-                let mut user_id: Option<crate::Value<String>> = None;
-                let mut user_name: Option<crate::Value<String>> = None;
+                let mut access_string: Option<::Value<String>> = None;
+                let mut engine: Option<::Value<String>> = None;
+                let mut no_password_required: Option<::Value<bool>> = None;
+                let mut passwords: Option<::ValueList<String>> = None;
+                let mut user_id: Option<::Value<String>> = None;
+                let mut user_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1888,7 +1888,7 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
     }
 }
 
-impl crate::Resource for User {
+impl ::Resource for User {
     type Properties = UserProperties;
     const TYPE: &'static str = "AWS::ElastiCache::User";
     fn properties(&self) -> &UserProperties {
@@ -1899,7 +1899,7 @@ impl crate::Resource for User {
     }
 }
 
-impl crate::private::Sealed for User {}
+impl ::private::Sealed for User {}
 
 impl From<UserProperties> for User {
     fn from(properties: UserProperties) -> User {
@@ -1920,17 +1920,17 @@ pub struct UserGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub engine: crate::Value<String>,
+    pub engine: ::Value<String>,
     /// Property [`UserGroupId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-usergroupid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub user_group_id: crate::Value<String>,
+    pub user_group_id: ::Value<String>,
     /// Property [`UserIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-userids).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub user_ids: Option<crate::ValueList<String>>,
+    pub user_ids: Option<::ValueList<String>>,
 }
 
 impl ::serde::Serialize for UserGroupProperties {
@@ -1960,9 +1960,9 @@ impl<'de> ::serde::Deserialize<'de> for UserGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut engine: Option<crate::Value<String>> = None;
-                let mut user_group_id: Option<crate::Value<String>> = None;
-                let mut user_ids: Option<crate::ValueList<String>> = None;
+                let mut engine: Option<::Value<String>> = None;
+                let mut user_group_id: Option<::Value<String>> = None;
+                let mut user_ids: Option<::ValueList<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1992,7 +1992,7 @@ impl<'de> ::serde::Deserialize<'de> for UserGroupProperties {
     }
 }
 
-impl crate::Resource for UserGroup {
+impl ::Resource for UserGroup {
     type Properties = UserGroupProperties;
     const TYPE: &'static str = "AWS::ElastiCache::UserGroup";
     fn properties(&self) -> &UserGroupProperties {
@@ -2003,7 +2003,7 @@ impl crate::Resource for UserGroup {
     }
 }
 
-impl crate::private::Sealed for UserGroup {}
+impl ::private::Sealed for UserGroup {}
 
 impl From<UserGroupProperties> for UserGroup {
     fn from(properties: UserGroupProperties) -> UserGroup {
@@ -2021,10 +2021,10 @@ pub mod cache_cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_group: crate::Value<String>,
+        pub log_group: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CloudWatchLogsDestinationDetails {
+    impl ::codec::SerializeValue for CloudWatchLogsDestinationDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroup", &self.log_group)?;
@@ -2032,7 +2032,7 @@ pub mod cache_cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for CloudWatchLogsDestinationDetails {
+    impl ::codec::DeserializeValue for CloudWatchLogsDestinationDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CloudWatchLogsDestinationDetails, D::Error> {
@@ -2049,7 +2049,7 @@ pub mod cache_cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut log_group: Option<crate::Value<String>> = None;
+                    let mut log_group: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2080,15 +2080,15 @@ pub mod cache_cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logs_details: Option<crate::Value<CloudWatchLogsDestinationDetails>>,
+        pub cloud_watch_logs_details: Option<::Value<CloudWatchLogsDestinationDetails>>,
         /// Property [`KinesisFirehoseDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-destinationdetails.html#cfn-elasticache-cachecluster-destinationdetails-kinesisfirehosedetails).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kinesis_firehose_details: Option<crate::Value<KinesisFirehoseDestinationDetails>>,
+        pub kinesis_firehose_details: Option<::Value<KinesisFirehoseDestinationDetails>>,
     }
 
-    impl crate::codec::SerializeValue for DestinationDetails {
+    impl ::codec::SerializeValue for DestinationDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_logs_details) = self.cloud_watch_logs_details {
@@ -2109,7 +2109,7 @@ pub mod cache_cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for DestinationDetails {
+    impl ::codec::DeserializeValue for DestinationDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DestinationDetails, D::Error> {
@@ -2127,10 +2127,10 @@ pub mod cache_cluster {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut cloud_watch_logs_details: Option<
-                        crate::Value<CloudWatchLogsDestinationDetails>,
+                        ::Value<CloudWatchLogsDestinationDetails>,
                     > = None;
                     let mut kinesis_firehose_details: Option<
-                        crate::Value<KinesisFirehoseDestinationDetails>,
+                        ::Value<KinesisFirehoseDestinationDetails>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2167,10 +2167,10 @@ pub mod cache_cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub delivery_stream: crate::Value<String>,
+        pub delivery_stream: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for KinesisFirehoseDestinationDetails {
+    impl ::codec::SerializeValue for KinesisFirehoseDestinationDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2182,7 +2182,7 @@ pub mod cache_cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for KinesisFirehoseDestinationDetails {
+    impl ::codec::DeserializeValue for KinesisFirehoseDestinationDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KinesisFirehoseDestinationDetails, D::Error> {
@@ -2199,7 +2199,7 @@ pub mod cache_cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut delivery_stream: Option<crate::Value<String>> = None;
+                    let mut delivery_stream: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2230,25 +2230,25 @@ pub mod cache_cluster {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_details: crate::Value<DestinationDetails>,
+        pub destination_details: ::Value<DestinationDetails>,
         /// Property [`DestinationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-logdeliveryconfigurationrequest.html#cfn-elasticache-cachecluster-logdeliveryconfigurationrequest-destinationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_type: crate::Value<String>,
+        pub destination_type: ::Value<String>,
         /// Property [`LogFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-logdeliveryconfigurationrequest.html#cfn-elasticache-cachecluster-logdeliveryconfigurationrequest-logformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_format: crate::Value<String>,
+        pub log_format: ::Value<String>,
         /// Property [`LogType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-logdeliveryconfigurationrequest.html#cfn-elasticache-cachecluster-logdeliveryconfigurationrequest-logtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_type: crate::Value<String>,
+        pub log_type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for LogDeliveryConfigurationRequest {
+    impl ::codec::SerializeValue for LogDeliveryConfigurationRequest {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2267,7 +2267,7 @@ pub mod cache_cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for LogDeliveryConfigurationRequest {
+    impl ::codec::DeserializeValue for LogDeliveryConfigurationRequest {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LogDeliveryConfigurationRequest, D::Error> {
@@ -2284,10 +2284,10 @@ pub mod cache_cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination_details: Option<crate::Value<DestinationDetails>> = None;
-                    let mut destination_type: Option<crate::Value<String>> = None;
-                    let mut log_format: Option<crate::Value<String>> = None;
-                    let mut log_type: Option<crate::Value<String>> = None;
+                    let mut destination_details: Option<::Value<DestinationDetails>> = None;
+                    let mut destination_type: Option<::Value<String>> = None;
+                    let mut log_format: Option<::Value<String>> = None;
+                    let mut log_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2336,20 +2336,20 @@ pub mod global_replication_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub replication_group_id: Option<crate::Value<String>>,
+        pub replication_group_id: Option<::Value<String>>,
         /// Property [`ReplicationGroupRegion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupregion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub replication_group_region: Option<crate::Value<String>>,
+        pub replication_group_region: Option<::Value<String>>,
         /// Property [`Role`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-role).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role: Option<crate::Value<String>>,
+        pub role: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for GlobalReplicationGroupMember {
+    impl ::codec::SerializeValue for GlobalReplicationGroupMember {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref replication_group_id) = self.replication_group_id {
@@ -2373,7 +2373,7 @@ pub mod global_replication_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for GlobalReplicationGroupMember {
+    impl ::codec::DeserializeValue for GlobalReplicationGroupMember {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GlobalReplicationGroupMember, D::Error> {
@@ -2390,9 +2390,9 @@ pub mod global_replication_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut replication_group_id: Option<crate::Value<String>> = None;
-                    let mut replication_group_region: Option<crate::Value<String>> = None;
-                    let mut role: Option<crate::Value<String>> = None;
+                    let mut replication_group_id: Option<::Value<String>> = None;
+                    let mut replication_group_region: Option<::Value<String>> = None;
+                    let mut role: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2432,20 +2432,20 @@ pub mod global_replication_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub replication_group_id: Option<crate::Value<String>>,
+        pub replication_group_id: Option<::Value<String>>,
         /// Property [`ReplicationGroupRegion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-regionalconfiguration.html#cfn-elasticache-globalreplicationgroup-regionalconfiguration-replicationgroupregion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub replication_group_region: Option<crate::Value<String>>,
+        pub replication_group_region: Option<::Value<String>>,
         /// Property [`ReshardingConfigurations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-regionalconfiguration.html#cfn-elasticache-globalreplicationgroup-regionalconfiguration-reshardingconfigurations).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resharding_configurations: Option<crate::ValueList<ReshardingConfiguration>>,
+        pub resharding_configurations: Option<::ValueList<ReshardingConfiguration>>,
     }
 
-    impl crate::codec::SerializeValue for RegionalConfiguration {
+    impl ::codec::SerializeValue for RegionalConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref replication_group_id) = self.replication_group_id {
@@ -2473,7 +2473,7 @@ pub mod global_replication_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for RegionalConfiguration {
+    impl ::codec::DeserializeValue for RegionalConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RegionalConfiguration, D::Error> {
@@ -2490,10 +2490,10 @@ pub mod global_replication_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut replication_group_id: Option<crate::Value<String>> = None;
-                    let mut replication_group_region: Option<crate::Value<String>> = None;
+                    let mut replication_group_id: Option<::Value<String>> = None;
+                    let mut replication_group_region: Option<::Value<String>> = None;
                     let mut resharding_configurations: Option<
-                        crate::ValueList<ReshardingConfiguration>,
+                        ::ValueList<ReshardingConfiguration>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2535,15 +2535,15 @@ pub mod global_replication_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub node_group_id: Option<crate::Value<String>>,
+        pub node_group_id: Option<::Value<String>>,
         /// Property [`PreferredAvailabilityZones`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-reshardingconfiguration.html#cfn-elasticache-globalreplicationgroup-reshardingconfiguration-preferredavailabilityzones).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub preferred_availability_zones: Option<crate::ValueList<String>>,
+        pub preferred_availability_zones: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for ReshardingConfiguration {
+    impl ::codec::SerializeValue for ReshardingConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref node_group_id) = self.node_group_id {
@@ -2564,7 +2564,7 @@ pub mod global_replication_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for ReshardingConfiguration {
+    impl ::codec::DeserializeValue for ReshardingConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ReshardingConfiguration, D::Error> {
@@ -2581,8 +2581,8 @@ pub mod global_replication_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut node_group_id: Option<crate::Value<String>> = None;
-                    let mut preferred_availability_zones: Option<crate::ValueList<String>> = None;
+                    let mut node_group_id: Option<::Value<String>> = None;
+                    let mut preferred_availability_zones: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2621,10 +2621,10 @@ pub mod replication_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_group: crate::Value<String>,
+        pub log_group: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CloudWatchLogsDestinationDetails {
+    impl ::codec::SerializeValue for CloudWatchLogsDestinationDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "LogGroup", &self.log_group)?;
@@ -2632,7 +2632,7 @@ pub mod replication_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for CloudWatchLogsDestinationDetails {
+    impl ::codec::DeserializeValue for CloudWatchLogsDestinationDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CloudWatchLogsDestinationDetails, D::Error> {
@@ -2649,7 +2649,7 @@ pub mod replication_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut log_group: Option<crate::Value<String>> = None;
+                    let mut log_group: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2680,15 +2680,15 @@ pub mod replication_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_logs_details: Option<crate::Value<CloudWatchLogsDestinationDetails>>,
+        pub cloud_watch_logs_details: Option<::Value<CloudWatchLogsDestinationDetails>>,
         /// Property [`KinesisFirehoseDetails`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-destinationdetails.html#cfn-elasticache-replicationgroup-destinationdetails-kinesisfirehosedetails).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub kinesis_firehose_details: Option<crate::Value<KinesisFirehoseDestinationDetails>>,
+        pub kinesis_firehose_details: Option<::Value<KinesisFirehoseDestinationDetails>>,
     }
 
-    impl crate::codec::SerializeValue for DestinationDetails {
+    impl ::codec::SerializeValue for DestinationDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_logs_details) = self.cloud_watch_logs_details {
@@ -2709,7 +2709,7 @@ pub mod replication_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for DestinationDetails {
+    impl ::codec::DeserializeValue for DestinationDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DestinationDetails, D::Error> {
@@ -2727,10 +2727,10 @@ pub mod replication_group {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut cloud_watch_logs_details: Option<
-                        crate::Value<CloudWatchLogsDestinationDetails>,
+                        ::Value<CloudWatchLogsDestinationDetails>,
                     > = None;
                     let mut kinesis_firehose_details: Option<
-                        crate::Value<KinesisFirehoseDestinationDetails>,
+                        ::Value<KinesisFirehoseDestinationDetails>,
                     > = None;
 
                     while let Some(__cfn_key) =
@@ -2767,10 +2767,10 @@ pub mod replication_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub delivery_stream: crate::Value<String>,
+        pub delivery_stream: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for KinesisFirehoseDestinationDetails {
+    impl ::codec::SerializeValue for KinesisFirehoseDestinationDetails {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2782,7 +2782,7 @@ pub mod replication_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for KinesisFirehoseDestinationDetails {
+    impl ::codec::DeserializeValue for KinesisFirehoseDestinationDetails {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<KinesisFirehoseDestinationDetails, D::Error> {
@@ -2799,7 +2799,7 @@ pub mod replication_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut delivery_stream: Option<crate::Value<String>> = None;
+                    let mut delivery_stream: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2830,25 +2830,25 @@ pub mod replication_group {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_details: crate::Value<DestinationDetails>,
+        pub destination_details: ::Value<DestinationDetails>,
         /// Property [`DestinationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-logdeliveryconfigurationrequest.html#cfn-elasticache-replicationgroup-logdeliveryconfigurationrequest-destinationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub destination_type: crate::Value<String>,
+        pub destination_type: ::Value<String>,
         /// Property [`LogFormat`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-logdeliveryconfigurationrequest.html#cfn-elasticache-replicationgroup-logdeliveryconfigurationrequest-logformat).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_format: crate::Value<String>,
+        pub log_format: ::Value<String>,
         /// Property [`LogType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-logdeliveryconfigurationrequest.html#cfn-elasticache-replicationgroup-logdeliveryconfigurationrequest-logtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_type: crate::Value<String>,
+        pub log_type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for LogDeliveryConfigurationRequest {
+    impl ::codec::SerializeValue for LogDeliveryConfigurationRequest {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2867,7 +2867,7 @@ pub mod replication_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for LogDeliveryConfigurationRequest {
+    impl ::codec::DeserializeValue for LogDeliveryConfigurationRequest {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LogDeliveryConfigurationRequest, D::Error> {
@@ -2884,10 +2884,10 @@ pub mod replication_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut destination_details: Option<crate::Value<DestinationDetails>> = None;
-                    let mut destination_type: Option<crate::Value<String>> = None;
-                    let mut log_format: Option<crate::Value<String>> = None;
-                    let mut log_type: Option<crate::Value<String>> = None;
+                    let mut destination_details: Option<::Value<DestinationDetails>> = None;
+                    let mut destination_type: Option<::Value<String>> = None;
+                    let mut log_format: Option<::Value<String>> = None;
+                    let mut log_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2933,30 +2933,30 @@ pub mod replication_group {
         /// Update type: _Conditional_.
         /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
         /// For more information, see the relevant resource type documentation.
-        pub node_group_id: Option<crate::Value<String>>,
+        pub node_group_id: Option<::Value<String>>,
         /// Property [`PrimaryAvailabilityZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-primaryavailabilityzone).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub primary_availability_zone: Option<crate::Value<String>>,
+        pub primary_availability_zone: Option<::Value<String>>,
         /// Property [`ReplicaAvailabilityZones`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-replicaavailabilityzones).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub replica_availability_zones: Option<crate::ValueList<String>>,
+        pub replica_availability_zones: Option<::ValueList<String>>,
         /// Property [`ReplicaCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-replicacount).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub replica_count: Option<crate::Value<u32>>,
+        pub replica_count: Option<::Value<u32>>,
         /// Property [`Slots`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-slots).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub slots: Option<crate::Value<String>>,
+        pub slots: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for NodeGroupConfiguration {
+    impl ::codec::SerializeValue for NodeGroupConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref node_group_id) = self.node_group_id {
@@ -2994,7 +2994,7 @@ pub mod replication_group {
         }
     }
 
-    impl crate::codec::DeserializeValue for NodeGroupConfiguration {
+    impl ::codec::DeserializeValue for NodeGroupConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NodeGroupConfiguration, D::Error> {
@@ -3011,11 +3011,11 @@ pub mod replication_group {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut node_group_id: Option<crate::Value<String>> = None;
-                    let mut primary_availability_zone: Option<crate::Value<String>> = None;
-                    let mut replica_availability_zones: Option<crate::ValueList<String>> = None;
-                    let mut replica_count: Option<crate::Value<u32>> = None;
-                    let mut slots: Option<crate::Value<String>> = None;
+                    let mut node_group_id: Option<::Value<String>> = None;
+                    let mut primary_availability_zone: Option<::Value<String>> = None;
+                    let mut replica_availability_zones: Option<::ValueList<String>> = None;
+                    let mut replica_count: Option<::Value<u32>> = None;
+                    let mut slots: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

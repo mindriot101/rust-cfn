@@ -13,37 +13,37 @@ pub struct EnvironmentProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_bundles: Option<crate::ValueList<String>>,
+    pub data_bundles: Option<::ValueList<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`FederationMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-federationmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub federation_mode: Option<crate::Value<String>>,
+    pub federation_mode: Option<::Value<String>>,
     /// Property [`FederationParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-federationparameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub federation_parameters: Option<crate::Value<self::environment::FederationParameters>>,
+    pub federation_parameters: Option<::Value<self::environment::FederationParameters>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`SuperuserParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-superuserparameters).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub superuser_parameters: Option<crate::Value<self::environment::SuperuserParameters>>,
+    pub superuser_parameters: Option<::Value<self::environment::SuperuserParameters>>,
 }
 
 impl ::serde::Serialize for EnvironmentProperties {
@@ -99,16 +99,16 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut data_bundles: Option<crate::ValueList<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut federation_mode: Option<crate::Value<String>> = None;
+                let mut data_bundles: Option<::ValueList<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut federation_mode: Option<::Value<String>> = None;
                 let mut federation_parameters: Option<
-                    crate::Value<self::environment::FederationParameters>,
+                    ::Value<self::environment::FederationParameters>,
                 > = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
                 let mut superuser_parameters: Option<
-                    crate::Value<self::environment::SuperuserParameters>,
+                    ::Value<self::environment::SuperuserParameters>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -154,7 +154,7 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
     }
 }
 
-impl crate::Resource for Environment {
+impl ::Resource for Environment {
     type Properties = EnvironmentProperties;
     const TYPE: &'static str = "AWS::FinSpace::Environment";
     fn properties(&self) -> &EnvironmentProperties {
@@ -165,7 +165,7 @@ impl crate::Resource for Environment {
     }
 }
 
-impl crate::private::Sealed for Environment {}
+impl ::private::Sealed for Environment {}
 
 impl From<EnvironmentProperties> for Environment {
     fn from(properties: EnvironmentProperties) -> Environment {
@@ -183,35 +183,35 @@ pub mod environment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub application_call_back_url: Option<crate::Value<String>>,
+        pub application_call_back_url: Option<::Value<String>>,
         /// Property [`AttributeMap`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-attributemap).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attribute_map: Option<crate::Value<crate::json::Value>>,
+        pub attribute_map: Option<::Value<::json::Value>>,
         /// Property [`FederationProviderName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-federationprovidername).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub federation_provider_name: Option<crate::Value<String>>,
+        pub federation_provider_name: Option<::Value<String>>,
         /// Property [`FederationURN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-federationurn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub federation_urn: Option<crate::Value<String>>,
+        pub federation_urn: Option<::Value<String>>,
         /// Property [`SamlMetadataDocument`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-samlmetadatadocument).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub saml_metadata_document: Option<crate::Value<String>>,
+        pub saml_metadata_document: Option<::Value<String>>,
         /// Property [`SamlMetadataURL`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-samlmetadataurl).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub saml_metadata_url: Option<crate::Value<String>>,
+        pub saml_metadata_url: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for FederationParameters {
+    impl ::codec::SerializeValue for FederationParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref application_call_back_url) = self.application_call_back_url {
@@ -260,7 +260,7 @@ pub mod environment {
         }
     }
 
-    impl crate::codec::DeserializeValue for FederationParameters {
+    impl ::codec::DeserializeValue for FederationParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FederationParameters, D::Error> {
@@ -277,12 +277,12 @@ pub mod environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut application_call_back_url: Option<crate::Value<String>> = None;
-                    let mut attribute_map: Option<crate::Value<crate::json::Value>> = None;
-                    let mut federation_provider_name: Option<crate::Value<String>> = None;
-                    let mut federation_urn: Option<crate::Value<String>> = None;
-                    let mut saml_metadata_document: Option<crate::Value<String>> = None;
-                    let mut saml_metadata_url: Option<crate::Value<String>> = None;
+                    let mut application_call_back_url: Option<::Value<String>> = None;
+                    let mut attribute_map: Option<::Value<::json::Value>> = None;
+                    let mut federation_provider_name: Option<::Value<String>> = None;
+                    let mut federation_urn: Option<::Value<String>> = None;
+                    let mut saml_metadata_document: Option<::Value<String>> = None;
+                    let mut saml_metadata_url: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -335,20 +335,20 @@ pub mod environment {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub email_address: Option<crate::Value<String>>,
+        pub email_address: Option<::Value<String>>,
         /// Property [`FirstName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-superuserparameters.html#cfn-finspace-environment-superuserparameters-firstname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub first_name: Option<crate::Value<String>>,
+        pub first_name: Option<::Value<String>>,
         /// Property [`LastName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-superuserparameters.html#cfn-finspace-environment-superuserparameters-lastname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub last_name: Option<crate::Value<String>>,
+        pub last_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for SuperuserParameters {
+    impl ::codec::SerializeValue for SuperuserParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref email_address) = self.email_address {
@@ -368,7 +368,7 @@ pub mod environment {
         }
     }
 
-    impl crate::codec::DeserializeValue for SuperuserParameters {
+    impl ::codec::DeserializeValue for SuperuserParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SuperuserParameters, D::Error> {
@@ -385,9 +385,9 @@ pub mod environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut email_address: Option<crate::Value<String>> = None;
-                    let mut first_name: Option<crate::Value<String>> = None;
-                    let mut last_name: Option<crate::Value<String>> = None;
+                    let mut email_address: Option<::Value<String>> = None;
+                    let mut first_name: Option<::Value<String>> = None;
+                    let mut last_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

@@ -13,22 +13,22 @@ pub struct DestinationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub destination_name: crate::Value<String>,
+    pub destination_name: ::Value<String>,
     /// Property [`DestinationPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationpolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub destination_policy: crate::Value<String>,
+    pub destination_policy: ::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: crate::Value<String>,
+    pub role_arn: ::Value<String>,
     /// Property [`TargetArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-targetarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub target_arn: crate::Value<String>,
+    pub target_arn: ::Value<String>,
 }
 
 impl ::serde::Serialize for DestinationProperties {
@@ -65,10 +65,10 @@ impl<'de> ::serde::Deserialize<'de> for DestinationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut destination_name: Option<crate::Value<String>> = None;
-                let mut destination_policy: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
-                let mut target_arn: Option<crate::Value<String>> = None;
+                let mut destination_name: Option<::Value<String>> = None;
+                let mut destination_policy: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
+                let mut target_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -103,7 +103,7 @@ impl<'de> ::serde::Deserialize<'de> for DestinationProperties {
     }
 }
 
-impl crate::Resource for Destination {
+impl ::Resource for Destination {
     type Properties = DestinationProperties;
     const TYPE: &'static str = "AWS::Logs::Destination";
     fn properties(&self) -> &DestinationProperties {
@@ -114,7 +114,7 @@ impl crate::Resource for Destination {
     }
 }
 
-impl crate::private::Sealed for Destination {}
+impl ::private::Sealed for Destination {}
 
 impl From<DestinationProperties> for Destination {
     fn from(properties: DestinationProperties) -> Destination {
@@ -135,22 +135,22 @@ pub struct LogGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`LogGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-loggroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub log_group_name: Option<crate::Value<String>>,
+    pub log_group_name: Option<::Value<String>>,
     /// Property [`RetentionInDays`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-retentionindays).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub retention_in_days: Option<crate::Value<u32>>,
+    pub retention_in_days: Option<::Value<u32>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for LogGroupProperties {
@@ -191,10 +191,10 @@ impl<'de> ::serde::Deserialize<'de> for LogGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut kms_key_id: Option<crate::Value<String>> = None;
-                let mut log_group_name: Option<crate::Value<String>> = None;
-                let mut retention_in_days: Option<crate::Value<u32>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
+                let mut log_group_name: Option<::Value<String>> = None;
+                let mut retention_in_days: Option<::Value<u32>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -227,7 +227,7 @@ impl<'de> ::serde::Deserialize<'de> for LogGroupProperties {
     }
 }
 
-impl crate::Resource for LogGroup {
+impl ::Resource for LogGroup {
     type Properties = LogGroupProperties;
     const TYPE: &'static str = "AWS::Logs::LogGroup";
     fn properties(&self) -> &LogGroupProperties {
@@ -238,7 +238,7 @@ impl crate::Resource for LogGroup {
     }
 }
 
-impl crate::private::Sealed for LogGroup {}
+impl ::private::Sealed for LogGroup {}
 
 impl From<LogGroupProperties> for LogGroup {
     fn from(properties: LogGroupProperties) -> LogGroup {
@@ -259,12 +259,12 @@ pub struct LogStreamProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub log_group_name: crate::Value<String>,
+    pub log_group_name: ::Value<String>,
     /// Property [`LogStreamName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-logstreamname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub log_stream_name: Option<crate::Value<String>>,
+    pub log_stream_name: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for LogStreamProperties {
@@ -301,8 +301,8 @@ impl<'de> ::serde::Deserialize<'de> for LogStreamProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut log_group_name: Option<crate::Value<String>> = None;
-                let mut log_stream_name: Option<crate::Value<String>> = None;
+                let mut log_group_name: Option<::Value<String>> = None;
+                let mut log_stream_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -328,7 +328,7 @@ impl<'de> ::serde::Deserialize<'de> for LogStreamProperties {
     }
 }
 
-impl crate::Resource for LogStream {
+impl ::Resource for LogStream {
     type Properties = LogStreamProperties;
     const TYPE: &'static str = "AWS::Logs::LogStream";
     fn properties(&self) -> &LogStreamProperties {
@@ -339,7 +339,7 @@ impl crate::Resource for LogStream {
     }
 }
 
-impl crate::private::Sealed for LogStream {}
+impl ::private::Sealed for LogStream {}
 
 impl From<LogStreamProperties> for LogStream {
     fn from(properties: LogStreamProperties) -> LogStream {
@@ -360,17 +360,17 @@ pub struct MetricFilterProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub filter_pattern: crate::Value<String>,
+    pub filter_pattern: ::Value<String>,
     /// Property [`LogGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-loggroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub log_group_name: crate::Value<String>,
+    pub log_group_name: ::Value<String>,
     /// Property [`MetricTransformations`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-metrictransformations).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub metric_transformations: crate::ValueList<self::metric_filter::MetricTransformation>,
+    pub metric_transformations: ::ValueList<self::metric_filter::MetricTransformation>,
 }
 
 impl ::serde::Serialize for MetricFilterProperties {
@@ -412,10 +412,10 @@ impl<'de> ::serde::Deserialize<'de> for MetricFilterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut filter_pattern: Option<crate::Value<String>> = None;
-                let mut log_group_name: Option<crate::Value<String>> = None;
+                let mut filter_pattern: Option<::Value<String>> = None;
+                let mut log_group_name: Option<::Value<String>> = None;
                 let mut metric_transformations: Option<
-                    crate::ValueList<self::metric_filter::MetricTransformation>,
+                    ::ValueList<self::metric_filter::MetricTransformation>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -448,7 +448,7 @@ impl<'de> ::serde::Deserialize<'de> for MetricFilterProperties {
     }
 }
 
-impl crate::Resource for MetricFilter {
+impl ::Resource for MetricFilter {
     type Properties = MetricFilterProperties;
     const TYPE: &'static str = "AWS::Logs::MetricFilter";
     fn properties(&self) -> &MetricFilterProperties {
@@ -459,7 +459,7 @@ impl crate::Resource for MetricFilter {
     }
 }
 
-impl crate::private::Sealed for MetricFilter {}
+impl ::private::Sealed for MetricFilter {}
 
 impl From<MetricFilterProperties> for MetricFilter {
     fn from(properties: MetricFilterProperties) -> MetricFilter {
@@ -480,17 +480,17 @@ pub struct QueryDefinitionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub log_group_names: Option<crate::ValueList<String>>,
+    pub log_group_names: Option<::ValueList<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-querydefinition.html#cfn-logs-querydefinition-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`QueryString`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-querydefinition.html#cfn-logs-querydefinition-querystring).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub query_string: crate::Value<String>,
+    pub query_string: ::Value<String>,
 }
 
 impl ::serde::Serialize for QueryDefinitionProperties {
@@ -526,9 +526,9 @@ impl<'de> ::serde::Deserialize<'de> for QueryDefinitionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut log_group_names: Option<crate::ValueList<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut query_string: Option<crate::Value<String>> = None;
+                let mut log_group_names: Option<::ValueList<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut query_string: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -558,7 +558,7 @@ impl<'de> ::serde::Deserialize<'de> for QueryDefinitionProperties {
     }
 }
 
-impl crate::Resource for QueryDefinition {
+impl ::Resource for QueryDefinition {
     type Properties = QueryDefinitionProperties;
     const TYPE: &'static str = "AWS::Logs::QueryDefinition";
     fn properties(&self) -> &QueryDefinitionProperties {
@@ -569,7 +569,7 @@ impl crate::Resource for QueryDefinition {
     }
 }
 
-impl crate::private::Sealed for QueryDefinition {}
+impl ::private::Sealed for QueryDefinition {}
 
 impl From<QueryDefinitionProperties> for QueryDefinition {
     fn from(properties: QueryDefinitionProperties) -> QueryDefinition {
@@ -590,12 +590,12 @@ pub struct ResourcePolicyProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub policy_document: crate::Value<String>,
+    pub policy_document: ::Value<String>,
     /// Property [`PolicyName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-resourcepolicy.html#cfn-logs-resourcepolicy-policyname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub policy_name: crate::Value<String>,
+    pub policy_name: ::Value<String>,
 }
 
 impl ::serde::Serialize for ResourcePolicyProperties {
@@ -628,8 +628,8 @@ impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut policy_document: Option<crate::Value<String>> = None;
-                let mut policy_name: Option<crate::Value<String>> = None;
+                let mut policy_document: Option<::Value<String>> = None;
+                let mut policy_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -656,7 +656,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourcePolicyProperties {
     }
 }
 
-impl crate::Resource for ResourcePolicy {
+impl ::Resource for ResourcePolicy {
     type Properties = ResourcePolicyProperties;
     const TYPE: &'static str = "AWS::Logs::ResourcePolicy";
     fn properties(&self) -> &ResourcePolicyProperties {
@@ -667,7 +667,7 @@ impl crate::Resource for ResourcePolicy {
     }
 }
 
-impl crate::private::Sealed for ResourcePolicy {}
+impl ::private::Sealed for ResourcePolicy {}
 
 impl From<ResourcePolicyProperties> for ResourcePolicy {
     fn from(properties: ResourcePolicyProperties) -> ResourcePolicy {
@@ -688,22 +688,22 @@ pub struct SubscriptionFilterProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub destination_arn: crate::Value<String>,
+    pub destination_arn: ::Value<String>,
     /// Property [`FilterPattern`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-filterpattern).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub filter_pattern: crate::Value<String>,
+    pub filter_pattern: ::Value<String>,
     /// Property [`LogGroupName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-loggroupname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub log_group_name: crate::Value<String>,
+    pub log_group_name: ::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: Option<crate::Value<String>>,
+    pub role_arn: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for SubscriptionFilterProperties {
@@ -748,10 +748,10 @@ impl<'de> ::serde::Deserialize<'de> for SubscriptionFilterProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut destination_arn: Option<crate::Value<String>> = None;
-                let mut filter_pattern: Option<crate::Value<String>> = None;
-                let mut log_group_name: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut destination_arn: Option<::Value<String>> = None;
+                let mut filter_pattern: Option<::Value<String>> = None;
+                let mut log_group_name: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -787,7 +787,7 @@ impl<'de> ::serde::Deserialize<'de> for SubscriptionFilterProperties {
     }
 }
 
-impl crate::Resource for SubscriptionFilter {
+impl ::Resource for SubscriptionFilter {
     type Properties = SubscriptionFilterProperties;
     const TYPE: &'static str = "AWS::Logs::SubscriptionFilter";
     fn properties(&self) -> &SubscriptionFilterProperties {
@@ -798,7 +798,7 @@ impl crate::Resource for SubscriptionFilter {
     }
 }
 
-impl crate::private::Sealed for SubscriptionFilter {}
+impl ::private::Sealed for SubscriptionFilter {}
 
 impl From<SubscriptionFilterProperties> for SubscriptionFilter {
     fn from(properties: SubscriptionFilterProperties) -> SubscriptionFilter {
@@ -816,25 +816,25 @@ pub mod metric_filter {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_value: Option<crate::Value<f64>>,
+        pub default_value: Option<::Value<f64>>,
         /// Property [`MetricName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_name: crate::Value<String>,
+        pub metric_name: ::Value<String>,
         /// Property [`MetricNamespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricnamespace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_namespace: crate::Value<String>,
+        pub metric_namespace: ::Value<String>,
         /// Property [`MetricValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub metric_value: crate::Value<String>,
+        pub metric_value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for MetricTransformation {
+    impl ::codec::SerializeValue for MetricTransformation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_value) = self.default_value {
@@ -859,7 +859,7 @@ pub mod metric_filter {
         }
     }
 
-    impl crate::codec::DeserializeValue for MetricTransformation {
+    impl ::codec::DeserializeValue for MetricTransformation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MetricTransformation, D::Error> {
@@ -876,10 +876,10 @@ pub mod metric_filter {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut default_value: Option<crate::Value<f64>> = None;
-                    let mut metric_name: Option<crate::Value<String>> = None;
-                    let mut metric_namespace: Option<crate::Value<String>> = None;
-                    let mut metric_value: Option<crate::Value<String>> = None;
+                    let mut default_value: Option<::Value<f64>> = None;
+                    let mut metric_name: Option<::Value<String>> = None;
+                    let mut metric_namespace: Option<::Value<String>> = None;
+                    let mut metric_value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

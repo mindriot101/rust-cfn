@@ -13,27 +13,27 @@ pub struct DatasetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub dataset_group_arn: crate::Value<String>,
+    pub dataset_group_arn: ::Value<String>,
     /// Property [`DatasetImportJob`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-datasetimportjob).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dataset_import_job: Option<crate::Value<self::dataset::DatasetImportJob>>,
+    pub dataset_import_job: Option<::Value<self::dataset::DatasetImportJob>>,
     /// Property [`DatasetType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-datasettype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub dataset_type: crate::Value<String>,
+    pub dataset_type: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`SchemaArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-schemaarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub schema_arn: crate::Value<String>,
+    pub schema_arn: ::Value<String>,
 }
 
 impl ::serde::Serialize for DatasetProperties {
@@ -73,11 +73,11 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut dataset_group_arn: Option<crate::Value<String>> = None;
-                let mut dataset_import_job: Option<crate::Value<self::dataset::DatasetImportJob>> = None;
-                let mut dataset_type: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut schema_arn: Option<crate::Value<String>> = None;
+                let mut dataset_group_arn: Option<::Value<String>> = None;
+                let mut dataset_import_job: Option<::Value<self::dataset::DatasetImportJob>> = None;
+                let mut dataset_type: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut schema_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -116,7 +116,7 @@ impl<'de> ::serde::Deserialize<'de> for DatasetProperties {
     }
 }
 
-impl crate::Resource for Dataset {
+impl ::Resource for Dataset {
     type Properties = DatasetProperties;
     const TYPE: &'static str = "AWS::Personalize::Dataset";
     fn properties(&self) -> &DatasetProperties {
@@ -127,7 +127,7 @@ impl crate::Resource for Dataset {
     }
 }
 
-impl crate::private::Sealed for Dataset {}
+impl ::private::Sealed for Dataset {}
 
 impl From<DatasetProperties> for Dataset {
     fn from(properties: DatasetProperties) -> Dataset {
@@ -148,22 +148,22 @@ pub struct DatasetGroupProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain: Option<crate::Value<String>>,
+    pub domain: Option<::Value<String>>,
     /// Property [`KmsKeyArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-datasetgroup.html#cfn-personalize-datasetgroup-kmskeyarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_arn: Option<crate::Value<String>>,
+    pub kms_key_arn: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-datasetgroup.html#cfn-personalize-datasetgroup-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-datasetgroup.html#cfn-personalize-datasetgroup-rolearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub role_arn: Option<crate::Value<String>>,
+    pub role_arn: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for DatasetGroupProperties {
@@ -200,10 +200,10 @@ impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut domain: Option<crate::Value<String>> = None;
-                let mut kms_key_arn: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut domain: Option<::Value<String>> = None;
+                let mut kms_key_arn: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -236,7 +236,7 @@ impl<'de> ::serde::Deserialize<'de> for DatasetGroupProperties {
     }
 }
 
-impl crate::Resource for DatasetGroup {
+impl ::Resource for DatasetGroup {
     type Properties = DatasetGroupProperties;
     const TYPE: &'static str = "AWS::Personalize::DatasetGroup";
     fn properties(&self) -> &DatasetGroupProperties {
@@ -247,7 +247,7 @@ impl crate::Resource for DatasetGroup {
     }
 }
 
-impl crate::private::Sealed for DatasetGroup {}
+impl ::private::Sealed for DatasetGroup {}
 
 impl From<DatasetGroupProperties> for DatasetGroup {
     fn from(properties: DatasetGroupProperties) -> DatasetGroup {
@@ -268,17 +268,17 @@ pub struct SchemaProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain: Option<crate::Value<String>>,
+    pub domain: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-schema.html#cfn-personalize-schema-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Schema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-schema.html#cfn-personalize-schema-schema).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub schema: crate::Value<String>,
+    pub schema: ::Value<String>,
 }
 
 impl ::serde::Serialize for SchemaProperties {
@@ -308,9 +308,9 @@ impl<'de> ::serde::Deserialize<'de> for SchemaProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut domain: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut schema: Option<crate::Value<String>> = None;
+                let mut domain: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut schema: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -339,7 +339,7 @@ impl<'de> ::serde::Deserialize<'de> for SchemaProperties {
     }
 }
 
-impl crate::Resource for Schema {
+impl ::Resource for Schema {
     type Properties = SchemaProperties;
     const TYPE: &'static str = "AWS::Personalize::Schema";
     fn properties(&self) -> &SchemaProperties {
@@ -350,7 +350,7 @@ impl crate::Resource for Schema {
     }
 }
 
-impl crate::private::Sealed for Schema {}
+impl ::private::Sealed for Schema {}
 
 impl From<SchemaProperties> for Schema {
     fn from(properties: SchemaProperties) -> Schema {
@@ -371,37 +371,37 @@ pub struct SolutionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub dataset_group_arn: crate::Value<String>,
+    pub dataset_group_arn: ::Value<String>,
     /// Property [`EventType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-eventtype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub event_type: Option<crate::Value<String>>,
+    pub event_type: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`PerformAutoML`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-performautoml).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub perform_auto_ml: Option<crate::Value<bool>>,
+    pub perform_auto_ml: Option<::Value<bool>>,
     /// Property [`PerformHPO`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-performhpo).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub perform_hpo: Option<crate::Value<bool>>,
+    pub perform_hpo: Option<::Value<bool>>,
     /// Property [`RecipeArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-recipearn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub recipe_arn: Option<crate::Value<String>>,
+    pub recipe_arn: Option<::Value<String>>,
     /// Property [`SolutionConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-solutionconfig).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub solution_config: Option<crate::Value<self::solution::SolutionConfig>>,
+    pub solution_config: Option<::Value<self::solution::SolutionConfig>>,
 }
 
 impl ::serde::Serialize for SolutionProperties {
@@ -455,13 +455,13 @@ impl<'de> ::serde::Deserialize<'de> for SolutionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut dataset_group_arn: Option<crate::Value<String>> = None;
-                let mut event_type: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut perform_auto_ml: Option<crate::Value<bool>> = None;
-                let mut perform_hpo: Option<crate::Value<bool>> = None;
-                let mut recipe_arn: Option<crate::Value<String>> = None;
-                let mut solution_config: Option<crate::Value<self::solution::SolutionConfig>> = None;
+                let mut dataset_group_arn: Option<::Value<String>> = None;
+                let mut event_type: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut perform_auto_ml: Option<::Value<bool>> = None;
+                let mut perform_hpo: Option<::Value<bool>> = None;
+                let mut recipe_arn: Option<::Value<String>> = None;
+                let mut solution_config: Option<::Value<self::solution::SolutionConfig>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -507,7 +507,7 @@ impl<'de> ::serde::Deserialize<'de> for SolutionProperties {
     }
 }
 
-impl crate::Resource for Solution {
+impl ::Resource for Solution {
     type Properties = SolutionProperties;
     const TYPE: &'static str = "AWS::Personalize::Solution";
     fn properties(&self) -> &SolutionProperties {
@@ -518,7 +518,7 @@ impl crate::Resource for Solution {
     }
 }
 
-impl crate::private::Sealed for Solution {}
+impl ::private::Sealed for Solution {}
 
 impl From<SolutionProperties> for Solution {
     fn from(properties: SolutionProperties) -> Solution {
@@ -536,30 +536,30 @@ pub mod dataset {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source: Option<crate::Value<crate::json::Value>>,
+        pub data_source: Option<::Value<::json::Value>>,
         /// Property [`DatasetArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-dataset-datasetimportjob.html#cfn-personalize-dataset-datasetimportjob-datasetarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dataset_arn: Option<crate::Value<String>>,
+        pub dataset_arn: Option<::Value<String>>,
         /// Property [`DatasetImportJobArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-dataset-datasetimportjob.html#cfn-personalize-dataset-datasetimportjob-datasetimportjobarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dataset_import_job_arn: Option<crate::Value<String>>,
+        pub dataset_import_job_arn: Option<::Value<String>>,
         /// Property [`JobName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-dataset-datasetimportjob.html#cfn-personalize-dataset-datasetimportjob-jobname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub job_name: Option<crate::Value<String>>,
+        pub job_name: Option<::Value<String>>,
         /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-dataset-datasetimportjob.html#cfn-personalize-dataset-datasetimportjob-rolearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub role_arn: Option<crate::Value<String>>,
+        pub role_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DatasetImportJob {
+    impl ::codec::SerializeValue for DatasetImportJob {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_source) = self.data_source {
@@ -585,7 +585,7 @@ pub mod dataset {
         }
     }
 
-    impl crate::codec::DeserializeValue for DatasetImportJob {
+    impl ::codec::DeserializeValue for DatasetImportJob {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DatasetImportJob, D::Error> {
@@ -602,11 +602,11 @@ pub mod dataset {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_source: Option<crate::Value<crate::json::Value>> = None;
-                    let mut dataset_arn: Option<crate::Value<String>> = None;
-                    let mut dataset_import_job_arn: Option<crate::Value<String>> = None;
-                    let mut job_name: Option<crate::Value<String>> = None;
-                    let mut role_arn: Option<crate::Value<String>> = None;
+                    let mut data_source: Option<::Value<::json::Value>> = None;
+                    let mut dataset_arn: Option<::Value<String>> = None;
+                    let mut dataset_import_job_arn: Option<::Value<String>> = None;
+                    let mut job_name: Option<::Value<String>> = None;
+                    let mut role_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -657,30 +657,30 @@ pub mod solution {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub algorithm_hyper_parameters: Option<crate::ValueMap<String>>,
+        pub algorithm_hyper_parameters: Option<::ValueMap<String>>,
         /// Property [`AutoMLConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-solutionconfig.html#cfn-personalize-solution-solutionconfig-automlconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub auto_ml_config: Option<crate::Value<crate::json::Value>>,
+        pub auto_ml_config: Option<::Value<::json::Value>>,
         /// Property [`EventValueThreshold`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-solutionconfig.html#cfn-personalize-solution-solutionconfig-eventvaluethreshold).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub event_value_threshold: Option<crate::Value<String>>,
+        pub event_value_threshold: Option<::Value<String>>,
         /// Property [`FeatureTransformationParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-solutionconfig.html#cfn-personalize-solution-solutionconfig-featuretransformationparameters).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub feature_transformation_parameters: Option<crate::ValueMap<String>>,
+        pub feature_transformation_parameters: Option<::ValueMap<String>>,
         /// Property [`HpoConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-solutionconfig.html#cfn-personalize-solution-solutionconfig-hpoconfig).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub hpo_config: Option<crate::Value<crate::json::Value>>,
+        pub hpo_config: Option<::Value<::json::Value>>,
     }
 
-    impl crate::codec::SerializeValue for SolutionConfig {
+    impl ::codec::SerializeValue for SolutionConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref algorithm_hyper_parameters) = self.algorithm_hyper_parameters {
@@ -720,7 +720,7 @@ pub mod solution {
         }
     }
 
-    impl crate::codec::DeserializeValue for SolutionConfig {
+    impl ::codec::DeserializeValue for SolutionConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SolutionConfig, D::Error> {
@@ -737,11 +737,11 @@ pub mod solution {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut algorithm_hyper_parameters: Option<crate::ValueMap<String>> = None;
-                    let mut auto_ml_config: Option<crate::Value<crate::json::Value>> = None;
-                    let mut event_value_threshold: Option<crate::Value<String>> = None;
-                    let mut feature_transformation_parameters: Option<crate::ValueMap<String>> = None;
-                    let mut hpo_config: Option<crate::Value<crate::json::Value>> = None;
+                    let mut algorithm_hyper_parameters: Option<::ValueMap<String>> = None;
+                    let mut auto_ml_config: Option<::Value<::json::Value>> = None;
+                    let mut event_value_threshold: Option<::Value<String>> = None;
+                    let mut feature_transformation_parameters: Option<::ValueMap<String>> = None;
+                    let mut hpo_config: Option<::Value<::json::Value>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

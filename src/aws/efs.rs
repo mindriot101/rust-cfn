@@ -13,27 +13,27 @@ pub struct AccessPointProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub access_point_tags: Option<crate::ValueList<self::access_point::AccessPointTag>>,
+    pub access_point_tags: Option<::ValueList<self::access_point::AccessPointTag>>,
     /// Property [`ClientToken`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-clienttoken).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub client_token: Option<crate::Value<String>>,
+    pub client_token: Option<::Value<String>>,
     /// Property [`FileSystemId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-filesystemid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub file_system_id: crate::Value<String>,
+    pub file_system_id: ::Value<String>,
     /// Property [`PosixUser`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-posixuser).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub posix_user: Option<crate::Value<self::access_point::PosixUser>>,
+    pub posix_user: Option<::Value<self::access_point::PosixUser>>,
     /// Property [`RootDirectory`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-rootdirectory).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub root_directory: Option<crate::Value<self::access_point::RootDirectory>>,
+    pub root_directory: Option<::Value<self::access_point::RootDirectory>>,
 }
 
 impl ::serde::Serialize for AccessPointProperties {
@@ -79,12 +79,12 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut access_point_tags: Option<crate::ValueList<self::access_point::AccessPointTag>> =
+                let mut access_point_tags: Option<::ValueList<self::access_point::AccessPointTag>> =
                     None;
-                let mut client_token: Option<crate::Value<String>> = None;
-                let mut file_system_id: Option<crate::Value<String>> = None;
-                let mut posix_user: Option<crate::Value<self::access_point::PosixUser>> = None;
-                let mut root_directory: Option<crate::Value<self::access_point::RootDirectory>> = None;
+                let mut client_token: Option<::Value<String>> = None;
+                let mut file_system_id: Option<::Value<String>> = None;
+                let mut posix_user: Option<::Value<self::access_point::PosixUser>> = None;
+                let mut root_directory: Option<::Value<self::access_point::RootDirectory>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -122,7 +122,7 @@ impl<'de> ::serde::Deserialize<'de> for AccessPointProperties {
     }
 }
 
-impl crate::Resource for AccessPoint {
+impl ::Resource for AccessPoint {
     type Properties = AccessPointProperties;
     const TYPE: &'static str = "AWS::EFS::AccessPoint";
     fn properties(&self) -> &AccessPointProperties {
@@ -133,7 +133,7 @@ impl crate::Resource for AccessPoint {
     }
 }
 
-impl crate::private::Sealed for AccessPoint {}
+impl ::private::Sealed for AccessPoint {}
 
 impl From<AccessPointProperties> for AccessPoint {
     fn from(properties: AccessPointProperties) -> AccessPoint {
@@ -154,57 +154,57 @@ pub struct FileSystemProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub availability_zone_name: Option<crate::Value<String>>,
+    pub availability_zone_name: Option<::Value<String>>,
     /// Property [`BackupPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-backuppolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub backup_policy: Option<crate::Value<self::file_system::BackupPolicy>>,
+    pub backup_policy: Option<::Value<self::file_system::BackupPolicy>>,
     /// Property [`BypassPolicyLockoutSafetyCheck`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-bypasspolicylockoutsafetycheck).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub bypass_policy_lockout_safety_check: Option<crate::Value<bool>>,
+    pub bypass_policy_lockout_safety_check: Option<::Value<bool>>,
     /// Property [`Encrypted`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-encrypted).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub encrypted: Option<crate::Value<bool>>,
+    pub encrypted: Option<::Value<bool>>,
     /// Property [`FileSystemPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystempolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub file_system_policy: Option<crate::Value<crate::json::Value>>,
+    pub file_system_policy: Option<::Value<::json::Value>>,
     /// Property [`FileSystemTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystemtags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub file_system_tags: Option<crate::ValueList<self::file_system::ElasticFileSystemTag>>,
+    pub file_system_tags: Option<::ValueList<self::file_system::ElasticFileSystemTag>>,
     /// Property [`KmsKeyId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-kmskeyid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key_id: Option<crate::Value<String>>,
+    pub kms_key_id: Option<::Value<String>>,
     /// Property [`LifecyclePolicies`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-lifecyclepolicies).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub lifecycle_policies: Option<crate::ValueList<self::file_system::LifecyclePolicy>>,
+    pub lifecycle_policies: Option<::ValueList<self::file_system::LifecyclePolicy>>,
     /// Property [`PerformanceMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-performancemode).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub performance_mode: Option<crate::Value<String>>,
+    pub performance_mode: Option<::Value<String>>,
     /// Property [`ProvisionedThroughputInMibps`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-provisionedthroughputinmibps).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provisioned_throughput_in_mibps: Option<crate::Value<f64>>,
+    pub provisioned_throughput_in_mibps: Option<::Value<f64>>,
     /// Property [`ThroughputMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-throughputmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub throughput_mode: Option<crate::Value<String>>,
+    pub throughput_mode: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for FileSystemProperties {
@@ -296,21 +296,21 @@ impl<'de> ::serde::Deserialize<'de> for FileSystemProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut availability_zone_name: Option<crate::Value<String>> = None;
-                let mut backup_policy: Option<crate::Value<self::file_system::BackupPolicy>> = None;
-                let mut bypass_policy_lockout_safety_check: Option<crate::Value<bool>> = None;
-                let mut encrypted: Option<crate::Value<bool>> = None;
-                let mut file_system_policy: Option<crate::Value<crate::json::Value>> = None;
+                let mut availability_zone_name: Option<::Value<String>> = None;
+                let mut backup_policy: Option<::Value<self::file_system::BackupPolicy>> = None;
+                let mut bypass_policy_lockout_safety_check: Option<::Value<bool>> = None;
+                let mut encrypted: Option<::Value<bool>> = None;
+                let mut file_system_policy: Option<::Value<::json::Value>> = None;
                 let mut file_system_tags: Option<
-                    crate::ValueList<self::file_system::ElasticFileSystemTag>,
+                    ::ValueList<self::file_system::ElasticFileSystemTag>,
                 > = None;
-                let mut kms_key_id: Option<crate::Value<String>> = None;
+                let mut kms_key_id: Option<::Value<String>> = None;
                 let mut lifecycle_policies: Option<
-                    crate::ValueList<self::file_system::LifecyclePolicy>,
+                    ::ValueList<self::file_system::LifecyclePolicy>,
                 > = None;
-                let mut performance_mode: Option<crate::Value<String>> = None;
-                let mut provisioned_throughput_in_mibps: Option<crate::Value<f64>> = None;
-                let mut throughput_mode: Option<crate::Value<String>> = None;
+                let mut performance_mode: Option<::Value<String>> = None;
+                let mut provisioned_throughput_in_mibps: Option<::Value<f64>> = None;
+                let mut throughput_mode: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -373,7 +373,7 @@ impl<'de> ::serde::Deserialize<'de> for FileSystemProperties {
     }
 }
 
-impl crate::Resource for FileSystem {
+impl ::Resource for FileSystem {
     type Properties = FileSystemProperties;
     const TYPE: &'static str = "AWS::EFS::FileSystem";
     fn properties(&self) -> &FileSystemProperties {
@@ -384,7 +384,7 @@ impl crate::Resource for FileSystem {
     }
 }
 
-impl crate::private::Sealed for FileSystem {}
+impl ::private::Sealed for FileSystem {}
 
 impl From<FileSystemProperties> for FileSystem {
     fn from(properties: FileSystemProperties) -> FileSystem {
@@ -405,22 +405,22 @@ pub struct MountTargetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub file_system_id: crate::Value<String>,
+    pub file_system_id: ::Value<String>,
     /// Property [`IpAddress`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipaddress).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub ip_address: Option<crate::Value<String>>,
+    pub ip_address: Option<::Value<String>>,
     /// Property [`SecurityGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-securitygroups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub security_groups: crate::ValueList<String>,
+    pub security_groups: ::ValueList<String>,
     /// Property [`SubnetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-subnetid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subnet_id: crate::Value<String>,
+    pub subnet_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for MountTargetProperties {
@@ -459,10 +459,10 @@ impl<'de> ::serde::Deserialize<'de> for MountTargetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut file_system_id: Option<crate::Value<String>> = None;
-                let mut ip_address: Option<crate::Value<String>> = None;
-                let mut security_groups: Option<crate::ValueList<String>> = None;
-                let mut subnet_id: Option<crate::Value<String>> = None;
+                let mut file_system_id: Option<::Value<String>> = None;
+                let mut ip_address: Option<::Value<String>> = None;
+                let mut security_groups: Option<::ValueList<String>> = None;
+                let mut subnet_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -497,7 +497,7 @@ impl<'de> ::serde::Deserialize<'de> for MountTargetProperties {
     }
 }
 
-impl crate::Resource for MountTarget {
+impl ::Resource for MountTarget {
     type Properties = MountTargetProperties;
     const TYPE: &'static str = "AWS::EFS::MountTarget";
     fn properties(&self) -> &MountTargetProperties {
@@ -508,7 +508,7 @@ impl crate::Resource for MountTarget {
     }
 }
 
-impl crate::private::Sealed for MountTarget {}
+impl ::private::Sealed for MountTarget {}
 
 impl From<MountTargetProperties> for MountTarget {
     fn from(properties: MountTargetProperties) -> MountTarget {
@@ -526,15 +526,15 @@ pub mod access_point {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: Option<crate::Value<String>>,
+        pub key: Option<::Value<String>>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-accesspointtag.html#cfn-efs-accesspoint-accesspointtag-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: Option<crate::Value<String>>,
+        pub value: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AccessPointTag {
+    impl ::codec::SerializeValue for AccessPointTag {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref key) = self.key {
@@ -547,7 +547,7 @@ pub mod access_point {
         }
     }
 
-    impl crate::codec::DeserializeValue for AccessPointTag {
+    impl ::codec::DeserializeValue for AccessPointTag {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AccessPointTag, D::Error> {
@@ -564,8 +564,8 @@ pub mod access_point {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -599,20 +599,20 @@ pub mod access_point {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub owner_gid: crate::Value<String>,
+        pub owner_gid: ::Value<String>,
         /// Property [`OwnerUid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-creationinfo.html#cfn-efs-accesspoint-creationinfo-owneruid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub owner_uid: crate::Value<String>,
+        pub owner_uid: ::Value<String>,
         /// Property [`Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-creationinfo.html#cfn-efs-accesspoint-creationinfo-permissions).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub permissions: crate::Value<String>,
+        pub permissions: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CreationInfo {
+    impl ::codec::SerializeValue for CreationInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "OwnerGid", &self.owner_gid)?;
@@ -626,7 +626,7 @@ pub mod access_point {
         }
     }
 
-    impl crate::codec::DeserializeValue for CreationInfo {
+    impl ::codec::DeserializeValue for CreationInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CreationInfo, D::Error> {
             struct Visitor;
 
@@ -641,9 +641,9 @@ pub mod access_point {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut owner_gid: Option<crate::Value<String>> = None;
-                    let mut owner_uid: Option<crate::Value<String>> = None;
-                    let mut permissions: Option<crate::Value<String>> = None;
+                    let mut owner_gid: Option<::Value<String>> = None;
+                    let mut owner_uid: Option<::Value<String>> = None;
+                    let mut permissions: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -684,20 +684,20 @@ pub mod access_point {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub gid: crate::Value<String>,
+        pub gid: ::Value<String>,
         /// Property [`SecondaryGids`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-posixuser.html#cfn-efs-accesspoint-posixuser-secondarygids).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub secondary_gids: Option<crate::ValueList<String>>,
+        pub secondary_gids: Option<::ValueList<String>>,
         /// Property [`Uid`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-posixuser.html#cfn-efs-accesspoint-posixuser-uid).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub uid: crate::Value<String>,
+        pub uid: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for PosixUser {
+    impl ::codec::SerializeValue for PosixUser {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Gid", &self.gid)?;
@@ -713,7 +713,7 @@ pub mod access_point {
         }
     }
 
-    impl crate::codec::DeserializeValue for PosixUser {
+    impl ::codec::DeserializeValue for PosixUser {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PosixUser, D::Error> {
             struct Visitor;
 
@@ -728,9 +728,9 @@ pub mod access_point {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut gid: Option<crate::Value<String>> = None;
-                    let mut secondary_gids: Option<crate::ValueList<String>> = None;
-                    let mut uid: Option<crate::Value<String>> = None;
+                    let mut gid: Option<::Value<String>> = None;
+                    let mut secondary_gids: Option<::ValueList<String>> = None;
+                    let mut uid: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -768,15 +768,15 @@ pub mod access_point {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub creation_info: Option<crate::Value<CreationInfo>>,
+        pub creation_info: Option<::Value<CreationInfo>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-rootdirectory.html#cfn-efs-accesspoint-rootdirectory-path).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub path: Option<crate::Value<String>>,
+        pub path: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for RootDirectory {
+    impl ::codec::SerializeValue for RootDirectory {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref creation_info) = self.creation_info {
@@ -793,7 +793,7 @@ pub mod access_point {
         }
     }
 
-    impl crate::codec::DeserializeValue for RootDirectory {
+    impl ::codec::DeserializeValue for RootDirectory {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RootDirectory, D::Error> {
@@ -810,8 +810,8 @@ pub mod access_point {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut creation_info: Option<crate::Value<CreationInfo>> = None;
-                    let mut path: Option<crate::Value<String>> = None;
+                    let mut creation_info: Option<::Value<CreationInfo>> = None;
+                    let mut path: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -849,10 +849,10 @@ pub mod file_system {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub status: crate::Value<String>,
+        pub status: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for BackupPolicy {
+    impl ::codec::SerializeValue for BackupPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Status", &self.status)?;
@@ -860,7 +860,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for BackupPolicy {
+    impl ::codec::DeserializeValue for BackupPolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BackupPolicy, D::Error> {
             struct Visitor;
 
@@ -875,7 +875,7 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut status: Option<crate::Value<String>> = None;
+                    let mut status: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -905,15 +905,15 @@ pub mod file_system {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-elasticfilesystemtag.html#cfn-efs-filesystem-elasticfilesystemtag-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<String>,
+        pub value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ElasticFileSystemTag {
+    impl ::codec::SerializeValue for ElasticFileSystemTag {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -922,7 +922,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for ElasticFileSystemTag {
+    impl ::codec::DeserializeValue for ElasticFileSystemTag {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ElasticFileSystemTag, D::Error> {
@@ -939,8 +939,8 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -974,15 +974,15 @@ pub mod file_system {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub transition_to_ia: Option<crate::Value<String>>,
+        pub transition_to_ia: Option<::Value<String>>,
         /// Property [`TransitionToPrimaryStorageClass`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-lifecyclepolicy.html#cfn-efs-filesystem-lifecyclepolicy-transitiontoprimarystorageclass).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub transition_to_primary_storage_class: Option<crate::Value<String>>,
+        pub transition_to_primary_storage_class: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LifecyclePolicy {
+    impl ::codec::SerializeValue for LifecyclePolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref transition_to_ia) = self.transition_to_ia {
@@ -1005,7 +1005,7 @@ pub mod file_system {
         }
     }
 
-    impl crate::codec::DeserializeValue for LifecyclePolicy {
+    impl ::codec::DeserializeValue for LifecyclePolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LifecyclePolicy, D::Error> {
@@ -1022,8 +1022,8 @@ pub mod file_system {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut transition_to_ia: Option<crate::Value<String>> = None;
-                    let mut transition_to_primary_storage_class: Option<crate::Value<String>> = None;
+                    let mut transition_to_ia: Option<::Value<String>> = None;
+                    let mut transition_to_primary_storage_class: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

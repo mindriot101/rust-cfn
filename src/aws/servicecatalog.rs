@@ -13,12 +13,12 @@ pub struct AcceptedPortfolioShareProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for AcceptedPortfolioShareProperties {
@@ -53,8 +53,8 @@ impl<'de> ::serde::Deserialize<'de> for AcceptedPortfolioShareProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -80,7 +80,7 @@ impl<'de> ::serde::Deserialize<'de> for AcceptedPortfolioShareProperties {
     }
 }
 
-impl crate::Resource for AcceptedPortfolioShare {
+impl ::Resource for AcceptedPortfolioShare {
     type Properties = AcceptedPortfolioShareProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::AcceptedPortfolioShare";
     fn properties(&self) -> &AcceptedPortfolioShareProperties {
@@ -91,7 +91,7 @@ impl crate::Resource for AcceptedPortfolioShare {
     }
 }
 
-impl crate::private::Sealed for AcceptedPortfolioShare {}
+impl ::private::Sealed for AcceptedPortfolioShare {}
 
 impl From<AcceptedPortfolioShareProperties> for AcceptedPortfolioShare {
     fn from(properties: AcceptedPortfolioShareProperties) -> AcceptedPortfolioShare {
@@ -112,58 +112,58 @@ pub struct CloudFormationProductProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Distributor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub distributor: Option<crate::Value<String>>,
+    pub distributor: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Owner`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub owner: crate::Value<String>,
+    pub owner: ::Value<String>,
     /// Property [`ProvisioningArtifactParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub provisioning_artifact_parameters:
-        crate::ValueList<self::cloud_formation_product::ProvisioningArtifactProperties>,
+        ::ValueList<self::cloud_formation_product::ProvisioningArtifactProperties>,
     /// Property [`ReplaceProvisioningArtifacts`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-replaceprovisioningartifacts).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub replace_provisioning_artifacts: Option<crate::Value<bool>>,
+    pub replace_provisioning_artifacts: Option<::Value<bool>>,
     /// Property [`SupportDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub support_description: Option<crate::Value<String>>,
+    pub support_description: Option<::Value<String>>,
     /// Property [`SupportEmail`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub support_email: Option<crate::Value<String>>,
+    pub support_email: Option<::Value<String>>,
     /// Property [`SupportUrl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub support_url: Option<crate::Value<String>>,
+    pub support_url: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for CloudFormationProductProperties {
@@ -233,19 +233,19 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProductProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut distributor: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut owner: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut distributor: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut owner: Option<::Value<String>> = None;
                 let mut provisioning_artifact_parameters: Option<
-                    crate::ValueList<self::cloud_formation_product::ProvisioningArtifactProperties>,
+                    ::ValueList<self::cloud_formation_product::ProvisioningArtifactProperties>,
                 > = None;
-                let mut replace_provisioning_artifacts: Option<crate::Value<bool>> = None;
-                let mut support_description: Option<crate::Value<String>> = None;
-                let mut support_email: Option<crate::Value<String>> = None;
-                let mut support_url: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut replace_provisioning_artifacts: Option<::Value<bool>> = None;
+                let mut support_description: Option<::Value<String>> = None;
+                let mut support_email: Option<::Value<String>> = None;
+                let mut support_url: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -310,7 +310,7 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProductProperties {
     }
 }
 
-impl crate::Resource for CloudFormationProduct {
+impl ::Resource for CloudFormationProduct {
     type Properties = CloudFormationProductProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::CloudFormationProduct";
     fn properties(&self) -> &CloudFormationProductProperties {
@@ -321,7 +321,7 @@ impl crate::Resource for CloudFormationProduct {
     }
 }
 
-impl crate::private::Sealed for CloudFormationProduct {}
+impl ::private::Sealed for CloudFormationProduct {}
 
 impl From<CloudFormationProductProperties> for CloudFormationProduct {
     fn from(properties: CloudFormationProductProperties) -> CloudFormationProduct {
@@ -342,64 +342,64 @@ pub struct CloudFormationProvisionedProductProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`NotificationArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-notificationarns).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub notification_arns: Option<crate::ValueList<String>>,
+    pub notification_arns: Option<::ValueList<String>>,
     /// Property [`PathId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub path_id: Option<crate::Value<String>>,
+    pub path_id: Option<::Value<String>>,
     /// Property [`PathName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub path_name: Option<crate::Value<String>>,
+    pub path_name: Option<::Value<String>>,
     /// Property [`ProductId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub product_id: Option<crate::Value<String>>,
+    pub product_id: Option<::Value<String>>,
     /// Property [`ProductName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub product_name: Option<crate::Value<String>>,
+    pub product_name: Option<::Value<String>>,
     /// Property [`ProvisionedProductName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisionedproductname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub provisioned_product_name: Option<crate::Value<String>>,
+    pub provisioned_product_name: Option<::Value<String>>,
     /// Property [`ProvisioningArtifactId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provisioning_artifact_id: Option<crate::Value<String>>,
+    pub provisioning_artifact_id: Option<::Value<String>>,
     /// Property [`ProvisioningArtifactName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provisioning_artifact_name: Option<crate::Value<String>>,
+    pub provisioning_artifact_name: Option<::Value<String>>,
     /// Property [`ProvisioningParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub provisioning_parameters:
-        Option<crate::ValueList<self::cloud_formation_provisioned_product::ProvisioningParameter>>,
+        Option<::ValueList<self::cloud_formation_provisioned_product::ProvisioningParameter>>,
     /// Property [`ProvisioningPreferences`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub provisioning_preferences:
-        Option<crate::Value<self::cloud_formation_provisioned_product::ProvisioningPreferences>>,
+        Option<::Value<self::cloud_formation_provisioned_product::ProvisioningPreferences>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for CloudFormationProvisionedProductProperties {
@@ -493,22 +493,22 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProvisionedProductProperti
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut notification_arns: Option<crate::ValueList<String>> = None;
-                let mut path_id: Option<crate::Value<String>> = None;
-                let mut path_name: Option<crate::Value<String>> = None;
-                let mut product_id: Option<crate::Value<String>> = None;
-                let mut product_name: Option<crate::Value<String>> = None;
-                let mut provisioned_product_name: Option<crate::Value<String>> = None;
-                let mut provisioning_artifact_id: Option<crate::Value<String>> = None;
-                let mut provisioning_artifact_name: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut notification_arns: Option<::ValueList<String>> = None;
+                let mut path_id: Option<::Value<String>> = None;
+                let mut path_name: Option<::Value<String>> = None;
+                let mut product_id: Option<::Value<String>> = None;
+                let mut product_name: Option<::Value<String>> = None;
+                let mut provisioned_product_name: Option<::Value<String>> = None;
+                let mut provisioning_artifact_id: Option<::Value<String>> = None;
+                let mut provisioning_artifact_name: Option<::Value<String>> = None;
                 let mut provisioning_parameters: Option<
-                    crate::ValueList<self::cloud_formation_provisioned_product::ProvisioningParameter>,
+                    ::ValueList<self::cloud_formation_provisioned_product::ProvisioningParameter>,
                 > = None;
                 let mut provisioning_preferences: Option<
-                    crate::Value<self::cloud_formation_provisioned_product::ProvisioningPreferences>,
+                    ::Value<self::cloud_formation_provisioned_product::ProvisioningPreferences>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -577,7 +577,7 @@ impl<'de> ::serde::Deserialize<'de> for CloudFormationProvisionedProductProperti
     }
 }
 
-impl crate::Resource for CloudFormationProvisionedProduct {
+impl ::Resource for CloudFormationProvisionedProduct {
     type Properties = CloudFormationProvisionedProductProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::CloudFormationProvisionedProduct";
     fn properties(&self) -> &CloudFormationProvisionedProductProperties {
@@ -588,7 +588,7 @@ impl crate::Resource for CloudFormationProvisionedProduct {
     }
 }
 
-impl crate::private::Sealed for CloudFormationProvisionedProduct {}
+impl ::private::Sealed for CloudFormationProvisionedProduct {}
 
 impl From<CloudFormationProvisionedProductProperties> for CloudFormationProvisionedProduct {
     fn from(
@@ -611,27 +611,27 @@ pub struct LaunchNotificationConstraintProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`NotificationArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-notificationarns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub notification_arns: crate::ValueList<String>,
+    pub notification_arns: ::ValueList<String>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
     /// Property [`ProductId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-productid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub product_id: crate::Value<String>,
+    pub product_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for LaunchNotificationConstraintProperties {
@@ -675,11 +675,11 @@ impl<'de> ::serde::Deserialize<'de> for LaunchNotificationConstraintProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut notification_arns: Option<crate::ValueList<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
-                let mut product_id: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut notification_arns: Option<::ValueList<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
+                let mut product_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -718,7 +718,7 @@ impl<'de> ::serde::Deserialize<'de> for LaunchNotificationConstraintProperties {
     }
 }
 
-impl crate::Resource for LaunchNotificationConstraint {
+impl ::Resource for LaunchNotificationConstraint {
     type Properties = LaunchNotificationConstraintProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::LaunchNotificationConstraint";
     fn properties(&self) -> &LaunchNotificationConstraintProperties {
@@ -729,7 +729,7 @@ impl crate::Resource for LaunchNotificationConstraint {
     }
 }
 
-impl crate::private::Sealed for LaunchNotificationConstraint {}
+impl ::private::Sealed for LaunchNotificationConstraint {}
 
 impl From<LaunchNotificationConstraintProperties> for LaunchNotificationConstraint {
     fn from(properties: LaunchNotificationConstraintProperties) -> LaunchNotificationConstraint {
@@ -750,32 +750,32 @@ pub struct LaunchRoleConstraintProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`LocalRoleName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-localrolename).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub local_role_name: Option<crate::Value<String>>,
+    pub local_role_name: Option<::Value<String>>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
     /// Property [`ProductId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-productid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub product_id: crate::Value<String>,
+    pub product_id: ::Value<String>,
     /// Property [`RoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-rolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub role_arn: Option<crate::Value<String>>,
+    pub role_arn: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for LaunchRoleConstraintProperties {
@@ -824,12 +824,12 @@ impl<'de> ::serde::Deserialize<'de> for LaunchRoleConstraintProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut local_role_name: Option<crate::Value<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
-                let mut product_id: Option<crate::Value<String>> = None;
-                let mut role_arn: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut local_role_name: Option<::Value<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
+                let mut product_id: Option<::Value<String>> = None;
+                let mut role_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -871,7 +871,7 @@ impl<'de> ::serde::Deserialize<'de> for LaunchRoleConstraintProperties {
     }
 }
 
-impl crate::Resource for LaunchRoleConstraint {
+impl ::Resource for LaunchRoleConstraint {
     type Properties = LaunchRoleConstraintProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::LaunchRoleConstraint";
     fn properties(&self) -> &LaunchRoleConstraintProperties {
@@ -882,7 +882,7 @@ impl crate::Resource for LaunchRoleConstraint {
     }
 }
 
-impl crate::private::Sealed for LaunchRoleConstraint {}
+impl ::private::Sealed for LaunchRoleConstraint {}
 
 impl From<LaunchRoleConstraintProperties> for LaunchRoleConstraint {
     fn from(properties: LaunchRoleConstraintProperties) -> LaunchRoleConstraint {
@@ -903,27 +903,27 @@ pub struct LaunchTemplateConstraintProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
     /// Property [`ProductId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-productid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub product_id: crate::Value<String>,
+    pub product_id: ::Value<String>,
     /// Property [`Rules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-rules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub rules: crate::Value<String>,
+    pub rules: ::Value<String>,
 }
 
 impl ::serde::Serialize for LaunchTemplateConstraintProperties {
@@ -963,11 +963,11 @@ impl<'de> ::serde::Deserialize<'de> for LaunchTemplateConstraintProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
-                let mut product_id: Option<crate::Value<String>> = None;
-                let mut rules: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
+                let mut product_id: Option<::Value<String>> = None;
+                let mut rules: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1005,7 +1005,7 @@ impl<'de> ::serde::Deserialize<'de> for LaunchTemplateConstraintProperties {
     }
 }
 
-impl crate::Resource for LaunchTemplateConstraint {
+impl ::Resource for LaunchTemplateConstraint {
     type Properties = LaunchTemplateConstraintProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::LaunchTemplateConstraint";
     fn properties(&self) -> &LaunchTemplateConstraintProperties {
@@ -1016,7 +1016,7 @@ impl crate::Resource for LaunchTemplateConstraint {
     }
 }
 
-impl crate::private::Sealed for LaunchTemplateConstraint {}
+impl ::private::Sealed for LaunchTemplateConstraint {}
 
 impl From<LaunchTemplateConstraintProperties> for LaunchTemplateConstraint {
     fn from(properties: LaunchTemplateConstraintProperties) -> LaunchTemplateConstraint {
@@ -1037,27 +1037,27 @@ pub struct PortfolioProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`DisplayName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-displayname).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub display_name: crate::Value<String>,
+    pub display_name: ::Value<String>,
     /// Property [`ProviderName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-providername).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub provider_name: crate::Value<String>,
+    pub provider_name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for PortfolioProperties {
@@ -1097,11 +1097,11 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut display_name: Option<crate::Value<String>> = None;
-                let mut provider_name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut display_name: Option<::Value<String>> = None;
+                let mut provider_name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1140,7 +1140,7 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioProperties {
     }
 }
 
-impl crate::Resource for Portfolio {
+impl ::Resource for Portfolio {
     type Properties = PortfolioProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::Portfolio";
     fn properties(&self) -> &PortfolioProperties {
@@ -1151,7 +1151,7 @@ impl crate::Resource for Portfolio {
     }
 }
 
-impl crate::private::Sealed for Portfolio {}
+impl ::private::Sealed for Portfolio {}
 
 impl From<PortfolioProperties> for Portfolio {
     fn from(properties: PortfolioProperties) -> Portfolio {
@@ -1172,22 +1172,22 @@ pub struct PortfolioPrincipalAssociationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
     /// Property [`PrincipalARN`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-principalarn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub principal_arn: crate::Value<String>,
+    pub principal_arn: ::Value<String>,
     /// Property [`PrincipalType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-principaltype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub principal_type: crate::Value<String>,
+    pub principal_type: ::Value<String>,
 }
 
 impl ::serde::Serialize for PortfolioPrincipalAssociationProperties {
@@ -1231,10 +1231,10 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioPrincipalAssociationProperties 
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
-                let mut principal_arn: Option<crate::Value<String>> = None;
-                let mut principal_type: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
+                let mut principal_arn: Option<::Value<String>> = None;
+                let mut principal_type: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1270,7 +1270,7 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioPrincipalAssociationProperties 
     }
 }
 
-impl crate::Resource for PortfolioPrincipalAssociation {
+impl ::Resource for PortfolioPrincipalAssociation {
     type Properties = PortfolioPrincipalAssociationProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::PortfolioPrincipalAssociation";
     fn properties(&self) -> &PortfolioPrincipalAssociationProperties {
@@ -1281,7 +1281,7 @@ impl crate::Resource for PortfolioPrincipalAssociation {
     }
 }
 
-impl crate::private::Sealed for PortfolioPrincipalAssociation {}
+impl ::private::Sealed for PortfolioPrincipalAssociation {}
 
 impl From<PortfolioPrincipalAssociationProperties> for PortfolioPrincipalAssociation {
     fn from(properties: PortfolioPrincipalAssociationProperties) -> PortfolioPrincipalAssociation {
@@ -1302,22 +1302,22 @@ pub struct PortfolioProductAssociationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
     /// Property [`ProductId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-productid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub product_id: crate::Value<String>,
+    pub product_id: ::Value<String>,
     /// Property [`SourcePortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-sourceportfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub source_portfolio_id: Option<crate::Value<String>>,
+    pub source_portfolio_id: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for PortfolioProductAssociationProperties {
@@ -1360,10 +1360,10 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioProductAssociationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
-                let mut product_id: Option<crate::Value<String>> = None;
-                let mut source_portfolio_id: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
+                let mut product_id: Option<::Value<String>> = None;
+                let mut source_portfolio_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1397,7 +1397,7 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioProductAssociationProperties {
     }
 }
 
-impl crate::Resource for PortfolioProductAssociation {
+impl ::Resource for PortfolioProductAssociation {
     type Properties = PortfolioProductAssociationProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::PortfolioProductAssociation";
     fn properties(&self) -> &PortfolioProductAssociationProperties {
@@ -1408,7 +1408,7 @@ impl crate::Resource for PortfolioProductAssociation {
     }
 }
 
-impl crate::private::Sealed for PortfolioProductAssociation {}
+impl ::private::Sealed for PortfolioProductAssociation {}
 
 impl From<PortfolioProductAssociationProperties> for PortfolioProductAssociation {
     fn from(properties: PortfolioProductAssociationProperties) -> PortfolioProductAssociation {
@@ -1429,22 +1429,22 @@ pub struct PortfolioShareProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`AccountId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-accountid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub account_id: crate::Value<String>,
+    pub account_id: ::Value<String>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
     /// Property [`ShareTagOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-sharetagoptions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub share_tag_options: Option<crate::Value<bool>>,
+    pub share_tag_options: Option<::Value<bool>>,
 }
 
 impl ::serde::Serialize for PortfolioShareProperties {
@@ -1487,10 +1487,10 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioShareProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut account_id: Option<crate::Value<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
-                let mut share_tag_options: Option<crate::Value<bool>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut account_id: Option<::Value<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
+                let mut share_tag_options: Option<::Value<bool>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1524,7 +1524,7 @@ impl<'de> ::serde::Deserialize<'de> for PortfolioShareProperties {
     }
 }
 
-impl crate::Resource for PortfolioShare {
+impl ::Resource for PortfolioShare {
     type Properties = PortfolioShareProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::PortfolioShare";
     fn properties(&self) -> &PortfolioShareProperties {
@@ -1535,7 +1535,7 @@ impl crate::Resource for PortfolioShare {
     }
 }
 
-impl crate::private::Sealed for PortfolioShare {}
+impl ::private::Sealed for PortfolioShare {}
 
 impl From<PortfolioShareProperties> for PortfolioShare {
     fn from(properties: PortfolioShareProperties) -> PortfolioShare {
@@ -1556,27 +1556,27 @@ pub struct ResourceUpdateConstraintProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
     /// Property [`ProductId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-productid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub product_id: crate::Value<String>,
+    pub product_id: ::Value<String>,
     /// Property [`TagUpdateOnProvisionedProduct`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-tagupdateonprovisionedproduct).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tag_update_on_provisioned_product: crate::Value<String>,
+    pub tag_update_on_provisioned_product: ::Value<String>,
 }
 
 impl ::serde::Serialize for ResourceUpdateConstraintProperties {
@@ -1620,11 +1620,11 @@ impl<'de> ::serde::Deserialize<'de> for ResourceUpdateConstraintProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
-                let mut product_id: Option<crate::Value<String>> = None;
-                let mut tag_update_on_provisioned_product: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
+                let mut product_id: Option<::Value<String>> = None;
+                let mut tag_update_on_provisioned_product: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1665,7 +1665,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourceUpdateConstraintProperties {
     }
 }
 
-impl crate::Resource for ResourceUpdateConstraint {
+impl ::Resource for ResourceUpdateConstraint {
     type Properties = ResourceUpdateConstraintProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::ResourceUpdateConstraint";
     fn properties(&self) -> &ResourceUpdateConstraintProperties {
@@ -1676,7 +1676,7 @@ impl crate::Resource for ResourceUpdateConstraint {
     }
 }
 
-impl crate::private::Sealed for ResourceUpdateConstraint {}
+impl ::private::Sealed for ResourceUpdateConstraint {}
 
 impl From<ResourceUpdateConstraintProperties> for ResourceUpdateConstraint {
     fn from(properties: ResourceUpdateConstraintProperties) -> ResourceUpdateConstraint {
@@ -1697,27 +1697,27 @@ pub struct ServiceActionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`Definition`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-definition).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub definition: crate::ValueList<self::service_action::DefinitionParameter>,
+    pub definition: ::ValueList<self::service_action::DefinitionParameter>,
     /// Property [`DefinitionType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-definitiontype).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub definition_type: crate::Value<String>,
+    pub definition_type: ::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
 }
 
 impl ::serde::Serialize for ServiceActionProperties {
@@ -1761,12 +1761,12 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut definition: Option<crate::ValueList<self::service_action::DefinitionParameter>> =
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut definition: Option<::ValueList<self::service_action::DefinitionParameter>> =
                     None;
-                let mut definition_type: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
+                let mut definition_type: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1805,7 +1805,7 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionProperties {
     }
 }
 
-impl crate::Resource for ServiceAction {
+impl ::Resource for ServiceAction {
     type Properties = ServiceActionProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::ServiceAction";
     fn properties(&self) -> &ServiceActionProperties {
@@ -1816,7 +1816,7 @@ impl crate::Resource for ServiceAction {
     }
 }
 
-impl crate::private::Sealed for ServiceAction {}
+impl ::private::Sealed for ServiceAction {}
 
 impl From<ServiceActionProperties> for ServiceAction {
     fn from(properties: ServiceActionProperties) -> ServiceAction {
@@ -1837,17 +1837,17 @@ pub struct ServiceActionAssociationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub product_id: crate::Value<String>,
+    pub product_id: ::Value<String>,
     /// Property [`ProvisioningArtifactId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html#cfn-servicecatalog-serviceactionassociation-provisioningartifactid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub provisioning_artifact_id: crate::Value<String>,
+    pub provisioning_artifact_id: ::Value<String>,
     /// Property [`ServiceActionId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html#cfn-servicecatalog-serviceactionassociation-serviceactionid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service_action_id: crate::Value<String>,
+    pub service_action_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for ServiceActionAssociationProperties {
@@ -1885,9 +1885,9 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionAssociationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut product_id: Option<crate::Value<String>> = None;
-                let mut provisioning_artifact_id: Option<crate::Value<String>> = None;
-                let mut service_action_id: Option<crate::Value<String>> = None;
+                let mut product_id: Option<::Value<String>> = None;
+                let mut provisioning_artifact_id: Option<::Value<String>> = None;
+                let mut service_action_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1919,7 +1919,7 @@ impl<'de> ::serde::Deserialize<'de> for ServiceActionAssociationProperties {
     }
 }
 
-impl crate::Resource for ServiceActionAssociation {
+impl ::Resource for ServiceActionAssociation {
     type Properties = ServiceActionAssociationProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::ServiceActionAssociation";
     fn properties(&self) -> &ServiceActionAssociationProperties {
@@ -1930,7 +1930,7 @@ impl crate::Resource for ServiceActionAssociation {
     }
 }
 
-impl crate::private::Sealed for ServiceActionAssociation {}
+impl ::private::Sealed for ServiceActionAssociation {}
 
 impl From<ServiceActionAssociationProperties> for ServiceActionAssociation {
     fn from(properties: ServiceActionAssociationProperties) -> ServiceActionAssociation {
@@ -1951,47 +1951,47 @@ pub struct StackSetConstraintProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub accept_language: Option<crate::Value<String>>,
+    pub accept_language: Option<::Value<String>>,
     /// Property [`AccountList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-accountlist).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub account_list: crate::ValueList<String>,
+    pub account_list: ::ValueList<String>,
     /// Property [`AdminRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-adminrole).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub admin_role: crate::Value<String>,
+    pub admin_role: ::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: crate::Value<String>,
+    pub description: ::Value<String>,
     /// Property [`ExecutionRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-executionrole).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub execution_role: crate::Value<String>,
+    pub execution_role: ::Value<String>,
     /// Property [`PortfolioId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-portfolioid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub portfolio_id: crate::Value<String>,
+    pub portfolio_id: ::Value<String>,
     /// Property [`ProductId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-productid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub product_id: crate::Value<String>,
+    pub product_id: ::Value<String>,
     /// Property [`RegionList`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-regionlist).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub region_list: crate::ValueList<String>,
+    pub region_list: ::ValueList<String>,
     /// Property [`StackInstanceControl`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-stackinstancecontrol).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub stack_instance_control: crate::Value<String>,
+    pub stack_instance_control: ::Value<String>,
 }
 
 impl ::serde::Serialize for StackSetConstraintProperties {
@@ -2041,15 +2041,15 @@ impl<'de> ::serde::Deserialize<'de> for StackSetConstraintProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut accept_language: Option<crate::Value<String>> = None;
-                let mut account_list: Option<crate::ValueList<String>> = None;
-                let mut admin_role: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut execution_role: Option<crate::Value<String>> = None;
-                let mut portfolio_id: Option<crate::Value<String>> = None;
-                let mut product_id: Option<crate::Value<String>> = None;
-                let mut region_list: Option<crate::ValueList<String>> = None;
-                let mut stack_instance_control: Option<crate::Value<String>> = None;
+                let mut accept_language: Option<::Value<String>> = None;
+                let mut account_list: Option<::ValueList<String>> = None;
+                let mut admin_role: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut execution_role: Option<::Value<String>> = None;
+                let mut portfolio_id: Option<::Value<String>> = None;
+                let mut product_id: Option<::Value<String>> = None;
+                let mut region_list: Option<::ValueList<String>> = None;
+                let mut stack_instance_control: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2108,7 +2108,7 @@ impl<'de> ::serde::Deserialize<'de> for StackSetConstraintProperties {
     }
 }
 
-impl crate::Resource for StackSetConstraint {
+impl ::Resource for StackSetConstraint {
     type Properties = StackSetConstraintProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::StackSetConstraint";
     fn properties(&self) -> &StackSetConstraintProperties {
@@ -2119,7 +2119,7 @@ impl crate::Resource for StackSetConstraint {
     }
 }
 
-impl crate::private::Sealed for StackSetConstraint {}
+impl ::private::Sealed for StackSetConstraint {}
 
 impl From<StackSetConstraintProperties> for StackSetConstraint {
     fn from(properties: StackSetConstraintProperties) -> StackSetConstraint {
@@ -2140,17 +2140,17 @@ pub struct TagOptionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub active: Option<crate::Value<bool>>,
+    pub active: Option<::Value<bool>>,
     /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-key).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub key: crate::Value<String>,
+    pub key: ::Value<String>,
     /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-value).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub value: crate::Value<String>,
+    pub value: ::Value<String>,
 }
 
 impl ::serde::Serialize for TagOptionProperties {
@@ -2180,9 +2180,9 @@ impl<'de> ::serde::Deserialize<'de> for TagOptionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut active: Option<crate::Value<bool>> = None;
-                let mut key: Option<crate::Value<String>> = None;
-                let mut value: Option<crate::Value<String>> = None;
+                let mut active: Option<::Value<bool>> = None;
+                let mut key: Option<::Value<String>> = None;
+                let mut value: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2211,7 +2211,7 @@ impl<'de> ::serde::Deserialize<'de> for TagOptionProperties {
     }
 }
 
-impl crate::Resource for TagOption {
+impl ::Resource for TagOption {
     type Properties = TagOptionProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::TagOption";
     fn properties(&self) -> &TagOptionProperties {
@@ -2222,7 +2222,7 @@ impl crate::Resource for TagOption {
     }
 }
 
-impl crate::private::Sealed for TagOption {}
+impl ::private::Sealed for TagOption {}
 
 impl From<TagOptionProperties> for TagOption {
     fn from(properties: TagOptionProperties) -> TagOption {
@@ -2243,12 +2243,12 @@ pub struct TagOptionAssociationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub resource_id: crate::Value<String>,
+    pub resource_id: ::Value<String>,
     /// Property [`TagOptionId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html#cfn-servicecatalog-tagoptionassociation-tagoptionid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tag_option_id: crate::Value<String>,
+    pub tag_option_id: ::Value<String>,
 }
 
 impl ::serde::Serialize for TagOptionAssociationProperties {
@@ -2277,8 +2277,8 @@ impl<'de> ::serde::Deserialize<'de> for TagOptionAssociationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut resource_id: Option<crate::Value<String>> = None;
-                let mut tag_option_id: Option<crate::Value<String>> = None;
+                let mut resource_id: Option<::Value<String>> = None;
+                let mut tag_option_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -2305,7 +2305,7 @@ impl<'de> ::serde::Deserialize<'de> for TagOptionAssociationProperties {
     }
 }
 
-impl crate::Resource for TagOptionAssociation {
+impl ::Resource for TagOptionAssociation {
     type Properties = TagOptionAssociationProperties;
     const TYPE: &'static str = "AWS::ServiceCatalog::TagOptionAssociation";
     fn properties(&self) -> &TagOptionAssociationProperties {
@@ -2316,7 +2316,7 @@ impl crate::Resource for TagOptionAssociation {
     }
 }
 
-impl crate::private::Sealed for TagOptionAssociation {}
+impl ::private::Sealed for TagOptionAssociation {}
 
 impl From<TagOptionAssociationProperties> for TagOptionAssociation {
     fn from(properties: TagOptionAssociationProperties) -> TagOptionAssociation {
@@ -2334,25 +2334,25 @@ pub mod cloud_formation_product {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<crate::Value<String>>,
+        pub description: Option<::Value<String>>,
         /// Property [`DisableTemplateValidation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-disabletemplatevalidation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disable_template_validation: Option<crate::Value<bool>>,
+        pub disable_template_validation: Option<::Value<bool>>,
         /// Property [`Info`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-info).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub info: crate::Value<crate::json::Value>,
+        pub info: ::Value<::json::Value>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ProvisioningArtifactProperties {
+    impl ::codec::SerializeValue for ProvisioningArtifactProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -2373,7 +2373,7 @@ pub mod cloud_formation_product {
         }
     }
 
-    impl crate::codec::DeserializeValue for ProvisioningArtifactProperties {
+    impl ::codec::DeserializeValue for ProvisioningArtifactProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProvisioningArtifactProperties, D::Error> {
@@ -2390,10 +2390,10 @@ pub mod cloud_formation_product {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<crate::Value<String>> = None;
-                    let mut disable_template_validation: Option<crate::Value<bool>> = None;
-                    let mut info: Option<crate::Value<crate::json::Value>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut description: Option<::Value<String>> = None;
+                    let mut disable_template_validation: Option<::Value<bool>> = None;
+                    let mut info: Option<::Value<::json::Value>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2440,15 +2440,15 @@ pub mod cloud_formation_provisioned_product {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameter-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<String>,
+        pub value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ProvisioningParameter {
+    impl ::codec::SerializeValue for ProvisioningParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -2457,7 +2457,7 @@ pub mod cloud_formation_provisioned_product {
         }
     }
 
-    impl crate::codec::DeserializeValue for ProvisioningParameter {
+    impl ::codec::DeserializeValue for ProvisioningParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProvisioningParameter, D::Error> {
@@ -2474,8 +2474,8 @@ pub mod cloud_formation_provisioned_product {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2509,40 +2509,40 @@ pub mod cloud_formation_provisioned_product {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stack_set_accounts: Option<crate::ValueList<String>>,
+        pub stack_set_accounts: Option<::ValueList<String>>,
         /// Property [`StackSetFailureToleranceCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancecount).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stack_set_failure_tolerance_count: Option<crate::Value<u32>>,
+        pub stack_set_failure_tolerance_count: Option<::Value<u32>>,
         /// Property [`StackSetFailureTolerancePercentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancepercentage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stack_set_failure_tolerance_percentage: Option<crate::Value<u32>>,
+        pub stack_set_failure_tolerance_percentage: Option<::Value<u32>>,
         /// Property [`StackSetMaxConcurrencyCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencycount).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stack_set_max_concurrency_count: Option<crate::Value<u32>>,
+        pub stack_set_max_concurrency_count: Option<::Value<u32>>,
         /// Property [`StackSetMaxConcurrencyPercentage`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencypercentage).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stack_set_max_concurrency_percentage: Option<crate::Value<u32>>,
+        pub stack_set_max_concurrency_percentage: Option<::Value<u32>>,
         /// Property [`StackSetOperationType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetoperationtype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stack_set_operation_type: Option<crate::Value<String>>,
+        pub stack_set_operation_type: Option<::Value<String>>,
         /// Property [`StackSetRegions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetregions).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stack_set_regions: Option<crate::ValueList<String>>,
+        pub stack_set_regions: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for ProvisioningPreferences {
+    impl ::codec::SerializeValue for ProvisioningPreferences {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref stack_set_accounts) = self.stack_set_accounts {
@@ -2605,7 +2605,7 @@ pub mod cloud_formation_provisioned_product {
         }
     }
 
-    impl crate::codec::DeserializeValue for ProvisioningPreferences {
+    impl ::codec::DeserializeValue for ProvisioningPreferences {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProvisioningPreferences, D::Error> {
@@ -2622,13 +2622,13 @@ pub mod cloud_formation_provisioned_product {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut stack_set_accounts: Option<crate::ValueList<String>> = None;
-                    let mut stack_set_failure_tolerance_count: Option<crate::Value<u32>> = None;
-                    let mut stack_set_failure_tolerance_percentage: Option<crate::Value<u32>> = None;
-                    let mut stack_set_max_concurrency_count: Option<crate::Value<u32>> = None;
-                    let mut stack_set_max_concurrency_percentage: Option<crate::Value<u32>> = None;
-                    let mut stack_set_operation_type: Option<crate::Value<String>> = None;
-                    let mut stack_set_regions: Option<crate::ValueList<String>> = None;
+                    let mut stack_set_accounts: Option<::ValueList<String>> = None;
+                    let mut stack_set_failure_tolerance_count: Option<::Value<u32>> = None;
+                    let mut stack_set_failure_tolerance_percentage: Option<::Value<u32>> = None;
+                    let mut stack_set_max_concurrency_count: Option<::Value<u32>> = None;
+                    let mut stack_set_max_concurrency_percentage: Option<::Value<u32>> = None;
+                    let mut stack_set_operation_type: Option<::Value<String>> = None;
+                    let mut stack_set_regions: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2692,15 +2692,15 @@ pub mod service_action {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-serviceaction-definitionparameter.html#cfn-servicecatalog-serviceaction-definitionparameter-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<String>,
+        pub value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for DefinitionParameter {
+    impl ::codec::SerializeValue for DefinitionParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -2709,7 +2709,7 @@ pub mod service_action {
         }
     }
 
-    impl crate::codec::DeserializeValue for DefinitionParameter {
+    impl ::codec::DeserializeValue for DefinitionParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DefinitionParameter, D::Error> {
@@ -2726,8 +2726,8 @@ pub mod service_action {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

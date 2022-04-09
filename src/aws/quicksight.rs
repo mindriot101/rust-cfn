@@ -13,47 +13,47 @@ pub struct AnalysisProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub analysis_id: crate::Value<String>,
+    pub analysis_id: ::Value<String>,
     /// Property [`AwsAccountId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-awsaccountid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub aws_account_id: crate::Value<String>,
+    pub aws_account_id: ::Value<String>,
     /// Property [`Errors`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-errors).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub errors: Option<crate::ValueList<self::analysis::AnalysisError>>,
+    pub errors: Option<::ValueList<self::analysis::AnalysisError>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-parameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameters: Option<crate::Value<self::analysis::Parameters>>,
+    pub parameters: Option<::Value<self::analysis::Parameters>>,
     /// Property [`Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-permissions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub permissions: Option<crate::ValueList<self::analysis::ResourcePermission>>,
+    pub permissions: Option<::ValueList<self::analysis::ResourcePermission>>,
     /// Property [`SourceEntity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-sourceentity).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_entity: crate::Value<self::analysis::AnalysisSourceEntity>,
+    pub source_entity: ::Value<self::analysis::AnalysisSourceEntity>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`ThemeArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-themearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub theme_arn: Option<crate::Value<String>>,
+    pub theme_arn: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for AnalysisProperties {
@@ -103,15 +103,15 @@ impl<'de> ::serde::Deserialize<'de> for AnalysisProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut analysis_id: Option<crate::Value<String>> = None;
-                let mut aws_account_id: Option<crate::Value<String>> = None;
-                let mut errors: Option<crate::ValueList<self::analysis::AnalysisError>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut parameters: Option<crate::Value<self::analysis::Parameters>> = None;
-                let mut permissions: Option<crate::ValueList<self::analysis::ResourcePermission>> = None;
-                let mut source_entity: Option<crate::Value<self::analysis::AnalysisSourceEntity>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut theme_arn: Option<crate::Value<String>> = None;
+                let mut analysis_id: Option<::Value<String>> = None;
+                let mut aws_account_id: Option<::Value<String>> = None;
+                let mut errors: Option<::ValueList<self::analysis::AnalysisError>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut parameters: Option<::Value<self::analysis::Parameters>> = None;
+                let mut permissions: Option<::ValueList<self::analysis::ResourcePermission>> = None;
+                let mut source_entity: Option<::Value<self::analysis::AnalysisSourceEntity>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut theme_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -167,7 +167,7 @@ impl<'de> ::serde::Deserialize<'de> for AnalysisProperties {
     }
 }
 
-impl crate::Resource for Analysis {
+impl ::Resource for Analysis {
     type Properties = AnalysisProperties;
     const TYPE: &'static str = "AWS::QuickSight::Analysis";
     fn properties(&self) -> &AnalysisProperties {
@@ -178,7 +178,7 @@ impl crate::Resource for Analysis {
     }
 }
 
-impl crate::private::Sealed for Analysis {}
+impl ::private::Sealed for Analysis {}
 
 impl From<AnalysisProperties> for Analysis {
     fn from(properties: AnalysisProperties) -> Analysis {
@@ -199,52 +199,52 @@ pub struct DashboardProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub aws_account_id: crate::Value<String>,
+    pub aws_account_id: ::Value<String>,
     /// Property [`DashboardId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-dashboardid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub dashboard_id: crate::Value<String>,
+    pub dashboard_id: ::Value<String>,
     /// Property [`DashboardPublishOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-dashboardpublishoptions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dashboard_publish_options: Option<crate::Value<self::dashboard::DashboardPublishOptions>>,
+    pub dashboard_publish_options: Option<::Value<self::dashboard::DashboardPublishOptions>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-parameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameters: Option<crate::Value<self::dashboard::Parameters>>,
+    pub parameters: Option<::Value<self::dashboard::Parameters>>,
     /// Property [`Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-permissions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub permissions: Option<crate::ValueList<self::dashboard::ResourcePermission>>,
+    pub permissions: Option<::ValueList<self::dashboard::ResourcePermission>>,
     /// Property [`SourceEntity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-sourceentity).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_entity: crate::Value<self::dashboard::DashboardSourceEntity>,
+    pub source_entity: ::Value<self::dashboard::DashboardSourceEntity>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`ThemeArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-themearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub theme_arn: Option<crate::Value<String>>,
+    pub theme_arn: Option<::Value<String>>,
     /// Property [`VersionDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-versiondescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub version_description: Option<crate::Value<String>>,
+    pub version_description: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for DashboardProperties {
@@ -305,20 +305,20 @@ impl<'de> ::serde::Deserialize<'de> for DashboardProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut aws_account_id: Option<crate::Value<String>> = None;
-                let mut dashboard_id: Option<crate::Value<String>> = None;
+                let mut aws_account_id: Option<::Value<String>> = None;
+                let mut dashboard_id: Option<::Value<String>> = None;
                 let mut dashboard_publish_options: Option<
-                    crate::Value<self::dashboard::DashboardPublishOptions>,
+                    ::Value<self::dashboard::DashboardPublishOptions>,
                 > = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut parameters: Option<crate::Value<self::dashboard::Parameters>> = None;
-                let mut permissions: Option<crate::ValueList<self::dashboard::ResourcePermission>> =
+                let mut name: Option<::Value<String>> = None;
+                let mut parameters: Option<::Value<self::dashboard::Parameters>> = None;
+                let mut permissions: Option<::ValueList<self::dashboard::ResourcePermission>> =
                     None;
-                let mut source_entity: Option<crate::Value<self::dashboard::DashboardSourceEntity>> =
+                let mut source_entity: Option<::Value<self::dashboard::DashboardSourceEntity>> =
                     None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut theme_arn: Option<crate::Value<String>> = None;
-                let mut version_description: Option<crate::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut theme_arn: Option<::Value<String>> = None;
+                let mut version_description: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -379,7 +379,7 @@ impl<'de> ::serde::Deserialize<'de> for DashboardProperties {
     }
 }
 
-impl crate::Resource for Dashboard {
+impl ::Resource for Dashboard {
     type Properties = DashboardProperties;
     const TYPE: &'static str = "AWS::QuickSight::Dashboard";
     fn properties(&self) -> &DashboardProperties {
@@ -390,7 +390,7 @@ impl crate::Resource for Dashboard {
     }
 }
 
-impl crate::private::Sealed for Dashboard {}
+impl ::private::Sealed for Dashboard {}
 
 impl From<DashboardProperties> for Dashboard {
     fn from(properties: DashboardProperties) -> Dashboard {
@@ -411,68 +411,68 @@ pub struct DataSetProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub aws_account_id: Option<crate::Value<String>>,
+    pub aws_account_id: Option<::Value<String>>,
     /// Property [`ColumnGroups`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-columngroups).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub column_groups: Option<crate::ValueList<self::data_set::ColumnGroup>>,
+    pub column_groups: Option<::ValueList<self::data_set::ColumnGroup>>,
     /// Property [`ColumnLevelPermissionRules`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-columnlevelpermissionrules).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub column_level_permission_rules:
-        Option<crate::ValueList<self::data_set::ColumnLevelPermissionRule>>,
+        Option<::ValueList<self::data_set::ColumnLevelPermissionRule>>,
     /// Property [`DataSetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_set_id: Option<crate::Value<String>>,
+    pub data_set_id: Option<::Value<String>>,
     /// Property [`FieldFolders`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-fieldfolders).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub field_folders: Option<crate::ValueMap<self::data_set::FieldFolder>>,
+    pub field_folders: Option<::ValueMap<self::data_set::FieldFolder>>,
     /// Property [`ImportMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-importmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub import_mode: Option<crate::Value<String>>,
+    pub import_mode: Option<::Value<String>>,
     /// Property [`IngestionWaitPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-ingestionwaitpolicy).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ingestion_wait_policy: Option<crate::Value<self::data_set::IngestionWaitPolicy>>,
+    pub ingestion_wait_policy: Option<::Value<self::data_set::IngestionWaitPolicy>>,
     /// Property [`LogicalTableMap`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-logicaltablemap).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub logical_table_map: Option<crate::ValueMap<self::data_set::LogicalTable>>,
+    pub logical_table_map: Option<::ValueMap<self::data_set::LogicalTable>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-permissions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub permissions: Option<crate::ValueList<self::data_set::ResourcePermission>>,
+    pub permissions: Option<::ValueList<self::data_set::ResourcePermission>>,
     /// Property [`PhysicalTableMap`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-physicaltablemap).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub physical_table_map: Option<crate::ValueMap<self::data_set::PhysicalTable>>,
+    pub physical_table_map: Option<::ValueMap<self::data_set::PhysicalTable>>,
     /// Property [`RowLevelPermissionDataSet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub row_level_permission_data_set: Option<crate::Value<self::data_set::RowLevelPermissionDataSet>>,
+    pub row_level_permission_data_set: Option<::Value<self::data_set::RowLevelPermissionDataSet>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for DataSetProperties {
@@ -556,26 +556,26 @@ impl<'de> ::serde::Deserialize<'de> for DataSetProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut aws_account_id: Option<crate::Value<String>> = None;
-                let mut column_groups: Option<crate::ValueList<self::data_set::ColumnGroup>> = None;
+                let mut aws_account_id: Option<::Value<String>> = None;
+                let mut column_groups: Option<::ValueList<self::data_set::ColumnGroup>> = None;
                 let mut column_level_permission_rules: Option<
-                    crate::ValueList<self::data_set::ColumnLevelPermissionRule>,
+                    ::ValueList<self::data_set::ColumnLevelPermissionRule>,
                 > = None;
-                let mut data_set_id: Option<crate::Value<String>> = None;
-                let mut field_folders: Option<crate::ValueMap<self::data_set::FieldFolder>> = None;
-                let mut import_mode: Option<crate::Value<String>> = None;
+                let mut data_set_id: Option<::Value<String>> = None;
+                let mut field_folders: Option<::ValueMap<self::data_set::FieldFolder>> = None;
+                let mut import_mode: Option<::Value<String>> = None;
                 let mut ingestion_wait_policy: Option<
-                    crate::Value<self::data_set::IngestionWaitPolicy>,
+                    ::Value<self::data_set::IngestionWaitPolicy>,
                 > = None;
-                let mut logical_table_map: Option<crate::ValueMap<self::data_set::LogicalTable>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut permissions: Option<crate::ValueList<self::data_set::ResourcePermission>> = None;
-                let mut physical_table_map: Option<crate::ValueMap<self::data_set::PhysicalTable>> =
+                let mut logical_table_map: Option<::ValueMap<self::data_set::LogicalTable>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut permissions: Option<::ValueList<self::data_set::ResourcePermission>> = None;
+                let mut physical_table_map: Option<::ValueMap<self::data_set::PhysicalTable>> =
                     None;
                 let mut row_level_permission_data_set: Option<
-                    crate::Value<self::data_set::RowLevelPermissionDataSet>,
+                    ::Value<self::data_set::RowLevelPermissionDataSet>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -646,7 +646,7 @@ impl<'de> ::serde::Deserialize<'de> for DataSetProperties {
     }
 }
 
-impl crate::Resource for DataSet {
+impl ::Resource for DataSet {
     type Properties = DataSetProperties;
     const TYPE: &'static str = "AWS::QuickSight::DataSet";
     fn properties(&self) -> &DataSetProperties {
@@ -657,7 +657,7 @@ impl crate::Resource for DataSet {
     }
 }
 
-impl crate::private::Sealed for DataSet {}
+impl ::private::Sealed for DataSet {}
 
 impl From<DataSetProperties> for DataSet {
     fn from(properties: DataSetProperties) -> DataSet {
@@ -679,62 +679,62 @@ pub struct DataSourceProperties {
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
     pub alternate_data_source_parameters:
-        Option<crate::ValueList<self::data_source::DataSourceParameters>>,
+        Option<::ValueList<self::data_source::DataSourceParameters>>,
     /// Property [`AwsAccountId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-awsaccountid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub aws_account_id: Option<crate::Value<String>>,
+    pub aws_account_id: Option<::Value<String>>,
     /// Property [`Credentials`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-credentials).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub credentials: Option<crate::Value<self::data_source::DataSourceCredentials>>,
+    pub credentials: Option<::Value<self::data_source::DataSourceCredentials>>,
     /// Property [`DataSourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-datasourceid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub data_source_id: Option<crate::Value<String>>,
+    pub data_source_id: Option<::Value<String>>,
     /// Property [`DataSourceParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-datasourceparameters).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub data_source_parameters: Option<crate::Value<self::data_source::DataSourceParameters>>,
+    pub data_source_parameters: Option<::Value<self::data_source::DataSourceParameters>>,
     /// Property [`ErrorInfo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-errorinfo).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub error_info: Option<crate::Value<self::data_source::DataSourceErrorInfo>>,
+    pub error_info: Option<::Value<self::data_source::DataSourceErrorInfo>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-permissions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub permissions: Option<crate::ValueList<self::data_source::ResourcePermission>>,
+    pub permissions: Option<::ValueList<self::data_source::ResourcePermission>>,
     /// Property [`SslProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-sslproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub ssl_properties: Option<crate::Value<self::data_source::SslProperties>>,
+    pub ssl_properties: Option<::Value<self::data_source::SslProperties>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: Option<crate::Value<String>>,
+    pub r#type: Option<::Value<String>>,
     /// Property [`VpcConnectionProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-vpcconnectionproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub vpc_connection_properties: Option<crate::Value<self::data_source::VpcConnectionProperties>>,
+    pub vpc_connection_properties: Option<::Value<self::data_source::VpcConnectionProperties>>,
 }
 
 impl ::serde::Serialize for DataSourceProperties {
@@ -808,24 +808,24 @@ impl<'de> ::serde::Deserialize<'de> for DataSourceProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut alternate_data_source_parameters: Option<
-                    crate::ValueList<self::data_source::DataSourceParameters>,
+                    ::ValueList<self::data_source::DataSourceParameters>,
                 > = None;
-                let mut aws_account_id: Option<crate::Value<String>> = None;
-                let mut credentials: Option<crate::Value<self::data_source::DataSourceCredentials>> =
+                let mut aws_account_id: Option<::Value<String>> = None;
+                let mut credentials: Option<::Value<self::data_source::DataSourceCredentials>> =
                     None;
-                let mut data_source_id: Option<crate::Value<String>> = None;
+                let mut data_source_id: Option<::Value<String>> = None;
                 let mut data_source_parameters: Option<
-                    crate::Value<self::data_source::DataSourceParameters>,
+                    ::Value<self::data_source::DataSourceParameters>,
                 > = None;
-                let mut error_info: Option<crate::Value<self::data_source::DataSourceErrorInfo>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut permissions: Option<crate::ValueList<self::data_source::ResourcePermission>> =
+                let mut error_info: Option<::Value<self::data_source::DataSourceErrorInfo>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut permissions: Option<::ValueList<self::data_source::ResourcePermission>> =
                     None;
-                let mut ssl_properties: Option<crate::Value<self::data_source::SslProperties>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut r#type: Option<crate::Value<String>> = None;
+                let mut ssl_properties: Option<::Value<self::data_source::SslProperties>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut r#type: Option<::Value<String>> = None;
                 let mut vpc_connection_properties: Option<
-                    crate::Value<self::data_source::VpcConnectionProperties>,
+                    ::Value<self::data_source::VpcConnectionProperties>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -893,7 +893,7 @@ impl<'de> ::serde::Deserialize<'de> for DataSourceProperties {
     }
 }
 
-impl crate::Resource for DataSource {
+impl ::Resource for DataSource {
     type Properties = DataSourceProperties;
     const TYPE: &'static str = "AWS::QuickSight::DataSource";
     fn properties(&self) -> &DataSourceProperties {
@@ -904,7 +904,7 @@ impl crate::Resource for DataSource {
     }
 }
 
-impl crate::private::Sealed for DataSource {}
+impl ::private::Sealed for DataSource {}
 
 impl From<DataSourceProperties> for DataSource {
     fn from(properties: DataSourceProperties) -> DataSource {
@@ -925,37 +925,37 @@ pub struct TemplateProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub aws_account_id: crate::Value<String>,
+    pub aws_account_id: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-permissions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub permissions: Option<crate::ValueList<self::template::ResourcePermission>>,
+    pub permissions: Option<::ValueList<self::template::ResourcePermission>>,
     /// Property [`SourceEntity`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-sourceentity).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_entity: crate::Value<self::template::TemplateSourceEntity>,
+    pub source_entity: ::Value<self::template::TemplateSourceEntity>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`TemplateId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-templateid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub template_id: crate::Value<String>,
+    pub template_id: ::Value<String>,
     /// Property [`VersionDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-versiondescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub version_description: Option<crate::Value<String>>,
+    pub version_description: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for TemplateProperties {
@@ -1003,13 +1003,13 @@ impl<'de> ::serde::Deserialize<'de> for TemplateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut aws_account_id: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut permissions: Option<crate::ValueList<self::template::ResourcePermission>> = None;
-                let mut source_entity: Option<crate::Value<self::template::TemplateSourceEntity>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut template_id: Option<crate::Value<String>> = None;
-                let mut version_description: Option<crate::Value<String>> = None;
+                let mut aws_account_id: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut permissions: Option<::ValueList<self::template::ResourcePermission>> = None;
+                let mut source_entity: Option<::Value<self::template::TemplateSourceEntity>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut template_id: Option<::Value<String>> = None;
+                let mut version_description: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1057,7 +1057,7 @@ impl<'de> ::serde::Deserialize<'de> for TemplateProperties {
     }
 }
 
-impl crate::Resource for Template {
+impl ::Resource for Template {
     type Properties = TemplateProperties;
     const TYPE: &'static str = "AWS::QuickSight::Template";
     fn properties(&self) -> &TemplateProperties {
@@ -1068,7 +1068,7 @@ impl crate::Resource for Template {
     }
 }
 
-impl crate::private::Sealed for Template {}
+impl ::private::Sealed for Template {}
 
 impl From<TemplateProperties> for Template {
     fn from(properties: TemplateProperties) -> Template {
@@ -1089,42 +1089,42 @@ pub struct ThemeProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub aws_account_id: crate::Value<String>,
+    pub aws_account_id: ::Value<String>,
     /// Property [`BaseThemeId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-basethemeid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub base_theme_id: Option<crate::Value<String>>,
+    pub base_theme_id: Option<::Value<String>>,
     /// Property [`Configuration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-configuration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub configuration: Option<crate::Value<self::theme::ThemeConfiguration>>,
+    pub configuration: Option<::Value<self::theme::ThemeConfiguration>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Permissions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-permissions).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub permissions: Option<crate::ValueList<self::theme::ResourcePermission>>,
+    pub permissions: Option<::ValueList<self::theme::ResourcePermission>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`ThemeId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-themeid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub theme_id: crate::Value<String>,
+    pub theme_id: ::Value<String>,
     /// Property [`VersionDescription`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-versiondescription).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub version_description: Option<crate::Value<String>>,
+    pub version_description: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ThemeProperties {
@@ -1177,14 +1177,14 @@ impl<'de> ::serde::Deserialize<'de> for ThemeProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut aws_account_id: Option<crate::Value<String>> = None;
-                let mut base_theme_id: Option<crate::Value<String>> = None;
-                let mut configuration: Option<crate::Value<self::theme::ThemeConfiguration>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut permissions: Option<crate::ValueList<self::theme::ResourcePermission>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut theme_id: Option<crate::Value<String>> = None;
-                let mut version_description: Option<crate::Value<String>> = None;
+                let mut aws_account_id: Option<::Value<String>> = None;
+                let mut base_theme_id: Option<::Value<String>> = None;
+                let mut configuration: Option<::Value<self::theme::ThemeConfiguration>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut permissions: Option<::ValueList<self::theme::ResourcePermission>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut theme_id: Option<::Value<String>> = None;
+                let mut version_description: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -1234,7 +1234,7 @@ impl<'de> ::serde::Deserialize<'de> for ThemeProperties {
     }
 }
 
-impl crate::Resource for Theme {
+impl ::Resource for Theme {
     type Properties = ThemeProperties;
     const TYPE: &'static str = "AWS::QuickSight::Theme";
     fn properties(&self) -> &ThemeProperties {
@@ -1245,7 +1245,7 @@ impl crate::Resource for Theme {
     }
 }
 
-impl crate::private::Sealed for Theme {}
+impl ::private::Sealed for Theme {}
 
 impl From<ThemeProperties> for Theme {
     fn from(properties: ThemeProperties) -> Theme {
@@ -1263,15 +1263,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message: Option<crate::Value<String>>,
+        pub message: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysiserror.html#cfn-quicksight-analysis-analysiserror-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<crate::Value<String>>,
+        pub r#type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AnalysisError {
+    impl ::codec::SerializeValue for AnalysisError {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref message) = self.message {
@@ -1284,7 +1284,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for AnalysisError {
+    impl ::codec::DeserializeValue for AnalysisError {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AnalysisError, D::Error> {
@@ -1301,8 +1301,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut message: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut message: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1336,10 +1336,10 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_template: Option<crate::Value<AnalysisSourceTemplate>>,
+        pub source_template: Option<::Value<AnalysisSourceTemplate>>,
     }
 
-    impl crate::codec::SerializeValue for AnalysisSourceEntity {
+    impl ::codec::SerializeValue for AnalysisSourceEntity {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref source_template) = self.source_template {
@@ -1353,7 +1353,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for AnalysisSourceEntity {
+    impl ::codec::DeserializeValue for AnalysisSourceEntity {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AnalysisSourceEntity, D::Error> {
@@ -1370,7 +1370,7 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source_template: Option<crate::Value<AnalysisSourceTemplate>> = None;
+                    let mut source_template: Option<::Value<AnalysisSourceTemplate>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1400,15 +1400,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arn: crate::Value<String>,
+        pub arn: ::Value<String>,
         /// Property [`DataSetReferences`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourcetemplate.html#cfn-quicksight-analysis-analysissourcetemplate-datasetreferences).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_references: crate::ValueList<DataSetReference>,
+        pub data_set_references: ::ValueList<DataSetReference>,
     }
 
-    impl crate::codec::SerializeValue for AnalysisSourceTemplate {
+    impl ::codec::SerializeValue for AnalysisSourceTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
@@ -1421,7 +1421,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for AnalysisSourceTemplate {
+    impl ::codec::DeserializeValue for AnalysisSourceTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AnalysisSourceTemplate, D::Error> {
@@ -1438,8 +1438,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut arn: Option<crate::Value<String>> = None;
-                    let mut data_set_references: Option<crate::ValueList<DataSetReference>> = None;
+                    let mut arn: Option<::Value<String>> = None;
+                    let mut data_set_references: Option<::ValueList<DataSetReference>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1474,15 +1474,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_arn: crate::Value<String>,
+        pub data_set_arn: ::Value<String>,
         /// Property [`DataSetPlaceholder`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datasetreference.html#cfn-quicksight-analysis-datasetreference-datasetplaceholder).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_placeholder: crate::Value<String>,
+        pub data_set_placeholder: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for DataSetReference {
+    impl ::codec::SerializeValue for DataSetReference {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1499,7 +1499,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataSetReference {
+    impl ::codec::DeserializeValue for DataSetReference {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSetReference, D::Error> {
@@ -1516,8 +1516,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_set_arn: Option<crate::Value<String>> = None;
-                    let mut data_set_placeholder: Option<crate::Value<String>> = None;
+                    let mut data_set_arn: Option<::Value<String>> = None;
+                    let mut data_set_placeholder: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1554,15 +1554,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimeparameter.html#cfn-quicksight-analysis-datetimeparameter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: crate::ValueList<String>,
+        pub values: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for DateTimeParameter {
+    impl ::codec::SerializeValue for DateTimeParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -1571,7 +1571,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for DateTimeParameter {
+    impl ::codec::DeserializeValue for DateTimeParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DateTimeParameter, D::Error> {
@@ -1588,8 +1588,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1623,15 +1623,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimalparameter.html#cfn-quicksight-analysis-decimalparameter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: crate::ValueList<f64>,
+        pub values: ::ValueList<f64>,
     }
 
-    impl crate::codec::SerializeValue for DecimalParameter {
+    impl ::codec::SerializeValue for DecimalParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -1640,7 +1640,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for DecimalParameter {
+    impl ::codec::DeserializeValue for DecimalParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DecimalParameter, D::Error> {
@@ -1657,8 +1657,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<f64>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1692,15 +1692,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameter.html#cfn-quicksight-analysis-integerparameter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: crate::ValueList<f64>,
+        pub values: ::ValueList<f64>,
     }
 
-    impl crate::codec::SerializeValue for IntegerParameter {
+    impl ::codec::SerializeValue for IntegerParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -1709,7 +1709,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for IntegerParameter {
+    impl ::codec::DeserializeValue for IntegerParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IntegerParameter, D::Error> {
@@ -1726,8 +1726,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<f64>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1761,25 +1761,25 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_time_parameters: Option<crate::ValueList<DateTimeParameter>>,
+        pub date_time_parameters: Option<::ValueList<DateTimeParameter>>,
         /// Property [`DecimalParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-decimalparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub decimal_parameters: Option<crate::ValueList<DecimalParameter>>,
+        pub decimal_parameters: Option<::ValueList<DecimalParameter>>,
         /// Property [`IntegerParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-integerparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub integer_parameters: Option<crate::ValueList<IntegerParameter>>,
+        pub integer_parameters: Option<::ValueList<IntegerParameter>>,
         /// Property [`StringParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-stringparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub string_parameters: Option<crate::ValueList<StringParameter>>,
+        pub string_parameters: Option<::ValueList<StringParameter>>,
     }
 
-    impl crate::codec::SerializeValue for Parameters {
+    impl ::codec::SerializeValue for Parameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref date_time_parameters) = self.date_time_parameters {
@@ -1814,7 +1814,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for Parameters {
+    impl ::codec::DeserializeValue for Parameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Parameters, D::Error> {
             struct Visitor;
 
@@ -1829,10 +1829,10 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut date_time_parameters: Option<crate::ValueList<DateTimeParameter>> = None;
-                    let mut decimal_parameters: Option<crate::ValueList<DecimalParameter>> = None;
-                    let mut integer_parameters: Option<crate::ValueList<IntegerParameter>> = None;
-                    let mut string_parameters: Option<crate::ValueList<StringParameter>> = None;
+                    let mut date_time_parameters: Option<::ValueList<DateTimeParameter>> = None;
+                    let mut decimal_parameters: Option<::ValueList<DecimalParameter>> = None;
+                    let mut integer_parameters: Option<::ValueList<IntegerParameter>> = None;
+                    let mut string_parameters: Option<::ValueList<StringParameter>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1875,15 +1875,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub actions: crate::ValueList<String>,
+        pub actions: ::ValueList<String>,
         /// Property [`Principal`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-resourcepermission.html#cfn-quicksight-analysis-resourcepermission-principal).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub principal: crate::Value<String>,
+        pub principal: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ResourcePermission {
+    impl ::codec::SerializeValue for ResourcePermission {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Actions", &self.actions)?;
@@ -1892,7 +1892,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourcePermission {
+    impl ::codec::DeserializeValue for ResourcePermission {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourcePermission, D::Error> {
@@ -1909,8 +1909,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut actions: Option<crate::ValueList<String>> = None;
-                    let mut principal: Option<crate::Value<String>> = None;
+                    let mut actions: Option<::ValueList<String>> = None;
+                    let mut principal: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1945,15 +1945,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`SheetId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheet.html#cfn-quicksight-analysis-sheet-sheetid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sheet_id: Option<crate::Value<String>>,
+        pub sheet_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Sheet {
+    impl ::codec::SerializeValue for Sheet {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref name) = self.name {
@@ -1966,7 +1966,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for Sheet {
+    impl ::codec::DeserializeValue for Sheet {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Sheet, D::Error> {
             struct Visitor;
 
@@ -1981,8 +1981,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut sheet_id: Option<crate::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut sheet_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2016,15 +2016,15 @@ pub mod analysis {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringparameter.html#cfn-quicksight-analysis-stringparameter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: crate::ValueList<String>,
+        pub values: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for StringParameter {
+    impl ::codec::SerializeValue for StringParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -2033,7 +2033,7 @@ pub mod analysis {
         }
     }
 
-    impl crate::codec::DeserializeValue for StringParameter {
+    impl ::codec::DeserializeValue for StringParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StringParameter, D::Error> {
@@ -2050,8 +2050,8 @@ pub mod analysis {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2089,10 +2089,10 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub availability_status: Option<crate::Value<String>>,
+        pub availability_status: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AdHocFilteringOption {
+    impl ::codec::SerializeValue for AdHocFilteringOption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref availability_status) = self.availability_status {
@@ -2106,7 +2106,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for AdHocFilteringOption {
+    impl ::codec::DeserializeValue for AdHocFilteringOption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AdHocFilteringOption, D::Error> {
@@ -2123,7 +2123,7 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut availability_status: Option<crate::Value<String>> = None;
+                    let mut availability_status: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2153,20 +2153,20 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ad_hoc_filtering_option: Option<crate::Value<AdHocFilteringOption>>,
+        pub ad_hoc_filtering_option: Option<::Value<AdHocFilteringOption>>,
         /// Property [`ExportToCSVOption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-exporttocsvoption).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub export_to_csv_option: Option<crate::Value<ExportToCSVOption>>,
+        pub export_to_csv_option: Option<::Value<ExportToCSVOption>>,
         /// Property [`SheetControlsOption`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-sheetcontrolsoption).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sheet_controls_option: Option<crate::Value<SheetControlsOption>>,
+        pub sheet_controls_option: Option<::Value<SheetControlsOption>>,
     }
 
-    impl crate::codec::SerializeValue for DashboardPublishOptions {
+    impl ::codec::SerializeValue for DashboardPublishOptions {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ad_hoc_filtering_option) = self.ad_hoc_filtering_option {
@@ -2194,7 +2194,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for DashboardPublishOptions {
+    impl ::codec::DeserializeValue for DashboardPublishOptions {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DashboardPublishOptions, D::Error> {
@@ -2211,9 +2211,9 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ad_hoc_filtering_option: Option<crate::Value<AdHocFilteringOption>> = None;
-                    let mut export_to_csv_option: Option<crate::Value<ExportToCSVOption>> = None;
-                    let mut sheet_controls_option: Option<crate::Value<SheetControlsOption>> = None;
+                    let mut ad_hoc_filtering_option: Option<::Value<AdHocFilteringOption>> = None;
+                    let mut export_to_csv_option: Option<::Value<ExportToCSVOption>> = None;
+                    let mut sheet_controls_option: Option<::Value<SheetControlsOption>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2254,10 +2254,10 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_template: Option<crate::Value<DashboardSourceTemplate>>,
+        pub source_template: Option<::Value<DashboardSourceTemplate>>,
     }
 
-    impl crate::codec::SerializeValue for DashboardSourceEntity {
+    impl ::codec::SerializeValue for DashboardSourceEntity {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref source_template) = self.source_template {
@@ -2271,7 +2271,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for DashboardSourceEntity {
+    impl ::codec::DeserializeValue for DashboardSourceEntity {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DashboardSourceEntity, D::Error> {
@@ -2288,7 +2288,7 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source_template: Option<crate::Value<DashboardSourceTemplate>> = None;
+                    let mut source_template: Option<::Value<DashboardSourceTemplate>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2318,15 +2318,15 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arn: crate::Value<String>,
+        pub arn: ::Value<String>,
         /// Property [`DataSetReferences`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardsourcetemplate.html#cfn-quicksight-dashboard-dashboardsourcetemplate-datasetreferences).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_references: crate::ValueList<DataSetReference>,
+        pub data_set_references: ::ValueList<DataSetReference>,
     }
 
-    impl crate::codec::SerializeValue for DashboardSourceTemplate {
+    impl ::codec::SerializeValue for DashboardSourceTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
@@ -2339,7 +2339,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for DashboardSourceTemplate {
+    impl ::codec::DeserializeValue for DashboardSourceTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DashboardSourceTemplate, D::Error> {
@@ -2356,8 +2356,8 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut arn: Option<crate::Value<String>> = None;
-                    let mut data_set_references: Option<crate::ValueList<DataSetReference>> = None;
+                    let mut arn: Option<::Value<String>> = None;
+                    let mut data_set_references: Option<::ValueList<DataSetReference>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2392,15 +2392,15 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_arn: crate::Value<String>,
+        pub data_set_arn: ::Value<String>,
         /// Property [`DataSetPlaceholder`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datasetreference.html#cfn-quicksight-dashboard-datasetreference-datasetplaceholder).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_placeholder: crate::Value<String>,
+        pub data_set_placeholder: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for DataSetReference {
+    impl ::codec::SerializeValue for DataSetReference {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -2417,7 +2417,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataSetReference {
+    impl ::codec::DeserializeValue for DataSetReference {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSetReference, D::Error> {
@@ -2434,8 +2434,8 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_set_arn: Option<crate::Value<String>> = None;
-                    let mut data_set_placeholder: Option<crate::Value<String>> = None;
+                    let mut data_set_arn: Option<::Value<String>> = None;
+                    let mut data_set_placeholder: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2472,15 +2472,15 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimeparameter.html#cfn-quicksight-dashboard-datetimeparameter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: crate::ValueList<String>,
+        pub values: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for DateTimeParameter {
+    impl ::codec::SerializeValue for DateTimeParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -2489,7 +2489,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for DateTimeParameter {
+    impl ::codec::DeserializeValue for DateTimeParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DateTimeParameter, D::Error> {
@@ -2506,8 +2506,8 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2541,15 +2541,15 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalparameter.html#cfn-quicksight-dashboard-decimalparameter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: crate::ValueList<f64>,
+        pub values: ::ValueList<f64>,
     }
 
-    impl crate::codec::SerializeValue for DecimalParameter {
+    impl ::codec::SerializeValue for DecimalParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -2558,7 +2558,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for DecimalParameter {
+    impl ::codec::DeserializeValue for DecimalParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DecimalParameter, D::Error> {
@@ -2575,8 +2575,8 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<f64>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2610,10 +2610,10 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub availability_status: Option<crate::Value<String>>,
+        pub availability_status: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ExportToCSVOption {
+    impl ::codec::SerializeValue for ExportToCSVOption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref availability_status) = self.availability_status {
@@ -2627,7 +2627,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for ExportToCSVOption {
+    impl ::codec::DeserializeValue for ExportToCSVOption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExportToCSVOption, D::Error> {
@@ -2644,7 +2644,7 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut availability_status: Option<crate::Value<String>> = None;
+                    let mut availability_status: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2674,15 +2674,15 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameter.html#cfn-quicksight-dashboard-integerparameter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: crate::ValueList<f64>,
+        pub values: ::ValueList<f64>,
     }
 
-    impl crate::codec::SerializeValue for IntegerParameter {
+    impl ::codec::SerializeValue for IntegerParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -2691,7 +2691,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for IntegerParameter {
+    impl ::codec::DeserializeValue for IntegerParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IntegerParameter, D::Error> {
@@ -2708,8 +2708,8 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<f64>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2743,25 +2743,25 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub date_time_parameters: Option<crate::ValueList<DateTimeParameter>>,
+        pub date_time_parameters: Option<::ValueList<DateTimeParameter>>,
         /// Property [`DecimalParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-decimalparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub decimal_parameters: Option<crate::ValueList<DecimalParameter>>,
+        pub decimal_parameters: Option<::ValueList<DecimalParameter>>,
         /// Property [`IntegerParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-integerparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub integer_parameters: Option<crate::ValueList<IntegerParameter>>,
+        pub integer_parameters: Option<::ValueList<IntegerParameter>>,
         /// Property [`StringParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-stringparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub string_parameters: Option<crate::ValueList<StringParameter>>,
+        pub string_parameters: Option<::ValueList<StringParameter>>,
     }
 
-    impl crate::codec::SerializeValue for Parameters {
+    impl ::codec::SerializeValue for Parameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref date_time_parameters) = self.date_time_parameters {
@@ -2796,7 +2796,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for Parameters {
+    impl ::codec::DeserializeValue for Parameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Parameters, D::Error> {
             struct Visitor;
 
@@ -2811,10 +2811,10 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut date_time_parameters: Option<crate::ValueList<DateTimeParameter>> = None;
-                    let mut decimal_parameters: Option<crate::ValueList<DecimalParameter>> = None;
-                    let mut integer_parameters: Option<crate::ValueList<IntegerParameter>> = None;
-                    let mut string_parameters: Option<crate::ValueList<StringParameter>> = None;
+                    let mut date_time_parameters: Option<::ValueList<DateTimeParameter>> = None;
+                    let mut decimal_parameters: Option<::ValueList<DecimalParameter>> = None;
+                    let mut integer_parameters: Option<::ValueList<IntegerParameter>> = None;
+                    let mut string_parameters: Option<::ValueList<StringParameter>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2857,15 +2857,15 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub actions: crate::ValueList<String>,
+        pub actions: ::ValueList<String>,
         /// Property [`Principal`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-resourcepermission.html#cfn-quicksight-dashboard-resourcepermission-principal).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub principal: crate::Value<String>,
+        pub principal: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ResourcePermission {
+    impl ::codec::SerializeValue for ResourcePermission {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Actions", &self.actions)?;
@@ -2874,7 +2874,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourcePermission {
+    impl ::codec::DeserializeValue for ResourcePermission {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourcePermission, D::Error> {
@@ -2891,8 +2891,8 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut actions: Option<crate::ValueList<String>> = None;
-                    let mut principal: Option<crate::Value<String>> = None;
+                    let mut actions: Option<::ValueList<String>> = None;
+                    let mut principal: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2927,10 +2927,10 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub visibility_state: Option<crate::Value<String>>,
+        pub visibility_state: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for SheetControlsOption {
+    impl ::codec::SerializeValue for SheetControlsOption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref visibility_state) = self.visibility_state {
@@ -2944,7 +2944,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for SheetControlsOption {
+    impl ::codec::DeserializeValue for SheetControlsOption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SheetControlsOption, D::Error> {
@@ -2961,7 +2961,7 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut visibility_state: Option<crate::Value<String>> = None;
+                    let mut visibility_state: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -2991,15 +2991,15 @@ pub mod dashboard {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Values`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringparameter.html#cfn-quicksight-dashboard-stringparameter-values).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub values: crate::ValueList<String>,
+        pub values: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for StringParameter {
+    impl ::codec::SerializeValue for StringParameter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -3008,7 +3008,7 @@ pub mod dashboard {
         }
     }
 
-    impl crate::codec::DeserializeValue for StringParameter {
+    impl ::codec::DeserializeValue for StringParameter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<StringParameter, D::Error> {
@@ -3025,8 +3025,8 @@ pub mod dashboard {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut values: Option<crate::ValueList<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3064,20 +3064,20 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_id: crate::Value<String>,
+        pub column_id: ::Value<String>,
         /// Property [`ColumnName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-calculatedcolumn.html#cfn-quicksight-dataset-calculatedcolumn-columnname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_name: crate::Value<String>,
+        pub column_name: ::Value<String>,
         /// Property [`Expression`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-calculatedcolumn.html#cfn-quicksight-dataset-calculatedcolumn-expression).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub expression: crate::Value<String>,
+        pub expression: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CalculatedColumn {
+    impl ::codec::SerializeValue for CalculatedColumn {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnId", &self.column_id)?;
@@ -3087,7 +3087,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for CalculatedColumn {
+    impl ::codec::DeserializeValue for CalculatedColumn {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CalculatedColumn, D::Error> {
@@ -3104,9 +3104,9 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column_id: Option<crate::Value<String>> = None;
-                    let mut column_name: Option<crate::Value<String>> = None;
-                    let mut expression: Option<crate::Value<String>> = None;
+                    let mut column_id: Option<::Value<String>> = None;
+                    let mut column_name: Option<::Value<String>> = None;
+                    let mut expression: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3147,20 +3147,20 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_name: crate::Value<String>,
+        pub column_name: ::Value<String>,
         /// Property [`Format`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-castcolumntypeoperation.html#cfn-quicksight-dataset-castcolumntypeoperation-format).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format: Option<crate::Value<String>>,
+        pub format: Option<::Value<String>>,
         /// Property [`NewColumnType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-castcolumntypeoperation.html#cfn-quicksight-dataset-castcolumntypeoperation-newcolumntype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub new_column_type: crate::Value<String>,
+        pub new_column_type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CastColumnTypeOperation {
+    impl ::codec::SerializeValue for CastColumnTypeOperation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnName", &self.column_name)?;
@@ -3176,7 +3176,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for CastColumnTypeOperation {
+    impl ::codec::DeserializeValue for CastColumnTypeOperation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CastColumnTypeOperation, D::Error> {
@@ -3193,9 +3193,9 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column_name: Option<crate::Value<String>> = None;
-                    let mut format: Option<crate::Value<String>> = None;
-                    let mut new_column_type: Option<crate::Value<String>> = None;
+                    let mut column_name: Option<::Value<String>> = None;
+                    let mut format: Option<::Value<String>> = None;
+                    let mut new_column_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3235,10 +3235,10 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text: Option<crate::Value<String>>,
+        pub text: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ColumnDescription {
+    impl ::codec::SerializeValue for ColumnDescription {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref text) = self.text {
@@ -3248,7 +3248,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for ColumnDescription {
+    impl ::codec::DeserializeValue for ColumnDescription {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ColumnDescription, D::Error> {
@@ -3265,7 +3265,7 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut text: Option<crate::Value<String>> = None;
+                    let mut text: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3293,10 +3293,10 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub geo_spatial_column_group: Option<crate::Value<GeoSpatialColumnGroup>>,
+        pub geo_spatial_column_group: Option<::Value<GeoSpatialColumnGroup>>,
     }
 
-    impl crate::codec::SerializeValue for ColumnGroup {
+    impl ::codec::SerializeValue for ColumnGroup {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref geo_spatial_column_group) = self.geo_spatial_column_group {
@@ -3310,7 +3310,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for ColumnGroup {
+    impl ::codec::DeserializeValue for ColumnGroup {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ColumnGroup, D::Error> {
             struct Visitor;
 
@@ -3325,7 +3325,7 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut geo_spatial_column_group: Option<crate::Value<GeoSpatialColumnGroup>> = None;
+                    let mut geo_spatial_column_group: Option<::Value<GeoSpatialColumnGroup>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3356,15 +3356,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_names: Option<crate::ValueList<String>>,
+        pub column_names: Option<::ValueList<String>>,
         /// Property [`Principals`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columnlevelpermissionrule.html#cfn-quicksight-dataset-columnlevelpermissionrule-principals).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub principals: Option<crate::ValueList<String>>,
+        pub principals: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for ColumnLevelPermissionRule {
+    impl ::codec::SerializeValue for ColumnLevelPermissionRule {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref column_names) = self.column_names {
@@ -3377,7 +3377,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for ColumnLevelPermissionRule {
+    impl ::codec::DeserializeValue for ColumnLevelPermissionRule {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ColumnLevelPermissionRule, D::Error> {
@@ -3394,8 +3394,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column_names: Option<crate::ValueList<String>> = None;
-                    let mut principals: Option<crate::ValueList<String>> = None;
+                    let mut column_names: Option<::ValueList<String>> = None;
+                    let mut principals: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3429,15 +3429,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_description: Option<crate::Value<ColumnDescription>>,
+        pub column_description: Option<::Value<ColumnDescription>>,
         /// Property [`ColumnGeographicRole`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columntag.html#cfn-quicksight-dataset-columntag-columngeographicrole).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_geographic_role: Option<crate::Value<String>>,
+        pub column_geographic_role: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ColumnTag {
+    impl ::codec::SerializeValue for ColumnTag {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref column_description) = self.column_description {
@@ -3458,7 +3458,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for ColumnTag {
+    impl ::codec::DeserializeValue for ColumnTag {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<ColumnTag, D::Error> {
             struct Visitor;
 
@@ -3473,8 +3473,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column_description: Option<crate::Value<ColumnDescription>> = None;
-                    let mut column_geographic_role: Option<crate::Value<String>> = None;
+                    let mut column_description: Option<::Value<ColumnDescription>> = None;
+                    let mut column_geographic_role: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3509,10 +3509,10 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub columns: crate::ValueList<CalculatedColumn>,
+        pub columns: ::ValueList<CalculatedColumn>,
     }
 
-    impl crate::codec::SerializeValue for CreateColumnsOperation {
+    impl ::codec::SerializeValue for CreateColumnsOperation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Columns", &self.columns)?;
@@ -3520,7 +3520,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for CreateColumnsOperation {
+    impl ::codec::DeserializeValue for CreateColumnsOperation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CreateColumnsOperation, D::Error> {
@@ -3537,7 +3537,7 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut columns: Option<crate::ValueList<CalculatedColumn>> = None;
+                    let mut columns: Option<::ValueList<CalculatedColumn>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3567,25 +3567,25 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub columns: crate::ValueList<InputColumn>,
+        pub columns: ::ValueList<InputColumn>,
         /// Property [`DataSourceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-customsql.html#cfn-quicksight-dataset-customsql-datasourcearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source_arn: crate::Value<String>,
+        pub data_source_arn: ::Value<String>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-customsql.html#cfn-quicksight-dataset-customsql-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`SqlQuery`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-customsql.html#cfn-quicksight-dataset-customsql-sqlquery).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sql_query: crate::Value<String>,
+        pub sql_query: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CustomSql {
+    impl ::codec::SerializeValue for CustomSql {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Columns", &self.columns)?;
@@ -3600,7 +3600,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for CustomSql {
+    impl ::codec::DeserializeValue for CustomSql {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<CustomSql, D::Error> {
             struct Visitor;
 
@@ -3615,10 +3615,10 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut columns: Option<crate::ValueList<InputColumn>> = None;
-                    let mut data_source_arn: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut sql_query: Option<crate::Value<String>> = None;
+                    let mut columns: Option<::ValueList<InputColumn>> = None;
+                    let mut data_source_arn: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut sql_query: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3662,15 +3662,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub columns: Option<crate::ValueList<String>>,
+        pub columns: Option<::ValueList<String>>,
         /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-fieldfolder.html#cfn-quicksight-dataset-fieldfolder-description).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<crate::Value<String>>,
+        pub description: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for FieldFolder {
+    impl ::codec::SerializeValue for FieldFolder {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref columns) = self.columns {
@@ -3683,7 +3683,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for FieldFolder {
+    impl ::codec::DeserializeValue for FieldFolder {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<FieldFolder, D::Error> {
             struct Visitor;
 
@@ -3698,8 +3698,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut columns: Option<crate::ValueList<String>> = None;
-                    let mut description: Option<crate::Value<String>> = None;
+                    let mut columns: Option<::ValueList<String>> = None;
+                    let mut description: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3733,10 +3733,10 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub condition_expression: crate::Value<String>,
+        pub condition_expression: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for FilterOperation {
+    impl ::codec::SerializeValue for FilterOperation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -3748,7 +3748,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for FilterOperation {
+    impl ::codec::DeserializeValue for FilterOperation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<FilterOperation, D::Error> {
@@ -3765,7 +3765,7 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut condition_expression: Option<crate::Value<String>> = None;
+                    let mut condition_expression: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3797,20 +3797,20 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub columns: crate::ValueList<String>,
+        pub columns: ::ValueList<String>,
         /// Property [`CountryCode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-geospatialcolumngroup.html#cfn-quicksight-dataset-geospatialcolumngroup-countrycode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub country_code: Option<crate::Value<String>>,
+        pub country_code: Option<::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-geospatialcolumngroup.html#cfn-quicksight-dataset-geospatialcolumngroup-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for GeoSpatialColumnGroup {
+    impl ::codec::SerializeValue for GeoSpatialColumnGroup {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Columns", &self.columns)?;
@@ -3822,7 +3822,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for GeoSpatialColumnGroup {
+    impl ::codec::DeserializeValue for GeoSpatialColumnGroup {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<GeoSpatialColumnGroup, D::Error> {
@@ -3839,9 +3839,9 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut columns: Option<crate::ValueList<String>> = None;
-                    let mut country_code: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut columns: Option<::ValueList<String>> = None;
+                    let mut country_code: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3879,15 +3879,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ingestion_wait_time_in_hours: Option<crate::Value<f64>>,
+        pub ingestion_wait_time_in_hours: Option<::Value<f64>>,
         /// Property [`WaitForSpiceIngestion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-ingestionwaitpolicy.html#cfn-quicksight-dataset-ingestionwaitpolicy-waitforspiceingestion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub wait_for_spice_ingestion: Option<crate::Value<bool>>,
+        pub wait_for_spice_ingestion: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for IngestionWaitPolicy {
+    impl ::codec::SerializeValue for IngestionWaitPolicy {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref ingestion_wait_time_in_hours) = self.ingestion_wait_time_in_hours {
@@ -3908,7 +3908,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for IngestionWaitPolicy {
+    impl ::codec::DeserializeValue for IngestionWaitPolicy {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<IngestionWaitPolicy, D::Error> {
@@ -3925,8 +3925,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut ingestion_wait_time_in_hours: Option<crate::Value<f64>> = None;
-                    let mut wait_for_spice_ingestion: Option<crate::Value<bool>> = None;
+                    let mut ingestion_wait_time_in_hours: Option<::Value<f64>> = None;
+                    let mut wait_for_spice_ingestion: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -3962,15 +3962,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-inputcolumn.html#cfn-quicksight-dataset-inputcolumn-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for InputColumn {
+    impl ::codec::SerializeValue for InputColumn {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Name", &self.name)?;
@@ -3979,7 +3979,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for InputColumn {
+    impl ::codec::DeserializeValue for InputColumn {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<InputColumn, D::Error> {
             struct Visitor;
 
@@ -3994,8 +3994,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4029,35 +4029,35 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub left_join_key_properties: Option<crate::Value<JoinKeyProperties>>,
+        pub left_join_key_properties: Option<::Value<JoinKeyProperties>>,
         /// Property [`LeftOperand`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-leftoperand).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub left_operand: crate::Value<String>,
+        pub left_operand: ::Value<String>,
         /// Property [`OnClause`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-onclause).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub on_clause: crate::Value<String>,
+        pub on_clause: ::Value<String>,
         /// Property [`RightJoinKeyProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-rightjoinkeyproperties).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub right_join_key_properties: Option<crate::Value<JoinKeyProperties>>,
+        pub right_join_key_properties: Option<::Value<JoinKeyProperties>>,
         /// Property [`RightOperand`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-rightoperand).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub right_operand: crate::Value<String>,
+        pub right_operand: ::Value<String>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for JoinInstruction {
+    impl ::codec::SerializeValue for JoinInstruction {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref left_join_key_properties) = self.left_join_key_properties {
@@ -4090,7 +4090,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for JoinInstruction {
+    impl ::codec::DeserializeValue for JoinInstruction {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<JoinInstruction, D::Error> {
@@ -4107,12 +4107,12 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut left_join_key_properties: Option<crate::Value<JoinKeyProperties>> = None;
-                    let mut left_operand: Option<crate::Value<String>> = None;
-                    let mut on_clause: Option<crate::Value<String>> = None;
-                    let mut right_join_key_properties: Option<crate::Value<JoinKeyProperties>> = None;
-                    let mut right_operand: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut left_join_key_properties: Option<::Value<JoinKeyProperties>> = None;
+                    let mut left_operand: Option<::Value<String>> = None;
+                    let mut on_clause: Option<::Value<String>> = None;
+                    let mut right_join_key_properties: Option<::Value<JoinKeyProperties>> = None;
+                    let mut right_operand: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4167,10 +4167,10 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub unique_key: Option<crate::Value<bool>>,
+        pub unique_key: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for JoinKeyProperties {
+    impl ::codec::SerializeValue for JoinKeyProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref unique_key) = self.unique_key {
@@ -4180,7 +4180,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for JoinKeyProperties {
+    impl ::codec::DeserializeValue for JoinKeyProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<JoinKeyProperties, D::Error> {
@@ -4197,7 +4197,7 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut unique_key: Option<crate::Value<bool>> = None;
+                    let mut unique_key: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4227,20 +4227,20 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alias: crate::Value<String>,
+        pub alias: ::Value<String>,
         /// Property [`DataTransforms`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-datatransforms).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_transforms: Option<crate::ValueList<TransformOperation>>,
+        pub data_transforms: Option<::ValueList<TransformOperation>>,
         /// Property [`Source`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-source).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source: crate::Value<LogicalTableSource>,
+        pub source: ::Value<LogicalTableSource>,
     }
 
-    impl crate::codec::SerializeValue for LogicalTable {
+    impl ::codec::SerializeValue for LogicalTable {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Alias", &self.alias)?;
@@ -4256,7 +4256,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for LogicalTable {
+    impl ::codec::DeserializeValue for LogicalTable {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<LogicalTable, D::Error> {
             struct Visitor;
 
@@ -4271,9 +4271,9 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut alias: Option<crate::Value<String>> = None;
-                    let mut data_transforms: Option<crate::ValueList<TransformOperation>> = None;
-                    let mut source: Option<crate::Value<LogicalTableSource>> = None;
+                    let mut alias: Option<::Value<String>> = None;
+                    let mut data_transforms: Option<::ValueList<TransformOperation>> = None;
+                    let mut source: Option<::Value<LogicalTableSource>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4311,15 +4311,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub join_instruction: Option<crate::Value<JoinInstruction>>,
+        pub join_instruction: Option<::Value<JoinInstruction>>,
         /// Property [`PhysicalTableId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html#cfn-quicksight-dataset-logicaltablesource-physicaltableid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub physical_table_id: Option<crate::Value<String>>,
+        pub physical_table_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LogicalTableSource {
+    impl ::codec::SerializeValue for LogicalTableSource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref join_instruction) = self.join_instruction {
@@ -4340,7 +4340,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for LogicalTableSource {
+    impl ::codec::DeserializeValue for LogicalTableSource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LogicalTableSource, D::Error> {
@@ -4357,8 +4357,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut join_instruction: Option<crate::Value<JoinInstruction>> = None;
-                    let mut physical_table_id: Option<crate::Value<String>> = None;
+                    let mut join_instruction: Option<::Value<JoinInstruction>> = None;
+                    let mut physical_table_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4392,20 +4392,20 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub description: Option<crate::Value<String>>,
+        pub description: Option<::Value<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-outputcolumn.html#cfn-quicksight-dataset-outputcolumn-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-outputcolumn.html#cfn-quicksight-dataset-outputcolumn-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<crate::Value<String>>,
+        pub r#type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for OutputColumn {
+    impl ::codec::SerializeValue for OutputColumn {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref description) = self.description {
@@ -4421,7 +4421,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for OutputColumn {
+    impl ::codec::DeserializeValue for OutputColumn {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<OutputColumn, D::Error> {
             struct Visitor;
 
@@ -4436,9 +4436,9 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut description: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut description: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4476,20 +4476,20 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub custom_sql: Option<crate::Value<CustomSql>>,
+        pub custom_sql: Option<::Value<CustomSql>>,
         /// Property [`RelationalTable`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html#cfn-quicksight-dataset-physicaltable-relationaltable).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub relational_table: Option<crate::Value<RelationalTable>>,
+        pub relational_table: Option<::Value<RelationalTable>>,
         /// Property [`S3Source`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html#cfn-quicksight-dataset-physicaltable-s3source).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_source: Option<crate::Value<S3Source>>,
+        pub s3_source: Option<::Value<S3Source>>,
     }
 
-    impl crate::codec::SerializeValue for PhysicalTable {
+    impl ::codec::SerializeValue for PhysicalTable {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref custom_sql) = self.custom_sql {
@@ -4509,7 +4509,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for PhysicalTable {
+    impl ::codec::DeserializeValue for PhysicalTable {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PhysicalTable, D::Error> {
@@ -4526,9 +4526,9 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut custom_sql: Option<crate::Value<CustomSql>> = None;
-                    let mut relational_table: Option<crate::Value<RelationalTable>> = None;
-                    let mut s3_source: Option<crate::Value<S3Source>> = None;
+                    let mut custom_sql: Option<::Value<CustomSql>> = None;
+                    let mut relational_table: Option<::Value<RelationalTable>> = None;
+                    let mut s3_source: Option<::Value<S3Source>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4566,10 +4566,10 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub projected_columns: crate::ValueList<String>,
+        pub projected_columns: ::ValueList<String>,
     }
 
-    impl crate::codec::SerializeValue for ProjectOperation {
+    impl ::codec::SerializeValue for ProjectOperation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -4581,7 +4581,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for ProjectOperation {
+    impl ::codec::DeserializeValue for ProjectOperation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ProjectOperation, D::Error> {
@@ -4598,7 +4598,7 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut projected_columns: Option<crate::ValueList<String>> = None;
+                    let mut projected_columns: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4629,30 +4629,30 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub catalog: Option<crate::Value<String>>,
+        pub catalog: Option<::Value<String>>,
         /// Property [`DataSourceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-datasourcearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source_arn: crate::Value<String>,
+        pub data_source_arn: ::Value<String>,
         /// Property [`InputColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-inputcolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_columns: crate::ValueList<InputColumn>,
+        pub input_columns: ::ValueList<InputColumn>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
         /// Property [`Schema`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-schema).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub schema: Option<crate::Value<String>>,
+        pub schema: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for RelationalTable {
+    impl ::codec::SerializeValue for RelationalTable {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref catalog) = self.catalog {
@@ -4676,7 +4676,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for RelationalTable {
+    impl ::codec::DeserializeValue for RelationalTable {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RelationalTable, D::Error> {
@@ -4693,11 +4693,11 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut catalog: Option<crate::Value<String>> = None;
-                    let mut data_source_arn: Option<crate::Value<String>> = None;
-                    let mut input_columns: Option<crate::ValueList<InputColumn>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
-                    let mut schema: Option<crate::Value<String>> = None;
+                    let mut catalog: Option<::Value<String>> = None;
+                    let mut data_source_arn: Option<::Value<String>> = None;
+                    let mut input_columns: Option<::ValueList<InputColumn>> = None;
+                    let mut name: Option<::Value<String>> = None;
+                    let mut schema: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4745,15 +4745,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_name: crate::Value<String>,
+        pub column_name: ::Value<String>,
         /// Property [`NewColumnName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-renamecolumnoperation.html#cfn-quicksight-dataset-renamecolumnoperation-newcolumnname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub new_column_name: crate::Value<String>,
+        pub new_column_name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RenameColumnOperation {
+    impl ::codec::SerializeValue for RenameColumnOperation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnName", &self.column_name)?;
@@ -4766,7 +4766,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for RenameColumnOperation {
+    impl ::codec::DeserializeValue for RenameColumnOperation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RenameColumnOperation, D::Error> {
@@ -4783,8 +4783,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column_name: Option<crate::Value<String>> = None;
-                    let mut new_column_name: Option<crate::Value<String>> = None;
+                    let mut column_name: Option<::Value<String>> = None;
+                    let mut new_column_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4820,15 +4820,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub actions: crate::ValueList<String>,
+        pub actions: ::ValueList<String>,
         /// Property [`Principal`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-resourcepermission.html#cfn-quicksight-dataset-resourcepermission-principal).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub principal: crate::Value<String>,
+        pub principal: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ResourcePermission {
+    impl ::codec::SerializeValue for ResourcePermission {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Actions", &self.actions)?;
@@ -4837,7 +4837,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourcePermission {
+    impl ::codec::DeserializeValue for ResourcePermission {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourcePermission, D::Error> {
@@ -4854,8 +4854,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut actions: Option<crate::ValueList<String>> = None;
-                    let mut principal: Option<crate::Value<String>> = None;
+                    let mut actions: Option<::ValueList<String>> = None;
+                    let mut principal: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4890,25 +4890,25 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arn: crate::Value<String>,
+        pub arn: ::Value<String>,
         /// Property [`FormatVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiondataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset-formatversion).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format_version: Option<crate::Value<String>>,
+        pub format_version: Option<::Value<String>>,
         /// Property [`Namespace`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiondataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset-namespace).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub namespace: Option<crate::Value<String>>,
+        pub namespace: Option<::Value<String>>,
         /// Property [`PermissionPolicy`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiondataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset-permissionpolicy).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub permission_policy: crate::Value<String>,
+        pub permission_policy: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RowLevelPermissionDataSet {
+    impl ::codec::SerializeValue for RowLevelPermissionDataSet {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
@@ -4931,7 +4931,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for RowLevelPermissionDataSet {
+    impl ::codec::DeserializeValue for RowLevelPermissionDataSet {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RowLevelPermissionDataSet, D::Error> {
@@ -4948,10 +4948,10 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut arn: Option<crate::Value<String>> = None;
-                    let mut format_version: Option<crate::Value<String>> = None;
-                    let mut namespace: Option<crate::Value<String>> = None;
-                    let mut permission_policy: Option<crate::Value<String>> = None;
+                    let mut arn: Option<::Value<String>> = None;
+                    let mut format_version: Option<::Value<String>> = None;
+                    let mut namespace: Option<::Value<String>> = None;
+                    let mut permission_policy: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -4994,20 +4994,20 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_source_arn: crate::Value<String>,
+        pub data_source_arn: ::Value<String>,
         /// Property [`InputColumns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-inputcolumns).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub input_columns: crate::ValueList<InputColumn>,
+        pub input_columns: ::ValueList<InputColumn>,
         /// Property [`UploadSettings`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-uploadsettings).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub upload_settings: Option<crate::Value<UploadSettings>>,
+        pub upload_settings: Option<::Value<UploadSettings>>,
     }
 
-    impl crate::codec::SerializeValue for S3Source {
+    impl ::codec::SerializeValue for S3Source {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -5031,7 +5031,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Source {
+    impl ::codec::DeserializeValue for S3Source {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Source, D::Error> {
             struct Visitor;
 
@@ -5046,9 +5046,9 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_source_arn: Option<crate::Value<String>> = None;
-                    let mut input_columns: Option<crate::ValueList<InputColumn>> = None;
-                    let mut upload_settings: Option<crate::Value<UploadSettings>> = None;
+                    let mut data_source_arn: Option<::Value<String>> = None;
+                    let mut input_columns: Option<::ValueList<InputColumn>> = None;
+                    let mut upload_settings: Option<::Value<UploadSettings>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5088,15 +5088,15 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub column_name: crate::Value<String>,
+        pub column_name: ::Value<String>,
         /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-tagcolumnoperation.html#cfn-quicksight-dataset-tagcolumnoperation-tags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tags: crate::ValueList<ColumnTag>,
+        pub tags: ::ValueList<ColumnTag>,
     }
 
-    impl crate::codec::SerializeValue for TagColumnOperation {
+    impl ::codec::SerializeValue for TagColumnOperation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "ColumnName", &self.column_name)?;
@@ -5105,7 +5105,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for TagColumnOperation {
+    impl ::codec::DeserializeValue for TagColumnOperation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TagColumnOperation, D::Error> {
@@ -5122,8 +5122,8 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut column_name: Option<crate::Value<String>> = None;
-                    let mut tags: Option<crate::ValueList<ColumnTag>> = None;
+                    let mut column_name: Option<::Value<String>> = None;
+                    let mut tags: Option<::ValueList<ColumnTag>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5158,35 +5158,35 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cast_column_type_operation: Option<crate::Value<CastColumnTypeOperation>>,
+        pub cast_column_type_operation: Option<::Value<CastColumnTypeOperation>>,
         /// Property [`CreateColumnsOperation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-createcolumnsoperation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub create_columns_operation: Option<crate::Value<CreateColumnsOperation>>,
+        pub create_columns_operation: Option<::Value<CreateColumnsOperation>>,
         /// Property [`FilterOperation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-filteroperation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub filter_operation: Option<crate::Value<FilterOperation>>,
+        pub filter_operation: Option<::Value<FilterOperation>>,
         /// Property [`ProjectOperation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-projectoperation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub project_operation: Option<crate::Value<ProjectOperation>>,
+        pub project_operation: Option<::Value<ProjectOperation>>,
         /// Property [`RenameColumnOperation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-renamecolumnoperation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rename_column_operation: Option<crate::Value<RenameColumnOperation>>,
+        pub rename_column_operation: Option<::Value<RenameColumnOperation>>,
         /// Property [`TagColumnOperation`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-tagcolumnoperation).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tag_column_operation: Option<crate::Value<TagColumnOperation>>,
+        pub tag_column_operation: Option<::Value<TagColumnOperation>>,
     }
 
-    impl crate::codec::SerializeValue for TransformOperation {
+    impl ::codec::SerializeValue for TransformOperation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cast_column_type_operation) = self.cast_column_type_operation {
@@ -5235,7 +5235,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for TransformOperation {
+    impl ::codec::DeserializeValue for TransformOperation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TransformOperation, D::Error> {
@@ -5252,14 +5252,14 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cast_column_type_operation: Option<crate::Value<CastColumnTypeOperation>> =
+                    let mut cast_column_type_operation: Option<::Value<CastColumnTypeOperation>> =
                         None;
-                    let mut create_columns_operation: Option<crate::Value<CreateColumnsOperation>> =
+                    let mut create_columns_operation: Option<::Value<CreateColumnsOperation>> =
                         None;
-                    let mut filter_operation: Option<crate::Value<FilterOperation>> = None;
-                    let mut project_operation: Option<crate::Value<ProjectOperation>> = None;
-                    let mut rename_column_operation: Option<crate::Value<RenameColumnOperation>> = None;
-                    let mut tag_column_operation: Option<crate::Value<TagColumnOperation>> = None;
+                    let mut filter_operation: Option<::Value<FilterOperation>> = None;
+                    let mut project_operation: Option<::Value<ProjectOperation>> = None;
+                    let mut rename_column_operation: Option<::Value<RenameColumnOperation>> = None;
+                    let mut tag_column_operation: Option<::Value<TagColumnOperation>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5313,30 +5313,30 @@ pub mod data_set {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub contains_header: Option<crate::Value<bool>>,
+        pub contains_header: Option<::Value<bool>>,
         /// Property [`Delimiter`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-delimiter).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub delimiter: Option<crate::Value<String>>,
+        pub delimiter: Option<::Value<String>>,
         /// Property [`Format`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-format).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub format: Option<crate::Value<String>>,
+        pub format: Option<::Value<String>>,
         /// Property [`StartFromRow`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-startfromrow).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_from_row: Option<crate::Value<f64>>,
+        pub start_from_row: Option<::Value<f64>>,
         /// Property [`TextQualifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-textqualifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub text_qualifier: Option<crate::Value<String>>,
+        pub text_qualifier: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for UploadSettings {
+    impl ::codec::SerializeValue for UploadSettings {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref contains_header) = self.contains_header {
@@ -5370,7 +5370,7 @@ pub mod data_set {
         }
     }
 
-    impl crate::codec::DeserializeValue for UploadSettings {
+    impl ::codec::DeserializeValue for UploadSettings {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UploadSettings, D::Error> {
@@ -5387,11 +5387,11 @@ pub mod data_set {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut contains_header: Option<crate::Value<bool>> = None;
-                    let mut delimiter: Option<crate::Value<String>> = None;
-                    let mut format: Option<crate::Value<String>> = None;
-                    let mut start_from_row: Option<crate::Value<f64>> = None;
-                    let mut text_qualifier: Option<crate::Value<String>> = None;
+                    let mut contains_header: Option<::Value<bool>> = None;
+                    let mut delimiter: Option<::Value<String>> = None;
+                    let mut format: Option<::Value<String>> = None;
+                    let mut start_from_row: Option<::Value<f64>> = None;
+                    let mut text_qualifier: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5441,10 +5441,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub domain: crate::Value<String>,
+        pub domain: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for AmazonElasticsearchParameters {
+    impl ::codec::SerializeValue for AmazonElasticsearchParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Domain", &self.domain)?;
@@ -5452,7 +5452,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for AmazonElasticsearchParameters {
+    impl ::codec::DeserializeValue for AmazonElasticsearchParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AmazonElasticsearchParameters, D::Error> {
@@ -5469,7 +5469,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut domain: Option<crate::Value<String>> = None;
+                    let mut domain: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5499,10 +5499,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub domain: crate::Value<String>,
+        pub domain: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for AmazonOpenSearchParameters {
+    impl ::codec::SerializeValue for AmazonOpenSearchParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Domain", &self.domain)?;
@@ -5510,7 +5510,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for AmazonOpenSearchParameters {
+    impl ::codec::DeserializeValue for AmazonOpenSearchParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AmazonOpenSearchParameters, D::Error> {
@@ -5527,7 +5527,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut domain: Option<crate::Value<String>> = None;
+                    let mut domain: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5557,10 +5557,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub work_group: Option<crate::Value<String>>,
+        pub work_group: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for AthenaParameters {
+    impl ::codec::SerializeValue for AthenaParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref work_group) = self.work_group {
@@ -5570,7 +5570,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for AthenaParameters {
+    impl ::codec::DeserializeValue for AthenaParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AthenaParameters, D::Error> {
@@ -5587,7 +5587,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut work_group: Option<crate::Value<String>> = None;
+                    let mut work_group: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5617,20 +5617,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-auroraparameters.html#cfn-quicksight-datasource-auroraparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-auroraparameters.html#cfn-quicksight-datasource-auroraparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for AuroraParameters {
+    impl ::codec::SerializeValue for AuroraParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -5640,7 +5640,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for AuroraParameters {
+    impl ::codec::DeserializeValue for AuroraParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AuroraParameters, D::Error> {
@@ -5657,9 +5657,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5697,20 +5697,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-aurorapostgresqlparameters.html#cfn-quicksight-datasource-aurorapostgresqlparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-aurorapostgresqlparameters.html#cfn-quicksight-datasource-aurorapostgresqlparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for AuroraPostgreSqlParameters {
+    impl ::codec::SerializeValue for AuroraPostgreSqlParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -5720,7 +5720,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for AuroraPostgreSqlParameters {
+    impl ::codec::DeserializeValue for AuroraPostgreSqlParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<AuroraPostgreSqlParameters, D::Error> {
@@ -5737,9 +5737,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5777,20 +5777,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub alternate_data_source_parameters: Option<crate::ValueList<DataSourceParameters>>,
+        pub alternate_data_source_parameters: Option<::ValueList<DataSourceParameters>>,
         /// Property [`Password`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-credentialpair.html#cfn-quicksight-datasource-credentialpair-password).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub password: crate::Value<String>,
+        pub password: ::Value<String>,
         /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-credentialpair.html#cfn-quicksight-datasource-credentialpair-username).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub username: crate::Value<String>,
+        pub username: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for CredentialPair {
+    impl ::codec::SerializeValue for CredentialPair {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref alternate_data_source_parameters) =
@@ -5808,7 +5808,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for CredentialPair {
+    impl ::codec::DeserializeValue for CredentialPair {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CredentialPair, D::Error> {
@@ -5826,10 +5826,10 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut alternate_data_source_parameters: Option<
-                        crate::ValueList<DataSourceParameters>,
+                        ::ValueList<DataSourceParameters>,
                     > = None;
-                    let mut password: Option<crate::Value<String>> = None;
-                    let mut username: Option<crate::Value<String>> = None;
+                    let mut password: Option<::Value<String>> = None;
+                    let mut username: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5868,15 +5868,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub copy_source_arn: Option<crate::Value<String>>,
+        pub copy_source_arn: Option<::Value<String>>,
         /// Property [`CredentialPair`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html#cfn-quicksight-datasource-datasourcecredentials-credentialpair).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub credential_pair: Option<crate::Value<CredentialPair>>,
+        pub credential_pair: Option<::Value<CredentialPair>>,
     }
 
-    impl crate::codec::SerializeValue for DataSourceCredentials {
+    impl ::codec::SerializeValue for DataSourceCredentials {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref copy_source_arn) = self.copy_source_arn {
@@ -5897,7 +5897,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataSourceCredentials {
+    impl ::codec::DeserializeValue for DataSourceCredentials {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSourceCredentials, D::Error> {
@@ -5914,8 +5914,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut copy_source_arn: Option<crate::Value<String>> = None;
-                    let mut credential_pair: Option<crate::Value<CredentialPair>> = None;
+                    let mut copy_source_arn: Option<::Value<String>> = None;
+                    let mut credential_pair: Option<::Value<CredentialPair>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -5949,15 +5949,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub message: Option<crate::Value<String>>,
+        pub message: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceerrorinfo.html#cfn-quicksight-datasource-datasourceerrorinfo-type).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub r#type: Option<crate::Value<String>>,
+        pub r#type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DataSourceErrorInfo {
+    impl ::codec::SerializeValue for DataSourceErrorInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref message) = self.message {
@@ -5970,7 +5970,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataSourceErrorInfo {
+    impl ::codec::DeserializeValue for DataSourceErrorInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSourceErrorInfo, D::Error> {
@@ -5987,8 +5987,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut message: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut message: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6022,90 +6022,90 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub amazon_elasticsearch_parameters: Option<crate::Value<AmazonElasticsearchParameters>>,
+        pub amazon_elasticsearch_parameters: Option<::Value<AmazonElasticsearchParameters>>,
         /// Property [`AmazonOpenSearchParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-amazonopensearchparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub amazon_open_search_parameters: Option<crate::Value<AmazonOpenSearchParameters>>,
+        pub amazon_open_search_parameters: Option<::Value<AmazonOpenSearchParameters>>,
         /// Property [`AthenaParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-athenaparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub athena_parameters: Option<crate::Value<AthenaParameters>>,
+        pub athena_parameters: Option<::Value<AthenaParameters>>,
         /// Property [`AuroraParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-auroraparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aurora_parameters: Option<crate::Value<AuroraParameters>>,
+        pub aurora_parameters: Option<::Value<AuroraParameters>>,
         /// Property [`AuroraPostgreSqlParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-aurorapostgresqlparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub aurora_postgre_sql_parameters: Option<crate::Value<AuroraPostgreSqlParameters>>,
+        pub aurora_postgre_sql_parameters: Option<::Value<AuroraPostgreSqlParameters>>,
         /// Property [`MariaDbParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-mariadbparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub maria_db_parameters: Option<crate::Value<MariaDbParameters>>,
+        pub maria_db_parameters: Option<::Value<MariaDbParameters>>,
         /// Property [`MySqlParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-mysqlparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub my_sql_parameters: Option<crate::Value<MySqlParameters>>,
+        pub my_sql_parameters: Option<::Value<MySqlParameters>>,
         /// Property [`OracleParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-oracleparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub oracle_parameters: Option<crate::Value<OracleParameters>>,
+        pub oracle_parameters: Option<::Value<OracleParameters>>,
         /// Property [`PostgreSqlParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-postgresqlparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub postgre_sql_parameters: Option<crate::Value<PostgreSqlParameters>>,
+        pub postgre_sql_parameters: Option<::Value<PostgreSqlParameters>>,
         /// Property [`PrestoParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-prestoparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub presto_parameters: Option<crate::Value<PrestoParameters>>,
+        pub presto_parameters: Option<::Value<PrestoParameters>>,
         /// Property [`RdsParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-rdsparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub rds_parameters: Option<crate::Value<RdsParameters>>,
+        pub rds_parameters: Option<::Value<RdsParameters>>,
         /// Property [`RedshiftParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-redshiftparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub redshift_parameters: Option<crate::Value<RedshiftParameters>>,
+        pub redshift_parameters: Option<::Value<RedshiftParameters>>,
         /// Property [`S3Parameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-s3parameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub s3_parameters: Option<crate::Value<S3Parameters>>,
+        pub s3_parameters: Option<::Value<S3Parameters>>,
         /// Property [`SnowflakeParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-snowflakeparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub snowflake_parameters: Option<crate::Value<SnowflakeParameters>>,
+        pub snowflake_parameters: Option<::Value<SnowflakeParameters>>,
         /// Property [`SparkParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-sparkparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub spark_parameters: Option<crate::Value<SparkParameters>>,
+        pub spark_parameters: Option<::Value<SparkParameters>>,
         /// Property [`SqlServerParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-sqlserverparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sql_server_parameters: Option<crate::Value<SqlServerParameters>>,
+        pub sql_server_parameters: Option<::Value<SqlServerParameters>>,
         /// Property [`TeradataParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-teradataparameters).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub teradata_parameters: Option<crate::Value<TeradataParameters>>,
+        pub teradata_parameters: Option<::Value<TeradataParameters>>,
     }
 
-    impl crate::codec::SerializeValue for DataSourceParameters {
+    impl ::codec::SerializeValue for DataSourceParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref amazon_elasticsearch_parameters) = self.amazon_elasticsearch_parameters
@@ -6232,7 +6232,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataSourceParameters {
+    impl ::codec::DeserializeValue for DataSourceParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSourceParameters, D::Error> {
@@ -6250,28 +6250,28 @@ pub mod data_source {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut amazon_elasticsearch_parameters: Option<
-                        crate::Value<AmazonElasticsearchParameters>,
+                        ::Value<AmazonElasticsearchParameters>,
                     > = None;
                     let mut amazon_open_search_parameters: Option<
-                        crate::Value<AmazonOpenSearchParameters>,
+                        ::Value<AmazonOpenSearchParameters>,
                     > = None;
-                    let mut athena_parameters: Option<crate::Value<AthenaParameters>> = None;
-                    let mut aurora_parameters: Option<crate::Value<AuroraParameters>> = None;
+                    let mut athena_parameters: Option<::Value<AthenaParameters>> = None;
+                    let mut aurora_parameters: Option<::Value<AuroraParameters>> = None;
                     let mut aurora_postgre_sql_parameters: Option<
-                        crate::Value<AuroraPostgreSqlParameters>,
+                        ::Value<AuroraPostgreSqlParameters>,
                     > = None;
-                    let mut maria_db_parameters: Option<crate::Value<MariaDbParameters>> = None;
-                    let mut my_sql_parameters: Option<crate::Value<MySqlParameters>> = None;
-                    let mut oracle_parameters: Option<crate::Value<OracleParameters>> = None;
-                    let mut postgre_sql_parameters: Option<crate::Value<PostgreSqlParameters>> = None;
-                    let mut presto_parameters: Option<crate::Value<PrestoParameters>> = None;
-                    let mut rds_parameters: Option<crate::Value<RdsParameters>> = None;
-                    let mut redshift_parameters: Option<crate::Value<RedshiftParameters>> = None;
-                    let mut s3_parameters: Option<crate::Value<S3Parameters>> = None;
-                    let mut snowflake_parameters: Option<crate::Value<SnowflakeParameters>> = None;
-                    let mut spark_parameters: Option<crate::Value<SparkParameters>> = None;
-                    let mut sql_server_parameters: Option<crate::Value<SqlServerParameters>> = None;
-                    let mut teradata_parameters: Option<crate::Value<TeradataParameters>> = None;
+                    let mut maria_db_parameters: Option<::Value<MariaDbParameters>> = None;
+                    let mut my_sql_parameters: Option<::Value<MySqlParameters>> = None;
+                    let mut oracle_parameters: Option<::Value<OracleParameters>> = None;
+                    let mut postgre_sql_parameters: Option<::Value<PostgreSqlParameters>> = None;
+                    let mut presto_parameters: Option<::Value<PrestoParameters>> = None;
+                    let mut rds_parameters: Option<::Value<RdsParameters>> = None;
+                    let mut redshift_parameters: Option<::Value<RedshiftParameters>> = None;
+                    let mut s3_parameters: Option<::Value<S3Parameters>> = None;
+                    let mut snowflake_parameters: Option<::Value<SnowflakeParameters>> = None;
+                    let mut spark_parameters: Option<::Value<SparkParameters>> = None;
+                    let mut sql_server_parameters: Option<::Value<SqlServerParameters>> = None;
+                    let mut teradata_parameters: Option<::Value<TeradataParameters>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6371,15 +6371,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub bucket: crate::Value<String>,
+        pub bucket: ::Value<String>,
         /// Property [`Key`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-manifestfilelocation.html#cfn-quicksight-datasource-manifestfilelocation-key).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ManifestFileLocation {
+    impl ::codec::SerializeValue for ManifestFileLocation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Bucket", &self.bucket)?;
@@ -6388,7 +6388,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for ManifestFileLocation {
+    impl ::codec::DeserializeValue for ManifestFileLocation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ManifestFileLocation, D::Error> {
@@ -6405,8 +6405,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut bucket: Option<crate::Value<String>> = None;
-                    let mut key: Option<crate::Value<String>> = None;
+                    let mut bucket: Option<::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6440,20 +6440,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-mariadbparameters.html#cfn-quicksight-datasource-mariadbparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-mariadbparameters.html#cfn-quicksight-datasource-mariadbparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for MariaDbParameters {
+    impl ::codec::SerializeValue for MariaDbParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -6463,7 +6463,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for MariaDbParameters {
+    impl ::codec::DeserializeValue for MariaDbParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MariaDbParameters, D::Error> {
@@ -6480,9 +6480,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6520,20 +6520,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-mysqlparameters.html#cfn-quicksight-datasource-mysqlparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-mysqlparameters.html#cfn-quicksight-datasource-mysqlparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for MySqlParameters {
+    impl ::codec::SerializeValue for MySqlParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -6543,7 +6543,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for MySqlParameters {
+    impl ::codec::DeserializeValue for MySqlParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<MySqlParameters, D::Error> {
@@ -6560,9 +6560,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6600,20 +6600,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oracleparameters.html#cfn-quicksight-datasource-oracleparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oracleparameters.html#cfn-quicksight-datasource-oracleparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for OracleParameters {
+    impl ::codec::SerializeValue for OracleParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -6623,7 +6623,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for OracleParameters {
+    impl ::codec::DeserializeValue for OracleParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<OracleParameters, D::Error> {
@@ -6640,9 +6640,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6680,20 +6680,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-postgresqlparameters.html#cfn-quicksight-datasource-postgresqlparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-postgresqlparameters.html#cfn-quicksight-datasource-postgresqlparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for PostgreSqlParameters {
+    impl ::codec::SerializeValue for PostgreSqlParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -6703,7 +6703,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for PostgreSqlParameters {
+    impl ::codec::DeserializeValue for PostgreSqlParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PostgreSqlParameters, D::Error> {
@@ -6720,9 +6720,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6760,20 +6760,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub catalog: crate::Value<String>,
+        pub catalog: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-prestoparameters.html#cfn-quicksight-datasource-prestoparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-prestoparameters.html#cfn-quicksight-datasource-prestoparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for PrestoParameters {
+    impl ::codec::SerializeValue for PrestoParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Catalog", &self.catalog)?;
@@ -6783,7 +6783,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for PrestoParameters {
+    impl ::codec::DeserializeValue for PrestoParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PrestoParameters, D::Error> {
@@ -6800,9 +6800,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut catalog: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut catalog: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6840,15 +6840,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`InstanceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-rdsparameters.html#cfn-quicksight-datasource-rdsparameters-instanceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub instance_id: crate::Value<String>,
+        pub instance_id: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for RdsParameters {
+    impl ::codec::SerializeValue for RdsParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -6857,7 +6857,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for RdsParameters {
+    impl ::codec::DeserializeValue for RdsParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RdsParameters, D::Error> {
@@ -6874,8 +6874,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut instance_id: Option<crate::Value<String>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut instance_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -6910,25 +6910,25 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cluster_id: Option<crate::Value<String>>,
+        pub cluster_id: Option<::Value<String>>,
         /// Property [`Database`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-redshiftparameters.html#cfn-quicksight-datasource-redshiftparameters-database).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-redshiftparameters.html#cfn-quicksight-datasource-redshiftparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: Option<crate::Value<String>>,
+        pub host: Option<::Value<String>>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-redshiftparameters.html#cfn-quicksight-datasource-redshiftparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: Option<crate::Value<f64>>,
+        pub port: Option<::Value<f64>>,
     }
 
-    impl crate::codec::SerializeValue for RedshiftParameters {
+    impl ::codec::SerializeValue for RedshiftParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cluster_id) = self.cluster_id {
@@ -6945,7 +6945,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for RedshiftParameters {
+    impl ::codec::DeserializeValue for RedshiftParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<RedshiftParameters, D::Error> {
@@ -6962,10 +6962,10 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cluster_id: Option<crate::Value<String>> = None;
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut cluster_id: Option<::Value<String>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7007,15 +7007,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub actions: crate::ValueList<String>,
+        pub actions: ::ValueList<String>,
         /// Property [`Principal`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-resourcepermission.html#cfn-quicksight-datasource-resourcepermission-principal).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub principal: crate::Value<String>,
+        pub principal: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ResourcePermission {
+    impl ::codec::SerializeValue for ResourcePermission {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Actions", &self.actions)?;
@@ -7024,7 +7024,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourcePermission {
+    impl ::codec::DeserializeValue for ResourcePermission {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourcePermission, D::Error> {
@@ -7041,8 +7041,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut actions: Option<crate::ValueList<String>> = None;
-                    let mut principal: Option<crate::Value<String>> = None;
+                    let mut actions: Option<::ValueList<String>> = None;
+                    let mut principal: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7077,10 +7077,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub manifest_file_location: crate::Value<ManifestFileLocation>,
+        pub manifest_file_location: ::Value<ManifestFileLocation>,
     }
 
-    impl crate::codec::SerializeValue for S3Parameters {
+    impl ::codec::SerializeValue for S3Parameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -7092,7 +7092,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for S3Parameters {
+    impl ::codec::DeserializeValue for S3Parameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<S3Parameters, D::Error> {
             struct Visitor;
 
@@ -7107,7 +7107,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut manifest_file_location: Option<crate::Value<ManifestFileLocation>> = None;
+                    let mut manifest_file_location: Option<::Value<ManifestFileLocation>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7139,20 +7139,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Warehouse`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-warehouse).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub warehouse: crate::Value<String>,
+        pub warehouse: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for SnowflakeParameters {
+    impl ::codec::SerializeValue for SnowflakeParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -7162,7 +7162,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for SnowflakeParameters {
+    impl ::codec::DeserializeValue for SnowflakeParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SnowflakeParameters, D::Error> {
@@ -7179,9 +7179,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut warehouse: Option<crate::Value<String>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut warehouse: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7220,15 +7220,15 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sparkparameters.html#cfn-quicksight-datasource-sparkparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for SparkParameters {
+    impl ::codec::SerializeValue for SparkParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Host", &self.host)?;
@@ -7237,7 +7237,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for SparkParameters {
+    impl ::codec::DeserializeValue for SparkParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SparkParameters, D::Error> {
@@ -7254,8 +7254,8 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7289,20 +7289,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sqlserverparameters.html#cfn-quicksight-datasource-sqlserverparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sqlserverparameters.html#cfn-quicksight-datasource-sqlserverparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for SqlServerParameters {
+    impl ::codec::SerializeValue for SqlServerParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -7312,7 +7312,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for SqlServerParameters {
+    impl ::codec::DeserializeValue for SqlServerParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SqlServerParameters, D::Error> {
@@ -7329,9 +7329,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7369,10 +7369,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub disable_ssl: Option<crate::Value<bool>>,
+        pub disable_ssl: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for SslProperties {
+    impl ::codec::SerializeValue for SslProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref disable_ssl) = self.disable_ssl {
@@ -7382,7 +7382,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for SslProperties {
+    impl ::codec::DeserializeValue for SslProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SslProperties, D::Error> {
@@ -7399,7 +7399,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut disable_ssl: Option<crate::Value<bool>> = None;
+                    let mut disable_ssl: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7429,20 +7429,20 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub database: crate::Value<String>,
+        pub database: ::Value<String>,
         /// Property [`Host`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-teradataparameters.html#cfn-quicksight-datasource-teradataparameters-host).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub host: crate::Value<String>,
+        pub host: ::Value<String>,
         /// Property [`Port`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-teradataparameters.html#cfn-quicksight-datasource-teradataparameters-port).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub port: crate::Value<f64>,
+        pub port: ::Value<f64>,
     }
 
-    impl crate::codec::SerializeValue for TeradataParameters {
+    impl ::codec::SerializeValue for TeradataParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Database", &self.database)?;
@@ -7452,7 +7452,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for TeradataParameters {
+    impl ::codec::DeserializeValue for TeradataParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TeradataParameters, D::Error> {
@@ -7469,9 +7469,9 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut database: Option<crate::Value<String>> = None;
-                    let mut host: Option<crate::Value<String>> = None;
-                    let mut port: Option<crate::Value<f64>> = None;
+                    let mut database: Option<::Value<String>> = None;
+                    let mut host: Option<::Value<String>> = None;
+                    let mut port: Option<::Value<f64>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7509,10 +7509,10 @@ pub mod data_source {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub vpc_connection_arn: crate::Value<String>,
+        pub vpc_connection_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for VpcConnectionProperties {
+    impl ::codec::SerializeValue for VpcConnectionProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -7524,7 +7524,7 @@ pub mod data_source {
         }
     }
 
-    impl crate::codec::DeserializeValue for VpcConnectionProperties {
+    impl ::codec::DeserializeValue for VpcConnectionProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<VpcConnectionProperties, D::Error> {
@@ -7541,7 +7541,7 @@ pub mod data_source {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut vpc_connection_arn: Option<crate::Value<String>> = None;
+                    let mut vpc_connection_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7576,15 +7576,15 @@ pub mod template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_arn: crate::Value<String>,
+        pub data_set_arn: ::Value<String>,
         /// Property [`DataSetPlaceholder`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetreference.html#cfn-quicksight-template-datasetreference-datasetplaceholder).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_placeholder: crate::Value<String>,
+        pub data_set_placeholder: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for DataSetReference {
+    impl ::codec::SerializeValue for DataSetReference {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -7601,7 +7601,7 @@ pub mod template {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataSetReference {
+    impl ::codec::DeserializeValue for DataSetReference {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataSetReference, D::Error> {
@@ -7618,8 +7618,8 @@ pub mod template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_set_arn: Option<crate::Value<String>> = None;
-                    let mut data_set_placeholder: Option<crate::Value<String>> = None;
+                    let mut data_set_arn: Option<::Value<String>> = None;
+                    let mut data_set_placeholder: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7656,15 +7656,15 @@ pub mod template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub actions: crate::ValueList<String>,
+        pub actions: ::ValueList<String>,
         /// Property [`Principal`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-resourcepermission.html#cfn-quicksight-template-resourcepermission-principal).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub principal: crate::Value<String>,
+        pub principal: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ResourcePermission {
+    impl ::codec::SerializeValue for ResourcePermission {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Actions", &self.actions)?;
@@ -7673,7 +7673,7 @@ pub mod template {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourcePermission {
+    impl ::codec::DeserializeValue for ResourcePermission {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourcePermission, D::Error> {
@@ -7690,8 +7690,8 @@ pub mod template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut actions: Option<crate::ValueList<String>> = None;
-                    let mut principal: Option<crate::Value<String>> = None;
+                    let mut actions: Option<::ValueList<String>> = None;
+                    let mut principal: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7726,15 +7726,15 @@ pub mod template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arn: crate::Value<String>,
+        pub arn: ::Value<String>,
         /// Property [`DataSetReferences`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceanalysis.html#cfn-quicksight-template-templatesourceanalysis-datasetreferences).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_set_references: crate::ValueList<DataSetReference>,
+        pub data_set_references: ::ValueList<DataSetReference>,
     }
 
-    impl crate::codec::SerializeValue for TemplateSourceAnalysis {
+    impl ::codec::SerializeValue for TemplateSourceAnalysis {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
@@ -7747,7 +7747,7 @@ pub mod template {
         }
     }
 
-    impl crate::codec::DeserializeValue for TemplateSourceAnalysis {
+    impl ::codec::DeserializeValue for TemplateSourceAnalysis {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TemplateSourceAnalysis, D::Error> {
@@ -7764,8 +7764,8 @@ pub mod template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut arn: Option<crate::Value<String>> = None;
-                    let mut data_set_references: Option<crate::ValueList<DataSetReference>> = None;
+                    let mut arn: Option<::Value<String>> = None;
+                    let mut data_set_references: Option<::ValueList<DataSetReference>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7800,15 +7800,15 @@ pub mod template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_analysis: Option<crate::Value<TemplateSourceAnalysis>>,
+        pub source_analysis: Option<::Value<TemplateSourceAnalysis>>,
         /// Property [`SourceTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceentity.html#cfn-quicksight-template-templatesourceentity-sourcetemplate).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub source_template: Option<crate::Value<TemplateSourceTemplate>>,
+        pub source_template: Option<::Value<TemplateSourceTemplate>>,
     }
 
-    impl crate::codec::SerializeValue for TemplateSourceEntity {
+    impl ::codec::SerializeValue for TemplateSourceEntity {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref source_analysis) = self.source_analysis {
@@ -7829,7 +7829,7 @@ pub mod template {
         }
     }
 
-    impl crate::codec::DeserializeValue for TemplateSourceEntity {
+    impl ::codec::DeserializeValue for TemplateSourceEntity {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TemplateSourceEntity, D::Error> {
@@ -7846,8 +7846,8 @@ pub mod template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut source_analysis: Option<crate::Value<TemplateSourceAnalysis>> = None;
-                    let mut source_template: Option<crate::Value<TemplateSourceTemplate>> = None;
+                    let mut source_analysis: Option<::Value<TemplateSourceAnalysis>> = None;
+                    let mut source_template: Option<::Value<TemplateSourceTemplate>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7881,10 +7881,10 @@ pub mod template {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub arn: crate::Value<String>,
+        pub arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for TemplateSourceTemplate {
+    impl ::codec::SerializeValue for TemplateSourceTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
@@ -7892,7 +7892,7 @@ pub mod template {
         }
     }
 
-    impl crate::codec::DeserializeValue for TemplateSourceTemplate {
+    impl ::codec::DeserializeValue for TemplateSourceTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TemplateSourceTemplate, D::Error> {
@@ -7909,7 +7909,7 @@ pub mod template {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut arn: Option<crate::Value<String>> = None;
+                    let mut arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7943,10 +7943,10 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub show: Option<crate::Value<bool>>,
+        pub show: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for BorderStyle {
+    impl ::codec::SerializeValue for BorderStyle {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref show) = self.show {
@@ -7956,7 +7956,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for BorderStyle {
+    impl ::codec::DeserializeValue for BorderStyle {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<BorderStyle, D::Error> {
             struct Visitor;
 
@@ -7971,7 +7971,7 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut show: Option<crate::Value<bool>> = None;
+                    let mut show: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -7999,20 +7999,20 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub colors: Option<crate::ValueList<String>>,
+        pub colors: Option<::ValueList<String>>,
         /// Property [`EmptyFillColor`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-datacolorpalette.html#cfn-quicksight-theme-datacolorpalette-emptyfillcolor).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub empty_fill_color: Option<crate::Value<String>>,
+        pub empty_fill_color: Option<::Value<String>>,
         /// Property [`MinMaxGradient`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-datacolorpalette.html#cfn-quicksight-theme-datacolorpalette-minmaxgradient).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub min_max_gradient: Option<crate::ValueList<String>>,
+        pub min_max_gradient: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for DataColorPalette {
+    impl ::codec::SerializeValue for DataColorPalette {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref colors) = self.colors {
@@ -8036,7 +8036,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for DataColorPalette {
+    impl ::codec::DeserializeValue for DataColorPalette {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DataColorPalette, D::Error> {
@@ -8053,9 +8053,9 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut colors: Option<crate::ValueList<String>> = None;
-                    let mut empty_fill_color: Option<crate::Value<String>> = None;
-                    let mut min_max_gradient: Option<crate::ValueList<String>> = None;
+                    let mut colors: Option<::ValueList<String>> = None;
+                    let mut empty_fill_color: Option<::Value<String>> = None;
+                    let mut min_max_gradient: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8093,10 +8093,10 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_family: Option<crate::Value<String>>,
+        pub font_family: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Font {
+    impl ::codec::SerializeValue for Font {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref font_family) = self.font_family {
@@ -8106,7 +8106,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for Font {
+    impl ::codec::DeserializeValue for Font {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Font, D::Error> {
             struct Visitor;
 
@@ -8121,7 +8121,7 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut font_family: Option<crate::Value<String>> = None;
+                    let mut font_family: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8151,10 +8151,10 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub show: Option<crate::Value<bool>>,
+        pub show: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for GutterStyle {
+    impl ::codec::SerializeValue for GutterStyle {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref show) = self.show {
@@ -8164,7 +8164,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for GutterStyle {
+    impl ::codec::DeserializeValue for GutterStyle {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<GutterStyle, D::Error> {
             struct Visitor;
 
@@ -8179,7 +8179,7 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut show: Option<crate::Value<bool>> = None;
+                    let mut show: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8207,10 +8207,10 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub show: Option<crate::Value<bool>>,
+        pub show: Option<::Value<bool>>,
     }
 
-    impl crate::codec::SerializeValue for MarginStyle {
+    impl ::codec::SerializeValue for MarginStyle {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref show) = self.show {
@@ -8220,7 +8220,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for MarginStyle {
+    impl ::codec::DeserializeValue for MarginStyle {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<MarginStyle, D::Error> {
             struct Visitor;
 
@@ -8235,7 +8235,7 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut show: Option<crate::Value<bool>> = None;
+                    let mut show: Option<::Value<bool>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8263,15 +8263,15 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub actions: crate::ValueList<String>,
+        pub actions: ::ValueList<String>,
         /// Property [`Principal`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-resourcepermission.html#cfn-quicksight-theme-resourcepermission-principal).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub principal: crate::Value<String>,
+        pub principal: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ResourcePermission {
+    impl ::codec::SerializeValue for ResourcePermission {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Actions", &self.actions)?;
@@ -8280,7 +8280,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourcePermission {
+    impl ::codec::DeserializeValue for ResourcePermission {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourcePermission, D::Error> {
@@ -8297,8 +8297,8 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut actions: Option<crate::ValueList<String>> = None;
-                    let mut principal: Option<crate::Value<String>> = None;
+                    let mut actions: Option<::ValueList<String>> = None;
+                    let mut principal: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8333,15 +8333,15 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tile: Option<crate::Value<TileStyle>>,
+        pub tile: Option<::Value<TileStyle>>,
         /// Property [`TileLayout`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetstyle.html#cfn-quicksight-theme-sheetstyle-tilelayout).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tile_layout: Option<crate::Value<TileLayoutStyle>>,
+        pub tile_layout: Option<::Value<TileLayoutStyle>>,
     }
 
-    impl crate::codec::SerializeValue for SheetStyle {
+    impl ::codec::SerializeValue for SheetStyle {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref tile) = self.tile {
@@ -8354,7 +8354,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for SheetStyle {
+    impl ::codec::DeserializeValue for SheetStyle {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<SheetStyle, D::Error> {
             struct Visitor;
 
@@ -8369,8 +8369,8 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut tile: Option<crate::Value<TileStyle>> = None;
-                    let mut tile_layout: Option<crate::Value<TileLayoutStyle>> = None;
+                    let mut tile: Option<::Value<TileStyle>> = None;
+                    let mut tile_layout: Option<::Value<TileLayoutStyle>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8404,25 +8404,25 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub data_color_palette: Option<crate::Value<DataColorPalette>>,
+        pub data_color_palette: Option<::Value<DataColorPalette>>,
         /// Property [`Sheet`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeconfiguration.html#cfn-quicksight-theme-themeconfiguration-sheet).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub sheet: Option<crate::Value<SheetStyle>>,
+        pub sheet: Option<::Value<SheetStyle>>,
         /// Property [`Typography`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeconfiguration.html#cfn-quicksight-theme-themeconfiguration-typography).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub typography: Option<crate::Value<Typography>>,
+        pub typography: Option<::Value<Typography>>,
         /// Property [`UIColorPalette`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeconfiguration.html#cfn-quicksight-theme-themeconfiguration-uicolorpalette).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ui_color_palette: Option<crate::Value<UIColorPalette>>,
+        pub ui_color_palette: Option<::Value<UIColorPalette>>,
     }
 
-    impl crate::codec::SerializeValue for ThemeConfiguration {
+    impl ::codec::SerializeValue for ThemeConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref data_color_palette) = self.data_color_palette {
@@ -8449,7 +8449,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for ThemeConfiguration {
+    impl ::codec::DeserializeValue for ThemeConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ThemeConfiguration, D::Error> {
@@ -8466,10 +8466,10 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut data_color_palette: Option<crate::Value<DataColorPalette>> = None;
-                    let mut sheet: Option<crate::Value<SheetStyle>> = None;
-                    let mut typography: Option<crate::Value<Typography>> = None;
-                    let mut ui_color_palette: Option<crate::Value<UIColorPalette>> = None;
+                    let mut data_color_palette: Option<::Value<DataColorPalette>> = None;
+                    let mut sheet: Option<::Value<SheetStyle>> = None;
+                    let mut typography: Option<::Value<Typography>> = None;
+                    let mut ui_color_palette: Option<::Value<UIColorPalette>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8511,15 +8511,15 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub gutter: Option<crate::Value<GutterStyle>>,
+        pub gutter: Option<::Value<GutterStyle>>,
         /// Property [`Margin`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilelayoutstyle.html#cfn-quicksight-theme-tilelayoutstyle-margin).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub margin: Option<crate::Value<MarginStyle>>,
+        pub margin: Option<::Value<MarginStyle>>,
     }
 
-    impl crate::codec::SerializeValue for TileLayoutStyle {
+    impl ::codec::SerializeValue for TileLayoutStyle {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref gutter) = self.gutter {
@@ -8532,7 +8532,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for TileLayoutStyle {
+    impl ::codec::DeserializeValue for TileLayoutStyle {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TileLayoutStyle, D::Error> {
@@ -8549,8 +8549,8 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut gutter: Option<crate::Value<GutterStyle>> = None;
-                    let mut margin: Option<crate::Value<MarginStyle>> = None;
+                    let mut gutter: Option<::Value<GutterStyle>> = None;
+                    let mut margin: Option<::Value<MarginStyle>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8584,10 +8584,10 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub border: Option<crate::Value<BorderStyle>>,
+        pub border: Option<::Value<BorderStyle>>,
     }
 
-    impl crate::codec::SerializeValue for TileStyle {
+    impl ::codec::SerializeValue for TileStyle {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref border) = self.border {
@@ -8597,7 +8597,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for TileStyle {
+    impl ::codec::DeserializeValue for TileStyle {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<TileStyle, D::Error> {
             struct Visitor;
 
@@ -8612,7 +8612,7 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut border: Option<crate::Value<BorderStyle>> = None;
+                    let mut border: Option<::Value<BorderStyle>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8640,10 +8640,10 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub font_families: Option<crate::ValueList<Font>>,
+        pub font_families: Option<::ValueList<Font>>,
     }
 
-    impl crate::codec::SerializeValue for Typography {
+    impl ::codec::SerializeValue for Typography {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref font_families) = self.font_families {
@@ -8657,7 +8657,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for Typography {
+    impl ::codec::DeserializeValue for Typography {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Typography, D::Error> {
             struct Visitor;
 
@@ -8672,7 +8672,7 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut font_families: Option<crate::ValueList<Font>> = None;
+                    let mut font_families: Option<::ValueList<Font>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -8702,85 +8702,85 @@ pub mod theme {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub accent: Option<crate::Value<String>>,
+        pub accent: Option<::Value<String>>,
         /// Property [`AccentForeground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-accentforeground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub accent_foreground: Option<crate::Value<String>>,
+        pub accent_foreground: Option<::Value<String>>,
         /// Property [`Danger`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-danger).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub danger: Option<crate::Value<String>>,
+        pub danger: Option<::Value<String>>,
         /// Property [`DangerForeground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-dangerforeground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub danger_foreground: Option<crate::Value<String>>,
+        pub danger_foreground: Option<::Value<String>>,
         /// Property [`Dimension`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-dimension).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dimension: Option<crate::Value<String>>,
+        pub dimension: Option<::Value<String>>,
         /// Property [`DimensionForeground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-dimensionforeground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dimension_foreground: Option<crate::Value<String>>,
+        pub dimension_foreground: Option<::Value<String>>,
         /// Property [`Measure`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-measure).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub measure: Option<crate::Value<String>>,
+        pub measure: Option<::Value<String>>,
         /// Property [`MeasureForeground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-measureforeground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub measure_foreground: Option<crate::Value<String>>,
+        pub measure_foreground: Option<::Value<String>>,
         /// Property [`PrimaryBackground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-primarybackground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub primary_background: Option<crate::Value<String>>,
+        pub primary_background: Option<::Value<String>>,
         /// Property [`PrimaryForeground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-primaryforeground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub primary_foreground: Option<crate::Value<String>>,
+        pub primary_foreground: Option<::Value<String>>,
         /// Property [`SecondaryBackground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-secondarybackground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secondary_background: Option<crate::Value<String>>,
+        pub secondary_background: Option<::Value<String>>,
         /// Property [`SecondaryForeground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-secondaryforeground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub secondary_foreground: Option<crate::Value<String>>,
+        pub secondary_foreground: Option<::Value<String>>,
         /// Property [`Success`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-success).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub success: Option<crate::Value<String>>,
+        pub success: Option<::Value<String>>,
         /// Property [`SuccessForeground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-successforeground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub success_foreground: Option<crate::Value<String>>,
+        pub success_foreground: Option<::Value<String>>,
         /// Property [`Warning`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-warning).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub warning: Option<crate::Value<String>>,
+        pub warning: Option<::Value<String>>,
         /// Property [`WarningForeground`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-warningforeground).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub warning_foreground: Option<crate::Value<String>>,
+        pub warning_foreground: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for UIColorPalette {
+    impl ::codec::SerializeValue for UIColorPalette {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref accent) = self.accent {
@@ -8875,7 +8875,7 @@ pub mod theme {
         }
     }
 
-    impl crate::codec::DeserializeValue for UIColorPalette {
+    impl ::codec::DeserializeValue for UIColorPalette {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UIColorPalette, D::Error> {
@@ -8892,22 +8892,22 @@ pub mod theme {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut accent: Option<crate::Value<String>> = None;
-                    let mut accent_foreground: Option<crate::Value<String>> = None;
-                    let mut danger: Option<crate::Value<String>> = None;
-                    let mut danger_foreground: Option<crate::Value<String>> = None;
-                    let mut dimension: Option<crate::Value<String>> = None;
-                    let mut dimension_foreground: Option<crate::Value<String>> = None;
-                    let mut measure: Option<crate::Value<String>> = None;
-                    let mut measure_foreground: Option<crate::Value<String>> = None;
-                    let mut primary_background: Option<crate::Value<String>> = None;
-                    let mut primary_foreground: Option<crate::Value<String>> = None;
-                    let mut secondary_background: Option<crate::Value<String>> = None;
-                    let mut secondary_foreground: Option<crate::Value<String>> = None;
-                    let mut success: Option<crate::Value<String>> = None;
-                    let mut success_foreground: Option<crate::Value<String>> = None;
-                    let mut warning: Option<crate::Value<String>> = None;
-                    let mut warning_foreground: Option<crate::Value<String>> = None;
+                    let mut accent: Option<::Value<String>> = None;
+                    let mut accent_foreground: Option<::Value<String>> = None;
+                    let mut danger: Option<::Value<String>> = None;
+                    let mut danger_foreground: Option<::Value<String>> = None;
+                    let mut dimension: Option<::Value<String>> = None;
+                    let mut dimension_foreground: Option<::Value<String>> = None;
+                    let mut measure: Option<::Value<String>> = None;
+                    let mut measure_foreground: Option<::Value<String>> = None;
+                    let mut primary_background: Option<::Value<String>> = None;
+                    let mut primary_foreground: Option<::Value<String>> = None;
+                    let mut secondary_background: Option<::Value<String>> = None;
+                    let mut secondary_foreground: Option<::Value<String>> = None;
+                    let mut success: Option<::Value<String>> = None;
+                    let mut success_foreground: Option<::Value<String>> = None;
+                    let mut warning: Option<::Value<String>> = None;
+                    let mut warning_foreground: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

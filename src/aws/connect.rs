@@ -13,37 +13,37 @@ pub struct ContactFlowProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub content: crate::Value<String>,
+    pub content: ::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflow.html#cfn-connect-contactflow-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`InstanceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflow.html#cfn-connect-contactflow-instancearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflow.html#cfn-connect-contactflow-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflow.html#cfn-connect-contactflow-state).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub state: Option<crate::Value<String>>,
+    pub state: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflow.html#cfn-connect-contactflow-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflow.html#cfn-connect-contactflow-type).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub r#type: Option<crate::Value<String>>,
+    pub r#type: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ContactFlowProperties {
@@ -83,13 +83,13 @@ impl<'de> ::serde::Deserialize<'de> for ContactFlowProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut content: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut instance_arn: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut state: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut r#type: Option<crate::Value<String>> = None;
+                let mut content: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut state: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut r#type: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -135,7 +135,7 @@ impl<'de> ::serde::Deserialize<'de> for ContactFlowProperties {
     }
 }
 
-impl crate::Resource for ContactFlow {
+impl ::Resource for ContactFlow {
     type Properties = ContactFlowProperties;
     const TYPE: &'static str = "AWS::Connect::ContactFlow";
     fn properties(&self) -> &ContactFlowProperties {
@@ -146,7 +146,7 @@ impl crate::Resource for ContactFlow {
     }
 }
 
-impl crate::private::Sealed for ContactFlow {}
+impl ::private::Sealed for ContactFlow {}
 
 impl From<ContactFlowProperties> for ContactFlow {
     fn from(properties: ContactFlowProperties) -> ContactFlow {
@@ -167,32 +167,32 @@ pub struct ContactFlowModuleProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub content: crate::Value<String>,
+    pub content: ::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`InstanceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-instancearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`State`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-state).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub state: Option<crate::Value<String>>,
+    pub state: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ContactFlowModuleProperties {
@@ -231,12 +231,12 @@ impl<'de> ::serde::Deserialize<'de> for ContactFlowModuleProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut content: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut instance_arn: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut state: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut content: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut state: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -278,7 +278,7 @@ impl<'de> ::serde::Deserialize<'de> for ContactFlowModuleProperties {
     }
 }
 
-impl crate::Resource for ContactFlowModule {
+impl ::Resource for ContactFlowModule {
     type Properties = ContactFlowModuleProperties;
     const TYPE: &'static str = "AWS::Connect::ContactFlowModule";
     fn properties(&self) -> &ContactFlowModuleProperties {
@@ -289,7 +289,7 @@ impl crate::Resource for ContactFlowModule {
     }
 }
 
-impl crate::private::Sealed for ContactFlowModule {}
+impl ::private::Sealed for ContactFlowModule {}
 
 impl From<ContactFlowModuleProperties> for ContactFlowModule {
     fn from(properties: ContactFlowModuleProperties) -> ContactFlowModule {
@@ -310,32 +310,32 @@ pub struct HoursOfOperationProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub config: crate::ValueList<self::hours_of_operation::HoursOfOperationConfig>,
+    pub config: ::ValueList<self::hours_of_operation::HoursOfOperationConfig>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-description).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`InstanceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-instancearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`TimeZone`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-timezone).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub time_zone: crate::Value<String>,
+    pub time_zone: ::Value<String>,
 }
 
 impl ::serde::Serialize for HoursOfOperationProperties {
@@ -373,13 +373,13 @@ impl<'de> ::serde::Deserialize<'de> for HoursOfOperationProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut config: Option<
-                    crate::ValueList<self::hours_of_operation::HoursOfOperationConfig>,
+                    ::ValueList<self::hours_of_operation::HoursOfOperationConfig>,
                 > = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut instance_arn: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut time_zone: Option<crate::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut time_zone: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -421,7 +421,7 @@ impl<'de> ::serde::Deserialize<'de> for HoursOfOperationProperties {
     }
 }
 
-impl crate::Resource for HoursOfOperation {
+impl ::Resource for HoursOfOperation {
     type Properties = HoursOfOperationProperties;
     const TYPE: &'static str = "AWS::Connect::HoursOfOperation";
     fn properties(&self) -> &HoursOfOperationProperties {
@@ -432,7 +432,7 @@ impl crate::Resource for HoursOfOperation {
     }
 }
 
-impl crate::private::Sealed for HoursOfOperation {}
+impl ::private::Sealed for HoursOfOperation {}
 
 impl From<HoursOfOperationProperties> for HoursOfOperation {
     fn from(properties: HoursOfOperationProperties) -> HoursOfOperation {
@@ -453,27 +453,27 @@ pub struct QuickConnectProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`InstanceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-quickconnect.html#cfn-connect-quickconnect-instancearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-quickconnect.html#cfn-connect-quickconnect-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`QuickConnectConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-quickconnect.html#cfn-connect-quickconnect-quickconnectconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub quick_connect_config: crate::Value<self::quick_connect::QuickConnectConfig>,
+    pub quick_connect_config: ::Value<self::quick_connect::QuickConnectConfig>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-quickconnect.html#cfn-connect-quickconnect-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for QuickConnectProperties {
@@ -513,13 +513,13 @@ impl<'de> ::serde::Deserialize<'de> for QuickConnectProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut instance_arn: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
                 let mut quick_connect_config: Option<
-                    crate::Value<self::quick_connect::QuickConnectConfig>,
+                    ::Value<self::quick_connect::QuickConnectConfig>,
                 > = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -558,7 +558,7 @@ impl<'de> ::serde::Deserialize<'de> for QuickConnectProperties {
     }
 }
 
-impl crate::Resource for QuickConnect {
+impl ::Resource for QuickConnect {
     type Properties = QuickConnectProperties;
     const TYPE: &'static str = "AWS::Connect::QuickConnect";
     fn properties(&self) -> &QuickConnectProperties {
@@ -569,7 +569,7 @@ impl crate::Resource for QuickConnect {
     }
 }
 
-impl crate::private::Sealed for QuickConnect {}
+impl ::private::Sealed for QuickConnect {}
 
 impl From<QuickConnectProperties> for QuickConnect {
     fn from(properties: QuickConnectProperties) -> QuickConnect {
@@ -590,52 +590,52 @@ pub struct UserProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub directory_user_id: Option<crate::Value<String>>,
+    pub directory_user_id: Option<::Value<String>>,
     /// Property [`HierarchyGroupArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-hierarchygrouparn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub hierarchy_group_arn: Option<crate::Value<String>>,
+    pub hierarchy_group_arn: Option<::Value<String>>,
     /// Property [`IdentityInfo`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-identityinfo).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub identity_info: Option<crate::Value<self::user::UserIdentityInfo>>,
+    pub identity_info: Option<::Value<self::user::UserIdentityInfo>>,
     /// Property [`InstanceArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-instancearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
     /// Property [`Password`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-password).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub password: Option<crate::Value<String>>,
+    pub password: Option<::Value<String>>,
     /// Property [`PhoneConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-phoneconfig).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub phone_config: crate::Value<self::user::UserPhoneConfig>,
+    pub phone_config: ::Value<self::user::UserPhoneConfig>,
     /// Property [`RoutingProfileArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-routingprofilearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub routing_profile_arn: crate::Value<String>,
+    pub routing_profile_arn: ::Value<String>,
     /// Property [`SecurityProfileArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-securityprofilearns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub security_profile_arns: crate::ValueList<String>,
+    pub security_profile_arns: ::ValueList<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`Username`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-username).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub username: crate::Value<String>,
+    pub username: ::Value<String>,
 }
 
 impl ::serde::Serialize for UserProperties {
@@ -696,16 +696,16 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut directory_user_id: Option<crate::Value<String>> = None;
-                let mut hierarchy_group_arn: Option<crate::Value<String>> = None;
-                let mut identity_info: Option<crate::Value<self::user::UserIdentityInfo>> = None;
-                let mut instance_arn: Option<crate::Value<String>> = None;
-                let mut password: Option<crate::Value<String>> = None;
-                let mut phone_config: Option<crate::Value<self::user::UserPhoneConfig>> = None;
-                let mut routing_profile_arn: Option<crate::Value<String>> = None;
-                let mut security_profile_arns: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut username: Option<crate::Value<String>> = None;
+                let mut directory_user_id: Option<::Value<String>> = None;
+                let mut hierarchy_group_arn: Option<::Value<String>> = None;
+                let mut identity_info: Option<::Value<self::user::UserIdentityInfo>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
+                let mut password: Option<::Value<String>> = None;
+                let mut phone_config: Option<::Value<self::user::UserPhoneConfig>> = None;
+                let mut routing_profile_arn: Option<::Value<String>> = None;
+                let mut security_profile_arns: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut username: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -766,7 +766,7 @@ impl<'de> ::serde::Deserialize<'de> for UserProperties {
     }
 }
 
-impl crate::Resource for User {
+impl ::Resource for User {
     type Properties = UserProperties;
     const TYPE: &'static str = "AWS::Connect::User";
     fn properties(&self) -> &UserProperties {
@@ -777,7 +777,7 @@ impl crate::Resource for User {
     }
 }
 
-impl crate::private::Sealed for User {}
+impl ::private::Sealed for User {}
 
 impl From<UserProperties> for User {
     fn from(properties: UserProperties) -> User {
@@ -798,17 +798,17 @@ pub struct UserHierarchyGroupProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub instance_arn: crate::Value<String>,
+    pub instance_arn: ::Value<String>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-userhierarchygroup.html#cfn-connect-userhierarchygroup-name).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`ParentGroupArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-userhierarchygroup.html#cfn-connect-userhierarchygroup-parentgrouparn).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub parent_group_arn: Option<crate::Value<String>>,
+    pub parent_group_arn: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for UserHierarchyGroupProperties {
@@ -844,9 +844,9 @@ impl<'de> ::serde::Deserialize<'de> for UserHierarchyGroupProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut instance_arn: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut parent_group_arn: Option<crate::Value<String>> = None;
+                let mut instance_arn: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut parent_group_arn: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -876,7 +876,7 @@ impl<'de> ::serde::Deserialize<'de> for UserHierarchyGroupProperties {
     }
 }
 
-impl crate::Resource for UserHierarchyGroup {
+impl ::Resource for UserHierarchyGroup {
     type Properties = UserHierarchyGroupProperties;
     const TYPE: &'static str = "AWS::Connect::UserHierarchyGroup";
     fn properties(&self) -> &UserHierarchyGroupProperties {
@@ -887,7 +887,7 @@ impl crate::Resource for UserHierarchyGroup {
     }
 }
 
-impl crate::private::Sealed for UserHierarchyGroup {}
+impl ::private::Sealed for UserHierarchyGroup {}
 
 impl From<UserHierarchyGroupProperties> for UserHierarchyGroup {
     fn from(properties: UserHierarchyGroupProperties) -> UserHierarchyGroup {
@@ -905,20 +905,20 @@ pub mod hours_of_operation {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub day: crate::Value<String>,
+        pub day: ::Value<String>,
         /// Property [`EndTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationconfig.html#cfn-connect-hoursofoperation-hoursofoperationconfig-endtime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub end_time: crate::Value<HoursOfOperationTimeSlice>,
+        pub end_time: ::Value<HoursOfOperationTimeSlice>,
         /// Property [`StartTime`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationconfig.html#cfn-connect-hoursofoperation-hoursofoperationconfig-starttime).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub start_time: crate::Value<HoursOfOperationTimeSlice>,
+        pub start_time: ::Value<HoursOfOperationTimeSlice>,
     }
 
-    impl crate::codec::SerializeValue for HoursOfOperationConfig {
+    impl ::codec::SerializeValue for HoursOfOperationConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Day", &self.day)?;
@@ -928,7 +928,7 @@ pub mod hours_of_operation {
         }
     }
 
-    impl crate::codec::DeserializeValue for HoursOfOperationConfig {
+    impl ::codec::DeserializeValue for HoursOfOperationConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HoursOfOperationConfig, D::Error> {
@@ -945,9 +945,9 @@ pub mod hours_of_operation {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut day: Option<crate::Value<String>> = None;
-                    let mut end_time: Option<crate::Value<HoursOfOperationTimeSlice>> = None;
-                    let mut start_time: Option<crate::Value<HoursOfOperationTimeSlice>> = None;
+                    let mut day: Option<::Value<String>> = None;
+                    let mut end_time: Option<::Value<HoursOfOperationTimeSlice>> = None;
+                    let mut start_time: Option<::Value<HoursOfOperationTimeSlice>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -986,15 +986,15 @@ pub mod hours_of_operation {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hours: crate::Value<u32>,
+        pub hours: ::Value<u32>,
         /// Property [`Minutes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationtimeslice.html#cfn-connect-hoursofoperation-hoursofoperationtimeslice-minutes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub minutes: crate::Value<u32>,
+        pub minutes: ::Value<u32>,
     }
 
-    impl crate::codec::SerializeValue for HoursOfOperationTimeSlice {
+    impl ::codec::SerializeValue for HoursOfOperationTimeSlice {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Hours", &self.hours)?;
@@ -1003,7 +1003,7 @@ pub mod hours_of_operation {
         }
     }
 
-    impl crate::codec::DeserializeValue for HoursOfOperationTimeSlice {
+    impl ::codec::DeserializeValue for HoursOfOperationTimeSlice {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<HoursOfOperationTimeSlice, D::Error> {
@@ -1020,8 +1020,8 @@ pub mod hours_of_operation {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut hours: Option<crate::Value<u32>> = None;
-                    let mut minutes: Option<crate::Value<u32>> = None;
+                    let mut hours: Option<::Value<u32>> = None;
+                    let mut minutes: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1059,10 +1059,10 @@ pub mod quick_connect {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub phone_number: crate::Value<String>,
+        pub phone_number: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for PhoneNumberQuickConnectConfig {
+    impl ::codec::SerializeValue for PhoneNumberQuickConnectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1074,7 +1074,7 @@ pub mod quick_connect {
         }
     }
 
-    impl crate::codec::DeserializeValue for PhoneNumberQuickConnectConfig {
+    impl ::codec::DeserializeValue for PhoneNumberQuickConnectConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PhoneNumberQuickConnectConfig, D::Error> {
@@ -1091,7 +1091,7 @@ pub mod quick_connect {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut phone_number: Option<crate::Value<String>> = None;
+                    let mut phone_number: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1122,15 +1122,15 @@ pub mod quick_connect {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub contact_flow_arn: crate::Value<String>,
+        pub contact_flow_arn: ::Value<String>,
         /// Property [`QueueArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-queuequickconnectconfig.html#cfn-connect-quickconnect-queuequickconnectconfig-queuearn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub queue_arn: crate::Value<String>,
+        pub queue_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for QueueQuickConnectConfig {
+    impl ::codec::SerializeValue for QueueQuickConnectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1143,7 +1143,7 @@ pub mod quick_connect {
         }
     }
 
-    impl crate::codec::DeserializeValue for QueueQuickConnectConfig {
+    impl ::codec::DeserializeValue for QueueQuickConnectConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<QueueQuickConnectConfig, D::Error> {
@@ -1160,8 +1160,8 @@ pub mod quick_connect {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut contact_flow_arn: Option<crate::Value<String>> = None;
-                    let mut queue_arn: Option<crate::Value<String>> = None;
+                    let mut contact_flow_arn: Option<::Value<String>> = None;
+                    let mut queue_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1197,25 +1197,25 @@ pub mod quick_connect {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub phone_config: Option<crate::Value<PhoneNumberQuickConnectConfig>>,
+        pub phone_config: Option<::Value<PhoneNumberQuickConnectConfig>>,
         /// Property [`QueueConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-queueconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub queue_config: Option<crate::Value<QueueQuickConnectConfig>>,
+        pub queue_config: Option<::Value<QueueQuickConnectConfig>>,
         /// Property [`QuickConnectType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-quickconnecttype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub quick_connect_type: crate::Value<String>,
+        pub quick_connect_type: ::Value<String>,
         /// Property [`UserConfig`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-userconfig).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_config: Option<crate::Value<UserQuickConnectConfig>>,
+        pub user_config: Option<::Value<UserQuickConnectConfig>>,
     }
 
-    impl crate::codec::SerializeValue for QuickConnectConfig {
+    impl ::codec::SerializeValue for QuickConnectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref phone_config) = self.phone_config {
@@ -1236,7 +1236,7 @@ pub mod quick_connect {
         }
     }
 
-    impl crate::codec::DeserializeValue for QuickConnectConfig {
+    impl ::codec::DeserializeValue for QuickConnectConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<QuickConnectConfig, D::Error> {
@@ -1253,10 +1253,10 @@ pub mod quick_connect {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut phone_config: Option<crate::Value<PhoneNumberQuickConnectConfig>> = None;
-                    let mut queue_config: Option<crate::Value<QueueQuickConnectConfig>> = None;
-                    let mut quick_connect_type: Option<crate::Value<String>> = None;
-                    let mut user_config: Option<crate::Value<UserQuickConnectConfig>> = None;
+                    let mut phone_config: Option<::Value<PhoneNumberQuickConnectConfig>> = None;
+                    let mut queue_config: Option<::Value<QueueQuickConnectConfig>> = None;
+                    let mut quick_connect_type: Option<::Value<String>> = None;
+                    let mut user_config: Option<::Value<UserQuickConnectConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1299,15 +1299,15 @@ pub mod quick_connect {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub contact_flow_arn: crate::Value<String>,
+        pub contact_flow_arn: ::Value<String>,
         /// Property [`UserArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-userquickconnectconfig.html#cfn-connect-quickconnect-userquickconnectconfig-userarn).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_arn: crate::Value<String>,
+        pub user_arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for UserQuickConnectConfig {
+    impl ::codec::SerializeValue for UserQuickConnectConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -1320,7 +1320,7 @@ pub mod quick_connect {
         }
     }
 
-    impl crate::codec::DeserializeValue for UserQuickConnectConfig {
+    impl ::codec::DeserializeValue for UserQuickConnectConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UserQuickConnectConfig, D::Error> {
@@ -1337,8 +1337,8 @@ pub mod quick_connect {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut contact_flow_arn: Option<crate::Value<String>> = None;
-                    let mut user_arn: Option<crate::Value<String>> = None;
+                    let mut contact_flow_arn: Option<::Value<String>> = None;
+                    let mut user_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1377,20 +1377,20 @@ pub mod user {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub email: Option<crate::Value<String>>,
+        pub email: Option<::Value<String>>,
         /// Property [`FirstName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-useridentityinfo.html#cfn-connect-user-useridentityinfo-firstname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub first_name: Option<crate::Value<String>>,
+        pub first_name: Option<::Value<String>>,
         /// Property [`LastName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-useridentityinfo.html#cfn-connect-user-useridentityinfo-lastname).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub last_name: Option<crate::Value<String>>,
+        pub last_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for UserIdentityInfo {
+    impl ::codec::SerializeValue for UserIdentityInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref email) = self.email {
@@ -1406,7 +1406,7 @@ pub mod user {
         }
     }
 
-    impl crate::codec::DeserializeValue for UserIdentityInfo {
+    impl ::codec::DeserializeValue for UserIdentityInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UserIdentityInfo, D::Error> {
@@ -1423,9 +1423,9 @@ pub mod user {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut email: Option<crate::Value<String>> = None;
-                    let mut first_name: Option<crate::Value<String>> = None;
-                    let mut last_name: Option<crate::Value<String>> = None;
+                    let mut email: Option<::Value<String>> = None;
+                    let mut first_name: Option<::Value<String>> = None;
+                    let mut last_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1463,25 +1463,25 @@ pub mod user {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub after_contact_work_time_limit: Option<crate::Value<u32>>,
+        pub after_contact_work_time_limit: Option<::Value<u32>>,
         /// Property [`AutoAccept`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-autoaccept).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub auto_accept: Option<crate::Value<bool>>,
+        pub auto_accept: Option<::Value<bool>>,
         /// Property [`DeskPhoneNumber`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-deskphonenumber).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub desk_phone_number: Option<crate::Value<String>>,
+        pub desk_phone_number: Option<::Value<String>>,
         /// Property [`PhoneType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-phonetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub phone_type: crate::Value<String>,
+        pub phone_type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for UserPhoneConfig {
+    impl ::codec::SerializeValue for UserPhoneConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref after_contact_work_time_limit) = self.after_contact_work_time_limit {
@@ -1506,7 +1506,7 @@ pub mod user {
         }
     }
 
-    impl crate::codec::DeserializeValue for UserPhoneConfig {
+    impl ::codec::DeserializeValue for UserPhoneConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UserPhoneConfig, D::Error> {
@@ -1523,10 +1523,10 @@ pub mod user {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut after_contact_work_time_limit: Option<crate::Value<u32>> = None;
-                    let mut auto_accept: Option<crate::Value<bool>> = None;
-                    let mut desk_phone_number: Option<crate::Value<String>> = None;
-                    let mut phone_type: Option<crate::Value<String>> = None;
+                    let mut after_contact_work_time_limit: Option<::Value<u32>> = None;
+                    let mut auto_accept: Option<::Value<bool>> = None;
+                    let mut desk_phone_number: Option<::Value<String>> = None;
+                    let mut phone_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

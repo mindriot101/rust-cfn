@@ -13,17 +13,17 @@ pub struct VirtualClusterProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub container_provider: crate::Value<self::virtual_cluster::ContainerProvider>,
+    pub container_provider: ::Value<self::virtual_cluster::ContainerProvider>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrcontainers-virtualcluster.html#cfn-emrcontainers-virtualcluster-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrcontainers-virtualcluster.html#cfn-emrcontainers-virtualcluster-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for VirtualClusterProperties {
@@ -60,10 +60,10 @@ impl<'de> ::serde::Deserialize<'de> for VirtualClusterProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut container_provider: Option<
-                    crate::Value<self::virtual_cluster::ContainerProvider>,
+                    ::Value<self::virtual_cluster::ContainerProvider>,
                 > = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -93,7 +93,7 @@ impl<'de> ::serde::Deserialize<'de> for VirtualClusterProperties {
     }
 }
 
-impl crate::Resource for VirtualCluster {
+impl ::Resource for VirtualCluster {
     type Properties = VirtualClusterProperties;
     const TYPE: &'static str = "AWS::EMRContainers::VirtualCluster";
     fn properties(&self) -> &VirtualClusterProperties {
@@ -104,7 +104,7 @@ impl crate::Resource for VirtualCluster {
     }
 }
 
-impl crate::private::Sealed for VirtualCluster {}
+impl ::private::Sealed for VirtualCluster {}
 
 impl From<VirtualClusterProperties> for VirtualCluster {
     fn from(properties: VirtualClusterProperties) -> VirtualCluster {
@@ -122,10 +122,10 @@ pub mod virtual_cluster {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub eks_info: crate::Value<EksInfo>,
+        pub eks_info: ::Value<EksInfo>,
     }
 
-    impl crate::codec::SerializeValue for ContainerInfo {
+    impl ::codec::SerializeValue for ContainerInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "EksInfo", &self.eks_info)?;
@@ -133,7 +133,7 @@ pub mod virtual_cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for ContainerInfo {
+    impl ::codec::DeserializeValue for ContainerInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ContainerInfo, D::Error> {
@@ -150,7 +150,7 @@ pub mod virtual_cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut eks_info: Option<crate::Value<EksInfo>> = None;
+                    let mut eks_info: Option<::Value<EksInfo>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -180,20 +180,20 @@ pub mod virtual_cluster {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub id: crate::Value<String>,
+        pub id: ::Value<String>,
         /// Property [`Info`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerprovider.html#cfn-emrcontainers-virtualcluster-containerprovider-info).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub info: crate::Value<ContainerInfo>,
+        pub info: ::Value<ContainerInfo>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerprovider.html#cfn-emrcontainers-virtualcluster-containerprovider-type).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: crate::Value<String>,
+        pub r#type: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ContainerProvider {
+    impl ::codec::SerializeValue for ContainerProvider {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Id", &self.id)?;
@@ -203,7 +203,7 @@ pub mod virtual_cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for ContainerProvider {
+    impl ::codec::DeserializeValue for ContainerProvider {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ContainerProvider, D::Error> {
@@ -220,9 +220,9 @@ pub mod virtual_cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<crate::Value<String>> = None;
-                    let mut info: Option<crate::Value<ContainerInfo>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut id: Option<::Value<String>> = None;
+                    let mut info: Option<::Value<ContainerInfo>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -260,10 +260,10 @@ pub mod virtual_cluster {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub namespace: crate::Value<String>,
+        pub namespace: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for EksInfo {
+    impl ::codec::SerializeValue for EksInfo {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Namespace", &self.namespace)?;
@@ -271,7 +271,7 @@ pub mod virtual_cluster {
         }
     }
 
-    impl crate::codec::DeserializeValue for EksInfo {
+    impl ::codec::DeserializeValue for EksInfo {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<EksInfo, D::Error> {
             struct Visitor;
 
@@ -286,7 +286,7 @@ pub mod virtual_cluster {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut namespace: Option<crate::Value<String>> = None;
+                    let mut namespace: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

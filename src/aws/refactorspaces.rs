@@ -13,32 +13,32 @@ pub struct ApplicationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub api_gateway_proxy: Option<crate::Value<self::application::ApiGatewayProxyInput>>,
+    pub api_gateway_proxy: Option<::Value<self::application::ApiGatewayProxyInput>>,
     /// Property [`EnvironmentIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-environmentidentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub environment_identifier: Option<crate::Value<String>>,
+    pub environment_identifier: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`ProxyType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-proxytype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub proxy_type: Option<crate::Value<String>>,
+    pub proxy_type: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`VpcId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-vpcid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc_id: Option<crate::Value<String>>,
+    pub vpc_id: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ApplicationProperties {
@@ -90,13 +90,13 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut api_gateway_proxy: Option<
-                    crate::Value<self::application::ApiGatewayProxyInput>,
+                    ::Value<self::application::ApiGatewayProxyInput>,
                 > = None;
-                let mut environment_identifier: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut proxy_type: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut vpc_id: Option<crate::Value<String>> = None;
+                let mut environment_identifier: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut proxy_type: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut vpc_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -137,7 +137,7 @@ impl<'de> ::serde::Deserialize<'de> for ApplicationProperties {
     }
 }
 
-impl crate::Resource for Application {
+impl ::Resource for Application {
     type Properties = ApplicationProperties;
     const TYPE: &'static str = "AWS::RefactorSpaces::Application";
     fn properties(&self) -> &ApplicationProperties {
@@ -148,7 +148,7 @@ impl crate::Resource for Application {
     }
 }
 
-impl crate::private::Sealed for Application {}
+impl ::private::Sealed for Application {}
 
 impl From<ApplicationProperties> for Application {
     fn from(properties: ApplicationProperties) -> Application {
@@ -169,22 +169,22 @@ pub struct EnvironmentProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#cfn-refactorspaces-environment-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`NetworkFabricType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#cfn-refactorspaces-environment-networkfabrictype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub network_fabric_type: Option<crate::Value<String>>,
+    pub network_fabric_type: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#cfn-refactorspaces-environment-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for EnvironmentProperties {
@@ -225,10 +225,10 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut network_fabric_type: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut network_fabric_type: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -261,7 +261,7 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
     }
 }
 
-impl crate::Resource for Environment {
+impl ::Resource for Environment {
     type Properties = EnvironmentProperties;
     const TYPE: &'static str = "AWS::RefactorSpaces::Environment";
     fn properties(&self) -> &EnvironmentProperties {
@@ -272,7 +272,7 @@ impl crate::Resource for Environment {
     }
 }
 
-impl crate::private::Sealed for Environment {}
+impl ::private::Sealed for Environment {}
 
 impl From<EnvironmentProperties> for Environment {
     fn from(properties: EnvironmentProperties) -> Environment {
@@ -293,32 +293,32 @@ pub struct RouteProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_identifier: crate::Value<String>,
+    pub application_identifier: ::Value<String>,
     /// Property [`EnvironmentIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-environmentidentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub environment_identifier: crate::Value<String>,
+    pub environment_identifier: ::Value<String>,
     /// Property [`RouteType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-routetype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub route_type: Option<crate::Value<String>>,
+    pub route_type: Option<::Value<String>>,
     /// Property [`ServiceIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-serviceidentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub service_identifier: crate::Value<String>,
+    pub service_identifier: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`UriPathRoute`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-uripathroute).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub uri_path_route: Option<crate::Value<self::route::UriPathRouteInput>>,
+    pub uri_path_route: Option<::Value<self::route::UriPathRouteInput>>,
 }
 
 impl ::serde::Serialize for RouteProperties {
@@ -367,12 +367,12 @@ impl<'de> ::serde::Deserialize<'de> for RouteProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_identifier: Option<crate::Value<String>> = None;
-                let mut environment_identifier: Option<crate::Value<String>> = None;
-                let mut route_type: Option<crate::Value<String>> = None;
-                let mut service_identifier: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut uri_path_route: Option<crate::Value<self::route::UriPathRouteInput>> = None;
+                let mut application_identifier: Option<::Value<String>> = None;
+                let mut environment_identifier: Option<::Value<String>> = None;
+                let mut route_type: Option<::Value<String>> = None;
+                let mut service_identifier: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut uri_path_route: Option<::Value<self::route::UriPathRouteInput>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -416,7 +416,7 @@ impl<'de> ::serde::Deserialize<'de> for RouteProperties {
     }
 }
 
-impl crate::Resource for Route {
+impl ::Resource for Route {
     type Properties = RouteProperties;
     const TYPE: &'static str = "AWS::RefactorSpaces::Route";
     fn properties(&self) -> &RouteProperties {
@@ -427,7 +427,7 @@ impl crate::Resource for Route {
     }
 }
 
-impl crate::private::Sealed for Route {}
+impl ::private::Sealed for Route {}
 
 impl From<RouteProperties> for Route {
     fn from(properties: RouteProperties) -> Route {
@@ -448,47 +448,47 @@ pub struct ServiceProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub application_identifier: crate::Value<String>,
+    pub application_identifier: ::Value<String>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-description).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`EndpointType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-endpointtype).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub endpoint_type: Option<crate::Value<String>>,
+    pub endpoint_type: Option<::Value<String>>,
     /// Property [`EnvironmentIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-environmentidentifier).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub environment_identifier: crate::Value<String>,
+    pub environment_identifier: ::Value<String>,
     /// Property [`LambdaEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-lambdaendpoint).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub lambda_endpoint: Option<crate::Value<self::service::LambdaEndpointInput>>,
+    pub lambda_endpoint: Option<::Value<self::service::LambdaEndpointInput>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: Option<crate::Value<String>>,
+    pub name: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`UrlEndpoint`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-urlendpoint).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub url_endpoint: Option<crate::Value<self::service::UrlEndpointInput>>,
+    pub url_endpoint: Option<::Value<self::service::UrlEndpointInput>>,
     /// Property [`VpcId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-vpcid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub vpc_id: Option<crate::Value<String>>,
+    pub vpc_id: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ServiceProperties {
@@ -548,15 +548,15 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut application_identifier: Option<crate::Value<String>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut endpoint_type: Option<crate::Value<String>> = None;
-                let mut environment_identifier: Option<crate::Value<String>> = None;
-                let mut lambda_endpoint: Option<crate::Value<self::service::LambdaEndpointInput>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut url_endpoint: Option<crate::Value<self::service::UrlEndpointInput>> = None;
-                let mut vpc_id: Option<crate::Value<String>> = None;
+                let mut application_identifier: Option<::Value<String>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut endpoint_type: Option<::Value<String>> = None;
+                let mut environment_identifier: Option<::Value<String>> = None;
+                let mut lambda_endpoint: Option<::Value<self::service::LambdaEndpointInput>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut url_endpoint: Option<::Value<self::service::UrlEndpointInput>> = None;
+                let mut vpc_id: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -611,7 +611,7 @@ impl<'de> ::serde::Deserialize<'de> for ServiceProperties {
     }
 }
 
-impl crate::Resource for Service {
+impl ::Resource for Service {
     type Properties = ServiceProperties;
     const TYPE: &'static str = "AWS::RefactorSpaces::Service";
     fn properties(&self) -> &ServiceProperties {
@@ -622,7 +622,7 @@ impl crate::Resource for Service {
     }
 }
 
-impl crate::private::Sealed for Service {}
+impl ::private::Sealed for Service {}
 
 impl From<ServiceProperties> for Service {
     fn from(properties: ServiceProperties) -> Service {
@@ -640,15 +640,15 @@ pub mod application {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub endpoint_type: Option<crate::Value<String>>,
+        pub endpoint_type: Option<::Value<String>>,
         /// Property [`StageName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-application-apigatewayproxyinput.html#cfn-refactorspaces-application-apigatewayproxyinput-stagename).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub stage_name: Option<crate::Value<String>>,
+        pub stage_name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ApiGatewayProxyInput {
+    impl ::codec::SerializeValue for ApiGatewayProxyInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref endpoint_type) = self.endpoint_type {
@@ -665,7 +665,7 @@ pub mod application {
         }
     }
 
-    impl crate::codec::DeserializeValue for ApiGatewayProxyInput {
+    impl ::codec::DeserializeValue for ApiGatewayProxyInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ApiGatewayProxyInput, D::Error> {
@@ -682,8 +682,8 @@ pub mod application {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut endpoint_type: Option<crate::Value<String>> = None;
-                    let mut stage_name: Option<crate::Value<String>> = None;
+                    let mut endpoint_type: Option<::Value<String>> = None;
+                    let mut stage_name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -721,25 +721,25 @@ pub mod route {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub activation_state: crate::Value<String>,
+        pub activation_state: ::Value<String>,
         /// Property [`IncludeChildPaths`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-includechildpaths).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub include_child_paths: Option<crate::Value<bool>>,
+        pub include_child_paths: Option<::Value<bool>>,
         /// Property [`Methods`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-methods).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub methods: Option<crate::ValueList<String>>,
+        pub methods: Option<::ValueList<String>>,
         /// Property [`SourcePath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-sourcepath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub source_path: Option<crate::Value<String>>,
+        pub source_path: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for UriPathRouteInput {
+    impl ::codec::SerializeValue for UriPathRouteInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(
@@ -764,7 +764,7 @@ pub mod route {
         }
     }
 
-    impl crate::codec::DeserializeValue for UriPathRouteInput {
+    impl ::codec::DeserializeValue for UriPathRouteInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UriPathRouteInput, D::Error> {
@@ -781,10 +781,10 @@ pub mod route {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut activation_state: Option<crate::Value<String>> = None;
-                    let mut include_child_paths: Option<crate::Value<bool>> = None;
-                    let mut methods: Option<crate::ValueList<String>> = None;
-                    let mut source_path: Option<crate::Value<String>> = None;
+                    let mut activation_state: Option<::Value<String>> = None;
+                    let mut include_child_paths: Option<::Value<bool>> = None;
+                    let mut methods: Option<::ValueList<String>> = None;
+                    let mut source_path: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -831,10 +831,10 @@ pub mod service {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub arn: crate::Value<String>,
+        pub arn: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for LambdaEndpointInput {
+    impl ::codec::SerializeValue for LambdaEndpointInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Arn", &self.arn)?;
@@ -842,7 +842,7 @@ pub mod service {
         }
     }
 
-    impl crate::codec::DeserializeValue for LambdaEndpointInput {
+    impl ::codec::DeserializeValue for LambdaEndpointInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaEndpointInput, D::Error> {
@@ -859,7 +859,7 @@ pub mod service {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut arn: Option<crate::Value<String>> = None;
+                    let mut arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -889,15 +889,15 @@ pub mod service {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub health_url: Option<crate::Value<String>>,
+        pub health_url: Option<::Value<String>>,
         /// Property [`Url`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-service-urlendpointinput.html#cfn-refactorspaces-service-urlendpointinput-url).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub url: crate::Value<String>,
+        pub url: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for UrlEndpointInput {
+    impl ::codec::SerializeValue for UrlEndpointInput {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref health_url) = self.health_url {
@@ -908,7 +908,7 @@ pub mod service {
         }
     }
 
-    impl crate::codec::DeserializeValue for UrlEndpointInput {
+    impl ::codec::DeserializeValue for UrlEndpointInput {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<UrlEndpointInput, D::Error> {
@@ -925,8 +925,8 @@ pub mod service {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut health_url: Option<crate::Value<String>> = None;
-                    let mut url: Option<crate::Value<String>> = None;
+                    let mut health_url: Option<::Value<String>> = None;
+                    let mut url: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

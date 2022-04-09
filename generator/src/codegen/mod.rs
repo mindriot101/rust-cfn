@@ -5,7 +5,7 @@ use std::path::Path;
 use heck::SnakeCase;
 use itertools::{merge_join_by, EitherOrBoth, Itertools};
 
-use crate::model::*;
+use model::*;
 
 mod printer;
 use self::printer::Printer;

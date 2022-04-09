@@ -13,42 +13,42 @@ pub struct SlackChannelConfigurationProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub configuration_name: crate::Value<String>,
+    pub configuration_name: ::Value<String>,
     /// Property [`GuardrailPolicies`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-guardrailpolicies).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub guardrail_policies: Option<crate::ValueList<String>>,
+    pub guardrail_policies: Option<::ValueList<String>>,
     /// Property [`IamRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-iamrolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub iam_role_arn: crate::Value<String>,
+    pub iam_role_arn: ::Value<String>,
     /// Property [`LoggingLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-logginglevel).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub logging_level: Option<crate::Value<String>>,
+    pub logging_level: Option<::Value<String>>,
     /// Property [`SlackChannelId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackchannelid).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub slack_channel_id: crate::Value<String>,
+    pub slack_channel_id: ::Value<String>,
     /// Property [`SlackWorkspaceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackworkspaceid).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub slack_workspace_id: crate::Value<String>,
+    pub slack_workspace_id: ::Value<String>,
     /// Property [`SnsTopicArns`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-snstopicarns).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub sns_topic_arns: Option<crate::ValueList<String>>,
+    pub sns_topic_arns: Option<::ValueList<String>>,
     /// Property [`UserRoleRequired`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-userrolerequired).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub user_role_required: Option<crate::Value<bool>>,
+    pub user_role_required: Option<::Value<bool>>,
 }
 
 impl ::serde::Serialize for SlackChannelConfigurationProperties {
@@ -111,14 +111,14 @@ impl<'de> ::serde::Deserialize<'de> for SlackChannelConfigurationProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut configuration_name: Option<crate::Value<String>> = None;
-                let mut guardrail_policies: Option<crate::ValueList<String>> = None;
-                let mut iam_role_arn: Option<crate::Value<String>> = None;
-                let mut logging_level: Option<crate::Value<String>> = None;
-                let mut slack_channel_id: Option<crate::Value<String>> = None;
-                let mut slack_workspace_id: Option<crate::Value<String>> = None;
-                let mut sns_topic_arns: Option<crate::ValueList<String>> = None;
-                let mut user_role_required: Option<crate::Value<bool>> = None;
+                let mut configuration_name: Option<::Value<String>> = None;
+                let mut guardrail_policies: Option<::ValueList<String>> = None;
+                let mut iam_role_arn: Option<::Value<String>> = None;
+                let mut logging_level: Option<::Value<String>> = None;
+                let mut slack_channel_id: Option<::Value<String>> = None;
+                let mut slack_workspace_id: Option<::Value<String>> = None;
+                let mut sns_topic_arns: Option<::ValueList<String>> = None;
+                let mut user_role_required: Option<::Value<bool>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -171,7 +171,7 @@ impl<'de> ::serde::Deserialize<'de> for SlackChannelConfigurationProperties {
     }
 }
 
-impl crate::Resource for SlackChannelConfiguration {
+impl ::Resource for SlackChannelConfiguration {
     type Properties = SlackChannelConfigurationProperties;
     const TYPE: &'static str = "AWS::Chatbot::SlackChannelConfiguration";
     fn properties(&self) -> &SlackChannelConfigurationProperties {
@@ -182,7 +182,7 @@ impl crate::Resource for SlackChannelConfiguration {
     }
 }
 
-impl crate::private::Sealed for SlackChannelConfiguration {}
+impl ::private::Sealed for SlackChannelConfiguration {}
 
 impl From<SlackChannelConfigurationProperties> for SlackChannelConfiguration {
     fn from(properties: SlackChannelConfigurationProperties) -> SlackChannelConfiguration {

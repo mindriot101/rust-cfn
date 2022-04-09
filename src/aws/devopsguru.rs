@@ -13,7 +13,7 @@ pub struct NotificationChannelProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub config: crate::Value<self::notification_channel::NotificationChannelConfig>,
+    pub config: ::Value<self::notification_channel::NotificationChannelConfig>,
 }
 
 impl ::serde::Serialize for NotificationChannelProperties {
@@ -42,7 +42,7 @@ impl<'de> ::serde::Deserialize<'de> for NotificationChannelProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut config: Option<
-                    crate::Value<self::notification_channel::NotificationChannelConfig>,
+                    ::Value<self::notification_channel::NotificationChannelConfig>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -64,7 +64,7 @@ impl<'de> ::serde::Deserialize<'de> for NotificationChannelProperties {
     }
 }
 
-impl crate::Resource for NotificationChannel {
+impl ::Resource for NotificationChannel {
     type Properties = NotificationChannelProperties;
     const TYPE: &'static str = "AWS::DevOpsGuru::NotificationChannel";
     fn properties(&self) -> &NotificationChannelProperties {
@@ -75,7 +75,7 @@ impl crate::Resource for NotificationChannel {
     }
 }
 
-impl crate::private::Sealed for NotificationChannel {}
+impl ::private::Sealed for NotificationChannel {}
 
 impl From<NotificationChannelProperties> for NotificationChannel {
     fn from(properties: NotificationChannelProperties) -> NotificationChannel {
@@ -96,7 +96,7 @@ pub struct ResourceCollectionProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub resource_collection_filter: crate::Value<self::resource_collection::ResourceCollectionFilter>,
+    pub resource_collection_filter: ::Value<self::resource_collection::ResourceCollectionFilter>,
 }
 
 impl ::serde::Serialize for ResourceCollectionProperties {
@@ -129,7 +129,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourceCollectionProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut resource_collection_filter: Option<
-                    crate::Value<self::resource_collection::ResourceCollectionFilter>,
+                    ::Value<self::resource_collection::ResourceCollectionFilter>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -154,7 +154,7 @@ impl<'de> ::serde::Deserialize<'de> for ResourceCollectionProperties {
     }
 }
 
-impl crate::Resource for ResourceCollection {
+impl ::Resource for ResourceCollection {
     type Properties = ResourceCollectionProperties;
     const TYPE: &'static str = "AWS::DevOpsGuru::ResourceCollection";
     fn properties(&self) -> &ResourceCollectionProperties {
@@ -165,7 +165,7 @@ impl crate::Resource for ResourceCollection {
     }
 }
 
-impl crate::private::Sealed for ResourceCollection {}
+impl ::private::Sealed for ResourceCollection {}
 
 impl From<ResourceCollectionProperties> for ResourceCollection {
     fn from(properties: ResourceCollectionProperties) -> ResourceCollection {
@@ -183,10 +183,10 @@ pub mod notification_channel {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub sns: Option<crate::Value<SnsChannelConfig>>,
+        pub sns: Option<::Value<SnsChannelConfig>>,
     }
 
-    impl crate::codec::SerializeValue for NotificationChannelConfig {
+    impl ::codec::SerializeValue for NotificationChannelConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref sns) = self.sns {
@@ -196,7 +196,7 @@ pub mod notification_channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for NotificationChannelConfig {
+    impl ::codec::DeserializeValue for NotificationChannelConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NotificationChannelConfig, D::Error> {
@@ -213,7 +213,7 @@ pub mod notification_channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut sns: Option<crate::Value<SnsChannelConfig>> = None;
+                    let mut sns: Option<::Value<SnsChannelConfig>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -241,10 +241,10 @@ pub mod notification_channel {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub topic_arn: Option<crate::Value<String>>,
+        pub topic_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for SnsChannelConfig {
+    impl ::codec::SerializeValue for SnsChannelConfig {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref topic_arn) = self.topic_arn {
@@ -254,7 +254,7 @@ pub mod notification_channel {
         }
     }
 
-    impl crate::codec::DeserializeValue for SnsChannelConfig {
+    impl ::codec::DeserializeValue for SnsChannelConfig {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<SnsChannelConfig, D::Error> {
@@ -271,7 +271,7 @@ pub mod notification_channel {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut topic_arn: Option<crate::Value<String>> = None;
+                    let mut topic_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -305,10 +305,10 @@ pub mod resource_collection {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub stack_names: Option<crate::ValueList<String>>,
+        pub stack_names: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for CloudFormationCollectionFilter {
+    impl ::codec::SerializeValue for CloudFormationCollectionFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref stack_names) = self.stack_names {
@@ -318,7 +318,7 @@ pub mod resource_collection {
         }
     }
 
-    impl crate::codec::DeserializeValue for CloudFormationCollectionFilter {
+    impl ::codec::DeserializeValue for CloudFormationCollectionFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<CloudFormationCollectionFilter, D::Error> {
@@ -335,7 +335,7 @@ pub mod resource_collection {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut stack_names: Option<crate::ValueList<String>> = None;
+                    let mut stack_names: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -365,15 +365,15 @@ pub mod resource_collection {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_formation: Option<crate::Value<CloudFormationCollectionFilter>>,
+        pub cloud_formation: Option<::Value<CloudFormationCollectionFilter>>,
         /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-resourcecollectionfilter.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter-tags).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tags: Option<crate::ValueList<TagCollection>>,
+        pub tags: Option<::ValueList<TagCollection>>,
     }
 
-    impl crate::codec::SerializeValue for ResourceCollectionFilter {
+    impl ::codec::SerializeValue for ResourceCollectionFilter {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_formation) = self.cloud_formation {
@@ -390,7 +390,7 @@ pub mod resource_collection {
         }
     }
 
-    impl crate::codec::DeserializeValue for ResourceCollectionFilter {
+    impl ::codec::DeserializeValue for ResourceCollectionFilter {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ResourceCollectionFilter, D::Error> {
@@ -407,8 +407,8 @@ pub mod resource_collection {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_formation: Option<crate::Value<CloudFormationCollectionFilter>> = None;
-                    let mut tags: Option<crate::ValueList<TagCollection>> = None;
+                    let mut cloud_formation: Option<::Value<CloudFormationCollectionFilter>> = None;
+                    let mut tags: Option<::ValueList<TagCollection>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -442,15 +442,15 @@ pub mod resource_collection {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub app_boundary_key: Option<crate::Value<String>>,
+        pub app_boundary_key: Option<::Value<String>>,
         /// Property [`TagValues`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html#cfn-devopsguru-resourcecollection-tagcollection-tagvalues).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub tag_values: Option<crate::ValueList<String>>,
+        pub tag_values: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for TagCollection {
+    impl ::codec::SerializeValue for TagCollection {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref app_boundary_key) = self.app_boundary_key {
@@ -467,7 +467,7 @@ pub mod resource_collection {
         }
     }
 
-    impl crate::codec::DeserializeValue for TagCollection {
+    impl ::codec::DeserializeValue for TagCollection {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<TagCollection, D::Error> {
@@ -484,8 +484,8 @@ pub mod resource_collection {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut app_boundary_key: Option<crate::Value<String>> = None;
-                    let mut tag_values: Option<crate::ValueList<String>> = None;
+                    let mut app_boundary_key: Option<::Value<String>> = None;
+                    let mut tag_values: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

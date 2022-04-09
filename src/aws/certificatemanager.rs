@@ -13,7 +13,7 @@ pub struct AccountProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub expiry_events_configuration: crate::Value<self::account::ExpiryEventsConfiguration>,
+    pub expiry_events_configuration: ::Value<self::account::ExpiryEventsConfiguration>,
 }
 
 impl ::serde::Serialize for AccountProperties {
@@ -44,7 +44,7 @@ impl<'de> ::serde::Deserialize<'de> for AccountProperties {
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
                 let mut expiry_events_configuration: Option<
-                    crate::Value<self::account::ExpiryEventsConfiguration>,
+                    ::Value<self::account::ExpiryEventsConfiguration>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -69,7 +69,7 @@ impl<'de> ::serde::Deserialize<'de> for AccountProperties {
     }
 }
 
-impl crate::Resource for Account {
+impl ::Resource for Account {
     type Properties = AccountProperties;
     const TYPE: &'static str = "AWS::CertificateManager::Account";
     fn properties(&self) -> &AccountProperties {
@@ -80,7 +80,7 @@ impl crate::Resource for Account {
     }
 }
 
-impl crate::private::Sealed for Account {}
+impl ::private::Sealed for Account {}
 
 impl From<AccountProperties> for Account {
     fn from(properties: AccountProperties) -> Account {
@@ -101,37 +101,37 @@ pub struct CertificateProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub certificate_authority_arn: Option<crate::Value<String>>,
+    pub certificate_authority_arn: Option<::Value<String>>,
     /// Property [`CertificateTransparencyLoggingPreference`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificatetransparencyloggingpreference).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub certificate_transparency_logging_preference: Option<crate::Value<String>>,
+    pub certificate_transparency_logging_preference: Option<::Value<String>>,
     /// Property [`DomainName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain_name: crate::Value<String>,
+    pub domain_name: ::Value<String>,
     /// Property [`DomainValidationOptions`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub domain_validation_options: Option<crate::ValueList<self::certificate::DomainValidationOption>>,
+    pub domain_validation_options: Option<::ValueList<self::certificate::DomainValidationOption>>,
     /// Property [`SubjectAlternativeNames`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-subjectalternativenames).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub subject_alternative_names: Option<crate::ValueList<String>>,
+    pub subject_alternative_names: Option<::ValueList<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`ValidationMethod`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub validation_method: Option<crate::Value<String>>,
+    pub validation_method: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for CertificateProperties {
@@ -197,15 +197,15 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut certificate_authority_arn: Option<crate::Value<String>> = None;
-                let mut certificate_transparency_logging_preference: Option<crate::Value<String>> = None;
-                let mut domain_name: Option<crate::Value<String>> = None;
+                let mut certificate_authority_arn: Option<::Value<String>> = None;
+                let mut certificate_transparency_logging_preference: Option<::Value<String>> = None;
+                let mut domain_name: Option<::Value<String>> = None;
                 let mut domain_validation_options: Option<
-                    crate::ValueList<self::certificate::DomainValidationOption>,
+                    ::ValueList<self::certificate::DomainValidationOption>,
                 > = None;
-                let mut subject_alternative_names: Option<crate::ValueList<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut validation_method: Option<crate::Value<String>> = None;
+                let mut subject_alternative_names: Option<::ValueList<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut validation_method: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -256,7 +256,7 @@ impl<'de> ::serde::Deserialize<'de> for CertificateProperties {
     }
 }
 
-impl crate::Resource for Certificate {
+impl ::Resource for Certificate {
     type Properties = CertificateProperties;
     const TYPE: &'static str = "AWS::CertificateManager::Certificate";
     fn properties(&self) -> &CertificateProperties {
@@ -267,7 +267,7 @@ impl crate::Resource for Certificate {
     }
 }
 
-impl crate::private::Sealed for Certificate {}
+impl ::private::Sealed for Certificate {}
 
 impl From<CertificateProperties> for Certificate {
     fn from(properties: CertificateProperties) -> Certificate {
@@ -285,10 +285,10 @@ pub mod account {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub days_before_expiry: Option<crate::Value<u32>>,
+        pub days_before_expiry: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for ExpiryEventsConfiguration {
+    impl ::codec::SerializeValue for ExpiryEventsConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref days_before_expiry) = self.days_before_expiry {
@@ -302,7 +302,7 @@ pub mod account {
         }
     }
 
-    impl crate::codec::DeserializeValue for ExpiryEventsConfiguration {
+    impl ::codec::DeserializeValue for ExpiryEventsConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ExpiryEventsConfiguration, D::Error> {
@@ -319,7 +319,7 @@ pub mod account {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut days_before_expiry: Option<crate::Value<u32>> = None;
+                    let mut days_before_expiry: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -353,20 +353,20 @@ pub mod certificate {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub domain_name: crate::Value<String>,
+        pub domain_name: ::Value<String>,
         /// Property [`HostedZoneId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-hostedzoneid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub hosted_zone_id: Option<crate::Value<String>>,
+        pub hosted_zone_id: Option<::Value<String>>,
         /// Property [`ValidationDomain`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-validationdomain).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub validation_domain: Option<crate::Value<String>>,
+        pub validation_domain: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DomainValidationOption {
+    impl ::codec::SerializeValue for DomainValidationOption {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "DomainName", &self.domain_name)?;
@@ -388,7 +388,7 @@ pub mod certificate {
         }
     }
 
-    impl crate::codec::DeserializeValue for DomainValidationOption {
+    impl ::codec::DeserializeValue for DomainValidationOption {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DomainValidationOption, D::Error> {
@@ -405,9 +405,9 @@ pub mod certificate {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut domain_name: Option<crate::Value<String>> = None;
-                    let mut hosted_zone_id: Option<crate::Value<String>> = None;
-                    let mut validation_domain: Option<crate::Value<String>> = None;
+                    let mut domain_name: Option<::Value<String>> = None;
+                    let mut hosted_zone_id: Option<::Value<String>> = None;
+                    let mut validation_domain: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

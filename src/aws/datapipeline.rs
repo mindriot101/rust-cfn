@@ -13,37 +13,37 @@ pub struct PipelineProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub activate: Option<crate::Value<bool>>,
+    pub activate: Option<::Value<bool>>,
     /// Property [`Description`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`ParameterObjects`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameter_objects: crate::ValueList<self::pipeline::ParameterObject>,
+    pub parameter_objects: ::ValueList<self::pipeline::ParameterObject>,
     /// Property [`ParameterValues`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub parameter_values: Option<crate::ValueList<self::pipeline::ParameterValue>>,
+    pub parameter_values: Option<::ValueList<self::pipeline::ParameterValue>>,
     /// Property [`PipelineObjects`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub pipeline_objects: Option<crate::ValueList<self::pipeline::PipelineObject>>,
+    pub pipeline_objects: Option<::ValueList<self::pipeline::PipelineObject>>,
     /// Property [`PipelineTags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub pipeline_tags: Option<crate::ValueList<self::pipeline::PipelineTag>>,
+    pub pipeline_tags: Option<::ValueList<self::pipeline::PipelineTag>>,
 }
 
 impl ::serde::Serialize for PipelineProperties {
@@ -97,16 +97,16 @@ impl<'de> ::serde::Deserialize<'de> for PipelineProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut activate: Option<crate::Value<bool>> = None;
-                let mut description: Option<crate::Value<String>> = None;
-                let mut name: Option<crate::Value<String>> = None;
-                let mut parameter_objects: Option<crate::ValueList<self::pipeline::ParameterObject>> =
+                let mut activate: Option<::Value<bool>> = None;
+                let mut description: Option<::Value<String>> = None;
+                let mut name: Option<::Value<String>> = None;
+                let mut parameter_objects: Option<::ValueList<self::pipeline::ParameterObject>> =
                     None;
-                let mut parameter_values: Option<crate::ValueList<self::pipeline::ParameterValue>> =
+                let mut parameter_values: Option<::ValueList<self::pipeline::ParameterValue>> =
                     None;
-                let mut pipeline_objects: Option<crate::ValueList<self::pipeline::PipelineObject>> =
+                let mut pipeline_objects: Option<::ValueList<self::pipeline::PipelineObject>> =
                     None;
-                let mut pipeline_tags: Option<crate::ValueList<self::pipeline::PipelineTag>> = None;
+                let mut pipeline_tags: Option<::ValueList<self::pipeline::PipelineTag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -152,7 +152,7 @@ impl<'de> ::serde::Deserialize<'de> for PipelineProperties {
     }
 }
 
-impl crate::Resource for Pipeline {
+impl ::Resource for Pipeline {
     type Properties = PipelineProperties;
     const TYPE: &'static str = "AWS::DataPipeline::Pipeline";
     fn properties(&self) -> &PipelineProperties {
@@ -163,7 +163,7 @@ impl crate::Resource for Pipeline {
     }
 }
 
-impl crate::private::Sealed for Pipeline {}
+impl ::private::Sealed for Pipeline {}
 
 impl From<PipelineProperties> for Pipeline {
     fn from(properties: PipelineProperties) -> Pipeline {
@@ -181,20 +181,20 @@ pub mod pipeline {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`RefValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects-fields.html#cfn-datapipeline-pipeline-pipelineobjects-fields-refvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub ref_value: Option<crate::Value<String>>,
+        pub ref_value: Option<::Value<String>>,
         /// Property [`StringValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects-fields.html#cfn-datapipeline-pipeline-pipelineobjects-fields-stringvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub string_value: Option<crate::Value<String>>,
+        pub string_value: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for Field {
+    impl ::codec::SerializeValue for Field {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -208,7 +208,7 @@ pub mod pipeline {
         }
     }
 
-    impl crate::codec::DeserializeValue for Field {
+    impl ::codec::DeserializeValue for Field {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<Field, D::Error> {
             struct Visitor;
 
@@ -223,9 +223,9 @@ pub mod pipeline {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut ref_value: Option<crate::Value<String>> = None;
-                    let mut string_value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut ref_value: Option<::Value<String>> = None;
+                    let mut string_value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -263,15 +263,15 @@ pub mod pipeline {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`StringValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html#cfn-datapipeline-pipeline-parameterobjects-attribtues-stringvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub string_value: crate::Value<String>,
+        pub string_value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ParameterAttribute {
+    impl ::codec::SerializeValue for ParameterAttribute {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -284,7 +284,7 @@ pub mod pipeline {
         }
     }
 
-    impl crate::codec::DeserializeValue for ParameterAttribute {
+    impl ::codec::DeserializeValue for ParameterAttribute {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ParameterAttribute, D::Error> {
@@ -301,8 +301,8 @@ pub mod pipeline {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut string_value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut string_value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -337,15 +337,15 @@ pub mod pipeline {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub attributes: crate::ValueList<ParameterAttribute>,
+        pub attributes: ::ValueList<ParameterAttribute>,
         /// Property [`Id`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html#cfn-datapipeline-pipeline-parameterobjects-id).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: crate::Value<String>,
+        pub id: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ParameterObject {
+    impl ::codec::SerializeValue for ParameterObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Attributes", &self.attributes)?;
@@ -354,7 +354,7 @@ pub mod pipeline {
         }
     }
 
-    impl crate::codec::DeserializeValue for ParameterObject {
+    impl ::codec::DeserializeValue for ParameterObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ParameterObject, D::Error> {
@@ -371,8 +371,8 @@ pub mod pipeline {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attributes: Option<crate::ValueList<ParameterAttribute>> = None;
-                    let mut id: Option<crate::Value<String>> = None;
+                    let mut attributes: Option<::ValueList<ParameterAttribute>> = None;
+                    let mut id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -407,15 +407,15 @@ pub mod pipeline {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: crate::Value<String>,
+        pub id: ::Value<String>,
         /// Property [`StringValue`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html#cfn-datapipeline-pipeline-parametervalues-stringvalue).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub string_value: crate::Value<String>,
+        pub string_value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for ParameterValue {
+    impl ::codec::SerializeValue for ParameterValue {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Id", &self.id)?;
@@ -428,7 +428,7 @@ pub mod pipeline {
         }
     }
 
-    impl crate::codec::DeserializeValue for ParameterValue {
+    impl ::codec::DeserializeValue for ParameterValue {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ParameterValue, D::Error> {
@@ -445,8 +445,8 @@ pub mod pipeline {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut id: Option<crate::Value<String>> = None;
-                    let mut string_value: Option<crate::Value<String>> = None;
+                    let mut id: Option<::Value<String>> = None;
+                    let mut string_value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -481,20 +481,20 @@ pub mod pipeline {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub fields: crate::ValueList<Field>,
+        pub fields: ::ValueList<Field>,
         /// Property [`Id`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-id).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub id: crate::Value<String>,
+        pub id: ::Value<String>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-name).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub name: crate::Value<String>,
+        pub name: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for PipelineObject {
+    impl ::codec::SerializeValue for PipelineObject {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Fields", &self.fields)?;
@@ -504,7 +504,7 @@ pub mod pipeline {
         }
     }
 
-    impl crate::codec::DeserializeValue for PipelineObject {
+    impl ::codec::DeserializeValue for PipelineObject {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PipelineObject, D::Error> {
@@ -521,9 +521,9 @@ pub mod pipeline {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut fields: Option<crate::ValueList<Field>> = None;
-                    let mut id: Option<crate::Value<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut fields: Option<::ValueList<Field>> = None;
+                    let mut id: Option<::Value<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -561,15 +561,15 @@ pub mod pipeline {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub key: crate::Value<String>,
+        pub key: ::Value<String>,
         /// Property [`Value`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html#cfn-datapipeline-pipeline-pipelinetags-value).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub value: crate::Value<String>,
+        pub value: ::Value<String>,
     }
 
-    impl crate::codec::SerializeValue for PipelineTag {
+    impl ::codec::SerializeValue for PipelineTag {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             ::serde::ser::SerializeMap::serialize_entry(&mut map, "Key", &self.key)?;
@@ -578,7 +578,7 @@ pub mod pipeline {
         }
     }
 
-    impl crate::codec::DeserializeValue for PipelineTag {
+    impl ::codec::DeserializeValue for PipelineTag {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(d: D) -> Result<PipelineTag, D::Error> {
             struct Visitor;
 
@@ -593,8 +593,8 @@ pub mod pipeline {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut key: Option<crate::Value<String>> = None;
-                    let mut value: Option<crate::Value<String>> = None;
+                    let mut key: Option<::Value<String>> = None;
+                    let mut value: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

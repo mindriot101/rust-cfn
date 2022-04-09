@@ -13,12 +13,12 @@ pub struct DeviceProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub device_id: crate::Value<String>,
+    pub device_id: ::Value<String>,
     /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-device.html#cfn-iot1click-device-enabled).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub enabled: crate::Value<bool>,
+    pub enabled: ::Value<bool>,
 }
 
 impl ::serde::Serialize for DeviceProperties {
@@ -45,8 +45,8 @@ impl<'de> ::serde::Deserialize<'de> for DeviceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut device_id: Option<crate::Value<String>> = None;
-                let mut enabled: Option<crate::Value<bool>> = None;
+                let mut device_id: Option<::Value<String>> = None;
+                let mut enabled: Option<::Value<bool>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -71,7 +71,7 @@ impl<'de> ::serde::Deserialize<'de> for DeviceProperties {
     }
 }
 
-impl crate::Resource for Device {
+impl ::Resource for Device {
     type Properties = DeviceProperties;
     const TYPE: &'static str = "AWS::IoT1Click::Device";
     fn properties(&self) -> &DeviceProperties {
@@ -82,7 +82,7 @@ impl crate::Resource for Device {
     }
 }
 
-impl crate::private::Sealed for Device {}
+impl ::private::Sealed for Device {}
 
 impl From<DeviceProperties> for Device {
     fn from(properties: DeviceProperties) -> Device {
@@ -103,22 +103,22 @@ pub struct PlacementProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub associated_devices: Option<crate::Value<crate::json::Value>>,
+    pub associated_devices: Option<::Value<::json::Value>>,
     /// Property [`Attributes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-attributes).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub attributes: Option<crate::Value<crate::json::Value>>,
+    pub attributes: Option<::Value<::json::Value>>,
     /// Property [`PlacementName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-placementname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub placement_name: Option<crate::Value<String>>,
+    pub placement_name: Option<::Value<String>>,
     /// Property [`ProjectName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-projectname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub project_name: crate::Value<String>,
+    pub project_name: ::Value<String>,
 }
 
 impl ::serde::Serialize for PlacementProperties {
@@ -157,10 +157,10 @@ impl<'de> ::serde::Deserialize<'de> for PlacementProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut associated_devices: Option<crate::Value<crate::json::Value>> = None;
-                let mut attributes: Option<crate::Value<crate::json::Value>> = None;
-                let mut placement_name: Option<crate::Value<String>> = None;
-                let mut project_name: Option<crate::Value<String>> = None;
+                let mut associated_devices: Option<::Value<::json::Value>> = None;
+                let mut attributes: Option<::Value<::json::Value>> = None;
+                let mut placement_name: Option<::Value<String>> = None;
+                let mut project_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -194,7 +194,7 @@ impl<'de> ::serde::Deserialize<'de> for PlacementProperties {
     }
 }
 
-impl crate::Resource for Placement {
+impl ::Resource for Placement {
     type Properties = PlacementProperties;
     const TYPE: &'static str = "AWS::IoT1Click::Placement";
     fn properties(&self) -> &PlacementProperties {
@@ -205,7 +205,7 @@ impl crate::Resource for Placement {
     }
 }
 
-impl crate::private::Sealed for Placement {}
+impl ::private::Sealed for Placement {}
 
 impl From<PlacementProperties> for Placement {
     fn from(properties: PlacementProperties) -> Placement {
@@ -226,17 +226,17 @@ pub struct ProjectProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub description: Option<crate::Value<String>>,
+    pub description: Option<::Value<String>>,
     /// Property [`PlacementTemplate`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-placementtemplate).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub placement_template: crate::Value<self::project::PlacementTemplate>,
+    pub placement_template: ::Value<self::project::PlacementTemplate>,
     /// Property [`ProjectName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-projectname).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub project_name: Option<crate::Value<String>>,
+    pub project_name: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for ProjectProperties {
@@ -272,10 +272,10 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut description: Option<crate::Value<String>> = None;
-                let mut placement_template: Option<crate::Value<self::project::PlacementTemplate>> =
+                let mut description: Option<::Value<String>> = None;
+                let mut placement_template: Option<::Value<self::project::PlacementTemplate>> =
                     None;
-                let mut project_name: Option<crate::Value<String>> = None;
+                let mut project_name: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -305,7 +305,7 @@ impl<'de> ::serde::Deserialize<'de> for ProjectProperties {
     }
 }
 
-impl crate::Resource for Project {
+impl ::Resource for Project {
     type Properties = ProjectProperties;
     const TYPE: &'static str = "AWS::IoT1Click::Project";
     fn properties(&self) -> &ProjectProperties {
@@ -316,7 +316,7 @@ impl crate::Resource for Project {
     }
 }
 
-impl crate::private::Sealed for Project {}
+impl ::private::Sealed for Project {}
 
 impl From<ProjectProperties> for Project {
     fn from(properties: ProjectProperties) -> Project {
@@ -334,15 +334,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub callback_overrides: Option<crate::Value<crate::json::Value>>,
+        pub callback_overrides: Option<::Value<::json::Value>>,
         /// Property [`DeviceType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-devicetype).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub device_type: Option<crate::Value<String>>,
+        pub device_type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for DeviceTemplate {
+    impl ::codec::SerializeValue for DeviceTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref callback_overrides) = self.callback_overrides {
@@ -359,7 +359,7 @@ pub mod project {
         }
     }
 
-    impl crate::codec::DeserializeValue for DeviceTemplate {
+    impl ::codec::DeserializeValue for DeviceTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<DeviceTemplate, D::Error> {
@@ -376,8 +376,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut callback_overrides: Option<crate::Value<crate::json::Value>> = None;
-                    let mut device_type: Option<crate::Value<String>> = None;
+                    let mut callback_overrides: Option<::Value<::json::Value>> = None;
+                    let mut device_type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -411,15 +411,15 @@ pub mod project {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub default_attributes: Option<crate::Value<crate::json::Value>>,
+        pub default_attributes: Option<::Value<::json::Value>>,
         /// Property [`DeviceTemplates`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html#cfn-iot1click-project-placementtemplate-devicetemplates).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub device_templates: Option<crate::Value<crate::json::Value>>,
+        pub device_templates: Option<::Value<::json::Value>>,
     }
 
-    impl crate::codec::SerializeValue for PlacementTemplate {
+    impl ::codec::SerializeValue for PlacementTemplate {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref default_attributes) = self.default_attributes {
@@ -440,7 +440,7 @@ pub mod project {
         }
     }
 
-    impl crate::codec::DeserializeValue for PlacementTemplate {
+    impl ::codec::DeserializeValue for PlacementTemplate {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<PlacementTemplate, D::Error> {
@@ -457,8 +457,8 @@ pub mod project {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut default_attributes: Option<crate::Value<crate::json::Value>> = None;
-                    let mut device_templates: Option<crate::Value<crate::json::Value>> = None;
+                    let mut default_attributes: Option<::Value<::json::Value>> = None;
+                    let mut device_templates: Option<::Value<::json::Value>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

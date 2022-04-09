@@ -13,17 +13,17 @@ pub struct ComponentVersionProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub inline_recipe: Option<crate::Value<String>>,
+    pub inline_recipe: Option<::Value<String>>,
     /// Property [`LambdaFunction`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-lambdafunction).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub lambda_function: Option<crate::Value<self::component_version::LambdaFunctionRecipeSource>>,
+    pub lambda_function: Option<::Value<self::component_version::LambdaFunctionRecipeSource>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueMap<String>>,
+    pub tags: Option<::ValueMap<String>>,
 }
 
 impl ::serde::Serialize for ComponentVersionProperties {
@@ -63,11 +63,11 @@ impl<'de> ::serde::Deserialize<'de> for ComponentVersionProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut inline_recipe: Option<crate::Value<String>> = None;
+                let mut inline_recipe: Option<::Value<String>> = None;
                 let mut lambda_function: Option<
-                    crate::Value<self::component_version::LambdaFunctionRecipeSource>,
+                    ::Value<self::component_version::LambdaFunctionRecipeSource>,
                 > = None;
-                let mut tags: Option<crate::ValueMap<String>> = None;
+                let mut tags: Option<::ValueMap<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -96,7 +96,7 @@ impl<'de> ::serde::Deserialize<'de> for ComponentVersionProperties {
     }
 }
 
-impl crate::Resource for ComponentVersion {
+impl ::Resource for ComponentVersion {
     type Properties = ComponentVersionProperties;
     const TYPE: &'static str = "AWS::GreengrassV2::ComponentVersion";
     fn properties(&self) -> &ComponentVersionProperties {
@@ -107,7 +107,7 @@ impl crate::Resource for ComponentVersion {
     }
 }
 
-impl crate::private::Sealed for ComponentVersion {}
+impl ::private::Sealed for ComponentVersion {}
 
 impl From<ComponentVersionProperties> for ComponentVersion {
     fn from(properties: ComponentVersionProperties) -> ComponentVersion {
@@ -125,15 +125,15 @@ pub mod component_version {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dependency_type: Option<crate::Value<String>>,
+        pub dependency_type: Option<::Value<String>>,
         /// Property [`VersionRequirement`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentdependencyrequirement.html#cfn-greengrassv2-componentversion-componentdependencyrequirement-versionrequirement).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub version_requirement: Option<crate::Value<String>>,
+        pub version_requirement: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentDependencyRequirement {
+    impl ::codec::SerializeValue for ComponentDependencyRequirement {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dependency_type) = self.dependency_type {
@@ -154,7 +154,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentDependencyRequirement {
+    impl ::codec::DeserializeValue for ComponentDependencyRequirement {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentDependencyRequirement, D::Error> {
@@ -171,8 +171,8 @@ pub mod component_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dependency_type: Option<crate::Value<String>> = None;
-                    let mut version_requirement: Option<crate::Value<String>> = None;
+                    let mut dependency_type: Option<::Value<String>> = None;
+                    let mut version_requirement: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -206,15 +206,15 @@ pub mod component_version {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub attributes: Option<crate::ValueMap<String>>,
+        pub attributes: Option<::ValueMap<String>>,
         /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentplatform.html#cfn-greengrassv2-componentversion-componentplatform-name).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub name: Option<crate::Value<String>>,
+        pub name: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ComponentPlatform {
+    impl ::codec::SerializeValue for ComponentPlatform {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref attributes) = self.attributes {
@@ -227,7 +227,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for ComponentPlatform {
+    impl ::codec::DeserializeValue for ComponentPlatform {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ComponentPlatform, D::Error> {
@@ -244,8 +244,8 @@ pub mod component_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut attributes: Option<crate::ValueMap<String>> = None;
-                    let mut name: Option<crate::Value<String>> = None;
+                    let mut attributes: Option<::ValueMap<String>> = None;
+                    let mut name: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -279,25 +279,25 @@ pub mod component_version {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub devices: Option<crate::ValueList<LambdaDeviceMount>>,
+        pub devices: Option<::ValueList<LambdaDeviceMount>>,
         /// Property [`MemorySizeInKB`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-memorysizeinkb).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub memory_size_in_kb: Option<crate::Value<u32>>,
+        pub memory_size_in_kb: Option<::Value<u32>>,
         /// Property [`MountROSysfs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-mountrosysfs).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub mount_ro_sysfs: Option<crate::Value<bool>>,
+        pub mount_ro_sysfs: Option<::Value<bool>>,
         /// Property [`Volumes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-volumes).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub volumes: Option<crate::ValueList<LambdaVolumeMount>>,
+        pub volumes: Option<::ValueList<LambdaVolumeMount>>,
     }
 
-    impl crate::codec::SerializeValue for LambdaContainerParams {
+    impl ::codec::SerializeValue for LambdaContainerParams {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref devices) = self.devices {
@@ -324,7 +324,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for LambdaContainerParams {
+    impl ::codec::DeserializeValue for LambdaContainerParams {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaContainerParams, D::Error> {
@@ -341,10 +341,10 @@ pub mod component_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut devices: Option<crate::ValueList<LambdaDeviceMount>> = None;
-                    let mut memory_size_in_kb: Option<crate::Value<u32>> = None;
-                    let mut mount_ro_sysfs: Option<crate::Value<bool>> = None;
-                    let mut volumes: Option<crate::ValueList<LambdaVolumeMount>> = None;
+                    let mut devices: Option<::ValueList<LambdaDeviceMount>> = None;
+                    let mut memory_size_in_kb: Option<::Value<u32>> = None;
+                    let mut mount_ro_sysfs: Option<::Value<bool>> = None;
+                    let mut volumes: Option<::ValueList<LambdaVolumeMount>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -386,20 +386,20 @@ pub mod component_version {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub add_group_owner: Option<crate::Value<bool>>,
+        pub add_group_owner: Option<::Value<bool>>,
         /// Property [`Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html#cfn-greengrassv2-componentversion-lambdadevicemount-path).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub path: Option<crate::Value<String>>,
+        pub path: Option<::Value<String>>,
         /// Property [`Permission`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html#cfn-greengrassv2-componentversion-lambdadevicemount-permission).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub permission: Option<crate::Value<String>>,
+        pub permission: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LambdaDeviceMount {
+    impl ::codec::SerializeValue for LambdaDeviceMount {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref add_group_owner) = self.add_group_owner {
@@ -419,7 +419,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for LambdaDeviceMount {
+    impl ::codec::DeserializeValue for LambdaDeviceMount {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaDeviceMount, D::Error> {
@@ -436,9 +436,9 @@ pub mod component_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut add_group_owner: Option<crate::Value<bool>> = None;
-                    let mut path: Option<crate::Value<String>> = None;
-                    let mut permission: Option<crate::Value<String>> = None;
+                    let mut add_group_owner: Option<::Value<bool>> = None;
+                    let mut path: Option<::Value<String>> = None;
+                    let mut permission: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -476,15 +476,15 @@ pub mod component_version {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub topic: Option<crate::Value<String>>,
+        pub topic: Option<::Value<String>>,
         /// Property [`Type`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaeventsource.html#cfn-greengrassv2-componentversion-lambdaeventsource-type).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub r#type: Option<crate::Value<String>>,
+        pub r#type: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LambdaEventSource {
+    impl ::codec::SerializeValue for LambdaEventSource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref topic) = self.topic {
@@ -497,7 +497,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for LambdaEventSource {
+    impl ::codec::DeserializeValue for LambdaEventSource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaEventSource, D::Error> {
@@ -514,8 +514,8 @@ pub mod component_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut topic: Option<crate::Value<String>> = None;
-                    let mut r#type: Option<crate::Value<String>> = None;
+                    let mut topic: Option<::Value<String>> = None;
+                    let mut r#type: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -549,60 +549,60 @@ pub mod component_version {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub environment_variables: Option<crate::ValueMap<String>>,
+        pub environment_variables: Option<::ValueMap<String>>,
         /// Property [`EventSources`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-eventsources).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub event_sources: Option<crate::ValueList<LambdaEventSource>>,
+        pub event_sources: Option<::ValueList<LambdaEventSource>>,
         /// Property [`ExecArgs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-execargs).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub exec_args: Option<crate::ValueList<String>>,
+        pub exec_args: Option<::ValueList<String>>,
         /// Property [`InputPayloadEncodingType`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-inputpayloadencodingtype).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub input_payload_encoding_type: Option<crate::Value<String>>,
+        pub input_payload_encoding_type: Option<::Value<String>>,
         /// Property [`LinuxProcessParams`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-linuxprocessparams).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub linux_process_params: Option<crate::Value<LambdaLinuxProcessParams>>,
+        pub linux_process_params: Option<::Value<LambdaLinuxProcessParams>>,
         /// Property [`MaxIdleTimeInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxidletimeinseconds).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_idle_time_in_seconds: Option<crate::Value<u32>>,
+        pub max_idle_time_in_seconds: Option<::Value<u32>>,
         /// Property [`MaxInstancesCount`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxinstancescount).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_instances_count: Option<crate::Value<u32>>,
+        pub max_instances_count: Option<::Value<u32>>,
         /// Property [`MaxQueueSize`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxqueuesize).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub max_queue_size: Option<crate::Value<u32>>,
+        pub max_queue_size: Option<::Value<u32>>,
         /// Property [`Pinned`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-pinned).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub pinned: Option<crate::Value<bool>>,
+        pub pinned: Option<::Value<bool>>,
         /// Property [`StatusTimeoutInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-statustimeoutinseconds).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub status_timeout_in_seconds: Option<crate::Value<u32>>,
+        pub status_timeout_in_seconds: Option<::Value<u32>>,
         /// Property [`TimeoutInSeconds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-timeoutinseconds).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub timeout_in_seconds: Option<crate::Value<u32>>,
+        pub timeout_in_seconds: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for LambdaExecutionParameters {
+    impl ::codec::SerializeValue for LambdaExecutionParameters {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref environment_variables) = self.environment_variables {
@@ -678,7 +678,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for LambdaExecutionParameters {
+    impl ::codec::DeserializeValue for LambdaExecutionParameters {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaExecutionParameters, D::Error> {
@@ -695,17 +695,17 @@ pub mod component_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut environment_variables: Option<crate::ValueMap<String>> = None;
-                    let mut event_sources: Option<crate::ValueList<LambdaEventSource>> = None;
-                    let mut exec_args: Option<crate::ValueList<String>> = None;
-                    let mut input_payload_encoding_type: Option<crate::Value<String>> = None;
-                    let mut linux_process_params: Option<crate::Value<LambdaLinuxProcessParams>> = None;
-                    let mut max_idle_time_in_seconds: Option<crate::Value<u32>> = None;
-                    let mut max_instances_count: Option<crate::Value<u32>> = None;
-                    let mut max_queue_size: Option<crate::Value<u32>> = None;
-                    let mut pinned: Option<crate::Value<bool>> = None;
-                    let mut status_timeout_in_seconds: Option<crate::Value<u32>> = None;
-                    let mut timeout_in_seconds: Option<crate::Value<u32>> = None;
+                    let mut environment_variables: Option<::ValueMap<String>> = None;
+                    let mut event_sources: Option<::ValueList<LambdaEventSource>> = None;
+                    let mut exec_args: Option<::ValueList<String>> = None;
+                    let mut input_payload_encoding_type: Option<::Value<String>> = None;
+                    let mut linux_process_params: Option<::Value<LambdaLinuxProcessParams>> = None;
+                    let mut max_idle_time_in_seconds: Option<::Value<u32>> = None;
+                    let mut max_instances_count: Option<::Value<u32>> = None;
+                    let mut max_queue_size: Option<::Value<u32>> = None;
+                    let mut pinned: Option<::Value<bool>> = None;
+                    let mut status_timeout_in_seconds: Option<::Value<u32>> = None;
+                    let mut timeout_in_seconds: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -780,35 +780,35 @@ pub mod component_version {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub component_dependencies: Option<crate::ValueMap<ComponentDependencyRequirement>>,
+        pub component_dependencies: Option<::ValueMap<ComponentDependencyRequirement>>,
         /// Property [`ComponentLambdaParameters`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentlambdaparameters).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub component_lambda_parameters: Option<crate::Value<LambdaExecutionParameters>>,
+        pub component_lambda_parameters: Option<::Value<LambdaExecutionParameters>>,
         /// Property [`ComponentName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentname).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub component_name: Option<crate::Value<String>>,
+        pub component_name: Option<::Value<String>>,
         /// Property [`ComponentPlatforms`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentplatforms).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub component_platforms: Option<crate::ValueList<ComponentPlatform>>,
+        pub component_platforms: Option<::ValueList<ComponentPlatform>>,
         /// Property [`ComponentVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentversion).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub component_version: Option<crate::Value<String>>,
+        pub component_version: Option<::Value<String>>,
         /// Property [`LambdaArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-lambdaarn).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub lambda_arn: Option<crate::Value<String>>,
+        pub lambda_arn: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LambdaFunctionRecipeSource {
+    impl ::codec::SerializeValue for LambdaFunctionRecipeSource {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref component_dependencies) = self.component_dependencies {
@@ -853,7 +853,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for LambdaFunctionRecipeSource {
+    impl ::codec::DeserializeValue for LambdaFunctionRecipeSource {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaFunctionRecipeSource, D::Error> {
@@ -871,15 +871,15 @@ pub mod component_version {
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
                     let mut component_dependencies: Option<
-                        crate::ValueMap<ComponentDependencyRequirement>,
+                        ::ValueMap<ComponentDependencyRequirement>,
                     > = None;
                     let mut component_lambda_parameters: Option<
-                        crate::Value<LambdaExecutionParameters>,
+                        ::Value<LambdaExecutionParameters>,
                     > = None;
-                    let mut component_name: Option<crate::Value<String>> = None;
-                    let mut component_platforms: Option<crate::ValueList<ComponentPlatform>> = None;
-                    let mut component_version: Option<crate::Value<String>> = None;
-                    let mut lambda_arn: Option<crate::Value<String>> = None;
+                    let mut component_name: Option<::Value<String>> = None;
+                    let mut component_platforms: Option<::ValueList<ComponentPlatform>> = None;
+                    let mut component_version: Option<::Value<String>> = None;
+                    let mut lambda_arn: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -931,15 +931,15 @@ pub mod component_version {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub container_params: Option<crate::Value<LambdaContainerParams>>,
+        pub container_params: Option<::Value<LambdaContainerParams>>,
         /// Property [`IsolationMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html#cfn-greengrassv2-componentversion-lambdalinuxprocessparams-isolationmode).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub isolation_mode: Option<crate::Value<String>>,
+        pub isolation_mode: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LambdaLinuxProcessParams {
+    impl ::codec::SerializeValue for LambdaLinuxProcessParams {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref container_params) = self.container_params {
@@ -960,7 +960,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for LambdaLinuxProcessParams {
+    impl ::codec::DeserializeValue for LambdaLinuxProcessParams {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaLinuxProcessParams, D::Error> {
@@ -977,8 +977,8 @@ pub mod component_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut container_params: Option<crate::Value<LambdaContainerParams>> = None;
-                    let mut isolation_mode: Option<crate::Value<String>> = None;
+                    let mut container_params: Option<::Value<LambdaContainerParams>> = None;
+                    let mut isolation_mode: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -1012,25 +1012,25 @@ pub mod component_version {
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub add_group_owner: Option<crate::Value<bool>>,
+        pub add_group_owner: Option<::Value<bool>>,
         /// Property [`DestinationPath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-destinationpath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub destination_path: Option<crate::Value<String>>,
+        pub destination_path: Option<::Value<String>>,
         /// Property [`Permission`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-permission).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub permission: Option<crate::Value<String>>,
+        pub permission: Option<::Value<String>>,
         /// Property [`SourcePath`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-sourcepath).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub source_path: Option<crate::Value<String>>,
+        pub source_path: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for LambdaVolumeMount {
+    impl ::codec::SerializeValue for LambdaVolumeMount {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref add_group_owner) = self.add_group_owner {
@@ -1057,7 +1057,7 @@ pub mod component_version {
         }
     }
 
-    impl crate::codec::DeserializeValue for LambdaVolumeMount {
+    impl ::codec::DeserializeValue for LambdaVolumeMount {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LambdaVolumeMount, D::Error> {
@@ -1074,10 +1074,10 @@ pub mod component_version {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut add_group_owner: Option<crate::Value<bool>> = None;
-                    let mut destination_path: Option<crate::Value<String>> = None;
-                    let mut permission: Option<crate::Value<String>> = None;
-                    let mut source_path: Option<crate::Value<String>> = None;
+                    let mut add_group_owner: Option<::Value<bool>> = None;
+                    let mut destination_path: Option<::Value<String>> = None;
+                    let mut permission: Option<::Value<String>> = None;
+                    let mut source_path: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

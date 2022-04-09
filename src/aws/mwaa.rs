@@ -13,102 +13,102 @@ pub struct EnvironmentProperties {
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub airflow_configuration_options: Option<crate::Value<crate::json::Value>>,
+    pub airflow_configuration_options: Option<::Value<::json::Value>>,
     /// Property [`AirflowVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-airflowversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub airflow_version: Option<crate::Value<String>>,
+    pub airflow_version: Option<::Value<String>>,
     /// Property [`DagS3Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-dags3path).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub dag_s3_path: Option<crate::Value<String>>,
+    pub dag_s3_path: Option<::Value<String>>,
     /// Property [`EnvironmentClass`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-environmentclass).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub environment_class: Option<crate::Value<String>>,
+    pub environment_class: Option<::Value<String>>,
     /// Property [`ExecutionRoleArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-executionrolearn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub execution_role_arn: Option<crate::Value<String>>,
+    pub execution_role_arn: Option<::Value<String>>,
     /// Property [`KmsKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-kmskey).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub kms_key: Option<crate::Value<String>>,
+    pub kms_key: Option<::Value<String>>,
     /// Property [`LoggingConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-loggingconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub logging_configuration: Option<crate::Value<self::environment::LoggingConfiguration>>,
+    pub logging_configuration: Option<::Value<self::environment::LoggingConfiguration>>,
     /// Property [`MaxWorkers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-maxworkers).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub max_workers: Option<crate::Value<u32>>,
+    pub max_workers: Option<::Value<u32>>,
     /// Property [`MinWorkers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-minworkers).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub min_workers: Option<crate::Value<u32>>,
+    pub min_workers: Option<::Value<u32>>,
     /// Property [`Name`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-name).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub name: crate::Value<String>,
+    pub name: ::Value<String>,
     /// Property [`NetworkConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-networkconfiguration).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub network_configuration: Option<crate::Value<self::environment::NetworkConfiguration>>,
+    pub network_configuration: Option<::Value<self::environment::NetworkConfiguration>>,
     /// Property [`PluginsS3ObjectVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-pluginss3objectversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub plugins_s3_object_version: Option<crate::Value<String>>,
+    pub plugins_s3_object_version: Option<::Value<String>>,
     /// Property [`PluginsS3Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-pluginss3path).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub plugins_s3_path: Option<crate::Value<String>>,
+    pub plugins_s3_path: Option<::Value<String>>,
     /// Property [`RequirementsS3ObjectVersion`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-requirementss3objectversion).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub requirements_s3_object_version: Option<crate::Value<String>>,
+    pub requirements_s3_object_version: Option<::Value<String>>,
     /// Property [`RequirementsS3Path`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-requirementss3path).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub requirements_s3_path: Option<crate::Value<String>>,
+    pub requirements_s3_path: Option<::Value<String>>,
     /// Property [`Schedulers`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-schedulers).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub schedulers: Option<crate::Value<u32>>,
+    pub schedulers: Option<::Value<u32>>,
     /// Property [`SourceBucketArn`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-sourcebucketarn).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub source_bucket_arn: Option<crate::Value<String>>,
+    pub source_bucket_arn: Option<::Value<String>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::Value<crate::json::Value>>,
+    pub tags: Option<::Value<::json::Value>>,
     /// Property [`WebserverAccessMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-webserveraccessmode).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub webserver_access_mode: Option<crate::Value<String>>,
+    pub webserver_access_mode: Option<::Value<String>>,
     /// Property [`WeeklyMaintenanceWindowStart`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-weeklymaintenancewindowstart).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub weekly_maintenance_window_start: Option<crate::Value<String>>,
+    pub weekly_maintenance_window_start: Option<::Value<String>>,
 }
 
 impl ::serde::Serialize for EnvironmentProperties {
@@ -243,30 +243,30 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut airflow_configuration_options: Option<crate::Value<crate::json::Value>> = None;
-                let mut airflow_version: Option<crate::Value<String>> = None;
-                let mut dag_s3_path: Option<crate::Value<String>> = None;
-                let mut environment_class: Option<crate::Value<String>> = None;
-                let mut execution_role_arn: Option<crate::Value<String>> = None;
-                let mut kms_key: Option<crate::Value<String>> = None;
+                let mut airflow_configuration_options: Option<::Value<::json::Value>> = None;
+                let mut airflow_version: Option<::Value<String>> = None;
+                let mut dag_s3_path: Option<::Value<String>> = None;
+                let mut environment_class: Option<::Value<String>> = None;
+                let mut execution_role_arn: Option<::Value<String>> = None;
+                let mut kms_key: Option<::Value<String>> = None;
                 let mut logging_configuration: Option<
-                    crate::Value<self::environment::LoggingConfiguration>,
+                    ::Value<self::environment::LoggingConfiguration>,
                 > = None;
-                let mut max_workers: Option<crate::Value<u32>> = None;
-                let mut min_workers: Option<crate::Value<u32>> = None;
-                let mut name: Option<crate::Value<String>> = None;
+                let mut max_workers: Option<::Value<u32>> = None;
+                let mut min_workers: Option<::Value<u32>> = None;
+                let mut name: Option<::Value<String>> = None;
                 let mut network_configuration: Option<
-                    crate::Value<self::environment::NetworkConfiguration>,
+                    ::Value<self::environment::NetworkConfiguration>,
                 > = None;
-                let mut plugins_s3_object_version: Option<crate::Value<String>> = None;
-                let mut plugins_s3_path: Option<crate::Value<String>> = None;
-                let mut requirements_s3_object_version: Option<crate::Value<String>> = None;
-                let mut requirements_s3_path: Option<crate::Value<String>> = None;
-                let mut schedulers: Option<crate::Value<u32>> = None;
-                let mut source_bucket_arn: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::Value<crate::json::Value>> = None;
-                let mut webserver_access_mode: Option<crate::Value<String>> = None;
-                let mut weekly_maintenance_window_start: Option<crate::Value<String>> = None;
+                let mut plugins_s3_object_version: Option<::Value<String>> = None;
+                let mut plugins_s3_path: Option<::Value<String>> = None;
+                let mut requirements_s3_object_version: Option<::Value<String>> = None;
+                let mut requirements_s3_path: Option<::Value<String>> = None;
+                let mut schedulers: Option<::Value<u32>> = None;
+                let mut source_bucket_arn: Option<::Value<String>> = None;
+                let mut tags: Option<::Value<::json::Value>> = None;
+                let mut webserver_access_mode: Option<::Value<String>> = None;
+                let mut weekly_maintenance_window_start: Option<::Value<String>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -367,7 +367,7 @@ impl<'de> ::serde::Deserialize<'de> for EnvironmentProperties {
     }
 }
 
-impl crate::Resource for Environment {
+impl ::Resource for Environment {
     type Properties = EnvironmentProperties;
     const TYPE: &'static str = "AWS::MWAA::Environment";
     fn properties(&self) -> &EnvironmentProperties {
@@ -378,7 +378,7 @@ impl crate::Resource for Environment {
     }
 }
 
-impl crate::private::Sealed for Environment {}
+impl ::private::Sealed for Environment {}
 
 impl From<EnvironmentProperties> for Environment {
     fn from(properties: EnvironmentProperties) -> Environment {
@@ -396,30 +396,30 @@ pub mod environment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub dag_processing_logs: Option<crate::Value<ModuleLoggingConfiguration>>,
+        pub dag_processing_logs: Option<::Value<ModuleLoggingConfiguration>>,
         /// Property [`SchedulerLogs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-schedulerlogs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub scheduler_logs: Option<crate::Value<ModuleLoggingConfiguration>>,
+        pub scheduler_logs: Option<::Value<ModuleLoggingConfiguration>>,
         /// Property [`TaskLogs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-tasklogs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub task_logs: Option<crate::Value<ModuleLoggingConfiguration>>,
+        pub task_logs: Option<::Value<ModuleLoggingConfiguration>>,
         /// Property [`WebserverLogs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-webserverlogs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub webserver_logs: Option<crate::Value<ModuleLoggingConfiguration>>,
+        pub webserver_logs: Option<::Value<ModuleLoggingConfiguration>>,
         /// Property [`WorkerLogs`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-workerlogs).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub worker_logs: Option<crate::Value<ModuleLoggingConfiguration>>,
+        pub worker_logs: Option<::Value<ModuleLoggingConfiguration>>,
     }
 
-    impl crate::codec::SerializeValue for LoggingConfiguration {
+    impl ::codec::SerializeValue for LoggingConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref dag_processing_logs) = self.dag_processing_logs {
@@ -453,7 +453,7 @@ pub mod environment {
         }
     }
 
-    impl crate::codec::DeserializeValue for LoggingConfiguration {
+    impl ::codec::DeserializeValue for LoggingConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<LoggingConfiguration, D::Error> {
@@ -470,11 +470,11 @@ pub mod environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut dag_processing_logs: Option<crate::Value<ModuleLoggingConfiguration>> = None;
-                    let mut scheduler_logs: Option<crate::Value<ModuleLoggingConfiguration>> = None;
-                    let mut task_logs: Option<crate::Value<ModuleLoggingConfiguration>> = None;
-                    let mut webserver_logs: Option<crate::Value<ModuleLoggingConfiguration>> = None;
-                    let mut worker_logs: Option<crate::Value<ModuleLoggingConfiguration>> = None;
+                    let mut dag_processing_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
+                    let mut scheduler_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
+                    let mut task_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
+                    let mut webserver_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
+                    let mut worker_logs: Option<::Value<ModuleLoggingConfiguration>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -520,20 +520,20 @@ pub mod environment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub cloud_watch_log_group_arn: Option<crate::Value<String>>,
+        pub cloud_watch_log_group_arn: Option<::Value<String>>,
         /// Property [`Enabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-enabled).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub enabled: Option<crate::Value<bool>>,
+        pub enabled: Option<::Value<bool>>,
         /// Property [`LogLevel`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-loglevel).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub log_level: Option<crate::Value<String>>,
+        pub log_level: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ModuleLoggingConfiguration {
+    impl ::codec::SerializeValue for ModuleLoggingConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref cloud_watch_log_group_arn) = self.cloud_watch_log_group_arn {
@@ -553,7 +553,7 @@ pub mod environment {
         }
     }
 
-    impl crate::codec::DeserializeValue for ModuleLoggingConfiguration {
+    impl ::codec::DeserializeValue for ModuleLoggingConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ModuleLoggingConfiguration, D::Error> {
@@ -570,9 +570,9 @@ pub mod environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut cloud_watch_log_group_arn: Option<crate::Value<String>> = None;
-                    let mut enabled: Option<crate::Value<bool>> = None;
-                    let mut log_level: Option<crate::Value<String>> = None;
+                    let mut cloud_watch_log_group_arn: Option<::Value<String>> = None;
+                    let mut enabled: Option<::Value<bool>> = None;
+                    let mut log_level: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -611,15 +611,15 @@ pub mod environment {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub security_group_ids: Option<crate::ValueList<String>>,
+        pub security_group_ids: Option<::ValueList<String>>,
         /// Property [`SubnetIds`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-networkconfiguration.html#cfn-mwaa-environment-networkconfiguration-subnetids).
         ///
         /// Update type: _Immutable_.
         /// AWS CloudFormation replaces the resource when you change this property.
-        pub subnet_ids: Option<crate::ValueList<String>>,
+        pub subnet_ids: Option<::ValueList<String>>,
     }
 
-    impl crate::codec::SerializeValue for NetworkConfiguration {
+    impl ::codec::SerializeValue for NetworkConfiguration {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref security_group_ids) = self.security_group_ids {
@@ -636,7 +636,7 @@ pub mod environment {
         }
     }
 
-    impl crate::codec::DeserializeValue for NetworkConfiguration {
+    impl ::codec::DeserializeValue for NetworkConfiguration {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<NetworkConfiguration, D::Error> {
@@ -653,8 +653,8 @@ pub mod environment {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut security_group_ids: Option<crate::ValueList<String>> = None;
-                    let mut subnet_ids: Option<crate::ValueList<String>> = None;
+                    let mut security_group_ids: Option<::ValueList<String>> = None;
+                    let mut subnet_ids: Option<::ValueList<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?

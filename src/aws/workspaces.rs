@@ -13,12 +13,12 @@ pub struct ConnectionAliasProperties {
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub connection_string: crate::Value<String>,
+    pub connection_string: ::Value<String>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-tags).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
 }
 
 impl ::serde::Serialize for ConnectionAliasProperties {
@@ -53,8 +53,8 @@ impl<'de> ::serde::Deserialize<'de> for ConnectionAliasProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut connection_string: Option<crate::Value<String>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
+                let mut connection_string: Option<::Value<String>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
                     match __cfn_key.as_ref() {
@@ -80,7 +80,7 @@ impl<'de> ::serde::Deserialize<'de> for ConnectionAliasProperties {
     }
 }
 
-impl crate::Resource for ConnectionAlias {
+impl ::Resource for ConnectionAlias {
     type Properties = ConnectionAliasProperties;
     const TYPE: &'static str = "AWS::WorkSpaces::ConnectionAlias";
     fn properties(&self) -> &ConnectionAliasProperties {
@@ -91,7 +91,7 @@ impl crate::Resource for ConnectionAlias {
     }
 }
 
-impl crate::private::Sealed for ConnectionAlias {}
+impl ::private::Sealed for ConnectionAlias {}
 
 impl From<ConnectionAliasProperties> for ConnectionAlias {
     fn from(properties: ConnectionAliasProperties) -> ConnectionAlias {
@@ -113,46 +113,46 @@ pub struct WorkspaceProperties {
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub bundle_id: crate::Value<String>,
+    pub bundle_id: ::Value<String>,
     /// Property [`DirectoryId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub directory_id: crate::Value<String>,
+    pub directory_id: ::Value<String>,
     /// Property [`RootVolumeEncryptionEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub root_volume_encryption_enabled: Option<crate::Value<bool>>,
+    pub root_volume_encryption_enabled: Option<::Value<bool>>,
     /// Property [`Tags`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-tags).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub tags: Option<crate::ValueList<crate::Tag>>,
+    pub tags: Option<::ValueList<::Tag>>,
     /// Property [`UserName`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username).
     ///
     /// Update type: _Immutable_.
     /// AWS CloudFormation replaces the resource when you change this property.
-    pub user_name: crate::Value<String>,
+    pub user_name: ::Value<String>,
     /// Property [`UserVolumeEncryptionEnabled`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub user_volume_encryption_enabled: Option<crate::Value<bool>>,
+    pub user_volume_encryption_enabled: Option<::Value<bool>>,
     /// Property [`VolumeEncryptionKey`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey).
     ///
     /// Update type: _Conditional_.
     /// Conditional updates can be mutable or immutable, depending on, for example, which other properties you updated.
     /// For more information, see the relevant resource type documentation.
-    pub volume_encryption_key: Option<crate::Value<String>>,
+    pub volume_encryption_key: Option<::Value<String>>,
     /// Property [`WorkspaceProperties`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-workspaceproperties).
     ///
     /// Update type: _Mutable_.
     /// AWS CloudFormation doesn't replace the resource when you change this property.
-    pub workspace_properties: Option<crate::Value<self::workspace::WorkspaceProperties>>,
+    pub workspace_properties: Option<::Value<self::workspace::WorkspaceProperties>>,
 }
 
 impl ::serde::Serialize for WorkspaceProperties {
@@ -211,15 +211,15 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
                 self,
                 mut map: A,
             ) -> Result<Self::Value, A::Error> {
-                let mut bundle_id: Option<crate::Value<String>> = None;
-                let mut directory_id: Option<crate::Value<String>> = None;
-                let mut root_volume_encryption_enabled: Option<crate::Value<bool>> = None;
-                let mut tags: Option<crate::ValueList<crate::Tag>> = None;
-                let mut user_name: Option<crate::Value<String>> = None;
-                let mut user_volume_encryption_enabled: Option<crate::Value<bool>> = None;
-                let mut volume_encryption_key: Option<crate::Value<String>> = None;
+                let mut bundle_id: Option<::Value<String>> = None;
+                let mut directory_id: Option<::Value<String>> = None;
+                let mut root_volume_encryption_enabled: Option<::Value<bool>> = None;
+                let mut tags: Option<::ValueList<::Tag>> = None;
+                let mut user_name: Option<::Value<String>> = None;
+                let mut user_volume_encryption_enabled: Option<::Value<bool>> = None;
+                let mut volume_encryption_key: Option<::Value<String>> = None;
                 let mut workspace_properties: Option<
-                    crate::Value<self::workspace::WorkspaceProperties>,
+                    ::Value<self::workspace::WorkspaceProperties>,
                 > = None;
 
                 while let Some(__cfn_key) = ::serde::de::MapAccess::next_key::<String>(&mut map)? {
@@ -272,7 +272,7 @@ impl<'de> ::serde::Deserialize<'de> for WorkspaceProperties {
     }
 }
 
-impl crate::Resource for Workspace {
+impl ::Resource for Workspace {
     type Properties = WorkspaceProperties;
     const TYPE: &'static str = "AWS::WorkSpaces::Workspace";
     fn properties(&self) -> &WorkspaceProperties {
@@ -283,7 +283,7 @@ impl crate::Resource for Workspace {
     }
 }
 
-impl crate::private::Sealed for Workspace {}
+impl ::private::Sealed for Workspace {}
 
 impl From<WorkspaceProperties> for Workspace {
     fn from(properties: WorkspaceProperties) -> Workspace {
@@ -301,25 +301,25 @@ pub mod connection_alias {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub associated_account_id: Option<crate::Value<String>>,
+        pub associated_account_id: Option<::Value<String>>,
         /// Property [`AssociationStatus`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-connectionalias-connectionaliasassociation.html#cfn-workspaces-connectionalias-connectionaliasassociation-associationstatus).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub association_status: Option<crate::Value<String>>,
+        pub association_status: Option<::Value<String>>,
         /// Property [`ConnectionIdentifier`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-connectionalias-connectionaliasassociation.html#cfn-workspaces-connectionalias-connectionaliasassociation-connectionidentifier).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub connection_identifier: Option<crate::Value<String>>,
+        pub connection_identifier: Option<::Value<String>>,
         /// Property [`ResourceId`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-connectionalias-connectionaliasassociation.html#cfn-workspaces-connectionalias-connectionaliasassociation-resourceid).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub resource_id: Option<crate::Value<String>>,
+        pub resource_id: Option<::Value<String>>,
     }
 
-    impl crate::codec::SerializeValue for ConnectionAliasAssociation {
+    impl ::codec::SerializeValue for ConnectionAliasAssociation {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref associated_account_id) = self.associated_account_id {
@@ -350,7 +350,7 @@ pub mod connection_alias {
         }
     }
 
-    impl crate::codec::DeserializeValue for ConnectionAliasAssociation {
+    impl ::codec::DeserializeValue for ConnectionAliasAssociation {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<ConnectionAliasAssociation, D::Error> {
@@ -367,10 +367,10 @@ pub mod connection_alias {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut associated_account_id: Option<crate::Value<String>> = None;
-                    let mut association_status: Option<crate::Value<String>> = None;
-                    let mut connection_identifier: Option<crate::Value<String>> = None;
-                    let mut resource_id: Option<crate::Value<String>> = None;
+                    let mut associated_account_id: Option<::Value<String>> = None;
+                    let mut association_status: Option<::Value<String>> = None;
+                    let mut connection_identifier: Option<::Value<String>> = None;
+                    let mut resource_id: Option<::Value<String>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
@@ -418,30 +418,30 @@ pub mod workspace {
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub compute_type_name: Option<crate::Value<String>>,
+        pub compute_type_name: Option<::Value<String>>,
         /// Property [`RootVolumeSizeGib`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-rootvolumesizegib).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub root_volume_size_gib: Option<crate::Value<u32>>,
+        pub root_volume_size_gib: Option<::Value<u32>>,
         /// Property [`RunningMode`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmode).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub running_mode: Option<crate::Value<String>>,
+        pub running_mode: Option<::Value<String>>,
         /// Property [`RunningModeAutoStopTimeoutInMinutes`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmodeautostoptimeoutinminutes).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub running_mode_auto_stop_timeout_in_minutes: Option<crate::Value<u32>>,
+        pub running_mode_auto_stop_timeout_in_minutes: Option<::Value<u32>>,
         /// Property [`UserVolumeSizeGib`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-uservolumesizegib).
         ///
         /// Update type: _Mutable_.
         /// AWS CloudFormation doesn't replace the resource when you change this property.
-        pub user_volume_size_gib: Option<crate::Value<u32>>,
+        pub user_volume_size_gib: Option<::Value<u32>>,
     }
 
-    impl crate::codec::SerializeValue for WorkspaceProperties {
+    impl ::codec::SerializeValue for WorkspaceProperties {
         fn serialize<S: ::serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
             let mut map = ::serde::Serializer::serialize_map(s, None)?;
             if let Some(ref compute_type_name) = self.compute_type_name {
@@ -481,7 +481,7 @@ pub mod workspace {
         }
     }
 
-    impl crate::codec::DeserializeValue for WorkspaceProperties {
+    impl ::codec::DeserializeValue for WorkspaceProperties {
         fn deserialize<'de, D: ::serde::Deserializer<'de>>(
             d: D,
         ) -> Result<WorkspaceProperties, D::Error> {
@@ -498,11 +498,11 @@ pub mod workspace {
                     self,
                     mut map: A,
                 ) -> Result<Self::Value, A::Error> {
-                    let mut compute_type_name: Option<crate::Value<String>> = None;
-                    let mut root_volume_size_gib: Option<crate::Value<u32>> = None;
-                    let mut running_mode: Option<crate::Value<String>> = None;
-                    let mut running_mode_auto_stop_timeout_in_minutes: Option<crate::Value<u32>> = None;
-                    let mut user_volume_size_gib: Option<crate::Value<u32>> = None;
+                    let mut compute_type_name: Option<::Value<String>> = None;
+                    let mut root_volume_size_gib: Option<::Value<u32>> = None;
+                    let mut running_mode: Option<::Value<String>> = None;
+                    let mut running_mode_auto_stop_timeout_in_minutes: Option<::Value<u32>> = None;
+                    let mut user_volume_size_gib: Option<::Value<u32>> = None;
 
                     while let Some(__cfn_key) =
                         ::serde::de::MapAccess::next_key::<String>(&mut map)?
