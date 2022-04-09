@@ -22,6 +22,8 @@ pub use error::{Error, ErrorKind};
 pub use parts::*;
 pub use types::*;
 
+pub use parts::resources::ResourceInner;
+
 pub mod json {
     //! Types for raw JSON values.
     pub use serde_json::{Number, Value};

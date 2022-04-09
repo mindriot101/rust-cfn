@@ -64,10 +64,13 @@ fn empty_object() -> ::serde_json::Value {
     ::serde_json::Value::Object(Default::default())
 }
 
+/// Inner representation of a resource
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ResourceInner {
+    /// The type of resource.
     #[serde(rename = "Type")]
     pub tag: String,
+    /// The JSON representation of the resource properties.
     #[serde(rename = "Properties", default = "empty_object")]
     pub properties: ::serde_json::Value,
 }
