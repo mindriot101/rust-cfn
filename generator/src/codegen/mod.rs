@@ -8,14 +8,16 @@ use itertools::{merge_join_by, EitherOrBoth, Itertools};
 use model::*;
 
 mod printer;
+use crate::generatable::Generatable;
+
 use self::printer::Printer;
 
 mod serde;
 use self::serde::{generate_deserialize, generate_deserialize_value, generate_serialize};
 
-pub fn generate<P: AsRef<Path>>(spec: Specification, base_path: P) -> io::Result<()> {
+pub(crate) fn generate<G: Generatable, P: AsRef<Path>>(spec: G, base_path: P) -> io::Result<()> {
     let resource_groups = spec
-        .resource_types
+        .resource_types()
         .into_iter()
         .filter_map(|(res_name, res_spec)| {
             if res_name.starts_with("AWS::") {
@@ -29,7 +31,7 @@ pub fn generate<P: AsRef<Path>>(spec: Specification, base_path: P) -> io::Result
         .group_by(|&(ref service_name, _, _)| service_name.to_owned());
 
     let property_groups = spec
-        .property_types
+        .property_types()
         .into_iter()
         .flatten()
         .filter_map(|(prop_name, prop_spec)| {

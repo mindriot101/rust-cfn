@@ -1,5 +1,19 @@
 use std::collections::BTreeMap;
 
+impl crate::generatable::Generatable for Specification {
+    fn version(&self) -> &str {
+        self.version.as_str()
+    }
+
+    fn property_types(&self) -> &Option<BTreeMap<String, PropertyType>> {
+        &self.property_types
+    }
+
+    fn resource_types(&self) -> &BTreeMap<String, ResourceType> {
+        &self.resource_types
+    }
+}
+
 #[derive(Deserialize)]
 pub struct Specification {
     /// The version of the resource specification. The version format is
