@@ -19,5 +19,5 @@ fn main() {
         .expect("failed to decompress specification file");
     let specification = serde_json::from_str::<model::Specification>(&data)
         .expect("failed to parse specification data");
-    codegen::generate(specification, "../src/aws").expect("failed to generate output files");
+    codegen::generate(specification, "cfn/src/aws").expect("failed to generate output files");
 }
